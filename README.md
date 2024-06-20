@@ -10,22 +10,13 @@ olimpiadele de informatică din România.
 
 ## Licență
 
-Decât dacă este specificat altfel, acest website, precum și conținutul său, este
-licențiat în baza Creative Commons Atribuire-Partajare în Condiții Identice 4.0
-Internațional (CC BY-SA 4.0). Vezi [LICENSE-CC-BY-SA](./LICENSE-CC-BY-SA) pentru
-textul complet al licenței.
+Conținutul acestui proiect este licențiat sub Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA). Puteți copia, distribui și modifica materialul nostru atâta timp cât ne menționați ca sursă, nu folosiți materialul în scopuri comerciale și distribuiți lucrările derivate sub aceeași licență. Pentru detalii, consultați licența completă [aici](https://github.com/roalgo-discord/arhiva-educationala/blob/main/LICENSE-CC-BY-NC-SA).
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+Codul scris pentru acest proiect este licențiat sub European Union Public License versiunea 1.2 (EUPL v1.2). Aceasta vă permite să folosiți, modificați și distribuiți codul, cu condiția ca orice lucrare derivată să fie distribuită sub aceeași licență. Pentru detalii, consultați licența completă [aici](https://github.com/roalgo-discord/arhiva-educationala/blob/main/LICENSE-EUPL.en).
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+Astfel, pentru arhiva noastră educațională de algoritmi de programare explicați:
 
-Decât dacă este specificat altfel, codurile sursă sunt licențiate sub Licența
-Publică a Uniunii Europene v1.2 (EUPL v1.2). Vezi
-[LICENSE-EUPL.en](./LICENSE-EUPL.en) pentru textul complet al licenței în limba
-engleză și [LICENSE-EUPL.ro](./LICENSE-EUPL.ro) pentru varianta în limba română.
+- **Text și explicații:** Licențiate sub Creative Commons Attribution-NonCommercial-ShareAlike (CC BY-NC-SA). Menționați sursa, nu folosiți comercial și distribuiți sub aceeași licență. [Consultați licența completă](https://github.com/roalgo-discord/arhiva-educationala/blob/main/LICENSE-CC-BY-NC-SA).
+- **Cod sursă:** Licențiat sub European Union Public License versiunea 1.2 (EUPL v1.2). Folosiți, modificați și redistribuiți cu menținerea aceleași licențe pentru lucrările derivate. [Consultați licența completă](https://github.com/roalgo-discord/arhiva-educationala/blob/main/LICENSE-EUPL.en).
 
-## Contribuire
-
-Pentru a vedea cum poți contribui la acest proiect, vezi
-[CONTRIBUTING.md](CONTRIBUTING.md).
+Aceste licențe asigură accesibilitatea și colaborarea, protejând în același timp împotriva utilizării comerciale neautorizate.

@@ -2,7 +2,6 @@ site_name: Arhiva Educationala Roalgo
 site_url: https://roalgo.github.io/arhiva-educationala/
 theme:
   name: material
-  custom_dir: overrides
   features:
     - content.code.annotate
     - content.code.copy
@@ -12,6 +11,13 @@ theme:
     - search.highlight
     - navigation.instant
     - navigation.footer
+    - navigation.tabs
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - navigation.top
   icon: 
     repo: fontawesome/brands/github-alt
   language: ro
@@ -44,7 +50,8 @@ extra:
       name: Hai pe discord!
   generator: false
 
-copyright: Arhiva Educationala Roalgo
+copyright: > 
+  Accest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai multe detali consultă <a href="/arhiva-educationala/licenta">pagina de licență</a>.
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -61,6 +68,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - def_list
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
