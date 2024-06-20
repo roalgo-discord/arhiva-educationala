@@ -16,4 +16,6 @@ pip install -r requirements.txt
 
 ### Daca ai docker si vscode configurat
 
-Daca ai docker si vscode configurat atunci cel mai usor e sa dai clone local la fork-ul tau sa 
+Daca ai docker si vscode configurat atunci cel mai usor e sa dai clone local la fork-ul tau si sa deschizi in devcontainer
+
+### Daca nu se poate deschide 
