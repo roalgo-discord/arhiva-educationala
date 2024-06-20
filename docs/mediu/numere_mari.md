@@ -102,7 +102,7 @@ $$
 
 Aici, $v[0]=5$ indică numărul de cifre din $N$, iar cifrele sunt stocate în ordine inversă începând de la $v[1]$
 
-[comment]: \todo{Utilizare vector<int> în schimb, dar trebuie rescris totul} 
+<!--Utilizare vector<int> în schimb, dar trebuie rescris totul--> 
 
 ### Procesarea Eficientă a Numerelor Mari în C++
 
