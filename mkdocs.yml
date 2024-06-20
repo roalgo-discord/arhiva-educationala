@@ -2,6 +2,7 @@ site_name: Arhiva Educationala Roalgo
 site_url: https://roalgo.github.io/arhiva-educationala/
 theme:
   name: material
+  custom_dir: overrides
   features:
     - content.code.annotate
     - content.code.copy
@@ -11,6 +12,8 @@ theme:
     - search.highlight
     - navigation.instant
     - navigation.footer
+  icon: 
+    repo: fontawesome/brands/github-alt
   language: ro
   font:
     text: "Recursive"
@@ -60,6 +63,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
+repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 plugins:
