@@ -69,6 +69,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - def_list
+  - md_in_html
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
