@@ -1,0 +1,75 @@
+site_name: Arhiva Educationala Roalgo
+site_url: https://roalgo.github.io/arhiva-educationala/
+theme:
+  name: material
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.share
+    - search.highlight
+    - navigation.instant
+    - navigation.footer
+  language: ro
+  font:
+    text: "Recursive"
+    code: "Recursive"
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to auto mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/roalgo
+      name: Hai pe discord!
+  generator: false
+
+copyright: Arhiva Educationala Roalgo
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+repo_url: https://github.com/roalgo-discord/arhiva-educationala
+edit_uri: edit/main/docs/
+
+plugins:
+  - git-committers:
+      repository: roalgo-discord/arhiva-educationala
+      branch: main
+  - search
+  - tags
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
