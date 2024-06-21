@@ -31,22 +31,19 @@ Pentru a rezolva această problemă, trebuie să ne folosim de faptul că toate 
 using namespace std;
 
 int n, v[200002], x;
-int main()
-{
+int main() {
 	ios_base::sync_with_stdio(false); // randuri pentru citirea rapida 
 	cin.tie(NULL);
 	
 	cin >> n >> x;
-	for(int i = 1; i <= n; i++)
+	for (int i = 1; i <= n; i++)
 		cin >> v[i];
 	int st = 1;
 	int dr = 1;
 	int sum = 0;
 	int ans = 0;
-	while(st <= n) // cat timp nu am terminat de parcurs
-	{
-		while(dr <= n && sum < x) // cat timp suma e mai mica decat x, incrementam dr
-		{
+	while (st <= n) { // cat timp nu am terminat de parcurs
+		while (dr <= n && sum < x) {// cat timp suma e mai mica decat x, incrementam dr
 			sum += v[dr];
 			dr++;
 		}
@@ -74,11 +71,9 @@ using namespace std;
  
 int n, x, a[200002], b[200002];
  
-int main()
-{
+int main() {
 	cin >> n >> x;
-	for(int i = 1; i <= n; ++i)
-	{
+	for (int i = 1; i <= n; ++i) {
 		cin >> a[i];
 		b[i] = a[i]; // avem nevoie de un alt vector pentru a afla pozitiile initiale 
 	}
@@ -87,24 +82,18 @@ int main()
 	
 	int p1 = 1, p2 = n; 
 	
-	while(p1 < p2)
-	{
-		if(a[p1] + a[p2] == x) // daca am gasit suma, aflam pozitiile celor 2 valori
-		{
+	while (p1 < p2) {
+		if (a[p1] + a[p2] == x) { // daca am gasit suma, aflam pozitiile celor 2 valori
 			int valA = a[p1]; 
 			int valB = a[p2];
 			
-			for(int i = 1; i <= n; ++i)
-			{
-				if(b[i] == valA) 
-				{
+			for (int i = 1; i <= n; ++i) {
+				if (b[i] == valA) {
 					cout << i << " ";
 					valA = 0;
 				}
-				else
-				{
-					if(b[i] == valB)
-					{
+				else {
+					if (b[i] == valB) {
 						cout << i << " ";
 						valB = 0;
 					}
@@ -113,10 +102,9 @@ int main()
 			// iesim din program ca sa evitam afisarea mai multor solutii
 			return 0;
 		}
-		else
-		{
+		else {
 			// daca suma e mai mare decat x, scadem p2, altfel crestem p1
-			if(a[p1] + a[p2] > x)
+			if (a[p1] + a[p2] > x)
 				--p2;
 			else
 				++p1;
@@ -135,7 +123,7 @@ Nane de pe Jiu, mare algoritmician fiind, vă provoacă să rezolvați o problem
 Pentru a rezolva această problemă, vom folosi metoda celor doi pointeri pentru a afla numărul de secvențe care au suma OR cu cel mult $k$ de $1$, actualizările fiind foarte similare cu cele de la celelalte probleme de acest tip. De asemenea, deoarece vorbim de suma OR, trebuie să folosim câte un vector de frecvență pentru fiecare bit pentru a evita calculele adiționale.
 
 ```cpp
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll long long
 using namespace std;
  
@@ -143,51 +131,44 @@ int n, k, v[100002], fr[32];
  
 ll ans;
 
-bool ok()
-{
+bool ok () {
 	int cnt = 0;
-	for(int i = 0; i <= 30; ++i)
-		if(fr[i])
+	for (int i = 0; i <= 30; ++i)
+		if (fr[i])
 			++cnt;
-	if(cnt <= k)
+	if (cnt <= k)
 		return 1;
 	return 0;
 }
 
-void add(int poz, int val)
-{
-	for(int i = 0; i <= 30; ++i)
-		if((v[poz] & (1<<i)))
+void add (int poz, int val) {
+	for (int i = 0; i <= 30; ++i)
+		if ((v[poz] & (1<<i)))
 			fr[i] += val;
 }
-int main()
-{
+int main() {
 	ifstream cin("nane.in");
 	ofstream cout("nane.out");
 	
 	cin >> n >> k;
-	for(int i = 1; i <= n; ++i)
+	for (int i = 1; i <= n; ++i)
 		cin >> v[i];
 	int st = 1;
 	int dr = 1;
-	while(st <= n)
-	{
-		while(st <= n && (dr > n || !ok()))
-		{
-			if(ok())
-			{
+	while (st <= n) {
+		while (st <= n && (dr > n || !ok())) {
+			if (ok()) {
 				ans += dr - st;
 				add(st, -1);
 				++st;
 			}
-			else
-			{
+			else {
 				add(st, -1);
 				++st;
 				ans += dr - st;
 			}
 		}
-		while(dr <= n && ok())
+		while (dr <= n && ok())
 			add(dr, 1), ++dr;
 	}
 	cout << ans << '\n';
@@ -215,22 +196,19 @@ int vj[200001], vo[200001], vi[200001];
  
 int lj, lo, li;
  
-int main()
-{
+int main() {
 	int n, k;
 	cin >> n >> k;
 	
 	string s;
 	cin >> s;
-	
-	
-	for(int i = 0; i < n; i++)
-	{
-		if(s[i] == 'J')
+
+	for (int i = 0; i < n; i++) {
+		if (s[i] == 'J')
 			vj[++lj] = i;
-		if(s[i] == 'O')
+		if (s[i] == 'O')
 			vo[++lo] = i;
-		if(s[i] == 'I')
+		if (s[i] == 'I')
 			vi[++li] = i;
 	}
 	
@@ -240,28 +218,23 @@ int main()
 	
 	int ans = n+1;
 	
-	while(pj + k - 1 <= lj && po + k - 1 <= lo && pi + k - 1 <= li)
-	{
-		while(po + k - 1 <= lo && vo[po] <= vj[pj + k - 1])
+	while (pj + k - 1 <= lj && po + k - 1 <= lo && pi + k - 1 <= li) {
+		while (po + k - 1 <= lo && vo[po] <= vj[pj + k - 1])
 			po++;
 			
-		if(po + k - 1 <= lo)
-			while(pi + k - 1 <= li && vi[pi] <= vo[po + k - 1])
+		if (po + k - 1 <= lo)
+			while (pi + k - 1 <= li && vi[pi] <= vo[po + k - 1])
 				pi++;
 		
-		if(pj + k - 1 <= lj && po + k - 1 <= lo && pi + k - 1 <= li)
-		{
+		if (pj + k - 1 <= lj && po + k - 1 <= lo && pi + k - 1 <= li) {
 			int fi = vj[pj];
-			int lst = vi[pi + k - 1];	
-			
-			
+			int lst = vi[pi + k - 1];
 			ans = min(ans, (lst - fi + 1) - 3 * k);
 		}
 		pj++;
 		
 	}
-	
-	if(ans == n+1)
+	if (ans == n+1)
 		cout << -1;
 	else
 		cout << ans;

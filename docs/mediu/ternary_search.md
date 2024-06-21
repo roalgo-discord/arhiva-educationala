@@ -33,27 +33,25 @@ Complexitatea algoritmului este $O(\log n)$ unde $n$ este dimensiunea intervalul
 
 ```cpp
 // f(i) este o funcție oarecare
-long long ternara(int precizie)
-{
+long long ternara (int precizie) {
     int st = 0;
     int dr = 1000000000;
     long long ans = -(1LL<<60);
-    while(st <= dr)
-    {
+    while (st <= dr) {
         int mid1 = st + (dr - st) / 3;
         int mid2 = dr - (dr - st) / 3;
-        if(dr - st + 1 <= precizie)
-        {
-            for(int i = st; i <= dr; ++i)
+        // daca diferenta este suficient de mica, vom rula brut
+        if (dr - st + 1 <= precizie) { 
+            for (int i = st; i <= dr; ++i)
                 ans = max(ans, f(i));
             break;
         }
-        ll xa = f(mid1);
-        ll xb = f(mid2);
-        if(xa == xb)
+        long long xa = f(mid1);
+        long long xb = f(mid2);
+        if (xa == xb)
             st = mid1, dr = mid2;
         else
-            if(xa < xb)
+            if (xa < xb)
                 st = mid1;
             else
                 dr = mid2;
@@ -103,46 +101,11 @@ def gss(f, a, b, tol=1e-5):
 
 ## Problema exemplu - [Devu and his Brother](https://codeforces.com/contest/439/problem/D)
 
-
-
 În această problemă avem doi vectori $a$ și $b$ și putem crește/scădea o valoare dintr-unul din cei doi vectori cu costul $1$. Vrem să aflăm costul minim pentru ca minimul din vectorul $a$ să fie cel puțin egal cu maximul din vectorul $b$. 
 
 Se poate observa că e clar că vrem să creștem valorile din $a$ și să scădem valorile din $b$. De asemenea, se poate observa că pe măsură ce vrem să aducem răspunsul la o oarecare "mediană", costul va fi tot mai mic. Aceste lucruri ne duc spre o abordare bazată pe o căutare ternară a răspunsului.
 
-Astfel, vom căuta ternar răspunsul în intervalul $[1, 10^9]$ răspunsul aplicând algoritmul descris mai sus.
-
-```cpp
-// f(i) este o functie oarecare
-long long ternara(int precizie)
-{
-    int st = 0;
-    int dr = 1000000000;
-    long long ans = -(1LL<<60);
-    while(st <= dr)
-    {
-        int mid1 = st + (dr - st) / 3;
-        int mid2 = dr - (dr - st) / 3;
-        if(dr - st + 1 <= precizie)
-        {
-            for(int i = st; i <= dr; ++i)
-                ans = max(ans, f(i));
-            break;
-        }
-        ll xa = f(mid1);
-        ll xb = f(mid2);
-        if(xa == xb)
-            st = mid1, dr = mid2;
-        else
-            if(xa < xb)
-                st = mid1;
-            else
-                dr = mid2;
-        ans = max(ans, xa);
-        ans = max(ans, xb);
-    }
-    return ans;
-}
-```
+Astfel, vom căuta ternar răspunsul în intervalul $[1, 10^9]$ răspunsul aplicând algoritmul descris mai sus, implementarea fiind cea de mai sus.
 
 ## Probleme suplimentare
  

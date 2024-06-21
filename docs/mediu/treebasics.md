@@ -85,14 +85,11 @@ Pentru a rezolva această problemă, va trebui să parcurgem arborele (de prefer
 ```cpp
 vector<vector<int> > tree;
 int sz[100001];
-void dfs(int nod, int tata)
-{
+void dfs (int nod, int tata) {
     sz[nod] = 1;
-    for(int i = 0; i < (int) tree[nod].size(); i++)
-    {
+    for (int i = 0; i < (int) tree[nod].size(); i++) {
         int fiu = tree[nod][i];
-        if(fiu != tata) 
-        {
+        if (fiu != tata) {
             dfs(fiu, nod);
             sz[nod] += sz[fiu];
         }
@@ -114,10 +111,10 @@ using namespace std;
 int n, root = 1, a, b;
 vector<vector<int> > graph;
 vector<int> dist;
-void dfs(int parent, int node) {
-    if(dist[node] > dist[root])
+void dfs (int parent, int node) {
+    if (dist[node] > dist[root])
         root = node;
-    for(int i = 0; i < (int) graph[node].size(); i++) {
+    for (int i = 0; i < (int) graph[node].size(); i++) {
         int nxt = graph[node][i];
         if(nxt == parent)
             continue;

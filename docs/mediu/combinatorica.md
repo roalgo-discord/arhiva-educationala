@@ -215,6 +215,7 @@ Trebuie să aveți grijă și la faptul că în unele cazuri, probleme ce pot p�
 * [pascal infoarena](https://www.infoarena.ro/problema/pascal)
 * [Stirling infoarena](https://infoarena.ro/problema/stirling)
 * [IIOT Dream](https://kilonova.ro/problems/300)
+* [Polyglot Kilonova](https://kilonova.ro/problems/2936)
 * [Problemele de combinatorică de pe Kilonova, în special cele de la loturile de juniori](https://kilonova.ro/tags/294)
 * [RoAlgo Contest 4 - Ursul](https://kilonova.ro/problems/1604)
 * [RoAlgo Contest 2 - munte](https://kilonova.ro/problems/695)

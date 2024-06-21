@@ -49,7 +49,7 @@ Trie *root = new Trie;
 Operația de _insert_ poate fi foarte ușor scrisă recursiv.
 
 ```cpp
-void inserts(Trie *node, string a, int poz) {
+void inserts (Trie *node, string a, int poz) {
     if (poz == a.size()) {
         node->cnt++;
         return;
@@ -68,7 +68,7 @@ void inserts(Trie *node, string a, int poz) {
 Pentru a elimina un string din trie ne mai trebuie o informație suplimentară, și anume să știm câți fii are un nod. Așadar, dacă am eliminat un sufix al șirului și nodul curent nu mai are fii nici nu mai este vizitat prin alt șir inserat, putem da erase complet la pointerul respectiv. 
 
 ```cpp
-bool del(Trie *node, string a, int pos) {
+bool del (Trie *node, string a, int pos) {
     if (pos == a.size()) {
         node->cnt--;
     } else if (del(node->fii[a[pos] - 'a'], a, pos + 1)) {
