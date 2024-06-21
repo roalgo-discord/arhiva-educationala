@@ -1,5 +1,7 @@
 # Algoritmi de sortare
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
 ## Fundamente și cunoștințe necesare
 
 În foarte multe probleme de algoritmică, un pas important în rezolvarea problemelor constă în ordonarea datelor de intrare după un anumit criteriu, iar o întrebare care se pune este cum putem să ordonăm datele convenabil, cât mai rapid posibil? 
