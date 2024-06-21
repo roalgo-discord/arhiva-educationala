@@ -84,6 +84,8 @@ markdown_extensions:
   - pymdownx.details
   - def_list
   - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
