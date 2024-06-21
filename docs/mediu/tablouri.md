@@ -33,8 +33,8 @@ acestuia. În mod similar cu variabilele simple, ne trebuie un tip de date pe
 care acest tablou să-l stocheze, precum și dimensiunea pe care vrem să o
 atribuim acestui tablou.
 
-De exemplu, `int v[101];` înseamnă ca am declarat un tablou cu $101$ elemente,
-pozițiile fiind numărate de la $0$ la $100$.
+De exemplu, `#!cpp int v[101];` înseamnă ca am declarat un tablou cu $101$
+elemente, pozițiile fiind numărate de la $0$ la $100$.
 
 !!! note "Observație" 
     Dacă preferați să lucrați cu tablouri indexate de la $1$,
@@ -84,27 +84,28 @@ for (int i = n; i >= k; i--) {
 
 v[k] = x;
 
-// Tabloul are acum o valoare în plus.
-n++; 
+n++; // (1)
 ```
 
-!!! note "Observație"
+1.  Tabloul va avea o valoare în plus, drept pentru care trebuie să 
+    creștem în consecință lungimea sa.
+
+!!! warning "Atenție"
     Mutarea valorilor trebuie făcută în ordine descrescătoare a pozițiilor inițiale deoarece altfel, am ajunge să avem aceeași valoare peste
     tot.
 
-```cpp
-for (int i = k; i <= n; i++) {
-    v[i + 1] = v[i];
-}
-
-v[k] = x;
-
-// Tabloul are acum o valoare în plus.
-n++; 
-```
-
-Se poate observa cu ușurință că valoarea de pe poziția $k$ va ajunge peste tot
-dacă implementăm așa, ceea ce este greșit.
+    ```cpp
+    for (int i = k; i <= n; i++) {
+        v[i + 1] = v[i];
+    }
+    
+    v[k] = x;
+    
+    n++; 
+    ```
+    
+    Se poate observa cu ușurință că valoarea de pe poziția $k$ va ajunge peste tot
+    dacă implementăm așa, ceea ce este greșit.
 
 # Ștergerea din tablou
 
@@ -115,25 +116,28 @@ inserării, vom vrea să mutăm valorile în ordine crescătoare a poziției ini
 
 ```cpp
 for (int i = k; i < n; i++) {
-    v[i] = v[i+1];
+    v[i] = v[i + 1];
 }
 
-// Tabloul are o valoare în minus.
-n--; 
+
+n--; // (1)
 ```
 
-!!! note "Observație"
+1.  Tabloul va avea o valoare în minus, drept pentru care trebuie să 
+    scădem în consecință lungimea sa.
+
+!!! warning "Atenție"
     Mutarea valorilor trebuie făcută în ordine crescătoare a pozițiilor
     inițiale deoarece altfel, am ajunge să avem aceeași valoare peste tot.
 
-```cpp
-for (int i = n; i > k; i--) {
-    v[i - 1] = v[i];
-}
+    ```cpp
+    for (int i = n; i > k; i--) {
+        v[i - 1] = v[i];
+    }
+    
+    n--; 
+    ```
 
-// Tabloul are o valoare în plus.
-n--;  
-```
 
 ## Inversarea unui tablou
 
@@ -151,9 +155,9 @@ for (int i = 1; i <= n / 2; i++) {
 }
 ```
 
-1.  Reținem valoarea lui $v[i]$ în $x$.
-2.  Interschimbăm $v[i]$ cu poziția echivalentă de la capătul tabloului, adică $v[n - i + 1]$. 
-3.  Reținem valoarea lui $v[i]$ în $x$.
+1.  Reținem valoarea lui `#!cpp v[i]` în `x`.
+2.  Interschimbăm `#!cpp v[i]` cu poziția echivalentă de la capătul tabloului, adică `#!cpp v[n - i + 1]`. 
+3.  Reținem valoarea lui `#!cpp v[i]` în `x`.
 
 
 # Interclasarea tablourilor
