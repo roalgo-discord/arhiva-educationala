@@ -147,7 +147,7 @@ pahare".
 for (int i = 1; i <= n / 2; i++) {
     int x = v[i];         // (1)
     v[i] = v[n - i + 1];  // (2)
-    v[n - i + 1] = x;     // (3)// Folosim copia pentru noua poziție
+    v[n - i + 1] = x;     // (3)
 }
 ```
 
