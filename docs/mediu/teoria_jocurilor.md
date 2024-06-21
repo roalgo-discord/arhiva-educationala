@@ -1,5 +1,4 @@
-\ChapterWithAuthor{Nimtroducere în teoria jocurilor}{Alecu Ștefan-Iulian}
-\section{Ce este un joc?}
+# Ce este un joc?
 
 Intuitiv, toți știm ce este un joc, doar că este greu să-l definim concret. Un
 joc este, fundamental, o activitate recreațională în care ai unul sau mai mulți
@@ -29,7 +28,7 @@ legat de inteligența artificială, printre altele).
 Hai să vedem un exemplu de astfel de joc și cum l-am putea transforma în ceva
 matematic.
 
-\section{Neco-Arc și Destiny}
+## Neco-Arc și Destiny
 
 Obosite de la duelele lor, Neco-Arc și Destiny au decis să se adune la
 Ahnenerbe\footnote{Aceste personaje și locații sunt referințe la Fate/Grand
