@@ -92,9 +92,9 @@ repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 plugins:
-  - git-committers:
-      repository: roalgo-discord/arhiva-educationala
-      branch: main
+  # - git-committers:
+  #     repository: roalgo-discord/arhiva-educationala
+  #     branch: main
   - search
   - tags
 
