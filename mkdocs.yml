@@ -97,6 +97,7 @@ plugins:
   #     branch: main
   - search
   - tags
+  - awesome-pages
 
 extra_javascript:
   - javascripts/katex.js
