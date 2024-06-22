@@ -1,0 +1,38 @@
+nav:
+    - Algebră:
+        - Algoritmi de compresie și de corectare a erorilor:
+            - Coduri Gray: coduri_gray.md
+            - Codarea Huffman: huffman.md
+            - Run-length encoding: rle.md # mai vedem aici
+        - Teorema chineză a resturilor (CRT): crt.md
+        - Introducere în probabilități: probabilitati.md
+        - FFT, NTT etc.: fft_ntt.md
+        - Recurențe liniare: recurente_liniare.md
+    - Programare dinamică:
+        - Convex Hull Trick: convex_hull_trick.md
+        - Programare dinamică pe divide et impera (Divide and Conquer DP): divide_conquer_dp.md
+        - Aliens DP: aliens_dp.md
+        - Knuth DP: knuth_dp.md
+        - Component DP: component_dp.md
+    - Teoria grafurilor:
+        - Fluxuri: fluxuri.md 
+        # Aici intra Bamboo, Cactus etc.
+        - Tipuri speciale de grafuri: grafuri_speciale.md 
+        - Dynamic connectivity: dynamic_connectivity.md
+        - 2-SAT: 2-sat.md
+    - Structuri de date:
+        - Aho-Corasick: aho-corasick.md
+        - Treap-uri: treaps.md
+        - Heavy light decomposition (HLD): hld.md
+        - Centroid decomposition: centroid_decomposition.md
+        - Arbore virtual (virtual tree): virtual_tree.md
+        - Arbore de intervale persistenți...: "?" # Bine ca pui la dificil si nu la avansati
+        - Arbore Li Chao: li_chao_tree.md
+    - Algoritmul lui Gauss: algoritmul_lui_gauss.md
+    - Algoritmi pe șiruri de caractere:
+        - Algoritmul lui Manacher: algoritm_manacher.md
+        - Tablou/arbore de sufixe: suffix_array_tree.md
+    - Altele:
+        - Matematică avansată: matematica_avansata.md
+        - Teoria jocurilor: teoria_jocurilor.md
+        - Funcții generatoare: generating_functions.md
