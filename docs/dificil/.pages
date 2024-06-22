@@ -1,0 +1,42 @@
+nav:
+    - Tehnici de rezolvare a problemelor:
+        - Probleme interactive: probleme_interactive.md
+        - Probleme output only: probleme_output_only.md
+    - Căutare ternară: cautare_ternara.md
+    - Programare dinamică:
+        - Programare dinamică pe grafuri: dinamica_pe_grafuri.md
+        - Programare dinamică pe arbore: dinamica_pe_arbore.md
+        - Programare dinamică pe intervale (range DP): dinamica_pe_intervale_(range_dp).md
+        - Programare dinamică pe cifre (digit DP): dinamica_pe_cifre_(digit_dp).md
+        - Programare dinamică pe permutări: dinamica_pe_permutari.md
+        - Programare dinamică cu structuri de date: dinamica_cu_structuri_de_date.md
+    - Teoria grafurilor:
+        - Componente tare conexe: componente_tare_conexe.md
+        - Componente biconexe: componente_biconexe.md
+        - Cuplaj maxim pe graf bipartit: cuplaj_maxim_pe_graf_bipartit.md
+    - Structuri de date:
+        - Square root decomposition: "?"
+        - Arbori de intervale: arbori_de_intervale_persistenti,_2d,_dinamici_etc..md 
+        - Arbori indexați binar: "?"
+        # De ce ai pus-o la mediu? Nu are sens
+        - Range Minimum Query (sparse tables): "?"
+        - Trie: trie.md
+    - Algebră liniară:
+        - Introducere în algebră liniară: "intro_alg_lin.md"
+        - Ridicare la putere a unei matrici: ridicare_la_putere_a_unei_matrici.md
+    - Geometrie:
+        - Înfășurătoare convexă: "?"
+        - Baleiere (sweep line): baleiere_(sweep_line).md
+    - Algoritmi pe șiruri de caractere:
+        - Rotație lexicografică minimă: "?"
+        - Knuth-Morris-Pratt (KMP): kmp.md 
+        - Z Function: "?"
+    - Lucrul pe arbori:
+        - Binary lifting: "?"
+        - Lowest common ancestor (LCA): "?"
+        - Small to large: small_to_large.md
+        - Structuri de date pe arbore (Euler tour): "?"
+    - Altele:
+        - Bitsets: bitsets.md # wait what, de ce nu e aici?
+        - Algoritmi randomizați: algoritmi_randomizati.md
+    
