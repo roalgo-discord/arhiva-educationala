@@ -24,13 +24,35 @@ O permutare a unei mulțimi reprezintă o bijecție între o mulțime $M$ (finit
 
 **Permutări cu repetiții**: Definim o permutare cu repetiții ca fiind o secvență de $n$ numere, care are proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au $n$ elemente este $$\frac{n!}{F_1! \times F_2! \times \dots \times F_n!}$$ unde $F_i$ reprezintă frecvența la care apare $i$ în permutare. Acest concept se regăsește într-un număr de probleme date în special la loturile de juniori. 
 
+Mai jos puteți găsi o secvență de cod pe care o putem folosi pentru a genera toate permutările unui șir. Funcția next_permutation nu va genera permutări cu repetiție dacă acestea apar de mai multe ori. 
+
+```cpp
+// generam permutarile
+vector<int> v;
+for (int i = 1; i <= 10; i++)
+    v.push_back(i);
+
+do{
+    // 
+}while (next_permutation(v.begin(), v.end()));
+```
 ### Submulțimi
 
 O submulțime a unui număr constă în alegerea unui număr de elemente dintr-o mulțime $M$. Dacă mulțimea $M$ are cardinalul $n$, numărul de submulțimi ale lui $M$ este egal cu $2^n$, deoarece pentru fiecare element al mulțimii, putem alege dacă să îl includem în submulțimea pe care vrem să o creăm sau nu. 
 
 Dacă mulțimea $M$ este egală cu $\{0, 1, 1 \}$, cele $8$ submulțimi ale ei sunt următoarele: $\emptyset$, $\{0 \}$, $\{0, 1\}$, $\{0, 1, 2\}$, $\{0, 2\}$, $\{1\}$, $\{1, 2\}$, $\{2\}$
 
-Pentru a putea itera prin toate submulțimile unei mulțimi date, ne putem folosi de faptul că fiind $2^n$ asemenea submulțimi, putem identifica fiecare submulțime folosind una din reprezentările binare ale numerelor de la $0$ la $2^n - 1$, tehnică numită colocvial bitmasks sau măști pe biți. Pentru a vedea dacă trebuie să folosim unul din numere sau nu, trebuie doar verificat pentru o submulțime dată dacă bitul corespunzător acelei poziții este setat sau nu în masca pe care o verificăm. Pentru mai multe detalii, accesați secțiunea Elemente de implementare. 
+Pentru a putea itera prin toate submulțimile unei mulțimi date, ne putem folosi de faptul că fiind $2^n$ asemenea submulțimi, putem identifica fiecare submulțime folosind una din reprezentările binare ale numerelor de la $0$ la $2^n - 1$, tehnică numită colocvial bitmasks sau măști pe biți. Pentru a vedea dacă trebuie să folosim unul din numere sau nu, trebuie doar verificat pentru o submulțime dată dacă bitul corespunzător acelei poziții este setat sau nu în masca pe care o verificăm. Pentru mai multe detalii, puteți vedea codul de mai jos.
+
+```cpp
+// gasirea tuturor submultimilor unei multimi de n valori 
+for (int i = 0; i < (1<<n); i++) {
+    for (int j = 0; j < n; j++)  
+        if (i & (1<<j)) {
+            // 
+        }
+}
+```
 
 ### Aranjamente
 
@@ -57,34 +79,28 @@ Există numeroase moduri și proprietăți de a lega valoarea lui $C_n^k$ de alt
 * $\binom{n}{k} = \binom{n}{n-k}$, fapt ce se poate observa din aplicarea formulei specifice. 
 * $\sum_{i=0}^{n} C_n^i = 2^n$
 
-De multe ori, pentru a calcula combinările, vom folosi [triunghiul lui Pascal](https://en.wikipedia.org/wiki/Pascal%27s_triangle) drept precalculare, fapt ce îl putem realiza cu ajutorul formulei de mai sus care leagă $\binom{n}{k}$ de $\binom{n-1}{k}$ și $\binom{n-1}{k-1}$. În alte instanțe, va trebui să precalculăm factorialele și inversele modulare pentru a putea calcula combinările, așa cum vom arăta în secțiunea Elemente de implementare. 
+De multe ori, pentru a calcula combinările, vom folosi [triunghiul lui Pascal](https://en.wikipedia.org/wiki/Pascal%27s_triangle) drept precalculare, fapt ce îl putem realiza cu ajutorul formulei de mai sus care leagă $\binom{n}{k}$ de $\binom{n-1}{k}$ și $\binom{n-1}{k-1}$. 
 
-### Partiții
+```cpp
+// calculam combinarile folosind triunghiul lui Pascal 
+pascal[0][0] = 1;
 
-Numim partiție a unui număr $n$ o secvență de numere naturale nenule $P$ cu proprietatea că $P_1 + P_2 + \dots + P_k = n$, unde $k$ este numărul de numere din partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție de proprietatea pe care dorim să o aplicăm într-o problemă. 
+for (int i = 1; i <= 1000; i++) {
+    pascal[i][0] = 1;
+    for (int j = 1; j <= i; j++) { 
+        // comb(i, j) = comb(i-1, j) + comb(i-1, j-1)
+        pascal[i][j] = pascal[i-1][j] + pascal[i-1][j-1];
+    }
+}
+```
 
-Pentru a afla numărul de partiții ordonate ale unui număr $n$, putem să ne gândim la numărul de moduri de a împărți $n$ stele folosind diferite bare (anticipăm într-o oarecare măsură discuția pe care o vom avea la Stars and Bars), iar dat fiind că avem $n-1$ poziții unde putem face o împărțire, iar pentru fiecare poziție avem posibilitatea de a pune o limită sau nu, cu alte cuvinte avem $2^{n-1}$ partiții ordonate ale unui număr $n$.
-
-În privința partițiilor neordonate, deoarece trebuie să păstrăm proprietatea că numerele din partiție sunt crescătoare, trebuie să avem grijă la calculul numărului de partiții de acest tip, iar o primă soluție la această problemă constă în folosirea unei recurențe de tipul $p(i, j)$ = numărul de partiții neordonate ale lui $i$, unde lungimea acesteia este $j$. Pentru a putea calcula această recurență, avem o formulă relativ simplă.
-
-* $p(i, j) = p(i-1, j-1) + p(i-j, j)$, dacă $i \geq 1$ și $j \geq 1$ (cu alte cuvinte, fie adăugăm un $1$ la începutul partiției, fie incrementăm toate elementele din partiție. 
-* $p(i, 0) = 0$, pentru $i \geq 1$
-* $p(0, 0) = 1$.
-
-<!-- se bagă cineva să scrie despre numerele pentagonale? -- totuși cred ca e peste nivelul intended al articolului, dar mă gândesc că le putem impărți după -->
-
-Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă folosind această abordare. Din fericire, există o metodă și mai rapidă, care folosește numere pentagonale, abordare ce ne duce la o soluție în $O(n \sqrt n)$, pentru mai multe detalii puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
-
-## Elemente de implementare
-
-În marea majoritate a problemelor de combinatorică, va trebui să folosim diverse elemente pe care le putem precalcula pentru a ajunge să putem calcula formulele eficient și corect. Cele mai importante elemente sunt de regulă calcularea triunghiului lui Pascal, permutărilor, submulțimilor, factorialelor și inverselor modulare (în cele mai multe cazuri vorbim de modulo număr prim). Puteți găsi mai jos un exemplu de implementare a acestor elemente de precalculare: 
+În alte situații, va trebui să precalculăm factorialele și inversele modulare pentru a putea calcula combinările, așa cum vom arăta mai jos. Dacă nu sunteți familiari cu ridicarea la putere în timp logaritmic, vă rugăm să citiți articolul pe această temă.
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
  
 const int mod = 998244353;
-int pascal[1002][1002];
 long long fact[100002], inv[100002];
  
 long long pw (long long b, long long e) {
@@ -106,35 +122,8 @@ long long C (int n, int k) {
     ans %= mod;
     return ans;
 }
+
 int main() {
-    // generam permutarile
-    vector<int> v;
-    for (int i = 1; i <= 10; i++)
-        v.push_back(i);
-  
-    do{
-        // 
-    }while (next_permutation(v.begin(), v.end()));
-   
-    // gasirea tuturor submultimilor unei multimi de n valori 
-    for (int i = 0; i < (1<<n); i++) {
-        for (int j = 0; j < n; j++)  
-            if (i & (1<<j)) {
-                // 
-            }
-    }
-    
-    // calculam combinarile folosind triunghiul lui Pascal 
-    pascal[0][0] = 1;
- 
-    for (int i = 1; i <= 1000; i++) {
-        pascal[i][0] = 1;
-        for (int j = 1; j <= i; j++) { 
-            // comb(i, j) = comb(i-1, j) + comb(i-1, j-1)
-            pascal[i][j] = pascal[i-1][j] + pascal[i-1][j-1];
-        }
-    }
- 
     // C(n, k) - calculam factorialele si inversele modulare
     // inversul modular = x^(-1) care pentru modulo prim e x^(mod-2) 
     // conform micii teoreme a lui Fermat 
@@ -154,6 +143,22 @@ int main() {
     return 0;
 }
 ```
+
+### Partiții
+
+Numim partiție a unui număr $n$ o secvență de numere naturale nenule $P$ cu proprietatea că $P_1 + P_2 + \dots + P_k = n$, unde $k$ este numărul de numere din partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție de proprietatea pe care dorim să o aplicăm într-o problemă. 
+
+Pentru a afla numărul de partiții ordonate ale unui număr $n$, putem să ne gândim la numărul de moduri de a împărți $n$ stele folosind diferite bare (anticipăm într-o oarecare măsură discuția pe care o vom avea la Stars and Bars), iar dat fiind că avem $n-1$ poziții unde putem face o împărțire, iar pentru fiecare poziție avem posibilitatea de a pune o limită sau nu, cu alte cuvinte avem $2^{n-1}$ partiții ordonate ale unui număr $n$.
+
+În privința partițiilor neordonate, deoarece trebuie să păstrăm proprietatea că numerele din partiție sunt crescătoare, trebuie să avem grijă la calculul numărului de partiții de acest tip, iar o primă soluție la această problemă constă în folosirea unei recurențe de tipul $p(i, j)$ = numărul de partiții neordonate ale lui $i$, unde lungimea acesteia este $j$. Pentru a putea calcula această recurență, avem o formulă relativ simplă.
+
+* $p(i, j) = p(i-1, j-1) + p(i-j, j)$, dacă $i \geq 1$ și $j \geq 1$ (cu alte cuvinte, fie adăugăm un $1$ la începutul partiției, fie incrementăm toate elementele din partiție. 
+* $p(i, 0) = 0$, pentru $i \geq 1$
+* $p(0, 0) = 1$.
+
+<!-- se bagă cineva să scrie despre numerele pentagonale? -- totuși cred ca e peste nivelul intended al articolului, dar mă gândesc că le putem impărți după -->
+
+Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă folosind această abordare. Din fericire, există o metodă și mai rapidă, care folosește numere pentagonale, abordare ce ne duce la o soluție în $O(n \sqrt n)$, pentru mai multe detalii puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
 
 ## Trucuri pentru rezolvarea problemelor de combinatorică
 

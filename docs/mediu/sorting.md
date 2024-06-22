@@ -140,6 +140,7 @@ Acești algoritmi ajung să fie folosiți în foarte multe tipuri de probleme, c
 * [perechi kilonova](https://kilonova.ro/problems/1946)
 * [sir OJI 2005](https://kilonova.ro/problems/740)
 * [USACO Bronze Acowdemia I](https://usaco.org/index.php?page=viewproblem2&cpid=1131)
+* [Pergament OJI 2023](https://kilonova.ro/problems/643)
 * [pseudocmp OJI 2022](https://kilonova.ro/problems/945)
 * [yinyang OJI 2019](https://kilonova.ro/problems/650)
 * [JOI 2018 Stove](https://oj.uz/problem/view/JOI18_stove)
