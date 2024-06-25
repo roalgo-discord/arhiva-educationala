@@ -200,7 +200,7 @@ bool cmp(const Foo x, const Foo y) {
     return (x.a + x.b) < (y.a + y.b);
 }
 
-sort(v + 1, v + n + 1, cmp);
+sort(v + 1, v + N + 1, cmp);
 
 // Alternativ (vom elabora într-o lecție viitoare):
 vector<Foo> foos(N + 1);
