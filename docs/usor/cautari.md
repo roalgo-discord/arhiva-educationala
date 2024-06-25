@@ -3,7 +3,7 @@ tags:
     - vectori
 ---
 
-**Autor**: Cineva
+**Autor**: Andrei-Cristian Ivan
 
 Să presupunem că avem un șir de $N$ numere și memorie astfel încât să putem
 reține _doar_ șirul (plus evident alte variabile, dar nu foarte multe). Noi
@@ -35,16 +35,12 @@ la determinarea răspunsului, deci vom avea complexitate $O(Q \log N)$ (dacă
 șirul nostru nu este sortat din input, se mai adaugă și un $O(N \log N)$ la
 complexitate), cu memorie $O(N)$.
 
-Pentru o înțelegere mai clară a algoritmului, să presupunem următorul exemplu: se dă un șir sortat crescător unde apar toate numerele de la $1$ la $100$, și se cere să determinăm dacă există în șir valoarea $72$.
+Pentru o înțelegere mai clară a algoritmului, să presupunem următorul exemplu:
+se dă un șir sortat crescător unde apar toate numerele de la $1$ la $100$, și se
+cere să determinăm dacă există în șir valoarea $72$.
 
-![](../images/cautari/cb1.png)
-![](../images/cautari/cb2.png)
-![](../images/cautari/cb3.png)
-![](../images/cautari/cb4.png)
-![](../images/cautari/cb5.png)
-![](../images/cautari/cb6.png)
-![](../images/cautari/cb7.png)
-![](../images/cautari/cb8.png)
+![](../images/cautari/cb-light.svg#only-light){ width="70%" }
+![](../images/cautari/cb-dark.svg#only-dark){ width="70%" }
 
 O întrebare la care trebuie totuși dat răspuns este: De ce împărțim în două
 jumătăți și de ce nu în $3$ treimi? Da, $\log_3 N < \log_2 N$, dar numărul de
@@ -57,8 +53,11 @@ demonstra pentru orice împărțire posibilă.
 Cea mai des întâlnită implementare a căutării binare este următoarea:
 
 ```cpp
-void cb1(int n) {
-    int l = 1, r = n, ans = -1;
+int cb_naiv(int n) {
+    int l = 1;
+    int r = n;
+    int ans = -1;
+
     while (l <= r) {
         int mij = (l + r) / 2;
         if (conditie) {
@@ -68,6 +67,8 @@ void cb1(int n) {
             r = mij - 1;
         }
     }
+
+    return ans;
 }
 ```
 
@@ -85,10 +86,14 @@ Implementarea de mai sus este una corectă, dar se pot întâlni următoarele bu
 ## O implementare corectă
 
 ```cpp
-void cb2(int n) {
-    int l = 1, r = n, ans = -1;
+int cb_corect(int n) {
+    int l = 1;
+    int r = n;
+    int ans = -1;
+
     while (l < r) {
         int mij = l + (r - l) / 2;
+
         if (conditie) {
             ans = mij;
             l = mij + 1;
@@ -96,6 +101,8 @@ void cb2(int n) {
             r = mij - 1;
         }
     }
+        
+    return ans;
 }
 ```
 
@@ -104,7 +111,7 @@ Această căutare binară se bazează pe principiul menționat mai sus: noi
 ne interesează. Formula de mai sus pentru calcularea mijlocului este echivalentă
 cu cea din prima căutare, dar mai mult, nu are cum să ne dea overflow.
 
-De fiecare dată când mijlocul nostru verifică _condiție_, noi facem un _„salt”_
+De fiecare dată când mijlocul nostru verifică _condiție_, noi facem un „salt”
 de la o poziție $l$ la alta. La finalul căutării, indicele $l$ final va fi
 defapt o sumă a salturilor, iar ca pe orice număr întreg, noi acest număr îl
 putem descompune într-o altă bază numerică. Hai să vedem cum putem rafina
@@ -114,12 +121,13 @@ această idee cu o altă implementare mai jos.
 
 ```cpp
 void cb3_patrascu(int n) {
-    int l = 0, e = 31;
-    while (e >= 0) {
-        if (l + (1 << e) <= n && conditie) {
-            l += (1 << e);
+    int l = 0;
+
+    for (int bit = 31; bit >= 0; --bit) {
+        int putere = 1 << bit;
+        if ((l | putere) <= n && conditie) {
+            l |= putere;
         }
-        e--;
     }
 }
 ```
@@ -132,8 +140,8 @@ $2$, care foarte probabil să fie diferită de $N$, se poate demonstra foarte u�
 că noi (dacă o să fie necesar), vom putea căuta valori și în acea secvență
 neacoperită inițial. Lăsăm această demonstrație ca temă pentru cititor.
 
-Căutarea de mai sus poartă și numele de _Căutarea binară a lui [Mihai
-Pătrașcu](http://people.csail.mit.edu/mip/)_, sau _căutarea pe biți_.
+Căutarea de mai sus poartă și numele de Căutarea binară a lui [Mihai
+Pătrașcu](http://people.csail.mit.edu/mip/), sau căutarea pe biți.
 
 În mare parte, aceste căutări binare ne vor da aceeași complexitate peste tot,
 în schimb, când vrem să implementăm algoritmul de Lowest Common Ancestor (LCA)
