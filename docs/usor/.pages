@@ -17,6 +17,6 @@ nav:
         - Algoritmi simpli de sortare: sorting.md
         - Metoda Greedy: metoda_greedy.md
         - Căutarea binară: cautari.md
-    - Introducere în programare dinamică: intro_dp.md
-    - Introducere în teoria grafurilor: graphs.md
+    - Introducere în programare dinamică: usor/intro-dp
+    - Introducere în teoria grafurilor: usor/graphs
     
