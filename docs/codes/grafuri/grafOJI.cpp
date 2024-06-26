@@ -1,72 +1,85 @@
 #include <fstream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
 
-const int MAXN = 7500;
+constexpr int MAXN = 7500;
 
-int distX[MAXN + 1], distY[MAXN + 1], solFreq[MAXN + 1];
-
-vector<vector<int>> goFromTo(MAXN + 5);
+vector<vector<int>> graph(MAXN + 1);
 vector<int> ans;
-queue<int> q;
 
-void bfs(int nod, int dist[]) 
-{
-    int first;
-    q.push(nod);
-    dist[nod] = 1;
+void bfs(int startNode, vector<int>& dist) {
+    queue<int> q;
+    q.push(startNode);
+    dist[startNode] = 0;
 
-    while(!q.empty())
-	{
-        first = q.front();
+    while (!q.empty()) {
+        int node = q.front();
         q.pop();
 
-        for(auto travelNod : goFromTo[first]) 
-		{
-            if(dist[travelNod] == 0)
-			{
-                dist[travelNod] = dist[first] + 1;
-                q.push(travelNod);
+        for (auto neighbor : graph[node]) {
+            if (dist[neighbor] == -1) {
+                dist[neighbor] = dist[node] + 1;
+                q.push(neighbor);
             }
         }
     }
 }
 
-int main() 
-{
-    ifstream cin("graf.in");
-    ofstream cout("graf.out");
+vector<int> distX, distY, solFreq;
 
-    int n, m, x, y, i, a, b, ansN;
-    cin >> n >> m >> x >> y;    
-    for(i = 1; i <= m; i++)
-	{
-        cin >> a >> b;
-        goFromTo[a].push_back(b);
-        goFromTo[b].push_back(a);
+int main() {
+    distX.reserve(MAXN + 1);
+    distY.reserve(MAXN + 1);
+    solFreq.reserve(MAXN + 1);
+
+    ifstream fin("graf.in");
+    ofstream fout("graf.out");
+
+    int n, m, x, y;
+    fin >> n >> m >> x >> y;
+
+    while (m--) {
+        int a, b;
+        fin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
     }
+
+    distX.resize(n + 1, -1);
+    distY.resize(n + 1, -1);
+    solFreq.resize(n + 1, 0);
 
     bfs(x, distX);
     bfs(y, distY);
 
-    for(i = 1; i <= n; i++)
-	{
-        // lungimea totala a drumului va fi egala cu distX[y];
-        if(distX[i] + distY[i] == distX[y] + 1) 
-            solFreq[distX[i]]++;
-    }
+    int totalDist = distX[y];
 
-    ansN = 0;
-    for(i = 1; i <= n; i++)
-        if(distX[i] + distY[i] == distX[y] + 1 && solFreq[distX[i]] == 1)
-		{
-            ansN++;
-            ans.push_back(i);
+    // Lungimea totală a drumului va fi egală cu distX[y].
+    for (int i = 1; i <= n; i++) {
+        if (distX[i] == -1 || distY[i] == -1) {
+            continue;
         }
 
-    cout << ansN << '\n';
-    for(i = 0; i < ansN; i++)
-        cout << ans[i] << ' ';
+        if (distX[i] + distY[i] == totalDist + 1) {
+            solFreq[distX[i]]++;
+        }
+    }
+
+    for (int i = 1; i <= n; i++) {
+        if (distX[i] == -1 || distY[i] == -1) {
+            continue;
+        }
+
+        if (distX[i] + distY[i] == totalDist + 1 && solFreq[distX[i]] == 1) {
+            ans.push_back(i);
+        }
+    }
+
+    fout << ans.size() << '\n';
+    for (const auto& node : ans) {
+        fout << node << ' ';
+    }
+
     return 0;
 }

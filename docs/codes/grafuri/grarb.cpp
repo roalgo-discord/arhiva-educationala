@@ -3,44 +3,43 @@
 
 using namespace std;
 
-ifstream cin("grarb.in");
-ofstream cout("grarb.out");
+ifstream fin("grarb.in");
+ofstream fout("grarb.out");
 
-int n, m, nr = 0;
-vector<vector<int> > v;
-vector<int> viz;
+vector<vector<int>> adj;
+vector<bool> visited;
 
-void dfs(int nod)
-{
-    viz[nod] = 1;
-    for(int i = 0; i < (int) v[nod].size(); i++)
-    {
-        int nxt = v[nod][i];
-        if(!viz[nxt])
-            dfs(nxt);
+void dfs(int nod) {
+    visited[nod] = true;
+    for (int next : adj[nod]) {
+        if (!visited[next]) dfs(next);
     }
 }
-int main()
-{
-    cin >> n >> m;
-    v.resize(n+1);
-    viz.resize(n+1);
-    
-    for(int i = 1; i <= m; i++)
-    {
+
+int main() {
+    int n, m, nr = 0;
+
+    fin >> n >> m;
+
+    adj.resize(n);
+    visited.resize(n, false);
+
+    for (int i = 1; i <= m; i++) {
         int a, b;
-        cin >> a >> b;
-        v[a].push_back(b);
-        v[b].push_back(a);
+        fin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
-    
-    for(int i = 1; i <= n; i++)
-        if(!viz[i])
-        {
+
+    for (int i = 0; i < n; i++)
+        if (!visited[i]) {
             dfs(i);
             nr++;
         }
-    
-    cout << m + nr - 1 - (n - 1) << '\n' << nr - 1 << '\n';
+
+    // Numărul de muchii ce trebuiesc șterse
+    fout << m + nr - 1 - (n - 1) << '\n';
+    // Numărul de componente conectate
+    fout << nr - 1 << '\n';
     return 0;
 }

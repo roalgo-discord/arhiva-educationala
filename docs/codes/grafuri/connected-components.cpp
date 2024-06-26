@@ -3,39 +3,42 @@
 
 using namespace std;
 
-int n, m;
- 
-vector <vector<int> > v;
-bool visited[100002];
-int cc;
-void dfs(int node)
-{
-	visited[node] = true;
-	for(int i = 0; i < v[node].size(); ++i)
-	{
-		int nxt = v[node][i];
-		if(visited[nxt] == false)
-			dfs(nxt);
+vector<vector<int>> adj;
+vector<bool> visited;
+
+void dfs(int node) {
+    visited[node] = true;
+
+	for (int next : adj[node]) {
+		if (!visited[next]) {
+			dfs(next);
+		}
 	}
 }
-int main()
-{
-	cin >> n >> m;
-	v.resize(n+1);
-	for(int i = 1; i <= m; ++i)
-	{
-		int a, b;
-		cin >> a >> b;
-		v[a].push_back(b);
-		v[b].push_back(a);
-	}
-	for(int i = 1; i <= n; ++i)
-		if(visited[i] == false)
-		{
-			++cc;
-			dfs(i);
-		}
-	
-	cout << cc << '\n';
+
+int main() {
+	int n, m;
+    cin >> n >> m;
+
+    adj.resize(n + 1);
+    visited.resize(n + 1, false);
+
+    for (int i = 0; i < m; ++i) {
+        int a, b;
+        cin >> a >> b;
+
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+
+    int cc = 0;
+    for (int i = 1; i <= n; ++i) {
+        if (!visited[i]) {
+            ++cc;
+            dfs(i);
+        }
+    }
+
+    cout << cc << '\n';
     return 0;
 }
