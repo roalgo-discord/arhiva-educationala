@@ -326,10 +326,57 @@ depth-first search), una din parcurgerile optime pentru această problemă.
     DFS-ul pleacă din $1$, $2$ va fi accesat din $1$, iar $3$ va fi accesat din $2$.
 
 !!! note "Observație"
-Se poate remarca faptul că ordinea în care vizităm nodurile în
-graf depinde de ordinea în care sunt adăugate muchiile în graf, acest lucru
-înseamnă că nu putem folosi DFS pentru anumite probleme, de exemplu cele la care
-trebuie aflată distanța minimă în graf.
+    Se poate remarca faptul că ordinea în care vizităm nodurile în
+    graf depinde de ordinea în care sunt adăugate muchiile în graf, acest lucru
+    înseamnă că nu putem folosi DFS pentru anumite probleme, de exemplu cele la care
+    trebuie aflată distanța minimă în graf.
+
+Ca o recapitulare (sau de fapt comparație) între BFS și DFS, să comparăm fiecare
+abordare împreună cu o funcție:
+
+=== "DFS"
+    
+    ```cpp
+    vector<vector<int>> graph;
+
+    void dfs(int node, vector<bool>& visited) {
+        visited[node] = true;
+
+        // Ca exemplu
+        cout << node << ' '; 
+
+        for (int neighbor : graph[node]) {
+            if (!visited[neighbor]) {
+                dfs(neighbor, visited);
+            }
+        }
+    }
+    ```
+
+=== "BFS"
+
+    ```cpp
+    vector<vector<int>> graph;
+    vector<int> dist; 
+    queue<int> q; 
+
+    void bfs(int startNode) {
+        q.push(startNode);
+        dist[startNode] = 0;
+
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+
+            for (auto neighbor : graph[node]) {
+                if (dist[neighbor] == -1) { 
+                    dist[neighbor] = dist[node] + 1; 
+                    q.push(neighbor); 
+                }
+            }
+        }
+    }
+    ```
 
 ## Problema [Connected components](https://kilonova.ro/problems/2036) de pe kilonova
 
