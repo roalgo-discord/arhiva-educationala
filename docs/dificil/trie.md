@@ -24,12 +24,10 @@ să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm c
 este $O(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai rău caz,
 este $O({ \cdot k)$.
 
-<div class="justify-content:center;">
 <figure markdown="span">
-![Un exemplu de trie pentru cuvintele am, bad, be și so](../images/trie/trie.png)
+![](../images/trie/trie.png)
 <figcaption>Un exemplu de trie pentru cuvintele am, bad, be și so</figcaption>
 </figure>
-</div>
 
 ## Moduri de implementare
 
