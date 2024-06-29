@@ -4,6 +4,8 @@ tags:
     - matematica
 ---
 
+**Autori**: Susan, Ștefan-Cosmin Dăscălescu
+
 Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza $10$, format
 din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu
 fiecare $a_i$ satisfăcând $0 \leq a_i \leq 9$, și $a_{n-1} \neq 0$. Valoarea
@@ -55,17 +57,18 @@ folosind un vector. Astfel, o abordare comună pentru manipularea numerelor mari
 cifre. Considerăm un număr mare, pe care îl descompunem în cifrele sale
 componente și le stocăm într-un vector.
 
-De exemplu, numărul $82534$ poate fi stocat într-un vector $v$ astfel:
+!!! example "Exemplu"
+    De exemplu, numărul $82534$ poate fi stocat într-un vector $v$ astfel:
+    
+    $$
+    \begin{array}{r|cccccccc}
+    i & 0 & 1 & 2 & 3 & 4\\
+    \hline
+    v[i] & 4 & 3 & 5 & 2 & 8 \\
+    \end{array}
+    $$
 
-$$
-\begin{array}{r|cccccccc}
-i & 0 & 1 & 2 & 3 & 4\\
-\hline
-v[i] & 4 & 3 & 5 & 2 & 8 \\
-\end{array}
-$$
-
-### Reprezentarea inversă 
+### Reprezentarea inversă
 
 Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}
 $ în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune
@@ -78,15 +81,15 @@ $$
 unde $n$ este numărul de cifre ale numărului natural $N$, iar $v[0]$ reprezintă
 cifra unităților, $v[1]$ cifra zecilor ș.a.m.d.
 
-#### Observație
+!!! note "Observație"
 
-Numerotarea cifrelor de la coadă, ca în exemplul anterior, este opțională, dar
-este indicată pentru simplificare, deoarece este mult mai simplu să efectuăm
-operațiile dacă păstrăm numărul în memorie în ordine inversă față de cum l-am
-scrie în mod obișnuit. Practic, adăugarea unor valori la pozițiile mai
-nesemnificative este o operație mult mai des întâlnită decât adăugarea la
-începutul numărului, iar când e nevoie, putem crește lungimea numărului plasând
-noua cifră pe poziția $n$, $v[n]$ ținând această valoare.
+    Numerotarea cifrelor de la coadă, ca în exemplul anterior, este opțională, dar
+    este indicată pentru simplificare, deoarece este mult mai simplu să efectuăm
+    operațiile dacă păstrăm numărul în memorie în ordine inversă față de cum l-am
+    scrie în mod obișnuit. Practic, adăugarea unor valori la pozițiile mai
+    nesemnificative este o operație mult mai des întâlnită decât adăugarea la
+    începutul numărului, iar când e nevoie, putem crește lungimea numărului plasând
+    noua cifră pe poziția $n$, $v[n]$ ținând această valoare.
 
 ### Citirea și afișarea unui număr mare
 
@@ -148,15 +151,16 @@ $$
 unde $v[0]$ reprezintă cifra unităților, $v[1]$ cifra zecilor ș.a.m.d., și $n$
 este numărul de cifre ale numărului natural $N$.
 
-De exemplu, numărul $82534$ va fi stocat astfel:
-
-$$
-\begin{array}{r|ccccccccc}
-i & \boldsymbol{0} & 1 & 2 & 3 & 4 & 5\\
-\hline
-v[i] & \boldsymbol{5} & 4 & 3 & 5 & 2 & 8 \\
-\end{array}
-$$
+!!! example "Exemplu"
+    De exemplu, numărul $82534$ va fi stocat astfel:
+    
+    $$
+    \begin{array}{r|ccccccccc}
+    i & \boldsymbol{0} & 1 & 2 & 3 & 4 & 5\\
+    \hline
+    v[i] & \boldsymbol{5} & 4 & 3 & 5 & 2 & 8 \\
+    \end{array}
+    $$
 
 Aici, $v[0]=5$ indică numărul de cifre din $N$, iar cifrele sunt stocate în
 ordine inversă începând de la $v[1]$.

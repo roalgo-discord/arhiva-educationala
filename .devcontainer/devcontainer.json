@@ -6,7 +6,7 @@
 	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/mkdocs:2": {
-			"plugins": "mkdocs-material mkdocs-git-committers-plugin-2 mkdocs-git-authors-plugin"
+			"plugins": "mkdocs-material mkdocs-git-committers-plugin-2 mkdocs-git-authors-plugin mkdocs-awesome-pages-plugin"
 		},
 		"ghcr.io/devcontainers/features/github-cli:1":{}
 	},

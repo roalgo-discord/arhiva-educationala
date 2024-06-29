@@ -1,33 +1,42 @@
 #include <iostream>
 #include <vector>
-#define MAXIM_SUMA_MONEZI 100000
+
 using namespace std;
-int N,S;
-int dp[MAXIM_SUMA_MONEZI + 1];
+
+constexpr int MAX_MONEZI = 100000;
+constexpr int INF = 0x3f3f3f3f;
+
+int N, S;
+vector<int> dp;
+
 int main() {
-    cin>>N>>S;
-    vector<int> coins(N);
-    for(int i = 0; i < N; i++) {
-        cin>>coins[i];
+    cin >> N >> S;
+    vector<int> monezi(N);
+
+    for (auto& moneda : monezi) {
+        cin >> moneda;
     }
-    for(int i : coins) {
-        dp[i] = 1;
+
+    dp.resize(S + 1);
+    for (int i = 1; i <= S; ++i) {
+        dp[i] = INF;
     }
-    for(int i = 1; i < S; i++){
-        if(dp[i] != 0){
-            for(int coin : coins){
-                if(i + coin <= S){
-                    if(dp[i + coin] == 0){
-                        dp[i + coin] = dp[i] + 1;
-                    }
-                    else{
-                        dp[i + coin] = min(dp[i + coin],
-                                            dp[i] + 1);
-                    }
+
+    for (int i = 0; i <= S; i++) {
+        if (dp[i] != INF) {
+            for (int moneda : monezi) {
+                if (i + moneda <= S) {
+                    dp[i + moneda] = min(dp[i + moneda], dp[i] + 1);
                 }
             }
         }
     }
-    cout<<dp[S];
+
+     if (dp[S] == INF) {
+        cout << -1;  
+    } else {
+        cout << dp[S];
+    }
+
     return 0;
 }
