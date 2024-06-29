@@ -5,6 +5,8 @@ tags:
     - structuri de date
 ---
 
+**Autori**: Ștefan-Cosmin Dăscălescu
+
 ## Introducere
 
 Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă citirea articolului (aici trebuie pus href la treebasics) pentru a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește structurile de date, programarea dinamică și lucrul cu STL.
@@ -90,22 +92,10 @@ int solve (int a, int b) {
 }
 ```
 
-# Small-to-large
-
-TO-DO
-
-# Centroid Decomposition
-
-# Heavy Light Decomposition
-
 # Alte probleme și resurse utile
-
 
 * [Euler Tour Technique](https://usaco.guide/gold/tree-euler)
 * [Binary Lifting + LCA](https://usaco.guide/plat/binary-jump?lang=cpp)
-* [Centroid Decomposition](https://usaco.guide/plat/centroid?lang=cpp)
-* [Small-to-large](https://usaco.guide/plat/merging?lang=cpp)
-* [Heavy Light Decomposition](https://usaco.guide/plat/hld?lang=cpp)
 * [LCA, predat la CPPI Craiova](https://iordachebogdan.github.io/cppi/lca_nivel_avansat.html)
 * [Milk Visits USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=968)
 * [Sap](https://kilonova.ro/problems/1802)
