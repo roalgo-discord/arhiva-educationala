@@ -73,7 +73,7 @@ Aceste relații vor fi foarte importante mai ales când avem de-a face cu formul
     $n$ elemente este
 
     $$
-   \frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}
+    \frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}
     $$ 
     
     unde $F_i$ reprezintă frecvența la care apare $i$ în permutare. 
