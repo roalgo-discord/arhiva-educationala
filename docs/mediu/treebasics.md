@@ -111,13 +111,15 @@ using namespace std;
 int n, root = 1, a, b;
 vector<vector<int> > graph;
 vector<int> dist;
+
 void dfs (int parent, int node) {
     if (dist[node] > dist[root])
         root = node;
     for (int i = 0; i < (int) graph[node].size(); i++) {
         int nxt = graph[node][i];
-        if(nxt == parent)
+        if(nxt == parent) {
             continue;
+        }
         dist[nxt] = dist[node] + 1;
         dfs(node, nxt);
     }
