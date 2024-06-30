@@ -100,8 +100,6 @@ plugins:
   - search
   - awesome-pages
   - tags
-  - privacy:
-      enabled: !ENV [CI, false]
   - social:
       enabled: !ENV [CI, false]
       cards_layout_options:
