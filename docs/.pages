@@ -1,4 +1,5 @@
 nav:
+  - "Introducere în C++": cppintro
   - "Ușor": usor
   - "Mediu": mediu
   - "Dificil": dificil
