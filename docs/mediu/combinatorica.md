@@ -132,7 +132,7 @@ for (int mask = 0; mask < totalSubsets; ++mask) {
 }
 ```
 
-1.  Dacă bitul din mască la poziția idx este setat, înseamnă că elementul de la
+1.  Dacă bitul din mască la poziția $idx$ este setat, înseamnă că elementul de la
     indice este prezent și deci adăugăm indicele în submulțime. 
 
 ### Aranjamente

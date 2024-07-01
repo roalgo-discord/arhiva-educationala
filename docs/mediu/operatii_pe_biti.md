@@ -112,38 +112,93 @@ Pe lângă operațiile specifice lucrului cu diverse baze de numerație, putem l
 
 ## Operatorul AND ("și" pe biți)
 
-Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice AND. Cu alte cuvinte, pentru o poziție $i$, dacă ambii biți de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația AND va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații:
+Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice AND. Cu alte cuvinte, pentru o poziție $i$, dacă ambii biți de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația AND va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații, notată în limbajele C/C++ cu `&`:
 
-||$0$|$1$|
+|&|$0$|$1$|
 |-|-|--------|
 |$0$|$0$|$0$|
 |$1$|$0$|$1$|
 
+!!! example "Exemplu"
+    De exemplu, dacă aplicăm operația pentru $12$ și $23$, reprezentările lor binare sunt $01100$, respectiv $10111$ (am pus un zero nesemnificativ în fața lui $12$ pentru a ne asigura că numerele au același număr de biți), rezultatul operației AND este $4$, deoarece bitul de pe poziția $2$ este singurul bit egal cu $1$ în ambele numere. 
+
 ## Operatorul OR ("sau" pe biți)
 
-Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice OR. Cu alte cuvinte, pentru o poziție $i$, dacă cel puțin unul din biții de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația OR va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații:
+Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice OR. Cu alte cuvinte, pentru o poziție $i$, dacă cel puțin unul din biții de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația OR va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații, notată în limbajele C/C++ cu `|`:
 
-||$0$|$1$|
+|\||$0$|$1$|
 |-|-|--------|
 |$0$|$0$|$1$|
 |$1$|$1$|$1$|
 
+!!! example "Exemplu"
+    De exemplu, dacă aplicăm operația pentru $12$ și $19$, reprezentările lor binare sunt $01100$, respectiv $10011$ (am pus un zero nesemnificativ în fața lui $12$ pentru a ne asigura că numerele au același număr de biți), rezultatul operației OR este $27$, deoarece fiecare din cei $5$ biți apare în măcar unul din numerele date, cu excepția bitului $2$.  
+
 ## Operatorul XOR ("sau exclusiv" pe biți)
 
-Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice XOR. Cu alte cuvinte, pentru o poziție $i$, dacă exact unul din biții de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația XOR va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații:
+Acest operator ia drept parametri două numere $a$ și $b$ și calculează pentru fiecare bit rezultatul operației logice XOR. Cu alte cuvinte, pentru o poziție $i$, dacă exact unul din biții de pe poziția $i$ din $a$ și $b$ sunt egali cu $1$, operația XOR va returna $1$ pentru acea poziție. Altfel, va returna $0$. Mai jos puteți găsi un tabel de adevăr a acestei operații, notată în limbajele C/C++ cu `^`:
 
-||$0$|$1$|
+|^|$0$|$1$|
 |-|-|--------|
 |$0$|$0$|$1$|
 |$1$|$1$|$0$|
 
+!!! example "Exemplu"
+    De exemplu, dacă aplicăm operația pentru $12$ și $22$, reprezentările lor binare sunt $01100$, respectiv $10110$ (am pus un zero nesemnificativ în fața lui $12$ pentru a ne asigura că numerele au același număr de biți), rezultatul operației XOR este $26$, deoarece bitul de pe poziția $2$ este singurul bit egal cu $1$ în ambele numere, iar ceilalți biți apar o singură dată, cu excepția bitului $0$, care nu este fixat în niciunul dintre numere. 
+
 ## Shiftarea pe biți
+
+Un alt operator care este folosit în foarte multe contexte este shiftarea pe biți, atât la stânga, cât și la dreapta. Operatorul este folosit atunci când vrem să înmulțim sau să împărțim un număr cu o putere a lui $2$, lucru ce ne poate fi foarte folositor atunci când vrem să aflăm valoarea unui bit anume, să inițializăm o valoare minimă sau maximă, precum și în multe alte cazuri similare. 
+
+Shiftarea la stânga, notată cu `<<` este folosită atunci când vrem să înmulțim un număr cu o putere a lui $2$. Modul de folosire al acestui operator este `a<<b`, care are semnificația că înmulțim $a$ cu $2^b$. 
+
+!!! note "Observație"
+    În mod particular, `1<<x` ne va returna în timp constant $2^x$, iar pentru puterile lui $2$ mai mari de $30$, se impune folosirea notației `1LL<<x`, pentru a ne asigura că lucrăm în spațiul numerelor din tipul de date long long. 
+
+Shiftarea la dreapta, notată cu `>>` este folosită atunci când vrem să împărțim un număr cu o putere a lui $2$. Modul de folosire al acestui operator este `a>>b`, care are semnificația că împărțim $a$ cu $2^b$. 
 
 # Proprietăți, aplicații și legături între operații pe biți
 
+Atunci când vine vorba de operații pe biți, există diverse legături, proprietăți și trucuri pe care le putem folosi pentru a ajunge să rezolvăm mai ușor anumite probleme. Aici voi menționa cele mai frecvent întâlnite asemenea proprietăți, precizând pentru fiecare dintre ele utilitatea ei. 
+
+!!! note "Observație"
+    Înainte de toate, vrem să reamintim faptul că $2^i > \sum_{x=0}^{i-1} 2^x$, deci cu alte cuvinte, dacă vom avea de făcut o alegere între o putere a lui $2$ și unele puteri mai mici ale lui $2$, alegerea unei puteri mai mari ne va garanta un răspuns optim, chiar dacă am putea alege ulterior o serie de puteri ale lui $2$.
+
+!!! note "Observație"
+    Un alt aspect important, care va fi folosit în majoritatea problemelor ce țin de operații pe biți este acela că putem trata biții de pe poziții diferite în mod independent, fără a afecta corectitudinea soluției găsite. 
+
+!!! info "Legătura dintre suma numerelor, AND și XOR"
+    Pentru oricare două valori $a$ și $b$ mai mari sau egale cu $0$, $a + b = 2 \cdot (a \& b) + (a \oplus b)$.
+    
+    Această proprietate se poate demonstra ușor folosind independența biților și evaluând expresia pentru toate modurile în care putem asigna valori biților.
+
+!!! info "Mici verificări cu impact major"
+    * Pentru a verifica dacă $n$ este o putere a lui $2$, este îndeajuns să verificăm valoarea expresiei $n \ \& \ (n-1)$. Dacă aceasta este $0$, înseamnă că $n$ și $n-1$ nu au biți în comun, iar singurul caz în care acest lucru se poate întâmpla este dacă $n$ este putere a lui $2$ (reprezentarea binară a lui $n$ ar fi $100 \dots 0$, iar cea a lui $n-1$ ar fi $011 \dots 1$.)
+    * Pentru a verifica dacă pentru o valoare $n$, bitul de pe poziția $x$ este setat, este îndeajuns să aflăm dacă rezultatul expresiei $(n \ \& \ (1<<x)) \neq 0$. Deoarece $2^x$ este o putere a lui $2$, singurul mod în care expresia ar fi nenulă este când bitul de pe poziția $x$ este setat în $n$.
+    * Pentru a afla valoarea celui mai nesemnificativ bit, este îndeajuns să folosim operația $x \ \& \ (-x)$, motivul pentru care această operație funcționează este acela că în cazul lui $-x$, biții vor fi inversați, cu excepția ultimului bit, care va rămâne la fel, datorită modului în care sunt dispuse în memorie numerele negative (bitul de semn va fi mereu setat în cazul lor).
+
+# Lucrul cu submulțimi 
+
+Așa cum veți vedea în detaliu dacă veți citi articolul specific combinatoricii, lucrul cu submulțimi va reprezenta o aplicație importantă a lucrului cu biți, cele $2^n$ submulțimi ale unei mulțimi cu dimensiunea $n$ putând fi toate codificate folosind câte un număr în intervalul $[0, 2^n - 1]$.
+
 # Probleme și lectură suplimentară
 
+* [morse ONI 2006](https://kilonova.ro/problems/1242)
+* [intervale RoAlgo Contest #3](https://kilonova.ro/problems/692)
+* [Bit Showdown RoAlgo Contest #9](https://kilonova.ro/problems/2249)
+* [patratele OJI 2022](https://kilonova.ro/problems/944)
+* [Matmare RoAlgo PreOJI 2024](https://kilonova.ro/problems/2418)
+* [Searching for Soulmates USACO](https://usaco.org/index.php?page=viewproblem2&cpid=1182)
+* [Powered Addition](https://codeforces.com/contest/1338/problem/A)
+* [Data Structures Fan](https://codeforces.com/contest/1872/problem/E)
+* [castel OJI 2018](https://kilonova.ro/problems/900)
+* [Sheikh (Easy version)](https://codeforces.com/problemset/problem/1732/C1)
+* [Three Days Ago](https://atcoder.jp/contests/abc295/tasks/abc295_d)
+* [Preparing Olympiad](https://codeforces.com/problemset/problem/550/B)
+* [Petr and a Combination Lock](https://codeforces.com/problemset/problem/1097/B)
+* [CSES Xor Pyramid](https://www.cses.fi/problemset/task/2419)
 * [Probleme cu operații pe biți de pe kilonova](https://kilonova.ro/tags/439)
+* [Probleme cu operații pe biți de pe codeforces](https://codeforces.com/problemset?tags=bitmasks)
 
 
 ## Lectură suplimentară 
