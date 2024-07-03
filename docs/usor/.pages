@@ -3,6 +3,7 @@ nav:
         - Introducere în C++: introducere_intr-un_limbaj_de_programare.md
         - Cunoștințe matematice de bază: cunostinte_matematice_de_baza.md
         - Complexități, stil de cod și alte fundamente: complexitati_coding_style_alte_fundamente.md
+        - Prelucrarea cifrelor: prelucrarea_cifrelor.md
         - Vectori (tablouri): vectori.md
         - Matrici: matrici.md
         - Simularea soluției: simularea_solutiei.md
