@@ -1,4 +1,9 @@
-# Invers Modular
+---
+title: Invers Modular
+tags:
+    - matematica
+    - combinatorica
+---
 
 **Autor**: Iuoraș Andrei
 
