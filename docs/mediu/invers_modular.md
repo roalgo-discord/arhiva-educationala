@@ -92,9 +92,13 @@ Se poate observa ușor că defapt inversul modular al lui $a$ este $a^{p - 2}$, 
 
 ## Probleme cu invers modular
 
-* [Invers Modular - Infoarena](https://www.infoarena.ro/problema/inversmodular)
-* [Prosum - Pbinfo](https://www.pbinfo.ro/probleme/3775/prosum)
+* [Invers Modular](https://www.infoarena.ro/problema/inversmodular)
+* [Prosum](https://kilonova.ro/problems/1697)
 
 ## Lectură suplimentară
 
 * [Algoritmul lui Euclid extins. Invers modular - Pbinfo](https://www.pbinfo.ro/articole/18942/algoritmul-lui-euclid-extins-invers-modular)
+* [Modular arithmetic - USACO Guide](https://usaco.guide/gold/modular?lang=cpp)
+* [Modular multiplicative inverse](https://cp-algorithms.com/algebra/module-inverse.html)
+* [Calculate modulo inverses efficiently](https://codeforces.com/blog/entry/83075)
+* [Funcție scurtă de a calcula inversul modular](https://codeforces.com/blog/entry/23365)
