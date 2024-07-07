@@ -1,3 +1,5 @@
+
+
 # Sortare Topologică
 
 **Autor** : Radu Mocănașu
@@ -30,10 +32,11 @@ E --> C
 ```mermaid
 graph LR
 A((1)) --> B((2))
-B --> D((4))
-C((3)) --> A
+B --> D((3))
+C((4)) --> A
 D --> C
 ```
+
 Acest graf conține un ciclu (de fapt chiar este unul), mai exact $1, 2, 3, 4$ . Astfel, putem alege 2 noduri, $A$ și $B$, astfel încât ele aparțin aceluiași ciclu (se poate ajunge de la $A$ la $B$ și viceversa). Dar asta implică faptul că în sortarea topologică, $A$ se află în fața lui $B$, dar și că $B$ se află înaintea lui $A$, ceea ce duce la o contradicție. Așadar, într-un graf ce conține un ciclu, nu există nicio sortare topologică.
 
 ## Algoritmul
@@ -182,7 +185,10 @@ int main() {
 }
 ```
 
-Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică).
+Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică). 
+
+### Complexitatea algoritmului:
+Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$ numărul de muchii. Memoria va fi tot $O(n + m)$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
 
