@@ -214,4 +214,5 @@ Niciunul dintre algoritmi nu este mai bun mereu decât celălalt. Pe de o parte,
 * [Minimum spanning tree - Kruskal with Disjoint Set Union](https://cp-algorithms.com/graph/mst_kruskal_with_dsu.html)
 * [Arbore partial de cost minim - CPPI Sync](https://cppi.sync.ro/materia/arborele_partial_de_cost_minim.html)
 * [Minimum Spanning Tree Problems](https://codeforces.com/blog/entry/6429)
+* [Avansat - Boruvka's Algorithm](https://codeforces.com/blog/entry/77760)
 * [Avansat - Second Best Minimum Spanning Tree](https://cp-algorithms.com/graph/second_best_mst.html)
