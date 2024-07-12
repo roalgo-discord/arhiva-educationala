@@ -81,9 +81,9 @@ De cele mai multe ori, atunci când vom lucra cu deque-ul, vom vrea să procesă
 
 ## Problema [deque](https://www.infoarena.ro/problema/deque)
 
-În această problemă, se cere aflarea valorii maxime pentru toate subsecvențele de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în $O(n \log n)$.
+În această problemă, se cere aflarea valorii minime pentru toate subsecvențele de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în $O(n \log n)$.
 
-Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să aflăm cea mai apropiată valoare mai mare de la stânga, singura modificare fiind faptul că dacă valoarea maximă este prea departe de poziția curentă, o scoatem. 
+Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să aflăm cea mai apropiată valoare mai mică de la stânga, singura modificare fiind faptul că dacă valoarea minimă este prea departe de poziția curentă, o scoatem. 
 
 ```cpp
 #include <fstream>
