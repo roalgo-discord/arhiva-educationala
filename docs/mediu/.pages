@@ -7,6 +7,7 @@ nav:
         - Abordarea problemelor ad-hoc: abordarea_problemelor_ad-hoc.md
         - Abordarea problemelor constructive: abordarea_problemelor_constructive.md
         - Abordarea concursurilor de pe Codeforces/AtCoder: abordare_codeforces_atcoder.md
+        - Abordarea problemelor cu secvențe: probleme_cu_secvente.md
     - Algebră:
         - Indicatorul lui Euler: indicatorul_lui_euler.md
         - Ridicare la putere în timp logaritmic: ridicare_la_putere_in_timp_logaritmic.md
