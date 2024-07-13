@@ -1,5 +1,4 @@
 ---
-title: Păduri de mulțimi disjuncte (DSU)
 tags:
 	- vectori 
 	- arbori 
