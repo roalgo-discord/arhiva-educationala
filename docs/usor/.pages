@@ -8,7 +8,7 @@ nav:
         - Matrici: matrices.md
         - Simularea soluției: simulating-solution.md
         - Șiruri de caractere: strings.md
-        - Subprograme: subprograms.md
+        - Subprograme: functions.md
     - Algebră:
         - Divizibilitatea: divisibility.md
         - Ciurul lui Eratostene: sieve.md
