@@ -5,6 +5,9 @@
 	},
 	"workspaceFolder": "/arhiva",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/arhiva,type=bind",
+	"mounts": [
+		"source=${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
