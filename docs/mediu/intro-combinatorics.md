@@ -553,6 +553,8 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Probleme suplimentare
 
+## Probleme suplimentare
+
 ### Probleme de la olimpiade
 
 - [Combination](https://kilonova.ro/problems/1982)
@@ -576,6 +578,7 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 - [Bracket Sequences I](https://cses.fi/problemset/task/2064)
 - [Bracket Sequences II](https://cses.fi/problemset/task/2187)
+- [Distributing Apples](https://cses.fi/problemset/task/1716)
 - [Arena](https://codeforces.com/problemset/problem/1606/E)
 - [Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
 - [Almost Identity Permutations](https://codeforces.com/problemset/problem/888/D)
