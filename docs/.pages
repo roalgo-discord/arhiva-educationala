@@ -1,5 +1,5 @@
 nav:
-  - usor
-  - mediu
-  - dificil
-  - avansat
+  - "Ușor": usor
+  - "Mediu": mediu
+  - "Dificil": dificil
+  - "Avansat": avansat
