@@ -1,3 +1,10 @@
+---
+title: ""
+tags:
+    - Programare dinamică
+    - DP
+---
+
 **Autor:** Teodor Ștefan Manolea
 
 Dacă citiți acest document înseamnă că vă interesează să aflați informații
@@ -201,7 +208,7 @@ abordare, scriere a sursei și modalități de tranziție.
     const int MAXIM_SUMA_MONEZI = 100000;
 
     int N, S;
-    int dp[MAXIM_SUMA_MONEZI + 1];
+    vector<int> dp(MAXIM_SUMA_MONEZI + 1);
 
     int main() {
         cin >> N >> S;
