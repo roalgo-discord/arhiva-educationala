@@ -116,10 +116,13 @@ Pentru a putea implementa algoritmul în complexitatea sa optimă, $O((n+m) \log
 
 Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie. 
 
-După aplicarea acestor optimizări, algoritmul nostru va arăta foarte similar cu o parcurgere de tip BFS, ideile fiind aceleași, cu excepția folosirii unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante. 
+După aplicarea acestor optimivdeile fiind aceleași, cu excepția folosirii unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante. 
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
+
 using namespace std;
  
 int main() {
@@ -166,10 +169,13 @@ int main() {
         cout << cost[i] << " ";
     }  
     return 0;
+}   
 ```
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std;
  
 int main() {
@@ -217,20 +223,143 @@ Folosind aceste implementări, putem afla drumurile minime între două noduri f
 
 ## Algoritmul Bellman-Ford
 
+Algoritmul Bellman-Ford este un algoritm de aflare a drumului minim între două noduri folosit mai ales pentru detectarea ciclurilor negative. 
+
+În mod similar cu algoritmul lui Dijkstra, vom ține pentru fiecare nod costul total până la el, dar ca o noutate, vom ține și numărul de modificări ale costului minim. Dacă numărul de modificări ale costului minim este cel puțin $n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseamnă că sigur am modificat costul minim de două ori din același vecin. 
+
+Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel mai prost este $O(n \cdot m)$. Implementarea, una foarte similară cu cea a parcurgerii BFS, se poate găsi mai jos. 
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+int main() {
+    
+    ifstream cin("bellmanford.in");
+    ofstream cout("bellmanford.out");
+    
+    
+    int n, m;
+    cin >> n >> m;
+    
+    vector<vector<pair<int, int> > > graph(n+1);
+    for (int i = 1; i <= m; i++) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        
+        graph[a].push_back({b, c});
+    }
+    
+    vector<long long> costs(n+1, (1LL<<60));
+    vector<int> cnt(n+1);
+    
+    costs[1] = 0;
+    queue<int> q; 
+    q.push(1);
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+        
+        for (int i = 0; i < (int) graph[node].size(); i++) {
+            int nxt = graph[node][i].first;
+            int c = graph[node][i].second;
+            if (costs[node] + c < costs[nxt]) {
+                costs[nxt] = costs[node] + c;
+                q.push(nxt);
+                
+                cnt[nxt]++;
+                if (cnt[nxt] > n) {
+                    cout << "Ciclu negativ!" << '\n';
+                    return 0;
+                }
+            }
+        }
+    }
+    
+    for (int i = 2; i <= n; i++) {
+        cout << costs[i] << " ";
+    }
+    return 0;
+}
+```
+!!! note "Observație"
+    Există o variație a acestui algoritm, foarte des folosită în cazul unor probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest algoritm este folosit cu succes în multe probleme de informatică, ca o alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost complexitatea este similară cu cea de la Bellman-Ford, $O(n \cdot m)$.
+
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
+
+Algoritmul Floyd-Warshall (Roy-Floyd) este un algoritm de aflare a drumului minim între toate perechile de noduri, fără a fi nevoie de a calcula individual distanțele dintre oricare două noduri. 
+
+Modul în care funcționează acest algoritm este acela că pentru fiecare pereche de noduri, vom ține în memorie distanța dintre acea pereche de noduri, iar la fiecare pas, vom fixa un nod pe care îl vom folosi drept un nod intermediar, cu scopul de a micșora distanțele dintre noduri în acest fel. 
+
+Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) < dist(i, j)$, astfel relaxând drumul dintre cele două noduri. 
+
+Complexitatea totală a algoritmului va fi $O(n^3)$, fiind unul dintre algoritmii folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale. Mai jos găsiți implementarea în limbajul C++.
+
+```cpp
+#include <iostream>
+using namespace std;
+int n, a[102][102]; // costul minim de la i la j
+int main() {
+    cin >> n;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            cin >> a[i][j];
+        }
+    }
+    for (int k = 1; k <= n; k++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (a[i][k] && a[k][j] && (a[i][j] > a[i][k] + a[k][j] || !a[i][j]) && i != j) {
+                    a[i][j] = a[i][k] + a[k][j];
+                }
+            }
+        }
+    }
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            cout << a[i][j] << " ";
+        }
+        cout << '\n';
+    }
+    return 0;
+}
+```
+
+!!! note "Observație"
+    Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să începem cu nodul pe care îl vom folosi drept cel intermediar $(k, i, j)$, celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest mod. 
 
 ## Care este algoritmul mai bun?
 
-Niciunul dintre algoritmi nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
-
-În condiții de concurs, dacă ambii algoritmi vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. 
+Fiecare algoritm are avantajele și dezavantajele lui, cunoașterea tuturor fiind necesară. Dijkstra este opțiunea optimă în cele mai multe cazuri, dar Floyd-Warshall și Bellman-Ford au ambele beneficiile lui. 
 
 # Probleme suplimentare
 
+* [Simple Shortest Path](https://kilonova.ro/problems/2037/)
 * [Shortest Routes I](https://cses.fi/problemset/task/1671/)
+* [Shortest Routes II](https://cses.fi/problemset/task/1672/)
+* [catun infoarena](https://www.infoarena.ro/problema/catun)
+* [High Score](https://cses.fi/problemset/task/1673)
+* [Flight Discount](https://cses.fi/problemset/task/1195)
+* [OJI 2004 Lanterna](https://kilonova.ro/problems/54)
+* [USACO Gold Fine Dining](https://usaco.org/index.php?page=viewproblem2&cpid=861)
+* [Cycle Finding](https://cses.fi/problemset/task/1197)
+* [Investigation](https://cses.fi/problemset/task/1202)
+* [Probleme cu drumul minim de pe Kilonova](https://kilonova.ro/tags/296)
+* [Probleme cu Dijkstra de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=72)
+* [Probleme cu Bellman-Ford de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=342)
+* [rfinv infoarena](https://www.infoarena.ro/problema/rfinv)
+* [Probleme cu Floyd-Warshall de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=92)
 
 
 ## Lectură suplimentară 
 
-* [Shortest Paths with Non-Negative Edge Weights](https://usaco.guide/gold/shortest-paths?lang=cpp)
-* [Shortest Paths with Negative Edge Weights](https://usaco.guide/adv/sp-neg?lang=cpp)
+* [Shortest Paths with Non-Negative Edge Weights - USACO Guide](https://usaco.guide/gold/shortest-paths?lang=cpp)
+* [Shortest Paths with Negative Edge Weights - USACO Guide](https://usaco.guide/adv/sp-neg?lang=cpp)
+* [Dijkstra - CP-algorithms](https://cp-algorithms.com/graph/dijkstra.html)
+* [Aflarea drumului minim - CPPI](https://cppi.sync.ro/materia/aflarea_drumului_minim__arborele_drumurilor_minime.html)
+* [Roy Floyd - CPPI](https://cppi.sync.ro/materia/roy_floyd.html)
+* [Dijkstra - CPPI](https://cppi.sync.ro/materia/dijkstra.html)
+* [Rethink the Dijkstra algorithm -- Let's go deeper](https://codeforces.com/blog/entry/107810)
+* [Bellman-Ford - CPPI](https://cppi.sync.ro/materia/Bellman-Ford.html)

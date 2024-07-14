@@ -131,7 +131,9 @@ Un lucru care se poate remarca este faptul că acest algoritm este centrat în j
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Prim.
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std;
 
 int main() {
