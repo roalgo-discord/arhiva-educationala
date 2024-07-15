@@ -24,7 +24,11 @@ Pentru a calcula această recurență, avem două cazuri principale:
 * Fie adăugăm un caracter din unul din cele două șiruri, preluând răspunsurile din $(i-1, j)$ și $(i, j-1)$
 * Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $(i-1, j-1)$ și adăugând $1$ dacă caracterele sunt egale.
 
-Cu alte cuvinte, $$dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1] + x)$$ unde $x = 1$ dacă $a_i = b_j$ și $x = 0$ în caz contrar. 
+Cu alte cuvinte, 
+
+$$dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1] + x)$$ 
+
+unde $x = 1$ dacă $a_i = b_j$ și $x = 0$ în caz contrar.
 
 Această abordare va avea complexitatea $O(|a| \cdot |b|)$, unde $|a|$ și $|b|$ sunt lungimile celor două șiruri de caractere. Aici puteți găsi o implementare, care rezolvă problema [similara de pe atcoder](https://atcoder.jp/contests/dp/tasks/dp_f)
 
