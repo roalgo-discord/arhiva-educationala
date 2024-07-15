@@ -3,6 +3,7 @@ tags:
     - optimizare
     - programare dinamica
 ---
+**Autor**: Ștefan-Cosmin Dăscălescu
 
 # Introducere
 
@@ -328,6 +329,7 @@ for (int i = W; i <= N; i++) {
 * [Infoarena Triunghi](https://infoarena.ro/problema/triunghi)
 * [IIOT 2021 Castle](https://kilonova.ro/problems/342)
 * [ONI 2015 Procente](https://kilonova.ro/problems/1469)
+* [RCPC 2023 Dragons](https://kilonova.ro/problems/1902)
 * [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
 * [USACO Gold Fruit Feast](https://usaco.org/index.php?page=viewproblem2&cpid=574)
 * [Subset Sum Queries](https://atcoder.jp/contests/abc321/tasks/abc321_f)
