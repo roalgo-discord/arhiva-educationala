@@ -7,7 +7,7 @@ tags:
 
 Problema subșirului comun maximal este o altă problemă foarte importantă care are aplicații în domenii diverse precum genetică, bioinformatică și procesarea limbajelor naturale, iar algoritmul pe care îl vom prezenta va putea fi folosit cu mici modificări în foarte multe dinamici bazate pe matrici. Distanțe precum Distanța Levenshtein vor fi prezentate și ele aici, datorită similarității cu problema subșirului comun maximal. 
 
-# Subșirul comun maximal
+## Subșirul comun maximal
 
 !!! info "Definiție" 
     Definim subșirul comun maximal a două șiruri de caractere $a$ și $b$ ca fiind un subșir $s$ care are proprietatea că pentru fiecare dintre șirurile de caractere $a$ și $b$, $s$ este un subșir al acelui șir de caractere. De exemplu, subșirul comun maximal al șirurilor `bcdaacd` si `acdbac` este `cdac`. 
@@ -85,7 +85,7 @@ int main() {
 }
 ```
 
-# Distanța Levenshtein
+## Distanța Levenshtein
 
 În mod similar cu subșirul comun maximal, putem defini și distanța Levenshtein ca fiind distanța de editare între două șiruri, dacă putem adăuga, șterge sau modifica caractere. Recurența va fi foarte similară cu cea de la problema precedentă, singura diferență este aceea că operațiile se schimbă din perspectiva valorii adăugate. Aici este soluția la problema [Edit Distance de pe CSES](https://cses.fi/problemset/task/1639/) 
 
@@ -126,13 +126,49 @@ int main() {
 }
 ```
 
-# Probleme suplimentare
+## Opțional - Algoritmul Hunt-Szymanski
+
+Un algoritm interesant care merită știut pentru aflarea lungimii celui mai lung subșir comun este algoritmul Hunt-Szymanski, un algoritm care se bazează pe ideea că dacă două șiruri de caractere nu au un subșir comun lung, foarte multe dintre comparațiile necesare sunt irelevante. 
+
+Principiul din spatele algoritmului este acela că ne interesează doar perechile de poziții $(i, j)$ cu proprietatea că $a[i]$ și $b[j]$ sunt egale, iar pentru a folosi acest lucru în avantajul nostru, vom precalcula pentru unul din șirurile de caractere pozițiile în care apare fiecare literă, iar mai apoi, pentru fiecare poziție $i$ din șirul $a$, vom itera pozițiile în care apare litera curentă în ordine descrescătoare, scopul nostru fiind acela de a ține un vector dp cu proprietatea că $dp[i]$ este cea mai mică poziție din șirul $b$ astfel încât am putut ajunge să avem un subșir comun maximal de lungime $i$. 
+
+Complexitatea algoritmului va fi $O((n + m) \log n)$, unde $m$ este numărul de perechi de caractere egale. Deși cel mai prost caz este $O(n^2 \log n)$, în practică, algoritmul va fi mult mai eficient. Aici puteți găsi o implementare a acestui algoritm, inspirata din [acest cod](https://github.com/sgtlaugh/algovault/blob/master/code_library/hunt_szymanski.cpp).
+
+Practic, se poate spune că acest algoritm este aproximativ un algoritm pentru aflarea celui mai lung subșir crescător pe perechi de poziții. 
+
+```cpp
+int ar[MAX];
+char A[MAX], B[MAX];
+
+int lcs (char* A, char* B) {
+    vector <int> adj[256];
+    int i, j, l = 0, n = strlen(A), m = strlen(B);
+    for (i = 0; i < m; i++) {
+        adj[(int)B[i]].push_back(i);
+    }
+    
+    ar[l++] = -1;
+    for (i = 0; i < n; i++) {
+        for (j = (int) adj[(int) A[i]].size() - 1; j >= 0; j--) {
+            int x = adj[(int) A[i]][j];
+            if (x > ar[l - 1]) ar[l++] = x;
+            else ar[lower_bound(ar, ar + l, x) - ar] = x;
+        }
+    }
+    return l - 1;
+}
+```
+
+## Probleme suplimentare
 
 * [cmlsc infoarena](https://www.infoarena.ro/problema/cmlsc)
-
+* [EJOI 2020 Exam](https://oj.uz/problem/view/eJOI20_exam)
+* [Palindromic Doubles](https://codeforces.com/contest/1488/problem/E)
 
 ## Lectură suplimentară 
 
 * [Probleme clasice de programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_clasice_0.html)
 * [Programare dinamica - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_IX-a_lec%C8%9Bia_24_-_09_mai_2020#Sub%C8%99ir_comun_maximal_(Cel_mai_lung_sub%C8%99ir_comun))
 * [Longest Common Subsequence - USACO Guide](https://usaco.guide/gold/paths-grids#solution---longest-common-subsequence)
+* [Hunt-Szymanski Algorithm Explained (LCS but optimized for special cases) - Codeforces](https://codeforces.com/blog/entry/91581)
+* [Paper despre Hunt-Szymanski](https://imada.sdu.dk/u/rolf/Edu/DM823/E16/HuntSzymanski.pdf)
