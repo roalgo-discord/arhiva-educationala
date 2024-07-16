@@ -252,6 +252,7 @@ Pentru a rezolva acest tip de probleme, de cele mai multe ori vom căuta binar r
 * [Infoarena peluzanord](https://www.infoarena.ro/problema/peluzanord)
 * [ONI 2012 Baraj Juniori cifreco](https://kilonova.ro/problems/1072/)
 * [Codeforces Magic Numbers](https://codeforces.com/contest/628/problem/D)
+* [Probleme cu digit dp de pe kilonova](https://kilonova.ro/tags/310)
 
 ## Lectură suplimentară 
 
