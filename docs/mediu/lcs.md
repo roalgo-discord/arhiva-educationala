@@ -134,28 +134,31 @@ Principiul din spatele algoritmului este acela că ne interesează doar perechil
 
 Complexitatea algoritmului va fi $O((n + m) \log n)$, unde $m$ este numărul de perechi de caractere egale. Deși cel mai prost caz este $O(n^2 \log n)$, în practică, algoritmul va fi mult mai eficient. Aici puteți găsi o implementare a acestui algoritm, inspirata din [acest cod](https://github.com/sgtlaugh/algovault/blob/master/code_library/hunt_szymanski.cpp).
 
-Practic, se poate spune că acest algoritm este aproximativ un algoritm pentru aflarea celui mai lung subșir crescător pe perechi de poziții. 
+Practic, se poate spune că acest algoritm este similar cu algoritmul pentru aflarea celui mai lung subșir crescător pe perechi de poziții. 
 
 ```cpp
-int ar[MAX];
-char A[MAX], B[MAX];
-
-int lcs (char* A, char* B) {
-    vector <int> adj[256];
-    int i, j, l = 0, n = strlen(A), m = strlen(B);
-    for (i = 0; i < m; i++) {
-        adj[(int)B[i]].push_back(i);
-    }
+int lcs(const std::string &A, const std::string &B) {
+    std::vector<std::vector<int>> adj(256);
+    int n = A.size(), m = B.size();
     
-    ar[l++] = -1;
-    for (i = 0; i < n; i++) {
-        for (j = (int) adj[(int) A[i]].size() - 1; j >= 0; j--) {
-            int x = adj[(int) A[i]][j];
-            if (x > ar[l - 1]) ar[l++] = x;
-            else ar[lower_bound(ar, ar + l, x) - ar] = x;
+    for (int i = 0; i < m; ++i) {
+        adj[B[i]].push_back(i);
+    }
+
+    std::vector<int> ar;
+    ar.push_back(-1);
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = adj[A[i]].size() - 1; j >= 0; --j) {
+            int x = adj[A[i]][j];
+            if (x > ar.back()) {
+                ar.push_back(x);
+            } else {
+                *std::lower_bound(ar.begin(), ar.end(), x) = x;
+            }
         }
     }
-    return l - 1;
+    return ar.size() - 1;
 }
 ```
 

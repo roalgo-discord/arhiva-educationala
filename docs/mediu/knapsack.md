@@ -5,23 +5,23 @@ tags:
 ---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-# Introducere
+## Introducere
 
 Se dă următoarea problemă pe care trebuie să o rezolvăm: Ai un set de obiecte pentru care știm greutatea și valoarea lor și vrei să alegi unele obiecte din el, pe care să le pui într-un rucsac și să încerci să le vinzi turiștilor care vizitează orașul în care locuiești. Ideal, ai vrea să poți aduce toate obiectele, dar din păcate, rucsacul are o capacitate limitată, așa că va trebui să alegi ce obiecte vei păstra și ce obiecte nu. 
 
 Această problemă se numește problema rucsacului și este una dintre cele mai studiate probleme de optimizare din informatică, având multiple soluții în funcție de condițiile impuse, restricțiile cu privire la numărul de obiecte alese și multe alte variații, pe care le vom discuta în cele ce urmează. 
 
-# Modul de abordare
+## Modul de abordare
 
 În cazul majorității problemelor de tipul celei menționate anterior, vom folosi o abordare ce folosește metoda programării dinamice, așa că recomandăm citirea articolului în care facem introducerea acestei metode pentru a putea înțelege mai bine conținuturile explicate aici. 
 
 O excepție notabilă constă în problema **rucsacului fracționar**, în care avem voie să rupem obiectele în beneficiul nostru, fiind evident în cazul acestei variante faptul că abordarea optimă constă în sortarea obiectelor în ordine descrescătoare a raportului $\frac{valoare}{greutate}$ și alegerea obiectelor cu cel mai bun raport, până când umplem rucsacul. 
 
-# Variații ale problemei rucsacului 
+## Variații ale problemei rucsacului 
 
 În cele ce urmează, vom prezenta diverse variații în care apare problema rucsacului, împreună cu strategiile de abordare și implementări care pot fi folosite și în alte probleme de acest fel. 
 
-## Rucsacul clasic (0-1 Knapsack)
+### Rucsacul clasic (0-1 Knapsack)
 
 Pentru această problemă, vom presupune că avem voie să alegem fiecare dintre cele $N$ obiecte cel mult o dată, obiecte pentru care știm valoarea și greutatea lor, $V_i$ și $W_i$ și știm greutatea maximă admisă a rucsacului, $G$. 
 
@@ -31,7 +31,7 @@ O primă soluție care pare ușor de găsit este cea pe care am descris-o mai su
 
 Astfel, vom defini $dp[i][j]$ ca fiind valoarea maximă a unor obiecte alese din primele $i$ cu suma greutăților egală cu $j$. Răspunsul final va fi valoarea maximă a unei valori de tipul $dp[i][j]$.
 
-### Cum calculăm $dp[i][j]$?
+#### Cum calculăm $dp[i][j]$?
 
 Pentru a calcula $dp[i][j]$, trebuie să ne gândim la cazurile de la care plecăm pentru a ajunge la această stare (vom presupune că $W_i \leq j$). Cu alte cuvinte, ce facem cu obiectul $i$. Pe de o parte, îl luăm și va trebui să considerăm cazul specific acestui lucru, iar pe de altă parte, nu îl luăm și va trebui să ne raportăm la starea anterioară cu aceeași sumă a greutății. Relația de recurență va dovedi acest lucru, accentuând caracterul binar al problemei rucsacului (de aici vine și denumirea de $0-1$ knapsack folosită în specialitate).
 
@@ -72,7 +72,7 @@ int main() {
 }
 ```
 
-### Putem îmbunătăți soluția?
+#### Putem îmbunătăți soluția?
 
 Se poate observa că fiecare poziție din dinamica noastră depinde doar de rezultatele liniei anterioare, deci putem să reducem memoria necesară la $2 \cdot w$, cum se poate vedea mai jos.
 
@@ -144,7 +144,7 @@ int main() {
 
 După cum se poate observa, această implementare a fost adusă de la $O(n \cdot w)$ memorie la $O(w)$ memorie, codul devenind de asemenea mai scurt. 
 
-## Rucsacul în care putem repeta obiecte de un număr nelimitat de ori
+### Rucsacul în care putem repeta obiecte de un număr nelimitat de ori
 
 Această variație este una în care putem folosi un obiect de mai multe ori. Pentru a putea implementa această variație, trebuie doar să modificăm ultimul cod pentru a avea o parcurgere clasică de la stânga la dreapta. Din nou, vom presupune forma datelor de intrare ca fiind aceeași.
 
@@ -177,11 +177,11 @@ int main() {
 }
 ```
 
-## Rucsacul în care putem repeta obiecte de un număr limitat de ori
+### Rucsacul în care putem repeta obiecte de un număr limitat de ori
 
 Această variație este una ceva mai dificilă, deoarece nu mai putem folosi implementarea de mai sus fără a folosi obiecte de prea multe ori, așa că va trebui să recurgem la o metodă de a reduce problema la un rucsac de tipul $0-1$, ca cel prezentat mai sus. 
 
-### Trucul "$\log_2$"
+#### Trucul "$\log_2$"
 
 Așa cum îi zice și numele, vom vrea să descompunem frecvențele obiectelor în sume de puteri ale lui $2$, astfel încât să putem acoperi oricare număr de la $1$ la frecvența numărului, cu cât mai puține obiecte. Motivul pentru care folosim puterile lui $2$ și nu numere consecutive este acela că în cazul în care frecvențele cresc foarte rapid, vom avea nevoie de foarte puține numere (de exemplu, $1 + 2 + 4 + 8 = 1 + 2 + 3 + 4 + 5$).
 
@@ -251,7 +251,7 @@ int main() {
 }
 ```
 
-## Rucsacul în care ne interesează doar dacă avem o anumită sumă sau nu
+### Rucsacul în care ne interesează doar dacă avem o anumită sumă sau nu
 
 În multe probleme, nu ne interesează suma maximă sau minimă pe care o putem obține, ci pur și simplu dacă putem crea o anumită sumă folosind obiectele alese sau nu, acesta fiind un alt exemplu în care putem aplica o dinamică de tipul celor prezentate anterior. Deoarece nu mai avem nevoie să ținem și o valoare maximă, avem o mai mare flexibilitate în privința implementărilor. Printre altele, aici putem folosi bitset pentru optimizarea actualizării stărilor, așa cum am procedat în această soluție pentru problema [Money Sums](https://cses.fi/problemset/task/1745/).
 
@@ -290,7 +290,7 @@ int main() {
 }
 ```
 
-## Adăugarea și scoaterea de valori din rucsac
+### Adăugarea și scoaterea de valori din rucsac
 
 Dacă vrem să avem un rucsac care să poată suporta și actualizări, vom putea folosi o variație destul de simplă care ne permite să ajungem la răspunsuri mai ușor. Vom presupune că vom stoca câte moduri sunt să ajungem la o anumită sumă, modulo $P$, unde $P$ este un număr prim foarte mare. Acest modulo ne va da flexibilitatea necesară pentru a evita coliziunile și situațiile de tip false negative, când ajungem să spunem că nu avem un răspuns când de fapt îl avem. 
 
@@ -316,7 +316,7 @@ for (int i = W; i <= N; i++) {
 }
 ```
 
-# Probleme suplimentare
+## Probleme suplimentare
 
 * [AtCoder Knapsack I](https://atcoder.jp/contests/dp/tasks/dp_d)
 * [AtCoder Knapsack II](https://atcoder.jp/contests/dp/tasks/dp_e)
