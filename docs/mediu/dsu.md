@@ -1,4 +1,5 @@
 ---
+title: Păduri de mulțimi disjuncte (DSU)
 tags:
 	- vectori 
 	- arbori 
@@ -559,6 +560,7 @@ grafuri.
 
 * [Chemical table - EJOI 2018](https://cses.fi/395/list/)
 * [MexC ONI 2008](https://kilonova.ro/problems/1785)
+* [JBOI 2023 Frequencies](https://kilonova.ro/problems/2013/)
 * [IIOT 2023-24 Binary Chess](https://kilonova.ro/problems/1936)
 * [Probleme cu DSU de pe kilonova](https://kilonova.ro/tags/311)
 * [COCI 13-ladice](https://dmoj.ca/problem/coci13c5p6)

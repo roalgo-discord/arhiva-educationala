@@ -216,6 +216,8 @@ cout << maxLin << " " << maxCol << " " << maxLin1 << " " << maxCol1 << "\n";
 
 * [infoarena vila2](https://www.infoarena.ro/problema/vila2)
 * [RoAlgo PreOJI 2024 pofta](https://kilonova.ro/problems/2187)
+* [JBOI 2022 Wall](https://www.pbinfo.ro/probleme/4198/wall1)
+* [Lot Juniori 2016 pofta](https://kilonova.ro/problems/1715)
 * [IIOT Discount Optimization](https://kilonova.ro/problems/994)
 * [Problemele cu deque de pe kilonova](https://kilonova.ro/tags/409)
 * [Problemele cu deque de pe infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=94)

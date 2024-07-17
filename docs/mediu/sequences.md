@@ -190,6 +190,10 @@ for (int i = 1; i <= n; i++) {
 cout << summax << " " << stmax " " << drmax << '\n'; 
 ```
 
+## Concluzii
+
+După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](https://roalgo-discord.github.io/arhiva-educationala/mediu/two-pointers/), [sliding window](https://roalgo-discord.github.io/arhiva-educationala/mediu/sliding-window/) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
+
 ## Probleme suplimentare
  
 * [Pbinfo - Verificarea unor proprietăți](https://www.pbinfo.ro/probleme/categorii/49/tablouri-unidimensionale-vectori-verificarea-unor-proprietati)
