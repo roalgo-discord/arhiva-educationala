@@ -65,8 +65,8 @@ Pentru a ne dezvolta intuiția în ceea ce privește această tehnică, este nec
 
 Este esențial să rezolvăm cât mai multe probleme de DP pentru a deveni fluenți în elaborarea soluților.
 
-<!-- I. 1. First Problem -->
-### [Frog1 Problem](https://atcoder.jp/contests/dp/tasks/dp_a)
+<!-- First Problem -->
+### Problema [Frog1](https://atcoder.jp/contests/dp/tasks/dp_a)
 
 Această problemă ne cere să aflăm costul minim de care are nevoie o broască pentru a ajunge de pe prima piatră pe ultima, dacă se poate deplasa doar pe piatra din față sau pe piatra cu două poziții mai în față.
 
@@ -156,9 +156,9 @@ Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
     }
     ```
 
-<!-- II. 2. Second Problem -->
+<!-- Second Problem -->
 
-### [Frog 2 problem](https://atcoder.jp/contests/dp/tasks/dp_b)
+### Problema [Frog 2](https://atcoder.jp/contests/dp/tasks/dp_b)
 La fel ca la problema precedentă, trebuie să aflăm costul minim de care are nevoie o broască pentru a ajunge de pe prima piatră pe ultima, dacă se poate deplasa cu cel mult $k$ pași la un moment dat.
 
 Spre deosebire de problema precedentă, pentru a calcula $dp[i]$, ne vom folosi de informațiile din enunț, recurența de la Frog 1 va fi extinsă pentru a acoperi $k$ poziții. 
@@ -241,8 +241,8 @@ Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$
     }
     ```
 
-<!-- III. 3. Third Problem -->
-### [Coin problem](#)
+<!-- Third Problem -->
+### Problema [Moneda](#)
 
 !!! info "Cerință"
 
@@ -371,8 +371,8 @@ abordare, scriere a sursei și modalități de tranziție.
     }
     ```
 
-<!-- IV. 4. Forth Problem -->
-### [Vacation problem](https://atcoder.jp/contests/dp/tasks/dp_c)
+<!-- Fourth Problem -->
+### Problema [Vacation](https://atcoder.jp/contests/dp/tasks/dp_c)
 
 Pentru această problemă, trebuie să aflăm satisfacția maximă pe care o poate obține Taro în $n$ zile, dacă nu are voie să repete o activitate de două ori la rând. 
 
@@ -512,9 +512,9 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
     }
     ```
 
-<!-- V. 5. Fifth problem -->
+<!-- Fifth problem -->
 
-### [Array Description problem](https://cses.fi/problemset/task/1746/)
+### Problema [Array Description](https://cses.fi/problemset/task/1746/)
 
 Pentru această problemă, trebuie să aflăm numărul de șiruri pe care le putem construi astfel încât să respecte condițiile din enunț cu privire la valorile deja setate și la diferența dintre ele. 
 
