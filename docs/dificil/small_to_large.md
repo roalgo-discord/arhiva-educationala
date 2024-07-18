@@ -8,6 +8,7 @@
 * Arbori.
 * Parcurgeri `DFS`.
 * Containerele `set` și `map` din STL.
+* De preferat si [`DSU`](https://roalgo-discord.github.io/arhiva-educationala/mediu/dsu/?h=)
 
 ## Introducere
 
@@ -76,22 +77,24 @@ Totuși, complexitatea reuniunii multimii unui nod cu cele ale fiilor sai poate 
 Însă, aici intervine următoarea informație:
 
 !!! note "Observație" 
-    Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în timp constant. Așadar, dacă avem 2 seturi, $s1$ și $s2$, `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $O(1)$.
+    Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în timp constant. Așadar, dacă avem 2 seturi, $s_1$ și $s_2$, `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $O(1)$.
 
 Așadar, în cazul în care mărimea setului unui fiu este mai mare decât cea a setului nodului, le putem interschimba între ele. De aici vine și numele tehnicii, deoarece noi ducem elementele de la mic la mare.
 
 
 ### Demonstrație complexitate
 
-<!-- Demonstratie lunga -->
+Demonstrație scurtă
+
+Ne putem baza pe același principiu ca la `DSU`, anume că dacă la un moment dat avem un element $x$ într-un set de mărime $s$, în cel mai rău caz, acesta va fi reunit cu un set tot de mărime $s$. Astfel, următorul set în care se va afla elementul va avea cel puțin $2s$ elemente, sau altfel spus, orice element va fi inserat în maxim $\log(n)$ seturi pe parcursul algoritmului. Așadar, vom avea complexitate $O(n\log^2(n))$, deoarece și inserările iau $O(\log(n))$.
+
+Demonstrație lungă
+
 Acum intervine întrebarea: cu ce ne ajută să interschimbăm cele două mulțimi? Să presupunem că avem mulțimi care permit existența a mai multor elemente egale (structura multiset din STL). Astfel, dacă avem o mulțime $M$ de mărime $s$, aceasta va fi reunită, în cel mai rău caz, cu o altă mulțime de dimensiune $s$, deci următoarea mulțime în care se vor afla elementele din $M$ va avea dimensiunea de cel puțin $2 * s$. Așadar, orice element va fi inserat în maxim $\log(n)$ seturi pe parcursul algoritmului, iar complexitatea finală va fi $O(n\log^2(n))$, deoarece inserările iau în total $O(n\log(n))$.
 
 Pentru structurile de tip set (care nu conțin mai multe elemente egale), intervine însă o problemă. Anume, dacă reunim o astfel de mulțime de dimensiune $s$ cu alta de aceeași dimensiune, numărul de elemente al mulțimii care va rezulta nu va mai fi neapărat $2 * s$, deoarece pot fi elemente care apar în ambele mulțimi.
 
 Totuși, putem demonstra că și în acest caz complexitatea rămâne aceeași. Dacă pentru fiecare nod, pentru mulțimea sa, am ține minte câte elemente ar fi avut dacă era un multiset. Dacă am face swap între cele două mulțimi doar în funcție de această proprietate, ar fi cel puțin la fel de rapid ca în cazul de mai sus (e la fel ca și cum am fi avut două structuri de tip multiset, minus elementele care se repetau). Această metodă, nu ține însă cont de mărimea reală a mulțimilor, deci putem avea cazuri unde mulțimea cu dimensiunea mai mare este reunită la cea de dimensiune mai mică. Așadar, pentru două structuri de tip set, putem să le interschimbăm după dimensiunea lor reală, fără ca acest lucru să afecteze complexitatea finală, care rămâne tot maxim $O(n\log^2(n))$.
-
-<!-- Demonstratie scurta -->
-<!-- Ne putem baza pe același principiu ca la `DSU`, anume că dacă la un moment dat avem un element $x$ într-un set de mărime $s$, în cel mai rău caz, acesta va fi reunit cu un set tot de mărime $s$. Astfel, următorul set în care se va afla elementul va avea cel puțin $2s$ elemente, sau altfel spus, orice element va fi inserat în maxim $\log(n)$ seturi pe parcursul algoritmului. Așadar, vom avea complexitate $O(n\log^2(n))$, deoarece și inserările iau $O(\log(n))$. -->
 
 Cu această schimbare, codul va arăta așa:
 
@@ -165,6 +168,15 @@ using ordered_set = tree<int, null_type, std::less_equal<int>, rb_tree_tag, tree
 ```
 În interiorul parantezelor ascuțite de după `tree`, primul câmp reprezintă tipul de date, în acest caz `int`, al patrulea reprezintă tipul de arbore folosit, în acest caz, `rb_tree`, care garantează complexitatea logaritmică a operațiilor de inserare și ștergere. Al treilea câmp reprezintă tipul de comparator folosit, unde `std::less_equal` permite existența a mai multor elemente egale (ca un `multiset`), iar `std::less` nu (ca un `set`).
 
+
+Totuși, deși structura __gnu_pbds ne oferă multe avantaje, următoarele lucruri trebuie luate în considerare când este folosită:
+
+1.    Chiar dacă operațiile au complexitate logaritmică, constanta este foarte mare.
+2.    Dacă vrem să interschimbăm 2 astfel de structuri în timp $O(1)$, va trebui să folosim metoda .swap(), cum apare în codul de mai jos. Dacă am folosi funcția `std::swap()`, aceasta ar avea complexitate liniară.
+
+
+
+
 ### Problemă: [E - Penultimul Cox -  Kilonova](https://kilonova.ro/problems/575)
 
 Această problemă se poate rezolva folosind o structură de tip `__gnu_pbds` care admite mai multe chei egale (folosește comparatorul `std::less_equal`). Este ușor să ne dăm seama că răspunsul pentru fiecare nod este chiar `s[nod].order_of_key(v[nod] + 1)`. Acel +1 se datorează faptului că ne trebuie numărul de elemente mai mici sau egale cu $v[nod]$, iar metoda `order_of_key` returnează numărul de elemente strict mai mici.
@@ -226,8 +238,17 @@ int main() {
 
 ## Alte probleme și resurse utile
 
-* [Small-to-large](https://usaco.guide/plat/merging?lang=cpp)
-* [Mai multe despre __gnu_pbds](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
-* [Alte informatii despre __gnu_pbds](https://codeforces.com/blog/entry/11080)
+### Resurse adiționale despre subiectele abordate
+* [Small-to-large USACO GUIDE](https://usaco.guide/plat/merging?lang=cpp)
+* [__gnu_pbds - GeeksForGeeks](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
+* Următoarele bloguri de pe Codeforces:
+    * [Blog 1](https://codeforces.com/blog/entry/11080)
+    * [Blog 2](https://codeforces.com/blog/entry/44351)
+    * [Blog 3](https://codeforces.com/blog/entry/67696)
+
+### Probleme
+* [Toska - Kilonova](https://kilonova.ro/problems/2098)
 * [Lomsat Gerlal - Codeforces](https://codeforces.com/problemset/problem/600/E)
 * [Arborel - Kilonova](https://kilonova.ro/problems/2970)
+* [Magic Tree - CEOI 2019](https://codeforces.com/contest/1193/problem/B)
+* [Alte probleme cu small-to-large de pe Kilonova](https://kilonova.ro/problems/2098)
