@@ -3,7 +3,6 @@ tags:
     - programare dinamica
     - DP
 ---
-<!-- /MD macros for title and shit -->
 
 <!-- Credits-->
 **Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu
@@ -26,9 +25,10 @@ Deși tipurile de probleme menționate anterior se pot rezolva și cu alte tehni
 
 ### Tipuri de scriere
 
-- [Recursiv](#)
+<!-- TODO adăugare linkuri pentru complete search recursiv și iterativ -->
+- Recursiv
 
-- [Iterativ](#)
+- Iterativ
 
 |     **Recursiv**     |       **Iterativ**      |
 |:--------------------:|:-----------------------:|
@@ -66,7 +66,7 @@ Pentru a ne dezvolta intuiția în ceea ce privește această tehnică, este nec
 Este esențial să rezolvăm cât mai multe probleme de DP pentru a deveni fluenți în elaborarea soluților.
 
 <!-- First Problem -->
-### Problema [Frog1](https://atcoder.jp/contests/dp/tasks/dp_a)
+### Problema [Frog 1](https://atcoder.jp/contests/dp/tasks/dp_a)
 
 Această problemă ne cere să aflăm costul minim de care are nevoie o broască pentru a ajunge de pe prima piatră pe ultima, dacă se poate deplasa doar pe piatra din față sau pe piatra cu două poziții mai în față.
 
@@ -104,21 +104,23 @@ Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
         if (dp[poz] != -1) {
             return dp[poz];
         }
-        dp[poz] = min(solve(poz-1, v, dp) + abs(v[poz-1] - v[poz]), solve(poz-2, v, dp) + abs(v[poz-2] - v[poz]));
+
+        dp[poz] = min(solve(poz - 1, v, dp) + abs(v[poz - 1] - v[poz]),
+                    solve(poz - 2, v, dp) + abs(v[poz - 2] - v[poz]));
         return dp[poz];
     }
 
     int main() {
         int n;
         cin >> n;
-        
-        vector<int> v(n+1);
-        vector<int> dp(n+1, -1);
-        
+
+        vector<int> v(n + 1);
+        vector<int> dp(n + 1, -1);
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
-        
+
         cout << solve(n, v, dp) << '\n';
         return 0;
     }
@@ -135,22 +137,23 @@ Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
     int main() {
         int n;
         cin >> n;
-        
-        vector<int> v(n+1);
-        vector<int> dp(n+1);
-        
+
+        vector<int> v(n + 1);
+        vector<int> dp(n + 1);
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
+
         for (int i = 2; i <= n; i++) {
             if (i == 2) {
-                dp[i] = abs(v[i] - v[i-1]);
-            }
-            else {
-                dp[i] = min(dp[i-1] + abs(v[i] - v[i-1]), dp[i-2] + abs(v[i] - v[i-2]));
+                dp[i] = abs(v[i] - v[i - 1]);
+            } else {
+                dp[i] = min(dp[i - 1] + abs(v[i] - v[i - 1]),
+                            dp[i - 2] + abs(v[i] - v[i - 2]));
             }
         }
-        
+
         cout << dp[n] << '\n';
         return 0;
     }
@@ -186,10 +189,12 @@ Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$
         if (dp[poz] != -1) {
             return dp[poz];
         }
-        dp[poz] = (1<<30); // 2^30
+
+        dp[poz] = (1 << 30);  // 2^30
         for (int i = 1; i <= diff; i++) {
             if (poz - i >= 1) {
-                dp[poz] = min(dp[poz], solve(poz-i, diff, v, dp) + abs(v[poz] - v[poz-i]));
+                dp[poz] = min(dp[poz], solve(poz - i, diff, v, dp) +
+                                        abs(v[poz] - v[poz - i]));
             }
         }
         return dp[poz];
@@ -197,14 +202,14 @@ Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$
     int main() {
         int n, k;
         cin >> n >> k;
-        
-        vector<int> v(n+1);
-        vector<int> dp(n+1, -1);
-        
+
+        vector<int> v(n + 1);
+        vector<int> dp(n + 1, -1);
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
-        
+
         cout << solve(n, k, v, dp) << '\n';
         return 0;
     }
@@ -220,22 +225,22 @@ Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$
     int main() {
         int n, k;
         cin >> n >> k;
-        
-        vector<int> v(n+1);
-        vector<int> dp(n+1);
-        
+
+        vector<int> v(n + 1);
+        vector<int> dp(n + 1, 1 << 30);  // 2 ^ 30
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
+
         for (int i = 2; i <= n; i++) {
-            dp[i] = (1<<30); // 2^30
             for (int j = 1; j <= k; j++) {
                 if (i - j >= 1) {
-                    dp[i] = min(dp[i], dp[i-j] + abs(v[i] - v[i-j]));
+                    dp[i] = min(dp[i], dp[i - j] + abs(v[i] - v[i - j]));
                 }
             }
         }
-        
+
         cout << dp[n] << '\n';
         return 0;
     }
@@ -271,8 +276,8 @@ denominația cea mai mare, care este mai mică ca S, cât timp puteați. După a
 continuat cu următoarea denominație cea mai mare care respectă condiția aceasta
 pentru suma rămasă ș.a.m.d. Ca să vă dovedesc că nu funcționează această
 modalitate, încercați să rezolvați această problemă, utilizând modalitatea
-anterior prezentată, având aceste date de intrare ($N$ numărul de monezi, apoi
-$S$ suma și apoi cele $N$ monezi):
+anterior prezentată, având aceste date de intrare ($N$ numărul de monede, apoi
+$S$ suma și apoi cele $N$ monede):
 
 ```
 3
@@ -284,10 +289,14 @@ Acum că ați încercat să rezolvați problema într-un mod cunoscut vouă, și
 văzut că nu îți garantează un răspuns, haideți să vă prezint o soluție corectă!
 
 Pentru această problem, o să vă prezint soluțiile utilizând ambele modalități de
-abordare, scriere a sursei și modalități de tranziție.
+abordare și scriere a sursei și modalități de tranziție.
 
 
 === "Recursiv"
+    !!! note "Explicație"
+        Pentru a găsi soluția optimă, noi vom avea vectorul dp care se utilizează pentru memoizare, el având forma următoare: dp[suma de bani rămasă de acoperit] = nr de bacnote necesare pentru a ajunge la suma de bani rămasă de acoperit curentă.
+        Pentru asta ne vom utiliza de o recursiune care are ca parametrii de stare suma de bani care a rămas de plătit, numărul de monede pe care l-am utilizat până acum și vectorul de denominații accesibile.
+    
 
     ```cpp
     #include <iostream>
@@ -295,21 +304,21 @@ abordare, scriere a sursei și modalități de tranziție.
 
     using namespace std;
 
-    const int MAXIM_SUMA_MONEZI = 100000;
+    const int MAXIM_SUMA_MONEDE = 100000;
 
     int N, S;
-    vector<int> dp(MAXIM_SUMA_MONEZI + 1);
+    vector<int> dp(MAXIM_SUMA_MONEDE + 1);
 
-    void solve(const int suma, const int nr_monede, const vector<int> &monezi) {
+    void solve(const int suma, const int nr_monede, const vector<int>& monede) {
         if (suma == 0) {
             return;
         }
 
-        for (const auto moneda : monezi) {
+        for (const auto moneda : monede) {
             if (suma >= moneda) {
                 if (dp[suma - moneda] > nr_monede + 1) {
                     dp[suma - moneda] = nr_monede + 1;
-                    solve(suma - moneda, nr_monede + 1, monezi);
+                    solve(suma - moneda, nr_monede + 1, monede);
                 }
             }
         }
@@ -318,13 +327,13 @@ abordare, scriere a sursei și modalități de tranziție.
     int main() {
         cin >> N >> S;
 
-        vector<int> monezi(N, 0);
+        vector<int> monede(N, 0);
 
-        for (auto& moneda : monezi) {
+        for (auto& moneda : monede) {
             cin >> moneda;
         }
 
-        solve(S, 0, monezi);
+        solve(S, 0, monede);
 
         cout << dp[0];
         return 0;
@@ -332,17 +341,20 @@ abordare, scriere a sursei și modalități de tranziție.
     ```
 
 === "Iterativ"
+    !!! note "Explicație"
+        Pentru a găsi soluția optimă, noi vom trece prin fiecare sumă de bani care este mai mică decât $S$, încercând, dacă putem, să continuăm să adăugăm bacnote astfel încât să ajungem la suma de bani dorită. Pentru acest lucru vom ține un vector dp de forma următoare: dp[sumă de bani totală] = numărul de bacnote necesare pentru a ajunge la această sumă de bani.
 
     ```cpp
+    #include <algorithm>
     #include <iostream>
     #include <vector>
 
     using namespace std;
 
-    const int MAXIM_SUMA_MONEZI = 100000;
+    const int MAXIM_SUMA_MONEDE = 100000;
 
     int N, S;
-    vector<int> dp(MAXIM_SUMA_MONEZI + 1);
+    vector<int> dp(MAXIM_SUMA_MONEDE + 1);
 
     int main() {
         cin >> N >> S;
@@ -353,6 +365,7 @@ abordare, scriere a sursei și modalități de tranziție.
         for (int i : coins) {
             dp[i] = 1;
         }
+
         for (int i = 1; i < S; i++) {
             if (dp[i] != 0) {
                 for (int coin : coins) {
@@ -366,6 +379,7 @@ abordare, scriere a sursei și modalități de tranziție.
                 }
             }
         }
+
         cout << dp[S];
         return 0;
     }
@@ -396,24 +410,28 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
 === "Recursiv"
 
     ```cpp
+    #include <algorithm>
     #include <iostream>
     #include <vector>
 
     using namespace std;
 
-    int solve(const int poz, const vector<vector<int>> &v, vector<vector<int>> &dp, const int activ) {
+    int solve(const int poz, const vector<vector<int>> &v, vector<vector<int>> &dp,
+            const int activ) {
         if (poz == 1) {
             return v[poz][activ];
         }
         if (dp[poz][activ] != -1) {
             return dp[poz][activ];
         }
+
         dp[poz][activ] = 0;
         for (int i = 0; i < 3; i++) {
             if (i != activ) {
-                dp[poz][activ] = max(dp[poz][activ], solve(poz-1, v, dp, i));
+                dp[poz][activ] = max(dp[poz][activ], solve(poz - 1, v, dp, i));
             }
         }
+
         dp[poz][activ] += v[poz][activ];
         return dp[poz][activ];
     }
@@ -421,16 +439,16 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
     int main() {
         int n;
         cin >> n;
-        
-        vector<vector<int>> v(n+1, vector<int>(3));
-        vector<vector<int>> dp(n+1, vector<int>(3));
-        
+
+        vector<vector<int>> v(n + 1, vector<int>(3));
+        vector<vector<int>> dp(n + 1, vector<int>(3, -1));
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i][0] >> v[i][1] >> v[i][2];
-            dp[i][0] = dp[i][1] = dp[i][2] = -1;
         }
-        
-        cout << max(solve(n, v, dp, 0), max(solve(n, v, dp, 1), solve(n, v, dp, 2))) << '\n';
+
+        cout << max({solve(n, v, dp, 0), solve(n, v, dp, 1), solve(n, v, dp, 2)})
+            << '\n';
         return 0;
     }
     ```
@@ -438,6 +456,7 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
 === "Iterativ"
 
     ```cpp
+    #include <algorithm>
     #include <iostream>
     #include <vector>
 
@@ -446,9 +465,9 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
     int main() {
         int n;
         cin >> n;
-        
-        vector<vector<int>> dp(n+1, vector<int>(3));
-        
+
+        vector<vector<int>> dp(n + 1, vector<int>(3));
+
         for (int i = 1; i <= n; i++) {
             int a, b, c;
             cin >> a >> b >> c;
@@ -456,15 +475,14 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
                 dp[1][0] = a;
                 dp[1][1] = b;
                 dp[1][2] = c;
-            }
-            else {
-                dp[i][0] = max(dp[i-1][1], dp[i-1][2]) + a;
-                dp[i][1] = max(dp[i-1][0], dp[i-1][2]) + b;
-                dp[i][2] = max(dp[i-1][0], dp[i-1][1]) + c;
+            } else {
+                dp[i][0] = max(dp[i - 1][1], dp[i - 1][2]) + a;
+                dp[i][1] = max(dp[i - 1][0], dp[i - 1][2]) + b;
+                dp[i][2] = max(dp[i - 1][0], dp[i - 1][1]) + c;
             }
         }
-        
-        cout << max(dp[n][0], max(dp[n][1], dp[n][2])) << '\n';
+
+        cout << max({dp[n][0], dp[n][1], dp[n][2]}) << '\n';
         return 0;
     }
     ```
@@ -477,6 +495,7 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
         Deoarece avem nevoie doar de ultimele două linii, nu vom ține toată matricea, mutând mereu valorile calculate pe prima linie pentru a păstra corectitudinea recurenței.
 
     ```cpp
+    #include <algorithm>
     #include <iostream>
     #include <vector>
 
@@ -485,9 +504,9 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
     int main() {
         int n;
         cin >> n;
-        
+
         vector<vector<int>> dp(2, vector<int>(3));
-        
+
         for (int i = 1; i <= n; i++) {
             int a, b, c;
             cin >> a >> b >> c;
@@ -495,19 +514,17 @@ Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și
                 dp[0][0] = a;
                 dp[0][1] = b;
                 dp[0][2] = c;
-            }
-            else {
+            } else {
                 dp[1][0] = max(dp[0][1], dp[0][2]) + a;
                 dp[1][1] = max(dp[0][0], dp[0][2]) + b;
                 dp[1][2] = max(dp[0][0], dp[0][1]) + c;
-                for (int j = 0; j < 3; j++) {
-                    dp[0][j] = dp[1][j];
-                    dp[1][j] = 0;
-                }
+
+                swap(dp[0], dp[1]);
+                fill(dp[1].begin(), dp[1].end(), 0);
             }
         }
-        
-        cout << max(dp[0][0], max(dp[0][1], dp[0][2])) << '\n';
+
+        cout << max({dp[0][0], , dp[0][1], dp[0][2]}) << '\n';
         return 0;
     }
     ```
@@ -523,7 +540,7 @@ Astfel, vom defini $dp[i][j]$ ca fiind numărul de moduri de a crea un șir cu $
 Pentru a afla $dp[i][j]$, va trebui să ne raportăm la valorile de pe poziția precedentă, aflate la o distanță de cel mult $1$, cu condiția să putem pune $j$ pe poziția $i$. 
 
 !!! note "Observatie"
-    Pentru a calcula numărul de soluții modulo $x$, vom folosi operatorul $\%$ (mod). Dar deoarece aici avem nevoie doar de operații de adunare, putem pur și simplu să efectuăm operațiile de adunare și să folosim scăderi în mod convenabil, reușind astfel să optimizăm semnificativ soluția.
+    Pentru a calcula numărul de soluții modulo $x$, vom folosi operatorul $\%$ (mod). Dar deoarece aici avem nevoie doar de operații de adunare, putem pur și simplu să efectuăm operațiile de adunare și să folosim scăderi în mod convenabil, reușind astfel să optimizăm soluția.
     
 
 ```cpp
@@ -531,34 +548,34 @@ Pentru a afla $dp[i][j]$, va trebui să ne raportăm la valorile de pe poziția 
 #include <vector>
 
 using namespace std;
- 
+
 const int MOD = 1000000007;
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<int> vals(n+1);
+
+    vector<int> vals(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> vals[i];
     }
-    
-    vector<vector<int>> dp(n+1, vector<int> (m+1));
-    
+
+    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+
     for (int i = 1; i <= m; i++) {
         if (vals[1] == 0 || vals[1] == i) {
             dp[1][i] = 1;
         }
     }
-    
+
     for (int i = 2; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             if (vals[i] && vals[i] != j) {
                 continue;
             }
-            for (int dif = j-1; dif <= j+1; dif++) {
-                if (dif > 0 && dif <= m) {
-                    dp[i][j] += dp[i-1][dif];
+            for (int dif = -1; dif <= 1; dif++) {
+                if (j + dif > 0 && j + dif <= m) {
+                    dp[i][j] += dp[i - 1][j + dif];
                     if (dp[i][j] >= MOD) {
                         dp[i][j] -= MOD;
                     }
@@ -566,7 +583,7 @@ int main() {
             }
         }
     }
-    
+
     int ans = 0;
     for (int i = 1; i <= m; i++) {
         ans += dp[n][i];
@@ -574,8 +591,204 @@ int main() {
             ans -= MOD;
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
 ```
+
+<!-- Sixth problem -->
+
+## Problema [Grid 1](https://atcoder.jp/contests/dp/tasks/dp_h)
+
+Pentru această problemă, trebuie să aflăm numărul de moduri de a parcurge matricea din colțul stânga-sus în colțul dreapta-jos prin mișcări în jos și la dreapta, fără să parcurgem pătrate acoperite de ziduri. 
+
+Deoarece avem de-a face cu o matrice, putem ține $dp[i][j]$ ca fiind numărul de moduri de a parcurge matricea dacă am ajuns la pătratul $(i, j)$. Deoarece putem ajunge la $(i, j)$ din pătratele de sus și stânga, acestea vor fi cele două rezultate care contribuie la răspunsul dat. 
+
+Astfel, $dp[i][j] = dp[i-1][j] + dp[i][j-1]$.
+
+### Soluție
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MOD = 1000000007;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<char>> grid(n + 1, vector<char>(m + 1));
+    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+
+    dp[1][1] = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            if (grid[i][j] != '#') {
+                dp[i][j] += dp[i - 1][j] + dp[i][j - 1];
+                if (dp[i][j] >= MOD) {
+                    dp[i][j] -= MOD;
+                }
+            }
+        }
+    }
+
+    cout << dp[n][m] << '\n';
+    return 0;
+}
+```
+
+<!-- Seventh problem -->
+## Problema [Sumtri1](https://www.pbinfo.ro/probleme/386/sumtri1)
+
+=== "Recursiv"
+
+    ```cpp
+    #include <fstream>
+
+    using namespace std;
+    ifstream fin("sumtri1.in");
+    ofstream fout("sumtri1.out");
+
+    const int MAX_N = 101;
+
+    using matrixB = bool[MAX_N][MAX_N];
+    using matrixI = int[MAX_N][MAX_N];
+
+    matrixB change;
+    matrixI triunghi, dp;
+
+    int n;
+    int ans;
+
+    int solve(const int lin, const int col) {
+        if (dp[lin][col] != 0) {
+            return dp[lin][col];
+        }
+        if (lin > n) {
+            return 0;
+        }
+
+        const int left = solve(lin + 1, col);
+        const int right = solve(lin + 1, col + 1);
+
+        if (left < right) {
+            dp[lin][col] = triunghi[lin][col] + left;
+            change[lin][col] = false;
+        } else {
+            dp[lin][col] = triunghi[lin][col] + right;
+            change[lin][col] = true;
+        }
+        return dp[lin][col];
+    }
+
+    int main() {
+        fin >> n;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                fin >> triunghi[i][j];
+            }
+        }
+
+        fout << solve(1, 1) << '\n';
+        
+
+        for (int l = 1, c = 1; l <= n; l++) {
+            fout << triunghi[l][c] << ' ';
+            if (change[l][c]) {
+                c++;
+            }
+        }
+        return 0;
+    }
+    ```
+
+=== "Iterativ"
+
+    ```cpp
+    #include <fstream>
+
+    using namespace std;
+    ifstream fin("sumtri1.in");
+    ofstream fout("sumtri1.out");
+
+    const int MAX_N = 101;
+
+    using matrix = int[MAX_N][MAX_N];
+
+    int n;
+    matrix triunghi, dp, cale;
+
+    int main() {
+        fin >> n;
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= i; ++j) {
+                fin >> triunghi[i][j];
+                if (i == n) {
+                    dp[n][j] = triunghi[n][j];
+                }
+            }
+        }
+
+        for (int i = n - 1; i > 0; --i) {
+            for (int j = 1; j <= i; ++j) {
+                dp[i][j] = triunghi[i][j];
+                if (dp[i + 1][j + 1] < dp[i + 1][j]) {
+                    dp[i][j] += dp[i + 1][j + 1];
+                    cale[i][j] = j + 1;
+                } else {
+                    dp[i][j] += dp[i + 1][j];
+                    cale[i][j] = j;
+                }
+            }
+        }
+
+        fout << dp[1][1] << '\n';
+
+        int j = 1;
+        for (int i = 1; i <= n; ++i) {
+            fout << triunghi[i][j] << " ";
+            j = cale[i][j];
+        }
+
+        return 0;
+    }
+    ```
+
+<!-- Extra stuff -->
+
+## Resurse suplimentare
+
+* [DP Book](https://dp-book.com/Dynamic_Programming.pdf)
+* [Programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_dinamica_3.html)
+* [Introduction to DP - USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp)
+* [DP Tutorial and Problem List](https://codeforces.com/blog/entry/67679)
+
+## Probleme suplimentare
+
+* [Infoarena custi](https://infoarena.ro/problema/custi)
+* [Codeforces Boredom](https://codeforces.com/problemset/problem/455/A)
+* [AtCoder Weak Takahashi](https://atcoder.jp/contests/abc232/tasks/abc232_d)
+* [IIOT 2023-24 PingPong](https://kilonova.ro/problems/1941)
+* [AtCoder 1111gal password](https://atcoder.jp/contests/abc242/tasks/abc242_c)
+* [AtCoder Flip Cards](https://atcoder.jp/contests/abc291/tasks/abc291_d)
+* [IIOT Police](https://kilonova.ro/problems/967)
+* [Counting Towers](https://cses.fi/problemset/task/2413)
+* [AtCoder Index × A(Not Continuous ver.)](https://atcoder.jp/contests/abc267/tasks/abc267_d)
+* [AtCoder Between Two Arrays](https://atcoder.jp/contests/abc222/tasks/abc222_d)
+* [Lot Juniori Minusk](https://kilonova.ro/problems/1743)
+* [AtCoder Count Bracket Sequences](https://atcoder.jp/contests/abc312/tasks/abc312_d)
+* [AtCoder I hate Non Integer Number](https://atcoder.jp/contests/abc262/tasks/abc262_d)
+* [Problemele cu DP de pe Kilonova](https://kilonova.ro/tags/275)
+* [Problemele intre rating 500 si 1400 de aici](https://atcoder-tags.herokuapp.com/tag_search/Dynamic-Programming)
+* [Problemele cu DP de pe infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=58)
+* [Ping Pong](https://kilonova.ro/problems/1941)
