@@ -484,6 +484,7 @@ int main() {
     
     while (lastempty <= 10) {
         lastempty++;
+        // timp%4 = timp&3, pentru puteri ale lui 2
         while (!q[(timp&3)].empty()) {
             lastempty = 0;
             info nod = q[(timp&3)].front();
@@ -520,8 +521,6 @@ int main() {
     return 0;
 }
 ```
-
-
 
 ## Care este algoritmul mai bun?
 
