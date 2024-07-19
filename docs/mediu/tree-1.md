@@ -146,6 +146,7 @@ int main() {
 * [Introduction to Tree Algorithms](https://usaco.guide/silver/intro-tree?lang=cpp)
 * [Grafuri și arbori - noțiuni de bază](https://cppi.sync.ro/materia/grafuri_arbori_notiuni_teoretice_de_baza.html)
 * [Subordinates](https://cses.fi/problemset/task/1674)
+* [nivele2 infoarena](https://www.infoarena.ro/problema/nivele2)
 * [Grarb infoarena](https://www.infoarena.ro/problema/grarb)
 * [Tree Diameter](https://kilonova.ro/problems/2188)
 * [Mootube USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=788)
