@@ -16,12 +16,36 @@ Pentru a realiza acest lucru, vom descompune problema în mai multe subprobleme,
 
 ## De ce trebuie să știm programare dinamică?
 
-Deși tipurile de probleme menționate anterior se pot rezolva și cu alte tehnici, cum ar fi backtracking, greedy, formulă matematică etc., programarea dinamică vine drept o nouă perspectivă asupra problemelor care ne permite să găsim soluții pentru o mulțime de probleme, păstrând avantajele care ne sunt oferite atât de greedy cât și de backtracking.
+Deși tipurile de probleme menționate anterior se pot rezolva și cu alte tehnici, cum ar fi backtracking, greedy, formulă matematică etc., programarea dinamică vine drept o nouă perspectivă asupra problemelor care ne permite să găsim soluții pentru o mulțime de probleme, păstrând avantajele care ne sunt oferite atât de greedy cât și de backtracking, iar în multe cazuri, devenind abordarea cea mai potrivită, ceea ce face programarea dinamică să devină una dintre cele mai populare tehnici date la concursurile de algoritmică.
+
+!!! note "Observație"
+    Aproape în fiecare an la OJI și ONI clasele XI-XII se dă o problemă care necesită o soluție bazată pe metoda programării dinamice, problemele de acest tip regăsindu-se și în foarte multe concursuri mai dificile.
+
+## Termenii specifici ai programării dinamice
+
+Pentru a explica părțile componente ale oricărei soluții care se bazează pe metoda programării dinamice, vom explica un exemplu foarte simplu, folosindu-ne de șirul lui Fibonacci. 
+
+Vom defini șirul lui Fibonacci ca fiind $F_0 = 1$, $F_1 = 1$ și $F_i = F_{i-1} + F_{i-2}$.
+
+După cum se poate observa, avem $F_i$ care reprezintă cel de-al $i$-lea număr Fibonacci, acesta fiind starea pe care o vom calcula, stări pe care le vom găsi în toate problemele ce necesită programare dinamică. Stările vor avea una sau mai multe dimensiuni. 
+
+$F_i = F_{i-1} + F_{i-2}$ reprezintă relația de recurență dintre $F_i$ și valorile precedente. Pasul de la $F_{i-1}$ sau $F_{i-2}$ la $F_{i}$ reprezintă tranzițiile de la o stare la alta. 
+
+În cele din urmă, $F_0 = 1$, $F_1 = 1$ reprezintă cazurile de bază, cazuri care nu pot fi definite folosind relația de recurență menționată mai sus. 
+
+În concluzie, pentru a putea avea o soluție care folosește programarea dinamică, trebuie să ne asigurăm că avem următoarele părți:
+
+* Cazuri de bază
+* Stare pe care o calculăm
+* Relație de recurență
+* Tranzitii
+
+Aceste aspecte pot fi și optimizate în funcție de problemă, aceste optimizări fiind realizabile fie calculând tranzițiile mai rapid, fie reducând numărul de stări, așa cum se va vedea de-a lungul capitolelor ulterioare care abordează tehnica programării dinamice.
 
 <!-- Types of DP -->
 ## Clasificare
 
-În elaborarea unui algoritm care conține DP, putem utiliza mai multe abordări.
+În elaborarea unui algoritm care folosește metoda programării dinamice, putem utiliza mai multe abordări.
 
 ### Tipuri de scriere
 

@@ -44,7 +44,7 @@ unui șir de caractere, fiecare poziție având o valoare egală cu $26^{n - i -
 \cdot ind_i$, unde $n$ este lungimea șirului de caractere, $i$ este poziția
 caracterului curent iar $ind_i$ este poziția din alfabet (cu indexare de la $0$)
 a caracterului de pe poziția $i$. De exemplu, dacă $s_i = d$, $ind_i = 3$ (_d_
-este cea de-a patra literă din alfabet). 
+este cea de-a patra literă din alfabet).
 
 De exemplu, dacă șirul de caractere este _algo_, numărul pe care l-am stoca ar
 fi egal cu
