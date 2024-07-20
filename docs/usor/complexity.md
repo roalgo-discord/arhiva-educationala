@@ -99,7 +99,6 @@ Aici prezentăm câteva exemple de complexități, care vor fi utile pe parcurs.
 - Folosirea unor structuri de date precum set, map: $O(\log n)$ per operație
 - Aflarea divizorilor unui număr: $O(\sqrt{n})$
 - Citirea sau parcurgerea a $n$ valori: $O(n)$
-- Iterating through an array or a list of $n$ elements: $O(n)$
 - Sortarea unui vector cu $n$ valori: de obicei $O(n \log n)$
 - Parcurgerea tuturor submulțimilor de lungime $2$: $O(n^2)$.
 - Parcurgerea tuturor submulțimilor: $O(2^n)$
