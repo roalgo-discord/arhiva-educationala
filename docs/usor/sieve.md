@@ -1,4 +1,10 @@
-# Ciurul lui Eratostene și alte aplicații
+---
+tags:
+    - matematica
+    - numere prime
+    - divizori
+    - precalculari
+---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
@@ -166,11 +172,29 @@ Pentru a rezolva query-urile, voi folosi un vector de frecventa pentru a tine ac
 
 [Soluția de $100$ de puncte](https://kilonova.ro/submissions/18796)
 
-## Probleme și lectură suplimentară
+## Probleme suplimentare
 
-Mai trebuie puse probleme
-
+* [CSES Counting Divisors](https://cses.fi/problemset/task/1713)
+* [CSES Common Divisors](https://cses.fi/problemset/task/1081)
+* [RoAlgo PreOJI 2024 Factoria](https://kilonova.ro/problems/2383)
+* [Moisil++ Sprime](https://kilonova.ro/problems/2043)
+* [infoarena numereprime](https://infoarena.ro/problema/prim)
+* [ONI 2013 divizori](https://kilonova.ro/problems/1409)
+* [ONI 2019 comun](https://kilonova.ro/problems/1545)
+* [OJI 2024 Macarie](https://kilonova.ro/problems/2501)
+* [OJI 2024 avid](https://kilonova.ro/problems/2514/)
+* [OJI 2023 Primprim](https://kilonova.ro/problems/514)
+* [ONI 2024 Geologie](https://kilonova.ro/problems/2646)
+* [ONI 2013 Extraprime](https://kilonova.ro/problems/1406)
+* [ONI 2022 Baraj Juniori Triprime](https://kilonova.ro/problems/1101)
+* [ONI 2021 Baraj Juniori Intergalactic](https://kilonova.ro/problems/1098)
 * [Probleme cu ciurul lui Eratostene de pe kilonova](https://kilonova.ro/tags/328)
+
+## Lectură suplimentară
+
+* [Ciurul lui Eratostene - Pbinfo](https://www.pbinfo.ro/articole/2540/ciurul-lui-eratostene)
+* [Eratostene si alte ciururi - Pbinfo](https://www.pbinfo.ro/articole/18904/eratostene-si-alte-ciururi)
+* [Ciurul lui Eratostene - CPPI Sync](https://cppi.sync.ro/materia/ciurul_lui_eratostene.html)
 * [Wikipedia - Ciurul lui Eratostene](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 * [Articol de pe CP Algorithms](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)
 
