@@ -10,7 +10,7 @@ nav:
         - Abordarea problemelor cu secvențe: sequences.md
     - Algebră:
         - Indicatorul lui Euler: euler-totient.md
-        - Ridicare la putere în timp logaritmic: pow-log.md
+        - Aritmetică modulară. Ridicare la putere în timp logaritmic: pow-log.md
         - Baze de numerație: number-bases.md
         - Principiul includerii și excluderii (pinex): pinex.md
         - Invers modular: modular-inverse.md
