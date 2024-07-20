@@ -36,10 +36,13 @@ Algoritmul se dovedește a fi o optimizare față de metoda standard de aflare p
 
 ```cpp
 int prim[100001];
-for (int i = 2; i <= n; i++)
-    if (prim[i] == 0)
-        for (int j = i + i; j <= n; j += i)
+for (int i = 2; i <= n; i++) {
+    if (prim[i] == 0) {
+        for (int j = i + i; j <= n; j += i) {
             prim[j] = 1;
+        }
+    }
+}
 ``` 
 
 !!! note "Observație"
@@ -52,12 +55,16 @@ Deși algoritmul în sine este deja foarte rapid, în practică concurenții tin
 
 ```cpp
 int prim[100001];
-for (int i = 4; i <= n; i += 2)
+for (int i = 4; i <= n; i += 2) {
     prim[i] = 1;
-for (int i = 3; i <= n; i += 2)
-    if (prim[i] == 0)
-        for (int j = i * i; j <= n; j += i * 2)
+}
+for (int i = 3; i <= n; i += 2) {
+    if (prim[i] == 0) {
+        for (int j = i * i; j <= n; j += i * 2) {
             prim[j] = 1;
+        }
+    }
+}
 ``` 
 
 !!! note "Observație"
@@ -66,24 +73,30 @@ Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poa
 
 ```cpp
 int prim[100001];
-for (int i = 4; i <= n; i += 2)
+for (int i = 4; i <= n; i += 2) {
     prim[i] = 1;
-for (int i = 3; i * i <= n; i += 2)
-    if (prim[i] == 0)
-        for (int j = i * i; j <= n; j += i * 2)
+}
+for (int i = 3; i * i <= n; i += 2) {
+    if (prim[i] == 0) {
+        for (int j = i * i; j <= n; j += i * 2) {
             prim[j] = 1;
+        }
+    }
+}
 
 // afisarea numerelor prime de la 1 la n
-for (int i = 2; i <= n; i++)
-    if (prim[i] == 0) 
+for (int i = 2; i <= n; i++) {
+    if (prim[i] == 0) {
         cout << i << " ";
+    }
+}
 ```
 
 Chiar dacă aceste implementări nu îmbunătățesc semnificativ performanța ciurului lui Eratostene, ele pot fi utile în contextul optimizărilor ce ar putea fi folosite la rezolvarea problemelor. 
 
 ## Alte aplicații ale ciurului lui Eratostene
 
-După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la pinex (link către articol mobius) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
+După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](https://roalgo-discord.github.io/arhiva-educationala/mediu/pinex/) sau [Möbius](https://roalgo-discord.github.io/arhiva-educationala/mediu/mobius/) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
 
 ## Problema [Ciurul lui Eratostene](https://kilonova.ro/problems/2108) de pe Kilonova
 
@@ -112,34 +125,42 @@ int main() {
     divisors.resize(NMAX + 1);
     prime_divisors.resize(NMAX + 1);
 
-    for (int i = 1; i <= NMAX; i++)
-        for (int j = i; j <= NMAX; j += i)
+    for (int i = 1; i <= NMAX; i++) {
+        for (int j = i; j <= NMAX; j += i) {
             divisors[j].push_back(i);
+        }
+    } 
         
     prime[1] = 1;
-    for (int i = 2; i <= NMAX; i++)
-        if (prime[i] == 0)
+    for (int i = 2; i <= NMAX; i++) {
+        if (prime[i] == 0) {
             for (int j = i; j <= NMAX; j += i) {
                 prime_divisors[j].push_back(i);
-                if (j != i)
+                if (j != i) {
                     prime[j] = 1;
+                }
             }
+        }
+    }
         
     cin >> q;
     
     for (int i = 1; i <= q; i++) {
         int type, value;
         cin >> type >> value;
-        if (type == 1)
+        if (type == 1) {
             cout << (prime[value] == 0 ? "Prime" : "Composite") << '\n';
+        }
         if (type == 2) {
-            for (int j = 0; j < (int) prime_divisors[value].size(); j++)
+            for (int j = 0; j < (int) prime_divisors[value].size(); j++) {
                 cout << prime_divisors[value][j] << " ";
+            }
             cout << '\n';
         }
         if(type == 3) {
-            for (int j = 0; j < (int) divisors[value].size(); j++)
+            for (int j = 0; j < (int) divisors[value].size(); j++) {
                 cout << divisors[value][j] << " ";
+            }
             cout << '\n';
         }
     }

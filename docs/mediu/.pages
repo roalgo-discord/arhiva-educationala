@@ -32,7 +32,7 @@ nav:
         - Păduri de mulțimi disjuncte (DSU): dsu.md 
         - Arbore parțial de cost minim: apcm.md
         - Algoritmi pentru drumuri minime: shortest-path.md
-        - Technica celor două DFS-uri (rerooting): rerooting.md
+        - Tehnica celor două DFS-uri (rerooting): rerooting.md
     - Structuri de date:
         - Algoritmul lui Lee (flood fill): lee.md
         - Evaluarea unei expresii: expression-evaluation.md

@@ -1,8 +1,8 @@
 ---
 tags:
     - vectori 
-	- arbori 
-	- multimi
+    - arbori 
+    - multimi
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
