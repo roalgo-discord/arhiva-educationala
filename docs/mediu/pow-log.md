@@ -74,7 +74,7 @@ for (int i = 1; i <= n; i++) {
 Totuși, nu am folosit încă o proprietate esențială pentru a optimiza calculul de mai sus.
 
 !!! note "Observație"
-    $$a^b = {a^\frac{n}{2}}^2$$ cu alte cuvinte, dacă $n$ este par, putem să aflăm $a^\frac{n}{2}$ și apoi să-l ridicăm la pătrat. 
+    $a^b = \left(a^{\frac{n}{2}}\right)^2$ cu alte cuvinte, dacă $n$ este par, putem să aflăm $a^\frac{n}{2}$ și apoi să-l ridicăm la pătrat. 
 
 Această proprietate ne va ajuta să deducem următorul mod de a calcula $a^n$ recursiv. 
 
