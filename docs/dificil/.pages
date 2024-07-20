@@ -1,42 +1,41 @@
 nav:
     - Tehnici de rezolvare a problemelor:
-        - Probleme interactive: probleme_interactive.md
-        - Probleme output only: probleme_output_only.md
-    - Căutare ternară: cautare_ternara.md
+        - Probleme interactive: interactive.md
+        - Probleme output only: output-only.md
+    - Căutare ternară: ternary-search.md
     - Programare dinamică:
-        - Programare dinamică pe grafuri: dinamica_pe_grafuri.md
-        - Programare dinamică pe arbore: dinamica_pe_arbore.md
-        - Programare dinamică pe intervale (range DP): dinamica_pe_intervale_(range_dp).md
-        - Programare dinamică pe cifre (digit DP): dinamica_pe_cifre_(digit_dp).md
-        - Programare dinamică pe permutări: dinamica_pe_permutari.md
-        - Programare dinamică cu structuri de date: dinamica_cu_structuri_de_date.md
+        - Programare dinamică pe grafuri: graph-dp.md
+        - Programare dinamică pe arbore: tree-dp.md
+        - Programare dinamică pe intervale (range DP): range-dp.md
+        - Programare dinamică pe cifre (digit DP): digit-dp.md
+        - Programare dinamică pe permutări: permutations-dp.md
+        - Programare dinamică cu structuri de date: data-structures-dp.md
     - Teoria grafurilor:
-        - Componente tare conexe: componente_tare_conexe.md
-        - Componente biconexe: componente_biconexe.md
-        - Cuplaj maxim pe graf bipartit: cuplaj_maxim_pe_graf_bipartit.md
+        - Componente tare conexe: componente-tare-conexe.md
+        - Componente biconexe: componente-biconexe.md
+        - Cuplaj maxim pe graf bipartit: cuplaj-maxim-pe-graf-bipartit.md
     - Structuri de date:
-        - Square root decomposition: "?"
-        - Arbori de intervale: arbori_de_intervale_persistenti,_2d,_dinamici_etc..md 
-        - Arbori indexați binar: "?"
-        # De ce ai pus-o la mediu? Nu are sens
-        - Range Minimum Query (sparse tables): "?"
+        - Square root decomposition: square-root-decomposition.md
+        - Arbori de intervale: persistent-segment-tree.md 
+        - Arbori indexați binar: fenwick-tree-bit.md
+        - Range Minimum Query (sparse tables): rmq.md
         - Trie: trie.md
     - Algebră liniară:
-        - Introducere în algebră liniară: "intro_alg_lin.md"
-        - Ridicare la putere a unei matrici: ridicare_la_putere_a_unei_matrici.md
+        - Introducere în algebră liniară: intro-linalg.md
+        - Ridicare la putere a unei matrici: pow-mat.md
     - Geometrie:
-        - Înfășurătoare convexă: "?"
-        - Baleiere (sweep line): baleiere_(sweep_line).md
+        - Înfășurătoare convexă: convex-hull.md
+        - Baleiere (sweep line): sweep-line.md
     - Algoritmi pe șiruri de caractere:
-        - Rotație lexicografică minimă: "?"
+        - Rotație lexicografică minimă: lmsr.md
         - Knuth-Morris-Pratt (KMP): kmp.md 
-        - Z Function: "?"
+        - Z Function: z-function.md
     - Lucrul pe arbori:
-        - Binary lifting: "?"
-        - Lowest common ancestor (LCA): "?"
-        - Small to large: small_to_large.md
-        - Structuri de date pe arbore (Euler tour): "?"
+        - Binary lifting: binary-lifting.md
+        - Lowest common ancestor (LCA): lowest-common-ancestor.md
+        - Small to large: small-to-large.md
+        - Structuri de date pe arbore (Euler tour): euler-tour.md
     - Altele:
-        - Bitsets: bitsets.md # wait what, de ce nu e aici?
-        - Algoritmi randomizați: algoritmi_randomizati.md
+        - Bitsets: bitsets.md 
+        - Algoritmi randomizați: random-algorithms.md
     

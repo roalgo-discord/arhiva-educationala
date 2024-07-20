@@ -695,12 +695,20 @@ int main() {
     return 0;
 }
 ```
+## Probleme suplimentare
 
-## Probleme și lectură suplimentară
-
-- Aici mai trebuie puse probleme
+- [Kilonova unire](https://kilonova.ro/problems/1611)
+- [CSES Message Route](https://cses.fi/problemset/task/1667)
+- [CSES Building Teams](https://cses.fi/problemset/task/1668)
+- [CSES Round Trip](https://cses.fi/problemset/task/1669)
+- [USACO Bronze Milk Factory](https://usaco.org/index.php?page=viewproblem2&cpid=940)
+- [USACO Bronze The Great Revegetation](https://usaco.org/index.php?page=viewproblem2&cpid=916)
+- [USACO Silver Closing the Farm](https://usaco.org/index.php?page=viewproblem2&cpid=644)
 - [Probleme cu grafuri de pe kilonova](https://kilonova.ro/tags/300)
+- [Probleme cu grafuri de pe codeforces, ordonate după dificultate](https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cgraphs%2Cdfs+and+similar)
+
+## Lectură suplimentară
+
 - [Grafuri - noțiuni teoretice de bază](https://cppi.sync.ro/materia/grafuri_arbori_notiuni_teoretice_de_baza.html)
 - [Articol introductiv de pe USACO Guide](https://usaco.guide/bronze/intro-graphs?lang=cpp)
 - [Articol despre parcurgeri de pe USACO Guide](https://usaco.guide/silver/graph-traversal?lang=cpp)
-- [Probleme cu grafuri de pe codeforces, ordonate după dificultate](https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cgraphs%2Cdfs+and+similar)

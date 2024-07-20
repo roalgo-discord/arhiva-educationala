@@ -1,45 +1,47 @@
 nav:
     - Concepte fundamente și de limbaj:
-        - Căutare completă: cautare_completa.md
+        - Căutare completă: complete-search.md
         - Introducere în STL: stl.md
-        - Liste înlănțuite: liste_inlantuite_.md
+        - Liste înlănțuite: linked-lists.md
     - Tehnici de rezolvare a problemelor:
-        - Abordarea problemelor ad-hoc: abordarea_problemelor_ad-hoc.md
-        - Abordarea problemelor constructive: abordarea_problemelor_constructive.md
-        - Abordarea concursurilor de pe Codeforces/AtCoder: abordare_codeforces_atcoder.md
+        - Abordarea problemelor ad-hoc: ad-hoc.md
+        - Abordarea problemelor constructive: constructive.md
+        - Abordarea concursurilor de pe Codeforces/AtCoder: cf-atcoder.md
+        - Abordarea problemelor cu secvențe: sequences.md
     - Algebră:
-        - Indicatorul lui Euler: indicatorul_lui_euler.md
-        - Ridicare la putere în timp logaritmic: ridicare_la_putere_in_timp_logaritmic.md
-        - Baze de numerație: baze_de_numeratie.md
+        - Indicatorul lui Euler: euler-totient.md
+        - Aritmetică modulară. Ridicare la putere în timp logaritmic: pow-log.md
+        - Baze de numerație: number-bases.md
         - Principiul includerii și excluderii (pinex): pinex.md
-        - Invers modular: invers_modular.md
+        - Invers modular: modular-inverse.md
         - Funcția Möbius: mobius.md
     - Sortare și căutare:
-        - Two pointers: two_pointers.md
-        - Sliding window: sliding_window.md
-        - Algoritmi de sortare: "?"
+        - Two pointers: two-pointers.md
+        - Sliding window: sliding-window.md
+        - Algoritmi de sortare: sorting-algorithms.md
     - Programare dinamică:
-        - Problema rucsacului: problema_rucsacului.md
+        - Problema rucsacului: knapsack.md
         - Subșir maximal: 
-            - Subșir comun maximal: subsir_comun_maximal.md
-            - Subșir crescător maximal: subsir_crescator_maximal
-        - Distanța Levenshtein: distanta_levenstein.md
-        - Dinamică pe stări exponențiale (bitmask DP): dinamica_pe_stari_exponentiale_(bitmask_dp).md
+            - Subșir comun maximal: lcs.md
+            - Subșir crescător maximal: lis.md
+        - Distanța Levenshtein: levenshtein.md
+        - Dinamică pe stări exponențiale (bitmask DP): bitmask-dp.md
     - Teoria grafurilor:
-        - Diametrul unui arbore: diametrul_unui_arbore.md
-        - Sortare topologică: sortare_topologica.md
+        - Diametrul unui arbore: tree-diameter.md
+        - Sortare topologică: toposort.md
         - Păduri de mulțimi disjuncte (DSU): dsu.md 
-        - Arbore parțial de cost minim: arbore_partial_de_cost_minim.md
-        - Algoritmi pentru drumuri minime: algoritmi_pentru_drumuri_minime.md
+        - Arbore parțial de cost minim: apcm.md
+        - Algoritmi pentru drumuri minime: shortest-path.md
         - Technica celor două DFS-uri (rerooting): rerooting.md
     - Structuri de date:
         - Algoritmul lui Lee (flood fill): lee.md
-        - Evaluarea unei expresii: evaluarea_unei_expresii.md
+        - Evaluarea unei expresii: expression-evaluation.md
         - Deque: deque.md
-    - Introducere în combinatorică: combinatorica.md
-    - Concepte fundamentale de geometrie: geometrie.md
+    - Introducere în combinatorică: intro-combinatorics.md
+    - Concepte fundamentale de geometrie: basic-geometry.md
     - Altele:
-        - Numere mari: numere_mari.md
-        - Normalizarea datelor: normalizarea_datelor.md
+        - Operații pe biți: bitwise-ops.md
+        - Numere mari: bignum.md
+        - Normalizarea datelor: data-normalization.md
         - Hashing: hashing.md
-        - Meet in the Middle: meet_in_the_middle.md
+        - Meet in the Middle: mitm.md
