@@ -15,12 +15,12 @@ Pentru a calcula aceste puteri, vom vrea să optimizăm metoda clasică de a în
 
 ## Fundamente ale calcului modular
 
-Înainte să prezentăm subiectul articolului, trebuie să prezentăm niște fundamente care ne vor ajuta să înțelegem mai bine conceptul de aici. 
+Înainte să prezentăm subiectul articolului, trebuie să prezentăm niște fundamente care ne vor ajuta să înțelegem mai bine conceptul de aici. Vom presupune că $a$ și $b$ sunt numere naturale, cuprinse între $0$ și $mod - 1$.
 
 ### Adunarea modulară 
 
 !!! note "Observație"
-    * $(a + b)\ \% \ mod = (a\%mod + b\%mod) \ \% \ mod$. Practic, dacă adunăm două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
+    * $(a + b)\ \% \ mod = (a \ \% \ mod + b \ \% \ mod) \ \% \ mod$. Practic, dacă adunăm două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
 
 De multe ori, când adunăm două numere care sunt deja mai mici decât $mod$, este de preferat să evităm operația $\%$ de la final, pentru a optimiza calculul aritmetic, deoarece operatorul $\%$ este foarte încet. Mai jos puteți găsi un exemplu. 
 
@@ -34,7 +34,7 @@ if (sum >= mod) { // mult mai rapid decat %
 ### Scăderea modulară 
 
 !!! note "Observație"
-    * $(a - b)\ \% \ mod = (a\%mod - b\%mod + mod) \ \% \ mod$. Practic, dacă scădem două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
+    * $(a - b)\ \% \ mod = (a\ \% \ mod - b \ \% \ mod + mod) \ \% \ mod$. Practic, dacă scădem două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
     
 Spre deosebire de adunare, trebuie să adăugăm un $mod$ în cazul în care rezultatul devine negativ, deoarece spre deosebire de proprietățile matematice, operatorul $\%$ poate returna valori negative în limbajul C++. Adăugarea acestui mod ne va ajuta să avem rezultate non-negative. Implementarea va fi una asemănătoare cu cea de la adunare.
 
@@ -48,7 +48,7 @@ if (sum < 0) { // mult mai rapid decat %
 ### Înmulțirea modulară 
 
 !!! note "Observație"
-    * $(a \cdot b)\ \% \ mod = ((a\%mod) \cdot (b\%mod)) \ \% \ mod$. Practic, dacă înmulțim două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
+    * $(a \cdot b)\ \% \ mod = ((a \ \% \ mod) \cdot (b \ \% \ mod)) \ \% \ mod$. Practic, dacă înmulțim două numere și facem modulo, e același lucru cu a face modulo separat, iar mai apoi, să facem modulo la final. 
     
 Deși nu putem optimiza calculul modulului, trebuie să fim atenți la posibilitatea ca rezultatul să nu devină mai mare decât valoarea maximă a tipurilor de date folosite în probleme (de regulă, tipul int). Folosirea valorii `1LL` (scrierea lui $1$ folosind tipul de date `long long`) rezolvă această problemă.
 
@@ -58,7 +58,7 @@ long long sum = (1LL * a * b) % mod;
 
 ### Împărțirea (inversul) modular 
 
-Împărțirea este cea mai grea operație de manevrat în cazul operațiilor modulare, recomandăm citirea articolului despre invers modular pentru mai multe detalii.
+Împărțirea este cea mai grea operație de manevrat în cazul operațiilor modulare, recomandăm citirea articolului despre [invers modular](https://roalgo-discord.github.io/arhiva-educationala/mediu/modular-inverse/) pentru mai multe detalii.
 
 ## Ridicarea la putere în timp logaritmic
 
@@ -74,7 +74,7 @@ for (int i = 1; i <= n; i++) {
 Totuși, nu am folosit încă o proprietate esențială pentru a optimiza calculul de mai sus.
 
 !!! note "Observație"
-    $$a^b = ({a^\frac{n}{2}})^2$$ cu alte cuvinte, dacă $n$ este par, putem să aflăm $a^\frac{n}{2}$ și apoi să-l ridicăm la pătrat. 
+    $$a^b = {a^\frac{n}{2}}^2$$ cu alte cuvinte, dacă $n$ este par, putem să aflăm $a^\frac{n}{2}$ și apoi să-l ridicăm la pătrat. 
 
 Această proprietate ne va ajuta să deducem următorul mod de a calcula $a^n$ recursiv. 
 
@@ -120,6 +120,11 @@ Acest algoritm se poate implementa atât recursiv, cât și iterativ, acestea fi
         return ans;
     }
     ```
+
+## Concluzii
+
+Aritmetica modulară este esențială pentru înțelegerea calculelor de acest fel, care apar la foarte multe tipuri de probleme, precum cele la programarea dinamică, combinatorică sau matematică mai avansată. Ridicarea la putere în timp logaritmic este o rutină folosită și ulterior, în ceea ce privește algebra liniară și operații combinatoriale.
+
 ## Probleme suplimentare 
 
 * [CSES Exponentiation II](https://cses.fi/problemset/task/1712)
