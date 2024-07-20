@@ -148,6 +148,7 @@ int main() {
 * [Subordinates](https://cses.fi/problemset/task/1674)
 * [nivele2 infoarena](https://www.infoarena.ro/problema/nivele2)
 * [Grarb infoarena](https://www.infoarena.ro/problema/grarb)
+* [IIOT tourdetree](https://kilonova.ro/problems/630)
 * [Tree Diameter](https://kilonova.ro/problems/2188)
 * [Mootube USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=788)
 * [Milk Visits USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=968)

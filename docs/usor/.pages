@@ -2,7 +2,8 @@ nav:
     - Concepte fundamentale și de limbaj:
         - Introducere în C++: intro-cpp.md
         - Cunoștințe matematice de bază: basic-math.md
-        - Complexități, stil de cod și alte fundamente: complexity-codestyle.md
+        - Complexități: complexity.md
+        - Stil de cod și alte fundamente: codestyle.md
         - Prelucrarea cifrelor: digits-manipulation.md
         - Vectori (tablouri): arrays.md
         - Matrici: matrices.md
