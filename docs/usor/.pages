@@ -1,23 +1,22 @@
 nav:
     - Concepte fundamentale și de limbaj:
-        - Introducere în C++: introducere_intr-un_limbaj_de_programare.md
-        - Cunoștințe matematice de bază: cunostinte_matematice_de_baza.md
-        - Complexități, stil de cod și alte fundamente: complexitati_coding_style_alte_fundamente.md
-        - Prelucrarea cifrelor: prelucrarea_cifrelor.md
-        - Vectori (tablouri): vectori.md
-        - Matrici: matrici.md
-        - Simularea soluției: simularea_solutiei.md
-        - Șiruri de caractere: siruri_de_caractere.md
-        - Operații pe biți: operatii_pe_biti.md
-        - Subprograme: subprograme.md
+        - Introducere în C++: intro-cpp.md
+        - Cunoștințe matematice de bază: basic-math.md
+        - Complexități, stil de cod și alte fundamente: complexity-codestyle.md
+        - Prelucrarea cifrelor: digits-manipulation.md
+        - Vectori (tablouri): arrays.md
+        - Matrici: matrices.md
+        - Simularea soluției: simulating-solution.md
+        - Șiruri de caractere: strings.md
+        - Subprograme: functions.md
     - Algebră:
-        - Divizibilitatea: divizibilitate.md
+        - Divizibilitatea: divisibility.md
         - Ciurul lui Eratostene: sieve.md
     - Sortare și căutare:
-        - Sume parțiale: sume_partiale.md
+        - Sume parțiale: partial-sums.md
         - Algoritmi simpli de sortare: sorting.md
-        - Metoda Greedy: metoda_greedy.md
-        - Căutarea binară: cautari.md
-    - Introducere în programare dinamică: usor/intro-dp
-    - Introducere în teoria grafurilor: usor/graphs
+        - Metoda Greedy: greedy.md
+        - Căutarea binară: binary-search.md
+    - Introducere în programarea dinamică: intro-dp.md
+    - Introducere în teoria grafurilor: graphs.md
     

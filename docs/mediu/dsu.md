@@ -68,9 +68,9 @@ void Union(int a, int b) {
 }
 ```
 
-1.  Vom vrea sa atașăm nodul b la nodul a.
-2.	Rădăcina lui b devine a.
-3.	Creștem cardinalul lui a cu cardinalul lui b.
+1.  Vom vrea sa atașăm nodul $b$ la nodul $a$.
+2.	Rădăcina lui $b$ devine $a$.
+3.	Creștem cardinalul lui $a$ cu cardinalul lui $b$.
 
 ### Operația de căutare (Find)
 
@@ -560,6 +560,8 @@ grafuri.
 
 * [Chemical table - EJOI 2018](https://cses.fi/395/list/)
 * [MexC ONI 2008](https://kilonova.ro/problems/1785)
+* [JBOI 2023 Frequencies](https://kilonova.ro/problems/2013/)
+* [IIOT 2023-24 Binary Chess](https://kilonova.ro/problems/1936)
 * [Probleme cu DSU de pe kilonova](https://kilonova.ro/tags/311)
 * [COCI 13-ladice](https://dmoj.ca/problem/coci13c5p6)
 * [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
