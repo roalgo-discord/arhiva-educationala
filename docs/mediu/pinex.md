@@ -203,6 +203,7 @@ Principiul includerii și excluderii este un principiu ce se dovedește a fi uti
 * [infoarena reuniune](https://infoarena.ro/problema/reuniune)
 * [infoarena pairs](https://infoarena.ro/problema/pairs)
 * [Codeforces Orac and LCM](https://codeforces.com/contest/1349/problem/A)
+* [OJI 2024 Poseidon](https://kilonova.ro/problems/2506/)
 * [Codeforces Count GCD](https://codeforces.com/contest/1750/problem/D)
 * [USACO Gold Cowpability](http://www.usaco.org/index.php?page=viewproblem2&cpid=862)
 * [Codeforces Small GCD](https://codeforces.com/contest/1900/problem/D)
@@ -211,7 +212,7 @@ Principiul includerii și excluderii este un principiu ce se dovedește a fi uti
 * [Lot Juniori 2024 pmo](https://kilonova.ro/problems/2807)
 * [RoAlgo Contest #1 Echipe](https://kilonova.ro/problems/652)
 * [infoarena cowfood](https://infoarena.ro/problema/cowfood)
-* [ONI 2019 XI-XII TreeGCD](https://kilonova.ro/problems/11)
+* [ONI 2019 TreeGCD](https://kilonova.ro/problems/11)
 * [Atcoder DP Contest Grid 2](https://atcoder.jp/contests/dp/tasks/dp_y)
 * [Probleme cu PINEX de pe Kilonova](https://kilonova.ro/tags/292)
 
