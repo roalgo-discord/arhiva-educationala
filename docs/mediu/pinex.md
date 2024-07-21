@@ -72,7 +72,7 @@ int main() {
 Pentru a aplica aceeași formulă pentru trei sau mai multe mulțimi, vom prezenta o proprietate importantă care ne va ajuta de-a lungul formulelor viitoare. 
 
 !!! note "Observație"
-    Pentru a calcula răspunsul unei probleme la care va trebui să aplicăm acest principiu, vom aduna mereu la răspuns rezultatele mulțimilor cu cardinal impar și vom scădea din răspuns rezultatele mulțimilor cu cardinal par. 
+    Pentru a calcula răspunsul unei probleme la care va trebui să aplicăm acest principiu, vom aduna mereu la răspuns numărul elementelor care se află într-un număr impar de mulțimi și vom scădea din răspuns cele care apar într-un număr par de mulțimi.
 
 ![](../images/pinex/pinex.png)
 
