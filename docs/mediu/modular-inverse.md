@@ -8,7 +8,7 @@ tags:
 
 ## Problema
 
-În cadrul multor probleme de informatică se cere calcularea unor valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.
+În cadrul multor probleme de informatică se cere calcularea unei valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.
 
 ## Ce este inversul modular?
 
@@ -16,9 +16,9 @@ tags:
 
 Atunci, pentru a efectua operația de împărțire cu respect la modul dintre $A$ și $B$ trebuie să îl înmulțim pe $A$ cu inversul modular al lui $B$, deoarece $(\frac{A}{B}) \mod{M} = (A \cdot B^{-1}) \mod{M}$.
 
-## Cum calculam inversul modular al unui număr?
+## Cum calculăm inversul modular al unui număr?
 
-### Calcularea folosind mica teorema a lui Fermat
+### Calcularea folosind mica teoremă a lui Fermat
 
 !!! note "Mica teoremă a lui Fermat"
 
@@ -50,7 +50,7 @@ r = A - M \cdot c &\implies Mx_2 + (A - M \cdot c)y_2 = 1\\
 &\iff Ay_2 + M(x_2 - c \cdot y_2) = 1
 \end{align*}
 $$
-Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid, adăugându-i parametrii $x_1$ si $y_1$:
+Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid, adăugându-i parametrii $x_1$ și $y_1$:
 
 ```cpp
 void euclidExtins(const int a, const int b, int& x1, int& y1);
@@ -61,7 +61,7 @@ void euclidExtins(const int a, const int b, int& x1, int& y1);
 !!! warning "Atenție"
     Valoarea lui $x_1$ poate fi și negativă. Dacă este necesară o valoare pozitivă atunci facem operația $x_1 = x_1 + M$.
 
-Mai jos se poate găsi o implementare în C++ a algoritmului lui Euclid, respectiv a funcției de calculare a inversului modular al lui $A$ pentru modulul $M$:
+Mai jos se poate observa o implementare în C++ a algoritmului lui Euclid, respectiv a funcției de calculare a inversului modular al lui $A$ pentru modulul $M$:
 
 ```cpp
 void euclidExtins(const int a, const int b, int& x1, int& y1) {
