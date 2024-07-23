@@ -5,6 +5,8 @@ hide:
   - toc
 ---
 
+## Instalare
+
 Pentru a instala:
 
 1. Descarcă executabilul de setup de aici (Visual Studio 2022 Community, este
@@ -48,6 +50,8 @@ Pentru a instala:
     <figure markdown="span">
     ![](./vs2022/msvc-3.png){ loading=lazy }
     </figure>
+
+## Configurare și utilizare
 
 Felicitări! Ai instalat Visual Studio 2022. Acum vremea să îl configurăm și
 folosim.
@@ -191,9 +195,9 @@ memorie, deci poate fi uneori încet):
 
     [Descarcă script :material-download:](./vs2022/ImproveVS2022.ps1){ .md-button .md-button--primary }
 
-    <details><summary>Scriptul complet (salvat în ImproveVS2022.ps1)</summary>
-    ```powershell
-    if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))
+    <details><summary>Scriptul complet</summary>
+    ```ps1 title="ImproveVS2022.ps1"
+    if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) 
     {
         Write-Host "Ruleaza acest script ca Administrator." -ForegroundColor Red
         exit
@@ -250,43 +254,43 @@ memorie, deci poate fi uneori încet):
         'sqlwriter.exe'
     )
 
-    Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele și procesele comune ale Visual Studio 2022."
+    Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele si procesele comune ale Visual Studio 2022."
     Write-Host ""
-    $projectsFolder = Read-Host "Care este calea către folderul proiectelor tale? (exemplu: $userPath\source\repos)"
+    $projectsFolder = Read-Host "Care este calea catre folderul proiectelor tale? (exemplu: $userPath\source\repos)"
 
-    if (-not (Test-Path $projectsFolder))
+    if (-not (Test-Path $projectsFolder)) 
     {
-        Write-Host "Calea specificată pentru folderul proiectelor nu există. Ieșire din script." -ForegroundColor Red
+        Write-Host "Calea specificata pentru folderul proiectelor nu exista. Iesire din script." -ForegroundColor Red
         exit
     }
 
     Write-Host ""
-    Write-Host "Adăugare excludere cale: $projectsFolder"
+    Write-Host "Adaugare excludere cale: $projectsFolder"
     Add-MpPreference -ExclusionPath $projectsFolder
 
-    foreach ($exclusion in $pathExclusions)
+    foreach ($exclusion in $pathExclusions) 
     {
-        Write-Host "Adăugare excludere cale: $exclusion"
-        try
+        Write-Host "Adaugare excludere cale: $exclusion"
+        try 
         {
             Add-MpPreference -ExclusionPath $exclusion
-        }
-        catch
+        } 
+        catch 
         {
-            Write-Host "Nu s-a reușit adăugarea excluderii pentru calea: $exclusion - $_" -ForegroundColor Yellow
+            Write-Host "Nu s-a reusit adaugarea excluderii pentru calea: $exclusion - $_" -ForegroundColor Yellow
         }
     }
 
-    foreach ($exclusion in $processExclusions)
+    foreach ($exclusion in $processExclusions) 
     {
-        Write-Host "Adăugare excludere proces: $exclusion"
-        try
+        Write-Host "Adaugare excludere proces: $exclusion"
+        try 
         {
             Add-MpPreference -ExclusionProcess $exclusion
-        }
-        catch
+        } 
+        catch 
         {
-            Write-Host "Nu s-a reușit adăugarea excluderii pentru procesul: $exclusion - $_" -ForegroundColor Yellow
+            Write-Host "Nu s-a reusit adaugarea excluderii pentru procesul: $exclusion - $_" -ForegroundColor Yellow
         }
     }
 
@@ -294,13 +298,12 @@ memorie, deci poate fi uneori încet):
     Write-Host "Excluderile tale:"
     $prefs = Get-MpPreference
 
-    Write-Host "Căile excluse:"
+    Write-Host "Caile excluse:"
     $prefs.ExclusionPath
     Write-Host ""
 
     Write-Host "Procesele excluse:"
     $prefs.ExclusionProcess
-
     ```
     </details>
 

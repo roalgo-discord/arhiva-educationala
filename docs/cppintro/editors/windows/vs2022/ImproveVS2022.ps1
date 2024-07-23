@@ -55,43 +55,43 @@ $processExclusions = @(
     'sqlwriter.exe'
 )
 
-Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele și procesele comune ale Visual Studio 2022."
+Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele si procesele comune ale Visual Studio 2022."
 Write-Host ""
-$projectsFolder = Read-Host "Care este calea către folderul proiectelor tale? (exemplu: $userPath\source\repos)"
+$projectsFolder = Read-Host "Care este calea catre folderul proiectelor tale? (exemplu: $userPath\source\repos)"
 
 if (-not (Test-Path $projectsFolder)) 
 {
-    Write-Host "Calea specificată pentru folderul proiectelor nu există. Ieșire din script." -ForegroundColor Red
+    Write-Host "Calea specificata pentru folderul proiectelor nu exista. Iesire din script." -ForegroundColor Red
     exit
 }
 
 Write-Host ""
-Write-Host "Adăugare excludere cale: $projectsFolder"
+Write-Host "Adaugare excludere cale: $projectsFolder"
 Add-MpPreference -ExclusionPath $projectsFolder
 
 foreach ($exclusion in $pathExclusions) 
 {
-    Write-Host "Adăugare excludere cale: $exclusion"
+    Write-Host "Adaugare excludere cale: $exclusion"
     try 
     {
         Add-MpPreference -ExclusionPath $exclusion
     } 
     catch 
     {
-        Write-Host "Nu s-a reușit adăugarea excluderii pentru calea: $exclusion - $_" -ForegroundColor Yellow
+        Write-Host "Nu s-a reusit adaugarea excluderii pentru calea: $exclusion - $_" -ForegroundColor Yellow
     }
 }
 
 foreach ($exclusion in $processExclusions) 
 {
-    Write-Host "Adăugare excludere proces: $exclusion"
+    Write-Host "Adaugare excludere proces: $exclusion"
     try 
     {
         Add-MpPreference -ExclusionProcess $exclusion
     } 
     catch 
     {
-        Write-Host "Nu s-a reușit adăugarea excluderii pentru procesul: $exclusion - $_" -ForegroundColor Yellow
+        Write-Host "Nu s-a reusit adaugarea excluderii pentru procesul: $exclusion - $_" -ForegroundColor Yellow
     }
 }
 
@@ -99,7 +99,7 @@ Write-Host ""
 Write-Host "Excluderile tale:"
 $prefs = Get-MpPreference
 
-Write-Host "Căile excluse:"
+Write-Host "Caile excluse:"
 $prefs.ExclusionPath
 Write-Host ""
 
