@@ -14,13 +14,15 @@ O platformă foarte populară folosită de elevii și studenții din toată lume
 
 Deși concursurile de pe Codeforces sunt diferite ca format față de olimpiade (de regulă, 5-7 probleme în 2-3 ore, de regulă ordonate crescător în funcție de dificultate), problemele de pe acest site sunt foarte apreciate și recomandate de sute de mii de utilizatori la nivel global, fiind cea mai mare platformă de acest fel la nivel mondial. Problemele sunt disponibile în engleză și rusă.
 
+Această platformă este una pe care o recomandăm mai ales după ce aveți oarecare experiență cu problemele de pe Pbinfo și cele mai simple date la concursurile românești de informatică, pentru o provocare în plus și pentru a învăța lucruri noi.
+
 ## Formatul problemelor
 
 Problemele sunt algoritmice, nivelul acestora este unul foarte variat, începând de la aplicații foarte simple, similare cu nivelul problemelor de pe siteuri precum Pbinfo și terminând cu probleme foarte dificile, uneori nerezolvate în timpul concursurilor. De regulă, problemele A de la rundele de Div. 3 și Div. 4 sunt cele mai ușoare, unele din cele mai dificile probleme fiind problemele de la rundele de Div. 1, literele E-F sunt cele mai dificile, sau echivalentul lor, problemele G, H sau I de la rundele Div. 1 + Div. 2. 
 
 Deși sunt peste $10 \ 000$ de probleme pe Codeforces, o bună parte dintre ele se vor dovedi a nu fi foarte relevante pentru contextul fiecărui cititor al acestei arhive, din cauza dificultății prea scăzute/ridicate a acestora sau din cauza faptului că stilul problemelor nu se mai regăsește la fel de mult în problemele care se dau în prezent pe Codeforcees.
 
-Spre deosebire de problemele cu care sunteți obișnuiți de la olimpiade, verdictele care pot apărea pe Codeforces sunt diferite. Cele mai frecvent întâlnite sunt acestea: 
+Spre deosebire de problemele cu care sunteți obișnuiți de la olimpiade sau de pe Pbinfo, verdictele care pot apărea pe Codeforces sunt diferite. Cele mai frecvent întâlnite sunt acestea: 
 
 * Accepted: Ați rezolvat problema corect, echivalent punctajului de $100$ de puncte de la olimpiade. În timpul concursului puteți găsi verdictul Pretests passed, similar în scop cu Accepted. 
 * Wrong answer on test x: Ați rezolvat corect problema pentru primele $x-1$ teste, dar la testul $x$, răspunsul este greșit. 
@@ -36,7 +38,7 @@ Spre deosebire de problemele cu care sunteți obișnuiți de la olimpiade, verdi
 
 ### Diviziile și ratingurile de pe Codeforces
 
-În funcție de nivelul dovedit la concursurile de pe Codeforces, concurenții pot avea următoarele culori și titluri:
+În funcție de nivelul dovedit la concursurile de pe Codeforces, nivel măsurat prin rating, concurenții pot avea următoarele culori și titluri:
 
 | Titlu                     | Culoare | Rating    | Divizie |
 |---------------------------|---------|-----------|---------|
@@ -57,7 +59,7 @@ Spre deosebire de problemele cu care sunteți obișnuiți de la olimpiade, verdi
 !!! note "Server internațional pentru cei cu rating 1900+"
     Există un server neoficial de Discord care cuprinde cea mai mare comunitate de utilizatori care sunt în Div. 1, [AC](https://discord.gg/RFfkprBt7r), accesul la discuții fiind disponibil celor cu rating peste $1900$, ei fiind creatorii botului TLE, pe care îl avem și noi.
     
-Inițial, un concurent are rating $0$, dar după $6$ concursuri, ratingul devine unul conform cu abilitățile sale, mai multe detalli sunt [aici](https://codeforces.com/blog/entry/77890). 
+Inițial, un concurent are rating $0$, dar după $6$ concursuri în care ratingul este unul provizoriu, acesta devine unul conform cu abilitățile dovedite de concurent, mai multe detalli sunt [aici](https://codeforces.com/blog/entry/77890). Sistemul prin care se acordă rating este unul de tip ELO, în care se măsoară performanța fiecărui concurent comparat cu performanța medie care era așteptată de la acesta.
 
 În funcție de ratingul pe care un concurent îl are, acesta poate participa la următoarele tipuri de competiții în mod oficial:
 
