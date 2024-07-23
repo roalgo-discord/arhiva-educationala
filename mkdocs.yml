@@ -102,13 +102,19 @@ edit_uri: edit/main/docs/
 
 plugins:
   - search
-  - awesome-pages
+  # - awesome-pages
   - tags
   - social:
       enabled: !ENV [CI, false]
       cards_layout_options:
         font_family: Roboto
         font_variant: Condensed
+
+nav:
+  - Acasă: index.md
+  - Introducere în C++:
+    - cppintro/index.md
+    - Introducere: cppintro/intro.md
 
 extra_javascript:
   - javascripts/katex.js
