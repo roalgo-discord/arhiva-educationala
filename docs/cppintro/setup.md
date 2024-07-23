@@ -77,7 +77,7 @@ următoarele opțiuni:
     MSVC (Microsoft Visual C++) este un compilator proprietar făcut de Microsoft
     și este parte din IDE-ul Visual Studio.
 
-    [:octicons-arrow-right-24: Vezi instrucțiuni pentru Visual Studio](#)
+    [:octicons-arrow-right-24: Vezi instrucțiuni pentru Visual Studio](#visual-studio-2022)
 
 - :material-sheep:{ .lg .middle } **GCC (MinGW)**
 
@@ -229,7 +229,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
     instrumente de dezvoltare și suportului pentru extensii, oferind o
     experiență de codare puternică și flexibilă.
 
-    [:octicons-arrow-right-24: Instalare și configurare](#)
+    [:octicons-arrow-right-24: Instalare și configurare](#visual-studio-code)
 
 - **Sublime Text 4**
 
@@ -240,7 +240,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
     datorită funcțiilor avansate precum evidențierea sintaxei și completarea
     automată, alături de un sistem robust de plugin-uri.
 
-     [:octicons-arrow-right-24: Instalare și configurare](#)
+     [:octicons-arrow-right-24: Instalare și configurare](#sublime-text-4)
 
 - **Notepad++**
 
@@ -252,7 +252,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
     alegere excelentă pentru dezvoltatorii care au nevoie de un editor eficient
     și ușor de folosit.
 
-     [:octicons-arrow-right-24: Instalare și configurare](#)
+     [:octicons-arrow-right-24: Instalare și configurare](#notepad)
 
 </div>
 
@@ -283,7 +283,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     un editor de cod avansat, debuger integrat, suport pentru controlul
     versiunilor și multe altele. Rulează doar pe Windows.
 
-    [:octicons-arrow-right-24: Instalare și configurare](#)
+    [:octicons-arrow-right-24: Instalare și configurare](#visual-studio-2022)
 
 - **Code::Blocks**
 
@@ -296,7 +296,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     printre programatorii C/C++. În plus, acesta este editorul implicit pentru
     olimpiadă. Rulează pe Windows, macOS, Linux, FreeBSD și OpenBSD.
 
-    [:octicons-arrow-right-24: Instalare și configurare](#)
+    [:octicons-arrow-right-24: Instalare și configurare](#codeblocks)
 
 - **Qt Creator**
 
@@ -312,7 +312,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     pentru diverse nevoi ale dezvoltatorilor. Rulează pe Windows, macOS, Linux,
     FreeBSD, OpenBSD și NetBSD.
 
-    [:octicons-arrow-right-24: Instalare și configurare](#)
+    [:octicons-arrow-right-24: Instalare și configurare](#qt-creator)
 
 - **CLion**
 
@@ -327,7 +327,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     instrumentelor sale avansate și integrării cu diverse sisteme de control al
     versiunilor. Rulează pe Windows, macOS și Linux.
 
-    [:octicons-arrow-right-24: Instalare și configurare](#)
+    [:octicons-arrow-right-24: Instalare și configurare](#clion)
 
 </div>
 
@@ -336,3 +336,29 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     CLion, spre deosebire de celelalte opțiuni, nu este gratis. Totuși, dacă
     ești eligibil, poți avea un cont de student ceea ce îți oferă acces la
     CLion, precum și la alte produse marca JetBrains.
+
+## Editoare și IDE-uri
+
+### Editoare de text
+
+#### Visual Studio Code
+
+#### Notepad++
+
+#### Sublime Text 4
+
+<!-- #### BBEdit -->
+
+<!-- Add more... or maybe...? -->
+
+### IDE-uri
+
+#### Visual Studio 2022
+
+#### Xcode
+
+#### Code::Blocks
+
+#### Qt Creator
+
+#### CLion
