@@ -244,6 +244,7 @@ Pentru a rezolva acest tip de probleme, de cele mai multe ori vom căuta binar r
 
 * [CSES Counting Numbers](https://cses.fi/problemset/task/2220/)
 * [Bug Lot Juniori 2024](https://kilonova.ro/problems/2800)
+* [AtCoder Digit Sum](https://atcoder.jp/contests/dp/tasks/dp_s)
 * [Perfect Number](https://codeforces.com/contest/919/problem/B)
 * [USACO Silver Odometer](https://usaco.org/index.php?page=viewproblem2&cpid=435)
 * [SPOJ Digit Sum](https://www.spoj.com/problems/PR003004/)

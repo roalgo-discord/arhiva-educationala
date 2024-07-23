@@ -24,7 +24,6 @@ nav:
         - Subșir maximal: 
             - Subșir comun maximal: lcs.md
             - Subșir crescător maximal: lis.md
-        - Distanța Levenshtein: levenshtein.md
         - Dinamică pe stări exponențiale (bitmask DP): bitmask-dp.md
     - Teoria grafurilor:
         - Diametrul unui arbore: tree-diameter.md
