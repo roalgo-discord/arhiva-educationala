@@ -86,9 +86,9 @@ Competițiile de pe Codeforces sunt de două tipuri, după cum urmează:
 
 De regulă, competițiile durează între $120$ și $150$ minute ($2$ ore - $2.5$ ore), rareori durând $180$ minute în cazul unor runde mai dificile și încep vara în jurul orei 17:35 sau iarna în jurul 16:35, cu mici excepții.
 
-În cadrul rundelor menționate în prima categorie, există o secțiune după concurs de $12$ ore, în care orice test care este folosit pentru a da hack la o soluție care obținuse Accepted în timpul concursului va fi folosit pentru a evalua toate celelalte soluții, la finalul acestei etape. 
+În cazul rundelor menționate în prima categorie, soluțiile vor fi testate doar pe o parte din testele finale ale problemei (_preteste_), iar verdictul de Accepted va fi înlocuit în timpul rundei cu verdictul Pretests passed. 
 
-În cazul rundelor menționate în cea de-a doua categorie, soluțiile vor fi testate doar pe o parte din testele finale ale problemei (_preteste_), iar verdictul de Accepted va fi înlocuit în timpul rundei cu verdictul Pretests passed. 
+În cadrul rundelor menționate în cea de-a doua categorie, există o secțiune după concurs de $12$ ore, în care orice test care este folosit pentru a da hack la o soluție care obținuse Accepted în timpul concursului va fi folosit pentru a evalua toate celelalte soluții, la finalul acestei etape. 
 
 Indiferent de rundă, are loc o secțiune în care toate testele pregătite de autori sunt folosite pentru a evalua soluțiile, cele care iau Accepted după această secțiune sunt cele care vor conta la scorul fiecărui concurent. 
 
