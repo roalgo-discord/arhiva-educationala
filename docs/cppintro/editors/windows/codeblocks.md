@@ -152,63 +152,62 @@ din bara de mediu.
     ![](./image-8.png){ loading=lazy }
     </figure>
 
-4. Acum ne mutăm pe tab-ul cu Other editor settings. Aici vom configura
-    următoarele chestii:
+Acum ne mutăm pe tab-ul cu **Other editor settings**. Aici vom configura
+următoarele chestii:
 
-    1. Bifează Word Wrap. Această funcție încadrează textul automat în caz că
-        este prea lung.
-    2. Este opțional, însă poți bifa Highlight line under caret, care
-        evidențiază linia pe care ești în momentul de față.
-    3. Acest lucru este preferință personală, însă poți face fontul să se
-        randeze mai bine pe ecran. La Technology alege DirectWrite, și la Font
-        quality alege LCD optimized (mă îndoiesc că ai un monitor cu tub ca pe
-        vremuri).
+1. Bifează Word Wrap. Această funcție încadrează textul automat în caz că este
+    prea lung.
+2. Este opțional, însă poți bifa Highlight line under caret, care evidențiază
+    linia pe care ești în momentul de față.
+3. Acest lucru este preferință personală, însă poți face fontul să se randeze
+    mai bine pe ecran. La Technology alege DirectWrite, și la Font quality alege
+    LCD optimized (mă îndoiesc că ai un monitor cu tub ca pe vremuri).
 
-5. Acum mergem la Margins and caret, unde vom face două schimbări:
+Acum mergem la **Margins and caret**, unde vom face două schimbări:
 
-    1. Activăm Dynamic setting, deoarece bara care arată numărul de linie este
-        mult prea groasă.
-    2. La Right margin hint, selectează Visible line. La a 80-a coloană, arată
-        o linie verticală. Dacă nu treci de acea linie, atunci codul tău va fi
-        mai ușor de citit, pentru că nu vei avea linii kilometrice.
+1. Activăm Dynamic setting, deoarece bara care arată numărul de linie este mult
+    prea groasă.
+2. La Right margin hint, selectează Visible line. La a 80-a coloană, arată o
+    linie verticală. Dacă nu treci de acea linie, atunci codul tău va fi mai
+    ușor de citit, pentru că nu vei avea linii kilometrice.
 
-6. Un aspect foarte disputat la Code::Blocks este **tema sa implicită**, cu
-    albul orbitor. Din păcate, Code::Blocks nu vine cu o temă întunecată, mai
-    prietenoasă cu ochii noaptea (de fapt, nu vine cu alte teme în afară de cea
-    standard). Din motive tehnice care nu sunt în controlul proiectului
-    Code::Blocks, nu o să avem vreodată interfața cu temă întunecată (pe alte
-    platforme însă se poate), dar putem schimba tema editorului. Pentru a
-    rezolva această problemă:
+Un aspect foarte disputat la Code::Blocks este **tema sa implicită**, cu albul
+orbitor. Din păcate, Code::Blocks nu vine cu o temă întunecată, mai prietenoasă
+cu ochii noaptea (de fapt, nu vine cu alte teme în afară de cea standard). Din
+motive tehnice care nu sunt în controlul proiectului Code::Blocks, nu o să avem
+vreodată interfața cu temă întunecată (pe alte platforme însă se poate), dar
+putem schimba tema editorului. Pentru a rezolva această problemă:
 
-    1. Mergi la [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes). Acolo o să vezi mai multe teme.
-    2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
-       însă prezervat pentru conveniența cititorului):
+1. Mergi la [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes). Acolo o să vezi mai multe teme.
+2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
+    însă prezervat pentru conveniența cititorului):
 
-        [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
+    [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
 
-    3. **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
-       vreo fereastră ascunsă.
-    4. Caută locația unde este instalat Code::Blocks și deschide folderul
-       corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
-    5. Ai un executabil numit `cb_share_config.exe`. Rulează-l.
-    6. În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care
-       l-ai descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
-    7. În partea stângă, bifează tot din listă.
+3. **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
+    vreo fereastră ascunsă.
+4. Caută locația unde este instalat Code::Blocks și deschide folderul
+    corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
+5. Ai un executabil numit `cb_share_config.exe`. Rulează-l.
+6. În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
+    descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află
+    la `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
+7. În partea stângă, bifează tot din listă.
 
-        Asigură-te că fereastra ta arată așa:
-        <figure markdown="span">
-        ![](./image-9.png){ loading=lazy }
-        </figure>
-
-    8. Apasă Transfer și răspunde cu Yes când ți se cere.
-    9. Apasă pe Save.
-    10. Închide programul și deschide Code::Blocks înapoi.
-    11. Alege o temă din Settings > Editor > Syntax highlighting. Eu personal
-        folosesc Son of Obsidian, dar asta rămâne la latitudinea ta.
-
-    După toți acești pași, așa arată editorul cu tema Son of Obsidian:
+    Asigură-te că fereastra ta arată așa:
     <figure markdown="span">
-    ![](./image-10.png){ loading=lazy }
+    ![](./image-9.png){ loading=lazy }
     </figure>
 
-    Este mai puțin alb, chiar dacă nu este temă întunecată peste tot.
+8. Apasă Transfer și răspunde cu Yes când ți se cere.
+9. Apasă pe Save.
+10. Închide programul și deschide Code::Blocks înapoi.
+11. Alege o temă din Settings > Editor > Syntax highlighting. Eu personal
+    folosesc Son of Obsidian, dar asta rămâne la latitudinea ta.
+
+După toți acești pași, așa arată editorul cu tema Son of Obsidian:
+<figure markdown="span">
+![](./image-10.png){ loading=lazy }
+</figure>
+
+Este mai puțin alb, chiar dacă nu este temă întunecată peste tot.
