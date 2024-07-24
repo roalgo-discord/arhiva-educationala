@@ -45,8 +45,6 @@ Mai jos puteți găsi implementările iterative și recursive ale acestei proble
     #include <vector>
     using namespace std;
  
-    const int mod = 1000000007;
- 
     vector<vector<int> > dp;
 
     int solve (int n, int m) {
@@ -83,9 +81,7 @@ Mai jos puteți găsi implementările iterative și recursive ale acestei proble
     #include <iostream>
     #include <vector>
     using namespace std;
- 
-    const int mod = 1000000007;
- 
+  
     int main() {
     
         int n, m;
@@ -232,6 +228,8 @@ După cum se poate vedea, Range DP este o tehnică care se dovedește a fi foart
 * [Empty String CSES](https://cses.fi/problemset/task/1080)
 * [Queries for Number of Palindromes Codeforces](https://codeforces.com/contest/245/problem/H)
 * [3SUM USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=994)
+* [Replace on Segment Codeforces](https://codeforces.com/contest/1922/problem/F)
+* [Interesting Problem (Hard Version) Codeforces](https://codeforces.com/contest/1987/problem/F2)
 * [Probleme de pe kilonova cu Range DP](https://kilonova.ro/tags/278)
 * [Probleme de pe pbinfo cu Range DP](https://www.pbinfo.ro/probleme/eticheta/121/programare-dinamica-metoda-mixta)
 
