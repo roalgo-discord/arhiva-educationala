@@ -172,10 +172,13 @@ din bara de mediu.
         o linie verticală. Dacă nu treci de acea linie, atunci codul tău va fi
         mai ușor de citit, pentru că nu vei avea linii kilometrice.
 
-6. Un aspect foarte disputat la Code::Blocks este tema sa implicită, cu albul
-    orbitor. Din păcate, Code::Blocks nu vine cu o temă întunecată, mai
+6. Un aspect foarte disputat la Code::Blocks este **tema sa implicită**, cu
+    albul orbitor. Din păcate, Code::Blocks nu vine cu o temă întunecată, mai
     prietenoasă cu ochii noaptea (de fapt, nu vine cu alte teme în afară de cea
-    standard). Pentru a rezolva această problemă:
+    standard). Din motive tehnice care nu sunt în controlul proiectului
+    Code::Blocks, nu o să avem vreodată interfața cu temă întunecată (pe alte
+    platforme însă se poate), dar putem schimba tema editorului. Pentru a
+    rezolva această problemă:
 
     1. Mergi la [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes). Acolo o să vezi mai multe teme.
     2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
@@ -200,3 +203,12 @@ din bara de mediu.
     8. Apasă Transfer și răspunde cu Yes când ți se cere.
     9. Apasă pe Save.
     10. Închide programul și deschide Code::Blocks înapoi.
+    11. Alege o temă din Settings > Editor > Syntax highlighting. Eu personal
+        folosesc Son of Obsidian, dar asta rămâne la latitudinea ta.
+
+    După toți acești pași, așa arată editorul cu tema Son of Obsidian:
+    <figure markdown="span">
+    ![](./image-10.png){ loading=lazy }
+    </figure>
+
+    Este mai puțin alb, chiar dacă nu este temă întunecată peste tot.
