@@ -211,3 +211,65 @@ După toți acești pași, așa arată editorul cu tema Son of Obsidian:
 </figure>
 
 Este mai puțin alb, chiar dacă nu este temă întunecată peste tot.
+
+Legat de scurtături, putem vedea scurtăturile curente pentru tot editorul, dacă
+mergem la Settings > Editor > Keyboard Shortcuts. Unele din scurtăturile pe care
+le vei folosi mai mult sau mai puțin sunt:
+
+- La loc de cinste se află ++f9++, de care am mai zis, care compilează și
+  rulează codul tău.
+- Pentru a crea un fișier _gol_, apasă ++ctrl+shift+n++ (File > New > Empty
+  file);
+- ++ctrl+o++ pentru a deschide un fișier;
+- ++ctrl+s++ pentru a salva fișierul curent, și ++ctrl+shift+s++ pentru a salva
+  tot;
+- ++ctrl+w++ pentru a închide fișierul curent și ++ctrl+shift+w++ pentru a
+  închide toate fișierele;
+- Clasicele ++ctrl+z++ pentru a reversa o schimbare și ++ctrl+shift+z++ pentru a
+  face invers, precum și ++ctrl+c++ și ++ctrl+v++ care nu au nevoie de
+  introducere;
+- ++ctrl++ și rotița de la mouse măresc sau micșorează fontul, în funcție de
+  mișcare;
+- ++shift+enter++ ca să inserezi o linie nouă sub linia curentă (ceea ce este
+  diferit de a apăsa ++enter++) și ++ctrl+enter++ pentru a te duce la capătul
+  unei linii;
+- ++ctrl+shift+c++ pentru a comenta și ++ctrl+shift+x++ pentru a decomenta;
+- ++ctrl+space++ pentru a completa codul (ceva ce folosesc tot timpul);
+- ++alt+n++ pentru a redenumi simboluri (nu subestima această scurtătură, căci
+  va fi extrem de utilă dacă vrei să redenumești o variabilă sau o funcție);
+- Dacă ai selectat un text, ++ctrl+e++ selectează următoarea apariție a
+  selecției;
+- ++f2++ pentru a ascunde log-urile (ce se află în partea de jos) și
+  ++shift+f2++ pentru a ascunde managerul (bara laterală). Poți apăsa aceleași
+  scurtături pentru a le aduce înapoi. Dacă nu știi unde s-a dus managerul,
+  apasă ++shift+f2++;
+- ++shift+f11++ dacă vrei să mărești pe tot ecranul și să reduci distragerile;
+- Uneori, închizi un tab din greșeală. Nicio problemă, apasă ++ctrl+shift+t++ și
+  revine ca prin magie la viață;
+- ++ctrl+tab++ pentru a te plimba prin tab-uri;
+- ++ctrl+f++ (și ++ctrl+shift+f++) pentru a căuta textul în fișierul curent,
+  respectiv în toate fișierele;
+- ++ctrl+r++ (și ++ctrl+shift+r++) pentru a înlocui textul în fișierul curent,
+  respectiv în toate fișierele.
+
+Totuși, există câteva scurtături pe care le vom seta noi:
+
+- În Settings > Editor > Keyboard shortcuts, mergem la Edit, apoi la Toggle
+  comment și adăugăm scurtătura ++ctrl+slash++. Practic ne scutește din a ține
+  minte ++ctrl+shift+c++ și ++ctrl+shift+x++;
+- Tot aici, mergem la Plugins > Source code formatter (AStyle) și punem
+  scurtătura ++shift+alt+f5++ (sau ceva care îți este convenabil, dar care nu
+  mai este folosit de altceva).
+
+!!! warning "Atenție" 
+
+    Dacă există două scurtături pe care vreau să le ții minte, în afară de 
+    chestiile tipice pentru salvat, deschis fișiere etc., acestea sunt:
+
+    - ++f9++ pentru a compila și rula codul;
+    - ++shift+alt+f5++ (sau ce ți-ai setat) pentru a formata codul. Chiar insist 
+      pe această scurtătură, și ar trebui să o rulezi la fiecare schimbare. 
+      În majoritatea timpului tu vei ajunge să citești codul tău sau codul altora,
+      deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu stă
+      să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba. Nu pot
+      sublinia destul importanța acestui lucru.
