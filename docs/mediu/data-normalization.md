@@ -14,7 +14,7 @@ De regulă, transformăm valorile într-un șir cu valori între $1$ și $n$, î
 
 Cum am zis și anterior, vrem să putem prelucra un șir dat, astfel încât să aflăm cu ușurință poziția lui din șirul sortat, reducând astfel intervalul de valori la unul de lungime $n$. 
 
-De exemplu, dacă șirul nostru este $v = \{4, 9, 41, 22, 14, 7, 44 \}$, după normalizare, vrem să obținem $v = \{1, 3, 7, 6, 5, 2, 8 \}$. 
+De exemplu, dacă șirul nostru este $v = \{4, 9, 41, 22, 14, 7, 44 \}$, după normalizare, vrem să obținem $v = \{1, 3, 6, 5, 4, 2, 7 \}$. 
 
 !!! note "Observație"
     Dacă avem mai multe valori egale, nu are importanță dacă le vom atribui aceeași valoare sau valori diferite, așa cum veți putea vedea în implementarea de mai jos. 
