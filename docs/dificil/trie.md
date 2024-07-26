@@ -22,7 +22,7 @@ Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvin
 să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că
 înălțimea arborelui este lungimea maximă a unui cuvânt. Complexitatea de timp
 este $O(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai rău caz,
-este $O({ \cdot k})$.
+este $O({ L \cdot k})$.
 
 <figure markdown="span">
 ![](../images/trie/trie.png)
