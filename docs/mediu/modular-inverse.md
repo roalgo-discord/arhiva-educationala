@@ -25,9 +25,11 @@ Atunci, pentru a efectua operația de împărțire cu respect la modul dintre $A
     Dacă $p$ este un număr prim și $a$ este un număr întreg prim cu $p$, atunci $a^{p-1} \equiv 1 \pmod{p}$.
 
 Congruența se mai poate scrie ca:
+
 $$
 a \cdot a^{p - 2} \equiv 1 \pmod{p}
 $$
+
 Se poate observa ușor că de fapt inversul modular al lui $a$ este $a^{p - 2}$, care poate fi calculat rapid folosind exponențierea logaritmică.
 
 ### Algoritmul extins al lui Euclid
@@ -43,6 +45,7 @@ Daca $A$ și $M$ sunt prime între ele, atunci există $x_1$ și $y_1$ astfel î
 Fie $c$ câtul împărțirii lui $A$ la $M$ și $r$ restul. Algoritmul lui Euclid ne spune că $cmmdc(A, M) = cmmdc(M, r) \implies cmmdc(M, r) = 1$. Astfel, există $x_2$ și $y_2$ care satisfac $Mx_2 + ry_2 = 1$.
 
 Dar
+
 $$
 \begin{align*}
 r = A - M \cdot c &\implies Mx_2 + (A - M \cdot c)y_2 = 1\\
@@ -50,6 +53,7 @@ r = A - M \cdot c &\implies Mx_2 + (A - M \cdot c)y_2 = 1\\
 &\iff Ay_2 + M(x_2 - c \cdot y_2) = 1
 \end{align*}
 $$
+
 Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid, adăugându-i parametrii $x_1$ și $y_1$:
 
 ```cpp
