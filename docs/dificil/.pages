@@ -31,8 +31,7 @@ nav:
         - Knuth-Morris-Pratt (KMP): kmp.md 
         - Z Function: z-function.md
     - Lucrul pe arbori:
-        - Binary lifting: binary-lifting.md
-        - Lowest common ancestor (LCA): lowest-common-ancestor.md
+        - Binary lifting. Lowest common ancestor (LCA): lowest-common-ancestor.md
         - Small to large: small-to-large.md
         - Structuri de date pe arbore (Euler tour): euler-tour.md
     - Altele:

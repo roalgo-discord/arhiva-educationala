@@ -9,7 +9,7 @@ tags:
 
 ## Introducere
 
-Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă citirea articolului (aici trebuie pus href la treebasics) pentru a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește structurile de date, programarea dinamică și lucrul cu STL.
+Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă citirea articolului (aici trebuie pus href la treebasics) pentru a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește structurile de date, programarea dinamică și lucrul cu STL. În cele ce urmează, vom discuta problema aflării celui mai mic strămoș comun, împreună cu câteva tehnici necesare pentru înțelegerea ei.
 
 ## Liniarizarea arborelui
 
@@ -88,6 +88,9 @@ int solve(int nod, int stp) {
 
 De foarte multe ori, se pune problema aflării celui mai mic strămoș comun între două sau mai multe noduri, într-un timp cât mai eficient. Deși la fel ca la subproblema precedentă, putem găsi răspunsul folosind o metodă brută, folosirea binary lifting se va dovedi instrumentală pentru aflarea LCA-ului în $O(\log n)$. Cu alte cuvinte, mai întâi vom vrea să aducem nodurile la același nivel, iar mai apoi, urcăm în arbore până când ajungem fix înainte de nodul care ne va da răspunsul. Cazul când un nod este strămoșul altuia se tratează anterior. Codul de mai jos se bazează pe precalculările menționate mai sus.
 
+!!! note "Observație"
+    LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele două, apoi rezultatul cu al treilea nod și așa mai departe
+
 ```cpp
 int solve(int a, int b) {
     if (lvl[a] < lvl[b]) {
@@ -114,7 +117,10 @@ int solve(int a, int b) {
 }
 ```
 
-# Alte probleme și resurse utile
+!!! note "Observație"
+    LCA-ul între două noduri se poate afla și în $O(1)$ per query, folosind o precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
+
+## Alte probleme și resurse utile
 
 * [Euler Tour Technique](https://usaco.guide/gold/tree-euler)
 * [Binary Lifting + LCA](https://usaco.guide/plat/binary-jump?lang=cpp)

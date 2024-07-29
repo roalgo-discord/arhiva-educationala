@@ -26,7 +26,7 @@ nav:
             - Subșir crescător maximal: lis.md
         - Dinamică pe stări exponențiale (bitmask DP): bitmask-dp.md
     - Teoria grafurilor:
-        - Diametrul unui arbore: tree-diameter.md
+        - Introducere în arbori. Diametrul unui arbore: tree-1.md
         - Sortare topologică: toposort.md
         - Păduri de mulțimi disjuncte (DSU): dsu.md 
         - Arbore parțial de cost minim: apcm.md
