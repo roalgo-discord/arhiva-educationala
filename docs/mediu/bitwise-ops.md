@@ -10,6 +10,8 @@ tags:
 
 Din acest considerent, biții au ajuns să fie studiați în mod amănunțit, iar în cele ce urmează, vom prezenta sistemul binar, operațiile pe biți și diverse proprietăți, observații și tehnici pe care le putem folosi pentru a rezolva probleme de algoritmică, dar și modurile în care putem integra cunoștințele drept pași intermediari pentru rezolvarea altor probleme de algoritmică. 
 
+
+
 # Sistemul binar
 
 De-a lungul acestui articol, vom lucra cu numere reprezentate în formă binară (în baza $2$), deci formate din cifre de $0$ și de $1$. De exemplu, dacă vrem să scriem numărul $27$ în binar, reprezentarea acestuia va fi:
@@ -181,6 +183,11 @@ Atunci când vine vorba de operații pe biți, există diverse legături, propri
 
 Așa cum veți vedea în detaliu dacă veți citi articolul specific combinatoricii, lucrul cu submulțimi va reprezenta o aplicație importantă a lucrului cu biți, cele $2^n$ submulțimi ale unei mulțimi cu dimensiunea $n$ putând fi toate codificate folosind câte un număr în intervalul $[0, 2^n - 1]$.
 
+Pentru mai multe detalii, puteți citi [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/intro-combinatorics/#submultimi) articolul nostru care privește în detaliu submulțimile din perspectiva combinatoricii. Totuși, aplicațiile prezentate acolo se aplică în totalitate și din perspectiva articolului curent.
+
+!!! note "Lectură suplimentară"
+    Alternativ, puteți citi mai multe detalii de pe articolul de pe [cp-algorithms](https://cp-algorithms.com/algebra/all-submasks.html) despre enumerarea submulțimilor.
+
 # Probleme și lectură suplimentară
 
 * [morse ONI 2006](https://kilonova.ro/problems/1242)
@@ -209,6 +216,6 @@ Așa cum veți vedea în detaliu dacă veți citi articolul specific combinatori
 * [Operații pe biți - Infoarena](https://infoarena.ro/operatii-pe-biti)
 * [Operații pe biți - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_biti.html)
 * [Operații pe biți - Dan Pracsiu](https://www.dponline.ro/articol.php?idarticol=81)
+* [Bit Manipulation - cp-algorithms](https://cp-algorithms.com/algebra/bit-manipulation.html)
 * [Curs lot juniori 2015](https://www.infobits.ro/docs/operatii_pe_biti_junior_2015.pdf)
 * [Easy explanation about Bitwise operations [Tutorial]](https://codeforces.com/blog/entry/104705)
-
