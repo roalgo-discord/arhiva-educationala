@@ -12,7 +12,7 @@ Pentru a instala Code::Blocks:
 1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
     binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
+    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#codeblocks/imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
 
 2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
     recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
