@@ -12,13 +12,15 @@ Pentru a instala Code::Blocks:
 1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
     binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#codeblocks/imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
+    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){
+    .md-button .md-button--primary }
 
 2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
     recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
     `codeblocks-20.03-nosetup.zip`.
 
-    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){ .md-button .md-button--primary }
+    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){
+    .md-button .md-button--primary }
 
     !!! warning "Atenție"
 
@@ -36,7 +38,7 @@ Pentru a instala Code::Blocks:
 De fiecare dată când vei deschide Code::Blocks, vei vedea asta:
 
 <figure markdown="span">
-![](./codeblocks/cb.png){ loading=lazy }
+![](./codeblocks/image.png){ loading=lazy }
 </figure>
 
 Selectează GNU GCC Compiler (care ar trebui să fie implicit), apasă pe Set as
@@ -45,7 +47,7 @@ default și apoi apasă OK.
 Prima dată când deschizi acest editor, această fereastră va apărea:
 
 <figure markdown="span">
-![](./codeblocks/cb-1.png){ loading=lazy }
+![](./codeblocks/image-1.png){ loading=lazy }
 </figure>
 
 Selectează "Yes, associate Code::Blocks with C/C++ file types", care înseamnă
@@ -63,16 +65,16 @@ Pașii pentru a crea un proiect sunt:
     din Start here (prima fereastră care apare) și apoi apasă Create a new
     project.
 2.  Indiferent de metoda aleasă, ajungi la această fereastră:
-    <figure markdown="span">
-    ![](./codeblocks/cb-new-project.png){ loading=lazy }
-    </figure>
-    Alege prin dublu clic Console application (engl. Aplicație în consolă).
+<figure markdown="span">
+![](./codeblocks/cb-new-project.png){ loading=lazy }
+</figure>
+Alege prin dublu clic Console application (engl. Aplicație în consolă).
 3.  În acest stadiu, vei fi întâmpinat de "wizard". Acesta te va ghida în
-    crearea unei aplicații noi. Așa arată:
-    <figure markdown="span">
-    ![](./codeblocks/image.png){ loading=lazy }
-    </figure>
-    Apasă Next.
+crearea unei aplicații noi. Așa arată:
+<figure markdown="span">
+![](./codeblocks/image.png){ loading=lazy }
+</figure>
+Apasă Next.
 4.  De aici, alege C++ (este o introducere de C++, la urma urmei) și apasă Next.
     <figure markdown="span">
     ![](./codeblocks/image-1.png){ loading=lazy }
@@ -155,9 +157,9 @@ din bara de mediu.
    linii.
 
    În total, așa ar trebui să arate momentan pagina:
-    <figure markdown="span">
-    ![](./codeblocks/image-8.png){ loading=lazy }
-    </figure>
+   <figure markdown="span">
+   ![](./codeblocks/image-8.png){ loading=lazy }
+   </figure>
 
 Acum ne mutăm pe tab-ul cu **Other editor settings**. Aici vom configura
 următoarele chestii:
