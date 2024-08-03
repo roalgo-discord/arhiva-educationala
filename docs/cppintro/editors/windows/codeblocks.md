@@ -12,15 +12,13 @@ Pentru a instala Code::Blocks:
 1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
     binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){
-    .md-button .md-button--primary }
+    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
 
 2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
     recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
     `codeblocks-20.03-nosetup.zip`.
 
-    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){
-    .md-button .md-button--primary }
+    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){ .md-button .md-button--primary }
 
     !!! warning "Atenție"
 
@@ -157,9 +155,9 @@ din bara de mediu.
    linii.
 
    În total, așa ar trebui să arate momentan pagina:
-   <figure markdown="span">
-   ![](./codeblocks/image-8.png){ loading=lazy }
-   </figure>
+    <figure markdown="span">
+    ![](./codeblocks/image-8.png){ loading=lazy }
+    </figure>
 
 Acum ne mutăm pe tab-ul cu **Other editor settings**. Aici vom configura
 următoarele chestii:
@@ -187,30 +185,29 @@ motive tehnice care nu sunt în controlul proiectului Code::Blocks, nu o să ave
 vreodată interfața cu temă întunecată (pe alte platforme însă se poate), dar
 putem schimba tema editorului. Pentru a rezolva această problemă:
 
-1. Mergi la
-   [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes).
-   Acolo o să vezi mai multe teme.
-2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
-   însă prezervat pentru conveniența cititorului):
-
-   [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){
-   .md-button .md-button--primary }
-
-3. **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
-   vreo fereastră ascunsă.
-4. Caută locația unde este instalat Code::Blocks și deschide folderul
-   corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
-5. Ai un executabil numit `cb_share_config.exe`. Rulează-l.
-6. În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
-   descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la
-   `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
-7. În partea stângă, bifează tot din listă. Asigură-te că fereastra ta arată
-   așa:
+1.  Mergi la
+    [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes).
+    Acolo o să vezi mai multe teme.
+2.  Descarcă următorul fișier de configurare (care este exact cel de pe site,
+    însă prezervat pentru conveniența cititorului):
+    
+    [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
+    
+3.  **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
+    vreo fereastră ascunsă.
+4.  Caută locația unde este instalat Code::Blocks și deschide folderul
+    corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
+5.  Ai un executabil numit `cb_share_config.exe`. Rulează-l.
+6.  În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
+    descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la
+    `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
+7.  În partea stângă, bifează tot din listă. Asigură-te că fereastra ta arată
+    așa:
     <figure markdown="span">
     ![](./codeblocks/image-9.png){ loading=lazy }
     </figure>
-8. Apasă Transfer și răspunde cu Yes când ți se cere.
-9. Apasă pe Save.
+8.  Apasă Transfer și răspunde cu Yes când ți se cere.
+9.  Apasă pe Save.
 10. Închide programul și deschide Code::Blocks înapoi.
 11. Alege o temă din Settings > Editor > Syntax highlighting. Eu personal
     folosesc Son of Obsidian, dar asta rămâne la latitudinea ta.
