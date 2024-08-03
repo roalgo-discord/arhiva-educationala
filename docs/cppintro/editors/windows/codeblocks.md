@@ -454,6 +454,7 @@ La Padding selectăm:
     indiferent de alinierea aleasă.
 
 Acum că am făcut aceste setări, acest exemplu:
+
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -475,7 +476,9 @@ int main(){
     return 0;
 }
 ```
+
 se va transforma în:
+
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -515,3 +518,26 @@ int main()
     return 0;
 }
 ```
+
+## Alte configurări
+
+În primul rând, recomand să activezi funcția de Autosave. Așa cum zice și
+numele, salvează automat proiectele la un interval anume, ca să nu pierzi toată
+munca depusă la o problemă. Pentru a activa asta, du-te la Settings, apoi la
+Environment și la Autosave bifează ambele căsuțe. 1 minut este mai mult decât
+suficient.
+
+Pentru a adăuga opțiuni pentru compilator, mergem la Settings > Compiler > Other
+compiler options (deoarece Code::Blocks 20.03 din motive tehnice dubioase nu
+afișează toate opțiunile pe care GCC le suportă) și adăugăm următoarele opțiuni:
+
+```text
+-std=c++20 -Wall -Wextra -Wpedantic
+```
+
+Aceste opțiuni zic compilatorului să suporte o versiune mai nouă de C++ și
+activăm majoritatea avertizărilor, pentru a prinde potențiale erori din timp.
+
+Asta este tot cu configurarea. Poți acum să mergi către următorul articol:
+
+[Mergi la introducere](./../../intro.md){ .md-button .md-button--primary }
