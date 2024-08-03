@@ -63,16 +63,16 @@ Pașii pentru a crea un proiect sunt:
     din Start here (prima fereastră care apare) și apoi apasă Create a new
     project.
 2.  Indiferent de metoda aleasă, ajungi la această fereastră:
-<figure markdown="span">
-![](./codeblocks/cb-new-project.png){ loading=lazy }
-</figure>
-Alege prin dublu clic Console application (engl. Aplicație în consolă).
+    <figure markdown="span">
+    ![](./codeblocks/cb-new-project.png){ loading=lazy }
+    </figure>
+    Alege prin dublu clic Console application (engl. Aplicație în consolă).
 3.  În acest stadiu, vei fi întâmpinat de "wizard". Acesta te va ghida în
-crearea unei aplicații noi. Așa arată:
-<figure markdown="span">
-![](./codeblocks/image.png){ loading=lazy }
-</figure>
-Apasă Next.
+    crearea unei aplicații noi. Așa arată:
+    <figure markdown="span">
+    ![](./codeblocks/image.png){ loading=lazy }
+    </figure>
+    Apasă Next.
 4.  De aici, alege C++ (este o introducere de C++, la urma urmei) și apasă Next.
     <figure markdown="span">
     ![](./codeblocks/image-1.png){ loading=lazy }
