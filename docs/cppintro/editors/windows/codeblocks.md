@@ -12,15 +12,13 @@ Pentru a instala Code::Blocks:
 1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
     binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){
-    .md-button .md-button--primary }
+    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
 
 2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
     recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
     `codeblocks-20.03-nosetup.zip`.
 
-    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){
-    .md-button .md-button--primary }
+    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){ .md-button .md-button--primary }
 
     !!! warning "Atenție"
 
@@ -157,9 +155,9 @@ din bara de mediu.
    linii.
 
    În total, așa ar trebui să arate momentan pagina:
-   <figure markdown="span">
-   ![](./codeblocks/image-8.png){ loading=lazy }
-   </figure>
+    <figure markdown="span">
+    ![](./codeblocks/image-8.png){ loading=lazy }
+    </figure>
 
 Acum ne mutăm pe tab-ul cu **Other editor settings**. Aici vom configura
 următoarele chestii:
