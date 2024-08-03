@@ -12,13 +12,15 @@ Pentru a instala Code::Blocks:
 1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
     binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#codeblocks/imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
+    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){
+    .md-button .md-button--primary }
 
 2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
     recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
     `codeblocks-20.03-nosetup.zip`.
 
-    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){ .md-button .md-button--primary }
+    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){
+    .md-button .md-button--primary }
 
     !!! warning "Atenție"
 
@@ -36,7 +38,7 @@ Pentru a instala Code::Blocks:
 De fiecare dată când vei deschide Code::Blocks, vei vedea asta:
 
 <figure markdown="span">
-![](./codeblocks/cb.png){ loading=lazy }
+![](./codeblocks/image.png){ loading=lazy }
 </figure>
 
 Selectează GNU GCC Compiler (care ar trebui să fie implicit), apasă pe Set as
@@ -45,7 +47,7 @@ default și apoi apasă OK.
 Prima dată când deschizi acest editor, această fereastră va apărea:
 
 <figure markdown="span">
-![](./codeblocks/cb-1.png){ loading=lazy }
+![](./codeblocks/image-1.png){ loading=lazy }
 </figure>
 
 Selectează "Yes, associate Code::Blocks with C/C++ file types", care înseamnă
@@ -63,21 +65,22 @@ Pașii pentru a crea un proiect sunt:
     din Start here (prima fereastră care apare) și apoi apasă Create a new
     project.
 2.  Indiferent de metoda aleasă, ajungi la această fereastră:
-    <figure markdown="span">
-    ![](./codeblocks/cb-new-project.png){ loading=lazy }
-    </figure>
-    Alege prin dublu clic Console application (engl. Aplicație în consolă).
+<figure markdown="span">
+![](./codeblocks/cb-new-project.png){ loading=lazy }
+</figure>
+Alege prin dublu clic Console application (engl. Aplicație în consolă).
 3.  În acest stadiu, vei fi întâmpinat de "wizard". Acesta te va ghida în
-    crearea unei aplicații noi. Așa arată:
-    <figure markdown="span">
-    ![](./codeblocks/image.png){ loading=lazy }
-    </figure>
-    Apasă Next.
+crearea unei aplicații noi. Așa arată:
+<figure markdown="span">
+![](./codeblocks/image.png){ loading=lazy }
+</figure>
+Apasă Next.
 4.  De aici, alege C++ (este o introducere de C++, la urma urmei) și apasă Next.
-    <figure markdown="span">
-    ![](./codeblocks/image-1.png){ loading=lazy }
-    </figure>
-5.  Aici este pasul unde alegi titlul proiectului, precum și folderul proiectului.
+<figure markdown="span">
+![](./codeblocks/image-1.png){ loading=lazy }
+</figure>
+5.  Aici este pasul unde alegi titlul proiectului, precum și folderul
+    proiectului.
     <figure markdown="span">
     ![](./codeblocks/image-3.png){ loading=lazy }
     </figure>
@@ -98,11 +101,11 @@ Pașii pentru a crea un proiect sunt:
     </figure>
 
 6.  Aici este pasul unde alegem compilatorul. Dacă ai instalat GCC și îl
-    recunoaște corespunzător, atunci prima opțiune va fi GNU GCC Compiler. Lasă
-    tot bifat așa cum e implicit și apasă Next și apoi Finish la următorul ecran.
-    <figure markdown="span">
-    ![](./codeblocks/image-5.png){ loading=lazy }
-    </figure>
+recunoaște corespunzător, atunci prima opțiune va fi GNU GCC Compiler. Lasă tot
+bifat așa cum e implicit și apasă Next și apoi Finish la următorul ecran.
+<figure markdown="span">
+![](./codeblocks/image-5.png){ loading=lazy }
+</figure>
 
 Dacă ai făcut totul corect, fereastra ta ar trebui să arate astfel:
 
@@ -154,9 +157,9 @@ din bara de mediu.
    linii.
 
    În total, așa ar trebui să arate momentan pagina:
-    <figure markdown="span">
-    ![](./codeblocks/image-8.png){ loading=lazy }
-    </figure>
+   <figure markdown="span">
+   ![](./codeblocks/image-8.png){ loading=lazy }
+   </figure>
 
 Acum ne mutăm pe tab-ul cu **Other editor settings**. Aici vom configura
 următoarele chestii:
@@ -174,8 +177,8 @@ Acum mergem la **Margins and caret**, unde vom face două schimbări:
 1. Activăm Dynamic setting, deoarece bara care arată numărul de linie este mult
    prea groasă.
 2. La Right margin hint, selectează Visible line. La a 80-a coloană, arată o
-   linie verticală. Dacă nu treci de acea linie, atunci codul tău va fi mai
-   ușor de citit, pentru că nu vei avea linii kilometrice.
+   linie verticală. Dacă nu treci de acea linie, atunci codul tău va fi mai ușor
+   de citit, pentru că nu vei avea linii kilometrice.
 
 Un aspect foarte disputat la Code::Blocks este **tema sa implicită**, cu albul
 orbitor. Din păcate, Code::Blocks nu vine cu o temă întunecată, mai prietenoasă
@@ -184,11 +187,14 @@ motive tehnice care nu sunt în controlul proiectului Code::Blocks, nu o să ave
 vreodată interfața cu temă întunecată (pe alte platforme însă se poate), dar
 putem schimba tema editorului. Pentru a rezolva această problemă:
 
-1. Mergi la [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes). Acolo o să vezi mai multe teme.
+1. Mergi la
+   [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes).
+   Acolo o să vezi mai multe teme.
 2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
    însă prezervat pentru conveniența cititorului):
 
-   [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
+   [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){
+   .md-button .md-button--primary }
 
 3. **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
    vreo fereastră ascunsă.
@@ -196,15 +202,13 @@ putem schimba tema editorului. Pentru a rezolva această problemă:
    corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
 5. Ai un executabil numit `cb_share_config.exe`. Rulează-l.
 6. În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
-   descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află
-   la `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
-7. În partea stângă, bifează tot din listă.
-
-   Asigură-te că fereastra ta arată așa:
+   descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la
+   `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
+7. În partea stângă, bifează tot din listă. Asigură-te că fereastra ta arată
+   așa:
     <figure markdown="span">
     ![](./codeblocks/image-9.png){ loading=lazy }
     </figure>
-
 8. Apasă Transfer și răspunde cu Yes când ți se cere.
 9. Apasă pe Save.
 10. Închide programul și deschide Code::Blocks înapoi.
@@ -280,3 +284,234 @@ Totuși, există câteva scurtături pe care le vom seta noi:
       deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu stă
       să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba. Nu pot
       sublinia destul importanța acestui lucru.
+
+## Formatare
+
+Ce urmează aici este strict părere personală, însă consider că oferă un stil
+lizibil. Voi explica raționamentul pentru fiecare alegere. Mergem la Settings >
+Editor > Source formatter.
+
+La tab-ul Style, alegem 1TBS (One True Brace Style). Acest stil arată astfel:
+
+```cpp
+int Foo(bool isBar)
+{
+    if (isFoo) {
+        bar();
+        return 1;
+    } else {
+        return 0;
+    }
+}
+```
+
+Ca să nu zic prea multe (deoarece se intersectează cu lecția viitoare), motivul
+pentru care aleg 1TBS este să evităm următoarea situație:
+
+```cpp
+if (isFoo)
+  bar();
+  return 1;
+```
+
+Acel `#!cpp return 1;` nu este asociat cu linia de dinaintea ei sau cu `if`,
+deci este un dezastru care o să se întâmple la un moment dat. Prin adăugarea
+acoladelor, suntem expliciți, și este mai ușor de extins codul.
+
+Pentru consistență la acolade cu stilul nostru (1TBS), selectăm toate opțiunile
+de la Brackets.
+
+La Indentation, nu avem de schimbat multe. Setăm Indentation size la 4 (nu
+recomand un număr sub 4, în mod special 2, și nici 8). Activăm doar Indent C++
+comments beginning in column one. Este util pentru a alinia comentariile care se
+află în prima coloană.
+
+```cpp
+void Foo()
+{
+// comment
+    if (isFoo)
+        bar();
+}
+```
+
+devine
+
+```cpp
+void Foo()
+{
+    // comment
+    if (isFoo) {
+        bar();
+    }
+}
+```
+
+La Formatting schimbăm următoarele setări:
+
+1.  Selectăm "Break one-line headers". Un "header" în acest context este orice
+    instrucțiune (`if`, `while`, `else` etc.). Cu această opțiune, și cele pe
+    care le-am setat mai înainte, transformăm:
+
+    ```cpp
+    void Foo(bool isFoo)
+    {
+        if (isFoo1) bar1();
+
+        if (isFoo2) { bar2(); }
+    }
+    ```
+
+    în
+
+    ```cpp
+    void Foo(bool isFoo)
+    {
+        if (isFoo1) {
+            bar1();
+        }
+
+        if (isFoo2) {
+            bar2();
+        }
+    }
+    ```
+
+    Acoladele fac intenția noastră mai clară și ne permit să adăugăm mai multe
+    instrucțiuni în viitor fără mult efort. În plus, este mai uniform.
+
+2.  Selectăm "Closes whitespace in the angle brackets of template definitions".
+    Pe vremuri, din cauza unui defect în standard și în compilatoare, nu puteai
+    scrie asta:
+
+    ```cpp
+    Stack<int, List<int>> stack1;
+    ```
+
+    și trebuia în schimb:
+
+    ```cpp
+    Stack< int, List<int> > stack1;
+    ```
+
+    Acum toate compilatoarele au evoluat, deci este sigur să activezi opțiunea
+    asta. 2. Activează "Enable line breaking". Acest lucru garantează faptul că
+    o linie va fi împărțită dacă trece de o lungime anume. Eu setez valoarea la
+    80 de obicei, însă 120 este acceptabil dacă ai mai mult spațiu orizontal.
+
+La Padding selectăm:
+
+1.  Pad empty lines around header blocks (e.g. 'if', 'while'...). Ce face
+    setarea pe scurt este că înconjoară cu o linie nouă înainte de și după
+    fiecare header. Transformă:
+
+    ```cpp
+    isFoo = true;
+    if (isFoo) {
+        bar();
+    } else {
+        anotherBar();
+    }
+    isBar = false;
+    ```
+
+    în
+
+    ```cpp
+    isFoo = true;
+
+    if (isFoo) {
+        bar();
+    } else {
+        anotherBar();
+    }
+
+    isBar = false;
+    ```
+
+2.  Insert space padding around operators. Așa cum zice și numele, pune spații
+    în jurul operatorilor. În loc de `1+1`, devine `1 + 1`.
+3.  Insert space padding between a header and the following paren. Dacă activăm
+    asta, "dezlipim" paranteza de `if`/`while`/...
+4.  Remove extra space padding around parentheses. Combinat cu ultima setare,
+    avem un singur spațiu. Ele transformă:
+    ```cpp
+    if ( isFoo( ( a+2 ), b ) ) {
+        bar ( a, b );
+    }
+    ```
+    în
+    ```cpp
+    if (isFoo((a + 2), b)) {
+        bar(a, b);
+    }
+    ```
+    Această opțiune nu va șterge spațiile în plus în jurul operatorilor, din
+    păcate. Există opțiunea în versiunile beta de Code::Blocks, însă nu sunt
+    stabile.
+5.  Setăm Pointer alignment și Reference alignment la Name. S-au purtat războaie
+    seculare pe această temă, însă le prefer pe cât posibil să fie la fel,
+    indiferent de alinierea aleasă.
+
+Acum că am făcut aceste setări, acest exemplu:
+```cpp
+#include <iostream>
+#include <cmath>
+int main(){
+    int v[10];
+    for(int i=0;i<10;++i) v[i]=i*sin(i);
+     for(int i=0;i<10;++i) std::cout<<v[i]<<" "; std::cout<<"\n";
+    bool sortat; do{
+        sortat=true;
+      for(int i=0;i<9;++i){
+      if(v[i]>v[i+1]){
+        int aux=v[i];
+        v[i]=v[i+1];
+        v[i+1]=aux;
+        sortat=false;
+      }}
+    } while(!sortat);
+    for(int i=0;i<10;++i) std::cout<<v[i]<<" ";  std::cout<<"\n";
+    return 0;
+}
+```
+se va transforma în:
+```cpp
+#include <iostream>
+#include <cmath>
+int main()
+{
+    int v[10];
+
+    for (int i = 0; i < 10; ++i) {
+        v[i] = i * sin(i);
+    }
+
+    for (int i = 0; i < 10; ++i) {
+        std::cout << v[i] << " ";
+    }
+
+    std::cout << "\n";
+    bool sortat;
+
+    do {
+        sortat = true;
+
+        for (int i = 0; i < 9; ++i) {
+            if (v[i] > v[i + 1]) {
+                int aux = v[i];
+                v[i] = v[i + 1];
+                v[i + 1] = aux;
+                sortat = false;
+            }
+        }
+    } while (!sortat);
+
+    for (int i = 0; i < 10; ++i) {
+        std::cout << v[i] << " ";
+    }
+
+    std::cout << "\n";
+    return 0;
+}
+```
