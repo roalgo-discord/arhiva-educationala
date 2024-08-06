@@ -326,7 +326,7 @@ află în prima coloană.
 ```cpp
 void Foo()
 {
-// comment
+// comentariu
     if (isFoo)
         bar();
 }
@@ -337,7 +337,7 @@ devine
 ```cpp
 void Foo()
 {
-    // comment
+    // comentariu
     if (isFoo) {
         bar();
     }
