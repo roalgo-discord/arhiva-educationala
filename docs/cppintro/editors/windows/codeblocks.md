@@ -36,7 +36,7 @@ Pentru a instala Code::Blocks:
 De fiecare dată când vei deschide Code::Blocks, vei vedea asta:
 
 <figure markdown="span">
-![](./codeblocks/image.png){ loading=lazy }
+![](./codeblocks/cb.png){ loading=lazy }
 </figure>
 
 Selectează GNU GCC Compiler (care ar trebui să fie implicit), apasă pe Set as
@@ -45,7 +45,7 @@ default și apoi apasă OK.
 Prima dată când deschizi acest editor, această fereastră va apărea:
 
 <figure markdown="span">
-![](./codeblocks/image-1.png){ loading=lazy }
+![](./codeblocks/cb-1.png){ loading=lazy }
 </figure>
 
 Selectează "Yes, associate Code::Blocks with C/C++ file types", care înseamnă
