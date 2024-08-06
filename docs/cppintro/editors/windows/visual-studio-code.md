@@ -41,10 +41,9 @@ mod normal).
 
 Implicit nu vine cu suport integrat pentru C++. Totuși, Visual Studio Code are o
 gamă largă de extensii (pe care le putem accesa folosind butonul de extensii
-(arată ca patru cuburi dintre care unul este desprins, dar poate fi accesat și
-cu scurtătura ++ctrl+shift+x++. De acolo, caută "C/C++
-Extension Pack" și apasă pe prima extensie de la Microsoft (nu este greu să o
-recunoști).
+care arată ca patru cuburi dintre care unul este desprins, dar poate fi accesat
+și cu scurtătura ++ctrl+shift+x++). De acolo, caută "C/C++ Extension Pack" și
+apasă pe prima extensie de la Microsoft (nu este greu să o recunoști).
 
 Acum să facem un fișier de C++ pentru a putea continua procesul. Creează un
 fișier nou, fie din File > New Text File, fie folosind scurtătura ++ctrl+n++. Îl
