@@ -16,7 +16,7 @@ nav:
         - Cuplaj maxim pe graf bipartit: cuplaj-maxim-pe-graf-bipartit.md
     - Structuri de date:
         - Square root decomposition: square-root-decomposition.md
-        - Arbori de intervale: persistent-segment-tree.md 
+        - Arbori de intervale: segment-trees.md
         - Arbori indexați binar: fenwick-tree-bit.md
         - Range Minimum Query (sparse tables): rmq.md
         - Trie: trie.md
