@@ -76,7 +76,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
 
     [:octicons-arrow-right-24: Instalare și configurare](./visual-studio-2022.md)
 
-- **Qt Creator**
+<!-- - **Qt Creator**
 
     ---
 
@@ -105,15 +105,15 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     instrumentelor sale avansate și integrării cu diverse sisteme de control al
     versiunilor. Rulează pe Windows, macOS și Linux.
 
-    [:octicons-arrow-right-24: Instalare și configurare](./clion.md)
+    [:octicons-arrow-right-24: Instalare și configurare](./clion.md) -->
 
 </div>
 
-!!! warning "Atenție"
+<!-- !!! warning "Atenție"
 
     CLion, spre deosebire de celelalte opțiuni, nu este gratis. Totuși, dacă
     ești eligibil, poți avea un cont de student ceea ce îți oferă acces la
-    CLion, precum și la alte produse marca JetBrains.
+    CLion, precum și la alte produse marca JetBrains. -->
 
 ## Editoare de text
 
