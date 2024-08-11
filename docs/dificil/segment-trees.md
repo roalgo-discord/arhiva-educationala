@@ -6,12 +6,12 @@ tags:
 
 **Autor**: Alexandru Toma
 
-În competițiile de informatică și olimpiadă se întâlnesc adesea probleme care implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula eficient suma, maximul sau minimul pe o subsecvență a unui vector, mai ales când acesta suferă **modificări în timp real**? 
+În competițiile de informatică și la olimpiadă se întâlnesc adesea probleme care implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula eficient suma, maximul sau minimul pe o subsecvență a unui vector, mai ales când acesta suferă **modificări în timp real**? 
 
 !!! note "Observație"
-    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici simple precum vectori de [sume parțiale](../ușor/parțial-sums.md) sau [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de query au o complexitate de \(O(1)\) atât pentru sume parțiale, cât și pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de valori, ceea ce duce la o complexitate de \(O(n)\) pentru sume parțiale și \(O(n \log n)\) pentru RMQ.
+    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de query au o complexitate de \(O(1)\) atât pentru sume parțiale, cât și pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de valori, ceea ce duce la o complexitate de \(O(n)\) pentru sume parțiale și \(O(n \log n)\) pentru RMQ.
 
-**Arborii de intervale** (Segment Trees) reprezintă o soluție elegantă și eficientă pentru acest tip de probleme, permițând efectuarea rapidă de interogări și actualizări în $O(log n)$ pentru ambele operații.
+**Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest tip de probleme, permițând efectuarea rapidă de interogări și actualizări în $O(log n)$ pentru ambele operații.
 
 În acest articol, vom explora conceptele de bază ale arborilor de intervale, modul de construire și utilizare a acestora, și vom analiza câteva aplicații frecvente în problemele de olimpiadă. Vom începe prin a defini structura unui arbore de intervale și vom continua prin a explica operațiile de actualizare, interogare și implementările acestora. În final, vom discuta și câteva probleme apărute în concursurile de programare competitivă. Fără prea multă vorbărie, să începem!
 
@@ -25,14 +25,17 @@ tags:
 
 ## Structura unui arbore de intervale
 
-Un arbore de intervale este un arbore binar complet care este folosit pentru a stoca informații despre intervalele unui vector. Fiecare nod din arbore reprezintă un interval și stochează o anumită valoare (de exemplu, suma, minimul sau maximul) pentru intervalul respectiv.
+Un arbore de intervale este un arbore binar care este folosit pentru a stoca informații despre intervalele unui vector. Fiecare nod din arbore reprezintă un interval și stochează o anumită valoare (de exemplu, suma, minimul sau maximul) pentru intervalul respectiv.
 
 ### Cum se formează un arbore de intervale?
 
 Să considerăm un vector $A$ de dimensiune $N$. Arborele de intervale asociat acestui vector se construiește astfel:
 
   - Rădăcina arborelui va fi nodul $1$ și va avea asociat răspunsul pentru intervalul $[1,n]$.
-  - Un nod $k$ are asociat un interval $[st,dr]$, iar acesta are doi fii ce se vor afla pe pozițiile $2*k$ (fiul din stânga) și $2*k+1$ (fiul din dreapta). Fiul din stânga va avea răspunsul pentru intervalul $[st, m]$, iar fiul din dreapta pentru $[m+1, dr]$, unde m este mijlocul intervalului.
+  - Un nod $k$ are asociat un interval $[st,dr]$, iar acesta are doi fii ce se vor afla pe pozițiile $2 \cdot k$ (fiul din stânga) și $2 \cdot k + 1$ (fiul din dreapta). Fiul din stânga va avea răspunsul pentru intervalul $[st, m]$, iar fiul din dreapta pentru $[m+1, dr]$, unde m este mijlocul intervalului.
+
+!!! info "Reprezentare în memorie"
+    Deși conceptul de arbore de intervale este unul de tip arbore binar, în practică, structura este stocată în memorie sub forma unui vector. Astfel, fiecare nod din arbore corespunde unei poziții din acest vector, ceea ce ne permite să accesăm eficient nodurile arborelui folosind operații de indexare.
 
 Să considerăm vectorul $A=[5,8,6,3,2,7,2,6]$, arborele de intervale asociat vectorului $A$ va arăta în felul următor:
 
@@ -73,23 +76,40 @@ Această operație se efectuează în $O(n)$, unde $n$ este numărul de elemente
 !!! info "De reținut"
     Arborii de intervale funcționează eficient doar cu **operații asociative** (ex: suma, maximul, minimul, cmmdc). Asociativitatea permite combinarea rezultatelor din subintervale fără a afecta corectitudinea rezultatului final.
 
-Iată un exemplu de implementare a acestei operații în C++:
+Mai jos sunt prezentate două modalități de implementare, atât recursivă, cât și iterativă:
 
-```cpp
-void build(int node, int st, int dr) {
-  if (st == dr) {
-    aint[node] = A[st];
-    return;
-  }
-  int mid = (st + dr) / 2;
+=== "Construcție recursivă"
 
-  build(2 * node, st, mid); // Construim subarborele stang
-  build(2 * node + 1, mid + 1, dr); // Construim subarborele drept
+    ```cpp
+    void build(int node, int st, int dr) {
+        if (st == dr) {
+            aint[node] = A[st];
+            return;
+        }
+        int mid = (st + dr) / 2;
 
-  // Actualizam rezultatul nodului in functie de rezultatele fiilor
-  aint[node] = aint[2 * node] + aint[2 * node + 1];
-}
-```
+        build(2 * node, st, mid);   // Construim subarborele stâng
+        build(2 * node + 1, mid + 1, dr);  // Construim subarborele drept
+
+        // Actualizăm rezultatul nodului în funcție de rezultatele fiilor
+        aint[node] = aint[2 * node] + aint[2 * node + 1];
+    }
+    ```
+
+=== "Construcție iterativă"
+
+    ```cpp
+    void build(int arr[]) { 
+        // Inserăm nodurile frunzelor în arbore
+        for (int i = 0; i < n; i++)  
+            tree[n + i] = arr[i]; 
+
+        // Construim arborele prin calcularea părinților
+        for (int i = n - 1; i > 0; --i)  
+            tree[i] = tree[i << 1] + tree[i << 1 | 1];   
+    }
+    ```
+
 
 ### Operația de update
 
@@ -171,7 +191,7 @@ Fie un vector \( A \) cu \( N \) elemente naturale. Asupra lui se vor face \( M 
 
 Problema de bază, identică cu cea pe care am rezolvat-o anterior, singura diferență este că acum trebuie să calculăm elementul maxim. Soluția mea o puteți vedea [aici](https://infoarena.ro/job_detail/3239964?action=view-source).
 
-### 2. [Maxq](https://www.infoarena.ro/problema/maxq)
+### 2. [Maxq - ONI 2007](https://kilonova.ro/problems/157)
 
 Johnie a început să se joace cu un vector de numere. El dispune inițial de un vector \( V \) cu \( N \) numere întregi și poate efectua următoarele operații:
 
@@ -310,7 +330,7 @@ int main() {
 
 În această problemă, trebuie să determinăm numărul de inversiuni dintr-o permutare dată a unui vector de lungime \( n \). O inversiune este o pereche ordonată \((i, j)\) astfel încât \( 1 \leq i < j \leq n \) și \( v[i] > v[j] \).
 
-**Soluția naivă** ar presupune să verificăm pentru fiecare pereche de elemente \((i, j)\) dacă \( v[i] > v[j] \). Acest lucru necesită două bucle îmbricate, una pentru \( i \) și alta pentru \( j \), ceea ce duce la o complexitate de \( O(n^2) \).
+**Soluția naivă** ar presupune să verificăm pentru fiecare pereche de elemente \((i, j)\) dacă \( v[i] > v[j] \). Acest lucru necesită două bucle imbricate, una pentru \( i \) și alta pentru \( j \), ceea ce duce la o complexitate de \( O(n^2) \).
 
 **Soluția optimă**. Această problemă poate fi rezolvată eficient cu ajutorul arborilor de intervale. Observația esențială este că fiecare element formează inversiuni cu toate elementele mai mari decât el care apar înaintea lui în vector. Pentru a implementa soluția, folosim un arbore de intervale care ne ajută să menținem numărul de elemente mai mare decât un anumit element pe măsură ce parcurgem vectorul.
 
@@ -325,23 +345,36 @@ Iată cum se poate implementa soluția:
 
 Pentru problemele de pe codeforces, este necesar un cont pentru a putea accesa acest curs din secțiunea EDU (ITMO Academy)
 
+  - [Dynamic Range Minimum Queries](https://cses.fi/problemset/task/1649)
+  - [Number of Minimums on a Segment](https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/C)
   - [Intervalxy](https://www.pbinfo.ro/probleme/1591/intervalxy)
-  - [NrInversiuni](https://www.pbinfo.ro/probleme/3206/nrinversiuni)
-  - [Inversiuni](https://www.pbinfo.ro/probleme/1715/inversiuni)
-  - [Rest](https://www.infoarena.ro/problema/rest)
-  - [Sign Alternation](https://codeforces.com/edu/course/2/lesson/4/4/practice/contest/274684/problem/A) 
+  - [Kth one](https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B)
+  - [First element at least X](https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/C)
+  - [Sign Alternation](https://codeforces.com/edu/course/2/lesson/4/4/practice/contest/274684/problem/A)
   - [Inversions](https://codeforces.com/edu/course/2/lesson/4/4/practice/contest/274684/problem/C)
   - [Xenia and bit operations](https://codeforces.com/contest/339/problem/D)
+  - [Irrigation](https://codeforces.com/contest/1181/problem/D)
   - [Distinct Value Queries](https://cses.fi/problemset/task/1734)
+  - [United Cows of Farmer John - USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=1137)
   - [Increasing Subsequence II](https://cses.fi/problemset/task/1748)
+  - [Salary Queries](https://cses.fi/problemset/task/1144)
+  - [Kth - ONI 2023](https://kilonova.ro/problems/542/)
   - [Intersecție segmente](https://www.pbinfo.ro/probleme/2103/intersectie-segmente) : baleiere
+
+## Probleme dificile
+  - [Dulciuri - OJI 2021](https://kilonova.ro/problems/133)
+  - [Array Counting - IIOT 2021-2022](https://infoarena.ro/problema/arraycounting)
+  - [Panama Sum - IIOT 2022-2023](https://kilonova.ro/problems/304/)
+  - [Lucky Array](https://codeforces.com/contest/121/problem/E)
 
 ## Bibliografie + Resurse suplimentare
 
+  - [CPPI](https://cppi.sync.ro/materia/arbori_de_intervale.html)
   - [USACO Guide](https://usaco.guide/gold/PURS?lang=cpp)
   - [Codeforces EDU](https://codeforces.com/edu/course/2/lesson/4): curs complet pentru introducerea în arbori de intervale
   - [CSAcademy](https://csacademy.com/lesson/segment_trees): articol care conține animații pentru operațiile elementare
   - [CPAlgorithms](https://cp-algorithms.com/data_structures/segment_tree.html): articol mai avansat care prezintă mai multe tehnici
   - [Efficient and easy segment trees](https://codeforces.com/blog/entry/18051)
+  - [Arbori de intervale si baleiere](https://www.infoarena.ro/arbori-de-intervale)
   - [Template arbori de intervale](https://github.com/alextm0/Data-Structures-Algorithms/blob/main/Segment%20Tree/aint.cpp): o clasă flexibilă care permite modificarea rapidă a operațiilor.
 
