@@ -366,7 +366,7 @@ int main() {
 * [Bovine Genomics
   USACO](http://www.usaco.org/index.php?page=viewproblem2&cpid=741)
 * [RMI 2017 Hangman
-  2](https://csacademy.com/contest/rmi-2017-day-1/task/hangman2/)]
+  2](https://csacademy.com/contest/rmi-2017-day-1/task/hangman2/)
 * [Probleme cu hashing de pe kilonova](https://kilonova.ro/tags/322)
 * [Probleme cu hashing de pe
   infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=432)
