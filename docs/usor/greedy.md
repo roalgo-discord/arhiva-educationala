@@ -6,7 +6,7 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-De multe ori atunci când trebuie să rezolvăm probleme algoritmice (și nu numai), suntem nevoiți să gândim lacom, alegând cea mai bună variantă la un moment dat. În algoritmică, această abordare este numită metoda Greedy și este una din cele mai importante metode pentru rezolvarea problemelor, fiind întâlnită atât în exemple foarte simple, cât și în unele din cele mai complicate exemple posibile. 
+De multe ori atunci când trebuie să rezolvăm probleme algoritmice (și nu numai), suntem nevoiți să gândim lacom, alegând cea mai bună variantă la un moment dat. În algoritmică, această abordare este numită metoda Greedy și este una din cele mai importante metode pentru rezolvarea problemelor, fiind întâlnită atât în probleme foarte simple, cât și în unele din cele mai complicate probleme posibile. 
 
 Chiar dacă conform manualelor de informatică din țara noastră, metoda Greedy este ceva ce se predă abia în clasele mai mari de liceu (mai exact, în clasa a XI-a), o să vedeți că probleme de acest fel apar încă de la începutul studiului algoritmicii.
 
@@ -145,6 +145,7 @@ int main() {
 - [pbinfo eureni](https://www.pbinfo.ro/probleme/1004/eureni)
 - [Probleme cu greedy de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/24/metoda-greedy-probleme-diverse-cu-metoda-greedy)
 - [USACO Bronze Out of Place](http://www.usaco.org/index.php?page=viewproblem2&cpid=785)
+- [Leetcode Minimum Cost to Move Chips to The Same Position](https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/description/)
 - [OJI 2012 Arme](https://kilonova.ro/problems/823)
 - [OJI 2024 Santinele](https://kilonova.ro/problems/2502)
 - [ONI 2024 Soldati](https://kilonova.ro/problems/2659)
