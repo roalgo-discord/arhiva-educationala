@@ -141,6 +141,9 @@ int main() {
 
 - [USACO Bronze Watching Mooloo](http://www.usaco.org/index.php?page=viewproblem2&cpid=1301)
 - [USACO Bronze Cow Tipping](http://www.usaco.org/index.php?page=viewproblem2&cpid=689)
+- [pbinfo kmax](https://www.pbinfo.ro/probleme/1877/kmax)
+- [pbinfo eureni](https://www.pbinfo.ro/probleme/1004/eureni)
+- [Probleme cu greedy de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/24/metoda-greedy-probleme-diverse-cu-metoda-greedy)
 - [USACO Bronze Out of Place](http://www.usaco.org/index.php?page=viewproblem2&cpid=785)
 - [OJI 2012 Arme](https://kilonova.ro/problems/823)
 - [OJI 2024 Santinele](https://kilonova.ro/problems/2502)
