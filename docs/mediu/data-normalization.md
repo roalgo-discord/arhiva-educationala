@@ -65,6 +65,59 @@ int main() {
 }
 ```
 
+## Problema [Restaurant Customers](https://cses.fi/problemset/task/1619) de pe cses
+
+Pentru a rezolva această problemă, trebuie să găsim o metodă care ne ajută să procesăm intervalele în așa fel încât să nu trebuiască să avem nevoie de foarte multă memorie pentru valorile din intervale. 
+
+O primă soluție brută constă în verificarea fiecărui punct posibil de la $1$ la $10^9$, iar pentru fiecare punct, verificăm dacă este inclus în fiecare dintre cele $n$ intervale date. Complexitatea ar fi $O(n \cdot maxval)$, ceea ce este mult prea încet pentru o soluție optimă.
+
+!!! note "Observație"
+    Singurele puncte în care se schimbă numărul de intervale acoperite de un punct sunt acelea unde începe și se termină un interval, deci numărul de puncte relevante scade la $2 \cdot n$.
+
+Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este îndeajuns pentru rezolvarea problemei date. 
+
+O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui Mars](https://roalgo-discord.github.io/arhiva-educationala/usor/partial-sums/?h=#smenul-lui-mars), iar pentru fiecare interval, putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$. 
+
+Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$, iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi optimizată la $O(n \log n)$, unele din abordările care merg pot fi fie folosirea șmenului lui Mars pe vectorul cu punctele normalizate, fie sortarea punctelor relevante și considerarea lor drept evenimente, mai apoi parcurgându-le în ordine crescătoare. 
+
+O abordare care consideră punctele drept evenimente se poate citi mai jos. Deoarece toate punctele sunt distincte, nu este necesar să considerăm într-o manieră particulară intrările și ieșirile.
+
+```cpp
+#include <iostream>
+#include <algorithm>
+ 
+using namespace std;
+ 
+int n;
+ 
+pair<int, int> p[400002]; 
+ 
+int main() {
+    cin >> n;
+    for (int i = 1; i <= n; ++i) {
+        int a, b;
+        cin >> a >> b;
+        // 1 - intrare in restaurant, -1 - iesire din restaurant
+        // transformam fiecare moment intr-o pereche
+        p[i*2-1] = {a, 1};
+        p[i*2] = {b, -1};
+    }
+    
+    sort(p + 1, p + n * 2 + 1); 
+     
+    int counter = 0, max_counter = 0;
+    for (int i = 1; i <= n*2; ++i) {
+        counter += p[i].second; 
+        if (counter > max_counter) {
+            max_counter = counter;
+        }
+    }
+    
+    cout << max_counter << '\n';
+    return 0;
+}
+```
+
 ## Concluzii 
 
 Deși normalizarea nu este altceva decât o tehnică auxiliară, aceasta se va dovedi a fi una foarte importantă în cazul multor probleme algoritmice, acest pas fiind un pas intermediar foarte important atunci când avem nevoie să prelucrăm datele folosind structuri de date, evitând astfel folosirea unor variante dinamice, care ocupă mult mai multă memorie și consumă mult mai mult timp. 

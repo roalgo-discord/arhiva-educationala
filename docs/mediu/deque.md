@@ -212,7 +212,7 @@ cout << maxSum << "\n";
 cout << maxLin << " " << maxCol << " " << maxLin1 << " " << maxCol1 << "\n";
 ```
 
-# Probleme suplimentare
+## Probleme suplimentare
 
 * [infoarena vila2](https://www.infoarena.ro/problema/vila2)
 * [RoAlgo PreOJI 2024 pofta](https://kilonova.ro/problems/2187)

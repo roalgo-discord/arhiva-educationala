@@ -16,7 +16,7 @@ nav:
     - Sortare și căutare:
         - Sume parțiale: partial-sums.md
         - Algoritmi simpli de sortare: sorting.md
-        - Metoda Greedy: greedy.md
+        - Introducere în Metoda Greedy: greedy.md
         - Căutarea binară: binary-search.md
     - Introducere în programarea dinamică: intro-dp.md
     - Introducere în teoria grafurilor: graphs.md
