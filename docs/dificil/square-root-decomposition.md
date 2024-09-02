@@ -298,6 +298,48 @@ Pentru a rezolva această problemă, plecăm de la faptul că dacă am vrea să 
 
 Din acest motiv, o idee care se impune imediat este aceea de a precalcula răspunsurile pentru cât mai multe valori ale lui $y$, pentru a evita această problemă pe viitor. Totuși, nu putem precalcula toate răspunsurile, deoarece complexitatea ar deveni $O(n^2)$. Din acest motiv, recurgem la o soluție de compromis, care folosește avantajele ambelor metode, iar din acest motiv, vom precalcula răspunsurile pentru toate valorile mai mici de $\sqrt n$, respectiv brut pentru toate valorile mai mari de $\sqrt n$, astfel complexitatea devenind $n \sqrt n$.
 
+```cpp
+#include <iostream>
+using namespace std;
+
+long long n, q, sp[302][100002], v[302];
+
+int main() {
+    cin >> n;
+    
+    for (int i = 1; i <= n; i++) {
+        cin >> v[i];
+    }
+    
+    for (int pas = 1; pas <= min(300, n); pas++) {
+        for (int i = 1; i <= n; i++) {
+            sp[pas][i] = v[i];
+            if(i > pas) {
+                sp[pas][i] += sp[pas][i - pas];
+            }
+        }
+    }
+    
+    cin >> q;
+    for (; q; q--) {
+        int x, y;
+        cin >> x >> y;
+        
+        if (y <= min(300, n)) {
+            cout << sp[y][x] << '\n';
+        }
+        else {
+            long long ans = 0;
+            while (x > 0) {
+                ans += v[x];
+                x -= y;
+            }
+            cout << ans << '\n';
+        }
+    }
+}
+```
+
 ### Problema [Bvarcolaci](https://kilonova.ro/problems/171) de la ONI 2015
 
 Pentru a rezolva această problemă, este foarte important să împărțim valorile în funcție de frecvența în care apar. Cu alte cuvinte, dacă un element apare de $x$ ori în șir, lungimea maximă a unei secvențe în care poate fi majoritar este de cel mult $2 \cdot x - 1$, ceea ce ne motivează să avem două abordări diferite în funcție de frecvența elementelor. 
