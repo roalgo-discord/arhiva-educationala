@@ -180,6 +180,7 @@ Pentru aprofundarea algoritmilor prezentați mai sus, recomand rezolvarea următ
 * [Probleme cu șmenul lui Mars](https://kilonova.ro/tags/375)
 * [Subsequences Summing to Sevens USACO Silver](https://usaco.org/index.php?page=viewproblem2&cpid=595)
 * [Haybale Stacking USACO Bronze](https://www.spoj.com/problems/HAYBALE/)
+* [ONI 2024 Eras](https://kilonova.ro/problems/2653/)
 * [Painting the Barn USACO Gold](http://www.usaco.org/index.php?page=viewproblem2&cpid=923)
 
 

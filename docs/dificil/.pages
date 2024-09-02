@@ -15,9 +15,9 @@ nav:
         - Componente biconexe: componente-biconexe.md
         - Cuplaj maxim pe graf bipartit: cuplaj-maxim-pe-graf-bipartit.md
     - Structuri de date:
-        - Square root decomposition: square-root-decomposition.md
+        - Descompuneri în bucăți de radical: square-root-decomposition.md
         - Arbori de intervale: segment-trees.md
-        - Arbori indexați binar: fenwick-tree-bit.md
+        - Arbori indexați binar: fenwick-tree.md
         - Range Minimum Query (sparse tables): rmq.md
         - Trie: trie.md
     - Algebră liniară:

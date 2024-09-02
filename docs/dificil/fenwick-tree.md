@@ -1,3 +1,11 @@
+---
+title: "Arbori indexati binar"
+tags:
+  - structuri de date
+---
+
+**Autori**: Ștefan-Cosmin Dăscălescu, Luca Valentin Mureșan
+
 ## Ce este un Arbore Indexat Binar?
 
 Arborii indexați binar (prescurtați de regulă, AIB) sunt o structură de date ce poate fi folosită pentru a actualiza eficient valori și pentru a calcula sume parțiale într-un tablou de valori ce poate avea una sau mai multe dimensiuni. 
