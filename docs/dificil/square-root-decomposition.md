@@ -565,6 +565,7 @@ Problemele și resursele pe care le veți găsi în cele ce urmează acoperă to
 
 * [cp-algorithms: Sqrt Decomposition](https://cp-algorithms.com/data_structures/sqrt_decomposition.html)
 * [SEPI Infobits F1 - paginile 99-137](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
+* [USACO Guide Sqrt Decomposition](https://usaco.guide/plat/sqrt?lang=cpp)
 * [Infoarena - The Square Root Trick](https://www.infoarena.ro/blog/square-root-trick)
 * [Infoarena - Multe "smenuri" de programare in C/C++... si nu numai!](https://www.infoarena.ro/multe-smenuri-de-programare-in-cc-si-nu-numai)
 * [Codeforces - Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
