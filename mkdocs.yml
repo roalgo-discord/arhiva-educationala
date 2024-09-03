@@ -113,8 +113,152 @@ plugins:
 nav:
   - Acasă: index.md
   - Introducere în C++:
-    - cppintro/index.md
-    - Introducere: cppintro/intro.md
+      - cppintro/index.md
+      - Introducere: cppintro/intro.md
+  - Ușor:
+      - Concepte fundamentale și de limbaj:
+          # - Introducere în C++: usor/intro-cpp.md
+          - Cunoștințe matematice de bază: usor/basic-math.md
+          - Complexități: usor/complexity.md
+          - Stil de cod și alte fundamente: usor/codestyle.md
+          - Prelucrarea cifrelor: usor/digits-manipulation.md
+          - Vectori (tablouri): usor/arrays.md
+          - Matrici: usor/matrices.md
+          - Simularea soluției: usor/simulating-solution.md
+          - Șiruri de caractere: usor/strings.md
+          - Subprograme: usor/functions.md
+      - Algebră:
+          - Divizibilitatea: usor/divisibility.md
+          - Ciurul lui Eratostene: usor/sieve.md
+      - Sortare și căutare:
+          - Sume parțiale: usor/partial-sums.md
+          - Algoritmi simpli de sortare: usor/sorting.md
+          - Introducere în Metoda Greedy: usor/greedy.md
+          - Căutarea binară: usor/binary-search.md
+      - Introducere în programarea dinamică: usor/intro-dp.md
+      - Introducere în teoria grafurilor: usor/graphs.md
+  - Mediu:
+      - Concepte fundamente și de limbaj:
+          - Căutare completă: mediu/complete-search.md
+          - Introducere în STL: mediu/stl.md
+          - Liste înlănțuite: mediu/linked-lists.md
+      - Tehnici de rezolvare a problemelor:
+          - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
+          - Abordarea problemelor constructive: mediu/constructive.md
+          - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
+          - Abordarea problemelor cu secvențe: mediu/sequences.md
+      - Algebră:
+          - Indicatorul lui Euler: mediu/euler-totient.md
+          - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md
+          - Baze de numerație: mediu/number-bases.md
+          - Principiul includerii și excluderii (pinex): mediu/pinex.md
+          - Invers modular: mediu/modular-inverse.md
+          - Funcția Möbius: mediu/mobius.md
+      - Sortare și căutare:
+          - Two pointers: mediu/two-pointers.md
+          - Sliding window: mediu/sliding-window.md
+          - Algoritmi de sortare: mediu/sorting-algorithms.md
+      - Programare dinamică:
+          - Problema rucsacului: mediu/knapsack.md
+          - Subșir maximal:
+              - Subșir comun maximal: mediu/lcs.md
+              - Subșir crescător maximal: mediu/lis.md
+          - Dinamică pe stări exponențiale (bitmask DP): mediu/bitmask-dp.md
+      - Teoria grafurilor:
+          - Introducere în arbori. Diametrul unui arbore: mediu/tree-1.md
+          - Sortare topologică: mediu/toposort.md
+          - Păduri de mulțimi disjuncte (DSU): mediu/dsu.md
+          - Arbore parțial de cost minim: mediu/apcm.md
+          - Algoritmi pentru drumuri minime: mediu/shortest-path.md
+          - Tehnica celor două DFS-uri (rerooting): mediu/rerooting.md
+      - Structuri de date:
+          - Algoritmul lui Lee (flood fill): mediu/lee.md
+          - Evaluarea unei expresii: mediu/expression-evaluation.md
+          - Deque: mediu/deque.md
+      - Introducere în combinatorică: mediu/intro-combinatorics.md
+      - Concepte fundamentale de geometrie: mediu/basic-geometry.md
+      - Altele:
+          - Operații pe biți: mediu/bitwise-ops.md
+          - Numere mari: mediu/bignum.md
+          - Normalizarea datelor: mediu/data-normalization.md
+          - Hashing: mediu/hashing.md
+          - Meet in the Middle: mediu/mitm.md
+  - Dificil:
+      - Tehnici de rezolvare a problemelor:
+          - Probleme interactive: dificil/interactive.md
+          - Probleme output only: dificil/output-only.md
+      - Căutare ternară: dificil/ternary-search.md
+      - Programare dinamică:
+          - Programare dinamică pe grafuri: dificil/graph-dp.md
+          - Programare dinamică pe arbore: dificil/tree-dp.md
+          - Programare dinamică pe intervale (range DP): dificil/range-dp.md
+          - Programare dinamică pe cifre (digit DP): dificil/digit-dp.md
+          - Programare dinamică pe permutări: dificil/permutations-dp.md
+          - Programare dinamică cu structuri de date: dificil/data-structures-dp.md
+      - Teoria grafurilor:
+          - Componente tare conexe: dificil/componente-tare-conexe.md
+          - Componente biconexe: dificil/componente-biconexe.md
+          - Cuplaj maxim pe graf bipartit: dificil/cuplaj-maxim-pe-graf-bipartit.md
+      - Structuri de date:
+          - Descompuneri în bucăți de radical (Square Root Decomposition): dificil/square-root-decomposition.md
+          - Arbori de intervale: dificil/segment-trees.md
+          - Arbori indexați binar: dificil/fenwick-tree.md
+          - Range Minimum Query (sparse tables): dificil/rmq.md
+          - Trie: dificil/trie.md
+      - Algebră liniară:
+          - Introducere în algebră liniară: dificil/intro-linalg.md
+          - Ridicare la putere a unei matrici: dificil/pow-mat.md
+      - Geometrie:
+          - Înfășurătoare convexă: dificil/convex-hull.md
+          - Baleiere (sweep line): dificil/sweep-line.md
+      - Algoritmi pe șiruri de caractere:
+          - Rotație lexicografică minimă: dificil/lmsr.md
+          - Knuth-Morris-Pratt (KMP): dificil/kmp.md
+          - Z Function: dificil/z-function.md
+      - Lucrul pe arbori:
+          - Binary lifting. Lowest common ancestor (LCA): dificil/lowest-common-ancestor.md
+          - Small to large: dificil/small-to-large.md
+          - Structuri de date pe arbore (Euler tour): dificil/euler-tour.md
+      - Altele:
+          - Bitsets: dificil/bitsets.md
+          - Algoritmi randomizați: dificil/random-algorithms.md
+  - Avansat:
+      - Algebră:
+          - Algoritmi de compresie și de corectare a erorilor:
+              - Coduri Gray: avansat/gray-codes.md
+              - Codarea Huffman: avansat/huffman.md
+              - Run-length encoding: avansat/rle.md
+          - Teorema chineză a resturilor (CRT): avansat/crt.md
+          - Introducere în probabilități: avansat/intro-probability.md
+          - FFT, NTT etc.: avansat/fft.md
+          - Recurențe liniare: avansat/linear-recurrences.md
+      - Programare dinamică:
+          - Convex Hull Trick: avansat/convex-hull-trick.md
+          - Programare dinamică pe divide et impera: avansat/dc-dp.md
+          - Aliens DP: avansat/aliens-dp.md
+          - Knuth DP: avansat/knuth-dp.md
+          - Component DP: avansat/component-dp.md
+      - Teoria grafurilor:
+          - Fluxuri: avansat/fluxuri.md
+          - Tipuri speciale de grafuri: avansat/special-graphs.md
+          - Dynamic connectivity: avansat/dynamic-connectivity.md
+          - 2-SAT: avansat/2-sat.md
+      - Structuri de date:
+          - Aho-Corasick: avansat/aho-corasick.md
+          - Treap-uri: avansat/treaps.md
+          - Heavy light decomposition (HLD): avansat/hld.md
+          - Centroid decomposition: avansat/centroid-decomposition.md
+          - Arbore virtual (virtual tree): avansat/virtual-tree.md
+          - Arbore de intervale persistenți: avansat/persistent-segment-tree.md
+          - Arbore Li Chao: avansat/li-chao.md
+      - Algoritmul lui Gauss: avansat/gauss-algorithm.md
+      - Algoritmi pe șiruri de caractere:
+          - Algoritmul lui Manacher: avansat/manacher.md
+          - Tablou/arbore de sufixe: avansat/suffix-array-tree.md
+      - Altele:
+          - Matematică avansată: avansat/advanced-math.md
+          - Teoria jocurilor: avansat/game-theory.md
+          - Funcții generatoare: avansat/generating-functions.md
 
 extra_javascript:
   - javascripts/katex.js
