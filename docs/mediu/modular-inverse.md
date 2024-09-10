@@ -10,6 +10,8 @@ tags:
 
 În cadrul multor probleme de informatică se cere calcularea unei valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.
 
+Se recomandă citirea informațiilor din articolul despre [matematică de bază](https://roalgo-discord.github.io/arhiva-educationala/usor/basic-math/) înainte de a citi noțiunile de aici. 
+
 ## Ce este inversul modular?
 
 În matematică, inversul unui număr real $x$ este acel număr $x^{-1}$ care satisface $x \cdot x^{-1} = 1$. Împărțirea unui număr la $x$ este echivalentă cu înmulțirea acestuia cu $x^{-1} = \frac{1}{x}$. Tot așa, și în aritmetica modulară definim **inversul modular** al unui număr $x$ (cu respect la modulul $M$) acel număr notat $x^{-1}$ care satisface relația $x \cdot x^{-1} \equiv{1} \pmod{M}$. Se poate demonstra faptul că un număr întreg are un invers modular modulo $M$ dacă și numai dacă el și $M$ sunt prime între ele.
@@ -101,6 +103,9 @@ int inversModular(const int A) {
 
 * [Invers Modular](https://www.infoarena.ro/problema/inversmodular)
 * [Prosum](https://kilonova.ro/problems/1697)
+* [Codeforces Beautiful Numbers](http://codeforces.com/problemset/problem/300/C)
+* [Toate aplicatiile prezentate la combinatorica](https://roalgo-discord.github.io/arhiva-educationala/mediu/intro-combinatorics/)
+* [Codeforces Sum of the kth powers](https://codeforces.com/contest/622/problem/F)
 
 ## Lectură suplimentară
 
@@ -108,4 +113,6 @@ int inversModular(const int A) {
 * [Modular arithmetic - USACO Guide](https://usaco.guide/gold/modular?lang=cpp)
 * [Modular multiplicative inverse](https://cp-algorithms.com/algebra/module-inverse.html)
 * [Calculate modulo inverses efficiently](https://codeforces.com/blog/entry/83075)
-* [Funcție scurtă de a calcula inversul modular](https://codeforces.com/blog/entry/23365)
+* [Modular arithmetic for Beginners - Codeforces](https://codeforces.com/blog/entry/72527)
+* [Funcție scurtă de a calcula inversul modular - Codeforces](https://codeforces.com/blog/entry/23365)
+* [Modular Inverse / Inverse Remainder / Modular Division – A Quick Guide - Codeforeces](https://codeforces.com/blog/entry/113756)

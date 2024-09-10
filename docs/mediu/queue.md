@@ -1,104 +1,183 @@
 ---
-title: Invers Modular
+title: Coada
 tags:
-    - matematica
-    - combinatorica
+    - structuri de date
 ---
 
-**Autor**: Iuoraș Andrei
+**Autor**: Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
-## Problema
+## Introducere și definiție
 
-În cadrul multor probleme de informatică se cere calcularea unor valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.
+Cu toții suntem obișnuiți cu noțiunea de coadă. Aproape în fiecare zi, suntem nevoiți să stăm la coadă, fie că e vorba de cozi la magazin, la o casă de bilete sau la un ghișeu. În fiecare dintre aceste situații, ne așezăm în spatele cozii, așteptăm ca rând pe rând, cei din fața noastră să iasă din coadă, iar atunci când ajungem primii in coadă, să fim serviți.
 
-## Ce este inversul modular?
+În schimb, atunci când vine vorba de informatică și mai ales algoritmică, principiile cozilor sunt foarte utile în ceea ce privește reprezentarea datelor, făcându-ne viața mult mai ușoară și deschizând poarta spre foarte multe tipuri de aplicații.
 
-In matematică, inversul unui număr real $x$ este acel număr $x^{-1}$ care satisface $x \cdot x^{-1} = 1$. Împărțirea unui număr la $x$ este echivalentă cu înmulțirea acestuia cu $x^{-1} = \frac{1}{x}$. Tot așa, și în aritmetica modulară definim **inversul modular** al unui număr $x$ (cu respect la modulul $M$) acel număr notat $x^{-1}$ care satisface relația $x \cdot x^{-1} \equiv{1} \pmod{M}$. Se poate demonstra faptul că un număr întreg are un invers modular modulo $M$ dacă și numai dacă el și $M$ sunt prime între ele.
+Coada este structura de date care pune la dispoziție informațiile primite în ordinea în care au fost introduse.
 
-Atunci, pentru a efectua operația de împărțire cu respect la modul dintre $A$ și $B$ trebuie să îl înmulțim pe $A$ cu inversul modular al lui $B$, deoarece $(\frac{A}{B}) \mod{M} = (A \cdot B^{-1}) \mod{M}$.
+Ea funcționează pe principiul “primul venit, primul servit” (First In, First Out/FIFO).
 
-## Cum calculam inversul modular al unui număr?
+## Operații cu coada
 
-### Algoritmul extins al lui Euclid
+Cu o coadă se pot face următoarele operații **în timp constant**:
 
-Luăm în considerare următoarea identitate:
+* adăugarea unui nou element în spatele cozii. Operația se numește **push**;
+* eliminarea elementului din vârful cozii. Operația se numește **pop**;
+* accesarea valorii din vârful cozii. Operația se numește **front**;
 
-!!! note "Identitatea lui Bézout"
+Ca o consecință a acestor operații principale, putem face și următoarele lucruri:
 
-    Fie numerele întregi $A$, $B$ și $d = cmmdc(A, B)$. Atunci, există cel puțin o pereche de numere întregi $x$ și $y$ astfel încat $Ax + By = d$.
+* inițializarea cozii – crearea unei cozi vide;
+* verificarea faptului că o coadă este sau nu vidă;
 
-Daca $A$ și $M$ sunt prime între ele, atunci există $x_1$ și $y_1$ astfel încât $Ax_1 + My_1 = 1$. De aici reiese faptul că $Ax_1 \equiv 1 \pmod{M}$, adică $x_1$ este inversul modular al lui $A$.
+## Modul de folosire și implementare al cozii
 
-Fie $c$ câtul împărțirii lui $A$ la $M$ și $r$ restul. Algoritmul lui Euclid ne spune că $cmmdc(A, M) = cmmdc(M, r) \implies cmmdc(M, r) = 1$. Astfel, există $x_2$ și $y_2$ care satisfac $Mx_2 + ry_2 = 1$.
+Pentru a folosi o coadă, avem nevoie de o metodă de a o implementa. Două dintre cele mai des întâlnite variante de a implementa o coadă sunt varianta statică, folosind tablouri (eventual circulare) sau folosind containerul queue din STL.
 
-Dar
-$$
-r = A - M \cdot c \implies Mx_2 + (A - M \cdot c)y_2 = 1 \iff Mx_2 + Ay_2 - M \cdot c \cdot y_2 = 1 \iff Ay_2 + M(x_2 - c \cdot y_2) = 1
-$$
-Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid, adăugându-i parametrii $x_1$ si $y_1$:
+În cele ce urmează, vom prezenta aceste implementări folosind problema [coada](https://www.pbinfo.ro/probleme/876/coada) de pe pbinfo, aceasta fiind o problemă de bază care ne ajută să putem explica diferențele între diverse metode de a implementa această structură de date. 
 
-```cpp
-void euclidExtins(int a, int b, int& x1, int& y1)
-```
+### Coada cu tablouri
 
-În cazul în care parametrul $b$ din funcție este egal cu $0$, atunci $a$ va fi egal cu $1$ și astfel vom seta $x_1 = 1$, iar $y_1$ poate lua orice valoare, de exemplu tot $1$.
+O primă metodă de a implementa o coadă, fără folosirea vreunei instrucțiuni avansate este cea care folosește tablouri, ținând pozițiile în care se află primul și ultimul element din coadă. 
 
-!!! warning "Atenție"
-    Valoarea lui $x_1$ poate fi și negativă. Dacă este necesară o valoare pozitivă atunci facem operația $x_1 = x_1 + M$.
-
-Mai jos se poate găsi o implementare în C++ a algoritmului lui Euclid, respectiv a funcției de calculare a inversului modular al lui $A$ pentru modulul $M$:
+Aici se poate observa faptul că folosim un tablou de dimensiune fixă, iar atunci când adăugăm și scoatem valori din coadă, ajustăm valorile lui $L$ și $R$.
 
 ```cpp
-void euclidExtins(int a, int b, int& x1, int& y1) {
-    if (b == 0) {
-        x1 = 1;
-        y1 = 1;
-        return;
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, q[1000001], L = 0, R = 0;
+    cin >> n;
+    
+    while (n--) {
+        char c[6];
+        cin >> c;
+        
+        // afisam prima valoare a cozii
+        if (c[0] == 'f') {
+            cout << q[L] << '\n';
+        }
+        else {
+            // adaugam o noua valoare si crestem R
+            if (c[1] == 'u') {
+                int val;
+                cin >> val;
+                q[R++] = val;
+            }
+            // scoatem o valoare si crestem L
+            else {
+                L++;
+            }
+        }
     }
-
-    int x2, y2;
-
-    euclidExtins(b, a % b, x2, y2);
-
-    x1 = y2;
-    y1 = (x2 - a / b * y2) % M;
-}
-
-int inversModular(int A) {
-    int x1, y1;
-
-    euclidExtins(A, M, x1, y1);
-
-    /* daca vrem x1 pozitiv
-    if(x1 < 0)
-        x1 += M;
-    */
-
-    return x1;
+    return 0;
 }
 ```
 
-### Calcularea folosind mica teorema a lui Fermat
+### Coada circulară 
 
-!!! note "Mica teoremă a lui Fermat"
+O îmbunătățire pe care o putem face la această implementare constă în a refolosi memoria dacă știm dimensiunea maximă pe care o poate avea coada la un moment dat. Astfel, în loc să stocăm cantitatea maximă de valori care intră in coadă, stocăm doar dimensiunea maximă a datelor, iar pentru a ajusta valorile lui $L$ și $R$, le vom ajusta circular, astfel limitând memoria folosită. 
 
-    Dacă $p$ este un număr prim și $a$ este un număr întreg prim cu $p$, atunci $a^{p-1} \equiv 1 \pmod{p}$
+```cpp
+#include <iostream>
+using namespace std;
 
-Congruența se mai poate scrie ca:
-$$
-a \cdot a^{p - 2} \equiv 1 \pmod{p}
-$$
-Se poate observa ușor că defapt inversul modular al lui $a$ este $a^{p - 2}$, care poate fi calculat rapid folosind exponențierea logaritmică.
+int main() {
+    int n, q[1001], L = 0, R = 0, maxi = 1001;
+    cin >> n;
+    
+    while (n--) {
+        char c[6];
+        cin >> c;
+        
+        // afisam prima valoare a cozii
+        if (c[0] == 'f') {
+            cout << q[L] << '\n';
+        }
+        else {
+            // adaugam o noua valoare si crestem R
+            if (c[1] == 'u') {
+                int val;
+                cin >> val;
+                q[R] = val;
+                R++;
+                if (R >= maxi) {
+                    R -= maxi;
+                }
+            }
+            // scoatem o valoare si crestem L
+            else {
+                L++;
+                if (L >= maxi) {
+                    L -= maxi;
+                }
+            }
+        }
+    }
+    return 0;
+}
+```
 
-## Probleme cu invers modular
+### Coada implementată cu std::queue
 
-* [Invers Modular](https://www.infoarena.ro/problema/inversmodular)
-* [Prosum](https://kilonova.ro/problems/1697)
+Primele două implementări, deși utile și corecte, au un mare dezavantaj, practic la fel ca la orice structură de date statică, trebuie să estimăm câte valori vom avea. Astfel, se impune introducerea unei implementări dinamice, care să elimine acest dezavantaj, iar o metodă de a implementa coada folosind STL constă în folosirea containerului std::queue, acesta fiind specializat pentru operațiile descrise mai sus, păstrând toate avantajele cozii, adăugându-se faptul că memoria de care avem nevoie este doar cea pe care o folosim la un moment dat, fără spațiu suplimentar folosit. 
+
+Pentru implementarea std::queue, vom avea nevoie de biblioteca queue, precum și cunoașterea funcțiilor specifice, push, pop și front. 
+
+```cpp
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    queue<int> q;
+    
+    while (n--) {
+        char c[6];
+        cin >> c;
+        
+        // afisam prima valoare a cozii
+        if (c[0] == 'f') {
+            cout << q.front() << '\n';
+        }
+        else {
+            // adaugam o noua valoare si crestem R
+            if (c[1] == 'u') {
+                int val;
+                cin >> val;
+                q.push(val);
+            }
+            // scoatem o valoare si crestem L
+            else {
+                q.pop();
+            }
+        }
+    }
+    return 0;
+}
+```
+
+## Aplicații ale cozii
+
+Coada se regăsește ca o aplicație pentru tot ce înseamnă păstrarea datelor într-o ordine cronologică, fie că e vorba de evenimente, stări, poziții sau alte informații similare. Datorită versatilității sale, putem să o folosim în combinație cu stiva, problemele ce constau în implementarea cozii cu [stive](https://roalgo-discord.github.io/arhiva-educationala/mediu/stack/) și invers sunt foarte cunoscute și deschid ușa către idei foarte importante, așa cum se poate observa și în problemele de pe Leetcode menționate mai jos. 
+
+Dintre cei mai importanți algoritmi ce au la bază o coadă, vom menționa parcurgerea în lățime (BFS), împreună cu varianta ei pe matrice, algoritmul lui Lee și in general, Flood Fill. Pentru mai multe detalii, puteți explora [acest articol](https://roalgo-discord.github.io/arhiva-educationala/mediu/lee/).
+
+Nu în ultimul rând, coada este o structură de date ce apare în diverse probleme de simulare a unui proces sau în anumite tipuri de probleme ce folosesc tehnici de tipul Sliding Window, deque-ul fiind o structură de date specializată pe asemenea algoritmi, așa cum este prezentată și [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/deque/).
+
+
+## Probleme cu coadă
+
+* [Coada1 pbinfo](https://www.pbinfo.ro/probleme/1598/coada1)
+* [Implement Queue using Stacks - Leetcode](https://leetcode.com/problems/implement-queue-using-stacks/description/)
+* [Implement Stack using Queues - Leetcode](https://leetcode.com/problems/implement-stack-using-queues/description/)
 
 ## Lectură suplimentară
 
-* [Algoritmul lui Euclid extins. Invers modular - Pbinfo](https://www.pbinfo.ro/articole/18942/algoritmul-lui-euclid-extins-invers-modular)
-* [Modular arithmetic - USACO Guide](https://usaco.guide/gold/modular?lang=cpp)
-* [Modular multiplicative inverse](https://cp-algorithms.com/algebra/module-inverse.html)
-* [Calculate modulo inverses efficiently](https://codeforces.com/blog/entry/83075)
-* [Funcție scurtă de a calcula inversul modular](https://codeforces.com/blog/entry/23365)
+* [Tipul coada - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_14_-_12_dec_2019#Tipul_coad%C4%83)
+* [Coada - pbinfo](https://www.pbinfo.ro/articole/19579/coada)
+* [Queue - wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
