@@ -3,23 +3,100 @@ tags:
     - structuri de date
     - Coadă
     - Lee
+    - Fill
+    - Stiva
     - BFS
+    - DFS
 ---
 
 **Autor:** Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
 ## Introducere
 
-Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dac 
+Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte. 
 
 !!! info "Resursă foarte utilă"
     Recomandăm softul făcut de cei de la Liceul Emil Racoviță Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
 
-## Implementare
+Pe parcurs, veți observa că indiferent de modul în care veți rezolva aceste clase de probleme, multe dintre principiile pe care le folosiți vor rămâne aceleași, în special atunci când vine vorba de implementarea acestor tipuri de parcurgeri. 
+
+Cele două moduri principale de a rezolva această categorie de probleme sunt fie folosind algoritmi de tip flood fill recursiv (numit și fill în jargonul românesc), fie folosind algoritmi iterativi de parcurgere ai labirintului (numit algoritmul lui Lee în literatura de specialitate românească).
+
+În cele ce urmează, voi prezenta atât flood fill-ul recursiv, cât și algoritmul lui Lee.
+
+## Fundamente
+
+Până să ajungem să discutăm implementarea algoritmilor în sine, vom prezenta câțiva pași importanți pe care trebuie să-i facem până ajungem să implementăm complet acești doi algoritmi, precum și cunoștințele necesare.
+
+### Cunoștințe necesare 
+
+În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/queue/).
+
+În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/stack/), iar informații despre implementarea funcțiilor recursive se găsesc [aici](https://roalgo-discord.github.io/arhiva-educationala/usor/functions/).
+
+O altă noțiune care se recomandă a fi cunoscută în prealabil este tipul de date pair sau o alternativă a acestuia (tuple sau dacă preferați implementările în stilul C, tipul de date struct, care permite și alte modificări după caz).
+
+### Vectorii de direcție
+
+În majoritatea problemelor de acest tip, personajele noastre se vor deplasa folosind mutări succesive pe una dintre cele $4$ sau $8$ direcții care ne sunt permise de problemă (de regulă, direcțiile cardinale - nord, est, sud, vest și eventual direcțiile diagonale - nord-est, sud-est, sud-vest, nord-vest).
+
+Pentru a stoca în memorie aceste dimensiuni cu ușurință, vom ține în memorie toate direcțiile posibile, iar pentru a face scrierea lor ușoară, se recomandă scrierea lor în sensul acelor de ceasornic. Acestea se pot scrie toate la început, noi putând folosi fie arrays din C, fie vectori. 
+
+Mai jos găsiți modul de declarare a acestor vectori de direcție atunci când putem merge doar în direcția celor $4$ vecini cardinali.
+
+```cpp
+int ox[] = {-1, 0, 1, 0};
+int oy[] = {0, 1, 0, -1};
+```
+
+```cpp
+vector<int> ox = {-1, 0, 1, 0};
+vector<int> oy = {0, 1, 0, -1};
+```
+
+Pentru a extinde acum la $8$ vecini, vom insera direcțiile intermediare în ordinea acelor de ceasornic, mai jos găsiți modul de declarare a acestor vectori de direcție pentru toate direcțiile, începând de la N și terminând cu NV, în sens orar. 
+
+```cpp
+int ox[] = {-1, -1, 0, 1, 1, 1, 0, -1};
+int oy[] = {0, 1, 1, 1, 0, -1, -1, -1};
+```
+
+```cpp
+vector<int> ox = {-1, -1, 0, 1, 1, 1, 0, -1};
+vector<int> oy = {0, 1, 1, 1, 0, -1, -1, -1};
+```
+
+O alternativă folosită în multe coduri constă în enumerarea vecinilor în ordine crescătoare a schimbării care se produce pe linie, mai întâi prioritizând vecinii nordici, apoi cei centrali și apoi cei sudici.
+
+```cpp
+int ox[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+int oy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
+```
+
+```cpp
+vector<int> ox = {-1, -1, -1, 0, 0, 1, 1, 1};
+vector<int> oy = {-1, 0, 1, -1, 1, -1, 0, 1};
+```
+
+Indiferent de modul în care îi declarați, dacă sunteți la un punct $(x, y)$ și vreți să verificați toți vecinii, tot ce trebuie să faceți este să parcurgeți vectorii de direcție și să identificați valorile vecinilor. 
+
+```cpp
+for (int i = 0; i < neighbors; i++) {
+    int nxt_x = x + ox[i];
+    int nxt_y = y + oy[i];
+    // aici urmeaza verificarile ulterioare
+}
+```
+
+## Algoritmul fill (flood fill recursiv)
+
+### Implementare
+
+## Algoritmul lui Lee
+
+### Implementare
 
 ## Problemă introductivă
-
-## Lee cu o singură origine
 
 ### Problemă exemplu
 
