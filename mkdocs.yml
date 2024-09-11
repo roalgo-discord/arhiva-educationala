@@ -1,5 +1,5 @@
 ---
-site_name: Arhiva Educationala Roalgo
+site_name: Arhiva Educationala RoAlgo
 site_url: https://roalgo.github.io/arhiva-educationala/
 
 theme:
@@ -175,7 +175,9 @@ nav:
           - Algoritmi pentru drumuri minime: mediu/shortest-path.md
           - Tehnica celor două DFS-uri (rerooting): mediu/rerooting.md
       - Structuri de date:
-          - Algoritmul lui Lee (flood fill): mediu/lee.md
+          - Coada: mediu/queue.md
+          - Stiva: mediu/stack.md
+          - Algoritmul lui Lee. Flood Fill: mediu/lee.md
           - Evaluarea unei expresii: mediu/expression-evaluation.md
           - Deque: mediu/deque.md
       - Introducere în combinatorică: mediu/intro-combinatorics.md
