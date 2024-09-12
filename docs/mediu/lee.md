@@ -88,15 +88,173 @@ for (int i = 0; i < neighbors; i++) {
 }
 ```
 
+### Evitarea accesării unor pătrate din afara matricii
+
+Pentru a ne asigura că de-a lungul parcurgerilor, noi nu vom ieși din matrice, avem două variante la fel de bune și populare.
+
+O primă variantă constă în a adăuga ziduri imaginare pe marginile matricii, procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se numește mat, iar tabloul are $n$ linii și $m$ coloane.
+
+```cpp
+for (int i = 0; i <= m+1; i++) {
+    mat[0][i] = mat[n+1][i] = -1; // bordarea liniilor 0 si n+1
+}
+for (int i = 0; i <= n+1; i++) {
+    mat[i][0] = mat[i][m+1] = -1; // bordarea coloanelor 0 si m+1
+}
+
+O a doua variantă constă în verificarea atentă a fiecărei stări atunci când trecem prin ea, astfel încât să ne asigurăm că nu ieșim din matrice, lucru ce se întâmplă când trecem prin pătrate noi în matrice.
+
+```cpp
+for (int i = 0; i < neighbors; i++) {
+    int nxt_x = x + ox[i];
+    int nxt_y = y + oy[i];
+    if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m) {
+        // aici vin verificarile ulterioare
+    }
+}
+```
+
+Pe de o parte, un avantaj al bordării este acela că nu avem nevoie de o verificare relativ complicată pentru pătratele din matrice. Pe de altă parte, verificarea fără bordare nu are nevoie de memorie suplimentară. Se poate observa faptul că ambele metode au avantajele lor, nefiind una din ele superioară celeilalte. 
+
+## Problemă introductivă - [Counting Rooms](https://cses.fi/problemset/task/1192/)
+
+Pentru a exemplifica aceste noțiuni și a prezenta algoritmii, precum și diferențele dintre ei, vom pleca de la o problemă simplă, și anume aflarea numărului de camere dintr-o încăpere.
+
 ## Algoritmul fill (flood fill recursiv)
 
-### Implementare
+Pentru a implementa algoritmul flood fill, va trebui să plecăm pe rând din fiecare punct nevizitat, iar la un pas al acestui algoritm, vom verifica toți vecinii folosind vectorul de direcție creat anterior, iar atunci când dăm de un asemenea punct, vom apela funcția fill pentru a continua vizitarea punctelor. Trebuie avut grijă să marcăm punctele drept vizitate, pentru a evita ciclarea la infinit. 
 
-## Algoritmul lui Lee
+!!! note "Observație"
+    Se poate observa că acest algoritm este un caz particular al parcurgerii DFS de pe grafuri, ambele fiind recursive și operând în același mod.
 
-### Implementare
+Mai jos, puteți găsi o implementare recursivă, în stilul algoritmului flood fill, care rezolvă problema Counting Rooms, prezentată mai sus.
 
-## Problemă introductivă
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+vector<int> ox = {-1, 0, 1, 0};
+vector<int> oy = {0, 1, 0, -1};
+
+void fill (int n, int m, int X, int Y, vector<vector<char> > &grid, vector<vector<int> > &visited) {
+    visited[X][Y] = 1;
+    for (int i = 0; i < 4; i++) {
+        int nxt_x = X + ox[i];
+        int nxt_y = Y + oy[i];
+        
+        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m && visited[nxt_x][nxt_y] == 0 && grid[nxt_x][nxt_y] == '.') {
+            fill(n, m, nxt_x, nxt_y, grid, visited);
+        }
+    }
+}
+int main() {
+    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n, m;
+    cin >> n >> m;
+    
+    vector<vector<char> > grid(n+1, vector<char> (m+1));
+    vector<vector<int> > visited(n+1, vector<int> (m+1));
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+    
+    int ans = 0;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            if (grid[i][j] == '.' && visited[i][j] == 0) {
+                
+                fill(n, m, i, j, grid, visited);
+                ans++;
+            }
+        }
+    }
+    
+    cout << ans << '\n';
+    return 0;
+}
+```
+
+## Algoritmul lui Lee (flood fill iterativ)
+
+Pentru a implementa algoritmul lui Lee, va trebui să plecăm pe rând din fiecare punct nevizitat, iar la un pas al acestui algoritm, vom verifica toți vecinii folosind vectorul de direcție creat anterior, iar atunci când dăm de un asemenea punct, vom adăuga vecinul în coadă, la fiecare pas prelucrând primul punct care încă se află în coadă. Trebuie avut grijă să marcăm punctele drept vizitate, pentru a evita ciclarea la infinit. 
+
+!!! note "Observație"
+    Se poate observa că acest algoritm este un caz particular al parcurgerii BFS de pe grafuri, ambele fiind iterative și operând în același mod, folosind o coadă.
+
+Mai jos, puteți găsi o implementare bazată pe o coadă, în stilul algoritmului lui Lee, care rezolvă problema Counting Rooms, prezentată mai sus.
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+int main() {
+    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n, m;
+    cin >> n >> m;
+    
+    vector<vector<char> > grid(n+1, vector<char> (m+1));
+    vector<vector<int> > visited(n+1, vector<int> (m+1));
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+    
+    int ans = 0;
+    vector<int> ox = {-1, 0, 1, 0};
+    vector<int> oy = {0, 1, 0, -1};
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            if (grid[i][j] == '.' && visited[i][j] == 0) {
+                
+                queue <pair<int, int> > q;
+                
+                q.push({i, j});
+                visited[i][j] = 1;
+                ans++;
+                
+                while (!q.empty()) {
+                    pair<int, int> node = q.front();
+                    q.pop();
+                    
+                    for (int i = 0; i < 4; i++) {
+                        int nxt_x = node.first + ox[i];
+                        int nxt_y = node.second + oy[i];
+                        
+                        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m && visited[nxt_x][nxt_y] == 0 && grid[nxt_x][nxt_y] == '.') {
+                            visited[nxt_x][nxt_y] = 1;
+                            q.push({nxt_x, nxt_y});
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    cout << ans << '\n';
+    return 0;
+}
+```
 
 ### Problemă exemplu
 
