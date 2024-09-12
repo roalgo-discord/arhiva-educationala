@@ -101,6 +101,7 @@ for (int i = 0; i <= m+1; i++) {
 for (int i = 0; i <= n+1; i++) {
     mat[i][0] = mat[i][m+1] = -1; // bordarea coloanelor 0 si m+1
 }
+```
 
 O a doua variantă constă în verificarea atentă a fiecărei stări atunci când trecem prin ea, astfel încât să ne asigurăm că nu ieșim din matrice, lucru ce se întâmplă când trecem prin pătrate noi în matrice.
 
@@ -275,6 +276,10 @@ Deși acest algoritm este folosit în principal pentru problemele de drumuri min
 ### Lee cu coadă de priorităti
 
 ## Concluzii
+
+Algoritmii de tip flood fill sunt unii din cei mai întâlniți algoritmi din această secțiune a structurilor de date liniare, ei regăsindu-se în foarte multe tipuri de probleme, fiind una din cele mai populare tipuri de probleme de la olimpiadele de informatică din România și nu numai, aceștia fiind regăsiți și în USACO Silver și alte competiții similare. 
+
+Pe lângă aplicațiile din problemele de algoritmică, aceștia se regăsesc și în multe situații practice, în care trebuie estimat impactul unor potențiale dezastre naturale sau chiar și în editarea imaginilor și a altor forme grafice. 
 
 ## Probleme suplimentare
 
