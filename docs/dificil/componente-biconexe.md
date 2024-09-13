@@ -200,10 +200,13 @@ int main()
 
 ## Concluzii
 
-Componentele biconexe, la fel ca și componentele tare conexe, sunt un concept al căror implementare, odată ce este știută, face procesul de rezolvare al problemelor mult mai ușor. Totuși, trebuie avut în vedere faptul că 
+Componentele biconexe, la fel ca și componentele tare conexe, sunt un concept al căror implementare, odată ce este știută, face procesul de rezolvare al problemelor mult mai ușor. Totuși, trebuie avut în vedere faptul că acestea apar de multe ori și combinate cu alte tehnici, precum programarea dinamică sau alți algoritmi pe grafuri.
+
+O altă aplicație a acestei metode reprezintă algoritmul lui Tarjan, explicat [aici](https://roalgo-discord.github.io/arhiva-educationala/dificil/componente-tare-conexe/#algoritmul-lui-tarjan).
 
 ## Probleme suplimentare
 
+* [biconex infoarena](https://www.infoarena.ro/problema/biconex)
 * [Strongly Connected Edges - CSES](https://cses.fi/problemset/task/2177)
 * [Componente biconexe - pbinfo](https://www.pbinfo.ro/probleme/1572/componentebiconexe)
 * [Non-academic problem - Codeforces](https://codeforces.com/contest/1986/problem/F)
