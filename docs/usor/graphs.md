@@ -704,6 +704,9 @@ int main() {
 - [USACO Bronze Milk Factory](https://usaco.org/index.php?page=viewproblem2&cpid=940)
 - [USACO Bronze The Great Revegetation](https://usaco.org/index.php?page=viewproblem2&cpid=916)
 - [USACO Silver Closing the Farm](https://usaco.org/index.php?page=viewproblem2&cpid=644)
+- [USACO Silver Moocast](https://usaco.org/current/index.php?page=viewproblem2&cpid=668)
+- [infoarena multiplu](https://www.infoarena.ro/problema/multiplu)
+- [ONI 2004 base3](https://kilonova.ro/problems/117)
 - [Probleme cu grafuri de pe kilonova](https://kilonova.ro/tags/300)
 - [Probleme cu grafuri de pe codeforces, ordonate după dificultate](https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cgraphs%2Cdfs+and+similar)
 
