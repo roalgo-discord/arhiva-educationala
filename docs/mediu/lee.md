@@ -16,7 +16,7 @@ tags:
 Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte. 
 
 !!! info "Resursă foarte utilă"
-    Recomandăm softul făcut de cei de la Liceul Emil Racoviță Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
+    Recomandăm softul făcut de cei de la Colegiul Național Emil Racoviță Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
 
 Pe parcurs, veți observa că indiferent de modul în care veți rezolva aceste clase de probleme, multe dintre principiile pe care le folosiți vor rămâne aceleași, în special atunci când vine vorba de implementarea acestor tipuri de parcurgeri. 
 
@@ -290,9 +290,12 @@ Pe lângă aplicațiile din problemele de algoritmică, aceștia se regăsesc ș
 * [USACO Silver Cross Country Skiing](http://www.usaco.org/index.php?page=viewproblem2&cpid=380)
 * [OJI 2021 labirint](https://kilonova.ro/problems/938)
 * [OJI 2009 insule](https://kilonova.ro/problems/398)
+* [Codeforces Fox and Two Dots](https://codeforces.com/contest/510/problem/B)
 * [USACO Silver Where's Bessie](http://www.usaco.org/index.php?page=viewproblem2&cpid=740)
+* [Codeforces Solve the Maze](https://codeforces.com/contest/1365/problem/D)
 * [OJI 2018 castel](https://kilonova.ro/problems/900)
 * [ONI 2014 traseu](https://kilonova.ro/problems/1429)
+* [Codeforces Igor in the Museum](https://codeforces.com/contest/598/problem/D)
 * [ONI 2012 gheizere](https://kilonova.ro/problems/1396)
 * [Codeforces Olya and Energy Drinks](https://codeforces.com/problemset/problem/877/D)
 * [USACO Silver Comfortable Cows](http://www.usaco.org/index.php?page=viewproblem2&cpid=1110)
@@ -309,6 +312,7 @@ Pe lângă aplicațiile din problemele de algoritmică, aceștia se regăsesc ș
 * [Algoritmul lui Lee - infoarena](https://infoarena.ro/algoritmul-lee)
 * [Algoritmul lui Lee - pbinfo](https://www.pbinfo.ro/articole/18589/algoritmul-lui-lee)
 * [Cozi - CPPI Sync](https://cppi.sync.ro/materia/cozi.html)
+* [Probleme diverse - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_paralela_cu_lee.html)
 * [Flood fill - wikipedia](https://en.wikipedia.org/wiki/Flood_fill)
 * [Algoritmi de umplere - generalitati - Pbinfo](https://www.pbinfo.ro/articole/18892/algoritmi-de-umplere-generalitati)
 * [Algoritmi de umplere - fill recursiv - Pbinfo](https://www.pbinfo.ro/articole/18893/fill-recursiv)

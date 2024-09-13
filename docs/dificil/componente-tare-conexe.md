@@ -2,6 +2,7 @@
 tags:
     - grafuri orientate
     - parcurgeri
+    - cicluri
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
