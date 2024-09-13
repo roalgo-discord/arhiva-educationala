@@ -16,7 +16,7 @@ tags:
 Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte. 
 
 !!! info "Resursă foarte utilă"
-    Recomandăm softul făcut de cei de la Colegiul Național Emil Racoviță Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
+    Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
 
 Pe parcurs, veți observa că indiferent de modul în care veți rezolva aceste clase de probleme, multe dintre principiile pe care le folosiți vor rămâne aceleași, în special atunci când vine vorba de implementarea acestor tipuri de parcurgeri. 
 
@@ -271,9 +271,7 @@ Deși acest algoritm este folosit în principal pentru problemele de drumuri min
 
 ## Lee cu structuri de date 
 
-### Lee cu seturi
-
-### Lee cu coadă de priorităti
+### Lee cu seturi sau coadă de priorități
 
 ## Concluzii
 
