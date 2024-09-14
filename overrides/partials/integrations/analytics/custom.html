@@ -280,3 +280,17 @@
     });
   });
 </script>
+
+<script defer data-domain="roalgo-discord.github.io/arhiva-educationala" src="https://plausible.susan.lol/js/script.js"></script>
+<script>
+  window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.forms.search) {
+      var query = document.forms.search.query;
+      query.addEventListener("blur", function() {
+        if (this.value) plausible("Search", { props: { search_term: this.value } });
+      })
+    }
+  });
+</script>
