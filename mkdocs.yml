@@ -112,7 +112,6 @@ plugins:
       cards_layout_options:
         font_family: Roboto
         font_variant: Condensed
-  - privacy
 
 nav:
   - Acasă: index.md
