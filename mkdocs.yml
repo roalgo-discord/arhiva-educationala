@@ -54,6 +54,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  custom_dir: overrides
 
 extra:
   social:
@@ -61,6 +62,8 @@ extra:
       link: https://discord.gg/roalgo
       name: Hai pe discord!
   generator: false
+  analytics:
+    provider: custom
 
 copyright: >
   Accest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
