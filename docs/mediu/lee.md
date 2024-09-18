@@ -703,7 +703,7 @@ Pe lângă aplicațiile din problemele de algoritmică, aceștia se regăsesc ș
 * [Algoritmul lui Lee - infogenius](https://infogenius.ro/algoritmul-lui-lee/)
 * [Algoritmul lui Lee - infoarena](https://infoarena.ro/algoritmul-lee)
 * [Algoritmul lui Lee - pbinfo](https://www.pbinfo.ro/articole/18589/algoritmul-lui-lee)
-* [Cozi - CPPI Sync](https://cppi.sync.ro/materia/cozi.html)
+* [Cozi (include si alte probleme) - CPPI Sync](https://cppi.sync.ro/materia/cozi.html)
 * [Probleme diverse - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_paralela_cu_lee.html)
 * [Flood fill - wikipedia](https://en.wikipedia.org/wiki/Flood_fill)
 * [Algoritmi de umplere - generalitati - Pbinfo](https://www.pbinfo.ro/articole/18892/algoritmi-de-umplere-generalitati)

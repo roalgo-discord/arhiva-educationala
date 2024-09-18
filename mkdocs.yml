@@ -138,6 +138,8 @@ nav:
       - Introducere în programarea dinamică: usor/intro-dp.md
       - Introducere în teoria grafurilor: usor/graphs.md
   - Mediu:
+      - Informații utile:
+          - Informații despre olimpiada de informatică: mediu/olympiad-info.md
       - Concepte fundamente și de limbaj:
           - Căutare completă: mediu/complete-search.md
           - Introducere în STL: mediu/stl.md
