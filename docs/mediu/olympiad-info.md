@@ -68,13 +68,17 @@ Pentru a te califica la etapa națională, trebuie să obții măcar $40\%$ din 
 * Rezultatul obținut este cel mai bun din județul/sectorul de unde ești
 * Rezultatul obținut nu este cel mai bun din județul/sectorul de unde ești, dar este în primele $90 - x$ locuri, unde $x$ este numărul de elevi care s-au calificat conform primului criteriu (locul $1$ pe județ/sector). În situația în care sunt mai mulți elevi pe locul $90$ cu punctaj egal, toți se califică la etapa națională. 
 
+Pentru a rezolva problemele date în anii anteriori, puteți să accesați următoarea listă: [OJI pe Kilonova](https://kilonova.ro/problem_lists/460).
+
 ### Olimpiada Națională de Informatică (ONI)
 
 Olimpiada Națională de Informatică (ONI) reprezintă faza națională a olimpiadei, aici calificându-se cei mai buni elevi din fiecare județ, aceasta organizându-se în fiecare an, de regulă în luna aprilie. În mod tradițional, faza națională este împărțită în două (gimnaziu și liceu), fiecare dintre ele are loc într-un alt oraș, iar în mod uzual, olimpiada are loc în fiecare an în orașe diferite.
 
 Deși au existat diferite formate de-a lungul istoriei, în prezent, proba olimpiadei naționale de informatică este la fel pentru gimnaziu și liceu, constând într-o singură probă ce are $3$ probleme și $4$ ore de concurs. 
 
-### Premii, mențiuni și medalii
+Pentru a rezolva problemele date în anii anteriori, puteți să accesați următoarea listă: [ONI pe Kilonova](https://kilonova.ro/problem_lists/524).
+
+#### Premii, mențiuni și medalii
 
 În funcție de rezultatul obținut la clasa unde participi, se acordă următoarele distincții:
 
@@ -111,6 +115,11 @@ Un elev junior este un elev care este eligibil pentru participarea la Olimpiada 
 
 Un elev senior este un elev care este eligibil pentru participarea la Olimpiada Internațională de Informatică (IOI), ceea ce presupune de regulă a avea cel mult $19$ ani împliniți atunci când IOI are loc. De exemplu, elevii eligibili pentru IOI $2024$ au fost cei născuți în septembrie $2004$ sau mai târziu. 
 
+Pentru a rezolva problemele date în anii anteriori, puteți să accesați următoarele liste: 
+
+* [Baraj Juniori pe Kilonova](https://kilonova.ro/problem_lists/508).
+* [Baraj Seniori pe Kilonova](https://kilonova.ro/problem_lists/516).
+
 Locurile corespunzătoare loturilor naționale se acordă astfel:
 
 Se acordă câte două locuri fiecărei clase, locuri ce revin celor mai buni $2$ elevi de la acea clasă, atâta timp cât obțin măcar $20$ de puncte la juniori, respectiv $30$ de puncte la seniori. 
@@ -124,6 +133,11 @@ De asemenea, în funcție de rezultatele obținute la probele de baraj (juniori 
 Dacă ai ajuns la lot, vei avea șansa să reprezinți România la concursurile internaționale de juniori sau seniori, cu condiția să te plasezi în primele locuri la lotul național. 
 
 Formatul concursurilor este același cu cel de la baraj, $3$ probleme și $4$ ore la juniori, respectiv $3$ probleme și $5$ ore la seniori, nivelul problemelor fiind similar rigorilor concursurilor internaționale la care participă țara noastră. 
+
+Pentru a rezolva problemele date în anii anteriori, puteți să accesați următoarele liste: 
+
+* [Lot Juniori pe Kilonova](https://kilonova.ro/problem_lists/689).
+* [Lot Seniori pe Kilonova](https://kilonova.ro/problem_lists/225).
 
 În anul $2024$, lotul național a fost format din două tabere de pregătire și selecție, care au avut loc la Cluj-Napoca și Orăștie în luna mai. Fiecare dintre tabere a avut două probe de concurs, numeroase activități educative dar și excursii și multe alte experiențe. 
 
