@@ -143,6 +143,7 @@ nav:
   - Mediu:
       - Informații utile:
           - Informații despre olimpiada de informatică: mediu/olympiad-info.md
+          - Listă de concursuri relevante: mediu/contest-list.md
       - Concepte fundamente și de limbaj:
           - Căutare completă: mediu/complete-search.md
           - Introducere în STL: mediu/stl.md
