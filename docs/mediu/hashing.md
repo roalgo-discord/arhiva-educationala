@@ -1,3 +1,9 @@
+---
+tags:
+    - hashing
+    - siruri de caractere
+    - matematica
+---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 În informatică și în algoritmică, de multe ori avem de-a face cu stocarea unei

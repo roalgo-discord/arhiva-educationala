@@ -1,3 +1,13 @@
+---
+tags:
+    - matematica
+    - combinatorica
+    - teoria numerelor
+    - permutari
+    - aranjamente
+    - combinari
+---
+
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 Combinatorica este una din ramurile principale ale matematicii, precum și una

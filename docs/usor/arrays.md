@@ -4,7 +4,7 @@ tags:
     - vectori
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).
