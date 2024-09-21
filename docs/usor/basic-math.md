@@ -67,6 +67,24 @@ int x = 6.3/20+24;
 cout << x << '\n'; // 24
 ```
 
+### Ridicarea la putere
+
+Pentru a afla rezultatul expresiei $a^b$, avem două moduri principale de a calcula acest lucru. 
+
+În primul rând, putem folosi instrucțiunea `pow` din biblioteca `#include <cmath>`, sintaxa fiind `pow(baza, exponent)`, dar problema este aceea că deși aceasta este o soluție viabilă pentru numere reale, uneori putem ajunge în situația în care dacă calculăm un rezultat foarte mare (de exemplu, $9^14$), în funcție de precizia operației de ridicare la putere, să avem rezultate de forma $x.999999999$ care rotunjite în jos, să ne dea $x-1$. 
+
+O metodă mai simplă constă în a ridica la putere folosind o structură repetitivă care calculează $a^b$ în $b$ pași, așa cum se poate vedea mai jos. 
+
+```cpp
+int ans = 0;
+for (int i = 1; i <= b; i++) {
+    ans = ans * a;
+}
+cout << ans << '\n';
+```
+
+Pentru cei mai avansați, această operație se poate face [și în timp logaritmic](https://roalgo-discord.github.io/arhiva-educationala/mediu/pow-log/#ridicarea-la-putere-in-timp-logaritmic), cunoașterea acestei tehnici nefiind necesară decât celor care vor să meargă la olimpiadă. 
+
 ## Tehnici matematice simple
 
 De multe ori, mai ales în problemele mai simple de algoritmică, cunoașterea unor formule și principii matematice simple este esențială. 
