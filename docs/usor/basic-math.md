@@ -118,8 +118,8 @@ Dacă vrem să aflăm câte perechi de forma $(i, j)$ există cu proprietatea c�
 
 Dacă avem două intervale de numere naturale $[x_1, y_1]$ și $[x_2, y_2]$ putem discuta despre următoarele două intervale:
 
-* Pentru intervalele de mai sus, intersecția lor este $[max(x_1, x_2), min(y_1, y_2)$]$, cu condiția că $max(x_1, x_2) \leq min(y_1, y_2)$. 
-* Pentru intervalele de mai sus, reuniunea lor este $[min(x_1, x_2), max(y_1, y_2)$]$, cu condiția că intersecția lor este nevidă. Dacă intersecția este vidă, reuniunea intervalelor este dată de cele două intervale luate separat. 
+* Pentru intervalele de mai sus, intersecția lor este $[max(x_1, x_2), min(y_1, y_2)]$, cu condiția că $max(x_1, x_2) \leq min(y_1, y_2)$. 
+* Pentru intervalele de mai sus, reuniunea lor este $[min(x_1, x_2), max(y_1, y_2)]$, cu condiția că intersecția lor este nevidă. Dacă intersecția este vidă, reuniunea intervalelor este dată de cele două intervale luate separat. 
 
 ## Divizibilitatea numerelor naturale
 
