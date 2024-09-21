@@ -135,7 +135,7 @@ nav:
           - Ciurul lui Eratostene: usor/sieve.md
       - Sortare și căutare:
           - Sume parțiale: usor/partial-sums.md
-          - Algoritmi simpli de sortare: usor/sorting.md
+          - Algoritmi de sortare: usor/sorting.md
           - Introducere în Metoda Greedy: usor/greedy.md
           - Căutarea binară: usor/binary-search.md
       - Introducere în programarea dinamică: usor/intro-dp.md
@@ -164,7 +164,7 @@ nav:
       - Sortare și căutare:
           - Two pointers: mediu/two-pointers.md
           - Sliding window: mediu/sliding-window.md
-          - Algoritmi de sortare: mediu/sorting-algorithms.md
+         # - Algoritmi de sortare: mediu/sorting-algorithms.md
       - Programare dinamică:
           - Problema rucsacului: mediu/knapsack.md
           - Subșir maximal:

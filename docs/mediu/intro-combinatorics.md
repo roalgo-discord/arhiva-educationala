@@ -43,6 +43,13 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 
     Numărul de moduri de a alege o pereche de valori, una din $A$ și una din $B$ este $n\cdot m$.
 
+!!! example "Exemplu"
+    Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
+    
+    Valorile posibile pentru $a$ sunt $\{1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt $\{0, 1, 2, 3, \dots, 9}$. 
+    
+    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de variante este $9 \cdot 9 = 81$.
+
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule independente care contribuie la răspunsul final.
 
 ### Permutări

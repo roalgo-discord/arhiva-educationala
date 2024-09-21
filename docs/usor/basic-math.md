@@ -129,6 +129,8 @@ Operatorul pe care îl folosim pentru a verifica dacă două numere se împart u
 
 În mod particular, dacă $a \% b = 0$, atunci $a$ se împarte exact la $b$.
 
+O altă particularitate a numerelor prime este aceea că numărul aproximativ de numere prime între $1$ și $n$ este $\frac{n}{\log n}$, iar în mod similar, $\sum_{i=1}^n \frac{n}{i} \approx n \log n$.
+
 ## Concluzii
 
 Deși matematica prezentată aici nu ar trebui să pună probleme unui elev de liceu care citește acest articol (sau chiar și unui elev mai bun de gimnaziu), este foarte important de avut în vedere tehnicile de rezolvare a problemelor, precum și formulele aflate de la matematică. 

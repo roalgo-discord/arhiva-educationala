@@ -26,7 +26,7 @@ ulterioare, deoarece acesta nu conține doar tablouri dinamice. În acest capito
 voi insista mai ales pe varianta standard, lucrul cu STL fiind aprofundat mai cu
 seamă în capitolele utile.
 
-# Declararea și umplerea tablourilor statice
+## Declararea și umplerea tablourilor statice
 
 Pentru a declara un tablou și a da valori, trebuie să analizăm structura
 acestuia. În mod similar cu variabilele simple, ne trebuie un tip de date pe
@@ -63,14 +63,14 @@ valori primelor poziții, idee ce va fi folosită pe parcurs la diverși algorit
 un exemplu notabil fiind flood fill. De exemplu, `#!cpp int A[] = {10, 20, 30};` va
 crea un tablou cu $3$ elemente, unde `#!cpp A[0] = 10; A[1] = 20;` ș.a.m.d.
 
-# Inserarea, ștergerea, inversarea valorilor dintr-un tablou
+## Inserarea, ștergerea, inversarea valorilor dintr-un tablou
 
 De multe ori în diverse aplicații, putem avea nevoie de operația de inserare și
 de operația de ștergere din tablou, ambele operații fiind foarte importante
 pentru a putea lucra în mod corespunzător cu tablourile. În exemplele pe care le
 voi prezenta mai jos, voi presupune că tablourile sunt indexate de la $1$.
 
-## Inserarea în tablou
+### Inserarea în tablou
 
 Dacă avem un tablou cu $n$ valori și vrem să inserăm o valoare nouă la poziția
 $k$, unde $1 \leq k \leq n+1$, vom vrea mai întâi să mutăm valorile între
@@ -107,7 +107,7 @@ n++; // (1)
     Se poate observa cu ușurință că valoarea de pe poziția $k$ va ajunge peste tot
     dacă implementăm așa, ceea ce este greșit.
 
-# Ștergerea din tablou
+### Ștergerea din tablou
 
 Dacă avem un tablou cu $n$ valori și vrem să ștergem valoarea de la poziția $k$,
 unde $1 \leq k \leq n$, vom vrea să mutăm pe rând valorile de la pozițiile
@@ -139,7 +139,7 @@ n--; // (1)
     ```
 
 
-## Inversarea unui tablou
+### Inversarea unui tablou
 
 Pentru a putea inversa un tablou, trebuie să știm numărul de elemente pe care îl
 are. Scopul nostru este să avem pe poziția $i$ valoarea ce se afla anterior pe
@@ -160,7 +160,7 @@ for (int i = 1; i <= n / 2; i++) {
 3.  Reținem valoarea lui `#!cpp v[i]` în `x`.
 
 
-# Interclasarea tablourilor
+## Interclasarea tablourilor
 
 Pentru a putea interclasa două tablouri (de regulă, crescătoare) $A$ și $B$,
 având $n$, respectiv $m$ elemente, vom vrea mereu să introducem valoarea mai
@@ -213,7 +213,7 @@ while (j <= m) {
 }
 ```
 
-# Rotirea tablourilor
+## Rotirea tablourilor
 
 Pentru a putea roti un tablou la stânga sau la dreapta, va trebui să mutăm toate
 elementele cu o poziție la stânga/dreapta, iar pentru a putea face asta, va
@@ -292,3 +292,21 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
         delete[] temp;
     }
     ```
+
+## Concluzii
+
+Lucrul cu tablouri unidimensionale este esențial oricărui algoritmist, principiile menționate aici fiind aplicate în diverse moduri și în ceea ce privește alte structuri de date, așa cum veți putea observa în problemele cu matrici și în diferiți algoritmi care au la bază metodele folosite mai sus. 
+
+## Probleme suplimentare 
+
+* [Problemele usoare si medii din capitolul Parcurgerea vectorilor](https://www.pbinfo.ro/probleme/categorii/9/tablouri-unidimensionale-vectori-parcurgerea-vectorilor)
+* [Problemele usoare si medii din capitolul Ștergeri și inserări de elemente în vectori](https://www.pbinfo.ro/probleme/categorii/157/tablouri-unidimensionale-vectori-Stergeri-si-inserari-de-elemente-in-vectori)
+* [Problemele usoare si medii din capitolul Verificarea unor proprietăţi](https://www.pbinfo.ro/probleme/categorii/49/tablouri-unidimensionale-vectori-verificarea-unor-proprietati)
+* [Problemele usoare si medii din capitolul Interclasare](https://www.pbinfo.ro/probleme/categorii/156/tablouri-unidimensionale-vectori-interclasare)
+
+## Resurse suplimentare
+
+* [Declararea și parcurgerea tablourilor unidimensionale](https://www.pbinfo.ro/articole/5583/declararea-si-parcurgerea-tablourilor-unidimensionale)
+* [Ștergeri și inserări de elemente](https://www.pbinfo.ro/articole/5584/stergeri-si-inserari-de-elemente)
+* [Verificarea unor proprietăți](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
+* [Interclasarea tablourilor](https://www.pbinfo.ro/articole/5588/interclasarea-tablourilor)
