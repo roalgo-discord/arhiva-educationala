@@ -15,9 +15,13 @@ Aceasta nu este o listă completă a concursurilor, iar de multe ori apar concur
 
 În primul rând, țara noastră organizează o gamă largă de concursuri care au loc în prezent, continuând o tradiție îndelungată a concursurilor de acest fel. Aici voi enumera cele mai importante concursuri, precum și când au loc. 
 
-* [Olimpiada de Informatică pe Echipe (IIOT)](http://cni.nt.edu.ro/ioit/): Are loc anual pe parcursul a $4$ runde preliminare, o rundă finală și o rundă internațională, rundele preliminare având loc lunar în perioada noiembrie-februarie. În prezent, este dedicat exclusiv elevilor de liceu, care pot participa în echipe de $4$ membri și $2$ rezerve din aceeași școală/centru de excelență. Problemele din anii anteriori se găsesc [aici](https://kilonova.ro/problem_lists/128).
+Multe dintre aceste concursuri, pe lângă faptul că reprezintă o oportunitate în plus de a te pregăti pentru olimpiadă, au și premii generoase și de asemenea reprezintă o metodă de a putea fi admis mai ușor la universitățile de profil din România.
+
+* [Olimpiada de Informatică pe Echipe (IIOT)](http://cni.nt.edu.ro/ioit/): Are loc anual pe parcursul a $4$ runde preliminare, o rundă finală și o rundă internațională, rundele preliminare având loc lunar în perioada noiembrie-februarie, cu finala națională având loc în fiecare an la Colegiul Național de Informatică Piatra Neamț. În prezent, este dedicat exclusiv elevilor de liceu, care pot participa în echipe de $4$ membri și $2$ rezerve din aceeași școală/centru de excelență. Problemele din anii anteriori se găsesc [aici](https://kilonova.ro/problem_lists/128).
 
 * [Concursul național "Urmașii lui Moisil"](https://infosv.ro/urmasii2024/): Are loc în fiecare an, după olimpiada județeană de informatică, este dedicat elevilor de liceu și reunește cei mai buni elevi din fiecare județ, având o probă de dificultate similară cu olimpiada națională. Problemele din anii anteriori se găsesc [aici](https://kilonova.ro/problem_lists/1037).
+
+* [Concursul Prosoft@NT](http://cni.nt.edu.ro/new/index.php/category/concurs-2024/) este un concurs de algoritmică pentru elevii de liceu care are loc în fiecare an, concomitent cu runda națională a IIOT, organizat de Colegiul Național de Informatică Piatra Neamț. 
 
 * [Concursul interjudețean "Grigore Moisil"](https://www.pbinfo.ro/articole/32950/grigore-moisil-2024): Are loc în fiecare an, după olimpiada județeană de informatică, este dedicat elevilor de gimnaziu și liceu și reunește elevii de top din Transilvania, Banat, Crișana și Maramureș, având o probă de dificultate similară cu olimpiada națională. Problemele din anii anteriori se găsesc [aici](https://kilonova.ro/problem_lists/1048).
 
@@ -45,7 +49,7 @@ Aceasta nu este o listă completă a concursurilor, iar de multe ori apar concur
 
 * [Turneul de Informatică de la Shumen (IATI)](https://iati-shu.org/) este un concurs de algoritmică pentru juniori și seniori la nivel regional, reunind unii cei mai buni elevi din fiecare țară participantă. Acest concurs este organizat în fiecare an în Shumen, Bulgaria. În fiecare an, România are o participare numeroasă, elevii participanți obținând rezultate dintre cele mai bune. 
 
-* [Romanian Masters of Informatics (RMI)](https://rmi.lbi.ro/rmi_2023/) este un concurs de algoritmică pentru juniori și seniori la nivel regional, reunind unii cei mai buni elevi din fiecare țară participantă. Acest concurs este organizat în fiecare an de Colegiul Național "Tudor Vianu", București. În fiecare an, România are o participare numeroasă, elevii participanți obținând rezultate dintre cele mai bune. 
+* [Romanian Masters of Informatics (RMI)](https://rmi.lbi.ro/rmi_2023/) este un concurs de algoritmică pentru juniori și seniori la nivel regional, reunind unii cei mai buni elevi din fiecare țară participantă. Acest concurs este organizat în fiecare an de Colegiul Național de Informatică "Tudor Vianu", București. În fiecare an, România are o participare numeroasă, elevii participanți obținând rezultate dintre cele mai bune. 
 
 ## Concursuri online
 
