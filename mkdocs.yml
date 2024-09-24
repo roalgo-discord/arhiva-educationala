@@ -108,7 +108,7 @@ plugins:
   # - awesome-pages
   - tags
   - social:
-      enabled: !ENV [CI, false]
+      enabled: true
       cards_layout_options:
         font_family: Roboto
         font_variant: Condensed
