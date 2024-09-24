@@ -119,7 +119,7 @@ nav:
       - cppintro/index.md
       - Primul program în C++: cppintro/intro.md
       - Variabile și tipuri de date simple: cppintro/data-types.md
-      - Operatori și expresii. Cunoștințe matematice de bază: usor/basic-math.md
+      - Operatori și expresii. Cunoștințe matematice de bază: cppintro/basic-math.md
       - Citirea și afișarea datelor: cppintro/input-output.md
       - Structura alternativă: cppintro/conditions-if.md
       - Structura repetitivă: cppintro/loops.md
