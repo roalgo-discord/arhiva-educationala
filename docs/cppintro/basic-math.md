@@ -2,6 +2,7 @@
 tags:
     - matematica
     - aritmetica
+    - C++
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
@@ -39,10 +40,45 @@ cout << -9 / 3 << '\n'; // -3
 cout << -8 / 3 << '\n'; // -2
 ```
 
-!!! note "Observație"
-    Trebuie avut grijă la faptul că dacă rezultatul operației depășește valoarea maximă sau minimă a tipului de date în care acesta este păstrat, vom avea overflow-uri, care trebuie evitate cu orice preț.
+```cpp
+cout << 8 + 2 << '\n'; // 10
+cout << 4 * 3 << '\n'; // 12
+cout << 12 - 5 << '\n'; // 7
+cout << 16 / 4 << '\n'; // 4
+cout << 15 / 4 << '\n'; // 3
+cout << -9 / 3 << '\n'; // -3
+cout << -8 / 3 << '\n'; // -2
+```
+
+În mod particular, pentru operațiile aritmetice de bază, putem folosi prefixarea și postfixarea, după cum se poate vedea în soluția pe care o prezentăm care rezolvă corect problema [asii de pe pbinfo](https://www.pbinfo.ro/probleme/1260/asii):
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    
+    int sum = a + b;
+    
+    int diff = a; // puteam scrie si a - b
+    diff -= b; // notatie prefixata
+    
+    // similar, putem scrie si a /= b, a += b, a *= b
+    int prod = a * b;
+    
+    int ratio = a / b;
+    
+    cout << sum << " " << diff << " " << prod << " " << ratio << '\n';
+    return 0;
+}
+```
 
 ### Soluții pentru evitarea overflow-ului
+
+!!! note "Observație"
+    Trebuie avut grijă la faptul că dacă rezultatul operației depășește valoarea maximă sau minimă a tipului de date în care acesta este păstrat, vom avea overflow-uri, care trebuie evitate cu orice preț.
 
 Cele mai populare două soluții sunt fie folosirea tipului de date long long pentru păstrarea termenilor din operații, fie folosirea operatorului 1LL, fie folosirea (long long) pentru convertirea datelor.
 
@@ -52,6 +88,35 @@ cout << 1LL * 594943 * 204232 << '\n'; // ok
 cout << (long long) 594943 * 204232 << '\n'; // ok
 cout << 594943 * (long long) 204232 << '\n'; // ok
 ```
+
+### Incrementarea și decrementarea 
+
+În mod particular, în cazul operațiilor de adunare și scădere, putem folosi operatorii de incrementare (adunare cu $1$) și decrementare (scădere cu $1$) pentru a face scrierea mai scurtă, sintaxa lor fiind `a++`, respectiv `a--`.
+
+Deși la prima vedere acest operator pare foarte simplu de utilizat, flexibilitatea lui duce la capcane care pot duce la erori în cazul folosirii neadecvate ale acestora, fiind un subiect des întâlnit în probele grilă la examenele de bacalaureat și admitere. 
+
+!!! example "Exemplu"
+    De exemplu, se dă următorul program C++, spuneți ce afișează.
+
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        int a = 6, b = 8;
+
+        cout << (a--) << '\n';
+        cout << (++b) + a << '\n';
+        cout << (--a) - (--b) << '\n';
+        cout << a << " " << b << '\n';
+        return 0;
+    }
+    ```
+
+    Dacă ați răspuns $6$, urmat de $14$, urmat de $-4$, urmat de $4 \ 8$, felicitări!
+
+    Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul rând, deoarece operatorul de decrementare este postfixat, instrucțiunea `a--` va produce efect abia după afișare, $a$ devenind $5$ ulterior. Apoi, deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va produce efect înainte de afișare, $b$ devenind $9$, deci suma devine $14$. Similar, $a$ și $b$ devin $4$ și $8$, deci diferența este $4$.  
+
 
 ### Operații aritmetice pe numere reale
 

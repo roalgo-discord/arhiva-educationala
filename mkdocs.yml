@@ -117,11 +117,15 @@ nav:
   - Acasă: index.md
   - Introducere în C++:
       - cppintro/index.md
-      - Introducere: cppintro/intro.md
+      - Primul program în C++: cppintro/intro.md
+      - Variabile și tipuri de date simple: cppintro/data-types.md
+      - Operatori și expresii. Cunoștințe matematice de bază: usor/basic-math.md
+      - Citirea și afișarea datelor: cppintro/input-output.md
+      - Structura alternativă: cppintro/conditions-if.md
+      - Structura repetitivă: cppintro/loops.md
   - Ușor:
       - Concepte fundamentale și de limbaj:
           # - Introducere în C++: usor/intro-cpp.md
-          - Cunoștințe matematice de bază: usor/basic-math.md
           - Complexități: usor/complexity.md
           - Stil de cod și alte fundamente: usor/codestyle.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md

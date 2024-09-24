@@ -110,11 +110,17 @@ Aici prezentăm câteva exemple de complexități, care vor fi utile pe parcurs.
 
 Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 
-* tipul **int**: $4$ bytes, limite intre $-2^{31}$ si $2^{31} - 1$ ($-2147483648$ si $2147483647$).
-* tipul **short**: $2$ bytes, limite intre $-2^{15}$ si $2^{15} - 1$ ($-32768$ si $32767$).
-* tipul **char**: $1$ byte, limite intre $-128$ si $127$
+* tipul **int**: $4$ bytes, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ si $2 \ 147 \ 483 \ 647$).
+* tipul **short**: $2$ bytes, limite între $-2^{15}$ si $2^{15} - 1$ ($-32  \ 768$ si $32 \ 767$).
+* tipul **char**: $1$ byte, limite între $-128$ si $127$
 * tipul **bool**: $1$ byte, accepta doar $0$ sau $1$.
-* tipul **long long**: $8$ bytes, limite intre $-2^{63}$ si $2^{63} - 1$ ($-9223372036854775808$ si $9223372036854775807$) - numere de maxim $19$ cifre.
+* tipul **long long**: $8$ bytes, limite între $-2^{63}$ si $2^{63} - 1$ ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre.
+
+În privința tipurilor reale, putem enumera următoarele:
+
+* tipul **float**: $4$ bytes, limite între aproximativ $-10^{38}$ și $10^{38}$
+* tipul **double**: $8$ bytes, limite între aproximativ $-10^{208}$ și $10^{208}$
+* tipul **long double**: în funcție de standardul de compilare, cel puțin $8$ bytes, limite mai mari decât cele de la **double**.
 
 De exemplu, dacă avem un vector de $10^6$ elemente de tipul **int** și altul de $10^5$ elemente de tipul **long long**, vom folosi $4 * 10^6 + 8 * 10^5 = 4.8*10^6$ bytes = $4.8$ MB. 
 
@@ -132,7 +138,7 @@ Acestea sunt aproximări pentru diverse clase de complexități, trebuie să ave
 | $n \leq 20$           | $O(2^n \cdot n)$, $O(n^5)$                   |
 | $n \leq 100$           | $O(n^4)$                                               |
 | $n \leq 500$          | $O(n^3)$                                               |
-| $n \leq 10000$         | $O(n^2)$                                               |
+| $n \leq 10 \ 000$         | $O(n^2)$                                               |
 | $n \leq 10^5$ | $O(n \sqrt n)$                                         |
 | $n \leq 5 \cdot 10^5$ | $O(n \log n)$                                          |
 | $n \leq 10^7$ | $O(n)$                                                 |
