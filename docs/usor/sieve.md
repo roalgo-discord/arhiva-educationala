@@ -46,8 +46,7 @@ for (int i = 2; i <= n; i++) {
 ``` 
 
 !!! note "Observație"
-
-E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
+    E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
 
 ### Optimizări ale implementării
 
@@ -68,8 +67,7 @@ for (int i = 3; i <= n; i += 2) {
 ``` 
 
 !!! note "Observație"
-
-Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
+    Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
 
 ```cpp
 int prim[100001];
