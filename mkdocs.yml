@@ -123,11 +123,12 @@ nav:
       - Citirea și afișarea datelor: cppintro/input-output.md
       - Structura alternativă: cppintro/conditions-if.md
       - Structura repetitivă: cppintro/loops.md
+      - Coding style: cppintro/coding-style.md
   - Ușor:
       - Concepte fundamentale și de limbaj:
           # - Introducere în C++: usor/intro-cpp.md
           - Complexități: usor/complexity.md
-          - Stil de cod și alte fundamente: usor/codestyle.md
+        #  - Stil de cod și alte fundamente: usor/codestyle.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md
           - Vectori (tablouri): usor/arrays.md
           - Matrici: usor/matrices.md

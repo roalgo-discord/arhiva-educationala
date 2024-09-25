@@ -349,7 +349,7 @@ int main() {
 
 ## Concluzii
 
-Căutarea binară este unul dintre cele mai fundamentale principii ale
+Căutarea binară este unul dintre cele mai fundamentale metode ale
 algoritmicii, fiind absolut necesar pentru a optimiza probleme unde ni se cere
 să determinăm existența unei valori într-un șir, sau determinarea unui număr
 maxim/minim care să respecte o condiție impusă de problemă etc.
@@ -361,12 +361,14 @@ Acest algoritm este unul din cele mai populari algoritmi dat atât la olimpiade,
 
 * [Problema cautbin - Infoarena](https://www.infoarena.ro/problema/cautbin)
 * [bete2 infoarena](https://www.infoarena.ro/problema/bete2)
+* [cb2 pbinfo](https://www.pbinfo.ro/probleme/2443/cb2)
 * [Problemele din pasul 1 de la EDU](https://codeforces.com/edu/course/2/lesson/6/1/practice)
 * [nrtri infoarena](https://www.infoarena.ro/problema/nrtri)
 * [USACO Bronze Social Distancing I](https://usaco.org/index.php?page=viewproblem2&cpid=1035)
 * [OJI 2016 pic](https://kilonova.ro/problems/865)
 * [ONI 2016 dif2](https://kilonova.ro/problems/1475)
 * [USACO Silver Convention](https://usaco.org/index.php?page=viewproblem2&cpid=858)
+* [OJI 2019 mostenire](https://kilonova.ro/problems/905)
 * [ONI 2017 orase](https://kilonova.ro/problems/1501)
 * [Problemele din pasul 2 de la EDU](https://codeforces.com/edu/course/2/lesson/6/2/practice)
 * [cb3 pbinfo](https://www.pbinfo.ro/probleme/2789/cb3)
