@@ -131,7 +131,7 @@ nav:
       - Concepte fundamentale și de limbaj:
           # - Introducere în C++: usor/intro-cpp.md
           - Complexități: usor/complexity.md
-        #  - Stil de cod și alte fundamente: usor/codestyle.md
+          # - Stil de cod și alte fundamente: usor/codestyle.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md
           - Vectori (tablouri): usor/arrays.md
           - Matrici: usor/matrices.md
