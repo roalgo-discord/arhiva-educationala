@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {% if page and page.meta and page.meta.description %}
+    <meta name="description" content="{{ page.meta.description }}" />
+    <meta property="og:description" content="{{ page.meta.description }}" />
+    <meta name="twitter:description" content="{{ page.meta.description }}" />
+  {% else %}
+    {% set truncated_content = page.content | striptags | truncate(160, True, '...') %}
+    <meta name="description" content="{{ truncated_content }}" />
+    <meta property="og:description" content="{{ truncated_content }}" />
+    <meta name="twitter:description" content="{{ truncated_content }}" />
+  {% endif %}
+{% endblock %}
