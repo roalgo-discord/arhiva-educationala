@@ -1,6 +1,7 @@
 ---
 tags:
     - programare dinamica
+    - intervale
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu

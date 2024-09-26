@@ -1,6 +1,7 @@
 ---
 tags:
     - programare dinamica
+    - cifre
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu

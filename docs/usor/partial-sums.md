@@ -3,6 +3,8 @@ tags:
     - sume partiale
     - implementare
     - optimizare
+    - difference arrays
+    - mars
 ---
 
 ## Cunoștiințe necesare pentru înțelegerea completă a articolului:

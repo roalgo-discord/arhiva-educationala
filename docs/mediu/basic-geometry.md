@@ -19,7 +19,6 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Resurse suplimentare
 
-* [Metoda backtracking](https://www.pbinfo.ro/articole/16597/metoda-backtracking)
 * [Aria unui triunghi, ecuația dreptei în plan - CPPI Sync](https://cppi.sync.ro/materia/aria_unui_triunghi_formula.html)
 * [Aria unui poligon simplu - CPPI Sync](https://cppi.sync.ro/materia/aria_unui_poligon_simplu.html)
 * [Notiuni elementare de geometrie si aplicatii - Infoarena](https://www.infoarena.ro/notiuni-de-geometrie-si-aplicatii)

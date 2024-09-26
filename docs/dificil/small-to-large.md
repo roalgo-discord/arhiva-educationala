@@ -1,10 +1,15 @@
+---
+tags:
+    - structuri de date
+    - arbori 
+    - STL
+    - dsu
+---
 
-
-# Small to large
-
-**Autor** : Radu Mocănașu
+**Autor** :Radu Mocănașu
 
 ## Cunoștințe necesare:
+
 * Arbori.
 * Parcurgeri `DFS`.
 * Containerele `set` și `map` din STL.

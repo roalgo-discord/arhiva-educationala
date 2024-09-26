@@ -2,7 +2,7 @@
 tags:
     - arbori
     - structuri de date
-    - strings
+    - siruri de caractere
 ---
 
 **Autor**: Matei Ionescu
