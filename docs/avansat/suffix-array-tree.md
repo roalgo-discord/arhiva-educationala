@@ -114,7 +114,7 @@ Fie $M$ minimul lungimilor subsecvențelor și $l = \lfloor log_2{M} \rfloor$. C
 
 #### Cel mai lung prefix comun dintre două subsecvențe
 
-Cautăm binar pe lungimea răspunsului și ne folosim de aplicația $2$ pentru a verifica dacă subsecvențele corespunzătoare sunt egale $O(log_2{N})$ pe query.
+Cautăm binar pe lungimea răspunsului și ne folosim de aplicația $2$ pentru a verifica dacă subsecvențele corespunzătoare sunt egale. $O(log_2{N})$ pe query.
 
 
 ## Șirul LCP
@@ -162,17 +162,17 @@ Complexitatea de spațiu este evident $O(N)$. Complexitatea de timp necesită ma
 !!!info
     Reamintim că orice subsecvență este prefix al unui sufix
 
-#### Potrivirea șirurilor : se dă un text $T$ si multiple șiruri $P$ pentru care se cer să aflăm de câte ori apar în $T$ ca subsecvență
+#### [Pattern matching(cses)](https://cses.fi/problemset/task/2103) : se dă un text $T$ si multiple șiruri $P$ pentru care se cer să aflăm de câte ori apar în $T$ ca subsecvență
 
-În primul rând,  orice subsecvența este un prefix al unui sufix. Astfel, se observă că toate sufixele în care $P$ este prefix vor forma o subsecvență în șirul de sufixe. Pentru a numara de câte ori apare $P$ este de ajuns să căutam ternar primul sufix în care apare $P$ ca prefix iar apoi să căutam binar cât de mult de putem extinde la dreapta astfel încât lcp-ul dintre $P$ și ultimul sufix din subsecvență să fie $|P|$. Complexitate : $O(|P|log{N})$ pe query.
+În primul rând,  orice subsecvența este un prefix al unui sufix. Astfel, se observă că toate sufixele în care $P$ este prefix vor forma o subsecvență în șirul de sufixe. Pentru a numara de câte ori apare $P$ este de ajuns să căutam ternar primul sufix în care apare $P$ ca prefix iar apoi să căutam binar cât de mult de putem extinde la dreapta astfel încât lcp-ul dintre $P$ și ultimul sufix din subsecvență să fie $|P|$. Complexitate : $O(|P|log{N})$ pe query. Atenție : este probabil să luați TLE pe această problemă deoarece soluția intended este lineară. 
 
-#### Repeating substring(cses) : se dă un text și se cere să afișăm cel mai lung șir posibil care apare în text ca subsecvență de cel puțin două ori. 
+#### [Repeating substring(cses)](https://cses.fi/problemset/task/2106) : se dă un text și se cere să afișăm cel mai lung șir posibil care apare în text ca subsecvență de cel puțin două ori. 
 
-Răspunsul se obține analizând șirul LCP. Ne uităm la fiecare sufix pe rând și ne întrebăm : "Care este lungimea maximă a unui șir care apare în acest sufix ca prefix și respectă proprietatea din enunț ?". Răspunsul este evident LCP-ul curent (poate fi și LCP-ul următor dar avem grijă de asta la urmatorul pas :) ). Astfel, este de ajuns să găsim minimul din șirul LCP. Această idee se poate generaliza și pentru mai multe apariții, așa cum veți vedea la problemele suplimentare. Problema o găsiți [aici](https://cses.fi/problemset/task/2106).
+Răspunsul se obține analizând șirul LCP. Ne uităm la fiecare sufix pe rând și ne întrebăm : "Care este lungimea maximă a unui șir care apare în acest sufix ca prefix și respectă proprietatea din enunț ?". Răspunsul este evident LCP-ul curent (poate fi și LCP-ul următor dar avem grijă de asta la urmatorul pas :) ). Astfel, este de ajuns să găsim minimul din șirul LCP. Această idee se poate generaliza și pentru mai multe apariții, așa cum veți vedea la problemele suplimentare. Aveți soluția autorului [aici](https://cses.fi/problemset/result/9911439/).
 
-#### Câte subsecvențe distincte are un șir ? Subsecvențele se disting în funcție de caractere, nu de indici.
+#### [Distinct substrings(cses)](https://cses.fi/problemset/task/2105) Câte subsecvențe distincte are un șir ? Subsecvențele se disting în funcție de caractere, nu de indici.
 
-Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite. Pentru a calcula acest număr iterăm prin șirul LCP : atunci când suntem la indicele $i$, prefixele acestui sufix care au apărut înainte sunt în număr de $LCP_i$. Astfel, rezultatul se obține scăzând toate elementele din șirul $LCP$. Problema o găsiți [aici](https://cses.fi/problemset/task/2105/).
+Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite. Pentru a calcula acest număr iterăm prin șirul LCP : atunci când suntem la indicele $i$, prefixele acestui sufix care au apărut înainte sunt în număr de $LCP_i$. Astfel, rezultatul se obține scăzând toate elementele din șirul $LCP$. Soluția mea o găsiți [aici](https://cses.fi/paste/8201bc56d5efcfe197365b/).
 
 # Probleme suplimentare
 
@@ -180,7 +180,13 @@ Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite
 * [Cses Substring distribution](https://cses.fi/problemset/task/2110)
 * [Kattis kindaokarray](https://open.kattis.com/problems/kindaokarray)
 * [Lot 2016](https://kilonova.ro/problems/1926?list_id=819)
+* [Forbidden indicies CF](https://codeforces.com/contest/873/problem/F)
 * [Codeforces](https://codeforces.com/problemset?tags=string%20suffix%20structures,2200-)
 
+# Material suplimentar
+
+* [Codeforces dynamic suffix array](https://codeforces.com/topic/93656/en2)
+* [Curs MIT de pe youtube](https://www.youtube.com/watch?v=NinWEPPrkDQ)
+* [Cp algo](https://cp-algorithms.com/string/suffix-array.html)
 
 
