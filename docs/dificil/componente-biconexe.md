@@ -202,7 +202,7 @@ int main()
 
 Componentele biconexe, la fel ca și componentele tare conexe, sunt un concept al căror implementare, odată ce este știută, face procesul de rezolvare al problemelor mult mai ușor. Totuși, trebuie avut în vedere faptul că acestea apar de multe ori și combinate cu alte tehnici, precum programarea dinamică sau alți algoritmi pe grafuri.
 
-O altă aplicație a acestei metode reprezintă algoritmul lui Tarjan, explicat [aici](https://roalgo-discord.github.io/arhiva-educationala/dificil/componente-tare-conexe/#algoritmul-lui-tarjan).
+O altă aplicație a acestei metode reprezintă algoritmul lui Tarjan, explicat [aici](./componente-tare-conexe.md#algoritmul-lui-tarjan).
 
 ## Probleme suplimentare
 

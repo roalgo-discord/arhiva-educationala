@@ -183,7 +183,7 @@ Atunci când vine vorba de operații pe biți, există diverse legături, propri
 
 Așa cum veți vedea în detaliu dacă veți citi articolul specific combinatoricii, lucrul cu submulțimi va reprezenta o aplicație importantă a lucrului cu biți, cele $2^n$ submulțimi ale unei mulțimi cu dimensiunea $n$ putând fi toate codificate folosind câte un număr în intervalul $[0, 2^n - 1]$.
 
-Pentru mai multe detalii, puteți citi [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/intro-combinatorics/#submultimi) articolul nostru care privește în detaliu submulțimile din perspectiva combinatoricii. Totuși, aplicațiile prezentate acolo se aplică în totalitate și din perspectiva articolului curent.
+Pentru mai multe detalii, puteți citi [aici](./intro-combinatorics.md#submultimi) articolul nostru care privește în detaliu submulțimile din perspectiva combinatoricii. Totuși, aplicațiile prezentate acolo se aplică în totalitate și din perspectiva articolului curent.
 
 !!! note "Lectură suplimentară"
     Alternativ, puteți citi mai multe detalii de pe articolul de pe [cp-algorithms](https://cp-algorithms.com/algebra/all-submasks.html) despre enumerarea submulțimilor.

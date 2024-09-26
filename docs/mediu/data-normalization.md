@@ -76,7 +76,7 @@ O primă soluție brută constă în verificarea fiecărui punct posibil de la $
 
 Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este îndeajuns pentru rezolvarea problemei date. 
 
-O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui Mars](https://roalgo-discord.github.io/arhiva-educationala/usor/partial-sums/?h=#smenul-lui-mars), iar pentru fiecare interval, putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$. 
+O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui Mars](../usor/partial-sums.md#smenul-lui-mars), iar pentru fiecare interval, putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$. 
 
 Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$, iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi optimizată la $O(n \log n)$, unele din abordările care merg pot fi fie folosirea șmenului lui Mars pe vectorul cu punctele normalizate, fie sortarea punctelor relevante și considerarea lor drept evenimente, mai apoi parcurgându-le în ordine crescătoare. 
 

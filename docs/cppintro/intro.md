@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Observație"
-    Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai întâi [acest articol](https://roalgo-discord.github.io/arhiva-educationala/cppintro/) pentru a putea scrie cod într-o manieră clară și fără probleme ulterior.
+    Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai întâi [acest articol](./index.md) pentru a putea scrie cod într-o manieră clară și fără probleme ulterior.
 
  În cele ce urmează, vom prezenta câteva dintre aspectele introductive ale limbajului de programare C++ (sintaxa, compilarea și primele părți ale oricărui program), precum și un prim program în acest limbaj.
 

@@ -148,7 +148,7 @@ for (int i = 1; i <= b; i++) {
 cout << ans << '\n';
 ```
 
-Pentru cei mai avansați, această operație se poate face [și în timp logaritmic](https://roalgo-discord.github.io/arhiva-educationala/mediu/pow-log/#ridicarea-la-putere-in-timp-logaritmic), cunoașterea acestei tehnici nefiind necesară decât celor care vor să meargă la olimpiadă. 
+Pentru cei mai avansați, această operație se poate face [și în timp logaritmic](../mediu/pow-log.md#ridicarea-la-putere-in-timp-logaritmic), cunoașterea acestei tehnici nefiind necesară decât celor care vor să meargă la olimpiadă. 
 
 ## Tehnici matematice simple
 
@@ -188,7 +188,7 @@ Dacă avem două intervale de numere naturale $[x_1, y_1]$ și $[x_2, y_2]$ pute
 
 ## Divizibilitatea numerelor naturale
 
-Deși acest capitol este abordat în detaliu [aici](https://roalgo-discord.github.io/arhiva-educationala/usor/divisibility/), aici vom sublinia doar aspectele de bază.
+Deși acest capitol este abordat în detaliu [aici](../usor/divisibility.md), aici vom sublinia doar aspectele de bază.
 
 Operatorul pe care îl folosim pentru a verifica dacă două numere se împart unul la altul este $\%$ și acesta ne află restul împărțirii deîmpărțitului la împărțitor. 
 

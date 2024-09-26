@@ -9,7 +9,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Observație"
-    Dacă nu ai scris încă un program, te invităm să accesezi mai întâi [acest articol](https://roalgo-discord.github.io/arhiva-educationala/cppintro/intro/) pentru a putea înțelege procesele explicate aici.
+    Dacă nu ai scris încă un program, te invităm să accesezi mai întâi [acest articol](./intro.md) pentru a putea înțelege procesele explicate aici.
 
 În cele ce urmează, vom prezenta metodele prin care putem citi și afișa datele în limbajul C++.
 

@@ -101,6 +101,8 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+  - toc:
+      permalink: '#'
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
