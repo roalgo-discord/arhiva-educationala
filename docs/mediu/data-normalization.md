@@ -65,6 +65,22 @@ int main() {
 }
 ```
 
+## Normalizare mai simplă când valorile sunt distincte
+
+În unele probleme în care toate valorile sunt distincte, ne putem gândi și la o variantă de a implementa conversia din datele clasice în cele normalizate în timp liniar (după sortare).
+
+Ne putem gândi pur și simplu la o traversare a șirului în timp liniar, presupunând că păstrăm valorile originale folosind perechi.
+
+```cpp
+int cnt = 0; // numarul de valori distincte
+for (int i = 1; i <= n; i++) {
+  if (sorted[i].first > sorted[i - 1].first) {
+    cnt++;
+  }
+  v[sorted[i].second] = cnt;
+}
+```
+
 ## Problema [Restaurant Customers](https://cses.fi/problemset/task/1619) de pe cses
 
 Pentru a rezolva această problemă, trebuie să găsim o metodă care ne ajută să procesăm intervalele în așa fel încât să nu trebuiască să avem nevoie de foarte multă memorie pentru valorile din intervale. 

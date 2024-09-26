@@ -1,19 +1,18 @@
+---
+tags:
+    - grafuri
+    - grafuri orientate
+    - parcurgere
+    - sortare
+    - recursivitate
+---
 
-
-# Sortare Topologică
-
-**Autor** : Radu Mocănașu
-
-## Cunoștințe necesare:
-* Grafuri.
-* Recursivitate.
-* Liste de Adiacență.
-* Câteva noțiuni legate de vectorii STL.
+**Autor**: Radu Mocănașu
 
 ## Teorie
 
-Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$ lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la $A$ la $B$,
- $$P_A < P_B $$
+!!! info "Definitie"
+    Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$ lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la $A$ la $B$, $$P_A < P_B $$
 
 ### Spre exemplu:
 
@@ -188,6 +187,7 @@ int main() {
 Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică). 
 
 ### Complexitatea algoritmului:
+
 Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$ numărul de muchii. Memoria va fi tot $O(n + m)$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
