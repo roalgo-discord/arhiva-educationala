@@ -50,7 +50,55 @@ Sortarea va fi realizată în $\lceil{log_2(N)}\rceil$ pași, unde $N$ este măr
 
 ## Câteva detalii de implementare
 
-Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $N$. Spre exemplu, dacă $N = 5$, suntem la pasul $2$ și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației $3$ atunci acestea vor fi clasa rotației $3$ în pasul $1$ respectiv clasa lui $3 + 2 ^ 1 \equiv 0 \pmod{N}$ în pasul $1$. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $\lceil{log_2(N)}\rceil$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți modelul autorului [aici](https://github.com/MONcalc/Surse_roalgo/blob/main/suffix_array.cpp).
+Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $N$. Spre exemplu, dacă $N = 5$, suntem la pasul $2$ și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației $3$ atunci acestea vor fi clasa rotației $3$ în pasul $1$ respectiv clasa lui $3 + 2 ^ 1 \equiv 0 \pmod{N}$ în pasul $1$. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $\lceil{log_2(N)}\rceil$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți mai jos implementarea mea :
+```cpp
+
+void reorder(vector<int> r[], vector<int> &p){
+
+    for(int i = 0,cnt = 0; i < max((int)p.size(), 300); i++){
+            
+            for(auto &it : r[i])
+                p[cnt++] = it;
+            r[i].clear();
+    }
+}
+
+vector<int> suffix(string s){
+
+    s += "$"; int n = s.size(); vector<int> c(n), p(n), nc(n), r[max(n, 300)];
+    
+    for(int i = 0 ; i < n ; i++) 
+        r[s[i]].emplace_back(i);
+    reorder(r, p); c[p[0]] = 0;
+    
+    for(int i = 1; i < n ; i++) 
+        c[p[i]] = c[p[i-1]] + (int)(s[p[i]] != s[p[i-1]]);
+    
+    for(int len = 1; len < n ; len <<= 1){
+
+        for(int i = 0; i < n ; i++)
+            r[c[(p[i] + len) % n]].emplace_back(p[i]);
+        reorder(r, p);
+        
+        for(int i = 0; i < n ; i++)
+            r[c[p[i]]].emplace_back(p[i]);
+        reorder(r, p); nc[p[0]] = 0;
+       
+        for(int i = 1; i < n ; i++){
+
+            pair<int,int> last = {c[p[i-1]], c[(p[i-1]+len)%n]};
+            pair<int,int> now = {c[p[i]], c[(p[i]+len)%n]};
+            nc[p[i]] = nc[p[i-1]] + (int)(last != now);
+        }
+
+        c.swap(nc);
+    }
+
+    p.erase(p.begin());
+    return p;
+}
+
+```
 
 ## Aplicații elementare ale șirului de sufixe
 
@@ -58,15 +106,15 @@ Atenție : pentru toate aplicațiile de mai jos mai puțin prima este necesar s�
 
 #### Rotația circulară minim lexicografică
 
-Extrem de simplă : este rotația ce începe de la primul indice din șirul de sufixe. 
+Putem să nu adăugăm santinela la finalul șirului iar astfel vom obține pe prima poziție rotația minim lexicografică.
 
 #### Compararea a două subsecvențe
 
-Împarțim subsecventele în două bucăți nu neapărat disjuncte și ne folosim de clasele lor de echivalență pentru a le compara. $O(1)$ pe query.
+Fie $M$ minimul lungimilor subsecvențelor și $l = \lfloor log_2{M} \rfloor$. Ca la $RMQ$, putem compara cele două subsecvențe comparând perechile corespunzătoare bucăților în care le împarțim folosind clasele de la pasul $l$. $O(1)$ pe query. 
 
 #### Cel mai lung prefix comun dintre două subsecvențe
 
-Ne folosim de căutare binară și aplicația $2$. $O(log_2{N})$ pe query.
+Cautăm binar pe lungimea răspunsului și ne folosim de aplicația $2$ pentru a verifica dacă subsecvențele corespunzătoare sunt egale $O(log_2{N})$ pe query.
 
 
 ## Șirul LCP
@@ -81,22 +129,24 @@ $1$. dacă avem doua sufixe care încep de la pozițiile $i$ respectiv $j$ și $
 
 $2$. $lcp(i, j) = \min\limits_{id = R_i + 1}^{R_j} LCP_{id}$ (lcp-ul dintre oricare două sufixe este minimul din subsecvența formată de pozițiile lor)
 
-Acum că am prezentat aceste două observații, putem continua cu algoritmul : iterăm prin toate sufixele, de la cel mai lung la cel mai scurt, și calculăm valoarea din șirul $LCP$ la poziția în care se află el. Dacă notăm cu $l > 0$ valoarea obținută la sufixul precedent, atunci ideea pivotală din spatele acestui algoritm este următoarea : putem incepe compararea direct de la indicele $l$ întrucât știm că lcp-ul este cel puțin $l - 1$. De unde știm asta ? Fie $i$ sufixul anterior si $j$ sufixul cu care l - am comparat. A se observa ca $j$ apare înaintea lui $i$ în șirul de sufixe. Deoarece avem $l > 0$ putem spune cu certitudine ca sufixul $j + 1$ apare înaintea lui $i + 1$ iar din observația $1$ știm că lcp-ul lor este cel puțin $l - 1$. Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$ atunci ordinea de apariție în șirul de sufixe este $j + 1 \geq k < i + 1$. Folosind observația $2$ obținem că $lcp(k, i + 1) \geq l - 1$. Mai jos aveți un model de implementare : 
+Acum că am prezentat aceste două observații, putem continua cu algoritmul : iterăm prin toate sufixele, de la cel mai lung la cel mai scurt, și calculăm valoarea din șirul $LCP$ la poziția în care se află el. Dacă notăm cu $l > 0$ valoarea obținută la sufixul precedent, atunci ideea pivotală din spatele acestui algoritm este următoarea : putem incepe compararea direct de la indicele $l$ întrucât știm că lcp-ul este cel puțin $l - 1$. De unde știm asta ? Fie $i$ sufixul anterior si $j$ sufixul cu care l - am comparat. A se observa ca $j$ apare înaintea lui $i$ în șirul de sufixe. Deoarece avem $l > 0$ putem spune cu certitudine ca sufixul $j + 1$ apare înaintea lui $i + 1$ iar din observația $1$ știm că lcp-ul lor este cel puțin $l - 1$. Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$ atunci ordinea de apariție în șirul de sufixe este $j + 1 \leq k < i + 1$. Folosind observația $2$ obținem că $lcp(k, i + 1) \geq l - 1$. Mai jos aveți un model de implementare : 
 ```cpp
-vector<int> lcp(string &s, vector<int> &p)
-{
+vector<int> lcp(string &s, vector<int> &p){
+
     vector<int> r(s.size()), l(s.size(), 0); int n = p.size();
-    for(int i = 0 ; i < n ; i++) r[p[i]] = i; ///r[i] = pozitia sufixului i in sirul de sufixe
+    for(int i = 0 ; i < n ; i++) 
+        r[p[i]] = i; ///r[i] = pozitia sufixului i in sirul de sufixe
     
     int fun = 0, j;
-    for(int i = 0 ; i < n ; i++)
-        {
-            if(!r[i]) continue;
-            j = p[r[i] - 1];
-            while(i + fun < n && j + fun < n && s[i+fun] == s[j+fun])
-                fun++;
-            l[r[i]] = fun; if(fun) fun--;
-        }
+    for(int i = 0 ; i < n ; i++){
+            
+        if(!r[i]) continue;
+        
+        j = p[r[i] - 1];
+        while(i + fun < n && j + fun < n && s[i+fun] == s[j+fun])
+            fun++;
+        l[r[i]] = fun; if(fun) fun--;
+    }                   
 
     return l;
 }
