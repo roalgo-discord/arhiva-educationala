@@ -1,9 +1,7 @@
 ---
 tags:
-    - C++
+    - matrici
     - implementare
-    - optimizare
-    - simulare
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
@@ -18,9 +16,8 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Probleme suplimentare
 
-* [Probleme de implementare de pe kilonova](https://kilonova.ro/tags/290)
-
 ## Resurse suplimentare
 
-* [Simulation - USACO Guide](https://usaco.guide/bronze/simulation)
-* [Verificarea unor proprietati - pbinfo](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
+* [Tablouri bidimensionale - pbinfo](https://www.pbinfo.ro/articole/5620/tablouri-bidimensionale)
+* [Tablouri bidimensionale (matrice) - CPPI Sync](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+* [Tablouri pătratice - pbinfo](https://www.pbinfo.ro/articole/5626/tablouri-patratice)

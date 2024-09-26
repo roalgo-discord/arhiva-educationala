@@ -1,6 +1,8 @@
 ---
 tags:
     - notiuni de baza
+    - memorie
+    - timp
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu

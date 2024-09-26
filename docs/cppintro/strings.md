@@ -3,7 +3,7 @@ tags:
     - C++
     - implementare
     - optimizare
-    - simulare
+    - siruri de caractere
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
@@ -18,9 +18,8 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Probleme suplimentare
 
-* [Probleme de implementare de pe kilonova](https://kilonova.ro/tags/290)
-
 ## Resurse suplimentare
 
-* [Simulation - USACO Guide](https://usaco.guide/bronze/simulation)
-* [Verificarea unor proprietati - pbinfo](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
+* [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
+* [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
+* [Șiruri de caractere C++](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)

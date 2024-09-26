@@ -129,17 +129,17 @@ nav:
       - Structura alternativă: cppintro/conditions-if.md
       - Structura repetitivă: cppintro/loops.md
       - Coding style: cppintro/coding-style.md
+      - Vectori (tablouri unidimensionale): cppintro/arrays.md
+      - Matrici (tablouri bidimensionale): cppintro/matrices.md
+      - Subprograme: cppintro/functions.md
+      - Șiruri de caractere: cppintro/strings.md
   - Ușor:
       - Concepte fundamentale și de limbaj:
           # - Introducere în C++: usor/intro-cpp.md
           - Complexități: usor/complexity.md
           # - Stil de cod și alte fundamente: usor/codestyle.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md
-          - Vectori (tablouri): usor/arrays.md
-          - Matrici: usor/matrices.md
           - Simularea soluției: usor/simulating-solution.md
-          - Șiruri de caractere: usor/strings.md
-          - Subprograme: usor/functions.md
       - Algebră:
           - Divizibilitatea: usor/divisibility.md
           - Ciurul lui Eratostene: usor/sieve.md
