@@ -122,6 +122,9 @@ int main () {
 }
 ```
 
+!!! note "endl vs '\n'"
+    În mod particular, dacă avem de citit un număr necunoscut de valori, trebuie să folosim structura repetitivă while, așa cum veți observa în [articolul nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această temă. 
+
 ## Afișarea specializată
 
 În unele probleme, suntem nevoiți să afișăm datele respectând un oarecare format (de exemplu, să se afișeze cu exact $x$ zecimale). Pentru a opera acest lucru, este necesară cunoașterea bibliotecii  `#include <iomanip>`.

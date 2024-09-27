@@ -299,18 +299,18 @@ nav:
           - Funcții generatoare: avansat/generating-functions.md
   - Olimpiadă:
       - Programă:
-          - Sfaturi generale pentru a învăța materia: olympiad/learning-content.md
+          - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
           - Gimnaziu:
-              - Clasa a V-a: olympiad/clasa-V.md
-              - Clasa a VI-a: olympiad/clasa-VI.md
-              - Clasa a VII-a: olympiad/clasa-VII.md
-              - Clasa a VIII-a: olympiad/clasa-VIII.md
-              - Baraj și lot juniori: olympiad/baraj-lot-juniori.md
+              - Clasa a V-a: olimpiada/clasa-V.md
+              - Clasa a VI-a: olimpiada/clasa-VI.md
+              - Clasa a VII-a: olimpiada/clasa-VII.md
+              - Clasa a VIII-a: olimpiada/clasa-VIII.md
+              - Baraj și lot juniori: olimpiada/baraj-lot-juniori.md
           - Liceu:
-              - Clasa a IX-a: olympiad/clasa-IX.md
-              - Clasa a X-a: olympiad/clasa-X.md
-              - Clasele XI-XII: olympiad/clasa-XI-XII.md
-              - Baraj și lot seniori: olympiad/baraj-lot-seniori.md
+              - Clasa a IX-a: olimpiada/clasa-IX.md
+              - Clasa a X-a: olimpiada/clasa-X.md
+              - Clasele XI-XII: olimpiada/clasa-XI-XII.md
+              - Baraj și lot seniori: olimpiada/baraj-lot-seniori.md
 
 extra_javascript:
   - javascripts/katex.js

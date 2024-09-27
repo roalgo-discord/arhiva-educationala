@@ -28,6 +28,16 @@ while (conditie) {
 }
 ```
 
+!!! note "Observație" 
+    În mod particular, această structură repetitivă este folosită pentru a citi un număr necunoscut de date atunci când lucrăm cu fișiere text, lucru ce se poate vedea mai ales în problemele ce se dau în variantele de bacalaureat la informatică. 
+
+```cpp
+int x;
+while (fin >> x) {
+    // instructiuni
+}
+```
+
 ## Structura do..while
 
 !!! info "Definiție" 

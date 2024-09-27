@@ -305,6 +305,7 @@ int main() {
 * [Obtinerea divizorilor unui numar - CPPI Sync](https://cppi.sync.ro/materia/obtinerea_divizorilor_unui_numar.html?hl=divizori)
 * [Articolele despre divizibilitate de pe Pbinfo](https://www.pbinfo.ro/articole/66/divizibilitate)
 * [Number theory  —  Storing information about multiples/divisors](https://codeforces.com/blog/entry/91707)
+* [Some useful conclusions for some naive algorithms to solve number theory problems - Codeforces](https://codeforces.com/blog/entry/134127)
 * [Articol de pe USACO Guide](https://usaco.guide/gold/divisibility?lang=cpp)
 * [Counting Divisors of a Number in $N^\frac{1}{3}$](https://codeforces.com/blog/entry/22317)
 
