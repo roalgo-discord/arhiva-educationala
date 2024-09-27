@@ -10,7 +10,9 @@ tags:
 
 ## Cunoștinte necesare
 
-Înaintea citirii acestui articol, se recomandă citirea articolului despre divizibilitate. De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+Înaintea citirii acestui articol, se recomandă citirea [articolului despre divizibilitate](https://edu.roalgo.ro/usor/divisibility/). De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+
+De asemenea, se recomandă cunoașterea vectorilor de frecvență, care sunt prezentați [aici](https://edu.roalgo.ro/usor/frequency-arrays/).
 
 ## Ce este ciurul lui Eratostene?
 

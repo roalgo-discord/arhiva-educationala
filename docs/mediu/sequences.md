@@ -212,4 +212,4 @@ După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundame
 * [Secvențe - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_V-a_lec%C8%9Bia_12_-_26_oct_2017)
 * [Secvențe partea II- Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_V-a_lec%C8%9Bia_13_-_2_nov_2017)
 * [Secvența de sumă maximă](https://www.pbinfo.ro/articole/20499/secventa-de-suma-maxima)
-
+* [Subsecventa de suma maxima - Sebastian Popa](https://vasiluta.ro/sebi/ssm)
