@@ -138,17 +138,19 @@ Vom parcurge vectorul de la stânga la dreapta, iar pe o stivă vom reține indi
 !!! note "Observație importantă"
     Pe stivă vom reține indici, nu valori. Acest lucru va fi valabil pentru o mare parte din problemele de stivă pe care le rezolvați.
 
-Vom face o simulare a acestui algoritm, folosindu-ne de exemplul din problemă, $v = [1 \ 2 \ 3 \ 6 \ 4 \ 5 \ 3 \ 2 \ 1 \ 10]$. Ca în problemă, vectorul va fi indexat de la $0$.
-1. Suntem la indicele $0$, $stiva = []$. Răspunsul va fi -1.
-2. Suntem la indicele $1$, $stiva = [0]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
-3. Suntem la indicele $2$, $stiva = [1]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
-4. Suntem la indicele $3$, $stiva = [2]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
-5. Suntem la indicele $4$, $stiva = [3]$. Răspunsul va fi $3$.
-6. Suntem la indicele $5$, $stiva = [3 \ 4]$, dar îl scoatem pe $4$. Răspunsul va fi $3$.
-7. Suntem la indicele $6$, $stiva = [3 \ 5]$. Răspunsul va fi $5$.
-8. Suntem la indicele $7$, $stiva = [3 \ 5 \ 6]$. Răspunsul va fi $6$.
-9. Suntem la indicele $8$, $stiva = [3 \ 5 \ 6 \ 7]$. Răspunsul va fi $7$.
-10. Suntem la indicele $9$, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
+!!! example "Exemplu"
+    Vom face o simulare a acestui algoritm, folosindu-ne de exemplul din problemă, $v = [1 \ 2 \ 3 \ 6 \ 4 \ 5 \ 3 \ 2 \ 1 \ 10]$. Ca în problemă, vectorul va fi indexat de la $0$.
+
+    * Suntem la indicele $0$, $stiva = []$. Răspunsul va fi -1.
+    * Suntem la indicele $1$, $stiva = [0]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
+    * Suntem la indicele $2$, $stiva = [1]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
+    * Suntem la indicele $3$, $stiva = [2]$, dar îl scoatem, iar apoi $stiva = []$. Răspunsul va fi $-1$.
+    * Suntem la indicele $4$, $stiva = [3]$. Răspunsul va fi $3$.
+    * Suntem la indicele $5$, $stiva = [3 \ 4]$, dar îl scoatem pe $4$. Răspunsul va fi $3$.
+    * Suntem la indicele $6$, $stiva = [3 \ 5]$. Răspunsul va fi $5$.
+    * Suntem la indicele $7$, $stiva = [3 \ 5 \ 6]$. Răspunsul va fi $6$.
+    * Suntem la indicele $8$, $stiva = [3 \ 5 \ 6 \ 7]$. Răspunsul va fi $7$.
+    * Suntem la indicele $9$, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
 
 Această rezolvare are complexitatea $\mathcal{O}(N)$, pentru că fiecare element va fi pus pe stivă și scos, deci se vor face cel mult două operații pentru fiecare.
 
