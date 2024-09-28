@@ -212,6 +212,96 @@ cout << maxSum << "\n";
 cout << maxLin << " " << maxCol << " " << maxLin1 << " " << maxCol1 << "\n";
 ```
 
+## Problema [secv - ONI 2016 Baraj Juniori](https://kilonova.ro/problems/1086/)
+
+Pentru a rezolva prima cerință, este îndeajuns să scoatem din șir de la stânga la dreapta toate secvențele de lungime $K$ cu sumă mai mare decât $S$. 
+
+Pentru cea de-a doua cerință, aflăm pentru fiecare secvență de lungime $K+1$ diferența dintre suma ei și $S$, iar dacă valoarea curentă este mai mică decât diferența minimă pentru o secvență din cele (cel mult) $K+1$ care o acoperă, atunci ea poate fi scoasă. 
+
+```cpp
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <deque>
+
+using namespace std;
+
+int main() {
+    ifstream cin("secv.in");
+    ofstream cout("secv.out");
+    
+    int c;
+    cin >> c;
+    
+    int n, k, s;
+    cin >> n >> k >> s;
+    
+    if (c == 1) {
+        vector <long long> st;
+        st.push_back(0);
+        int sz = 0;
+        int cnt = 0;
+        for (int i = 1; i <= n; i++) {
+            int val;
+            cin >> val;
+            
+            st.push_back(st.back() + val);
+            sz++;
+            if (sz > k) {
+                if (st[sz] - st[sz - k] > s) {
+                    for (int j = 1; j <= k; j++) {
+                        st.pop_back();
+                    }
+                    sz -= k;
+                    cnt++;
+                }
+            }
+        }
+        
+        cout << cnt << '\n';
+    }
+    else {
+        vector <int> vals(n+1);
+        vector <int> sp(n+1);
+        vector <int> threshold(n+1);
+        for (int i = 1; i <= n; i++) {
+            cin >> vals[i];
+            sp[i] = sp[i-1] + vals[i];
+        }
+        
+        for (int i = k+1; i <= n; i++) {
+            threshold[i - k] = sp[i] - sp[i - (k + 1)] - s;
+        }
+        
+        int ans = 0;
+        
+        deque <int> s;
+        for (int i = 1; i <= n; i++) {
+            if (i <= n-k) {
+                while (!s.empty() && threshold[i] > threshold[s.back()]) {
+                    s.pop_back();
+                }
+                s.push_back(i);
+            }
+            if (!s.empty() && s.front() == i - (k+1)) {
+                s.pop_front();
+            }
+            
+            if (vals[i] < threshold[s.front()]) {
+                ans++;
+            }
+        }
+        
+        cout << ans << '\n';
+    }
+    return 0;
+}
+```
+
+## Concluzie
+
+Deque este o structură de date foarte utilă pentru foarte multe probleme ce folosesc sliding window, precum și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod normal s-ar rezolva cu o stivă sau o coadă. 
+
 ## Probleme suplimentare
 
 * [infoarena vila2](https://www.infoarena.ro/problema/vila2)
