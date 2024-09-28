@@ -304,6 +304,23 @@ int main() {
 }
 ```
 
+
+## Problema [Ehab and Prefix MEXs - Codeforces Round 649](https://codeforces.com/contest/1364/problem/C)
+
+TO-DO
+
+## Problema [Maximum Rectangle - kilonova](https://kilonova.ro/problems/2113)
+
+TO-DO
+
+## Problema [unific - OJI 2013 VII](https://kilonova.ro/problems/835)
+
+TO-DO
+
+## Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/problems/1076)
+
+TO-DO
+
 ## Concluzii
 
 După cum se poate observa, odată ce deprindeți tehnicile folosite la problemele prezentate mai sus, soluțiile devin mult mai ușor de conceput, existând foarte multe similarități între problemele care implică folosirea stivei. 
@@ -314,10 +331,6 @@ După cum se poate observa, odată ce deprindeți tehnicile folosite la probleme
 - [Maximum Building I - CSES](https://cses.fi/problemset/task/1147) (Este aceeași problemă ca Maximum Rectangle)
 - [inundație - ONI 2022 VI](https://kilonova.ro/problems/1593) (Cerințele 2 și 3 pot fi rezolvate folosind o stivă, necesită și căutare binară).
 - [fuziune - ONI 2023 Baraj Juniori](https://kilonova.ro/problems/554) (Problemă asemănătoare cu unific, dar necesită lucru cu numere mari și numere prime)
-- [Ehab and Prefix MEXs - Codeforces Round 649](https://codeforces.com/contest/1364/problem/C)
-- [Maximum Rectangle - kilonova](https://kilonova.ro/problems/2113)
-- [unific - OJI 2013 VII](https://kilonova.ro/problems/835)
-- [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/problems/1076)
 - [șiruri - ONI 2022 VI](https://kilonova.ro/submissions/62356) (Altă problemă asemănătoare cu unific)
 - [tower - Shumen 2016 Juniori](https://www.nerdarena.ro/problema/tower) (Nu vă speriați că este de la Shumen, problema este doar o aplicație la stack_max_min)
 - [maxp - ONI 2013 VIII](https://kilonova.ro/problems/836) (O altă aplicație la problema stack_max_min)
@@ -333,7 +346,9 @@ După cum se poate observa, odată ce deprindeți tehnicile folosite la probleme
 
 - [std::stack - cppreference](https://en.cppreference.com/w/cpp/container/stack)
 - [Articolul de pe USACO Guide despre stivă](https://usaco.guide/gold/stacks?lang=cpp)
+- [Stiva - CPPI Sync](https://cppi.sync.ro/materia/stive.html)
 - [Un video despre stivă, pentru a vă ajuta să înțelegeți mai bine acest concept.](https://www.youtube.com/watch?v=I37kGX-nZEI)
 - [Un video despre analiza amortizată, vă va ajuta să înțelegeți mai bine rezolvarea problemei *stack_max_min* și de ce are complexitatea $\mathcal{O}(N)$](https://www.youtube.com/watch?v=T7W5E-5mljc)
+- [Stiva - pbinfo](https://www.pbinfo.ro/articole/19577/stiva)
 - [Algopedia - Stive](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_2_-_26_sep_2019#Stive)
 - [Algopedia - Analiza amortizată, mai multe detalii despre problema stack_max_min](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_11_-_21_nov_2019#Lec%C8%9Bie_-_analiz%C4%83_amortizat%C4%83)
