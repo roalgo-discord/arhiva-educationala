@@ -3,8 +3,7 @@ site_name: Arhiva Educationala RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
   O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
-  și nu numai. Aici vei găsi informații despre algoritmi, structuri de date,
-  tehnici de rezolvare a problemelor și multe altele.
+  și nu numai.
 theme:
   name: material
   features:
@@ -109,7 +108,9 @@ repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 plugins:
-  - search
+  - search:
+      enabled: true
+      lang: ro
   # - awesome-pages
   - tags
   - social:
