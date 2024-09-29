@@ -22,13 +22,15 @@ Operațiile pe care o stivă le poate efectua în timp constant sunt:
 !!! note "Observație"
     Valorile vor fi procesate conform principiului **LIFO**, adică **last in, first out**.
 
-## Problema exemplu: [stack](https://kilonova.ro/problems/2001)
+## Probleme de bază
+
+### Problema [stack](https://kilonova.ro/problems/2001)
 
 Această problemă ne cere să implementăm exact operațiile descrise mai sus.
 
 Pentru a implementa aceste operații, avem două variante posibile:
 
-### Implementarea folosind un vector obișnuit
+#### Implementarea folosind un vector obișnuit
 
 Pentru a implementa aceste operații fără a folosi vreo structură de date dinamică, putem face asta ținând un contor cu numărul de valori care se află la acel moment în stivă, astfel operațiile de ștergere și de verificare a dimensiunii stivei se fac raportându-ne la variabila $pos$, iar adăugarea valorii se face pur și simplu crescând valoarea lui $pos$. 
 
@@ -72,7 +74,7 @@ int main() {
 }
 ```
 
-### Implementarea folosind std::stack
+#### Implementarea folosind std::stack
 
 Stiva poate fi implementată și cu funcțiile din STL. Pentru mai multe detalii,
 vedeți [implementarea](https://kilonova.ro/pastes/BkG7Wrt8wQ83) și [funcțiile descrise aici](https://en.cppreference.com/w/cpp/container/stack).
@@ -104,7 +106,7 @@ int main() {
             } 
             else {
                 if (tip == 3) {
-                cout << st.top() << '\n';
+                    cout << st.top() << '\n';
                 } 
                 else {
                     if (st.empty()) {
@@ -122,7 +124,7 @@ int main() {
 }
 ```
 
-## Problema exemplu - [stack_max_min](https://kilonova.ro/problems/2107)
+### Problema [stack_max_min](https://kilonova.ro/problems/2107)
 
 Problema ne dă un șir de numere și $4$ întrebări pentru câte o poziție:
 
@@ -250,7 +252,9 @@ int main() {
 }
 ```
 
-## Problema [skyline](https://kilonova.ro/problems/2114)
+## Probleme rezolvate
+
+### Problema [skyline](https://kilonova.ro/problems/2114)
 
 Pentru a rezolva această problemă, va trebui să aflăm pentru fiecare valoare care este cea mai apropiată poziție de la stânga și de la dreapta cu o înălțime mai mică decât cea curentă. 
 
@@ -304,22 +308,295 @@ int main() {
 }
 ```
 
+### Problema [unific - OJI 2013 VII](https://kilonova.ro/problems/835)
 
-## Problema [Ehab and Prefix MEXs - Codeforces Round 649](https://codeforces.com/contest/1364/problem/C)
+Mai întâi, vom defini urmatoarele două functii:
 
-TO-DO
+1. $canJoin(x, y) = 1$ dacă putem unifica $x$ si $y$, $0$ altfel
+2. $join(x, y) =$ rezultatul unificării dintre $x$ si $y$
 
-## Problema [Maximum Rectangle - kilonova](https://kilonova.ro/problems/2113)
+Sa simplificăm enunțul astfel: Găsim primul $i (1 < i <= n)$ pentru care $canJoin(a_{i - 1}, a_i) = 1$ (dacă nu există atunci terminăm procedeul). Setăm $a_{i - 1}$ la $join(a_{i - 1}, a_i)$ si scoatem $a_i$ din șir. Acum, dacă $i > 2$ și $canJoin(a_{i - 2}, a_{i - 1}) = 0$ continuăm căutarea de la $i + 1$. Altfel, setăm $a_{i - 1}$ la $join(a_{i - 3}, a_{i - 1})$ și continuăm tot așa.
 
-TO-DO
+Observăm că noi trebuie să scoatem elemente din șir, iar acest lucru nu este ușor într-un vector. Așa că, atunci când ajungem la $i$, vom menține într-o stivă grupurile care s-au format până la $i$. Apoi, cât timp stiva nu este goală, vom încerca să unificam vârful stivei cu $a_i$. Dacă $canJoin(top(), a_i) = 1$ atunci setăm $a_i$ la $join(top(), a_i)$ și scoatem vârful. Altfel, adaugăm $a_i$ in stiva și continuăm cu $i + 1$.
 
-## Problema [unific - OJI 2013 VII](https://kilonova.ro/problems/835)
+Sursa de 100 de puncte:
+```cpp
+#include <stdio.h>
 
-TO-DO
+const int MAXN = 100'000;
+const int MAXCF = 10;
+const int FARA_CIFRE = -1;
 
-## Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/problems/1076)
+FILE *fin, *fout;
+int n, sp, fr[MAXCF], fra[MAXCF], frb[MAXCF];
+long long v[MAXN], stiva[MAXN];
 
-TO-DO
+void openFiles() {
+    fin = fopen("unific.in", "r");
+    fout = fopen("unific.out", "w");
+}
+
+void readArray() {
+    int i;
+    fscanf(fin, "%d", &n);
+    for (i = 0; i < n; i++) {
+        fscanf(fin, "%lld", &v[i]);
+    }
+}
+
+void getMostFrequent() {
+    int i, max;
+    long long val;
+    for (i = 0; i < n; i++) {
+        val = v[i]; // vrem sa pastram valoarea
+        while (val > 0) {
+            fr[val % 10]++;
+            val /= 10;
+        }
+    }
+    max = 0;
+    for (i = 1; i < MAXCF; i++) {
+        if (fr[i] > fr[max]) {
+            max = i;
+        }
+    }
+    fprintf(fout, "%d\n", max);
+}
+
+void getDigitFrequencies(long long val, int fr[MAXCF]) {
+    do { // tratam si cazul val = 0
+        fr[val % 10]++;
+        val /= 10;
+    } while (val > 0);
+}
+
+int canJoin(long long a, long long b) {
+    int i;
+    for (i = 0; i < MAXCF; i++) {
+        fra[i] = frb[i] = 0;
+    }
+    getDigitFrequencies(a, fra);
+    getDigitFrequencies(b, frb);
+    i = 0; // cautam prima cifra care apare la ambii
+    while (i < MAXCF && (fra[i] == 0 || frb[i] == 0)) {
+        i++;
+    }
+    return i < MAXCF; // daca am gasit vreuna
+}
+
+long long removeCommonDigits(long long val, int other_fr[]) {
+    long long p, rez;
+    int cf, has_digits;
+    p = 1;
+    while (p * 10 <= val) {
+        p *= 10;
+    }
+    rez = has_digits = 0;
+    while (p > 0) {
+        cf = val / p % 10;
+        if (other_fr[cf] == 0) { // daca nu e comuna
+            rez = rez * 10 + cf; // adaugam cifra
+            has_digits = 1;
+        }
+        p /= 10;
+    }
+    return has_digits ? rez : FARA_CIFRE;
+}
+
+// consideram ca am aplicat inainte canJoin(a, b)
+// asta inseamna ca fra si frb sunt calculate deja
+long long join(long long a, long long b) {
+    long long p, rez;
+    a = removeCommonDigits(a, frb); // numarul nou al lui a
+    b = removeCommonDigits(b, fra); // numarul nou al lui b
+    if (a != FARA_CIFRE || b != FARA_CIFRE) { // ambele dispar daca ambele n-au cifre
+        if (a == FARA_CIFRE) { // nu mai conteaza ca nu are cifre
+            a = 0;
+        }
+        p = 1;
+        while (p <= b) {
+            p *= 10;
+        }
+        if (b == 0) {
+            p = 10; // si cifra asta trebuie luata in considerare
+        }
+        if (b == FARA_CIFRE) { // setam la 0 ca sa nu ne afecteze rezultatul
+            b = 0;
+        }
+        a = a * p + b; // lipim numerele
+    }
+    return a;
+}
+
+void unifyArray() {
+    int i;
+    for (i = 0; i < n; i++) {
+        while (sp > 0 && v[i] >= 0 && canJoin(stiva[sp - 1], v[i])) {
+            v[i] = join(stiva[sp - 1], v[i]);
+            sp--; // scoatem varful din stiva
+        }
+        if (v[i] != FARA_CIFRE) { // daca mai are cifre
+            stiva[sp++] = v[i]; // adaugam elementul in stiva
+        }
+    }
+    fprintf(fout, "%d\n", sp); // cate sunt
+    for (i = 0; i < sp; i++) {
+        fprintf(fout, "%lld ", stiva[i]);
+    }
+    fputc('\n', fout);
+}
+
+void closeFiles() {
+    fclose(fin);
+    fclose(fout);
+}
+
+int main() {
+    openFiles();
+    readArray();
+    getMostFrequent();
+    unifyArray();
+    closeFiles();
+    return 0;
+}
+```
+
+### Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/contest/1076)
+
+Notam cu $S$ șirul de paranteze.
+Pentru punctul a), în timp ce parcurgem șirul de paranteze, vom menține o stivă care va conține indicii parantezelor deschise cărora nu le-am găsit încă o pereche. De fiecare dată când dăm peste o paranteză deschisa, îi adaugăm indicele în stivă, iar atunci când dăm peste o paranteză închisă, $top()$ va fi perechea ei. Adunăm la răspuns $i - top()$, scoatem vârful din stivă și continuăm cu $i + 1$.
+Punctele b) și c) pot fi rezolvate împreuna. Deducem următoarele trei cazuri:
+1. $S_i = S_{i + 1}$, unde $i$ și $i + 1$ sunt parantezele interschimbate. Atunci, răspunsul va rămâne exact la fel, deci nu este o operație swap validă
+2. $S_i = )$ și $S_{i + 1} = ($. În acest caz, există un $a (a < i)$ și un $b (i + 1 < b)$ astfel încât $S_a = ($, $S_b = )$, și $(a, i)$, respectiv $(i + 1, b)$ formau perechi. Costurile lor însumate vor fi $i - a + b - i - 1 = b - a - 1$. Când interschimbăm $S_i$ cu $S_{i + 1}$ obținem perechile $(a, b)$ și $(i, i + 1)$, ale căror costuri însumate dau $b - a + 1$. Deci răspunsul a crescut cu $2$, ceea ce înseamnă că nu este o operație swap validă.
+3. $S_i = ($ și $S_{i + 1} = )$. Dacă nu există nici un $a (a < i)$ astfel încât $S_a = ($ și perechea lui $a$ (pe care o notăm cu $b$) să fie mai mare ca $i + 1$, atunci operația nu ar fi validă, deoarece nu am avea pereche pentru $S_i$ dacă $S_i = )$. Mai întai, avem perechile $(a, b)$ și $(i, i + 1)$. După cum am văzut la cazul $2$, răspunsul ar fi mai mic cu $2$ dacă perechile ar fi $(a, i)$ și $(i + 1, b)$. Deci operația swap este validă.
+
+Observăm că singurul caz în care operația swap este validă este atunci când $S_i = (, S_{i + 1} = )$ și există un $a < i$, $S_a = ($, a cărui pereche $b$ este mai mare ca $i + 1$. Acest lucru se poate simplifica astfel: Căutăm un $i$ care respectă următoarele condiții:
+1. $S_i = )$
+2. Înainte să scoatem perechea lui $i$, stiva trebuie să aiba cel puțin $2$ elemente
+3. Vârful stivei trebuie să aibă valoarea $i - 1$.
+
+Deci noi, trebuie să numărăm câți $i$ respectă cele trei condiții. Dacă găsim vreunul, răspunsul este $rez - 2$, unde $rez$ este răspunsul de la punctul a). Altfel, răspunsul este $-1$.
+
+Sursa de 100 de puncte:
+```cpp
+#include <stdio.h>
+
+const int MAXN = 90'000;
+const char DESCHISA = '(';
+const char INCHISA = ')';
+
+int stiva[MAXN], sp;
+
+FILE *fin, *fout;
+
+void openFiles() {
+    fin = fopen("swap.in", "r");
+    fout = fopen("swap.out", "w");
+}
+
+void calcAnswer() {
+    int i, n, ch, cate;
+    long long rez;
+    fscanf(fin, "%d ", &n);
+    rez = cate = 0;
+    for (i = 0; i < n; i++) {
+        ch = fgetc(fin);
+        if (ch == DESCHISA) {
+            stiva[sp++] = i; // il adaugam in stiva
+        }
+        else { // INCHISA
+            rez += i - stiva[sp - 1]; // distanta pana la pereche
+            if (sp >= 2 && stiva[sp - 1] == i - 1) { // conditia sa fie valida operatia 
+                cate++;
+            }
+            sp--; // scoatem perechea din stiva
+        }
+    }
+    fprintf(fout, "%lld\n%lld\n%d\n", rez, cate > 0 ? rez - 2 : -1, cate);
+}
+
+void closeFiles() {
+    fclose(fin);
+    fclose(fout);
+}
+
+int main() {
+    openFiles();
+    calcAnswer();
+    closeFiles();
+    return 0;
+}
+```
+
+### Problema [Ehab and Prefix MEXs - Codeforces Round 649](https://codeforces.com/contest/1364/problem/C)
+
+Să presupunem că suntem la un indice $i$ și am reușit să construim tot prefixul $[1, i - 1]$. Dacă $a_{i - 1} = a_i$, atunci $b_i$ poate fi orice valoare mai mare ca $a_i$. Vom ține elementele care au $a_{i - 1} = a_i$ într-o stivă, deoarece ele pot lua orice valoare mai mare ca $a_i$. Când $a_{i - 1} < a_i$, vom putea folosi elementele din stivă pentru a acoperi intervalul $[a_{i - 1}, a_i)$. Dacă în stivă sunt mai puțin de $a_i - a_{i - 1} - 1$ elemente, atunci nu putem forma prefixul $[1, i]$ și atunci răspunsul va fi $-1$. Altfel, setăm $b_i$ la $a_{i - 1}$. Apoi luăm primele $a_i - a_{i - 1} - 1$ elemente, le setăm la $a_{i - 1} + 1, a_{i - 1} + 2, .., a_i - 1$ și apoi le scoatem din stivă. Restul elementelor, care au rămas în stivă după ce am trecut prin tot șirul, pot fi setate la $n + 1$ sau la orice valoare mai mare ca $n$.
+
+Codul de Accepted:
+```cpp
+#include <stdio.h>
+
+const int MAXN = 100'000;
+const int CANNOT = -1;
+
+int n, a[MAXN + 1], answer[MAXN + 1], stiva[MAXN];
+
+void readArray() {
+    int i;
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++) {
+        scanf("%d", &a[i]);
+    }
+}
+
+void buildAnswer() {
+    int i, sp, pot, j;
+    sp = 0;
+    pot = i = 1;
+    while (i <= n && pot) {
+        if (a[i] == a[i - 1]) {
+            stiva[sp++] = i; // il adaugam in stiva
+        }
+        else if (a[i] - a[i - 1] > sp + 1) { // nu avem destule elemente
+            pot = 0;
+        }
+        else {
+            answer[i] = a[i - 1];
+            for (j = a[i - 1] + 1; j < a[i]; j++) {
+                // folosim elementul si il scoatem
+                answer[stiva[--sp]] = j;
+            }
+        }
+        i++;
+    }
+    while (sp > 0) {
+        // setam restul elementelor la ceva care nu conteaza
+        answer[stiva[--sp]] = n + 1;
+    }
+    if (pot == 0) {
+        answer[0] = CANNOT;
+    }
+}
+
+void writeAnswer() {
+    int i;
+    if (answer[0] == CANNOT) {
+        printf("%d\n", CANNOT);
+    } else {
+        for (i = 1; i <= n; i++) {
+            printf("%d ", answer[i]);
+        } 
+        fputc('\n', stdout);
+    }
+}
+
+int main() {
+    readArray();
+    buildAnswer();
+    writeAnswer();
+    return 0;
+}
+```
 
 ## Concluzii
 
@@ -328,19 +605,17 @@ După cum se poate observa, odată ce deprindeți tehnicile folosite la probleme
 ## Probleme suplimentare
 
 - [Advertisement - CSES](https://cses.fi/problemset/task/1142) (O versiune mai ușoară a problemei skyline)
-- [Maximum Building I - CSES](https://cses.fi/problemset/task/1147) (Este aceeași problemă ca Maximum Rectangle)
+- [Maximum Building I - CSES](https://cses.fi/problemset/task/1147) (O versiune putin mai grea a problemei skyline)
 - [inundație - ONI 2022 VI](https://kilonova.ro/problems/1593) (Cerințele 2 și 3 pot fi rezolvate folosind o stivă, necesită și căutare binară).
 - [fuziune - ONI 2023 Baraj Juniori](https://kilonova.ro/problems/554) (Problemă asemănătoare cu unific, dar necesită lucru cu numere mari și numere prime)
-- [șiruri - ONI 2022 VI](https://kilonova.ro/submissions/62356) (Altă problemă asemănătoare cu unific)
+- [șiruri - ONI 2022 VI](https://kilonova.ro/submissions/62356) (Problemă asemănătoare cu unific)
 - [tower - Shumen 2016 Juniori](https://www.nerdarena.ro/problema/tower) (Nu vă speriați că este de la Shumen, problema este doar o aplicație la stack_max_min)
 - [maxp - ONI 2013 VIII](https://kilonova.ro/problems/836) (O altă aplicație la problema stack_max_min)
 - [changemin - ONI 2022 X](https://kilonova.ro/problems/1602) (O aplicație similară cu stack_max_min)
-- [CF 1905C](https://codeforces.com/contest/1905/problem/C) (Problemă a cărei rezolvare se folosește de tehnica de la stack_max_min)
-- [CF 1905D](https://codeforces.com/contest/1905/problem/D) (Problemă a cărei rezolvare se folosește de tehnica de la stack_max_min)
-- [CF 1909C](https://codeforces.com/contest/1909/problem/C) (Problemă care are o rezolvare cu tehnica de la stack_max_min)
 - [reactii - ONI 2009 X](https://kilonova.ro/problems/1325) (Problemă asemănătoare cu unific)
 - [dag - ONI 2019 Baraj Seniori](https://kilonova.ro/problems/410) (Problemă care se folosește de tehnica de la stack_max_min)
 - [leftmax - OJI 2020 X](https://kilonova.ro/problems/929) (Problemă care se folosește de tehinca de la stack_max_min)
+- Alte probleme cu stiva de pe [kilonova](https://kilonova.ro/tags/314)
 
 ## Bibliografie și lectură suplimentară
 
