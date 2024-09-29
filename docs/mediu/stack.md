@@ -3,7 +3,7 @@ tags:
     - stiva
     - structuri de date
 ---
-**Autor**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
+**Autori**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
 
 În multe probleme în care lucrăm cu secvențe de valori, suntem nevoiți să procesăm valorile pe rând, asemenea unui teanc de obiecte. Pentru a formaliza acest proces, vom avea nevoie de o structură de date potrivită. În informatică, numim această structură de date stivă.
 
@@ -155,6 +155,9 @@ Vom parcurge vectorul de la stânga la dreapta, iar pe o stivă vom reține indi
     * Suntem la indicele $9$, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
 
 Această rezolvare are complexitatea $\mathcal{O}(N)$, pentru că fiecare element va fi pus pe stivă și scos, deci se vor face cel mult două operații pentru fiecare.
+
+!!! note "Analiza amortizata"
+    Pentru a înțelege de ce complexitatea este liniară, puteți citi [aici](https://edu.roalgo.ro/mediu/amortised-analysis/) mai multe detalii.
 
 Detaliii de implementare: vom reține o matrice $raspuns[tip - 1][i]$ care va reprezenta răspunsul la o întrebare de tipul $tip \ i$. De asemenea, vom folosi o santinelă, care va fi o valoare care va fi mereu mai mică (sau mai mare, în funcție de caz) decât orice valoare din vector. Pentru mai multe detalii, vezi implementarea de mai jos.
 

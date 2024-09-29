@@ -58,8 +58,7 @@ scădere cu o singură împărțire, algoritmul devenind mult mai eficient.
 
 Mai jos puteți găsi implementarea în C++ a cmmdc-ului și a cmmmc-ului, program ce află cmmdc și cmmmc pentru $t$ perechi de numere. Complexitatea algoritmului este $O(\log n)$ pentru fiecare test.
 
-    !!! note "Observație"
-        Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi a la $cmmdc(a, b)$ și apoi să înmulțim cu $b$, pentru a evita un potențial overflow.
+Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi la $cmmdc(a, b)$ și apoi să înmulțim cu $b$, pentru a evita un potențial overflow.
 
 ```cpp
 #include <iostream>

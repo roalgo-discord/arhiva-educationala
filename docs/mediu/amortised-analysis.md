@@ -69,6 +69,7 @@ Analiza amortizată este o metodă folosită pentru foarte multe tipuri de algor
 
 ## Resurse suplimentare
 
+* [Un video despre analiza amortizată, vă va ajuta să înțelegeți mai bine rezolvarea problemei *stack_max_min* și de ce are complexitatea $\mathcal{O}(N)$](https://www.youtube.com/watch?v=T7W5E-5mljc)
 * [Analiza amortizata - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_VII/VIII_lec%C8%9Bia_9_-_18_nov_2014#Analiz%C4%83_amortizat%C4%83)
 * [Amortized analysis - Wikipedia](https://en.wikipedia.org/wiki/Amortized_analysis)
 * [Analiza amortizata - Utilizarea unei stive](https://revista.infobits.ro/2021/08/31/analiza-amortizata-utilizarea-unei-stive/)
