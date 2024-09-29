@@ -203,6 +203,7 @@ nav:
       - Structuri de date:
           - Coada: mediu/queue.md
           - Stiva: mediu/stack.md
+          - Analiza amortizată: mediu/amortised-analysis.md
           - Algoritmul lui Lee. Flood Fill: mediu/lee.md
           - Evaluarea unei expresii: mediu/expression-evaluation.md
           - Deque: mediu/deque.md
