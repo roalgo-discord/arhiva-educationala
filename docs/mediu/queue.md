@@ -163,11 +163,11 @@ int main() {
 
 ## Aplicații ale cozii
 
-Coada se regăsește ca o aplicație pentru tot ce înseamnă păstrarea datelor într-o ordine cronologică, fie că e vorba de evenimente, stări, poziții sau alte informații similare. Datorită versatilității sale, putem să o folosim în combinație cu stiva, problemele ce constau în implementarea cozii cu [stive](https://roalgo-discord.github.io/arhiva-educationala/mediu/stack/) și invers sunt foarte cunoscute și deschid ușa către idei foarte importante, așa cum se poate observa și în problemele de pe Leetcode menționate mai jos. 
+Coada se regăsește ca o aplicație pentru tot ce înseamnă păstrarea datelor într-o ordine cronologică, fie că e vorba de evenimente, stări, poziții sau alte informații similare. Datorită versatilității sale, putem să o folosim în combinație cu stiva, problemele ce constau în implementarea cozii cu [stive](./stack.md) și invers sunt foarte cunoscute și deschid ușa către idei foarte importante, așa cum se poate observa și în problemele de pe Leetcode menționate mai jos. 
 
-Dintre cei mai importanți algoritmi ce au la bază o coadă, vom menționa parcurgerea în lățime (BFS), împreună cu varianta ei pe matrice, algoritmul lui Lee și in general, Flood Fill. Pentru mai multe detalii, puteți explora [acest articol](https://roalgo-discord.github.io/arhiva-educationala/mediu/lee/).
+Dintre cei mai importanți algoritmi ce au la bază o coadă, vom menționa parcurgerea în lățime (BFS), împreună cu varianta ei pe matrice, algoritmul lui Lee și in general, Flood Fill. Pentru mai multe detalii, puteți explora [acest articol](./lee.md).
 
-Nu în ultimul rând, coada este o structură de date ce apare în diverse probleme de simulare a unui proces sau în anumite tipuri de probleme ce folosesc tehnici de tipul Sliding Window, deque-ul fiind o structură de date specializată pe asemenea algoritmi, așa cum este prezentată și [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/deque/).
+Nu în ultimul rând, coada este o structură de date ce apare în diverse probleme de simulare a unui proces sau în anumite tipuri de probleme ce folosesc tehnici de tipul Sliding Window, deque-ul fiind o structură de date specializată pe asemenea algoritmi, așa cum este prezentată și [aici](./deque.md).
 
 
 ## Probleme cu coadă

@@ -6,7 +6,7 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-Așa cum am menționat în articolul despre [lucrul cu secvențe](https://roalgo-discord.github.io/arhiva-educationala/mediu/sequences/), acestea se regăsesc în foarte multe tipuri de probleme, iar deși acolo am discutat în special despre problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru problemele în care trebuie să iterăm prin ferestre de lungime fixă. 
+Așa cum am menționat în articolul despre [lucrul cu secvențe](./sequences.md), acestea se regăsesc în foarte multe tipuri de probleme, iar deși acolo am discutat în special despre problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru problemele în care trebuie să iterăm prin ferestre de lungime fixă. 
 
 !!! info "Definiție" 
     Fereastra glisantă (în engleză _sliding window_) reprezintă o metodă de rezolvare a problemelor care implică folosirea informației acumulate pentru a face tranzițiile între subsecvențe de lungime $k$ cu ușurință, fără a fi nevoie de recalcularea răspunsului pentru toate secvențele de lungime $k$. 
@@ -172,7 +172,7 @@ int main() {
 
 ## Alte aplicații și concluzii
 
-Metode de tipul sliding window se pot folosi și în cazul altor tehnici, precum [tehnica celor doi pointeri](https://roalgo-discord.github.io/arhiva-educationala/mediu/two-pointers/), multe dintre aplicațiile întâlnite la [deque](https://roalgo-discord.github.io/arhiva-educationala/mediu/deque/) și alte structuri de date mai complicate decât scopul acestui articol, care este unul de legătură dintre aplicațiile întâlnite la problemele cu secvențe și cele mai avansate, din capitolele următoare. 
+Metode de tipul sliding window se pot folosi și în cazul altor tehnici, precum [tehnica celor doi pointeri](./two-pointers.md), multe dintre aplicațiile întâlnite la [deque](./deque.md) și alte structuri de date mai complicate decât scopul acestui articol, care este unul de legătură dintre aplicațiile întâlnite la problemele cu secvențe și cele mai avansate, din capitolele următoare. 
 
 # Probleme suplimentare
 

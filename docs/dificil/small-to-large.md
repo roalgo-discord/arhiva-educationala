@@ -1,14 +1,19 @@
+---
+tags:
+    - structuri de date
+    - arbori 
+    - STL
+    - dsu
+---
 
-
-# Small to large
-
-**Autor** : Radu Mocănașu
+**Autor** :Radu Mocănașu
 
 ## Cunoștințe necesare:
+
 * Arbori.
 * Parcurgeri `DFS`.
 * Containerele `set` și `map` din STL.
-* De preferat si [`DSU`](https://roalgo-discord.github.io/arhiva-educationala/mediu/dsu/?h=)
+* De preferat si [`DSU`](../mediu/dsu.md)
 
 ## Introducere
 

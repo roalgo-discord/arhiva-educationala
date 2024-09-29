@@ -1,3 +1,10 @@
+---
+tags:
+    - structuri de date
+    - arbori indexati binar
+    - optimizare
+---
+
 **Autori**: Ștefan-Cosmin Dăscălescu, Luca Mureșan
 
 ## Ce este un arbore indexat binar?
@@ -149,12 +156,15 @@ binară în $O(\log n)$.
 
 [Soluția de $100$](https://kilonova.ro/submissions/160534)
 
-## Alte aplicații și resurse suplimentare
+## Probleme suplimentare
 
-* [Fenwick Tree](https://cp-algorithms.com/data_structures/fenwick.html)
 * [Fenwick Tree](https://kilonova.ro/problems/2100)
 * [Goal Statistics](https://kilonova.ro/problems/960)
-* [inv](https://infoarena.ro/problema/inv)
+* [inv infoarena](https://infoarena.ro/problema/inv)
+* [aib infoarena](https://www.infoarena.ro/problema/aib)
+
+## Resurse suplimentare
+
+* [Fenwick Tree](https://cp-algorithms.com/data_structures/fenwick.html)
 * [Understanding Fenwick Trees](https://codeforces.com/blog/entry/57292)
-* [Binary Indexed
-  Trees](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)
+* [Binary Indexed Trees](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)

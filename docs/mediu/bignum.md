@@ -2,6 +2,8 @@
 tags:
     - vectori
     - matematica
+    - numere mari
+    - implementare
 ---
 
 **Autori**: Susan, Ștefan-Cosmin Dăscălescu

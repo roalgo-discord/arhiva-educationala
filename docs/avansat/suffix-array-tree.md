@@ -188,5 +188,3 @@ Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite
 * [Codeforces dynamic suffix array](https://codeforces.com/topic/93656/en2)
 * [Curs MIT de pe youtube](https://www.youtube.com/watch?v=NinWEPPrkDQ)
 * [Cp algo](https://cp-algorithms.com/string/suffix-array.html)
-
-

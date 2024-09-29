@@ -1,6 +1,7 @@
 ---
 tags:
     - programare dinamica
+    - siruri de caractere
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu

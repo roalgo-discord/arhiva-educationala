@@ -16,7 +16,7 @@ Chiar dacă această subtehnică este folosită doar pentru dimensiuni ale datel
 
 ## Introducere și aplicare
 
-În primul rând, pentru a putea folosi această tehnică, trebuie să ne reamintim câteva concepte învățate de la operațiile pe biți, cele mai importante fiind submulțimile și măștile pe biți. Pentru mai multe detalii, puteți citi [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/intro-combinatorics/#submultimi).
+În primul rând, pentru a putea folosi această tehnică, trebuie să ne reamintim câteva concepte învățate de la operațiile pe biți, cele mai importante fiind submulțimile și măștile pe biți. Pentru mai multe detalii, puteți citi [aici](./intro-combinatorics.md#submultimi).
 
 Acum că acest concept vă este cunoscut, pentru a formaliza o stare într-o problemă de acest gen, trebuie să găsim o mulțime de valori cu un cardinal suficient de mic, care are proprietatea că submulțimile sale pot constitui stări într-o relație de recurență de acest fel. 
 

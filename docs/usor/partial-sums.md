@@ -1,4 +1,11 @@
-# Sume parțiale
+---
+tags:
+    - sume partiale
+    - implementare
+    - optimizare
+    - difference arrays
+    - mars
+---
 
 ## Cunoștiințe necesare pentru înțelegerea completă a articolului:
 
@@ -18,8 +25,9 @@ Sumele parțiale reprezintă o optimizare pentru algoritmii care trebuie să afl
 Tabloul se calculează în felul următor:
 
 ```cpp
-for (int i = 1; i <= n; i++)
+for (int i = 1; i <= n; i++) {
     sp[i] = sp[i - 1] + v[i];
+}
 ```
 
 După calculare, putem începe să răspunem la întrebări. Răspunsul nostru pentru un interval $[st, dr]$, unde $1 \leq st \leq dr \leq n$ va fi: $suma \ = sp[dr] - sp[st - 1]$
@@ -80,9 +88,11 @@ $sp[i][j] = sp[i - 1][j] + sp[i][j - 1] - sp[i - 1][j - 1] + A[i][j]$
 Deci, tabloul $sp$ se poate calcula destul de ușor în timp $O(N \cdot M)$. Atașăm, mai jos, o secvență de cod în care se calculează matricea $sp$.
 
 ```cpp
-for (int i = 1; i <= n; i++)
-    for (int j = 1; j <= m; j++)
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= m; j++) {
         sp[i][j] = sp[i - 1][j] + sp[i][j - 1] - sp[i - 1][j - 1] + a[i][j];
+    }
+}
 ```
 
 ## Șmenul lui Mars

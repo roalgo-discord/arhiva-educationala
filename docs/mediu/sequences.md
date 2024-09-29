@@ -192,7 +192,7 @@ cout << summax << " " << stmax " " << drmax << '\n';
 
 ## Concluzii
 
-După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](https://roalgo-discord.github.io/arhiva-educationala/mediu/two-pointers/), [sliding window](https://roalgo-discord.github.io/arhiva-educationala/mediu/sliding-window/) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
+După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](./two-pointers.md), [sliding window](./sliding-window.md) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
 
 ## Probleme suplimentare
  
@@ -212,4 +212,4 @@ După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundame
 * [Secvențe - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_V-a_lec%C8%9Bia_12_-_26_oct_2017)
 * [Secvențe partea II- Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_V-a_lec%C8%9Bia_13_-_2_nov_2017)
 * [Secvența de sumă maximă](https://www.pbinfo.ro/articole/20499/secventa-de-suma-maxima)
-
+* [Subsecventa de suma maxima - Sebastian Popa](https://vasiluta.ro/sebi/ssm)

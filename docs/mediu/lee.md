@@ -30,9 +30,9 @@ Până să ajungem să discutăm implementarea algoritmilor în sine, vom prezen
 
 ### Cunoștințe necesare 
 
-În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/queue/).
+În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](./queue.md).
 
-În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](https://roalgo-discord.github.io/arhiva-educationala/mediu/stack/), iar informații despre implementarea funcțiilor recursive se găsesc [aici](https://roalgo-discord.github.io/arhiva-educationala/usor/functions/).
+În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](./stack.md), iar informații despre implementarea funcțiilor recursive se găsesc [aici](../usor/functions.md).
 
 O altă noțiune care se recomandă a fi cunoscută în prealabil este tipul de date pair sau o alternativă a acestuia (tuple sau dacă preferați implementările în stilul C, tipul de date struct, care permite și alte modificări după caz).
 
@@ -532,11 +532,11 @@ int main() {
 
 ## Algoritmul 0-1 BFS
 
-Deși acest algoritm este folosit în principal pentru problemele de drumuri minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum se precizează în [articolul nostru despre drumuri minime](https://roalgo-discord.github.io/arhiva-educationala/mediu/shortest-path/?h=bfs#0-1-bfs).
+Deși acest algoritm este folosit în principal pentru problemele de drumuri minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum se precizează în [articolul nostru despre drumuri minime](./shortest-path.md/#0-1-bfs).
 
 ## Lee cu structuri de date 
 
-În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat adiacent din matrice poate avea costuri diferite de $0$ și $1$, în acest caz se impune folosirea unor structuri de date pentru a calcula aceste costuri minime, implementarea devenind foarte similară cu cea pe care o veți vedea atunci când veți învăța [algoritmul lui Dijkstra](https://roalgo-discord.github.io/arhiva-educationala/mediu/shortest-path/?h=bfs#algoritmul-lui-dijkstra), acesta fiind varianta sa pe matrice. 
+În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat adiacent din matrice poate avea costuri diferite de $0$ și $1$, în acest caz se impune folosirea unor structuri de date pentru a calcula aceste costuri minime, implementarea devenind foarte similară cu cea pe care o veți vedea atunci când veți învăța [algoritmul lui Dijkstra](./shortest-path.md#algoritmul-lui-dijkstra), acesta fiind varianta sa pe matrice. 
 
 La fel ca și la Dijkstra, cele mai populare structuri de date sunt setul și coada de priorități, mai jos găsind implementări folosind ambele structuri de date ce rezolvă problema [lee2 de pe pbinfo](https://www.pbinfo.ro/probleme/3368/lee2).
 

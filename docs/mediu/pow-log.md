@@ -58,7 +58,7 @@ long long sum = (1LL * a * b) % mod;
 
 ### Împărțirea (inversul) modular 
 
-Împărțirea este cea mai grea operație de manevrat în cazul operațiilor modulare, recomandăm citirea articolului despre [invers modular](https://roalgo-discord.github.io/arhiva-educationala/mediu/modular-inverse/) pentru mai multe detalii.
+Împărțirea este cea mai grea operație de manevrat în cazul operațiilor modulare, recomandăm citirea articolului despre [invers modular](./modular-inverse.md) pentru mai multe detalii.
 
 ## Ridicarea la putere în timp logaritmic
 
@@ -138,3 +138,4 @@ Aritmetica modulară este esențială pentru înțelegerea calculelor de acest f
 * [Modular Arithmetic for Beginners Codeforces](https://codeforces.com/blog/entry/72527)
 * [Modular arithmetic USACO Guide](https://usaco.guide/gold/modular?lang=cpp)
 * [Modular arithmetic Wikipedia](https://en.wikipedia.org/wiki/Modular_arithmetic)
+* [Ridicarea la putere in timp logaritmic - Sebastian Popa](https://vasiluta.ro/sebi/lgput)

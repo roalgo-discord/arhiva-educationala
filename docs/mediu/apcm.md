@@ -24,7 +24,7 @@ Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algori
 ## Algoritmul lui Kruskal
 
 !!! info "Definiție" 
-    Algoritmul lui Kruskal este un algoritm de tip greedy care va prelucra muchiile în ordine crescătoare a costurilor acestora, iar pentru fiecare dintre muchii, va verifica dacă adăugarea ei în graful parțial va genera un ciclu sau nu. Pentru verificarea rapidă a ciclurilor în graf, vom folosi o structură de tip [Union-Find](https://roalgo-discord.github.io/arhiva-educationala/mediu/dsu/), iar sortarea se poate face cu ușurință păstrând muchiile într-o structură potrivită. 
+    Algoritmul lui Kruskal este un algoritm de tip greedy care va prelucra muchiile în ordine crescătoare a costurilor acestora, iar pentru fiecare dintre muchii, va verifica dacă adăugarea ei în graful parțial va genera un ciclu sau nu. Pentru verificarea rapidă a ciclurilor în graf, vom folosi o structură de tip [Union-Find](./dsu.md), iar sortarea se poate face cu ușurință păstrând muchiile într-o structură potrivită. 
 
 !!! note "Observație"
     Dacă sunt mai multe muchii cu cost egal, nu are importanță care este aleasă, rezultatul fiind identic. 
@@ -121,7 +121,7 @@ int main() {
 ## Algoritmul lui Prim
 
 !!! info "Definiție" 
-    Algoritmul lui Prim este un algoritm de tip greedy care va prelucra nodurile în ordine crescătoare a costurilor de a fi conectate, plecând de la un nod oarecare, iar pentru fiecare dintre noduri, va verifica dacă adăugarea muchiilor vecine cu acel nod în graful parțial va rezulta în micșorarea unor costuri sau nu. Pentru verificarea rapidă a îmbunătățirilor pe care le obținem în privința costurilor, vom folosi o implementare similară cu cea de la [algoritmul lui Dijkstra](https://roalgo-discord.github.io/arhiva-educationala/mediu/algoritmul_lui_dijkstra/). 
+    Algoritmul lui Prim este un algoritm de tip greedy care va prelucra nodurile în ordine crescătoare a costurilor de a fi conectate, plecând de la un nod oarecare, iar pentru fiecare dintre noduri, va verifica dacă adăugarea muchiilor vecine cu acel nod în graful parțial va rezulta în micșorarea unor costuri sau nu. Pentru verificarea rapidă a îmbunătățirilor pe care le obținem în privința costurilor, vom folosi o implementare similară cu cea de la [algoritmul lui Dijkstra](./shortest-path.md#algoritmul-lui-dijkstra). 
 
 !!! note "Observație"
     Dacă sunt mai multe noduri cu cost egal, nu are importanță care este aleas, rezultatul fiind identic. 

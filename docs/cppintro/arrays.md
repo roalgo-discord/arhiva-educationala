@@ -63,6 +63,33 @@ valori primelor poziții, idee ce va fi folosită pe parcurs la diverși algorit
 un exemplu notabil fiind flood fill. De exemplu, `#!cpp int A[] = {10, 20, 30};` va
 crea un tablou cu $3$ elemente, unde `#!cpp A[0] = 10; A[1] = 20;` ș.a.m.d.
 
+### Problemă exemplu - [afisare0 de pe pbinfo](https://www.pbinfo.ro/probleme/546/afisare0)
+
+Pentru a rezolva această problemă, va trebui mai întâi să citim valorile în tablou, iar mai apoi să parcurgem valorile pentru a afla multiplii ultimului element. 
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int v[n+1]; // vector cu n elemente
+    for (int i = 1; i <= n; i++) {
+        cin >> v[i];
+    }
+    
+    for (int i = 1; i <= n; i++) {
+        if (v[i] % v[n] == 0) {
+            cout << v[i] << " ";
+        }
+    }
+    
+    return 0;
+}
+```
+
 ## Inserarea, ștergerea, inversarea valorilor dintr-un tablou
 
 De multe ori în diverse aplicații, putem avea nevoie de operația de inserare și

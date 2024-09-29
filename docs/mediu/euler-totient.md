@@ -15,11 +15,11 @@ tags:
 !!! example "Exemplu"
     De exemplu, $\varphi (12) = 4$, deoarece $1$, $5$, $7$ și $11$ sunt prime cu $12$. 
 
-Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere sau ca pas intermediar în algoritmi și metode mai complicate, precum [Funcția Möbius](https://roalgo-discord.github.io/arhiva-educationala/mediu/mobius/) sau pentru cei mai avansați, teorema chinezească a resturilor.
+Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere sau ca pas intermediar în algoritmi și metode mai complicate, precum [Funcția Möbius](./mobius.md) sau pentru cei mai avansați, teorema chinezească a resturilor.
 
 ## Calcularea funcției și proprietățile acesteia
 
-Pentru a calcula $\varphi (n)$, putem fie să verificăm pentru fiecare număr de la $1$ la $n$ dacă $(i, n) = 1$, unde cu $(a, b)$ am notat [cel mai mare divizor comun](https://roalgo-discord.github.io/arhiva-educationala/usor/divisibility/#notiuni-introductive) al numerelor $a$ și $b$, fie să găsim o formulă care se bazează pe o observație mai avansată. 
+Pentru a calcula $\varphi (n)$, putem fie să verificăm pentru fiecare număr de la $1$ la $n$ dacă $(i, n) = 1$, unde cu $(a, b)$ am notat [cel mai mare divizor comun](../usor/divisibility.md#notiuni-introductive) al numerelor $a$ și $b$, fie să găsim o formulă care se bazează pe o observație mai avansată. 
 
 Cu alte cuvinte, dacă știm factorii primi care apar în reprezentarea lui $n$, îi notăm $p_1$, $p_2$, $\dots$, $p_k$, formula va deveni următoarea:
 
@@ -56,7 +56,7 @@ int Phi(int n) {
 
 ## Calcularea funcției pentru toate valorile de la $1$ la $n$
 
-Pentru a calcula $\varphi (i)$ pentru toate valorile de la $1$ la $n$, tot ce trebuie să facem este să folosim o precalculare similară cu cea descrisă la [ciurul lui Eratostene](https://roalgo-discord.github.io/arhiva-educationala/usor/sieve/).
+Pentru a calcula $\varphi (i)$ pentru toate valorile de la $1$ la $n$, tot ce trebuie să facem este să folosim o precalculare similară cu cea descrisă la [ciurul lui Eratostene](../usor/sieve.md).
 
 Mai întâi, vom inițializa răspunsul pentru fiecare poziție ca fiind $i$, iar pentru fiecare număr prim în intervalul $[2, n]$ (numerele prime se pot afla ușor, verificând dacă valoarea calculată este încă egală cu $i$), vom trece prin toți multiplii și vom împărți la $i$ și înmulți cu $i-1$. 
 
@@ -150,4 +150,4 @@ Indicatorul lui Euler este o funcție care se dovedește a fi foarte importantă
 * [Indicatorul lui Euler - pbinfo](https://www.pbinfo.ro/articole/18882/indicatorul-lui-euler)
 * [Euler's phi function, its properties, and how to compute it - Codeforces](https://codeforces.com/blog/entry/106851)
 * [Euler's totient function - wikipedia](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
-* [Funcția Möbius](https://roalgo-discord.github.io/arhiva-educationala/mediu/mobius/)
+* [Funcția Möbius](./mobius.md)

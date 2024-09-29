@@ -10,7 +10,9 @@ tags:
 
 ## Cunoștinte necesare
 
-Înaintea citirii acestui articol, se recomandă citirea articolului despre divizibilitate. De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+Înaintea citirii acestui articol, se recomandă citirea [articolului despre divizibilitate](https://edu.roalgo.ro/usor/divisibility/). De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+
+De asemenea, se recomandă cunoașterea vectorilor de frecvență, care sunt prezentați [aici](https://edu.roalgo.ro/usor/frequency-arrays/).
 
 ## Ce este ciurul lui Eratostene?
 
@@ -46,8 +48,7 @@ for (int i = 2; i <= n; i++) {
 ``` 
 
 !!! note "Observație"
-
-E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
+    E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
 
 ### Optimizări ale implementării
 
@@ -68,8 +69,7 @@ for (int i = 3; i <= n; i += 2) {
 ``` 
 
 !!! note "Observație"
-
-Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
+    Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
 
 ```cpp
 int prim[100001];
@@ -96,7 +96,7 @@ Chiar dacă aceste implementări nu îmbunătățesc semnificativ performanța c
 
 ## Alte aplicații ale ciurului lui Eratostene
 
-După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](https://roalgo-discord.github.io/arhiva-educationala/mediu/pinex/) sau [Möbius](https://roalgo-discord.github.io/arhiva-educationala/mediu/mobius/) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
+După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](../mediu/pinex.md) sau [Möbius](../mediu/mobius.md) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
 
 ## Problema [Ciurul lui Eratostene](https://kilonova.ro/problems/2108) de pe Kilonova
 

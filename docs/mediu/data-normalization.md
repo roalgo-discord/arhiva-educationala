@@ -65,6 +65,22 @@ int main() {
 }
 ```
 
+## Normalizare mai simplă când valorile sunt distincte
+
+În unele probleme în care toate valorile sunt distincte, ne putem gândi și la o variantă de a implementa conversia din datele clasice în cele normalizate în timp liniar (după sortare).
+
+Ne putem gândi pur și simplu la o traversare a șirului în timp liniar, presupunând că păstrăm valorile originale folosind perechi.
+
+```cpp
+int cnt = 0; // numarul de valori distincte
+for (int i = 1; i <= n; i++) {
+  if (sorted[i].first > sorted[i - 1].first) {
+    cnt++;
+  }
+  v[sorted[i].second] = cnt;
+}
+```
+
 ## Problema [Restaurant Customers](https://cses.fi/problemset/task/1619) de pe cses
 
 Pentru a rezolva această problemă, trebuie să găsim o metodă care ne ajută să procesăm intervalele în așa fel încât să nu trebuiască să avem nevoie de foarte multă memorie pentru valorile din intervale. 
@@ -76,7 +92,7 @@ O primă soluție brută constă în verificarea fiecărui punct posibil de la $
 
 Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este îndeajuns pentru rezolvarea problemei date. 
 
-O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui Mars](https://roalgo-discord.github.io/arhiva-educationala/usor/partial-sums/?h=#smenul-lui-mars), iar pentru fiecare interval, putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$. 
+O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui Mars](../usor/partial-sums.md#smenul-lui-mars), iar pentru fiecare interval, putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$. 
 
 Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$, iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi optimizată la $O(n \log n)$, unele din abordările care merg pot fi fie folosirea șmenului lui Mars pe vectorul cu punctele normalizate, fie sortarea punctelor relevante și considerarea lor drept evenimente, mai apoi parcurgându-le în ordine crescătoare. 
 

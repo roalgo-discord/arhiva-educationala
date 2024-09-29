@@ -1,3 +1,11 @@
+---
+tags:
+    - grafuri
+    - parcurgeri
+    - DFS
+    - BFS
+    - drumuri
+---
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
