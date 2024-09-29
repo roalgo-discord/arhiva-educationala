@@ -283,6 +283,8 @@ De asemenea, recursivitatea indirectă reprezintă o metodă elegantă de rezolv
 * [Urmasii lui Moisil 2023 Indiciu](https://kilonova.ro/problems/528)
 * [Probleme cu evaluarea de expresii de pe Kilonova](https://kilonova.ro/tags/332)
 * [Probleme cu evaluarea de expresii de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=91)
+* [Probleme cu evaluarea de expresii de pe Codeforces](https://codeforces.com/problemset?order=BY_RATING_ASC&tags=expression+parsing)
+* [Listă de probleme cu evaluare de expresii](https://earthshakira.github.io/a2oj-clientside/server/Category36.html)
 
 ## Resurse suplimentare
 
