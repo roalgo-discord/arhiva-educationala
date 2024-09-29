@@ -321,26 +321,22 @@ Observăm că noi trebuie să scoatem elemente din șir, iar acest lucru nu este
 
 Sursa de 100 de puncte:
 ```cpp
-#include <stdio.h>
+#include <fstream>
 
 const int MAXN = 100'000;
 const int MAXCF = 10;
 const int FARA_CIFRE = -1;
 
-FILE *fin, *fout;
+std::ifstream fin("unific.in");
+std::ofstream fout("unific.out");
 int n, sp, fr[MAXCF], fra[MAXCF], frb[MAXCF];
 long long v[MAXN], stiva[MAXN];
 
-void openFiles() {
-    fin = fopen("unific.in", "r");
-    fout = fopen("unific.out", "w");
-}
-
 void readArray() {
     int i;
-    fscanf(fin, "%d", &n);
+    fin >> n;
     for (i = 0; i < n; i++) {
-        fscanf(fin, "%lld", &v[i]);
+        fin >> v[i];
     }
 }
 
@@ -360,7 +356,7 @@ void getMostFrequent() {
             max = i;
         }
     }
-    fprintf(fout, "%d\n", max);
+    fout << max << "\n";
 }
 
 void getDigitFrequencies(long long val, int fr[MAXCF]) {
@@ -439,24 +435,17 @@ void unifyArray() {
             stiva[sp++] = v[i]; // adaugam elementul in stiva
         }
     }
-    fprintf(fout, "%d\n", sp); // cate sunt
+    fout << sp << "\n"; // cate sunt
     for (i = 0; i < sp; i++) {
-        fprintf(fout, "%lld ", stiva[i]);
+        fout << stiva[i] << " ";
     }
-    fputc('\n', fout);
-}
-
-void closeFiles() {
-    fclose(fin);
-    fclose(fout);
+    fout << "\n";
 }
 
 int main() {
-    openFiles();
     readArray();
     getMostFrequent();
     unifyArray();
-    closeFiles();
     return 0;
 }
 ```
@@ -479,28 +468,23 @@ Deci noi, trebuie să numărăm câți $i$ respectă cele trei condiții. Dacă 
 
 Sursa de 100 de puncte:
 ```cpp
-#include <stdio.h>
+#include <fstream>
 
 const int MAXN = 90'000;
 const char DESCHISA = '(';
 const char INCHISA = ')';
 
+std::ifstream fin("swap.in");
+std::ofstream fout("swap.out");
 int stiva[MAXN], sp;
-
-FILE *fin, *fout;
-
-void openFiles() {
-    fin = fopen("swap.in", "r");
-    fout = fopen("swap.out", "w");
-}
 
 void calcAnswer() {
     int i, n, ch, cate;
     long long rez;
-    fscanf(fin, "%d ", &n);
+    fin >> n;
     rez = cate = 0;
+    while((ch = fin.get()) != '('); // asta va fi mereu primul caracter
     for (i = 0; i < n; i++) {
-        ch = fgetc(fin);
         if (ch == DESCHISA) {
             stiva[sp++] = i; // il adaugam in stiva
         }
@@ -511,19 +495,13 @@ void calcAnswer() {
             }
             sp--; // scoatem perechea din stiva
         }
+        ch = fin.get();
     }
-    fprintf(fout, "%lld\n%lld\n%d\n", rez, cate > 0 ? rez - 2 : -1, cate);
-}
-
-void closeFiles() {
-    fclose(fin);
-    fclose(fout);
+    fout << rez << "\n" << (cate > 0 ? rez - 2 : -1) << "\n" << cate << "\n";
 }
 
 int main() {
-    openFiles();
     calcAnswer();
-    closeFiles();
     return 0;
 }
 ```
@@ -534,7 +512,7 @@ Să presupunem că suntem la un indice $i$ și am reușit să construim tot pref
 
 Codul de Accepted:
 ```cpp
-#include <stdio.h>
+#include <iostream>
 
 const int MAXN = 100'000;
 const int CANNOT = -1;
@@ -543,9 +521,9 @@ int n, a[MAXN + 1], answer[MAXN + 1], stiva[MAXN];
 
 void readArray() {
     int i;
-    scanf("%d", &n);
+    std::cin >> n;
     for (i = 1; i <= n; i++) {
-        scanf("%d", &a[i]);
+        std::cin >> a[i];
     }
 }
 
@@ -581,12 +559,12 @@ void buildAnswer() {
 void writeAnswer() {
     int i;
     if (answer[0] == CANNOT) {
-        printf("%d\n", CANNOT);
+        std::cout << CANNOT << "\n";
     } else {
         for (i = 1; i <= n; i++) {
-            printf("%d ", answer[i]);
+            std::cout << answer[i] << " ";
         } 
-        fputc('\n', stdout);
+        std::cout << "\n";
     }
 }
 
