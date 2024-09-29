@@ -63,6 +63,10 @@ Deși intrăm mai mult în detalii [aici](https://edu.roalgo.ro/mediu/dsu/), se 
 
 Analiza amortizată este o metodă folosită pentru foarte multe tipuri de algoritmi pentru a demonstra complexitatea acestora, atunci când lucrurile nu sunt evidente. De asemenea, această metodă se aplică și pentru anumite părți din probleme care deși în teorie par încete, complexitatea lor practică este una mai rapidă.
 
+## Probleme suplimentare
+
+* [Probleme care implica analiza amortizata - nerdarena](https://www.nerdarena.ro/cauta-probleme?tag_ids=11)
+
 ## Resurse suplimentare
 
 * [Analiza amortizata - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_VII/VIII_lec%C8%9Bia_9_-_18_nov_2014#Analiz%C4%83_amortizat%C4%83)
