@@ -22,7 +22,7 @@ Aici găsiți programa clasei a noua pentru Olimpiada de Informatică, conform [
 * Prelucrarea cifrelor numerelor naturale scrise în baza 10 - [link articol](https://edu.roalgo.ro/usor/digits-manipulation/)
 * Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc prin algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea fracțiilor, descompunerea numerelor în factori primi) - [link articol](https://edu.roalgo.ro/usor/divisibility/)
 * Calculul unor expresii (de exemplu, factorial, ridicare la putere) - [link articol](https://edu.roalgo.ro/cppintro/basic-math/)
-• Algoritmul de exponențiere rapidă - [link articol](https://edu.roalgo.ro/mediu/pow-log/#ridicarea-la-putere-in-timp-logaritmic)
+* Algoritmul de exponențiere rapidă - [link articol](https://edu.roalgo.ro/mediu/pow-log/#ridicarea-la-putere-in-timp-logaritmic)
 
 ## Generări de șiruri
 
