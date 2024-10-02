@@ -22,8 +22,7 @@ Aici găsiți programa clasei a cincea pentru Olimpiada de Informatică, conform
     * Structura alternativă: [link articol](https://edu.roalgo.ro/cppintro/conditions-if/)
     * Structura repetitivă: [link articol](https://edu.roalgo.ro/cppintro/loops/)
 * Prelucrarea cifrelor numerelor naturale scrise în baza 10 - [link articol](https://edu.roalgo.ro/usor/digits-manipulation/)
-* Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc prin
-algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea fracțiilor) - [link articol](https://edu.roalgo.ro/usor/divisibility/)
+* Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc prin algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea fracțiilor) - [link articol](https://edu.roalgo.ro/usor/divisibility/)
 * Calculul unor expresii (de exemplu, factorial, ridicare la putere) - [link articol](https://edu.roalgo.ro/cppintro/basic-math/)
 
 ## Generări de șiruri
