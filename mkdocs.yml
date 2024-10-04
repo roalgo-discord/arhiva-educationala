@@ -149,6 +149,7 @@ nav:
           - Simularea soluției: usor/simulating-solution.md
           - Vectori de frecvență: usor/frequency-arrays.md
       - Algebră:
+          - Generarea șirurilor de numere: usor/generarea-sirurilor.md
           - Divizibilitatea: usor/divisibility.md
           - Ciurul lui Eratostene: usor/sieve.md
       - Sortare și căutare:
