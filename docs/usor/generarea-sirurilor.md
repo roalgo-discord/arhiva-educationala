@@ -5,6 +5,8 @@ tags:
     - fibonacci
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
 ## Introducere
 
 De multe ori în problemele de informatică, apar șiruri de numere naturale care trebuie fie știute, cum va fi cazul unor șiruri consacrate precum șirul lui Fibonacci sau alte șiruri matematice precum cel al pătratelor sau cuburilor perfecte.
@@ -85,6 +87,29 @@ int main() {
     else {
         fout << ans << '\n';
     }
+    return 0;
+}
+```
+
+#### Problemă rezolvată - [sir1 pbinfo](https://www.pbinfo.ro/probleme/243/sir1)
+
+Pentru a rezolva această problemă, ne folosim de proprietățile sumei lui Gauss (progresie aritmetică cu rația $1$). Astfel, aflăm câte grupe complete de valori există în șir și apoi aflăm valoarea corespunzătoare ultimei grupe rămase. 
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int total = 1;
+    while (n > total) { // scadem grupele complete
+        n -= total;
+        total++;
+    }
+    
+    cout << total - n + 1 << '\n'; // valoarea ramasa
     return 0;
 }
 ```
@@ -253,6 +278,11 @@ Fie că e vorba de șiruri precum cel al lui Fibonacci sau diferitele șiruri ma
 ## Probleme suplimentare
 
 * [Probleme în care se generează șiruri de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/56/algoritmi-elementari-generarea-unor-siruri?start=0)
+* [pbinfo fiboverif](https://www.pbinfo.ro/probleme/256/fiboverif)
+* [pbinfo generare](https://www.pbinfo.ro/probleme/806/generare)
+* [pbinfo sirk](https://www.pbinfo.ro/probleme/960/sirk)
+* [pbinfo sumapatrate](https://www.pbinfo.ro/probleme/1212/sumapatrate)
+* [pbinfo regula](https://www.pbinfo.ro/probleme/3643/regula)
 * [OJI 2006 factori](https://kilonova.ro/problems/786)
 * [ONI 2019 fibofrac](https://kilonova.ro/problems/1548)
 * [Lot Juniori 2010 fibo](https://kilonova.ro/problems/1637)

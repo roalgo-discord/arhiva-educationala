@@ -594,6 +594,7 @@ După cum se poate observa, odată ce deprindeți tehnicile folosite la probleme
 - [maxp - ONI 2013 VIII](https://kilonova.ro/problems/836) (O altă aplicație la problema stack_max_min)
 - [changemin - ONI 2022 X](https://kilonova.ro/problems/1602) (O aplicație similară cu stack_max_min)
 - [reactii - ONI 2009 X](https://kilonova.ro/problems/1325) (Problemă asemănătoare cu unific)
+- [cladiri - Lot 2007 seniori](https://kilonova.ro/problems/2340)
 - [dag - ONI 2019 Baraj Seniori](https://kilonova.ro/problems/410) (Problemă care se folosește de tehnica de la stack_max_min)
 - [leftmax - OJI 2020 X](https://kilonova.ro/problems/929) (Problemă care se folosește de tehinca de la stack_max_min)
 - Alte probleme cu stiva de pe [kilonova](https://kilonova.ro/tags/314)

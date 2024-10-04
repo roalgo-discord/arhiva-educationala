@@ -37,6 +37,8 @@ unde Tip_de_date reprezintă tipul de date pe care îl folosim (de exemplu, int,
 
 Un exemplu în codul de mai sus este `int n, a, b;`.
 
+Variabilele, împreună cu tipurile lor de date, ocupă memorie care este folosită de program pentru a putea fi rulat. În cazul în care folosiți prea multă memorie, veți primi verdictul _limită de memorie depășită_ sau în engleză, _memory limit exceeded_.
+
 ## Tipuri de date ce păstrează numere întregi
 
 Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Chiar dacă acestea pot fi folosite și pentru alte date (de exemplu, tipul _char_ poate fi folosit și pentru a opera cu caractere, fiecare valoare având drept corespondent un caracter din codul ASCII, așa cum vom detalia mai ales la șirurile de caractere).

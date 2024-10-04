@@ -170,6 +170,7 @@ nav:
           - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
       - Concepte fundamente și de limbaj:
           - Căutare completă: mediu/complete-search.md
+          - Tehnica divide et impera: mediu/divide-et-impera.md
       - Tehnici de rezolvare a problemelor:
           - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
           - Abordarea problemelor constructive: mediu/constructive.md

@@ -5,6 +5,8 @@ tags:
     - implementare
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
 ## Introducere
 
 În multe probleme, suntem nevoiți să lucrăm cu foarte multe valori cuprinse într-un interval relativ mic. Pentru a face lucrul cu ele mai ușor, se impune numărarea lor și păstrarea datelor într-o structură de date potrivită. 

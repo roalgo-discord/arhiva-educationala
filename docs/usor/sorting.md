@@ -174,6 +174,8 @@ MergeSort este o metodă eficientă de sortare a unui tablou, inventată de prog
 - Rulăm algoritmul pe fiecare din cele două jumătăți.
 - Se interclasează cele două șiruri rezultate.
 
+Acest algoritm folosește principiul Divide et Impera, principiu despre care puteți studia mai multe în acest articol. 
+
 !!! note "Observație"
     Este de remarcat că acest algoritm poate fi folosit pentru a calcula numărul de inversiuni al unui șir.
 

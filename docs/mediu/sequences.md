@@ -198,6 +198,7 @@ După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundame
  
 * [Pbinfo - Verificarea unor proprietăți](https://www.pbinfo.ro/probleme/categorii/49/tablouri-unidimensionale-vectori-verificarea-unor-proprietati)
 * [Pbinfo - Probleme cu secvențe](https://www.pbinfo.ro/probleme/categorii/21/tablouri-unidimensionale-vectori-probleme-cu-secvente)
+* [kilonova progres](https://kilonova.ro/problems/2200)
 * [sss OJI 2022](https://kilonova.ro/problems/942/)
 * [Microbist OJI 2024](https://kilonova.ro/problems/2517/)
 * [Subsecvență de sumă maximă](https://infoarena.ro/problema/ssm) 

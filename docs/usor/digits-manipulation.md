@@ -252,3 +252,4 @@ int main () {
 * [Parcurgerea cifrelor unui număr](https://cppi.sync.ro/materia/parcurgerea_cifrelor_unui_numar.html)
 * [Cifrele unui număr](https://www.pbinfo.ro/articole/65/cifrele-unui-numar)
 * [Probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
+* [OJI 2019 aur](https://kilonova.ro/submissions/50202)
