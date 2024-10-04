@@ -24,7 +24,7 @@ Aici găsiți programa clasei a noua pentru Olimpiada de Informatică, conform [
 * Calculul unor expresii (de exemplu, factorial, ridicare la putere) - [link articol](https://edu.roalgo.ro/cppintro/basic-math/)
 * Algoritmul de exponențiere rapidă - [link articol](https://edu.roalgo.ro/mediu/pow-log/#ridicarea-la-putere-in-timp-logaritmic)
 
-## Generări de șiruri
+## Generări de șiruri - [link articol](https://edu.roalgo.ro/usor/generarea-sirurilor/)
 
 * Generarea șirurilor pe baza unor reguli
 * Șirul lui Fibonacci și alte șiruri recurente

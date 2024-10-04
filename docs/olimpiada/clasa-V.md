@@ -25,7 +25,7 @@ Aici găsiți programa clasei a cincea pentru Olimpiada de Informatică, conform
 * Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc prin algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea fracțiilor) - [link articol](https://edu.roalgo.ro/usor/divisibility/)
 * Calculul unor expresii (de exemplu, factorial, ridicare la putere) - [link articol](https://edu.roalgo.ro/cppintro/basic-math/)
 
-## Generări de șiruri
+## Generări de șiruri - [link articol](https://edu.roalgo.ro/usor/generarea-sirurilor/)
 
 * Generarea șirurilor pe baza unor reguli
 * Șirul lui Fibonacci și alte șiruri recurente
