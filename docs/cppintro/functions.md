@@ -59,6 +59,9 @@ Apoi, avem instrucțiunile specifice funcției, care pot fi scrise în același 
 
 În cele din urmă, dacă funcția trebuie să returneze o valoare, trebuie să o facă (dacă funcția are un tip non-void și nu se returnează nicio valoare, de regulă primiți warning la compilare și în cele mai multe cazuri, comportamentul programului rămâne la mâna compilatorului - _undefined behavior_).
 
+!!! note "Observație"
+    În momentul în care scriem o instrucțiune de tip _return_, funcția se va opri și în cazul funcțiilor non-void, va returna valoarea dată. Acest lucru este echivalent cu instrucțiunea _return 0_ din programul principal. 
+
 ## Utilizarea funcțiilor 
 
 În general, pentru a putea folosi o funcție, trebuie scrisă deasupra blocului de cod unde va fi folosită. De exemplu, primul cod de mai jos este corect, iar cel de-al doilea este greșit. 
@@ -220,13 +223,11 @@ void sum_cif (int n) {
 }
 ```
 
-## Clasificarea funcțiilor după tipul lor 
-
-### Funcții iterative
+## Funcții iterative
 
 O funcție iterativă este o funcție care execută codul pe care îl are asignat, fără a fi nevoie să apeleze alte instanțe ale aceleiași funcții (nu se va apela pe ea însăși). Funcțiile scrise până acum în acest articol sunt toate iterative. 
 
-Aici puteți vedea cum aflăm în mod recursiv suma cifrelor a unui număr $n$ folosind o funcție iterativă. 
+Aici puteți vedea o funcție în care aflăm suma cifrelor a unui număr $n$ folosind o funcție iterativă. 
 
 ```cpp
 int sumcif (int n) {
@@ -239,7 +240,9 @@ int sumcif (int n) {
 }
 ```
 
-### Funcții recursive
+În general, funcțiile iterative tind să fie mai rapide decât cele recursive și sunt de preferat atunci când putem implementa un program folosind ambele metode.
+
+## Funcții recursive
 
 Spre deosebire de funcțiile iterative, cele recursive se pot auto-apela și acest lucru poate fi foarte folositor atunci când avem nevoie să aflăm răspunsul folosind o instanță mai simplă a funcției curente. 
 
@@ -273,12 +276,176 @@ Pentru a calcula $n!$, trebuie să aflăm toate factorialele până la $1!$, iar
 
 Acest mod de a scrie funcțiile este foarte folosit în multe tipuri de aplicații, cum ar fi metoda divide et impera, programarea dinamică, teoria grafurilor ș.a.m.d. 
 
+## Exerciții rezolvate
+
+De multe ori, mai ales în variantele de bacalaureat și cele de admitere, se regăsesc exerciții în care evaluăm rezultatele pe care le obțin anumite funcții, iar în mare parte din cazuri, aceste funcții sunt recursive. 
+
+Pentru a evalua aceste funcții, recomandăm citirea codului cu atenție și notarea apelurilor de funcție în ordinea în care apar, ținând cont de locul în funcție unde apelurile următoare au loc. 
+
+### Exercițiu bacalaureat - Care este valoarea lui $f(38)$?
+
+```cpp
+void f (int x) {
+    if (x) {
+        if (x % 3 == 0) {
+            cout << 3;
+            f(x/3);
+        }
+        else {
+            f(x/3);
+            cout << x%3;
+        }
+    }
+}
+```
+
+* $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
+* $f(12)$ - $12 \% 3 = 0$, deci intrăm în if, **afișăm $3$** și apelăm $f(4)$.
+* $f(4)$ - $4 \% 3 = 1$, deci intrăm în else și apelăm $f(1)$.
+* $f(1)$ - $1 \% 3 = 1$, deci intrăm în else și apelăm $f(0)$.
+* $f(0)$ - $x$ este $0$, deci nu se mai intră nicăieri în funcție și ne întoarcem la apelurile anterioare.
+* $f(1)$ - după apelul lui $f(0)$, **afișăm $1 \% 3 = 1$**.
+* $f(4)$ - după apelul lui $f(1)$, **afișăm $4 \% 3 = 1$**.
+* $f(12)$ - după apelul lui $f(4)$, se termină acea secvență.
+* $f(38)$ - după apelul lui $f(12)$, **afișăm $38 \% 3 = 2$**.
+
+Astfel, am afișat $3112$.
+
+### Exercițiu admitere - Care este valoarea lui $g(2, 1)$?
+
+```cpp
+int g(int x, int y) {
+    if (x > 0) {
+        if (y == 0) {
+            return g(x - 1, 1);
+        }
+        if (y > 0) {
+            return g(x - 1, g(x, y - 1));
+        }
+    }
+    return y + 1;
+}
+```
+
+* $g(2, 1)$ - $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(1, g(2, 0))$.
+* $g(2, 0)$ - $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(1, 1)$.
+* $g(1, 1)$ - $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 0))$.
+* $g(1, 0)$ - $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(0, 1)$.
+* $g(0, 1)$ - $x = 0$ $\rightarrow$ se va returna $1 + 1 = 2$, deci $g(1, 0) = 2$, deci $g(0, g(1, 0)) = g(0, 2)$ .
+* $g(0, 2)$ - $x = 0$ $\rightarrow$ se va returna $2 + 1 = 3$, deci $g(1, 1) = g(2, 0) = 3$.
+* Astfel, $g(1, g(2, 0)) = g(1, 3)$.
+* $g(1, 3)$ - $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 2))$.
+* $g(1, 2)$ - $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 1))$.
+* Deja știm că $g(1, 1) = 3$, deci $g(0, 3) = g(1, 2) = 4$. Astfel, $g(0, 4) = g(1, 3) = 5$.
+
+Cu alte cuvinte, valoarea lui $g(2, 1) = 5$.
+
+!!! note "Calculul funcției"
+    Se poate observa că pentru a calcula eficient și corect aceste valori, trebuie o grămadă de atenție și mult exercițiu în contextul examenelor de admitere și bacalaureat, lucru ce îl vom aborda în detaliu în capitolul specific acestor examene.
+
+### Problemă rezolvată - [cifminrec de pe pbinfo](https://www.pbinfo.ro/probleme/825/cifminrec)
+
+Pentru a rezolva această problemă, vom folosi principiul recursivității, bazându-ne pe faptul că $n$ este format din numărul format din cifrele lui cu excepția ultimei cifre ($n/10$) și ultima cifră $(n \% 10)$, lucru ce face implementarea recursivă a unei asemenea probleme mult mai ușoară. 
+
+```cpp
+int cifmin (int x) {
+    if (x < 10) {
+        return x;
+    }
+    int mini = cifmin(x/10);
+    if (mini < x%10) {
+        return mini;
+    }
+    return x%10;
+}
+```
+
+## Alte tipuri de funcții 
+
+### Funcții cu parametru implicit
+
+Uneori, atunci când scriem funcții, avem anumite variabile care vor fi mereu inițializate cu aceeași valoare, ceea ce impune un tratament diferit în cadrul funcțiilor pe care le scriem. Astfel, se impune folosirea unor parametri impliciți, care să poată fi inițializate cu o anumită valoare în lipsa unei alte apelări. 
+
+Aceste funcții se numesc funcții cu parametru implicit. 
+
+Pentru a scrie o funcție cu parametri impliciți, trebuie să menționăm mai întâi parametrii obișnuiți, iar mai apoi, cei impliciți.
+
+De exemplu, prima declarare este incorectă, dar cea de-a doua este corectă.
+
+```cpp
+int medie (int a = 0, int b) {
+    // instructiuni    
+}
+```
+
+```cpp
+int medie (int b, int a = 0) {
+    // instructiuni    
+}
+```
+
+
+### Problema [div3 de pe pbinfo](https://www.pbinfo.ro/probleme/996/div3)
+
+Pentru a explica această noțiune, am folosit o funcție care preia suma cifrelor drept parametru implicit și află recursiv suma cifrelor unui număr, folosind parametrul implicit care trebuie menționat acum.
+
+Se remarcă faptul că atunci când apelăm această funcție din main, menționarea valorii parametrului $s$ nu este necesară. 
+
+```cpp
+#include <fstream>
+using namespace std;
+
+int suma_cifre (int n, int s = 0) {
+    if (n < 10) {
+        return s + n;
+    }
+    else {
+        return suma_cifre (n/10, s+n%10);
+    }
+}
+
+int main() {
+    ifstream fin("div3.in");
+    ofstream fout("div3.out");
+    
+    int n;
+    fin >> n;
+    
+    for (int i = 1; i <= n; i++) {
+        int x;
+        fin >> x;
+        
+        if (suma_cifre(x) % 3 == 0) {
+            fout << x << " ";
+        }
+    }
+    return 0;
+}
+```
+
+### (Opțional) Lambda functions 
+
+!!! note "Funcțiile lambda"
+    Cunoașterea acestora este opțională în contextul examenelor de bacalaureat și admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari la olimpiadă. Totuși, acestea nu reprezintă un element care trebuie obligatoriu învățat.
+
+Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții lambda.
+
+TO-DO
+
 ## Concluzii
 
 Funcțiile programate de utilizator sunt unul din cele mai importante unelte pe care le poate folosi un utilizator, fiind concepute pentru a fi ușor de folosit și reutilizabile, astfel încât ne permit simplificarea semnificativă a programelor scrise. 
 
 ## Probleme suplimentare
 
+* [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
+* [oglindit2 pbinfo](https://www.pbinfo.ro/probleme/24/oglindit2)
+* [celmaimicnr pbinfo](https://www.pbinfo.ro/probleme/26/celmaimicnr)
+* [zerof pbinfo](https://www.pbinfo.ro/probleme/1826/zerof)
+* [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
+* [factorialrec pbinfo](https://www.pbinfo.ro/probleme/820/factorialrec)
+* [cmmdcrec pbinfo](https://www.pbinfo.ro/probleme/821/cmmdcrec)
+* [Manna - Pnueli pbinfo](https://www.pbinfo.ro/probleme/828/manna-pnueli)
 * [cât mai multe probleme din acest capitol pentru subprograme iterative](https://www.pbinfo.ro/probleme/categorii/13/subprograme)
 * [cât mai multe probleme din acest capitol pentru subprograme recursive](https://www.pbinfo.ro/probleme/categorii/81/recursivitate)
 
@@ -287,4 +454,6 @@ Funcțiile programate de utilizator sunt unul din cele mai importante unelte pe 
 * [Subprograme - pbinfo](https://www.pbinfo.ro/articole/3656/subprograme)
 * [Recursivitate - pbinfo](https://www.pbinfo.ro/articole/3873/recursivitate)
 * [Subprograme - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_simple.html)
+* [Recursivitate - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_de_fixare_a_metodei.html)
+* [Recursivitate cu mai multe autoapeluri - CPPI Sync](https://cppi.sync.ro/materia/recursivitate_cu_mai_multe_autoapeluri.html)
 * [Functions - w3schools](https://www.w3schools.com/cpp/cpp_functions.asp#:~:text=A%20function%20is%20a%20block,and%20use%20it%20many%20times.)
