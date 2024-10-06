@@ -129,6 +129,31 @@ Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema [AfisareN
         return 0;
     }
     ```
+
+## Structuri repetitive imbricate
+
+Aceste structuri repetitive pot fi și imbricate, așa cum se poate observa în exemplul de mai jos. Cu alte cuvinte, putem să le scriem una în alta, astfel încât vom executa un număr de pași de un alt număr de pași. Putem scrie un număr nelimitat de structuri repetitive imbricate, bineînțeles în limita vitezei computaționale a programului dat. 
+
+În codul de mai jos, veți observa soluția noastră pentru problema [piramida de pe pbinfo](https://www.pbinfo.ro/probleme/351/piramida). Se poate observa faptul că primul for va avea $n$ pași, dar în cadrul acestui for, avem un alt for care are $i$ pași. 
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << j << " ";
+        }
+        cout << '\n';
+    }
+	return 0;
+}
+```
+
 ## Resurse suplimentare
 
 * [Articolul despre structuri repetitive de pe pbinfo](https://www.pbinfo.ro/articole/71/structuri-repetitive)

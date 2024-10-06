@@ -1,7 +1,7 @@
 ---
-title: Tablouri (arrays)
 tags:
     - vectori
+    - implementare
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu

@@ -456,4 +456,6 @@ Funcțiile programate de utilizator sunt unul din cele mai importante unelte pe 
 * [Subprograme - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_simple.html)
 * [Recursivitate - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_de_fixare_a_metodei.html)
 * [Recursivitate cu mai multe autoapeluri - CPPI Sync](https://cppi.sync.ro/materia/recursivitate_cu_mai_multe_autoapeluri.html)
+* [Material subprograme - CNI Tudor Vianu](http://www.lbi.ro/~carmen/vineri/Subprograme%20iterative(pdf)/Subprograme%20Cpp.pdf)
+* [Functii in C/C++ - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_37_-_29_mai_2019#Func%C8%9Bii_%C3%AEn_limbajul_C)
 * [Functions - w3schools](https://www.w3schools.com/cpp/cpp_functions.asp#:~:text=A%20function%20is%20a%20block,and%20use%20it%20many%20times.)
