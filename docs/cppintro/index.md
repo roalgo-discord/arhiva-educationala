@@ -59,4 +59,4 @@ Pentru alte opțiuni, recomandăm [acest articol](https://usaco.guide/general/ru
 
 Editoarele locale sunt mult mai folositoare decât cele online, deoarece permit o varietate de opțiuni și sunt mult mai versatile, fiind și folosite la concursurile reale de programare competitivă, inclusiv olimpiadă. 
 
-După ți-ai instalat compilatorul și editorul dorit, te invităm să explorezi facilitățile limbajului C++, începând cu [acest articol](https://edu.roalgo.ro/cppintro/intro/). 
+După ți-ai instalat compilatorul și editorul dorit, te invităm să explorezi facilitățile limbajului C++, începând cu [acest articol](./intro.md).
