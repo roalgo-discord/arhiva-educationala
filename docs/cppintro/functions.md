@@ -423,14 +423,14 @@ int main() {
 }
 ```
 
-### (Opțional) Lambda functions 
+### (Opțional) Lambda functions  
 
 !!! note "Funcțiile lambda"
     Cunoașterea acestora este opțională în contextul examenelor de bacalaureat și admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari la olimpiadă. Totuși, acestea nu reprezintă un element care trebuie obligatoriu învățat.
 
 Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții lambda.
 
-TO-DO
+Vezi pagina dedicata la [funcțiile lambda](./lambdas.md).
 
 ## Concluzii
 
