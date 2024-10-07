@@ -197,7 +197,132 @@ int main() {
 
 ## Matricile pătratice
 
+!!! info "Definiție"
+    O matrice pătratică este o matrice care are un număr egal de linii și coloane.
+
+Deși în mod structural, aceste matrici nu sunt diferite față de matricile "dreptunghiulare", această structură simetrică ne permită să operăm mult mai multe tipuri de operații. 
+
+În cele ce urmează, vom defini diverse noțiuni întâlnite frecvent în aceste tipuri de probleme.
+
 ### Împărțirea matricilor pătratice. Diagonale, zone și regiuni
+
+Mai întâi, deoarece matricea este pătratică, putem să ne gândim la diagonalele matricii drept granițe pentru împărțirea matricii pe zone, astfel creându-se $4$ regiuni.
+
+!!! info "Diagonala principală"
+    Definim diagonala principală a unei matrici pătratice segmentul care unește punctele situate în pozițiile $(1, 1)$ și $(n, n)$, astfel încât această linie acoperă toate punctele cu coordonatele de forma $(i, i)$.
+
+!!! info "Diagonala secundară"
+    Definim diagonala secundară a unei matrici pătratice segmentul care unește punctele situate în pozițiile $(1, n)$ și $(n, 1)$, astfel încât această linie acoperă toate punctele cu coordonatele de forma $(i, n - i + 1)$.
+
+!!! note "Observație" 
+    Dacă indexăm matricea de la $0$, diagonala secundară unește pozițiile $(0, n-1)$ și $(n-1, 0)$, punctele acoperite având coordonatele $(i, n - i - 1)$.
+
+O consecință a prezenței acestor diagonale reprezintă împărțirea matricii pe zone, în funcție de orientarea raportată la diagonale, zonele fiind definite presupunând indexarea matricii de la $1$.
+
+Astfel, putem defini $4$ zone, după cum urmează:
+
+* zona de nord: Pozițiile situate deasupra ambelor diagonale (cu portocaliu pe desen). Pentru ca un punct să fie în zona de nord, $i < j$ și $i + j < n + 1$. 
+* zona de vest: Pozițiile situate deasupra diagonalei secundare (cu roșu pe desen). Pentru ca un punct să fie în zona de vest, $i > j$ și $i + j < n + 1$. 
+* zona de est: Pozițiile situate deasupra diagonalei principale (cu albastru pe desen). Pentru ca un punct să fie în zona de est, $i < j$ și $i + j > n + 1$. 
+* zona de sud: Pozițiile situate dedesubtul ambelor diagonale (cu galben pe desen). Pentru ca un punct să fie în zona de sud, $i > j$ și $i + j > n + 1$.
+
+!!! note "Observație" 
+    Pentru valori impare ale lui $n$, diagonalele se intersectează în punctul din mijlocul matricii. 
+
+* În desen, diagonala principală reprezintă zonele cu roz pe desen, iar diagonala secundară, zonele cu verde pe desen. (punctul din mijloc este hașurat cu verde).
+
+![](../images/matrici/diagonals.png)
+
+
+#### Problemă exemplu - [zona1 de pe pbinfo](https://www.pbinfo.ro/probleme/782/zona1)
+
+Această problemă se concentrează pe zona de sud a matricii. După ce parcurgem elementele matricii, le vom adăuga într-un vector de frecvență pentru a obține răspunsul cerut. 
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int fr[1000] = {0};
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            int x;
+            cin >> x;
+            if (i > j && i + j > n+1) {
+                fr[x]++;
+            }
+        }
+    }
+    
+    for (int i = 0; i < 1000; i++) {
+        if (fr[i] >= 2) {
+            cout << i << " ";
+        }
+    }
+    
+    return 0;
+}
+```
+
+#### Problemă exemplu - [diagonal de pe nerdarena](https://www.nerdarena.ro/problema/diagonal)
+
+Aici, vrem să ne folosim de structura matricii pentru a procesa diagonalele, de jos în sus și de la stânga la dreapta. Mai întâi, mergem prin punctele de pe prima coloană și apoi cele de pe prima linie, iar pentru diagonala secundară, punctele de pe prima linie și apoi cele de pe ultima coloană. Indiferent de parcurgere, vom merge în jos ulterior.
+
+```cpp
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ifstream cin("diagonal.in");
+    ofstream cout("diagonal.out");
+    
+    char grid[100][100];
+    
+    int n = 0;
+    while (cin >> grid[n]) {
+        n++;
+    }
+    
+    // diagonala principala
+    
+    for (int L = n-1; L >= 0; L--) {
+        int L2 = L;
+        for (int C = 0; L2 < n && C < n; L2++, C++) {
+            cout << grid[L2][C];
+        }
+    }
+    for (int C = 1; C < n; C++) {
+        int C2 = C;
+        for (int L = 0; L < n && C2 < n; L++, C2++) {
+            cout << grid[L][C2];
+        }
+    }
+    
+    cout << '\n';
+    
+    // diagonala secundara
+    
+    for (int C = 0; C < n; C++) {
+        int C2 = C;
+        for (int L = 0; L < n && C2 >= 0; L++, C2--) {
+            cout << grid[L][C2];
+        }
+    }
+    
+    for (int L = 1; L < n; L++) {
+        int L2 = L;
+        for (int C = n-1; L2 < n && C >= 0; L2++, C--) {
+            cout << grid[L2][C];
+        }
+    }
+    return 0;
+}
+```
 
 ## Alte parcurgeri și modificări în matrice
 
@@ -338,6 +463,8 @@ for (int i = 0; i <= n+1; i++) {
 ```
 
 ### Căutarea unor elemente în matrici
+
+Pentru a căuta elementele în matrici, vom procesa mai mult sau mai puțin ca la vectori, putând aplica algoritmii învățați la vectori și pentru matrici.
 
 ## Tablouri multidimensionale
 
