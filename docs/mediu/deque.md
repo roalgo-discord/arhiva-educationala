@@ -75,7 +75,7 @@ if (!d.empty()) {
 
 ## Motivație
 
-Motivul principal pentru care folosim deque-urile este acela de a putea performa operații pe secvențe de lungime fixă, fiind una din tehnicile des folosite în cazul problemelor ce folosesc tehnica sliding window (sau în română, fereastra glisantă), subiect discutat în acest articol (note: aici trebuie să punem articolul cu sliding window când va fi). Acesta va fi și scopul principal al acestui articol, acela de a prezenta cele mai des întâlnite aplicații ale deque-ului.
+Motivul principal pentru care folosim deque-urile este acela de a putea performa operații pe secvențe de lungime fixă, fiind una din tehnicile des folosite în cazul problemelor ce folosesc tehnica sliding window (sau în română, fereastra glisantă), subiect discutat în [acest articol](https://edu.roalgo.ro/mediu/sliding-window/). Acesta va fi și scopul principal al acestui articol, acela de a prezenta cele mai des întâlnite aplicații ale deque-ului.
 
 De cele mai multe ori, atunci când vom lucra cu deque-ul, vom vrea să procesăm secvențe de o lungime fixă, având operații bine stabilite și de cele mai multe ori, preluând aspecte de implementare văzute mai devreme când ați studiat principiile de funcționare ale stivei. 
 
@@ -300,11 +300,12 @@ int main() {
 
 ## Concluzie
 
-Deque este o structură de date foarte utilă pentru foarte multe probleme ce folosesc sliding window, precum și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod normal s-ar rezolva cu o stivă sau o coadă. 
+Deque este o structură de date foarte utilă pentru foarte multe probleme ce folosesc [sliding window](https://edu.roalgo.ro/mediu/sliding-window/), precum și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod normal s-ar rezolva cu o stivă sau o coadă. 
 
 ## Probleme suplimentare
 
 * [infoarena vila2](https://www.infoarena.ro/problema/vila2)
+* [infoarena knumere](https://www.infoarena.ro/problema/knumere)
 * [RoAlgo PreOJI 2024 pofta](https://kilonova.ro/problems/2187)
 * [JBOI 2022 Wall](https://www.pbinfo.ro/probleme/4198/wall1)
 * [Lot Juniori 2016 pofta](https://kilonova.ro/problems/1715)
