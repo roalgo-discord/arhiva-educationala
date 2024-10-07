@@ -453,7 +453,7 @@ int main() {
 }
 ```
 
-### Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/contest/1076)
+### Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/problems/1076)
 
 Notam cu $S$ șirul de paranteze.
 Pentru punctul a), în timp ce parcurgem șirul de paranteze, vom menține o stivă care va conține indicii parantezelor deschise cărora nu le-am găsit încă o pereche. De fiecare dată când dăm peste o paranteză deschisa, îi adaugăm indicele în stivă, iar atunci când dăm peste o paranteză închisă, $top()$ va fi perechea ei. Adunăm la răspuns $i - top()$, scoatem vârful din stivă și continuăm cu $i + 1$.
