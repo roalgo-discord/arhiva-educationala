@@ -192,7 +192,7 @@ cout << summax << " " << stmax " " << drmax << '\n';
 
 ### Subsecvența de sumă maximă pe matrice
 
-Acest algoritm poate fi extins și pe matrice, observația de bază fiind aceea că putem fixa linia de început și linia de final, iar mai apoi folosind [sume parțiale](./usor/partial-sums.md), să aplicăm algoritmul de mai sus.
+Acest algoritm poate fi extins și pe matrice, observația de bază fiind aceea că putem fixa linia de început și linia de final, iar mai apoi folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), să aplicăm algoritmul de mai sus.
 
 Mai jos puteți găsi soluția de la problema [Submatrix SumMax](https://www.pbinfo.ro/probleme/3410/submatrixsummax) de pe pbinfo.
 
