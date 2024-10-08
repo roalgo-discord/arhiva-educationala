@@ -316,46 +316,36 @@ int main() {
 
 ### Probleme de la olimpiade
 
-
-* [Probleme cu two pointers](https://kilonova.ro/tags/291)
 * [Infoarena 3secv](https://infoarena.ro/problema/3secv)
 * [JOI JJOOII 2](https://oj.uz/problem/view/JOI20_ho_t2)
+* [pbinfo maru](https://www.pbinfo.ro/probleme/2943/maru)
 * [NOI Singapore Global Warming](https://oj.uz/problem/view/NOI13_gw)
 * [Baraj Seniori 2023 sirbun](https://kilonova.ro/problems/556)
 * [Infoarena nane](https://infoarena.ro/problema/nane)
-* [USACO Social
-  Distancing](http://www.usaco.org/index.php?page=viewproblem2&cpid=1038)
+* [Infoarena teren](https://www.infoarena.ro/problema/teren)
+* [USACO Social Distancing](http://www.usaco.org/index.php?page=viewproblem2&cpid=1038)
 * [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
-* [USACO Wormhole
-  Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
+* [USACO Wormhole Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
 * [USACO Sprinklers](http://usaco.org/index.php?page=viewproblem2&cpid=794)
 * [USACO Cow Dating](http://usaco.org/index.php?page=viewproblem2&cpid=924)
+* [Probleme cu two pointers de pe kilonova](https://kilonova.ro/tags/291)
+* [Probleme cu two pointers de pe pbinfo](https://www.pbinfo.ro/probleme/eticheta/144/two-pointers)
 
 
 ### Probleme de pe Codeforces
 
-* [Towers -
-  Codeforces](https://codeforces.com/group/swEqtABRxe/contest/227531/problem/C)
-* [Two Pointers -
-  Codeforces](https://codeforces.com/problemset?tags=two+pointers)
-* [Two Pointers Step 1 - Codeforces
-  EDU](https://codeforces.com/edu/course/2/lesson/9/1/practice)
-* [Two Pointers Step 2 - Codeforces
-  EDU](https://codeforces.com/edu/course/2/lesson/9/2/practice)
-* [Two Pointers Step 3 - Codeforces
-  EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)
+* [Towers - Codeforces](https://codeforces.com/group/swEqtABRxe/contest/227531/problem/C)
+* [Two Pointers - Codeforces](https://codeforces.com/problemset?tags=two+pointers)
+* [Two Pointers Step 1 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/1/practice)
+* [Two Pointers Step 2 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/2/practice)
+* [Two Pointers Step 3 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)
     
 
 ## Bibliografie și lectură suplimentară
 
 * [Two Pointers - USACO Guide](https://usaco.guide/silver/two-pointers?lang=cpp)
-* [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO
-  Academy](https://codeforces.com/edu/courses)
-* [Curs despre Two Pointers - Codeforces (este necesar un cont pentru a putea
-  accesa acest curs, plus accesarea linkului de mai
-  sus)](https://codeforces.com/edu/course/2/lesson/9)
-* [Using the Two Pointers
-  Technique](https://algodaily.com/lessons/using-the-two-pointer-technique)
+* [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO Academy](https://codeforces.com/edu/courses)
+* [Curs despre Two Pointers - Codeforces (este necesar un cont pentru a putea accesa acest curs, plus accesarea linkului de mai sus)](https://codeforces.com/edu/course/2/lesson/9)
+* [Using the Two Pointers Technique](https://algodaily.com/lessons/using-the-two-pointer-technique)
 * [Edu - Two pointers](https://codeforces.com/blog/entry/87248)
-* [Competitive Programmer's Handbook - Capitolul
-  8](https://cses.fi/book/book.pdf)
+* [Competitive Programmer's Handbook - Capitolul 8](https://cses.fi/book/book.pdf)

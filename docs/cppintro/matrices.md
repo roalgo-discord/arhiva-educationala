@@ -449,6 +449,55 @@ int main() {
 
 ### Transpunerea elementelor în matrice
 
+În unele probleme, suntem nevoiți să rotim matricea pentru a lucra mai ușor cu ea. 
+
+De obicei, cele mai frecvente rotații sunt cele la stânga sau la dreapta, dar avem de-a face și cu alte tipuri de mișcări, precum transpozițiile sau oglindirea valorilor. 
+
+Se poate observa faptul că după o rotire a matricii cu $90^o$, prima linie va deveni prima coloană scrisă invers, a doua coloană va deveni a doua coloană scrisă invers ș.a.m.d. 
+
+!!! note "Rotații mai mari" 
+    Dacă vrem să rotim matricea cu valori mai mari de $90^o$, putem simula rotirile de $90^o$ de mai multe ori, ajungând la același rezultat.
+
+!!! note "Rotații la dreapta" 
+    Dacă vrem să rotim matricea la dreapta, vom folosi aceeași logică, unde prima linie va deveni ultima coloană, a doua linie va deveni penultima coloană ș.a.m.d.
+
+Aici se poate găsi soluția problemei [rotire de pe pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim matricea la stânga cu $90^o$.
+
+```cpp
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream cin("rotire.in");
+    ofstream cout("rotire.out");
+    
+    int n, m;
+    cin >> n >> m;
+    
+    int grid[11][11], grid2[11][11];
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+    
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            grid2[m-j+1][i] = grid[i][j];
+        }
+    }
+    
+    for (int i = 1; i <= m; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << grid2[i][j] << " ";
+        }
+        cout << '\n';
+    }
+    return 0;
+}
+```
+
 ### Bordarea unei matrici
 
 Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze faptul că nu vrem să trecem prin acele poziții (de exemplu, $-1$).
@@ -462,11 +511,19 @@ for (int i = 0; i <= n+1; i++) {
 }
 ```
 
-### Căutarea unor elemente în matrici
+### Căutarea unor elemente și secvențe în matrici
 
 Pentru a căuta elementele în matrici, vom procesa mai mult sau mai puțin ca la vectori, putând aplica algoritmii învățați la vectori și pentru matrici.
 
+O tehnică care merită știută este aceea că în cazul multor probleme, dacă vrem să alegem o submatrice cu o anumită proprietate, de multe ori este optim să fixăm linia de început și de final, iar mai apoi să procesăm valorile dintre cele două linii presupunând că acestea formează un vector, ulterior aplicând tehnicile și algoritmii învățați la vectori. 
+
+Un astfel de exemplu de problemă este [Submatrix SumMax](https://www.pbinfo.ro/probleme/3410/submatrixsummax), discutată în articolul cu secvențe.
+
 ## Tablouri multidimensionale
+
+În general, când vine vorba de tablouri cu mai multe dimensiuni, putem să le declarăm fie la fel cum declarăm matricile, fie folosind variantele din STL, care vor fi detaliate în articolul corespunzător. 
+
+De exemplu, `#!cpp int v[101][101][101];` reprezintă un "cub" de dimensiuni $101 \cdot 101 \cdot 101$. La fel ca la celelalte tablouri, cu cât avem mai multe dimensiuni, cu atât cantitatea de memorie crește, iar în cele mai multe cazuri, nu vom avea nevoie de mai mult de $3-4$ dimensiuni. 
 
 ## Concluzii
 
@@ -474,11 +531,27 @@ Lucrul cu matrici și tablouri multidimensionale este un pas înainte pentru apr
 
 ## Probleme suplimentare
 
+* [cntlinii pbinfo](https://www.pbinfo.ro/probleme/776/cntlinii)
+* [ordlin pbinfo](https://www.pbinfo.ro/probleme/771/ordlin)
+* [lincol pbinfo](https://www.pbinfo.ro/probleme/669/lincol)
+* [chenar pbinfo](https://www.pbinfo.ro/probleme/210/chenar)
+* [zone1 pbinfo](https://www.pbinfo.ro/probleme/781/zone1)
+* [serpuire pbinfo](https://www.pbinfo.ro/probleme/794/serpuire)
 * [spirala1 pbinfo](https://www.pbinfo.ro/probleme/1008/spirala1)
 * [spirala2 pbinfo](https://www.pbinfo.ro/probleme/1584/spirala2)
+* [eroziune pbinfo](https://www.pbinfo.ro/probleme/594/eroziune)
+* [memory001 pbinfo](https://www.pbinfo.ro/probleme/1444/memory001)
+* [OJI 2007 cartele](https://kilonova.ro/problems/759)
+* [infoarena mostenire2](https://infoarena.ro/problema/mostenire2)
+* [infoarena marmote](https://www.infoarena.ro/problema/marmote)
+* [Problemele recomandate în cele 4 articole de aici](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+* [Probleme de la parcurgerea matricelor oarecare - pbinfo](https://www.pbinfo.ro/probleme/categorii/47/tablouri-bidimensionale-matrice-parcurgerea-matricelor-oarecare)
+* [Probleme de la parcurgerea matricelor pătratice - pbinfo](https://www.pbinfo.ro/probleme/categorii/80/tablouri-bidimensionale-matrice-parcurgerea-matricelor-patratice)
+* [Probleme diverse cu matrici - pbinfo](https://www.pbinfo.ro/probleme/categorii/58/tablouri-bidimensionale-matrice-probleme-diverse)
 
 ## Resurse suplimentare
 
 * [Tablouri bidimensionale - pbinfo](https://www.pbinfo.ro/articole/5620/tablouri-bidimensionale)
-* [Tablouri bidimensionale (matrice) - CPPI Sync](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+* [Articolele din secțiunea tablouri bidimensionale (matrice) - CPPI Sync](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+* [Matrici - InfoGym](https://events.info.uaic.ro/infogim/2021/lectii/6/12%20matrici.pdf)
 * [Tablouri pătratice - pbinfo](https://www.pbinfo.ro/articole/5626/tablouri-patratice)

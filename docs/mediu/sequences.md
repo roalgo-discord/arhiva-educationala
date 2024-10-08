@@ -190,6 +190,45 @@ for (int i = 1; i <= n; i++) {
 cout << summax << " " << stmax " " << drmax << '\n'; 
 ```
 
+### Subsecvența de sumă maximă pe matrice
+
+Acest algoritm poate fi extins și pe matrice, observația de bază fiind aceea că putem fixa linia de început și linia de final, iar mai apoi folosind [sume parțiale](./usor/partial-sums.md), să aplicăm algoritmul de mai sus.
+
+Mai jos puteți găsi soluția de la problema [Submatrix SumMax](https://www.pbinfo.ro/probleme/3410/submatrixsummax) de pe pbinfo.
+
+```cpp
+#include <iostream>
+using namespace std;
+int n, a[302][302], sp[302][302];
+int sum (int xa, int ya, int xb, int yb) {
+    return sp[xb][yb] - sp[xa-1][yb] - sp[xb][ya-1] + sp[xa-1][ya-1];
+}
+int main() {
+    cin >> n;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            cin >> a[i][j];
+            sp[i][j] = sp[i-1][j] + sp[i][j-1] - sp[i-1][j-1] + a[i][j];
+        }
+    }
+    int ans = -1001;
+    for (int i = 1; i <= n; ++i) {
+        for(int j = i; j <= n; ++j) {
+            int ssm = 0;
+            for (int poz = 1; poz <= n; ++poz) {
+                int sumCol = sum(i, poz, j, poz);
+                ssm = max(ssm + sumCol, sumCol);
+                if(ssm > ans) {
+                    ans = ssm;
+                }
+            }
+        }
+    }
+    cout << ans;
+    return 0;
+}
+```
+
 ## Concluzii
 
 După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](./two-pointers.md), [sliding window](./sliding-window.md) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
@@ -200,6 +239,7 @@ După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundame
 * [Pbinfo - Probleme cu secvențe](https://www.pbinfo.ro/probleme/categorii/21/tablouri-unidimensionale-vectori-probleme-cu-secvente)
 * [kilonova progres](https://kilonova.ro/problems/2200)
 * [sss OJI 2022](https://kilonova.ro/problems/942/)
+* [Trafalet OJI 2024](https://kilonova.ro/problems/2503/)
 * [Microbist OJI 2024](https://kilonova.ro/problems/2517/)
 * [Subsecvență de sumă maximă](https://infoarena.ro/problema/ssm) 
 * [infoarena joctv](https://infoarena.ro/problema/joctv)

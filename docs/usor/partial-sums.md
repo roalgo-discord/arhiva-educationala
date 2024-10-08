@@ -182,6 +182,8 @@ Pentru aprofundarea algoritmilor prezentați mai sus, recomand rezolvarea următ
 * [flip01 RoAlgo PreOJI 2024](https://kilonova.ro/problems/2379/)
 * [sirpal RoAlgo PreOJI 2024](https://kilonova.ro/problems/2355/)
 * [cdcq RoAlgo Contest #1](https://kilonova.ro/problems/662)
+* [infoarena mostenire2](https://infoarena.ro/problema/mostenire2)
+* [infoarena bmatrix](https://www.infoarena.ro/problema/bmatrix)
 * [tnia OJI 2018](https://kilonova.ro/problems/892)
 * [balon ONI 2023](https://kilonova.ro/problems/547)
 * [poseidon RoAlgo Contest #4](https://kilonova.ro/problems/1018)

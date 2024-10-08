@@ -605,6 +605,7 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Bibliografie și lectură suplimentară
 
+- [Concurs educațional făcut de MathDash](https://mathdash.com/contest/complementary-counting-educational)
 - [Curs de combinatorică făcut de Bogdan Iordache](https://iordachebogdan.github.io/cppi/combinatorica_nivel_mediu.html)
 - [Curs de combinatorică avansat făcut de Alex Luchianov](https://sepi.ro/assets/upload-file/articole/Alexandru%20Luchianov%20-%20Trucuri%20de%20combinatorica1.pdf)
 - [Combinatorics - USACO Guide (articol + probleme)](https://usaco.guide/gold/combo?lang=cpp)

@@ -370,6 +370,8 @@ Acest algoritm este unul din cele mai populari algoritmi dat atât la olimpiade,
 * [USACO Silver Convention](https://usaco.org/index.php?page=viewproblem2&cpid=858)
 * [OJI 2019 mostenire](https://kilonova.ro/problems/905)
 * [ONI 2017 orase](https://kilonova.ro/problems/1501)
+* [ONI 2017 orase](https://kilonova.ro/problems/1501)
+* [zone infoarena](https://www.infoarena.ro/problema/zone)
 * [Problemele din pasul 2 de la EDU](https://codeforces.com/edu/course/2/lesson/6/2/practice)
 * [cb3 pbinfo](https://www.pbinfo.ro/probleme/2789/cb3)
 * [Baraj Juniori 2021 intergalactic](https://kilonova.ro/problems/1098)
