@@ -409,3 +409,4 @@ Problemele de optimizare sunt, în mare parte, din categoriile prezentate. Dar, 
 * [Simulation - USACO Guide](https://usaco.guide/bronze/simulation)
 * [Verificarea unor proprietati - pbinfo](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
 * [Simulare - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_14_-_20_dec_2018#Simulare)
+* [Simulare, partea 2 - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_15_-_17_ian_2019)
