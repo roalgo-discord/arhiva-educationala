@@ -133,6 +133,7 @@ nav:
       - Vectori (tablouri unidimensionale): cppintro/arrays.md
       - Matrici (tablouri bidimensionale): cppintro/matrices.md
       - Subprograme: cppintro/functions.md
+      - Funcții Lambda: cppintro/lambda.md
       - Introducere în STL: cppintro/stl.md
       - Șiruri de caractere: cppintro/strings.md
       - Liste înlănțuite: cppintro/linked-lists.md
