@@ -304,6 +304,8 @@ nav:
           - Teoria jocurilor: avansat/game-theory.md
           - Funcții generatoare: avansat/generating-functions.md
   - Olimpiadă:
+      - Strategie: 
+          - Cum te pregătești pentru olimpiadă?: olimpiada/olympiad-prep.md
       - Programă:
           - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
           - Gimnaziu:
