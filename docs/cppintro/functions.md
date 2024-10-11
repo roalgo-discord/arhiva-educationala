@@ -430,7 +430,7 @@ int main() {
 
 Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții lambda.
 
-Vezi pagina dedicata la [funcțiile lambda](./lambdas.md).
+Vezi pagina dedicata la [funcțiile lambda](https://edu.roalgo.ro/cppintro/lambda/).
 
 ## Concluzii
 

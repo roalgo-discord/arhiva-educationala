@@ -1,3 +1,12 @@
+---
+tags:
+    - C++
+    - functii
+    - lambda
+---
+
+**Autor**: Susan
+
 ## Un ghid pentru începători despre funcții lambda în C++
 
 Funcțiile lambda au fost introduse în C++ odată cu C++11 și au devenit rapid una dintre cele mai puternice caracteristici ale limbajului. Ele fac codul mai expresiv, concis și, adesea, mai ușor de citit. Dar dacă ești nou în C++ sau chiar un programator experimentat care abia acum explorează aceste instrumente utile, ele pot părea puțin intimidante la început. În această postare, vom analiza ce sunt funcțiile lambda, cum să le folosești și când pot fi utile.

@@ -6,6 +6,8 @@ tags:
     - simulare
 ---
 
+**Autor**: Traian Mihai Danciu
+
 ## Introducere
 
 Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le obținem pe parcurs. O simulare necesită $3$ lucruri:
