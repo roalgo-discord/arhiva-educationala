@@ -116,6 +116,7 @@ Cum toate numerele sunt de la $1$ la $999$, rezultă, din [principiul cutiei](ht
 Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclului. Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
 
 Sursa de 100 de puncte:
+
 ```cpp
 #include <fstream>
 
@@ -197,13 +198,17 @@ De exemplu, pentru $N=8$, aplicând de $N$ ori regula $A$ se obțin șirurile:
 Observăm că prin aplicarea de un număr impar de ori a regulii, șirul rezultat are pe pozițiile impare numerele pare. Numere pare au apariție periodică în șirurile rezultate în ordinea $2, 4, 6, 8, 2, 4, 6, ...$ Analog, numerele impare apar pe poziții impare în ordinea $1, 3, 5, 7, 1, 3, 5, ...$ Dacă se aplică regula de un număr par de ori, pe pozițiile pare apar numerele pare.
 
 Studiind exemplul, observăm că:
-1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(R+K)%N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numarul căutat este egal cu $(N+K-R)%N$ sau $N$ dacă acest rest este $0$.
-2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R)%N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numărul căutat este egal cu $(K+R)%N$ sau $N$ dacă acest rest este $0$.
-3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat” este $poz=(N+T-R)%N$. Altfel, $poz=(T+R)%N$. În ambele situații, dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”, determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor, respectiv $poz+1$ (sau $1$) pentru succesor folosindu-ne de rezultatele de la $1$) și $2$) 
 
-Detaliu de implementare: vom folosi faptul că $(x % n) == 0 ? n : x % n$ este echivalent cu $(x - 1) % n + 1$, pentru $x > 0$. Demonstrație:
-1. $x % n = 0$, atunci $(x - 1) % n + 1 = n - 1 + 1 = n$.
-2. $x % n > 0$, atunci $(x - 1) % n + 1 = x % n - 1 + 1 = x % n$
+1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(R+K) \% N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numarul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$.
+
+2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numărul căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este $0$.
+
+3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat” este $poz=(N+T-R) \% N$. Altfel, $poz=(T+R) \% N$. În ambele situații, dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”, determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor, respectiv $poz+1$ (sau $1$) pentru succesor folosindu-ne de rezultatele de la $1$) și $2$) 
+
+Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este echivalent cu $(x - 1) \% n + 1$, pentru $x > 0$. Demonstrație:
+
+1. $x \% n = 0$, atunci $(x - 1) \% n + 1 = n - 1 + 1 = n$.
+2. $x \% n > 0$, atunci $(x - 1) \% n + 1 = x \% n - 1 + 1 = x \% n$
 
 Sursa de 100 de puncte:
 ```cpp
