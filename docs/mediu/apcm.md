@@ -17,7 +17,7 @@ tags:
 !!! example "Exemplu"
     De exemplu, dacă avem următorul graf: $n = 5$, $m = 6$ și următoarele muchii de tip $(a, b, cost)$: $(1, 2, 3), (2, 3, 5), (2, 4, 2), (3, 4, 8), (5, 1, 7), (5, 4, 4)$, arborele parțial de cost minim va avea costul $14$, alegându-se primele trei muchii și ultima. 
 
-Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai puțin cunoscuți, precum algoritmul lui Boruvka. Acest articoul va acoperi cei trei algoritmi menționați.
+Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai puțin cunoscuți, precum algoritmul lui Boruvka. Acest articol va acoperi cei trei algoritmi menționați.
 
 În probleme, de cele mai multe ori vom putea aplica algoritmul ales fără prea multe modificări, dar găsirea unui graf pe care să aplicăm APM se va dovedi a fi o alegere mai dificilă. 
 
@@ -190,10 +190,13 @@ int main() {
 ## Algoritmul lui Boruvka
 
 !!! info "Definiție" 
-    Acest algoritm începe cu fiecare nod fiind într-o comopnentă conexă doar cu el însuși. Apoi, va face iterații prin graf, până când nu este arbore (adică cât timp mai sunt cel puțin două componente conexe). El va găsi pentru fiecare componentă conexă (sau pentru fiecare nod, depinzând de problemă) cea mai bună muchie nefolosită care o (îl) unește de altă componentă conexă. După ce aceste muchii sunt găsite, ele sunt folosite. Vom folosi și la acest algoritm structura Union-Find pentru a afla dacă muchiile duc la componente conexe diferite și pentru a uni două componente conexe.
+    Acest algoritm începe cu fiecare nod fiind într-o comopnentă conexă doar cu el însuși. Apoi, va face iterații prin graf, până când nu este arbore (adică cât timp mai sunt cel puțin două componente conexe). El va găsi pentru fiecare componentă conexă (sau pentru fiecare nod, depinzând de problemă) cea mai bună muchie nefolosită (de obicei, cea cu cost cvel mai mic) care o (îl) unește de altă componentă conexă. După ce aceste muchii sunt găsite, ele sunt folosite. Vom folosi și la acest algoritm structura Union-Find pentru a afla dacă muchiile duc la componente conexe diferite și pentru a uni două componente conexe.
 
 !!! note "Observație"
-    La fiecare iterare prin graf, numărul de componente conexe se înjumătățește. La început sunt $n - 1$ componente conexe, deci se vor face $O(\log n)$ iterații.
+    La fiecare iterare prin graf, numărul de componente conexe se înjumătățește. La început sunt $n - 1$ componente conexe, deci se vor face $O(\log n)$ iterații. Astfel, complexitatea algoritmului este $O(m \log n)$, unde $m$ este numărul de muchii, iar $n$ este numărul de noduri.
+
+!!! note "Observație"
+    Uneori, nu este posibil să construim un APM, dar trebuie să raportăm că nu se poate. Vom face acest lucru printr-o metodă similară cu cea de la [Bubble Sort](https://edu.roalgo.ro/usor/sorting/#bubble-sort): vom menține o variabilă care să ne spună dacă am reușit să unim vreo pereche de componente conexe. Dacă până acum nu am obținut un arbore și nu mai avem cum să folosim vreo muchie, atunci putem să declarăm că nu se poate obține un APM.
 
 Aici puteți găsi o implementare în C++ a algoritmului lui Boruvka:
 ```cpp
@@ -323,7 +326,9 @@ int main() {
 
 ## Care este algoritmul mai bun?
 
-Niciunul dintre algoritmi nu este mai bun mereu decât celălalt, mai puțin în cazurile particulare în care funcționează doar algoritmul lui Boruvka. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
+Algoritmul lui Boruvka poate fi folosit și atunci când avem prea multe muchii ca să le putem procesa pe toate, dar putem afla pentru fiecare nod cea mai bună muchie folositoare. Un exemplu de astfel de problemă este problema [CF 888G](https://codeforces.com/problemset/problem/888/G).
+
+Când vorbim despre algoritmii lui Kruskal, respectiv al lui Prim, niciunul dintre ei nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
 
 În condiții de concurs, dacă toți algoritmii vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. De asemenea, algoritmul lui Boruvka este și el foarte important. 
 
