@@ -457,12 +457,14 @@ int main() {
 
 Notam cu $S$ șirul de paranteze.
 Pentru punctul a), în timp ce parcurgem șirul de paranteze, vom menține o stivă care va conține indicii parantezelor deschise cărora nu le-am găsit încă o pereche. De fiecare dată când dăm peste o paranteză deschisa, îi adaugăm indicele în stivă, iar atunci când dăm peste o paranteză închisă, $top()$ va fi perechea ei. Adunăm la răspuns $i - top()$, scoatem vârful din stivă și continuăm cu $i + 1$.
-Punctele b) și c) pot fi rezolvate împreuna. Deducem următoarele trei cazuri:
+Punctele b) și c) pot fi rezolvate împreună. Deducem următoarele trei cazuri:
+
 1. $S_i = S_{i + 1}$, unde $i$ și $i + 1$ sunt parantezele interschimbate. Atunci, răspunsul va rămâne exact la fel, deci nu este o operație swap validă
 2. $S_i = )$ și $S_{i + 1} = ($. În acest caz, există un $a (a < i)$ și un $b (i + 1 < b)$ astfel încât $S_a = ($, $S_b = )$, și $(a, i)$, respectiv $(i + 1, b)$ formau perechi. Costurile lor însumate vor fi $i - a + b - i - 1 = b - a - 1$. Când interschimbăm $S_i$ cu $S_{i + 1}$ obținem perechile $(a, b)$ și $(i, i + 1)$, ale căror costuri însumate dau $b - a + 1$. Deci răspunsul a crescut cu $2$, ceea ce înseamnă că nu este o operație swap validă.
 3. $S_i = ($ și $S_{i + 1} = )$. Dacă nu există nici un $a (a < i)$ astfel încât $S_a = ($ și perechea lui $a$ (pe care o notăm cu $b$) să fie mai mare ca $i + 1$, atunci operația nu ar fi validă, deoarece nu am avea pereche pentru $S_i$ dacă $S_i = )$. Mai întai, avem perechile $(a, b)$ și $(i, i + 1)$. După cum am văzut la cazul $2$, răspunsul ar fi mai mic cu $2$ dacă perechile ar fi $(a, i)$ și $(i + 1, b)$. Deci operația swap este validă.
 
 Observăm că singurul caz în care operația swap este validă este atunci când $S_i = (, S_{i + 1} = )$ și există un $a < i$, $S_a = ($, a cărui pereche $b$ este mai mare ca $i + 1$. Acest lucru se poate simplifica astfel: Căutăm un $i$ care respectă următoarele condiții:
+
 1. $S_i = )$
 2. Înainte să scoatem perechea lui $i$, stiva trebuie să aiba cel puțin $2$ elemente
 3. Vârful stivei trebuie să aibă valoarea $i - 1$.
