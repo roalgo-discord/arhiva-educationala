@@ -45,14 +45,15 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Chiar da
 
 În ordinea popularității lor, tipurile de date întregi sunt următoarele:
 
-* tipul **int** - cel mai utilizat tip de date, îl folosim pentru a stoca numere întregi intre $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ si $2 \ 147 \ 483 \ 647$).
-* tipul **long long** - un tip de date folosit pentru numerele întregi mai mari, având limite intre $-2^{63}$ si $2^{63} - 1$ ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre. 
-* tipul **char** - tipul de date folosit pentru lucrul cu caractere, având limitele între $-128$ si $127$
+* tipul **int** - cel mai utilizat tip de date, îl folosim pentru a stoca numere întregi intre $-2^{31}$ și $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ și $2 \ 147 \ 483 \ 647$).
+* tipul **long long** - un tip de date folosit pentru numerele întregi mai mari, având limite intre $-2^{63}$ și $2^{63} - 1$ ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ și $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre. 
+* tipul **char** - tipul de date folosit pentru lucrul cu caractere, având limitele între $-128$ și $127$
 * tipul **bool** - așa cum îi zice și numele, este folosit pentru a păstra doar valori binare ($1$ sau $0$, corespunzător stărilor de True și False)
-* tipul **short** - un tip de date folosit pentru numerele întregi mai mici,  având limite intre $-2^{15}$ si $2^{15} - 1$ ($-32 \ 768$ si $32 \ 767$).
+* tipul **short** - un tip de date folosit pentru numerele întregi mai mici, având limite intre $-2^{15}$ și $2^{15} - 1$ ($-32 \ 768$ și $32 \ 767$).
 
-!!! note "Observație"   
-    Pe lângă aceste tipuri, există și tipul de date **__int128** care ne permite să stocăm valori pe $128$ de biți (între $-2^{127}$ si $2^{127} - 1$)
+### Tipul **__int128**
+
+Pe lângă aceste tipuri, există și tipul de date **__int128** care ne permite să stocăm valori pe $128$ de biți, având limite între $-2^{127}$ și $2^{127} - 1$ (numere de aproximativ $37$ de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
 
 ### Tipurile de date unsigned 
 
