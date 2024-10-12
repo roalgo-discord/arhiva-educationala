@@ -292,6 +292,7 @@ Deși toate aceste soluții au utilitatea lor, pe parcurs, veți observa că sol
 * [Codeforces Tourist](https://codeforces.com/contest/76/problem/F)
 * [interclasare infoarena](https://infoarena.ro/problema/interclasare)
 * [USACO Gold Cowjog](http://www.usaco.org/index.php?page=viewproblem2&cpid=496)
+* [Pokemoni - Lot 2024 Juniori](https://kilonova.ro/problems/2808?list_id=1104)
 
 ## Lectură suplimentară 
 

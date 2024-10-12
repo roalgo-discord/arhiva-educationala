@@ -570,8 +570,6 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Probleme suplimentare
 
-## Probleme suplimentare
-
 ### Probleme de la olimpiade
 
 - [Combination](https://kilonova.ro/problems/1982)
