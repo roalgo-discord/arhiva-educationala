@@ -280,6 +280,7 @@ De asemenea, recursivitatea indirectă reprezintă o metodă elegantă de rezolv
 * [OJI 2018 eq4](https://kilonova.ro/problems/901)
 * [ONI 2018 Baraj Juniori gcl](https://kilonova.ro/problems/1091)
 * [OJI 2020 arh](https://kilonova.ro/problems/928)
+* [ONI 2014 Baraj Juniori opmult](https://kilonova.ro/problems/1080)
 * [Urmasii lui Moisil 2023 Indiciu](https://kilonova.ro/problems/528)
 * [Probleme cu evaluarea de expresii de pe Kilonova](https://kilonova.ro/tags/332)
 * [Probleme cu evaluarea de expresii de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=91)
