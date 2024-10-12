@@ -191,7 +191,7 @@ int main() {
 ## Algoritmul lui Boruvka
 
 !!! info "Definiție" 
-    Acest algoritm începe cu fiecare nod fiind într-o comopnentă conexă doar cu el însuși. Apoi, va face iterații prin graf, până când nu este arbore (adică cât timp mai sunt cel puțin două componente conexe). El va găsi pentru fiecare componentă conexă (sau pentru fiecare nod, depinzând de problemă) cea mai bună muchie nefolosită (de obicei, cea cu cost cvel mai mic) care o (îl) unește de altă componentă conexă. După ce aceste muchii sunt găsite, ele sunt folosite. Vom folosi și la acest algoritm structura Union-Find pentru a afla dacă muchiile duc la componente conexe diferite și pentru a uni două componente conexe.
+    Acest algoritm începe cu fiecare nod fiind într-o comopnentă conexă doar cu el însuși. Apoi, va face iterații prin graf, până când nu este arbore (adică cât timp mai sunt cel puțin două componente conexe). El va găsi pentru fiecare componentă conexă (sau pentru fiecare nod, depinzând de problemă) cea mai bună muchie nefolosită (de obicei, cea cu costul minim) care o (îl) unește de altă componentă conexă. După ce aceste muchii sunt găsite, ele sunt folosite. Vom folosi și la acest algoritm structura Union-Find pentru a afla dacă muchiile duc la componente conexe diferite și pentru a uni două componente conexe.
 
 !!! note "Observație"
     La fiecare iterare prin graf, numărul de componente conexe se înjumătățește. La început sunt $n - 1$ componente conexe, deci se vor face $O(\log n)$ iterații. Astfel, complexitatea algoritmului este $O(m \log n)$, unde $m$ este numărul de muchii, iar $n$ este numărul de noduri.
