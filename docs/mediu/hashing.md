@@ -365,6 +365,7 @@ int main() {
 * [subsecvente OJI 2013](https://kilonova.ro/problems/36)
 * [Carry Bit IIOT 2023-24](https://kilonova.ro/problems/2165)
 * [sp Lot juniori 2021](https://kilonova.ro/problems/1702)
+* [gimigpt Lot Juniori 2024](https://kilonova.ro/problems/2836/)
 * [mixperm Lot juniori 2017](https://kilonova.ro/problems/1690)
 * [Palindrome String](https://kilonova.ro/problems/1903)
 * [sap RoAlgo Contest 6 - XOR Hashing](https://kilonova.ro/problems/1802)
