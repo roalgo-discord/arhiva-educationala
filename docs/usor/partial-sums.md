@@ -201,6 +201,7 @@ Pentru aprofundarea algoritmilor prezentați mai sus, recomand rezolvarea următ
 * [Good Subarrays - Codeforces](https://codeforces.com/contest/1398/problem/C)
 * [Running Miles - Codeforces](https://codeforces.com/contest/1826/problem/D)
 * [Irreductible Anagrams](https://codeforces.com/contest/1291/problem/D)
+* [Tea Tasting](https://codeforces.com/contest/1795/problem/C)
 * [Nusret Gokce](https://codeforces.com/gym/104114/problem/N)
 * [Constant Palindrome Sum - Codeforces](https://codeforces.com/contest/1343/problem/D)
 * [Two Pointers Step 3 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)

@@ -21,6 +21,8 @@ Pe parcurs, vom menționa diverse scenarii de start, împreună cu mijloacele pr
 
 De asemenea, recomandăm învățarea materiei folosind articolele scrise de noi, iar în funcție de clasă, poți găsi programa, împreună cu locurile de unde o poți învăța în articolele din aceeași secțiune. 
 
+Un alt aspect important și ceva care recomand este păstrarea ultimilor ani ai OJI/ONI pentru eventuale simulări de concurs, o simulare fiind recrearea condițiilor de concurs, practic ești contra cronometru și vrei să obții cât mai multe puncte în timpul de concurs. Chiar dacă vom detalia acest lucru în articolul despre abordarea olimpiadei, acest sfat trebuie să-l aveți în vedere în general, pentru a vă pregăti mai bine de olimpiadă. 
+
 Nu în ultimul rând, este foarte important să privești parcursul tău la informatică și ca o activitate socială. Fie că e vorba de colegii tăi de la clasă, profesorul tău sau prietenii pe care ți-i faci pe serverul nostru, latura socială a parcuruslui la informatică este mult mai importantă decât pare. Poți progresa mult mai repede, în special dacă lucrezi împreună cu colegi de diverse niveluri, astfel încât nelămuririle tale să fie rezolvate mai ușor. 
 
 ## Scenariu 1 - Începi în gimnaziu sau chiar mai devreme
