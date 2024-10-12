@@ -201,22 +201,19 @@ int main() {
 
 Aici puteți găsi o implementare în C++ a algoritmului lui Boruvka:
 ```cpp
-#include <fstream>
-
-std::ifstream fin("apm.in");
-std::ofstream fout("apm.out");
-
+#include <iostream>
+ 
 const int MAXN = 200'000;
 const int MAXM = 400'000;
-
-int n, m, minedge[MAXN];
+ 
+int n, m, minedge[MAXN], foundEdge;
 long long rez;
 char viz[MAXM];
-
+ 
 struct Edge {
     int u, v, cost;
 } edges[MAXM];
-
+ 
 struct DSU {
     int sef[MAXN], cate_comp;
     
@@ -242,24 +239,30 @@ struct DSU {
         }
     }
 } dsu;
-
+ 
+void fastReadWrite() {
+    std::ios_base::sync_with_stdio(false):
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+}
+ 
 void readGraph() {
     int i;
-    fin >> n >> m;
+    std::cin >> n >> m;
     for (i = 0; i < m; i++) {
-        fin >> edges[i].u >> edges[i].v >> edges[i].cost;
+        std::cin >> edges[i].u >> edges[i].v >> edges[i].cost;
         edges[i].u--;
         edges[i].v--;
     }
 }
-
+ 
 void resetComps() {
     int i;
     for (i = 0; i < n; i++) {
         minedge[i] = -1;
     }
 }
-
+ 
 // este muchia a mai buna ca muchia b?
 int better(int a, int b) {
     if (b == -1) {
@@ -267,7 +270,7 @@ int better(int a, int b) {
     }
     return edges[a].cost < edges[b].cost;
 }
-
+ 
 void processEdges() {
     int i, u, v;
     for (i = 0; i < m; i++) {
@@ -285,7 +288,7 @@ void processEdges() {
         }
     }
 }
-
+ 
 void processComps() {
     int i, u, v;
     for (i = 0; i < n; i++) { // trecem prin fiecare componenta
@@ -295,30 +298,33 @@ void processComps() {
             dsu.join(edges[minedge[i]].u, edges[minedge[i]].v); // unim componentele
             rez += edges[minedge[i]].cost; // adunam costul
             viz[minedge[i]] = 1; // am folosit muchia
+            foundEdge = 1;
         }
     }
 }
-
+ 
 void findMST() {
     int i, u, v;
     
     dsu.init(n);
     rez = 0;
-    while (dsu.cate_comp > 1) { // cat timp nu e arbore
+    foundEdge = 1;
+    while (dsu.cate_comp > 1 && foundEdge) { // cat timp nu e arbore si mai putem face ceva
+        foundEdge = 0;
         resetComps(); // resetam componentele
         processEdges(); // trecem prin fiecare muchie
         processComps(); // unim fiecare componenta cu muchia ei cea mai buna
     }
-    
-    fout << rez << "\n" << n - 1 << "\n"; // un arbore are n - 1 muchii
-    for (i = 0; i < m; i++) {
-        if (viz[i]) { // daca am folosit muchia o afisam
-            fout << edges[i].u + 1 << " " << edges[i].v + 1 << "\n";
-        }
+    if (dsu.cate_comp > 1) {
+        std::cout << "IMPOSSIBLE\n";
+    }
+    else {
+        std::cout << rez << "\n";
     }
 }
-
+ 
 int main() {
+    fastReadWrite();
     readGraph();
     findMST();
     return 0;
