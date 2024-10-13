@@ -195,25 +195,25 @@ int main()
 
 ## Problemă rezolvată - [Lot 2024 Juniori pmo](https://kilonova.ro/problems/2807)
 
-Mai intai, vom fixa numarul de factori din produs. Fie acesta $i$. Putem observa ca $i$ este mai mic sau egal cu suma exponentilor din descompunerea in factori primi a lui $x$ (sa notam aceasta suma cu $S$).Noi nu putem sa ne asiguram ca fiecare numar va fi mai mare ca 1 decat daca ne asiguram ca fiecare numar are toate numerele prime din descompunerea lui $x$ in produs.
+Mai întâi, vom fixa numărul de factori din produs. Fie acesta $i$. Putem observa că $i$ este mai mic sau egal cu suma exponenților din descompunerea în factori primi a lui $x$ (să notăm această sumă cu $S$). Noi nu putem să ne asigurăm ca fiecare număr va fi mai mare ca $1$ decât dacă ne asigurăm că fiecare număr are toate numerele prime din descompunerea lui $x$ în descompunerea lui.
 
-Noi vrem ca exact $0$ din cele $i$ elemente sa fie egale cu $1$. Pentru a calcula acest numar, putem aplica principiul includerii si excluderii in functie de cate elemente am fixat sa fie egale cu $1$.
+Noi vrem ca exact $0$ din cele $i$ elemente să fie egale cu $1$. Pentru a calcula acest număr, putem aplica PINEX în funcție de câte elemente am fixat să fie egale cu $1$.
 
-Fie $f(n, i)$ numarul de moduri de a imparti numarul $n$ in produs de $i$ elemente, care pot fi si egale cu $1$.
+Fie $f(n, i)$ numărul de moduri de a împărți numărul $n$ în produs de $i$ elemente, care pot fi și egale cu $1$.
 
-Raspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x, i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ in $C _i ^j$ moduri.
-
-
-!!! "Observatie"
-    Sa calculam $f(n, i)$. Fie $k$ numarul de factori primi ai lui $n$ si $exp_k$ exponentul al celui de-al $k$-lea factor prim in $n$. Pentru a afla numarul, putem sa ne legam de fiecare factor prim. Noi trebuie sa vedem cati vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule au suma elementelor egale cu $exp_K$. Aceasta formula este studoiata la [Stars and Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars). Asa ca, numarul cautat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
+Raspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x, i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i ^j$ moduri.
 
 !!! "Observatie"
-    Descompunerea in factori primi o vom face folosind numerele prime, pe care le vom precalcula folosind [ciurul lui eratostene](https://edu.roalgo.ro/usor/sieve/).
+    Să calculam $f(n, i)$. Fie $k$ numarul de factori primi ai lui $n$ și fie $exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule au suma elementelor egală cu $exp_K$. Această formulă este studoiată în articolul de [Stars and Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars). Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
 
 !!! "Observatie"
-    Unele calcule pot fi foarte mari, mai mari decat poate stoca tipul **long long**. De aceea, vom folosi [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
+    Descompunerea în factori primi o vom face folosind numerele prime, pe care le vom precalcula folosind [ciurul lui eratostene](https://edu.roalgo.ro/usor/sieve/).
+
+!!! "Observatie"
+    Unele calcule pot fi foarte mari, mai mari decât poate stoca tipul **long long**. De aceea, vom folosi [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
 
 Sursa de 100 de puncte:
+
 ```cpp
 #include <fstream>
 #include <string>
