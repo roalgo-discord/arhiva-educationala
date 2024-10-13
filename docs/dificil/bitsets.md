@@ -31,21 +31,30 @@ int main(){
 #### Output
 ```1000001001```
 
-*Obsevăm că*:
+**Obsevăm că**:
 * Elementele sunt indexate de la $0$.
 * ```cout << b;``` va afisa toate elementale de la **dreapta la stanga**. 
-* Este prezent operatorul **[]**.
+* Este prezent ```operator[]```.
 
-
-###Operatori permisi
+### Operatori permisi
 
 * ```operator==``` si ```operator!=``` compara continutul cu alt ```bitset```. 
 * ```operator[]``` acceseaza valoarea unui bit la o pozitie anume.
 * Operatori logici: 
-	1. ```operator&=``` 
-	2. ```operator&=```
-	3. ```operator&=```
-	4. ```operator&=```
+		<ol type = "1">
+			<li>```operator&=```</li>
+			<li>```operator|=```</li>
+			<li>```operator^=```</li>
+			<li>```operator~```</li>
+   			<li>```operator<<=```</li>
+      			<li>```operator>>=```</li>
+			<li>```operator<<```</li>
+   			<li>```operator>>```</li>
+		</ol>
+
+  Operatorii logici functioneaza la fel ca atunci cand le folosim pe alte tipuri de date cum ar fi ```int```, dar datorita dimensiunilor mari pe care le poate suporta un **bitset**, aceasta vin de cele mai multe ori cu o optimizare cruciala ce consta in gruparea **bitilor** in grupe de cate $32$ elemente, convertirea acestora in **numere intregi**, aplicarea operatiei logice si inlocuirea numarului in bitset. Cum pe un numar intreg o operatie logica este constanta, putem deduce deci ca complexitatea pentru o astfel de operatie este $O \( \frac{N}{w} \)$.
+
+
 ## Problema exemplu
 
 ## Concluzii
