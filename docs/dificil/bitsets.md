@@ -8,7 +8,7 @@ tags:
 
 
 ## Introducere
-
+$\display_style \sum_{i = 1}^{n} a_i$
 ## Problema exemplu
 
 ## Concluzii
