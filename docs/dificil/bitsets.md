@@ -44,8 +44,8 @@ int main(){
 * ```operator|=``` operator binar **SAU**.
 * ```operator^=``` operator binar **XOR**.
 * ```operator~``` operator binar **NOT**.
-* ```operator<<=``` siftare pe biti la stanga.
-* ```operator>>=``` siftare pe biti la dreapta.
+* ```operator<<=``` shift pe biti la stanga.
+* ```operator>>=``` shift pe biti la dreapta.
 
 **Program C++**
 ```cpp
@@ -72,7 +72,7 @@ int main(){
 0000001111
 0000000000
 ```
-
+!!! note Observatie Daca shiftarea, intr-o oricare directie, presupune pentru unele elemente egale cu $1$ sa "iasa" din **bitset**, atunci valoare de $1$ se va pierde permanent.
 
 ## ```std::bitset``` in programare competitiva
 
