@@ -120,7 +120,7 @@ int main(){
 
 ## ```std::bitset``` in programare competitivă
 
-Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este $O \( \dfrac{N}{w} \)$.
+Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este ![]{.
 
 
 ## Concluzii
