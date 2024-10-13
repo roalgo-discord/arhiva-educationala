@@ -8,7 +8,7 @@ tags:
 
 
 ## Introducere
-$\display_style \sum_{i = 1}^{n} a_i$
+În **C++** bitset reprezintă un container cu lungime fixă care stochează exact $N$ biți.
 ## Problema exemplu
 
 ## Concluzii
