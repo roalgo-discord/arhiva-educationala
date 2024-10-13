@@ -14,7 +14,26 @@ In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asocia
 * ```std::bitset``` se regăseste in libraria ```<bitset>``` sau ```<bits/stdc.++h>```.
 * linia ```bitset<N> b;``` declara un bitset cu exact $N$ biti, $N$ este constanta, i.e. se specifică explicit valoarea acesteia la declarare.
 
-```std::bitset```.
+#### Program C++
+```cpp
+bitset<10> b;
+int main(){
+	
+	b[0] = 1;
+	b[3] = 1;
+	b[9] = 1;
+
+	cout << b;
+}
+
+```
+
+#### Output
+```1000001001```
+
+**Obsevăm că**:
+* Elementele într-un ```bitset``` sunt de la **dreapta la stanga**.
+* ```cout << b;``` va afisa toate elementele.
 ## Problema exemplu
 
 ## Concluzii
