@@ -14,7 +14,7 @@ In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asocia
 * ```std::bitset``` se regăseste in libraria ```<bitset>``` sau ```<bits/stdc.++h>```.
 * linia ```bitset<N> b;``` declara un bitset cu exact $N$ biti, $N$ este constanta, i.e. se specifică explicit valoarea acesteia la declarare.
 
-#### Program C++
+**Program C++**
 ```cpp
 bitset<10> b;
 int main(){
@@ -28,7 +28,7 @@ int main(){
 
 ```
 
-#### Output
+**Output**
 ```1000001001```
 
 **Obsevăm că**:
@@ -40,22 +40,44 @@ int main(){
 
 * ```operator==``` si ```operator!=``` compara continutul cu alt ```bitset```. 
 * ```operator[]``` acceseaza valoarea unui bit la o pozitie anume.
-* Operatori logici: 
-		<ol type = "1">
-			<li>```operator&=```</li>
-			<li>```operator|=```</li>
-			<li>```operator^=```</li>
-			<li>```operator~```</li>
-   			<li>```operator<<=```</li>
-      			<li>```operator>>=```</li>
-			<li>```operator<<```</li>
-   			<li>```operator>>```</li>
-		</ol>
+* ```operator&=``` operator binar **SI**.
+* ```operator|=``` operator binar **SAU**.
+* ```operator^=``` operator binar **XOR**.
+* ```operator~``` operator binar **NOT**.
+* ```operator<<=``` siftare pe biti la stanga.
+* ```operator>>=``` siftare pe biti la dreapta.
 
-  Operatorii logici functioneaza la fel ca atunci cand le folosim pe alte tipuri de date cum ar fi ```int```, dar datorita dimensiunilor mari pe care le poate suporta un **bitset**, aceasta vin de cele mai multe ori cu o optimizare cruciala ce consta in gruparea **bitilor** in grupe de cate $32$ elemente, convertirea acestora in **numere intregi**, aplicarea operatiei logice si inlocuirea numarului in bitset. Cum pe un numar intreg o operatie logica este constanta, putem deduce deci ca complexitatea pentru o astfel de operatie este $O \( \frac{N}{w} \)$.
+**Program C++**
+```cpp
+bitset<10> b;
+int main(){
+	
+	b[0] = 1;
+	b <<= 1;
+    	cout << b << '\n';
 
 
-## Problema exemplu
+	b ^= 13;
+	cout << b << '\n';
+		
+	b >>= 100;
+	cout << b;
+}
+
+```
+
+**Output**
+```
+0000000010
+0000001111
+0000000000
+```
+
+
+## ```std::bitset``` in programare competitiva
+
+Operatoriile binari functioneaza la fel ca atunci cand le folosim pe alte tipuri de date cum ar fi ```int```, dar datorita dimensiunilor mari pe care le poate suporta un **bitset**, aceasta vin de cele mai multe ori cu o optimizare cruciala ce consta in gruparea **bitilor** in grupe de cate $32$ elemente, convertirea acestora in **numere intregi**, aplicarea operatiei si inlocuirea numarului in bitset. Cum pe un numar intreg o operatie binara este constanta, putem deduce deci ca complexitatea pentru o astfel de operatie este $O \( \frac{N}{w} \)$.
+
 
 ## Concluzii
 
