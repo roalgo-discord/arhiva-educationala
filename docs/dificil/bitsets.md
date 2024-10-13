@@ -31,9 +31,21 @@ int main(){
 #### Output
 ```1000001001```
 
-**Obsevăm că**:
-* Elementele într-un ```bitset``` sunt de la **dreapta la stanga**.
-* ```cout << b;``` va afisa toate elementele.
+*Obsevăm că*:
+* Elementele sunt indexate de la $0$.
+* ```cout << b;``` va afisa toate elementale de la **dreapta la stanga**. 
+* Este prezent operatorul **[]**.
+
+
+###Operatori permisi
+
+* ```operator==``` si ```operator!=``` compara continutul cu alt ```bitset```. 
+* ```operator[]``` acceseaza valoarea unui bit la o pozitie anume.
+* Operatori logici: 
+	1. ```operator&=``` 
+	2. ```operator&=```
+	3. ```operator&=```
+	4. ```operator&=```
 ## Problema exemplu
 
 ## Concluzii
