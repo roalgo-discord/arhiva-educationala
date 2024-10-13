@@ -9,6 +9,7 @@ tags:
 
 ## Introducere
 În **C++** bitset reprezintă un container cu lungime fixă care stochează exact $N$ biți.
+```std::bitset```.
 ## Problema exemplu
 
 ## Concluzii
