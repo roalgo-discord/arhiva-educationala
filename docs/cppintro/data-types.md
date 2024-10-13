@@ -55,6 +55,37 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Chiar da
 
 Pe lângă aceste tipuri, există și tipul de date **__int128** care ne permite să stocăm valori pe $128$ de biți, având limite între $-2^{127}$ și $2^{127} - 1$ (numere de aproximativ $37$ de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
 
+Noi nu putem să citim și să afișăm direct **__int128**, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim **std::cin >> x** chiar dacă $x$ este **__int128**
+
+```cpp
+#include <string> // pentru std::string
+#include <algorithm> // pentru std::reverse
+
+// citire
+std::istream &operator>>(std::istream &in, __int128 &n) {
+    int i;
+    std::string s;
+    in >> s;
+    n = 0;
+    for (i = 0; i < (int)s.size(); i++) {
+        n = n * 10 + s[i] - '0';
+    }
+    return in;
+}
+
+// afisare
+std::ostream &operator<<(std::ostream &out, __int128 n) {
+    std::string s = "";
+    do {
+        s.push_back('0' + n % 10);
+        n /= 10;
+    } while (n > 0);
+    std::reverse(s.begin(), s.end());
+    out << s;
+    return out;
+}
+```
+
 ### Tipurile de date unsigned 
 
 Uneori, putem fi în situația în care să avem nevoie de numere un pic mai mari decât limitele acestor tipuri de date, fără a avea memoria să folosim tipul de date superior. Aici devin utile tipurile unsigned. 

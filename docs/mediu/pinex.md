@@ -193,6 +193,173 @@ int main()
 }
 ```
 
+## Problemă rezolvată - [Lot 2024 Juniori pmo](https://kilonova.ro/problems/2807)
+
+Mai întâi, vom fixa numărul de factori din produs. Fie acesta $i$. Putem observa că $i$ este mai mic sau egal cu suma exponenților din descompunerea în factori primi a lui $x$ (să notăm această sumă cu $S$). Noi nu putem să ne asigurăm ca fiecare număr va fi mai mare ca $1$ decât dacă ne asigurăm că fiecare număr are toate numerele prime din descompunerea lui $x$ în descompunerea lui.
+
+Noi vrem ca exact $0$ din cele $i$ elemente să fie egale cu $1$. Pentru a calcula acest număr, putem aplica PINEX în funcție de câte elemente am fixat să fie egale cu $1$.
+
+Fie $f(n, i)$ numărul de moduri de a împărți numărul $n$ în produs de $i$ elemente, care pot fi și egale cu $1$.
+
+Raspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x, i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i ^j$ moduri.
+
+!!! "Observatie"
+    Să calculam $f(n, i)$. Fie $k$ numarul de factori primi ai lui $n$ și fie $exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule au suma elementelor egală cu $exp_K$. Această formulă este studoiată în articolul de [Stars and Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars). Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
+
+!!! "Observatie"
+    Descompunerea în factori primi o vom face folosind numerele prime, pe care le vom precalcula folosind [ciurul lui eratostene](https://edu.roalgo.ro/usor/sieve/).
+
+!!! "Observatie"
+    Unele calcule pot fi foarte mari, mai mari decât poate stoca tipul **long long**. De aceea, vom folosi [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
+
+Sursa de 100 de puncte:
+
+```cpp
+#include <fstream>
+#include <string>
+#include <algorithm>
+
+std::ifstream fin("pmo.in");
+std::ofstream fout("pmo.out");
+
+std::istream &operator>>(std::istream &in, __int128 &n) {
+    int i;
+    std::string s;
+    in >> s;
+    n = 0;
+    for (i = 0; i < (int)s.size(); i++) {
+        n = n * 10 + s[i] - '0';
+    }
+    return in;
+}
+
+std::ostream &operator<<(std::ostream &out, __int128 n) {
+    std::string s = "";
+    do {
+        s.push_back('0' + n % 10);
+        n /= 10;
+    } while (n > 0);
+    std::reverse(s.begin(), s.end());
+    out << s;
+    return out;
+}
+
+const int MAXP = 32'000;
+const int MAXEXPS = 64;
+
+char ciur[MAXP];
+int prime[MAXP], exps[MAXEXPS], sumexp, nfact;
+long long comb[MAXEXPS][MAXEXPS];
+__int128 ways[MAXEXPS]; // ways[i] = nrmod de a scrie x ca prod de i nr
+
+void precomputeSieve() {
+    int i, j;
+    for (i = 2; i * i < MAXP; i++) {
+        if (ciur[i] == 0) {
+            for (j = i * i; j < MAXP; j += i) {
+                ciur[j] = 1;
+            }
+        }
+    }
+}
+
+void precomputePrimes() {
+    int i, p;
+    p = 0;
+    for (i = 2; i < MAXP; i++) {
+        if (ciur[i] == 0) {
+            prime[p++] = i;
+        }
+    }
+}
+
+void precomputeComb() {
+    int i, j;
+    comb[0][0] = 1;
+    for (i = 1; i < MAXEXPS; i++) {
+        comb[i][0] = 1;
+        for (j = 1; j <= i; j++) {
+            comb[i][j] = comb[i - 1][j] + comb[i - 1][j - 1];
+        }
+    }
+}
+
+void precompute() {
+    precomputeSieve();
+    precomputePrimes();
+    precomputeComb();
+}
+
+void decomposeInPrimes(int val) {
+    int i;
+    nfact = i = sumexp = 0;
+    while (prime[i] * prime[i] <= val) {
+        if (val % prime[i] == 0) {
+            exps[nfact] = 0;
+            do {
+                exps[nfact]++;
+                val /= prime[i];
+            } while (val % prime[i] == 0);
+            sumexp += exps[nfact++];
+        }
+        i++;
+    }
+    if (val > 1) {
+        exps[nfact++] = 1;
+        sumexp++;
+    }
+}
+
+long long starsAndBars(int n, int k) {
+    return comb[n + k - 1][k - 1];
+}
+
+void computeWays() {
+    int i, j;
+    for (i = 0; i <= sumexp; i++) {
+        ways[i] = 1;
+        for (j = 0; j < nfact; j++) {
+            ways[i] *= starsAndBars(exps[j], i);
+        }
+    }
+}
+
+void calcAnswer() {
+    int i, j;
+    __int128 answer, prod;
+    answer = 0;
+    for (i = 1; i <= sumexp; i++) {
+        for (j = 0; j < i; j++) {
+            prod = comb[i][j] * ways[i - j];
+            if (j % 2 == 0) {
+                answer += prod;
+            }
+            else {
+                answer -= prod;
+            }
+        }
+    }
+    fout << answer << "\n";
+}
+
+void answerQueries() {
+    int t, x;
+    fin >> t;
+    while (t--) {
+        fin >> x;
+        decomposeInPrimes(x);
+        computeWays();
+        calcAnswer();
+    }
+}
+
+int main() {
+    precompute();
+    answerQueries();
+    return 0;
+}
+```
+
 ## Concluzii
 
 Principiul includerii și excluderii este un principiu ce se dovedește a fi util în foarte multe probleme de numărare, cunoașterea acestuia dovedindu-se a fi esențială în multe probleme, începând de la concursurile de juniori (lot, concursuri internaționale) și terminând cu diverse competiții online în care teoria numerelor își face apariția. Mai târziu, funcții sau constante ce se bazează pe PINEX vor demonstra o dată în plus utilitatea acestui principiu. Problemele de mai jos pot avea și alte abordări, în afară de cea cu PINEX, toate fiind foarte utile și folositoare în competițiile de informatică. 
@@ -209,7 +376,6 @@ Principiul includerii și excluderii este un principiu ce se dovedește a fi uti
 * [Codeforces Small GCD](https://codeforces.com/contest/1900/problem/D)
 * [Lot Juniori 2015 cardinal](https://kilonova.ro/problems/1639)
 * [Lot Juniori 2019 divizori](https://kilonova.ro/problems/1807)
-* [Lot Juniori 2024 pmo](https://kilonova.ro/problems/2807)
 * [Lot Juniori 2023 countall](https://kilonova.ro/problems/640)
 * [ONI 2023 Comun](https://kilonova.ro/problems/536/)
 * [RoAlgo Contest #1 Echipe](https://kilonova.ro/problems/652)
