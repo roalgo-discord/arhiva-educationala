@@ -198,6 +198,7 @@ nav:
           - Dinamică pe stări exponențiale (bitmask DP): >-
               mediu/bitmask-dp.md
       - Teoria grafurilor:
+          - Cicluri în grafuri. Grafuri funcționale: mediu/cycles.md
           - Introducere în arbori. Diametrul unui arbore: mediu/tree-1.md
           - Sortare topologică: mediu/toposort.md
           - Păduri de mulțimi disjuncte (DSU): mediu/dsu.md

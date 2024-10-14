@@ -609,6 +609,7 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 - [Combinatorics - USACO Guide (articol + probleme)](https://usaco.guide/gold/combo?lang=cpp)
 - [Elemente de combinatorică](https://infogenius.ro/combinatorica/)
 - [Binomial Coefficients - Eolymp](https://basecamp.eolymp.com/en/posts/em5e34cc0d35p7omf3taia3fu4?fbclid=IwZXh0bgNhZW0CMTEAAR3K5oGUJpJiGSo1CG2r9McoQ3HQtmbdLJmPRbFDXzhyhcewZce2R6ETsxw_aem_ZmFrZWR1bW15MTZieXRlcw)
+- [Ghid despre permutari - nor-blog](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/)
 - [Elemente de combinatorică, curs predat la lotul de juniori din 2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
 - [Problem Solving Guide to Modular Combinatorics and Exponentiation - Codeforces](https://codeforces.com/blog/entry/78873)
