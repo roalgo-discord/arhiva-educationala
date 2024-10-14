@@ -5,13 +5,13 @@ tags:
     - optimizare
 ---
 
-
+**Autor**: Matei Ionescu
 
 ## Introducere
 In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asociată cu un **vector**, însă numărul de elemente este constant pe parcursul rulării programului. În linii mari, **bitset** nu aduce o contribuție mare asupra corectitudinii unui algoritm, sau nu reprezintă o tehnică  propriu-zisă, fiind folosit de cele mai multe ori doar pentru a face optimizări semnificative asupra timpului sau memoriei. 
 
 ### Sintaxă
-* ```std::bitset``` se regăsește in librăriile```<bitset>``` sau ```<bits/stdc.++h>```.
+* ```std::bitset``` se regăsește in librăriile```<bitset>``` sau ```<bits/stdc++.h>```.
 * Linia ```bitset<N> b;``` declară un bitset cu exact $N$ biți, $N$ este constantă, i.e. se specifică explicit valoarea acesteia la declarare.
 * De asemenenea putem declara un **bitset** care să conțină biții unui număr: ```bitset<10> b(13)```.
 
@@ -127,7 +127,7 @@ Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipu
 	Notații de tipul $$\ \ \large{O} \biggl( \frac{N}{32} \biggr)$$  **sau** $$\ \ \large{O} \biggl( \frac{N}{64} \biggr)$$ nu sunt corecte, pentru că de cele mai multe ori [constantele sunt ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae), de aceea se folosește variabila $w$. 
 
 ### Problema [somnoros](https://kilonova.ro/problems/677?list_id=461)
-Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un [**DAG**](https://en.wikipedia.org/wiki/Directed_acyclic_graph) avem drum de la un nod la altul.
+Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un graf orientat aciclic avem drum de la un nod la altul.
 
 Considerăm următoare abordare: $dp[u][v] = 1$ dacă afirmația este adevarată.
 Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică $dp[f_j][x] |= dp[r_i][x]$, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată. Observăm că pentru $2$ noduri $u$ și $v$, $dp[u][x] |= dp[v][x]$ este echivalentul la $b1 |= b2$, unde $b1$ și $b2$ reprezintă $2$ ```std::bitset```-uri. Deci dacă în loc de ```vector<vector<int>> dp(n + 1, vector<int>(n + 1))``` am pune ```vector<bitset<const>> dp(n + 1)```, am putea face tranzițiile în $$\ \ \large{O} \biggl( \frac{N}{w} \biggr)$$, complexitatea finală fiind $$\ \ \large{O} \biggl( \frac{N^2}{w} \biggr)$$.
