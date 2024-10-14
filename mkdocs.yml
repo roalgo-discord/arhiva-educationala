@@ -153,6 +153,7 @@ nav:
           - Generarea șirurilor de numere: usor/generarea-sirurilor.md
           - Divizibilitatea: usor/divisibility.md
           - Ciurul lui Eratostene: usor/sieve.md
+          - Principiul lui Dirichlet (principiul cutiei): usor/dirichlet.md
       - Sortare și căutare:
           - Algoritmi de sortare: usor/sorting.md
           - Introducere în Metoda Greedy: usor/greedy.md

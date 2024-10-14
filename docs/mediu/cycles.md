@@ -561,8 +561,6 @@ Lucrul cu cicluri este important în ceea ce privește teoria grafurilor, iar ob
 * [USACO Bronze Swapity Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1013)
 * [USACO Silver Bovine Shuffle](https://usaco.org/index.php?page=viewproblem2&cpid=764)
 * [CSES Planets Cycles](https://cses.fi/problemset/task/1751)
-* [CSES Planet Queries I](https://cses.fi/problemset/task/1750)
-* [CSES Planet Queries II](https://cses.fi/problemset/task/1160)
 * [Codeforces Lucky Permutation](https://codeforces.com/contest/1768/problem/D)
 * [infoarena domino](https://www.infoarena.ro/problema/domino)
 * [infoarena johnie](https://www.infoarena.ro/problema/johnie)

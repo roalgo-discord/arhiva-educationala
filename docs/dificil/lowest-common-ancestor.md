@@ -126,6 +126,8 @@ int solve(int a, int b) {
 * [Binary Lifting + LCA](https://usaco.guide/plat/binary-jump?lang=cpp)
 * [LCA, predat la CPPI Craiova](https://iordachebogdan.github.io/cppi/lca_nivel_avansat.html)
 * [Milk Visits USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=968)
+* [CSES Planet Queries I](https://cses.fi/problemset/task/1750)
+* [CSES Planet Queries II](https://cses.fi/problemset/task/1160)
 * [Sap](https://kilonova.ro/problems/1802)
 * [Tutorial - Binary lifting](https://codeforces.com/blog/entry/100826)
 * [Tutorial video Errichto (Binary lifting)](https://www.youtube.com/watch?v=oib-XsjFa-M)
