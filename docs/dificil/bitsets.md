@@ -289,15 +289,11 @@ Vom aborda o metodă similară cu prima problema, unde vom reține într-un tabl
 
 Pentru a înțelege mai bine haideți să vizualizăm concret ce se întâmplă pe unul dintre exemple. 
 
-$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$
-
-$\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$
-
-$\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$
-
-$\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$
-
-$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$
+   $\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$  
+   $\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$  
+  $\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$  
+  $\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$  
+  $\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$  
 
 ## Concluzii
 
