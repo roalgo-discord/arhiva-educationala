@@ -121,7 +121,10 @@ int main(){
 
 ## ```std::bitset``` in programare competitivă
 
-Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este  $$\ \ \large{O} \biggl( \frac{N}{w} \biggr)$$ .
+Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este  $$\ \ \large{O} \biggl( \frac{N}{w} \biggr)$$ , unde $w$ de regulă seminifică constanta cu care este împărțit numărul de elemente $N$.
+
+!!! note "Atenție"
+	Notații de tipul $$\ \ \large{O} \biggl( \frac{N}{32} \biggr)$$  **sau** $$\ \ \large{O} \biggl( \frac{N}{64} \biggr)$$ nu sunt corecte, pentru că de cele mai multe ori [constantele sunt ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae), de aceea se folosește variabila $w$. 
 
 ### Problema [somnoros](https://kilonova.ro/problems/677?list_id=461)
 Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un [**DAG**](https://en.wikipedia.org/wiki/Directed_acyclic_graph) avem drum de la un nod la altul.
@@ -188,7 +191,7 @@ int main() {
 
 ### Problema [strehaia](https://kilonova.ro/problems/684?list_id=461)
 
-Avem $n$ probleme, a $i$-a având $k_i$ subtaskuri, fiecare cu un număr de puncte. Problema ne cere să calculăm numărul total de punctaje distincte care se pot forma în urma rezolvări celor $n$ probleme.
+Avem $n$ probleme, a $i$-a având $k_i$ subtaskuri, fiecare cu un număr de puncte între $1$ și $100$. Problema ne cere să calculăm numărul total de punctaje distincte care se pot forma în urma rezolvări celor $n$ probleme.
 
 O primă observație este că problemele pot fi luate independent, ceea ce înseamnă că nu contează ce subtaskuri are o anumită problemă, ci câte subtaskuri au un anumit punctaj.
 Fie $fr[i]$ numărul de subtaskuri cu $i$ puncte, și $dp[i] = 1$ dacă exista un set de subtaskuri cu suma $i$. Este destul de clar că putem constitui următorul rucsac:
@@ -222,7 +225,7 @@ for(int i = 1; i <= 100; i++){
 ```
 Cu operatorul ``` |= ``` păstrăm sumele deja calculate în **dp**, iar cu operatorul ``` << ``` vom face tranzițiile, cu alte cuvinte dacă shiftăm fiecare bit cu $i$ poziții, toate sumele prezente în **dp** vor crește cu $i$, sintaxă echivalentă cu ```  dp[s + i] |= dp[s]; ```.
 
-Complexitatea devine $O \biggl( S \cdot maxsum \cdot  \frac{1}{w} \biggr)$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$. Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j = 0}^{p-1} 2^j  + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să construim fiecare număr de la $1$ la $2^{p}-1$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile  de a lua numărul $i$.
+Complexitatea devine $O \biggl( S \cdot maxsum \cdot  \frac{1}{w} \biggr)$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$. Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j = 0}^{p-1} 2^j  + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să construim fiecare număr de la $1$ la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p + 1$, vom putea reprezenta fiecare număr de la $1$ la $fr_i$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile  de a lua numărul $i$.
 
 ```cpp
 dp[0] = 1;
@@ -239,7 +242,63 @@ for (int i = 1; i <= 100; i++) {
 }
 ```
 
+**Programul complet**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n;
+vector<int> fr(101);
+bitset < (int)1e6 + 200 > dp;
+int main() {
+	cin.tie(0)->sync_with_stdio(0);
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		int w;
+		cin >> w;
+		for (int j = 1; j <= w; j++) {
+			int val;
+			cin >> val;
+			fr[val]++;
+		}
+	}
+	
+	dp[0] = 1;
+	for (int i = 1; i <= 100; i++) {
+		int mask = 1;
+		while (fr[i]) {
+			fr[i] -= mask;
+			dp |= (dp << (i * mask));
+			mask *= 2;
+			if (mask > fr[i]) {
+				mask = fr[i];
+			}
+		}
+	}
+	cout << dp.count();
+}
+```
+
 Timpul se reduce la $O \biggl( log(S) \cdot maxsum \cdot  \frac{1}{w} \biggr)$
+
+### Problema [Copaci](https://kilonova.ro/problems/2805), Lot 2024 Baraj 2 Juniori
+
+Ni se dă o matrice cu $N \cdot N$ elemente și un string $S$, ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel mai mare prefix al șirului $S$ care poate constituie un drum valid în matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice și următorul element are exact o latură comună cu cel actual, iar fiecare element din drum este egal cu reprezentantul lui în șir. Citți problema pentru a înțelege mai bine.
+
+Vom aborda o metodă similară cu prima problema, unde vom reține într-un tablou dacă o poziție anume a fost "atinsă" până acuma sau nu.
+
+Pentru a înțelege mai bine haideți să vizualizăm concret ce se întâmplă pe unul dintre exemple. 
+
+$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$
+
+$\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$
+
+$\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$
+
+$\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$
+
+$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$
+
 ## Concluzii
 
 ## Probleme suplimentare
