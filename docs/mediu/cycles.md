@@ -319,6 +319,9 @@ Cu alte cuvinte, aceste grafuri sunt o reuniune de cicluri, împreună cu niște
 
 Aceste grafuri, datorită formei lor speciale, au multe proprietăți interesante și fac prelucrarea lor mai ușoară. De multe ori, vom vrea să filtrăm nodurile care nu fac parte din cicluri, iar mai apoi, să lucrăm cu fiecare ciclu în mod independent. Vom folosi câteva exemple pentru a prezenta acest concept în diverse probleme de la competiții de informatică.
 
+!!! warning "Ciclurile permutarilor"  
+    Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective) a articolului despre permutări, unde se vorbește de ciclurile unei permutări și aplicațiile care implică grafuri funcționale
+
 ### Problemă exemplu - [Mouse Hunt - Codeforces](https://codeforces.com/contest/1027/problem/D)
 
 Pentru a rezolva această problemă, vrem să filtrăm nodurile care nu aparțin ciclurilor, iar algoritmul pe care îl vom prezenta mai jos va fi unul standard, care va fi aplicat în multe asemenea probleme. 
@@ -558,6 +561,8 @@ Lucrul cu cicluri este important în ceea ce privește teoria grafurilor, iar ob
 * [USACO Bronze Swapity Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1013)
 * [USACO Silver Bovine Shuffle](https://usaco.org/index.php?page=viewproblem2&cpid=764)
 * [CSES Planets Cycles](https://cses.fi/problemset/task/1751)
+* [CSES Planet Queries I](https://cses.fi/problemset/task/1750)
+* [CSES Planet Queries II](https://cses.fi/problemset/task/1160)
 * [Codeforces Lucky Permutation](https://codeforces.com/contest/1768/problem/D)
 * [infoarena domino](https://www.infoarena.ro/problema/domino)
 * [infoarena johnie](https://www.infoarena.ro/problema/johnie)
