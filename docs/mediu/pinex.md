@@ -201,15 +201,15 @@ Noi vrem ca exact $0$ din cele $i$ elemente să fie egale cu $1$. Pentru a calcu
 
 Fie $f(n, i)$ numărul de moduri de a împărți numărul $n$ în produs de $i$ elemente, care pot fi și egale cu $1$.
 
-Raspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x, i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i ^j$ moduri.
+Răspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x, i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i ^j$ moduri.
 
-!!! "Observatie"
-    Să calculam $f(n, i)$. Fie $k$ numarul de factori primi ai lui $n$ și fie $exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule au suma elementelor egală cu $exp_K$. Această formulă este studoiată în articolul de [Stars and Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars). Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
+!!! note "Observașie"
+    Să calculam $f(n, i)$. Fie $k$ numărul de factori primi ai lui $n$ și fie $exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule au suma elementelor egală cu $exp_K$. Această formulă este studoiată în articolul de [Stars and Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars). Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
 
-!!! "Observatie"
+!!! note "Observație"
     Descompunerea în factori primi o vom face folosind numerele prime, pe care le vom precalcula folosind [ciurul lui eratostene](https://edu.roalgo.ro/usor/sieve/).
 
-!!! "Observatie"
+!!! note "Observație"
     Unele calcule pot fi foarte mari, mai mari decât poate stoca tipul **long long**. De aceea, vom folosi [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
 
 Sursa de 100 de puncte:
