@@ -19,7 +19,7 @@ Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervale
 
 Fie $rmq_{i, j} = $ minimul numerelor din intervalul $[j, j + 2^i)$.
 
-$$rmq_{i, j} = \begin{cases} v_j &\text{daca } j = 0 \\ min(rmq_{i-1, j}, rmq_{i-1, j + 2^{i-1}}) \text{daca } j > 0 \end{cases}$$
+$$rmq_{i, j} = \begin{cases} v_j &\text{dacă } j = 0 \\ min(rmq_{i-1, j}, rmq_{i-1, j + 2^{i-1}}) &\text{dacă } j > 0 \end{cases}$$
 
 !!! warning “Atenție“
     Este foarte important ca, în $rmq_{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
