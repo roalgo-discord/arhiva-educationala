@@ -204,6 +204,7 @@ Dinamica pe stări exponențiale este o tehnică foarte utilă când trebuie să
 * [OJI 2020 RecycleBin](hhttps://kilonova.ro/problems/19/)
 * [Lot Juniori 2014 ssce](https://kilonova.ro/problems/1756)
 * [Lot Juniori 2024 nooverlap](https://kilonova.ro/problems/2802/)
+* [Lot Juniori 2016 ksiruri](https://kilonova.ro/problems/1716)
 * [Lot Juniori 2024 numbers](https://kilonova.ro/problems/2839?list_id=1115)
 * [OJI 2005 scara](https://kilonova.ro/problems/746)
 * [AtCoder Matching](https://atcoder.jp/contests/dp/tasks/dp_o?lang=en)
@@ -213,6 +214,7 @@ Dinamica pe stări exponențiale este o tehnică foarte utilă când trebuie să
 * [Codeforces Team Building](https://codeforces.com/contest/1316/problem/E)
 * [Codeforces Minimax Problem](https://codeforces.com/contest/1288/problem/D)
 * [COCI 2016 Burza](https://oj.uz/problem/view/COCI16_burza)
+* [permutare - InfoTeams #2](https://kilonova.ro/problems/3247)
 
 ## Lectură suplimentară 
 
