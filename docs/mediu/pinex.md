@@ -5,7 +5,7 @@ tags:
     - multimi
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
 În unele probleme de algoritmică, suntem nevoiți să calculăm numărul de răspunsuri care se potrivesc cu o anumită regulă, dar numărarea directă a fiecărei reguli în mod individual nu aduce cu ușurință răspunsul corect. În cazul acestor probleme, vom apela la un principiu matematic folosit în foarte mulți algoritmi elementari studiați până acum, formalizând discuția și aducând mai multe asemenea probleme în discuție. 
 
