@@ -1,9 +1,9 @@
-
 ---
 tags:
     - C++
     - implementare
     - structuri de date
+    - STL
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Alex Vasiluță
