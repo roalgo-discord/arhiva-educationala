@@ -5,7 +5,7 @@ tags:
     - structuri de date
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu, Alex Vasiluță
+**Autori**: Ștefan-Cosmin Dăscălescu, Alex Vasiluță
 
 ## Introducere
 
@@ -17,7 +17,7 @@ Cu alte cuvinte, putem spune că programele scrise sunt programe de C care au ci
 
 ## Structuri de date de tip tablou
 
-În această secțiune, ne vom concentra pe structurile de date care pot fi reprezentate în sintaxa din C sub formă de tablouri. Fie că e vorba de vectori, cozi, stive sau tipuri de date mai complexe, toate acestea vor fi menționate în cele ce urmează. 
+În această secțiune, ne vom concentra pe structurile de date care pot fi reprezentate în sintaxa din C sub formă de tablouri. Fie că e vorba de vectori, cozi, stive sau tipuri de date mai complexe, toate acestea vor fi menționate în cele ce urmează.
 
 Deși acest articol poate fi parcurs fără cunoștințe anterioare, se recomandă parcurgerea [articolului anterior despre arrays](https://edu.roalgo.ro/cppintro/arrays/).
 
@@ -193,9 +193,8 @@ Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vo
 * ``make_tuple(a, b, c, ..., d)``: Returnează un tuplu cu valorile scrise în paranteză
 * ``tie(a, b, c, ..., d) = t``: Asignăm la $a, b, c, \dots, d$ valorile din tuplul $t$ în ordinea dată. 
 * ``get<i>(t)``: Returnează cea de-a i-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
-
+    
 Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă. 
-
 ```cpp
 tuple<int,  int,  int> t{3,  4,  5};
 int i =  1;
@@ -233,6 +232,8 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 
 -   `.begin()`  - iterator la primul element din structură;
 -   `.end()`  - iterator past-the-end pentru structură.
+-   `.rbegin()`  - iterator invers la ultimul element din structură;
+-   `.rend()`  - iterator invers past-the-beginning pentru structură.
 
 ### Ce pot face cu un iterator?
 
@@ -325,11 +326,116 @@ Structurile de date arborescente ne permit să putem lucra cu valori ordonate î
 
 ### Structura std::map
 
+Un map este o structură de date arborescentă care ne permite să păstrăm pentru fiecare cheie o valoare specifică, fiind foarte similar ca principiu cu funcțiile de la matematică. Pentru a putea folosi std::map, va trebui să includem biblioteca ``#include <map>``. Sintaxa acestuia va fi ``map <tip1, tip2> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  Cheile vor fi ordonate crescător, datorită implementării bazate pe red-black trees.
+
+Dintre cele mai importante funcții, vom enumera următoarele:
+
+* Atribuirea: ``mp[x] = y;`` face valoarea cheii $x$ să devină $y$. În mod particular, dacă încercăm să lucrăm cu o cheie $x_1$ neinițializată, ea va fi inițializată cu $0$, așa cum se va putea vedea în codul de mai jos.
+* Găsirea unui element: ``mp.find(x) != mp.end()`` verifică dacă $x$ există în map, fără a crea un element nou în map.
+* Ștergerea: ``mp.erase(x)`` șterge instanța cheii $x$ din map. Dacă $x$ nu se află în map, nu se întâmplă nimic.
+* Curățarea: ``mp.clear()`` șterge toate cheile din map. 
+* Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
+
+Cea mai simplă utilizare a unui map va fi drept un vector de frecvență dinamic, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a map-ului.
+
+```cpp
+map <int, int> mp; 
+
+mp[2] = 5; 
+mp[4] = 6;
+
+cout << mp[2] << '\n'; // 2
+cout << mp[3] << '\n'; // 0
+
+/*
+2 5
+3 0
+4 6
+*/
+for (map<int, int> ::iterator it = mp.begin(); it != mp.end(); it++) {
+    cout << it -> first << " " << it -> second << '\n';
+}
+mp.erase(3);
+  
+mp.clear();
+
+mp[3] = 4;
+mp[3] = 5;
+mp[6] = 1;
+
+for (auto it : mp) {
+    cout << it.first << " " << it.second << '\n';
+}
+if (mp.find(10) != mp.end()) {
+    cout << "Cheia 10 este in map\n";
+}
+else {
+    cout << "Cheia 10 nu este in map\n"; 
+}
+```
+
 ### Structura std::set
+
+Un set este o structură de date arborescentă care ne permite să păstrăm o listă de valori care apare, ordonată crescător, fiind foarte similar ca principiu cu mulțimile de la matematică. Pentru a putea folosi std::set, va trebui să includem biblioteca ``#include <set>``. Sintaxa acestuia va fi ``set <tip> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  
+
+Dintre cele mai importante funcții, vom enumera următoarele:
+
+* Inserarea: ``s.insert(x)`` adaugă $x$ în setul $s$. În mod particular, dacă încercăm să inserăm o valoare care deja este în set, nu se va întâmpla nimic.
+* Găsirea unui element: La fel ca la map, ``s.find(x) != s.end()`` verifică dacă $x$ există în set, fără a crea un element nou în set.
+* Ștergerea: ``s.erase(x)`` șterge $x$ din set. Dacă $x$ nu se află în set, nu se întâmplă nimic.
+* Curățarea: ``s.clear()`` șterge toate cheile din set. 
+* Lower_bound: ``s.lower_bound(x)`` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau ``s.end()`` dacă nu avem o asemenea valoare.
+* Upper_bound: ``s.upper_bound(x)`` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau ``s.end()`` dacă nu avem o asemenea valoare.
+* Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
+
+Cea mai simplă utilizare a unui set va fi drept o mulțime dinamică, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a setului. Totuși, nu vom putea păstra informații mai avansate, precum poziția relativă, acestea fiind discutate ulterior în articol, când vorbim despre policy based data structures.
+
+```cpp
+set<int> s;
+s.insert(1);  // [1]
+s.insert(14); // [1, 14]
+s.insert(9);  // [1, 9, 14]
+s.insert(2);  // [1, 2, 9, 14]
+cout << *s.upper_bound(7) << '\n';  // 9
+cout << *s.upper_bound(9) << '\n';  // 14
+cout << *s.lower_bound(5) << '\n';  // 9
+cout << *s.lower_bound(9) << '\n';  // 9
+cout << *s.begin() << '\n';  // 1
+cout << *s.rbegin() << '\n';  // 14
+auto it = s.end();
+cout << *(--it) << '\n';  // 14
+s.erase(s.upper_bound(6));  // [1, 2, 14]
+// iterator
+for (set<int> ::iterator it = s.begin(); it != s.end(); it++) { 
+    cout << *it << '\n'; // 1, 2, 14
+}
+// iterator invers
+for (set<int> ::reverse_iterator it2 = s.rbegin(); it2 != s.rend(); it2++) {
+    cout << *it2 << '\n'; // 14, 2, 1
+}
+```
 
 ### std::unordered_map și std::unordered_set
 
+Atât std::set cât și std::map au versiuni unordered ale acestora, care acționează în mod similar cu structuri de tip hashmap, codificând valorile sub diverse forme pentru a evita coliziuni de diverse moduri. Totuși, aici nu vom discuta teoria din spatele hashurilor, ci doar containerele în sine [articolul nostru despre hashing](https://edu.roalgo.ro/mediu/hashing/#hash-tables-si-unordered-map). Deși funcțiile pe care cele două structuri de date le au sunt identice cu cele ale echivalentelor lor sortate, uneori pot deveni foarte utile în concursuri.
+
+std::unordered_map este versiunea nesortată a map-ului, fiind inclus în biblioteca ``#include <unordered_map>``. Sintaxa acestuia va fi ``unordered_map <tip1, tip2> nume``.
+
+std::unordered_set este versiunea nesortată a set-ului, fiind inclus în biblioteca ``#include <unordered_set>``. Sintaxa acestuia va fi ``unordered_set <tip> nume``.
+
+Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $O(1)$ amortizat, dar în cel mai rău caz, complexitatea finală este $O(n)$ per operație, unde $n$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
+
 ### std::multimap și std::multiset
+
+De asemenea, std::set și std::map au și versiuni care ne permit să ținem mai multe instanțe ale aceleiași valori, std::multiset fiind de departe cel mai utilizat în practică. Acestea au aceleași funcții specifice cu cele întâlnite la set și map, dar trebuie să fim atenți la un aspect foarte important, sintaxa fiind la fel (``multiset <tip> nume``).
+
+!!! warning "Erase și multiseturile"
+    Dacă folosim erase în același mod cum am explicat la set, toate valorile egale cu $x$ se șterg, deci trebuie să folosim ``ms.erase(ms.find(val))``. 
+
+* ``ms.erase(x)`` - șterge toate aparițiile lui $x$ din multiset.
+* ``ms.erase(ms.find(x)) `` - șterge o singură apariție a lui $x$ din multiset.
+
+La fel ca la set și map, complexitatea operațiilor este logaritimică, cu o singură excepție, aceasta fiind funcția count, care numără valorile egale cu x. Totuși, complexitatea lui count este liniară, fapt pentru care nu se recomandă folosirea acestei funcții.
 
 ### Structura std::priority_queue
 
@@ -443,5 +549,6 @@ Totuși, trebuie să aveți în vedere faptul că este de preferat înțelegerea
 * [STL - infoarena](https://www.infoarena.ro/stl)
 * [Introduction to Data Structures - USACO Guide](https://usaco.guide/bronze/intro-ds?lang=cpp)
 * [Introduction to Sets & Maps - USACO Guide](https://usaco.guide/bronze/intro-sets?lang=cpp)
+* [More Operations on Sorted Sets - USACO Guide](https://usaco.guide/silver/intro-sorted-sets)
 * [STL - pbinfo](https://www.pbinfo.ro/articole/23702/standard-template-library-stl)
 * [Policy Based Data Structures - Codeforces](https://codeforces.com/blog/entry/11080)
