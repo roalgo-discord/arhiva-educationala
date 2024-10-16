@@ -3,7 +3,6 @@ tags:
     - C++
     - implementare
     - structuri de date
-    - STL
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Alex Vasiluță
@@ -165,25 +164,272 @@ for (int i = 1; i <= 1000000; i++) { // O(n^2)
 
 ### Structura std::pair
 
+Această structură de date vă permite să folosiți o combinație de tipuri de date mai complexe, în mod similar cu tipul de date struct pe care l-ați învățat anterior. Un mare avantaj pe care std::pair (și ulterior, std::tuple) îl au este acela că permit instrucțiunilor de sortare să compare două instanțe ale acestui tip de date fără a mai fi nevoie să scriem o funcție suplimentară de comparare a valorilor. 
+
+Sintaxa este ``pair<tip1, tip2> nume;``, unde tip1 și tip2 sunt tipuri de date, care pot fi de toate felurile, inclusiv alte perechi. Pentru a putea accesa tip1, respectiv tip2, va trebui să folosim comenzile nume.first și nume.second. Inițializarea unui pair se poate face similar cu cea a unui vector.
+
+În cazul elementelor de tip pair compuse, în mod similar cu struct, notațiile vor fi la fel compuse.
+
+De exemplu, dacă avem ``pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};``, cele patru elemente vor putea fi declarate și accesate după cum urmează:
+
+```cpp
+pair<int, int> pr = make_pair(5, 8);
+cout << pr.first << '\n';
+cout << pr.second << '\n';
+pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};
+cout << p.first.first << '\n'; // 2
+cout << p.first.second << '\n'; // 4
+cout << p.second.first << '\n'; // 1
+cout << p.second.second << '\n'; // 3
+```
+
 ### Structura std::tuple
+
+Această structură de date reprezintă o generalizare a structurii std::pair vă permite să folosiți o combinație de tipuri de date mai complexe, într-o manieră mult mai ușoară decât ați face-o dacă ați folosi pair sau vector, profitând de avantajul că putem ține tipuri de date diferite în fiecare dintre poziții. Pentru a folosi tuple, va trebui să includeți ``#include <tuple>``.
+
+Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vor face acest lucru mult mai ușor. 
+
+* ``tuple<tip1, tip2, ..., tipN> t``: Creăm un tuplu cu $N$ valori, a i-a valoare având $tip_i$.
+* ``make_tuple(a, b, c, ..., d)``: Returnează un tuplu cu valorile scrise în paranteză
+* ``tie(a, b, c, ..., d) = t``: Asignăm la $a, b, c, \dots, d$ valorile din tuplul $t$ în ordinea dată. 
+* ``get<i>(t)``: Returnează cea de-a i-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
+
+Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă. 
+
+```cpp
+tuple<int,  int,  int> t{3,  4,  5};
+int i =  1;
+cout << get<i>(t) << '\n';  // eroare
+```
+
+Mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+
+```cpp
+int a = 3, b = 4, c = 5;
+tuple<int, int, int> t = tie(a, b, c);
+cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << '\n'; // 3 4 5
+get<0>(t)  =  7;
+cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << '\n'; // 7 4 5
+tuple<string, string, int> tp2 = make_tuple("Hello", "world", 100);
+
+string s1, s2;
+int x;
+tie(s1, s2, x)  = tp2;
+cout << s1 << " " << s2 << " " << x << '\n'; // Hello world 100
+}
+```
+
+## Iteratori
+
+Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze elementele unui container STL. Ei sunt implementați numai la structurile cu acces aleatoriu (toate mai puțin  `queue`,  `stack`  și  `priority_queue`).
+
+### Glosar iteratori
+
+-  range reprezintă un interval de elemente de tip  `[start, end)`.
+-  iterator de început: iterator care marchează începutul unui range
+-  iterator past-the-end: iterator care marchează finalul unui range. Deși uneori poate fi accesat, în cele mai multe cazuri accesarea lui duce la erori (de exemplu, rezultatul pentru  `.end()`).
+
+### Cum obțin un iterator?
+
+-   `.begin()`  - iterator la primul element din structură;
+-   `.end()`  - iterator past-the-end pentru structură.
+
+### Ce pot face cu un iterator?
+
+*  Să parcurgi structura
+    -   Fiecare iterator permite să îl incrementezi (`++it`) să se ducă mai departe.
+    -   Putem folosi și  `it++`, dar de obicei este mai lent.
+*  Să îl pui drept parametru la o funcție
+    -   Multe funcții din  `<algorithm>`  care merg pe range-uri cer un iterator de început și un iterator "past-the-end".
+        -   De exemplu, funcția  `sort()`  cere doi iteratori: unul care marchează începutul și elementul de după sfârșit (cum ar fi  `begin()`  și  `end()`).
+    -   Structurile  `std::vector`  și  `std::deque`  oferă și funcțiile  `.erase()`  și  `.insert()`
+        -   Funcția  `.insert()`  adaugă un element înaintea elementului iteratorului.
+        -   Funcția  `.erase()`  poate primi un singur argument, elementul care să fie șters, sau două argumente, range-ul pe care să îl șteargă.
+*  Foarte multe funcții returnează iteratori, exemple fiind funcțiile `lower_bound()` și `upper_bound()` din diverse structuri de date precum `std::set`, `std::map`. 
 
 ## Structuri de date liniare
 
 ### Structura std::queue
 
+În general, folosim această structură de date pentru a simula funcționalitățile unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca ``#include  <queue>``.
+
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](https://edu.roalgo.ro/mediu/queue/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+
+```cpp
+queue<int> q;
+q.push(2);
+q.push(4);
+while (!q.empty()) {
+    int val = q.front(); // accesam varful cozii
+    q.pop();
+    cout << val << " "; // afisam 2 4
+}
+cout << '\n';
+```
+
 ### Structura std::stack
+
+În general, folosim această structură de date pentru a simula funcționalitățile unei stive. Pentru a folosi std::stack, avem nevoie de biblioteca ``#include  <stack>``.
+
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](https://edu.roalgo.ro/mediu/stack/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+
+```cpp
+stack<int> s;
+s.push(5);
+s.push(8);
+while (!s.empty()) {
+    int val = s.top(); // accesam varful stivei
+    s.pop();
+    cout << val << " "; // afisam 8 5
+}
+cout << '\n';
+```
 
 ### Structura std::deque
 
+În general, folosim această structură de date pentru a simula funcționalitățile unui deque. Pentru a folosi std::deque, avem nevoie de biblioteca ``#include  <deque>``.
+
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre deques](https://edu.roalgo.ro/mediu/deque/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+
+!!! note "Accesarea pozițiilor oarecare"    
+    Spre deosebire de stack și queue, deque permite accesarea pozițiilor oarecare, la fel ca la vector. În multe contexte, putem spune că deque este un vector mai complex, cu toate că un dezavantaj ar fi viteza un pic mai redusă a instrucțiunilor la deque spre deosebire de vector.
+
+```cpp
+deque<int> d;
+d.push_front(4);
+d.push_front(5);
+d.push_back(7);
+d.push_back(8);
+d.push_front(3);
+
+// deque-ul contine 3 5 4 7 8
+int x = d[3]; // putem accesa valori din pozitii oarecare, ca la vector
+
+while (!d.empty()) {
+    int val = d.front(); // accesam prima valoare
+    cout << val << " ";
+    d.pop_front(); // stergem prima valoare
+    if (d.size() > 0) {
+        val = d.back(); // accesam ultima valoare
+        d.pop_back(); // stergem ultima valoare
+        cout << val << " ";
+    }
+}
+cout << '\n';
+// afisam 3 8 5 7 4
+```
+
 ## Structuri de date arborescente
+
+Structurile de date arborescente ne permit să putem lucra cu valori ordonate în mod dinamic, având o performanță foarte bună, complexitatea operațiilor fiind în cele mai multe cazuri logaritimică, deoarece se bazează pe diverși arbori binari care permit sortări dintre cele mai rapide. 
 
 ### Structura std::map
 
 ### Structura std::set
 
+### std::unordered_map și std::unordered_set
+
+### std::multimap și std::multiset
+
 ### Structura std::priority_queue
 
+O coadă de priorități este o coadă pe care o folosim pentru a păstra datele într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe o structură de date de tip heap, permițând operații de push, pop și top, în mod similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat. Complexitatea operațiilor este $O(\log n)$. Chiar dacă această structură de date este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea heap-ului. 
+
+În general, vom vrea să folosim o coadă de priorități atunci când vrem să aflăm mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce face această structură de date principala metodă de a implementa diverși algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui Dijkstra](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-lui-dijkstra) pe grafuri cu costuri.
+
+Pentru a folosi această structură de date, biblioteca ``#include  <queue>``  este necesară. Sintaxa unei cozi de priorități este ``priority_queue<tip> nume``. Mai jos găsiți un exemplu de implementare a acestei structuri de date.
+
+```cpp
+priority_queue<int> pq; 
+pq.push(5); // adaugam valori
+pq.push(9);
+pq.push(1);
+
+while (!pq.empty()) {
+    int val = pq.top(); // varful cozii
+    pq.pop(); // scoatem varful cozii
+    
+    cout << val << " "; // se vor afisa 9, 5, 1 
+}
+```
+
+!!! note "Accesarea valorilor în ordine crescătoare"
+    Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom. 
+
+```cpp
+struct cmp {
+    bool operator()(int a, int b) {
+        return a > b;
+    }
+};
+priority_queue<int, vector<int>, cmp>q;
+```
+
 ### Policy based data structures
+
+Structurile de date menționate anterior, deși puternice, nu ne permit să răspundem la întrebări de tipul:
+
+* Care este a $k$-a valoare în ordine crescătoare prezentă în set/map?
+* Câte valori sunt mai mici decât $x$ în set/map?
+
+Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $O(\log n)$, la fel ca la set și map. 
+
+!!! note "Atenție la constante" 
+    Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai înceată decât alte metode care ar fi mai greu de implementat.
+
+Această structură de date ne va permite să folosim facilitățile setului, împreună cu două funcții noi:
+
+* `find_by_order(k)` - Al $k$-lea cel mai mare element, începând de la $0$. 
+* `order_of_key(x)` - Numărul de valori strict mai mici decât $x$.
+
+Pentru a putea folosi această structură de date, trebuie să declarăm următoarele biblioteci, namespace-uri și typedefs:
+
+```cpp 
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+
+using namespace __gnu_pbds;
+ 
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> order_set;
+```
+
+!!! note "Alte tipuri de date"  
+    Pentru a folosi policy based data structures și cu alte tipuri de date, trebuie înlocuite cele două inturi cu tipul de date potrivit. De exemplu, ``typedef tree<pair<int, int>,null_type,less<pair<int,int>>,rb_tree_tag,tree_order_statistics_node_update> order_set``; ne permite să ținem pairuri și să operăm în mod similar, fiind foarte util atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai complexe.
+
+Mai jos găsiți un exemplu de folosire a acestei structuri de date, așa cum a fost folosită în problema [AIB de pe pbinfo](https://www.pbinfo.ro/probleme/2725/aib).
+
+```cpp 
+#include <iostream>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+ 
+using namespace std;
+using namespace __gnu_pbds;
+ 
+typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> order_set;
+ 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n;
+    cin >> n;
+    
+    order_set X;
+    
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cin >> x;
+        
+        cout << X.order_of_key(x) << " ";
+        X.insert(x);
+        // X.find_by_order(x) ar afla al x-lea cel mai mare element
+    }
+    return 0;
+}
+```
+
+Pe lângă o mare parte din problemele cu structuri de date, această structură de date poate fi aplicată și pentru a rezolva problema [Greetings de pe Codeforces](https://codeforces.com/contest/1915/problem/F).
 
 ## Concluzii
 
