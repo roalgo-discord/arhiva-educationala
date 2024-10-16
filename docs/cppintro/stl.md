@@ -9,7 +9,7 @@ tags:
 
 ## Introducere
 
-Până acum, programele pe care le-ați scris până acum, deși sunt corecte și compilează în limbajul C++, respectă în mare parte din cazuri sintaxa din C, exemple fiind tablourile, anumite funcții de sistem și în general, modul în care am lucrat cu variabilele și tipurile de date menționate anterior, cu o singură excepție - citirea și afișarea, care s-au făcut conform limbajului C++.
+Până acum, programele pe care le-ați scris, deși sunt corecte și compilează în limbajul C++, respectă în mare parte din cazuri sintaxa din C, exemple fiind tablourile, anumite funcții de sistem și în general, modul în care am lucrat cu variabilele și tipurile de date menționate anterior, cu o singură excepție - citirea și afișarea, care s-au făcut conform limbajului C++.
 
 Cu alte cuvinte, putem spune că programele scrise sunt programe de C care au cin și cout. Astfel, pentru a putea folosi limbajul C++ la adevărata sa valoare, se impune folosirea structurilor de date și celorlalte facilități ale acestui limbaj. O mare parte dintre ele sunt înglobate în ceea ce vom numi STL (Standard Template Library) și ne vor ajuta să lucrăm cu foarte multe tipuri de valori într-un mod dinamic, astfel evitând marea majoritate a neajunsurilor lucrului cu structuri din C, chiar și adaptate la limbajul C++.
 

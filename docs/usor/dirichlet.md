@@ -10,7 +10,7 @@ tags:
 După cum știți, foarte multe principii întâlnite în matematică ajung să fie aplicate și în informatică sub diverse forme. Unul dintre aceste principii, frecvent întâlnit în problemele de matematică de gimnaziu și nu numai este principiul lui Dirichlet, de asemenea cunoscut sub numele de principiul cutiei sau sub denumirea sa din engleză, pigeonhole principle.
 
 !!! info "Definiție"
-	Dacă avem $n+1$ obiecte și $n$ cutii, indiferent cum vom aranja obiectele în cutii, vom avea cu siguranță o cutie care va avea cel puțin două obiecte. 
+    Dacă avem $n+1$ obiecte și $n$ cutii, indiferent cum vom aranja obiectele în cutii, vom avea cu siguranță o cutie care va avea cel puțin două obiecte. 
 
 Există foarte multe moduri de a demonstra acest lucru, dar un mod foarte simplu de a face acest lucru este acela de a pleca de la un caz simplu ($2$ obiecte și $1$ cutie), caz care este evident, adevărat. Apoi, fiecare obiect adăugat va fi în cutia lui, deci vom avea cu siguranță o cutie cu cel puțin două obiecte. 
 

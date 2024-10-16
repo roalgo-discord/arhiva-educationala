@@ -4,7 +4,7 @@
 
 ## Cunoștinte necesare
 
-Înaintea citirii acestui articol, se recomandă familiarizarea cu structurile repetitive, deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
+Înaintea citirii acestui articol, se recomandă familiarizarea cu [structurile repetitive](https://edu.roalgo.ro/cppintro/loops/), deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
 
 ## Numerele de cel mult trei cifre
 

@@ -149,6 +149,7 @@ nav:
           - Prelucrarea cifrelor: usor/digits-manipulation.md
           - Simularea soluției: usor/simulating-solution.md
           - Vectori de frecvență: usor/frequency-arrays.md
+          - Abordarea problemelor cu secvențe: usor/sequences.md
       - Algebră:
           - Generarea șirurilor de numere: usor/generarea-sirurilor.md
           - Divizibilitatea: usor/divisibility.md
@@ -178,7 +179,6 @@ nav:
           - Abordarea problemelor constructive: mediu/constructive.md
           - Abordarea concursurilor de pe Codeforces/AtCoder: >-
               mediu/cf-atcoder.md
-          - Abordarea problemelor cu secvențe: mediu/sequences.md
       - Algebră:
           - Indicatorul lui Euler: mediu/euler-totient.md
           - Aritmetică modulară. Ridicare la putere în timp logaritmic: >-
