@@ -23,12 +23,70 @@ Fie $spt_{i, j}$ suma intervalul $[j, j + 2^i)$. Cand avem o intrebare pe interv
 Sursa de Accepted:
 
 ```cpp
+#include <iostream>
 
+const int MAXN = 200'000;
+const int LOGN = 18;
+
+int v[MAXN], n, q;
+
+struct SparseTable {
+    long long spt[LOGN][MAXN];
+    int maxbit;
+    
+    void init(int n) {
+        int i, j;
+        for (i = 0; i < n; i++) {
+            spt[0][i] = v[i];
+        }
+        maxbit = 31 - __builtin_clz(n); // i-ul maxim
+        for (i = 1; i <= maxbit; i++) {
+            for (j = 0; j + (1 << i) - 1 < n; j++) {
+                spt[i][j] = spt[i - 1][j] + spt[i - 1][j + (1 << (i - 1))];
+            }
+        }
+    }
+    
+    long long query(int st, int dr) {
+        int len = dr - st + 1, i;
+        long long sum = 0;
+        for (i = maxbit; i >= 0; i--) {
+            if (len & (1 << i)) { // daca are bitul i
+                sum += spt[i][st];
+                st += 1 << i;
+            }
+        }
+        return sum;
+    }
+} table;
+
+void readArray() {
+    int i;
+    std::cin >> n >> q;
+    for (i = 0; i < n; i++) {
+        std::cin >> v[i];
+    }
+}
+
+void answerQueries() {
+    int i, st, dr;
+    for (i = 0; i < q; i++) {
+        std::cin >> st >> dr;
+        std::cout << table.query(st - 1, dr - 1) << "\n";
+    }
+}
+
+int main() {
+    readArray();
+    table.init(n);
+    answerQueries();
+    return 0;
+}
 ```
 
 ## Range Minimum Query 
 
-Așa cum îi spune și numele, la Range Minimu Query (RMQ), avem intrebari la care trebuie sa raspundem cu minimul pe un interval. Vom folosi un sparse table pentru a precalcula raspunsul
+Așa cum îi spune și numele, la Range Minimum Query (RMQ), avem intrebari la care trebuie sa raspundem cu minimul pe un interval. Vom folosi un sparse table pentru a precalcula raspunsul
 
 Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervalele de lungime putere de $2$. Astfel, vom împărți intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$, care au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$. 
 
@@ -107,11 +165,23 @@ int main() {
 
 ## RMQ 2D
 
+Putem face RMQ si pe matrice. Sa luam ca exemplu problema [euclid de pe infoarena](https://infoarena.ro/problema/euclid). 
+
 ## Reverse RMQ
 
-Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări.
+Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problema in care avem actualizari de forma $a_i = min(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemanator, folosind aceleasi intervale ca la RMQ normal, si modificand astfel:
 
-### Problemă exemplu - [Codeforces Gym](https://codeforces.com/gym/102114/problem/G)
+$$spt_{lg, st} = min(spt_{lg, st}, x)$$
+
+$$spt_{lg, dr - 2^{lg} + 1} = min(spt_{lg, dr - 2^{lg} + 1, x)$$
+
+Apoi, valoarea $a_i$ finala va fi minimul dintre $a_i$ si valoarea din orice interval care este actualizat in $spt$ si include $i$. Pentru mai multe detalii vedeti implementarea.
+
+Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G)
+
+```cpp
+
+```
 
 ## Probleme rezolvate
 
@@ -119,24 +189,31 @@ Putem să rezolvăm și probleme în care avem doar actualizări, fără întreb
 
 ### Problema [CF 2009G2](https://codeforces.com/contest/2009/problem/G2)
 
+### Problema [CF 713D](https://codeforces.com/contest/713/problem/D)
+
 ## Concluzii
 
 ## Probleme suplimentare
 
 * [ONI 2021 Baraj Juniori cartita](https://kilonova.ro/problems/1096)
 * [Info1Cup 2021 wonderland](https://kilonova.ro/problems/3147)
-* [Probleme cu RMQ de pe kilonova](https://kilonova.ro/tags/289)
-* [Problemele de RMQ din acest blog](https://codeforces.com/blog/entry/55274)
 * [CF 1175E](https://codeforces.com/contest/1175/problem/E)
 * [CF 191C](https://codeforces.com/problemset/problem/191/C)
 * [CF 1328E](https://codeforces.com/contest/1328/problem/E)
 * [CF 1702G2](https://codeforces.com/contest/1702/problem/G2)
 * [CF 832D](https://codeforces.com/problemset/problem/832/D)
+* [CF 15D](https://codeforces.com/contest/15/problem/D)
 * [RMI 2020 Sum Zero](https://oj.uz/problem/view/RMI20_sumzero)
 * [EJOI 2021 consecutive1](https://www.pbinfo.ro/probleme/3860/consecutive1)
 * [PBinfo minisecvente](https://www.pbinfo.ro/probleme/2865/minisecvente)
 * [PBinfo divquery](https://www.pbinfo.ro/probleme/1735/divquery)
+* [infoarena plantatie](https://infoarena.ro/problema/plantatie)
+* [CodeChef Tic Tac Toe](https://www.codechef.com/problems/TICTACTO)
+* [CodeChef Maximum of GCDs](https://www.codechef.com/problems/KSIZEGCD)
 * [Substring Restrictions - CS Academy](https://csacademy.com/contest/round-15/task/substring-restrictions/)
+* [Problemele cu Sparse Table de la articolul de pe CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html#practice-problems)
+* [Probleme cu RMQ de pe kilonova](https://kilonova.ro/tags/289)
+* [Problemele de RMQ din acest blog](https://codeforces.com/blog/entry/55274)
 
 ## Resurse suplimentare
 
