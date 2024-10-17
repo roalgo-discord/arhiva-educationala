@@ -75,15 +75,15 @@ int main(){
 0000000000
 ```
 !!! note "Observație"
-	Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente egale cu $1$ să "iasă" din **bitset**, atunci valoare de $1$ se va pierde permanent.
+	Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente egale cu $1$ să "iasă" din **bitset**, atunci valorile de $1$ aferente se vor pierde permanent.
 
 ### Funcții permise
 
-* ```_Find_first()``` returnează prima poziție a unui bit setat.
+* ```_Find_first()``` returnează prima poziție a unui bit setat (cea cu index minim).
 * ```_Find_next(int pos)``` returnează următorul bit setat după poz, iar în cazul în care nu există va returna lungimea **bitsetului**
 * ```.count()``` returnează numarul de biți setați.
 * ```.reset()``` resetează toți biții la $0$.
-* ```.flip(int pos)``` $b[pos]$ devine $b[pos] \oplus 1$, i.e. schimbă bitul $pos$ din $0$ în $1$ și invers.
+* ```.flip(int pos)``` $b[pos]$ devine $b[pos]$ **xor** $1$, i.e. schimbă bitul $pos$ din $0$ în $1$ și invers.
 * ```.to_string()``` va converti **bitsetul** într-un **string**.
 * ```.to_ulong()``` va converti **bitsetul** într-un ```unsigned long```.
 * ```.to_ullong()``` va converti **bitsetul** într-un ```unsigned long long```.
@@ -283,18 +283,18 @@ Timpul se reduce la $O \biggl( log(S) \cdot maxsum \cdot  \frac{1}{w} \biggr)$
 
 ### Problema [Copaci](https://kilonova.ro/problems/2805), Lot 2024 Baraj 2 Juniori
 
-Ni se dă o matrice cu $N \cdot N$ elemente și un string $S$, ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel mai mare prefix al șirului $S$ care poate constituie un drum valid în matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice și următorul element are exact o latură comună cu cel actual, iar fiecare element din drum este egal cu reprezentantul lui în șir. Citți problema pentru a înțelege mai bine.
+Ni se dă o matrice cu $N \cdot N$ elemente și un string $S$, ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel mai mare prefix al șirului $S$ care poate fi reprezentat ca un drum valid în matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice și următorul element are exact o latură comună cu cel actual, iar fiecare element din drum este egal cu reprezentantul lui în șir. Citiți problema pentru a înțelege mai bine.
 
 Vom aborda o metodă similară cu prima problema, unde vom reține într-un tablou dacă o poziție anume a fost "atinsă" până acuma sau nu.
 
 Pentru a înțelege mai bine haideți să vizualizăm concret ce se întâmplă pe unul dintre exemple. 
 
-<div style="text-align:center;">
-  <div style="font-size:200%;">$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$</div>
-  <div style="font-size:200%;">$\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$</div>
-  <div style="font-size:200%;">$\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$</div>
-  <div style="font-size:200%;">$\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$</div>
-  <div style="font-size:200%;">$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$</div>
+<div style="text-align:center">
+  <div style="font-size:200%">$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$</div>
+  <div style="font-size:200%">$\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$</div>
+  <div style="font-size:200%">$\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$</div>
+  <div style="font-size:200%">$\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$</div>
+  <div style="font-size:200%">$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$</div>
 </div>
 
 ## Concluzii
