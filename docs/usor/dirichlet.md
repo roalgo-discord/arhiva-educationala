@@ -22,9 +22,9 @@ Există foarte multe moduri de a demonstra acest lucru, dar un mod foarte simplu
 
 Pentru a rezolva această problemă, trebuie să găsim o observație care să ne ajute să aflăm cu ușurință un număr valid. Deoarece există $2^n$ numere valide, nu putem să le încercăm pe toate. Totuși, ne putem gândi la o formă particulară a numerelor care să ne ajute să aflăm răspunsul mai ușor. 
 
-Dacă ne gândim la numerele de forma $1111\dots10000\dots0$ cu $n$ cifre, avem $n+1$ asemenea numere. Datorită acestui fapt, putem scădea mereu din numărul $1111\dots1$ un număr cu mai puține cifre de aceeași formă cu proprietatea că restul împărțirii la $n$ a celor două numere este egal. 
+Dacă ne gândim la numerele de forma $1111\dots1$ cu $1, 2, 3, \dots, n$ cifre, avem $n$ asemenea numere. De aici, avem două cazuri. Fie unul din aceste numere este multiplu de $n$ și putem adăuga zerouri la finalul numărului, fie găsim două numere care să aibă același rest (lucru ce este adevărat deoarece avem $n-1$ resturi posibile). Datorită acestui fapt, putem găsi mereu o soluție la această problemă.
 
-Pentru a afla aceste resturi, putem construi un vector de resturi parțiale și pentru a afla o soluție, ne putem duce înapoi până când găsim un alt număr cu același rest cu numărul format din $n$ de $1$.
+Pentru a afla aceste resturi, putem construi un vector de resturi parțiale și dacă avem un multiplu de $n$, afișăm acea valoare împreună cu valorile de $0$, iar dacă găsim două resturi parțiale egale, vom afișa diferența între cele două numere, iar mai apoi îndeajuns de mult zerouri până ce avem $n$ cifre.
 
 Mai jos găsiți implementarea soluției în limbajul C++.
 
@@ -32,7 +32,7 @@ Mai jos găsiți implementarea soluției în limbajul C++.
 #include <iostream>
 using namespace std;
 
-int sp[1000001];
+int sp[1000001], prv[1000001];
 
 int main() {
     int n;
@@ -40,19 +40,29 @@ int main() {
     
     for (int i = 1; i <= n; i++) {
         sp[i] = (sp[i-1] * 10 + 1) % n;
-    }
-    
-    for (int i = 0; i < n; i++) {
-        if (sp[i] == sp[n]) {
-            for (int x = i+1; x <= n; x++) {
+        if (sp[i] == 0) {
+            for (int j = 1; j <= i; j++) {
                 cout << 1;
             }
-            for (int x = 1; x <= i; x++) {
+            for (int j = i+1; j <= n; j++) {
                 cout << 0;
             }
-            cout << '\n';
             return 0;
         }
+        else {
+            if (prv[sp[i]] != 0) {
+                int tot = i - prv[sp[i]];
+                for (int x = prv[sp[i]]+1; x <= i; x++) {
+                    cout << 1;
+                }
+                for (int x = 1; x <= n - tot; x++) {
+                    cout << 0;
+                }
+                cout << '\n';
+                return 0;
+            }
+        }
+        prv[sp[i]] = i;
     }
     return 0;
 }
