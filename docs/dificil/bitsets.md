@@ -301,10 +301,10 @@ Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În
 
 Pentru prima linie, procesul descris mai sus ar arăta în felul următor:
 
-[/begin(align)
 
-$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rightarrow \textcolor{white}{3} \ \textcolor{white}{6} \ \textcolor{blue}{2} \ \textcolor{white}{3 \ 1}$  
-/end(align)]
+$$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rightarrow \textcolor{white}{3} \ \textcolor{white}{6} \ \textcolor{blue}{2} \ \textcolor{white}{3 \ 1}$$ ,
+
+pentru că al doilea element din $S$ este $2$.
 ## Concluzii
 
 ## Probleme suplimentare
