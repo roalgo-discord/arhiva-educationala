@@ -121,16 +121,16 @@ int main(){
 
 ## ```std::bitset``` in programare competitivă
 
-Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este  $$\ \ \large{O} \biggl( \frac{N}{w} \biggr)$$ , unde $w$ de regulă seminifică constanta cu care este împărțit numărul de elemente $N$.
+Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este $O ( \frac{N}{w} )$ , unde $w$ de regulă seminifică constanta cu care este împărțit numărul de elemente $N$.
 
 !!! note "Atenție"
-	Notații de tipul $$\ \ \large{O} \biggl( \frac{N}{32} \biggr)$$  **sau** $$\ \ \large{O} \biggl( \frac{N}{64} \biggr)$$ nu sunt corecte, pentru că de cele mai multe ori [constantele sunt ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae), de aceea se folosește variabila $w$. 
+	Notații de tipul $O ( \frac{N}{32} )$  **sau**  $O ( \frac{N}{64} )$ nu sunt corecte, pentru că de cele mai multe ori [constantele sunt ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae), de aceea se folosește variabila $w$. 
 
 ### Problema [somnoros](https://kilonova.ro/problems/677?list_id=461)
 Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un graf orientat aciclic avem drum de la un nod la altul.
 
 Considerăm următoare abordare: $dp[u][v] = 1$ dacă afirmația este adevarată.
-Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică $dp[f_j][x] |= dp[r_i][x]$, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată. Observăm că pentru $2$ noduri $u$ și $v$, $dp[u][x] |= dp[v][x]$ este echivalentul la $b1 |= b2$, unde $b1$ și $b2$ reprezintă $2$ ```std::bitset```-uri. Deci dacă în loc de ```vector<vector<int>> dp(n + 1, vector<int>(n + 1))``` am pune ```vector<bitset<const>> dp(n + 1)```, am putea face tranzițiile în $$\ \ \large{O} \biggl( \frac{N}{w} \biggr)$$, complexitatea finală fiind $$\ \ \large{O} \biggl( \frac{N^2}{w} \biggr)$$.
+Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică $dp[f_j][x] |= dp[r_i][x]$, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată. Observăm că pentru $2$ noduri $u$ și $v$, $dp[u][x] |= dp[v][x]$ este echivalentul la $b1 |= b2$, unde $b1$ și $b2$ reprezintă $2$ ```std::bitset```-uri. Deci dacă în loc de ```vector<vector<int>> dp(n + 1, vector<int>(n + 1))``` am pune ```vector<bitset<const>> dp(n + 1)```, am putea face tranzițiile în $O ( \frac{N}{w} )$, complexitatea finală fiind $O ( \frac{N^2}{w} )$.
 
 **Program C++**
 ```cpp
@@ -225,7 +225,7 @@ for(int i = 1; i <= 100; i++){
 ```
 Cu operatorul ``` |= ``` păstrăm sumele deja calculate în **dp**, iar cu operatorul ``` << ``` vom face tranzițiile, cu alte cuvinte dacă shiftăm fiecare bit cu $i$ poziții, toate sumele prezente în **dp** vor crește cu $i$, sintaxă echivalentă cu ```  dp[s + i] |= dp[s]; ```.
 
-Complexitatea devine $O \biggl( S \cdot maxsum \cdot  \frac{1}{w} \biggr)$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$. Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j = 0}^{p-1} 2^j  + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să construim fiecare număr de la $1$ la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p + 1$, vom putea reprezenta fiecare număr de la $1$ la $fr_i$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile  de a lua numărul $i$.
+Complexitatea devine $O ( S \cdot maxsum \cdot  \frac{1}{w} )$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$. Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j = 0}^{p-1} 2^j  + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să construim fiecare număr de la $1$ la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p + 1$, vom putea reprezenta fiecare număr de la $1$ la $fr_i$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile  de a lua numărul $i$.
 
 ```cpp
 dp[0] = 1;
@@ -279,11 +279,11 @@ int main() {
 }
 ```
 
-Timpul se reduce la $O \biggl( log(S) \cdot maxsum \cdot  \frac{1}{w} \biggr)$
+Timpul se reduce la $O ( log(S) \cdot maxsum \cdot  \frac{1}{w} )$
 
 ### Problema [Copaci](https://kilonova.ro/problems/2805), Lot 2024 Baraj 2 Juniori
 
-Ni se dă o matrice cu $N \cdot N$ elemente și un string $S$, ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel mai mare prefix al șirului $S$ care poate fi reprezentat ca un drum valid în matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice și următorul element are exact o latură comună cu cel actual, iar fiecare element din drum este egal cu reprezentantul lui în șir. Citiți problema pentru a înțelege mai bine.
+Ni se dă o matrice (o vom nota $M$) cu $N \cdot N$  elemente și un string $S$, ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel mai mare prefix al șirului $S$ care poate fi reprezentat ca un drum valid în matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice și următorul element are exact o latură comună cu cel actual, iar fiecare element din drum este egal cu reprezentantul lui în șir. Citiți problema pentru a înțelege mai bine.
 
 Vom aborda o metodă similară cu prima problema, unde vom reține într-un tablou dacă o poziție anume a fost "atinsă" până acuma sau nu.
 
@@ -297,15 +297,80 @@ $\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$
 
 $S = \textcolor{blue}{6} \text{281864292913}$
 
-Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În momentul în care vrem să aflăm raspunsul pentru prefixul de lungime $2$, din fiecare celulă marcată va trebui să luăm în considerare fiecare vecin, marcându-le de asemenea cu albastru.
+Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În momentul în care  decidem să ne mutăm poziția din matrice, ar trebui luat în considerare fiecare element adiacent cu măcar o poziție colorată deja. Pentru o linie, acest lucru presupune "shiftarea" la stânga și la dreapta a fiecarui element deja marcat. Mai concret, dacă $G_l$ reprezintă mulțimea de puncte $(a_1, a_2, a_3, \dots , a_k)$, astfel încât $M_{l,a_i}$ este albastru, după un update $G$ va fi egal cu $( (a_1 - 1), (a1 + 1), (a_2 - 1), (a_2 + 1), \dots, (a_k-1), (a_k + 1) )$.
 
 Pentru prima linie, procesul descris mai sus ar arăta în felul următor:
 
 
-$$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rightarrow \textcolor{white}{3} \ \textcolor{white}{6} \ \textcolor{blue}{2} \ \textcolor{white}{3 \ 1}$$ ,
+$$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rightarrow \textcolor{blue}{3} \ \textcolor{white}{6} \ \textcolor{blue}{2} \ \textcolor{white}{3 \ 1}$$
 
-pentru că al doilea element din $S$ este $2$.
-## Concluzii
+Singura problemă pe care o întâmpinăm este dată de corelarea corectă a fiecarei poziți din drum cu cea din șirul $S$. Adică, elementul cu valoarea $3$ nu ar trebui marcat, deoarece $S_2 = 2$. Există o soluție totuși pentru problema noastră, care constă în reținerea în alt **bitset** , în funcție de sensul în care shiftăm, dacă există o poziție $p$ pentru care $M_{l,p} = S_i$ și $M_{l,p-1} = S_{i-1}$ (în cazul în care vrem să shiftăm la dreapta).
+
+De exemplu, ```left[l][a][b][x] = 1``` dacă pe linia $l$ există $p$ pentru care $M_{l,p} = a$ și $M_{l,p-1} = b$ (facem tranziție de la $a$ la $b$), și ```right[l][a][b][x] = 1``` dacă există $p$ pentru care $M_{l,p} = a$ și $M_{l,p+1} = b$. Cu astea fiind spuse, definim ```dp[a][b] = 1``` dacă putem atinge elementul $(a,b)$ după un număr de pași, atunci:
+
+	dp[a] = ((dp[a] << 1) & left[a][x][y]) | ((dp[a] >> 1) & right[a][x][y])
+ unde $S_i = y, S_{i-1} = x$.
+
+Pentru a tranziționa de pe o linie pe alta (mergem în sus sau în jos), procedăm la fel doar că de data asta vom reține ```up[l][a][b][x], down[l][a][b][x]```.
+
+Complexitatea este $O(|S| \cdot \frac{N^2}{w})$.
+
+### O parte din cod (cpp)
+```cpp
+int ans = 0;
+vector<bitset<101>> dp(n + 1),new_dp(n + 1);
+for(int i = 1; i <= n; i++){
+	for(int j = 1; j <= n; j++){
+	    if(M[i][j] == s[1]-'0'){
+		dp[i][j] = 1;
+		ans=1;
+	    }
+	}
+}
+
+bitset<101> rest;
+for(int l = 2; l< s.size(); l++){
+	
+	int nr1 = s[l-1]-'0',nr2 = s[l]-'0';
+	for(int i = 1; i <= n; i++){
+	    new_dp[i] = (new_dp[i]|((dp[i]>>1)& right[i][nr1][nr2]));
+	    new_dp[i] = (new_dp[i]|((dp[i]<<1)& left[i][nr1][nr2]));
+	    if(i > 1) new_dp[i-1] = (new_dp[i-1]|(dp[i]& up[i-1][nr1][nr2]));
+	    if(i < n) new_dp[i + 1] = (new_dp[i + 1]|(dp[i]& down[i + 1][nr1][nr2]));
+	}
+	
+	
+	for(int i = 1; i <= n; i++){
+	    if(new_dp[i]._Find_first() != 101){
+		ans = l;
+	    }
+	
+	    swap(dp[i], new_dp[i]);
+	    new_dp[i] &= rest;
+	}
+	if(ans != l){
+	    break;
+	}
+}
+
+cout << ans << '\n';
+```
+
+ Aceasta reprezintă doar o soluție, se poate și mai simplu.
+
+ 
+##  Bitset dinamic
+
+Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul de elemente pe parcursul execuției programului, sau îl putem declara direct cu cât vrem noi (```bitset<>a(n)```?). De ce am avea nevoie oare de așa ceva? Pentru eficiență, evident!! Este destul de tedious să facem toate operațiile pe aceeși constană $N$ știind clar că în unele cazuri nu avem nevoie de toți biții.
+
+## "Tips and tricks" pentru bitset
+
+## OK, cat e concret $w$?
+
+
+
+
+## Concluzii 
 
 ## Probleme suplimentare
 
