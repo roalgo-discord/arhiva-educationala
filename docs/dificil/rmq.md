@@ -9,17 +9,17 @@ tags:
 
 ## Introducere
 
-Sparse Table este o structură care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
+**Sparse Table** este o structură care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
 
-Sa luam ca exemplu problema [Static Range Sum Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur ca o putem rezolva folosind [sume partiale](https://edu.roalgo.ro/usor/partial-sums/), dar haideti sa incercam sa o rezolvam cu sparse table.
+Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem rezolva folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), dar haideți să încercăm o metodă nouă.
 
-Fie $spt_{i, j}$ suma intervalul $[j, j + 2^i)$. Cand avem o intrebare pe intervalul $[st, dr]$, il vom imparti in intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu bitii din reprezentarea in baza $2$ a lungimii intervalului $[st, dr]$. Aceasta metoda se cheama binary lifting.
+Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o întrebare pe intervalul $[st, dr]$, îl vom imparti în intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary lifting**.
 
 !!! warning “Atenție“
     Este foarte important ca, în $spt{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
 
 !!! note "Observatie"
-    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de asemenea, folosind binary lifting. Cautarea binara in [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) foloseste, de asemenea, binary lifting.
+    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de asemenea, folosind binary lifting. Căutarea binară în [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea, binary lifting.
 
 Sursa de Accepted:
 
@@ -87,9 +87,9 @@ int main() {
 
 ## Range Minimum Query 
 
-Așa cum îi spune și numele, la Range Minimum Query (RMQ), avem intrebari la care trebuie sa raspundem cu minimul pe un interval. Vom folosi un sparse table pentru a precalcula raspunsul
+Așa cum îi spune și numele, la **Range Minimum Query (RMQ)**, avem întrebări la care trebuie să răspundem cu minimul pe un interval. Vom folosi un sparse table.
 
-Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervalele de lungime putere de $2$. Astfel, vom împărți intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezinta cel mai mare numar astfel incat $2^{lg} \leq dr - st + 1$, care au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$. 
+Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja precalculate). 
 
 !!! note “Observație“
     Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest lucru nu ne afectează, deoarece $min(x, x) = x$.
@@ -97,7 +97,7 @@ Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervale
 !!! note "Observație"
     Vom precalcula un vector $lg2_i = $ cel mai mare $j$ astfel încât $2^j \leq i$. Acest vector ne va ajuta să calculăm $lg$ ușor.
 
-Tabloul $spt$ se calculeaza la fel ca inainte.
+Tabloul $spt$ se calculează la fel ca înainte.
 
 Sursa de accepted (la problema [Static Range Minimum Queries](https://cses.fi/problemset/task/1647)):
 
@@ -162,7 +162,7 @@ int main() {
 ```
 
 !!! note “Observație“
-    RMQ poate fi folosit cu orice operație $f$ care este idempotentă, adică $f(x, x) = x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
+    RMQ poate fi folosit cu orice operație $f$ care este [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) = x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
 
 ## RMQ 2D
 
@@ -170,11 +170,11 @@ Putem face RMQ si pe matrice. Sa luam ca exemplu problema [CF 713D](https://code
 
 ## Reverse RMQ
 
-Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problema in care avem actualizari de forma $a_i = max(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemanator, folosind aceleasi intervale ca la RMQ normal, si modificand astfel:
+Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problemă în care avem actualizări de forma $a_i = max(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemănător, folosind aceleași intervale ca la RMQ normal și modificând astfel:
 
 $$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 
-Apoi, valoarea $a_i$ finala va fi minimul dintre $a_i$ si valoarea din orice interval care este actualizat in $spt$ si include $i$. Calculam aceasta valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar in $spt_{i - 1, j}$ si $spt_{i - 1, j + 2^{i-1}}$, deoarece astea sunt singurele intervale necesare pentru a ne asigura ca rezultatul ajunge la toate pozitiile din sir. Pentru mai multe detalii vedeti implementarea.
+Apoi, valoarea $a_i$ finală va fi minimul dintre toate valorile din orice interval care este actualizat în $spt$ și include $i$. Calculăm această valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j + 2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe detalii vedeți implementarea.
 
 Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G)
 
@@ -280,31 +280,31 @@ int main() {
 
 ## RMQ sau AINT?
 
-Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideti sa comparam aceste doua structuri de date.
+Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideți să comparăm aceste două structuri de date.
 
-### Comparatie in functie de timp
+### Comparație în funcție de timp
 
-RMQ este precalculat, la inceput, in $O(n \log n)$, iar AINT in $O(n)$. Insa, RMQ are complexitate $O(1)$ per query, in timp ce AINT are $O(\log n)$ per query.
+RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Însă, RMQ are complexitate $O(1)$ per query, În timp ce AINT are $O(\log n)$ per query.
 
-### Comparatie in functie de memorie
+### Comparație în funcție de memorie
 
-RMQ foloseste $O(n \log n)$ memorie, iar AINT foloseste $O(n)$ memorie.
+RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
 
 ### Alte precizari
 
-AINT poate rezolva si alte probleme pe care nu le poate rezolva RMQ. Aceste probleme pot fi rezolvate cu Sparse Table normal, rezultand aceeasi complexitate ca la AINT la query-uri. Acest lucru inseamna ca AINT este mai folositor in acest caz, chiar daca este mai greu de implementat.
+AINT poate rezolva și alte probleme pe care RMQ nu le poate rezolva. La astfel de probleme, putem folosi un Sparse Table normal, rezultând aceeași complexitate ca la AINT la query-uri. Acest lucru înseamnă că AINT este mai folositor în acest caz, chiar dacă este mai greu de implementat.
 
 ### Concluzie
 
-AINT este, de obicei, mai folositor ca RMQ, mai putin atunci cand numarul de query-uri este cu mult mai mare decat numarul de elemente sau atunci cand dorim sa nu scriem prea multe linii de cod.
+AINT este, de obicei, mai folositor ca RMQ, mai puțin atunci când numărul de query-uri este cu mult mai mare decât numărul de elemente sau atunci când dorim să nu scriem prea multe linii de cod.
 
 ## Probleme rezolvate
 
 ### Problema [Lot 2023 Juniori excursie](https://kilonova.ro/problems/619)
 
-Observam ca indicatoarele trebuie sa fie de forma RRR...RLLL..L. Asa ca sa fixam pozitia $i$ pana la care vom avea R-uri. Costul va fi egal cu numarul de L-uri de la $st$ la $i$ adunat cu numarul de R-uri de la $i + 1$ la $dr$. Aceste lucruri pot fi calculate usor folosind sume partiale.
+Observăm că indicatoarele trebuie să fie de forma RRR...RLLL..L. Să fixam poziția $i$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-uri de la $st$ la $i$ adunat cu numărul de R-uri de la $i + 1$ la $dr$. Aceste lucruri pot fi calculate ușor folosind sume parțiale.
 
-Fie $prefL_i = $ cate L-uri sunt de la $1$ la $i$ si $suffR_i = $ cate R-uri sunt de la $i$ la $n$. Atunci raspunsul va fi $min(prefL_i - prefL_{st-1} + suffR_{i+1} - suffR_{dr+1})$ astfel incat $st - 1 \leq i \leq dr$. Acest lucru este echivalent cu a afla minimul expresiei $prefL_i + suffR_{i+1}$ cu $i$ in intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
+Fie $prefL_i = $ câte L-uri sunt de la $1$ la $i$ și $suffR_i = $ câte R-uri sunt de la $i$ la $n$. Atunci răspunsul va fi $min(prefL_i - prefL_{st-1} + suffR_{i+1} - suffR_{dr+1})$ astfel încât $st - 1 \leq i \leq dr$. Acest lucru este echivalent cu a afla minimul expresiei $prefL_i + suffR_{i+1}$ cu $i$ in intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
 
 Sursa de 100 de puncte:
 
@@ -394,15 +394,15 @@ int main() {
 
 ### Problema [CF 2009G2](https://codeforces.com/contest/2009/problem/G2)
 
-#### Versiunea usoara, [G1](https://codeforces.com/contest/2009/problem/G2)
+#### Versiunea ușoara, [G1](https://codeforces.com/contest/2009/problem/G2)
 
-Sa rezolvam mai intai versiunea usoara. Noi trebuie sa avem $b_i = b_{i+1} - 1 = b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Sa scadem $i$ din aceasta relatie: $b_i - i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i - i$.
+Să rezolvăm mai întâi versiunea ușoara. Noi trebuie să avem $b_i = b_{i+1} - 1 = b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Să scădem $i$ din această relație: $b_i - i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i - i$.
 
-Sa precalculam $rez_i = $ frecventa elementului majoritar din intervalul $[i, i + k)$ ($k - rez_l$ va fi raspunsul nostru la un query). $rez$ poate fi calculat folosind [sliding window](https://edu.roalgo.ro/mediu/sliding-window/). Vom mentine un [map](https://edu.roalgo.ro/cppintro/stl/#structura-stdmap) care se cheama $fr$ cu frecventa elementelor si inca un vector de frecventa care se cheama $frfr$ care mentine frecventa fiecarei valori din $fr$.
+Să precalculam $rez_i = $ frecvența elementului majoritar din intervalul $[i, i + k)$ ($k - rez_l$ va fi răspunsul nostru la un query). $rez$ poate fi calculat folosind [sliding window](https://edu.roalgo.ro/mediu/sliding-window/). Vom menține un [map](https://edu.roalgo.ro/cppintro/stl/#structura-stdmap) care se cheamă $fr$ cu frecvența elementelor și înca un [vector de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) care se cheamă $frfr$ care menține frecvența fiecărei valori din $fr$.
 
-Cand adaugam o valoare scadem $1$ din $frfr_{fr_{val}}$, crestem $fr_{val}$ si adunam $1$ la noul $frfr_{fr_{val}}$. Daca $fr_{val}$ este mai mare ca rezulatul curent, atunci setam rezultatul curent la $fr_{val}$.
+Când adaugăm o valoare, scădem $1$ din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu $1$ și adunăm $1$ la noul $frfr_{fr_{val}}$. Dacă $fr_{val}$ este mai mare ca rezulatul curent, atunci setăm rezultatul curent la $fr_{val}$.
 
-Atunci cand scoatem o valoare, scadem $1$ din $frfr_{fr_{val}}$. Daca $fr_{val}$ era egal cu rezultatul si $frfr_{fr_{val}}$ a devenit $0$, atunci rezultatul scade cu $1$, deoarece $frfr_{fr_{val} - 1}$ a crescut cu $1$. Restul ramane ca la adaugare.
+Atunci când scoatem o valoare, scădem $1$ din $frfr_{fr_{val}}$. Dacă $fr_{val}$ era egal cu rezultatul și $frfr_{fr_{val}}$ a devenit $0$, atunci rezultatul scade cu $1$, deoarece $frfr_{fr_{val} - 1}$ a crescut cu $1$. Restul rămâne la fel ca la adăugare.
 
 Sursa de accepted la G1:
 
@@ -494,11 +494,11 @@ int main() {
 
 #### Versiunea grea
 
-Noi trebuie, de fapt, sa avem o subsecventa (contigua) de exact $k$ elemente. Observam ca $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$ (incercam fiecare subsecventa de $k$ elemente). Asa ca raspunsul nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
+Noi trebuie, de fapt, să avem o subsecvență (contigua) de exact $k$ elemente. Observăm că $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$ (încercăm fiecare subsecvență de $k$ elemente). Așa că, răspunsul nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
 
-Vom gasi, pentru fiecare $i$, la cate sume contribuie $rez_i$. Cu alte cuvinte, vom afla pentru cati $j > i$ avem $max(rez_i, rez_{i+1}, \dots, rez_j) = rez_i$. Fie $nxt_{0, i} = $ cel mai mic $j > i$ astfel incat $rez_j > rez_i$, lucru pe care il vom afla cu [stiva](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$.
+Vom găsi, pentru fiecare $i$, la câte sume contribuie $rez_i$. Cu alte cuvinte, vom afla pentru câți $j > i$ avem $max(rez_i, rez_{i+1}, \dots, rez_j) = rez_i$. Fie $nxt_{0, i} = $ cel mai mic $j > i$ astfel încât $rez_j > rez_i$, lucru pe care îl vom afla cu [stivă](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$.
 
-Acum, sa presupunem ca avem un arbore, in care $nxt_{0, i}$ reprezinta parintele lui $i$ si $sum_{0, i}$ reprezinta costul muchiei de la $i$ la parintele lui $i$. Noi vom pleca de la $l$, si vom tot merge in tatal nodului, pana cand tatal este mai mare decat $r$. Pentru a afla al catelea tata este cu usurinta, vom precalcula $nxt_{i, j} = $ al $2^i$-lea parinte al lui $j$ si $sum_{i, j} = $ suma costurilor muchiilor lantului de la $j$ la al $2^i$-lea parinte al lui $j$.
+Acum, să presupunem că avem un arbore, în care $nxt_{0, i}$ reprezintă părintele lui $i$ și $sum_{0, i}$ reprezintă costul muchiei de la $i$ la părintele lui $i$. Noi vom pleca de la $l$ și vom tot merge în tatăl nodului, până când indicele tatălui este mai mare decât $r$. Pentru a afla al câtelea tată este cu ușurinta, vom precalcula $nxt_{i, j} = $ al $2^i$-lea tată al lui $j$ și $sum_{i, j} = $ suma costurilor muchiilor lanțului de la $j$ la cel de-al $2^i$-lea tată al lui $j$.
 
 $$nxt_{i, j} = nxt_{i-1, nxt_{i-1, j}} \\ sum_{i, j} = sum_{i-1, j} + sum_{i-1, nxt_{i-1, j}}$$
 
@@ -632,11 +632,11 @@ int main() {
 ```
 
 !!! note "Observatie"
-    Aceasta solutie este foarte asemanatoare cu solutia la problema [stramosi](https://infoarena.ro/problema/stramosi), discutata in articolul de [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/#binary-lifting)
+    Această soluție este foarte asemănătoare cu soluția la problema [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul de [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/#binary-lifting)
 
 ## Concluzii
 
-Sparse Table este una dintre structurile de date care rezolva intrebari pe interval. Chiar daca arborii de intervale pot face aproape tot ce poate face si Sparse Table, de obicei cu o complexitate chiar mai buna, Sparse Table este mai usor de implementat. De asemenea, am vazut ca RMQ poate avea multe avantaje, dar si dezavantaje fata de AINT.
+Sparse Table este una dintre structurile de date care răspunde la întrebări pe un interval într-un șir static. Chiar dacă arborii de intervale pot face aproape tot ce poate face și Sparse Table, de obicei cu o complexitate chiar mai bună, Sparse Table este mai ușor de implementat. De asemenea, am văzut că RMQ poate avea multe avantaje, dar și dezavantaje față de AINT.
 
 ## Probleme suplimentare
 
