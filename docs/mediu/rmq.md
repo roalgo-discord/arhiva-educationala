@@ -88,7 +88,7 @@ int main() {
 
 Așa cum îi spune și numele, la Range Minimum Query (RMQ), avem intrebari la care trebuie sa raspundem cu minimul pe un interval. Vom folosi un sparse table pentru a precalcula raspunsul
 
-Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervalele de lungime putere de $2$. Astfel, vom împărți intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$, care au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$. 
+Ideea principală la RMQ este să precalculăm răspunsul pentru toate intervalele de lungime putere de $2$. Astfel, vom împărți intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezinta cel mai mare numar astfel incat $2^{lg} \leq dr - st + 1$, care au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$. 
 
 !!! note “Observație“
     Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest lucru nu ne afectează, deoarece $min(x, x) = x$.
@@ -165,13 +165,13 @@ int main() {
 
 ## RMQ 2D
 
-Putem face RMQ si pe matrice. Sa luam ca exemplu problema [euclid de pe infoarena](https://infoarena.ro/problema/euclid). 
+Putem face RMQ si pe matrice. Sa luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
 
 ## Reverse RMQ
 
 Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problema in care avem actualizari de forma $a_i = max(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemanator, folosind aceleasi intervale ca la RMQ normal, si modificand astfel:
 
-$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1, x)$$
+$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 
 Apoi, valoarea $a_i$ finala va fi minimul dintre $a_i$ si valoarea din orice interval care este actualizat in $spt$ si include $i$. Calculam aceasta valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar in $spt_{i - 1, j}$ si $spt_{i - 1, j + 2^{i-1}}$, deoarece astea sunt singurele intervale necesare pentru a ne asigura ca rezultatul ajunge la toate pozitiile din sir. Pentru mai multe detalii vedeti implementarea.
 
@@ -277,15 +277,35 @@ int main() {
 }
 ```
 
+## RMQ sau AINT?
+
+Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideti sa comparam aceste doua structuri de date.
+
+### Comparatie in functie de timp
+
+RMQ este precalculat, la inceput, in $O(n \log n)$, iar AINT in $O(n)$. Insa, RMQ are complexitate $O(1)$ per query, in timp ce AINT are $O(\log n)$ per query.
+
+### Comparatie in functie de memorie
+
+RMQ foloseste $O(n \log n)$ memorie, iar AINT foloseste $O(n)$ memorie.
+
+### Alte precizari
+
+AINT poate rezolva si alte probleme pe care nu le poate rezolva RMQ. Aceste probleme pot fi rezolvate cu Sparse Table normal, rezultand aceeasi complexitate ca la AINT la query-uri. Acest lucru inseamna ca AINT este mai folositor in acest caz, chiar daca este mai greu de implementat.
+
+### Concluzie
+
+AINT este, de obicei, mai folositor ca RMQ, mai putin atunci cand numarul de query-uri este cu mult mai mare decat numarul de elemente sau atunci cand dorim sa nu scriem prea multe linii de cod.
+
 ## Probleme rezolvate
 
 ### Problema [Lot 2023 Juniori excursie](https://kilonova.ro/problems/619)
 
 ### Problema [CF 2009G2](https://codeforces.com/contest/2009/problem/G2)
 
-### Problema [CF 713D](https://codeforces.com/contest/713/problem/D)
-
 ## Concluzii
+
+Sparse Table este una dintre structurile de date care rezolva intrebari pe interval. Chiar daca arborii de intervale pot face aproape tot ce poate face si Sparse Table, de obicei cu o complexitate chiar mai buna, Sparse Table este mai usor de implementat. De asemenea, am vazut ca RMQ poate avea multe avantaje, dar si dezavantaje fata de AINT.
 
 ## Probleme suplimentare
 
@@ -296,24 +316,25 @@ int main() {
 * [CF 1328E](https://codeforces.com/contest/1328/problem/E)
 * [CF 1702G2](https://codeforces.com/contest/1702/problem/G2)
 * [CF 832D](https://codeforces.com/problemset/problem/832/D)
-* [CF 15D](https://codeforces.com/contest/15/problem/D)
 * [RMI 2020 Sum Zero](https://oj.uz/problem/view/RMI20_sumzero)
 * [EJOI 2021 consecutive1](https://www.pbinfo.ro/probleme/3860/consecutive1)
 * [PBinfo minisecvente](https://www.pbinfo.ro/probleme/2865/minisecvente)
 * [PBinfo divquery](https://www.pbinfo.ro/probleme/1735/divquery)
+* [infoarena euclid](https://infoarena.ro/problema/euclid)
 * [infoarena plantatie](https://infoarena.ro/problema/plantatie)
-* [CodeChef Tic Tac Toe](https://www.codechef.com/problems/TICTACTO)
 * [CodeChef Maximum of GCDs](https://www.codechef.com/problems/KSIZEGCD)
 * [Substring Restrictions - CS Academy](https://csacademy.com/contest/round-15/task/substring-restrictions/)
 * [Problemele cu Sparse Table de la articolul de pe CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html#practice-problems)
 * [Probleme cu RMQ de pe kilonova](https://kilonova.ro/tags/289)
+* [Probleme cu Binary Lifting de pe kilonova](https://kilonova.ro/tags/708)
 * [Problemele de RMQ din acest blog](https://codeforces.com/blog/entry/55274)
+* [Problemele din acest blog](https://codeforces.com/blog/entry/70418)
 
 ## Resurse suplimentare
 
 * [RMQ - SEPI Infobits F1 (pag. 63)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
 * [Sparse Table - CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html)
-* [Sparse Table - Codeforces](https://codeforces.com/blog/entry/101083)
-* [Binary Lifting - Codeforces](https://codeforces.com/blog/entry/100826)
+* Recomandat - [Sparse Table - Codeforces](https://codeforces.com/blog/entry/101083)
+* Recomandat - [Binary Lifting - Codeforces](https://codeforces.com/blog/entry/100826)
 * [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
 * [Avansat - RMQ cu $O(N)$ memorie și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)
