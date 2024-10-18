@@ -169,18 +169,112 @@ Putem face RMQ si pe matrice. Sa luam ca exemplu problema [euclid de pe infoaren
 
 ## Reverse RMQ
 
-Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problema in care avem actualizari de forma $a_i = min(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemanator, folosind aceleasi intervale ca la RMQ normal, si modificand astfel:
+Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problema in care avem actualizari de forma $a_i = max(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemanator, folosind aceleasi intervale ca la RMQ normal, si modificand astfel:
 
-$$spt_{lg, st} = min(spt_{lg, st}, x)$$
+$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1, x)$$
 
-$$spt_{lg, dr - 2^{lg} + 1} = min(spt_{lg, dr - 2^{lg} + 1, x)$$
-
-Apoi, valoarea $a_i$ finala va fi minimul dintre $a_i$ si valoarea din orice interval care este actualizat in $spt$ si include $i$. Pentru mai multe detalii vedeti implementarea.
+Apoi, valoarea $a_i$ finala va fi minimul dintre $a_i$ si valoarea din orice interval care este actualizat in $spt$ si include $i$. Calculam aceasta valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar in $spt_{i - 1, j}$ si $spt_{i - 1, j + 2^{i-1}}$, deoarece astea sunt singurele intervale necesare pentru a ne asigura ca rezultatul ajunge la toate pozitiile din sir. Pentru mai multe detalii vedeti implementarea.
 
 Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G)
 
 ```cpp
+#include <iostream>
 
+const int MAXN = 100'000;
+const int MAXVAL = 1 << 30;
+const int MAXLOG = 17;
+
+int n;
+unsigned int x, y, z;
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+struct SparseTable {
+    int spt[MAXLOG][MAXN], lg2[MAXN + 1];
+
+    void init(int n) {
+        int i, j;
+        for (i = 2; i <= n; i++) {
+            lg2[i] = 1 + lg2[i >> 1];
+        }
+        for (i = 0; i <= lg2[n]; i++) {
+            for (j = 0; j < n; j++) {
+                spt[i][j] = 0;
+            }
+        }
+    }
+
+    void update(int st, int dr, int val) {
+        int lg = lg2[dr - st + 1], dr_idx;
+        spt[lg][st] = max(spt[lg][st], val);
+        dr_idx = dr - (1 << lg) + 1;
+        spt[lg][dr_idx] = max(spt[lg][dr_idx], val);
+    }
+
+    void pullResults() {
+        int i, j, new_j;
+        for (i = lg2[n]; i > 0; i--) {
+            for (j = 0; j + (1 << i) <= n; j++) {
+                spt[i - 1][j] = max(spt[i - 1][j], spt[i][j]);
+                new_j = j + (1 << (i - 1));
+                spt[i - 1][new_j] = max(spt[i - 1][new_j], spt[i][j]);
+            }
+        }
+    }
+
+    void writeAnswer() {
+        int i;
+        unsigned long long answer;
+        pullResults();
+        answer = 0;
+        for (i = 0; i < n; i++) {
+            answer ^= 1LL * (i + 1) * spt[0][i];
+        }
+        std::cout << answer << "\n";
+    }
+} rmq;
+
+unsigned int nextValue() {
+    unsigned int w;
+    x ^= x << 11;
+    x ^= x >> 4;
+    x ^= x << 5;
+    x ^= x >> 14;
+    w = x ^ y ^ z;
+    x = y;
+    y = z;
+    z = w;
+    return z;
+}
+
+void processUpdates() {
+    int q, i, st, dr, val, aux;
+    std::cin >> n >> q >> x >> y >> z;
+    rmq.init(n);
+    for (i = 0; i < q; i++) {
+        st = nextValue() % n;
+        dr = nextValue() % n;
+        if (st > dr) {
+            aux = st;
+            st = dr;
+            dr = aux;
+        }
+        val = nextValue() % MAXVAL;
+        rmq.update(st, dr, val);
+    }
+}
+
+int main() {
+    int t;
+    std::cin >> t;
+    while (t--) {
+        processUpdates();
+        rmq.writeAnswer();
+    }
+    return 0;
+}
 ```
 
 ## Probleme rezolvate
