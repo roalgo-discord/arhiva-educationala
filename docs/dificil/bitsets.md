@@ -287,16 +287,24 @@ Ni se dă o matrice cu $N \cdot N$ elemente și un string $S$, ambele conținân
 
 Vom aborda o metodă similară cu prima problema, unde vom reține într-un tablou dacă o poziție anume a fost "atinsă" până acuma sau nu.
 
-Pentru a înțelege mai bine haideți să vizualizăm concret ce se întâmplă pe unul dintre exemple. 
+Pentru a înțelege mai bine haideți să vizualizăm concret ce se întâmplă pe unul dintre exemple:
 
-<div style="text-align:center">
-  <div style="font-size:200%">$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$</div>
-  <div style="font-size:200%">$\textcolor{blue}{9} \ \textcolor{purple}{2} \ \textcolor{blue}{9 \ 2} \  \textcolor{white}{8}$</div>
-  <div style="font-size:200%">$\textcolor{white}{0} \ \textcolor{blue}{8} \ \textcolor{white}{0} \ \textcolor{blue}{4} \ \textcolor{white}{4}$</div>
-  <div style="font-size:200%">$\textcolor{white}{5} \ \textcolor{blue}{1 \ 8 \ 6} \ \textcolor{white}{8}$</div>
-  <div style="font-size:200%">$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$</div>
-</div>
+ $\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1}$  
+ $\textcolor{white}{9} \ \textcolor{white}{2} \ \textcolor{white}{9 \ 2} \  \textcolor{white}{8}$  
+ $\textcolor{white}{0} \ \textcolor{white}{8} \ \textcolor{white}{0} \ \textcolor{white}{4} \ \textcolor{white}{4}$  
+ $\textcolor{white}{5} \ \textcolor{white}{1 \ 8} \ \textcolor{blue}{6} \ \textcolor{white}{8}$  
+$\textcolor{white}{4 \ 3 \ 3 \ 0 \ 1}$
 
+$S = \textcolor{blue}{6} \text{281864292913}$
+
+Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În momentul în care vrem să aflăm raspunsul pentru prefixul de lungime $2$, din fiecare celulă marcată va trebui să luăm în considerare fiecare vecin, marcându-le de asemenea cu albastru.
+
+Pentru prima linie, procesul descris mai sus ar arăta în felul următor:
+
+[/begin(align)
+
+$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rightarrow \textcolor{white}{3} \ \textcolor{white}{6} \ \textcolor{blue}{2} \ \textcolor{white}{3 \ 1}$  
+/end(align)]
 ## Concluzii
 
 ## Probleme suplimentare
