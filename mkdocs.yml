@@ -247,7 +247,7 @@ nav:
               dificil/square-root-decomposition.md
           - Arbori de intervale: dificil/segment-trees.md
           - Arbori indexați binar: dificil/fenwick-tree.md
-          - Range Minimum Query (sparse tables): dificil/rmq.md
+          - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
           - Trie: dificil/trie.md
       - Algebră liniară:
           - Introducere în algebră liniară: dificil/intro-linalg.md
