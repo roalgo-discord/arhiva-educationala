@@ -5,7 +5,7 @@ tags:
     - optimizare
 ---
 
-**Autori**: Ștefan-Cosmin Dăscălescu, Luca Mureșan
+**Autori**: Ștefan-Cosmin Dăscălescu, Luca Valentin Mureșan
 
 ## Ce este un arbore indexat binar?
 
@@ -57,7 +57,7 @@ De exemplu, pentru nodul $13$ vom trece prin următoarele poziții, după cum se
 * $12$ - poziția celui mai nesemnificativ bit este $2$, scădem $2^2 = 4$ din poziție
 * $8$ - poziția celui mai nesemnificativ bit este $3$, scădem $2^3 = 8$ din poziție, am ajuns la $0$, deci calculul ia sfârșit.
 
-![Un exemplu de query pentru poziția 13](../images/fenwick/fenwick-query.png)
+![Un exemplu de query pentru poziția $13$](../images/fenwick/fenwick-query.png)
 
 Complexitatea operației de query este $O(\log n)$, unde $n$ este dimensiunea
 arborelui indexat binar. 
