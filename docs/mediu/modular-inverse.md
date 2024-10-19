@@ -4,7 +4,7 @@ tags:
     - combinatorica
 ---
 
-**Autor**: Iuoraș Andrei
+**Autor**: Andrei Iuoraș
 
 ## Problema
 
@@ -102,7 +102,7 @@ int inversModular(const int A) {
 ## Probleme cu invers modular
 
 * [Invers Modular](https://www.infoarena.ro/problema/inversmodular)
-* [Prosum](https://kilonova.ro/problems/1697)
+* [Lot 2021 Juniori Prosum](https://kilonova.ro/problems/1697)
 * [Codeforces Beautiful Numbers](http://codeforces.com/problemset/problem/300/C)
 * [Toate aplicatiile prezentate la combinatorica](./intro-combinatorics.md)
 * [Codeforces Sum of the kth powers](https://codeforces.com/contest/622/problem/F)

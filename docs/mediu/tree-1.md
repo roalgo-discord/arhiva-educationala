@@ -2,7 +2,10 @@
 tags:
     - arbori
     - grafuri
+    - diametru
 ---
+
+**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 
@@ -144,10 +147,8 @@ int main() {
 }
 ```
 
-## Alte probleme și resurse utile
+## Probleme suplimentare
 
-* [Introduction to Tree Algorithms](https://usaco.guide/silver/intro-tree?lang=cpp)
-* [Grafuri și arbori - noțiuni de bază](https://cppi.sync.ro/materia/grafuri_arbori_notiuni_teoretice_de_baza.html)
 * [Subordinates](https://cses.fi/problemset/task/1674)
 * [nivele2 infoarena](https://www.infoarena.ro/problema/nivele2)
 * [Grarb infoarena](https://www.infoarena.ro/problema/grarb)
@@ -157,3 +158,8 @@ int main() {
 * [Mootube USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=788)
 * [Milk Visits USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=968)
 * [Sap](https://kilonova.ro/problems/1802)
+
+## Resurse suplimentare
+
+* [Introduction to Tree Algorithms](https://usaco.guide/silver/intro-tree?lang=cpp)
+* [Grafuri și arbori - noțiuni de bază](https://cppi.sync.ro/materia/grafuri_arbori_notiuni_teoretice_de_baza.html)

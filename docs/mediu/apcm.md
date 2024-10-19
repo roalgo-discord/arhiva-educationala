@@ -2,6 +2,8 @@
 tags:
     - grafuri
     - greedy
+    - arbori
+    - sortare
 ---
 **Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 

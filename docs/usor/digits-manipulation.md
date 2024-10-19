@@ -1,4 +1,9 @@
-# Prelucrarea cifrelor unui număr
+---
+tags:
+    - cifre
+    - matematica
+    - structura repetitiva
+---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
@@ -247,9 +252,20 @@ int main () {
 }
 ```
 
-## Probleme și lectură suplimentară
+## Probleme suplimentare
 
-* [Parcurgerea cifrelor unui număr](https://cppi.sync.ro/materia/parcurgerea_cifrelor_unui_numar.html)
-* [Cifrele unui număr](https://www.pbinfo.ro/articole/65/cifrele-unui-numar)
-* [Probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
-* [OJI 2019 aur](https://kilonova.ro/submissions/50202)
+* [NumarulDeCifre pbinfo](https://www.pbinfo.ro/probleme/66/numaruldecifre)
+* [UltimaCifraPara pbinfo](https://www.pbinfo.ro/probleme/77/ultimacifrapara)
+* [ProdusCifreImpare pbinfo](https://www.pbinfo.ro/probleme/65/produscifreimpare)
+* [prod_k pbinfo](https://www.pbinfo.ro/probleme/3078/prod-k)
+* [aparitii pbinfo](https://www.pbinfo.ro/probleme/107/aparitii)
+* [OMI Iasi 2020 codjoc](https://www.pbinfo.ro/probleme/3384/codjoc)
+* [alternant1 pbinfo](https://www.pbinfo.ro/probleme/3926/alternant1)
+* [Alte probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
+* [OJI 2019 aur](https://kilonova.ro/problems/906)
+
+## Resurse suplimentare
+
+* [Parcurgerea cifrelor unui număr - CPPI Sync](https://cppi.sync.ro/materia/parcurgerea_cifrelor_unui_numar.html)
+* [Prelucrarea cifrelor unui numar - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_IX-a_lec%C8%9Bia_6)
+* [Cifrele unui număr - pbinfo](https://www.pbinfo.ro/articole/65/cifrele-unui-numar)

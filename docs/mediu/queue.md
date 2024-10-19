@@ -2,6 +2,8 @@
 title: Coada
 tags:
     - structuri de date
+    - coada
+    - STL
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea

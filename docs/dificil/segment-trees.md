@@ -1,7 +1,8 @@
 ---
-title: "Arbori de intervale"
 tags:
-  - structuri de date
+    - structuri de date
+    - arbori
+    - queryuri
 ---
 
 **Autor**: Alexandru Toma
@@ -9,9 +10,9 @@ tags:
 În competițiile de informatică și la olimpiadă se întâlnesc adesea probleme care implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula eficient suma, maximul sau minimul pe o subsecvență a unui vector, mai ales când acesta suferă **modificări în timp real**? 
 
 !!! note "Observație"
-    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de query au o complexitate de \(O(1)\) atât pentru sume parțiale, cât și pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de valori, ceea ce duce la o complexitate de \(O(n)\) pentru sume parțiale și \(O(n \log n)\) pentru RMQ.
+    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de valori, ceea ce duce la o complexitate de $O(n)$ pentru sume parțiale și $O(n \log n)$ pentru RMQ.
 
-**Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest tip de probleme, permițând efectuarea rapidă de interogări și actualizări în $O(log n)$ pentru ambele operații.
+**Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest tip de probleme, permițând efectuarea rapidă de interogări și actualizări în $O(\log n)$ pentru ambele operații.
 
 În acest articol, vom explora conceptele de bază ale arborilor de intervale, modul de construire și utilizare a acestora, și vom analiza câteva aplicații frecvente în problemele de olimpiadă. Vom începe prin a defini structura unui arbore de intervale și vom continua prin a explica operațiile de actualizare, interogare și implementările acestora. În final, vom discuta și câteva probleme apărute în concursurile de programare competitivă. Fără prea multă vorbărie, să începem!
 
@@ -362,6 +363,7 @@ Pentru problemele de pe codeforces, este necesar un cont pentru a putea accesa a
   - [Intersecție segmente](https://www.pbinfo.ro/probleme/2103/intersectie-segmente) : baleiere
 
 ## Probleme dificile
+
   - [Dulciuri - OJI 2021](https://kilonova.ro/problems/133)
   - [Array Counting - IIOT 2021-2022](https://infoarena.ro/problema/arraycounting)
   - [Panama Sum - IIOT 2022-2023](https://kilonova.ro/problems/304/)

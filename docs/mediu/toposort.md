@@ -272,18 +272,21 @@ int main() {
 }
 ```
 
-## Resurse Utile
+## Probleme suplimentare
 
-### Probleme și Articole Recomandate
+* [Infoarena - Sortare Topologica](https://www.infoarena.ro/problema/sortaret)
+* [CSES Course Schedule](https://cses.fi/problemset/task/1679)
+* [Infoarena Path](https://www.infoarena.ro/problema/path)
+* [RoAlgo Contest #4 Leximin](https://kilonova.ro/problems/1016)
+* [Codeforces Fox and Names](https://codeforces.com/problemset/problem/510/C)
+* [Infoarena easygraph](https://www.infoarena.ro/problema/easygraph)
+* [IATI Shumen 2024 xy](https://kilonova.ro/problems/2627)
+* [RoAlgo Contest #2 somnoros](https://kilonova.ro/problems/677)
+* [Infoarena alpin](https://infoarena.ro/problema/alpin)
+* [Codeforces Gym Permutation Counting](https://codeforces.com/gym/103741/problem/H)
 
-* [USACO Guide](https://usaco.guide/gold/toposort)
-* [Sortare Topologica - Infoarena](https://www.infoarena.ro/problema/sortaret)
-* [Path - Infoarena](https://www.infoarena.ro/problema/path)
-* [Leximin - Kilonova](https://kilonova.ro/problems/1016)
 
-### Probleme adiționale
+## Resurse suplimentare
 
-* [Easygraph - Infoarena](https://www.infoarena.ro/problema/easygraph)
-* [xy - Kilonova](https://kilonova.ro/problems/2627)
-* [Somnoros - Kilonova](https://kilonova.ro/problems/677)
-* [Alpin - Infoarena](https://infoarena.ro/problema/alpin)
+* [Topological Sorting - cp-algorithms](https://cp-algorithms.com/graph/topological-sort.html)
+* [Topological Sorting - USACO Guide](https://usaco.guide/gold/toposort)

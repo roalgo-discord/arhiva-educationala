@@ -3,6 +3,7 @@ tags:
     - stiva
     - structuri de date
 ---
+
 **Autori**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
 
 În multe probleme în care lucrăm cu secvențe de valori, suntem nevoiți să procesăm valorile pe rând, asemenea unui teanc de obiecte. Pentru a formaliza acest proces, vom avea nevoie de o structură de date potrivită. În informatică, numim această structură de date stivă.
