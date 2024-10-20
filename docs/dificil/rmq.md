@@ -7,9 +7,13 @@ tags:
     - binary lifting
 ---
 
+**Autor**: Traian Mihai Danciu
+
 ## Introducere
 
 **Sparse Table** este o structură care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
+
+## Sparse Table. Binary Lifting
 
 Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem rezolva folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), dar haideți să încercăm o metodă nouă.
 
@@ -166,7 +170,33 @@ int main() {
 
 ## RMQ 2D
 
-Putem face RMQ si pe matrice. Sa luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
+Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
+
+Să calculăm, mai întâi $maxd_{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$.
+
+$$maxd_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxd_{i-1, j}, maxd_{i, j-1}, maxd_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
+
+Acum, sa vedem cum se calculeaza $spt$. Fie $spt_{i, j, l, c} = $ latura celui mai mare patrat inclus in dreptunghiul cu coltul stanga-sus la $(i, j)$ si cu coltul dreapta-jos la $(l+2^i-1, c+2^j-1)$.
+
+$$spt_{i, j, l, c} = \begin{cases} maxd_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
+
+Sa vedem cum se calculeaza raspunsul pentru o intrebare pentru un dreptunghi cu coltul stanga-sus in $(l_1, c_1)$ si coltul dreapta-jos in $(l_2, c_2)$. Fie $lgl = $ cel mai mare numar astfel incat $2^{lgl} \leq l_2-l_1+1$ si $lgc = $ cel mai mare numar astfel incat $2^lgc \leq c_2-c_1+1$.
+
+$$query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_2 - 2^{lgc} + 1})$$
+
+Mai departe, observam ca noi nu avem cum sa aflam direct raspunsul, deoarece unele rezultate pot iesi din dreptunhiul in care suntem intrebati. Asa ca, vom cauta binar raspunsul.
+
+Cum verificam daca avem vreun patrat de latura cel putin $k$? Vom verifica daca:
+
+$$query(l_2-k+1, c_2-k+1, l_2, c-2) \geq k$$
+
+Adica vom verifica daca exista vreun colt dreapta-jos care formeaza un patrat de latura cel putin $k$.
+
+Sursa de Accepted:
+
+```cpp
+
+```
 
 ## Reverse RMQ
 
