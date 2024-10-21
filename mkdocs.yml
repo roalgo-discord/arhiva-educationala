@@ -145,7 +145,7 @@ nav:
           - Cum ajungi să stăpânești materia de la clasă?: usor/schoolwork.md
           - Cum să te pregătești pentru bacalaureat și admitere?: usor/bac-admitere.md
       - Concepte fundamentale:
-          - Complexități: 'cppintro/functions.md'
+          - Complexități: usor/complexity.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md
           - Simularea soluției: usor/simulating-solution.md
           - Vectori de frecvență: usor/frequency-arrays.md
