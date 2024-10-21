@@ -242,15 +242,12 @@ while (j <= m) {
 
 ## Rotirea tablourilor
 
-Pentru a putea roti un tablou la stânga sau la dreapta, va trebui să mutăm toate
-elementele cu o poziție la stânga/dreapta, iar pentru a putea face asta, va
-trebui mai întâi să păstrăm în memorie valoarea de pe prima/ultima poziție, să
-mutăm secvențial celelalte valori și în cele din urmă să mutăm valoarea păstrată
-pe ultima/prima poziție în șirul nou rezultat. În mod similar, putem implementa
-rotirea cu $k$ poziții, folosind $\mathcal{O}(k)$ memorie suplimentară. 
+!!! note "Observație" 
+    Veți găsi această metodă numită și permutarea circulară a valorilor dintr-un șir, deoarece dacă operăm această operație de un număr suficient de ori, vom reveni la configurația inițială.
 
-Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi un
-algoritm ce rulează în timp constant pentru o rotație la stânga sau la dreapta.
+Pentru a putea roti un tablou (mutarea valorilor din el cu un număr $k$ de poziții la stânga sau la dreapta), va trebui mai întâi să păstrăm în memorie valoarea de pe primele/ultimele $k$ poziții, să mutăm secvențial celelalte valori și în cele din urmă să mutăm valorile păstrate pe ultimele/primele $k$ poziții în șirul nou rezultat. 
+
+Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi o structură de date ce permite rotația unui tablou cu o singură poziție la stânga sau dreapta.
 
 ```cpp
 void rotire(int arr[], int n, bool laStanga = true, int k = 1) {

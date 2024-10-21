@@ -45,46 +45,14 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Chiar da
 
 În ordinea popularității lor, tipurile de date întregi sunt următoarele:
 
-* tipul **int** - cel mai utilizat tip de date, îl folosim pentru a stoca numere întregi intre $-2^{31}$ și $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ și $2 \ 147 \ 483 \ 647$);
-* tipul **long long** - un tip de date folosit pentru numerele întregi mai mari, având limite intre $-2^{63}$ și $2^{63} - 1$  ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ și $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre;
-* tipul **char** - tipul de date folosit pentru lucrul cu caractere, având limitele între $-128$ și $127$;
+* tipul **int** - cel mai utilizat tip de date, îl folosim pentru a stoca numere întregi intre $-2^{31}$ și $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ și $2 \ 147 \ 483 \ 647$), acestea fiind numerele ce se pot stoca pe $32$ de biți ($4$ bytes);
+* tipul **long long** - un tip de date folosit pentru numerele întregi mai mari, având limite intre $-2^{63}$ și $2^{63} - 1$  ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ și $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre, acestea fiind numerele ce se pot stoca pe $64$ de biți ($8$ bytes);
+* tipul **char** - tipul de date folosit pentru lucrul cu caractere, având limitele între $-128$ și $127$ ($1$ byte);
 * tipul **bool** - așa cum îi zice și numele, este folosit pentru a păstra doar valori binare ($1$ sau $0$, corespunzător stărilor de True și False);
-* tipul **short** - un tip de date folosit pentru numerele întregi mai mici, având limite intre $-2^{15}$ și $2^{15} - 1$ ($-32 \ 768$ și $32 \ 767$).
+* tipul **short** - un tip de date folosit pentru numerele întregi mai mici, având limite intre $-2^{15}$ și $2^{15} - 1$ ($-32 \ 768$ și $32 \ 767$), acestea fiind numerele ce se pot stoca pe $16$ biți ($2$ bytes).
 
-### Tipul **__int128**
-
-Pe lângă aceste tipuri, există și tipul de date **__int128** care ne permite să stocăm valori pe $128$ de biți, având limite între $-2^{127}$ și $2^{127} - 1$ (numere de aproximativ $37$ de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
-
-Noi nu putem să citim și să afișăm direct **__int128**, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim **std::cin >> x** chiar dacă $x$ este **__int128**.
-
-```cpp
-#include <string> // pentru std::string
-#include <algorithm> // pentru std::reverse
-
-// citire
-std::istream &operator>>(std::istream &in, __int128 &n) {
-    int i;
-    std::string s;
-    in >> s;
-    n = 0;
-    for (i = 0; i < (int)s.size(); i++) {
-        n = n * 10 + s[i] - '0';
-    }
-    return in;
-}
-
-// afisare
-std::ostream &operator<<(std::ostream &out, __int128 n) {
-    std::string s = "";
-    do {
-        s.push_back('0' + n % 10);
-        n /= 10;
-    } while (n > 0);
-    std::reverse(s.begin(), s.end());
-    out << s;
-    return out;
-}
-```
+!!! note "Observație"
+    Printre altele, există și tipul de date __int128, care ne permite să păstrăm numere pe $128$ de biți, despre care vom vorbi ulterior în articol, deoarece cunoașterea lui nu este necesară decât pentru aplicații mai avansate de la olimpiadă. 
 
 ### Tipurile de date unsigned 
 
@@ -158,6 +126,42 @@ int main() {
     return 0;
 }
 ```
+
+### Tipul **__int128**
+
+Pe lângă aceste tipuri, există și tipul de date **__int128** care ne permite să stocăm valori pe $128$ de biți, având limite între $-2^{127}$ și $2^{127} - 1$ (numere de aproximativ $37$ de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
+
+Noi nu putem să citim și să afișăm direct **__int128**, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim **std::cin >> x** chiar dacă $x$ este **__int128**.
+
+```cpp
+#include <string> // pentru std::string
+#include <algorithm> // pentru std::reverse
+
+// citire
+std::istream &operator>>(std::istream &in, __int128 &n) {
+    int i;
+    std::string s;
+    in >> s;
+    n = 0;
+    for (i = 0; i < (int)s.size(); i++) {
+        n = n * 10 + s[i] - '0';
+    }
+    return in;
+}
+
+// afisare
+std::ostream &operator<<(std::ostream &out, __int128 n) {
+    std::string s = "";
+    do {
+        s.push_back('0' + n % 10);
+        n /= 10;
+    } while (n > 0);
+    std::reverse(s.begin(), s.end());
+    out << s;
+    return out;
+}
+```
+
 
 ## Concluzii
 

@@ -35,70 +35,119 @@ while (!gata) {
 
 În această problemă, cum cere și titlul, trebuie doar să simulăm procesul descris. De fiecare dată când citim o direcție, avansăm în acel mod, creștem suma cu valoarea de la poziția obținută și o afișăm.
 
-Sursa de 100 de puncte:
-```cpp
-#include <iostream>
+Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât și fără ele:
 
-const int MAXN = 1'000;
-const char T_NORD = 'N';
-const char T_EST = 'E';
-const char T_SUD = 'S';
-const char T_VEST = 'V';
+=== "Fără funcții"
 
-int mat[MAXN][MAXN], q, x, y;
+    ```cpp
+    #include <iostream>
+    using namespace std;
 
-void fastReadWrite() {
-    std::ios_base::sync_with_stdio(0);
-    std::cin.tie(0);
-    std::cout.tie(0);
-}
+    int mat[1000][1000], q, x, y;
 
-void readMatrix() {
-    int i, j, n, m;
-    std::cin >> n >> m >> q >> x >> y;
-    x--; // noi indexam de la 0
-    y--;
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < m; j++) {
-            std::cin >> mat[i][j];
+    int main() {
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+
+        int i, j, n, m;
+        cin >> n >> m >> q >> x >> y;
+        x--; // noi indexam de la 0
+        y--;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                cin >> mat[i][j];
+            }
+        }
+        int dir;
+        long long sum;
+        dir = cin.get();
+        while (!isalpha(dir)) {
+            dir = cin.get(); // gasim prima litera (prima directie)
+        }
+        sum = 0;
+        for (i = 0; i < q; i++) {
+            if (dir == 'N') {
+                x--;
+            }
+            else if (dir == 'E') {
+                y++;
+            }
+            else if (dir == 'S') {
+                x++;
+            }
+            else { // T_VEST
+                y--;
+            }
+
+            sum += mat[x][y];
+            cout << sum << " ";
+
+            dir = cin.get();
+        }
+        cout << "\n";
+        return 0;
+    }
+    ```
+
+=== "Cu funcții"
+
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    int mat[1000][1000], q, x, y;
+
+    void readMatrix() {
+        int i, j, n, m;
+        cin >> n >> m >> q >> x >> y;
+        x--; // noi indexam de la 0
+        y--;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                cin >> mat[i][j];
+            }
         }
     }
-}
 
-void simulateRoad() {
-    int i, dir;
-    long long sum;
-    while (!isalpha(dir = std::cin.get())); // gasim prima litera (prima directie)
-    sum = 0;
-    for (i = 0; i < q; i++) {
-        if (dir == T_NORD) {
-            x--;
+    void simulateRoad() {
+        int i, dir;
+        long long sum;
+        dir = cin.get();
+        while (!isalpha(dir)) {
+            dir = cin.get(); // gasim prima litera (prima directie)
         }
-        else if (dir == T_EST) {
-            y++;
-        }
-        else if (dir == T_SUD) {
-            x++;
-        }
-        else { // T_VEST
-            y--;
-        }
+        sum = 0;
+        for (i = 0; i < q; i++) {
+            if (dir == 'N') {
+                x--;
+            }
+            else if (dir == 'E') {
+                y++;
+            }
+            else if (dir == 'S') {
+                x++;
+            }
+            else { // T_VEST
+                y--;
+            }
 
-        sum += mat[x][y];
-        std::cout << sum << " ";
+            sum += mat[x][y];
+            cout << sum << " ";
 
-        dir = std::cin.get();
+            dir = cin.get();
+        }
+        cout << "\n";
     }
-    std::cout << "\n";
-}
 
-int main() {
-    fastReadWrite();
-    readMatrix();
-    simulateRoad();
-    return 0;
-}
-```
+    int main() {
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+
+        readMatrix();
+        simulateRoad();
+        return 0;
+    }
+    ```
 
 ## Optimizarea unei simulări
 
@@ -120,13 +169,12 @@ Sursa de 100 de puncte:
 
 ```cpp
 #include <fstream>
+using namespace std;
 
-std::ifstream fin("galbeni.in");
-std::ofstream fout("galbeni.out");
+ifstream fin("galbeni.in");
+ofstream fout("galbeni.out");
 
-const int MAXNR = 1'000;
-
-int n, start_cycle, cycle_length, p10, poz[MAXNR], v[MAXNR];
+int n, start_cycle, cycle_length, p10, poz[1000], v[1000];
 
 int getNext(int s) {
     int i, p, new_s, cifra;
@@ -214,9 +262,10 @@ Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este
 Sursa de 100 de puncte:
 ```cpp
 #include <fstream>
+using namespace std;
 
-std::ifstream fin("asort.in");
-std::ofstream fout("asort.out");
+ifstream fin("asort.in");
+ofstream fout("asort.out");
 
 int r, n;
 
@@ -271,9 +320,10 @@ De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom [b
 Sursa de 100 de puncte:
 ```cpp
 #include <fstream>
+using namespace std;
 
-std::ifstream fin("robinson.in");
-std::ofstream fout("robinson.out");
+ifstream fin("robinson.in");
+ofstream fout("robinson.out");
 
 const int MAXM = 100;
 const int VISITED = -1;
@@ -333,9 +383,10 @@ int main() {
 
 ```cpp
 #include <fstream>
+using namespace std;
 
-std::ifstream fin("furnica.in");
-std::ofstream fout("furnica.out");
+ifstream fin("furnica.in");
+ofstream fout("furnica.out");
 
 const int MAXN = 100;
 const int N_DIR = 8;

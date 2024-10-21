@@ -154,6 +154,16 @@ Pentru cei mai avansați, această operație se poate face [și în timp logarit
 
 De multe ori, mai ales în problemele mai simple de algoritmică, cunoașterea unor formule și principii matematice simple este esențială. 
 
+### Notații importante
+
+De-a lungul acestei arhive, dar și dacă studiați matematica sau alte discipline la școală, precum fizică sau chimie, veți întâlni diverse notații matematice, pe care le vom folosi în acest articol. Printre altele, vom enumera următoarele:
+
+* Notația pentru sumă: $\sum$ este folosi pentru a nota diverse sume între mai multe numere legate între ele printr-o formulă. De exemplu, $\sum_{i=1}^n x$ reprezintă suma numerelor de la $1$ la $n$.
+* Notația pentru produs: $\Pi$ este folosi pentru a nota diverse produse între mai multe numere legate între ele printr-o formulă. De exemplu, $\Pi_{i=1}^n x$ reprezintă produsul numerelor de la $1$ la $n$.
+* Notația pentru logaritm: $\log n$ este folosit pentru a nota logaritmul unui număr $n$, o valoare folosită frecvent în calculul complexităților. Fără a intra prea mult în teoria specifică a logaritmilor (se studiază în clasa a X-a la mate-info), putem să-i definim într-un mod aproximativ drept numărul de pași necesari pentru a ajunge la un număr subunitar dacă împărțim pe $n$ la $2$. De exemplu, $\log 1000 \approx 10$,  $\log 1000000 \approx 20$ etc.
+
+De asemenea, în funcție de algoritmii studiați, veți mai găsi alte notații ce folosesc litere din alfabetul grecesc precum $\pi$, $\psi$, $\phi$ etc.
+
 ### Formule pentru sume remarcabile
 
 Așa cum știți probabil de la matematică, avem diverse formule pentru unele sume de numere naturale. Cele mai multe dintre ele se pot demonstra fie prin calcul direct, fie prin inducție matematică. 
