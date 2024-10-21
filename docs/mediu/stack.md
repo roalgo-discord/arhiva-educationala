@@ -258,16 +258,19 @@ int main() {
 
 ## Probleme rezolvate
 
-### Problema [skyline](https://kilonova.ro/problems/2114)
+### Problema [skyline](https://nerdarena.ro/problema/skyline)
 
 Pentru a rezolva această problemă, va trebui să aflăm pentru fiecare valoare care este cea mai apropiată poziție de la stânga și de la dreapta cu o înălțime mai mică decât cea curentă. 
 
 După ce aflăm aceste valori, tot ce trebuie să facem este să folosim sume parțiale pentru a calcula aria cerută pentru fiecare poziție. 
 
 ```cpp
-#include <iostream>
+#include <fstream>
 
 using namespace std;
+
+ifstream fin("skyline.in");
+ofstream fout("skyline.out");
 
 const int nmax = 40000;
 int length[5 + nmax], height[5 + nmax], l[5 + nmax], stk[5 + nmax];
@@ -275,10 +278,10 @@ int length[5 + nmax], height[5 + nmax], l[5 + nmax], stk[5 + nmax];
 
 int main() {
     int n;
-    cin >> n;
+    fin >> n;
     int ptr = 0;
     for (int i = 1; i <= n; i++) {
-        cin >> height[i] >> length[i];
+        fin >> height[i] >> length[i];
         length[i] += length[i - 1];  // fac sume partiale pe length[]
         while (ptr > 0 && height[stk[ptr - 1]] >= height[i]) {
             ptr--;
@@ -307,7 +310,7 @@ int main() {
         stk[ptr++] = i;
         ans = max(ans, 1ll * height[i] * (length[r - 1] - length[l[i]]));
     }
-    cout << ans << '\n';
+    fout << ans << '\n';
     return 0;
 }
 ```
