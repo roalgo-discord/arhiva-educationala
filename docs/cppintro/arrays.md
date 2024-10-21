@@ -271,7 +271,7 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
 
     ```cpp
     void rotireLaStanga(int arr[], int n, int k) {
-        int* temp = new int[k];
+        int temp[k];
     
         // Păstrăm primele k elemente
         for (int i = 0; i < k; ++i) {
@@ -287,8 +287,6 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
         for (int i = 0; i < k; ++i) {
             arr[n - k + i] = temp[i];
         }
-    
-        delete[] temp;
     }
     ```
 
@@ -296,7 +294,7 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
 
     ```cpp
     void rotireLaDreapta(int arr[], int n, int k) {
-        int* temp = new int[k];
+        int temp[k];
     
         // Păstrăm ultimele k elemente
         for (int i = 0; i < k; ++i) {
@@ -312,8 +310,6 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
         for (int i = 0; i < k; ++i) {
             arr[i] = temp[i];
         }
-    
-        delete[] temp;
     }
     ```
 

@@ -250,6 +250,9 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 
 ## Structuri de date liniare
 
+!!! note "Observație"
+    Toate aceste structuri de date au în spatele implementării lor din STL o structură de tip deque.
+
 ### Structura std::queue
 
 În general, folosim această structură de date pentru a simula funcționalitățile unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca ``#include  <queue>``.
@@ -334,6 +337,8 @@ Dintre cele mai importante funcții, vom enumera următoarele:
 * Găsirea unui element: ``mp.find(x) != mp.end()`` verifică dacă $x$ există în map, fără a crea un element nou în map.
 * Ștergerea: ``mp.erase(x)`` șterge instanța cheii $x$ din map. Dacă $x$ nu se află în map, nu se întâmplă nimic.
 * Curățarea: ``mp.clear()`` șterge toate cheile din map. 
+* Lower_bound: ``mp.lower_bound(x)`` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau ``mp.end()`` dacă nu avem o asemenea valoare.
+* Upper_bound: ``mp.upper_bound(x)`` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau ``mp.end()`` dacă nu avem o asemenea valoare.
 * Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
 
 Cea mai simplă utilizare a unui map va fi drept un vector de frecvență dinamic, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a map-ului.

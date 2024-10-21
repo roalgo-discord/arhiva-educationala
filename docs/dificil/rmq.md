@@ -19,7 +19,8 @@ Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problem
 
 Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o întrebare pe intervalul $[st, dr]$, îl vom împărți în intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary lifting**.
 
-!!! warning “Atenție“
+!!! warning "Atenție"
+
     Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
 
 !!! note "Observație"

@@ -186,7 +186,6 @@ nav:
           - Baze de numerație: mediu/number-bases.md
           - Principiul includerii și excluderii (pinex): mediu/pinex.md
           - Invers modular: mediu/modular-inverse.md
-          - Funcția Möbius: mediu/mobius.md
       - Sortare și căutare:
           - Two pointers: mediu/two-pointers.md
           - Sliding window: mediu/sliding-window.md
@@ -249,7 +248,8 @@ nav:
           - Arbori indexați binar: dificil/fenwick-tree.md
           - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
           - Trie: dificil/trie.md
-      - Algebră liniară:
+      - Algebră:
+          - Funcția Möbius: dificil/mobius.md
           - Introducere în algebră liniară: dificil/intro-linalg.md
           - Ridicare la putere a unei matrici: dificil/pow-mat.md
       - Geometrie:
