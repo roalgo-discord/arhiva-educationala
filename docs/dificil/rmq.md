@@ -433,7 +433,7 @@ int main() {
 }
 ```
 
-## RMQ sau AINT?
+## RMQ sau Arbori de intervale?
 
 Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideți să comparăm aceste două structuri de date.
 
@@ -448,6 +448,8 @@ RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
 ### Alte precizări
 
 AINT poate rezolva și alte probleme pe care RMQ nu le poate rezolva. La astfel de probleme, putem folosi un Sparse Table normal, rezultând aceeași complexitate ca la AINT la query-uri. Acest lucru înseamnă că AINT este mai folositor în acest caz, chiar dacă este mai greu de implementat.
+
+În același timp, AINT poate trata și actualizări împreună cu interogări, iar RMQ nu le poate trata. În această situație, RMQ nu intră în calcul atunci când dorim să găsim cea mai bună structură de date pentru a rezolva o anumită problemă.
 
 ### Concluzie
 
