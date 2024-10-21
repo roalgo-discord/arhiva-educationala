@@ -823,4 +823,4 @@ Sparse Table este una dintre structurile de date care răspunde la întrebări p
 * Recomandat - [Sparse Table - Codeforces](https://codeforces.com/blog/entry/101083)
 * Recomandat - [Binary Lifting - Codeforces](https://codeforces.com/blog/entry/100826)
 * [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
-* [Avansat - RMQ cu $O(N)$ memorie și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)
+* [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)
