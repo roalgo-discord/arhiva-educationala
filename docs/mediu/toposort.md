@@ -1,17 +1,18 @@
-# Sortare Topologică
+---
+tags:
+    - grafuri
+    - grafuri orientate
+    - parcurgere
+    - sortare
+    - recursivitate
+---
 
-**Autor** : Radu Mocănașu
-
-## Cunoștințe necesare:
-* Grafuri.
-* Recursivitate.
-* Liste de Adiacență.
-* Câteva noțiuni legate de vectorii STL.
+**Autor**: Radu Mocănașu
 
 ## Teorie
 
-Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$ lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la $A$ la $B$,
- $$P_A < P_B $$
+!!! info "Definitie"
+    Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$ lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la $A$ la $B$, $$P_A < P_B $$
 
 ### Spre exemplu:
 
@@ -30,10 +31,11 @@ E --> C
 ```mermaid
 graph LR
 A((1)) --> B((2))
-B --> D((4))
-C((3)) --> A
+B --> D((3))
+C((4)) --> A
 D --> C
 ```
+
 Acest graf conține un ciclu (de fapt chiar este unul), mai exact $1, 2, 3, 4$ . Astfel, putem alege 2 noduri, $A$ și $B$, astfel încât ele aparțin aceluiași ciclu (se poate ajunge de la $A$ la $B$ și viceversa). Dar asta implică faptul că în sortarea topologică, $A$ se află în fața lui $B$, dar și că $B$ se află înaintea lui $A$, ceea ce duce la o contradicție. Așadar, într-un graf ce conține un ciclu, nu există nicio sortare topologică.
 
 ## Algoritmul
@@ -182,7 +184,11 @@ int main() {
 }
 ```
 
-Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică).
+Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică). 
+
+### Complexitatea algoritmului:
+
+Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$ numărul de muchii. Memoria va fi tot $O(n + m)$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
 
@@ -266,18 +272,21 @@ int main() {
 }
 ```
 
-## Resurse Utile
+## Probleme suplimentare
 
-### Probleme și Articole Recomandate
+* [Infoarena - Sortare Topologica](https://www.infoarena.ro/problema/sortaret)
+* [CSES Course Schedule](https://cses.fi/problemset/task/1679)
+* [Infoarena Path](https://www.infoarena.ro/problema/path)
+* [RoAlgo Contest #4 Leximin](https://kilonova.ro/problems/1016)
+* [Codeforces Fox and Names](https://codeforces.com/problemset/problem/510/C)
+* [Infoarena easygraph](https://www.infoarena.ro/problema/easygraph)
+* [IATI Shumen 2024 xy](https://kilonova.ro/problems/2627)
+* [RoAlgo Contest #2 somnoros](https://kilonova.ro/problems/677)
+* [Infoarena alpin](https://infoarena.ro/problema/alpin)
+* [Codeforces Gym Permutation Counting](https://codeforces.com/gym/103741/problem/H)
 
-* [USACO Guide](https://usaco.guide/gold/toposort)
-* [Sortare Topologica - Infoarena](https://www.infoarena.ro/problema/sortaret)
-* [Path - Infoarena](https://www.infoarena.ro/problema/path)
-* [Leximin - Kilonova](https://kilonova.ro/problems/1016)
 
-### Probleme adiționale
+## Resurse suplimentare
 
-* [Easygraph - Infoarena](https://www.infoarena.ro/problema/easygraph)
-* [xy - Kilonova](https://kilonova.ro/problems/2627)
-* [Somnoros - Kilonova](https://kilonova.ro/problems/677)
-* [Alpin - Infoarena](https://infoarena.ro/problema/alpin)
+* [Topological Sorting - cp-algorithms](https://cp-algorithms.com/graph/topological-sort.html)
+* [Topological Sorting - USACO Guide](https://usaco.guide/gold/toposort)

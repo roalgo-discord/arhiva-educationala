@@ -2,6 +2,7 @@
 tags:
     - grafuri
     - drumuri minime
+    - dijsktra
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
@@ -412,7 +413,7 @@ int main() {
 
 Această abordare poate fi extinsă și dacă avem $k$ costuri distincte, folosind o strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a folosi $k$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim exact ca la 0-1 BFS. 
 
-Vom începe prin a adăuga punctul inițial în coada $0$, iar pe parcurs, dacă luăm punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte. 
+Vom începe prin a adăuga punctul inițial în coada $0$, iar pe parcurs, dacă luăm punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte. Acest lucru se poate generaliza și dacă avem $k$ costuri oarecare, putând astfel adăuga costurile în cozi în funcție de ultimul cost adăugat, exact cum procedăm la problema [Biom de la ONI 2023](https://kilonova.ro/problems/532/).
 
 La fel ca și la algoritmul precedent, vom parcurge cozile alternativ, păstrând ordinea costurilor intactă, pentru a permite algoritmului nostru să rămână liniar raportat la numărul de noduri. 
 

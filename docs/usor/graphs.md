@@ -1,3 +1,11 @@
+---
+tags:
+    - grafuri
+    - parcurgeri
+    - DFS
+    - BFS
+    - drumuri
+---
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
@@ -695,15 +703,101 @@ int main() {
     return 0;
 }
 ```
+
+## Detectarea unui ciclu simplu - [Round Trip CSES](https://cses.fi/problemset/task/1669/)
+
+În această problemă, trebuie să găsim un ciclu simplu într-un graf neorientat. Există foarte mulți algoritmi care rezolvă această problemă corect, dar un algoritm care este foarte simplu și ușor de înțeles constă în următorii pași:
+
+* Pentru fiecare componentă conexă, vom rula un DFS din unul din noduri și vom afla un arbore DFS (pentru fiecare nod din componentă, vom ține $prv[i]$ drept nodul de unde am ajuns să vizităm nodul $i$, într-un mod similar cu modul în care ținem părinții unui nod în arbore).
+* Dacă la un pas dăm de un nod care a fost deja vizitat și nu este părintele nodului curent, înseamnă că avem un ciclu între cele două noduri în cauză. 
+* Pentru cele două noduri găsite, vom folosi vectorul prv creat anterior pentru a merge înapoi prin nodurile găsite, iar acest drum va fi ciclul pe care îl vom obține. 
+
+Mai jos găsiți implementarea C++ a soluției descrise mai sus.
+
+```cpp
+#include <iostream>
+#include <vector>
+ 
+using namespace std;
+ 
+vector<vector<int>> graph;
+vector<int> visited, prv;
+ 
+int fi, lst;
+void dfs(int parent, int node) {
+    visited[node] = 1;
+    for (int i = 0; i < (int) graph[node].size(); i++) {
+        int nxt = graph[node][i];
+        if (nxt == parent) {
+            continue;
+        }
+        if (visited[nxt]) {
+            fi = node;
+            lst = nxt;
+        }
+        else {
+            prv[nxt] = node;
+            dfs(node, nxt);
+        }
+    }
+}
+int main() {
+    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n, m;
+    cin >> n >> m;
+    
+    graph.resize(n+1);
+    prv.resize(n+1);
+    visited.resize(n+1);
+    for (int i = 1; i <= m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+    
+    for (int i = 1; i <= n; i++) {
+        if (!visited[i]) {
+            dfs(0, i);
+        }
+    }
+    
+    if (fi == 0) {
+        cout << "IMPOSSIBLE";
+        return 0;
+    }
+    vector<int> cycle;
+    cycle.push_back(fi);
+    while (lst != fi) {
+        cycle.push_back(lst);
+        lst = prv[lst];
+    }
+    cycle.push_back(fi);
+    
+    cout << cycle.size() << '\n';
+    for (auto x : cycle) {
+        cout << x << " ";
+    }
+    return 0;
+}
+```
+
 ## Probleme suplimentare
 
 - [Kilonova unire](https://kilonova.ro/problems/1611)
+- [GasesteCiclu pbinfo](https://www.pbinfo.ro/probleme/4290/gasesteciclu)
 - [CSES Message Route](https://cses.fi/problemset/task/1667)
 - [CSES Building Teams](https://cses.fi/problemset/task/1668)
 - [CSES Round Trip](https://cses.fi/problemset/task/1669)
 - [USACO Bronze Milk Factory](https://usaco.org/index.php?page=viewproblem2&cpid=940)
 - [USACO Bronze The Great Revegetation](https://usaco.org/index.php?page=viewproblem2&cpid=916)
 - [USACO Silver Closing the Farm](https://usaco.org/index.php?page=viewproblem2&cpid=644)
+- [USACO Silver Moocast](https://usaco.org/current/index.php?page=viewproblem2&cpid=668)
+- [infoarena multiplu](https://www.infoarena.ro/problema/multiplu)
+- [ONI 2004 base3](https://kilonova.ro/problems/117)
 - [Probleme cu grafuri de pe kilonova](https://kilonova.ro/tags/300)
 - [Probleme cu grafuri de pe codeforces, ordonate după dificultate](https://codeforces.com/problemset?order=BY_RATING_ASC&tags=combine-tags-by-or%2Cgraphs%2Cdfs+and+similar)
 
@@ -712,3 +806,4 @@ int main() {
 - [Grafuri - noțiuni teoretice de bază](https://cppi.sync.ro/materia/grafuri_arbori_notiuni_teoretice_de_baza.html)
 - [Articol introductiv de pe USACO Guide](https://usaco.guide/bronze/intro-graphs?lang=cpp)
 - [Articol despre parcurgeri de pe USACO Guide](https://usaco.guide/silver/graph-traversal?lang=cpp)
+- [Find a cycle in O(m) - cp-algorithms](https://cp-algorithms.com/graph/finding-cycle.html)

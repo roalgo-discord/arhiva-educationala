@@ -1,10 +1,18 @@
-# Ciurul lui Eratostene și alte aplicații
+---
+tags:
+    - matematica
+    - numere prime
+    - divizori
+    - precalculari
+---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Cunoștinte necesare
 
-Înaintea citirii acestui articol, se recomandă citirea articolului despre divizibilitate. De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+Înaintea citirii acestui articol, se recomandă citirea [articolului despre divizibilitate](https://edu.roalgo.ro/usor/divisibility/). De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
+
+De asemenea, se recomandă cunoașterea vectorilor de frecvență, care sunt prezentați [aici](https://edu.roalgo.ro/usor/frequency-arrays/).
 
 ## Ce este ciurul lui Eratostene?
 
@@ -30,15 +38,17 @@ Algoritmul se dovedește a fi o optimizare față de metoda standard de aflare p
 
 ```cpp
 int prim[100001];
-for (int i = 2; i <= n; i++)
-    if (prim[i] == 0)
-        for (int j = i + i; j <= n; j += i)
+for (int i = 2; i <= n; i++) {
+    if (prim[i] == 0) {
+        for (int j = i + i; j <= n; j += i) {
             prim[j] = 1;
+        }
+    }
+}
 ``` 
 
 !!! note "Observație"
-
-E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
+    E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor fi cele marcate cu $1$.
 
 ### Optimizări ale implementării
 
@@ -46,38 +56,47 @@ Deși algoritmul în sine este deja foarte rapid, în practică concurenții tin
 
 ```cpp
 int prim[100001];
-for (int i = 4; i <= n; i += 2)
+for (int i = 4; i <= n; i += 2) {
     prim[i] = 1;
-for (int i = 3; i <= n; i += 2)
-    if (prim[i] == 0)
-        for (int j = i * i; j <= n; j += i * 2)
+}
+for (int i = 3; i <= n; i += 2) {
+    if (prim[i] == 0) {
+        for (int j = i * i; j <= n; j += i * 2) {
             prim[j] = 1;
+        }
+    }
+}
 ``` 
 
 !!! note "Observație"
-
-Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
+    Trebuie avut grijă la cel de-al doilea for deoarece expresia int j = i * i; poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și pentru primul for.
 
 ```cpp
 int prim[100001];
-for (int i = 4; i <= n; i += 2)
+for (int i = 4; i <= n; i += 2) {
     prim[i] = 1;
-for (int i = 3; i * i <= n; i += 2)
-    if (prim[i] == 0)
-        for (int j = i * i; j <= n; j += i * 2)
+}
+for (int i = 3; i * i <= n; i += 2) {
+    if (prim[i] == 0) {
+        for (int j = i * i; j <= n; j += i * 2) {
             prim[j] = 1;
+        }
+    }
+}
 
 // afisarea numerelor prime de la 1 la n
-for (int i = 2; i <= n; i++)
-    if (prim[i] == 0) 
+for (int i = 2; i <= n; i++) {
+    if (prim[i] == 0) {
         cout << i << " ";
+    }
+}
 ```
 
 Chiar dacă aceste implementări nu îmbunătățesc semnificativ performanța ciurului lui Eratostene, ele pot fi utile în contextul optimizărilor ce ar putea fi folosite la rezolvarea problemelor. 
 
 ## Alte aplicații ale ciurului lui Eratostene
 
-După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la pinex (link către articol mobius) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
+După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](../mediu/pinex.md) sau [Möbius](../mediu/mobius.md) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
 
 ## Problema [Ciurul lui Eratostene](https://kilonova.ro/problems/2108) de pe Kilonova
 
@@ -106,34 +125,42 @@ int main() {
     divisors.resize(NMAX + 1);
     prime_divisors.resize(NMAX + 1);
 
-    for (int i = 1; i <= NMAX; i++)
-        for (int j = i; j <= NMAX; j += i)
+    for (int i = 1; i <= NMAX; i++) {
+        for (int j = i; j <= NMAX; j += i) {
             divisors[j].push_back(i);
+        }
+    } 
         
     prime[1] = 1;
-    for (int i = 2; i <= NMAX; i++)
-        if (prime[i] == 0)
+    for (int i = 2; i <= NMAX; i++) {
+        if (prime[i] == 0) {
             for (int j = i; j <= NMAX; j += i) {
                 prime_divisors[j].push_back(i);
-                if (j != i)
+                if (j != i) {
                     prime[j] = 1;
+                }
             }
+        }
+    }
         
     cin >> q;
     
     for (int i = 1; i <= q; i++) {
         int type, value;
         cin >> type >> value;
-        if (type == 1)
+        if (type == 1) {
             cout << (prime[value] == 0 ? "Prime" : "Composite") << '\n';
+        }
         if (type == 2) {
-            for (int j = 0; j < (int) prime_divisors[value].size(); j++)
+            for (int j = 0; j < (int) prime_divisors[value].size(); j++) {
                 cout << prime_divisors[value][j] << " ";
+            }
             cout << '\n';
         }
         if(type == 3) {
-            for (int j = 0; j < (int) divisors[value].size(); j++)
+            for (int j = 0; j < (int) divisors[value].size(); j++) {
                 cout << divisors[value][j] << " ";
+            }
             cout << '\n';
         }
     }
@@ -166,11 +193,29 @@ Pentru a rezolva query-urile, voi folosi un vector de frecventa pentru a tine ac
 
 [Soluția de $100$ de puncte](https://kilonova.ro/submissions/18796)
 
-## Probleme și lectură suplimentară
+## Probleme suplimentare
 
-Mai trebuie puse probleme
-
+* [CSES Counting Divisors](https://cses.fi/problemset/task/1713)
+* [CSES Common Divisors](https://cses.fi/problemset/task/1081)
+* [RoAlgo PreOJI 2024 Factoria](https://kilonova.ro/problems/2383)
+* [Moisil++ Sprime](https://kilonova.ro/problems/2043)
+* [infoarena numereprime](https://infoarena.ro/problema/prim)
+* [ONI 2013 divizori](https://kilonova.ro/problems/1409)
+* [ONI 2019 comun](https://kilonova.ro/problems/1545)
+* [OJI 2024 Macarie](https://kilonova.ro/problems/2501)
+* [OJI 2024 avid](https://kilonova.ro/problems/2514/)
+* [OJI 2023 Primprim](https://kilonova.ro/problems/514)
+* [ONI 2024 Geologie](https://kilonova.ro/problems/2646)
+* [ONI 2013 Extraprime](https://kilonova.ro/problems/1406)
+* [ONI 2022 Baraj Juniori Triprime](https://kilonova.ro/problems/1101)
+* [ONI 2021 Baraj Juniori Intergalactic](https://kilonova.ro/problems/1098)
 * [Probleme cu ciurul lui Eratostene de pe kilonova](https://kilonova.ro/tags/328)
+
+## Lectură suplimentară
+
+* [Ciurul lui Eratostene - Pbinfo](https://www.pbinfo.ro/articole/2540/ciurul-lui-eratostene)
+* [Eratostene si alte ciururi - Pbinfo](https://www.pbinfo.ro/articole/18904/eratostene-si-alte-ciururi)
+* [Ciurul lui Eratostene - CPPI Sync](https://cppi.sync.ro/materia/ciurul_lui_eratostene.html)
 * [Wikipedia - Ciurul lui Eratostene](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 * [Articol de pe CP Algorithms](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html)
 

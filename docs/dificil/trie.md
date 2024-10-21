@@ -2,11 +2,10 @@
 tags:
     - arbori
     - structuri de date
-    - strings
+    - siruri de caractere
 ---
 
 **Autor**: Matei Ionescu
-
 
 ## Ce este un Trie
 
@@ -22,7 +21,7 @@ Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvin
 să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că
 înălțimea arborelui este lungimea maximă a unui cuvânt. Complexitatea de timp
 este $O(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai rău caz,
-este $O({ \cdot k)$.
+este $O({ L \cdot k})$.
 
 <figure markdown="span">
 ![](../images/trie/trie.png)
@@ -706,11 +705,7 @@ Barricades](http://www.lookingforachallengethebook.com/uploads/1/4/5/5/14555448/
 iar sursa completă o puteți vizualiza
 [aici](https://kilonova.ro/submissions/140069).
 
-## Resurse suplimentare
-
-* [Trie (USACO Guide)](https://usaco.guide/adv/string-search?lang=cpp#tries)
-
-## Probleme
+## Probleme suplimentare
 
 * [intervalxor2](https://kilonova.ro/problems/456) (Trie pe biți persistent. Puteți face queriurile și offline)
 * [xortree2](https://kilonova.ro/problems/361) (Problemă ok cu trie pe biți)
@@ -720,3 +715,8 @@ iar sursa completă o puteți vizualiza
 * [Facebook Search](https://www.infoarena.ro/problema/fbsearch)
 * [Perfect Security](https://codeforces.com/contest/948/problem/D)
 * [Collapsing Strings](https://codeforces.com/contest/1902/problem/E)
+
+## Resurse suplimentare
+
+* [Trie (USACO Guide)](https://usaco.guide/adv/string-search?lang=cpp#tries)
+* [Using a Trie - Topcoder](https://www.topcoder.com/thrive/articles/Using%20Tries)

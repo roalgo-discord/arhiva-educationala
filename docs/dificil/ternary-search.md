@@ -162,6 +162,7 @@ algoritmul descris mai sus, implementarea fiind cea de mai sus.
 * [CEOI 2017 - Sure Bet](https://csacademy.com/contest/ceoi-2017-day-1/task/sure-bet/)
 * [CF 1355 E](https://codeforces.com/problemset/problem/1355/E)
 * [CF 1848 D](https://codeforces.com/contest/1848/problem/D)
+* [Lot Juniori 2018 cherhanale](https://kilonova.ro/problems/1626)
 * [CCO 18-Gradient Descent](https://dmoj.ca/problem/cco18p4)
 
 

@@ -1,8 +1,15 @@
-# Funcția Möbius
+---
+tags:
+    - matematica
+    - combinatorica
+    - multimi
+    - implementare
+---
 
 **Autor**: Matei Ionescu
 
 ## Noțiuni introductive
+
 În teoria numerelor, o funcție aritmetică este o funcție $f(n) : \mathbb{N} \to \mathbb{C}$. O funcție aritmetică exprimă proprietăți aritmetice pentru $n$.
 
 Pentru $m, n$ numere prime între ele (adică $cmmdc(m, n) = 1$), avem două feluri de funcții aritmetice:
@@ -548,15 +555,10 @@ int main() {
 
 ## Probleme suplimentare
 
-### Probleme de la olimpiade
-
-* [Pastile](https://kilonova.ro/problems/69)
-* [countall](https://kilonova.ro/problems/640)
-* [Gya-chan and the gcd operation](https://kilonova.ro/problems/2017)
-* [Cowpability](https://usaco.org/index.php?page=viewproblem2&cpid=862)
-
-### Probleme de pe alte siteuri
-
+* [ONI 2021 Baraj Seniori Pastile](https://kilonova.ro/problems/69)
+* [Lot 2023 Juniori countall](https://kilonova.ro/problems/640)
+* [RoAlgo Contest #8 Gya-chan and the gcd operation](https://kilonova.ro/problems/2017)
+* [USACO Gold Cowpability](https://usaco.org/index.php?page=viewproblem2&cpid=862)
 * [Listă de probleme cu Mobius](https://vjudge.net/contest/151569)
 * [Sum of gcd of Tuples (Hard)](https://atcoder.jp/contests/abc162/tasks/abc162_e)
     

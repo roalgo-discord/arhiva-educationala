@@ -168,8 +168,10 @@ Tehnica meet in the middle este o tehnică utilă pentru a îmbunătăți timpul
 * [23 - IIOT 2019-20](https://kilonova.ro/problems/1613/)
 * [OJI 2018 eq4](https://kilonova.ro/problems/901)
 * [Infoarena aiacubiti](https://www.infoarena.ro/problema/aiacubiti)
+* [Infoarena colectie](https://infoarena.ro/problema/colectie)
 * [CEOI 2019 cubeword](https://codeforces.com/contest/1192/problem/C)
 * [USACO Silver Field Day](https://usaco.org/index.php?page=viewproblem2&cpid=1327)
+* [Cupa SEPI 2023 circles](https://kilonova.ro/problems/990)
 * [Probleme cu meet in the middle de pe Codeforces](https://codeforces.com/problemset?tags=meet-in-the-middle)
 * [Probleme cu meet in the middle de pe Kilonova](https://kilonova.ro/tags/348)
 

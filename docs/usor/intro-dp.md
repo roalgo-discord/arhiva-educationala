@@ -4,10 +4,8 @@ tags:
     - DP
 ---
 
-<!-- Credits-->
 **Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu
 
-<!-- Introduction -->
 ## Introducere
 
 Programarea dinamică (abrv. DP) este un mod de gândire care poate fi folosit pentru rezolvarea problemelor la care trebuie să aflăm fie numărul de soluții corecte pentru un anumit set de date, fie soluția optimă (minim, maxim, etc.).
@@ -790,13 +788,6 @@ int main() {
 
 <!-- Extra stuff -->
 
-## Resurse suplimentare
-
-* [DP Book](https://dp-book.com/Dynamic_Programming.pdf)
-* [Programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_dinamica_3.html)
-* [Introduction to DP - USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp)
-* [DP Tutorial and Problem List](https://codeforces.com/blog/entry/67679)
-
 ## Probleme suplimentare
 
 * [Infoarena custi](https://infoarena.ro/problema/custi)
@@ -815,4 +806,10 @@ int main() {
 * [Problemele cu DP de pe Kilonova](https://kilonova.ro/tags/275)
 * [Problemele intre rating 500 si 1400 de aici](https://atcoder-tags.herokuapp.com/tag_search/Dynamic-Programming)
 * [Problemele cu DP de pe infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=58)
-* [Ping Pong](https://kilonova.ro/problems/1941)
+
+## Resurse suplimentare
+
+* [DP Book](https://dp-book.com/Dynamic_Programming.pdf)
+* [Programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_dinamica_3.html)
+* [Introduction to DP - USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp)
+* [DP Tutorial and Problem List](https://codeforces.com/blog/entry/67679)

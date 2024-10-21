@@ -1,9 +1,8 @@
 ---
-title: Păduri de mulțimi disjuncte (DSU)
 tags:
-	- vectori 
-	- arbori 
-	- multimi
+    - vectori 
+    - arbori 
+    - multimi
 ---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
@@ -569,6 +568,7 @@ grafuri.
 
 ### Probleme de pe Codeforces/AtCoder
 
+* [Microcycles - Codeforces](https://codeforces.com/contest/1927/problem/F)
 * [Galleries - AGM 2020](https://codeforces.com/gym/102565/problem/D)
 * [DSU Step 1 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/1/practice)
 * [DSU Step 2 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/2/practice)

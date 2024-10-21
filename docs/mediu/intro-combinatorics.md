@@ -1,3 +1,13 @@
+---
+tags:
+    - matematica
+    - combinatorica
+    - teoria numerelor
+    - permutari
+    - aranjamente
+    - combinari
+---
+
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 Combinatorica este una din ramurile principale ale matematicii, precum și una
@@ -42,6 +52,13 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 !!! info "Regula produsului"
 
     Numărul de moduri de a alege o pereche de valori, una din $A$ și una din $B$ este $n\cdot m$.
+
+!!! example "Exemplu"
+    Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
+    
+    Valorile posibile pentru $a$ sunt $\{1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt $\{0, 1, 2, 3, \dots, 9}$. 
+    
+    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de variante este $9 \cdot 9 = 81$.
 
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule independente care contribuie la răspunsul final.
 
@@ -553,8 +570,6 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Probleme suplimentare
 
-## Probleme suplimentare
-
 ### Probleme de la olimpiade
 
 - [Combination](https://kilonova.ro/problems/1982)
@@ -588,11 +603,13 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Bibliografie și lectură suplimentară
 
+- [Concurs educațional făcut de MathDash](https://mathdash.com/contest/complementary-counting-educational)
 - [Curs de combinatorică făcut de Bogdan Iordache](https://iordachebogdan.github.io/cppi/combinatorica_nivel_mediu.html)
 - [Curs de combinatorică avansat făcut de Alex Luchianov](https://sepi.ro/assets/upload-file/articole/Alexandru%20Luchianov%20-%20Trucuri%20de%20combinatorica1.pdf)
 - [Combinatorics - USACO Guide (articol + probleme)](https://usaco.guide/gold/combo?lang=cpp)
 - [Elemente de combinatorică](https://infogenius.ro/combinatorica/)
 - [Binomial Coefficients - Eolymp](https://basecamp.eolymp.com/en/posts/em5e34cc0d35p7omf3taia3fu4?fbclid=IwZXh0bgNhZW0CMTEAAR3K5oGUJpJiGSo1CG2r9McoQ3HQtmbdLJmPRbFDXzhyhcewZce2R6ETsxw_aem_ZmFrZWR1bW15MTZieXRlcw)
+- [Ghid despre permutari - nor-blog](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/)
 - [Elemente de combinatorică, curs predat la lotul de juniori din 2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
 - [Problem Solving Guide to Modular Combinatorics and Exponentiation - Codeforces](https://codeforces.com/blog/entry/78873)

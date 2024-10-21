@@ -1,3 +1,10 @@
+---
+tags:
+    - matematica
+    - divizori
+    - numere prime
+---
+
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 De-a lungul parcursului vostru în domeniul algoritmicii, precum și de multe ori
@@ -50,6 +57,8 @@ scădere cu o singură împărțire, algoritmul devenind mult mai eficient.
     * $a = 2, b = 0$. Deoarece $b = 0$, continuarea algoritmului ne-ar duce la împărțiri la $0$, operație ce nu este validă.
 
 Mai jos puteți găsi implementarea în C++ a cmmdc-ului și a cmmmc-ului, program ce află cmmdc și cmmmc pentru $t$ perechi de numere. Complexitatea algoritmului este $O(\log n)$ pentru fiecare test.
+
+Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi la $cmmdc(a, b)$ și apoi să înmulțim cu $b$, pentru a evita un potențial overflow.
 
 ```cpp
 #include <iostream>
@@ -272,12 +281,30 @@ int main() {
 }
 ```
 
-## Probleme și lectură suplimentară
+## Probleme suplimentare 
 
-Aici mai trebuie probleme 
-
+* [CSES Counting Divisors](https://cses.fi/problemset/task/1713)
+* [pbinfo difimin](https://www.pbinfo.ro/probleme/377/difimin)
+* [pbinfo zerouri](https://www.pbinfo.ro/probleme/306/zerouri)
+* [CSES Trailing Zeroes](https://cses.fi/problemset/task/1618)
+* [Pbinfo divizori3](https://www.pbinfo.ro/probleme/2547/divizori3)
+* [pbinfo zerouri1](https://www.pbinfo.ro/probleme/307/zerouri1)
+* [Problemele cu divizibilitate de pe Pbinfo](https://www.pbinfo.ro/probleme/categorii/18/algoritmi-elementari-divizibilitate)
+* [Infoarena divmul](https://www.infoarena.ro/problema/divmul)
+* [ONI 2006 Suma](https://kilonova.ro/problems/1244)
+* [OJI 2003 Tort](https://kilonova.ro/problems/720)
+* [OLI 2024 Suceava Perechi](https://kilonova.ro/problems/2343/)
+* [OJI 2024 bomboane](https://kilonova.ro/problems/2516)
+* [ONI 2019 copii](https://kilonova.ro/problems/1550)
 * [Probleme cu divizibilitate de pe kilonova](https://kilonova.ro/tags/359)
+
+## Lectură suplimentară
+
+* [CMMDC - CPPI Sync](https://cppi.sync.ro/materia/cel_mai_mare_divizor_comun.html)
+* [Obtinerea divizorilor unui numar - CPPI Sync](https://cppi.sync.ro/materia/obtinerea_divizorilor_unui_numar.html?hl=divizori)
+* [Articolele despre divizibilitate de pe Pbinfo](https://www.pbinfo.ro/articole/66/divizibilitate)
 * [Number theory  —  Storing information about multiples/divisors](https://codeforces.com/blog/entry/91707)
+* [Some useful conclusions for some naive algorithms to solve number theory problems - Codeforces](https://codeforces.com/blog/entry/134127)
 * [Articol de pe USACO Guide](https://usaco.guide/gold/divisibility?lang=cpp)
 * [Counting Divisors of a Number in $N^\frac{1}{3}$](https://codeforces.com/blog/entry/22317)
 

@@ -2,7 +2,10 @@
 tags:
     - grafuri
     - greedy
+    - arbori
+    - sortare
 ---
+**Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
 În diverse probleme de grafuri, suntem nevoiți să alegem o mulțime de muchii care formează un graf conex, iar costul să fie cât mai mic. În cele mai multe cazuri, va fi îndeajuns să creăm un arbore parțial, iar acesta să fie de cost minim, concept ce va fi subiectul acestui articol.
 
@@ -17,14 +20,14 @@ tags:
 !!! example "Exemplu"
     De exemplu, dacă avem următorul graf: $n = 5$, $m = 6$ și următoarele muchii de tip $(a, b, cost)$: $(1, 2, 3), (2, 3, 5), (2, 4, 2), (3, 4, 8), (5, 1, 7), (5, 4, 4)$, arborele parțial de cost minim va avea costul $14$, alegându-se primele trei muchii și ultima. 
 
-Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai puțin cunoscuți, precum algoritmul lui Boruvka, dar acest articol va acoperi doar primii doi algoritmi, cu resurse disponibile și pentru Boruvka. 
+Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai puțin cunoscuți, precum algoritmul lui Boruvka. Acest articol va acoperi cei trei algoritmi menționați.
 
 În probleme, de cele mai multe ori vom putea aplica algoritmul ales fără prea multe modificări, dar găsirea unui graf pe care să aplicăm APM se va dovedi a fi o alegere mai dificilă. 
 
 ## Algoritmul lui Kruskal
 
 !!! info "Definiție" 
-    Algoritmul lui Kruskal este un algoritm de tip greedy care va prelucra muchiile în ordine crescătoare a costurilor acestora, iar pentru fiecare dintre muchii, va verifica dacă adăugarea ei în graful parțial va genera un ciclu sau nu. Pentru verificarea rapidă a ciclurilor în graf, vom folosi o structură de tip [Union-Find](https://roalgo-discord.github.io/arhiva-educationala/mediu/dsu/), iar sortarea se poate face cu ușurință păstrând muchiile într-o structură potrivită. 
+    Algoritmul lui Kruskal este un algoritm de tip greedy care va prelucra muchiile în ordine crescătoare a costurilor acestora, iar pentru fiecare dintre muchii, va verifica dacă adăugarea ei în graful parțial va genera un ciclu sau nu. Pentru verificarea rapidă a ciclurilor în graf, vom folosi o structură de tip [Union-Find](./dsu.md), iar sortarea se poate face cu ușurință păstrând muchiile într-o structură potrivită. 
 
 !!! note "Observație"
     Dacă sunt mai multe muchii cu cost egal, nu are importanță care este aleasă, rezultatul fiind identic. 
@@ -121,7 +124,7 @@ int main() {
 ## Algoritmul lui Prim
 
 !!! info "Definiție" 
-    Algoritmul lui Prim este un algoritm de tip greedy care va prelucra nodurile în ordine crescătoare a costurilor de a fi conectate, plecând de la un nod oarecare, iar pentru fiecare dintre noduri, va verifica dacă adăugarea muchiilor vecine cu acel nod în graful parțial va rezulta în micșorarea unor costuri sau nu. Pentru verificarea rapidă a îmbunătățirilor pe care le obținem în privința costurilor, vom folosi o implementare similară cu cea de la [algoritmul lui Dijkstra](https://roalgo-discord.github.io/arhiva-educationala/mediu/algoritmul_lui_dijkstra/). 
+    Algoritmul lui Prim este un algoritm de tip greedy care va prelucra nodurile în ordine crescătoare a costurilor de a fi conectate, plecând de la un nod oarecare, iar pentru fiecare dintre noduri, va verifica dacă adăugarea muchiilor vecine cu acel nod în graful parțial va rezulta în micșorarea unor costuri sau nu. Pentru verificarea rapidă a îmbunătățirilor pe care le obținem în privința costurilor, vom folosi o implementare similară cu cea de la [algoritmul lui Dijkstra](./shortest-path.md#algoritmul-lui-dijkstra). 
 
 !!! note "Observație"
     Dacă sunt mai multe noduri cu cost egal, nu are importanță care este aleas, rezultatul fiind identic. 
@@ -187,11 +190,156 @@ int main() {
 }
 ```
 
+## Algoritmul lui Boruvka
+
+!!! info "Definiție" 
+    Acest algoritm începe cu fiecare nod fiind într-o comopnentă conexă doar cu el însuși. Apoi, va face iterații prin graf, până când nu este arbore (adică cât timp mai sunt cel puțin două componente conexe). El va găsi pentru fiecare componentă conexă (sau pentru fiecare nod, depinzând de problemă) cea mai bună muchie nefolosită (de obicei, cea cu costul minim) care o (îl) unește de altă componentă conexă. După ce aceste muchii sunt găsite, ele sunt folosite. Vom folosi și la acest algoritm structura Union-Find pentru a afla dacă muchiile duc la componente conexe diferite și pentru a uni două componente conexe.
+
+!!! note "Observație"
+    La fiecare iterare prin graf, numărul de componente conexe se înjumătățește. La început sunt $n - 1$ componente conexe, deci se vor face $O(\log n)$ iterații. Astfel, complexitatea algoritmului este $O(m \log n)$, unde $m$ este numărul de muchii, iar $n$ este numărul de noduri.
+
+!!! note "Observație"
+    Uneori, nu este posibil să construim un APM, dar trebuie să raportăm că nu se poate. Vom face acest lucru printr-o metodă similară cu cea de la [Bubble Sort](https://edu.roalgo.ro/usor/sorting/#bubble-sort): vom menține o variabilă care să ne spună dacă am reușit să unim vreo pereche de componente conexe. Dacă până acum nu am obținut un arbore și nu mai avem cum să folosim vreo muchie, atunci putem să declarăm că nu se poate obține un APM.
+
+Aici puteți găsi o implementare în C++ a algoritmului lui Boruvka:
+```cpp
+#include <iostream>
+ 
+const int MAXN = 200'000;
+const int MAXM = 400'000;
+ 
+int n, m, minedge[MAXN], foundEdge;
+long long rez;
+char viz[MAXM];
+ 
+struct Edge {
+    int u, v, cost;
+} edges[MAXM];
+ 
+struct DSU {
+    int sef[MAXN], cate_comp;
+    
+    void init(int n) {
+        int i;
+        cate_comp = n;
+        for (i = 0; i < n; i++) {
+            sef[i] = i;
+        }
+    }
+    
+    int find(int i) {
+        if (i == sef[i]) {
+            return i;
+        }
+        return sef[i] = find(sef[i]);
+    }
+    
+    void join(int i, int j) {
+        if ((i = find(i)) != (j = find(j))) {
+            cate_comp--;
+            sef[j] = i;
+        }
+    }
+} dsu;
+ 
+void fastReadWrite() {
+    std::ios_base::sync_with_stdio(false):
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+}
+ 
+void readGraph() {
+    int i;
+    std::cin >> n >> m;
+    for (i = 0; i < m; i++) {
+        std::cin >> edges[i].u >> edges[i].v >> edges[i].cost;
+        edges[i].u--;
+        edges[i].v--;
+    }
+}
+ 
+void resetComps() {
+    int i;
+    for (i = 0; i < n; i++) {
+        minedge[i] = -1;
+    }
+}
+ 
+// este muchia a mai buna ca muchia b?
+int better(int a, int b) {
+    if (b == -1) {
+        return 1;
+    }
+    return edges[a].cost < edges[b].cost;
+}
+ 
+void processEdges() {
+    int i, u, v;
+    for (i = 0; i < m; i++) {
+        if (viz[i] == 0) { // daca n-am folosit muchia deja
+            u = dsu.find(edges[i].u);
+            v = dsu.find(edges[i].v);
+            if (u != v) { // sa nu fie in aceeasi componenta
+                if (better(i, minedge[u])) { // cautam cea mai buna muchie pentru fiecare componenta
+                    minedge[u] = i;
+                }
+                if (better(i, minedge[v])) {
+                    minedge[v] = i;
+                }
+            }
+        }
+    }
+}
+ 
+void processComps() {
+    int i, u, v;
+    for (i = 0; i < n; i++) { // trecem prin fiecare componenta
+        if (minedge[i] != -1 // daca am gasit o muchie pentru componenta in care i e parinte
+                             // daca i nu e parintele unei componente atunci nu o sa fie gasita nicio muchie
+            && viz[minedge[i]] == 0) { // sa nu o fi folosit pentru componenta cu care ne unim deja
+            dsu.join(edges[minedge[i]].u, edges[minedge[i]].v); // unim componentele
+            rez += edges[minedge[i]].cost; // adunam costul
+            viz[minedge[i]] = 1; // am folosit muchia
+            foundEdge = 1;
+        }
+    }
+}
+ 
+void findMST() {
+    int i, u, v;
+    
+    dsu.init(n);
+    rez = 0;
+    foundEdge = 1;
+    while (dsu.cate_comp > 1 && foundEdge) { // cat timp nu e arbore si mai putem face ceva
+        foundEdge = 0;
+        resetComps(); // resetam componentele
+        processEdges(); // trecem prin fiecare muchie
+        processComps(); // unim fiecare componenta cu muchia ei cea mai buna
+    }
+    if (dsu.cate_comp > 1) {
+        std::cout << "IMPOSSIBLE\n";
+    }
+    else {
+        std::cout << rez << "\n";
+    }
+}
+ 
+int main() {
+    fastReadWrite();
+    readGraph();
+    findMST();
+    return 0;
+}
+```
+
 ## Care este algoritmul mai bun?
 
-Niciunul dintre algoritmi nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
+Algoritmul lui Boruvka poate fi folosit și atunci când avem prea multe muchii ca să le putem procesa pe toate, dar putem afla pentru fiecare nod cea mai bună muchie folositoare. Un exemplu de astfel de problemă este problema [CF 888G](https://codeforces.com/problemset/problem/888/G).
 
-În condiții de concurs, dacă ambii algoritmi vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. 
+Când vorbim despre algoritmii lui Kruskal, respectiv al lui Prim, niciunul dintre ei nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
+
+În condiții de concurs, dacă toți algoritmii vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. De asemenea, algoritmul lui Boruvka este și el foarte important. 
 
 # Probleme suplimentare
 
@@ -200,9 +348,12 @@ Niciunul dintre algoritmi nu este mai bun mereu decât celălalt. Pe de o parte,
 * [USACO Gold Moo Network](https://usaco.org/index.php?page=viewproblem2&cpid=1211)
 * [infoarena cablaj](https://www.infoarena.ro/problema/cablaj)
 * [OJI 2017 Ninjago](https://kilonova.ro/problems/27)
+* [Codeforces Microcycle](https://codeforces.com/contest/1927/problem/F)
 * [infoarena desen](https://www.infoarena.ro/problema/desen)
 * [ONI 2018 Poligon](https://kilonova.ro/problems/150)
 * [ONI 2019 Oracol](https://kilonova.ro/problems/10)
+* [Codeforces Opening Portals](https://codeforces.com/problemset/problem/196/E)
+* [Codeforces XOR-MST](https://codeforces.com/problemset/problem/888/G)
 * [USACO Gold Moo Network](https://usaco.org/index.php?page=viewproblem2&cpid=1211)
 * [Problemele cu APM de pe kilonova](https://kilonova.ro/tags/312)
 * [Probleme educaționale cu APM](https://codeforces.com/gym/100238)
@@ -216,5 +367,5 @@ Niciunul dintre algoritmi nu este mai bun mereu decât celălalt. Pe de o parte,
 * [Minimum spanning tree - Kruskal with Disjoint Set Union](https://cp-algorithms.com/graph/mst_kruskal_with_dsu.html)
 * [Arbore partial de cost minim - CPPI Sync](https://cppi.sync.ro/materia/arborele_partial_de_cost_minim.html)
 * [Minimum Spanning Tree Problems](https://codeforces.com/blog/entry/6429)
-* [Avansat - Boruvka's Algorithm](https://codeforces.com/blog/entry/77760)
+* [Boruvka's Algorithm](https://codeforces.com/blog/entry/77760)
 * [Avansat - Second Best Minimum Spanning Tree](https://cp-algorithms.com/graph/second_best_mst.html)

@@ -2,6 +2,8 @@
 tags:
     - vectori
     - matematica
+    - numere mari
+    - implementare
 ---
 
 **Autori**: Susan, Ștefan-Cosmin Dăscălescu
@@ -539,9 +541,8 @@ for (int i = a[0]; i >= 1; i--) {
 ## Optimizări ce se pot face la implementare
 
 Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca
-$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$
-și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea
-individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre.
+$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$ și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre. 
+
 Această optimizare poate fi utilă mai ales în situația în care foarte multe
 calcule sunt necesare sau limita de timp este strânsă. Un astfel de exemplu
 reprezintă problemele de programare dinamică în care trebuie afișat numărul
@@ -549,16 +550,23 @@ complet de soluții (totuși, în prezent, o mare parte din acele probleme cer
 răspunsul modulo un număr prim).
 
 De asemenea, așa cum veți observa mai târziu, există diverse metode de a
-optimiza operațiile de înmulțire, folosind diverși algoritmi precum algoritmul
-lui Karatsuba sau FFT, dar aceștia nu fac obiectul discuției noastre din acest
-articol.
+optimiza operațiile de înmulțire, folosind diverși algoritmi precum algoritmul lui Karatsuba sau FFT, dar aceștia nu fac obiectul discuției noastre din acest articol.
 
 
-## Probleme și resurse suplimentare
+## Probleme suplimentare
+
+* [pbinfo sumaXXL](https://www.pbinfo.ro/probleme/2393/sumaxxl)
+* [pbinfo produsXL](https://www.pbinfo.ro/probleme/2409/produsxl)
+* [infoarena perm3](https://www.infoarena.ro/problema/perm3)
+* [ONI 2016 cod](https://kilonova.ro/problems/1481/)
+* [ONI 2023 Baraj Juniori Fuziune](https://kilonova.ro/problems/554) - cerinta 2
+* [Lot Juniori 2015 Pastile](https://kilonova.ro/problems/1663)
+* [infoarena coprime](https://www.infoarena.ro/problema/coprime)
+* [OJI 2010 numar](https://kilonova.ro/problems/794)
+* [Probleme cu numere mari de pe Kilonova](https://kilonova.ro/tags/379)
+
+## Resurse suplimentare
 
 * [Clasă de numere mari](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/bigints.cpp)
-* [Lucrul cu numere mari](https://infoarena.ro/lucrul-cu-nr-mari)
-* [Probleme cu numere mari](https://kilonova.ro/tags/379)
-* [perm3 de pe infoarena](https://www.infoarena.ro/problema/perm3)
-* [pastile, lot juniori 2015](https://kilonova.ro/problems/1663)
-* [număr, OJI 2010 IX](https://kilonova.ro/problems/794)
+* [Lucrul cu numere mari - infoarena](https://infoarena.ro/lucrul-cu-nr-mari)
+* [Numere mari - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_numere_mari.html)
