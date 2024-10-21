@@ -22,7 +22,7 @@ Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o înt
 !!! warning “Atenție“
     Este foarte important ca, în $spt{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
 
-!!! note "Observatie"
+!!! note "Observație"
     [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de asemenea, folosind binary lifting. Căutarea binară în [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea, binary lifting.
 
 Sursa de Accepted:
@@ -172,25 +172,25 @@ int main() {
 
 Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
 
-Să calculăm, mai întâi $maxp{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$. Aceasta metoda se cheama [programare dinamica](https://edu.roalgo.ro/usor/intro-dp/).
+Să calculăm, mai întâi $maxp{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$. Această metodă se cheamă [programare dinamica](https://edu.roalgo.ro/usor/intro-dp/).
 
 $$maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
 
-Acum, sa vedem cum se calculeaza $spt$. Fie $spt_{i, j, l, c} = $ latura celui mai mare patrat inclus in dreptunghiul cu coltul stanga-sus la $(i, j)$ si cu coltul dreapta-jos la $(l+2^i-1, c+2^j-1)$.
+Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ latura celui mai mare pătrat inclus în dreptunghiul cu colțul stânga-sus la $(i, j)$ și cu colțul dreapta-jos la $(l+2^i-1, c+2^j-1)$.
 
 $$spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
 
-Sa vedem cum se calculeaza raspunsul pentru o intrebare pentru un dreptunghi cu coltul stanga-sus in $(l_1, c_1)$ si coltul dreapta-jos in $(l_2, c_2)$. Fie $lgl = $ cel mai mare numar astfel incat $2^{lgl} \leq l_2-l_1+1$ si $lgc = $ cel mai mare numar astfel incat $2^lgc \leq c_2-c_1+1$.
+Să vedem cum se calculează răspunsul pentru o întrebare pe un dreptunghi cu colțul stânga-sus în $(l_1, c_1)$ și coltul dreapta-jos în $(l_2, c_2)$. Fie $lgl = $ cel mai mare număr astfel încât $2^{lgl} \leq l_2-l_1+1$ și $lgc = $ cel mai mare număr astfel încât $2^lgc \leq c_2-c_1+1$.
 
 $$query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_2 - 2^{lgc} + 1})$$
 
-Mai departe, observam ca noi nu avem cum sa aflam direct raspunsul, deoarece unele rezultate pot iesi din dreptunhiul in care suntem intrebati. Asa ca, vom cauta binar raspunsul.
+Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece unele rezultate pot ieși din dreptunhiul în care suntem întrebați. Așa că, vom [căuta binar](https://edu.roalgo.ro/usor/binary-search/) raspunsul.
 
-Cum verificam daca avem vreun patrat de latura cel putin $k$? Vom verifica daca:
+Cum verificăm dacă avem vreun pătrat de latură cel puțin $k$? Vom verifica dacă:
 
 $$query(l_2-k+1, c_2-k+1, l_2, c-2) \geq k$$
 
-Adica vom verifica daca exista vreun colt dreapta-jos care formeaza un patrat de latura cel putin $k$.
+Adică vom verifica dacă există vreun colț dreapta-jos care formează un pătrat de latură cel puțin $k$.
 
 Sursa de Accepted:
 
@@ -264,6 +264,12 @@ struct SparseTable2D {
     }
 } rmq2d;
 
+void fastReadWrite() {
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+    std::cout.tie(0);
+}
+
 void readMatrix() {
     int l, c;
     std::cin >> n >> m;
@@ -309,6 +315,7 @@ void answerQueries() {
 }
 
 int main() {
+    fastReadWrite();
     readMatrix();
     computeMaxp();
     rmq2d.init();
