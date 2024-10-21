@@ -69,7 +69,7 @@ for (int i = 1; i <= n + 758458; i++) {
 }
 ```
 
-Dacă avem de-a face cu mai multe structuri repetitive imbricate, complexitatea se va înmulți, complexitatea codului de mai jos este $O(n \cdot m)$
+Dacă avem de-a face cu mai multe structuri repetitive imbricate, complexitatea se va înmulți, complexitatea codului de mai jos este $O(n \cdot m)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
@@ -114,14 +114,14 @@ Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 
 * tipul **int**: $4$ bytes, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147 \ 483 \ 648$ si $2 \ 147 \ 483 \ 647$).
 * tipul **short**: $2$ bytes, limite între $-2^{15}$ si $2^{15} - 1$ ($-32  \ 768$ si $32 \ 767$).
-* tipul **char**: $1$ byte, limite între $-128$ si $127$
+* tipul **char**: $1$ byte, limite între $-128$ si $127$.
 * tipul **bool**: $1$ byte, accepta doar $0$ sau $1$.
 * tipul **long long**: $8$ bytes, limite între $-2^{63}$ si $2^{63} - 1$ ($-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$) - numere de maxim $19$ cifre.
 
 În privința tipurilor reale, putem enumera următoarele:
 
-* tipul **float**: $4$ bytes, limite între aproximativ $-10^{38}$ și $10^{38}$
-* tipul **double**: $8$ bytes, limite între aproximativ $-10^{208}$ și $10^{208}$
+* tipul **float**: $4$ bytes, limite între aproximativ $-10^{38}$ și $10^{38}$.
+* tipul **double**: $8$ bytes, limite între aproximativ $-10^{208}$ și $10^{208}$.
 * tipul **long double**: în funcție de standardul de compilare, cel puțin $8$ bytes, limite mai mari decât cele de la **double**.
 
 De exemplu, dacă avem un vector de $10^6$ elemente de tipul **int** și altul de $10^5$ elemente de tipul **long long**, vom folosi $4 * 10^6 + 8 * 10^5 = 4.8*10^6$ bytes = $4.8$ MB. 
