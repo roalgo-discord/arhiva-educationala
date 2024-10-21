@@ -267,7 +267,6 @@ struct SparseTable2D {
 void fastReadWrite() {
     std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
-    std::cout.tie(0);
 }
 
 void readMatrix() {
@@ -574,7 +573,6 @@ std::map<int, int> fr;
 void fastReadWrite() {
     std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
-    std::cout.tie(0);
 }
 
 void readArray() {
@@ -676,7 +674,6 @@ std::map<int, int> fr;
 void fastReadWrite() {
     std::ios_base::sync_with_stdio(0);
     std::cin.tie(0);
-    std::cout.tie(0);
 }
 
 void readArray() {
