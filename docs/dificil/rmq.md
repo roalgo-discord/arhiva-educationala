@@ -172,13 +172,13 @@ int main() {
 
 Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
 
-Să calculăm, mai întâi $maxd_{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$.
+Să calculăm, mai întâi $maxp{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$. Aceasta metoda se cheama [programare dinamica](https://edu.roalgo.ro/usor/intro-dp/).
 
-$$maxd_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxd_{i-1, j}, maxd_{i, j-1}, maxd_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
+$$maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
 
 Acum, sa vedem cum se calculeaza $spt$. Fie $spt_{i, j, l, c} = $ latura celui mai mare patrat inclus in dreptunghiul cu coltul stanga-sus la $(i, j)$ si cu coltul dreapta-jos la $(l+2^i-1, c+2^j-1)$.
 
-$$spt_{i, j, l, c} = \begin{cases} maxd_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
+$$spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
 
 Sa vedem cum se calculeaza raspunsul pentru o intrebare pentru un dreptunghi cu coltul stanga-sus in $(l_1, c_1)$ si coltul dreapta-jos in $(l_2, c_2)$. Fie $lgl = $ cel mai mare numar astfel incat $2^{lgl} \leq l_2-l_1+1$ si $lgc = $ cel mai mare numar astfel incat $2^lgc \leq c_2-c_1+1$.
 
@@ -195,7 +195,126 @@ Adica vom verifica daca exista vreun colt dreapta-jos care formeaza un patrat de
 Sursa de Accepted:
 
 ```cpp
+#include <iostream>
 
+const int MAXN = 1'000;
+const int LOGN = 11;
+
+int mat[MAXN + 1][MAXN + 1], maxp[MAXN + 1][MAXN + 1], n, m;
+
+int min(int a, int b) {
+    return a < b ? a : b;
+}
+
+int min(int a, int b, int c) {
+    return min(min(a, b), c);
+}
+
+int max(int a, int b) {
+    return a > b ? a : b;
+}
+
+int max(int a, int b, int c, int d) {
+    return max(max(a, b), max(c, d));
+}
+
+struct SparseTable2D {
+    int spt[LOGN][LOGN][MAXN + 1][MAXN + 1], lg2[MAXN + 1];
+
+    void init() {
+        int i, j, l, c;
+        for (i = 2; i <= MAXN; i++) {
+            lg2[i] = 1 + lg2[i >> 1];
+        }
+        for (l = 1; l <= n; l++) {
+            for (c = 1; c <= m; c++) {
+                spt[0][0][l][c] = maxp[l][c];
+            }
+        }
+        for (i = 1; i <= lg2[n]; i++) {
+            for (l = 1; l <= n; l++) {
+                for (c = 1; c <= m; c++) {
+                    spt[i][0][l][c] = max(spt[i - 1][0][l][c], spt[i - 1][0][l + (1 << (i - 1))][c]);
+                }
+            }
+        }
+        for (j = 1; j <= lg2[m]; j++) {
+            for (l = 1; l <= n; l++) {
+                for (c = 1; c <= m; c++) {
+                    spt[0][j][l][c] = max(spt[0][j - 1][l][c], spt[0][j - 1][l][c + (1 << (j - 1))]);
+                }
+            }
+        }
+        for (i = 1; i <= lg2[n]; i++) {
+            for (j = 1; j <= lg2[m]; j++) {
+                for (l = 1; l + (1 << i) - 1 <= n; l++) {
+                    for (c = 1; c + (1 << j) - 1 <= m; c++) {
+                        spt[i][j][l][c] = max(spt[i - 1][j - 1][l][c], spt[i - 1][j - 1][l][c + (1 << (j - 1))],
+                                spt[i - 1][j - 1][l + (1 << (i - 1))][c], spt[i - 1][j - 1][l + (1 << (i - 1))][c + (1 << (j - 1))]);
+                    }
+                }
+            }
+        }
+    }
+
+    int query(int l1, int c1, int l2, int c2) {
+        int lgl = lg2[l2 - l1 + 1], lgc = lg2[c2 - c1 + 1];
+        return max(spt[lgl][lgc][l1][c1], spt[lgl][lgc][l1][c2 - (1 << lgc) + 1], spt[lgl][lgc][l2 - (1 << lgl) + 1][c1],
+                   spt[lgl][lgc][l2 - (1 << lgl) + 1][c2 - (1 << lgc) + 1]);
+    }
+} rmq2d;
+
+void readMatrix() {
+    int l, c;
+    std::cin >> n >> m;
+    for (l = 1; l <= n; l++) {
+        for (c = 1; c <= m; c++) {
+            std::cin >> mat[l][c];
+        }
+    }
+}
+
+void computeMaxp() {
+    int l, c;
+    for (l = 1; l <= n; l++) {
+        for (c = 1; c <= m; c++) {
+            if (mat[l][c] == 0) {
+                maxp[l][c] = 0;
+            }
+            else {
+                maxp[l][c] = 1 + min(maxp[l - 1][c], maxp[l][c - 1], maxp[l - 1][c - 1]);
+            }
+        }
+    }
+}
+
+void answerQueries() {
+    int l1, c1, l2, c2, q, st, dr, mij;
+    std::cin >> q;
+    while (q--) {
+        std::cin >> l1 >> c1 >> l2 >> c2;
+        st = 0; // intervalul este [) (inchis-deschis)
+        dr = min(l2 - l1 + 1, c2 - c1 + 1) + 1; // patratul maxim care este inclus
+        while (dr - st > 1) {
+            mij = (st + dr) / 2;
+            if (rmq2d.query(l1 + mij - 1, c1 + mij - 1, l2, c2) >= mij) {
+                st = mij;
+            }
+            else {
+                dr = mij;
+            }
+        }
+        std::cout << st << "\n";
+    }
+}
+
+int main() {
+    readMatrix();
+    computeMaxp();
+    rmq2d.init();
+    answerQueries();
+    return 0;
+}
 ```
 
 ## Reverse RMQ
