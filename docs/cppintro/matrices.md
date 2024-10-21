@@ -70,7 +70,7 @@ int main() {
 
 Multe probleme cu matrici, în special cele date la examenele de bacalaureat și admitere, necesită diverse generări și construiri de matrice. Aici vom prezenta câteva exerciții și probleme rezolvate.
 
-O listă foarte bună cu probleme suplimentare de acest tip se găsește [aici](https://www.pbinfo.ro/?pagina=probleme-lista&tag=48)
+O listă foarte bună cu probleme suplimentare de acest tip se găsește [aici](https://www.pbinfo.ro/?pagina=probleme-lista&tag=48).
 
 #### Exercițiu adaptat dintr-un model al examenului de bacalaureat
 

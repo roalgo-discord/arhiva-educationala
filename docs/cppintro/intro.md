@@ -86,7 +86,7 @@ Un alt element foarte important, care deși nu e obligatoriu, este foarte util �
 
 După ce terminați de scris programul, dacă programul este corect din punct de vedere sintactic, programul va putea fi rulat, iar în caz contrar, editorul vă va specifica erorile de compilare, împreună cu locul în care acestea apar. 
 
-Dacă programul este corect și nu are vreo eroare, se va genera un cod obiect (programul pe care îl găsiți cu extensia .o în același loc cu programul C++ pe care l-ați scris)
+Dacă programul este corect și nu are vreo eroare, se va genera un cod obiect (programul pe care îl găsiți cu extensia .o în același loc cu programul C++ pe care l-ați scris).
 
 Pentru a rula programul, va trebui să rulați executabilul generat (programul cu extensia .exe), să introduceți eventual datele și apoi să vedeți outputul generat.
 

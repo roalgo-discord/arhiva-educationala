@@ -225,13 +225,13 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 ### Glosar iteratori
 
 -  range reprezintă un interval de elemente de tip  `[start, end)`.
--  iterator de început: iterator care marchează începutul unui range
+-  iterator de început: iterator care marchează începutul unui range.
 -  iterator past-the-end: iterator care marchează finalul unui range. Deși uneori poate fi accesat, în cele mai multe cazuri accesarea lui duce la erori (de exemplu, rezultatul pentru  `.end()`).
 
 ### Cum obțin un iterator?
 
 -   `.begin()`  - iterator la primul element din structură;
--   `.end()`  - iterator past-the-end pentru structură.
+-   `.end()`  - iterator past-the-end pentru structură;
 -   `.rbegin()`  - iterator invers la ultimul element din structură;
 -   `.rend()`  - iterator invers past-the-beginning pentru structură.
 

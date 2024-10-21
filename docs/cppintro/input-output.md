@@ -122,7 +122,7 @@ int main () {
 }
 ```
 
-!!! note "endl vs '\n'"
+!!! note "Citirea unui număr necunoscut de valori"
     În mod particular, dacă avem de citit un număr necunoscut de valori, trebuie să folosim structura repetitivă while, așa cum veți observa în [articolul nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această temă. 
 
 ## Afișarea specializată
@@ -131,14 +131,14 @@ int main () {
 
 Această bibliotecă poate fi folosită și pentru a prelucra datele într-o manieră mai prietenoasă cu cititorii, folosind funcțiile de lungime, aliniere sau umplere:
 
-* lungimea – setw(int n), numărul de caractere folosit pentru afișarea datelor
-* alinierea – left, right, internal
-* caracterul de umplere – setfill(char f), caracterele care să fie folosite pentru a umple un element afișat
+* lungimea – setw(int n), numărul de caractere folosit pentru afișarea datelor;
+* alinierea – left, right, internal;
+* caracterul de umplere – setfill(char f), caracterele care să fie folosite pentru a umple un element afișat;
 * baza de numerație (dec, oct, hex) în care sunt scrise valorile de tip întreg. În cele mai multe cazuri, nu vom avea nevoie să afișăm altfel decât în formatul zecimal.
 
 Ne vom concentra în cele ce urmează pe funcția setprecision, fiind de departe cea mai relevantă funcție dintre cele pe care le folosim în algoritmică. 
 
-Sintaxa ei este `setprecision(int n)`, unde $n$ este numărul de cifre folosite pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul total de cifre sau numărul de cifre de după punctul zecimal
+Sintaxa ei este `setprecision(int n)`, unde $n$ este numărul de cifre folosite pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul total de cifre sau numărul de cifre de după punctul zecimal.
 
 De exemplu, dacă vrem să afișăm primele $7$ zecimale ale lui $\pi$, putem face asta folosind următoarele instrucțiuni:
 

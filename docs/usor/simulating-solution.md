@@ -11,6 +11,7 @@ tags:
 ## Introducere
 
 Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le obținem pe parcurs. O simulare necesită $3$ lucruri:
+
 1. O stare care poate fi descrisă în mod unic, prin niște variabile
 2. O măsură de timp, un tact (care, de obicei, este definit de problemă)
 3. O buclă cu o condiție de oprire
