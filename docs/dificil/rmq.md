@@ -11,16 +11,16 @@ tags:
 
 ## Introducere
 
-**Sparse Table** este o structură care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
+**Sparse Table** este o structură de date care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
 
 ## Sparse Table. Binary Lifting
 
 Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem rezolva folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), dar haideți să încercăm o metodă nouă.
 
-Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o întrebare pe intervalul $[st, dr]$, îl vom imparti în intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary lifting**.
+Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o întrebare pe intervalul $[st, dr]$, îl vom împărți în intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary lifting**.
 
 !!! warning “Atenție“
-    Este foarte important ca, în $spt{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
+    Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
 
 !!! note "Observație"
     [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de asemenea, folosind binary lifting. Căutarea binară în [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea, binary lifting.
@@ -172,11 +172,11 @@ int main() {
 
 Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
 
-Să calculăm, mai întâi $maxp{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are coltul dreapta-jos în $(i, j)$. Această metodă se cheamă [programare dinamica](https://edu.roalgo.ro/usor/intro-dp/).
+Să calculăm, mai întâi $maxp_{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are colțul dreapta-jos în $(i, j)$. Această metodă se cheamă [programare dinamică](https://edu.roalgo.ro/usor/intro-dp/).
 
 $$maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
 
-Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ latura celui mai mare pătrat inclus în dreptunghiul cu colțul stânga-sus la $(i, j)$ și cu colțul dreapta-jos la $(l+2^i-1, c+2^j-1)$.
+Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ maximul elementelor din submatricea cu colțul stânga-sus la $(i, j)$ și cu colțul dreapta-jos la $(l+2^i-1, c+2^j-1)$ din $maxp$.
 
 $$spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
 
@@ -184,7 +184,7 @@ Să vedem cum se calculează răspunsul pentru o întrebare pe un dreptunghi cu 
 
 $$query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_2 - 2^{lgc} + 1})$$
 
-Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece unele rezultate pot ieși din dreptunhiul în care suntem întrebați. Așa că, vom [căuta binar](https://edu.roalgo.ro/usor/binary-search/) raspunsul.
+Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece unele rezultate pot ieși din dreptunhiul în care suntem întrebați. Așa că, vom [căuta binar](https://edu.roalgo.ro/usor/binary-search/) răspunsul.
 
 Cum verificăm dacă avem vreun pătrat de latură cel puțin $k$? Vom verifica dacă:
 
@@ -330,9 +330,9 @@ Putem să rezolvăm și probleme în care avem doar actualizări, fără întreb
 
 $$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 
-Apoi, valoarea $a_i$ finală va fi minimul dintre toate valorile din orice interval care este actualizat în $spt$ și include $i$. Calculăm această valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j + 2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe detalii vedeți implementarea.
+Apoi, valoarea $a_i$ finală va fi maximul dintre toate valorile din orice interval care este actualizat în $spt$ și include $i$. Calculăm această valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j + 2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe detalii vedeți implementarea.
 
-Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G)
+Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G))
 
 ```cpp
 #include <iostream>
@@ -446,7 +446,7 @@ RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Îns�
 
 RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
 
-### Alte precizari
+### Alte precizări
 
 AINT poate rezolva și alte probleme pe care RMQ nu le poate rezolva. La astfel de probleme, putem folosi un Sparse Table normal, rezultând aceeași complexitate ca la AINT la query-uri. Acest lucru înseamnă că AINT este mai folositor în acest caz, chiar dacă este mai greu de implementat.
 
@@ -650,9 +650,9 @@ int main() {
 
 #### Versiunea grea
 
-Noi trebuie, de fapt, să avem o subsecvență (contigua) de exact $k$ elemente. Observăm că $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$ (încercăm fiecare subsecvență de $k$ elemente). Așa că, răspunsul nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
+Noi trebuie, de fapt, să avem o subsecvență (contiguă) de exact $k$ elemente. Observăm că $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$ (încercăm fiecare subsecvență de $k$ elemente). Așa că, răspunsul nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
 
-Vom găsi, pentru fiecare $i$, la câte sume contribuie $rez_i$. Cu alte cuvinte, vom afla pentru câți $j > i$ avem $max(rez_i, rez_{i+1}, \dots, rez_j) = rez_i$. Fie $nxt_{0, i} = $ cel mai mic $j > i$ astfel încât $rez_j > rez_i$, lucru pe care îl vom afla cu [stivă](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$.
+Vom găsi, pentru fiecare $i$, la câte sume contribuie $rez_i$. Cu alte cuvinte, vom afla pentru câți $j > i$ avem $max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i$. De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că nu există $l \leq p < i$ astfel încât $rez_p = rez_i$. Fie $nxt_{0, i} = $ cel mai mic $j > i$ astfel încât $rez_j >= rez_i$, lucru pe care îl vom afla cu [stivă](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$.
 
 Acum, să presupunem că avem un arbore, în care $nxt_{0, i}$ reprezintă părintele lui $i$ și $sum_{0, i}$ reprezintă costul muchiei de la $i$ la părintele lui $i$. Noi vom pleca de la $l$ și vom tot merge în tatăl nodului, până când indicele tatălui este mai mare decât $r$. Pentru a afla al câtelea tată este cu ușurinta, vom precalcula $nxt_{i, j} = $ al $2^i$-lea tată al lui $j$ și $sum_{i, j} = $ suma costurilor muchiilor lanțului de la $j$ la cel de-al $2^i$-lea tată al lui $j$.
 
