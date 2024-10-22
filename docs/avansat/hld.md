@@ -26,7 +26,7 @@ Pentru ceilalți fii al nodului $x$, ei vor fi nodul de start pentru lanțul car
 
 Următoarea imagine ilustrează descompunerea unui arbore.
 
-~[paths.png]
+![](../images/hld/paths.png)
 
 
 ## Problema exemplu
