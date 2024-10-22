@@ -67,13 +67,13 @@ void dfs(int node)
     /// daca node este o frunză
     if (leaf){
         L[node] = ++nrL; /// se crează un nou lanț
-        Lant[L[node]].eb(node);
+        Lant[L[node]].push_back(node);
         return;
     }
     /// altfel o să legăm pe node de maxl
     else{
         L[node] = L[maxl];
-        Lant[L[node]].eb(node);
+        Lant[L[node]].push_back(node);
 
         /// aici vom fixa nodul de start pentru fii care au rămas, aceștia fiind primi în lanțul creat păna la ei
         for (auto x : G[node])
