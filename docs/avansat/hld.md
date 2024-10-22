@@ -28,6 +28,54 @@ Următoarea imagine ilustrează descompunerea unui arbore.
 
 ![](../images/hld/paths.png)
 
+Iată un cod de precalculare a lanțurilor: 
+
+```cpp
+void dfs(int node)
+{
+    viz[node] = 1;
+    w[node] = 1;
+    v.eb(node);
+    tin[node] = ++limit;
+    int leaf = 1, maxl = -1;
+
+    for (auto x : G[node])
+    {
+        if (viz[x])
+            continue;
+        leaf = 0;
+        niv[x] = niv[node] + 1;
+        dfs(x);
+        w[node] += w[x];
+        v.eb(node), limit++;
+
+        if (maxl == -1)
+            maxl = x;
+        else if (w[maxl] < w[x])
+            maxl = x;
+    }
+    if (leaf)
+    {
+        L[node] = ++nrL;
+        Lant[L[node]].eb(node);
+        return;
+    }
+
+    L[node] = L[maxl];
+    Lant[L[node]].eb(node);
+
+    for (auto x : G[node])
+    {
+        if (x == maxl or niv[x] < niv[node])
+            continue;
+        Lfather[L[x]] = node;
+    Lniv[L[x]] = niv[node];
+    }
+}                                                        
+
+
+```
+
 
 ## Problema exemplu
 
