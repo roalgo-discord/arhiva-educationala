@@ -96,7 +96,7 @@ Așa cum îi spune și numele, la **Range Minimum Query (RMQ)**, avem întrebăr
 
 Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja precalculate). 
 
-!!! note “Observație“
+!!! note "Observație"
     Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest lucru nu ne afectează, deoarece $min(x, x) = x$.
 
 !!! note "Observație"

@@ -313,6 +313,12 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
     }
     ```
 
+## Sortarea tablourilor 
+
+În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în complexitate $O(n^2)$, $O(n \log n)$ și multe alte clase de complexități.
+
+Pentru mai multe detalii, recomandăm citirea articolului pe acest subiect, pe care îl puteți găsi [aici](https://edu.roalgo.ro/usor/sorting/).
+
 ## Concluzii
 
 Lucrul cu tablouri unidimensionale este esențial oricărui algoritmist, principiile menționate aici fiind aplicate în diverse moduri și în ceea ce privește alte structuri de date, așa cum veți putea observa în problemele cu matrici și în diferiți algoritmi care au la bază metodele folosite mai sus. 
