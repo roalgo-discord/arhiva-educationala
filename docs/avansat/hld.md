@@ -85,9 +85,11 @@ void dfs(int node)
         }
     }
 }
-
-
 ```
+
+Pentru a obține timpul logaritmic, va trebui pentru fiecare lanț în parte să creăm câte un arbore de intervale.
+
+O altă modalitate, mai scurtă ca și implementare ar fi să implementăm arbori de intervale pe un vector static, iar fiecare arbore de intervale să ocupe o zonă din acest vector.
 
 ## Problema exemplu
 
