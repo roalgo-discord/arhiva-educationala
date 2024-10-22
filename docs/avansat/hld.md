@@ -38,10 +38,10 @@ const int MAX=2e5+5; /// limita de noduri din arbore
 bitset<MAX> viz; /// viz[i] - verificăm dacă am intrat în nodul i
 int w[MAX]; /// w[i] - dimensiunea subarborelui cu root i
 int nrL; /// numărul de lanțuri
-int L[MAX + 5]; /// L[i] - în ce lanț se află nodul i
-int Lfather[MAX + 5]; /// Lfather[L[i]] - primul nod al lanțului în care se află i
-int Lniv[MAX + 5]; /// Lniv[L[i]] - nivelul primului nod al lanțului în care se află i
-vector<int> Lant[MAX + 5]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului, trebuie dat reverse() pentru fiecare lanț în parte
+int L[MAX]; /// L[i] - în ce lanț se află nodul i
+int Lfather[MAX]; /// Lfather[L[i]] - primul nod al lanțului în care se află i
+int Lniv[MAX]; /// Lniv[L[i]] - nivelul primului nod al lanțului în care se află i
+vector<int> Lant[MAX]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului, trebuie dat reverse() pentru fiecare lanț în parte
 
 void dfs(int node)
 {
