@@ -24,6 +24,10 @@ Pentru un nod fixat $x$, vom afla pentru fiecare fiu al său dimensiunea subarbo
 Știm că funcția logaritmică crește foarte lent, astfel ne este convenabil să construim lanțuri de lungimi cât mai mari, pentru a avea cât mai puține operații de făcut pentru interogări și update-uri. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarbore.
 Pentru ceilalți fii al nodului $x$, ei vor fi nodul de start pentru lanțul care o fost format până la aceștia.
 
+Următoarea imagine ilustrează descompunerea unui arbore.
+
+
+
 
 ## Problema exemplu
 
