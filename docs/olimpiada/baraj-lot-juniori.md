@@ -16,7 +16,7 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a opta
 * Operații pe biți - [link articol](https://edu.roalgo.ro/mediu/bitwise-ops/)
 * Indicatorul lui Euler - [link articol](https://edu.roalgo.ro/mediu/euler-totient/)
 * Tablouri de diferențe (Difference Arrays) 2D - [link articol](https://edu.roalgo.ro/usor/partial-sums/#smenul-lui-mars-2d)
-* Recursivitate 
+* Recursivitate - [link articol](https://edu.roalgo.ro/cppintro/functions/#functii-recursive)
 * Algoritmul de fill - [link articol](https://edu.roalgo.ro/mediu/lee/#algoritmul-fill-flood-fill-recursiv)
 * Algoritmul lui Lee - [link articol](https://edu.roalgo.ro/mediu/lee/#algoritmul-lui-lee-flood-fill-iterativ)
 * Tehnica Square root decomposition - [link articol](https://edu.roalgo.ro/dificil/square-root-decomposition/) 

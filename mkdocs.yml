@@ -247,7 +247,7 @@ nav:
           - Arbori de intervale: dificil/segment-trees.md
           - Arbori indexați binar: dificil/fenwick-tree.md
           - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
-          - Trie: dificil/trie.md
+          - Trie (arbore de prefixe): dificil/trie.md
       - Algebră:
           - Funcția Möbius: dificil/mobius.md
           - Introducere în algebră liniară: dificil/intro-linalg.md

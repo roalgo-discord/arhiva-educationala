@@ -30,7 +30,7 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a cinc
 * Operații cu mulțimi 
 * Căutare binară - [link articol](https://edu.roalgo.ro/usor/binary-search/)
 * Precalcularea unor informații pentru prefixe/sufixe în tablouri unidimensionale (de exemplu sume parțiale, maxime parțiale) - [link articol](https://edu.roalgo.ro/usor/partial-sums/)
-* Probleme cu secvențe de valori (de exemplu, determinarea unei secvențe maximale cu o anumită proprietate, numărarea secvențelor, prelucrarea secvențelor de lungime fixată ce nu implică stive, cozi sau alte structuri de date avansate) - [link articol](https://edu.roalgo.ro/mediu/sequences/)
+* Probleme cu secvențe de valori (de exemplu, determinarea unei secvențe maximale cu o anumită proprietate, numărarea secvențelor, prelucrarea secvențelor de lungime fixată ce nu implică stive, cozi sau alte structuri de date avansate) - [link articol](https://edu.roalgo.ro/usor/sequences/)
 * Căutarea aparițiilor unei subsecvențe într-o secvență de valori în timp pătratic 
 * Interclasarea tablourilor unidimensionale - [link articol](https://edu.roalgo.ro/cppintro/arrays/#interclasarea-tablourilor)
 

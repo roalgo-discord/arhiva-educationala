@@ -32,7 +32,7 @@ Până să ajungem să discutăm implementarea algoritmilor în sine, vom prezen
 
 În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](./queue.md).
 
-În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](./stack.md), iar informații despre implementarea funcțiilor recursive se găsesc [aici](../usor/functions.md).
+În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](./stack.md), iar informații despre implementarea funcțiilor recursive se găsesc [aici](https://edu.roalgo.ro/cppintro/functions/).
 
 O altă noțiune care se recomandă a fi cunoscută în prealabil este tipul de date pair sau o alternativă a acestuia (tuple sau dacă preferați implementările în stilul C, tipul de date struct, care permite și alte modificări după caz).
 

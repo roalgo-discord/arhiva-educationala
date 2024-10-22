@@ -148,7 +148,7 @@ int main() {
 
 ## Aplicarea PINEX în probleme mai complexe 
 
-Pe lângă aplicarea [funcției Möbius](./mobius.md) în problemele dificile ce folosesc PINEX, se mai regăsește o formă de aplicare a acestui principiu, atunci când trebuie să numărăm câte perechi sau mulțimi de valori au o anumită valoare a unei funcții. De foarte multe ori, funcțiile ce apar în aceste probleme sunt multiplicative, deci scopul va fi acela de a exclude mulțimile care au drept răspuns o valoare multiplu de numărul pe care îl căutăm.
+Pe lângă aplicarea [funcției Möbius](../dificil/mobius.md) în problemele dificile ce folosesc PINEX, se mai regăsește o formă de aplicare a acestui principiu, atunci când trebuie să numărăm câte perechi sau mulțimi de valori au o anumită valoare a unei funcții. De foarte multe ori, funcțiile ce apar în aceste probleme sunt multiplicative, deci scopul va fi acela de a exclude mulțimile care au drept răspuns o valoare multiplu de numărul pe care îl căutăm.
 
 ### Problema [Counting Coprime Pairs](https://cses.fi/problemset/task/2417/)
 

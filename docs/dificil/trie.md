@@ -7,7 +7,7 @@ tags:
 
 **Autor**: Matei Ionescu
 
-## Ce este un Trie
+## Ce este un Trie 
 
 Un trie (sau arbore de prefixe) este un _arbore de căutare $k$-ar_ (un arbore cu
 rădăcină unde fiecare nod are maxim $k$ fii), reprezentând un mod unic de a

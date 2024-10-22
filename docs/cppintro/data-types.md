@@ -17,15 +17,17 @@ Totuși, unele tipuri de date mai complexe, cum ar fi [vectorii](https://edu.roa
 ## Variabile
 
 !!! info "Definiție"
-    O variabilă reprezintă o locație de memorie unde se află o valoare de un anumit tip. Orice variabilă este caracterizată de:
+    O variabilă reprezintă o locație de memorie unde se află o valoare de un anumit tip, variabilele fiind caracterizate de o adresă, identificator, domeniul și tipul acesteia.
 
-    * adresa variabilei (unde se află variabila stocată în memorie), nu lucrăm cu ea în timpul programelor dar uneori în cazul unor afișări greșite, o putem detecta, aceasta fiind reprezentată cu un număr în baza 16 (de exemplu, _0x6dfed4_).
-    * identificatorul variabilei – reprezintă un nume pentru variabilă – legătura dintre variabilă si adresa ei. Identificatorul respectă următoarele reguli:
-        * conține litere mari, mici ale alfabetului englez cifre și caracterul de subliniere '_' – underline. Literele mari sunt considerate diferite de cele mici, astfel că Raspuns, raspuns și RASPUNS reprezintă identificatori diferiți.
-        * primul caracter nu poate fi cifră.
-        * identificatorul nu poate face parte din lista cuvintelor rezervate (de regulă, numele unor funcții, tipuri, structuri etc.).
-    * tipul variabilei – stabilește ce fel de valori poate să ia variabila, aceasta determinând și limitele valorilor ce pot fi luate de ea.
-    * domeniul de vizibilitate – reprezintă zona din program în care variabila există și poate fi utilizată. Variabilele pot fi globale sau locale.
+Orice variabilă este caracterizată de:
+
+* adresa variabilei (unde se află variabila stocată în memorie), nu lucrăm cu ea în timpul programelor dar uneori în cazul unor afișări greșite, o putem detecta, aceasta fiind reprezentată cu un număr în baza 16 (de exemplu, _0x6dfed4_).
+* identificatorul variabilei – reprezintă un nume pentru variabilă – legătura dintre variabilă si adresa ei. Identificatorul respectă următoarele reguli:
+    * conține litere mari, mici ale alfabetului englez cifre și caracterul de subliniere '_' – underline. Literele mari sunt considerate diferite de cele mici, astfel că Raspuns, raspuns și RASPUNS reprezintă identificatori diferiți.
+    * primul caracter nu poate fi cifră.
+    * identificatorul nu poate face parte din lista cuvintelor rezervate (de regulă, numele unor funcții, tipuri, structuri etc.).
+* tipul variabilei – stabilește ce fel de valori poate să ia variabila, aceasta determinând și limitele valorilor ce pot fi luate de ea.
+* domeniul de vizibilitate – reprezintă zona din program în care variabila există și poate fi utilizată. Variabilele pot fi globale sau locale.
 
 În C/C++, variabilele trebuie declarate, precizând tipul și identificatorul. Sintaxa este:
 
@@ -64,6 +66,10 @@ Uneori, putem fi în situația în care să avem nevoie de numere un pic mai mar
 De exemplu, tipul de date **unsigned int** poate păstra în memorie valori între $0$ și $2^{32} - 1$, intervalul fiind $[0, 4 \ 294 \ 967 \ 295]$.
 
 De cele mai multe ori, tipurile de date pe care le folosim sunt **unsigned int**, respectiv **unsigned long long**.
+
+### Tipul de date void
+
+Pe lângă tipurile de date menționate anterior, există și tipul de date void, care deși nu are valori și operații, este necesar pentru a indica faptul că o metodă, o funcție sau un program nu returnează nimic, așa cum veți vedea ulterior când studiați [funcțiile](https://edu.roalgo.ro/cppintro/functions/).
 
 ### Sfaturi practice și evitarea overflow-ului
 

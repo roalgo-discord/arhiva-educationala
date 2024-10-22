@@ -96,7 +96,7 @@ Chiar dacă aceste implementări nu îmbunătățesc semnificativ performanța c
 
 ## Alte aplicații ale ciurului lui Eratostene
 
-După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](../mediu/pinex.md) sau [Möbius](../mediu/mobius.md) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
+După cum am menționat la începutul articolului, ciurul lui Eratostene este un algoritm foarte versatil, putând fi folosit pentru aflarea multor proprietăți ale numerelor, precum divizorii (primi sau toți) ai unui număr, pentru calcule de tipul celor folosite la [pinex](../mediu/pinex.md) sau [Möbius](../dificil/mobius.md) și așa mai departe. Câteva din implementările acestor operații vor fi prezentate mai jos, în cadrul problemei educaționale descrisă în cele ce urmează. 
 
 ## Problema [Ciurul lui Eratostene](https://kilonova.ro/problems/2108) de pe Kilonova
 

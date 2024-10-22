@@ -89,6 +89,33 @@ cout << (long long) 594943 * 204232 << '\n'; // ok
 cout << 594943 * (long long) 204232 << '\n'; // ok
 ```
 
+O altă soluție pentru evitarea overflowurilor în cazul în care trebuie să verificăm dacă produsele depășesc o anumită valoare este să verificăm rezultatul împărțirii unui deîmpărțit la un împărțitor. Cu alte cuvinte, în loc să verificăm dacă $a \cdot b \geq c$, vom verifica dacă $\frac{c}{a} \geq b$. Un exemplu de problemă este problema [Overflow de pe pbinfo](https://www.pbinfo.ro/probleme/555/overflow), soluția o găsiți în codul de mai jos.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int n;
+    unsigned long long huge = 18446744073709551615; // cel mai mare numar de tip unsigned long long
+    
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        unsigned long long nr1, nr2;
+        cin >> nr1 >> nr2;
+        
+        if (nr2 && nr1 > huge / nr2) { // evitam impartirea la zero
+            cout << "Overflow!" << '\n';
+        }
+        else {
+            cout << nr1 * nr2 << '\n';
+        }
+    }
+    return 0;
+}
+```
+
 ### Incrementarea și decrementarea 
 
 În mod particular, în cazul operațiilor de adunare și scădere, putem folosi operatorii de incrementare (adunare cu $1$) și decrementare (scădere cu $1$) pentru a face scrierea mai scurtă, sintaxa lor fiind `a++`, respectiv `a--`.

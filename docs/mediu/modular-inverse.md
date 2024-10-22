@@ -10,7 +10,7 @@ tags:
 
 În cadrul multor probleme de informatică se cere calcularea unei valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.
 
-Se recomandă citirea informațiilor din articolul despre [matematică de bază](../usor/basic-math.md) înainte de a citi noțiunile de aici. 
+Se recomandă citirea informațiilor din articolul despre [matematică de bază](https://edu.roalgo.ro/cppintro/basic-math/) înainte de a citi noțiunile de aici. 
 
 ## Ce este inversul modular?
 

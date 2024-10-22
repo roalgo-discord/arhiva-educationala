@@ -97,6 +97,9 @@ Pentru a rula programul, va trebui să rulați executabilul generat (programul c
 
 Prima linie, `#include <iostream>` reprezintă ceea ce vom numi **o bibliotecă**, aceasta fiind o colecție de funcții, clase și metode ce pot fi reutilizate fără a fi nevoie să scriem întreagă definiție de mână. Un echivalent în viața de zi reprezintă utilizarea unei cărți de rețete pentru prepararea unui fel de mâncare, astfel noi putem folosi acele metode fără a fi nevoie să le reinventăm. Toate bibliotecile vor avea sintaxa `#include <NUME>`, exemple ar fi `#include <fstream>`, `#include <cmath>`, `#include <vector>`, `#include <cstring>` etc.
 
+!!! note "Observație"
+    Printre altele, există și biblioteca `#include <bits/stdc++.h>` care include toate bibliotecile de care veți avea nevoie când rezolvați probleme în algoritmică. Totuși, recomandăm folosirea acestei biblioteci doar la olimpiadă, și chiar și acolo, există unele dezavantaje, cum ar fi timpul crescut de compilare a programului, care poate fi un factor descurajator în contextul avantajului clar de a nu fi nevoie să scrieți toate bibliotecile pe care le utilizați.
+
 Următoarea linie, `using namespace std;` ne indică faptul că putem utiliza toate definițiile incluse în namespace-ul standard. **Un namespace** reprezintă o regiune de declarări care conferă un scop identificatorilor (numelor funcțiilor, variabilelor, tipurilor de date etc.) din acesta, fiind folosite pentru a grupa codul în grupe logice și pentru a preveni coliziunile de nume care pot apărea în special în situația în care programul nostru include multiple biblioteci. 
 
 !!! note "Observație"
