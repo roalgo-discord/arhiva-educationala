@@ -258,6 +258,7 @@ Debugging-ul este una dintre cele mai importante tehnici pentru orice programato
 
 ## Resurse suplimentare
 
+* [O abordare eficientă a problemelor de informatică - Nerdvana](https://nerdvana.ro/sfaturi-pentru-olimpiada-o-abordarea-eficienta-a-problemelor-de-informatica/)
 * [Compilation and Debugging Tutorial - Codeforces](https://codeforces.com/blog/entry/79024)
 * [How to Debug - USACO Guide](https://usaco.guide/general/debugging-checklist?lang=cpp)
 * [Basic Debugging - USACO Guide](https://usaco.guide/general/basic-debugging?lang=cpp)

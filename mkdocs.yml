@@ -164,11 +164,8 @@ nav:
       - Introducere în teoria grafurilor: usor/graphs.md
   - Mediu:
       - Informații utile:
-          - Informații despre olimpiada de informatică: mediu/olympiad-info.md
-          - Cum te pregătești pentru olimpiadă?: mediu/olympiad-preparation.md
           - Cum repari o soluție greșită?: mediu/debugging.md
-          - Cum abordezi proba de concurs la olimpiadă?: mediu/olympiad-strategy.md
-          - Cum ajungi tot mai bun la concursuri?: mediu/olympiad-improvement.md
+          - Cum ajungi tot mai bun la concursuri?: mediu/contest-improvement.md
           - Listă de concursuri relevante: mediu/contest-list.md
           - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
       - Concepte fundamente și de limbaj:
@@ -307,7 +304,10 @@ nav:
           - Funcții generatoare: avansat/generating-functions.md
   - Olimpiadă:
       - Strategie: 
+          - Informații despre olimpiada de informatică: olimpiada/olympiad-info.md
           - Cum te pregătești pentru olimpiadă?: olimpiada/olympiad-prep.md
+          - Cum abordezi proba de concurs la olimpiadă?: olimpiada/olympiad-strategy.md
+          - Cum ajungi să iei rezultate tot mai bune la olimpiadă?: olimpiada/olympiad-improvement.md
       - Programă:
           - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
           - Gimnaziu:
