@@ -306,12 +306,12 @@ $$\textcolor{white}{3} \ \textcolor{blue}{6} \ \textcolor{white}{2 \ 3 \ 1} \Rig
 
 Singura problemă pe care o întâmpinăm este dată de corelarea corectă a fiecarei poziți din drum cu cea din șirul $S$. Adică, elementul cu valoarea $3$ nu ar trebui marcat, deoarece $S_2 = 2$. Există o soluție totuși pentru problema noastră, care constă în reținerea în alt **bitset** , în funcție de sensul în care shiftăm, dacă există o poziție $p$ pentru care $M_{l,p} = S_i$ și $M_{l,p-1} = S_{i-1}$ (în cazul în care vrem să shiftăm la dreapta).
 
-De exemplu, ```left[l][a][b][x] = 1``` dacă pe linia $l$ există $p$ pentru care $M_{l,p} = a$ și $M_{l,p-1} = b$ (facem tranziție de la $a$ la $b$), și ```right[l][a][b][x] = 1``` dacă există $p$ pentru care $M_{l,p} = a$ și $M_{l,p+1} = b$. Cu astea fiind spuse, definim ```dp[a][b] = 1``` dacă putem atinge elementul $(a,b)$ după un număr de pași, atunci:
+De exemplu, ```left[l][a][b][p] = 1``` dacă pe linia $l$ există $p+1$ pentru care $M_{l,p+1} = a$ și $M_{l,p} = b$ (facem tranziție de la $a$ la $b$), și ```right[l][a][b][p] = 1``` dacă există $p-1$ pentru care $M_{l,p-1} = a$ și $M_{l,p} = b$. Cu astea fiind spuse, definim ```dp[a][b] = 1``` dacă putem atinge elementul $(a,b)$ după un număr de pași, atunci:
 
 	dp[a] = ((dp[a] << 1) & left[a][x][y]) | ((dp[a] >> 1) & right[a][x][y])
  unde $S_i = y, S_{i-1} = x$.
 
-Pentru a tranziționa de pe o linie pe alta (mergem în sus sau în jos), procedăm la fel doar că de data asta vom reține ```up[l][a][b][x], down[l][a][b][x]```.
+Pentru a tranziționa de pe o linie pe alta (mergem în sus sau în jos), procedăm la fel doar că de data asta vom reține ```up[l][a][b][p], down[l][a][b][p]```.
 
 Complexitatea este $O(|S| \cdot \frac{N^2}{w})$.
 
@@ -361,7 +361,11 @@ cout << ans << '\n';
  
 ##  Bitset dinamic
 
-Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul de elemente pe parcursul execuției programului, sau îl putem declara direct cu cât vrem noi (```bitset<>a(n)```?). De ce am avea nevoie oare de așa ceva? Pentru eficiență, evident!! Este destul de tedious să facem toate operațiile pe aceeși constană $N$ știind clar că în unele cazuri nu avem nevoie de toți biții.
+Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul de elemente pe parcursul execuției programului, sau îl putem declara direct cu cât vrem noi (```bitset<>a(n)```?). De ce am avea nevoie oare de așa ceva? Pentru eficiență, poate. Este destul de tedious să facem toate operațiile pe aceeși constană $N$ știind clar că în unele cazuri nu avem nevoie de toți biții. De pildă, există probleme pentru care necesită folosirea unui ```bitset``` dinamic. Un exemplu bun ar fi:
+
+### Problema [PermuteTree-Hard](https://codeforces.com/contest/1856/problem/E2)
+
+Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$, definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u \leq a_{lca(u,v)} \leq a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care o poate lua $f(a)$, pentru oricare permutare de $n$ numere.
 
 ## "Tips and tricks" pentru bitset
 
