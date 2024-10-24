@@ -16,25 +16,25 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acel
 
 Știm că funcția logaritmică crește foarte lent, astfel ne este convenabil să construim lanțuri de lungimi cât mai mari, pentru a minimiza numărul de operații necesare pentru interogări și update-uri pe un număr cât mai mare de noduri din lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarbore.
 
-De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt N)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
+De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $\sqrt N$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
 
 <p align="center">
 <img src="../images/hld/pathssqrtn.png" width="600" />
 </p>
 
-Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N$.
+Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină se reduce la $\log N$.
 
-Următoarea imagine ilustrează descompunerea arborelui cu tehnica descrisă anterior, cunoscută în termeni de specialitate **heavy path decomposition**.
+Următoarea imagine ilustrează descompunerea arborelui cu tehnica descrisă anterior, cunoscută în termeni de specialitate sub denumirea de **heavy path decomposition**.
 
 <p align="center">
 <img src="../images/hld/pathslogn.png" width="600" />
 </p>
 
-Complexitatea finală pe fiecare interogare și update: $O(( \log N ) ^ 2)$.
+Complexitatea finală pe fiecare interogare sau update: $O(( \log N ) ^ 2)$.
 
 ## Implementarea în C++
 
-Există și alte tehnici de precalculare a lanțurilor, dar aceasta este cea mai intuitivă.
+Există și alte tehnici de precalculare a lanțurilor, dar aceasta este cea mai ușor de înțeles.
 
 ```cpp
 /// nodurile arborelui sunt inițializați de la 1
@@ -92,7 +92,23 @@ void dfs(int node)
 }
 ```
 
-## Problema exemplu
+## Probleme rezolvate
+
+### Problema [Heavy Path Decomposition](https://www.infoarena.ro/problema/heavypath)
+
+Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \leq i \leq N$. Se dau $M$ operații de forma $(t, x, y)$, cu următoarea semnificație:
+    * dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata nodului cu indicele $x$ devine $y$;
+    * dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $x$ și $y$.
+
+Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
+
+Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul $x$. 
+
+Pentru operația de tip query, va trebuie să parcurgem mai multe lanțuri până când vom ajunge cu cele două noduri în același lanț. Această operațiune este chiar cea de la [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
+
+O implementare de $100$ de puncte pentru această problemă se poate găsi [aici](https://www.infoarena.ro/job_detail/3250975?action=view-source).
+
+
 
 ## Concluzii
 
