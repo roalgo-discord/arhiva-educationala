@@ -19,7 +19,7 @@ Evident, dacă efectuăm această descompunere pe arborele nostru, ne va permite
 
 Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua același pattern.
 
-Știm că funcția logaritmică crește foarte lent, astfel ne este convenabil să construim lanțuri de lungimi cât mai mari, pentru a avea cât mai puține operații de făcut pentru interogări și update-uri în raport cu un număr cât mai mare de noduri din lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarbore.
+Știm că funcția logaritmică crește foarte lent, astfel ne este convenabil să construim lanțuri de lungimi cât mai mari, pentru a minimiza numărul de operații necesare pentru interogări și update-uri pe un număr cât mai mare de noduri din lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarbore.
 
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem O(sqrt(N)) lanțuri elementare, atunci vom avea o complexitate de O(sqrt(N)) pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de O(sqrt(N) * log(N)) pentru fiecare interogare sau update.
 
@@ -46,7 +46,7 @@ int nrL; /// numărul de lanțuri
 int L[MAX]; /// L[i] - în ce lanț se află nodul i
 int Lfather[MAX]; /// Lfather[L[i]] - primul nod al lanțului în care se află i
 int Lniv[MAX]; /// Lniv[L[i]] - nivelul primului nod al lanțului în care se află i
-vector<int> Lant[MAX]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului, trebuie dat reverse() pentru fiecare lanț în parte
+vector<int> Lant[MAX]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului
 
 void dfs(int node)
 {
@@ -91,10 +91,6 @@ void dfs(int node)
     }
 }
 ```
-
-Pentru a obține timpul logaritmic, va trebui pentru fiecare lanț în parte să creăm câte un arbore de intervale.
-
-O altă modalitate, mai scurtă ca și implementare ar fi să implementăm arbori de intervale pe un vector static, iar fiecare arbore de intervale să ocupe o zonă din acest vector.
 
 ## Problema exemplu
 
