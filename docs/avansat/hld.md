@@ -119,7 +119,7 @@ Pentru $Q$ query-uri, ai două tipuri de întrebări pe care le poți primi:
 
 <ol>
     <li>$1 \ x \ y$. Aflați cel mai lung sufix ale celor $2$ noduri astfel încât cuvintele formate să fie identice. Un cuvânt se definește ca un lanț a $len$ noduri consecutive. Dacă vrem să formăm un cuvânt de la nodul $x$ la nodul $y$, $y$ trebuie să fie fiul nodului $x$.</li>
-    <li>$2 \ x \ ch$. Nodul $x$ își va schimba valoarea caracterului în $ch$.<\li>
+    <li>$2 \ x \ ch$. Nodul $x$ își va schimba valoarea caracterului în $ch$.</li>
 </ol>
 
 Fetițele Powerpuff vă roagă să le dați un cod cu cea mai bună complexitate posibilă astfel încât să obțină medalia de aur. Se garantează că cele $N$ noduri formează un arbore.
