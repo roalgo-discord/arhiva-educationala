@@ -24,15 +24,17 @@ De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem
 
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N$.
 
-Următoarea imagine ilustrează descompunerea arborelui de mai sus prin tehnica **heavy path decomposition**.
+Următoarea imagine ilustrează descompunerea arborelui cu tehnica descrisă anterior, cunoscută în termeni de specialitate **heavy path decomposition**.
 
 <p align="center">
 <img src="../images/hld/pathslogn.png" width="600" />
 </p>
 
-Complexitatea finală pe fiecare interogare: $O(( \log N ) ^ 2)$.
+Complexitatea finală pe fiecare interogare și update: $O(( \log N ) ^ 2)$.
 
-Iată un cod de precalculare a lanțurilor:
+## Implementarea în C++
+
+Există și alte tehnici de precalculare a lanțurilor, dar aceasta este cea mai intuitivă.
 
 ```cpp
 /// nodurile arborelui sunt inițializați de la 1
@@ -72,7 +74,6 @@ void dfs(int node)
     if (leaf){
         L[node] = ++nrL; /// se crează un nou lanț
         Lant[L[node]].push_back(node);
-        return;
     }
     /// altfel o să legăm pe node de maxl
     else{
