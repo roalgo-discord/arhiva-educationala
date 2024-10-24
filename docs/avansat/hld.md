@@ -104,7 +104,7 @@ Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \le
 
 Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
 
-<\br>
+<br>
 
 Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul $x$. 
 
