@@ -21,7 +21,8 @@ De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem
 <p align="center">
 <img src="../images/hld/pathssqrtn.jpg" width="600" />
 </p>
-Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N $.
+
+Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N$.
 
 Următoarea imagine ilustrează descompunerea arborelui de mai sus prin tehnica **heavy path decomposition**.
 
