@@ -19,13 +19,15 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acel
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt N)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
 
 <p align="center">
-<img src="../images/hld/pathssqrtn.jpg" width="300" />
+<img src="../images/hld/pathssqrtn.jpg" width="400" />
 </p>
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N $.
 
 Următoarea imagine ilustrează descompunerea arborelui de mai sus prin tehnica **heavy path decomposition**.
 
-![](../images/hld/pathslogn.jpg)
+<p align="center">
+<img src="../images/hld/pathslogn.jpg" width="400" />
+</p>
 
 Complexitatea finală pe fiecare interogare: $O(( \log N ) ^ 2)$.
 
