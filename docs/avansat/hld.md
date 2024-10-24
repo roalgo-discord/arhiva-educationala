@@ -5,6 +5,8 @@ tags:
   - optimizare
 ---
 
+**Autor**: Raul Ardelean
+
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri și update-uri într-un timp eficient pe un **arbore**.
 
 ## Introducere
@@ -21,15 +23,15 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acel
 
 Știm că funcția logaritmică crește foarte lent, astfel ne este convenabil să construim lanțuri de lungimi cât mai mari, pentru a minimiza numărul de operații necesare pentru interogări și update-uri pe un număr cât mai mare de noduri din lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarbore.
 
-De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt n)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
+De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt N)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
 
-![](../images/hld/pathssqrtn.png)
+![](../images/hld/pathssqrtn.svg)
 
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N $.
 
 Următoarea imagine ilustrează descompunerea arborelui de mai sus prin tehnica **heavy path decomposition**.
 
-![](../images/hld/pathslogn.png)
+![](../images/hld/pathslogn.svg)
 
 Complexitatea finală pe fiecare interogare: $O(( \log N ) ^ 2)$.
 
