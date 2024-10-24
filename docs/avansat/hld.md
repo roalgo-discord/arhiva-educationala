@@ -97,6 +97,7 @@ void dfs(int node)
 ### Problema [Heavy Path Decomposition](https://www.infoarena.ro/problema/heavypath)
 
 Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \leq i \leq N$. Se dau $M$ operații de forma $(t, x, y)$, cu următoarea semnificație:
+
 <ol>
     <li> dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata nodului cu indicele $x$ devine $y$;</li>
     <li> dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $x$ și $y$.</li>
@@ -104,12 +105,35 @@ Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \le
 
 Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
 
-
-Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul $x$. 
+Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul $x$.
 
 Pentru operația de tip query, va trebuie să parcurgem mai multe lanțuri până când vom ajunge cu cele două noduri în același lanț. Această operațiune este chiar cea de la [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
 
-O implementare de $100$ de puncte pentru această problemă se poate găsi [aici](https://www.infoarena.ro/job_detail/3250975?action=view-source).
+O implementare de $100$ de puncte se poate găsi [aici](https://www.infoarena.ro/job_detail/3250975?action=view-source).
+
+### Problema [Struct arbore{}](https://kilonova.ro/problems/2844/)
+
+Fetițele Powerpuff au întâmpinat o problemă de informatică la proba de la ONI. Ele nu sunt familiarizate cu struct arbori și de aceea îți cer ajutorul.
+Ți se oferă $N$ noduri, fiecare nod având o literă mică specifică.
+Pentru $Q$ query-uri, ai două tipuri de întrebări pe care le poți primi:
+
+<ol>
+    <li>$1 \ x \ y$. Aflați cel mai lung sufix ale celor $2$ noduri astfel încât cuvintele formate să fie identice. Un cuvânt se definește ca un lanț a $len$ noduri consecutive. Dacă vrem să formăm un cuvânt de la nodul $x$ la nodul $y$, $y$ trebuie să fie fiul nodului $x$.</li>
+    <li>$2 \ x \ ch$. Nodul $x$ își va schimba valoarea caracterului în $ch$.<\li>
+</ol>
+
+Fetițele Powerpuff vă roagă să le dați un cod cu cea mai bună complexitate posibilă astfel încât să obțină medalia de aur. Se garantează că cele $N$ noduri formează un arbore.
+
+Această problemă necesită cunoștințe de la [string hashing](https://edu.roalgo.ro/mediu/hashing/), respectiv [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
+
+În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $O(1)$ valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va trebui să facem update pe fiecare lanț când schimbăm caracterul de la un nod. Astfel, complexitatea pentru update și query pe un lanț va rămâne tot $O(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un lanț care leagă două noduri, aceasta va intra în complexitate $O((\log N)^2)$, deoarece putem parcurge maxim $\log N$ lanțuri în tot arborele.
+
+În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor $2$ noduri, astfel încât acesta să fie la o distanță cât mai mare, iar cele $2$ stringuri formate să fie identice. Ne vom folosi de LCA pentru a afla în $O(\log N)$ al $K$ strămoș pentru nodul $x$, iar de căutarea binară pentru a afla valoarea $K$ în timp logaritmic. Astfel rezultă o complexitate finala de $O((\log N)^4)$ pentru fiecare query și $O(\log N)$ pentru update.
+
+O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/pastes/dVpzXLJV0vkL).
+
+!!! note "Observație"
+    Această problemă poate să fie rezolvată în $O(Q \cdot (\log N)^3)$ dacă liniarizăm arborele, dar în contest s-a permis ca tehnica hld să primească $100$.
 
 
 
