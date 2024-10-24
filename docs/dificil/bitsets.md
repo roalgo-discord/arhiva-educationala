@@ -367,6 +367,13 @@ Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul d
 
 Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$, definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u \leq a_{lca(u,v)} \leq a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care o poate lua $f(a)$, pentru oricare permutare de $n$ numere.
 
+O să forțăm puțin raționamentul spunând că pentru fiecare nod vom calcula rezultatul (i.e. cu cât contribuie nodul $u$ la rezultat) folosind permutarea numerelor de la $1$ la $sz_u$ ($sz_u$ este numărul de elemente din subarborele lui $u$). Ideea e că dacă vom aduna cu o constantă fiecare element din permutare, rezultatul se păstrează, pentru că până la urmă tot ce contează este modul în care elementele sunt ordonate.
+
+Raționamentul ne permite să obervăm că, dacă ne fixăm valoarea nodului $u$ (fie ea H), putem aduna fiecare permutare în cu un număr în așa fel încât să formăm permutarea ``` 1, 2, ... , sz[u] ```, iar rezultatul pentru nodul $u$ va fi dat de numărul de elememente din permutarea nouă care sunt mai mici ca $H$ înmulțit cu numărul de elemente mai mari ca $H$. Atunci practic trebuie să găsim o mulțime de fii ai lui $u$ astfel încat numărul de noduri din mulțime $\cdot$ numărul de elemente care nu sunt în mulțime să fie maxim. 
+
+Concret, rezultatul e maximul dintre $D \cdot (sz_u - D - 1)$ cu condiția că există o sumbulțime de fii cu $\sum_{i} sz_{fiu_i} = D$.
+
+O observație esențială pe care o deducem de aici este faptul că rezultatul optim pentru fiecare nod nu depinde de rezultatul optim al celorlalte noduri.
 ## "Tips and tricks" pentru bitset
 
 ## OK, cat e concret $w$?
