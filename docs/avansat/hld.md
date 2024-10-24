@@ -141,10 +141,12 @@ O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/past
 * [QTREE3 - Query on a tree again!](https://www.spoj.com/problems/QTREE3/en/)
 * [Milk Visits](https://usaco.org/index.php?page=viewproblem2&cpid=970)
 * [Delay](https://infoarena.ro/problema/delay)
+* [Aladdin and the Return Journey](https://lightoj.com/problem/aladdin-and-the-return-journe)
 * [Disruption](https://usaco.org/index.php?page=viewproblem2&cpid=842)
 * [Subtrees And Paths](https://usaco.guide/plat/hld?lang=cpp)
 * [Grass Planting](https://usaco.org/index.php?page=viewproblem2&cpid=102)
 * [Vertex Set Path Composite](https://judge.yosupo.jp/problem/vertex_set_path_composite)
+* [Caves and Tunnels](https://acm.timus.ru/problem.aspx?space=1&num=1553)
 * [Tree Queries](https://codeforces.com/contest/1254/problem/D)
 * [The Tree](https://codeforces.com/contest/1017/problem/G)
 * [Tree Game](https://tlx.toki.id/problems/troc-14/H/)
@@ -154,3 +156,7 @@ O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/past
 
 ## Resurse suplimentare
 
+* [HLD - CP Algorithms ](https://cp-algorithms.com/graph/hld.html)
+* [HLD - USACO](https://usaco.guide/plat/hld)
+* [Tree decompositions - Infoarena](https://infoarena.ro/tree-decompositions)
+* [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
