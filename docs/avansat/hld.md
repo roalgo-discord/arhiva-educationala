@@ -132,8 +132,8 @@ Această problemă necesită cunoștințe de la [string hashing](https://edu.roa
 
 O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/pastes/dVpzXLJV0vkL).
 
-!!! note "Observație" 
-Această problemă poate să fie rezolvată în $O(Q \cdot (\log N)^3)$ dacă liniarizăm arborele, dar în contest s-a permis ca tehnica hld să primească $100$.
+!!! note "Observație"
+    LCA-ul între două noduri se poate afla și în $O(1)$ per query, folosind o precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
 
 ## Concluzii
 
