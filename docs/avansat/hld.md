@@ -30,7 +30,7 @@ Următoarea imagine ilustrează descompunerea arborelui cu tehnica descrisă ant
 <img src="../images/hld/pathslogn.png" width="600" />
 </p>
 
-Complexitatea finală pe fiecare interogare sau update: $O(( \log N ) ^ 2)$.
+Complexitatea finală pe fiecare interogare va fi $O(( \log N ) ^ 2)$, iar pentru update-ul unui singur nod în $O(\log N)$.
 
 ## Implementarea în C++
 
@@ -126,14 +126,33 @@ Fetițele Powerpuff vă roagă să le dați un cod cu cea mai bună complexitate
 
 Această problemă necesită cunoștințe de la [string hashing](https://edu.roalgo.ro/mediu/hashing/), respectiv [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
 
-În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $O(1)$ valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va trebui să facem update pe fiecare lanț când schimbăm caracterul de la un nod. Astfel, complexitatea pentru update și query pe un lanț va rămâne tot $O(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un lanț care leagă două noduri, aceasta va intra în complexitate $O((\log N)^2)$, deoarece putem parcurge maxim $\log N$ lanțuri în tot arborele.
+În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $O(1)$ valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va trebui să facem update pe fiecare lanț când schimbăm litera de la un nod. Astfel, complexitatea pentru update și query pe un lanț va rămâne tot $O(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un lanț care leagă două noduri, aceasta va intra în complexitate $O((\log N)^2)$, deoarece putem parcurge maxim $\log N$ lanțuri în tot arborele.
 
-În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor $2$ noduri, astfel încât acesta să fie la o distanță cât mai mare, iar cele $2$ stringuri formate să fie identice. Ne vom folosi de LCA pentru a afla în $O(\log N)$ al $K$ strămoș pentru nodul $x$, iar de căutarea binară pentru a afla valoarea $K$ în timp logaritmic. Astfel rezultă o complexitate finala de $O((\log N)^4)$ pentru fiecare query și $O(\log N)$ pentru update.
+În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor $2$ noduri, astfel încât acesta să fie la o distanță cât mai mare, iar cele $2$ stringuri formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $O(\log N)$ al $K$ strămoș pentru nodul $x$, iar de căutarea binară pentru a afla valoarea $K$ în timp logaritmic. Astfel rezultă o complexitate finală de $O((\log N)^4)$ pentru fiecare query și $O(\log N)$ pentru update.
 
 O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/pastes/dVpzXLJV0vkL).
 
-## Concluzii
-
 ## Probleme suplimentare
 
+*[Path Queries II](https://cses.fi/problemset/task/2134/)
+*[Company Queries II](https://cses.fi/problemset/task/1688)
+*[confuzie](https://kilonova.ro/problems/217/)
+*[Disconnect](https://www.infoarena.ro/problema/disconnect)
+*[Sever](https://www.infoarena.ro/problema/sever)
+*[Cow Land](https://usaco.org/index.php?page=viewproblem2&cpid=921)
+*[QTREE3 - Query on a tree again!](https://www.spoj.com/problems/QTREE3/en/)
+*[Milk Visits](https://usaco.org/index.php?page=viewproblem2&cpid=970)
+*[Delay](https://infoarena.ro/problema/delay)
+*[Disruption](https://usaco.org/index.php?page=viewproblem2&cpid=842)
+*[Subtrees And Paths](https://usaco.guide/plat/hld?lang=cpp)
+*[Grass Planting](https://usaco.org/index.php?page=viewproblem2&cpid=102)
+*[Vertex Set Path Composite](https://judge.yosupo.jp/problem/vertex_set_path_composite)
+*[Tree Queries](https://codeforces.com/contest/1254/problem/D)
+*[The Tree](https://codeforces.com/contest/1017/problem/G)
+*[Tree Game](https://tlx.toki.id/problems/troc-14/H/)
+*[Synchronization](https://oj.uz/problem/view/JOI13_synchronization)
+*[Cats or Dogs](https://oj.uz/problem/view/JOI18_catdog)
+*[Probleme cu HLD de pe Kilonova](https://kilonova.ro/tags/295)
+
 ## Resurse suplimentare
+
