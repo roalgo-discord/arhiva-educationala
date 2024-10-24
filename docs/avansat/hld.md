@@ -18,7 +18,7 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acel
 
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt N)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
 
-![](../images/hld/pathssqrtn.jpg,width: 20 px)
+<img src="../images/hld/pathssqrtn.jpg" width="50"/>
 
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N $.
 
