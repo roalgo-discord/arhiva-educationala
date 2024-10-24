@@ -1,10 +1,3 @@
----
-tags:
-  - structuri de date
-  - arbori
-  - optimizare
----
-
 **Autor**: Raul Ardelean
 
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri și update-uri într-un timp eficient pe un **arbore**.
@@ -25,13 +18,13 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acel
 
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $O(\sqrt N)$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de $O(\sqrt N \cdot \log N)$ pentru fiecare interogare sau update.
 
-![](../images/hld/pathssqrtn.svg)
+![](../images/hld/pathssqrtn.jpg)
 
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină va fi $\log N $.
 
 Următoarea imagine ilustrează descompunerea arborelui de mai sus prin tehnica **heavy path decomposition**.
 
-![](../images/hld/pathslogn.svg)
+![](../images/hld/pathslogn.jpg)
 
 Complexitatea finală pe fiecare interogare: $O(( \log N ) ^ 2)$.
 
