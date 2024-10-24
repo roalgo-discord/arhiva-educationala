@@ -101,7 +101,10 @@ Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \le
     <li> dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata nodului cu indicele $x$ devine $y$;</li>
     <li> dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $x$ și $y$.</li>
 </ol>
+
 Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
+
+<\br>
 
 Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul $x$. 
 
