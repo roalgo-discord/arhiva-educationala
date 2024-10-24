@@ -160,3 +160,4 @@ O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/past
 * [HLD - USACO](https://usaco.guide/plat/hld)
 * [Tree decompositions - Infoarena](https://infoarena.ro/tree-decompositions)
 * [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
+* [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)
