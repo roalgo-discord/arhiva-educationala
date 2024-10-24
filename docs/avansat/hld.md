@@ -12,7 +12,7 @@ Evident, dacă efectuăm această descompunere pe arborele nostru, ne va permite
 
 ## Construcția lanțurilor
 
-Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua același pattern.
+Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua aceași metodă.
 
 Știm că funcția logaritmică crește foarte lent, astfel încât este convenabil să construim lanțuri de lungimi cât mai mari, pentru a minimiza numărul de operații necesare pentru interogări și update-uri pe un număr cât mai mare de noduri din lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțului cu fiul care are cele mai multe noduri în subarborele său.
 
