@@ -135,9 +135,6 @@ O implementare de $100$ de puncte se poate găsi [aici](https://kilonova.ro/past
 !!! note "Observație" 
     Această problemă poate să fie rezolvată în $O(Q \cdot (\log N)^3)$ dacă liniarizăm arborele, dar în contest s-a permis ca tehnica hld să primească $100$.
 
-!!! note "Observație"
-    LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele două, apoi rezultatul cu al treilea nod și așa mai departe
-
 ## Concluzii
 
 ## Probleme suplimentare
