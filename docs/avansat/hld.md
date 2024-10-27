@@ -635,6 +635,8 @@ signed main() {
 * [confuzie](https://kilonova.ro/problems/217/)
 * [Disconnect](https://www.infoarena.ro/problema/disconnect)
 * [Sever](https://www.infoarena.ro/problema/sever)
+* [Petarbore](https://www.infoarena.ro/problema/petarbore)
+* [mogger](https://kilonova.ro/problems/3182)
 * [Cow Land](https://usaco.org/index.php?page=viewproblem2&cpid=921)
 * [QTREE3 - Query on a tree again!](https://www.spoj.com/problems/QTREE3/en/)
 * [Milk Visits](https://usaco.org/index.php?page=viewproblem2&cpid=970)
