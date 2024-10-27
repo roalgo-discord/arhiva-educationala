@@ -51,13 +51,15 @@ int Lfather[MAX]; /// Lfather[L[i]] - primul nod al lanțului în care se află 
 int Lniv[MAX]; /// Lniv[L[i]] - nivelul primului nod al lanțului în care se află i
 vector<int> Lant[MAX]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului
 
-void dfs(int node){
-    viz[node] = 1;
-    w[node] = 1;
+void dfs(int node) {
     int leaf = 1, maxl = -1;
 
-    for (auto x : G[node]){
-        if (viz[x]){
+    viz[node] = 1;
+    w[node] = 1;
+    
+
+    for (auto x : G[node]) {
+        if (viz[x]) {
             continue;
         }
             
@@ -69,29 +71,27 @@ void dfs(int node){
         w[node] += w[x];
 
         /// actualizăm fiul care are cea mai mare dimensiune al subarborelui
-        if (maxl == -1){
+        if (maxl == -1) {
             maxl = x;
         }
-            
-        else if (w[maxl] < w[x]){
+        else if (w[maxl] < w[x]) {
             maxl = x;
         }
     }
 
     /// daca node este o frunză
-    if (leaf){
+    if (leaf) {
         L[node] = ++nrL; /// se crează un nou lanț
         Lant[L[node]].push_back(node);
     }
-
     /// altfel o să legăm pe node de maxl
-    else{
+    else {
         L[node] = L[maxl];
         Lant[L[node]].push_back(node);
 
         /// aici vom fixa nodul de start pentru fii care au rămas, aceștia fiind primi în lanțul creat păna la ei
-        for (auto x : G[node]){
-            if (x == maxl or niv[x] < niv[node]){
+        for (auto x : G[node]) {
+            if (x == maxl or niv[x] < niv[node]) {
                 continue;
             }
                 
