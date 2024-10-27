@@ -625,8 +625,7 @@ signed main() {
 
 ## Concluzii
 
-**Heavy-light decomposition** este un algoritm foarte important și puternic care apare rar, datorită numărului mare de linii de cod scrise pentru a putea restrânge arborele și a prelucra operații asupra lanțurilor.
-Orice idee ce poate fi realizată cu arbori de intervale poate să fie extinsă și folosită pe un arbore.
+**Heavy-light decomposition** este un algoritm foarte important și puternic, care apare rar, datorită numărului mare de linii de cod necesare pentru a restrânge arborele și a prelucra operații asupra lanțurilor. Orice idee care poate fi realizată cu arbori de intervale poate fi extinsă și folosită pe un arbore.
 
 ## Probleme suplimentare
 
