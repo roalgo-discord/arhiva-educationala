@@ -143,10 +143,11 @@ vector<int> g[MAX + 5], Lant[MAX + 5];
 bitset<MAX + 5> viz;
 
 void dfs(int node) {
-    viz[node] = 1;
-    w[node] = 1;
     int leaf = 1, maxl = -1;
 
+    viz[node] = 1;
+    w[node] = 1;
+    
     for (auto x : g[node]) {
         if (viz[x]) {
             continue;
