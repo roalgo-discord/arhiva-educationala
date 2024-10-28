@@ -367,18 +367,18 @@ Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul d
 
 Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$, definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u < a_{lca(u,v)} < a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care o poate lua $f(a)$, pentru oricare permutare de $n$ numere.
 
-Ne vom folosi de un raționament tipic programării dinamice și vom calcula pentru fiecare nod rezultatul dacă am considera arborele ca fiind subarborele nodului respectiv, iar permutarea va conține doar nodurile din subarborele actual. Adică daca $sz_u$ = numărul de noduri din subarborele lui $u$, $a$ va fi egal cu $(1,2,\dots, sz_u)$. Când facem tranziție de la $u$ la părintele lui, o sa avem , astfel, pentru fiecare fiu împarte câte o permutare care va fi indepdentă de restul permutărilor. Cu alte cuvinte, dacă notăm cu $f_i$ al $i$-lea fiu al unui nod $v$, atunci permutarile for fi $a_1, a_2, \dots, a_k$. Din aceste permutări noi vom dori să construim permutarea necesară nodului $v$ adk $a_v = (1, 2, \dots, sz_v)$. Ca să facem asta trebuie să ținem cont de :
+Ne vom folosi de un raționament tipic programării dinamice și vom calcula pentru fiecare nod rezultatul dacă am considera arborele ca fiind subarborele nodului respectiv, iar permutarea va conține doar nodurile din subarborele actual. Adică daca $sz_u$ = numărul de noduri din subarborele lui $u$, $a$ va fi egal cu $(1,2,\dots, sz_u)$. Când facem tranziție de la $u$ la părintele lui, o sa avem , astfel, pentru fiecare fiu împarte câte o permutare care va fi indepdentă de restul permutărilor. Cu alte cuvinte, dacă notăm cu $f_i$ al $i$-lea fiu al unui nod $v$, atunci permutarile vor fi $a_1, a_2, \dots, a_k$. Din aceste permutări noi vom dori să construim permutarea necesară nodului $v$ adk $a_v = (1, 2, \dots, sz_v)$. Ca să facem asta trebuie să ținem cont de :
 
 * Permutările deja existente (i.e. permutările fiilor);
 * Ce valoare va primi nodul $v$.
 
-Pentru a forma $a_v$ din permutările deja existente, putem efectiv incrementa un număr de permutări cu constante diferite astfel încât $(1) a_1 \cup a_2 \cup \dots \cup a_k = a_v / \{ x \}$, unde $x$ va fi valoarea nodului $v$. Putem incrementa o permutare pentru că până la urmă nu contează valorile propriu-zise, ci doar cum sunt ordonate. 
+Pentru a forma $a_v$ din permutările deja existente, putem efectiv incrementa un număr de permutări cu constante diferite astfel încât $(1) \ \ a_1 \cup a_2 \cup \dots \cup a_k = a_v / \{ x \}$, unde $x$ va fi valoarea nodului $v$. Putem incrementa o permutare pentru că până la urmă nu contează valorile propriu-zise, ci doar cum sunt ordonate. 
 
 Relația $(1)$ implică faptul că fiecare permutare reprezintă un interval continuu de elemente din $a_v$. Dacă nu avem nicio permutare $a_i$ care să conțină pe $x$, înseamnă efectiv ca fie toate elementele din $a_i$ sunt mai mici ca $x$, fie sunt mai mari ca $x$. Uitându-ne la relația din enunț $a_{f_i} < a_v = x < a_{f_j}$, împreună cu ce-am dedus până acum, deducem că contribuția nodului $v$ la rezultat este $(sz_v - S - 1) \cdot S$ , cu condiția că există o submulțime a fiilor cu $\sum_{r} sz_{f_r} = S$.
 
-Problema se rezumă la : află pentru fiecare nod care este $S$-ul care maximizează contribuția, adună rezultatele si afișează raspunsul.
+Problema se rezumă la : află pentru fiecare nod care este $S$-ul care maximizează contribuția, adună rezultatele și afișează răspunsul.
 
-Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida folosind dp. Similar a doua problemă discutată, putem optimiza dp-ul cu ajutorul unui **bitset**, complexitatea finală fiind
+Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida folosind dp. Similar cu  a doua problemă discutată, putem optimiza dp-ul cu ajutorul unui **bitset**, complexitatea finală fiind
 $O(\frac{N^2}{w})$.
 ### Program Cpp
 ```cpp
@@ -419,7 +419,7 @@ Valori pentru $n$ care depășesc $10^5$ cu greu întră în timp, iar pentru $n
 
 O optimizare importantă, care nu ține de **bitset**, ci mai mult de **programarea dinamică**, este similară (daca nu chiar identică) cu algoritmul de **comprimare** explicat la problema **strehaia**. Dacă un element apare de mai mult de $3$ ori : $x, x, x$ , putem să lipim pe 2 dintre ei : $x, 2x$, fără ca să stricăm corectitudinea la dp. Dacă repetăm procesul până când un element apare de maxim $2$ ori, iar împreună cu o proprietate care zice că : "Pentru un șir $S$ cu $N$ elemente și suma elementelor $R$ $\Rightarrow$ sunt maxim $O(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi **bitset** nu vor fi  mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea se reduce la $O(\frac{N \sqrt N}{w})$.
 
-Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul $5$. Așadar ne vom folosi de **bitset dinamic**, iar în loc să declarăm bitsetul mereu cu $10^6$ elemente, îl vom declara cu $sz_v$ elemente. Foarte suprinzător dar chestia asta întră destul de lejer în timp.
+Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul $5$. Așadar ne vom folosi de **bitset dinamic**, iar în loc să declarăm bitsetul mereu cu $10^6$ elemente, îl vom declara cu $sz_v$ elemente. Foarte suprinzător dar chestia asta întră destul de lejer în timp (sunt ironic lol) .
 
 ### Cum facem un bitset să fie dinamic?
 
@@ -467,19 +467,102 @@ Pâi, ambele! Depinde foarte mult de ce vrei să faci cu el.
 O diferență la ```tr2::dynamic_bitset``` este funcția ```resize()```. În consecință, ```tr2::dynamic_bitset``` este mai lent decât un **bitset** normal sau un **bitset dinamic** cu template-uri. Însă, prima variantă de **bitset dinamic** nu-și poate da resize, adică e mult spus **dinamic**. Dacă veți avea nevoie să reutilizați același bitset dar cu lungime diferită, folosiți  ```tr2::dynamic_bitset```, altfel varianta cu template-uri este superioară din punct de vedere al timpului de execuție. Iar dacă nu aveți în general nevoie de **bitset dinamic**, **folosiți bitsetul normal**.
 
 
-## "Tips and tricks" pentru bitset
+## Cum eficientizăm memoria
 
-## OK, cat e concret $w$?
+Putem să copiem ce face **bitset** cel mai import (faptul că împarte numărul de biți în grupe de câte $w$) și să rezolvăm problema pentru grupe de $w$ elemente consecutive ca la final să dăm merge la rezultate.
 
+### Problemma [Infinity War, RMI 2015](https://kilonova.ro/problems/1837?var=ro-md)
+
+Avem $N$ armate care sunt în război una cu alta, iar fiecare armată este alcătuită din soldați cu diferite puteri (o armată are maxim un soldat cu o anumită putere) numerotate de la $1$ la $P$. Dacă $2$ armate se luptă, vor rămâne în viață doar soldații care nu își regăsesc puterea în armata inamică. De exemplu, dacă reprezentăm armatele ca un șir de biți (unde bitul $i$ este setat dacă există un soldat cu puterea $i$), atunci soldații care rămân în viață sunt prezenți în **suma xor** a celor doua șiruri.
+
+Avem $Q$ queriuri $(l,r)$ și trebuie să aflăm câți soldați rămân în viață dacă se vor lupta armatele $l, l + 1, \dots, r$.
+
+Fie $b_i$ un bitset cu soldații armatei $i$. Răspunsul este practic numărul de biți în $b_l \oplus b_{l+1} \oplus \dots \oplus b_r$, unde $\oplus$ reprezintă operația **XOR**. Putem face asta folosindu-ne de sumele xor pe prefixe, $sp_i = b_i \oplus b_{i-1} \oplus \dots \oplus b_1$. Nu putem reține din păcate fiecare bitset, nu încape $N \cdot P$ biți în 8MB.
+
+Însă putem să luăm pe rând secvențe de câte $w$ elemente și să calculăm rezultatul doar pentru ele, ca apoi să adunăm rezultatele pentru un query.
+
+### Program Cpp
+```cpp
+const int N = 5e4 + 1, P = 1e4 + 1;
+
+ifstream fin("infinitywar.in");
+ofstream fout("infinitywar.out");
+#define cin fin
+#define cout fout
+int n, q, p = 1, maxim;
+
+//bitset<P> b[N];
+vector<int> v[N];
+int main(){
+    cin.tie(0)->sync_with_stdio(0);
+    cin >> n >> q;
+    vector<pair<int, int>> qr(q + 1);
+    vector<int> ans(q + 1);
+    for(int i = 1; i <= n; i++){
+        int k;
+        cin >> k;
+        for(int j = 1; j <= k; j++){
+            int x;
+            cin >> x;
+            maxim = max(maxim, x);
+            v[i].push_back(x);
+        }
+    }
+    for(int i = 1; i <= q; i++){
+        int l, r;
+        cin >> l >> r;
+        qr[i] = {l, r};
+    }
+    while(p <= maxim){
+
+        vector<unsigned long long> b(n + 1);
+        for(int i = 1; i <= n; i++){
+            for(auto j : v[i]){
+                if(p <= j && j <= p + 63){
+                    b[i] = 1ULL * b[i] + (1ULL << (j - p));
+                }
+            }
+            b[i] ^= b[i - 1];
+        }
+        for(int i = 1; i <= q; i++){
+            unsigned long long nr = b[qr[i].second] ^ b[qr[i].first - 1];
+            ans[i] += __builtin_popcountll(nr);
+        }
+        p++;
+        p += 63;
+    }
+    for(int i = 1; i <= q; i++){
+        cout << ans[i] << '\n';
+    }
+    //cout << 'a';
+}
+```
+
+Complexitatea de timp rămâne tot $O(\frac{N \cdot P}{w})$ doar că acum memoria e $O(N)$.
 
 
 
 ## Concluzii 
-
+Este de apreciat cu cât poate îmbunătății execuția unui algoritm un **bitset**. Puteți să încercați să vă construiți voi un bitset custom, să experimentați cu diferite valori ale lui $w$, cu diferite funcții etc.. În general nu ar trebui să abuzați de un bitset, dar nici să-l desconsiderați. Găsiți o cale de mijloc.
 ## Probleme suplimentare
-
+* [atcoder - Triangle](https://atcoder.jp/contests/abc258/tasks/abc258_g)
+* [cses - Reachable Nodes](https://cses.fi/problemset/task/2138)
+* [atcoder - Balancing Network (T=1)](https://atcoder.jp/contests/agc041/tasks/agc041_e)
+* [Tzaph & Number Line](https://tlx.toki.id/contests/troc-15-div-1/problems/E)
+* [Baltic OI 2019 - Nautil](https://oj.uz/problem/view/BOI19_nautilus)
+* [Baltic OI 2010 - Candies](https://cses.fi/106/list/)
+* [COCI 2015 - Uzastopni](https://oj.uz/problem/view/COCI15_uzastopni)
+* [Platinum - Equilateral Triangles](http://www.usaco.org/index.php?page=viewproblem2&cpid=1021)
+* [IZhO 2017 - Bootfall](https://oj.uz/problem/view/IZhO17_bootfall)
+* [Baltic OI 2015 - Tug of War](https://oj.uz/problem/view/BOI15_tug)
+* [codeforces - Rectangular Polyline](https://codeforces.com/contest/1444/problem/D)
+* [Lot Seniori 2022 - erinaceida](https://kilonova.ro/problems/210)
+* [Lot Seniori 2014 - Switch5](https://kilonova.ro/problems/1980)
+* [Lot Seniori 2024 - Matrice Palindrom](https://kilonova.ro/problems/2798) (puteți 60 puncte cu bitset, eu nu știu să fac mai bine de atât)
+* [holmesc](https://open.kattis.com/problems/holmes)
 ## Resurse suplimentare
-
+* [How to get actual 64 bit bitsets on Codeforces](https://codeforces.com/blog/entry/77480)
 * [Bitset - USACO Guide](https://usaco.guide/plat/bitsets)
 * [Bitwise operations 2 — popcount & bitsets - Codeforces](https://codeforces.com/blog/entry/73558)
+* [Dynamic Bitsets in GCC](https://codeforces.com/blog/entry/129454)
 
