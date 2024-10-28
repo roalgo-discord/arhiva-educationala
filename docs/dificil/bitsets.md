@@ -378,8 +378,93 @@ Relația $(1)$ implică faptul că fiecare permutare reprezintă un interval con
 
 Problema se rezumă la : află pentru fiecare nod care este $S$-ul care maximizează contribuția, adună rezultatele si afișează raspunsul.
 
-Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida folosind dp. Similar cu problema [strehaia](1296)
+Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida folosind dp. Similar a doua problemă discutată, putem optimiza dp-ul cu ajutorul unui **bitset**, complexitatea finală fiind
+$O(\frac{N^2}{w})$.
+### Program Cpp
+```cpp
+int n;
+cin >> n;
+vector<int> sz(n+1);
+vector<vector<int>> liste(n + 1);
+for(int i = 2; i <= n; i++){
+    int p;
+    cin >> p;
+    liste[p].push_back(i);
+    liste[i].push_back(p);
+}
+long long ans = 0;
+function<void(int,int)> dfs = [&](int nod, int p){
+    sz[nod] = 1;
+    bitset<5001> b;
+    b[0] = 1;
+    for(auto i : liste[nod]){
+        if(i == p) continue;
+        dfs(i,nod);
+        sz[nod] += sz[i];
+        b |= (b << sz[i]);
+    }
+    long long maxim = 0;
+    for(int i = 1; i <= sz[nod] - 1; i++){
+        if(b[i]){
+            maxim = max(maxim, 1LL * i * (sz[nod] - 1 - i));
+        }
+    }
+    ans += maxim;
+};
+dfs(1,1);
+cout << ans << '\n';
+```
 
+Valori pentru $n$ care depășesc $10^5$ cu greu întră în timp, iar pentru $n = 10^6$ este destul de clar că trebuie să optimizăm algoritmul.
+
+O optimizare importantă, care nu ține de **bitset**, ci mai mult de **programarea dinamică**, este similară (daca nu chiar identică) cu algoritmul de **comprimare** explicat la problema **strehaia**. Dacă un element apare de mai mult de $3$ ori : $x, x, x$ , putem să lipim pe 2 dintre ei : $x, 2x$, fără ca să stricăm corectitudinea la dp. Dacă repetăm procesul până când un element apare de maxim $2$ ori, iar împreună cu o proprietate care zice că : "Pentru un șir $S$ cu $N$ elemente și suma elementelor $R$ $\Rightarrow$ sunt maxim $O(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi **bitset** nu vor fi  mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea se reduce la $O(\frac{N \sqrt N}{w})$.
+
+Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul $5$. Așadar ne vom folosi de **bitset dinamic**, iar în loc să declarăm bitsetul mereu cu $10^6$ elemente, îl vom declara cu $sz_v$ elemente. Foarte suprinzător dar chestia asta întră destul de lejer în timp.
+
+### Cum facem un bitset să fie dinamic?
+
+Avem (cred) $2$ metode:
+
+* Îl scriem noi de mână;
+* (Mai nou) Îl putem folosi pe acela întrodus în librăria ```<tr2/dynamic_bitset>```.
+
+Un **bitset** dinamic scris de mână arată în felul următor:
+```cpp
+template <int len = 1>
+void dynamic_bitset(int n) {
+    if (n >= len) {
+        dynamic_bitset<std::min(len*2, maxn)>(n);
+        return;
+    }
+    
+    bitset<len> dp;
+    
+    //do somethine with dp
+}
+```
+
+Dacă nu este evident, ne folosim de template-uri pentru a ajunge la o lungime minimă care depășeste pe $n$ în timp logaritmic.
+
+Iar un bitset dinamic din librăria ```<tr2/dynamic_bitset>``` arată așa:
+```cpp
+#include <iostream>
+#include <tr2/dynamic_bitset>
+using namespace tr2
+using namespace std;
+
+int main(){
+
+    dynamic_bitset<>dp(n);
+
+    //do something with dp
+}
+```
+
+Care este mai bun?
+
+Pâi, ambele! Depinde foarte mult de ce vrei să faci cu el.
+
+O diferență la ```tr2::dynamic_bitset``` este funcția ```resize()```. În consecință, ```tr2::dynamic_bitset``` este mai lent decât un **bitset** normal sau un **bitset dinamic** cu template-uri. Însă, prima variantă de **bitset dinamic** nu-și poate da resize, adică e mult spus **dinamic**. Dacă veți avea nevoie să reutilizați același bitset dar cu lungime diferită, folosiți  ```tr2::dynamic_bitset```, altfel varianta cu template-uri este superioară din punct de vedere al timpului de execuție. Iar dacă nu aveți în general nevoie de **bitset dinamic**, **folosiți bitsetul normal**.
 
 
 ## "Tips and tricks" pentru bitset
@@ -397,3 +482,4 @@ Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă va
 
 * [Bitset - USACO Guide](https://usaco.guide/plat/bitsets)
 * [Bitwise operations 2 — popcount & bitsets - Codeforces](https://codeforces.com/blog/entry/73558)
+
