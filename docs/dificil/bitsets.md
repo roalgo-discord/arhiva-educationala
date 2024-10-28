@@ -81,7 +81,7 @@ int main(){
 
 * ```_Find_first()``` returnează prima poziție a unui bit setat (cea cu index minim).
 * ```_Find_next(int pos)``` returnează următorul bit setat după poz, iar în cazul în care nu există va returna lungimea **bitsetului**
-* ```.count()``` returnează numarul de biți setați.
+* ```.count()``` returnează numărul de biți setați.
 * ```.reset()``` resetează toți biții la $0$.
 * ```.flip(int pos)``` $b[pos]$ devine $b[pos]$ **xor** $1$, i.e. schimbă bitul $pos$ din $0$ în $1$ și invers.
 * ```.to_string()``` va converti **bitsetul** într-un **string**.
@@ -119,7 +119,7 @@ int main(){
 !!! note "Observație"
 	La fel cum putem declara ```bitset<N> b(val)```, la fel de bine putem atribui ```b = val```, dar în ambele cazuri  se vor copia doar primii $N$ biți.
 
-## ```std::bitset``` in programare competitivă
+## ```std::bitset``` în programare competitivă
 
 Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este $O ( \frac{N}{w} )$ , unde $w$ de regulă seminifică constanta cu care este împărțit numărul de elemente $N$.
 
@@ -130,12 +130,10 @@ Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipu
 Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un graf orientat aciclic avem drum de la un nod la altul.
 
 Considerăm următoare abordare: $dp[u][v] = 1$ dacă afirmația este adevarată.
-Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică $dp[f_j][x] |= dp[r_i][x]$, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată. Observăm că pentru $2$ noduri $u$ și $v$, $dp[u][x] |= dp[v][x]$ este echivalentul la $b1 |= b2$, unde $b1$ și $b2$ reprezintă $2$ ```std::bitset```-uri. Deci dacă în loc de ```vector<vector<int>> dp(n + 1, vector<int>(n + 1))``` am pune ```vector<bitset<const>> dp(n + 1)```, am putea face tranzițiile în $O ( \frac{N}{w} )$, complexitatea finală fiind $O ( \frac{N^2}{w} )$.
+Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică ```dp[f_j][x] |= dp[r_i][x]```, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată. Observăm că pentru $2$ noduri $u$ și $v$, ```dp[u][x] |= dp[v][x]``` este echivalentul la ```b1 |= b2```, unde $b1$ și $b2$ reprezintă $2$ ```std::bitset```-uri. Deci dacă în loc de ```vector<vector<int>> dp(n + 1, vector<int>(n + 1))``` am pune ```vector<bitset<const>> dp(n + 1)```, am putea face tranzițiile în $O ( \frac{N}{w} )$, complexitatea finală fiind $O ( \frac{N^2}{w} )$.
 
 **Program C++**
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
 const int N = 5e4 + 1;
 vector<bitset<N>> v(N);
 bitset<N> viz;
@@ -194,7 +192,7 @@ int main() {
 Avem $n$ probleme, a $i$-a având $k_i$ subtaskuri, fiecare cu un număr de puncte între $1$ și $100$. Problema ne cere să calculăm numărul total de punctaje distincte care se pot forma în urma rezolvări celor $n$ probleme.
 
 O primă observație este că problemele pot fi luate independent, ceea ce înseamnă că nu contează ce subtaskuri are o anumită problemă, ci câte subtaskuri au un anumit punctaj.
-Fie $fr[i]$ numărul de subtaskuri cu $i$ puncte, și $dp[i] = 1$ dacă exista un set de subtaskuri cu suma $i$. Este destul de clar că putem constitui următorul rucsac:
+Fie $fr[i]$ numărul de subtaskuri cu $i$ puncte, și $dp[i] = 1$ dacă există un set de subtaskuri cu suma $i$. Este destul de clar că putem constitui următorul rucsac:
 
 ```cpp
 vector<int> dp(maxsum + 1);
@@ -244,9 +242,6 @@ for (int i = 1; i <= 100; i++) {
 
 **Programul complet**
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
 int n;
 vector<int> fr(101);
 bitset < (int)1e6 + 200 > dp;
