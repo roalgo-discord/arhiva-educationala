@@ -1,3 +1,9 @@
+---
+tags:
+    - structuri de date
+    - arbori
+    - optimizare
+---
 **Autor**: Raul Ardelean
 
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri și update-uri într-un timp eficient pe un **arbore**.
@@ -18,17 +24,13 @@ Pentru început, vom presupune că pentru fiecare nod din $G$ se va efectua acea
 
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem $\sqrt N$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$ pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o complexitate de **$O(\sqrt N \cdot \log N)$** pentru fiecare interogare sau update.
 
-<p align="center">
-<img src="../images/hld/pathssqrtn.png" width="600" />
-</p>
+![](../images/hld/pathssqrtn.png)
 
 Dacă alegem fiul care are cele mai multe noduri în subarbore, constatăm că numărul de lanțuri pe care le vom parcurgem până la rădăcină se reduce la **$\log N$**.
 
 Următoarea imagine ilustrează descompunerea arborelui cu tehnica descrisă anterior, cunoscută în termeni de specialitate sub denumirea de **heavy path decomposition**.
 
-<p align="center">
-<img src="../images/hld/pathslogn.png" width="600" />
-</p>
+![](../images/hld/pathslogn.png)
 
 Complexitatea finală pe fiecare interogare va fi $O(( \log N ) ^ 2)$, iar pentru update-ul unui singur nod în $O(\log N)$.
 
@@ -615,7 +617,6 @@ void solve() {
 signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
-    cout.tie(0);
 
     read();
     init();
@@ -659,5 +660,6 @@ signed main() {
 * [HLD - CP Algorithms](https://cp-algorithms.com/graph/hld.html)
 * [HLD - USACO Guide](https://usaco.guide/plat/hld)
 * [Tree decompositions - Infoarena](https://infoarena.ro/tree-decompositions)
+* [Template HLD - Stefdasca](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/heavy-light.cpp)
 * [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
 * [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)
