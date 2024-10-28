@@ -319,7 +319,7 @@ O implementare de $100$ de puncte poate fi citită mai jos:
 ```cpp
 /// Autor: Ardelean Raul, CNVL - Baia Mare
 /// Cuvinte cheie: Binary Lifting, Hashing, Heavy Path Decomposition, Heavy Light Decomposition, Binary Search
-/// Complexitate: O(Q * log(n) ^ 4)
+/// Complexitate: O(Q * log(n) ^ 3)
 #include <iostream>
 #include <cmath>
 #include <algorithm>
