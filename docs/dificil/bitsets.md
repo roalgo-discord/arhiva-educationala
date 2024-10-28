@@ -361,19 +361,27 @@ cout << ans << '\n';
  
 ##  Bitset dinamic
 
-Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul de elemente pe parcursul execuției programului, sau îl putem declara direct cu cât vrem noi (```bitset<>a(n)```?). De ce am avea nevoie oare de așa ceva? Pentru eficiență, poate. Este destul de tedious să facem toate operațiile pe aceeși constană $N$ știind clar că în unele cazuri nu avem nevoie de toți biții. De pildă, există probleme pentru care necesită folosirea unui ```bitset``` dinamic. Un exemplu bun ar fi:
+Prin dinamic înțelegem faptul că **bitsetul** își poate modifica numărul de elemente pe parcursul execuției programului, sau îl putem declara direct cu cât vrem noi (```bitset<>a(n)```?). De ce am avea nevoie oare de așa ceva? Pentru eficiență, poate. Este destul de tedious să facem toate operațiile pe aceeși constană $N$ știind clar că în unele cazuri nu avem nevoie de toți biții. De pildă, există probleme care necesită folosirea unui ```bitset``` dinamic. Un exemplu bun ar fi:
 
 ### Problema [PermuteTree-Hard](https://codeforces.com/contest/1856/problem/E2)
 
-Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$, definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u \leq a_{lca(u,v)} \leq a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care o poate lua $f(a)$, pentru oricare permutare de $n$ numere.
+Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$, definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u < a_{lca(u,v)} < a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care o poate lua $f(a)$, pentru oricare permutare de $n$ numere.
 
-O să forțăm puțin raționamentul spunând că pentru fiecare nod vom calcula rezultatul (i.e. cu cât contribuie nodul $u$ la rezultat) folosind permutarea numerelor de la $1$ la $sz_u$ ($sz_u$ este numărul de elemente din subarborele lui $u$). Ideea e că dacă vom aduna cu o constantă fiecare element din permutare, rezultatul se păstrează, pentru că până la urmă tot ce contează este modul în care elementele sunt ordonate.
+Ne vom folosi de un raționament tipic programării dinamice și vom calcula pentru fiecare nod rezultatul dacă am considera arborele ca fiind subarborele nodului respectiv, iar permutarea va conține doar nodurile din subarborele actual. Adică daca $sz_u$ = numărul de noduri din subarborele lui $u$, $a$ va fi egal cu $(1,2,\dots, sz_u)$. Când facem tranziție de la $u$ la părintele lui, o sa avem , astfel, pentru fiecare fiu împarte câte o permutare care va fi indepdentă de restul permutărilor. Cu alte cuvinte, dacă notăm cu $f_i$ al $i$-lea fiu al unui nod $v$, atunci permutarile for fi $a_1, a_2, \dots, a_k$. Din aceste permutări noi vom dori să construim permutarea necesară nodului $v$ adk $a_v = (1, 2, \dots, sz_v)$. Ca să facem asta trebuie să ținem cont de :
 
-Raționamentul ne permite să obervăm că, dacă ne fixăm valoarea nodului $u$ (fie ea H), putem aduna fiecare permutare în cu un număr în așa fel încât să formăm permutarea ``` 1, 2, ... , sz[u] ```, iar rezultatul pentru nodul $u$ va fi dat de numărul de elememente din permutarea nouă care sunt mai mici ca $H$ înmulțit cu numărul de elemente mai mari ca $H$. Atunci practic trebuie să găsim o mulțime de fii ai lui $u$ astfel încat numărul de noduri din mulțime $\cdot$ numărul de elemente care nu sunt în mulțime să fie maxim. 
+* Permutările deja existente (i.e. permutările fiilor);
+* Ce valoare va primi nodul $v$.
 
-Concret, rezultatul e maximul dintre $D \cdot (sz_u - D - 1)$ cu condiția că există o sumbulțime de fii cu $\sum_{i} sz_{fiu_i} = D$.
+Pentru a forma $a_v$ din permutările deja existente, putem efectiv incrementa un număr de permutări cu constante diferite astfel încât $(1) a_1 \cup a_2 \cup \dots \cup a_k = a_v / \{ x \}$, unde $x$ va fi valoarea nodului $v$. Putem incrementa o permutare pentru că până la urmă nu contează valorile propriu-zise, ci doar cum sunt ordonate. 
 
-O observație esențială pe care o deducem de aici este faptul că rezultatul optim pentru fiecare nod nu depinde de rezultatul optim al celorlalte noduri.
+Relația $(1)$ implică faptul că fiecare permutare reprezintă un interval continuu de elemente din $a_v$. Dacă nu avem nicio permutare $a_i$ care să conțină pe $x$, înseamnă efectiv ca fie toate elementele din $a_i$ sunt mai mici ca $x$, fie sunt mai mari ca $x$. Uitându-ne la relația din enunț $a_{f_i} < a_v = x < a_{f_j}$, împreună cu ce-am dedus până acum, deducem că contribuția nodului $v$ la rezultat este $(sz_v - S - 1) \cdot S$ , cu condiția că există o submulțime a fiilor cu $\sum_{r} sz_{f_r} = S$.
+
+Problema se rezumă la : află pentru fiecare nod care este $S$-ul care maximizează contribuția, adună rezultatele si afișează raspunsul.
+
+Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida folosind dp. Similar cu problema [strehaia](1296)
+
+
+
 ## "Tips and tricks" pentru bitset
 
 ## OK, cat e concret $w$?
