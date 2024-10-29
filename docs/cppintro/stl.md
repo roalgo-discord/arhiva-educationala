@@ -126,7 +126,7 @@ cout << arr[5] << '\n';
 
 Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$.
 
-Se recomandă citirea în prealabil a [articolului anterior despre șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/).
+Se recomandă citirea în prealabil a [articolului următor despre șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/).
 
 De asemenea, toate proprietățile vectorului se aplică și pentru std::string. Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``#include <string>``. Se remarcă faptul că există anumite diferențe față de cum folosim șirurile de caractere din C.
 
@@ -189,14 +189,14 @@ Această structură de date reprezintă o generalizare a structurii std::pair v�
 
 Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vor face acest lucru mult mai ușor. 
 
-* ``tuple<tip1, tip2, ..., tipN> t``: Creăm un tuplu cu $N$ valori, a i-a valoare având $tip_i$.
+* ``tuple<tip1, tip2, ..., tipN> t``: Creăm un tuplu cu $N$ valori, a $i$-a valoare având $tip_i$.
 * ``make_tuple(a, b, c, ..., d)``: Returnează un tuplu cu valorile scrise în paranteză
-* ``tie(a, b, c, ..., d) = t``: Asignăm la $a, b, c, \dots, d$ valorile din tuplul $t$ în ordinea dată. 
-* ``get<i>(t)``: Returnează cea de-a i-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
+* ``tie(a, b, c, ..., d) = t``: Setăm $a, b, c, \dots, d$ la valorile din tuplul $t$ în ordinea dată. 
+* ``get<i>(t)``: Returnează cea de-a $i$-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
     
 Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă. 
 ```cpp
-tuple<int,  int,  int> t{3,  4,  5};
+tuple<int,  int,  int> t{3, 4, 5};
 int i =  1;
 cout << get<i>(t) << '\n';  // eroare
 ```
@@ -215,7 +215,6 @@ string s1, s2;
 int x;
 tie(s1, s2, x)  = tp2;
 cout << s1 << " " << s2 << " " << x << '\n'; // Hello world 100
-}
 ```
 
 ## Iteratori

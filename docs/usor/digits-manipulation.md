@@ -11,6 +11,10 @@ tags:
 
 Înaintea citirii acestui articol, se recomandă familiarizarea cu [structurile repetitive](https://edu.roalgo.ro/cppintro/loops/), deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
 
+
+!!! note "Observație"
+    Multe probleme de OJI clasa a 5-a necesită lucrul cu cifrele unui număr, o astfel de problemă găsindu-se aproape în fiecare an.
+
 ## Numerele de cel mult trei cifre
 
 Pentru a introduce conceptul, vom pleca de la cazurile cele mai simple, și anume numerele cu cel mult trei cifre. Ele apar în multe probleme, iar deși metodele pe care le vom explica aici le putem folosi și pentru numere cu mai multe cifre, nu este practic să le folosim deoarece putem folosi structurile repetitive într-un mod mai simplu și eficient. 
@@ -138,59 +142,63 @@ Cifra de control este un concept ce se regăsește frecvent în problemele de al
     * $x = 10$, suma cifrelor este $1 + 0 = 1$.
     * $x = 1$, numărul are o cifră, deci cifra de control este $1$.
 
-În mod particular, se poate observa faptul că cifra de control este fix rezultatul operației $x\%9$, cu două particularități pe care trebuie să le avem în vedere:
+Criteriul de divizibilitate cu $9$ (învățat la matematică în clasa a 5-a) spune că $x$ și suma cifrelor lui $x$ dau același rest la împărțirea cu $9$. În particular, se poate observa faptul că cifra de control este fix rezultatul operației $x\%9$, cu două particularități pe care trebuie să le avem în vedere:
 
 * Dacă $x = 0$, cifra de control a lui $x$ este $0$
 * Dacă $x\%9 = 0$, cifra de control a lui $x$ este $9$.
 
 Mai jos puteți găsi implementări folosind atât formula simplificată, cât și simularea răspunsului.
 
-```cpp
-#include <iostream>
-using namespace std;
+=== "Simularea răspunsului"
 
-int main() {
-    int n;
-    cin >> n;
+    ```cpp
+    #include <iostream>
+    using namespace std;
     
-    // cat timp n > 9, aflam suma cifrelor si modificam n
-    while (n > 9) {
-        int n2 = n;
-        n = 0;
-        while (n2) {
-            n += n2%10;
-            n2 /= 10;
+    int main() {
+        int n;
+        cin >> n;
+        
+        // cat timp n > 9, aflam suma cifrelor si modificam n
+        while (n > 9) {
+            int n2 = n;
+            n = 0;
+            while (n2) {
+                n += n2%10;
+                n2 /= 10;
+            }
         }
+        
+        cout << n << '\n';
+        return 0;
     }
-    
-    cout << n << '\n';
-    return 0;
-}
-```
+    ```
 
-```cpp
-#include <iostream>
-using namespace std;
+=== "Formula simplificată"
 
-int main() {
-    int n;
-    cin >> n;
+    ```cpp
+    #include <iostream>
+    using namespace std;
     
-    if (n == 0) {
-        cout << 0 << '\n';
-    }
-    else {
-        if (n % 9 == 0) {
-            cout << 9 << '\n';
+    int main() {
+        int n;
+        cin >> n;
+        
+        if (n == 0) {
+            cout << 0 << '\n';
         }
         else {
-            cout << n%9 << '\n';
+            if (n % 9 == 0) {
+                cout << 9 << '\n';
+            }
+            else {
+                cout << n%9 << '\n';
+            }
         }
+        
+        return 0;
     }
-    
-    return 0;
-}
-```
+    ```
 
 
 ## Problema [Oglinditul unui număr](https://www.pbinfo.ro/probleme/69/oglindit): 

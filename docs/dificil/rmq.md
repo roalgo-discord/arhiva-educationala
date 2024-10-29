@@ -166,7 +166,7 @@ int main() {
 }
 ```
 
-!!! note “Observație“
+!!! note "Observație"
     RMQ poate fi folosit cu orice operație $f$ care este [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) = x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
 
 ## RMQ 2D
@@ -552,9 +552,9 @@ int main() {
 
 ### Problema [CF 2009G2](https://codeforces.com/contest/2009/problem/G2)
 
-#### Versiunea ușoara, [G1](https://codeforces.com/contest/2009/problem/G2)
+#### Versiunea ușoară, [G1](https://codeforces.com/contest/2009/problem/G2)
 
-Să rezolvăm mai întâi versiunea ușoara. Noi trebuie să avem $b_i = b_{i+1} - 1 = b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Să scădem $i$ din această relație: $b_i - i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i - i$.
+Să rezolvăm mai întâi versiunea ușoară. Noi trebuie să avem $b_i = b_{i+1} - 1 = b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Să scădem $i$ din această relație: $b_i - i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i - i$.
 
 Să precalculam $rez_i = $ frecvența elementului majoritar din intervalul $[i, i + k)$ ($k - rez_l$ va fi răspunsul nostru la un query). $rez$ poate fi calculat folosind [sliding window](https://edu.roalgo.ro/mediu/sliding-window/). Vom menține un [map](https://edu.roalgo.ro/cppintro/stl/#structura-stdmap) care se cheamă $fr$ cu frecvența elementelor și înca un [vector de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) care se cheamă $frfr$ care menține frecvența fiecărei valori din $fr$.
 
@@ -824,4 +824,4 @@ Sparse Table este una dintre structurile de date care răspunde la întrebări p
 * Recomandat - [Sparse Table - Codeforces](https://codeforces.com/blog/entry/101083)
 * Recomandat - [Binary Lifting - Codeforces](https://codeforces.com/blog/entry/100826)
 * [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
-* [Avansat - RMQ cu $O(N)$ memorie și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)
+* [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)

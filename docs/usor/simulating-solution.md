@@ -75,7 +75,7 @@ Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât �
             else if (dir == 'S') {
                 x++;
             }
-            else { // T_VEST
+            else { // 'V'
                 y--;
             }
 
@@ -127,7 +127,7 @@ Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât �
             else if (dir == 'S') {
                 x++;
             }
-            else { // T_VEST
+            else { // 'V'
                 y--;
             }
 
