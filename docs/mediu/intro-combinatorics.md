@@ -302,9 +302,6 @@ void precalc() {
     }
 }
 
-1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul 
-    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
-
 int main() {
     precalc();
 
@@ -314,6 +311,9 @@ int main() {
     return 0;
 }
 ```
+
+1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul 
+    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
 
 ### Partiții
 
