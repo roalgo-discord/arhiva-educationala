@@ -43,7 +43,7 @@ int main() {
     cout << (int) (c - 'A') << '\n'; // 15
     
     c += 32; // transformarea din litera mare in mica
-    cout << (int) c << '\n'; // 115
+    cout << (int) c << '\n'; // 112
     cout << (int) (c - 'a') << '\n'; // 15
     
     c = 'g';
@@ -99,7 +99,31 @@ Un șir de caractere poate fi citit în diverse moduri, fie la fel ca la vectori
 
 De asemenea, se va putea observa faptul că putem citi o întreagă linie folosind funcția getline și fixând numărul de caractere pe care vrem să-l citim. 
 
+Să presupunem că șirul de caractere este `roalgo este cel mai bun server de informatica`. În funcție de cum citim acest șir, vom avea rezultate diferite.
 
+Funcția cin.getline are ca parametri șirul în care se va stoca rezultatul citirii și numărul maxim de caractere permis, citind șirul până la întâlnirea caracterului de newline, un exemplu ar fi ``cin.getline(s, x)``, unde s este șirul dat și x este lungimea lui.
+
+Citirea fără o funcție specifică se poate face cu cin, dar se va citi până la primul spațiu. 
+
+Există și funcția ``cin.get()``, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția ``cin.getline()`` devine mai utilă.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    char s[100];
+    cin >> s; 
+    cout << s << '\n'; // roalgo
+    
+    cin.get(); // sare peste urmatorul caracter, de obicei spatiu sau newline
+    
+    cin.getline(s, 100); // citeste cel mult 100 de caractere, pana la newline, sare si peste newline
+    cout << s << '\n'; // roalgo este cel mai bun server de informatica
+    return 0;
+}
+```
 
 ### Funcția strlen
 
@@ -108,7 +132,6 @@ Funcția strlen ia drept parametru un șir de caractere și returnează lungimea
 ```cpp
 char message[] = "roalgo este cel mai bun server de informatica";
 cout << strlen(message) << '\n'; // 45
-}
 ```
 
 ### Funcția strcpy și strncpy
@@ -128,6 +151,14 @@ cout << strlen(message) << '\n'; // 45
 Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$. Tipul string este unul din tipurile prezente în [STL](https://edu.roalgo.ro/cppintro/stl/), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
 Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``#include <string>``. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
+
+În ceea ce privește citirea, funcția getline va avea o sintaxă un pic diferită, fiind scrisă astfel:
+
+```cpp
+string s;
+getline (cin, s);
+cout << s << '\n';
+```
 
 Sintaxa unui string va fi de tipul ``string nume;``
 
