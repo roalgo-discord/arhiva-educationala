@@ -165,7 +165,7 @@ int main() {
 }
 ```
 
-!!! note “Observație“
+!!! note "Observație"
     RMQ poate fi folosit cu orice operație $f$ care este [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) = x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
 
 ## RMQ 2D
