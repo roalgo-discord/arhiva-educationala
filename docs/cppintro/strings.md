@@ -6,7 +6,7 @@ tags:
     - siruri de caractere
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Denisa-Maria Ursu
 
 ## Introducere
 
@@ -135,16 +135,112 @@ cout << strlen(message) << '\n'; // 45
 ```
 
 ### Funcția strcpy și strncpy
+Funcția `strcpy` copiază un șir de caractere în alt șir, numit destinație. Asemănător, funcția `strncpy` copiază doar primele n caractere dintr-un șir. Aceste funcții nu adaugă caracterul `\0` la finalul șirului.
+
+=== "strcpy"
+
+    ```cpp
+    char sursa[11] = "hello";
+    char destinatie[11] = "world";
+    cout << sursa << " " << destinatie << '\n'; //se va afisa "hello world"
+    strcpy(destinatie, sursa);
+    cout << sursa << " " << destinatie << '\n'; //se va afisa "hello hello"
+    ```
+
+=== "strncpy"
+
+    ```cpp
+    char sursa[11] = "caine";
+    char destinatie[11] = "paine";
+    cout << sursa << " " << destinatie << '\n'; //se va afisa "caine paine"
+    strncpy(destinatie, sursa, 1);
+    cout << sursa << " " << destinatie << '\n'; //se va afisa "caine caine"
+    ```
 
 ### Funcțiile strcat și strncat
+Funcția `strcat` concatenează un șir 'destinatie' cu o copie a unui șir 'sursa'. Concatenarea a două șiruri înseamnă alipirea acestora. Funcția `strncat` funcționează asemănător, numai că alipește doar primele n caractere ale șirului sursă. Iată un exemplu:
+
+=== "strcat"
+
+    ```cpp
+    char sursa[11] = "hello ";
+    char destinatie[11] = "world";
+    cout << sursa << " " << destinatie <<'\n'; //se va afisa "hello world"
+    strcat(destinatie, sursa);
+    cout << destinatie; //se va afisa "worldhello"
+    ```
+
+=== "strncat"
+
+    ```cpp
+    char sursa[20] = "informatica";
+    char destinatie[20] = "mate";
+    cout << sursa << " " << destinatie <<'\n'; //se va afisa "informatica mate"
+    strncat(destinatie, sursa, 4);
+    cout << destinatie; //se va afisa "mateinfo"
+    ```
 
 ### Funcția strchr și strrchr
+Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, respectiv ultima apariție a unui caracter într-un șir. Mai exact se va afișa șirul de începând cu prima, respectiv ultima apariție a caracterului.
+
+=== "strchr"
+
+    ```cpp
+    char string[] = "serverul rolago este plin de persoane pasionate de algoritmica";
+    char *myPtr = strchr(string, 'p');
+    if (myPtr != NULL) {
+        cout << myPtr; // se va afisa "plin de persoane pasionate de algoritmica"
+    }
+    ```
+
+=== "strrchr"
+
+    ```cpp
+    char string[] = "serverul rolago este plin de persoane pasionate de algoritmica";
+    char *myPtr = strrchr(string, 'p');
+    if (myPtr != NULL) {
+        cout << myPtr; // se va afisa "pasionate de algoritmica"
+    }
+    ```
 
 ### Funcția strcmp
+Funcția `strcmp` este folosită pentru a compara două șiruri de caractere. Aceasta poate returna 3 valori:
+
+* `0` - dacă șirurile sunt exact la fel;
+* `-1` sau o valoare mai mică decât 0 - dacă primul șir este înaintea celuilalt, alfabetic vorbind;
+* `1` sau o valoare mai mare decât 0 - dacă primul șir este după celălalt, alfabetic vorbind.
+
+```cpp
+char str1[] = "abc";
+char str2[] = "abc";
+cout << strcmp(str1, str2) << '\n'; // se va afișa 0 deoarece șirurile sunt la fel
+
+char str3[] = "def";
+char str4[] = "ghi";
+cout << strcmp(str3, str4) << '\n'; // se va afișa -1 deoarece primul șir este înaintea celui de al doilea
+cout << strcmp(str4, str3) << '\n'; // se va afișa 1 deoarece primul șir este după cel de al doilea
+```
 
 ### Funcția strstr
+Această funcție primește două șiruri de caractere, s1 și s2, ca argumente și găsește prima apariție a șirului s2 în șirul s1.
+
+```cpp
+char str1[] = "abcdefghijklmnop";
+char str2[] = "fgh";
+cout << strstr(str1, str2); // se va afișa "fghijklmnop"
+```
 
 ### Funcția strtok
+Funcția `strtok` împarte `str[]` conform delimitatorilor dați și returnează următorul token. Trebuie apelată într-o structură repetitivă pentru a obține toate token-urile.
+
+```cpp
+char str[] = "wow-ce-multe-cuvinte-in-acest-sir";
+char* token = strtok(str, " - ");
+while (token != NULL) {
+    cout << token << " "; // se va afișa "wow ce multe cuvinte in acest sir"
+    token = strtok(NULL, " - ");
+}
+```
 
 ## Tipul de date std::string
 
