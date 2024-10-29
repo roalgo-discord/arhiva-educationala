@@ -186,7 +186,7 @@ Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, res
 === "strchr"
 
     ```cpp
-    char string[] = "serverul rolago este plin de persoane pasionate de algoritmica";
+    char string[] = "serverul roalgo este plin de persoane pasionate de algoritmica";
     char *myPtr = strchr(string, 'p');
     if (myPtr != NULL) {
         cout << myPtr; // se va afisa "plin de persoane pasionate de algoritmica"
@@ -196,7 +196,7 @@ Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, res
 === "strrchr"
 
     ```cpp
-    char string[] = "serverul rolago este plin de persoane pasionate de algoritmica";
+    char string[] = "serverul roalgo este plin de persoane pasionate de algoritmica";
     char *myPtr = strrchr(string, 'p');
     if (myPtr != NULL) {
         cout << myPtr; // se va afisa "pasionate de algoritmica"
@@ -204,6 +204,7 @@ Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, res
     ```
 
 ### Funcția strcmp
+
 Funcția `strcmp` este folosită pentru a compara două șiruri de caractere. Aceasta poate returna 3 valori:
 
 * `0` - dacă șirurile sunt exact la fel;
@@ -222,6 +223,7 @@ cout << strcmp(str4, str3) << '\n'; // se va afișa 1 deoarece primul șir este 
 ```
 
 ### Funcția strstr
+
 Această funcție primește două șiruri de caractere, s1 și s2, ca argumente și găsește prima apariție a șirului s2 în șirul s1.
 
 ```cpp
@@ -231,6 +233,7 @@ cout << strstr(str1, str2); // se va afișa "fghijklmnop"
 ```
 
 ### Funcția strtok
+
 Funcția `strtok` împarte `str[]` conform delimitatorilor dați și returnează următorul token. Trebuie apelată într-o structură repetitivă pentru a obține toate token-urile.
 
 ```cpp
