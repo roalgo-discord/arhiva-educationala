@@ -31,14 +31,11 @@ se regăsește drept parte esențială în două competiții - lotul de juniori 
 olimpiada clasei a zecea. Ulterior, poate să se regăsească și ca subprobleme la
 probele ulterioare de seniori, într-o măsură mai mică.
 
-Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a
-articolelor despre aritmetica modulară, divizibilitate și în general să aveți o
-înțelegere a conceptelor matematice din capitolele anterioare. Va fi foarte
-importantă și înțelegerea conceptului de invers modular, deoarece deși în cele
-mai multe probleme vom avea de-a face cu modulo numere prime, uneori va trebui
-să știm să implementăm și inversul modular.
+Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a articolelor despre [aritmetica modulară](https://edu.roalgo.ro/mediu/pow-log), [divizibilitate](https://edu.roalgo.ro/usor/divisibility/) și în general să aveți o înțelegere a conceptelor matematice din capitolele anterioare. Va fi foarte importantă și înțelegerea conceptului de invers modular, deoarece deși în cele mai multe probleme vom avea de-a face cu modulo numere prime, uneori va trebui să știm să implementăm și algoritmul de aflare al [inversul modular](https://edu.roalgo.ro/mediu/modular-inverse/).
 
 ## Noțiuni teoretice fundamentale
+
+Pe lângă capitolele menționate anterior, vrem să începem prin a explica anumite fundamente, care ne vor ajuta mult pe parcurs.
 
 ### Regula sumei și a produsului
 
@@ -265,7 +262,7 @@ const int N = 100000;
 
 long long fact[N + 1], inv[N + 1];
 
-const long long modpow(long long base, long long exponent) {
+long long modpow(long long base, long long exponent) {
     long long result = 1;
     while (exponent) {
         if (exponent & 1) {
@@ -277,11 +274,11 @@ const long long modpow(long long base, long long exponent) {
     return result;
 }
 
-const long long C(const int n, const int k) {
+long long C(int n, int k) {
     if (k > n || k < 0) {
         return 0;
     }
-    
+
     // C(n, k) = n! * (k!)^-1 * (n - k)!^-1
     long long result = fact[n];
     result *= inv[k]; 
@@ -299,7 +296,7 @@ void precalc() {
         fact[i] = (fact[i - 1] * i) % MOD;
     }
 
-    inv[N] = modpow(fact[N], MOD - 2, MOD); // (1)
+    inv[N] = modpow(fact[N], MOD - 2); // (1)
     for (int i = N - 1; i >= 0; --i) {
         inv[i] = (inv[i + 1] * (i + 1)) % MOD;
     }
@@ -479,7 +476,7 @@ se regăsesc în probleme legate de numărarea unor partiții.
 
 **Numerele lui Stirling de speța I** numără câte permutări de ordin $n$ cu $k$
 cicluri există, și se notează cu $s(n, k)$. De exemplu, permutarea $1, 4, 2, 3,
-6, 5$ are $3$ cicluri ($1$, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
+6, 5$ are $2$ cicluri ($1$, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
 $s(0, 0) = 1, s(n, 0) = 0$ și $s(0, k) = 0$, iar formula recurentă este $s(n, k)
 = s(n-1, k-1) + (n-1)\cdot s(n-1, k)$, recurență ce se poate explica recurgând
 la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la

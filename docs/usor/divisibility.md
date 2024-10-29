@@ -64,7 +64,7 @@ Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi la
 #include <iostream>
 using namespace std;
 
-constexpr auto cmmdc(int a, int b) {
+int cmmdc(int a, int b) {
     while (b > 0) {
         int c = a % b;
         a = b;
@@ -73,7 +73,7 @@ constexpr auto cmmdc(int a, int b) {
     return a;
 }
 
-constexpr auto cmmmc(int a, int b) { 
+long long cmmmc(int a, int b) { 
     return 1LL * a / cmmdc(a, b) * b; 
 }
 
@@ -85,8 +85,8 @@ int main() {
         int a, b;
         cin >> a >> b;
 
-        auto gcd = cmmdc(a, b);
-        auto lcm = cmmmc(a, b);
+        int gcd = cmmdc(a, b);
+        long long lcm = cmmmc(a, b);
         cout << gcd << " " << lcm << '\n';
     }
     return 0;
@@ -164,7 +164,7 @@ arăta diferențele ce pot apărea de la un tip de întrebare la alta.
 #include <iostream>
 using namespace std;
 
-constexpr bool isPrime(int n) {
+bool isPrime(int n) {
     // n == 0 || n == 1
     if (n <= 1) {
         return false;
@@ -189,7 +189,7 @@ constexpr bool isPrime(int n) {
     return true;
 }
 
-constexpr int countDivisors(int n) {
+int countDivisors(int n) {
     int count = 0;
 
     for (int div = 1; div * div <= n; ++div) {
@@ -202,7 +202,7 @@ constexpr int countDivisors(int n) {
     return count;
 }
 
-constexpr int countPrimeDivisors(int n) {
+int countPrimeDivisors(int n) {
     int count = 0;
 
     for (int div = 2; div * div <= n; ++div) {

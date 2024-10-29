@@ -176,7 +176,49 @@ Pentru a afla cifrul trebuie să procedeze astfel: extrage fiecare cartonaș din
 
 Pentru a rezolva problema vom afla folosind un ciur toți divizorii primi ai numerelor mai mici sau egale cu $10^6$, aceștia fiind folosiți pentru a calcula răspunsul la query-uri. Aflarea răspunsului final devine ușoară ulterior efectuării acestui pas.
 
-[Soluția de $100$ de puncte](https://kilonova.ro/submissions/160634)
+```cpp
+#include <fstream>
+using namespace std;
+
+ifstream f("cufar.in");
+ofstream g("cufar.out");
+
+int c, n, nr, k, prime[9][1000002];
+int cate[1000002];
+long long sol;
+bool prim[1000002];
+
+void ciur() {
+    for (int i = 2; i <= 1000000; i++) {
+        if (!prim[i]) {
+            for (int j = i; j <= 1000000; j += i) {
+                prim[j] = 1;
+                ++cate[j];
+                prime[cate[j]][j] = i;
+            }
+        }
+    }
+}
+
+int main() {
+    ciur();
+    f >> c >> n;
+    if (c == 1) {
+        f >> nr >> k;
+        g << prime[k][nr] << '\n';
+    }
+    else {
+        long long sol = 0;
+        for (int i = 1; i <= n; ++i) {
+            f >> nr >> k;
+            sol += 1LL * prime[k][nr];
+        }
+        g << sol << '\n';
+    }
+    return 0;
+}
+
+```
 
 ## Problema [primprim - OJI 2023](https://kilonova.ro/problems/514) de pe Kilonova
 
@@ -191,7 +233,103 @@ Pentru a rezolva problema, vom precalcula pentru fiecare valoare răspunsul opti
 
 Pentru a rezolva query-urile, voi folosi un vector de frecventa pentru a tine aceste diferențe, care de altfel sunt destul de mici. Apoi, pentru fiecare query, voi parcurge vectorul de frecvență pentru a afla suma celor mai mici $p$ diferențe.
 
-[Soluția de $100$ de puncte](https://kilonova.ro/submissions/18796)
+```cpp
+#include <fstream> 
+#include <cmath>
+   
+using namespace std; 
+
+
+ifstream fin("primprim.in"); 
+ofstream fout("primprim.out"); 
+   
+int vals[1000002], primes[200002], cnt, ans[1100002];
+bool pr[1100002];
+
+int fr[202];
+
+int main() {  
+    int c; 
+    fin >> c; 
+      
+    int n, a = 1100000, i, j; 
+    fin >> n; 
+      
+    for (i = 1; i <= n; i++) {
+        fin >> vals[i]; 
+    }
+      
+    // precalculam raspunsul optim pentru fiecare numar de la 1 la a folosind ciurul lui Eratostene 
+      
+    for (i = 2; i <= a; i++) { 
+        if (pr[i] == 0)  { 
+            primes[cnt++] = i;
+            for (j = i+i; j <= a; j += i) {
+                pr[j] = 1; 
+            }
+        } 
+    } 
+      
+    int poz = -1; 
+      
+    // parcurg valorile de la 1 la a pentru a afla raspunsul optim dupa ce am aflat numerele prime 
+    ans[1] = 1; 
+    for (i = 2; i <= a; i++) { 
+        if (pr[i] == 0) {
+            poz++; 
+        }
+        ans[i] = abs(i - primes[poz]); 
+        if (poz + 1 < cnt) {
+            ans[i] = min(ans[i], abs(i - primes[poz+1])); 
+        }
+    } 
+      
+    // voi folosi vector de frecventa pentru a tine aceste diferente, care de altfel sunt destul de mici 
+      
+    for (i = 1; i <= n; i++) {
+        fr[ans[vals[i]]]++; 
+    }
+      
+    if (c == 1) { 
+        int total = 0;           
+        for (i = 1; i <= n; i++) {
+            total += ans[vals[i]]; 
+        }
+        fout << total; 
+        return 0; 
+    } 
+      
+    int q; 
+    fin >> q; 
+      
+    for (i = 1; i <= q; i++) { 
+        int a, b, p; 
+        fin >> a >> b >> p; 
+          
+        fr[ans[vals[a]]]--; 
+        vals[a] = b; 
+        fr[ans[vals[a]]]++; 
+          
+        int dif = 0; 
+        int sol = 0; 
+          
+        // la fiecare pas parcurg vectorul de frecventa pana cand dau de p diferente 
+          
+        while (p) { 
+            sol += min(p, fr[dif]) * dif; 
+            p -= min(p, fr[dif]); 
+            dif++; 
+        } 
+          
+        fout << sol << '\n'; 
+    }  
+    return 0; 
+} 
+```
+
+## Concluzie
+
+Ciurul lui Eratostene este una dintre cele mai importante metode de a lucra cu numere prime, precalculările care se pot face pe stilul acestui algoritm ne pot ajuta în multe contexte, în special când calculăm divizori, sume sau chiar numărul de soluții în alte probleme.
 
 ## Probleme suplimentare
 
