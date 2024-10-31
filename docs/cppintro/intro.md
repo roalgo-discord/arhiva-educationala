@@ -24,10 +24,12 @@ O altă metodă de a clasifica limbajele de programare este în funcție de modu
 !!! note "Observație"
     Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau veți ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți avea de-a face cu foarte multe limbaje de programare, iar deși arhiva noastră se concentrează pe limbajul C++ datorită avantajelor sale în ceea ce privește algoritmica, nu există vreun limbaj de programare care să fie în totalitate inutil. 
 
-* Un limbaj imperativ (de exemplu, C++) este folosit pentru a implementa algoritmi într-o ordine dată, cu alte cuvinte ele fac ceea ce le spunem să facă.
-* Un limbaj funcțional (de exemplu, Haskell) se caracterizează prin aplicarea unor funcții succesive pentru a rezolva cerințele programului dat. 
-* Un limbaj logic (de exemplu, Prolog) se caracterizează prin faptul că aplicația, și nu programatorul decide ordinea în care sunt executate instrucțiunile. 
-* Un limbaj orientat pe obiecte (de exemplu, Java) are drept caracteristici principale folosirea claselor pentru abstractizarea, încapsularea, polimorfismul și moștenirea datelor, aceste facilități fiind incorporate și în majoritatea limbajelor imperative și funcționale. 
+* Un limbaj imperativ (de exemplu C++, C, Pascal) este folosit pentru a implementa algoritmi folosind o listă de comenzi, într-o ordine dată, cu alte cuvinte ele fac ceea ce le spunem să facă.
+* Un limbaj funcțional (de exemplu Haskell, Lisp) se caracterizează prin aplicarea unor funcții succesive pe un set de date pentru a rezolva cerințele programului dat. 
+* Un limbaj logic (de exemplu Prolog) se caracterizează prin faptul că aplicația, și nu programatorul decide ordinea în care sunt executate instrucțiunile. 
+* Un limbaj orientat pe obiecte (de exemplu Java, Python, Smalltalk) are drept caracteristică principale folosirea claselor, adică structuri compuse ce conțin câmpuri și metode sau mesaje (funcții) pentru organizarea și operarea pe date.
+
+Multe limbaje combină aceste trăsături; aceste limbaje se numesc *limbaje multiparadigmă*. De exemplu, C++, deși este derivat din limbajul imperativ C și are toate trăsăturile acestuia, adaugă un sistem de obiecte, ceea ce îl face orientat pe obiecte. Python este orientat pe obiecte (toate datele sunt obiecte), dar permite și scrierea de cod imperativ și are și facilități de programare funcțională.
 
 ## Limbajul de programare C++
 
