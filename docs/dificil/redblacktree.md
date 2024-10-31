@@ -432,5 +432,38 @@ int kth_max(int k){
 
 ### 1. [Subarray Sums I](https://cses.fi/problemset/task/1660)
 
+Fie un vector cu N elemente și un număr S. Ni se cere să afisăm numărul de secvențe din vector care au suma egală cu S.
 
+Problema se poate rezolva foarte simplu folosind un map din STL, dar ne propunem să-l implementăm manual folosind Red-Black Trees.
+
+Voi prezenta doar secvențele relevante deoarece codul sursă este destul de mare.
+
+```cpp
+void RBInsert(RBNode* z){
+    RBNode *y = RBNode::Nil;
+    RBNode *x = root;
+    while (!isNil(x)){
+        y = x;
+        if(x->key == z->key){
+            z->fr++; /// Dacă elementul apare de mai multe ori, doar contorizăm aparițiile
+            return;
+        }
+ 
+        x = (z->key < x->key) ? x->left : x->right;
+    }
+    z->fr = 1; /// Daca apare prima dată, îl marcăm.
+    z->parent = y;
+    if (isNil(y))
+        root = z;
+    else if (z->key < y->key)
+        y->left = z;
+    else
+        y->right = z;
+
+    z->left = z->right = RBNode::Nil;
+    z->col = RBNode::RED;
+    RBInsertFixup(z);
+}
+```
+Parametrul 
 
