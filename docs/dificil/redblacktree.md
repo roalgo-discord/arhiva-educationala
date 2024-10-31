@@ -230,6 +230,7 @@ void RBInsertFixup(RBNode* z){
 !!! info "De reținut"
     Cazurile vor fi discutate pentru partea stângă, adică prima parte din implementare. Pentru partea dreapta se inversează Right cu Left.
     La finalul metodei colorăm radăcina cu negru forțat pentru a restabili proprietatea (2)
+
 ### Cazul 1
 - În momentul în care părintele nodului și unchiul acestuia sunt amândoi roșii îî putem recolora pe amândoi în ${\color{grey}Black}$.
 - Recolorăm bunicul nodului nou inserat în ${\color{red}Red}$ pentru a da fix-up până la radăcină.
