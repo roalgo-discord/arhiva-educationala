@@ -9,18 +9,18 @@ tags:
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).
 Aceștia stau la baza unui număr mare de prelucrări care necesită un volum mare
-de date, iar în contextul rezolvării problemelor de algoritmică, tablouri sunt o
+de date, iar în contextul rezolvării problemelor de algoritmică, tablourile sunt o
 parte fundamentală atât în sine, cât și prin faptul că toate tablourile
-multidimensionale sunt de fapt, tablouri unidimensionale puși împreună.
+multidimensionale sunt de fapt, tablouri unidimensionale puse împreună.
 Colocvial, aceste tablouri mai sunt numite și vectori, dar trebuie evitată
-confuzia cu vectorii din STL, prezentați ulterior.
+confuzia cu vectorii din STL, prezentați ulterior. Nu trebuie confundate nici cu vectorii din matematică și fizică.
 
 !!! note "Observație"
     În memorie, tablourile sunt stocate secvențial, indiferent de
     numărul de dimensiuni pe care îl au.
 
 În contextul limbajului C++, putem lucra cu tablourile în două moduri distincte:
-fie folosind varianta standard, luată din limbajul C, fie folosind STL (Standard
+fie folosind varianta standard, moștenită din limbajul C, fie folosind STL (Standard
 Template Library). Conceptele din STL vor fi prezentate în capitolele
 ulterioare, deoarece acesta nu conține doar tablouri dinamice. În acest capitol
 voi insista mai ales pe varianta standard, lucrul cu STL fiind aprofundat mai cu
@@ -33,15 +33,15 @@ acestuia. În mod similar cu variabilele simple, ne trebuie un tip de date pe
 care acest tablou să-l stocheze, precum și dimensiunea pe care vrem să o
 atribuim acestui tablou.
 
-De exemplu, `#!cpp int v[101];` înseamnă ca am declarat un tablou cu $101$
-elemente, pozițiile fiind numărate de la $0$ la $100$.
+De exemplu, `#!cpp int v[100];` înseamnă ca am declarat un tablou cu $100$
+elemente, pozițiile fiind numerotate de la $0$ la $99$. De fapt, avem acum 100 de locații de memorie alocate, fiecare având un `#!cpp int`. Operatorul `#!cpp [x]` ne adaugă x poziții de memorie la cea inițială.
 
 !!! note "Observație" 
     Dacă preferați să lucrați cu tablouri indexate de la $1$,
     aveți grijă să adăugați $1$ la dimensiunile pe care le folosiți pentru a
     adapta tablourile la stilul vostru de lucru. De asemenea, nu puteți începe
     tablourile de la indici negativi cum se poate în alte limbaje (Pascal, de
-    pildă) și nici să-i folosiți pentru a lua elemente de la final (ca în
+    pildă) și nici să-i folosiți pentru a lua elemente de la final (ca listele din
     Python).
 
 !!! note "Observație" 
@@ -61,11 +61,14 @@ obișnuite.
 O altă metodă de a inițializa elementele dintr-un tablou este aceea de a atribui
 valori primelor poziții, idee ce va fi folosită pe parcurs la diverși algoritmi,
 un exemplu notabil fiind flood fill. De exemplu, `#!cpp int A[] = {10, 20, 30};` va
-crea un tablou cu $3$ elemente, unde `#!cpp A[0] = 10; A[1] = 20;` ș.a.m.d.
+crea un tablou cu $3$ elemente, unde `#!cpp A[0] = 10; A[1] = 20;` ș.a.m.d. Dacă tabloul are o lungime mai mare decât lista de inițializări, elementele suplimentare vor deveni $0$.
+
+!!! note "Observație"
+    Tablourile cu număr variabil de elemente nu sunt prevăzute în standardul C++, dar sunt o extensie foarte comună prezentă în majoritatea compilatoarelor.
 
 ### Problemă exemplu - [afisare0 de pe pbinfo](https://www.pbinfo.ro/probleme/546/afisare0)
 
-Pentru a rezolva această problemă, va trebui mai întâi să citim valorile în tablou, iar mai apoi să parcurgem valorile pentru a afla multiplii ultimului element. 
+Pentru a rezolva această problemă, va trebui mai întâi să citim valorile în tablou, iar mai apoi să parcurgem valorile pentru a afla multiplii ultimului element. În acest exemplu indexăm tabloul de la $0$.
 
 ```cpp
 #include <iostream>
@@ -75,12 +78,12 @@ int main() {
     int n;
     cin >> n;
     
-    int v[n+1]; // vector cu n elemente
-    for (int i = 1; i <= n; i++) {
+    int v[n];
+    for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
     
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         if (v[i] % v[n] == 0) {
             cout << v[i] << " ";
         }
@@ -247,7 +250,7 @@ while (j <= m) {
 
 Pentru a putea roti un tablou (mutarea valorilor din el cu un număr $k$ de poziții la stânga sau la dreapta), va trebui mai întâi să păstrăm în memorie valoarea de pe primele/ultimele $k$ poziții, să mutăm secvențial celelalte valori și în cele din urmă să mutăm valorile păstrate pe ultimele/primele $k$ poziții în șirul nou rezultat. 
 
-Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi o structură de date ce permite rotația unui tablou cu o singură poziție la stânga sau dreapta.
+Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi o structură de date (deque) ce permite rotația unui tablou cu o singură poziție la stânga sau dreapta, în timp constant.
 
 ```cpp
 void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
@@ -315,7 +318,7 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
 
 ## Sortarea tablourilor 
 
-În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în complexitate $O(n^2)$, $O(n \log n)$ și multe alte clase de complexități.
+În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în complexitate $O(n^2)$, $O(n \log n)$ și multe alte clase de complexități. Pentru un interval mic de valori putem număra elementele în $O(n)$.
 
 Pentru mai multe detalii, recomandăm citirea articolului pe acest subiect, pe care îl puteți găsi [aici](https://edu.roalgo.ro/usor/sorting/).
 
