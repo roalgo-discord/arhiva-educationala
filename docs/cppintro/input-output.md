@@ -76,7 +76,7 @@ Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
 
 Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `#include <fstream>`.
 
-Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul ifstream declară un flux de intrare, ofstream declară unul de ieșire.
+Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul ifstream declară un flux de citire din fișier, ofstream declară unul de scriere în fișier.
 
 ```cpp
 ifstream fin("date.in");
