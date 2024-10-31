@@ -14,6 +14,8 @@ tags:
 
 Vom prezenta cazurile cele mai simple, urmate de implementări mai generalizate și în final, diverse probleme clasice care implică maxime și minime. 
 
+Pentru a putea urmări acest articol, se recomandă studierea anterioară a [structurilor repetitive](https://edu.roalgo.ro/cppintro/loops/).
+
 !!! note "Detalii de implementare"
     În general, pentru a afla valoarea minimă în loc de cea maximă, vom vrea să schimbăm semnul ($<$ în loc de $>$). Acest lucru va fi adevărat și în cazul în care permitem egalități, care fac implementările mai ușoare.
 
