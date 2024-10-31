@@ -536,3 +536,13 @@ int main(){
 Propun și această problemă spre rezolvare, soluția fiind aproximativ identică cu cea anterioară, fiind bună pentru antrenament.
 
 Problema ne cere să numărăm secvențele ce au suma divizibilă cu N - Cod Sursă [github](https://github.com/sSlepa/Invers-Hash-si-altele/blob/main/Subarray_Divisibility.cpp)
+
+## Probleme suplimentare / propuse
+-
+-
+-
+
+## Bibliografie și Resurse
+-
+-
+-
