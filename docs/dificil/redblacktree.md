@@ -282,7 +282,7 @@ RBNode* del(RBNode* z){
             z->key = y->key;
         }
 
-        if (y->col == RBNode::BLACK) /// Daca am șters un nod negru atunci putem încâlca una din proprietățile mentionate mai sus
+        if (y->col == RBNode::BLACK) /// Daca am șters un nod negru atunci putem încâlca una din proprietățile mentionate 
             RBDeleteFixup(x);
 
         return y; /// Returnăm pentru a se dealoca Y.
