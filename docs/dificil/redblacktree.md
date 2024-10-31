@@ -472,6 +472,7 @@ Parametrul **fr** trebuie adăugat în struct-ul arborelui, în constructor dar 
 Parametrul **key** trebuie setat ca și ```long long``` pentru a primi punctaj maxim.
 
 === "Implementare cu Red-Black Tree"
+
 ```cpp
 ///Functia main
 RBTree* RB = new RBTree();
@@ -502,6 +503,7 @@ int main(){
 }
 ```
 === "Implementare cu Map"
+
 ```cpp
 long long n,s;
 long long x,sum;
@@ -529,4 +531,8 @@ int main(){
     return 0;
 }
 ```
+### 2. [Subarray Divisibility](https://cses.fi/problemset/task/1662)
 
+Propun și această problemă spre rezolvare, soluția fiind aproximativ identică cu cea anterioară, fiind bună pentru antrenament.
+
+Problema ne cere să numărăm secvențele ce au suma divizibilă cu N - Cod Sursă [github](https://github.com/sSlepa/Invers-Hash-si-altele/blob/main/Subarray_Divisibility.cpp)
