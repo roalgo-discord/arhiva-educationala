@@ -23,10 +23,10 @@ tags:
 
 Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură", respectiv a afișa "pe ecran"), vom avea nevoie de biblioteca `#include <iostream>`.
 
-Citirea datelor se face folosind instrucțiunea **cin**, iar afișarea datelor se face folosind instrucțiunea **cout**, câteva exemple fiind regăsite mai jos. 
+Citirea datelor se face folosind **cin** și operatorul `>>`, iar afișarea datelor se face folosind **cout** și operatorul `<<`, câteva exemple fiind regăsite mai jos. 
 
 !!! note "Observație"
-    Aceasta nu este singura metodă de a citi și afișa datele, putem citi și afișa datele și folosind metodele specifice limbajului C (instrucțiunile scanf și printf). Totuși, metodele native limbajului C++ sunt cele mai intuitive și mai simplu de utilizat.
+    Aceasta nu este singura metodă de a citi și afișa datele, putem citi și afișa datele și folosind metodele specifice limbajului C (funcțiile scanf și printf). Totuși, metodele native limbajului C++ sunt cele mai intuitive și mai simplu de utilizat.
 
 Atunci când folosiți intrarea și ieșirea standard, după ce compilați programul și nu apare nicio eroare, va trebui să rulați executabilul generat și să introduceți datele de intrare conform descrierii problemei și a programului scris de voi anterior. În cazul în care ați procedat cum trebuie, veți obține un răspuns conform cu ceea ce ați scris. În caz contrar, va trebui să verificați ce ați scris și eventual, să modificați programul. 
 
@@ -76,7 +76,7 @@ Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
 
 Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `#include <fstream>`.
 
-Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. 
+Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul ifstream declară un flux de intrare, ofstream declară unul de ieșire.
 
 ```cpp
 ifstream fin("date.in");
