@@ -467,8 +467,11 @@ void RBInsert(RBNode* z){
     RBInsertFixup(z);
 }
 ```
-Parametrul **fr** trebuie adăugat în struct-ul arborelui, în constructor dar și în metoda createNode()
+Parametrul **fr** trebuie adăugat în struct-ul arborelui, în constructor dar și în metoda createNode().
 
+Parametrul **key** trebuie setat ca și ```long long``` pentru a primi punctaj maxim.
+
+=== "Implementare cu Red-Black Tree"
 ```cpp
 ///Functia main
 RBTree* RB = new RBTree();
@@ -494,8 +497,33 @@ int main(){
  
     }
     cout << rez;
-    
+
+    return 0;
+}
+```
+=== "Implementare cu Map"
+```cpp
+long long n,s;
+long long x,sum;
+map<long long,long long> m;
+long long rez;
  
+int main(){
+    
+    cin >> n >> s;
+    m[0] = 1;
+    for(int i = 1 ; i <= n ; ++i){
+ 
+        cin >> x;
+        sum += x;
+ 
+        if(m.find(sum - s) != m.end())
+            rez += m[sum - s];
+ 
+        m[sum]++;
+ 
+    }
+    cout << rez;
     
     
     return 0;
