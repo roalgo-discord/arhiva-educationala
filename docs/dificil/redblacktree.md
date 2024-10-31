@@ -428,3 +428,9 @@ int kth_max(int k){
     return y->key;
 }
 ```
+## Probleme rezolvate
+
+### 1. [Subarray Sums I](https://cses.fi/problemset/task/1660)
+
+
+
