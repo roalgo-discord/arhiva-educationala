@@ -17,20 +17,36 @@ De multe ori, se impune luarea unor decizii diferite în funcție de situație. 
 
 În limbajul C++, structura alternativă este reprezentată de blocul if..else, astfel încât putem să direcționăm programul în funcție de rezultatele expresiilor logice menționate. 
 
-Pe lângă if..else, există și instrucțiunea switch-case, care funcționează într-o manieră similară, trecând prin fiecare caz pe rând fără a mai fi nevoie de if-uri și else-uri
+Pe lângă if..else, există și instrucțiunea switch-case, care funcționează într-o manieră similară, trecând prin fiecare caz pe rând fără a mai fi nevoie de if-uri și else-uri.
 
 Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni. 
 
 ```cpp
 if (n == 5) {
     // instructiune
-}
-else {
+} else {
     // alta instructiune
 }
 ```
 
-În mod particular, instrucțiunea `if (n)` verifică dacă $n$ are o valoare nenulă.
+Blocul `else` este opțional.
+
+Dacă condiția nu este deja o valoare logică, cum este cea returnată de operatorii de comparație, va fi considerată adevărată dacă aceasta este nenulă.
+
+Acoladele nu sunt obligatorii, dar dacă nu le folosim putem scrie o singură instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de condiții:
+
+```cpp
+if(x) {
+    // dacă x este adevărat
+    // ...
+} else if(y) {
+    // dacă x este fals, dar y este adevărat
+    // ...
+} else {
+    // dacă și x, și y sunt false
+    // ...
+}
+```
 
 ## Operatori de comparație
 
@@ -46,7 +62,7 @@ Astfel, operatorii de comparație sunt următorii:
 * `!=` - verifică dacă cele două expresii au o valoare diferită.
 
 !!! note "Observație"
-    În mod particular, se observă că trebuie două semne de egalitate, o instrucțiune de tipul `if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai apoi verifică dacă $n$ este diferit de $0$.
+    Pentru a verifica egalitatea este nevoie de două semne `=`; o instrucțiune de tipul `if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai apoi verifică dacă $n$ este diferit de $0$.
 
 ## Operatori logici
 
