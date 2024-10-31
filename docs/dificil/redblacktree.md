@@ -436,6 +436,8 @@ Fie un vector cu N elemente și un număr S. Ni se cere să afisăm numărul de 
 
 Problema se poate rezolva foarte simplu folosind un map din STL, dar ne propunem să-l implementăm manual folosind Red-Black Trees.
 
+Va trebui să numărăm aparițiile valorii $sum - s$ unde **sum** reprezintă suma până la poziția curentă.
+
 Voi prezenta doar secvențele relevante deoarece codul sursă este destul de mare.
 
 ```cpp
@@ -465,5 +467,38 @@ void RBInsert(RBNode* z){
     RBInsertFixup(z);
 }
 ```
-Parametrul 
+Parametrul **fr** trebuie adăugat în struct-ul arborelui, în constructor dar și în metoda createNode()
+
+```cpp
+///Functia main
+RBTree* RB = new RBTree();
+ 
+long long n,s;
+long long x;
+ 
+int main(){
+ 
+    cin >> n >> s;
+    RB->RBInsert(RB->createNode(0)); /// marcăm elementul 0.
+ 
+    long long sum = 0,rez = 0;
+    for(int i = 1 ; i <= n ; ++i){
+        cin >> x;
+        sum += x; /// Suma la fiecare pas
+ 
+        RBNode* caut = RB->search(RB->root,sum - s); /// Căutăm daca valoarea respectivă a apărut în arbore la pașii anteriori
+        if(!RB->isNil(caut)){
+            rez += caut->fr; /// Adunăm nr de apariții.
+        }
+        RB->RBInsert(RB->createNode(sum)); /// Marcăm suma curentă
+ 
+    }
+    cout << rez;
+    
+ 
+    
+    
+    return 0;
+}
+```
 
