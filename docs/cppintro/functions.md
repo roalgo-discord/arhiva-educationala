@@ -12,6 +12,8 @@ tags:
 
 Atunci când scrieți un program în orice limbaj de programare, există situații în care sunteți nevoiți să executați anumite tipuri de operații de mai multe ori. Pentru a evita scrierea acestor secvențe de un număr mare de ori, se impune folosirea unor secvențe de cod pe care să le putem refolosi. Acestea vor fi ceea ce numim în limbajul C++ funcții sau subprograme.
 
+Deja ați scris o funcție, funcția `main` care este apelată automat de sistemul de operare când pornește programul.
+
 !!! info "Funcție" 
     O funcție sau un subprogram reprezintă o secvență de cod care poate fi apelată de utilizator pentru a fi executată de mai multe ori, fără a fi nevoie să rescriem acel cod. Aceasta poate fi apelată fie din programul principal, fie dintr-o altă funcție. 
 
@@ -50,17 +52,20 @@ Mai întâi, avem antetul funcției, format din următoarele componente:
 !!! note "Observație"
     În mod particular, limbajul C++ conține și tipul void, care este în esență un tip gol (funcția nu returnează nimic). 
 
+!!! note "Observație"
+    Valoarea returnată de funcția main se numește codul de ieșire; este folosită de sistemul de operare pentru a verifica starea de execuție a programului. Un cod de ieșire nenul înseamnă că programul nu a funcționat corect.
+
 * `tip_1 nume_1`, `tip_2 nume_2` $\dots$ `tip_k nume_k` sunt parametrii pe care funcția îi primește de unde a fost apelată. 
 
 !!! note "Observație"
-    Parametrii nu sunt obligatorii pentru funcții, dar prezența lor face de regulă lucrurile mai ușoare pentru utilizator. 
+    Parametrii nu sunt obligatorii pentru funcții, dar prezența lor face de regulă lucrurile mai ușoare pentru utilizator. Ar fi ideal ca toate funcțiile să nu folosească variabile globale, să nu-și modifice parametrii și să fie ușor de generalizat, dar restricțiile limbajului și unele optimizări nu permit acest lucru.
 
-Apoi, avem instrucțiunile specifice funcției, care pot fi scrise în același mod în care ați scris oricare alt program C++ până acum, atâta timp cât respectă regulile de sintaxă și compilare ale limbajului. 
+Apoi, avem instrucțiunile specifice funcției, care pot fi scrise în același mod în care ați scris oricare alt program C++ până acum, atât timp cât respectă regulile de sintaxă și compilare ale limbajului. 
 
-În cele din urmă, dacă funcția trebuie să returneze o valoare, trebuie să o facă (dacă funcția are un tip non-void și nu se returnează nicio valoare, de regulă primiți warning la compilare și în cele mai multe cazuri, comportamentul programului rămâne la mâna compilatorului - _undefined behavior_).
+În cele din urmă, dacă funcția trebuie să returneze o valoare, trebuie să o facă (dacă funcția are un tip non-void și nu se returnează nicio valoare, de regulă primiți avertisment la compilare și în cele mai multe cazuri, comportamentul programului rămâne la mâna compilatorului - _undefined behavior_).
 
 !!! note "Observație"
-    În momentul în care scriem o instrucțiune de tip _return_, funcția se va opri și în cazul funcțiilor non-void, va returna valoarea dată. Acest lucru este echivalent cu instrucțiunea _return 0_ din programul principal. 
+    În momentul în care scriem o instrucțiune de tip _return_, funcția se va opri și în cazul funcțiilor non-void, va returna valoarea dată.
 
 ## Utilizarea funcțiilor 
 
