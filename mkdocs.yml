@@ -1,5 +1,5 @@
 ---
-site_name: Arhiva Educațională RoAlgo
+site_name: Arhiva Educationala RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
   O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
@@ -146,6 +146,7 @@ nav:
           - Cum să te pregătești pentru bacalaureat și admitere?: usor/bac-admitere.md
       - Concepte fundamentale:
           - Complexități: usor/complexity.md
+          - Maxime și minime: usor/maxime-minime.md
           - Prelucrarea cifrelor: usor/digits-manipulation.md
           - Simularea soluției: usor/simulating-solution.md
           - Vectori de frecvență: usor/frequency-arrays.md
@@ -174,12 +175,10 @@ nav:
       - Tehnici de rezolvare a problemelor:
           - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
           - Abordarea problemelor constructive: mediu/constructive.md
-          - Abordarea concursurilor de pe Codeforces/AtCoder: >-
-              mediu/cf-atcoder.md
+          - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
       - Algebră:
           - Indicatorul lui Euler: mediu/euler-totient.md
-          - Aritmetică modulară. Ridicare la putere în timp logaritmic: >-
-              mediu/pow-log.md
+          - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md
           - Baze de numerație: mediu/number-bases.md
           - Principiul includerii și excluderii (pinex): mediu/pinex.md
           - Invers modular: mediu/modular-inverse.md
@@ -192,8 +191,7 @@ nav:
           - Subșir maximal:
               - Subșir comun maximal: mediu/lcs.md
               - Subșir crescător maximal: mediu/lis.md
-          - Dinamică pe stări exponențiale (bitmask DP): >-
-              mediu/bitmask-dp.md
+          - Dinamică pe stări exponențiale (bitmask DP): mediu/bitmask-dp.md
       - Teoria grafurilor:
           - Cicluri în grafuri. Grafuri funcționale: mediu/cycles.md
           - Introducere în arbori. Diametrul unui arbore: mediu/tree-1.md
@@ -227,20 +225,16 @@ nav:
       - Programare dinamică:
           - Programare dinamică pe grafuri: dificil/graph-dp.md
           - Programare dinamică pe arbore: dificil/tree-dp.md
-          - Programare dinamică pe intervale (range DP): >-
-              dificil/range-dp.md
+          - Programare dinamică pe intervale (range DP): dificil/range-dp.md
           - Programare dinamică pe cifre (digit DP): dificil/digit-dp.md
           - Programare dinamică pe permutări: dificil/permutations-dp.md
-          - Programare dinamică cu structuri de date: >-
-              dificil/data-structures-dp.md
+          - Programare dinamică cu structuri de date: dificil/data-structures-dp.md
       - Teoria grafurilor:
           - Componente tare conexe: dificil/componente-tare-conexe.md
           - Componente biconexe: dificil/componente-biconexe.md
-          - Cuplaj maxim pe graf bipartit: >-
-              dificil/cuplaj-maxim-pe-graf-bipartit.md
+          - Cuplaj maxim pe graf bipartit: dificil/cuplaj-maxim-pe-graf-bipartit.md
       - Structuri de date:
-          - Descompuneri în bucăți de radical (Square Root Decomposition): >-
-              dificil/square-root-decomposition.md
+          - Descompuneri în bucăți de radical (Square Root Decomposition): dificil/square-root-decomposition.md
           - Arbori de intervale: dificil/segment-trees.md
           - Arbori indexați binar: dificil/fenwick-tree.md
           - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
@@ -257,11 +251,9 @@ nav:
           - Knuth-Morris-Pratt (KMP): dificil/kmp.md
           - Z Function: dificil/z-function.md
       - Lucrul pe arbori:
-          - Binary lifting. Lowest common ancestor (LCA): >-
-              dificil/lowest-common-ancestor.md
+          - Binary lifting. Lowest common ancestor (LCA): dificil/lowest-common-ancestor.md
           - Small to large: dificil/small-to-large.md
-          - Structuri de date pe arbore (Euler tour): >-
-              dificil/euler-tour.md
+          - Structuri de date pe arbore (Euler tour): dificil/euler-tour.md
       - Altele:
           - Bitsets: dificil/bitsets.md
           - Algoritmi randomizați: dificil/random-algorithms.md
