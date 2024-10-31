@@ -489,8 +489,9 @@ int main(){
     for(int i = 1 ; i <= n ; ++i){
         cin >> x;
         sum += x; /// Suma la fiecare pas
- 
-        RBNode* caut = RB->search(RB->root,sum - s); /// Căutăm daca valoarea respectivă a apărut în arbore la pașii anteriori
+
+        /// Căutăm daca valoarea respectivă a apărut în arbore la pașii anteriori
+        RBNode* caut = RB->search(RB->root,sum - s); 
         if(!RB->isNil(caut)){
             rez += caut->fr; /// Adunăm nr de apariții.
         }
