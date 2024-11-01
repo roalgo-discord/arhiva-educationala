@@ -53,7 +53,7 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 !!! example "Exemplu"
     Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
     
-    Valorile posibile pentru $a$ sunt $\{1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt $\{0, 1, 2, 3, \dots, 9}$. 
+    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$. 
     
     Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de variante este $9 \cdot 9 = 81$.
 
@@ -161,7 +161,7 @@ Similar permutărilor, aranjamentele pot fi considerate funcții injective
 definite pe mulțimea $\{1, 2, 3,\dots, k\}$ cu valori în $\{1, 2, 3,\dots, n\}$
 
 Numărul aranjamentelor de $n$ luate câte $k (k\leq n)$ se notează cu $A_n^k$ și
-este egal cu $$\frac{n!}{(n-k)!}$$
+este egal cu $\frac{n!}{(n-k)!}$
 
 O altă formulă care poate fi utilă în special în cazul precalculărilor este $A_n^k = (n - k + 1)\cdot A_n^{k-1}$
 
@@ -564,6 +564,10 @@ Trebuie să aveți grijă și la faptul că în unele cazuri, probleme ce pot p�
 fi de combinatorică să nu fie de fapt dinamici care se pot aborda mult mai ușor
 folosind modul de gândire specific programării dinamice, iar chiar dacă în unele
 cazuri există similarități între cele două, acest lucru nu este adevărat mereu.
+
+## Concluzii
+
+Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea temeinică a tehnicilor de rezolvare a acestor probleme este esențială. Din cauza dificultății cu care această tehnică este învățată, se recomandă rezolvarea unui număr cât mai mare de probleme, pentru a fi expus la diverse tehnici, formule și rezultate importante atât în matematică, cât și în informatică.  
 
 ## Probleme suplimentare
 

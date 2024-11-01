@@ -7,7 +7,7 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-Pe lângă olimpiada de informatică, prezentată mai devreme [în acest articol](./olympiad-info.md), există numeroase concursuri și olimpiade pentru elevii de gimnaziu, liceu și chiar și pentru studenți. Nu în ultimul rând, există numeroase platforme cu concursuri online cu diverse reguli care permit oricărui entuziast de algoritmică să se mențină în formă și de ce nu, să devină tot mai bun. 
+Pe lângă olimpiada de informatică, prezentată mai devreme [în acest articol](https://edu.roalgo.ro/olimpiada/olympiad-info/), există numeroase concursuri și olimpiade pentru elevii de gimnaziu, liceu și chiar și pentru studenți. Nu în ultimul rând, există numeroase platforme cu concursuri online cu diverse reguli care permit oricărui entuziast de algoritmică să se mențină în formă și de ce nu, să devină tot mai bun. 
 
 Aceasta nu este o listă completă a concursurilor, iar de multe ori apar concursuri ce nu sunt neapărat organizate într-un mod regular, așa că recomandăm să fiți pe fază pe serverul nostru [RoAlgo](https://discord.gg/roalgo/).
 
