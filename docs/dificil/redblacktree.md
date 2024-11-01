@@ -33,7 +33,7 @@ tags:
 struct RBNode{
 
     int key;        // poate reține mai multe informații.
-    RBNode *parent; // pointer spre pârinte
+    RBNode *parent; // pointer spre părinte
     RBNode *left;   // pointer spre stânga
     RBNode *right;  // pointer spre dreapta
     enum color { RED, BLACK }; /// culoarea
