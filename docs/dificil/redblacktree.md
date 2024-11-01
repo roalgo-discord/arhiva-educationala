@@ -14,7 +14,7 @@ tags:
 3) Niciun nod ce conține informație nu este frunză. Frunzele sunt reprezentate de un nod "santinelă" care este de culoare ${\color{grey}Black}$ (Nodul NIL).
 4) Nu pot exista 2 noduri ${\color{red}Red}$ consecutive.
 5) Fiecare cale dintre un nod și o frunză descendentă conține același număr de noduri de culoare ${\color{grey}Black}$.
-6) Un Arbore Red-Black cu N noduri are înălțimea maximă 2 * $\log (N)$.
+6) Un Arbore Red-Black cu N noduri are înălțimea maximă $2 \cdot \log N$ .
 
 <br>
 
