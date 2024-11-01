@@ -9,7 +9,7 @@ tags:
 **Arborii Red-Black** reprezintă o structură de date avansată, o alternativă mult mai rapidă a arborilor binari de căutare(BST) ce ne permit realizarea operațiilor de tipul **insert** și **delete** în timp logaritmic.
 
 ## Proprietăți
-1) Nodurile conțin un identificator, aceea fiind culoarea (${\color{red}Red}$ sau ${\color{grey}Black}$)
+1) Nodurile conțin un identificator, aceea fiind culoarea (${\color{red}Red}$ sau ${\color{grey}Black}$).
 2) Radăcina este tot timpul ${\color{grey}Black}$.
 3) Niciun nod ce conține informație nu este frunză. Frunzele sunt reprezentate de un nod "santinelă" care este de culoare ${\color{grey}Black}$ (Nodul NIL).
 4) Nu pot exista 2 noduri ${\color{red}Red}$ consecutive.
@@ -119,7 +119,7 @@ void LeftRotate(RBNode* x){
 
 ```
 ## Find Succesor
-- Operația ne ajută să găsim următorul nod ca și valoare (cea mai mică cheie mai mare decât cea curentă)
+- Operația ne ajută să găsim următorul nod ca și valoare (cea mai mică cheie mai mare decât cea curentă).
 - Este folosită pentru funcția delete explicată mai jos.
 - Basically căutam elementul minim în subarborele drept.
 - Daca nu putem coborî in dreapta, succesor se poate afla deasupra. Urcăm până când suntem cu X pe partea dreaptă.
@@ -152,8 +152,8 @@ RBNode* successor(RBNode* w){
 
 ## Operația Insert
 - Inserarea se realizează in 2 etape.
-- Prima constă în inserarea default, ca într-un BST și colorarea nodului în ${\color{red}Red}$
-- Apoi apelăm RBInsert_Fixup(), ce va recolora și va efectua rotații pentru a menține proprietățiile Red-Black Tree-ului 
+- Prima constă în inserarea default, ca într-un BST și colorarea nodului în ${\color{red}Red}$.
+- Apoi apelăm RBInsert_Fixup(), ce va recolora și va efectua rotații pentru a menține proprietățiile Red-Black Tree-ului .
 
 ```cpp
 void RBInsert(RBNode* z){
@@ -235,7 +235,7 @@ void RBInsertFixup(RBNode* z){
 - În momentul în care părintele nodului și unchiul acestuia sunt amândoi roșii îî putem recolora pe amândoi în ${\color{grey}Black}$.
 - Recolorăm bunicul nodului nou inserat în ${\color{red}Red}$ pentru a da fix-up până la radăcină.
 - Recolorând părintele si bunicul rezolvăm problema a două noduri ${\color{red}Red}$ consecutive.
-- Proprietatea (5) rămâne intactă deoarece colorăm bunicul ${\color{red}Red}$ (adică reducem Black Path Length cu 1) iar apoi colorăm cu ${\color{grey}Black}$ cei 2 fii ai bunicului (Se readaugă +1 la cele 2 path-uri)
+- Proprietatea (5) rămâne intactă deoarece colorăm bunicul ${\color{red}Red}$ (adică reducem Black Path Length cu 1) iar apoi colorăm cu ${\color{grey}Black}$ cei 2 fii ai bunicului (Se readaugă +1 la cele 2 path-uri).
   
 ### Cazul 2
 - Acest caz este unul intermediar, ce doar pregătește layout-ul arborelui pentru Cazul 3.
