@@ -23,7 +23,7 @@ Deja ați scris o funcție, funcția `main` care este apelată automat de sistem
 
 Chiar dacă acest articol nu se va concentra pe funcțiile de sistem, cel mai probabil ați folosit până acum aceste funcții pentru a afla valorile diverselor funcții. 
 
-Un astfel de exemplu este funcția $sqrt(x)$, care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `#include <cmath>`. În mod similar, probabil ați folosit până acum funcția `std::sort`, funcție ce se regăsește în biblioteca `#include <algorithm>`, iar exemplele pot continua. 
+Un astfel de exemplu este funcția $sqrt(x)$, care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `<cmath>`. În mod similar, probabil ați folosit până acum funcția `std::sort`, funcție ce se regăsește în biblioteca `<algorithm>`, iar exemplele pot continua. 
 
 Deși nu trebuie să rescriem aceste funcții, acestea se bazează pe același principiu (refolosirea unor coduri deja scrise), singura diferență fiind aceea că codul din spatele acestor funcții face deja parte din standardul bibliotecilor și nu trebuie reprodus. 
 
@@ -50,7 +50,7 @@ Mai întâi, avem antetul funcției, format din următoarele componente:
 * tip reprezintă tipul de date al valorii întoarse de funcție (poate fi oricare tip de date cunoscut, inclusiv containere din STL), iar numele funcției este unul dat de utilizator, regulile privind numirea funcției sunt aceleași cu cele de la numirea variabilelor. 
 
 !!! note "Observație"
-    În mod particular, limbajul C++ conține și tipul void, care este în esență un tip gol (funcția nu returnează nimic). 
+    Limbajul C++ conține și tipul void, care este în esență un tip gol (funcția nu returnează nimic). 
 
 !!! note "Observație"
     Valoarea returnată de funcția main se numește codul de ieșire; este folosită de sistemul de operare pentru a verifica starea de execuție a programului. Un cod de ieșire nenul înseamnă că programul nu a funcționat corect.
@@ -65,7 +65,7 @@ Apoi, avem instrucțiunile specifice funcției, care pot fi scrise în același 
 În cele din urmă, dacă funcția trebuie să returneze o valoare, trebuie să o facă (dacă funcția are un tip non-void și nu se returnează nicio valoare, de regulă primiți avertisment la compilare și în cele mai multe cazuri, comportamentul programului rămâne la mâna compilatorului - _undefined behavior_).
 
 !!! note "Observație"
-    În momentul în care scriem o instrucțiune de tip _return_, funcția se va opri și în cazul funcțiilor non-void, va returna valoarea dată.
+    În momentul în care scriem o instrucțiune de tip _return_, funcția se va opri și în cazul funcțiilor non-void, va returna valoarea dată. În funcția `main`, care este apelată de sistemul de operare, când folosim return întregul program se va închide.
 
 ## Utilizarea funcțiilor 
 
@@ -127,7 +127,7 @@ long long sum_div (int x) {
 }
 ```
 
-Totuși, limbajul C++ permite și scrierea funcțiilor sub programul principal, cu condiția ca antetele să fie scrise deasupra funcției main. Codul de mai jos poate fi modificat astfel:
+Totuși, limbajul C++ permite și scrierea funcțiilor sub locul unde sunt folosite prima dată, cu condiția ca antetele să fie copiate deasupra funcției care le apelează. Codul de mai jos poate fi modificat astfel:
 
 ```cpp
 #include <iostream>
@@ -168,7 +168,7 @@ Cele mai multe funcții scrise sunt de acest tip, ele practic preiau valori și 
 De exemplu, aici avem o funcție care primește un număr ca parametru și întoarce suma divizorilor numărului dat. 
 
 !!! note "Observație"
-    Variabilele declarate în funcții sunt locale, iar prezența lor acolo nu influențează în niciun fel ce se întâmplă în programul principal (excepția fiind valorile întoarse, care vor fi folosite ulterior acolo). De asemenea, declararea unei variabile cu același nume nu va avea niciun impact în programul principal sau în alte funcții.
+    Variabilele declarate în funcții sunt locale, iar prezența lor acolo nu influențează în niciun fel ce se întâmplă în alte părți din program (excepția fiind valorile întoarse, care vor fi folosite ulterior acolo). De asemenea, declararea unei variabile cu același nume nu va avea niciun impact în programul principal sau în alte funcții.
 
 ```cpp
 int sum_div (int x) {
@@ -258,26 +258,29 @@ O funcție recursivă are la bază folosirea memoriei din stack, apelurile succe
 
 Astfel, pentru fiecare apel al unei funcții se adaugă pe stivă o zonă de memorie în care se memorează variabilele locale și parametrii pentru apelul curent. Această zonă a stivei va exista până la finalul apelului, după care se va elibera. Dacă din apelul curent se face un alt apel, se adaugă pe stivă o nouă zonă de memorie, iar conținutul zonei anterioare este inaccesibil până la finalul acelui apel. Aceste operații se fac la fel și dacă al doilea apel este un autoapel al unei funcții recursive.
 
-Aici puteți vedea cum aflăm în mod recursiv valoarea lui $n!$ folosind o funcție recursivă. 
+Mai jos vedem aceeași funcție pentru suma cifrelor, dar implementată recursiv. 
 
 ```cpp
-int factorial (int n) {
-    if (n <= 1) {
+int sumcif (int n) {
+    if (n < 10) {
         return n;
     }
-    return factorial(n-1) * n;
+    return n % 10 + sumcif(n / 10);
 }
 ```
 
-Se poate observa faptul că ne folosim de definiția lui $n!$, iar pentru a afla $n!$, avem nevoie de $(n-1)!$ și așa mai departe. Dacă vrem să calculăm valoarea lui $5!$, aceasta se obține în felul următor:
+Se poate observa faptul că calculăm sume pentru câteva cifre, apoi le combinăm. Pentru a calcula suma cifrelor a numărului n, adunăm ultima cifră cu suma cifrelor rămase. De exemplu, pentru a calcula suma cifrelor lui $4567$:
 
-* $factorial(5)$: răspunsul devine $factorial(4) \cdot 5$
-* $factorial(4)$: răspunsul devine $factorial(3) \cdot 4$
-* $factorial(3)$: răspunsul devine $factorial(2) \cdot 3$
-* $factorial(2)$: răspunsul devine $factorial(1) \cdot 2$
-* $factorial(1)$: caz de bază, răspunsul devine $1$
+* $sumcif(4567)$: răspunsul devine $7 + sumcif(456)$
+* $sumcif(456)$: răspunsul devine $6 + sumcif(45)$
+* $sumcif(45)$: răspunsul devine $5 + sumcif(4)$
+* $sumcif(4)$: caz de bază, răspunsul devine $4$
 
-Pentru a calcula $n!$, trebuie să aflăm toate factorialele până la $1!$, iar mai apoi folosim aceste rezultate invers pentru a primi răspunsul în valoarea cerută. 
+Pentru a calcula $sumcif(4567)$, mergem înapoi în acea listă și folosim rezultatele.
+
+* $sumcif(45)$: $5 + 4 = 9$
+* $sumcif(456)$: $6 + 9 = 15$
+* $sumcif(4567)$: $7 + 15 = 22$
 
 Acest mod de a scrie funcțiile este foarte folosit în multe tipuri de aplicații, cum ar fi metoda divide et impera, programarea dinamică, teoria grafurilor ș.a.m.d. 
 
@@ -377,11 +380,15 @@ Pentru a scrie o funcție cu parametri impliciți, trebuie să menționăm mai �
 
 De exemplu, prima declarare este incorectă, dar cea de-a doua este corectă.
 
+**Greșit**
+
 ```cpp
 int medie (int a = 0, int b) {
     // instructiuni    
 }
 ```
+
+**Corect**
 
 ```cpp
 int medie (int b, int a = 0) {
