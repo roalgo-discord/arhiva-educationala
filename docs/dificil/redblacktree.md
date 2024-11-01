@@ -174,7 +174,7 @@ void RBInsert(RBNode* z){
         z->left = z->right = RBNode::Nil;
         z->col = RBNode::RED;
         RBInsertFixup(z);
-    }
+}
 
 void RBInsertFixup(RBNode* z){
         RBNode* y;
@@ -224,7 +224,7 @@ void RBInsertFixup(RBNode* z){
             }
         }
         root->col = RBNode::BLACK;
-    }
+}
 ```
 !!! info "De reținut"
     Cazurile vor fi discutate pentru partea stângă, adică prima parte din implementare. Pentru partea dreapta se inversează Right cu Left.
@@ -285,9 +285,7 @@ RBNode* del(RBNode* z){
             RBDeleteFixup(x);
 
         return y; /// Returnăm pentru a se dealoca Y.
-    }
-```
-```cpp
+}
 void RBDeleteFixup(RBNode* x){
         RBNode* w;
         while(x != root && x->col == RBNode::BLACK){
@@ -356,7 +354,7 @@ void RBDeleteFixup(RBNode* x){
 
             }
         }
-    }
+}
 
 ```
 !!! info "De reținut"
