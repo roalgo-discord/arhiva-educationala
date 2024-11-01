@@ -175,8 +175,7 @@ void RBInsert(RBNode* z){
         z->col = RBNode::RED;
         RBInsertFixup(z);
     }
-```
-```cpp
+
 void RBInsertFixup(RBNode* z){
         RBNode* y;
         while(z->parent->col == RBNode::RED){
