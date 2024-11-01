@@ -235,7 +235,7 @@ void RBInsertFixup(RBNode* z){
 - În momentul în care părintele nodului și unchiul acestuia sunt amândoi roșii îî putem recolora pe amândoi în ${\color{grey}Black}$.
 - Recolorăm bunicul nodului nou inserat în ${\color{red}Red}$ pentru a da fix-up până la radăcină.
 - Recolorând părintele si bunicul rezolvăm problema a două noduri ${\color{red}Red}$ consecutive.
-- Proprietatea (5) rămâne intactă deoarece colorăm bunicul ${\color{red}Red}$ (adică reducem Black Path Length cu 1) iar apoi colorăm cu ${\color{grey}Black}$ cei 2 fii a-i bunicului (Se readaugă +1 la cele 2 path-uri)
+- Proprietatea (5) rămâne intactă deoarece colorăm bunicul ${\color{red}Red}$ (adică reducem Black Path Length cu 1) iar apoi colorăm cu ${\color{grey}Black}$ cei 2 fii ai bunicului (Se readaugă +1 la cele 2 path-uri)
   
 ### Cazul 2
 - Acest caz este unul intermediar, ce doar pregătește layout-ul arborelui pentru Cazul 3.
@@ -370,7 +370,7 @@ void RBDeleteFixup(RBNode* x){
 ![](../images/rbtree/Del_1.png)
 
 ### Cazul 2
-- Dacă ambii fii a-i fratelui sunt ${\color{grey}Black}$ atunci îl recolorăm și urcăm în părintele lui X.
+- Dacă ambii fii ai fratelui sunt ${\color{grey}Black}$ atunci îl recolorăm și urcăm în părintele lui X.
 - Daca am accesat cazul 2 din cazul 1, atunci loop-ul se oprește deoarece părintele lui X este ${\color{red}Red}$. La pasul următor vom fi în el.
 - In poza de deasupra X va pointa spre X->parent adică nodul B care este roșu.
 - In cazul în care nu venim din cazul 1, B poate fi orice culoare și ne vom ocupa de el în momentul în care se repetă loop-ul.
@@ -394,7 +394,7 @@ void RBDeleteFixup(RBNode* x){
   
 ![](../images/rbtree/Del4.png)
 
-- Complexitatea operației de delete în Worst Case $O(2 * log(N))$ dar constanta o putem anula.
+- Complexitatea operației de delete în Worst Case $O(2 \cdot \log N)$  dar constanta o putem anula.
 - Basically, acea constantă **2** vine de la faptul că urcăm în sus pe arbore pentru a rebalansa. (Doar dacă intrăm pe cazul 2 fara a intra pe cazul 1 apare aceasta "constantă". Cazurile 1, 3 și 4 opresc loop-ul prin colorarea nodului în care urcăm în ${\color{red}Red}$ si prin a-l face pe X să pointeze spre root).
 
 ## Finding K-th min / max in $O(k * log(N))$
