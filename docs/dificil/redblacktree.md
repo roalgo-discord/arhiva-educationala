@@ -358,7 +358,7 @@ void RBDeleteFixup(RBNode* x){
 
 ```
 !!! info "De reținut"
-    Cazurile vor fi discutate pentru partea stângă, adică prima parte din implementare. Pentru partea dreapta se inversează Right cu Left.F
+    Cazurile vor fi discutate pentru partea stângă, adică prima parte din implementare. Pentru partea dreapta se inversează Right cu Left.
     
 ### Cazul 1
 - Daca fratele nodului este  ${\color{red}Red}$ îl recolorăm în ${\color{grey}Black}$, părintele lui X în ${\color{red}Red}$ iar apoi rotim fratele în locul părintelui lui X. Apoi W devine din nou fratele lui X în formația noua a arborelui.
