@@ -6,7 +6,7 @@ tags:
     - dsu
 ---
 
-**Autor** :Radu Mocănașu
+**Autor**: Radu Mocănașu
 
 ## Cunoștințe necesare:
 
@@ -241,19 +241,19 @@ int main() {
 }
 ```
 
-## Alte probleme și resurse utile
+## Probleme suplimentare 
 
-### Resurse adiționale despre subiectele abordate
-* [Small-to-large USACO GUIDE](https://usaco.guide/plat/merging?lang=cpp)
-* [__gnu_pbds - GeeksForGeeks](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
-* Următoarele bloguri de pe Codeforces:
-    * [Blog 1](https://codeforces.com/blog/entry/11080)
-    * [Blog 2](https://codeforces.com/blog/entry/44351)
-    * [Blog 3](https://codeforces.com/blog/entry/67696)
-
-### Probleme
 * [Toska - Kilonova](https://kilonova.ro/problems/2098)
 * [Lomsat Gerlal - Codeforces](https://codeforces.com/problemset/problem/600/E)
 * [Arborel - Kilonova](https://kilonova.ro/problems/2970)
 * [Magic Tree - CEOI 2019](https://codeforces.com/contest/1193/problem/B)
 * [Alte probleme cu small-to-large de pe Kilonova](https://kilonova.ro/problems/2098)
+
+
+## Resurse suplimentare 
+
+* [Small-to-large - Usaco Guide](https://usaco.guide/plat/merging?lang=cpp)
+* [__gnu_pbds - GeeksForGeeks](https://www.geeksforgeeks.org/ordered-set-gnu-c-pbds/)
+* [C++ STL: Policy based data structures - Codeforces](https://codeforces.com/blog/entry/11080)
+* [Sack (dsu on tree) - Codeforces](https://codeforces.com/blog/entry/44351)
+* [[Explanation] dsu on trees (small to large) - Codeforces](https://codeforces.com/blog/entry/67696)

@@ -157,7 +157,7 @@ int main()
 }
 ```
 
-### Concluzii 
+## Concluzii 
 
 Tehnica meet in the middle este o tehnică utilă pentru a îmbunătăți timpul de execuție pentru foarte multe soluții ce se bazează pe metode de tip brute-force. Fie că e vorba de probleme cu restricții mici sau la care avem nevoie de submulțimi mici, meet in the middle este o tehnică foarte utilă pentru diferite tipuri de aplicații.
 

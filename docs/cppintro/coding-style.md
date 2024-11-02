@@ -17,11 +17,11 @@ Deși sunt multe stiluri de cod care pot fi utilizate, un stil de cod bun este u
 
 De-a lungul acestei arhive, soluțiile prezentate de noi vor folosi stilul de cod Google, cu următoarele caracteristici:
 
-* $4$ spații la indentare
-* Folosirea acoladelor pentru orice structură alternativă și repetitivă
-* Acolada deschisă se pune în același rând cu definiția structurii
-* Acolada închisă se pune în rândul de după finalul structurii
-* Folosirea extensivă a spațiilor pentru separarea diverselor instrucțiuni sau chiar a expresiilor. 
+* $4$ spații la indentare;
+* Folosirea acoladelor pentru orice structură alternativă și repetitivă;
+* Acolada deschisă se pune în același rând cu definiția structurii;
+* Acolada închisă se pune în rândul de după finalul structurii;
+* Folosirea extensivă a spațiilor pentru separarea diverselor instrucțiuni sau chiar a expresiilor;
 * Nume sugestive pentru variabile.
 
 Un astfel de exemplu îl puteți găsi în acest cod în care operăm cu cifrele unui număr $n$ dat.
@@ -129,7 +129,7 @@ Dacă nu preferați stilul nostru, un alt stil bun este stilul Allman, foarte si
 
 În general, orice stil folosiți trebuie să aibă o logică clară și să fie ușor de citit pentru oricine vrea să vă urmeze ideea la o problemă, evident fără a cauza dificultăți majore în ceea ce privește debuggingul.
 
-De asemenea, recomandăm și [acest ghid de pe Codeforces](https://codeforces.com/blog/entry/64218)
+De asemenea, recomandăm și [acest ghid de pe Codeforces](https://codeforces.com/blog/entry/64218).
 
 ## Concluzii
 

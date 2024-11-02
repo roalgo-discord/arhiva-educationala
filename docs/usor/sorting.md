@@ -90,7 +90,7 @@ timpul unei competiții este prin folosirea funcției oferite de limbajul C++
 pentru a sorta un șir, această funcție având la spate algoritmul IntroSort, o
 combinație între QuickSort, HeapSort și Insertion Sort care preia cele mai bune
 caracteristici ale celor trei algoritmi menționați. Aplicarea ei se va dovedi a
-fi banală, fiind nevoie de o singură linie de cod.
+fi banală, fiind nevoie de o singură linie de cod. Se găsește în biblioteca `algorithm`.
 
 Pentru a scrie funcția, trebuie să știm adresa de început (de regulă, poziția
 $0$ sau $1$ din șir) și adresa de final, cea de final fiind incrementată cu $1$

@@ -34,7 +34,6 @@ int main(){
 ```1000001001```
 
 **Obsevăm că**:
-
 * Elementele sunt indexate de la $0$.
 * ```cout << b;``` va afișa toate elementale de la **dreapta la stanga**. 
 * Este prezent ```operator[]```.
@@ -458,7 +457,7 @@ int main(){
 
 Care este mai bun?
 
-Păi, ambele! Depinde foarte mult de ce vrei să faci cu el.
+Pâi, ambele! Depinde foarte mult de ce vrei să faci cu el.
 
 O diferență la ```tr2::dynamic_bitset``` este funcția ```resize()```. În consecință, ```tr2::dynamic_bitset``` este mai lent decât un **bitset** normal sau un **bitset dinamic** cu template-uri. Însă, prima variantă de **bitset dinamic** nu-și poate da resize, adică e mult spus **dinamic**. Dacă veți avea nevoie să reutilizați același bitset dar cu lungime diferită, folosiți  ```tr2::dynamic_bitset```, altfel varianta cu template-uri este superioară din punct de vedere al timpului de execuție. Iar dacă nu aveți în general nevoie de **bitset dinamic**, **folosiți bitsetul normal**.
 

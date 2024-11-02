@@ -6,7 +6,7 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-Așa cum am menționat în articolul despre [lucrul cu secvențe](./sequences.md), acestea se regăsesc în foarte multe tipuri de probleme, iar deși acolo am discutat în special despre problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru problemele în care trebuie să iterăm prin ferestre de lungime fixă. 
+Așa cum am menționat în articolul despre [lucrul cu secvențe](https://edu.roalgo.ro/usor/sequences/), acestea se regăsesc în foarte multe tipuri de probleme, iar deși acolo am discutat în special despre problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru problemele în care trebuie să iterăm prin ferestre de lungime fixă. 
 
 !!! info "Definiție" 
     Fereastra glisantă (în engleză _sliding window_) reprezintă o metodă de rezolvare a problemelor care implică folosirea informației acumulate pentru a face tranzițiile între subsecvențe de lungime $k$ cu ușurință, fără a fi nevoie de recalcularea răspunsului pentru toate secvențele de lungime $k$. 

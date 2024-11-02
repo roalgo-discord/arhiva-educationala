@@ -5,6 +5,8 @@ tags:
     - stiva
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
 ## Ce este analiza amortizată?
 
 În algoritmică, se întâmplă de foarte multe ori să găsim algoritmi pentru diverse aplicații care deși la prima vedere par foarte înceți, după ce îi analizăm în detaliu, constatăm faptul că în practică se comportă foarte bine și în multe cazuri, putem chiar demonstra complexitatea rapidă pe care aceștia o au.

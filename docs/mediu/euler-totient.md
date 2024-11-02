@@ -15,7 +15,7 @@ tags:
 !!! example "Exemplu"
     De exemplu, $\varphi (12) = 4$, deoarece $1$, $5$, $7$ și $11$ sunt prime cu $12$. 
 
-Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere sau ca pas intermediar în algoritmi și metode mai complicate, precum [Funcția Möbius](./mobius.md) sau pentru cei mai avansați, teorema chinezească a resturilor.
+Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere sau ca pas intermediar în algoritmi și metode mai complicate, precum [Funcția Möbius](../dificil/mobius.md) sau pentru cei mai avansați, teorema chinezească a resturilor.
 
 ## Calcularea funcției și proprietățile acesteia
 
@@ -150,4 +150,4 @@ Indicatorul lui Euler este o funcție care se dovedește a fi foarte importantă
 * [Indicatorul lui Euler - pbinfo](https://www.pbinfo.ro/articole/18882/indicatorul-lui-euler)
 * [Euler's phi function, its properties, and how to compute it - Codeforces](https://codeforces.com/blog/entry/106851)
 * [Euler's totient function - wikipedia](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
-* [Funcția Möbius](./mobius.md)
+* [Funcția Möbius](../dificil/mobius.md)

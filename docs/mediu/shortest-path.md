@@ -1,4 +1,5 @@
 ---
+title: Algoritmi pentru drumuri minime
 tags:
     - grafuri
     - drumuri minime
@@ -527,7 +528,7 @@ int main() {
 
 Fiecare algoritm are avantajele și dezavantajele lui, cunoașterea tuturor fiind necesară. Dijkstra este opțiunea optimă în cele mai multe cazuri, dar Floyd-Warshall și Bellman-Ford au ambele beneficiile lui. 0-1 BFS / 1-K BFS au și ele avantajele lor, în special când vine vorba de grafuri cu costuri mici, nefiind nici acest algoritm unul de neglijat. 
 
-# Probleme suplimentare
+## Probleme suplimentare
 
 * [Simple Shortest Path](https://kilonova.ro/problems/2037/)
 * [Shortest Routes I](https://cses.fi/problemset/task/1671/)

@@ -4,6 +4,7 @@ tags:
     - arbori
     - programare dinamica
 ---
+
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 În ceea ce privește rezolvarea problemelor cu arbori, in anumite situatii se poate observa faptul că avem nevoie de o calculare inițială a răspunsului presupunând rădăcina într-un nod oarecare (de regulă, nodul $1$), urmată de folosirea acestor răspunsuri pentru generalizarea rezultatelor pentru toate rădăcinile posibile. Vom numi tehnica pe care o folosim pentru aceste probleme **rerooting**, sau așa cum este cunoscută în jargonul românesc, tehnica celor două DFS-uri.

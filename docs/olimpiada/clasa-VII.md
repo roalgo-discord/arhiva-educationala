@@ -24,7 +24,7 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a șas
 
 * Tehnica Two Pointers - [link articol](https://edu.roalgo.ro/mediu/two-pointers/)
 * Tablouri de diferențe - Difference Arrays - [link articol](https://edu.roalgo.ro/usor/partial-sums/?h=#smenul-lui-mars)
-* Determinarea secvenței de sumă maximă - [link articol](https://edu.roalgo.ro/mediu/sequences/#subsecventa-de-suma-maxima) 
+* Determinarea secvenței de sumă maximă - [link articol](https://edu.roalgo.ro/usor/sequences/#subsecventa-de-suma-maxima) 
 * Determinarea elementului majoritar 
 * Precalcularea unor informații în tablouri bidimensionale (de exemplu sume parțiale pe prefixe/sufixe de linii/coloane, suma elementelor dintr-o submatrice cu unul dintre colțuri fixat în unul dintre colțurile matricei) - [link articol](https://edu.roalgo.ro/usor/partial-sums/#extinderea-sumelor-partiale-pe-matrice)
 * Tablouri multidimensionale 

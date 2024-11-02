@@ -5,11 +5,11 @@ tags:
     - structuri de date
 ---
 
-**Autori**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 
-Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă citirea articolului (aici trebuie pus href la treebasics) pentru a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește structurile de date, programarea dinamică și lucrul cu STL. În cele ce urmează, vom discuta problema aflării celui mai mic strămoș comun, împreună cu câteva tehnici necesare pentru înțelegerea ei.
+Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă citirea [articolului despre arbori](https://edu.roalgo.ro/mediu/tree-1/) pentru a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește structurile de date, programarea dinamică și [lucrul cu STL](https://edu.roalgo.ro/cppintro/stl/). În cele ce urmează, vom discuta problema aflării celui mai mic strămoș comun, împreună cu câteva tehnici necesare pentru înțelegerea ei.
 
 ## Liniarizarea arborelui
 
@@ -120,12 +120,22 @@ int solve(int a, int b) {
 !!! note "Observație"
     LCA-ul între două noduri se poate afla și în $O(1)$ per query, folosind o precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
 
-## Alte probleme și resurse utile
+## Probleme suplimentare
 
-* [Euler Tour Technique](https://usaco.guide/gold/tree-euler)
-* [Binary Lifting + LCA](https://usaco.guide/plat/binary-jump?lang=cpp)
-* [LCA, predat la CPPI Craiova](https://iordachebogdan.github.io/cppi/lca_nivel_avansat.html)
 * [Milk Visits USACO Silver](http://www.usaco.org/index.php?page=viewproblem2&cpid=968)
-* [Sap](https://kilonova.ro/problems/1802)
-* [Tutorial - Binary lifting](https://codeforces.com/blog/entry/100826)
+* [CSES Planet Queries I](https://cses.fi/problemset/task/1750)
+* [CSES Planet Queries II](https://cses.fi/problemset/task/1160)
+* [USACO Platinum Max Flow](http://www.usaco.org/index.php?page=viewproblem2&cpid=576)
+* [RoAlgo Contest #6 Sap](https://kilonova.ro/problems/1802)
+* [IIOT 2022 Sum Tree](https://kilonova.ro/problems/305)
+* [MST for Each Edge - Codeforces](https://codeforces.com/contest/609/problem/E)
+* [Lot 2016 Seniori maxdist](https://kilonova.ro/problems/1918)
+* [Probleme cu LCA de pe Kilonova](https://kilonova.ro/tags/285)
+
+## Resurse suplimentare
+
+* [Euler Tour Technique - USACO Guide](https://usaco.guide/gold/tree-euler)
+* [Binary Lifting + LCA - USACO Guide](https://usaco.guide/plat/binary-jump?lang=cpp)
+* [LCA - CPPI Sync](https://iordachebogdan.github.io/cppi/lca_nivel_avansat.html)
+* [Tutorial - Binary lifting - Codeforces](https://codeforces.com/blog/entry/100826)
 * [Tutorial video Errichto (Binary lifting)](https://www.youtube.com/watch?v=oib-XsjFa-M)

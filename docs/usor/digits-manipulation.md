@@ -1,10 +1,19 @@
-# Prelucrarea cifrelor unui număr
+---
+tags:
+    - cifre
+    - matematica
+    - structura repetitiva
+---
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Cunoștinte necesare
 
-Înaintea citirii acestui articol, se recomandă familiarizarea cu structurile repetitive, deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
+Înaintea citirii acestui articol, se recomandă familiarizarea cu [structurile repetitive](https://edu.roalgo.ro/cppintro/loops/), deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
+
+
+!!! note "Observație"
+    Multe probleme de OJI clasa a 5-a necesită lucrul cu cifrele unui număr, o astfel de problemă găsindu-se aproape în fiecare an.
 
 ## Numerele de cel mult trei cifre
 
@@ -133,59 +142,63 @@ Cifra de control este un concept ce se regăsește frecvent în problemele de al
     * $x = 10$, suma cifrelor este $1 + 0 = 1$.
     * $x = 1$, numărul are o cifră, deci cifra de control este $1$.
 
-În mod particular, se poate observa faptul că cifra de control este fix rezultatul operației $x\%9$, cu două particularități pe care trebuie să le avem în vedere:
+Criteriul de divizibilitate cu $9$ (învățat la matematică în clasa a 5-a) spune că $x$ și suma cifrelor lui $x$ dau același rest la împărțirea cu $9$. În particular, se poate observa faptul că cifra de control este fix rezultatul operației $x\%9$, cu două particularități pe care trebuie să le avem în vedere:
 
 * Dacă $x = 0$, cifra de control a lui $x$ este $0$
 * Dacă $x\%9 = 0$, cifra de control a lui $x$ este $9$.
 
 Mai jos puteți găsi implementări folosind atât formula simplificată, cât și simularea răspunsului.
 
-```cpp
-#include <iostream>
-using namespace std;
+=== "Simularea răspunsului"
 
-int main() {
-    int n;
-    cin >> n;
+    ```cpp
+    #include <iostream>
+    using namespace std;
     
-    // cat timp n > 9, aflam suma cifrelor si modificam n
-    while (n > 9) {
-        int n2 = n;
-        n = 0;
-        while (n2) {
-            n += n2%10;
-            n2 /= 10;
+    int main() {
+        int n;
+        cin >> n;
+        
+        // cat timp n > 9, aflam suma cifrelor si modificam n
+        while (n > 9) {
+            int n2 = n;
+            n = 0;
+            while (n2) {
+                n += n2%10;
+                n2 /= 10;
+            }
         }
+        
+        cout << n << '\n';
+        return 0;
     }
-    
-    cout << n << '\n';
-    return 0;
-}
-```
+    ```
 
-```cpp
-#include <iostream>
-using namespace std;
+=== "Formula simplificată"
 
-int main() {
-    int n;
-    cin >> n;
+    ```cpp
+    #include <iostream>
+    using namespace std;
     
-    if (n == 0) {
-        cout << 0 << '\n';
-    }
-    else {
-        if (n % 9 == 0) {
-            cout << 9 << '\n';
+    int main() {
+        int n;
+        cin >> n;
+        
+        if (n == 0) {
+            cout << 0 << '\n';
         }
         else {
-            cout << n%9 << '\n';
+            if (n % 9 == 0) {
+                cout << 9 << '\n';
+            }
+            else {
+                cout << n%9 << '\n';
+            }
         }
+        
+        return 0;
     }
-    
-    return 0;
-}
-```
+    ```
 
 
 ## Problema [Oglinditul unui număr](https://www.pbinfo.ro/probleme/69/oglindit): 
@@ -247,9 +260,20 @@ int main () {
 }
 ```
 
-## Probleme și lectură suplimentară
+## Probleme suplimentare
 
-* [Parcurgerea cifrelor unui număr](https://cppi.sync.ro/materia/parcurgerea_cifrelor_unui_numar.html)
-* [Cifrele unui număr](https://www.pbinfo.ro/articole/65/cifrele-unui-numar)
-* [Probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
-* [OJI 2019 aur](https://kilonova.ro/submissions/50202)
+* [NumarulDeCifre pbinfo](https://www.pbinfo.ro/probleme/66/numaruldecifre)
+* [UltimaCifraPara pbinfo](https://www.pbinfo.ro/probleme/77/ultimacifrapara)
+* [ProdusCifreImpare pbinfo](https://www.pbinfo.ro/probleme/65/produscifreimpare)
+* [prod_k pbinfo](https://www.pbinfo.ro/probleme/3078/prod-k)
+* [aparitii pbinfo](https://www.pbinfo.ro/probleme/107/aparitii)
+* [OMI Iasi 2020 codjoc](https://www.pbinfo.ro/probleme/3384/codjoc)
+* [alternant1 pbinfo](https://www.pbinfo.ro/probleme/3926/alternant1)
+* [Alte probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
+* [OJI 2019 aur](https://kilonova.ro/problems/906)
+
+## Resurse suplimentare
+
+* [Parcurgerea cifrelor unui număr - CPPI Sync](https://cppi.sync.ro/materia/parcurgerea_cifrelor_unui_numar.html)
+* [Prelucrarea cifrelor unui numar - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_IX-a_lec%C8%9Bia_6)
+* [Cifrele unui număr - pbinfo](https://www.pbinfo.ro/articole/65/cifrele-unui-numar)

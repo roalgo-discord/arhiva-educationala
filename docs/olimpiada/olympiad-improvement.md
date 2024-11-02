@@ -1,9 +1,8 @@
 ---
 tags:
-    - structuri de date
-    - RMQ
-    - optimizare
-    - sparse table
+    - meta
+    - sfaturi
+    - strategie
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
@@ -18,9 +17,7 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Probleme suplimentare
 
-* [RMQ infoarena](https://infoarena.ro/problema/rmq)
-
 ## Resurse suplimentare
 
-* [RMQ - SEPI Infobits F1 (pag. 63)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [Sparse Table - CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html)
+* [Ghid complet pentru concursurile de informatica - infoarena](https://www.infoarena.ro/ghid-complet-pentru-concursurile-de-informatica)
+* [Psihologia concursurilor de informatica - Algopedia](https://www.algopedia.ro/wiki/index.php/Psihologia_concursurilor_de_informatic%C4%83)

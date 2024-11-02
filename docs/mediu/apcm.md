@@ -2,7 +2,10 @@
 tags:
     - grafuri
     - greedy
+    - arbori
+    - sortare
 ---
+
 **Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
 În diverse probleme de grafuri, suntem nevoiți să alegem o mulțime de muchii care formează un graf conex, iar costul să fie cât mai mic. În cele mai multe cazuri, va fi îndeajuns să creăm un arbore parțial, iar acesta să fie de cost minim, concept ce va fi subiectul acestui articol.
@@ -339,7 +342,7 @@ Când vorbim despre algoritmii lui Kruskal, respectiv al lui Prim, niciunul dint
 
 În condiții de concurs, dacă toți algoritmii vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. De asemenea, algoritmul lui Boruvka este și el foarte important. 
 
-# Probleme suplimentare
+## Probleme suplimentare
 
 * [Road Reparation](https://cses.fi/problemset/task/1675/)
 * [USACO Gold Fenced In](http://www.usaco.org/index.php?page=viewproblem2&cpid=623)

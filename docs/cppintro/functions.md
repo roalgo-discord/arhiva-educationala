@@ -21,7 +21,7 @@ Atunci când scrieți un program în orice limbaj de programare, există situaț
 
 Chiar dacă acest articol nu se va concentra pe funcțiile de sistem, cel mai probabil ați folosit până acum aceste funcții pentru a afla valorile diverselor funcții. 
 
-Un astfel de exemplu este funcția sqrt(x), care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `#include <cmath>`. În mod similar, probabil ați folosit până acum funcția std::sort, funcție ce se regăsește în biblioteca `#include <algorithm>`, iar exemplele pot continua. 
+Un astfel de exemplu este funcția $sqrt(x)$, care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `#include <cmath>`. În mod similar, probabil ați folosit până acum funcția `std::sort`, funcție ce se regăsește în biblioteca `#include <algorithm>`, iar exemplele pot continua. 
 
 Deși nu trebuie să rescriem aceste funcții, acestea se bazează pe același principiu (refolosirea unor coduri deja scrise), singura diferență fiind aceea că codul din spatele acestor funcții face deja parte din standardul bibliotecilor și nu trebuie reprodus. 
 
@@ -50,7 +50,7 @@ Mai întâi, avem antetul funcției, format din următoarele componente:
 !!! note "Observație"
     În mod particular, limbajul C++ conține și tipul void, care este în esență un tip gol (funcția nu returnează nimic). 
 
-* tip_1 nume_1, tip_2 nume_2 $\dots$ tip_k nume_k sunt parametrii pe care funcția îi primește de unde a fost apelată. 
+* `tip_1 nume_1`, `tip_2 nume_2` $\dots$ `tip_k nume_k` sunt parametrii pe care funcția îi primește de unde a fost apelată. 
 
 !!! note "Observație"
     Parametrii nu sunt obligatorii pentru funcții, dar prezența lor face de regulă lucrurile mai ușoare pentru utilizator. 
@@ -190,7 +190,7 @@ De exemplu, putem scrie o funcție care să afle suma cifrelor unui număr, iar 
 
 Aceste funcții sunt de regulă de tipul void, iar singura diferență față de celelalte tipuri de funcții este acela că în loc să returneze valorile direct, se folosesc de variabile auxiliare care de regulă sunt declarate altundeva, iar modificarea lor duce la modificări în adresa de memorie în care au fost declarate (cu alte cuvinte, dacă modificăm ceva la ele, se va modifica și în funcția/programul în care au fost declarate).
 
-Notația prin referință este &nume, unde & este folosit pentru a sugera faptul că adresa de memorie în care modificăm este aceeași cu cea din programul principal.
+Notația prin referință este `&nume`, unde & este folosit pentru a sugera faptul că adresa de memorie în care modificăm este aceeași cu cea din programul principal.
 
 !!! note "Observație"
     În cazul folosirii parametrilor, inițializarea variabilelor este obligatorie, pentru a preveni erori ce apar din cauza neinițializării acestor valori.
@@ -430,7 +430,7 @@ int main() {
 
 Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții lambda.
 
-Vezi pagina dedicata la [funcțiile lambda](https://edu.roalgo.ro/cppintro/lambda/).
+Vezi pagina dedicată [funcțiilor lambda](https://edu.roalgo.ro/cppintro/lambda/).
 
 ## Concluzii
 

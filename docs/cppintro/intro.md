@@ -24,10 +24,12 @@ O altă metodă de a clasifica limbajele de programare este în funcție de modu
 !!! note "Observație"
     Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau veți ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți avea de-a face cu foarte multe limbaje de programare, iar deși arhiva noastră se concentrează pe limbajul C++ datorită avantajelor sale în ceea ce privește algoritmica, nu există vreun limbaj de programare care să fie în totalitate inutil. 
 
-* Un limbaj imperativ (de exemplu, C++) este folosit pentru a implementa algoritmi într-o ordine dată, cu alte cuvinte ele fac ceea ce le spunem să facă.
-* Un limbaj funcțional (de exemplu, Haskell) se caracterizează prin aplicarea unor funcții succesive pentru a rezolva cerințele programului dat. 
-* Un limbaj logic (de exemplu, Prolog) se caracterizează prin faptul că aplicația, și nu programatorul decide ordinea în care sunt executate instrucțiunile. 
-* Un limbaj orientat pe obiecte (de exemplu, Java) are drept caracteristici principale folosirea claselor pentru abstractizarea, încapsularea, polimorfismul și moștenirea datelor, aceste facilități fiind incorporate și în majoritatea limbajelor imperative și funcționale. 
+* Un limbaj imperativ (de exemplu C++, C, Pascal) este folosit pentru a implementa algoritmi folosind o listă de comenzi, într-o ordine dată, cu alte cuvinte ele fac ceea ce le spunem să facă.
+* Un limbaj funcțional (de exemplu Haskell, Lisp) se caracterizează prin aplicarea unor funcții succesive pe un set de date pentru a rezolva cerințele programului dat. 
+* Un limbaj logic (de exemplu Prolog) se caracterizează prin faptul că aplicația, și nu programatorul decide ordinea în care sunt executate instrucțiunile. 
+* Un limbaj orientat pe obiecte (de exemplu Java, Python, Smalltalk) are drept caracteristică principale folosirea claselor, adică structuri compuse ce conțin câmpuri și metode sau mesaje (funcții) pentru organizarea și operarea pe date.
+
+Multe limbaje combină aceste trăsături; aceste limbaje se numesc *limbaje multiparadigmă*. De exemplu, C++, deși este derivat din limbajul imperativ C și are toate trăsăturile acestuia, adaugă un sistem de obiecte, ceea ce îl face orientat pe obiecte. Python este orientat pe obiecte (toate datele sunt obiecte), dar permite și scrierea de cod imperativ și are și facilități de programare funcțională.
 
 ## Limbajul de programare C++
 
@@ -86,7 +88,7 @@ Un alt element foarte important, care deși nu e obligatoriu, este foarte util �
 
 După ce terminați de scris programul, dacă programul este corect din punct de vedere sintactic, programul va putea fi rulat, iar în caz contrar, editorul vă va specifica erorile de compilare, împreună cu locul în care acestea apar. 
 
-Dacă programul este corect și nu are vreo eroare, se va genera un cod obiect (programul pe care îl găsiți cu extensia .o în același loc cu programul C++ pe care l-ați scris)
+Dacă programul este corect și nu are vreo eroare, se va genera un cod obiect (programul pe care îl găsiți cu extensia .o în același loc cu programul C++ pe care l-ați scris).
 
 Pentru a rula programul, va trebui să rulați executabilul generat (programul cu extensia .exe), să introduceți eventual datele și apoi să vedeți outputul generat.
 
@@ -96,6 +98,9 @@ Pentru a rula programul, va trebui să rulați executabilul generat (programul c
 ### Inițializarea programului
 
 Prima linie, `#include <iostream>` reprezintă ceea ce vom numi **o bibliotecă**, aceasta fiind o colecție de funcții, clase și metode ce pot fi reutilizate fără a fi nevoie să scriem întreagă definiție de mână. Un echivalent în viața de zi reprezintă utilizarea unei cărți de rețete pentru prepararea unui fel de mâncare, astfel noi putem folosi acele metode fără a fi nevoie să le reinventăm. Toate bibliotecile vor avea sintaxa `#include <NUME>`, exemple ar fi `#include <fstream>`, `#include <cmath>`, `#include <vector>`, `#include <cstring>` etc.
+
+!!! note "Observație"
+    Printre altele, există și biblioteca `#include <bits/stdc++.h>` care include toate bibliotecile de care veți avea nevoie când rezolvați probleme în algoritmică. Totuși, recomandăm folosirea acestei biblioteci doar la olimpiadă, și chiar și acolo, există unele dezavantaje, cum ar fi timpul crescut de compilare a programului, care poate fi un factor descurajator în contextul avantajului clar de a nu fi nevoie să scrieți toate bibliotecile pe care le utilizați.
 
 Următoarea linie, `using namespace std;` ne indică faptul că putem utiliza toate definițiile incluse în namespace-ul standard. **Un namespace** reprezintă o regiune de declarări care conferă un scop identificatorilor (numelor funcțiilor, variabilelor, tipurilor de date etc.) din acesta, fiind folosite pentru a grupa codul în grupe logice și pentru a preveni coliziunile de nume care pot apărea în special în situația în care programul nostru include multiple biblioteci. 
 

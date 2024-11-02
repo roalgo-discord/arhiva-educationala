@@ -7,8 +7,7 @@ tags:
 
 **Autor**: Matei Ionescu
 
-
-## Ce este un Trie
+## Ce este un Trie 
 
 Un trie (sau arbore de prefixe) este un _arbore de căutare $k$-ar_ (un arbore cu
 rădăcină unde fiecare nod are maxim $k$ fii), reprezentând un mod unic de a
@@ -706,11 +705,7 @@ Barricades](http://www.lookingforachallengethebook.com/uploads/1/4/5/5/14555448/
 iar sursa completă o puteți vizualiza
 [aici](https://kilonova.ro/submissions/140069).
 
-## Resurse suplimentare
-
-* [Trie (USACO Guide)](https://usaco.guide/adv/string-search?lang=cpp#tries)
-
-## Probleme
+## Probleme suplimentare
 
 * [intervalxor2](https://kilonova.ro/problems/456) (Trie pe biți persistent. Puteți face queriurile și offline)
 * [xortree2](https://kilonova.ro/problems/361) (Problemă ok cu trie pe biți)
@@ -720,3 +715,8 @@ iar sursa completă o puteți vizualiza
 * [Facebook Search](https://www.infoarena.ro/problema/fbsearch)
 * [Perfect Security](https://codeforces.com/contest/948/problem/D)
 * [Collapsing Strings](https://codeforces.com/contest/1902/problem/E)
+
+## Resurse suplimentare
+
+* [Trie (USACO Guide)](https://usaco.guide/adv/string-search?lang=cpp#tries)
+* [Using a Trie - Topcoder](https://www.topcoder.com/thrive/articles/Using%20Tries)

@@ -31,14 +31,11 @@ se regăsește drept parte esențială în două competiții - lotul de juniori 
 olimpiada clasei a zecea. Ulterior, poate să se regăsească și ca subprobleme la
 probele ulterioare de seniori, într-o măsură mai mică.
 
-Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a
-articolelor despre aritmetica modulară, divizibilitate și în general să aveți o
-înțelegere a conceptelor matematice din capitolele anterioare. Va fi foarte
-importantă și înțelegerea conceptului de invers modular, deoarece deși în cele
-mai multe probleme vom avea de-a face cu modulo numere prime, uneori va trebui
-să știm să implementăm și inversul modular.
+Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a articolelor despre [aritmetica modulară](https://edu.roalgo.ro/mediu/pow-log), [divizibilitate](https://edu.roalgo.ro/usor/divisibility/) și în general să aveți o înțelegere a conceptelor matematice din capitolele anterioare. Va fi foarte importantă și înțelegerea conceptului de invers modular, deoarece deși în cele mai multe probleme vom avea de-a face cu modulo numere prime, uneori va trebui să știm să implementăm și algoritmul de aflare al [inversul modular](https://edu.roalgo.ro/mediu/modular-inverse/).
 
 ## Noțiuni teoretice fundamentale
+
+Pe lângă capitolele menționate anterior, vrem să începem prin a explica anumite fundamente, care ne vor ajuta mult pe parcurs.
 
 ### Regula sumei și a produsului
 
@@ -56,7 +53,7 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 !!! example "Exemplu"
     Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
     
-    Valorile posibile pentru $a$ sunt $\{1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt $\{0, 1, 2, 3, \dots, 9}$. 
+    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$. 
     
     Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de variante este $9 \cdot 9 = 81$.
 
@@ -164,7 +161,7 @@ Similar permutărilor, aranjamentele pot fi considerate funcții injective
 definite pe mulțimea $\{1, 2, 3,\dots, k\}$ cu valori în $\{1, 2, 3,\dots, n\}$
 
 Numărul aranjamentelor de $n$ luate câte $k (k\leq n)$ se notează cu $A_n^k$ și
-este egal cu $$\frac{n!}{(n-k)!}$$
+este egal cu $\frac{n!}{(n-k)!}$
 
 O altă formulă care poate fi utilă în special în cazul precalculărilor este $A_n^k = (n - k + 1)\cdot A_n^{k-1}$
 
@@ -265,7 +262,7 @@ const int N = 100000;
 
 long long fact[N + 1], inv[N + 1];
 
-const long long modpow(long long base, long long exponent) {
+long long modpow(long long base, long long exponent) {
     long long result = 1;
     while (exponent) {
         if (exponent & 1) {
@@ -277,11 +274,11 @@ const long long modpow(long long base, long long exponent) {
     return result;
 }
 
-const long long C(const int n, const int k) {
+long long C(int n, int k) {
     if (k > n || k < 0) {
         return 0;
     }
-    
+
     // C(n, k) = n! * (k!)^-1 * (n - k)!^-1
     long long result = fact[n];
     result *= inv[k]; 
@@ -299,14 +296,11 @@ void precalc() {
         fact[i] = (fact[i - 1] * i) % MOD;
     }
 
-    inv[N] = modpow(fact[N], MOD - 2, MOD); // (1)
+    inv[N] = modpow(fact[N], MOD - 2); // (1)
     for (int i = N - 1; i >= 0; --i) {
         inv[i] = (inv[i + 1] * (i + 1)) % MOD;
     }
 }
-
-1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul 
-    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
 
 int main() {
     precalc();
@@ -317,6 +311,9 @@ int main() {
     return 0;
 }
 ```
+
+1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul 
+    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
 
 ### Partiții
 
@@ -479,7 +476,7 @@ se regăsesc în probleme legate de numărarea unor partiții.
 
 **Numerele lui Stirling de speța I** numără câte permutări de ordin $n$ cu $k$
 cicluri există, și se notează cu $s(n, k)$. De exemplu, permutarea $1, 4, 2, 3,
-6, 5$ are $3$ cicluri ($1$, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
+6, 5$ are $2$ cicluri ($1$, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
 $s(0, 0) = 1, s(n, 0) = 0$ și $s(0, k) = 0$, iar formula recurentă este $s(n, k)
 = s(n-1, k-1) + (n-1)\cdot s(n-1, k)$, recurență ce se poate explica recurgând
 la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la
@@ -568,6 +565,10 @@ fi de combinatorică să nu fie de fapt dinamici care se pot aborda mult mai uș
 folosind modul de gândire specific programării dinamice, iar chiar dacă în unele
 cazuri există similarități între cele două, acest lucru nu este adevărat mereu.
 
+## Concluzii
+
+Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea temeinică a tehnicilor de rezolvare a acestor probleme este esențială. Din cauza dificultății cu care această tehnică este învățată, se recomandă rezolvarea unui număr cât mai mare de probleme, pentru a fi expus la diverse tehnici, formule și rezultate importante atât în matematică, cât și în informatică.  
+
 ## Probleme suplimentare
 
 ### Probleme de la olimpiade
@@ -609,6 +610,7 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 - [Combinatorics - USACO Guide (articol + probleme)](https://usaco.guide/gold/combo?lang=cpp)
 - [Elemente de combinatorică](https://infogenius.ro/combinatorica/)
 - [Binomial Coefficients - Eolymp](https://basecamp.eolymp.com/en/posts/em5e34cc0d35p7omf3taia3fu4?fbclid=IwZXh0bgNhZW0CMTEAAR3K5oGUJpJiGSo1CG2r9McoQ3HQtmbdLJmPRbFDXzhyhcewZce2R6ETsxw_aem_ZmFrZWR1bW15MTZieXRlcw)
+- [Ghid despre permutari - nor-blog](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/)
 - [Elemente de combinatorică, curs predat la lotul de juniori din 2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
 - [Problem Solving Guide to Modular Combinatorics and Exponentiation - Codeforces](https://codeforces.com/blog/entry/78873)

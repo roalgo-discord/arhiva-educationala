@@ -5,6 +5,8 @@ tags:
     - cautari
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
 ## Fundamente și cunoștințe necesare
 
 Tehnica Two pointers este o tehnică pe care o putem folosi în foarte multe

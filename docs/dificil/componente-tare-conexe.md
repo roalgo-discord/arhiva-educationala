@@ -31,13 +31,13 @@ Pentru aflarea componentelor tare conexe, există doi algoritmi la fel de eficie
 Algoritmul lui Kosaraju este un algoritm care se va baza pe două parcurgeri de tip DFS, una pe graful inițial și cealaltă pe graful transpus pentru a afla componentele tare conexe. 
 
 !!! info "Graf transpus" 
-    Într-un graf orientat, un graf transpus $G'$ este un graf care are proprietatea că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va conține muchia $(a, b)$. Cu alte cuvinte, muchiile sunt inversate. Pentru mai multe informații, puteți accesa [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
+    Într-un graf orientat, un graf transpus $G'$ este un graf care are proprietatea că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va conține muchia $(b, a)$. Cu alte cuvinte, muchiile sunt inversate. Pentru mai multe informații, puteți accesa [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
 
 Pe scurt, algoritmul va parcurge mai întâi nodurile într-o manieră similară cu cea de la algoritmul pentru aflarea componentelor conexe, singura diferență fiind aceea că la finalizarea pașilor efectuați în funcție pentru un nod dat, acesta va fi adăugat într-o stivă. 
 
 Ulterior, nodurile din stivă vor fi luate pe rând, iar pentru fiecare nod nevizitat la acest pas, vom avea o parcurgere similară cu cea de la primul pas, parcurgere efectuată pe graful transpus care ne va da componentele tare conexe, acelea fiind cele care sunt vizitate de nodul curent la pasul dat. 
 
-Acest algoritm are complexitate $O(n)$ și implementarea lui, folosită la problema [Planets and Kingdoms](https://cses.fi/problemset/task/1683/) poate fi citită mai jos:
+Acest algoritm are complexitate $O(n + m)$ și implementarea lui, folosită la problema [Planets and Kingdoms](https://cses.fi/problemset/task/1683/) poate fi citită mai jos:
 
 ```cpp
 #include <iostream>

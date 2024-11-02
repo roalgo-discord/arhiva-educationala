@@ -127,7 +127,7 @@ void cb3_patrascu(int n) {
     int l = 0;
 
     for (int bit = 30; bit >= 0; --bit) {
-        int putere = 1 << bit;
+        int putere = (1 << bit);
         if ((l | putere) <= n && conditie) {
             l |= putere;
         }

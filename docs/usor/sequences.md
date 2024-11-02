@@ -231,7 +231,7 @@ int main() {
 
 ## Concluzii
 
-După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](./two-pointers.md), [sliding window](./sliding-window.md) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
+După cum se poate observa, secvențele și prelucrarea lor sunt o parte fundamentală și necesară pentru abordarea unei plaje foarte largi de probleme, așa cum veți putea vedea în capitolele următoare, în special când vine vorba de diverse cazuri particulare, algoritmi și metode de programare, aici putem enumera [metoda celor doi pointeri](../mediu/two-pointers.md), [sliding window](../mediu/sliding-window.md) sau chiar și problemele în care folosim metodele specifice structurilor de date. Implementările precise și clare vor fi esențiale pentru rezolvarea acestor probleme în timp rapid și simplu. 
 
 ## Probleme suplimentare
  

@@ -9,8 +9,8 @@ tags:
 
 ## Cunoștiințe necesare pentru înțelegerea completă a articolului:
 
-* tablourile unidimensionale și parcurgerea lor
-* tablourile bidimensionale și parcurgerea lor
+* [tablourile unidimensionale și parcurgerea lor](https://edu.roalgo.ro/cppintro/arrays/)
+* [tablourile bidimensionale și parcurgerea lor](https://edu.roalgo.ro/cppintro/matrices/)
 
 ## Problema inițială
 
@@ -101,7 +101,12 @@ Să considerăm următoarea problemă: se dă o axă și $K$ intervale de forma 
 
 O soluție foarte ineficientă ar fi pentru fiecare întrebare să luăm fiecare interval în parte și să verificăm dacă punctul nostru este inclus sau nu în interval. Soluția este ușor de intuit și de implementat, dar programul nostru ar avea complexitate $(Q \cdot K)$. Șmenul lui Marius Andrei (_Mars_) ne poate rezolva această problemă în timp constant, chiar și dacă o extindem pe mai multe dimensiuni (două axe, $3$ axe etc.).
 
-Șmenul lui Mars permite efectuarea operațiilor de adăugare a unei valori la toate elementele dintr-un interval (sau o submatrice, pentru cazul în care lucrăm cu o matrice), **fără posibilitatea de a primi întrebări între operațiile de adăugare** (pentru acest tip de problemă se vor utiliza arborii de intervale, o tehnică care va fi prezentată ulterior). Când primim actualizările, noi vom efectua niște adunări și niște scăderi pentru a delimita bucata din șir / matrice pe care se efectuează operația. Apoi, valorile efective din structura noastră de date se vor calcula asemănător sumelor parțiale, fapt ce ne poate intui într-o modalitate cum vom efectua aceste operații.
+!!! note "Observație"
+    Deși în algoritmica românească, această tehnică este cunoscută sub numele de Șmenul lui Mars, numele ei standard este difference arrays.
+
+Șmenul lui Mars permite efectuarea operațiilor de adăugare a unei valori la toate elementele dintr-un interval (sau o submatrice, pentru cazul în care lucrăm cu o matrice), **fără posibilitatea de a primi întrebări între operațiile de adăugare** (pentru acest tip de problemă se vor utiliza arborii de intervale, o tehnică care va fi prezentată ulterior). 
+
+Când primim actualizările, noi vom efectua niște adunări și niște scăderi pentru a delimita bucata din șir / matrice pe care se efectuează operația. Apoi, valorile efective din structura noastră de date se vor calcula asemănător sumelor parțiale, fapt ce ne poate intui într-o modalitate cum vom efectua aceste operații.
 
 ### Șmenul lui Mars 1D
 
@@ -167,11 +172,11 @@ for (int i = 1; i <= n; i++) {
 
 Șmenul lui Mars poate fi extins și pe $3$ dimensiuni sau chiar mai multe, iar abordarea pe mai multe dimensiuni se va realiza identic, dar o să fie rar întâlnit în problemele de algoritmică cazuri în care să se ceară șmenul lui Mars pe mai mult de două dimensiuni.
 
-## Concluzii și probleme suplimentare 
+## Concluzii 
 
 Sumele parțiale sunt o optimizare cheie în algoritmică, ajutându-ne să transformăm lucruri precum aflarea unei sume pe un interval dintr-o întreagă parcurgere într-o simplă formulă, cu timp constant de răspuns.
 
-Pentru aprofundarea algoritmilor prezentați mai sus, recomand rezolvarea următoarelor probleme și articole:
+Tehnici precum șmenul lui Mars reprezintă un pas înainte pentru procesarea diverselor probleme care implică lucrul cu queryuri de diverse feluri, fiind o metodă auxiliară utilă când vine vorba de alte tehnici.
 
 ### Probleme de la olimpiade
 
@@ -198,12 +203,13 @@ Pentru aprofundarea algoritmilor prezentați mai sus, recomand rezolvarea următ
 
 ### Probleme de pe Codeforces
 
-* [Good Subarrays - Codeforces](https://codeforces.com/contest/1398/problem/C)
-* [Running Miles - Codeforces](https://codeforces.com/contest/1826/problem/D)
+* [Good Subarrays](https://codeforces.com/contest/1398/problem/C)
+* [Running Miles](https://codeforces.com/contest/1826/problem/D)
 * [Irreductible Anagrams](https://codeforces.com/contest/1291/problem/D)
+* [Attribute Checks](https://codeforces.com/contest/2025/problem/D)
 * [Tea Tasting](https://codeforces.com/contest/1795/problem/C)
 * [Nusret Gokce](https://codeforces.com/gym/104114/problem/N)
-* [Constant Palindrome Sum - Codeforces](https://codeforces.com/contest/1343/problem/D)
+* [Constant Palindrome Sum](https://codeforces.com/contest/1343/problem/D)
 * [Two Pointers Step 3 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)
     
 
