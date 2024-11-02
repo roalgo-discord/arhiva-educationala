@@ -387,8 +387,7 @@ int main() {
         
     for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= m; ++j) { 
-            if (mat[i][j] == '1' && dist[0][i][j] != -1 && dist[1][i][j] != -1) 
-            {  
+            if (mat[i][j] == '1' && dist[0][i][j] != -1 && dist[1][i][j] != -1) {  
                 if (dist[0][i][j] + dist[1][i][j] - 1 < dist[1][1][1]) {
                     ans[i][j] = '1';  
                 }
