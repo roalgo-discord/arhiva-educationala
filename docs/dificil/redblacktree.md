@@ -541,6 +541,6 @@ Problema ne cere să numărăm secvențele ce au suma divizibilă cu N - Cod Sur
 -
 
 ## Bibliografie și Resurse
--
--
+- Thomas H. Cormen. Introduction to Algorithms 3rd Edition Sep 2010
+- 
 -
