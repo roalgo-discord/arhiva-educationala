@@ -536,8 +536,8 @@ Propun și această problemă spre rezolvare, soluția fiind aproximativ identic
 Problema ne cere să numărăm secvențele ce au suma divizibilă cu N - Cod Sursă [github](https://github.com/sSlepa/Invers-Hash-si-altele/blob/main/Subarray_Divisibility.cpp)
 
 ## Probleme suplimentare / propuse
--
--
+- [h2](https://www.pbinfo.ro/probleme/2628/h2)
+- 
 -
 
 ## Bibliografie și Resurse
