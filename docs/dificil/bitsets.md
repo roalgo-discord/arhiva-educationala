@@ -466,7 +466,7 @@ O diferență la ```tr2::dynamic_bitset``` este funcția ```resize()```. În con
 
 Putem să copiem ce face **bitset** cel mai import (faptul că împarte numărul de biți în grupe de câte $w$) și să rezolvăm problema pentru grupe de $w$ elemente consecutive ca la final să dăm merge la rezultate.
 
-### Problemma [Infinity War, RMI 2015](https://kilonova.ro/problems/1837?var=ro-md)
+### Problema [Infinity War, RMI 2015](https://kilonova.ro/problems/1837?var=ro-md)
 
 Avem $N$ armate care sunt în război una cu alta, iar fiecare armată este alcătuită din soldați cu diferite puteri (o armată are maxim un soldat cu o anumită putere) numerotate de la $1$ la $P$. Dacă $2$ armate se luptă, vor rămâne în viață doar soldații care nu își regăsesc puterea în armata inamică. De exemplu, dacă reprezentăm armatele ca un șir de biți (unde bitul $i$ este setat dacă există un soldat cu puterea $i$), atunci soldații care rămân în viață sunt prezenți în **suma xor** a celor doua șiruri.
 
