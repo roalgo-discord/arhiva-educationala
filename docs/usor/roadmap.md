@@ -42,6 +42,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ## Capitolul 1 - Noțiuni elementare de limbaj, algoritmi elementari
 
+Această secțiune își propune să vă ducă de la baze și să puteți ajunge să rezolvați probleme ușoare, precum și să vă familiarizați cu algoritmica, limbajul C++ și în general, tehnici de bază de rezolvare a problemelor. 
+
 !!! note "Secțiune specială"
     Aceste noțiuni de bază sunt discutate și [aici](https://edu.roalgo.ro/usor/how-to-start/#notiuni-cu-care-sa-incepi), dar vom relua discuția și mai jos.
 
@@ -69,6 +71,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ## Capitolul 2 - Tablouri, tehnici introductive
 
+Aici trecem la niște conținuturi mai avansate, cunoașterea tablourilor și a unor metode de bază inspirate din aritmetică și algebră devine necesară pentru a putea trece la noțiuni mai specifice.
+
 ### Lucrul cu tablouri
 
 * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
@@ -87,6 +91,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/) - Doar sumele parțiale
 
 ## Capitolul 3 - Sortare, căutare, tehnici mai avansate de limbaj
+
+Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți să învățați și alte metode care ajung să fie un fundament pentru multe concursuri de algoritmică. Fie că este vorba de algoritmi deprinși din cei pentru sortări și căutări sau chiar de noțiuni matematice mai avansate, aici sunt algoritmii pe care îi veți folosi în multe situații și drept pași mai mici pentru alte metode mai avansate.
 
 ### Tehnici de limbaj
 
@@ -111,6 +117,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
 
 ## Capitolul 4 - Structuri de date liniare, fundamentele tehnicilor avansate
+
+În această secțiune vom începe să rafinăm lucrurile folosind structuri de date liniare, precum coada, stiva și deque-ul, dar și să introducem tehnici mai avansate, precum teoria grafurilor și programarea dinamică. Continuăm și parcurgerea noțiunilor matematice.
 
 ### Elemente de implementare
 
@@ -147,6 +155,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ## Capitolul 5 - Programarea dinamică (I), teoria grafurilor (I), combinatorică și geometrie
 
+Aici intrăm încet-încet în complexitatea a două dintre cele mai importante tehnici din algoritmică, programarea dinamică și teoria grafurilor. De asemenea, combinatorica și geometria sunt și ele abordate, existând multe probleme care folosesc aceste tehnici. 
+
 ### Programarea dinamică
 
 * [Problema rucsacului](https://edu.roalgo.ro/mediu/knapsack/)
@@ -174,6 +184,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 * [Meet in the Middle](https://edu.roalgo.ro/mediu/mitm/)
 
 ## Capitolul 6 - Structuri de date, lucrul cu arbori, probleme speciale
+
+Aici începem să lucrăm cu structurile de date care ne ajută să răspundem la întrebări și să performăm actualizări într-un timp rapid. De asemenea, lucrăm în moduri mai detaliate cu arbori și grafuri, dar și cu alte tipuri de probleme pe care le întâlniți la concursuri. 
 
 ### Structuri de date
 
@@ -208,6 +220,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ## Capitolul 7 - Programare dinamică (II), Teoria grafurilor (II), Matematică
 
+Continuăm munca de la capitolul 5 cu adaptări mai avansate ale metodelor menționate acolo, experiența devenind tot mai importantă.
+
 ### Programarea dinamică
 
 * [Programare dinamică pe intervale (range DP)](https://edu.roalgo.ro/dificil/range-dp/)
@@ -235,12 +249,12 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ## Capitolul 8 - Matematică avansată, algoritmi pe stringuri
 
+Aici intrăm deja în algoritmi și tehnici de o complexitate foarte ridicată, aceștia trebuie să fie știuți de cei care vor să ajungă la cel mai înalt nivel.
+
 ### Matematică avansată
 
 * [Coduri Gray](https://edu.roalgo.ro/avansat/gray-codes/)
 * [Codarea Huffman](https://edu.roalgo.ro/avansat/huffman/)
-* [Run-length encoding](https://edu.roalgo.ro/avansat/rle/)
-* [Teorema chineză a resturilor (CRT)](https://edu.roalgo.ro/avansat/crt/)
 * [Teoria jocurilor](https://edu.roalgo.ro/avansat/game-theory/)
 
 ### Algoritmi pe stringuri
@@ -253,6 +267,10 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 * [Suffix array/tree](https://edu.roalgo.ro/avansat/suffix-array-tree/)
 
 ## Capitolul 9 - Structuri de date avansate, DP Optimizations, Algoritmi avansați pe grafuri, matematică
+
+Acest capitol este unul open-ended, putând fi denumit mai informal drept restul algoritmicii, deoarece aici, pe lângă conținuturile menționate, orice alt conținut pe care îl considerați că trebuie abordat, îl puteți aborda. 
+
+Pe lângă aceste conținuturi menționate aici, orice altceva ce vreți să învătați ar trebui învățat după ce vă asigurați că stăpâniți algoritmii menționați anterior. În mod evident, există anumite excepții, dar dacă ați ajuns la acest nivel, probabil că știți și voi cum să ajustați anumite lucruri în funcție de ce observați în studiul vostru individual. 
 
 ### Structuri de date
 
@@ -279,6 +297,8 @@ Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fieca
 
 ### Matematică
 
+* [Run-length encoding](https://edu.roalgo.ro/avansat/rle/)
+* [Teorema chineză a resturilor (CRT)](https://edu.roalgo.ro/avansat/crt/)
 * [Recurențe liniare](https://edu.roalgo.ro/avansat/linear-recurrences/)
 * [Funcții generatoare](https://edu.roalgo.ro/avansat/generating-functions/)
 * [FFT, NTT](https://edu.roalgo.ro/avansat/fft/)
