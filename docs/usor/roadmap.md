@@ -14,6 +14,8 @@ Chiar dacă programele școlare, fie că e vorba de programele cadru sau program
 
 În acest articol, vom prezenta ordinea pe care o propunem pentru învățarea acestor noțiuni, acesta fiind un roadmap pe care îl recomandăm tuturor pasionaților de algoritmi și structuri de date, și nu numai. 
 
+Cu alte cuvinte, vom putea spune că sunteți la $10$ capitole distanță de a putea ajunge la olimpiada internațională de informatică. Totuși, aceste capitole necesită foarte multă muncă, timp și efort pentru a fi studiate și înțelese temeinic. 
+
 ## Clarificări și precizări
 
 În arhivă, avem secțiunile Ușor, Mediu, Dificil și Avansat care au drept scop crearea unei împărțiri aproximative a conținuturilor pe niveluri de dificultate. De asemenea, fiecare articol va avea la început o listă de articole pe care le recomandăm să le citiți înainte să citiți articolul curent, pentru a înțelege mai bine conținutul (de exemplu, pentru a citi articolul despre aflarea [cifrelor unui număr](https://edu.roalgo.ro/usor/digits-manipulation/), trebuie să știți să lucrați cu [operatori și expresii](https://edu.roalgo.ro/cppintro/basic-math/)).
@@ -60,6 +62,7 @@ Această secțiune își propune să vă ducă de la baze și să puteți ajunge
 * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
 * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
 * [Citirea și afișarea datelor](https://edu.roalgo.ro/cppintro/input-output/)
+* [Coding Style](https://edu.roalgo.ro/cppintro/coding-style/)
 
 ### Structuri alternative și repetitive
 
@@ -68,6 +71,11 @@ Această secțiune își propune să vă ducă de la baze și să puteți ajunge
 * [Prelucrarea cifrelor unui număr](https://edu.roalgo.ro/usor/digits-manipulation/)
 * [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime)
 * [Generarea șirurilor de numere](https://edu.roalgo.ro/usor/generarea-sirurilor/)
+
+### Algoritmi elementari
+
+* [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
+* [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
 
 ## Capitolul 2 - Tablouri, tehnici introductive
 
@@ -78,17 +86,15 @@ Aici trecem la niște conținuturi mai avansate, cunoașterea tablourilor și a 
 * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
 * [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
 * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
-* [Coding Style](https://edu.roalgo.ro/cppintro/coding-style/)
 
 ### Algoritmi și tehnici introductive
 
 * [Complexități](https://edu.roalgo.ro/usor/complexity/)
-* [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
-* [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
 * [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
 * [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/) - Doar algoritmii în $O(n^2)$ și funcția std::sort
 * [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
 * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/) - Doar sumele parțiale
+* [Cum repari o soluție greșită?](https://edu.roalgo.ro/mediu/debugging/) - sfaturile inițiale
 
 ## Capitolul 3 - Sortare, căutare, tehnici mai avansate de limbaj
 
@@ -103,7 +109,6 @@ Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți
 
 ### Algoritmi și metode de rezolvare a problemelor
 
-* [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/) - Restul algoritmilor de sortare
 * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
 * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
 * [Șmenul lui Mars](https://edu.roalgo.ro/usor/partial-sums/#smenul-lui-mars)
@@ -122,9 +127,10 @@ Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți
 
 ### Elemente de implementare
 
-* [Cum repari o soluție greșită?](https://edu.roalgo.ro/mediu/debugging/)
-* [Căutare completă. Tehnica Backtracking](https://edu.roalgo.ro/mediu/backtracking/)
+* [Cum repari o soluție greșită?](https://edu.roalgo.ro/mediu/debugging/) - generarea testelor
 * [Tehnica divide et impera](https://edu.roalgo.ro/mediu/divide-et-impera/)
+* [Căutare completă. Tehnica Backtracking](https://edu.roalgo.ro/mediu/backtracking/)
+* [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/) - Restul algoritmilor de sortare
 * [Numere mari](https://edu.roalgo.ro/mediu/bignum/)
 * [Normalizarea datelor](https://edu.roalgo.ro/mediu/data-normalization/)
 
@@ -192,7 +198,7 @@ Aici începem să lucrăm cu structurile de date care ne ajută să răspundem l
 * [Descompuneri în bucăți de radical (Square Root Decomposition)](https://edu.roalgo.ro/dificil/square-root-decomposition/)
 * [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
 * [Arbori indexați binar](https://edu.roalgo.ro/dificil/fenwick-tree/)
-* [Sparse Table. Binary Lifting. Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
+* [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
 * [Trie](https://edu.roalgo.ro/dificil/trie/)
 * [Dinamici pe structuri de date](https://edu.roalgo.ro/dificil/data-structures-dp/)
 * [Baleiere (sweep line)](https://edu.roalgo.ro/dificil/sweep-line/)
