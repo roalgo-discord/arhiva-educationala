@@ -141,7 +141,7 @@ nav:
   - Ușor:
       - Informații utile:
           - De unde începi?: usor/how-to-start.md
-          - În ce ordine să înveți noțiunile: usor/roadmap.md
+          - Ordinea învățării conținuturilor (roadmap): usor/roadmap.md
           - Cum ajungi să stăpânești materia de la clasă?: usor/schoolwork.md
           - Cum să te pregătești pentru bacalaureat și admitere?: usor/bac-admitere.md
       - Concepte fundamentale:
@@ -170,7 +170,7 @@ nav:
           - Listă de concursuri relevante: mediu/contest-list.md
           - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
       - Concepte fundamente și de limbaj:
-          - Căutare completă: mediu/complete-search.md
+          - Căutare completă. Tehnica Backtracking: mediu/backtracking.md
           - Tehnica divide et impera: mediu/divide-et-impera.md
       - Tehnici de rezolvare a problemelor:
           - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
@@ -303,12 +303,14 @@ nav:
       - Programă:
           - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
           - Gimnaziu:
+              - Sfaturi generale pentru gimnaziu: olimpiada/gimnaziu.md
               - Clasa a V-a: olimpiada/clasa-V.md
               - Clasa a VI-a: olimpiada/clasa-VI.md
               - Clasa a VII-a: olimpiada/clasa-VII.md
               - Clasa a VIII-a: olimpiada/clasa-VIII.md
               - Baraj și lot juniori: olimpiada/baraj-lot-juniori.md
           - Liceu:
+              - Sfaturi generale pentru liceu: olimpiada/liceu.md
               - Clasa a IX-a: olimpiada/clasa-IX.md
               - Clasa a X-a: olimpiada/clasa-X.md
               - Clasele XI-XII: olimpiada/clasa-XI-XII.md
