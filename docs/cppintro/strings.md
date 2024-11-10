@@ -65,6 +65,83 @@ int main() {
 
 Lista completă a codurilor pentru caractere se găsește [aici](https://www.sciencebuddies.org/science-fair-projects/references/ascii-table).
 
+## Funcții pe tipul char
+
+În C++, funcțiile aplicate pe caractere din biblioteca standard sunt funcții predefinite din <cctype> care permit verificarea anumitor proprietăți ale caracterelor individuale. Aceste funcții sunt utile pentru a determina tipul sau categoria unui caracter, facilitând validarea și manipularea stringurilor. Iată câteva dintre cele mai comune funcții și scopul lor:
+
+### Funcția isdigit
+
+Funcția `isdigit()` primește ca parametru un caracter c, returnând o valoare diferită de 0 dacă acesta este cifră sau 0 dacă nu este.
+
+```c++
+    char c1 = '3';
+    char c2 = 'A';
+
+    cout << isdigit(c1) << endl; //se va afișa ceve diferit de 0
+    cout << isdigit(c2) << endl; //se va afișa 0
+```
+
+### Funcția isalpha
+
+Funcția `isalpha` returnează o valoare diferită de 0 dacă caracterul este alfabetic sau 0 dacă acesta nu este alfabetic.
+
+```cpp
+    char c1 = '2';
+    char c2 = 'A';
+
+    cout << isalpha(c1) << endl; //se va afișa 0
+    cout << isalpha(c2) << endl; //se va afișa ceva diferit de 0
+```
+
+### Funcția isalnum
+
+Aceasta returnează dacă un caracter este alfanumeric sau nu.
+
+```cpp
+    char c1 = 'a';
+    char c2 = '?';
+
+    cout << isalnum(c1) << endl; //se returnează ceva diferit de 0
+    cout << isalnum(c2) << endl; //se returnează 0
+```
+
+
+### Funcțiile isupper și islower
+ 
+Funcția `isupper` returnează 0 dacă un caracter este literă mică, și o valoare diferită de 0 dacă este literă mare. Asemănător, `islower` returnează o valoare diferită de 0 dacă litera este mică și 0 dacă litera este mare.
+
+=== "isupper"
+
+    ```c++
+        char c1 = 'a';
+        char c2 = 'A';
+    
+        cout << isupper(c1) << endl; //se va afișa 0
+        cout << isupper(c2) << endl; //se va afișa ceva diferit de 0
+    ```
+
+=== "islower"
+
+    ```c++
+        char c1 = 'a';
+        char c2 = 'A';
+
+        cout << islower(c1) << endl; //se va afișa ceva diferit de 0
+        cout << islower(c2) << endl; //se va afișa 0
+    ```
+
+### Funcțiile toupper și tolower
+
+Aceste funcții convertesc un caracter din literă mare în literă mică sau invers.
+
+```cpp
+    char c1 = 'a';
+    char c2 = 'A';
+
+    cout << (char)(toupper(c1)) << endl; //se va afișa 'A'
+    cout << (char)(tolower(c2)) << endl; //se va afișa 'a'
+```
+
 ## Șiruri de caractere și biblioteca cstring
 
 Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de caractere constă în folosirea metodelor care există și în limbajul C, metode care sunt incluse în bibiloteca ``#include <cstring>``.
@@ -330,6 +407,7 @@ Cunoașterea funcțiilor specifice este esențială deoarece foarte multe între
 
 ## Resurse suplimentare
 
+* [Clasificarea caracterelor - geeksforgeeks](https://www.geeksforgeeks.org/character-classification-c-cctype/)
 * [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
 * [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
 * [Șiruri de caractere C++ - pbinfo](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)
