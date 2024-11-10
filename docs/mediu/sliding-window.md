@@ -174,7 +174,7 @@ int main() {
 
 Metode de tipul sliding window se pot folosi și în cazul altor tehnici, precum [tehnica celor doi pointeri](./two-pointers.md), multe dintre aplicațiile întâlnite la [deque](./deque.md) și alte structuri de date mai complicate decât scopul acestui articol, care este unul de legătură dintre aplicațiile întâlnite la problemele cu secvențe și cele mai avansate, din capitolele următoare. 
 
-# Probleme suplimentare
+## Probleme suplimentare
 
 * [OJI 2024 Santinele](https://kilonova.ro/problems/2502)
 * [Strip Codeforces](https://codeforces.com/contest/488/problem/D)

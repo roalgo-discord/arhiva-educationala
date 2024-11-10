@@ -45,6 +45,7 @@ Pentru a începe studiul algoritmicii, recomandăm învățarea bazelor limbajul
 ### Algoritmi și tehnici introductive
 
 * [Prelucrarea cifrelor unui număr](https://edu.roalgo.ro/usor/digits-manipulation/)
+* [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime)
 * [Generarea șirurilor de numere](https://edu.roalgo.ro/usor/generarea-sirurilor/)
 * [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
 * [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
