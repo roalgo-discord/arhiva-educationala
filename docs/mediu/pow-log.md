@@ -9,7 +9,7 @@ tags:
 
 ## Introducere
 
-De multe ori, sunten nevoiți să calculăm diverse valori modulo $x$ sau să calculăm puteri foarte mari într-o manieră care să ne permită să obținem răspunsurile cât mai rapid. 
+De multe ori, suntem nevoiți să calculăm diverse valori modulo $x$ sau să calculăm puteri foarte mari într-o manieră care să ne permită să obținem răspunsurile cât mai rapid. 
 
 Pentru a calcula aceste puteri, vom vrea să optimizăm metoda clasică de a înmulți rezultatul cu baza de fiecare dată până când ajungem la răspunsul optim, așa că se impune folosirea unor observații matematice care ne ajută să calculăm expresii de acest gen mult mai rapid. 
 
