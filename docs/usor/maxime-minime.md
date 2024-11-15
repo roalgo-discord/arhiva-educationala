@@ -259,8 +259,14 @@ Cunoașterea tipurilor de implementări care se folosesc de conceptul de maxim �
 
 ## Probleme suplimentare
 
+* [summaxmin pbinfo](https://www.pbinfo.ro/probleme/347/summaxmin)
+* [maxandap pbinfo](https://www.pbinfo.ro/probleme/346/maxandap)
+* [rafaelo pbinfo](https://www.pbinfo.ro/probleme/561/rafaelo)
+* [existaprime pbinfo](https://www.pbinfo.ro/probleme/506/existaprime)
+* [memory002 pbinfo](https://www.pbinfo.ro/probleme/1446/memory002)
 * [Probleme cu maxime si minime de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/4/algoritmi-elementari-maxime-si-minime)
 
 ## Resurse suplimentare
 
 * [Maxime si minime - pbinfo](https://www.pbinfo.ro/articole/76/maxime-si-minime)
+* [Maxime si minime - CPPI Sync](https://cppi.sync.ro/materia/citirea_mai_multor_numere_operarea_cu_cel_curent_i_cu_cel_anterior_maxime_minime_verificari_secvente_etc.html)

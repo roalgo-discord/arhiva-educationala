@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! note "Conținutul articolului"
+    O bună parte din conținutul acestui articol este preluat din cursul creat de același autor pentru lotul de juniori din 2023, curs care se poate găsi [aici](https://sepi.ro/assets/upload-file/articole/curs_DSU.pdf)
+
 Structurile de date sunt de multe ori foarte utile în multe contexte în
 programare, acestea dovedindu-se a fi în special foarte puternice și esențiale
 în lucrul problemelor date la diverse olimpiade și concursuri de informatică.
@@ -545,40 +548,29 @@ int main() {
 
 Acest articol este menit să introducă audiența în folosirea pădurilor de mulțimi
 disjuncte, punând accentul pe funcționalitățile de bază, fără a menționa alte
-aplicații importante, cum ar fi algoritmul lui Kruskal sau algoritmii folosiți
+aplicații importante, cum ar fi [algoritmul lui Kruskal](https://edu.roalgo.ro/mediu/apcm/#algoritmul-lui-kruskal) sau algoritmii folosiți
 pentru dynamic connectivity. De asemenea, pădurile de mulțimi disjuncte pot fi
 folosite pentru a scurta foarte mult implementările aplicațiilor simple la
 grafuri.
 
-<!-- ref la APM cand va fi sa fie -->
 <!--ref la dynamic connectivity cand va fi sa fie-->
 
 ## Probleme suplimentare
 
-### Probleme de la olimpiade
-
 * [Chemical table - EJOI 2018](https://cses.fi/395/list/)
 * [MexC ONI 2008](https://kilonova.ro/problems/1785)
+* [Microcycles - Codeforces](https://codeforces.com/contest/1927/problem/F)
+* [Galleries - AGM 2020](https://codeforces.com/gym/102565/problem/D)
 * [JBOI 2023 Frequencies](https://kilonova.ro/problems/2013/)
 * [IIOT 2023-24 Binary Chess](https://kilonova.ro/problems/1936)
 * [Probleme cu DSU de pe kilonova](https://kilonova.ro/tags/311)
 * [COCI 13-ladice](https://dmoj.ca/problem/coci13c5p6)
 * [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
 * [USACO Wormhole Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
-
-### Probleme de pe Codeforces/AtCoder
-
-* [Microcycles - Codeforces](https://codeforces.com/contest/1927/problem/F)
-* [Galleries - AGM 2020](https://codeforces.com/gym/102565/problem/D)
 * [DSU Step 1 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/1/practice)
 * [DSU Step 2 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/2/practice)
-    
 
-### Bibliografie și lectură suplimentară
-
-Am ordonat resursele suplimentare în ordinea dificultății înțelegerii și într-o
-ordine logică pentru a ușura obținerea de cunoștinte despre tehnicile,
-abordările și problemele discutate în acest curs. 
+## Bibliografie și lectură suplimentară
 
 * [Păduri de mulțimi disjuncte - CS Academy](https://csacademy.com/lesson/disjoint_data_sets/)
 * [Algoritmul Union-Find - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_18_-_23_ian_2020#Algoritmul_union-find)
