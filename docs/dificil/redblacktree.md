@@ -537,8 +537,7 @@ Problema ne cere să numărăm secvențele ce au suma divizibilă cu N - Cod Sur
 
 ## Probleme suplimentare / propuse
 - [h2](https://www.pbinfo.ro/probleme/2628/h2)
-- 
+- [map](https://www.pbinfo.ro/probleme/eticheta/137/map)
 
 ## Bibliografie și Resurse
 - Thomas H. Cormen. Introduction to Algorithms 3rd Edition Sep 2010
-- 
