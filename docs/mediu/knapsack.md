@@ -5,6 +5,9 @@ tags:
 ---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+
 ## Introducere
 
 Se dă următoarea problemă pe care trebuie să o rezolvăm: Ai un set de obiecte pentru care știm greutatea și valoarea lor și vrei să alegi unele obiecte din el, pe care să le pui într-un rucsac și să încerci să le vinzi turiștilor care vizitează orașul în care locuiești. Ideal, ai vrea să poți aduce toate obiectele, dar din păcate, rucsacul are o capacitate limitată, așa că va trebui să alegi ce obiecte vei păstra și ce obiecte nu. 

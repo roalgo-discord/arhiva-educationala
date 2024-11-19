@@ -8,6 +8,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+
 Aflarea drumului minim între două sau mai multe locații este una dintre cele mai importante probleme pe care oamenii au fost nevoiți să le rezolve de-a lungul istoriei, începând din timpurile preistorice în care comunicarea era limitată și până în zilele noastre, când avem foarte multe facilități la dispoziție. În funcție de criteriul ales, ne putem gândi la distanța minimă, timpul minim de parcurgere al unui traseu sau alte criterii, precum dificultatea de parcurgere a drumului ales etc. 
 
 !!! example "Exemplu"

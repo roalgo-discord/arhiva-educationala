@@ -8,7 +8,7 @@ tags:
 
 
 !!! example "Cunoștințe necesare"   
-    * [Introducere în Metoda Greedy](hhttps://edu.roalgo.ro/usor/greedy/)
+    * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
     * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
 
 ## Introducere

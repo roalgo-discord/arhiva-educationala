@@ -7,10 +7,17 @@ tags:
 
 **Autor**: Matei Ionescu
 
+
+!!! example "Cunoștințe necesare"   
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+
 ## Introducere
+
 In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asociată cu un **vector**, însă numărul de elemente este constant pe parcursul rulării programului. În linii mari, **bitset** nu aduce o contribuție mare asupra corectitudinii unui algoritm, sau nu reprezintă o tehnică  propriu-zisă, fiind folosit de cele mai multe ori doar pentru a face optimizări semnificative asupra timpului sau memoriei. 
 
 ### Sintaxă
+
 * ```std::bitset``` se regăsește in librăriile```<bitset>``` sau ```<bits/stdc++.h>```.
 * Linia ```bitset<N> b;``` declară un bitset cu exact $N$ biți, $N$ este constantă, i.e. se specifică explicit valoarea acesteia la declarare.
 * De asemenenea putem declara un **bitset** care să conțină biții unui număr: ```bitset<10> b(13)```.

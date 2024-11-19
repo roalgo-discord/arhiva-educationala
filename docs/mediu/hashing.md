@@ -7,6 +7,12 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+    * [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+
 În informatică și în algoritmică, de multe ori avem de-a face cu stocarea unei
 cantități semnificative de informație fără să putem să o stocăm în intregime,
 sau în alte cazuri va trebui să alterăm informația sau s-o organizăm diferit

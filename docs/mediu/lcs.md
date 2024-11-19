@@ -6,6 +6,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+
 Problema subșirului comun maximal este o altă problemă foarte importantă care are aplicații în domenii diverse precum genetică, bioinformatică și procesarea limbajelor naturale, iar algoritmul pe care îl vom prezenta va putea fi folosit cu mici modificări în foarte multe dinamici bazate pe matrici. Distanțe precum Distanța Levenshtein vor fi prezentate și ele aici, datorită similarității cu problema subșirului comun maximal. 
 
 ## Subșirul comun maximal

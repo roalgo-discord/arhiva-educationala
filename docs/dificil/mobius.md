@@ -8,6 +8,12 @@ tags:
 
 **Autor**: Matei Ionescu
 
+
+!!! example "Cunoștințe necesare"   
+    * [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
+    * [Indicatorul lui Euler](https://edu.roalgo.ro/mediu/euler-totient/)
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+
 ## Noțiuni introductive
 
 În teoria numerelor, o funcție aritmetică este o funcție $f(n) : \mathbb{N} \to \mathbb{C}$. O funcție aritmetică exprimă proprietăți aritmetice pentru $n$.

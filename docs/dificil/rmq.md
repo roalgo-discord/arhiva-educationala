@@ -9,6 +9,10 @@ tags:
 
 **Autor**: Traian Mihai Danciu
 
+!!! example "Cunoștințe necesare"   
+    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+    * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+
 ## Introducere
 
 **Sparse Table** este o structură de date care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).

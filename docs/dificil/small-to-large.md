@@ -8,12 +8,11 @@ tags:
 
 **Autor**: Radu Mocănașu
 
-## Cunoștințe necesare:
-
-* Arbori.
-* Parcurgeri `DFS`.
-* Containerele `set` și `map` din STL.
-* De preferat si [`DSU`](../mediu/dsu.md)
+!!! example "Cunoștințe necesare"   
+    * [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)  
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Păduri de mulțimi disjuncte (DSU)](https://edu.roalgo.ro/mediu/dsu/)
 
 ## Introducere
 

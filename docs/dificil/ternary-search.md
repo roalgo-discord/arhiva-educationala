@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+
 ## Introducere
 
 Un algoritm de căutare ternară este o tehnică în informatică pentru a găsi

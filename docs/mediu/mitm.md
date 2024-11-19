@@ -6,6 +6,10 @@ tags:
 ---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+
 ## Introducere
 
 Meet in the middle este o tehnică de programare care este folosită atunci când avem de-a face cu probleme pentru care soluția optimă este aceea de a împărți spațiul de căutare în două, pentru a putea aplica forța brută independent pentru cele două jumătăți rezultate. 

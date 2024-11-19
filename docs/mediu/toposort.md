@@ -9,6 +9,9 @@ tags:
 
 **Autor**: Radu Mocănașu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+
 ## Teorie
 
 !!! info "Definitie"

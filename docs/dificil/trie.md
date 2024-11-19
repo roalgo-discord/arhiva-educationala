@@ -7,6 +7,12 @@ tags:
 
 **Autor**: Matei Ionescu
 
+
+!!! example "Cunoștințe necesare"   
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+
 ## Ce este un Trie 
 
 Un trie (sau arbore de prefixe) este un _arbore de căutare $k$-ar_ (un arbore cu
@@ -456,6 +462,7 @@ int main() {
 ```
 
 ## Problema [cuvinte](https://kilonova.ro/problems/65) (medie-grea) 
+
 Se dau $N$ cuvinte formate doar din primele $K$ litere mici ale alfabetului
 englez și un șir $x_i$, de $M$ numere naturale. Trebuie să se formeze $M$
 cuvinte astfel încât oricare cuvânt $(1 \leq i \leq M)$ să respecte următoarele

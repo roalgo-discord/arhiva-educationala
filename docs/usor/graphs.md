@@ -11,6 +11,7 @@ tags:
 !!! example "Cunoștințe necesare"   
     * [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
     * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Coada](https://edu.roalgo.ro/mediu/queue/)
     * [Stiva](https://edu.roalgo.ro/mediu/stack/)
     * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
 

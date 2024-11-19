@@ -8,6 +8,10 @@ tags:
 
 **Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    * [Păduri de mulțimi disjuncte (DSU)](https://edu.roalgo.ro/mediu/dsu/)
+
 În diverse probleme de grafuri, suntem nevoiți să alegem o mulțime de muchii care formează un graf conex, iar costul să fie cât mai mic. În cele mai multe cazuri, va fi îndeajuns să creăm un arbore parțial, iar acesta să fie de cost minim, concept ce va fi subiectul acestui articol.
 
 ## Introducere
