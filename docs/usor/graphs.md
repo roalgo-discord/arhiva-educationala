@@ -673,14 +673,13 @@ int main() {
     bfs(y, distY);
 
     int totalDist = distX[y];
-
     // Lungimea totală a drumului va fi egală cu distX[y].
     for (int i = 1; i <= n; i++) {
         if (distX[i] == -1 || distY[i] == -1) {
             continue;
         }
 
-        if (distX[i] + distY[i] == totalDist + 1) {
+        if (distX[i] + distY[i] == totalDist) {
             solFreq[distX[i]]++;
         }
     }
@@ -690,7 +689,7 @@ int main() {
             continue;
         }
 
-        if (distX[i] + distY[i] == totalDist + 1 && solFreq[distX[i]] == 1) {
+        if (distX[i] + distY[i] == totalDist && solFreq[distX[i]] == 1) {
             ans.push_back(i);
         }
     }
