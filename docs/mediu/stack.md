@@ -6,6 +6,10 @@ tags:
 
 **Autori**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    
 În multe probleme în care lucrăm cu secvențe de valori, suntem nevoiți să procesăm valorile pe rând, asemenea unui teanc de obiecte. Pentru a formaliza acest proces, vom avea nevoie de o structură de date potrivită. În informatică, numim această structură de date stivă.
 
 ## Noțiuni introductive

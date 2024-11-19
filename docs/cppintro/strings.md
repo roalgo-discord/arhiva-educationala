@@ -8,6 +8,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Denisa-Maria Ursu
 
+!!! example "Cunoștințe necesare"
+    * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+
 ## Introducere
 
 Un șir de caractere este un tablou care stochează caractere. În limbajul C++, putem stoca aceste șiruri în două moduri, fie folosind un tablou static, la fel ca în limbajul C, fie folosind tipul de date string. În acest articol, vom detalia ambele opțiuni, împreună cu avantajele și dezavantajele lor. 

@@ -6,6 +6,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+
 În unele probleme, suntem nevoiți să prelucrăm datele de intrare, astfel încât să putem efectua operații de actualizare și interogare ale datelor mult mai ușor. O metodă foarte populară care are drept scop compresia datelor de intrare este normalizarea datelor. Cu alte cuvinte, scopul principal al acestei metode este acela de a transforma un șir cu valori arbitrare într-un șir cu valori mai mici.
 
 De regulă, transformăm valorile într-un șir cu valori între $1$ și $n$, în care fiecare valoare va fi modificată în funcție de poziția acesteia în șirul sortat. Deși în multe cazuri, vom putea folosi și alte structuri de date, normalizarea devine în multe cazuri o metodă care ne ajută să îmbunătățim constanta de timp pentru multe soluții.

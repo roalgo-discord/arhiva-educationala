@@ -137,7 +137,7 @@ Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți
 ### Matematică
 
 * [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
-* [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/) - doar pentru modulo prim
+* [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
 
 ### Structuri de date
 

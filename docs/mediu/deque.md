@@ -6,6 +6,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Coada](https://edu.roalgo.ro/mediu/queue/)
+    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    * [Sliding Window](https://edu.roalgo.ro/mediu/sliding-window/)
+
 Probabil că până acum, v-ati obișnuit cu folosirea stivelor și a cozilor în diverse probleme de algoritmică, iar deși aceste structuri de date sunt foarte puternice, fiecare dintre ele are lipsuri care fac implementarea anumitor părți mult mai dificilă. 
 
 Acum, se pune întrebarea firească dacă putem să unim proprietățile cozilor și ale stivelor fără să avem de făcut sacrificii majore, iar răspunsul este din fericire un DA clar. În cele ce urmează, vom discuta despre deque, o structură de date care îmbină proprietățile stivelor și ale cozilor, adăugând și facilități în plus. 

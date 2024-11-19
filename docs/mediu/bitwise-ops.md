@@ -6,6 +6,11 @@ tags:
 
 **Autori**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 În informatică și în programare, bitul reprezintă unitatea de bază pentru stocarea informațiilor în memorie. Orice activitate desfășurată folosind un sistem de calcul (inclusiv articolul pe care îl citiți acum) are la bază o înșiruire de biți folosiți pentru a reda informația sub o formă accesibilă pentru oameni. 
 
 Din acest considerent, biții au ajuns să fie studiați în mod amănunțit, iar în cele ce urmează, vom prezenta sistemul binar, operațiile pe biți și diverse proprietăți, observații și tehnici pe care le putem folosi pentru a rezolva probleme de algoritmică, dar și modurile în care putem integra cunoștințele drept pași intermediari pentru rezolvarea altor probleme de algoritmică. 

@@ -6,6 +6,10 @@ tags:
 
 **Autor**: Andrei Iuoraș
 
+!!! example "Cunoștințe necesare"
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+
 ## Problema
 
 În cadrul multor probleme de informatică se cere calcularea unei valori și afișarea acesteia modulo unei constante precizate în enunț. Se poate observa faptul că operațiile de adunare, scădere și înmulțire se pot efectua fără probleme cu respect la un anumit modul, însă operația de împărțire trebuie tratată diferit. Mai exact, dacă $A$, $B$ si $M$ sunt numere întregi, $M \ne 0$, $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}} \mod{M}$ nu este întotdeauna adevărată.

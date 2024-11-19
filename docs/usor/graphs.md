@@ -8,6 +8,12 @@ tags:
 ---
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
+!!! example "Cunoștințe necesare"   
+    * [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
 atât în algoritmică, cât și în viața de zi cu zi, acestea fiind grafurile.
 Problema aflării existenței unor conexiuni sau aflării distanței minime între

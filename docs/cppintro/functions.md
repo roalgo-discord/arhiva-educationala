@@ -8,6 +8,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 ## Introducere
 
 Atunci când scrieți un program în orice limbaj de programare, există situații în care sunteți nevoiți să executați anumite tipuri de operații de mai multe ori. Pentru a evita scrierea acestor secvențe de un număr mare de ori, se impune folosirea unor secvențe de cod pe care să le putem refolosi. Acestea vor fi ceea ce numim în limbajul C++ funcții sau subprograme.
@@ -243,6 +246,9 @@ int sumcif (int n) {
 În general, funcțiile iterative tind să fie mai rapide decât cele recursive și sunt de preferat atunci când putem implementa un program folosind ambele metode.
 
 ## Funcții recursive
+
+!!! example "Cunoștințe necesare"
+    * [Funcții recursive](https://edu.roalgo.ro/cppintro/functions/#functii-recursive)
 
 Spre deosebire de funcțiile iterative, cele recursive se pot auto-apela și acest lucru poate fi foarte folositor atunci când avem nevoie să aflăm răspunsul folosind o instanță mai simplă a funcției curente. 
 

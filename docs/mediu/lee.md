@@ -11,6 +11,12 @@ tags:
 
 **Autor:** Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+    * [Coada](https://edu.roalgo.ro/mediu/queue/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 ## Introducere
 
 Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte. 
