@@ -117,6 +117,7 @@ Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți
 
 ### Noțiuni de algebră
 
+* [Principiul lui Dirichlet (principiul cutiei)](https://edu.roalgo.ro/usor/dirichlet/)
 * [Baze de numerație](https://edu.roalgo.ro/mediu/number-bases/)
 * [Indicatorul lui Euler](https://edu.roalgo.ro/mediu/euler-totient/)
 * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)

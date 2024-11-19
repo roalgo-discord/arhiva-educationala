@@ -6,6 +6,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
+
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice atunci când vine vorba de a număra câte numere au o anumită proprietate într-un interval, sau care este al $k$-lea număr cu o proprietate anume, această tehnică fiind găsită și sub numele de dinamică pe cifre sau digit dp. 
 
 Deși în cazul unora dintre problemele pe care le vom prezenta există soluții folosind diverse formule matematice sau combinatoriale, ne vom concentra pe modul general de implementare a acestor probleme, mod care va fi similar în cazul majorității acestor probleme.

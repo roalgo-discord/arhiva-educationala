@@ -6,6 +6,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru șiruri cu o lungime relativ mică (de regulă, cel mult $500$), folosind drept stări anterioare subsecvențe de lungime mai mică ale șirului dat. 
 
 Această tehnică este numită în specialitate range dp, fiind găsită în articolele românești și sub numele de metoda mixtă a programării dinamice.
