@@ -6,6 +6,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).
 Aceștia stau la baza unui număr mare de prelucrări care necesită un volum mare

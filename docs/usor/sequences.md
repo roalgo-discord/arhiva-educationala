@@ -7,14 +7,16 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+
 În algoritmică, dar și în alte domenii, suntem nevoiți de multe ori să lucrăm cu secvențe de valori și se impune folosirea unor abordări specifice pentru a rezolva aceste probleme. Fie că este vorba de probleme ce apar în examenele naționale sau la concursurile de informatică, algoritmii ce prelucrează secvențe de valori se dovedesc a fi foarte importanți și cunoașterea lor, precum și a tehnicilor de rezolvare a acestor probleme devine esențială. 
 
 ## Noțiuni introductive
 
 !!! info "Definiție" 
     O secvență reprezintă un șir de valori, de regulă dispuse consecutiv într-un șir mai mare sau poate reprezenta chiar un șir de sine stătător. 
-
-    
 
 !!! example "Exemplu"
     În vectorul $30$, $32$, $19$, $8$, $11$, $6$, putem spune următoarele lucruri:

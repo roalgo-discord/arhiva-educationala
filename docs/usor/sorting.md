@@ -6,6 +6,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+
 ## Fundamente și cunoștințe necesare
 
 În foarte multe probleme de algoritmică, un pas important în rezolvarea problemelor constă în ordonarea datelor de intrare după un anumit criteriu, iar o întrebare care se pune este cum putem să ordonăm datele convenabil, cât mai rapid posibil?
@@ -76,6 +80,10 @@ for (int i = 2; i <= n; i++) {
     }
 }
 ```
+
+!!! example "Cunoștințe necesare pentru următoarele capitole"
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
 
 ## Algoritmi de sortare în $O(n \log n)$
 

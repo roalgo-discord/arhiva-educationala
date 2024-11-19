@@ -7,10 +7,8 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-## Cunoștinte necesare
-
-Înaintea citirii acestui articol, se recomandă familiarizarea cu [structurile repetitive](https://edu.roalgo.ro/cppintro/loops/), deoarece le vom folosi pentru ilustrarea diverselor exemple ce țin de cifrele numerelor, în special când vine vorba de aplicațiile mai avansate.
-
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
 
 !!! note "Observație"
     Multe probleme de OJI clasa a 5-a necesită lucrul cu cifrele unui număr, o astfel de problemă găsindu-se aproape în fiecare an.

@@ -8,6 +8,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+
 ## Introducere și instrucțiunile if..else, respectiv switch-case
 
 De multe ori, se impune luarea unor decizii diferite în funcție de situație. Vrem să obținem același lucru și în programare, iar limbajul C++ are diverse opțiuni pentru realizarea acestui lucru.
