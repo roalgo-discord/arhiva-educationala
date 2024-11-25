@@ -10,6 +10,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    * [Structura alternativă](https://edu.roalgo.ro/cppintro/conditions-if/)
+
 !!! info "Definiție" 
     O structură repetitivă este o structură pe care o folosim pentru a coordona programul să ia aceleași decizii de mai multe ori, atâta timp cât o anumită condiție este îndeplinită. Acest lucru se poate întâmpla de un număr fixat de ori sau de un număr variat de ori. 
 

@@ -6,6 +6,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Instalarea primului editor C/C++](https://edu.roalgo.ro/cppintro/)
+
 !!! note "Observație"
     Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai întâi [acest articol](./index.md) pentru a putea scrie cod într-o manieră clară și fără probleme ulterior.
 

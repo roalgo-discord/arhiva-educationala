@@ -7,6 +7,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+    * [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/)
+
 În multe probleme de algoritmică, suntem nevoiți să împărțim datele în grupe mai mici pentru a ajunge să obținem soluții optime sau cel puțin suficient de rapide pentru a obține un punctaj foarte bun, chiar maxim în anumite situații. De cele mai multe ori, vom împărți datele în bucăți cu o lungime aproximativ egală cu $\sqrt n$, de unde vine și numele pentru care această tehnică este cunoscută în jargonul internațional, **Square Root Decomposition**. 
 
 În acest articol, vom prezenta câteva dintre cele mai cunoscute tipuri de descompuneri și grupări existente care folosesc această tehnică, fie că e vorba de gruparea elementelor din vector, gruparea query-urilor sau chiar abordări diferite în funcție de dimensiunea datelor, toate aceste tehnici au un numitor comun, și anume prezența valorii $\sqrt n$ drept un etalon de separare a datelor. 

@@ -7,6 +7,11 @@ tags:
 
 **Autor**: Alexandru Toma
 
+!!! example "Cunoștințe necesare"   
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    * [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
+
 În competițiile de informatică și la olimpiadă se întâlnesc adesea probleme care implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula eficient suma, maximul sau minimul pe o subsecvență a unui vector, mai ales când acesta suferă **modificări în timp real**? 
 
 !!! note "Observație"

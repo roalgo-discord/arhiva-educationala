@@ -8,6 +8,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    
 ## Introducere și definiție
 
 Cu toții suntem obișnuiți cu noțiunea de coadă. Aproape în fiecare zi, suntem nevoiți să stăm la coadă, fie că e vorba de cozi la magazin, la o casă de bilete sau la un ghișeu. În fiecare dintre aceste situații, ne așezăm în spatele cozii, așteptăm ca rând pe rând, cei din fața noastră să iasă din coadă, iar atunci când ajungem primii in coadă, să fim serviți.

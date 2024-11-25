@@ -6,6 +6,11 @@ tags:
 
 **Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu
 
+
+!!! example "Cunoștințe necesare"   
+    * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 ## Introducere
 
 Programarea dinamică (abrv. DP) este un mod de gândire care poate fi folosit pentru rezolvarea problemelor la care trebuie să aflăm fie numărul de soluții corecte pentru un anumit set de date, fie soluția optimă (minim, maxim, etc.).

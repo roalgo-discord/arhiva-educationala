@@ -7,6 +7,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    * [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 ## Introducere
 
 De multe ori, suntem nevoiți să calculăm diverse valori modulo $x$ sau să calculăm puteri foarte mari într-o manieră care să ne permită să obținem răspunsurile cât mai rapid. 

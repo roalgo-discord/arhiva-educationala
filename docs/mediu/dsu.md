@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+
 !!! note "Conținutul articolului"
     O bună parte din conținutul acestui articol este preluat din cursul creat de același autor pentru lotul de juniori din 2023, curs care se poate găsi [aici](https://sepi.ro/assets/upload-file/articole/curs_DSU.pdf)
 

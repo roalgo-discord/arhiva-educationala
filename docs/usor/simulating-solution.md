@@ -8,6 +8,11 @@ tags:
 
 **Autor**: Traian Mihai Danciu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+
 ## Introducere
 
 Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le obținem pe parcurs. O simulare necesită $3$ lucruri:

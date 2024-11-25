@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 ## Introducere
 
 Atunci când elaborăm un algoritm, vrem să știm cât de rapid va fi, pentru a putea decide dacă are sens să trecem la implementarea lui propriu-zisă. Un mod de a măsura calitatea unui algoritm este dat de complexitatea pe care îl are. În cele ce urmează vom discuta acest concept și modul în care îl putem aplica în probleme.

@@ -7,6 +7,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+
 Atunci când vorbim de tipuri de probleme pentru care apelăm la soluții bazate pe metoda programării dinamice, dinamicile pe măști pe biți (_bitmask dp_) se disting prin faptul că reușesc să formalizeze aceste calcule pentru dimensiuni mici ale valorilor, eliminând necesitatea de a calcula toate cele $N!$ permutări ale șirului dat, prin stări care să țină doar posibilele rezultate optime.
 
 Chiar dacă această subtehnică este folosită doar pentru dimensiuni ale datelor foarte mici (de regulă, valoarea maximă a lui $N$ într-o problemă de acest gen este $20$), bitmask dp se dovedește a fi o unealtă foarte utilă în multe instanțe, chiar și atunci când trebuie să găsim soluții încete pentru a face pași spre a optimiza diverse abordări.

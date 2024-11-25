@@ -8,8 +8,8 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! note "Observație"
-    Dacă nu ai scris încă un program, te invităm să accesezi mai întâi [acest articol](./intro.md) pentru a putea înțelege procesele explicate aici.
+!!! example "Cunoștințe necesare"
+    * [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
 
 În cele ce urmează, vom prezenta metodele prin care putem citi și afișa datele în limbajul C++.
 

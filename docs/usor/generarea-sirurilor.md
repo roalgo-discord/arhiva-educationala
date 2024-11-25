@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 ## Introducere
 
 De multe ori în problemele de informatică, apar șiruri de numere naturale care trebuie fie știute, cum va fi cazul unor șiruri consacrate precum șirul lui Fibonacci sau alte șiruri matematice precum cel al pătratelor sau cuburilor perfecte.

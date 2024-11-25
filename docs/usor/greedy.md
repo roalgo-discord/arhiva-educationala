@@ -6,6 +6,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
+
 De multe ori atunci când trebuie să rezolvăm probleme algoritmice (și nu numai), suntem nevoiți să gândim lacom, alegând cea mai bună variantă la un moment dat. În algoritmică, această abordare este numită metoda Greedy și este una din cele mai importante metode pentru rezolvarea problemelor, fiind întâlnită atât în probleme foarte simple, cât și în unele din cele mai complicate probleme posibile. 
 
 Chiar dacă conform manualelor de informatică din țara noastră, metoda Greedy este ceva ce se predă abia în clasele mai mari de liceu (mai exact, în clasa a XI-a), o să vedeți că probleme de acest fel apar încă de la începutul studiului algoritmicii.

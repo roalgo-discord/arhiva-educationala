@@ -7,6 +7,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
+    * [Numere mari](https://edu.roalgo.ro/mediu/bignum/)
+
 ## Introducere
 
 În acest articol, vom discuta o serie de probleme care implică aplicarea diverselor recurențe specifice programării dinamice pentru problemele care au la bază permutări. În cele mai multe cazuri, problemele sunt de tipul celor de numărare, în care vrem să aflăm fie câte permutări îndeplinesc un anumit criteriu, fie care este a $k$-a permutare care îndeplinește un criteriu dat. Deși articolul se va concentra pe aplicațiile din algoritmică, aceste tipuri de soluții pot fi utile și pentru anumite tipuri de probleme care se dau la competițiile de matematică. 

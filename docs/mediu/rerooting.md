@@ -7,6 +7,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+
 În ceea ce privește rezolvarea problemelor cu arbori, in anumite situatii se poate observa faptul că avem nevoie de o calculare inițială a răspunsului presupunând rădăcina într-un nod oarecare (de regulă, nodul $1$), urmată de folosirea acestor răspunsuri pentru generalizarea rezultatelor pentru toate rădăcinile posibile. Vom numi tehnica pe care o folosim pentru aceste probleme **rerooting**, sau așa cum este cunoscută în jargonul românesc, tehnica celor două DFS-uri.
 
 În cele ce urmează, vom prezenta câteva exemple de probleme care se pot rezolva folosind această tehnică, împreună cu abordările posibile. Se va putea observa faptul că în cele mai multe situații, implementarea va fi una foarte similară, singurele modificări fiind făcute la modul în care vom defini dinamicile și alte date pe care le folosim.

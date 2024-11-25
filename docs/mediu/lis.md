@@ -8,6 +8,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    * [Căutarea binară (pentru primul algoritm)](https://edu.roalgo.ro/usor/binary-search/)
+    * [Arbori de intervale (pentru cel de-al doilea algoritm)](https://edu.roalgo.ro/dificil/segment-trees/)
+
 În cele ce urmează, vom prezenta problema aflării celui mai lung subșir crescător dintr-un șir, prezentând o serie de algoritmi care rezolvă această problemă, începând de la cei mai înceți și terminând cu variantele optime, precum și diversele modificări pe care le putem face.
 
 ## Introducere

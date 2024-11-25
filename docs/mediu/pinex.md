@@ -7,6 +7,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
+!!! example "Cunoștințe necesare"
+    * [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+
 În unele probleme de algoritmică, suntem nevoiți să calculăm numărul de răspunsuri care se potrivesc cu o anumită regulă, dar numărarea directă a fiecărei reguli în mod individual nu aduce cu ușurință răspunsul corect. În cazul acestor probleme, vom apela la un principiu matematic folosit în foarte mulți algoritmi elementari studiați până acum, formalizând discuția și aducând mai multe asemenea probleme în discuție. 
 
 !!! info "Definiție"

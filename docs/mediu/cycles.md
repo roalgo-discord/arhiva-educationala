@@ -6,6 +6,11 @@ tags:
     - cicluri
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+
 ## Introducere
 
 În general, când vine vorba de lucrul cu cicluri în problemele cu grafuri, lucrurile pot fi mai dificile, iar din acest motiv vrem să formalizăm procesul de aflare a unor cicluri în grafuri, fie că e vorba de grafuri orientate sau neorientate, iar mai apoi vom discuta și despre un tip special de grafuri, grafurile funcționale. 

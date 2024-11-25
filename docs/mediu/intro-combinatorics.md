@@ -10,6 +10,11 @@ tags:
 
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
+!!! example "Cunoștințe necesare"  
+    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+    * [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
+    * [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
+
 Combinatorica este una din ramurile principale ale matematicii, precum și una
 din cele patru ramuri din care se dau problemele de la olimpiada internațională
 de matematică (IMO) celelalte fiind algebra, teoria numerelor și geometria. În

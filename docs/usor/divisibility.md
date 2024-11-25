@@ -7,6 +7,10 @@ tags:
 
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
+!!! example "Cunoștințe necesare"
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+
 De-a lungul parcursului vostru în domeniul algoritmicii, precum și de multe ori
 în diferite olimpiade și concursuri de informatică, va trebui să rezolvați multe
 probleme care se bazează pe un fundament matematic, studiul teoriei din spatele

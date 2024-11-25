@@ -8,6 +8,13 @@ tags:
 ---
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
+!!! example "Cunoștințe necesare"   
+    * [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
+    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    * [Coada](https://edu.roalgo.ro/mediu/queue/)
+    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
 atât în algoritmică, cât și în viața de zi cu zi, acestea fiind grafurile.
 Problema aflării existenței unor conexiuni sau aflării distanței minime între
@@ -673,14 +680,13 @@ int main() {
     bfs(y, distY);
 
     int totalDist = distX[y];
-
     // Lungimea totală a drumului va fi egală cu distX[y].
     for (int i = 1; i <= n; i++) {
         if (distX[i] == -1 || distY[i] == -1) {
             continue;
         }
 
-        if (distX[i] + distY[i] == totalDist + 1) {
+        if (distX[i] + distY[i] == totalDist) {
             solFreq[distX[i]]++;
         }
     }
@@ -690,7 +696,7 @@ int main() {
             continue;
         }
 
-        if (distX[i] + distY[i] == totalDist + 1 && solFreq[distX[i]] == 1) {
+        if (distX[i] + distY[i] == totalDist && solFreq[distX[i]] == 1) {
             ans.push_back(i);
         }
     }

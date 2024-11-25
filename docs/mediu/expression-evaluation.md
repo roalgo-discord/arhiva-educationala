@@ -8,6 +8,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+
 ## Introducere
 
 În unele probleme de algoritmică, sunteți nevoiți să evaluați valorile unor expresii aritmetice sau în general, valorile unor expresii conform unor sisteme matematice sau logice bine definite. Aceste probleme sunt colocvial numite probleme la care avem nevoie de noțiunile specifice evaluării unor expresii aritmetice (parsing în engleză).

@@ -7,6 +7,11 @@ tags:
 
 **Autori**: Ștefan-Cosmin Dăscălescu, Luca Valentin Mureșan
 
+!!! example "Cunoștințe necesare"   
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+    * [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
+
 ## Ce este un arbore indexat binar?
 
 Arborii indexați binar (prescurtați de regulă, AIB) sunt o structură de date ce poate fi folosită pentru a actualiza eficient valori și pentru a calcula sume parțiale într-un tablou de valori ce poate avea una sau mai multe dimensiuni. 

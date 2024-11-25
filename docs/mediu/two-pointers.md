@@ -7,6 +7,10 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+
 ## Fundamente și cunoștințe necesare
 
 Tehnica Two pointers este o tehnică pe care o putem folosi în foarte multe

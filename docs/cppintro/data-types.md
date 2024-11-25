@@ -8,6 +8,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
+
 Așa cum ați observat atunci când am prezentat primul program în articolul precedent, fiecare componentă are mai multe caracteristici, una dintre cele mai importante fiind variabilele, respectiv tipul de date al acestora. 
 
 Ulterior, voi împărți în cele ce urmează tipurile de date simple în funcție de valorile care sunt păstrate. 

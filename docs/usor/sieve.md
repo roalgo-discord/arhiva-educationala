@@ -8,11 +8,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-## Cunoștinte necesare
-
-Înaintea citirii acestui articol, se recomandă citirea [articolului despre divizibilitate](https://edu.roalgo.ro/usor/divisibility/). De asemenea, pentru unele aplicații mai avansate, cunoașterea elementară a STL este necesară.
-
-De asemenea, se recomandă cunoașterea vectorilor de frecvență, care sunt prezentați [aici](https://edu.roalgo.ro/usor/frequency-arrays/).
+!!! example "Cunoștințe necesare"
+    * [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
+    * [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
 
 ## Ce este ciurul lui Eratostene?
 

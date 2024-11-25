@@ -7,10 +7,9 @@ tags:
     - mars
 ---
 
-## Cunoștiințe necesare pentru înțelegerea completă a articolului:
-
-* [tablourile unidimensionale și parcurgerea lor](https://edu.roalgo.ro/cppintro/arrays/)
-* [tablourile bidimensionale și parcurgerea lor](https://edu.roalgo.ro/cppintro/matrices/)
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
 
 ## Problema inițială
 

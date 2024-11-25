@@ -6,6 +6,10 @@ tags:
     - cautare completa
 ---
 
+!!! example "Cunoștințe necesare"
+    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    * [Tehnica divide et impera](https://edu.roalgo.ro/mediu/divide-et-impera/)
+
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
 
 Mai jos găsiți resurse pe care le puteți citi până atunci.

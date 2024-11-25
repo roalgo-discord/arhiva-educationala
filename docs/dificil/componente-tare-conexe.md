@@ -7,6 +7,12 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"   
+    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    * [Sortare topologică](https://edu.roalgo.ro/mediu/toposort/)
+    * [Cicluri în grafuri](https://edu.roalgo.ro/mediu/cycles/)
+    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+
 ## Introducere
 
 În cele ce urmează, vom prezenta componentele tare conexe, algoritmii principali și cum îi putem aplica. 

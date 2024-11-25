@@ -5,6 +5,9 @@ tags:
 ---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+
 ## Introducere
 
 După ce v-ați obișnuit cu [tablourile unidimensionale](https://edu.roalgo.ro/cppintro/arrays/), a venit timpul să generalizăm lucrurile și pentru tablourile bidimensionale (colocvial numite, matrici) și cele cu mai multe dimensiuni.

@@ -5,6 +5,11 @@ tags:
     - optimizare
 ---
 
+**Autor**: Ștefan-Cosmin Dăscălescu
+
+!!! example "Cunoștințe necesare"   
+    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+
 ## Introducere
 
 După cum știți, foarte multe principii întâlnite în matematică ajung să fie aplicate și în informatică sub diverse forme. Unul dintre aceste principii, frecvent întâlnit în problemele de matematică de gimnaziu și nu numai este principiul lui Dirichlet, de asemenea cunoscut sub numele de principiul cutiei sau sub denumirea sa din engleză, pigeonhole principle.

@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+
 ## Introducere
 
 În multe probleme, suntem nevoiți să lucrăm cu foarte multe valori cuprinse într-un interval relativ mic. Pentru a face lucrul cu ele mai ușor, se impune numărarea lor și păstrarea datelor într-o structură de date potrivită. 

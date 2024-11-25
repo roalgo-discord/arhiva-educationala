@@ -6,6 +6,10 @@ tags:
 ---
 **Autor**: Raul Ardelean
 
+!!! example "Cunoștințe necesare"   
+    * [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
+    * [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
+
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri și update-uri într-un timp eficient pe un **arbore**.
 
 ## Introducere

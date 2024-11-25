@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+
 ## Introducere
 
 Un mit care este răspândit de foarte mulți oameni în diverse medii este acela că matematica nu are vreo relevanță în programare sau algoritmică, ceea ce nu poate fi mai fals. Deși nu este necesar să fii olimpic la matematică pentru a fi foarte bun la algoritmică sau mai ales pentru a fi un bun programator, cunoștințele adecvate de matematică sunt foarte importante deoarece foarte mulți algoritmi și foarte multe ramuri ale informaticii se bazează pe un fundament matematic solid, care să permită aprofundarea unor capitole specifice. 
