@@ -66,8 +66,7 @@ De multe ori, după ce generăm răspunsuri pentru valori mici folosind o metod�
 Un exemplu concret este problema [asort](https://kilonova.ro/problems/1084) de la barajul de juniori din 2016. 
 
 !!! note "Observație"
-
-Soluția acestei probleme este explicată în arhiva noastră [aici](https://edu.roalgo.ro/usor/simulating-solution/#problema-exemplu-asort-baraj-2016-juniori)
+    Soluția acestei probleme este explicată în arhiva noastră [aici](https://edu.roalgo.ro/usor/simulating-solution/#problema-exemplu-asort-baraj-2016-juniori)
 
 ### Folosiți-vă de diferite restricții speciale din enunț (dacă apar asemenea restricții)
 
