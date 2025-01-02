@@ -67,7 +67,7 @@ for (int i = 1; i <= n; i++) {
         }
     }
 }
-cout << lenmax << " " << stmax " " << drmax << '\n'; 
+cout << lenmax << " " << stmax << " " << drmax << '\n'; 
 ```
 
 Chiar dacă această soluție este tot $O(n^3)$, în multe cazuri se va dovedi mai rapidă în practică, deoarece iterând în ordine descrescătoare după lungime, dacă găsim o secvență cu proprietatea dorită, atunci ne putem opri. 
