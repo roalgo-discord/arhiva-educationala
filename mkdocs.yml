@@ -322,6 +322,24 @@ nav:
                     - Clasa a V-a: 
                         - Balaur: olimpiada/solutii/OJI/2002/V-balaur.md
                         - La școală: olimpiada/solutii/OJI/2002/V-lascoala.md
+                    - Clasa a VI-a:
+                        - Valori-pantă: olimpiada/solutii/OJI/2002/VI-valori-panta.md
+                        - Cuburi: olimpiada/solutii/OJI/2002/VI-cuburi.md
+                    - Clasa a VII-a:
+                        - Panglică: olimpiada/solutii/OJI/2002/VII-panglica.md
+                        - Joc: olimpiada/solutii/OJI/2002/VII-joc.md
+                    - Clasa a VIII-a:
+                        - Sir: olimpiada/solutii/OJI/2002/VIII-sir.md
+                        - Anagrame: olimpiada/solutii/OJI/2002/VIII-anagrame.md
+                    - Clasa a IX-a:
+                        - Poarta: olimpiada/solutii/OJI/2002/IX-poarta.md
+                        - Mouse: olimpiada/solutii/OJI/2002/IX-mouse.md
+                    - Clasa a X-a:
+                        - Triang: olimpiada/solutii/OJI/2002/X-triang.md
+                        - Cod: olimpiada/solutii/OJI/2002/X-cod.md
+                    - Clasele XI-XII: 
+                        - Urgenta: olimpiada/solutii/OJI/2002/XI-XII-urgenta.md
+                        - Nunta: olimpiada/solutii/OJI/2002/XI-XII-nunta.md
              #   - OJI 2003:
              #       - Clasa a V-a: 
              #           - Exponent: olimpiada/solutii/OJI/2003-V-exponent.md
@@ -392,22 +410,106 @@ nav:
                #         - Aur: olimpiada/solutii/OJI/2019-V-aur.md
                #         - Cartele: olimpiada/solutii/OJI/2019-V-cartele.md
               - OJI 2020-2024:
-              #  - OJI 2020:
-               #     - Clasa a V-a: 
-                #        - Cartonase: olimpiada/solutii/OJI/2020-V-cartonase.md
-                #        - Tai: olimpiada/solutii/OJI/2020-V-tai.md
-              #  - OJI 2021:
-               #     - Clasa a V-a: 
-               #         - Concurs: olimpiada/solutii/OJI/2021-V-concurs.md
-                #        - Sir: olimpiada/solutii/OJI/2021-V-sir.md
-             #   - OJI 2022:
-              #      - Clasa a V-a: 
-              #          - Ceas: olimpiada/solutii/OJI/2022-V-ceas.md
-              #          - Sss: olimpiada/solutii/OJI/2022-V-sss.md
-              #  - OJI 2023:
-              #      - Clasa a V-a: 
-               #         - Aeriana: olimpiada/solutii/OJI/2023-V-aeriana.md
-               #         - Castel: olimpiada/solutii/OJI/2023-V-castel.md
+                - OJI 2020:
+                    - Clasa a V-a: 
+                        - Cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
+                        - Tai: olimpiada/solutii/OJI/2020-V/tai.md
+                    - Clasa a VI-a: 
+                        - Forta: olimpiada/solutii/OJI/2020/VI-forta.md
+                        - Furnica: olimpiada/solutii/OJI/2020/VI-furnica.md
+                    - Clasa a VII-a: 
+                        - Foto: olimpiada/solutii/OJI/2020/VII-foto.md
+                        - Wind: olimpiada/solutii/OJI/2020/VII-wind.md
+                    - Clasa a VIII-a: 
+                        - Datorii: olimpiada/solutii/OJI/2020/VIII-datorii.md
+                        - Triunghi: olimpiada/solutii/OJI/2020/VIII-triunghi.md
+                    - Clasa a IX-a: 
+                        - Buldo: olimpiada/solutii/OJI/2020/IX-buldo.md
+                        - Cetate: olimpiada/solutii/OJI/2020/IX-cetate.md
+                        - Spiralmatrix: olimpiada/solutii/OJI/2020/IX-spiralmatrix.md
+                    - Clasa a X-a: 
+                        - Alinieri: olimpiada/solutii/OJI/2020/X-alinieri.md
+                        - Arh: olimpiada/solutii/OJI/2020/X-arh.md
+                        - Leftmax: olimpiada/solutii/OJI/2020/X-leftmax.md
+                    - Clasele XI-XII: 
+                        - Ateleport: olimpiada/solutii/OJI/2020/XI-XII-ateleport.md
+                        - Partit: olimpiada/solutii/OJI/2020/XI-XII-partit.md
+                        - RecycleBin: olimpiada/solutii/OJI/2020/XI-XII-recycleBin.md
+                - OJI 2021:
+                    - Clasa a V-a: 
+                        - Concurs: olimpiada/solutii/OJI/2021/V-concurs.md
+                        - Sir: olimpiada/solutii/OJI/2021/V-sir.md
+                    - Clasa a VI-a: 
+                        - Formula1: olimpiada/solutii/OJI/2021/VI-formula1.md
+                        - Seism: olimpiada/solutii/OJI/2021/VI-seism.md
+                    - Clasa a VII-a: 
+                        - Campionat: olimpiada/solutii/OJI/2021/VII-campionat.md
+                        - Exclusiv: olimpiada/solutii/OJI/2021/VII-exclusiv.md
+                    - Clasa a VIII-a: 
+                        - Cartofi: olimpiada/solutii/OJI/2021/VIII-cartofi.md
+                        - Tunel: olimpiada/solutii/OJI/2021/VIII-tunel.md
+                    - Clasa a IX-a: 
+                        - Aproape: olimpiada/solutii/OJI/2021/IX-aproape.md
+                        - Cochilie: olimpiada/solutii/OJI/2021/IX-cochilie.md
+                        - Logic: olimpiada/solutii/OJI/2021/IX-logic.md
+                    - Clasa a X-a: 
+                        - Labirint: olimpiada/solutii/OJI/2021/X-labirint.md
+                        - SDistanțe: olimpiada/solutii/OJI/2021/X-sdistante.md
+                        - Tort: olimpiada/solutii/OJI/2021/X-tort.md
+                    - Clasele XI-XII: 
+                        - Polihroniade: olimpiada/solutii/OJI/2021/XI-XII-polihroniade.md
+                        - Bob: olimpiada/solutii/OJI/2021/XI-XII-bob.md
+                        - Dreptunghi: olimpiada/solutii/OJI/2021/XI-XII-dreptunghi.md
+                - OJI 2022:
+                    - Clasa a V-a: 
+                        - Ceas: olimpiada/solutii/OJI/2022/V-ceas.md
+                        - Sss: olimpiada/solutii/OJI/2022/V-sss.md
+                    - Clasa a VI-a: 
+                        - Cmmdc: olimpiada/solutii/OJI/2022/VI-cmmdc.md
+                        - Vecine: olimpiada/solutii/OJI/2022/VI-vecine.md
+                    - Clasa a VII-a: 
+                        - Patratele: olimpiada/solutii/OJI/2022/VII-patratele.md
+                        - Pseudocmp: olimpiada/solutii/OJI/2022/VII-pseudocmp.md
+                    - Clasa a VIII-a: 
+                        - Pelican: olimpiada/solutii/OJI/2022/VIII-pelican.md
+                        - Strips: olimpiada/solutii/OJI/2022/VIII-strips.md
+                    - Clasa a IX-a: 
+                        - Balba: olimpiada/solutii/OJI/2022/IX-balba.md
+                        - Oneout: olimpiada/solutii/OJI/2022/IX-oneout.md
+                        - Pergament: olimpiada/solutii/OJI/2022/IX-pergament.md
+                    - Clasa a X-a: 
+                        - Circular: olimpiada/solutii/OJI/2022/X-circular.md
+                        - Pulsar: olimpiada/solutii/OJI/2022/X-pulsar.md
+                        - Transport: olimpiada/solutii/OJI/2022/X-transport.md
+                    - Clasele XI-XII: 
+                        - Dulciuri: olimpiada/solutii/OJI/2022/XI-XII-dulciuri.md
+                        - Investitie: olimpiada/solutii/OJI/2022/XI-XII-investitie.md
+                        - Superhedgy: olimpiada/solutii/OJI/2022/XI-XII-superhedgy.md
+                - OJI 2023:
+                    - Clasa a V-a: 
+                        - Aeriana: olimpiada/solutii/OJI/2023/V-aeriana.md
+                        - Castel: olimpiada/solutii/OJI/2023/V-castel.md
+                    - Clasa a VI-a: 
+                        - Ciocolata: olimpiada/solutii/OJI/2023/VI-ciocolata.md
+                        - Unificare: olimpiada/solutii/OJI/2023/VI-unificare.md
+                    - Clasa a VII-a: 
+                        - Palindrom: olimpiada/solutii/OJI/2023/VII-palindrom.md
+                        - Primprim: olimpiada/solutii/OJI/2023/VII-primprim.md
+                    - Clasa a VIII-a: 
+                        - Hibrid: olimpiada/solutii/OJI/2023/VIII-hibrid.md
+                        - Tema: olimpiada/solutii/OJI/2023/VIII-tema.md
+                    - Clasa a IX-a: 
+                        - Cufere: olimpiada/solutii/OJI/2023/IX-cufere.md
+                        - Fibosnek: olimpiada/solutii/OJI/2023/IX-fibosnek.md
+                        - Partitura: olimpiada/solutii/OJI/2023/IX-partitura.md
+                    - Clasa a X-a: 
+                        - Arhitect: olimpiada/solutii/OJI/2023/X-arhitect.md
+                        - Bingo: olimpiada/solutii/OJI/2023/X-bingo.md
+                        - Fotbal: olimpiada/solutii/OJI/2023/X-fotbal.md
+                    - Clasele XI-XII: 
+                        - Parcare: olimpiada/solutii/OJI/2023/XI-XII-parcare.md
+                        - Turcane: olimpiada/solutii/OJI/2023/XI-XII-turcane.md
+                        - Veri: olimpiada/solutii/OJI/2023/XI-XII-veri.md
                 - OJI 2024:
                     - Clasa a V-a: 
                         - Bomboane: olimpiada/solutii/OJI/2024/V-bomboane.md

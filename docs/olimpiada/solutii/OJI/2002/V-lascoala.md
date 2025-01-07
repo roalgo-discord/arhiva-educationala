@@ -18,7 +18,7 @@ Această problemă poate fi rezolvată aflând cel mai mare pătrat perfect mai 
 
 Ulterior, aflăm diferența dintre $n$ și $k^2$, iar mai apoi afișăm liniile cu elevi în ordine descrescătoare a valorilor, câte $k$ pe rând. 
 
-Mai jos puteți găsi o soluție care ia punctajul maxim.
+Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
 #include <fstream>

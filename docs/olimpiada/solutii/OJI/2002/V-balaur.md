@@ -21,7 +21,7 @@ Această problemă poate fi rezolvată observând modul în care evoluează num�
 
 Se poate observa că în fiecare zi, balaurul va avea $5$ capete mai mult decât în ziua precedentă, deci putem defini răspunsul ca fiind egal cu $5 \cdot n$, unde $n$ este numărul de zile dat în datele de intrare.
 
-Mai jos puteți găsi o soluție care ia punctajul maxim.
+Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
 #include <fstream>
