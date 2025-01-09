@@ -72,7 +72,7 @@ int main() {
         mdr[i] = max(mdr[i + 1], dr[i]);
     }
     // lung maxima
-    int p[NMAX], j = 0; // in p retinem pozitiile de unde pot scoate cuburi pt a obtine lmax
+    int p[200002], j = 0; // in p retinem pozitiile de unde pot scoate cuburi pt a obtine lmax
     int lmax = -1, l;
     for (int i = 1; i <= n; i++) {
         if (v[i - 1] == v[i + 1])      // daca prin taiere alipesc doua siruri cu aceleasi elemente
