@@ -64,7 +64,7 @@ for(i=1+s[k-1];i<=n;i++)
  { s[k]=i;f(k+1); }}
 ```
 
-Această secvență de cod are un stil foarte inconsistent în privința acoladelor și a instrucțiunilor subordonate if-urilor, pe de o parte apărând pe aceeași linie și apoi apărând pe următorul rând. De asemenea, nu se respectă vreo regulă de spațiere ceea ce face codul (intenționat) mai greu de citit. 
+Această secvență de cod are un stil foarte inconsecvent în privința acoladelor și a instrucțiunilor subordonate if-urilor, pe de o parte apărând pe aceeași linie și apoi apărând pe următorul rând. De asemenea, nu se respectă vreo regulă de spațiere ceea ce face codul (intenționat) mai greu de citit. 
 
 ```cpp
 int a=2 ,n;
