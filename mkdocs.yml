@@ -317,7 +317,7 @@ nav:
               - Baraj și lot seniori: olimpiada/baraj-lot-seniori.md
       - Probleme rezolvate:
           - Olimpiada Județeană de Informatică (OJI):
-              - OJI 2002-2009:
+             - OJI 2002-2009:
                 - OJI 2002: 
                     - Clasa a V-a: 
                         - Balaur: olimpiada/solutii/OJI/2002/V-balaur.md
@@ -494,7 +494,7 @@ nav:
                     - Clasele XI-XII: 
                         - Cerc: olimpiada/solutii/OJI/2009/XI-XII-cerc.md
                         - Project Management: olimpiada/solutii/OJI/2009/XI-XII-pm.md
-              - OJI 2010-2019:
+             - OJI 2010-2019:
                 - OJI 2010:
                     - Clasa a V-a: 
                         - Sir: olimpiada/solutii/OJI/2010/V-sir.md
@@ -649,7 +649,7 @@ nav:
                     - Clasele XI-XII: 
                         - Elicoptere: olimpiada/solutii/OJI/2016/XI-XII-elicoptere.md
                         - Summax: olimpiada/solutii/OJI/2016/XI-XII-summax.md
-               - OJI 2017:
+                - OJI 2017:
                     - Clasa a V-a: 
                         - Numere: olimpiada/solutii/OJI/2017/V-numere.md
                         - Robot: olimpiada/solutii/OJI/2017/V-robot.md
@@ -724,7 +724,7 @@ nav:
                         - Conexidad: olimpiada/solutii/OJI/2019/XI-XII-conexidad.md
                         - Rufe: olimpiada/solutii/OJI/2019/XI-XII-rufe.md
                         - Tairos: olimpiada/solutii/OJI/2019/XI-XII-tairos.md
-              - OJI 2020-2024:
+             - OJI 2020-2024:
                 - OJI 2020:
                     - Clasa a V-a: 
                         - Cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
@@ -850,21 +850,7 @@ nav:
                         - Birocratie: olimpiada/solutii/OJI/2024/XI-XII-birocratie.md
                         - Nestemate: olimpiada/solutii/OJI/2024/XI-XII-nestemate.md
                         - Acoperire: olimpiada/solutii/OJI/2024/XI-XII-acoperire.md
-         # - Olimpiada Națională de Informatică (ONI):
-        #      - Clasa a V-a: olimpiada/solutii/ONI/clasa-V.md
-         #     - Clasa a VI-a: olimpiada/solutii/ONI/clasa-VI.md
-         #     - Clasa a VII-a: olimpiada/solutii/ONI/clasa-VII.md
-         #     - Clasa a VIII-a: olimpiada/solutii/ONI/clasa-VIII.md
-         #     - Clasa a IX-a: olimpiada/solutii/ONI/clasa-IX.md
-         #     - Clasa a X-a: olimpiada/solutii/ONI/clasa-X.md
-         #     - Clasele XI-XII: olimpiada/solutii/ONI/clasa-XI-XII.md  
-        #  - Baraje și loturi:
-         #     - Juniori:
-         #         - Baraj juniori: olimpiada/solutii/baraj-lot/baraj-juniori.md
-          #        - Lot juniori: olimpiada/solutii/baraj-lot/lot-juniori.md
-          #    - Seniori:
-          #        - Baraj seniori: olimpiada/solutii/baraj-lot/baraj-seniori.md
-          #        - Lot seniori: olimpiada/solutii/baraj-lot/lot-seniori.md
+
 
 extra_javascript:
   - javascripts/katex.js
