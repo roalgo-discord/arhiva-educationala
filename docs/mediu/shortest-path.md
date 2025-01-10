@@ -364,7 +364,7 @@ using namespace std;
 
 int main() {
 
-    vector<pair<int, int> > dir = { {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    vector<pair<int, int> > dir = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
 
     ifstream cin("padure.in");
     ofstream cout("padure.out");
