@@ -176,7 +176,7 @@ De exemplu, dacă avem ``pair<pair<int, int>, pair<int, int>> p = { {2, 4}, {1, 
 pair<int, int> pr = make_pair(5, 8);
 cout << pr.first << '\n';
 cout << pr.second << '\n';
-pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};
+pair<pair<int, int>, pair<int, int>> p = { {2, 4}, {1, 3} };
 cout << p.first.first << '\n'; // 2
 cout << p.first.second << '\n'; // 4
 cout << p.second.first << '\n'; // 1
