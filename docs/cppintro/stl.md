@@ -170,7 +170,7 @@ Sintaxa este ``pair<tip1, tip2> nume;``, unde tip1 și tip2 sunt tipuri de date,
 
 În cazul elementelor de tip pair compuse, în mod similar cu struct, notațiile vor fi la fel compuse.
 
-De exemplu, dacă avem ``pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};``, cele patru elemente vor putea fi declarate și accesate după cum urmează:
+De exemplu, dacă avem ``pair<pair<int, int>, pair<int, int>> p = { {2, 4}, {1, 3} };``, cele patru elemente vor putea fi declarate și accesate după cum urmează:
 
 ```cpp
 pair<int, int> pr = make_pair(5, 8);
