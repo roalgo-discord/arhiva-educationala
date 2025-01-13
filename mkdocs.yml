@@ -169,13 +169,12 @@ nav:
           - Cum ajungi tot mai bun la concursuri?: mediu/contest-improvement.md
           - Listă de concursuri relevante: mediu/contest-list.md
           - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
-      - Concepte fundamente și de limbaj:
-          - Căutare completă. Tehnica Backtracking: mediu/backtracking.md
-          - Tehnica divide et impera: mediu/divide-et-impera.md
+          - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
       - Tehnici de rezolvare a problemelor:
           - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
           - Abordarea problemelor constructive: mediu/constructive.md
-          - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
+          - Căutare completă. Tehnica Backtracking: mediu/backtracking.md
+          - Tehnica divide et impera: mediu/divide-et-impera.md
       - Algebră:
           - Indicatorul lui Euler: mediu/euler-totient.md
           - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md

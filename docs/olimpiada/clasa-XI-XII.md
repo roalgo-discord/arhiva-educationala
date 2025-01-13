@@ -36,8 +36,8 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a zece
     * Determinarea matricei lanţurilor/drumurilor (algoritmul Roy-Warshall) - [link articol](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-floyd-warshall-roy-floyd)
     * Descompunerea unui graf orientat fără circuite pe niveluri. Sortare topologică - [link articol](https://edu.roalgo.ro/mediu/toposort/)
     * Determinarea drumurilor de cost minim într-un graf. Algoritmul lui Dijkstra, algoritmul Bellman-Ford, algoritmul Roy-Floyd - [link articol](https://edu.roalgo.ro/mediu/shortest-path/)
-    * Determinarea unui lanț/ciclu hamiltonian 
-    * Determinarea unui lanț/ciclu eulerian 
+    * Determinarea unui lanț/ciclu hamiltonian - [link articol](https://edu.roalgo.ro/mediu/cycles/#cicluri-hamiltoniene)
+    * Determinarea unui lanț/ciclu eulerian - [link articol](https://edu.roalgo.ro/mediu/cycles/#cicluri-euleriene) 
 
 ## Arbori
 

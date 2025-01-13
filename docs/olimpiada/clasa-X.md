@@ -42,9 +42,9 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a noua
 * Determinarea numărului de ordine pentru elementele combinatoriale
 * Aritmetică modulară (adunare, scădere, înmulțire, invers modular - pentru modulo număr prim) - [link articol](https://edu.roalgo.ro/mediu/pow-log/#fundamente-ale-calcului-modular)
 
-## Recursivitate
+## Recursivitate - [link articol](https://edu.roalgo.ro/cppintro/functions/#functii-recursive)
 
-## Metoda Divide et Impera
+## Metoda Divide et Impera - [link articol](https://edu.roalgo.ro/mediu/divide-et-impera/)
 
 !!! note "Observație"
     Următoarele capitole sunt doar pentru etapa națională
