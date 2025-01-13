@@ -149,7 +149,7 @@ Aceste funcții convertesc un caracter din literă mare în literă mică sau in
 
 ## Șiruri de caractere și biblioteca cstring
 
-Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de caractere constă în folosirea metodelor care există și în limbajul C, metode care sunt incluse în bibiloteca ``#include <cstring>``.
+Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de caractere constă în folosirea metodelor care există și în limbajul C, metode care sunt incluse în bibiloteca ``<cstring>``.
 
 Un șir de caractere poate fi inițializat în diverse moduri, așa cum se poate vedea în exemplele menționate mai jos. Se poate observa că afișarea se face foarte ușor, la fel ca la orice variabilă, spre deosebire de arrays de tipuri întregi sau reale.
 
@@ -331,7 +331,7 @@ while (token != NULL) {
 
 Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$. Tipul string este unul din tipurile prezente în [STL](https://edu.roalgo.ro/cppintro/stl/), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
-Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``#include <string>``. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
+Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``<string>``. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
 
 În ceea ce privește citirea, funcția getline va avea o sintaxă un pic diferită, fiind scrisă astfel:
 

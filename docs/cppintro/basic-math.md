@@ -166,7 +166,7 @@ cout << x << '\n'; // 24
 
 Pentru a afla rezultatul expresiei $a^b$, avem două moduri principale de a calcula acest lucru. 
 
-În primul rând, putem folosi instrucțiunea `pow` din biblioteca `#include <cmath>`, sintaxa fiind `pow(baza, exponent)`, dar problema este aceea că deși aceasta este o soluție viabilă pentru numere reale, uneori putem ajunge în situația în care dacă calculăm un rezultat foarte mare (de exemplu, $9^{14}$), în funcție de precizia operației de ridicare la putere, să avem rezultate de forma $x.999999999$ care rotunjite în jos, să ne dea $x-1$. 
+În primul rând, putem folosi instrucțiunea `pow` din biblioteca `<cmath>`, sintaxa fiind `pow(baza, exponent)`, dar problema este aceea că deși aceasta este o soluție viabilă pentru numere reale, uneori putem ajunge în situația în care dacă calculăm un rezultat foarte mare (de exemplu, $9^{14}$), în funcție de precizia operației de ridicare la putere, să avem rezultate de forma $x.999999999$ care rotunjite în jos, să ne dea $x-1$. 
 
 O metodă mai simplă constă în a ridica la putere folosind o structură repetitivă care calculează $a^b$ în $b$ pași, așa cum se poate vedea mai jos. 
 

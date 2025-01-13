@@ -84,7 +84,7 @@ int main() {
 Stiva poate fi implementată și cu funcțiile din STL. Pentru mai multe detalii,
 vedeți [implementarea](https://kilonova.ro/pastes/BkG7Wrt8wQ83) și [funcțiile descrise aici](https://en.cppreference.com/w/cpp/container/stack).
 
-Se poate observa faptul că avem nevoie de biblioteca `#include <stack>` pentru aceste funcții. 
+Se poate observa faptul că avem nevoie de biblioteca `<stack>` pentru aceste funcții. 
 
 ```cpp
 #include <iostream>

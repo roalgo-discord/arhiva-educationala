@@ -24,7 +24,7 @@ Atunci când scrieți un program în orice limbaj de programare, există situaț
 
 Chiar dacă acest articol nu se va concentra pe funcțiile de sistem, cel mai probabil ați folosit până acum aceste funcții pentru a afla valorile diverselor funcții. 
 
-Un astfel de exemplu este funcția $sqrt(x)$, care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `#include <cmath>`. În mod similar, probabil ați folosit până acum funcția `std::sort`, funcție ce se regăsește în biblioteca `#include <algorithm>`, iar exemplele pot continua. 
+Un astfel de exemplu este funcția $sqrt(x)$, care ne ajută să aflăm valoarea lui $\sqrt n$, funcție ce se regăsește în biblioteca `<cmath>`. În mod similar, probabil ați folosit până acum funcția `std::sort`, funcție ce se regăsește în biblioteca `<algorithm>`, iar exemplele pot continua. 
 
 Deși nu trebuie să rescriem aceste funcții, acestea se bazează pe același principiu (refolosirea unor coduri deja scrise), singura diferență fiind aceea că codul din spatele acestor funcții face deja parte din standardul bibliotecilor și nu trebuie reprodus. 
 

@@ -23,7 +23,7 @@ Deși acest articol poate fi parcurs fără cunoștințe anterioare, se recomand
 
 ### Structura std::vector
 
-Aceasta este cea mai simplă structură de date din STL, fiind un tablou cu lungime dinamică, care este indexat de la $0$. Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``#include <vector>``.
+Aceasta este cea mai simplă structură de date din STL, fiind un tablou cu lungime dinamică, care este indexat de la $0$. Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``<vector>``.
 
 Sintaxa unui vector va fi de tipul ``vector<tip> nume;``, unde tip poate fi orice tip de date cunoscut, inclusiv cele pe care le veți studia în acest articol. Cel mai frecvent, veți folosi un vector drept un înlocuitor pentru tablourile de tip _array_ cu care sunteți obișnuiți din codurile scrise anterior. 
 
@@ -128,7 +128,7 @@ Această structură de date este echivalentul std::vector pentru șirurile de ca
 
 Se recomandă citirea în prealabil a [articolului următor despre șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/).
 
-De asemenea, toate proprietățile vectorului se aplică și pentru std::string. Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``#include <string>``. Se remarcă faptul că există anumite diferențe față de cum folosim șirurile de caractere din C.
+De asemenea, toate proprietățile vectorului se aplică și pentru std::string. Pentru a putea folosi această structură de date, va trebui să includem biblioteca ``<string>``. Se remarcă faptul că există anumite diferențe față de cum folosim șirurile de caractere din C.
 
 Sintaxa unui string va fi de tipul ``string nume;``
 
@@ -185,7 +185,7 @@ cout << p.second.second << '\n'; // 3
 
 ### Structura std::tuple
 
-Această structură de date reprezintă o generalizare a structurii std::pair vă permite să folosiți o combinație de tipuri de date mai complexe, într-o manieră mult mai ușoară decât ați face-o dacă ați folosi pair sau vector, profitând de avantajul că putem ține tipuri de date diferite în fiecare dintre poziții. Pentru a folosi tuple, va trebui să includeți ``#include <tuple>``.
+Această structură de date reprezintă o generalizare a structurii std::pair vă permite să folosiți o combinație de tipuri de date mai complexe, într-o manieră mult mai ușoară decât ați face-o dacă ați folosi pair sau vector, profitând de avantajul că putem ține tipuri de date diferite în fiecare dintre poziții. Pentru a folosi tuple, va trebui să includeți ``<tuple>``.
 
 Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vor face acest lucru mult mai ușor. 
 
@@ -254,7 +254,7 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 
 ### Structura std::queue
 
-În general, folosim această structură de date pentru a simula funcționalitățile unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca ``#include  <queue>``.
+În general, folosim această structură de date pentru a simula funcționalitățile unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca ``<queue>``.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](https://edu.roalgo.ro/mediu/queue/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
@@ -272,7 +272,7 @@ cout << '\n';
 
 ### Structura std::stack
 
-În general, folosim această structură de date pentru a simula funcționalitățile unei stive. Pentru a folosi std::stack, avem nevoie de biblioteca ``#include  <stack>``.
+În general, folosim această structură de date pentru a simula funcționalitățile unei stive. Pentru a folosi std::stack, avem nevoie de biblioteca ``<stack>``.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](https://edu.roalgo.ro/mediu/stack/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
@@ -290,7 +290,7 @@ cout << '\n';
 
 ### Structura std::deque
 
-În general, folosim această structură de date pentru a simula funcționalitățile unui deque. Pentru a folosi std::deque, avem nevoie de biblioteca ``#include  <deque>``.
+În general, folosim această structură de date pentru a simula funcționalitățile unui deque. Pentru a folosi std::deque, avem nevoie de biblioteca ``<deque>``.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre deques](https://edu.roalgo.ro/mediu/deque/), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
@@ -328,7 +328,7 @@ Structurile de date arborescente ne permit să putem lucra cu valori ordonate î
 
 ### Structura std::map
 
-Un map este o structură de date arborescentă care ne permite să păstrăm pentru fiecare cheie o valoare specifică, fiind foarte similar ca principiu cu funcțiile de la matematică. Pentru a putea folosi std::map, va trebui să includem biblioteca ``#include <map>``. Sintaxa acestuia va fi ``map <tip1, tip2> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  Cheile vor fi ordonate crescător, datorită implementării bazate pe red-black trees.
+Un map este o structură de date arborescentă care ne permite să păstrăm pentru fiecare cheie o valoare specifică, fiind foarte similar ca principiu cu funcțiile de la matematică. Pentru a putea folosi std::map, va trebui să includem biblioteca ``<map>``. Sintaxa acestuia va fi ``map <tip1, tip2> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  Cheile vor fi ordonate crescător, datorită implementării bazate pe red-black trees.
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
@@ -380,7 +380,7 @@ else {
 
 ### Structura std::set
 
-Un set este o structură de date arborescentă care ne permite să păstrăm o listă de valori care apare, ordonată crescător, fiind foarte similar ca principiu cu mulțimile de la matematică. Pentru a putea folosi std::set, va trebui să includem biblioteca ``#include <set>``. Sintaxa acestuia va fi ``set <tip> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  
+Un set este o structură de date arborescentă care ne permite să păstrăm o listă de valori care apare, ordonată crescător, fiind foarte similar ca principiu cu mulțimile de la matematică. Pentru a putea folosi std::set, va trebui să includem biblioteca ``<set>``. Sintaxa acestuia va fi ``set <tip> nume``, iar tipurile de date vor putea fi cele cunoscute, inclusiv vectori și stringuri.  
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
@@ -423,9 +423,9 @@ for (set<int> ::reverse_iterator it2 = s.rbegin(); it2 != s.rend(); it2++) {
 
 Atât std::set cât și std::map au versiuni unordered ale acestora, care acționează în mod similar cu structuri de tip hashmap, codificând valorile sub diverse forme pentru a evita coliziuni de diverse moduri. Totuși, aici nu vom discuta teoria din spatele hashurilor, ci doar containerele în sine [articolul nostru despre hashing](https://edu.roalgo.ro/mediu/hashing/#hash-tables-si-unordered-map). Deși funcțiile pe care cele două structuri de date le au sunt identice cu cele ale echivalentelor lor sortate, uneori pot deveni foarte utile în concursuri.
 
-std::unordered_map este versiunea nesortată a map-ului, fiind inclus în biblioteca ``#include <unordered_map>``. Sintaxa acestuia va fi ``unordered_map <tip1, tip2> nume``.
+std::unordered_map este versiunea nesortată a map-ului, fiind inclus în biblioteca ``<unordered_map>``. Sintaxa acestuia va fi ``unordered_map <tip1, tip2> nume``.
 
-std::unordered_set este versiunea nesortată a set-ului, fiind inclus în biblioteca ``#include <unordered_set>``. Sintaxa acestuia va fi ``unordered_set <tip> nume``.
+std::unordered_set este versiunea nesortată a set-ului, fiind inclus în biblioteca ``<unordered_set>``. Sintaxa acestuia va fi ``unordered_set <tip> nume``.
 
 Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $O(1)$ amortizat, dar în cel mai rău caz, complexitatea finală este $O(n)$ per operație, unde $n$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
 
@@ -447,7 +447,7 @@ O coadă de priorități este o coadă pe care o folosim pentru a păstra datele
 
 În general, vom vrea să folosim o coadă de priorități atunci când vrem să aflăm mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce face această structură de date principala metodă de a implementa diverși algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui Dijkstra](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-lui-dijkstra) pe grafuri cu costuri.
 
-Pentru a folosi această structură de date, biblioteca ``#include  <queue>``  este necesară. Sintaxa unei cozi de priorități este ``priority_queue<tip> nume``. Mai jos găsiți un exemplu de implementare a acestei structuri de date.
+Pentru a folosi această structură de date, biblioteca ``<queue>``  este necesară. Sintaxa unei cozi de priorități este ``priority_queue<tip> nume``. Mai jos găsiți un exemplu de implementare a acestei structuri de date.
 
 ```cpp
 priority_queue<int> pq; 
