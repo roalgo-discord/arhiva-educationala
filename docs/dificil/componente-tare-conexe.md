@@ -7,43 +7,75 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-    * [Sortare topologică](https://edu.roalgo.ro/mediu/toposort/)
-    * [Cicluri în grafuri](https://edu.roalgo.ro/mediu/cycles/)
-    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+!!! example "Cunoștințe necesare"
+    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Sortare topologică](https://edu.roalgo.ro/mediu/toposort/)
+    - [Cicluri în grafuri](https://edu.roalgo.ro/mediu/cycles/)
+    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
 
 ## Introducere
 
-În cele ce urmează, vom prezenta componentele tare conexe, algoritmii principali și cum îi putem aplica. 
+În cele ce urmează, vom prezenta componentele tare conexe, algoritmii principali
+și cum îi putem aplica.
 
-!!! info "Definiție" 
-    Într-un graf orientat, componentele tare conexe sunt submulțimi maximale de noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care aparțin unei astfel de componente, se poate ajunge și de la $a$ la $b$, și de la $b$ la $a$ folosind muchiile existente. 
+!!! info "Definiție"
+
+    Într-un graf orientat, componentele tare conexe sunt submulțimi maximale de
+    noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care aparțin
+    unei astfel de componente, se poate ajunge și de la $a$ la $b$, și de la $b$ la
+    $a$ folosind muchiile existente.
 
 !!! note "Observație"
-    Se poate observa că componentele tare conexe sunt versiunea componentelor conexe pentru grafurile orientate. Deși definițiile sunt similare, se va observa că aflarea lor va fi mai dificilă decât cea a componentelor conexe, care constă într-o simplă parcurgere. 
+
+    Se poate observa că componentele tare conexe sunt versiunea componentelor conexe
+    pentru grafurile orientate. Deși definițiile sunt similare, se va observa că
+    aflarea lor va fi mai dificilă decât cea a componentelor conexe, care constă
+    într-o simplă parcurgere.
 
 !!! example "Exemplu"
-    De exemplu, dacă avem următorul graf: $n = 8$, $m = 12$ și următoarele muchii de tip $(a, b)$: $(1, 2), (2, 6), (6, 7), (7, 6), (3, 1), (3, 4), (2, 3), (4, 5), (5, 4), (6, 5), (5, 8), (8, 7)$, componentele tare conexe sunt $\{1, 2, 3\}$ și $\{4, 5, 6, 7, 8\}$. Mai jos găsiți un desen reprezentativ.  
+
+    De exemplu, dacă avem următorul graf: $n = 8$, $m = 12$ și următoarele muchii de
+    tip $(a, b)$: $(1, 2)$,$ (2, 6)$,$ (6, 7)$,$ (7, 6)$,$ (3, 1)$,$ (3, 4)$,$ (2,
+    3)$,$ (4, 5)$,$ (5, 4)$,$ (6, 5)$,$ (5, 8)$,$ (8, 7)$, componentele tare conexe
+    sunt $\{1, 2, 3\}$ și $\{4, 5, 6, 7, 8\}$. Mai jos găsiți un desen
+    reprezentativ.  
 
 ![](../images/scc/scc.png)
 
-Pentru aflarea componentelor tare conexe, există doi algoritmi la fel de eficienți, algoritmul lui Tarjan și algoritmul lui Kosaraju, ambii fiind algoritmi ce rulează în timp liniar. 
+Pentru aflarea componentelor tare conexe, există doi algoritmi la fel de
+eficienți, algoritmul lui Tarjan și algoritmul lui Kosaraju, ambii fiind
+algoritmi ce rulează în timp liniar.
 
-În general, deoarece nu există vreo diferență între ei în practică, se preferă folosirea algoritmului lui Kosaraju, deoarece este mai ușor de ținut minte și poate fi aplicat foarte ușor în aplicațiile viitoare. 
+În general, deoarece nu există vreo diferență între ei în practică, se preferă
+folosirea algoritmului lui Kosaraju, deoarece este mai ușor de ținut minte și
+poate fi aplicat foarte ușor în aplicațiile viitoare.
 
 ## Algoritmul lui Kosaraju
 
-Algoritmul lui Kosaraju este un algoritm care se va baza pe două parcurgeri de tip DFS, una pe graful inițial și cealaltă pe graful transpus pentru a afla componentele tare conexe. 
+Algoritmul lui Kosaraju este un algoritm care se va baza pe două parcurgeri de
+tip DFS, una pe graful inițial și cealaltă pe graful transpus pentru a afla
+componentele tare conexe.
 
-!!! info "Graf transpus" 
-    Într-un graf orientat, un graf transpus $G'$ este un graf care are proprietatea că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va conține muchia $(b, a)$. Cu alte cuvinte, muchiile sunt inversate. Pentru mai multe informații, puteți accesa [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
+!!! info "Graf transpus"
 
-Pe scurt, algoritmul va parcurge mai întâi nodurile într-o manieră similară cu cea de la algoritmul pentru aflarea componentelor conexe, singura diferență fiind aceea că la finalizarea pașilor efectuați în funcție pentru un nod dat, acesta va fi adăugat într-o stivă. 
+    Într-un graf orientat, un graf transpus $G'$ este un graf care are proprietatea
+    că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va conține muchia
+    $(b, a)$. Cu alte cuvinte, muchiile sunt inversate. Pentru mai multe informații,
+    puteți accesa [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
 
-Ulterior, nodurile din stivă vor fi luate pe rând, iar pentru fiecare nod nevizitat la acest pas, vom avea o parcurgere similară cu cea de la primul pas, parcurgere efectuată pe graful transpus care ne va da componentele tare conexe, acelea fiind cele care sunt vizitate de nodul curent la pasul dat. 
+Pe scurt, algoritmul va parcurge mai întâi nodurile într-o manieră similară cu
+cea de la algoritmul pentru aflarea componentelor conexe, singura diferență
+fiind aceea că la finalizarea pașilor efectuați în funcție pentru un nod dat,
+acesta va fi adăugat într-o stivă.
 
-Acest algoritm are complexitate $O(n + m)$ și implementarea lui, folosită la problema [Planets and Kingdoms](https://cses.fi/problemset/task/1683/) poate fi citită mai jos:
+Ulterior, nodurile din stivă vor fi luate pe rând, iar pentru fiecare nod
+nevizitat la acest pas, vom avea o parcurgere similară cu cea de la primul pas,
+parcurgere efectuată pe graful transpus care ne va da componentele tare conexe,
+acelea fiind cele care sunt vizitate de nodul curent la pasul dat.
+
+Acest algoritm are complexitate $O(n + m)$ și implementarea lui, folosită la
+problema [Planets and Kingdoms](https://cses.fi/problemset/task/1683/) poate fi
+citită mai jos:
 
 ```cpp
 #include <iostream>
@@ -114,11 +146,21 @@ int main() {
 
 ## Algoritmul lui Tarjan
 
-Ideea de bază a algoritmului este următoarea: Se începe cu o parcurgere DFS dintr-un nod oarecare (parcurgerile viitoare vor fi efectuate pe noduri care nu au fost vizitate încă). Aceste parcurgeri ne vor oferi niște arbori parțiali, construiți din muchiile care au fost folosite pentru a vizita nodurile în cauză. 
+Ideea de bază a algoritmului este următoarea: Se începe cu o parcurgere DFS
+dintr-un nod oarecare (parcurgerile viitoare vor fi efectuate pe noduri care nu
+au fost vizitate încă). Aceste parcurgeri ne vor oferi niște arbori parțiali,
+construiți din muchiile care au fost folosite pentru a vizita nodurile în cauză.
 
-Pentru a afla componentele tare conexe, ne vom folosi de arborii creați pentru a găsi subarbori care vor avea proprietatea că nivelul minim la care se poate ajunge folosind muchiile de întoarcere este egal cu nivelul nodului curent, unde nivelul nodului este numărul său de ordine din parcurgerea DFS. Un tutorial foarte bun poate fi accesat [aici](https://codeforces.com/blog/entry/131187).
+Pentru a afla componentele tare conexe, ne vom folosi de arborii creați pentru a
+găsi subarbori care vor avea proprietatea că nivelul minim la care se poate
+ajunge folosind muchiile de întoarcere este egal cu nivelul nodului curent, unde
+nivelul nodului este numărul său de ordine din parcurgerea DFS. Un tutorial
+foarte bun poate fi accesat [aici](https://codeforces.com/blog/entry/131187).
 
-Pentru cei familiarizați și cu componentele biconexe, se vor putea observa destule similarități între algoritmul acesta și cel de la componentele biconexe, ambii fiind inventați de Tarjan. Mai jos puteți găsi o soluție care rezolvă aceeași problemă de mai sus. 
+Pentru cei familiarizați și cu componentele biconexe, se vor putea observa
+destule similarități între algoritmul acesta și cel de la componentele biconexe,
+ambii fiind inventați de Tarjan. Mai jos puteți găsi o soluție care rezolvă
+aceeași problemă de mai sus.
 
 ```cpp
 #include <iostream>
@@ -198,19 +240,33 @@ int main() {
 
 ## Aplicații
 
-De regulă, componentele tare conexe apar destul de rar în probleme de sine stătătoare, din cauza faptului că cunoașterea lor ar face diferența dintre cei care ar lua punctajul maxim și cei care nu ar lua puncte. Totuși, se poate remarca prezența lucrului cu componentele tare conexe în unele dinamici pe grafuri, în care putem folosi o proprietate foarte importantă, pe care o vom enunța mai jos. 
+De regulă, componentele tare conexe apar destul de rar în probleme de sine
+stătătoare, din cauza faptului că cunoașterea lor ar face diferența dintre cei
+care ar lua punctajul maxim și cei care nu ar lua puncte. Totuși, se poate
+remarca prezența lucrului cu componentele tare conexe în unele dinamici pe
+grafuri, în care putem folosi o proprietate foarte importantă, pe care o vom
+enunța mai jos.
 
-!!! info "Compresarea componentelor tare conexe" 
-    Dacă compresăm componentele tari conexe într-un singur nod, noul graf rezultat devine aciclic, fapt care ne ajută să aplicăm dinamicile specifice grafurilor orientate aciclice. 
+!!! info "Compresarea componentelor tare conexe"
+
+    Dacă compresăm componentele tari conexe într-un singur nod, noul graf rezultat
+    devine aciclic, fapt care ne ajută să aplicăm dinamicile specifice grafurilor
+    orientate aciclice.
 
 !!! note "Observație"
-    Algoritmul lui Kosaraju ne oferă componentele tare conexe în ordinea sortării topologice din graful rezultat. 
+
+    Algoritmul lui Kosaraju ne oferă componentele tare conexe în ordinea sortării
+    topologice din graful rezultat.
 
 ## Problema [Coin Collector](https://cses.fi/problemset/task/1686/)
 
-Pentru a rezolva această problemă, va trebui să aflăm componentele tare conexe, iar mai apoi, să le compresăm folosind unul din algoritmii descriși mai sus. Ulterior, vom construi noul graf și vom aplica o sortare topologică pe noul graf rezultat, ținând o dinamică, în care vom ști pentru fiecare componentă tare conexă, suma maximă a costurilor ce pot fi luate pe un asemenea drum.
+Pentru a rezolva această problemă, va trebui să aflăm componentele tare conexe,
+iar mai apoi, să le compresăm folosind unul din algoritmii descriși mai sus.
+Ulterior, vom construi noul graf și vom aplica o sortare topologică pe noul graf
+rezultat, ținând o dinamică, în care vom ști pentru fiecare componentă tare
+conexă, suma maximă a costurilor ce pot fi luate pe un asemenea drum.
 
-Soluția va fi din nou, una liniară raportată la dimensiunile grafului. 
+Soluția va fi din nou, una liniară raportată la dimensiunile grafului.
 
 ```cpp
 #include <iostream>
@@ -324,31 +380,46 @@ int main() {
 
 ## Concluzii și alte aplicații
 
-Componentele tare conexe sunt o noțiune fundamentală foarte importantă care apare în probleme la diverse competiții, dar în contextul olimpiadelor, se regăsesc mai ales în dinamicile pe grafuri orientate, precum și ulterior, atunci când veți studia 2-SAT, problemă ce se rezolvă cu ajutorul componentelor tare conexe generate de graful special creat din expresiile logice date. 
+Componentele tare conexe sunt o noțiune fundamentală foarte importantă care
+apare în probleme la diverse competiții, dar în contextul olimpiadelor, se
+regăsesc mai ales în dinamicile pe grafuri orientate, precum și ulterior, atunci
+când veți studia 2-SAT, problemă ce se rezolvă cu ajutorul componentelor tare
+conexe generate de graful special creat din expresiile logice date.
 
-Se recomandă implementarea clară a algoritmului ales (nu aveți nevoie să știți ambii algoritmi, dar cunoașterea ambilor e un plus) pentru a putea face rezolvarea problemelor ulterioare mai ușoară.
+Se recomandă implementarea clară a algoritmului ales (nu aveți nevoie să știți
+ambii algoritmi, dar cunoașterea ambilor e un plus) pentru a putea face
+rezolvarea problemelor ulterioare mai ușoară.
 
 ## Probleme suplimentare
 
-* [ctc infoarena](https://infoarena.ro/problema/ctc)
-* [Checkposts Codeforces](https://codeforces.com/problemset/problem/427/C)
-* [Ralph and Mushrooms Codeforces](https://codeforces.com/contest/894/problem/E)
-* [IIOT 2023-24 Dogtrick 2](https://kilonova.ro/problems/2288/)
-* [Transitive Graph Codeforces](https://codeforces.com/contest/1900/problem/E)
-* [Flight Routes Check CSES](https://cses.fi/problemset/task/1682)
-* [Grass Cownoisseur USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=516)
-* [obiective infoarena](https://infoarena.ro/problema/obiective)
-* [dep Baraj Seniori 2008](https://kilonova.ro/problems/1787/)
-* [network Baraj Seniori 2016](https://kilonova.ro/problems/278)
-* [Probleme cu componente tare conexe de pe kilonova](https://kilonova.ro/tags/302)
+- [ctc infoarena](https://infoarena.ro/problema/ctc)
+- [Checkposts Codeforces](https://codeforces.com/problemset/problem/427/C)
+- [Ralph and Mushrooms Codeforces](https://codeforces.com/contest/894/problem/E)
+- [IIOT 2023-24 Dogtrick 2](https://kilonova.ro/problems/2288/)
+- [Transitive Graph Codeforces](https://codeforces.com/contest/1900/problem/E)
+- [Flight Routes Check CSES](https://cses.fi/problemset/task/1682)
+- [Grass Cownoisseur USACO
+  Gold](https://usaco.org/index.php?page=viewproblem2&cpid=516)
+- [obiective infoarena](https://infoarena.ro/problema/obiective)
+- [dep Baraj Seniori 2008](https://kilonova.ro/problems/1787/)
+- [network Baraj Seniori 2016](https://kilonova.ro/problems/278)
+- [Probleme cu componente tare conexe de pe
+  kilonova](https://kilonova.ro/tags/302)
 
 ## Lectură suplimentară
 
-* [Strongly Connected Components - USACO Guide](https://usaco.guide/adv/SCC?lang=cpp)
-* [Tare conexitate - pbinfo](https://www.pbinfo.ro/articole/6036/tare-conexitate)
-* [Strongly Connected Components - CP-algorithms](https://cp-algorithms.com/graph/strongly-connected-components.html)
-* [Algoritmul lui Kosaraju - Wikipedia](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
-* [Algoritmul lui Tarjan - Codeforces](https://codeforces.com/blog/entry/131187)
-* [Algoritmul lui Tarjan - Wikipedia](https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)
-* [Graph (IV) - slides 61-83 - HKOI](https://assets.hkoi.org/training2023/g-iv.pdf)
-* [Alt algoritm pentru componente tare conexe de la Radewoosh](https://codeforces.com/blog/entry/91608)
+- [Strongly Connected Components - USACO
+  Guide](https://usaco.guide/adv/SCC?lang=cpp)
+- [Tare conexitate -
+  pbinfo](https://www.pbinfo.ro/articole/6036/tare-conexitate)
+- [Strongly Connected Components -
+  CP-algorithms](https://cp-algorithms.com/graph/strongly-connected-components.html)
+- [Algoritmul lui Kosaraju -
+  Wikipedia](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
+- [Algoritmul lui Tarjan - Codeforces](https://codeforces.com/blog/entry/131187)
+- [Algoritmul lui Tarjan -
+  Wikipedia](https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)
+- [Graph (IV) - slides 61-83 -
+  HKOI](https://assets.hkoi.org/training2023/g-iv.pdf)
+- [Alt algoritm pentru componente tare conexe de la
+  Radewoosh](https://codeforces.com/blog/entry/91608)

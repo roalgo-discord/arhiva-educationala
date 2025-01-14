@@ -8,36 +8,54 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    * [Căutarea binară (pentru primul algoritm)](https://edu.roalgo.ro/usor/binary-search/)
-    * [Arbori de intervale (pentru cel de-al doilea algoritm)](https://edu.roalgo.ro/dificil/segment-trees/)
+!!! example "Cunoștințe necesare"
+    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Căutarea binară (pentru primul algoritm)](https://edu.roalgo.ro/usor/binary-search/)
+    - [Arbori de intervale (pentru cel de-al doilea algoritm)](https://edu.roalgo.ro/dificil/segment-trees/)
 
-În cele ce urmează, vom prezenta problema aflării celui mai lung subșir crescător dintr-un șir, prezentând o serie de algoritmi care rezolvă această problemă, începând de la cei mai înceți și terminând cu variantele optime, precum și diversele modificări pe care le putem face.
+În cele ce urmează, vom prezenta problema aflării celui mai lung subșir
+crescător dintr-un șir, prezentând o serie de algoritmi care rezolvă această
+problemă, începând de la cei mai înceți și terminând cu variantele optime,
+precum și diversele modificări pe care le putem face.
 
 ## Introducere
 
-Se consideră un subșir crescător al vectorului $v$ un subșir $p_1, p_2, \dots, p_k$ cu proprietățile că $1 \leq p_1 < p_2 < \dots < p_k \leq n$, iar $v[p_1] < v[p_2] < \dots < v[p_k]$.
+Se consideră un subșir crescător al vectorului $v$ un subșir $p_1, p_2, \dots,
+p_k$ cu proprietățile că $1 \leq p_1 < p_2 < \dots < p_k \leq n$, iar $v[p_1] <
+v[p_2] < \dots < v[p_k]$.
 
-Un subșir crescător maximal al unui șir este un subșir crescător al lui $v$ cu proprietatea că lungimea acestuia este maximă. 
+Un subșir crescător maximal al unui șir este un subșir crescător al lui $v$ cu
+proprietatea că lungimea acestuia este maximă.
 
-De exemplu, dacă $v = \{7, 3, 5, 3, 6, 2, 9, 8 \}$, unul dintre subșirurile crescătoare de lungime maximă al acestui șir este $\{ 3, 5, 6, 9 \}$, lungimea acestuia fiind $4$. 
+De exemplu, dacă $v = \{7, 3, 5, 3, 6, 2, 9, 8 \}$, unul dintre subșirurile
+crescătoare de lungime maximă al acestui șir este $\{ 3, 5, 6, 9 \}$, lungimea
+acestuia fiind $4$.
 
 ## Cum aflăm subșirul crescător maximal?
 
-O primă soluție constă în folosirea unei metode de tip Backtracking pentru a testa toate subșirurile, dar aceasta este mult prea înceată, nu are sens să o discutăm aici. Totuși, există câteva soluții care sunt bazate pe algoritmi de tip Greedy și bazate pe metoda programării dinamice care ne duc la răspuns, în diverse complexități de timp. În cele ce urmează, le vom prezenta, una câte una. 
+O primă soluție constă în folosirea unei metode de tip Backtracking pentru a
+testa toate subșirurile, dar aceasta este mult prea înceată, nu are sens să o
+discutăm aici. Totuși, există câteva soluții care sunt bazate pe algoritmi de
+tip Greedy și bazate pe metoda programării dinamice care ne duc la răspuns, în
+diverse complexități de timp. În cele ce urmează, le vom prezenta, una câte una.
 
 ## Dinamica în O(n^2)
 
-O soluție foarte cunoscută a acestei probleme constă în folosirea unei dinamici, în care $dp[i]$ va ține lungimea subșirului crescător maximal care conține poziția $i$. Tranzițiile vor fi foarte simple, fiecare poziție este comparată cu fiecare, complexitatea soluției ajungând la $O(n^2). 
+O soluție foarte cunoscută a acestei probleme constă în folosirea unei dinamici,
+în care $dp[i]$ va ține lungimea subșirului crescător maximal care conține
+poziția $i$. Tranzițiile vor fi foarte simple, fiecare poziție este comparată cu
+fiecare, complexitatea soluției ajungând la $O(n^2).
 
 $$
 dp[i] = \max_{\substack{j < i \\\\ v[j] < v[i]}} \left(dp[j] + 1\right)
 $$
 
-Evident, dacă nu există o poziție $j < i$ care respectă condiția de mai sus, $dp[i] = 1$.
+Evident, dacă nu există o poziție $j < i$ care respectă condiția de mai sus,
+$dp[i] = 1$.
 
-Implementarea acestei soluții nu este foarte complicată, mai jos găsiți soluția propusă de noi pentru problema [SCLM](https://www.pbinfo.ro/probleme/396/sclm) de pe pbinfo. 
+Implementarea acestei soluții nu este foarte complicată, mai jos găsiți soluția
+propusă de noi pentru problema [SCLM](https://www.pbinfo.ro/probleme/396/sclm)
+de pe pbinfo.
 
 ```cpp
 #include <fstream>
@@ -89,9 +107,16 @@ int main() {
 
 ## Soluție în $O(n \log n)$ cu căutare binară
 
-Pentru a rezolva această problemă în timp optim, trebuie să observăm că foarte mulți candidați pe care îi ținem la soluția anterioară nu își au rostul, fiind îndeajuns să știm doar candidatul cu cea mai mică valoare pentru fiecare valoare distinctă pe care o poate lua $dp[i]$. 
+Pentru a rezolva această problemă în timp optim, trebuie să observăm că foarte
+mulți candidați pe care îi ținem la soluția anterioară nu își au rostul, fiind
+îndeajuns să știm doar candidatul cu cea mai mică valoare pentru fiecare valoare
+distinctă pe care o poate lua $dp[i]$.
 
-Deoarece pe măsură ce creștem valorile lui $dp[i]$, candidații pe care îi păstrăm au valori tot mai mari, putem îmbunătăți această soluție păstrând doar candidații și căutând binar valoarea minimă din șirul candidaților care depășește valoarea curentă. Mai jos găsiți soluția problemei [Increasing Subsequence](https://cses.fi/problemset/task/1145/) de pe CSES.
+Deoarece pe măsură ce creștem valorile lui $dp[i]$, candidații pe care îi
+păstrăm au valori tot mai mari, putem îmbunătăți această soluție păstrând doar
+candidații și căutând binar valoarea minimă din șirul candidaților care
+depășește valoarea curentă. Mai jos găsiți soluția problemei [Increasing
+Subsequence](https://cses.fi/problemset/task/1145/) de pe CSES.
 
 ```cpp
 #include <iostream>
@@ -142,11 +167,21 @@ int main() {
 
 ## Soluție în $O(n \log n)$ cu structuri de date
 
-Pentru soluțiile în $O(n \log n)$ care folosesc structuri de date, mai întâi vom vrea să avem o copie a vectorului inițial, pe care să o sortăm. Recomandăm mai întâi familiarizarea cu arborii de intervale sau arborii indexați binar pentru a continua, precum și normalizarea dacă nu ați mai folosit această tehnică anterior.
+Pentru soluțiile în $O(n \log n)$ care folosesc structuri de date, mai întâi vom
+vrea să avem o copie a vectorului inițial, pe care să o sortăm. Recomandăm mai
+întâi familiarizarea cu arborii de intervale sau arborii indexați binar pentru a
+continua, precum și normalizarea dacă nu ați mai folosit această tehnică
+anterior.
 
-Acest lucru ne garantează normalizarea vectorului, lucru pe care îl vom folosi pentru a putea avea queryuri de tip maxim pe un interval pe parcursul implementării voastre.
+Acest lucru ne garantează normalizarea vectorului, lucru pe care îl vom folosi
+pentru a putea avea queryuri de tip maxim pe un interval pe parcursul
+implementării voastre.
 
-După ce am făcut acest pas, tot ce trebuie să facem este să căutăm binar pentru fiecare valoare din șir, în ordinea în care apar, care ar fi poziția în vectorul sortat, facem query-urile de maxim pe interval și actualizăm poziția găsită anterior în timpul căutării binare. Mai jos găsiți cele două variante folosind cele două structuri de date, soluțiile fiind pentru aceeași problemă de pe CSES.
+După ce am făcut acest pas, tot ce trebuie să facem este să căutăm binar pentru
+fiecare valoare din șir, în ordinea în care apar, care ar fi poziția în vectorul
+sortat, facem query-urile de maxim pe interval și actualizăm poziția găsită
+anterior în timpul căutării binare. Mai jos găsiți cele două variante folosind
+cele două structuri de date, soluțiile fiind pentru aceeași problemă de pe CSES.
 
 ### Soluție cu arbori de intervale
 
@@ -281,27 +316,37 @@ int main() {
 }
 ```
 
-## Concluzii și alte moduri în care putem folosi această abordare 
+## Concluzii și alte moduri în care putem folosi această abordare
 
-Probleme similare cu cea descrisă mai sus sunt unele precum numărul de subșiruri crescătoare maximale, lungimea unui subșir crescător maximal în care putem avea elemente egale sau pentru doritorii unei provocări mai avansate, numărul minim de subșiruri descrescătoare necesare pentru a acoperi o secvență dată. 
+Probleme similare cu cea descrisă mai sus sunt unele precum numărul de subșiruri
+crescătoare maximale, lungimea unui subșir crescător maximal în care putem avea
+elemente egale sau pentru doritorii unei provocări mai avansate, numărul minim
+de subșiruri descrescătoare necesare pentru a acoperi o secvență dată.
 
-Deși toate aceste soluții au utilitatea lor, pe parcurs, veți observa că soluțiile ce implică structuri de date au o mai mare plajă în ceea ce privește modificările care pot fi făcute și timpul de implementare al acestora.
+Deși toate aceste soluții au utilitatea lor, pe parcurs, veți observa că
+soluțiile ce implică structuri de date au o mai mare plajă în ceea ce privește
+modificările care pot fi făcute și timpul de implementare al acestora.
 
 ## Probleme suplimentare
 
-* [CopyCopyCopyCopyCopy Codeforces](https://codeforces.com/problemset/problem/1325/B)
-* [scmax infoarena](https://infoarena.ro/problema/scmax)
-* [subsiruri infoarena](https://infoarena.ro/problema/subsiruri)
-* [LIS On Permutations - Codeforces](https://codeforces.com/gym/102951/problem/C)
-* [IIOT 2018 UpDown](https://kilonova.ro/problems/2896/)
-* [Codeforces Tourist](https://codeforces.com/contest/76/problem/F)
-* [interclasare infoarena](https://infoarena.ro/problema/interclasare)
-* [USACO Gold Cowjog](http://www.usaco.org/index.php?page=viewproblem2&cpid=496)
-* [Pokemoni - Lot 2024 Juniori](https://kilonova.ro/problems/2808?list_id=1104)
+- [CopyCopyCopyCopyCopy
+  Codeforces](https://codeforces.com/problemset/problem/1325/B)
+- [scmax infoarena](https://infoarena.ro/problema/scmax)
+- [subsiruri infoarena](https://infoarena.ro/problema/subsiruri)
+- [LIS On Permutations -
+  Codeforces](https://codeforces.com/gym/102951/problem/C)
+- [IIOT 2018 UpDown](https://kilonova.ro/problems/2896/)
+- [Codeforces Tourist](https://codeforces.com/contest/76/problem/F)
+- [interclasare infoarena](https://infoarena.ro/problema/interclasare)
+- [USACO Gold Cowjog](http://www.usaco.org/index.php?page=viewproblem2&cpid=496)
+- [Pokemoni - Lot 2024 Juniori](https://kilonova.ro/problems/2808?list_id=1104)
 
-## Lectură suplimentară 
+## Lectură suplimentară
 
-* [Articolul de pe wikipedia](https://en.wikipedia.org/wiki/Longest_increasing_subsequence)
-* [Articolul de pe pbinfo](https://www.pbinfo.ro/articole/20677/subsir-crescator-de-lungime-maxima)
-* [Articolul de pe cp-algorithms](https://cp-algorithms.com/sequences/longest_increasing_subsequence.html)
-* [Articolul de pe USACO Guide](https://usaco.guide/gold/lis?lang=cpp)
+- [Articolul de pe
+  wikipedia](https://en.wikipedia.org/wiki/Longest_increasing_subsequence)
+- [Articolul de pe
+  pbinfo](https://www.pbinfo.ro/articole/20677/subsir-crescator-de-lungime-maxima)
+- [Articolul de pe
+  cp-algorithms](https://cp-algorithms.com/sequences/longest_increasing_subsequence.html)
+- [Articolul de pe USACO Guide](https://usaco.guide/gold/lis?lang=cpp)

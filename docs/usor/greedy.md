@@ -4,11 +4,11 @@ tags:
     - greedy
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+- *Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    * [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
+    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
 
 De multe ori atunci când trebuie să rezolvăm probleme algoritmice (și nu numai), suntem nevoiți să gândim lacom, alegând cea mai bună variantă la un moment dat. În algoritmică, această abordare este numită metoda Greedy și este una din cele mai importante metode pentru rezolvarea problemelor, fiind întâlnită atât în probleme foarte simple, cât și în unele din cele mai complicate probleme posibile. 
 

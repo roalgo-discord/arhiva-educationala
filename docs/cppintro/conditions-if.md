@@ -9,21 +9,29 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
-    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    - [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
 
 ## Introducere și instrucțiunile if..else, respectiv switch-case
 
-De multe ori, se impune luarea unor decizii diferite în funcție de situație. Vrem să obținem același lucru și în programare, iar limbajul C++ are diverse opțiuni pentru realizarea acestui lucru.
+De multe ori, se impune luarea unor decizii diferite în funcție de situație.
+Vrem să obținem același lucru și în programare, iar limbajul C++ are diverse
+opțiuni pentru realizarea acestui lucru.
 
-!!! info "Definiție" 
-    O structură alternativă este o structură pe care o folosim pentru a coordona programul să ia decizii diferite în funcție de rezultatul unei expresii logice. 
+!!! info "Definiție"
 
-În limbajul C++, structura alternativă este reprezentată de blocul if..else, astfel încât putem să direcționăm programul în funcție de rezultatele expresiilor logice menționate. 
+    O structură alternativă este o structură pe care o folosim pentru a coordona
+    programul să ia decizii diferite în funcție de rezultatul unei expresii logice.
 
-Pe lângă if..else, există și instrucțiunea switch-case, care funcționează într-o manieră similară, trecând prin fiecare caz pe rând fără a mai fi nevoie de if-uri și else-uri.
+În limbajul C++, structura alternativă este reprezentată de blocul if..else,
+astfel încât putem să direcționăm programul în funcție de rezultatele
+expresiilor logice menționate.
 
-Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni. 
+Pe lângă `if..else`, există și instrucțiunea switch-case, care funcționează
+într-o manieră similară, trecând prin fiecare caz pe rând fără a mai fi nevoie
+de if-uri și else-uri.
+
+Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni.
 
 ```cpp
 if (n == 5) {
@@ -35,9 +43,12 @@ if (n == 5) {
 
 Blocul `else` este opțional.
 
-Dacă condiția nu este deja o valoare logică, cum este cea returnată de operatorii de comparație, va fi considerată adevărată dacă aceasta este nenulă.
+Dacă condiția nu este deja o valoare logică, cum este cea returnată de
+operatorii de comparație, va fi considerată adevărată dacă aceasta este nenulă.
 
-Acoladele nu sunt obligatorii, dar dacă nu le folosim putem scrie o singură instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de condiții:
+Acoladele nu sunt obligatorii, dar dacă nu le folosim putem scrie o singură
+instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de
+condiții:
 
 ```cpp
 if(x) {
@@ -54,25 +65,35 @@ if(x) {
 
 ## Operatori de comparație
 
-Pentru a compara două valori sau expresii, putem folosi operatorii obișnuiți de comparație de la matematică, cu mici ajustări. 
+Pentru a compara două valori sau expresii, putem folosi operatorii obișnuiți de
+comparație de la matematică, cu mici ajustări.
 
 Astfel, operatorii de comparație sunt următorii:
 
-* `==` - verifică prima expresie are o valoare mai egală cu cea de-a doua expresie. 
-* `<=` - verifică dacă prima expresie are o valoare mai mică sau egală decât cea de-a doua expresie. 
-* `>=` - verifică dacă prima expresie are o valoare mai mare sau egală decât cea de-a doua expresie. 
-* `>` - verifică dacă prima expresie are o valoare strict mai mare decât cea de-a doua expresie. 
-* `<` - - verifică dacă prima expresie are o valoare strict mai mică decât cea de-a doua expresie. 
-* `!=` - verifică dacă cele două expresii au o valoare diferită.
+- `==` - verifică prima expresie are o valoare mai egală cu cea de-a doua
+  expresie.
+- `<=` - verifică dacă prima expresie are o valoare mai mică sau egală decât cea
+  de-a doua expresie.
+- `>=` - verifică dacă prima expresie are o valoare mai mare sau egală decât cea
+  de-a doua expresie.
+- `>` - verifică dacă prima expresie are o valoare strict mai mare decât cea
+  de-a doua expresie.
+- `<` - - verifică dacă prima expresie are o valoare strict mai mică decât cea
+  de-a doua expresie.
+- `!=` - verifică dacă cele două expresii au o valoare diferită.
 
 !!! note "Observație"
-    Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune de tipul `if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai apoi verifică dacă $n$ este diferit de $0$.
+
+    Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune de
+    tipul `if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai apoi
+    verifică dacă $n$ este diferit de $0$.
 
 ## Operatori logici
 
-De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
+De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind
+operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
 
-* Negația - notată cu `!`, inversează valoarea de adevăr a unei expresii.
+- Negația - notată cu `!`, inversează valoarea de adevăr a unei expresii.
 
 ```cpp
 int x = 10;
@@ -81,7 +102,10 @@ cout << !x == 10; // tot 0, dar se efectuează mai întâi !x, adică !10, cu re
 cout << !(x < 5); // 1: x < 5 este fals, adică 0, 0 negat este 1
 ```
 
-* Conjuncția - notată cu `&&`, reprezintă compunerea a două sau mai multe expresii prin operatorul ȘI, cu alte cuvinte, pentru ca o expresie compusă să fie adevărată, toți membrii ei trebuie să fie adevărați, altfel, întreaga expresie este falsă.
+- Conjuncția - notată cu `&&`, reprezintă compunerea a două sau mai multe
+  expresii prin operatorul ȘI, cu alte cuvinte, pentru ca o expresie compusă să
+  fie adevărată, toți membrii ei trebuie să fie adevărați, altfel, întreaga
+  expresie este falsă.
 
 ```cpp
 cout << (1 < 2 && 2 == 1 + 1); // 1; ADEVĂRAT ȘI ADEVĂRAT este ADEVĂRAT
@@ -90,7 +114,10 @@ cout << (1 == 2 && 2 == 1 + 1); // 0; FALS ȘI ADEVĂRAT este FALS
 cout << (1 == 2 && 2 != 1 + 1); // 0; FALS ȘI FALS este FALS
 ```
 
-* Disjuncția - notată cu `||`, reprezintă compunerea a două sau mai multe expresii prin operatorul SAU, cu alte cuvinte, pentru ca o expresie compusă să fie adevărată, cel puțin unul dintre membrii ei trebuie să fie adevărați, altfel, întreaga expresie este falsă.
+- Disjuncția - notată cu `||`, reprezintă compunerea a două sau mai multe
+  expresii prin operatorul SAU, cu alte cuvinte, pentru ca o expresie compusă să
+  fie adevărată, cel puțin unul dintre membrii ei trebuie să fie adevărați,
+  altfel, întreaga expresie este falsă.
 
 ```cpp
 cout << (1 < 2 || 2 == 1 + 1); // 1; ADEVĂRAT SAU ADEVĂRAT este ADEVĂRAT
@@ -99,9 +126,12 @@ cout << (1 == 2 || 2 == 1 + 1); // 1; FALS SAU ADEVĂRAT este ADEVĂRAT
 cout << (1 == 2 || 2 != 1 + 1); // 0; FALS SAU FALS este FALS
 ```
 
-## Exemplu 
+## Exemplu
 
-Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema [cumparaturi1](https://www.pbinfo.ro/probleme/3211/cumparaturi1) de pe pbinfo folosind diverse if-uri și else-uri. O soluție alternativă folosește switch-case.
+Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema
+[cumparaturi1](https://www.pbinfo.ro/probleme/3211/cumparaturi1) de pe pbinfo
+folosind diverse if-uri și else-uri. O soluție alternativă folosește
+switch-case.
 
 === "if-else"
 
@@ -167,13 +197,17 @@ Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema [cumparat
 
 ## Concluzii
 
-Odată cu învățarea structurii alternative, putem acum să incorporăm structuri repetitive, așa cum puteți vedea în articolele ulterioare.
+Odată cu învățarea structurii alternative, putem acum să incorporăm structuri
+repetitive, așa cum puteți vedea în articolele ulterioare.
 
-## Resurse suplimentare 
+## Resurse suplimentare
 
-* [Articolul despre structuri alternative de pe pbinfo](https://www.pbinfo.ro/articole/70/structuri-alternative)
-* [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
+- [Articolul despre structuri alternative de pe
+  pbinfo](https://www.pbinfo.ro/articole/70/structuri-alternative)
+- [Learning to code - USACO
+  Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
 
 ## Probleme suplimentare
 
-* [Probleme usoare si medii din capitolul Structura de decizie](https://www.pbinfo.ro/probleme/categorii/12/elemente-de-baza-ale-limbajului-structura-de-decizie)
+- [Probleme usoare si medii din capitolul Structura de
+  decizie](https://www.pbinfo.ro/probleme/categorii/12/elemente-de-baza-ale-limbajului-structura-de-decizie)

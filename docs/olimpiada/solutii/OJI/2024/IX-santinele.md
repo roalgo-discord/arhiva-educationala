@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Santinele (OJI 2024, clasa a IX-a)
 
 !!! example "Cunoștințe necesare"
-    * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
+    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
 
 **Autor soluție**: Cristian Frâncu
 
@@ -18,8 +18,8 @@ Subtask $1$: Santinela trebuie amplasată în primele $K + 1$ înălțimi. Fie $
 
 Subtask $2$: Fie $H$ maximul dintre înălțimi. Avem două situații:
 
-* $h_{N/2} = H$ sau $h_{N/2+1} = H$. Avem nevoie de o singură santinelă ce poate fi amplasată la una din acele poziții și va veghea tot muntele.
-* $h_{N/2} \neq H$ și $h_{N/2+1} \neq H$. Avem nevoie de două santinele, una pentru primele $K + 1$ înălțimi și una pentru ultimele $K$. Cele două santinele vor fi amplasate în maximele zonelor vegheate de ele. Complexitate: $O(N)$ timp, $O(1)$ memorie.
+- $h_{N/2} = H$ sau $h_{N/2+1} = H$. Avem nevoie de o singură santinelă ce poate fi amplasată la una din acele poziții și va veghea tot muntele.
+- $h_{N/2} \neq H$ și $h_{N/2+1} \neq H$. Avem nevoie de două santinele, una pentru primele $K + 1$ înălțimi și una pentru ultimele $K$. Cele două santinele vor fi amplasate în maximele zonelor vegheate de ele. Complexitate: $O(N)$ timp, $O(1)$ memorie.
 
 Subtask $3$: Înălțimile fiind strict crescătoare putem plasa santinele pe pozițiile $K + 1$, $2 \cdot K + 2$, $3 \cdot K + 3$, etc. Numărul minim de santinele este $N/(K + 1)$ dacă $N$ se divide cu $K + 1$, sau $N/(K +1)+1$ în caz contrar. Expresia C/C++ ce calculează acest număr este $(N +K)/(K +1)$. Complexitate: $O(1)$ timp și memorie.
 

@@ -7,11 +7,15 @@ tags:
 # Soluția problemei Panglica (OJI 2002, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    * [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    - [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-Pentru a afla lungimea maximă a unei benzi pe care o putem obține, vom avea nevoie să știm pentru fiecare culoare prima și ultima pozitie a acesteia în șirul dat. Apoi, vom afla culoarea care are cea mai mare diferență între aceste poziții, precum și pozițiile ei de început și final, folosind precalcularea anterioară. 
+Pentru a afla lungimea maximă a unei benzi pe care o putem obține, vom avea
+nevoie să știm pentru fiecare culoare prima și ultima pozitie a acesteia în
+șirul dat. Apoi, vom afla culoarea care are cea mai mare diferență între aceste
+poziții, precum și pozițiile ei de început și final, folosind precalcularea
+anterioară.
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/705/).

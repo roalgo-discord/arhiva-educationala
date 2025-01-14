@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Tema (OJI 2023, clasa a VIII-a)
 
 !!! example "Cunoștințe necesare"
-    * [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
-    * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    * [Two Pointers](https://edu.roalgo.ro/mediu/two-pointers/)
+    - [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
+    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+    - [Two Pointers](https://edu.roalgo.ro/mediu/two-pointers/)
 
 **Autor soluție**: Daniela Lica
 
@@ -33,10 +33,10 @@ Pentru cerința $2$, soluția în complexitate $O(N)$ obține punctaj maxim, adi
 
 Considerând, ciurul obținut după transformarea elementelor compuse, vom determina, pentru fiecare poziție $i$ din șir, cât de mult ne putem extinde spre stânga, și spre dreapta cu o secvență care conține cel mai mic factor prim al lui $A[i]$ (notat $fpmin[A[i]]$), respectiv cel mai mare factor prim al lui $A[i]$ (notat $fpmax[A[i]]$), astfel:
 
-* $\text{st}[0][i]$ - cel mai mic indice din stânga unde regăsim $fpmin[A[i]]$ ca factor în toate elementele dintre acel indice și $i$;
-* $\text{st}[1][i]$ - cel mai mic indice din stânga unde regăsim $fpmax[A[i]]$ ca factor în toate elementele dintre acel indice și $i$;
-* $\text{dr}[0][i]$ - cel mai mare indice din dreapta unde regăsim $fpmin[A[i]]$ ca factor în toate elementele de la $i$ până la acea poziție;
-* $\text{dr}[1][i]$ - cel mai mare indice din dreapta unde regăsim $fpmax[A[i]]$ ca factor în toate elementele de la $i$ până la acea poziție.
+- $\text{st}[0][i]$ - cel mai mic indice din stânga unde regăsim $fpmin[A[i]]$ ca factor în toate elementele dintre acel indice și $i$;
+- $\text{st}[1][i]$ - cel mai mic indice din stânga unde regăsim $fpmax[A[i]]$ ca factor în toate elementele dintre acel indice și $i$;
+- $\text{dr}[0][i]$ - cel mai mare indice din dreapta unde regăsim $fpmin[A[i]]$ ca factor în toate elementele de la $i$ până la acea poziție;
+- $\text{dr}[1][i]$ - cel mai mare indice din dreapta unde regăsim $fpmax[A[i]]$ ca factor în toate elementele de la $i$ până la acea poziție.
 
 Pentru fiecare element $A[i]$, lungimea maximă a secvenței care îl conține, și care are cel mai mare divizor comun diferit de 1 este: $\max((\text{dr}[0][i] - \text{st}[0][i] + 1), (\text{dr}[1][i] - \text{st}[1][i] + 1))$.
 

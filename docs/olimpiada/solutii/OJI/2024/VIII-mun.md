@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Mun (OJI 2024, clasa a VIII-a)
 
 !!! example "Cunoștințe necesare"
-    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
-    * [(Opțional): Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    - [(Opțional): Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
 
 **Autor soluție**: Lucia Miron
 

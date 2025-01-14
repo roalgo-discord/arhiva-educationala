@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Avid (OJI 2024, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    * [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
-    * [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
+    - [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
+    - [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
 
 **Autor soluție**: Giulian Buzatu
 

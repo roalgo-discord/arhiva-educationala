@@ -9,8 +9,8 @@ tags:
 **Autor**: Andrei-Cristian Ivan, Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    * [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
+    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
 
 Să presupunem că avem un șir de $N$ numere și memorie astfel încât să putem
 reține _doar_ șirul (plus evident alte variabile, dar nu foarte multe). Noi
@@ -81,11 +81,11 @@ int cb_naiv(int n) {
 
 Implementarea de mai sus este una corectă, dar se pot întâlni următoarele bug-uri:
 
-* Schimbarea în $l = mij$ și $r = mij$ va face ca programul nostru să ruleze
+- Schimbarea în $l = mij$ și $r = mij$ va face ca programul nostru să ruleze
   într-o buclă infinită (deoarece ambele valori vor atinge la un moment dat
   valoarea $mij$, și deci va fi respectată mereu condiția $l \leq r$)
 
-* În timp ce-l calculăm pe $mij$, ne putem lua overflow (dacă prin absurd
+- În timp ce-l calculăm pe $mij$, ne putem lua overflow (dacă prin absurd
   ajungem să căutam fix pe la valorile maxime pe care le poate reține tipul
   nostru de date, este inevitabil un overflow generat de $l + r$). De aceea,
   următoarea variantă prezentată se va axa fix pe rezolvarea acestui bug.
@@ -157,9 +157,16 @@ la $O(\log{H})$, unde $H$ reprezintă adâncimea maximă a arborelui.
 
 ## Căutarea binară pe răspuns
 
-Să presupunem că avem de-a face cu o problemă în care trebuie să aflăm punctul în care o funcție monotonă atinge un anumit punct. Chiar dacă aici nu mai avem de-a face cu un vector, putem folosi aceleași principii ale căutării binare și să aflăm în mod precis punctul în care funcția noastră $f$ depășește o valoare dată, $n$. 
+Să presupunem că avem de-a face cu o problemă în care trebuie să aflăm punctul
+în care o funcție monotonă atinge un anumit punct. Chiar dacă aici nu mai avem
+de-a face cu un vector, putem folosi aceleași principii ale căutării binare și
+să aflăm în mod precis punctul în care funcția noastră $f$ depășește o valoare
+dată, $n$.
 
-Codul nostru nu va fi modificat într-un mod semnificativ, singurul lucru ce se va modifica va fi adăugarea funcției menționate anterior. Totuși, trebuie remarcat că spre deosebire de căutările binare pe șiruri de lungime fixă, aici capetele pentru $l$ și $r$ trebuie determinate în funcție de cerința problemei. 
+Codul nostru nu va fi modificat într-un mod semnificativ, singurul lucru ce se
+va modifica va fi adăugarea funcției menționate anterior. Totuși, trebuie
+remarcat că spre deosebire de căutările binare pe șiruri de lungime fixă, aici
+capetele pentru $l$ și $r$ trebuie determinate în funcție de cerința problemei.
 
 ```cpp
 int f(int x) {
@@ -188,9 +195,16 @@ int cb_raspuns() {
 
 ### Problema [Factory Machines](https://cses.fi/problemset/task/1620) de pe CSES
 
-Pentru această problemă, se poate observa rapid faptul că este foarte greu, dacă nu imposibil să reducem această problemă la una sau mai multe ecuații care dacă rezolvate, ne-ar da răspunsul exact. Deoarece numărul de produse pe care mașinile îl produc crește pe măsură ce crește timpul alocat, ne putem gândi la o căutare binară pe răspuns. 
+Pentru această problemă, se poate observa rapid faptul că este foarte greu, dacă
+nu imposibil să reducem această problemă la una sau mai multe ecuații care dacă
+rezolvate, ne-ar da răspunsul exact. Deoarece numărul de produse pe care
+mașinile îl produc crește pe măsură ce crește timpul alocat, ne putem gândi la o
+căutare binară pe răspuns.
 
-Astfel, la un pas al căutării binare putem evalua dacă $f(x) \geq t$, unde $f(x)$ este numărul de produse pe care fabrica le poate produce în $x$ unități de timp. După ce avem grijă la evaluarea funcției pentru a evita overflow-ul, soluția nu este complicată.
+Astfel, la un pas al căutării binare putem evalua dacă $f(x) \geq t$, unde
+$f(x)$ este numărul de produse pe care fabrica le poate produce în $x$ unități
+de timp. După ce avem grijă la evaluarea funcției pentru a evita overflow-ul,
+soluția nu este complicată.
 
 ```cpp
 #include <iostream>
@@ -246,9 +260,15 @@ int main() {
 
 ## Căutarea binară pe numere reale
 
-Pentru a căuta binar pe numere reale, trebuie să avem grijă la un detaliu foarte important. Deoarece avem nevoie de o precizie de câteva zecimale (de regulă, un număr mai mare, cel puțin $6$), trebuie să evităm situațiile în care rămânem blocați într-un loop infinit, pericol în care ne-am putea afla folosind abordarea existentă. 
+Pentru a căuta binar pe numere reale, trebuie să avem grijă la un detaliu foarte
+important. Deoarece avem nevoie de o precizie de câteva zecimale (de regulă, un
+număr mai mare, cel puțin $6$), trebuie să evităm situațiile în care rămânem
+blocați într-un loop infinit, pericol în care ne-am putea afla folosind
+abordarea existentă.
 
-Astfel, soluția care se impune este folosirea unui for pentru a fixa numărul de iterații (de regulă, nu mai mare de $100$, în cele mai multe cazuri $50$ de iterații ale funcției sunt îndeajuns).
+Astfel, soluția care se impune este folosirea unui for pentru a fixa numărul de
+iterații (de regulă, nu mai mare de $100$, în cele mai multe cazuri $50$ de
+iterații ale funcției sunt îndeajuns).
 
 ```cpp
 int f(int x) {
@@ -276,9 +296,14 @@ double cb_double() {
 ### Problema [Equation](https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E) de pe Codeforces Edu
 
 !!! note "Observație"
-    Pentru a accesa această problemă, trebuie să vă înregistrați în prealabil la aceste cursuri, intrând în secțiunea ITMO Academy - Pilot Course, pe care o găsiți [aici](https://codeforces.com/edu/courses)
+    Pentru a accesa această problemă, trebuie să vă înregistrați în prealabil la
+    aceste cursuri, intrând în secțiunea ITMO Academy - Pilot Course, pe care o
+    găsiți [aici](https://codeforces.com/edu/courses)
 
-Deși această problemă poate fi rezolvată și folosind ecuații matematice, căutarea binară a răspunsului devine o soluție elegantă care evită complicații fără rost. Fixând un număr de $100$ de iterații, se ajunge la răspuns foarte simplu și eficient.
+Deși această problemă poate fi rezolvată și folosind ecuații matematice,
+căutarea binară a răspunsului devine o soluție elegantă care evită complicații
+fără rost. Fixând un număr de $100$ de iterații, se ajunge la răspuns foarte
+simplu și eficient.
 
 ```cpp
 #include <iostream>
@@ -317,14 +342,21 @@ int main() {
 
 ## Funcții de sistem pentru căutarea binară
 
-Deși multe structuri de date din STL au căutarea binară drept o parte esențială a funcționalității lor, ne vom concentra strict pe cele care operează pe un vector ordonat crescător, toate aceste funcții plecând de la această presupunere. 
+Deși multe structuri de date din STL au căutarea binară drept o parte esențială
+a funcționalității lor, ne vom concentra strict pe cele care operează pe un
+vector ordonat crescător, toate aceste funcții plecând de la această
+presupunere.
 
 Funcțiile de sistem care se bazează pe căutarea binară sunt următoarele:
 
-* **`std::binary_search`**: Verifică dacă o valoare dată se află în intervalul menționat. 
-* **`std::lower_bound`**: Găsește prima poziție unde valoarea dată poate fi inserată fără a strica ordinea elementelor deja existente. 
-* **`std::upper_bound`**: Găsește prima poziție cu proprietatea că elementele de la acea poziție încolo sunt strict mai mari decât valoarea dată. 
-* **`std::equal_range`**: Găsesște intervalul de poziții care au valori egale cu valoarea dată (echivalentul aplicării lower_bound și upper_bound).
+- **`std::binary_search`**: Verifică dacă o valoare dată se află în intervalul
+  menționat.
+- **`std::lower_bound`**: Găsește prima poziție unde valoarea dată poate fi
+  inserată fără a strica ordinea elementelor deja existente.
+- **`std::upper_bound`**: Găsește prima poziție cu proprietatea că elementele de
+  la acea poziție încolo sunt strict mai mari decât valoarea dată.
+- **`std::equal_range`**: Găsește intervalul de poziții care au valori egale cu
+  valoarea dată (echivalentul aplicării lower_bound și upper_bound).
 
 ```cpp
 #include <algorithm>
@@ -353,42 +385,43 @@ int main() {
 
 ## Concluzii
 
-Căutarea binară este unul dintre cele mai fundamentale metode ale
-algoritmicii, fiind absolut necesar pentru a optimiza probleme unde ni se cere
-să determinăm existența unei valori într-un șir, sau determinarea unui număr
-maxim/minim care să respecte o condiție impusă de problemă etc.
+Căutarea binară este unul dintre cele mai fundamentale metode ale algoritmicii,
+fiind absolut necesar pentru a optimiza probleme unde ni se cere să determinăm
+existența unei valori într-un șir, sau determinarea unui număr maxim/minim care
+să respecte o condiție impusă de problemă etc.
 
-Acest algoritm este unul din cele mai populari algoritmi dat atât la olimpiade, cât și la rundele de Codeforces, regăsindu-se frecvent drept subproblemă în multe probleme foarte celebre, precum și fiind la baza multor implementări ale unor algoritmi mai complicați.
+Acest algoritm este unul din cele mai populari algoritmi dat atât la olimpiade,
+cât și la rundele de Codeforces, regăsindu-se frecvent drept subproblemă în
+multe probleme foarte celebre, precum și fiind la baza multor implementări ale
+unor algoritmi mai complicați.
 
 ## Probleme suplimentare
 
-
-* [Problema cautbin - Infoarena](https://www.infoarena.ro/problema/cautbin)
-* [bete2 infoarena](https://www.infoarena.ro/problema/bete2)
-* [cb2 pbinfo](https://www.pbinfo.ro/probleme/2443/cb2)
-* [Problemele din pasul 1 de la EDU](https://codeforces.com/edu/course/2/lesson/6/1/practice)
-* [nrtri infoarena](https://www.infoarena.ro/problema/nrtri)
-* [USACO Bronze Social Distancing I](https://usaco.org/index.php?page=viewproblem2&cpid=1035)
-* [OJI 2016 pic](https://kilonova.ro/problems/865)
-* [ONI 2016 dif2](https://kilonova.ro/problems/1475)
-* [USACO Silver Convention](https://usaco.org/index.php?page=viewproblem2&cpid=858)
-* [OJI 2019 mostenire](https://kilonova.ro/problems/905)
-* [ONI 2017 orase](https://kilonova.ro/problems/1501)
-* [ONI 2017 orase](https://kilonova.ro/problems/1501)
-* [zone infoarena](https://www.infoarena.ro/problema/zone)
-* [Problemele din pasul 2 de la EDU](https://codeforces.com/edu/course/2/lesson/6/2/practice)
-* [cb3 pbinfo](https://www.pbinfo.ro/probleme/2789/cb3)
-* [Baraj Juniori 2021 intergalactic](https://kilonova.ro/problems/1098)
-* [ONI 2018 plaja](https://kilonova.ro/problems/1522/)
-* [USACO Silver Loan Repayment](https://usaco.org/index.php?page=viewproblem2&cpid=991)
-* [Problemele cu cautare binara de pe kilonova](https://kilonova.ro/tags/315)
-* [Problemele cu cautare binara de pe codeforces](https://codeforces.com/problemset?tags=binary+search)
-* [Problemele cu cautare binara de pe infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=49)
-
+- [Problema cautbin - Infoarena](https://www.infoarena.ro/problema/cautbin)
+- [bete2 infoarena](https://www.infoarena.ro/problema/bete2)
+- [cb2 pbinfo](https://www.pbinfo.ro/probleme/2443/cb2)
+- [Problemele din pasul 1 de la EDU](https://codeforces.com/edu/course/2/lesson/6/1/practice)
+- [nrtri infoarena](https://www.infoarena.ro/problema/nrtri)
+- [USACO Bronze Social Distancing I](https://usaco.org/index.php?page=viewproblem2&cpid=1035)
+- [OJI 2016 pic](https://kilonova.ro/problems/865)
+- [ONI 2016 dif2](https://kilonova.ro/problems/1475)
+- [USACO Silver Convention](https://usaco.org/index.php?page=viewproblem2&cpid=858)
+- [OJI 2019 mostenire](https://kilonova.ro/problems/905)
+- [ONI 2017 orase](https://kilonova.ro/problems/1501)
+- [ONI 2017 orase](https://kilonova.ro/problems/1501)
+- [zone infoarena](https://www.infoarena.ro/problema/zone)
+- [Problemele din pasul 2 de la EDU](https://codeforces.com/edu/course/2/lesson/6/2/practice)
+- [cb3 pbinfo](https://www.pbinfo.ro/probleme/2789/cb3)
+- [Baraj Juniori 2021 intergalactic](https://kilonova.ro/problems/1098)
+- [ONI 2018 plaja](https://kilonova.ro/problems/1522/)
+- [USACO Silver Loan Repayment](https://usaco.org/index.php?page=viewproblem2&cpid=991)
+- [Problemele cu cautare binara de pe kilonova](https://kilonova.ro/tags/315)
+- [Problemele cu cautare binara de pe codeforces](https://codeforces.com/problemset?tags=binary+search)
+- [Problemele cu cautare binara de pe infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=49)
 
 ## Resurse suplimentare
 
-* [Binary Search - USACO Guide](https://usaco.guide/silver/binary-search?lang=cpp)
-* [Cursurile Edu de pe Codeforces, este necesară înregistrarea anterioară](https://codeforces.com/edu/course/2/lesson/6)
-* [Cautare binara - CPPI Sync](https://cppi.sync.ro/materia/cautare_binara.html)
-* [Cautare binara - pbinfo](https://www.pbinfo.ro/articole/3633/cautarea-binara)
+- [Binary Search - USACO Guide](https://usaco.guide/silver/binary-search?lang=cpp)
+- [Cursurile Edu de pe Codeforces, este necesară înregistrarea anterioară](https://codeforces.com/edu/course/2/lesson/6)
+- [Cautare binara - CPPI Sync](https://cppi.sync.ro/materia/cautare_binara.html)
+- [Cautare binara - pbinfo](https://www.pbinfo.ro/articole/3633/cautarea-binara)

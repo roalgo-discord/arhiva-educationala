@@ -7,8 +7,8 @@ tags:
 **Autor**: Raul Ardelean
 
 !!! example "Cunoștințe necesare"   
-    * [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
-    * [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
+    - [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
+    - [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
 
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri și update-uri într-un timp eficient pe un **arbore**.
 
@@ -114,8 +114,8 @@ void dfs(int node) {
 
 Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \leq i \leq N$. Se dau $M$ operații de forma $(t, x, y)$, cu următoarea semnificație:
 
-* dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata nodului cu indicele $x$ devine $y$;
-* dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $x$ și $y$.
+- dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata nodului cu indicele $x$ devine $y$;
+- dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $x$ și $y$.
 
 Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
 
@@ -635,35 +635,35 @@ signed main() {
 
 ## Probleme suplimentare
 
-* [Path Queries II](https://cses.fi/problemset/task/2134/)
-* [Company Queries II](https://cses.fi/problemset/task/1688)
-* [confuzie](https://kilonova.ro/problems/217/)
-* [Disconnect](https://www.infoarena.ro/problema/disconnect)
-* [Sever](https://www.infoarena.ro/problema/sever)
-* [Petarbore](https://www.infoarena.ro/problema/petarbore)
-* [mogger](https://kilonova.ro/problems/3182)
-* [Cow Land](https://usaco.org/index.php?page=viewproblem2&cpid=921)
-* [QTREE3 - Query on a tree again!](https://www.spoj.com/problems/QTREE3/en/)
-* [Milk Visits](https://usaco.org/index.php?page=viewproblem2&cpid=970)
-* [Delay](https://infoarena.ro/problema/delay)
-* [Aladdin and the Return Journey](https://lightoj.com/problem/aladdin-and-the-return-journe)
-* [Disruption](https://usaco.org/index.php?page=viewproblem2&cpid=842)
-* [Subtrees And Paths](https://usaco.guide/plat/hld?lang=cpp)
-* [Grass Planting](https://usaco.org/index.php?page=viewproblem2&cpid=102)
-* [Vertex Set Path Composite](https://judge.yosupo.jp/problem/vertex_set_path_composite)
-* [Caves and Tunnels](https://acm.timus.ru/problem.aspx?space=1&num=1553)
-* [Tree Queries](https://codeforces.com/contest/1254/problem/D)
-* [The Tree](https://codeforces.com/contest/1017/problem/G)
-* [Tree Game](https://tlx.toki.id/problems/troc-14/H/)
-* [Synchronization](https://oj.uz/problem/view/JOI13_synchronization)
-* [Cats or Dogs](https://oj.uz/problem/view/JOI18_catdog)
-* [Probleme cu HLD de pe Kilonova](https://kilonova.ro/tags/295)
+- [Path Queries II](https://cses.fi/problemset/task/2134/)
+- [Company Queries II](https://cses.fi/problemset/task/1688)
+- [confuzie](https://kilonova.ro/problems/217/)
+- [Disconnect](https://www.infoarena.ro/problema/disconnect)
+- [Sever](https://www.infoarena.ro/problema/sever)
+- [Petarbore](https://www.infoarena.ro/problema/petarbore)
+- [mogger](https://kilonova.ro/problems/3182)
+- [Cow Land](https://usaco.org/index.php?page=viewproblem2&cpid=921)
+- [QTREE3 - Query on a tree again!](https://www.spoj.com/problems/QTREE3/en/)
+- [Milk Visits](https://usaco.org/index.php?page=viewproblem2&cpid=970)
+- [Delay](https://infoarena.ro/problema/delay)
+- [Aladdin and the Return Journey](https://lightoj.com/problem/aladdin-and-the-return-journe)
+- [Disruption](https://usaco.org/index.php?page=viewproblem2&cpid=842)
+- [Subtrees And Paths](https://usaco.guide/plat/hld?lang=cpp)
+- [Grass Planting](https://usaco.org/index.php?page=viewproblem2&cpid=102)
+- [Vertex Set Path Composite](https://judge.yosupo.jp/problem/vertex_set_path_composite)
+- [Caves and Tunnels](https://acm.timus.ru/problem.aspx?space=1&num=1553)
+- [Tree Queries](https://codeforces.com/contest/1254/problem/D)
+- [The Tree](https://codeforces.com/contest/1017/problem/G)
+- [Tree Game](https://tlx.toki.id/problems/troc-14/H/)
+- [Synchronization](https://oj.uz/problem/view/JOI13_synchronization)
+- [Cats or Dogs](https://oj.uz/problem/view/JOI18_catdog)
+- [Probleme cu HLD de pe Kilonova](https://kilonova.ro/tags/295)
 
 ## Resurse suplimentare
 
-* [HLD - CP Algorithms](https://cp-algorithms.com/graph/hld.html)
-* [HLD - USACO Guide](https://usaco.guide/plat/hld)
-* [Tree decompositions - Infoarena](https://infoarena.ro/tree-decompositions)
-* [Template HLD - Stefdasca](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/heavy-light.cpp)
-* [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
-* [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)
+- [HLD - CP Algorithms](https://cp-algorithms.com/graph/hld.html)
+- [HLD - USACO Guide](https://usaco.guide/plat/hld)
+- [Tree decompositions - Infoarena](https://infoarena.ro/tree-decompositions)
+- [Template HLD - Stefdasca](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/heavy-light.cpp)
+- [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
+- [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)

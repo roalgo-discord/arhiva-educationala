@@ -7,19 +7,27 @@ tags:
 # Soluția problemei Cuburi (OJI 2002, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    * [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
-    * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
+    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/704/).
 
-Pentru primele două cerințe, vom afla frecvența maximă a unei valori din șir, precum și care sunt valorile care au acea frecvență maximă. 
+Pentru primele două cerințe, vom afla frecvența maximă a unei valori din șir,
+precum și care sunt valorile care au acea frecvență maximă.
 
-Pentru cea de-a treia cerință, putem precalcula doi vectori, $st$ și $dr$, cu semnificația că $st[i]$ reprezintă numărul maxim de poziții consecutive cu valoare egală care conțin poziția $i$ de la stânga, iar $dr[i]$ este definit în mod similar, dar pentru o secvență care începe la poziția $i$ și se extinde la dreapta.
+Pentru cea de-a treia cerință, putem precalcula doi vectori, $st$ și $dr$, cu
+semnificația că $st[i]$ reprezintă numărul maxim de poziții consecutive cu
+valoare egală care conțin poziția $i$ de la stânga, iar $dr[i]$ este definit în
+mod similar, dar pentru o secvență care începe la poziția $i$ și se extinde la
+dreapta.
 
-Pentru fiecare poziție $i$, acum ce putem face este să verificăm dacă pozițiile $i-1$ și $i+1$ au valori egale pentru a verifica dacă putem pune laolaltă șirurile de cuburi, iar maximul dintre lungimile verificate va fi răspunsul final al problemei. 
+Pentru fiecare poziție $i$, acum ce putem face este să verificăm dacă pozițiile
+$i-1$ și $i+1$ au valori egale pentru a verifica dacă putem pune laolaltă
+șirurile de cuburi, iar maximul dintre lungimile verificate va fi răspunsul
+final al problemei.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

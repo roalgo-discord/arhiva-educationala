@@ -198,15 +198,15 @@ Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite
 
 ## Probleme suplimentare
 
-* [CSES Substring Order I](https://cses.fi/problemset/task/2108)
-* [CSES Substring distribution](https://cses.fi/problemset/task/2110)
-* [Kattis kindaokarray](https://open.kattis.com/problems/kindaokarray)
-* [Lot Seniori 2016 - parb](https://kilonova.ro/problems/1926?list_id=819)
-* [Codeforces Forbidden Indices](https://codeforces.com/contest/873/problem/F)
-* [Probleme cu structuri pe siruri de caractere](https://codeforces.com/problemset?tags=string%20suffix%20structures,2200-)
+- [CSES Substring Order I](https://cses.fi/problemset/task/2108)
+- [CSES Substring distribution](https://cses.fi/problemset/task/2110)
+- [Kattis kindaokarray](https://open.kattis.com/problems/kindaokarray)
+- [Lot Seniori 2016 - parb](https://kilonova.ro/problems/1926?list_id=819)
+- [Codeforces Forbidden Indices](https://codeforces.com/contest/873/problem/F)
+- [Probleme cu structuri pe siruri de caractere](https://codeforces.com/problemset?tags=string%20suffix%20structures,2200-)
 
 ## Materiale suplimentare
 
-* [Codeforces - Dynamic Suffix Array](https://codeforces.com/blog/entry/93042)
-* [Curs MIT de pe Youtube](https://www.youtube.com/watch?v=NinWEPPrkDQ)
-* [Articolul de pe cp-algorithms](https://cp-algorithms.com/string/suffix-array.html)
+- [Codeforces - Dynamic Suffix Array](https://codeforces.com/blog/entry/93042)
+- [Curs MIT de pe Youtube](https://www.youtube.com/watch?v=NinWEPPrkDQ)
+- [Articolul de pe cp-algorithms](https://cp-algorithms.com/string/suffix-array.html)

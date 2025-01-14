@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Bomboane (OJI 2024, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    * [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
+    - [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
 
 **Autor soluție**: Marius Nicoli
 
@@ -28,8 +28,8 @@ Cerința $3$ poate fi abordată și în modul descris în continuare. Notăm cu 
 
 Când păstrăm un triplet avem grijă să fie respectate și condițiile $x \geq X$ și $y \geq Y$. Din ideea anterioară se obține o soluție mai rapidă analizând, pe rând, două cazuri:
  
-* Cazul $x \leq y$ când parcurgem valorile $x = 1, 2, \dots$, cât timp $x \leq \frac{N}{x}$
-* Cazul $x \geq y$ când parcurgem valorile $y = 1, 2, \dots$, cât timp $y \leq \frac{N}{y}$.
+- Cazul $x \leq y$ când parcurgem valorile $x = 1, 2, \dots$, cât timp $x \leq \frac{N}{x}$
+- Cazul $x \geq y$ când parcurgem valorile $y = 1, 2, \dots$, cât timp $y \leq \frac{N}{y}$.
 
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 

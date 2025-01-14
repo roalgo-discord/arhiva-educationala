@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Robotron (OJI 2024, clasa a VIII-a)
 
 !!! example "Cunoștințe necesare"
-    * [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
-    * [(Opțional): Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
+    - [(Opțional): Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
 
 **Autor soluție**: Isabela Patricia Coman
 

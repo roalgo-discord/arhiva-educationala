@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
 
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).
@@ -328,14 +328,14 @@ Lucrul cu tablouri unidimensionale este esențial oricărui algoritmist, princip
 
 ## Probleme suplimentare 
 
-* [Problemele usoare si medii din capitolul Parcurgerea vectorilor](https://www.pbinfo.ro/probleme/categorii/9/tablouri-unidimensionale-vectori-parcurgerea-vectorilor)
-* [Problemele usoare si medii din capitolul Ștergeri și inserări de elemente în vectori](https://www.pbinfo.ro/probleme/categorii/157/tablouri-unidimensionale-vectori-Stergeri-si-inserari-de-elemente-in-vectori)
-* [Problemele usoare si medii din capitolul Verificarea unor proprietăţi](https://www.pbinfo.ro/probleme/categorii/49/tablouri-unidimensionale-vectori-verificarea-unor-proprietati)
-* [Problemele usoare si medii din capitolul Interclasare](https://www.pbinfo.ro/probleme/categorii/156/tablouri-unidimensionale-vectori-interclasare)
+- [Problemele usoare si medii din capitolul Parcurgerea vectorilor](https://www.pbinfo.ro/probleme/categorii/9/tablouri-unidimensionale-vectori-parcurgerea-vectorilor)
+- [Problemele usoare si medii din capitolul Ștergeri și inserări de elemente în vectori](https://www.pbinfo.ro/probleme/categorii/157/tablouri-unidimensionale-vectori-Stergeri-si-inserari-de-elemente-in-vectori)
+- [Problemele usoare si medii din capitolul Verificarea unor proprietăţi](https://www.pbinfo.ro/probleme/categorii/49/tablouri-unidimensionale-vectori-verificarea-unor-proprietati)
+- [Problemele usoare si medii din capitolul Interclasare](https://www.pbinfo.ro/probleme/categorii/156/tablouri-unidimensionale-vectori-interclasare)
 
 ## Resurse suplimentare
 
-* [Declararea și parcurgerea tablourilor unidimensionale](https://www.pbinfo.ro/articole/5583/declararea-si-parcurgerea-tablourilor-unidimensionale)
-* [Ștergeri și inserări de elemente](https://www.pbinfo.ro/articole/5584/stergeri-si-inserari-de-elemente)
-* [Verificarea unor proprietăți](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
-* [Interclasarea tablourilor](https://www.pbinfo.ro/articole/5588/interclasarea-tablourilor)
+- [Declararea și parcurgerea tablourilor unidimensionale](https://www.pbinfo.ro/articole/5583/declararea-si-parcurgerea-tablourilor-unidimensionale)
+- [Ștergeri și inserări de elemente](https://www.pbinfo.ro/articole/5584/stergeri-si-inserari-de-elemente)
+- [Verificarea unor proprietăți](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
+- [Interclasarea tablourilor](https://www.pbinfo.ro/articole/5588/interclasarea-tablourilor)

@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Perechi (OJI 2024, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    * [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
-    * [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
+    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
 
 **Autor soluție**: Alina-Gabriela Boca
 

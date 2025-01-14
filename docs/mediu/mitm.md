@@ -6,28 +6,42 @@ tags:
 ---
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+!!! example "Cunoștințe necesare"
+    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
 
 ## Introducere
 
-Meet in the middle este o tehnică de programare care este folosită atunci când avem de-a face cu probleme pentru care soluția optimă este aceea de a împărți spațiul de căutare în două, pentru a putea aplica forța brută independent pentru cele două jumătăți rezultate. 
+Meet in the middle este o tehnică de programare care este folosită atunci când
+avem de-a face cu probleme pentru care soluția optimă este aceea de a împărți
+spațiul de căutare în două, pentru a putea aplica forța brută independent pentru
+cele două jumătăți rezultate.
 
-Numele și principiile acestei tehnici sunt înrudite cu [atacul criptografic cu același nume](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack).
+Numele și principiile acestei tehnici sunt înrudite cu [atacul criptografic cu
+același nume](https://en.wikipedia.org/wiki/Meet-in-the-middle_attack).
 
-În algoritmică, acea tehnică este folosită atunci când vrem să rezolvăm probleme folosind brute-force, dar restricțiile nu sunt suficient de mici pentru un brute-force clasic, utilizarea cea mai des întâlnită pentru meet in the middle este atunci când trebuie să lucrăm cu submulțimi.
+În algoritmică, acea tehnică este folosită atunci când vrem să rezolvăm probleme
+folosind brute-force, dar restricțiile nu sunt suficient de mici pentru un
+brute-force clasic, utilizarea cea mai des întâlnită pentru meet in the middle
+este atunci când trebuie să lucrăm cu submulțimi.
 
 !!! "Observație"
-    Deoarece spațiul de căutare se împarte în două, complexitatea exponențială va crește mult mai greu, meet in the middle devenind util pentru probleme la care dimensiunea datelor de intrare este cel mult $40-45$.
+    Deoarece spațiul de căutare se împarte în două, complexitatea exponențială
+    va crește mult mai greu, meet in the middle devenind util pentru probleme la
+    care dimensiunea datelor de intrare este cel mult $40-45$.
 
-Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții generate.
+Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar
+apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții
+generate.
 
 Astfel, complexitatea algoritmului va deveni acum $O(2^{\frac{n}{2}})$.
 
 ### [Problema Meet in the Middle](https://cses.fi/problemset/task/1628/)
 
-Pentru a afla câte submulțimi au suma $k$, vom precalcula pentru prima jumătate din șir sumele tuturor submulțimilor, stocând sumele într-un vector sau map, iar apoi pentru fiecare sumă din cea de-a doua jumătate, vom afla câte sume sunt egale cu complementul ei $k - sum$. 
+Pentru a afla câte submulțimi au suma $k$, vom precalcula pentru prima jumătate
+din șir sumele tuturor submulțimilor, stocând sumele într-un vector sau map, iar
+apoi pentru fiecare sumă din cea de-a doua jumătate, vom afla câte sume sunt
+egale cu complementul ei $k - sum$.
 
 ```cpp
 #include <iostream>
@@ -103,7 +117,11 @@ int main() {
 
 ### [Problema Sum of Four Values](https://cses.fi/problemset/task/1642/)
 
-Un alt tip de probleme care se poate rezolva cu meet in the middle este acela în care trebuie să găsim o submulțime de dimensiunea $x$ cu o anumită proprietate, iar abordarea pentru aceste probleme constă în a crea submulțimi de dimensiunea $\frac{x}{2}$ iar mai apoi, le vom uni într-un mod similar cu cel de la prima problemă, așa cum facem și aici.
+Un alt tip de probleme care se poate rezolva cu meet in the middle este acela în
+care trebuie să găsim o submulțime de dimensiunea $x$ cu o anumită proprietate,
+iar abordarea pentru aceste probleme constă în a crea submulțimi de dimensiunea
+$\frac{x}{2}$ iar mai apoi, le vom uni într-un mod similar cu cel de la prima
+problemă, așa cum facem și aici.
 
 ```cpp
 #include <iostream>
@@ -161,27 +179,36 @@ int main()
 }
 ```
 
-## Concluzii 
+## Concluzii
 
-Tehnica meet in the middle este o tehnică utilă pentru a îmbunătăți timpul de execuție pentru foarte multe soluții ce se bazează pe metode de tip brute-force. Fie că e vorba de probleme cu restricții mici sau la care avem nevoie de submulțimi mici, meet in the middle este o tehnică foarte utilă pentru diferite tipuri de aplicații.
+Tehnica meet in the middle este o tehnică utilă pentru a îmbunătăți timpul de
+execuție pentru foarte multe soluții ce se bazează pe metode de tip brute-force.
+Fie că e vorba de probleme cu restricții mici sau la care avem nevoie de
+submulțimi mici, meet in the middle este o tehnică foarte utilă pentru diferite
+tipuri de aplicații.
 
-## Probleme suplimentare 
+## Probleme suplimentare
 
-* [Piese Lot Juniori 2017](https://kilonova.ro/problems/1691)
-* [Infoarena loto](https://www.infoarena.ro/problema/loto)
-* [23 - IIOT 2019-20](https://kilonova.ro/problems/1613/)
-* [OJI 2018 eq4](https://kilonova.ro/problems/901)
-* [Infoarena aiacubiti](https://www.infoarena.ro/problema/aiacubiti)
-* [Infoarena colectie](https://infoarena.ro/problema/colectie)
-* [CEOI 2019 cubeword](https://codeforces.com/contest/1192/problem/C)
-* [USACO Silver Field Day](https://usaco.org/index.php?page=viewproblem2&cpid=1327)
-* [Cupa SEPI 2023 circles](https://kilonova.ro/problems/990)
-* [Probleme cu meet in the middle de pe Codeforces](https://codeforces.com/problemset?tags=meet-in-the-middle)
-* [Probleme cu meet in the middle de pe Kilonova](https://kilonova.ro/tags/348)
+- [Piese Lot Juniori 2017](https://kilonova.ro/problems/1691)
+- [Infoarena loto](https://www.infoarena.ro/problema/loto)
+- [23 - IIOT 2019-20](https://kilonova.ro/problems/1613/)
+- [OJI 2018 eq4](https://kilonova.ro/problems/901)
+- [Infoarena aiacubiti](https://www.infoarena.ro/problema/aiacubiti)
+- [Infoarena colectie](https://infoarena.ro/problema/colectie)
+- [CEOI 2019 cubeword](https://codeforces.com/contest/1192/problem/C)
+- [USACO Silver Field
+  Day](https://usaco.org/index.php?page=viewproblem2&cpid=1327)
+- [Cupa SEPI 2023 circles](https://kilonova.ro/problems/990)
+- [Probleme cu meet in the middle de pe
+  Codeforces](https://codeforces.com/problemset?tags=meet-in-the-middle)
+- [Probleme cu meet in the middle de pe Kilonova](https://kilonova.ro/tags/348)
 
-## Lectură suplimentară 
+## Lectură suplimentară
 
-* [Meet in the middle - Errichto](https://codeforces.com/blog/entry/95571)
-* [Meet in the middle - USACO Guide](https://usaco.guide/gold/meet-in-the-middle?lang=cpp)
-* [Infobits F1 - SEPI (pagina 89)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [Meet in the middle - infoarena](https://www.infoarena.ro/blog/meet-in-the-middle)
+- [Meet in the middle - Errichto](https://codeforces.com/blog/entry/95571)
+- [Meet in the middle - USACO
+  Guide](https://usaco.guide/gold/meet-in-the-middle?lang=cpp)
+- [Infobits F1 - SEPI (pagina
+  89)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
+- [Meet in the middle -
+  infoarena](https://www.infoarena.ro/blog/meet-in-the-middle)

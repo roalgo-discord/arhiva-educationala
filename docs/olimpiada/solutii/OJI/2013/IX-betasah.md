@@ -9,7 +9,7 @@ tags:
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
 
 !!! example "Cunoștințe necesare"
-    * [Placeholder](https://edu.roalgo.ro/)
+    - [Placeholder](https://edu.roalgo.ro/)
 
 **Autor soluție**: 
 

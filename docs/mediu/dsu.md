@@ -7,18 +7,20 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+!!! example "Cunoștințe necesare"
+    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
 
 !!! note "Conținutul articolului"
-    O bună parte din conținutul acestui articol este preluat din cursul creat de același autor pentru lotul de juniori din 2023, curs care se poate găsi [aici](https://sepi.ro/assets/upload-file/articole/curs_DSU.pdf)
+    O bună parte din conținutul acestui articol este preluat din cursul creat de
+    același autor pentru lotul de juniori din 2023, curs care se poate găsi
+    [aici](https://sepi.ro/assets/upload-file/articole/curs_DSU.pdf)
 
 Structurile de date sunt de multe ori foarte utile în multe contexte în
 programare, acestea dovedindu-se a fi în special foarte puternice și esențiale
 în lucrul problemelor date la diverse olimpiade și concursuri de informatică.
 Acest articol va prezenta o structură de date care nu e la prima vedere foarte
 complicată față de alte structuri de date mai consacrate, dar care se dovedește
-a fi foarte puternică în rezolvarea multor probleme de toate felurile. 
+a fi foarte puternică în rezolvarea multor probleme de toate felurile.
 
 Așa cum sugerează și titlul, vom prezenta în acest articol pădurile de mulțimi
 disjuncte, sau union-find, denumire dată după cele două operații principale pe
@@ -47,8 +49,8 @@ fiecare nod fiind reprezentantul lui însuși.
 vector<int> rad(n + 1), card(n + 1);
 
 for(int i = 1; i <= n; ++i) {
-	rad[i] = i;
-	card[i] = 1;
+ rad[i] = i;
+ card[i] = 1;
 }
 ```
 
@@ -61,7 +63,11 @@ radical complexitatea algoritmului. Astfel, voi introduce prima optimizare, si
 anume optimizarea de unire după cardinalul mulțimii, astfel încât vom uni mereu
 mulțimea cu cardinal mai mic la mulțimea cu cardinal mai mare.
 
-Motivul pentru care această optimizare duce la o complexitate mai mică va fi dat de numărul mai mic de operații pe care funcția Find le va face la fiecare pas. De asemenea, această optimizare de a uni mulțimile mai mici la cele mai mari se regăsește în mod frecvent și în alte contexte în diverse structuri de date și nu numai. 
+Motivul pentru care această optimizare duce la o complexitate mai mică va fi dat
+de numărul mai mic de operații pe care funcția Find le va face la fiecare pas.
+De asemenea, această optimizare de a uni mulțimile mai mici la cele mai mari se
+regăsește în mod frecvent și în alte contexte în diverse structuri de date și nu
+numai.
 
 ```cpp
 void Union(int a, int b) {
@@ -73,13 +79,19 @@ void Union(int a, int b) {
 }
 ```
 
-1.  Vom vrea sa atașăm nodul $b$ la nodul $a$.
-2.	Rădăcina lui $b$ devine $a$.
-3.	Creștem cardinalul lui $a$ cu cardinalul lui $b$.
+1. Vom vrea sa atașăm nodul $b$ la nodul $a$.
+2. Rădăcina lui $b$ devine $a$.
+3. Creștem cardinalul lui $a$ cu cardinalul lui $b$.
 
 ### Operația de căutare (Find)
 
-La această operație, vrem să găsim pentru un nod, poziția nodului reprezentativ în structura noastră de date. În mod normal, această operație poate face cel mult $O(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși, putem să ne folosim de parcurgerile pe care le facem pentru a reține rezultatele pentru toate nodurile de pe parcursul acelui drum, astfel încât la o parcurgere ulterioară, numărul de pași să se reducă spre un număr constant, structura arborelui ajungând similară cu cea a unui arbore stea. 
+La această operație, vrem să găsim pentru un nod, poziția nodului reprezentativ
+în structura noastră de date. În mod normal, această operație poate face cel
+mult $O(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși,
+putem să ne folosim de parcurgerile pe care le facem pentru a reține rezultatele
+pentru toate nodurile de pe parcursul acelui drum, astfel încât la o parcurgere
+ulterioară, numărul de pași să se reducă spre un număr constant, structura
+arborelui ajungând similară cu cea a unui arbore stea.
 
 ```cpp
 int Find(int x) {
@@ -91,22 +103,36 @@ int Find(int x) {
 }
 ```
 
-1.	Dacă nodul nostru este rădăcină, înseamnă că l-am găsit și-l returnăm în
-	consecință.
-2.	Rădăcina nodului nostru va deveni rădăcina rădăcinii curente.
+1. Dacă nodul nostru este rădăcină, înseamnă că l-am găsit și-l returnăm în
+   consecință.
+2. Rădăcina nodului nostru va deveni rădăcina rădăcinii curente.
 
 ### Prime concluzii
 
-Operația union are complexitatea $O(1)$, iar operația de find are complexitatea $O(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor și unirea după dimensiunea mulțimilor), numărul total de operații făcute este $O(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare care se poate aproxima ca fiind o constantă.  
-De asemenea, nefolosirea optimizării de compresie a drumurilor ar duce la complexitatea $O(n \log n)$, rezultat foarte important în contextul altor optimizări, cum ar fi [tehnica small-to-large](https://usaco.guide/plat/merging?lang=cpp) sau în general în demonstrarea diverselor rezultate ce țin de sume armonice. 
+Operația union are complexitatea $O(1)$, iar operația de find are complexitatea
+$O(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor
+și unirea după dimensiunea mulțimilor), numărul total de operații făcute este
+$O(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare
+care se poate aproxima ca fiind o constantă.  
+De asemenea, nefolosirea optimizării de compresie a drumurilor ar duce la
+complexitatea $O(n \log n)$, rezultat foarte important în contextul altor
+optimizări, cum ar fi [tehnica
+small-to-large](https://usaco.guide/plat/merging?lang=cpp) sau în general în
+demonstrarea diverselor rezultate ce țin de sume armonice.
 
 ## Problema [disjoint](https://infoarena.ro/problema/disjoint)
 
 <!--ne trebuie ceva pe kilonova de genul asta-->
 
-Pentru fiecare operație citită de la intrare, vom implementa funcțiile necesare pentru a obține rezultatul problemei. Unirea a două mulțimi implică mai întâi folosirea funcției Find pentru a găsi rădăcinile, iar mai apoi folosim funcția Union pentru a face unirea propriu-zisă. Folosirea ambelor optimizări pentru îmbunătățirea complexității duce la soluția optimă, ce rulează într-un timp aproximativ liniar raportat la numărul de valori citite. 
+Pentru fiecare operație citită de la intrare, vom implementa funcțiile necesare
+pentru a obține rezultatul problemei. Unirea a două mulțimi implică mai întâi
+folosirea funcției Find pentru a găsi rădăcinile, iar mai apoi folosim funcția
+Union pentru a face unirea propriu-zisă. Folosirea ambelor optimizări pentru
+îmbunătățirea complexității duce la soluția optimă, ce rulează într-un timp
+aproximativ liniar raportat la numărul de valori citite.
 
 Soluția de 100 de puncte este următoarea:
+
 ```cpp
 #include <fstream>
 #include <vector>
@@ -176,6 +202,7 @@ valoare, respectiv reprezentarea nodurilor adiacente cu numere pozitive,
 reprezentând rădăcina mulțimii din care acea valoare face parte.
 
 Soluția de 100 de puncte cu optimizarea de memorie este următoarea:
+
 ```cpp
 #include <fstream>
 #include <vector>
@@ -236,27 +263,46 @@ int main() {
 }
 ```
 
-## Problema [bile](https://infoarena.ro/problema/bile).
+## Problema [bile](https://infoarena.ro/problema/bile)
 
 !!! info "Cerință"
 
-	Pe o tabla patratica impartita in $N^2$ patratele ($N$ linii si $N$ coloane), se afla asezate $N^2$ bile (cate una in fiecare patratica a tablei). Lui Gigel ii plac bilele foarte mult, astfel ca el ia, pe rand, cate o bila de pe tabla, pana cand nu mai ramane pe tabla nici o bila. Gigel este, de asemenea, un baiat foarte curios. El a constatat ca bilele pot fi impartite in componente conexe, astfel:
-	
-	* fiecare bila face parte din exact o componenta conexa
-	
-	* daca 2 bile sunt invecinate pe orizontala sau verticala, atunci ele fac
-	  parte din aceeasi componenta conexa (adica daca una se afla imediat
-	  deasupra, dedesubtul, la dreapta sau la stanga celeilalte)
+    Pe o tabla patratica impartita in $N^2$ patratele ($N$ linii si $N$ coloane), se
+    afla asezate $N^2$ bile (cate una in fiecare patratica a tablei). Lui Gigel ii
+    plac bilele foarte mult, astfel ca el ia, pe rand, cate o bila de pe tabla, pana
+    cand nu mai ramane pe tabla nici o bila. Gigel este, de asemenea, un baiat
+    foarte curios. El a constatat ca bilele pot fi impartite in componente conexe,
+    astfel:
 
-	Dimensiunea unei componente conexe este egala cu numarul de bile care fac parte din componenta conexa respectiva. Dupa fiecare bila luata, Gigel vrea sa stie care este valoarea maxima dintre dimensiunile componentelor conexe din care fac parte bilele ramase.
+    - fiecare bila face parte din exact o componenta conexa
 
-Mai întâi, trebuie observat faptul că problema determinării conectivității dinamice este una foarte dificil de rezolvat (vezi [acest articol de pe Wikipedia](https://en.wikipedia.org/wiki/Dynamic_connectivity)), deci nu are sens să ne chinuim cu asemenea implementări care nu fac obiectul cursului nostru sau în general a programelor olimpiadelor de informatică.
+    - daca 2 bile sunt invecinate pe orizontala sau verticala, atunci ele fac parte
+    din aceeasi componenta conexa (adica daca una se afla imediat deasupra,
+    dedesubtul, la dreapta sau la stanga celeilalte)
 
-Asta ne duce cu gândul să încercăm să privim problema dintr-o perspectivă diferită, în special și datorită faptului că nu suntem forțați să răspundem la actualizări online. Din acest motiv, vom introduce o abordare care se folosește la multe soluții ce se bazează pe folosirea pădurilor de mulțimi disjuncte. 
+    Dimensiunea unei componente conexe este egala cu numarul de bile care fac parte
+    din componenta conexa respectiva. Dupa fiecare bila luata, Gigel vrea sa stie
+    care este valoarea maxima dintre dimensiunile componentelor conexe din care fac
+    parte bilele ramase.
 
-Practic, în loc să privim problema de la început la final, vom rezolva problema inversă, în care putem adăuga bile, ceea ce ne ajută să reducem problema la o aplicație standard a pădurilor de mulțimi disjuncte, răspunsurile ajungând în cele din urmă să fie afișate în ordinea inversă în care le-am aflat. 
+Mai întâi, trebuie observat faptul că problema determinării conectivității
+dinamice este una foarte dificil de rezolvat (vezi [acest articol de pe
+Wikipedia](https://en.wikipedia.org/wiki/Dynamic_connectivity)), deci nu are
+sens să ne chinuim cu asemenea implementări care nu fac obiectul cursului nostru
+sau în general a programelor olimpiadelor de informatică.
+
+Asta ne duce cu gândul să încercăm să privim problema dintr-o perspectivă
+diferită, în special și datorită faptului că nu suntem forțați să răspundem la
+actualizări online. Din acest motiv, vom introduce o abordare care se folosește
+la multe soluții ce se bazează pe folosirea pădurilor de mulțimi disjuncte.
+
+Practic, în loc să privim problema de la început la final, vom rezolva problema
+inversă, în care putem adăuga bile, ceea ce ne ajută să reducem problema la o
+aplicație standard a pădurilor de mulțimi disjuncte, răspunsurile ajungând în
+cele din urmă să fie afișate în ordinea inversă în care le-am aflat.
 
 Soluția de 100 de puncte este următoarea:
+
 ```cpp
 #include <algorithm>
 #include <fstream>
@@ -351,15 +397,19 @@ int main() {
 
 ```
 
-## Problema [Secvmax](https://www.infoarena.ro/problema/secvmax).
+## Problema [Secvmax](https://www.infoarena.ro/problema/secvmax)
 
-!!! info "Cerință" 
-	Fiona are o secventa de $N$ numere naturale. Ea se întreabă din când în când
-	pentru un anumit număr $Q$ care este cea mai lungă subsecvență care are
-	toate numerele mai mici sau egale cu $Q$. Ajutați-o pe Fiona să își răspundă
-	la toate întrebările.
+!!! info "Cerință"
+    Fiona are o secventa de $N$ numere naturale. Ea se întreabă din când în când
+    pentru un anumit număr $Q$ care este cea mai lungă subsecvență care are
+    toate numerele mai mici sau egale cu $Q$. Ajutați-o pe Fiona să își răspundă
+    la toate întrebările.
 
-Aici putem folosi din nou prelucrarea numerelor în ordine crescătoare a numerelor din vector, iar atunci când adăugăm valorile în considerare, vom verifica fiecare vecin să vedem dacă putem uni valorile din cele două mulțimi, iar la fiecare pas răspunsul e cardinalul maxim al unei mulțimi, care e crescător pe măsură ce creștem valorile adăugate.  
+Aici putem folosi din nou prelucrarea numerelor în ordine crescătoare a
+numerelor din vector, iar atunci când adăugăm valorile în considerare, vom
+verifica fiecare vecin să vedem dacă putem uni valorile din cele două mulțimi,
+iar la fiecare pas răspunsul e cardinalul maxim al unei mulțimi, care e
+crescător pe măsură ce creștem valorile adăugate.  
 
 ```cpp
 #include <fstream>
@@ -469,25 +519,39 @@ int main() {
 }
 ```
 
-
-
-## Problema [joingraf](https://kilonova.ro/problems/1907).
+## Problema [joingraf](https://kilonova.ro/problems/1907)
 
 !!! info "Cerință"
-	A fost ziua lui Traian de curând, iar el a primit în dar un graf cu $N$ noduri. La început, fiecare nod era într-o componentă conexă, singur. Dar apoi, câinele lui Traian a venit și i-a spus $Q$ întrebări de forma următoare:
+    A fost ziua lui Traian de curând, iar el a primit în dar un graf cu $N$ noduri.
+    La început, fiecare nod era într-o componentă conexă, singur. Dar apoi, câinele
+    lui Traian a venit și i-a spus $Q$ întrebări de forma următoare:
 
-	* $1 \ x \ y$: Adaugă la graful tău muchiile $(x, x + 1), (x + 1, x + 2), \dots , (y - 1, y)$
-	* $2 \ x \ y$: Spune dacă nodurile $x$ și $y$ sunt în aceeași componentă conexă.
+    * $1 \ x \ y$: Adaugă la graful tău muchiile $(x, x + 1), (x + 1, x + 2), \dots
+    , (y - 1, y)$
+    * $2 \ x \ y$: Spune dacă nodurile $x$ și $y$ sunt în aceeași componentă conexă.
 
-Pentru a rezolva această problemă există mai multe abordări, plecând de la diverse moduri de a gândi problema, dar în contextul pădurilor de mulțimi disjuncte, ne vom concentra pe soluția cu DSU. 
+Pentru a rezolva această problemă există mai multe abordări, plecând de la
+diverse moduri de a gândi problema, dar în contextul pădurilor de mulțimi
+disjuncte, ne vom concentra pe soluția cu DSU.
 
-Mai întâi, trebuie să observăm că componentele conexe sunt ca niște intervale. De exemplu, să luăm $n = 7$. Atunci, la început intervalele vor fi: $[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]$. Dacă unim muchiile de la $3$ la $6$, intervalele vor deveni: $[1, 1], [2, 2], [3, 6], [7, 7]$.
+Mai întâi, trebuie să observăm că componentele conexe sunt ca niște intervale.
+De exemplu, să luăm $n = 7$. Atunci, la început intervalele vor fi: $[1, 1], [2,
+2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]$. Dacă unim muchiile de la $3$ la
+$6$, intervalele vor deveni: $[1, 1], [2, 2], [3, 6], [7, 7]$.
 
-Atunci, putem folosi o structură de tip DSU. Vom reține $par_i = $ "părintele" nodului $i$, sau mai ușor de înțeles, capătul stânga al intervalului în care este nodul $i$. Este nevoie să reținem doar capătul dreapta, deoarece capătul dreapta al secvenței curente este predecesorul capătului stânga al secvenței următoare. Vom reține și $nxt_i = $ capătul stânga al secvenței de după secvența în care este $i$.
+Atunci, putem folosi o structură de tip DSU. Vom reține $par_i = $ "părintele"
+nodului $i$, sau mai ușor de înțeles, capătul stânga al intervalului în care
+este nodul $i$. Este nevoie să reținem doar capătul dreapta, deoarece capătul
+dreapta al secvenței curente este predecesorul capătului stânga al secvenței
+următoare. Vom reține și $nxt_i = $ capătul stânga al secvenței de după secvența
+în care este $i$.
 
-Iar atunci când avem update cu $x, y$, mergem la fiecare secvență până la $y$ (adică când avansăm de la $p$ la următoarea, facem $p = nxt_p$) și o reunim cu secvența în care este $x$.
+Iar atunci când avem update cu $x, y$, mergem la fiecare secvență până la $y$
+(adică când avansăm de la $p$ la următoarea, facem $p = nxt_p$) și o reunim cu
+secvența în care este $x$.
 
-Iar la query, verificăm dacă intervalul în care este $x$ este egal cu cel în care este $y$. Complexitate: $O(N + Q \ log \ N)$ timp, $O(n)$ memorie.
+Iar la query, verificăm dacă intervalul în care este $x$ este egal cu cel în
+care este $y$. Complexitate: $O(N + Q \ log \ N)$ timp, $O(n)$ memorie.
 
 ```cpp
 #include <iostream>
@@ -551,34 +615,44 @@ int main() {
 
 Acest articol este menit să introducă audiența în folosirea pădurilor de mulțimi
 disjuncte, punând accentul pe funcționalitățile de bază, fără a menționa alte
-aplicații importante, cum ar fi [algoritmul lui Kruskal](https://edu.roalgo.ro/mediu/apcm/#algoritmul-lui-kruskal) sau algoritmii folosiți
-pentru dynamic connectivity. De asemenea, pădurile de mulțimi disjuncte pot fi
-folosite pentru a scurta foarte mult implementările aplicațiilor simple la
-grafuri.
+aplicații importante, cum ar fi [algoritmul lui
+Kruskal](https://edu.roalgo.ro/mediu/apcm/#algoritmul-lui-kruskal) sau
+algoritmii folosiți pentru dynamic connectivity. De asemenea, pădurile de
+mulțimi disjuncte pot fi folosite pentru a scurta foarte mult implementările
+aplicațiilor simple la grafuri.
 
 <!--ref la dynamic connectivity cand va fi sa fie-->
 
 ## Probleme suplimentare
 
-* [Chemical table - EJOI 2018](https://cses.fi/395/list/)
-* [MexC ONI 2008](https://kilonova.ro/problems/1785)
-* [Microcycles - Codeforces](https://codeforces.com/contest/1927/problem/F)
-* [Galleries - AGM 2020](https://codeforces.com/gym/102565/problem/D)
-* [JBOI 2023 Frequencies](https://kilonova.ro/problems/2013/)
-* [IIOT 2023-24 Binary Chess](https://kilonova.ro/problems/1936)
-* [Probleme cu DSU de pe kilonova](https://kilonova.ro/tags/311)
-* [COCI 13-ladice](https://dmoj.ca/problem/coci13c5p6)
-* [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
-* [USACO Wormhole Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
-* [DSU Step 1 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/1/practice)
-* [DSU Step 2 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/7/2/practice)
+- [Chemical table - EJOI 2018](https://cses.fi/395/list/)
+- [MexC ONI 2008](https://kilonova.ro/problems/1785)
+- [Microcycles - Codeforces](https://codeforces.com/contest/1927/problem/F)
+- [Galleries - AGM 2020](https://codeforces.com/gym/102565/problem/D)
+- [JBOI 2023 Frequencies](https://kilonova.ro/problems/2013/)
+- [IIOT 2023-24 Binary Chess](https://kilonova.ro/problems/1936)
+- [Probleme cu DSU de pe kilonova](https://kilonova.ro/tags/311)
+- [COCI 13-ladice](https://dmoj.ca/problem/coci13c5p6)
+- [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
+- [USACO Wormhole
+  Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
+- [DSU Step 1 - Codeforces
+  EDU](https://codeforces.com/edu/course/2/lesson/7/1/practice)
+- [DSU Step 2 - Codeforces
+  EDU](https://codeforces.com/edu/course/2/lesson/7/2/practice)
 
 ## Bibliografie și lectură suplimentară
 
-* [Păduri de mulțimi disjuncte - CS Academy](https://csacademy.com/lesson/disjoint_data_sets/)
-* [Algoritmul Union-Find - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_18_-_23_ian_2020#Algoritmul_union-find)
-* [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO Academy](https://codeforces.com/edu/courses)
-* [Articol USACO Guide - DSU](https://usaco.guide/gold/dsu?lang=cpp)
-* [Curs despre DSU - Codeforces (este necesar un cont pentru a putea accesa acest curs, plus accesarea linkului de mai sus)](https://codeforces.com/edu/course/2/lesson/7)
-* [Sack (dsu on tree) - Avansat](https://codeforces.com/blog/entry/44351)
-* [Smenul de manevrare a query-urilor offline cu DSU](https://codeforces.com/blog/entry/75369)
+- [Păduri de mulțimi disjuncte - CS
+  Academy](https://csacademy.com/lesson/disjoint_data_sets/)
+- [Algoritmul Union-Find -
+  Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_18_-_23_ian_2020#Algoritmul_union-find)
+- [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO
+  Academy](https://codeforces.com/edu/courses)
+- [Articol USACO Guide - DSU](https://usaco.guide/gold/dsu?lang=cpp)
+- [Curs despre DSU - Codeforces (este necesar un cont pentru a putea accesa
+  acest curs, plus accesarea linkului de mai
+  sus)](https://codeforces.com/edu/course/2/lesson/7)
+- [Sack (dsu on tree) - Avansat](https://codeforces.com/blog/entry/44351)
+- [Smenul de manevrare a query-urilor offline cu
+  DSU](https://codeforces.com/blog/entry/75369)

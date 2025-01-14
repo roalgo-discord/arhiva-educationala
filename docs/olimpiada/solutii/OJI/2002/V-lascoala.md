@@ -7,16 +7,19 @@ tags:
 # Soluția problemei La școală (OJI 2002, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/702/).
 
-Această problemă poate fi rezolvată aflând cel mai mare pătrat perfect mai mic decât $n$, lucru ce se poate afla verificând toate pătratele perfecte și alegând valoarea maximă.
+Această problemă poate fi rezolvată aflând cel mai mare pătrat perfect mai mic
+decât $n$, lucru ce se poate afla verificând toate pătratele perfecte și alegând
+valoarea maximă.
 
-Ulterior, aflăm diferența dintre $n$ și $k^2$, iar mai apoi afișăm liniile cu elevi în ordine descrescătoare a valorilor, câte $k$ pe rând. 
+Ulterior, aflăm diferența dintre $n$ și $k^2$, iar mai apoi afișăm liniile cu
+elevi în ordine descrescătoare a valorilor, câte $k$ pe rând.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

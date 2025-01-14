@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Opsir (OJI 2024, clasa a X-a)
 
 !!! example "Cunoștințe necesare"
-    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
-    * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
-    * [Abordarea problemelor ad-hoc](https://edu.roalgo.ro/mediu/ad-hoc/)
+    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
+    - [Abordarea problemelor ad-hoc](https://edu.roalgo.ro/mediu/ad-hoc/)
 
 **Autor soluție**: Ștefan-Alexandru Popescu
 
@@ -38,9 +38,9 @@ Subtask $4$ - fără restricții
 
 Să presupunem că există o succesiune de lungime $L$ de operații de tip $1$ și $2$ care pot transforma șirul $T$ în șirul $S$ (adica e validă ca soluție): $op_1, op_2, op_3 \dots op_L$. Dacă încercăm să interschimbăm $2$ operații consecutive din această succesiune (fie ele $op_i$ și $op_{i+1}$, $1 \leq i < L$) pentru a obține tot o succesiune validă, putem observa următoarele cazuri:
 
-* $op_i$ și $op_{i+1}$ sunt operații de tip $1$: echivalent cu a șterge $2$ poziții din șirul $T$. Acestea pot fi șterse în orice ordine (cu o eventuală recalculare de indecși)
-* $op_i$ și $op_{i+1}$ sunt operații de tip $2$: din criteriul colorării din cerință știm că intervalele sunt disjuncte, deci nu contează ordinea în care se realizează aceste operații
-* $op_i$ și $op_{i+1}$ sunt operații de tipuri diferite: echivalent cu a șterge o poziție și a sorta un interval, operații care se pot realiza în orice ordine (cu eventuale recalculări de indecși)
+- $op_i$ și $op_{i+1}$ sunt operații de tip $1$: echivalent cu a șterge $2$ poziții din șirul $T$. Acestea pot fi șterse în orice ordine (cu o eventuală recalculare de indecși)
+- $op_i$ și $op_{i+1}$ sunt operații de tip $2$: din criteriul colorării din cerință știm că intervalele sunt disjuncte, deci nu contează ordinea în care se realizează aceste operații
+- $op_i$ și $op_{i+1}$ sunt operații de tipuri diferite: echivalent cu a șterge o poziție și a sorta un interval, operații care se pot realiza în orice ordine (cu eventuale recalculări de indecși)
 
 Aceste observații ne arată faptul că putem interschimba $2$ operații consecutive dintr-o succesiune validă (cu anumite modificări) pentru a obține tot o succesiune validă. Considerăm în continuare că ”am adus”, prin interschimbări, operațiile de tip $1$ pe primele poziții din succesiune.
 

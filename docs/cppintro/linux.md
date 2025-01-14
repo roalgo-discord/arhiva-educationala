@@ -15,9 +15,9 @@ mai populare opțiuni sunt:
     ---
 
     GCC (GNU Compiler Collection) este o suită de compilatoare libere și
-    gratuite. Este standardul de facto pentru dezvoltarea C++ pe Linux. GCC
-    este disponibil în majoritatea distribuțiilor Linux și poate fi instalat
-    direct din managerul de pachete al sistemului.
+    gratuite. Este standardul de facto pentru dezvoltarea C++ pe Linux. GCC este
+    disponibil în majoritatea distribuțiilor Linux și poate fi instalat direct
+    din managerul de pachete al sistemului.
 
     [:octicons-arrow-right-24: Vezi instrucțiuni pentru GCC](./compilers/linux/gcc.md)
 

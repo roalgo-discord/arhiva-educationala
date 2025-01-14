@@ -7,15 +7,18 @@ tags:
 # Soluția problemei Valori-pantă (OJI 2002, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    * [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime/)
-    * [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime/)
+    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/703/).
 
-Pentru fiecare număr, putem afla parcurgând cifrele lui dacă toate sunt așezate în ordine crescătoare sau descrescătoare, iar mai apoi după ce facem această parcurgere, tot ce trebuie să facem este să aflăm valoarea maximă și minimă care sunt valori-pantă.
+Pentru fiecare număr, putem afla parcurgând cifrele lui dacă toate sunt așezate
+în ordine crescătoare sau descrescătoare, iar mai apoi după ce facem această
+parcurgere, tot ce trebuie să facem este să aflăm valoarea maximă și minimă care
+sunt valori-pantă.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

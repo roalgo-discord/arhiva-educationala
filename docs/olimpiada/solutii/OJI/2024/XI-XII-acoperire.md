@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Acoperire (OJI 2024, clasele XI-XII)
 
 !!! example "Cunoștințe necesare"
-    * [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
-    * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
+    - [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
 
 
 **Autor soluție**: Mihai Ciucu

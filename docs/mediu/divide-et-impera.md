@@ -8,15 +8,27 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
 
 ## Introducere
 
-Divide et Impera (nume inspirat din doctrina romana, poate fi tradus ca dezbină și stăpânește) este o metodă de programare bazată pe un principiu simplu, acela al împărțirii unei probleme date în două sau mai multe subprobleme de același tip, care sunt independente și prin combinarea rezultatelor obținute, obținem rezultatul problemei întregi. 
+Divide et Impera (nume inspirat din doctrina romana, poate fi tradus ca dezbină
+și stăpânește) este o metodă de programare bazată pe un principiu simplu, acela
+al împărțirii unei probleme date în două sau mai multe subprobleme de același
+tip, care sunt independente și prin combinarea rezultatelor obținute, obținem
+rezultatul problemei întregi.
 
-Subproblemele trebuie să fie de același tip cu problema inițială, ele urmând a fi rezolvate prin aceeași tehnică. De regulă, vom împărți problema în subprobleme de dimensiuni aproximativ egale. În urma împărțirilor succesive în subprobleme, se ajunge în situația că problema curentă nu mai poate fi împărțită în subprobleme. O asemenea problemă se numește caz de bază (sau problemă elementară) și se rezolvă într-un mod trivial, fără a mai fi nevoie de alte împărțiri).
+Subproblemele trebuie să fie de același tip cu problema inițială, ele urmând a
+fi rezolvate prin aceeași tehnică. De regulă, vom împărți problema în
+subprobleme de dimensiuni aproximativ egale. În urma împărțirilor succesive în
+subprobleme, se ajunge în situația că problema curentă nu mai poate fi împărțită
+în subprobleme. O asemenea problemă se numește caz de bază (sau problemă
+elementară) și se rezolvă într-un mod trivial, fără a mai fi nevoie de alte
+împărțiri).
 
-Divide et Impera admite de regulă o implementare recursivă – rezolvarea problemei constă în rezolvarea unor subprobleme de același tip. Un algoritm pseudocod care descrie metoda este:
+Divide et Impera admite de regulă o implementare recursivă – rezolvarea
+problemei constă în rezolvarea unor subprobleme de același tip. Un algoritm
+pseudocod care descrie metoda este:
 
 ```
 funcție (X) 
@@ -30,17 +42,29 @@ funcție (X)
       întoarcem răspunsul obținut
 ```
 
-Această tehnică este frecvent întâlnită în foarte multe tipuri de probleme, ea stând la baza multor algoritmi de sortare prin comparare (quicksort, mergesort) dar are aplicații și în domeniul matematicii, fiind folosit în algoritmi mai avansați precum înmulțirea matricilor sau aflarea celor mai apropiate puncte în plan. Totuși, acest articol se va concentra pe aplicațiile mai simple ale divide et impera.
+Această tehnică este frecvent întâlnită în foarte multe tipuri de probleme, ea
+stând la baza multor algoritmi de sortare prin comparare (quicksort, mergesort)
+dar are aplicații și în domeniul matematicii, fiind folosit în algoritmi mai
+avansați precum înmulțirea matricilor sau aflarea celor mai apropiate puncte în
+plan. Totuși, acest articol se va concentra pe aplicațiile mai simple ale divide
+et impera.
 
 ## Problema exemplu - [Ordonat](https://www.pbinfo.ro/probleme/4356/ordonatdivimp)
 
-Pentru a rezolva această problemă, trebuie să identificăm subproblemele și diversele cazuri care pot apărea atunci când rezolvăm problema. 
+Pentru a rezolva această problemă, trebuie să identificăm subproblemele și
+diversele cazuri care pot apărea atunci când rezolvăm problema.
 
-În primul rând, pentru ca un șir să fie ordonat, trebuie ca ambele jumătăți ale șirului să fie ordonate, iar elementele din mijloc trebuie să aibă același rezultat la comparare. 
+În primul rând, pentru ca un șir să fie ordonat, trebuie ca ambele jumătăți ale
+șirului să fie ordonate, iar elementele din mijloc trebuie să aibă același
+rezultat la comparare.
 
-De exemplu, un șir strict crescător este format din două șiruri strict crescătoare, cu proprietatea că $v[mij] < v[mij+1]$. Putem defini în mod similar și un șir strict descrescător.
+De exemplu, un șir strict crescător este format din două șiruri strict
+crescătoare, cu proprietatea că $v[mij] < v[mij+1]$. Putem defini în mod similar
+și un șir strict descrescător.
 
-În cazul acestei probleme, cazul de bază constituie în șirul cu lungime $1$, care este atât strict crescător, cât și strict descrescător. Puteți vedea codul sursă mai jos. 
+În cazul acestei probleme, cazul de bază constituie în șirul cu lungime $1$,
+care este atât strict crescător, cât și strict descrescător. Puteți vedea codul
+sursă mai jos.
 
 ```cpp
 #include <iostream>
@@ -86,11 +110,21 @@ int main() {
 ## Problema turnurilor din Hanoi - [Tower of Hanoi - CSES](https://cses.fi/problemset/task/2165/)
 
 !!! note "Observație"
-    Această problemă este una foarte celebră, fiind studiată de foarte mulți ani - [Tower of Hanoi](hhttps://en.wikipedia.org/wiki/Tower_of_Hanoi) 
+    Această problemă este una foarte celebră, fiind studiată de foarte mulți ani
+    - [Tower of Hanoi](hhttps://en.wikipedia.org/wiki/Tower_of_Hanoi)
 
-Problema constă în mutarea unui șir de $3$ (în varianta generalizată, $n$) discuri de dimensiuni descrescătoare din tija $A$ în tija $B$, folosindu-te de o tijă ajutătoare, $C$. La un pas, putem muta un disc dintr-o tijă în alta, cu condiția ca tija unde plasăm discul să aibă fie un disc mai mare în vârf, fie să nu aibă niciun disc plasat.
+Problema constă în mutarea unui șir de $3$ (în varianta generalizată, $n$)
+discuri de dimensiuni descrescătoare din tija $A$ în tija $B$, folosindu-te de o
+tijă ajutătoare, $C$. La un pas, putem muta un disc dintr-o tijă în alta, cu
+condiția ca tija unde plasăm discul să aibă fie un disc mai mare în vârf, fie să
+nu aibă niciun disc plasat.
 
-Numărul minim de mutări pentru a muta $n$ discuri din tija $A$ în tija $B$ este $2^n - 1$, iar algoritmul de mutare al discurilor se bazează pe faptul că vom vrea să mutăm la un pas un disc maxim în tija $B$, fapt ce presupune mutarea turnului cu înălțime $h - 1$ în discul $C$. Acest lucru se poate simula folosind un algoritm de tipul divide et impera. Mai jos găsiți un algoritm ce rezolvă această problemă. 
+Numărul minim de mutări pentru a muta $n$ discuri din tija $A$ în tija $B$ este
+$2^n - 1$, iar algoritmul de mutare al discurilor se bazează pe faptul că vom
+vrea să mutăm la un pas un disc maxim în tija $B$, fapt ce presupune mutarea
+turnului cu înălțime $h - 1$ în discul $C$. Acest lucru se poate simula folosind
+un algoritm de tipul divide et impera. Mai jos găsiți un algoritm ce rezolvă
+această problemă.
 
 ```cpp
 #include <iostream>
@@ -116,7 +150,11 @@ int main() {
 
 ## Problema [compresie - OJI 2012, clasa a X-a](https://kilonova.ro/problems/827)
 
-Pentru a rezolva această problemă, va trebui să analizăm șirul dat de la intrare. Mai întâi aflăm dimensiunea matricii, iar mai apoi, vom simula împărțirile folosind divide et impera. Trebuie avut în vedere cazurile când împărțim doar în două cadrane în loc de patru, precum și cazurile de bază când umplem o zonă a matricii cu un anumit caracter.
+Pentru a rezolva această problemă, va trebui să analizăm șirul dat de la
+intrare. Mai întâi aflăm dimensiunea matricii, iar mai apoi, vom simula
+împărțirile folosind divide et impera. Trebuie avut în vedere cazurile când
+împărțim doar în două cadrane în loc de patru, precum și cazurile de bază când
+umplem o zonă a matricii cu un anumit caracter.
 
 Mai jos puteți găsi o soluție care rezolvă problema.
 
@@ -185,7 +223,12 @@ int main() {
 
 ## Problema [Interesting Array](https://kilonova.ro/problems/382)
 
-Pentru a rezolva această problemă, trebuie să plecăm de la șirul inițial și ne bazăm pe faptul că vom avea cel mult $\sqrt n$ frecvențe distincte, fapt ce motivează o parcurgere de tip divide et impera, unde excludem mereu valorile cu frecvență minimă. Deși în teorie acest algoritm poate avea o complexitate de tip $O(n \sqrt n)$, în practică algoritmul va fi foarte rapid și relativ simplu de implementat. 
+Pentru a rezolva această problemă, trebuie să plecăm de la șirul inițial și ne
+bazăm pe faptul că vom avea cel mult $\sqrt n$ frecvențe distincte, fapt ce
+motivează o parcurgere de tip divide et impera, unde excludem mereu valorile cu
+frecvență minimă. Deși în teorie acest algoritm poate avea o complexitate de tip
+$O(n \sqrt n)$, în practică algoritmul va fi foarte rapid și relativ simplu de
+implementat.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -231,28 +274,39 @@ int main() {
 
 ## Concluzii
 
-Tehnica divide et impera este o tehnică foarte importantă pentru înțelegerea principiului din spatele unor algoritmi de sortare mai dificili, care chiar dacă nu trebuie implementați în timpul unui concurs de algoritmică datorită existenței funcției std::sort, problemele care folosesc proprietățile acestor algoritmi apar în anumite situații. De asemenea, unele probleme se dovedesc a fi exerciții de implementare foarte utile, care s-au mai regăsit în problemele date la olimpiadă la clasa a X-a. 
+Tehnica divide et impera este o tehnică foarte importantă pentru înțelegerea
+principiului din spatele unor algoritmi de sortare mai dificili, care chiar dacă
+nu trebuie implementați în timpul unui concurs de algoritmică datorită
+existenței funcției std::sort, problemele care folosesc proprietățile acestor
+algoritmi apar în anumite situații. De asemenea, unele probleme se dovedesc a fi
+exerciții de implementare foarte utile, care s-au mai regăsit în problemele date
+la olimpiadă la clasa a X-a.
 
 ## Probleme suplimentare
 
-* [cât mai multe probleme din acest capitol pentru Divide et Impera](https://www.pbinfo.ro/probleme/categorii/94/divide-et-impera)
-* [OJI 2024 aprogressive](https://kilonova.ro/problems/2504)
-* [ONI 2013 romb](https://kilonova.ro/problems/1419)
-* [Codeforces a-good String](https://codeforces.com/contest/1385/problem/D)
-* [infoarena bitcost](https://www.infoarena.ro/problema/bitcost)
-* [Codeforces Creative Snap](https://codeforces.com/contest/1111/problem/C)
-* [OJI 2017 caps](https://kilonova.ro/problems/887)
-* [ONI 2010 xp](https://kilonova.ro/problems/1350)
-* [Codeforces Dr. Evil Underscores](https://codeforces.com/contest/1285/problem/D)
-* [ONI 2004 invsort](https://kilonova.ro/problems/1993)
-* [Codeforces The Number of Subpermutations](https://codeforces.com/problemset/problem/1175/F)
-* [ONI 2018 proiectoare](https://kilonova.ro/problems/1543)
-* [RCPC 2023 blabla](https://kilonova.ro/problems/1894)
-* [probleme cu Divide et Impera de pe Codeforces](https://codeforces.com/problemset?tags=divide%20and%20conquer)
-* [probleme cu Divide et Impera de pe Kilonova](https://kilonova.ro/tags/280)
+- [cât mai multe probleme din acest capitol pentru Divide et
+  Impera](https://www.pbinfo.ro/probleme/categorii/94/divide-et-impera)
+- [OJI 2024 aprogressive](https://kilonova.ro/problems/2504)
+- [ONI 2013 romb](https://kilonova.ro/problems/1419)
+- [Codeforces a-good String](https://codeforces.com/contest/1385/problem/D)
+- [infoarena bitcost](https://www.infoarena.ro/problema/bitcost)
+- [Codeforces Creative Snap](https://codeforces.com/contest/1111/problem/C)
+- [OJI 2017 caps](https://kilonova.ro/problems/887)
+- [ONI 2010 xp](https://kilonova.ro/problems/1350)
+- [Codeforces Dr. Evil
+  Underscores](https://codeforces.com/contest/1285/problem/D)
+- [ONI 2004 invsort](https://kilonova.ro/problems/1993)
+- [Codeforces The Number of
+  Subpermutations](https://codeforces.com/problemset/problem/1175/F)
+- [ONI 2018 proiectoare](https://kilonova.ro/problems/1543)
+- [RCPC 2023 blabla](https://kilonova.ro/problems/1894)
+- [probleme cu Divide et Impera de pe
+  Codeforces](https://codeforces.com/problemset?tags=divide%20and%20conquer)
+- [probleme cu Divide et Impera de pe Kilonova](https://kilonova.ro/tags/280)
 
 ## Resurse suplimentare
 
-* [Divide et Impera - pbinfo](https://www.pbinfo.ro/articole/7651/divide-et-impera)
-* [Divide et Impera - cppi sync](https://cppi.sync.ro/materia/probleme_de_baza_cu_divide_et_impera.html)
-
+- [Divide et Impera -
+  pbinfo](https://www.pbinfo.ro/articole/7651/divide-et-impera)
+- [Divide et Impera - cppi
+  sync](https://cppi.sync.ro/materia/probleme_de_baza_cu_divide_et_impera.html)

@@ -8,21 +8,21 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+    - [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
 
 ## Introducere
 
 Un algoritm de căutare ternară este o tehnică în informatică pentru a găsi
 minimul sau maximul unei funcții unimodale (care are un singur punct/interval cu
-valoare maximă/minimă). 
+valoare maximă/minimă).
 
 Spre deosebire de alte căutări similare precum căutarea binară, căutarea ternară
 este utilă pentru a afla dacă valoarea extremă nu se găsește în prima sau ultima
 treime a spațiului de căutare, algoritmul repetându-se pentru celelalte două
-treimi ale intervalului căutat. 
+treimi ale intervalului căutat.
 
 Căutarea ternară este un exemplu de algoritm de tipul divide et impera, alături
-de căutarea binară și alți algoritmi similari. 
+de căutarea binară și alți algoritmi similari.
 
 ## Funcția în sine
 
@@ -45,18 +45,18 @@ la $\frac{1}{3}$ respectiv $\frac{2}{3}$ de capătul din stânga al intervalului
 iar în funcție de valorile $f(m_1)$ și $f(m_2)$, avem următoarele cazuri,
 acestea fiind similare și pentru o funcție mai întâi descrescătoare.
 
-* Dacă $f(m_1) < f(m_2)$, maximul nu poate fi în intervalul $[a, m_1]$ deoarece
+- Dacă $f(m_1) < f(m_2)$, maximul nu poate fi în intervalul $[a, m_1]$ deoarece
   $f(m_2)$ este mai mare decât $f(m_1)$.
-* Dacă $f(m_1) > f(m_2)$, maximul nu poate fi în intervalul $[m_2, b]$ deoarece
+- Dacă $f(m_1) > f(m_2)$, maximul nu poate fi în intervalul $[m_2, b]$ deoarece
   $f(m_1)$ este mai mare decât $f(m_2)$.
-* Dacă $f(m_1) = f(m_2)$, maximul nu poate fi decât în intervalul $[m_1, m_2]$
+- Dacă $f(m_1) = f(m_2)$, maximul nu poate fi decât în intervalul $[m_1, m_2]$
   deoarece $f(m_1)$ și $f(m_2)$ sunt de părți opuse ale punctului sau punctelor
   maxime.
 
 După ce am redus căutarea la o lungime suficient de mică pentru a preveni erori
 de precizie, putem trata intervalul rămas folosind brute force pentru a ajunge
 la răspunsul dorit. Alternativ, putem apela algoritmul de un număr finit de ori,
-similar cu modul în care am rula căutarea binară pe numere reale. 
+similar cu modul în care am rula căutarea binară pe numere reale.
 
 Complexitatea algoritmului este $O(\log n)$ unde $n$ este dimensiunea
 intervalului de căutare. Se poate remarca faptul că spre deosebire de căutarea
@@ -102,7 +102,11 @@ long long ternara(int epsilon) {
 
 ## Golden Section Search
 
-Pe lângă căutarea ternară, putem folosi pentru a optimiza procesul de căutare și căutarea Golden Section, care spre deosebire de căutarea ternară, împarte intervalul astfel încât cele două valori de mijloc să fie puse la distanta $r = \frac{3 - \sqrt{5}}{2}$, distantă care este egală cu $\frac{1}{\phi}$, unde $\phi$ este numărul de aur, egal cu aproximativ $1.618$.
+Pe lângă căutarea ternară, putem folosi pentru a optimiza procesul de căutare și
+căutarea Golden Section, care spre deosebire de căutarea ternară, împarte
+intervalul astfel încât cele două valori de mijloc să fie puse la distanta $r =
+\frac{3 - \sqrt{5}}{2}$, distantă care este egală cu $\frac{1}{\phi}$, unde
+$\phi$ este numărul de aur, egal cu aproximativ $1.618$.
 
 ```cpp
 #include <cmath>
@@ -148,7 +152,7 @@ int main() {
 
 În această problemă avem doi vectori $a$ și $b$ și putem crește/scădea o valoare
 dintr-unul din cei doi vectori cu costul $1$. Vrem să aflăm costul minim pentru
-ca minimul din vectorul $a$ să fie cel puțin egal cu maximul din vectorul $b$. 
+ca minimul din vectorul $a$ să fie cel puțin egal cu maximul din vectorul $b$.
 
 Se poate observa că e clar că vrem să creștem valorile din $a$ și să scădem
 valorile din $b$. De asemenea, se poate observa că pe măsură ce vrem să aducem
@@ -159,22 +163,27 @@ Astfel, vom căuta ternar răspunsul în intervalul $[1, 10^9]$ răspunsul aplic
 algoritmul descris mai sus, implementarea fiind cea de mai sus.
 
 ## Probleme suplimentare
- 
-* [CF 439D](https://codeforces.com/contest/439/problem/D)
-* [copii3 infoarena](https://infoarena.ro/problema/copii3)
-* [CEOI 2017 - Sure Bet](https://csacademy.com/contest/ceoi-2017-day-1/task/sure-bet/)
-* [CF 1355 E](https://codeforces.com/problemset/problem/1355/E)
-* [CF 1848 D](https://codeforces.com/contest/1848/problem/D)
-* [Lot Juniori 2018 cherhanale](https://kilonova.ro/problems/1626)
-* [CCO 18-Gradient Descent](https://dmoj.ca/problem/cco18p4)
 
+- [CF 439D](https://codeforces.com/contest/439/problem/D)
+- [copii3 infoarena](https://infoarena.ro/problema/copii3)
+- [CEOI 2017 - Sure
+  Bet](https://csacademy.com/contest/ceoi-2017-day-1/task/sure-bet/)
+- [CF 1355 E](https://codeforces.com/problemset/problem/1355/E)
+- [CF 1848 D](https://codeforces.com/contest/1848/problem/D)
+- [Lot Juniori 2018 cherhanale](https://kilonova.ro/problems/1626)
+- [CCO 18-Gradient Descent](https://dmoj.ca/problem/cco18p4)
 
 ## Bibliografie și lectură suplimentară
 
-* [Ternary Search - CP Algorithms](https://cp-algorithms.com/num_methods/ternary_search.html)
-* [Ternary Search on Integers  - Codeforces](https://codeforces.com/blog/entry/43440)
-* [Tutorial On Tof (Ternary Search) - Codeforces](https://codeforces.com/blog/entry/60702)
-* [Solutia de la copii3 - infoarena](https://infoarena.ro/solutii/copii3)
-* [Ternary Search - Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)
-* [Numerical Methods with Programming - Golden Section Search](https://drlvk.github.io/nm/section-golden-section.html)
-* [Golden Section Search - Wikipedia](https://en.wikipedia.org/wiki/Golden-section_search)
+- [Ternary Search - CP
+  Algorithms](https://cp-algorithms.com/num_methods/ternary_search.html)
+- [Ternary Search on Integers  -
+  Codeforces](https://codeforces.com/blog/entry/43440)
+- [Tutorial On Tof (Ternary Search) -
+  Codeforces](https://codeforces.com/blog/entry/60702)
+- [Solutia de la copii3 - infoarena](https://infoarena.ro/solutii/copii3)
+- [Ternary Search - Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)
+- [Numerical Methods with Programming - Golden Section
+  Search](https://drlvk.github.io/nm/section-golden-section.html)
+- [Golden Section Search -
+  Wikipedia](https://en.wikipedia.org/wiki/Golden-section_search)

@@ -7,14 +7,16 @@ tags:
 # Soluția problemei Joc (OJI 2002, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    * [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
+    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/706/).
-    
-Tot ce trebuie să facem în această problemă este să simulăm mutările făcute de către cei doi jucători. Vom verifica pe rând momentele când suma depășește suma precedentă și vom aduna aceste sume la răspuns.
+
+Tot ce trebuie să facem în această problemă este să simulăm mutările făcute de
+către cei doi jucători. Vom verifica pe rând momentele când suma depășește suma
+precedentă și vom aduna aceste sume la răspuns.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

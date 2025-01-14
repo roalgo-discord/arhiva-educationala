@@ -6,26 +6,43 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Coada](https://edu.roalgo.ro/mediu/queue/)
-    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
-    * [Sliding Window](https://edu.roalgo.ro/mediu/sliding-window/)
+!!! example "Cunoștințe necesare"
+    - [Coada](https://edu.roalgo.ro/mediu/queue/)
+    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    - [Sliding Window](https://edu.roalgo.ro/mediu/sliding-window/)
 
-Probabil că până acum, v-ati obișnuit cu folosirea stivelor și a cozilor în diverse probleme de algoritmică, iar deși aceste structuri de date sunt foarte puternice, fiecare dintre ele are lipsuri care fac implementarea anumitor părți mult mai dificilă. 
+Probabil că până acum, v-ati obișnuit cu folosirea stivelor și a cozilor în
+diverse probleme de algoritmică, iar deși aceste structuri de date sunt foarte
+puternice, fiecare dintre ele are lipsuri care fac implementarea anumitor părți
+mult mai dificilă.
 
-Acum, se pune întrebarea firească dacă putem să unim proprietățile cozilor și ale stivelor fără să avem de făcut sacrificii majore, iar răspunsul este din fericire un DA clar. În cele ce urmează, vom discuta despre deque, o structură de date care îmbină proprietățile stivelor și ale cozilor, adăugând și facilități în plus. 
+Acum, se pune întrebarea firească dacă putem să unim proprietățile cozilor și
+ale stivelor fără să avem de făcut sacrificii majore, iar răspunsul este din
+fericire un DA clar. În cele ce urmează, vom discuta despre deque, o structură
+de date care îmbină proprietățile stivelor și ale cozilor, adăugând și
+facilități în plus.
 
 ## Introducere și sintaxă
 
-!!! info "Definiție" 
-    Un deque (double-ended queue) este o structură de date liniară, similară cu stiva și coada, cu proprietatea că suportă operațiile specifice stivelor și cozilor în timp constant. Așa cum îi zice și numele, practic este o coadă dublă, din care putem extrage valori din ambele capete, dar și adăuga în ambele capete. 
+!!! info "Definiție"
+    Un deque (double-ended queue) este o structură de date liniară, similară cu
+    stiva și coada, cu proprietatea că suportă operațiile specifice stivelor și
+    cozilor în timp constant. Așa cum îi zice și numele, practic este o coadă
+    dublă, din care putem extrage valori din ambele capete, dar și adăuga în
+    ambele capete.
 
 !!! note "Observație"
-    Complexitatea menționată mai sus este cel puțin pentru implementarea din STL (std::deque) una amortizată, cu alte cuvinte, $n$ operații făcute pe un deque vor fi $O(n)$, dar asta nu garantează faptul că fiecare operație va lua $O(1)$. Din acest motiv, vom spune că complexitatea unui deque este $O(1)$ amortizat. 
+    Complexitatea menționată mai sus este cel puțin pentru implementarea din STL
+    (std::deque) una amortizată, cu alte cuvinte, $n$ operații făcute pe un
+    deque vor fi $O(n)$, dar asta nu garantează faptul că fiecare operație va
+    lua $O(1)$. Din acest motiv, vom spune că complexitatea unui deque este
+    $O(1)$ amortizat.
 
 ### Sintaxă
 
-La fel ca și în cazul cozilor și stivelor, deque-ul poate fi implementat de mână, folosind un tablou de lungime fixă, adăugând și scoțând valori într-un mod ciclic.
+La fel ca și în cazul cozilor și stivelor, deque-ul poate fi implementat de
+mână, folosind un tablou de lungime fixă, adăugând și scoțând valori într-un mod
+ciclic.
 
 ```cpp
 const int QMAX = 100001;
@@ -45,9 +62,12 @@ void pushBack(int e) {
 }
 ```
 
-Totuși, în cele mai multe probleme, ne vom folosi de versiunea specifică limbajului C++, și anume std::deque. Acesta va avea funcțiile specifice cozilor și stivelor, fără a fi nevoie să le implementăm noi. 
+Totuși, în cele mai multe probleme, ne vom folosi de versiunea specifică
+limbajului C++, și anume std::deque. Acesta va avea funcțiile specifice cozilor
+și stivelor, fără a fi nevoie să le implementăm noi.
 
-Lista operatorilor și funcțiilor pe care le puteți folosi în deque este următoarea:
+Lista operatorilor și funcțiilor pe care le puteți folosi în deque este
+următoarea:
 
 1. *push_back(value)*: Adaugă *value* la sfârșitul deque-ului.
 2. *push_front(value)*: Adaugă *value* la începutul deque-ului.
@@ -80,15 +100,29 @@ if (!d.empty()) {
 
 ## Motivație
 
-Motivul principal pentru care folosim deque-urile este acela de a putea performa operații pe secvențe de lungime fixă, fiind una din tehnicile des folosite în cazul problemelor ce folosesc tehnica sliding window (sau în română, fereastra glisantă), subiect discutat în [acest articol](https://edu.roalgo.ro/mediu/sliding-window/). Acesta va fi și scopul principal al acestui articol, acela de a prezenta cele mai des întâlnite aplicații ale deque-ului.
+Motivul principal pentru care folosim deque-urile este acela de a putea performa
+operații pe secvențe de lungime fixă, fiind una din tehnicile des folosite în
+cazul problemelor ce folosesc tehnica sliding window (sau în română, fereastra
+glisantă), subiect discutat în [acest
+articol](https://edu.roalgo.ro/mediu/sliding-window/). Acesta va fi și scopul
+principal al acestui articol, acela de a prezenta cele mai des întâlnite
+aplicații ale deque-ului.
 
-De cele mai multe ori, atunci când vom lucra cu deque-ul, vom vrea să procesăm secvențe de o lungime fixă, având operații bine stabilite și de cele mai multe ori, preluând aspecte de implementare văzute mai devreme când ați studiat principiile de funcționare ale stivei. 
+De cele mai multe ori, atunci când vom lucra cu deque-ul, vom vrea să procesăm
+secvențe de o lungime fixă, având operații bine stabilite și de cele mai multe
+ori, preluând aspecte de implementare văzute mai devreme când ați studiat
+principiile de funcționare ale stivei.
 
 ## Problema [deque](https://www.infoarena.ro/problema/deque)
 
-În această problemă, se cere aflarea valorii minime pentru toate subsecvențele de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în $O(n \log n)$.
+În această problemă, se cere aflarea valorii minime pentru toate subsecvențele
+de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este
+folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în
+$O(n \log n)$.
 
-Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să aflăm cea mai apropiată valoare mai mică de la stânga, singura modificare fiind faptul că dacă valoarea minimă este prea departe de poziția curentă, o scoatem. 
+Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să
+aflăm cea mai apropiată valoare mai mică de la stânga, singura modificare fiind
+faptul că dacă valoarea minimă este prea departe de poziția curentă, o scoatem.
 
 ```cpp
 #include <fstream>
@@ -129,10 +163,17 @@ int main() {
 
 ## Problema [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644)
 
-Pentru a rezolva această problemă, ne folosim de faptul că suma unei subsecvențe între pozițiile $L$ și $R$ este $sp[R] - sp[L-1]$, unde $sp[i]$ este suma parțială a valorilor până la poziția $i$. Astfel, dat fiind că trebuie să aflăm suma maximă a unei subsecvențe între lungimile $a$ și $b$, la pasul $i$, vom insera $sp[i-a]$, folosind deque-ul drept o stivă care ține sumele minime. La fel ca la problema precedentă, dacă poziția $i - b - 1$ încă este în deque, o vom scoate.
+Pentru a rezolva această problemă, ne folosim de faptul că suma unei subsecvențe
+între pozițiile $L$ și $R$ este $sp[R] - sp[L-1]$, unde $sp[i]$ este suma
+parțială a valorilor până la poziția $i$. Astfel, dat fiind că trebuie să aflăm
+suma maximă a unei subsecvențe între lungimile $a$ și $b$, la pasul $i$, vom
+insera $sp[i-a]$, folosind deque-ul drept o stivă care ține sumele minime. La
+fel ca la problema precedentă, dacă poziția $i - b - 1$ încă este în deque, o
+vom scoate.
 
 !!! note "Observație"
-    Vrem să scădem din suma curentă o sumă cât mai mică pentru a avea o sumă maximă, deoarece $sp[i]$ este elementul fix, invariant.
+    Vrem să scădem din suma curentă o sumă cât mai mică pentru a avea o sumă
+    maximă, deoarece $sp[i]$ este elementul fix, invariant.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -169,7 +210,11 @@ int main() {
 
 ## Problema [cetate](https://kilonova.ro/problems/917)
 
-Pentru rezolvarea cerinței $2$ a acestei probleme, putem fixa două linii și să aplicăm o tehnică similară folosind deque, aflând suma maximă folosindu-ne de sumele parțiale de pe coloane, mai jos fiind codul de la cerința a doua, întreaga submisie putând fi accesată [aici](https://kilonova.ro/submissions/375896) 
+Pentru rezolvarea cerinței $2$ a acestei probleme, putem fixa două linii și să
+aplicăm o tehnică similară folosind deque, aflând suma maximă folosindu-ne de
+sumele parțiale de pe coloane, mai jos fiind codul de la cerința a doua,
+întreaga submisie putând fi accesată
+[aici](https://kilonova.ro/submissions/375896)
 
 ```cpp
 maxSum = LLONG_MIN;
@@ -219,9 +264,13 @@ cout << maxLin << " " << maxCol << " " << maxLin1 << " " << maxCol1 << "\n";
 
 ## Problema [secv - ONI 2016 Baraj Juniori](https://kilonova.ro/problems/1086/)
 
-Pentru a rezolva prima cerință, este îndeajuns să scoatem din șir de la stânga la dreapta toate secvențele de lungime $K$ cu sumă mai mare decât $S$. 
+Pentru a rezolva prima cerință, este îndeajuns să scoatem din șir de la stânga
+la dreapta toate secvențele de lungime $K$ cu sumă mai mare decât $S$.
 
-Pentru cea de-a doua cerință, aflăm pentru fiecare secvență de lungime $K+1$ diferența dintre suma ei și $S$, iar dacă valoarea curentă este mai mică decât diferența minimă pentru o secvență din cele (cel mult) $K+1$ care o acoperă, atunci ea poate fi scoasă. 
+Pentru cea de-a doua cerință, aflăm pentru fiecare secvență de lungime $K+1$
+diferența dintre suma ei și $S$, iar dacă valoarea curentă este mai mică decât
+diferența minimă pentru o secvență din cele (cel mult) $K+1$ care o acoperă,
+atunci ea poate fi scoasă.
 
 ```cpp
 #include <fstream>
@@ -305,24 +354,30 @@ int main() {
 
 ## Concluzie
 
-Deque este o structură de date foarte utilă pentru foarte multe probleme ce folosesc [sliding window](https://edu.roalgo.ro/mediu/sliding-window/), precum și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod normal s-ar rezolva cu o stivă sau o coadă. 
+Deque este o structură de date foarte utilă pentru foarte multe probleme ce
+folosesc [sliding window](https://edu.roalgo.ro/mediu/sliding-window/), precum
+și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod
+normal s-ar rezolva cu o stivă sau o coadă.
 
 ## Probleme suplimentare
 
-* [infoarena vila2](https://www.infoarena.ro/problema/vila2)
-* [infoarena knumere](https://www.infoarena.ro/problema/knumere)
-* [RoAlgo PreOJI 2024 pofta](https://kilonova.ro/problems/2187)
-* [JBOI 2022 Wall](https://www.pbinfo.ro/probleme/4198/wall1)
-* [Lot Juniori 2016 pofta](https://kilonova.ro/problems/1715)
-* [IIOT Discount Optimization](https://kilonova.ro/problems/994)
-* [Problemele cu deque de pe kilonova](https://kilonova.ro/tags/409)
-* [Problemele cu deque de pe infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=94)
+- [infoarena vila2](https://www.infoarena.ro/problema/vila2)
+- [infoarena knumere](https://www.infoarena.ro/problema/knumere)
+- [RoAlgo PreOJI 2024 pofta](https://kilonova.ro/problems/2187)
+- [JBOI 2022 Wall](https://www.pbinfo.ro/probleme/4198/wall1)
+- [Lot Juniori 2016 pofta](https://kilonova.ro/problems/1715)
+- [IIOT Discount Optimization](https://kilonova.ro/problems/994)
+- [Problemele cu deque de pe kilonova](https://kilonova.ro/tags/409)
+- [Problemele cu deque de pe
+  infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=94)
 
+## Lectură suplimentară
 
-## Lectură suplimentară 
-
-* [Deque CPPI Sync](https://cppi.sync.ro/materia/deque.html)
-* [Deque si aplicatii - Infoarena](https://www.infoarena.ro/deque-si-aplicatii)
-* [Deque Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_16_-_16_ian_2020)
-* [Minima/maxima over all fixed-size arrays (multi-dimensional)](https://codeforces.com/blog/entry/53810)
-* [Minimum stack / Minimum queue](https://cp-algorithms.com/data_structures/stack_queue_modification.html)
+- [Deque CPPI Sync](https://cppi.sync.ro/materia/deque.html)
+- [Deque si aplicatii - Infoarena](https://www.infoarena.ro/deque-si-aplicatii)
+- [Deque
+  Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_16_-_16_ian_2020)
+- [Minima/maxima over all fixed-size arrays
+  (multi-dimensional)](https://codeforces.com/blog/entry/53810)
+- [Minimum stack / Minimum
+  queue](https://cp-algorithms.com/data_structures/stack_queue_modification.html)

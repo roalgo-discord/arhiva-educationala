@@ -7,7 +7,9 @@ tags:
     - optimizare
 ---
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
+[github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul
+nostru de discord](https://discord.gg/vdDRSmg3fC)
 
 Mai jos găsiți resurse pe care le puteți citi până atunci.
 
@@ -21,5 +23,7 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Resurse suplimentare
 
-* [Parsare fișier intrare - infoarena](https://www.infoarena.ro/parsare-fisier-intrare)
-* [Parsare fișier ieșire - infoarena](https://www.infoarena.ro/parsare-fisier-iesire)
+- [Parsare fișier intrare -
+  infoarena](https://www.infoarena.ro/parsare-fisier-intrare)
+- [Parsare fișier ieșire -
+  infoarena](https://www.infoarena.ro/parsare-fisier-iesire)

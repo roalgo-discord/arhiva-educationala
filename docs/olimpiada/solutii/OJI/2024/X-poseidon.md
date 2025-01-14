@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Poseidon (OJI 2024, clasa a X-a)
 
 !!! example "Cunoștințe necesare"
-    * [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
-    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    * [Introducere în combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
+    - [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
+    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Introducere în combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
 
 **Autor soluție**: Ioana Gabor
 
@@ -49,9 +49,9 @@ Este necesară calcularea șirului $D$ într-un mod mai eficient. Pentru ilustra
 
 Notăm cu $k$ numărul care se va amplasa pe poziția $1$. Problema se împarte în două cazuri, în funcție de elementul de pe poziția $k$.
 
-* Amplasăm numărul $1$ pe poziția $k$. Problema se reduce la a calcula $D(n−2)$, pentru că
+- Amplasăm numărul $1$ pe poziția $k$. Problema se reduce la a calcula $D(n−2)$, pentru că
 pe poziția $1$ avem valoarea $k$, iar pe poziția $k$ avem valoare $1$ și restul de $n −2$ valori se pot permuta independent de cele două cu respectarea cerinței inițiale.
-* Amplasăm un număr diferit de $1$ pe poziția $k$. Pentru fiecare poziție din cele cuprinse între $2$ și $n$, există $n − 2$ elemente care pot fi amplasate pe poziția respecitvă. Pentru pozițiile diferite de $k$, nu se pot amplasa $k$ (pentru că apare deja pe prima poziție) sau elementul cu indicele poziției respective. Pentru poziția $k$, nu se pot amplasa $k$ sau $1$ (pentru că suntem în cazul $2$). Problema se reduce la a calcula $D(n−1)$, fiindcă trebuie să amplasăm valorile pe pozițiile cuprinse între $2$ și $n$ (adică $n − 1$ poziții în total) și avem $n − 2$ variante pentru fiecare. 
+- Amplasăm un număr diferit de $1$ pe poziția $k$. Pentru fiecare poziție din cele cuprinse între $2$ și $n$, există $n − 2$ elemente care pot fi amplasate pe poziția respecitvă. Pentru pozițiile diferite de $k$, nu se pot amplasa $k$ (pentru că apare deja pe prima poziție) sau elementul cu indicele poziției respective. Pentru poziția $k$, nu se pot amplasa $k$ sau $1$ (pentru că suntem în cazul $2$). Problema se reduce la a calcula $D(n−1)$, fiindcă trebuie să amplasăm valorile pe pozițiile cuprinse între $2$ și $n$ (adică $n − 1$ poziții în total) și avem $n − 2$ variante pentru fiecare. 
 
 Datorită faptului că numărul $k$ se poate alege în $n − 1$ moduri, formula finală este: $D(n) = (n − 1) \cdot (D(n − 2) + D(n − 1))$, calculele se vor efectua modulo $10^9 + 7$.
 

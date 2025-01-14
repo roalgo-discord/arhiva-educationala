@@ -11,9 +11,9 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"  
-    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
-    * [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
-    * [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
+    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+    - [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
+    - [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
 
 Combinatorica este una din ramurile principale ale matematicii, precum și una
 din cele patru ramuri din care se dau problemele de la olimpiada internațională
@@ -36,11 +36,19 @@ se regăsește drept parte esențială în două competiții - lotul de juniori 
 olimpiada clasei a zecea. Ulterior, poate să se regăsească și ca subprobleme la
 probele ulterioare de seniori, într-o măsură mai mică.
 
-Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a articolelor despre [aritmetica modulară](https://edu.roalgo.ro/mediu/pow-log), [divizibilitate](https://edu.roalgo.ro/usor/divisibility/) și în general să aveți o înțelegere a conceptelor matematice din capitolele anterioare. Va fi foarte importantă și înțelegerea conceptului de invers modular, deoarece deși în cele mai multe probleme vom avea de-a face cu modulo numere prime, uneori va trebui să știm să implementăm și algoritmul de aflare al [inversul modular](https://edu.roalgo.ro/mediu/modular-inverse/).
+Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a
+articolelor despre [aritmetica modulară](https://edu.roalgo.ro/mediu/pow-log),
+[divizibilitate](https://edu.roalgo.ro/usor/divisibility/) și în general să
+aveți o înțelegere a conceptelor matematice din capitolele anterioare. Va fi
+foarte importantă și înțelegerea conceptului de invers modular, deoarece deși în
+cele mai multe probleme vom avea de-a face cu modulo numere prime, uneori va
+trebui să știm să implementăm și algoritmul de aflare al [inversul
+modular](https://edu.roalgo.ro/mediu/modular-inverse/).
 
 ## Noțiuni teoretice fundamentale
 
-Pe lângă capitolele menționate anterior, vrem să începem prin a explica anumite fundamente, care ne vor ajuta mult pe parcurs.
+Pe lângă capitolele menționate anterior, vrem să începem prin a explica anumite
+fundamente, care ne vor ajuta mult pe parcurs.
 
 ### Regula sumei și a produsului
 
@@ -57,12 +65,16 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 
 !!! example "Exemplu"
     Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
-    
-    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$. 
-    
-    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de variante este $9 \cdot 9 = 81$.
 
-Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule independente care contribuie la răspunsul final.
+    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile posibile
+    ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$. 
+
+    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$
+    variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de
+    variante este $9 \cdot 9 = 81$.
+
+Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule
+independente care contribuie la răspunsul final.
 
 ### Permutări
 
@@ -72,24 +84,29 @@ Aceste relații vor fi foarte importante mai ales când avem de-a face cu formul
     $M$ finită într-o ordine diferită. Dacă cardinalul mulțimii $|M| = n$, numărul
     de permutări ale unei mulțimi de $n$ valori este $n!$.
 
-    De exemplu, pentru $n = 3$, cele $6$ permutări
-    ale mulțimii $\{1, 2, 3\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$,
-    $\{2, 1, 3\}$, $\{2, 3, 1\}$, $\{3, 1, 2\}$,  $\{3, 2, 1\}$
+    De exemplu, pentru $n = 3$, cele $6$ permutări ale mulțimii $\{1, 2, 3\}$ sunt
+    următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$, $\{2, 1, 3\}$, $\{2, 3, 1\}$, $\{3,
+    1, 2\}$,  $\{3, 2, 1\}$
 
-În probleme, există diverse cazuri particulare ale permutărilor care devin foarte utile în rezolvarea unor probleme de combinatorică.
+În probleme, există diverse cazuri particulare ale permutărilor care devin
+foarte utile în rezolvarea unor probleme de combinatorică.
 
 !!! info "Deranjamente"
 
-    Un deranjament este o permutare fără puncte fixe, adică $\forall i$, $p_i\neq i$.
+    Un deranjament este o permutare fără puncte fixe, adică $\forall i$, $p_i\neq
+    i$.
 
-    Numărul de deranjamente cu $n$ elemente este egal cu $D_n = (n-1)\cdot (D_{n-1} + D_{n-2})$, unde $D_0 = 1$ și $D_1 = 0$. Acest concept a fost util printre altele la rezolvarea problemei [Poseidon](https://kilonova.ro/problems/2506), dată la OJI 2024, clasa a X-a.
+    Numărul de deranjamente cu $n$ elemente este egal cu $D_n = (n-1)\cdot (D_{n-1}
+    + D_{n-2})$, unde $D_0 = 1$ și $D_1 = 0$. Acest concept a fost util printre
+    altele la rezolvarea problemei [Poseidon](https://kilonova.ro/problems/2506),
+    dată la OJI 2024, clasa a X-a.
 
 !!! info "Permutări cu repetiții"
 
-    Definim o permutare cu repetiții ca fiind o secvență de $n$ numere, care are 
-    proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se 
-    pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au 
-    $n$ elemente este
+    Definim o permutare cu repetiții ca fiind o secvență de $n$ numere, care are
+    proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se pot
+    repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au $n$
+    elemente este
 
     $$
     \frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}
@@ -99,7 +116,9 @@ Aceste relații vor fi foarte importante mai ales când avem de-a face cu formul
     Acest concept se regăsește într-un număr de probleme date în special la 
     loturile de juniori.
 
-Mai jos puteți găsi o secvență de cod pe care o putem folosi pentru a genera toate permutările unui șir. Funcția `#!cpp std::next_permutation` nu va genera permutări cu repetiție dacă acestea apar de mai multe ori.
+Mai jos puteți găsi o secvență de cod pe care o putem folosi pentru a genera
+toate permutările unui șir. Funcția `#!cpp std::next_permutation` nu va genera
+permutări cu repetiție dacă acestea apar de mai multe ori.
 
 ```cpp
 vector<int> v(10);
@@ -151,8 +170,8 @@ for (int mask = 0; mask < totalSubsets; ++mask) {
 }
 ```
 
-1.  Dacă bitul din mască la poziția $idx$ este setat, înseamnă că elementul de la
-    indice este prezent și deci adăugăm indicele în submulțime. 
+1. Dacă bitul din mască la poziția $idx$ este setat, înseamnă că elementul de la
+   indice este prezent și deci adăugăm indicele în submulțime.
 
 ### Aranjamente
 
@@ -168,7 +187,8 @@ definite pe mulțimea $\{1, 2, 3,\dots, k\}$ cu valori în $\{1, 2, 3,\dots, n\}
 Numărul aranjamentelor de $n$ luate câte $k (k\leq n)$ se notează cu $A_n^k$ și
 este egal cu $\frac{n!}{(n-k)!}$
 
-O altă formulă care poate fi utilă în special în cazul precalculărilor este $A_n^k = (n - k + 1)\cdot A_n^{k-1}$
+O altă formulă care poate fi utilă în special în cazul precalculărilor este
+$A_n^k = (n - k + 1)\cdot A_n^{k-1}$
 
 ### Combinări
 
@@ -182,12 +202,13 @@ elemente dar într-o ordine diferită, se numără o singură dată.
 
 Formula pentru combinări de $n$ luate câte $k$, care se notează cu $C_n^k$
 (alternativ, veți mai putea găsi notații precum ${}_{n}C_{k}$, $C(n, k)$ sau
-$\binom{n}{k}$ este 
+$\binom{n}{k}$ este
 $$
 C_n^k = \frac{n!}{k!\cdot (n-k)!}
 $$ unde $C_0^0 = C_n^n = 1$.
 
-Există numeroase moduri și proprietăți de a lega valoarea lui $C_n^k$ de alte valori combinatoriale, cele mai importante fiind următoarele:
+Există numeroase moduri și proprietăți de a lega valoarea lui $C_n^k$ de alte
+valori combinatoriale, cele mai importante fiind următoarele:
 
 - $C_{n}^{k} =C_{n-1}^{k} +C_{n-1}^{k-1}$, deoarece:
 
@@ -200,7 +221,7 @@ C_n^k = \frac{n!}{k! (n-k)!} &= \frac{n(n - 1)!}{k! (n-k)!}\\
 \end{align*}
 $$
 
-- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca fiind 
+- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca fiind
 $$
 C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1) + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k}
 $$
@@ -232,7 +253,8 @@ for (int n = 1; n <= N; n++) {
 }
 ```
 
-Există o metodă mai eficientă de a calcula $C_n^k$ în timp $O(k)$ și spațiu $O(1)$:
+Există o metodă mai eficientă de a calcula $C_n^k$ în timp $O(k)$ și spațiu
+$O(1)$:
 
 ```cpp
 const long long C(int n, int k) {
@@ -252,14 +274,13 @@ const long long C(int n, int k) {
 }
 ```
 
-
 În alte situații, va trebui să precalculăm factorialele și inversele modulare
 pentru a putea calcula combinările, așa cum vom arăta mai jos. Dacă nu sunteți
 familiari cu ridicarea la putere în timp logaritmic, vă rugăm să citiți
 articolul pe această temă.
 
 ```cpp
-#include <iostream>
+# include <iostream>
 using namespace std;
 
 const int MOD = 998244353;
@@ -286,9 +307,9 @@ long long C(int n, int k) {
 
     // C(n, k) = n! * (k!)^-1 * (n - k)!^-1
     long long result = fact[n];
-    result *= inv[k]; 
+    result *= inv[k];
     result %= MOD;
-    result *= inv[n - k]; 
+    result *= inv[n - k];
     result %= MOD;
     return result;
 }
@@ -317,15 +338,15 @@ int main() {
 }
 ```
 
-1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul 
+1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul
     în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
 
 ### Partiții
 
 Numim partiție a unui număr $n$ o secvență de numere naturale nenule $P$ cu
-proprietatea că $\sum_{i = 1}^k P_i = n$, unde $k$ este numărul de numere
-din partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție
-de proprietatea pe care dorim să o aplicăm într-o problemă.
+proprietatea că $\sum_{i = 1}^k P_i = n$, unde $k$ este numărul de numere din
+partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție de
+proprietatea pe care dorim să o aplicăm într-o problemă.
 
 Pentru a afla numărul de partiții ordonate ale unui număr $n$, putem să ne
 gândim la numărul de moduri de a împărți $n$ stele folosind diferite bare
@@ -354,7 +375,7 @@ folosind această abordare. Din fericire, există o metodă și mai rapidă, car
 folosește [numere pentagonale](https://codeforces.com/blog/entry/104312),
 abordare ce ne duce la o soluție în $O(n\sqrt n)$, pentru mai multe detalii
 puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau
-rezolva problema [crescător2](https://infoarena.ro/problema/crescator2). 
+rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
 
 ## Trucuri pentru rezolvarea problemelor de combinatorică
 
@@ -443,7 +464,7 @@ Așa se calculează numărul Catalan:
     unsigned long long catalan(unsigned int n)
     {
         unsigned long long C[n + 1];
-    
+
         C[0] = C[1] = 1;
 
         for (int i = 2; i <= n; i++) {
@@ -451,7 +472,7 @@ Așa se calculează numărul Catalan:
             for (int j = 0; j < i; j++)
                 C[i] += C[j] * C[i - j - 1];
         }
-    
+
         return C[n];
     }
     ```
@@ -572,7 +593,11 @@ cazuri există similarități între cele două, acest lucru nu este adevărat m
 
 ## Concluzii
 
-Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea temeinică a tehnicilor de rezolvare a acestor probleme este esențială. Din cauza dificultății cu care această tehnică este învățată, se recomandă rezolvarea unui număr cât mai mare de probleme, pentru a fi expus la diverse tehnici, formule și rezultate importante atât în matematică, cât și în informatică.  
+Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea
+temeinică a tehnicilor de rezolvare a acestor probleme este esențială. Din cauza
+dificultății cu care această tehnică este învățată, se recomandă rezolvarea unui
+număr cât mai mare de probleme, pentru a fi expus la diverse tehnici, formule și
+rezultate importante atât în matematică, cât și în informatică.  
 
 ## Probleme suplimentare
 
@@ -583,7 +608,8 @@ Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea 
 - [Stirling infoarena](https://infoarena.ro/problema/stirling)
 - [IIOT Dream](https://kilonova.ro/problems/300)
 - [Polyglot Kilonova](https://kilonova.ro/problems/2936)
-- [Problemele de combinatorică de pe Kilonova, în special cele de la loturile de juniori](https://kilonova.ro/tags/294)
+- [Problemele de combinatorică de pe Kilonova, în special cele de la loturile de
+  juniori](https://kilonova.ro/tags/294)
 - [RoAlgo Contest 4 - Ursul](https://kilonova.ro/problems/1604)
 - [RoAlgo Contest 2 - munte](https://kilonova.ro/problems/695)
 - [RCPC 2023 KsumT](https://kilonova.ro/problems/1898)
@@ -592,7 +618,8 @@ Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea 
 - [ONI 2015 Baraj Provocare](https://kilonova.ro/problems/287/)
 - [ONI 2013 Xnumere](https://kilonova.ro/problems/220)
 - [IIOT 2024 Mermaid](https://kilonova.ro/problems/2433/)
-- [USACO Gold Help Yourself](https://usaco.org/index.php?page=viewproblem2&cpid=1018)
+- [USACO Gold Help
+  Yourself](https://usaco.org/index.php?page=viewproblem2&cpid=1018)
 - [Problemele de pe cppi.sync](https://cppi.sync.ro/materia/combinatorica.html)
 
 ### Alte probleme
@@ -602,31 +629,50 @@ Combinatorica apare drept subiect de bază în multe probleme, iar cunoașterea 
 - [Distributing Apples](https://cses.fi/problemset/task/1716)
 - [Arena](https://codeforces.com/problemset/problem/1606/E)
 - [Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
-- [Almost Identity Permutations](https://codeforces.com/problemset/problem/888/D)
+- [Almost Identity
+  Permutations](https://codeforces.com/problemset/problem/888/D)
 - [Med and Mex](https://codeforces.com/gym/104520/problem/K)
-- [Different Subsets For All Tuples](https://codeforces.com/contest/660/problem/E)
-- [Probleme de combinatorică de pe Codeforces](https://codeforces.com/problemset?tags=combinatorics)
+- [Different Subsets For All
+  Tuples](https://codeforces.com/contest/660/problem/E)
+- [Probleme de combinatorică de pe
+  Codeforces](https://codeforces.com/problemset?tags=combinatorics)
 
 ## Bibliografie și lectură suplimentară
 
-- [Concurs educațional făcut de MathDash](https://mathdash.com/contest/complementary-counting-educational)
-- [Curs de combinatorică făcut de Bogdan Iordache](https://iordachebogdan.github.io/cppi/combinatorica_nivel_mediu.html)
-- [Curs de combinatorică avansat făcut de Alex Luchianov](https://sepi.ro/assets/upload-file/articole/Alexandru%20Luchianov%20-%20Trucuri%20de%20combinatorica1.pdf)
-- [Combinatorics - USACO Guide (articol + probleme)](https://usaco.guide/gold/combo?lang=cpp)
+- [Concurs educațional făcut de
+  MathDash](https://mathdash.com/contest/complementary-counting-educational)
+- [Curs de combinatorică făcut de Bogdan
+  Iordache](https://iordachebogdan.github.io/cppi/combinatorica_nivel_mediu.html)
+- [Curs de combinatorică avansat făcut de Alex
+  Luchianov](https://sepi.ro/assets/upload-file/articole/Alexandru%20Luchianov%20-%20Trucuri%20de%20combinatorica1.pdf)
+- [Combinatorics - USACO Guide (articol +
+  probleme)](https://usaco.guide/gold/combo?lang=cpp)
 - [Elemente de combinatorică](https://infogenius.ro/combinatorica/)
-- [Binomial Coefficients - Eolymp](https://basecamp.eolymp.com/en/posts/em5e34cc0d35p7omf3taia3fu4?fbclid=IwZXh0bgNhZW0CMTEAAR3K5oGUJpJiGSo1CG2r9McoQ3HQtmbdLJmPRbFDXzhyhcewZce2R6ETsxw_aem_ZmFrZWR1bW15MTZieXRlcw)
-- [Ghid despre permutari - nor-blog](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/)
-- [Elemente de combinatorică, curs predat la lotul de juniori din 2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
+- [Binomial Coefficients -
+  Eolymp](https://basecamp.eolymp.com/en/posts/em5e34cc0d35p7omf3taia3fu4?fbclid=IwZXh0bgNhZW0CMTEAAR3K5oGUJpJiGSo1CG2r9McoQ3HQtmbdLJmPRbFDXzhyhcewZce2R6ETsxw_aem_ZmFrZWR1bW15MTZieXRlcw)
+- [Ghid despre permutari -
+  nor-blog](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/)
+- [Elemente de combinatorică, curs predat la lotul de juniori din
+  2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
-- [Problem Solving Guide to Modular Combinatorics and Exponentiation - Codeforces](https://codeforces.com/blog/entry/78873)
-- [Binomial coefficient - wikipedia](https://en.wikipedia.org/wiki/Binomial_coefficient)
-- [Triunghiul lui Pascal - wikipedia](https://en.wikipedia.org/wiki/Pascal%27s_triangle)
+- [Problem Solving Guide to Modular Combinatorics and Exponentiation -
+  Codeforces](https://codeforces.com/blog/entry/78873)
+- [Binomial coefficient -
+  wikipedia](https://en.wikipedia.org/wiki/Binomial_coefficient)
+- [Triunghiul lui Pascal -
+  wikipedia](https://en.wikipedia.org/wiki/Pascal%27s_triangle)
 - [Stars and Bars](https://cp-algorithms.com/combinatorics/stars_and_bars.html)
-- [Numărul de partiții ale unui număr natural](https://infogenius.ro/partitii-numar-natural/)
+- [Numărul de partiții ale unui număr
+  natural](https://infogenius.ro/partitii-numar-natural/)
 - [Numere Catalan](https://cp-algorithms.com/combinatorics/catalan-numbers.html)
-- [Catalan Numbers and Catalan Convolution](https://codeforces.com/blog/entry/87585)
-- [Catalan Numbers and Generating Uniform Balanced Bracket Sequences](https://codeforces.com/blog/entry/103245)
-- [Numerele Stirling și numerele Bell](https://infogenius.ro/numerele-stirling-bell/)
-- [Numerele Stirling de ambele spețe](https://en.wikipedia.org/wiki/Stirling_number)
+- [Catalan Numbers and Catalan
+  Convolution](https://codeforces.com/blog/entry/87585)
+- [Catalan Numbers and Generating Uniform Balanced Bracket
+  Sequences](https://codeforces.com/blog/entry/103245)
+- [Numerele Stirling și numerele
+  Bell](https://infogenius.ro/numerele-stirling-bell/)
+- [Numerele Stirling de ambele
+  spețe](https://en.wikipedia.org/wiki/Stirling_number)
 - [Partition of a set](https://en.wikipedia.org/wiki/Partition_of_a_set)
-- [Opțional, restul articolelor de la secțiunea combinatorics](https://codeforces.com/catalog)
+- [Opțional, restul articolelor de la secțiunea
+  combinatorics](https://codeforces.com/catalog)

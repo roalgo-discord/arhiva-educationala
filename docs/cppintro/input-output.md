@@ -9,26 +9,46 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
+    - [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
 
-În cele ce urmează, vom prezenta metodele prin care putem citi și afișa datele în limbajul C++.
+În cele ce urmează, vom prezenta metodele prin care putem citi și afișa datele
+în limbajul C++.
 
 !!! info "Tipurile de citire"
-    Datele pot fi citite și afișate fie prin intrarea și ieșirea standard (numite colocvial "de la tastatură", respectiv "pe ecran"), fie folosind fișiere auxiliare, preluând datele dintr-un fișier și afișându-le în alt fișier. 
+
+    Datele pot fi citite și afișate fie prin intrarea și ieșirea standard (numite
+    colocvial "de la tastatură", respectiv "pe ecran"), fie folosind fișiere
+    auxiliare, preluând datele dintr-un fișier și afișându-le în alt fișier.
 
 !!! note "Observație"
-    Aceste metode pot fi folosite și într-o manieră hibrid, fiind foarte multe exemple de probleme în care se dau datele într-un fișier de intrare și se afișează pe ecran.
 
-## Intrarea și ieșirea standard 
+    Aceste metode pot fi folosite și într-o manieră hibrid, fiind foarte multe
+    exemple de probleme în care se dau datele într-un fișier de intrare și se
+    afișează pe ecran.
 
-Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură", respectiv a afișa "pe ecran"), vom avea nevoie de biblioteca `#include <iostream>`.
+## Intrarea și ieșirea standard
 
-Citirea datelor se face folosind **cin** și operatorul `>>`, iar afișarea datelor se face folosind **cout** și operatorul `<<`, câteva exemple fiind regăsite mai jos. 
+Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură",
+respectiv a afișa "pe ecran"), vom avea nevoie de biblioteca `#include
+<iostream>`.
+
+Citirea datelor se face folosind **cin** și operatorul `>>`, iar afișarea
+datelor se face folosind **cout** și operatorul `<<`, câteva exemple fiind
+regăsite mai jos.
 
 !!! note "Observație"
-    Aceasta nu este singura metodă de a citi și afișa datele, putem citi și afișa datele și folosind metodele specifice limbajului C (funcțiile scanf și printf). Totuși, metodele native limbajului C++ sunt cele mai intuitive și mai simplu de utilizat.
 
-Atunci când folosiți intrarea și ieșirea standard, după ce compilați programul și nu apare nicio eroare, va trebui să rulați executabilul generat și să introduceți datele de intrare conform descrierii problemei și a programului scris de voi anterior. În cazul în care ați procedat cum trebuie, veți obține un răspuns conform cu ceea ce ați scris. În caz contrar, va trebui să verificați ce ați scris și eventual, să modificați programul. 
+    Aceasta nu este singura metodă de a citi și afișa datele, putem citi și afișa
+    datele și folosind metodele specifice limbajului C (funcțiile scanf și printf).
+    Totuși, metodele native limbajului C++ sunt cele mai intuitive și mai simplu de
+    utilizat.
+
+Atunci când folosiți intrarea și ieșirea standard, după ce compilați programul
+și nu apare nicio eroare, va trebui să rulați executabilul generat și să
+introduceți datele de intrare conform descrierii problemei și a programului
+scris de voi anterior. În cazul în care ați procedat cum trebuie, veți obține un
+răspuns conform cu ceea ce ați scris. În caz contrar, va trebui să verificați ce
+ați scris și eventual, să modificați programul.
 
 ```cpp
 #include <iostream>
@@ -70,13 +90,22 @@ Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
 ```
 
 !!! note "endl vs '\n'"
-    Probabil că ați observat că pentru a afișa o linie nouă, am folosit pe de o parte `'\n'` și pe de altă parte, `endl`. Deși aceste instrucțiuni par identice în rol, nu pot fi mai diferite. Se remarcă faptul că instrucțiunea `endl`, pe lângă rolul de a marca trecerea la o linie nouă, curăță bufferul (un loc în care sunt stocate datele temporar) de datele deja afișate, ceea ce face această instrucțiune mult mai înceată decât `'\n'`, lucru ce se poate dovedi important atunci când lucrăm cu un volum de date foarte mare. 
+
+    Probabil că ați observat că pentru a afișa o linie nouă, am folosit pe de o
+    parte `'\n'` și pe de altă parte, `endl`. Deși aceste instrucțiuni par identice
+    în rol, nu pot fi mai diferite. Se remarcă faptul că instrucțiunea `endl`, pe
+    lângă rolul de a marca trecerea la o linie nouă, curăță bufferul (un loc în care
+    sunt stocate datele temporar) de datele deja afișate, ceea ce face această
+    instrucțiune mult mai înceată decât `'\n'`, lucru ce se poate dovedi important
+    atunci când lucrăm cu un volum de date foarte mare.
 
 ## Citirea și afișarea folosind fișiere
 
 Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `<fstream>`.
 
-Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul ifstream declară un flux de citire din fișier, ofstream declară unul de scriere în fișier.
+Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde
+să le afișeze. Tipul ifstream declară un flux de citire din fișier, ofstream
+declară unul de scriere în fișier.
 
 ```cpp
 ifstream fin("date.in");
@@ -84,9 +113,14 @@ ofstream fout("date.out");
 ```
 
 !!! note "Numele fișierelor"
-    Deși aici am folosit fin și fout pentru a putea menționa aceste streamuri de date, putem folosi orice nume vrem atâta timp cât nu avem și alte variabile numite astfel. În mod particular, putem numi acestea chiar și cin, respectiv cout atâta timp cât nu avem inclusă biblioteca iostream.
 
-Programul de mai sus va fi identic, singura diferență fiind adăugarea facilităților care ne permit să citim datele din fișiere. 
+    Deși aici am folosit fin și fout pentru a putea menționa aceste streamuri de
+    date, putem folosi orice nume vrem atâta timp cât nu avem și alte variabile
+    numite astfel. În mod particular, putem numi acestea chiar și cin, respectiv
+    cout atâta timp cât nu avem inclusă biblioteca iostream.
+
+Programul de mai sus va fi identic, singura diferență fiind adăugarea
+facilităților care ne permit să citim datele din fișiere.
 
 ```cpp
 #include <fstream>
@@ -123,24 +157,38 @@ int main () {
 ```
 
 !!! note "Citirea unui număr necunoscut de valori"
-    În mod particular, dacă avem de citit un număr necunoscut de valori, trebuie să folosim structura repetitivă while, așa cum veți observa în [articolul nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această temă. 
+
+    În mod particular, dacă avem de citit un număr necunoscut de valori, trebuie să
+    folosim structura repetitivă while, așa cum veți observa în [articolul
+    nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această temă.
 
 ## Afișarea specializată
 
-În unele probleme, suntem nevoiți să afișăm datele respectând un oarecare format (de exemplu, să se afișeze cu exact $x$ zecimale). Pentru a opera acest lucru, este necesară cunoașterea bibliotecii  `#include <iomanip>`.
+În unele probleme, suntem nevoiți să afișăm datele respectând un oarecare format
+(de exemplu, să se afișeze cu exact $x$ zecimale). Pentru a opera acest lucru,
+este necesară cunoașterea bibliotecii `<iomanip>`.
 
-Această bibliotecă poate fi folosită și pentru a prelucra datele într-o manieră mai prietenoasă cu cititorii, folosind funcțiile de lungime, aliniere sau umplere:
+Această bibliotecă poate fi folosită și pentru a prelucra datele într-o manieră
+mai prietenoasă cu cititorii, folosind funcțiile de lungime, aliniere sau
+umplere:
 
-* lungimea – setw(int n), numărul de caractere folosit pentru afișarea datelor;
-* alinierea – left, right, internal;
-* caracterul de umplere – setfill(char f), caracterele care să fie folosite pentru a umple un element afișat;
-* baza de numerație (dec, oct, hex) în care sunt scrise valorile de tip întreg. În cele mai multe cazuri, nu vom avea nevoie să afișăm altfel decât în formatul zecimal.
+- lungimea – `setw(int n)`, numărul de caractere folosit pentru afișarea datelor;
+- alinierea – `left`, `right`, `internal`;
+- caracterul de umplere – `setfill(char f)`, caracterele care să fie folosite
+  pentru a umple un element afișat;
+- baza de numerație (`dec`, `oct`, `hex`) în care sunt scrise valorile de tip
+  întreg. În cele mai multe cazuri, nu vom avea nevoie să afișăm altfel decât în
+  formatul zecimal.
 
-Ne vom concentra în cele ce urmează pe funcția setprecision, fiind de departe cea mai relevantă funcție dintre cele pe care le folosim în algoritmică. 
+Ne vom concentra în cele ce urmează pe funcția setprecision, fiind de departe
+cea mai relevantă funcție dintre cele pe care le folosim în algoritmică.
 
-Sintaxa ei este `setprecision(int n)`, unde $n$ este numărul de cifre folosite pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul total de cifre sau numărul de cifre de după punctul zecimal.
+Sintaxa ei este `setprecision(int n)`, unde $n$ este numărul de cifre folosite
+pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul
+total de cifre sau numărul de cifre de după punctul zecimal.
 
-De exemplu, dacă vrem să afișăm primele $7$ zecimale ale lui $\pi$, putem face asta folosind următoarele instrucțiuni:
+De exemplu, dacă vrem să afișăm primele $7$ zecimale ale lui $\pi$, putem face
+asta folosind următoarele instrucțiuni:
 
 ```cpp
 #include <iostream>
@@ -158,15 +206,24 @@ int main() {
 } 
 ```
 
-Se poate remarca că înainte de a folosi notația fixed, se afișau exact $7$ zecimale, inclusiv cele de dinainte de virgulă. Odată cu folosirea acestui operator, se afișează exact $7$ zecimale după virgulă, rotunjite eventual la cea mai apropiată zecimală.
+Se poate remarca că înainte de a folosi notația fixed, se afișau exact $7$
+zecimale, inclusiv cele de dinainte de virgulă. Odată cu folosirea acestui
+operator, se afișează exact $7$ zecimale după virgulă, rotunjite eventual la cea
+mai apropiată zecimală.
 
 ## Concluzii
 
-Odată cu învățarea tipurilor de date, sunteți pregătiți să le folosiți în instrucțiuni și structuri alternative și repetitive, așa cum puteți vedea în articolele ulterioare.
+Odată cu învățarea tipurilor de date, sunteți pregătiți să le folosiți în
+instrucțiuni și structuri alternative și repetitive, așa cum puteți vedea în
+articolele ulterioare.
 
-## Resurse suplimentare 
+## Resurse suplimentare
 
-* [Intrări/Ieșiri în C++](https://www.pbinfo.ro/articole/60/intrari-iesiri-in-cpp)
-* [Operații de intrare/ieșire cu fișiere în C++](https://www.pbinfo.ro/articole/19047/operatii-de-intrare-iesire-cu-fisiere-in-cpp)
-* [Citiri și scrieri cu format în C++](https://www.pbinfo.ro/articole/16018/citiri-si-scrieri-cu-format-in-cpp)
-* [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
+- [Intrări/Ieșiri în
+  C++](https://www.pbinfo.ro/articole/60/intrari-iesiri-in-cpp)
+- [Operații de intrare/ieșire cu fișiere în
+  C++](https://www.pbinfo.ro/articole/19047/operatii-de-intrare-iesire-cu-fisiere-in-cpp)
+- [Citiri și scrieri cu format în
+  C++](https://www.pbinfo.ro/articole/16018/citiri-si-scrieri-cu-format-in-cpp)
+- [Learning to code - USACO
+  Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)

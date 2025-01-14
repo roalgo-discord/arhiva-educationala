@@ -7,11 +7,11 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
-    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
-    * [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
-    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+!!! example "Cunoștințe necesare"
+    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+    - [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
+    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
 
 În informatică și în algoritmică, de multe ori avem de-a face cu stocarea unei
 cantități semnificative de informație fără să putem să o stocăm în intregime,
@@ -73,7 +73,7 @@ va fi și ea un număr prim, mai mare decât numărul de caractere distincte pe 
 îl putem avea (dat fiind că avem $26$ de litere, alegeri bune pentru bază ar fi
 $29$ sau $31$).
 
-!!! info "Observație" 
+!!! info "Observație"
 
     Numerele prime sunt recomandate pentru crearea hashurilor
     deoarece neavând divizori comuni cu alte numere, riscul de a ajunge la valori
@@ -86,7 +86,7 @@ la poziția $R$, lungimea acestuia fiind $R - L + 1$. Dacă știm hashul pentru
 intervalul $[1, R]$ și hashul pentru intervalul $[1, L-1]$, să le notăm $x_R$ și
 $x_L$, hashul subsecvenței $[L, R]$ va fi $y - x \cdot base^{R - L + 1}$.
 
-!!! info "Observație" 
+!!! info "Observație"
 
     Deoarece în majoritatea cazurilor avem de păstrat valoarea
     modulo $X$, va trebui să fim atenți în ceea ce privește calculul hashului și
@@ -369,34 +369,31 @@ int main() {
 
 ### Probleme de la olimpiade
 
-* [subsecvente OJI 2013](https://kilonova.ro/problems/36)
-* [Carry Bit IIOT 2023-24](https://kilonova.ro/problems/2165)
-* [sp Lot juniori 2021](https://kilonova.ro/problems/1702)
-* [gimigpt Lot Juniori 2024](https://kilonova.ro/problems/2836/)
-* [mixperm Lot juniori 2017](https://kilonova.ro/problems/1690)
-* [Palindrome String](https://kilonova.ro/problems/1903)
-* [sap RoAlgo Contest 6 - XOR Hashing](https://kilonova.ro/problems/1802)
-* [toska Stelele Informaticii - XOR Hashing](https://kilonova.ro/problems/2098/)
-* [Bovine Genomics
+- [subsecvente OJI 2013](https://kilonova.ro/problems/36)
+- [Carry Bit IIOT 2023-24](https://kilonova.ro/problems/2165)
+- [sp Lot juniori 2021](https://kilonova.ro/problems/1702)
+- [gimigpt Lot Juniori 2024](https://kilonova.ro/problems/2836/)
+- [mixperm Lot juniori 2017](https://kilonova.ro/problems/1690)
+- [Palindrome String](https://kilonova.ro/problems/1903)
+- [sap RoAlgo Contest 6 - XOR Hashing](https://kilonova.ro/problems/1802)
+- [toska Stelele Informaticii - XOR Hashing](https://kilonova.ro/problems/2098/)
+- [Bovine Genomics
   USACO](http://www.usaco.org/index.php?page=viewproblem2&cpid=741)
-* [RMI 2017 Hangman
+- [RMI 2017 Hangman
   2](https://csacademy.com/contest/rmi-2017-day-1/task/hangman2/)
-* [Probleme cu hashing de pe kilonova](https://kilonova.ro/tags/322)
-* [Probleme cu hashing de pe
+- [Probleme cu hashing de pe kilonova](https://kilonova.ro/tags/322)
+- [Probleme cu hashing de pe
   infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=432)
-
 
 ### Probleme de pe alte siteuri
 
-
-* [Finding Periods](https://cses.fi/problemset/task/1733/)
-* [Sum of Four Values](https://cses.fi/problemset/task/1642)
-* [Fullmetal Alchemist II](https://codeforces.com/gym/104048/problem/K)
-* [Mysterious Crime](https://codeforces.com/contest/1043/problem/D)
-* [The Number of Subpermutations](https://codeforces.com/contest/1175/problem/F)
-* [Alte probleme cu hashing de pe
+- [Finding Periods](https://cses.fi/problemset/task/1733/)
+- [Sum of Four Values](https://cses.fi/problemset/task/1642)
+- [Fullmetal Alchemist II](https://codeforces.com/gym/104048/problem/K)
+- [Mysterious Crime](https://codeforces.com/contest/1043/problem/D)
+- [The Number of Subpermutations](https://codeforces.com/contest/1175/problem/F)
+- [Alte probleme cu hashing de pe
   Codeforces](https://codeforces.com/problemset?tags=hashing)
-
 
 ### Bibliografie și lectură suplimentară
 
@@ -404,16 +401,16 @@ Am ordonat resursele suplimentare în ordinea dificultății înțelegerii și �
 ordine logică pentru a ușura obținerea de cunoștinte despre tehnicile,
 abordările și problemele discutate în acest curs.
 
-* [Cartea SEPI F1 - Capitolul 12 (pagina 171) - Căutări în șiruri de caractere.
+- [Cartea SEPI F1 - Capitolul 12 (pagina 171) - Căutări în șiruri de caractere.
   Algoritmul Rabin-Karp - Articol
   Recomandat](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [Articol USACO Guide - String
+- [Articol USACO Guide - String
   Hashing](https://usaco.guide/gold/string-hashing?lang=cpp)
-* [Articol USACO Guide - Hash maps](https://usaco.guide/gold/hashmaps?lang=cpp)
-* [XOR Hashing TUTORIAL](https://codeforces.com/blog/entry/85900)
-* [On the mathematics behind rolling hashes and anti-hash
+- [Articol USACO Guide - Hash maps](https://usaco.guide/gold/hashmaps?lang=cpp)
+- [XOR Hashing TUTORIAL](https://codeforces.com/blog/entry/85900)
+- [On the mathematics behind rolling hashes and anti-hash
   tests](https://codeforces.com/blog/entry/60442)
-* [Articolul de pe cppi.sync](https://cppi.sync.ro/materia/hashuri.html)
-* [Hash tables](https://www.infoarena.ro/tabele-hash-scurta-prezentare)
-* [Hash tables - prezentare
+- [Articolul de pe cppi.sync](https://cppi.sync.ro/materia/hashuri.html)
+- [Hash tables](https://www.infoarena.ro/tabele-hash-scurta-prezentare)
+- [Hash tables - prezentare
   detaliata](https://www.infoarena.ro/tabele-hash-prezentare-detaliata)

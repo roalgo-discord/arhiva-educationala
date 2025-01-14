@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Nestemate (OJI 2024, clasele XI-XII)
 
 !!! example "Cunoștințe necesare"
-    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
 
 **Autor soluție**: Mihaela Cismaru
 

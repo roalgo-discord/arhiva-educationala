@@ -8,12 +8,12 @@ tags:
 ---
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
-!!! example "Cunoștințe necesare"   
-    * [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
-    * [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    * [Coada](https://edu.roalgo.ro/mediu/queue/)
-    * [Stiva](https://edu.roalgo.ro/mediu/stack/)
-    * [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+!!! example "Cunoștințe necesare"
+    - [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
+    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Coada](https://edu.roalgo.ro/mediu/queue/)
+    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
 
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
 atât în algoritmică, cât și în viața de zi cu zi, acestea fiind grafurile.
@@ -27,12 +27,11 @@ se dovedesc a fi esențiale în foarte multe situații, atât competiționale, c
 
 ### Terminologie
 
-Un graf este o structură care corespunde unui grup de obiecte, în
-care unele perechi de obiecte sunt într-un anumit sens „legate” reciproc.
-Obiectele corespund unor abstracții matematice numite într-un graf
-noduri/vârfuri (numite și puncte) și fiecare legătură dintre perechile de
-obiecte asociate se numește muchie (numită și arc sau linie, prin care este și
-reprezentată).
+Un graf este o structură care corespunde unui grup de obiecte, în care unele
+perechi de obiecte sunt într-un anumit sens „legate” reciproc. Obiectele
+corespund unor abstracții matematice numite într-un graf noduri/vârfuri (numite
+și puncte) și fiecare legătură dintre perechile de obiecte asociate se numește
+muchie (numită și arc sau linie, prin care este și reprezentată).
 
 <!-- De obicei, un graf este reprezentat în formă schematică ca un
 set/grup de puncte pentru noduri, iar acestea sunt unite două câte două de
@@ -44,14 +43,14 @@ O definiție mai riguroasă ce se va dovedi utilă este prezentată aici:
 !!! info "Noțiunea de graf"
 
     Un graf $G = (V, E)$ este o structură matematică compusă din două mulțimi:
-
+    
     - $V$ (mulțimea vârfurilor sau nodurilor), care reprezintă obiectele;
 
     - $E \subseteq V \times V$ (mulțimea muchiilor sau arcelor), care
       reprezintă legăturile între perechi de vârfuri.
 
-Fiecare element $ v \in V$ este numit vârf (sau nod), iar fiecare element $
-e = (u, v) \in E$ este numit muchie (sau arc). În mod obișnuit, grafurile sunt
+Fiecare element $ v \in V$ este numit vârf (sau nod), iar fiecare element $ e =
+(u, v) \in E$ este numit muchie (sau arc). În mod obișnuit, grafurile sunt
 reprezentate grafic printr-un set de puncte (corespunzătoare vârfurilor)
 conectate prin linii sau curbe (corespunzătoare muchiilor).
 
@@ -60,13 +59,13 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
 
 !!! info "Graf orientat și neorientat"
 
-    Un **graf neorientat** $G = (V, E)$ este un graf în care perechile de
-    vârfuri $(u, v) \in E$ sunt neordonate. Aceasta înseamnă că, dacă $(u, v)
-    \in E$ este o muchie de la $u$ la $v$, atunci și $(v, u) \in E$.
+    Un **graf neorientat** $G = (V, E)$ este un graf în care perechile de vârfuri
+    $(u, v) \in E$ sunt neordonate. Aceasta înseamnă că, dacă $(u, v) \in E$ este o
+    muchie de la $u$ la $v$, atunci și $(v, u) \in E$.
 
-    Prin comparație, un **graf orientat** este un graf în care perechile de
-    vârfuri $(u, v) \in E$ sunt ordonate. Aceasta înseamnă că, dacă $(u, v)
-    \in E$, atunci $(v, u) \not\in E$.
+    Prin comparație, un **graf orientat** este un graf în care perechile de vârfuri
+    $(u, v) \in E$ sunt ordonate. Aceasta înseamnă că, dacă $(u, v) \in E$, atunci
+    $(v, u) \not\in E$.
 
 !!! info "Noduri adiacente"
 
@@ -74,32 +73,37 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
     există o muchie $ (u, v) \in E $. Adică, există o legătură directă între $u$ și $v$.
 
     Formal:
-    $$
+    \[
     u \text{ și } v \text{ sunt adiacente} \iff (u, v) \in E \text{ sau } (v, u) \in E \text{ (în cazul grafurilor neorientate)}
-    $$
+    \]
 
 !!! info "Incidență"
 
-    Folosim noțiunea de **incidență** pentru a descrie relația dintre noduri și muchii.
-    O muchie $(u, v) \in E$ este incidentă cu nodurile $u$ și $v$.
+    Folosim noțiunea de **incidență** pentru a descrie relația dintre noduri și
+    muchii. O muchie $(u, v) \in E$ este incidentă cu nodurile $u$ și $v$.
 
 !!! info "Gradul unui nod"
 
-    Definim **gradul** unui nod \(v\) dintr-un graf \(G = (V, E)\) ca fiind numărul de muchii incidente cu \(v\).
+    Definim **gradul** unui nod \(v\) dintr-un graf \(G = (V, E)\) ca fiind numărul
+    de muchii incidente cu \(v\).
 
-    Într-un graf neorientat, gradul nodului \(v\), notat \(\deg(v)\), este numărul de muchii care au \(v\) ca una dintre extremități.
+    Într-un graf neorientat, gradul nodului \(v\), notat \(\deg(v)\), este numărul
+    de muchii care au \(v\) ca una dintre extremități.
 
-    $$\deg(v) = |\{(u, v) \in E \text{ sau } (v, u) \in E \mid u \in V\}|$$
+    \[
+    \deg(v) = |\{(u, v) \in E \text{ sau } (v, u) \in E \mid u \in V\}|
+    \]
 
     Într-un graf orientat, se pot defini două tipuri de grad:
     - **Gradul intern** (numărul de muchii care intră în nodul \(v\)), notat \(\deg^-(v)\):
-       $$
-       \deg^-(v) = |\{(u, v) \in E \mid u \in V\}|
-       $$
+      \[
+      \deg^-(v) = |\{(u, v) \in E \mid u \in V\}|
+      \]
+      
     - **Gradul extern** (numărul de muchii care ies din nodul \(v\)), notat \(\deg^+(v)\):
-       $$
-       \deg^+(v) = |\{(v, u) \in E \mid u \in V\}|
-       $$
+      \[
+      \deg^+(v) = |\{(v, u) \in E \mid u \in V\}|
+      \]
 
 !!! note "Observație"
 
@@ -116,16 +120,18 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
 
     Numim **lanț** o secvență de noduri $(v_1, v_2, ..., v_k)$ cu proprietatea că
     $(v_i, v_{i + 1}) \in E$ oricare ar fi $1 \leq i \leq k$. Un lanț este
-    **elementar** dacă $v_i \neq v_j$ oricare ar fi $1 \leq i < j \leq k$. Un
-    lanț este **simplu** dacă $(v_i, v_{i + 1}) \neq (v_j, v_{j+1})$ oricare ar
-    fi $1 \leq i < j \leq k$.
+    -*elementar** dacă $v_i \neq v_j$ oricare ar fi $1 \leq i < j \leq k$. Un lanț
+    este **simplu** dacă $(v_i, v_{i + 1}) \neq (v_j, v_{j+1})$ oricare ar fi $1
+    \leq i < j \leq k$.
 
-    Altfel spus, un lanț elementar este un lanț cu nodurile distincte, iar un lanț simplu este un lanț cu muchii distincte.
+    Altfel spus, un lanț elementar este un lanț cu nodurile distincte, iar un lanț
+    simplu este un lanț cu muchii distincte.
 
 !!! info "Ciclu"
 
-    O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă $(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$.
-    Un ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j < k$.
+    O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă
+    $(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$. Un
+    ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j < k$.
 
     Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă,
     pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge tot la
@@ -133,7 +139,7 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
 
 !!! info "Lungimea unui lanț"
 
-    **Lungimea unui lanț** $(v_1, v_2, ..., v_k)$ este $k-1$ (numărul de muchii).
+    -*Lungimea unui lanț** $(v_1, v_2, ..., v_k)$ este $k-1$ (numărul de muchii).
     Uneori, aceasta se definește ca fiind numărul de noduri, așadar lungimea
     acestui lanț este $k$.
 
@@ -143,7 +149,8 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
     din graful dat păstrând toate nodurile și eliminând eventual unele muchii, fără
     a adăuga muchii noi.
 
-    Formal spus, un graf parțial $G' = (V, E')$ a grafului $G = (V, E)$ este un graf unde $E' \subseteq E$.
+    Formal spus, un graf parțial $G' = (V, E')$ a grafului $G = (V, E)$ este un graf
+    unde $E' \subseteq E$.
 
     Definim **subgraf** al unui graf dat ca fiind ceea ce rămâne din
     graful dat eliminând unele noduri și doar muchiile incidente lor, deci nu și
@@ -153,9 +160,10 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
     unde $V' \subseteq V$ și $E' \subseteq \{(u, v) \in E \mid u, v \in V'\}$.
 
 !!! note "Observație"
-Numărul de subgrafuri ale unui graf $G = (V, E)$ este $2^{|V|}$,
-iar numărul de grafuri parțiale este $2^{|E|}$,
-unde $|V| = n$ este numărul de noduri, iar $|E| = m$ este numărul de muchii al grafului.
+
+    Numărul de subgrafuri ale unui graf $G = (V, E)$ este $2^{|V|}$, iar numărul de
+    grafuri parțiale este $2^{|E|}$, unde $|V| = n$ este numărul de noduri, iar $|E|
+    = m$ este numărul de muchii al grafului.
 
 ### Câteva tipuri speciale de grafuri
 
@@ -183,9 +191,9 @@ unele din aceste tipuri, vom avea probleme unde vom explica în detaliu noțiuni
 !!! note "Observație"
 
     Are loc următoarea relație pentru un graf bipartit $G = (A, B, E)$:
-    $$
-    \sum_{a \in a} \deg(a) = \sum_{b \in B} \deg(b) = |E|
-    $$
+    \[
+        \sum_{a \in a} \deg(a) = \sum_{b \in B} \deg(b) = |E|
+    \]
 
 !!! note "Observație"
 
@@ -235,14 +243,19 @@ Pentru a reprezenta un graf în memorie, există trei moduri principale de a o
 face, cu distincția că în practică se va folosi doar reprezentarea prin liste de
 vecini.
 
-**Definiție:** Definim **matricea de adiacență a unui graf** ca fiind o matrice
-binară pentru care $a_{ij} = 1$ dacă și numai dacă avem muchie de la nodul $i$
-la nodul $j$ și $a_{ij} = 0$ în caz contrar.
+!!! info "Matrice de adiacență"
 
-**Observație:** Pentru un graf neorientat, matricea este mereu simetrică, adică
-$a_{ij} = a_{ji}\ \forall i, j$.
+    Definim **matricea de adiacență a unui graf** ca fiind o matrice binară pentru
+    care $a_{ij} = 1$ dacă și numai dacă avem muchie de la nodul $i$ la nodul $j$ și
+    $a_{ij} = 0$ în caz contrar.
 
-Pentru graful nostru de mai sus, aceasta este matricea de adiacență la care ajungem.
+!!! note "Observație"
+
+    Pentru un graf neorientat, matricea este mereu simetrică, adică
+    $a_{ij} = a_{ji}\ \forall i, j$.
+
+Pentru graful nostru de mai sus, aceasta este matricea de adiacență la care
+ajungem.
 
 <figure markdown="span">
 ![](../images/grafuri/matrice-light.svg#only-light){width="300"}
@@ -260,7 +273,7 @@ Pentru graful nostru de mai sus, aceasta este matricea de adiacență la care aj
 
     Pentru graful de mai sus, aceasta este lista de vecini:
 
-    | Nod | Vecini           |
+    | Nod |      Vecini      |
     | --- | ---------------- |
     | 1   | $\{3,4\}$        |
     | 2   | $\{4,5,6\}$      |
@@ -278,16 +291,17 @@ Pentru graful nostru de mai sus, aceasta este matricea de adiacență la care aj
 
 !!! info "Listă de muchii"
 
-    Definim o **listă de muchii** ca fiind o listă pe care o folosim
-    pentru a ține toate muchiile în memorie. Deși nu este o variantă prea practică
-    de a efectua parcurgerile, această metodă poate fi utilă pentru anumiți
-    algoritmi ce se bazează în principal pe prelucrarea muchiilor, un astfel de
-    exemplu fiind arborele parțial de cost minim.
+    Definim o **listă de muchii** ca fiind o listă pe care o folosim pentru a ține
+    toate muchiile în memorie. Deși nu este o variantă prea practică de a efectua
+    parcurgerile, această metodă poate fi utilă pentru anumiți algoritmi ce se
+    bazează în principal pe prelucrarea muchiilor, un astfel de exemplu fiind
+    arborele parțial de cost minim.
 
 !!! example "Exemplu"
 
-    În cazul nostru, lista de muchii este: $\{1, 4\}$,$\{1, 3\}$,
-    $\{4,9\}$,$\{9,3\}$,$\{4,2\}$,$\{4,6\}$,$\{2,6\}$,$\{2,5\}$,$\{8,12\}$,$\{8,11\}$,$\{8,10\}$,$\{8,7\}$.
+    În cazul nostru, lista de muchii este: $\{1, 4\}$, $\{1, 3\}$, $\{4,9\}$,
+    $\{9,3\}$, $\{4,2\}$, $\{4,6\}$, $\{2,6\}$, $\{2,5\}$, $\{8,12\}$, $\{8,11\}$,
+    $\{8,10\}$, $\{8,7\}$.
 
 ## Conexitate. Parcurgerea DFS
 
@@ -297,15 +311,16 @@ explicarea și înțelegerea grafurilor.
 
 !!! info "Graf conex"
 
-    Un **graf conex** este un graf neorientat în care există o cale între oricare două noduri.
-    Cu alte cuvinte, oricare două noduri din graf sunt conectate direct sau indirect printr-o serie de muchii.
+    Un **graf conex** este un graf neorientat în care există o cale între oricare
+    două noduri. Cu alte cuvinte, oricare două noduri din graf sunt conectate direct
+    sau indirect printr-o serie de muchii.
 
 !!! info "Componenta conexă"
 
-    O **componentă conexă** a unui graf este un subgraf conex maximal, adică un subgraf
-    în care oricare două noduri sunt conectate printr-o serie de muchii, iar acest
-    subgraf nu poate fi extins adăugând vreun alt nod sau vreo altă muchie fără a
-    pierde proprietatea de conexitate.
+    O **componentă conexă** a unui graf este un subgraf conex maximal, adică un
+    subgraf în care oricare două noduri sunt conectate printr-o serie de muchii, iar
+    acest subgraf nu poate fi extins adăugând vreun alt nod sau vreo altă muchie
+    fără a pierde proprietatea de conexitate.
 
 Pentru a rezolva problema aflării conexității unui graf, va trebui să parcurgem
 graful folosind unul din algoritmii consacrați pentru această problemă. În cazul
@@ -341,6 +356,7 @@ depth-first search), una din parcurgerile optime pentru această problemă.
     DFS-ul pleacă din $1$, $2$ va fi accesat din $1$, iar $3$ va fi accesat din $2$.
 
 !!! note "Observație"
+
     Se poate remarca faptul că ordinea în care vizităm nodurile în
     graf depinde de ordinea în care sunt adăugate muchiile în graf, acest lucru
     înseamnă că nu putem folosi DFS pentru anumite probleme, de exemplu cele la care
@@ -350,7 +366,7 @@ Ca o recapitulare (sau de fapt comparație) între BFS și DFS, să comparăm fi
 abordare împreună cu o funcție:
 
 === "DFS"
-    
+
     ```cpp
     vector<vector<int>> graph;
 
@@ -467,26 +483,26 @@ este acela că ordinea în care nodurile sunt parcurse în DFS depinde de ordine
 distanțelor minime imposibilă. Astfel, vom introduce un alt mod de a parcurge
 graful nostru.
 
-!!! info "Parcurgerea în lățime (BFS)" 
+!!! info "Parcurgerea în lățime (BFS)"
 
-    Parcurgerea în lățime** (BFS, engl. breadth-first
-    search) a unui graf ca fiind o parcurgere iterativă ce pleacă de la unul sau mai
-    multe noduri, iar la fiecare pas, dacă ne aflăm la un nod $x$, vom vizita
-    vecinii nevizitați ai nodului $x$, adăugându-i într-o coadă, nodurile fiind
-    parcurse în ordinea în care au fost adăugate în coadă.
-
-!!! note "Observație"
-
-    Complexitatea parcurgerii în lățime (BFS) este $O(\lvert V
-    \rvert + \lvert E \lvert)$, unde $\lvert V \rvert$ reprezintă numărul de noduri
-    sau vârfuri și $\lvert E \rvert$ reprezintă numărul de muchii.
+    Parcurgerea în lățime** (BFS, engl. breadth-first search) a unui graf ca fiind o
+    parcurgere iterativă ce pleacă de la unul sau mai multe noduri, iar la fiecare
+    pas, dacă ne aflăm la un nod $x$, vom vizita vecinii nevizitați ai nodului $x$,
+    adăugându-i într-o coadă, nodurile fiind parcurse în ordinea în care au fost
+    adăugate în coadă.
 
 !!! note "Observație"
 
-    Se poate remarca faptul că ordinea în care vizităm nodurile în
-    graf va fi aceeași cu ordinea crescătoare a distanței minime față de nodul sau
-    nodurile inițiale, datorită faptului că ele vor fi inserate în coadă în ordinea
-    în care acestea au fost adăugate.
+    Complexitatea parcurgerii în lățime (BFS) este $O(\lvert V \rvert + \lvert E
+    \lvert)$, unde $\lvert V \rvert$ reprezintă numărul de noduri sau vârfuri și
+    $\lvert E \rvert$ reprezintă numărul de muchii.
+
+!!! note "Observație"
+
+    Se poate remarca faptul că ordinea în care vizităm nodurile în graf va fi
+    aceeași cu ordinea crescătoare a distanței minime față de nodul sau nodurile
+    inițiale, datorită faptului că ele vor fi inserate în coadă în ordinea în care
+    acestea au fost adăugate.
 
 ## Problema [Simple Shortest Path](https://kilonova.ro/problems/2037) de pe kilonova
 
@@ -712,11 +728,19 @@ int main() {
 
 ## Detectarea unui ciclu simplu - [Round Trip CSES](https://cses.fi/problemset/task/1669/)
 
-În această problemă, trebuie să găsim un ciclu simplu într-un graf neorientat. Există foarte mulți algoritmi care rezolvă această problemă corect, dar un algoritm care este foarte simplu și ușor de înțeles constă în următorii pași:
+În această problemă, trebuie să găsim un ciclu simplu într-un graf neorientat.
+Există foarte mulți algoritmi care rezolvă această problemă corect, dar un
+algoritm care este foarte simplu și ușor de înțeles constă în următorii pași:
 
-* Pentru fiecare componentă conexă, vom rula un DFS din unul din noduri și vom afla un arbore DFS (pentru fiecare nod din componentă, vom ține $prv[i]$ drept nodul de unde am ajuns să vizităm nodul $i$, într-un mod similar cu modul în care ținem părinții unui nod în arbore).
-* Dacă la un pas dăm de un nod care a fost deja vizitat și nu este părintele nodului curent, înseamnă că avem un ciclu între cele două noduri în cauză. 
-* Pentru cele două noduri găsite, vom folosi vectorul prv creat anterior pentru a merge înapoi prin nodurile găsite, iar acest drum va fi ciclul pe care îl vom obține. 
+- Pentru fiecare componentă conexă, vom rula un DFS din unul din noduri și vom
+  afla un arbore DFS (pentru fiecare nod din componentă, vom ține $prv[i]$ drept
+  nodul de unde am ajuns să vizităm nodul $i$, într-un mod similar cu modul în
+  care ținem părinții unui nod în arbore).
+- Dacă la un pas dăm de un nod care a fost deja vizitat și nu este părintele
+  nodului curent, înseamnă că avem un ciclu între cele două noduri în cauză.
+- Pentru cele două noduri găsite, vom folosi vectorul prv creat anterior pentru
+  a merge înapoi prin nodurile găsite, iar acest drum va fi ciclul pe care îl
+  vom obține.
 
 Mai jos găsiți implementarea C++ a soluției descrise mai sus.
 

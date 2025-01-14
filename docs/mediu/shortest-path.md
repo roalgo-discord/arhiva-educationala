@@ -8,54 +8,98 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+!!! example "Cunoștințe necesare"
+    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
 
-Aflarea drumului minim între două sau mai multe locații este una dintre cele mai importante probleme pe care oamenii au fost nevoiți să le rezolve de-a lungul istoriei, începând din timpurile preistorice în care comunicarea era limitată și până în zilele noastre, când avem foarte multe facilități la dispoziție. În funcție de criteriul ales, ne putem gândi la distanța minimă, timpul minim de parcurgere al unui traseu sau alte criterii, precum dificultatea de parcurgere a drumului ales etc. 
+Aflarea drumului minim între două sau mai multe locații este una dintre cele mai
+importante probleme pe care oamenii au fost nevoiți să le rezolve de-a lungul
+istoriei, începând din timpurile preistorice în care comunicarea era limitată și
+până în zilele noastre, când avem foarte multe facilități la dispoziție. În
+funcție de criteriul ales, ne putem gândi la distanța minimă, timpul minim de
+parcurgere al unui traseu sau alte criterii, precum dificultatea de parcurgere a
+drumului ales etc.
 
 !!! example "Exemplu"
-    De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov. Acest traseu poate fi parcurs în două moduri principale, fiecare cu avantajele și dezavantajele lui. 
+    De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
+    Acest traseu poate fi parcurs în două moduri principale, fiecare cu avantajele
+    și dezavantajele lui.
 
-    * Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h, traseu dificil
-    * Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu ceva mai ușor
+    - Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h, traseu
+    dificil
+    - Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu ceva
+    mai ușor
 
-    Chiar dacă cele două drumuri au o distanță identică, diferența este dată de timpul de parcurgere și de dificultatea traseului în sine. Deși primul traseu necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea traseu este semnificativ mai ușor din punct de vedere al dificultății din punct de vedere rutier (după părerea autorului), fapt ce îi dă un cost mai mic, fiind preferat primului, în ciuda timpului și distanței mai mari. 
+    Chiar dacă cele două drumuri au o distanță identică, diferența este dată de
+    timpul de parcurgere și de dificultatea traseului în sine. Deși primul traseu
+    necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea traseu este
+    semnificativ mai ușor din punct de vedere al dificultății din punct de vedere
+    rutier (după părerea autorului), fapt ce îi dă un cost mai mic, fiind preferat
+    primului, în ciuda timpului și distanței mai mari. 
 
-În cele ce urmează, vom discuta despre algoritmii ce ne ajută să aflăm drumuri minime, modelând aceste probleme folosind grafurile orientate și neorientate, prezentând avantajele și dezavantajele fiecărui algoritm. 
+În cele ce urmează, vom discuta despre algoritmii ce ne ajută să aflăm drumuri
+minime, modelând aceste probleme folosind grafurile orientate și neorientate,
+prezentând avantajele și dezavantajele fiecărui algoritm.
 
 ## Introducere
 
-De regulă, atunci când vorbim de drumuri minime, vorbim de muchii care au asociate costuri. Pentru a înțelege mai ușor noțiunea de cost pentru o muchie, ne vom raporta la exemplul folosit anterior.
+De regulă, atunci când vorbim de drumuri minime, vorbim de muchii care au
+asociate costuri. Pentru a înțelege mai ușor noțiunea de cost pentru o muchie,
+ne vom raporta la exemplul folosit anterior.
 
-!!! info "Definiție" 
-    Un drum minim între două noduri $a$ și $b$ este un lanț simplu cu capetele în $a$ și $b$ cu proprietatea că costul total al muchiilor de pe lanț este minim. 
+!!! info "Definiție"
+    Un drum minim între două noduri $a$ și $b$ este un lanț simplu cu capetele
+    în $a$ și $b$ cu proprietatea că costul total al muchiilor de pe lanț este
+    minim.
 
 !!! note "Observație"
-    Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii este egal cu $1$.
+    Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii
+    este egal cu $1$.
 
-Pentru a păstra în memorie costul unei muchii, vom ține o variabilă în plus, astfel vom fi nevoiți să lucrăm cu structuri sau cu tipuri precum pair, după preferințe. 
+Pentru a păstra în memorie costul unei muchii, vom ține o variabilă în plus,
+astfel vom fi nevoiți să lucrăm cu structuri sau cu tipuri precum pair, după
+preferințe.
 
-Fie că e vorba de aflarea drumului minim între două noduri, toate nodurile sau dacă vrem pur și simplu să verificăm anumite proprietăți, algoritmii pe care îi vom prezenta se vor dovedi a fi soluții utile, fiecare dintre ei având avantajele și dezavantajele lor.  
+Fie că e vorba de aflarea drumului minim între două noduri, toate nodurile sau
+dacă vrem pur și simplu să verificăm anumite proprietăți, algoritmii pe care îi
+vom prezenta se vor dovedi a fi soluții utile, fiecare dintre ei având
+avantajele și dezavantajele lor.  
 
 ## Algoritmul lui Dijkstra
 
-De departe cel mai cunoscut algoritm pentru aflarea drumului minim între două noduri, algoritmul lui Dijsktra este folosit atunci când avem de-a face cu costuri pozitive, condiția minimă necesară este aceea să nu avem cicluri negative. 
+De departe cel mai cunoscut algoritm pentru aflarea drumului minim între două
+noduri, algoritmul lui Dijsktra este folosit atunci când avem de-a face cu
+costuri pozitive, condiția minimă necesară este aceea să nu avem cicluri
+negative.
 
 !!! note "Observație"
-    Algoritmul este numit după [un informatician olandez](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra), iar o pronunție corectă a numelui lui este ```daikstra``` (pentru fanii fotbalului, gândiți-vă la Virgil Van Dijk), nu ```diștra```, ```jikstra``` sau alte variante total greșite, care sunt folosite foarte des.
+    Algoritmul este numit după [un informatician
+    olandez](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra), iar o pronunție
+    corectă a numelui lui este ```daikstra``` (pentru fanii fotbalului,
+    gândiți-vă la Virgil Van Dijk), nu ```diștra```, ```jikstra``` sau alte
+    variante total greșite, care sunt folosite foarte des.
 
-!!! info "Definiție" 
-    Un ciclu negativ este un ciclu cu proprietatea că suma costurilor muchiilor de pe ciclu este negativă. 
+!!! info "Definiție"
+    Un ciclu negativ este un ciclu cu proprietatea că suma costurilor muchiilor
+    de pe ciclu este negativă.
 
-Modul de funcționare al algoritmului este unul foarte simplu: 
+Modul de funcționare al algoritmului este unul foarte simplu:
 
-* Pentru fiecare nod, vom ține un cost total până la el, la început acesta va fi inițializat pentru toate nodurile cu valori mari, cu excepția nodului (sau nodurilor) start, care vor avea costul inițial $0$.
-* Cât timp nu am vizitat toate nodurile, alegem nodul cu costul total dintre cele nealese. Dacă există mai multe asemenea noduri, oricare poate fi ales. 
-* Pentru nodul ales, vom vizita toate nodurile nevizitate, vecine cu el și verificăm pentru fiecare dintre ele dacă costul total pentru acel nod devine mai mic.
+- Pentru fiecare nod, vom ține un cost total până la el, la început acesta va fi
+  inițializat pentru toate nodurile cu valori mari, cu excepția nodului (sau
+  nodurilor) start, care vor avea costul inițial $0$.
+- Cât timp nu am vizitat toate nodurile, alegem nodul cu costul total dintre
+  cele nealese. Dacă există mai multe asemenea noduri, oricare poate fi ales.
+- Pentru nodul ales, vom vizita toate nodurile nevizitate, vecine cu el și
+  verificăm pentru fiecare dintre ele dacă costul total pentru acel nod devine
+  mai mic.
 
-### Implementare suboptimă 
+### Implementare suboptimă
 
-Acest algoritm, în forma sa neoptimizată are complexitatea $O(n^2)$ și are drept unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate fi folosit drept o soluție reală este atunci când avem un graf complet, în care numărul de muchii se apropie de $n^2$, mai jos putând fi citită o implementare care aplică pașii de mai sus pe un graf neorientat.
+Acest algoritm, în forma sa neoptimizată are complexitatea $O(n^2)$ și are drept
+unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate
+fi folosit drept o soluție reală este atunci când avem un graf complet, în care
+numărul de muchii se apropie de $n^2$, mai jos putând fi citită o implementare
+care aplică pașii de mai sus pe un graf neorientat.
 
 ```cpp
 #include <iostream>
@@ -113,15 +157,22 @@ int main () {
 
 ### Implementare optimă
 
-Pentru a putea implementa algoritmul în complexitatea sa optimă, $O((n+m) \log n)$, va trebui să facem câteva observații critice. 
+Pentru a putea implementa algoritmul în complexitatea sa optimă, $O((n+m) \log
+n)$, va trebui să facem câteva observații critice.
 
-În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate sunt cele cu cost minim. 
+În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate
+sunt cele cu cost minim.
 
-În al doilea rând, fiind vorba de regulă de grafuri cu un număr de muchii apropiat de numărul de noduri, putem ține vecinii folosind liste. 
+În al doilea rând, fiind vorba de regulă de grafuri cu un număr de muchii
+apropiat de numărul de noduri, putem ține vecinii folosind liste.
 
-Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie. 
+Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu
+cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de
+date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui
+pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
 
-După aplicarea acestor optimivdeile fiind aceleași, cu excepția folosirii unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante. 
+După aplicarea acestor optimivdeile fiind aceleași, cu excepția folosirii unei
+cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
 
 ```cpp
 #include <iostream>
@@ -224,15 +275,25 @@ int main() {
     return 0;
 ```
 
-Folosind aceste implementări, putem afla drumurile minime între două noduri foarte rapid, în cazul majorității problemelor de acest fel. Totuși, așa cum veți vedea în cazul celorlalți doi algoritmi, Dijkstra nu acoperă toate variantele de grafuri cu costuri.
+Folosind aceste implementări, putem afla drumurile minime între două noduri
+foarte rapid, în cazul majorității problemelor de acest fel. Totuși, așa cum
+veți vedea în cazul celorlalți doi algoritmi, Dijkstra nu acoperă toate
+variantele de grafuri cu costuri.
 
 ## Algoritmul Bellman-Ford
 
-Algoritmul Bellman-Ford este un algoritm de aflare a drumului minim între două noduri folosit mai ales pentru detectarea ciclurilor negative. 
+Algoritmul Bellman-Ford este un algoritm de aflare a drumului minim între două
+noduri folosit mai ales pentru detectarea ciclurilor negative.
 
-În mod similar cu algoritmul lui Dijkstra, vom ține pentru fiecare nod costul total până la el, dar ca o noutate, vom ține și numărul de modificări ale costului minim. Dacă numărul de modificări ale costului minim este cel puțin $n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseamnă că sigur am modificat costul minim de două ori din același vecin. 
+În mod similar cu algoritmul lui Dijkstra, vom ține pentru fiecare nod costul
+total până la el, dar ca o noutate, vom ține și numărul de modificări ale
+costului minim. Dacă numărul de modificări ale costului minim este cel puțin
+$n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseamnă
+că sigur am modificat costul minim de două ori din același vecin.
 
-Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel mai prost este $O(n \cdot m)$. Implementarea, una foarte similară cu cea a parcurgerii BFS, se poate găsi mai jos. 
+Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel
+mai prost este $O(n \cdot m)$. Implementarea, una foarte similară cu cea a
+parcurgerii BFS, se poate găsi mai jos.
 
 ```cpp
 #include <iostream>
@@ -289,18 +350,32 @@ int main() {
     return 0;
 }
 ```
+
 !!! note "Observație"
-    Există o variație a acestui algoritm, foarte des folosită în cazul unor probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest algoritm este folosit cu succes în multe probleme de informatică, ca o alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost complexitatea este similară cu cea de la Bellman-Ford, $O(n \cdot m)$.
+    Există o variație a acestui algoritm, foarte des folosită în cazul unor
+    probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
+    algoritm este folosit cu succes în multe probleme de informatică, ca o
+    alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost
+    complexitatea este similară cu cea de la Bellman-Ford, $O(n \cdot m)$.
 
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
 
-Algoritmul Floyd-Warshall (Roy-Floyd) este un algoritm de aflare a drumului minim între toate perechile de noduri, fără a fi nevoie de a calcula individual distanțele dintre oricare două noduri. 
+Algoritmul Floyd-Warshall (Roy-Floyd) este un algoritm de aflare a drumului
+minim între toate perechile de noduri, fără a fi nevoie de a calcula individual
+distanțele dintre oricare două noduri.
 
-Modul în care funcționează acest algoritm este acela că pentru fiecare pereche de noduri, vom ține în memorie distanța dintre acea pereche de noduri, iar la fiecare pas, vom fixa un nod pe care îl vom folosi drept un nod intermediar, cu scopul de a micșora distanțele dintre noduri în acest fel. 
+Modul în care funcționează acest algoritm este acela că pentru fiecare pereche
+de noduri, vom ține în memorie distanța dintre acea pereche de noduri, iar la
+fiecare pas, vom fixa un nod pe care îl vom folosi drept un nod intermediar, cu
+scopul de a micșora distanțele dintre noduri în acest fel.
 
-Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) < dist(i, j)$, astfel relaxând drumul dintre cele două noduri. 
+Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar
+pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) <
+dist(i, j)$, astfel relaxând drumul dintre cele două noduri.
 
-Complexitatea totală a algoritmului va fi $O(n^3)$, fiind unul dintre algoritmii folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale. Mai jos găsiți implementarea în limbajul C++.
+Complexitatea totală a algoritmului va fi $O(n^3)$, fiind unul dintre algoritmii
+folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale.
+Mai jos găsiți implementarea în limbajul C++.
 
 ```cpp
 #include <iostream>
@@ -333,27 +408,53 @@ int main() {
 ```
 
 !!! note "Observație"
-    Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să începem cu nodul pe care îl vom folosi drept cel intermediar $(k, i, j)$, celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest mod. 
+    Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să
+    începem cu nodul pe care îl vom folosi drept cel intermediar $(k, i, j)$,
+    celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest
+    mod.
 
 ## Algoritmul 0-1 BFS și variațiile sale
 
-În unele probleme de drum minim, costurile muchiilor sunt valori mici, dar nu doar egale cu $1$. Deoarece avem puține costuri, ne putem gândi la optimizări care să se folosească de acest lucru pentru a ajunge să avem algoritmi mai rapizi, fără a fi nevoie de Dijkstra sau vreun alt algoritm mai general. 
+În unele probleme de drum minim, costurile muchiilor sunt valori mici, dar nu
+doar egale cu $1$. Deoarece avem puține costuri, ne putem gândi la optimizări
+care să se folosească de acest lucru pentru a ajunge să avem algoritmi mai
+rapizi, fără a fi nevoie de Dijkstra sau vreun alt algoritm mai general.
 
 ### 0-1 BFS
 
-Un prim exemplu constă în grafurile (sau construcțiile care pot fi reprezentate ca și grafuri) în care costurile muchiilor sunt doar $0$ sau $1$. Deoarece avem costuri care nu sunt uniforme, nu vom putea folosi BFS la fel cum am proceda într-o problemă obișnuită, dar putem în schimb să profităm de faptul că sunt doar două costuri distincte. 
+Un prim exemplu constă în grafurile (sau construcțiile care pot fi reprezentate
+ca și grafuri) în care costurile muchiilor sunt doar $0$ sau $1$. Deoarece avem
+costuri care nu sunt uniforme, nu vom putea folosi BFS la fel cum am proceda
+într-o problemă obișnuită, dar putem în schimb să profităm de faptul că sunt
+doar două costuri distincte.
 
-În loc să avem o singură coadă în care adăugăm valori de fiecare dată când drumul devine unul mai optim decât drumul minim, vom avea două cozi (sau un deque) în care vom alterna cozile în care adăugăm nodurile, după cum urmează:
+În loc să avem o singură coadă în care adăugăm valori de fiecare dată când
+drumul devine unul mai optim decât drumul minim, vom avea două cozi (sau un
+deque) în care vom alterna cozile în care adăugăm nodurile, după cum urmează:
 
-* Dacă costul muchiei este $0$, vom adăuga în coada curentă (sau în vârful deque-ului, dacă folosim un deque)
-* Dacă costul muchiei este $1$, vom adăuga în coada următoare (sau la coada deque-ului, dacă folosim această structură de date)
+- Dacă costul muchiei este $0$, vom adăuga în coada curentă (sau în vârful
+  deque-ului, dacă folosim un deque)
+- Dacă costul muchiei este $1$, vom adăuga în coada următoare (sau la coada
+  deque-ului, dacă folosim această structură de date)
 
-!!! note "Observație" 
-    Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura noastră de date de cel mult $2$ ori, complexitatea devenind liniară, spre deosebire de o abordare standard folosind BFS, în care complexitatea pe cel mai rău caz poate fi polinomială (de cele mai multe ori, pătratică raportat la numărul de noduri)
+!!! note "Observație"
+    Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura
+    noastră de date de cel mult $2$ ori, complexitatea devenind liniară, spre
+    deosebire de o abordare standard folosind BFS, în care complexitatea pe cel
+    mai rău caz poate fi polinomială (de cele mai multe ori, pătratică raportat
+    la numărul de noduri)
 
-De asemenea, prin această strategie vom păstra o proprietate fundamentală a parcurgerii BFS când vine vorba de drumuri minime, și anume faptul că nodurile vor fi procesate în ordine crescătoare a costurilor față de origine. Această proprietate este una esențială și va fi păstrată indiferent de numărul de cozi pe care îl vom folosi, prin alternarea cozilor pe care le parcurgem la un moment dat, acestea fiind traversate secvențial. 
+De asemenea, prin această strategie vom păstra o proprietate fundamentală a
+parcurgerii BFS când vine vorba de drumuri minime, și anume faptul că nodurile
+vor fi procesate în ordine crescătoare a costurilor față de origine. Această
+proprietate este una esențială și va fi păstrată indiferent de numărul de cozi
+pe care îl vom folosi, prin alternarea cozilor pe care le parcurgem la un moment
+dat, acestea fiind traversate secvențial.
 
-Un exemplu de problemă în care avem această abordare este problema [padure](https://www.infoarena.ro/problema/padure), în care vom implementa acest algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia $100$ pe problema dată. 
+Un exemplu de problemă în care avem această abordare este problema
+[padure](https://www.infoarena.ro/problema/padure), în care vom implementa acest
+algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia $100$ pe
+problema dată.
 
 ```cpp
 #include <fstream>
@@ -415,15 +516,30 @@ int main() {
 
 ### 1-K BFS (Algoritmul lui Dial)
 
-Această abordare poate fi extinsă și dacă avem $k$ costuri distincte, folosind o strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a folosi $k$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim exact ca la 0-1 BFS. 
+Această abordare poate fi extinsă și dacă avem $k$ costuri distincte, folosind o
+strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a
+folosi $k$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim
+exact ca la 0-1 BFS.
 
-Vom începe prin a adăuga punctul inițial în coada $0$, iar pe parcurs, dacă luăm punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte. Acest lucru se poate generaliza și dacă avem $k$ costuri oarecare, putând astfel adăuga costurile în cozi în funcție de ultimul cost adăugat, exact cum procedăm la problema [Biom de la ONI 2023](https://kilonova.ro/problems/532/).
+Vom începe prin a adăuga punctul inițial în coada $0$, iar pe parcurs, dacă luăm
+punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat
+în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte.
+Acest lucru se poate generaliza și dacă avem $k$ costuri oarecare, putând astfel
+adăuga costurile în cozi în funcție de ultimul cost adăugat, exact cum procedăm
+la problema [Biom de la ONI 2023](https://kilonova.ro/problems/532/).
 
-La fel ca și la algoritmul precedent, vom parcurge cozile alternativ, păstrând ordinea costurilor intactă, pentru a permite algoritmului nostru să rămână liniar raportat la numărul de noduri. 
+La fel ca și la algoritmul precedent, vom parcurge cozile alternativ, păstrând
+ordinea costurilor intactă, pentru a permite algoritmului nostru să rămână
+liniar raportat la numărul de noduri.
 
-Pentru a înțelege mai bine modul de folosire a acestei variante generalizate, voi explica soluția problemei [John and Tractor](https://codeforces.com/gym/104328/problem/C), dată la finala FIICode 2023. 
+Pentru a înțelege mai bine modul de folosire a acestei variante generalizate,
+voi explica soluția problemei [John and
+Tractor](https://codeforces.com/gym/104328/problem/C), dată la finala FIICode
+2023.
 
-Aici vom avea trei costuri distincte, unul dintre ele putând fi ajustat de operația descrisă în enunț. Ne vom concentra pe partea în care vom rula algoritmul lui Dial, folosind $4$ cozi (costurile sunt $1, 2, 3$).
+Aici vom avea trei costuri distincte, unul dintre ele putând fi ajustat de
+operația descrisă în enunț. Ne vom concentra pe partea în care vom rula
+algoritmul lui Dial, folosind $4$ cozi (costurile sunt $1, 2, 3$).
 
 ```cpp
 #include <iostream>
@@ -529,41 +645,52 @@ int main() {
 
 ## Care este algoritmul mai bun?
 
-Fiecare algoritm are avantajele și dezavantajele lui, cunoașterea tuturor fiind necesară. Dijkstra este opțiunea optimă în cele mai multe cazuri, dar Floyd-Warshall și Bellman-Ford au ambele beneficiile lui. 0-1 BFS / 1-K BFS au și ele avantajele lor, în special când vine vorba de grafuri cu costuri mici, nefiind nici acest algoritm unul de neglijat. 
+Fiecare algoritm are avantajele și dezavantajele lui, cunoașterea tuturor fiind
+necesară. Dijkstra este opțiunea optimă în cele mai multe cazuri, dar
+Floyd-Warshall și Bellman-Ford au ambele beneficiile lui. 0-1 BFS / 1-K BFS au
+și ele avantajele lor, în special când vine vorba de grafuri cu costuri mici,
+nefiind nici acest algoritm unul de neglijat.
 
 ## Probleme suplimentare
 
-* [Simple Shortest Path](https://kilonova.ro/problems/2037/)
-* [Shortest Routes I](https://cses.fi/problemset/task/1671/)
-* [Shortest Routes II](https://cses.fi/problemset/task/1672/)
-* [catun infoarena](https://www.infoarena.ro/problema/catun)
-* [High Score](https://cses.fi/problemset/task/1673)
-* [Flight Discount](https://cses.fi/problemset/task/1195)
-* [OJI 2004 Lanterna](https://kilonova.ro/problems/54)
-* [FIICode John and Tractor](https://codeforces.com/gym/104328/problem/C)
-* [OJI 2017 Rover](https://kilonova.ro/problems/888)
-* [Baltic Olympiad 2011 Switch](https://cses.fi/100/list/)
-* [Lot 2018 Juniori Road](https://kilonova.ro/problems/1624/)
-* [USACO Gold Fine Dining](https://usaco.org/index.php?page=viewproblem2&cpid=861)
-* [ONI 2023 Biom](https://kilonova.ro/problems/532/)
-* [Cycle Finding](https://cses.fi/problemset/task/1197)
-* [Investigation](https://cses.fi/problemset/task/1202)
-* [Probleme cu drumul minim de pe Kilonova](https://kilonova.ro/tags/296)
-* [Probleme cu Dijkstra de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=72)
-* [Probleme cu Bellman-Ford de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=342)
-* [rfinv infoarena](https://www.infoarena.ro/problema/rfinv)
-* [Probleme cu Floyd-Warshall de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=92)
+- [Simple Shortest Path](https://kilonova.ro/problems/2037/)
+- [Shortest Routes I](https://cses.fi/problemset/task/1671/)
+- [Shortest Routes II](https://cses.fi/problemset/task/1672/)
+- [catun infoarena](https://www.infoarena.ro/problema/catun)
+- [High Score](https://cses.fi/problemset/task/1673)
+- [Flight Discount](https://cses.fi/problemset/task/1195)
+- [OJI 2004 Lanterna](https://kilonova.ro/problems/54)
+- [FIICode John and Tractor](https://codeforces.com/gym/104328/problem/C)
+- [OJI 2017 Rover](https://kilonova.ro/problems/888)
+- [Baltic Olympiad 2011 Switch](https://cses.fi/100/list/)
+- [Lot 2018 Juniori Road](https://kilonova.ro/problems/1624/)
+- [USACO Gold Fine
+  Dining](https://usaco.org/index.php?page=viewproblem2&cpid=861)
+- [ONI 2023 Biom](https://kilonova.ro/problems/532/)
+- [Cycle Finding](https://cses.fi/problemset/task/1197)
+- [Investigation](https://cses.fi/problemset/task/1202)
+- [Probleme cu drumul minim de pe Kilonova](https://kilonova.ro/tags/296)
+- [Probleme cu Dijkstra de pe
+  Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=72)
+- [Probleme cu Bellman-Ford de pe
+  Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=342)
+- [rfinv infoarena](https://www.infoarena.ro/problema/rfinv)
+- [Probleme cu Floyd-Warshall de pe
+  Infoarena](https://infoarena.ro/cauta-probleme?tag_id[]=92)
 
+## Lectură suplimentară
 
-## Lectură suplimentară 
-
-* [Shortest Paths with Non-Negative Edge Weights - USACO Guide](https://usaco.guide/gold/shortest-paths?lang=cpp)
-* [Shortest Paths with Negative Edge Weights - USACO Guide](https://usaco.guide/adv/sp-neg?lang=cpp)
-* [Dijkstra - CP-algorithms](https://cp-algorithms.com/graph/dijkstra.html)
-* [Aflarea drumului minim - CPPI](https://cppi.sync.ro/materia/aflarea_drumului_minim__arborele_drumurilor_minime.html)
-* [1-K BFS - Codeforces](https://codeforces.com/blog/entry/88408)
-* [0-1 BFS - CP-algorithms](https://cp-algorithms.com/graph/01_bfs.html)
-* [Roy Floyd - CPPI](https://cppi.sync.ro/materia/roy_floyd.html)
-* [Dijkstra - CPPI](https://cppi.sync.ro/materia/dijkstra.html)
-* [Rethink the Dijkstra algorithm -- Let's go deeper](https://codeforces.com/blog/entry/107810)
-* [Bellman-Ford - CPPI](https://cppi.sync.ro/materia/Bellman-Ford.html)
+- [Shortest Paths with Non-Negative Edge Weights - USACO
+  Guide](https://usaco.guide/gold/shortest-paths?lang=cpp)
+- [Shortest Paths with Negative Edge Weights - USACO
+  Guide](https://usaco.guide/adv/sp-neg?lang=cpp)
+- [Dijkstra - CP-algorithms](https://cp-algorithms.com/graph/dijkstra.html)
+- [Aflarea drumului minim -
+  CPPI](https://cppi.sync.ro/materia/aflarea_drumului_minim__arborele_drumurilor_minime.html)
+- [1-K BFS - Codeforces](https://codeforces.com/blog/entry/88408)
+- [0-1 BFS - CP-algorithms](https://cp-algorithms.com/graph/01_bfs.html)
+- [Roy Floyd - CPPI](https://cppi.sync.ro/materia/roy_floyd.html)
+- [Dijkstra - CPPI](https://cppi.sync.ro/materia/dijkstra.html)
+- [Rethink the Dijkstra algorithm -- Let's go
+  deeper](https://codeforces.com/blog/entry/107810)
+- [Bellman-Ford - CPPI](https://cppi.sync.ro/materia/Bellman-Ford.html)

@@ -9,19 +9,21 @@ tags:
 **Autor**: Traian Mihai Danciu
 
 !!! example "Cunoștințe necesare"
-    * [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
-    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
 
 ## Introducere
 
-Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le obținem pe parcurs. O simulare necesită $3$ lucruri:
+Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le
+obținem pe parcurs. O simulare necesită $3$ lucruri:
 
 1. O stare care poate fi descrisă în mod unic, prin niște variabile
 2. O măsură de timp, un tact (care, de obicei, este definit de problemă)
 3. O buclă cu o condiție de oprire
 
 O simulare arată astfel:
+
 ```cpp
 gata = 1;
 while (!gata) {
@@ -38,9 +40,12 @@ while (!gata) {
 
 ## Problema exemplu - [simulare](https://kilonova.ro/problems/3237)
 
-În această problemă, cum cere și titlul, trebuie doar să simulăm procesul descris. De fiecare dată când citim o direcție, avansăm în acel mod, creștem suma cu valoarea de la poziția obținută și o afișăm.
+În această problemă, cum cere și titlul, trebuie doar să simulăm procesul
+descris. De fiecare dată când citim o direcție, avansăm în acel mod, creștem
+suma cu valoarea de la poziția obținută și o afișăm.
 
-Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât și fără ele:
+Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât și fără
+ele:
 
 === "Fără funcții"
 
@@ -156,19 +161,28 @@ Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât �
 
 ## Optimizarea unei simulări
 
-La unele probleme, chiar dacă nu ne este cerut rezultatul pe parcursul simulării, nu se poate găsi o altă soluție decât simularea. Majoritatea problemelor de acest fel, în care simularea nu intră în timp, este necesară optimizarea simulării.
+La unele probleme, chiar dacă nu ne este cerut rezultatul pe parcursul
+simulării, nu se poate găsi o altă soluție decât simularea. Majoritatea
+problemelor de acest fel, în care simularea nu intră în timp, este necesară
+optimizarea simulării.
 
 ### Optimizarea prin găsirea unei perioade
 
-Uneori, stările unei simulări se repetă periodic. La anumite probleme, o optimizare cerută este alfarea acelei perioade și folosirea ei pentru aflarea tuturor elementelor
+Uneori, stările unei simulări se repetă periodic. La anumite probleme, o
+optimizare cerută este alfarea acelei perioade și folosirea ei pentru aflarea
+tuturor elementelor
 
 #### Problemă exemplu: [galbeni - OJI 2013 VI](https://kilonova.ro/problems/402)
 
 Fie $getNext(n) =$ numărul care urmează după $n$.
 
-Cum toate numerele sunt de la $1$ la $999$, rezultă, din [principiul cutiei](https://ro.wikipedia.org/wiki/Principiul_lui_Dirichlet), că, după maxim $1000$ de numere, vom găsi două egale. Secvența dintre ele se va repeta la nesfârșit.
+Cum toate numerele sunt de la $1$ la $999$, rezultă, din [principiul
+cutiei](https://ro.wikipedia.org/wiki/Principiul_lui_Dirichlet), că, după maxim
+$1000$ de numere, vom găsi două egale. Secvența dintre ele se va repeta la
+nesfârșit.
 
-Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclului. Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
+Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclului.
+Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
 
 Sursa de 100 de puncte:
 
@@ -244,27 +258,45 @@ Anumite probleme se generează într-un mod care poate fi stabilit de o formulă
 
 #### Problemă exemplu: [asort - Baraj 2016 Juniori](https://kilonova.ro/problems/1084)
 
-Soluția problemei se poate deduce studiind transformarea șirului până când acesta devine “A sortat”.
+Soluția problemei se poate deduce studiind transformarea șirului până când
+acesta devine “A sortat”.
 
 De exemplu, pentru $N=8$, aplicând de $N$ ori regula $A$ se obțin șirurile:
 ![](../images/simulation/asort-imagine.png)
 
-Observăm că prin aplicarea de un număr impar de ori a regulii, șirul rezultat are pe pozițiile impare numerele pare. Numere pare au apariție periodică în șirurile rezultate în ordinea $2, 4, 6, 8, 2, 4, 6, ...$ Analog, numerele impare apar pe poziții impare în ordinea $1, 3, 5, 7, 1, 3, 5, ...$ Dacă se aplică regula de un număr par de ori, pe pozițiile pare apar numerele pare.
+Observăm că prin aplicarea de un număr impar de ori a regulii, șirul rezultat
+are pe pozițiile impare numerele pare. Numere pare au apariție periodică în
+șirurile rezultate în ordinea $2, 4, 6, 8, 2, 4, 6, ...$ Analog, numerele impare
+apar pe poziții impare în ordinea $1, 3, 5, 7, 1, 3, 5, ...$ Dacă se aplică
+regula de un număr par de ori, pe pozițiile pare apar numerele pare.
 
 Studiind exemplul, observăm că:
 
-1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(R+K) \% N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numarul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$.
+1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția
+   $K$ este impară atunci numărul căutat este egal cu $(R+K) \% N$ sau $N$ dacă
+   acest rest este $0$. Dacă poziția $K$ este pară, atunci numarul căutat este
+   egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$.
 
-2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numărul căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este $0$.
+2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă
+   poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R) \% N$ sau
+   $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numărul
+   căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este $0$.
 
-3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat” este $poz=(N+T-R) \% N$. Altfel, $poz=(T+R) \% N$. În ambele situații, dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”, determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor, respectiv $poz+1$ (sau $1$) pentru succesor folosindu-ne de rezultatele de la $1$) și $2$) 
+3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat”
+   este $poz = (N+T-R) \% N$. Altfel, $poz = (T+R) \% N$. În ambele situații,
+   dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”,
+   determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor,
+   respectiv $poz+1$ (sau $1$) pentru succesor folosindu-ne de rezultatele
+   menționate mai sus.
 
-Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este echivalent cu $(x - 1) \% n + 1$, pentru $x > 0$. Demonstrație:
+Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este
+echivalent cu $(x - 1) \% n + 1$, pentru $x > 0$. Demonstrație:
 
 1. $x \% n = 0$, atunci $(x - 1) \% n + 1 = n - 1 + 1 = n$.
 2. $x \% n > 0$, atunci $(x - 1) \% n + 1 = x \% n - 1 + 1 = x \% n$
 
 Sursa de 100 de puncte:
+
 ```cpp
 #include <fstream>
 using namespace std;
@@ -318,11 +350,20 @@ int main() {
 
 ### Problema [robinson - ONI 2005 VI](https://kilonova.ro/problems/1221)
 
-Mai intai, vom construi matricea in modul descris. Dupa aceea, va trebuie sa simulam drumul din problema. Pentru a afla usor urmatoarea pozitie, vom folosi [vectori de directie](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie). După ce aflăm directța în care mergem, vom marca poziția ca vizitată (adică setăm valoarea din matrice la $VISITED$, o constantă care va fi egală cu $-1$ sau cu orice valoare care nu poate apărea in matrice).
+Mai intai, vom construi matricea in modul descris. Dupa aceea, va trebuie sa
+simulam drumul din problema. Pentru a afla usor urmatoarea pozitie, vom folosi
+[vectori de directie](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie).
+După ce aflăm directța în care mergem, vom marca poziția ca vizitată (adică
+setăm valoarea din matrice la $VISITED$, o constantă care va fi egală cu $-1$
+sau cu orice valoare care nu poate apărea in matrice).
 
-De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom [borda matricea](https://edu.roalgo.ro/mediu/lee/#evitarea-accesarii-unor-patrate-din-afara-matricii) cu valoarea $VISITED$.
+De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom
+[borda
+matricea](https://edu.roalgo.ro/mediu/lee/#evitarea-accesarii-unor-patrate-din-afara-matricii)
+cu valoarea $VISITED$.
 
 Sursa de 100 de puncte:
+
 ```cpp
 #include <fstream>
 using namespace std;
@@ -384,7 +425,10 @@ int main() {
 
 ### Problema [furnica - OJI 2007 VI](https://kilonova.ro/problems/763)
 
-În această problemă este destul de direct ce trebuie să facem. Vom simula procesul descris, ținând o matrice $fr_{i, j}$ care va reprezenta de câte ori am trecut printr-o anumită poziție $(i, j)$. De asemenea, și în această problemă vom folosi vectori de direcție pentru a afla ușor următoarea poziție.
+În această problemă este destul de direct ce trebuie să facem. Vom simula
+procesul descris, ținând o matrice $fr_{i, j}$ care va reprezenta de câte ori am
+trecut printr-o anumită poziție $(i, j)$. De asemenea, și în această problemă
+vom folosi vectori de direcție pentru a afla ușor următoarea poziție.
 
 ```cpp
 #include <fstream>
@@ -446,31 +490,45 @@ int main() {
 
 ## Concluzii
 
-În problemele de simulare, de obicei, este destul de ușor să îți dai seama ce trebuie să faci, dar implementarea, uneori, nu este așa de ușoară precum pare. Pentru ca implementările a acestor probleme să vi se pară mai ușoare, recomandăm să rezolvați cât mai multe probleme de implementare/simulare, eventual și unele la care este de scris mai mult.
+În problemele de simulare, de obicei, este destul de ușor să îți dai seama ce
+trebuie să faci, dar implementarea, uneori, nu este așa de ușoară precum pare.
+Pentru ca implementările a acestor probleme să vi se pară mai ușoare, recomandăm
+să rezolvați cât mai multe probleme de implementare/simulare, eventual și unele
+la care este de scris mai mult.
 
-Problemele de optimizare sunt, în mare parte, din categoriile prezentate. Dar, la unele probleme, sunt necesare alte observații care duc la o optimizare mai puțin obișnuită. De aceea, trebuie să fim mereu foarte atenți la detalii și să facem toate observațiile necesare.
+Problemele de optimizare sunt, în mare parte, din categoriile prezentate. Dar,
+la unele probleme, sunt necesare alte observații care duc la o optimizare mai
+puțin obișnuită. De aceea, trebuie să fim mereu foarte atenți la detalii și să
+facem toate observațiile necesare.
 
 ## Probleme suplimentare
 
-* [joc - ONI 2011 VI](https://kilonova.ro/problems/1363)
-* [furnica - OJI 2007 VI](https://kilonova.ro/problems/763)
-* [oua - ONI 2007 VI](https://kilonova.ro/problems/1268)
-* [circular - OJI 2022 X](https://kilonova.ro/problems/284)
-* [gcl - Baraj 2018 Juniori](https://kilonova.ro/problems/1091) (O problemă la care este mult de scris, dar care vă ajută să vă organizați codul mai bine și vă îmbunătățește abilitățile de implementare)
-* [medalion - ONI 2012 VI](https://kilonova.ro/problems/1387) (Trebuie să simulați cum se construiește o spirală)
-* [tinta - ONI 2014 VI](https://kilonova.ro/problems/1435)
-* [robinhood - ONI 2024 V](https://kilonova.ro/problems/2637)
-* [numere - OJI 2008 V](https://kilonova.ro/problems/772) (necesită cunoștința perioadei [Pisano](https://en.wikipedia.org/wiki/Pisano_period))
-* [cartofi - OJI 2021 VIII](https://kilonova.ro/problems/936)
-* [seif - Lot 2022 Juniori](https://kilonova.ro/problems/1818)
-* [loopover - Lot 2022 Juniori](https://kilonova.ro/problems/1823)
-* [Probleme de forță brută de pe kilonova](https://kilonova.ro/tags/323)
-* [Probleme de periodicitate de pe kilonova](https://kilonova.ro/tags/502)
-* [Alte probleme de implementare de pe kilonova](https://kilonova.ro/tags/290)
+- [joc - ONI 2011 VI](https://kilonova.ro/problems/1363)
+- [furnica - OJI 2007 VI](https://kilonova.ro/problems/763)
+- [oua - ONI 2007 VI](https://kilonova.ro/problems/1268)
+- [circular - OJI 2022 X](https://kilonova.ro/problems/284)
+- [gcl - Baraj 2018 Juniori](https://kilonova.ro/problems/1091) (O problemă la
+  care este mult de scris, dar care vă ajută să vă organizați codul mai bine și
+  vă îmbunătățește abilitățile de implementare)
+- [medalion - ONI 2012 VI](https://kilonova.ro/problems/1387) (Trebuie să
+  simulați cum se construiește o spirală)
+- [tinta - ONI 2014 VI](https://kilonova.ro/problems/1435)
+- [robinhood - ONI 2024 V](https://kilonova.ro/problems/2637)
+- [numere - OJI 2008 V](https://kilonova.ro/problems/772) (necesită cunoștința
+  perioadei [Pisano](https://en.wikipedia.org/wiki/Pisano_period))
+- [cartofi - OJI 2021 VIII](https://kilonova.ro/problems/936)
+- [seif - Lot 2022 Juniori](https://kilonova.ro/problems/1818)
+- [loopover - Lot 2022 Juniori](https://kilonova.ro/problems/1823)
+- [Probleme de forță brută de pe kilonova](https://kilonova.ro/tags/323)
+- [Probleme de periodicitate de pe kilonova](https://kilonova.ro/tags/502)
+- [Alte probleme de implementare de pe kilonova](https://kilonova.ro/tags/290)
 
 ## Resurse suplimentare
 
-* [Simulation - USACO Guide](https://usaco.guide/bronze/simulation)
-* [Verificarea unor proprietati - pbinfo](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
-* [Simulare - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_14_-_20_dec_2018#Simulare)
-* [Simulare, partea 2 - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_15_-_17_ian_2019)
+- [Simulation - USACO Guide](https://usaco.guide/bronze/simulation)
+- [Verificarea unor proprietati -
+  pbinfo](https://www.pbinfo.ro/articole/5586/verificarea-unor-proprietati)
+- [Simulare -
+  algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_14_-_20_dec_2018#Simulare)
+- [Simulare, partea 2 -
+  algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_15_-_17_ian_2019)

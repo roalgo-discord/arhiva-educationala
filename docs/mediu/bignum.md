@@ -9,8 +9,8 @@ tags:
 **Autori**: Susan, Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    * [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
-    * [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
 
 Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza $10$, format
 din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu
@@ -65,7 +65,7 @@ componente și le stocăm într-un vector.
 
 !!! example "Exemplu"
     De exemplu, numărul $82534$ poate fi stocat într-un vector $v$ astfel:
-    
+
     $$
     \begin{array}{r|cccccccc}
     i & 0 & 1 & 2 & 3 & 4\\
@@ -141,7 +141,7 @@ primei poziții a vectorului, $v[0]$, pentru a stoca lungimea numărului. Aceast
 face mai ușoară manipularea lungimii și permite modificări mai ușoare ale
 numărului, cum ar fi adăugarea sau eliminarea cifrelor.
 
-### Reprezentarea inversă 
+### Reprezentarea inversă
 
 Fie un număr natural $N $ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}
 $ în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune
@@ -150,7 +150,7 @@ $n $ este definită astfel:
 $$
 \begin{gather*}
 v[0] = n\\
-v[i + 1] = a_{n-i},\,\forall\ 0 \leq i < n 
+v[i + 1] = a_{n-i},\,\forall\ 0 \leq i < n
 \end{gather*}
 $$
 
@@ -159,7 +159,7 @@ este numărul de cifre ale numărului natural $N$.
 
 !!! example "Exemplu"
     De exemplu, numărul $82534$ va fi stocat astfel:
-    
+
     $$
     \begin{array}{r|ccccccccc}
     i & \boldsymbol{0} & 1 & 2 & 3 & 4 & 5\\
@@ -545,7 +545,7 @@ for (int i = a[0]; i >= 1; i--) {
 ## Optimizări ce se pot face la implementare
 
 Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca
-$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$ și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre. 
+$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$ și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre.
 
 Această optimizare poate fi utilă mai ales în situația în care foarte multe
 calcule sunt necesare sau limita de timp este strânsă. Un astfel de exemplu
@@ -556,21 +556,20 @@ răspunsul modulo un număr prim).
 De asemenea, așa cum veți observa mai târziu, există diverse metode de a
 optimiza operațiile de înmulțire, folosind diverși algoritmi precum algoritmul lui Karatsuba sau FFT, dar aceștia nu fac obiectul discuției noastre din acest articol.
 
-
 ## Probleme suplimentare
 
-* [pbinfo sumaXXL](https://www.pbinfo.ro/probleme/2393/sumaxxl)
-* [pbinfo produsXL](https://www.pbinfo.ro/probleme/2409/produsxl)
-* [infoarena perm3](https://www.infoarena.ro/problema/perm3)
-* [ONI 2016 cod](https://kilonova.ro/problems/1481/)
-* [ONI 2023 Baraj Juniori Fuziune](https://kilonova.ro/problems/554) - cerinta 2
-* [Lot Juniori 2015 Pastile](https://kilonova.ro/problems/1663)
-* [infoarena coprime](https://www.infoarena.ro/problema/coprime)
-* [OJI 2010 numar](https://kilonova.ro/problems/794)
-* [Probleme cu numere mari de pe Kilonova](https://kilonova.ro/tags/379)
+- [pbinfo sumaXXL](https://www.pbinfo.ro/probleme/2393/sumaxxl)
+- [pbinfo produsXL](https://www.pbinfo.ro/probleme/2409/produsxl)
+- [infoarena perm3](https://www.infoarena.ro/problema/perm3)
+- [ONI 2016 cod](https://kilonova.ro/problems/1481/)
+- [ONI 2023 Baraj Juniori Fuziune](https://kilonova.ro/problems/554) - cerinta 2
+- [Lot Juniori 2015 Pastile](https://kilonova.ro/problems/1663)
+- [infoarena coprime](https://www.infoarena.ro/problema/coprime)
+- [OJI 2010 numar](https://kilonova.ro/problems/794)
+- [Probleme cu numere mari de pe Kilonova](https://kilonova.ro/tags/379)
 
 ## Resurse suplimentare
 
-* [Clasă de numere mari](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/bigints.cpp)
-* [Lucrul cu numere mari - infoarena](https://infoarena.ro/lucrul-cu-nr-mari)
-* [Numere mari - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_numere_mari.html)
+- [Clasă de numere mari](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/bigints.cpp)
+- [Lucrul cu numere mari - infoarena](https://infoarena.ro/lucrul-cu-nr-mari)
+- [Numere mari - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_numere_mari.html)
