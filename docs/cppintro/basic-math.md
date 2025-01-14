@@ -22,10 +22,11 @@ matematic solid, care să permită aprofundarea unor capitole specifice.
 
 !!! note "Observație"
 
-    Totuși, dacă ești deja foarte bun la matematică sau chiar olimpic, asta va face
-    învățarea multor capitole mai ușoară, deoarece foarte multe noțiuni se corelează
-    cu cele de la matematică. În esență, programarea se reduce în multe situații la
-    limbaj matematic transpus în cod citibil de mașinile de calcul.
+    Totuși, dacă ești deja foarte bun la matematică sau chiar olimpic, asta va
+    face învățarea multor capitole mai ușoară, deoarece foarte multe noțiuni se
+    corelează cu cele de la matematică. În esență, programarea se reduce în
+    multe situații la limbaj matematic transpus în cod citibil de mașinile de
+    calcul.
 
 De exemplu, de-a lungul studiului algoritmicii, pe lângă cunoștințele matematice
 de bază care vor fi subiectul acestui articol, veți avea de-a face cu capitole
@@ -88,17 +89,17 @@ using namespace std;
 int main() {
     int a, b;
     cin >> a >> b;
-    
+
     int sum = a + b;
-    
+
     int diff = a; // puteam scrie si a - b
     diff -= b; // notatie prefixata
-    
+
     // similar, putem scrie si a /= b, a += b, a *= b
     int prod = a * b;
-    
+
     int ratio = a / b;
-    
+
     cout << sum << " " << diff << " " << prod << " " << ratio << '\n';
     return 0;
 }
@@ -107,7 +108,6 @@ int main() {
 ### Soluții pentru evitarea overflow-ului
 
 !!! note "Observație"
-
     Trebuie avut grijă la faptul că dacă rezultatul operației depășește valoarea
     maximă sau minimă a tipului de date în care acesta este păstrat, vom avea
     overflow-uri, care trebuie evitate cu orice preț.
@@ -136,15 +136,15 @@ găsiți în codul de mai jos.
 using namespace std;
 
 int main() {
-    
+
     int n;
     unsigned long long huge = 18446744073709551615; // cel mai mare numar de tip unsigned long long
-    
+
     cin >> n;
     for (int i = 0; i < n; i++) {
         unsigned long long nr1, nr2;
         cin >> nr1 >> nr2;
-        
+
         if (nr2 && nr1 > huge / nr2) { // evitam impartirea la zero
             cout << "Overflow!" << '\n';
         }
@@ -185,14 +185,15 @@ examenele de bacalaureat și admitere.
     }
     ```
 
-    Dacă ați răspuns $6$, urmat de $14$, urmat de $-4$, urmat de $4 \ 8$, felicitări!
+    Dacă ați răspuns $6$, urmat de $14$, urmat de $-4$, urmat de $4 \ 8$,
+    felicitări!
 
-    Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul rând,
-    deoarece operatorul de decrementare este postfixat, instrucțiunea `a--` va
-    produce efect abia după afișare, $a$ devenind $5$ ulterior. Apoi, deoarece
-    operatorul de incrementare este prefixat, instrucțiunea `b++` va produce efect
-    înainte de afișare, $b$ devenind $9$, deci suma devine $14$. Similar, $a$ și $b$
-    devin $4$ și $8$, deci diferența este $4$.  
+    Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul
+    rând, deoarece operatorul de decrementare este postfixat, instrucțiunea
+    `a--` va produce efect abia după afișare, $a$ devenind $5$ ulterior. Apoi,
+    deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va
+    produce efect înainte de afișare, $b$ devenind $9$, deci suma devine
+    $14$. Similar, $a$ și $b$ devin $4$ și $8$, deci diferența este $4$.
 
 ### Operații aritmetice pe numere reale
 
@@ -207,7 +208,7 @@ cout << 3 * 2.5 << '\n'; // 7.5
 cout << 2.5 / 2 << '\n'; // 1.25
 cout << 2 / 2.5 << '\n'; // 0.8
 cout << 6.3/20+24 << '\n'; // 24.315
-int x = 6.3/20+24; 
+int x = 6.3/20+24;
 cout << x << '\n'; // 24
 ```
 
@@ -299,10 +300,10 @@ soluțiilor, după cum urmează.
 pentru a simplifica calculele. De obicei, când vrem să facem asta, scopul este
 acela de a aduce termenii ce se pot păstra în același mod împreună.
 
-Dacă vrem să aflăm câte perechi de forma $(i, j)$ există cu proprietatea că $x_i +
-x_j = y_i + y_j$, este mai simplu să aflăm câte perechi există cu proprietatea
+Dacă vrem să aflăm câte perechi de forma $(i, j)$ există cu proprietatea că $x_i
++ x_j = y_i + y_j$, este mai simplu să aflăm câte perechi există cu proprietatea
 că $x_i - y_i = y_j - x_j = -(x_j - y_j)$, lucru ce se poate afla mult mai ușor
-folosind vectori de frecvență.  
+folosind vectori de frecvență.
 
 ### Lucrul cu intervale
 
