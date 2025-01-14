@@ -324,6 +324,7 @@ int main() {
 
 - [Infoarena 3secv](https://infoarena.ro/problema/3secv)
 - [JOI JJOOII 2](https://oj.uz/problem/view/JOI20_ho_t2)
+- [CSES Apartments](https://cses.fi/problemset/task/1084/)
 - [pbinfo maru](https://www.pbinfo.ro/probleme/2943/maru)
 - [NOI Singapore Global Warming](https://oj.uz/problem/view/NOI13_gw)
 - [Baraj Seniori 2023 sirbun](https://kilonova.ro/problems/556)

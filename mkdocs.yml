@@ -184,6 +184,7 @@ nav:
           - Sortare și căutare:
                 - Two pointers: mediu/two-pointers.md
                 - Sliding window: mediu/sliding-window.md
+                - Aplicații ale STL în problemele de căutare și sortare: mediu/stl-sorting-searching.md
                 # - Algoritmi de sortare: mediu/sorting-algorithms.md
           - Programare dinamică:
                 - Problema rucsacului: mediu/knapsack.md

@@ -402,6 +402,7 @@ unor algoritmi mai complicați.
 - [cb2 pbinfo](https://www.pbinfo.ro/probleme/2443/cb2)
 - [Problemele din pasul 1 de la EDU](https://codeforces.com/edu/course/2/lesson/6/1/practice)
 - [nrtri infoarena](https://www.infoarena.ro/problema/nrtri)
+- [Codeforces Cellular Network](https://codeforces.com/contest/702/problem/C)
 - [USACO Bronze Social Distancing I](https://usaco.org/index.php?page=viewproblem2&cpid=1035)
 - [OJI 2016 pic](https://kilonova.ro/problems/865)
 - [ONI 2016 dif2](https://kilonova.ro/problems/1475)
