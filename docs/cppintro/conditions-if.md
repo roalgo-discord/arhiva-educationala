@@ -6,7 +6,7 @@ tags:
     - structura alternativa
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
@@ -35,9 +35,9 @@ Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni.
 
 ```cpp
 if (n == 5) {
-    // instructiune
+    // Instrucțiune
 } else {
-    // alta instructiune
+    // Altă instrucțiune
 }
 ```
 
@@ -51,14 +51,14 @@ instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de
 condiții:
 
 ```cpp
-if(x) {
-    // dacă x este adevărat
+if (x) {
+    // Dacă x este adevărat
     // ...
-} else if(y) {
-    // dacă x este fals, dar y este adevărat
+} else if (y) {
+    // Dacă x este fals, dar y este adevărat
     // ...
 } else {
-    // dacă și x, și y sunt false
+    // Dacă și x, și y sunt false
     // ...
 }
 ```
@@ -97,33 +97,34 @@ operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
 
 ```cpp
 int x = 10;
-cout << !(x == 10); // 0: x == 10 este adevărat (1), 1 negat este 0
-cout << !x == 10; // tot 0, dar se efectuează mai întâi !x, adică !10, cu rezultat 0, apoi 0 == 10, cu rezultat fals, adică 0
-cout << !(x < 5); // 1: x < 5 este fals, adică 0, 0 negat este 1
+cout << !(x == 10);  // 0: x == 10 este adevărat (1), 1 negat este 0
+cout << !x == 10;    // tot 0, dar se efectuează mai întâi !x, adică !10, cu
+                     // rezultat 0, apoi 0 == 10, cu rezultat fals, adică 0
+cout << !(x < 5);    // 1: x < 5 este fals, adică 0, 0 negat este 1
 ```
 
 - Conjuncția - notată cu `&&`, reprezintă compunerea a două sau mai multe
-  expresii prin operatorul ȘI, cu alte cuvinte, pentru ca o expresie compusă să
+  expresii prin operatorul ȘI. Cu alte cuvinte, pentru ca o expresie compusă să
   fie adevărată, toți membrii ei trebuie să fie adevărați, altfel, întreaga
   expresie este falsă.
 
 ```cpp
-cout << (1 < 2 && 2 == 1 + 1); // 1; ADEVĂRAT ȘI ADEVĂRAT este ADEVĂRAT
-cout << (1 < 2 && 2 != 1 + 1); // 0; ADEVĂRAT ȘI FALS este FALS
-cout << (1 == 2 && 2 == 1 + 1); // 0; FALS ȘI ADEVĂRAT este FALS
-cout << (1 == 2 && 2 != 1 + 1); // 0; FALS ȘI FALS este FALS
+cout << (1 < 2 && 2 == 1 + 1);   // 1; ADEVĂRAT ȘI ADEVĂRAT este ADEVĂRAT
+cout << (1 < 2 && 2 != 1 + 1);   // 0; ADEVĂRAT ȘI FALS este FALS
+cout << (1 == 2 && 2 == 1 + 1);  // 0; FALS ȘI ADEVĂRAT este FALS
+cout << (1 == 2 && 2 != 1 + 1);  // 0; FALS ȘI FALS este FALS
 ```
 
 - Disjuncția - notată cu `||`, reprezintă compunerea a două sau mai multe
-  expresii prin operatorul SAU, cu alte cuvinte, pentru ca o expresie compusă să
+  expresii prin operatorul SAU. Cu alte cuvinte, pentru ca o expresie compusă să
   fie adevărată, cel puțin unul dintre membrii ei trebuie să fie adevărați,
   altfel, întreaga expresie este falsă.
 
 ```cpp
-cout << (1 < 2 || 2 == 1 + 1); // 1; ADEVĂRAT SAU ADEVĂRAT este ADEVĂRAT
-cout << (1 < 2 || 2 != 1 + 1); // 1; ADEVĂRAT SAU FALS este ADEVĂRAT
-cout << (1 == 2 || 2 == 1 + 1); // 1; FALS SAU ADEVĂRAT este ADEVĂRAT
-cout << (1 == 2 || 2 != 1 + 1); // 0; FALS SAU FALS este FALS
+cout << (1 < 2 || 2 == 1 + 1);   // 1; ADEVĂRAT SAU ADEVĂRAT este ADEVĂRAT
+cout << (1 < 2 || 2 != 1 + 1);   // 1; ADEVĂRAT SAU FALS este ADEVĂRAT
+cout << (1 == 2 || 2 == 1 + 1);  // 1; FALS SAU ADEVĂRAT este ADEVĂRAT
+cout << (1 == 2 || 2 != 1 + 1);  // 0; FALS SAU FALS este FALS
 ```
 
 ## Exemplu
@@ -142,19 +143,20 @@ switch-case.
     int main() {
         int s, c, n;
         cin >> s >> c >> n;
-        
-        if (s % n == 0 && s % c == 0) { // daca ambele conditii sunt indeplinite
+
+        if (s % n == 0 && s % c == 0) {
+            // Dacă ambele condiții sunt îndeplinite
             cout << "CN" << '\n';
-        }
-        else {
-            if (s % n == 0) { // daca prima conditie este indeplinita
+        } else {
+            if (s % n == 0) {
+                // Dacă prima condiție este îndeplinită
                 cout << "N" << '\n';
-            }
-            else {
-                if (s % c == 0) { // daca cea de-a doua conditie este indeplinita
+            } else {
+                if (s % c == 0) {
+                    // Dacă a doua condiție este îndeplinită
                     cout << "C" << '\n';
-                }
-                else { // daca nicio conditie nu este indeplinita
+                } else {
+                    // Dacă nicio condiție nu este îndeplinită
                     cout << "nimic" << '\n';
                 }
             }
@@ -172,23 +174,39 @@ switch-case.
     int main() {
         int s, c, n;
         cin >> s >> c >> n;
-        
-        // Combinam conditia intr-o singura valoare
+
+        // Combinăm condiția într-o singură valoare
         int condition = (s % n == 0) * 1 + (s % c == 0) * 2;
 
+        /*-----------------------------------*\
+        | s % n == 0 | s % c == 0 | condition |
+        |------------|------------|-----------|
+        | 0          | 0          | 0         |
+        | 1          | 0          | 1         |
+        | 0          | 1          | 2         |
+        | 1          | 1          | 3         |
+        \*-----------------------------------*/
+
         switch (condition) {
-            case 3: // daca ambele conditii sunt indeplinite (s % n == 0 && s % c == 0)
-                cout << "CN" << '\n';
-                break;
-            case 1: // daca prima conditie este indeplinita (s % n == 0)
-                cout << "N" << '\n';
-                break;
-            case 2: // daca cea de-a doua conditie este indeplinita (s % c == 0)
-                cout << "C" << '\n';
-                break;
-            default: // daca nicio conditie nu este indeplinita
-                cout << "nimic" << '\n';
-                break;
+        case 3:
+            // Dacă ambele condiții sunt îndeplinite
+            // (s % n == 0 && s % c == 0)
+            cout << "CN" << '\n';
+            break;
+        case 1:
+            // Dacă prima condiție este îndeplinită
+            // (s % n == 0)
+            cout << "N" << '\n';
+            break;
+        case 2:
+            // Dacă a doua condiție este îndeplinită
+            // (s % c == 0)
+            cout << "C" << '\n';
+            break;
+        default:
+            // Dacă nicio condiție este îndeplinită
+            cout << "nimic" << '\n';
+            break;
         }
 
         return 0;
