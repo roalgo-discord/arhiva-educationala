@@ -58,8 +58,8 @@ matematice, se recomandă folosirea parantezelor pentru a simplifica calculele.
 va fi mereu numărul fără virgulă.
 
 ```cpp
-cout << 8 + 2 << '\n'; // 10
-cout << 4 * 3 << '\n'; // 12
+cout << 8  + 2 << '\n'; // 10
+cout << 4  * 3 << '\n'; // 12
 cout << 12 - 5 << '\n'; // 7
 cout << 16 / 4 << '\n'; // 4
 cout << 15 / 4 << '\n'; // 3
@@ -68,8 +68,8 @@ cout << -8 / 3 << '\n'; // -2
 ```
 
 ```cpp
-cout << 8 + 2 << '\n'; // 10
-cout << 4 * 3 << '\n'; // 12
+cout << 8  + 2 << '\n'; // 10
+cout << 4  * 3 << '\n'; // 12
 cout << 12 - 5 << '\n'; // 7
 cout << 16 / 4 << '\n'; // 4
 cout << 15 / 4 << '\n'; // 3
@@ -92,12 +92,18 @@ int main() {
 
     int sum = a + b;
 
-    int diff = a; // puteam scrie si a - b
-    diff -= b; // notatie prefixata
+    int diff = a;
+    diff -= b;
 
-    // similar, putem scrie si a /= b, a += b, a *= b
+    // Pentru ce e mai sus, puteam scrie și:
+    //
+    //     int diff = a - b;
+    //
+    // diff -= b înseamnă diff = diff - b;
+    //
+    // Similar, putem scrie si a /= b, a += b, a *= b
+
     int prod = a * b;
-
     int ratio = a / b;
 
     cout << sum << " " << diff << " " << prod << " " << ratio << '\n';
@@ -117,10 +123,15 @@ pentru păstrarea termenilor din operații, fie folosirea operatorului 1LL, fie
 folosirea (long long) pentru convertirea datelor.
 
 ```cpp
-cout << 594943 * 204232 << '\n'; // overflow
-cout << 1LL * 594943 * 204232 << '\n'; // ok
-cout << (long long) 594943 * 204232 << '\n'; // ok
-cout << 594943 * (long long) 204232 << '\n'; // ok
+cout << 594943 * 204232 << '\n';             // overflow
+
+cout << 1LL * 594943 * 204232 << '\n';       // ok
+
+cout << (long long)594943 * 204232 << '\n';  // ok
+cout << 594943LL * 204232 << '\n';           // echivalent
+
+cout << 594943 * (long long)204232 << '\n';  // ok
+cout << 594943 * 204232LL << '\n';           // echivalent
 ```
 
 O altă soluție pentru evitarea overflowurilor în cazul în care trebuie să
@@ -136,22 +147,24 @@ găsiți în codul de mai jos.
 using namespace std;
 
 int main() {
+    // Cel mai mare număr de tip unsigned long long
+    unsigned long long huge = 18446744073709551615;
 
     int n;
-    unsigned long long huge = 18446744073709551615; // cel mai mare numar de tip unsigned long long
-
     cin >> n;
+    
     for (int i = 0; i < n; i++) {
         unsigned long long nr1, nr2;
         cin >> nr1 >> nr2;
 
-        if (nr2 && nr1 > huge / nr2) { // evitam impartirea la zero
+        // Evităm împărțirea la zero
+        if (nr2 && nr1 > huge / nr2) {
             cout << "Overflow!" << '\n';
-        }
-        else {
+        } else {
             cout << nr1 * nr2 << '\n';
         }
     }
+    
     return 0;
 }
 ```
@@ -203,13 +216,14 @@ expresia este memorată într-un tip de date întreg, atunci rezultatul va răm�
 întreg.
 
 ```cpp
-cout << 2.5 + 7 << '\n'; // 9.5
-cout << 3 * 2.5 << '\n'; // 7.5
-cout << 2.5 / 2 << '\n'; // 1.25
-cout << 2 / 2.5 << '\n'; // 0.8
-cout << 6.3/20+24 << '\n'; // 24.315
-int x = 6.3/20+24;
-cout << x << '\n'; // 24
+cout << 2.5 + 7 << '\n';        // 9.5
+cout << 3 * 2.5 << '\n';        // 7.5
+cout << 2.5 / 2 << '\n';        // 1.25
+cout << 2 / 2.5 << '\n';        // 0.8
+cout << 6.3 / 20 + 24 << '\n';  // 24.315
+
+int x = 6.3 / 20 + 24;
+cout << x << '\n';  // 24
 ```
 
 ### Ridicarea la putere
