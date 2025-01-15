@@ -78,18 +78,20 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
-    int v[n+1]; // vector cu n elemente
+
+    // Vector cu n elemente
+    int v[n + 1];
+
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     for (int i = 1; i <= n; i++) {
         if (v[i] % v[n] == 0) {
             cout << v[i] << " ";
         }
     }
-    
+
     return 0;
 }
 ```
@@ -115,7 +117,7 @@ for (int i = n; i >= k; i--) {
 
 v[k] = x;
 
-n++; // (1)
+n++;  // (1)
 ```
 
 1. Tabloul va avea o valoare în plus, drept pentru care trebuie să creștem în
@@ -262,7 +264,7 @@ sau dreapta.
 void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
     k = k % n;
 
-    // Dacă k = 0 sau multiplu de n, nu facem nimic.
+    // Dacă k = 0 (k este multiplu de n), nu facem nimic.
     if (k == 0) {
         return;
     }
@@ -284,7 +286,7 @@ void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
     
         // Păstrăm primele k elemente
         for (int i = 0; i < k; ++i) {
-            temp[i] = arr[i];  // Păstrăm primele k elemente
+            temp[i] = arr[i];
         }
     
         // Mutăm elementele spre stânga
