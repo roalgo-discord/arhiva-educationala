@@ -50,7 +50,8 @@ iar pentru fiecare $i$, vom actualiza datele din map
 Astfel, complexitatea algoritmului va deveni $O(n \log n)$.
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
 using namespace std;
  
 int main() {
@@ -152,7 +153,9 @@ o structură de tip set, care ne permite inserarea
 jos găsiți o soluție care obține punctajul maxim.
 
 ```cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <set>
+#include <algorithm>
 using namespace std;
 ifstream in("ramen.in");
 ofstream out("ramen.out");

@@ -7,6 +7,9 @@ tags:
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
+!!! example "Cunoștințe necesare"
+    - [Informații despre olimpiada de informatică](https://edu.roalgo.ro/olimpiada/olympiad-info/)
+
 ## Introducere
 
 O întrebare pe care foarte mulți oameni o pun în fiecare an constă în modul cel
