@@ -60,7 +60,10 @@ vă odihniți cum trebuie înainte de concurs.
 Recomandarea strictă este să dormiți măcar 7h30m înainte
 de olimpiadă, iar dacă programul de somn nu este compatibil
 cu cel specific concursurilor (de regulă, probele încep la ora $9$ sau $10$),
-o perioadă de adaptare este mai mult decât necesară.
+o perioadă de adaptare este mai mult decât necesară. Un alt lucru important
+este să evitați lucratul de probleme în ziua de dinainte de proba de concurs,
+pentru a fi complet relaxați și detașați de tot ce înseamnă algoritmică
+atunci când intrați în sala de concurs.
 
 Chiar dacă pe termen scurt, există și alte soluții care pot ajuta
 cu rezolvarea acestei probleme, cea mai sănătoasă opțiune pe termen lung
