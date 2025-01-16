@@ -4,9 +4,10 @@ tags:
     - implementare
     - optimizare
     - siruri de caractere
+toc_depth: 3
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu, Denisa-Maria Ursu
+**Autori**: Ștefan-Cosmin Dăscălescu, Denisa-Maria Ursu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
@@ -16,33 +17,35 @@ tags:
 ## Introducere
 
 Un șir de caractere este un tablou care stochează caractere. În limbajul C++,
-putem stoca aceste șiruri în două moduri, fie folosind un tablou static, la fel
-ca în limbajul C, fie folosind tipul de date string. În acest articol, vom
-detalia ambele opțiuni, împreună cu avantajele și dezavantajele lor.
+putem stoca aceste șiruri în două moduri: fie folosind un tablou static, similar
+limbajului C, fie folosind tipul de date `#!cpp std::string`. În acest articol,
+vom analiza ambele opțiuni, incluzând avantajele și dezavantajele lor.
 
-## Tipul char și tabelul ASCII
+## Tipul `#!cpp char` și tabelul ASCII
 
-Așa cum ați văzut când am prezentat [tipurile de
-date](https://edu.roalgo.ro/cppintro/data-types/), limbajul C++ are și tipul de
-date char, care este folosit pentru a stoca caractere. Chiar dacă valorile care
-sunt acoperite de tipul char sunt în intervalul $[-128, 127]$, în general,
-caracterele care apar în probleme sunt acoperite de valori pozitive, mai precis
-intervalul $[32, 127]$.
+Așa cum ați văzut când am discutat despre [tipurile de
+date](https://edu.roalgo.ro/cppintro/data-types/), limbajul C++ dispune de tipul
+de date `#!cpp char`, utilizat pentru a stoca caractere. Deși valorile stocate
+într-un `#!cpp char` sunt în intervalul [-128, 127] (pentru reprezentări cu
+semn), cele mai utilizate caractere sunt cele afișabile, care aparțin
+intervalului [32, 127].
 
 !!! note "Codificarea caracterelor"
 
-    Standardul care a asignat valori caracterelor se numește ASCII (American
-    Standard Code for Information Interchange). Caracterele în intervalul $[0, 31]$
-    nu sunt afișabile, fiind instrucțiuni de sistem.
+    Standardul care atribuie valori caracterelor se numește ASCII (American 
+    Standard Code for Information Interchange). Caracterele din intervalul 
+    [0, 31] nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
 
-Printre cele mai importante coduri sunt $32$ (spațiu), codurile din intervalul
-$[48, 57]$ (cifrele de la $0$ la $9$), codurile din intervalul $[65, 90]$
-(literele mari ale alfabetului englez) și codurile din intervalul $[97, 122]$
-(literele mici ale alfabetului englez).
+Printre cele mai importante coduri ASCII sunt:
+
+- **32** (spațiu)
+- **48-57**: cifrele 0-9
+- **65-90**: literele mari ale alfabetului englez (A-Z)
+- **97-122**: literele mici ale alfabetului englez (a-z)
 
 ### Transformări între litere și cifre
 
-Pentru a putea lucra cu caracterele fără a fi nevoiți să ținem cont de codul lor
+<!-- Pentru a putea lucra cu caracterele fără a fi nevoiți să ținem cont de codul lor
 ASCII (cifrele să fie notate cu valori de la $0$ la $9$, iar literele cu valori
 de la $0$ la $25$), tot ce trebuie să facem este să scădem caracterul
 corespunzător celei mai mici cifre/litere, mai jos găsiți exemple în C++.
@@ -51,166 +54,315 @@ corespunzător celei mai mici cifre/litere, mai jos găsiți exemple în C++.
 
     Pentru a converti o literă mare în literă mică, valoarea caracterului trebuie
     crescută cu $32$, iar pentru operația de a converti litera mică în mare,
-    valoarea trebuie scăzută cu $32$.
+    valoarea trebuie scăzută cu $32$. -->
+
+Putem simplifica lucrul cu caractere folosind valorile ASCII, fără a gestiona
+direct codurile. De exemplu:
+
+- **Cifre**: Scădeți '0' din caracter.
+- **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    
     char c = '5';
-    cout << (int) c << '\n'; // 53
-    cout << (int) (c - '0') << '\n'; // 5
-    
+    cout << (int)c << '\n';          // 53 - ASCII pentru '5'
+    cout << (int)(c - '0') << '\n';  // 5  - convertește caracterul '5' în număr
+
     c = 'P';
-    cout << (int) c << '\n'; // 80
-    cout << (int) (c - 'A') << '\n'; // 15
-    
-    c += 32; // transformarea din litera mare in mica
-    cout << (int) c << '\n'; // 112
-    cout << (int) (c - 'a') << '\n'; // 15
-    
+    cout << (int)c << '\n';          // 80 - ASCII pentru 'P'
+    cout << (int)(c - 'A') << '\n';  // 15 - indexul 'P' în alfabet
+
+    c += 32;                         // 'P' -> 'p'
+    cout << (int)c << '\n';          // 112 - ASCII pentru 'p'
+    cout << (int)(c - 'a') << '\n';  // 15  - indexul 'p' în alfabetul mic
+
     c = 'g';
-    cout << (int) c << '\n'; // 103
-    cout << (int) (c - 'a') << '\n'; // 6
-    
-    c -= 32; // transformarea din litera mica in mare
-    cout << (int) c << '\n'; // 71
-    cout << (int) (c - 'A') << '\n'; // 6
+    cout << (int)c << '\n';          // 103 - ASCII pentru 'g'
+    cout << (int)(c - 'a') << '\n';  // 6   - indexul 'g' în alfabetul mic
 
-    c = 35;
-    cout << c << '\n'; // #
+    c -= 32;                         // 'g' -> 'G'
+    cout << (int)c << '\n';          // 71  - ASCII pentru 'G'
+    cout << (int)(c - 'A') << '\n';  // 6   - indexul 'G' în alfabetul mare
 
-    c = 99;
-    cout << c << '\n'; // c
+    c = 35;             // caracterul '#'
+    cout << c << '\n';  // #
+
+    c = 99;             // caracterul 'c'
+    cout << c << '\n';  // c
+
     return 0;
 }
 ```
 
 Lista completă a codurilor pentru caractere se găsește
 [aici](https://www.sciencebuddies.org/science-fair-projects/references/ascii-table).
+Pentru conveniență, o voi reproduce aici:
 
-## Funcții pe tipul char
+<!-- markdownlint-disable MD038 -->
 
-În C++, funcțiile aplicate pe caractere din biblioteca standard sunt funcții
-predefinite din `<cctype>` care permit verificarea anumitor proprietăți ale
-caracterelor individuale. Aceste funcții sunt utile pentru a determina tipul sau
-categoria unui caracter, facilitând validarea și manipularea stringurilor. Iată
-câteva dintre cele mai comune funcții și scopul lor:
+| Dec | Caracter | Dec | Caracter | Dec | Caracter | Dec | Caracter |
+| --- | -------- | --- | -------- | --- | -------- | --- | -------- |
+| 0   | NUL      | 32  | ` `      | 64  | @        | 96  | `        |
+| 1   | SOH      | 33  | !        | 65  | A        | 97  | a        |
+| 2   | STX      | 34  | "        | 66  | B        | 98  | b        |
+| 3   | ETX      | 35  | #        | 67  | C        | 99  | c        |
+| 4   | EOT      | 36  | $        | 68  | D        | 100 | d        |
+| 5   | ENQ      | 37  | %        | 69  | E        | 101 | e        |
+| 6   | ACK      | 38  | &        | 70  | F        | 102 | f        |
+| 7   | BEL      | 39  | '        | 71  | G        | 103 | g        |
+| 8   | BS       | 40  | (        | 72  | H        | 104 | h        |
+| 9   | TAB      | 41  | )        | 73  | I        | 105 | i        |
+| 10  | LF       | 42  | *        | 74  | J        | 106 | j        |
+| 11  | VT       | 43  | +        | 75  | K        | 107 | k        |
+| 12  | FF       | 44  | ,        | 76  | L        | 108 | l        |
+| 13  | CR       | 45  | -        | 77  | M        | 109 | m        |
+| 14  | SO       | 46  | .        | 78  | N        | 110 | n        |
+| 15  | SI       | 47  | /        | 79  | O        | 111 | o        |
+| 16  | DLE      | 48  | 0        | 80  | P        | 112 | p        |
+| 17  | DC1      | 49  | 1        | 81  | Q        | 113 | q        |
+| 18  | DC2      | 50  | 2        | 82  | R        | 114 | r        |
+| 19  | DC3      | 51  | 3        | 83  | S        | 115 | s        |
+| 20  | DC4      | 52  | 4        | 84  | T        | 116 | t        |
+| 21  | NAK      | 53  | 5        | 85  | U        | 117 | u        |
+| 22  | SYN      | 54  | 6        | 86  | V        | 118 | v        |
+| 23  | ETB      | 55  | 7        | 87  | W        | 119 | w        |
+| 24  | CAN      | 56  | 8        | 88  | X        | 120 | x        |
+| 25  | EM       | 57  | 9        | 89  | Y        | 121 | y        |
+| 26  | SUB      | 58  | :        | 90  | Z        | 122 | z        |
+| 27  | ESC      | 59  | ;        | 91  | [        | 123 | {        |
+| 28  | FS       | 60  | <        | 92  | \        | 124 | &#124;   |
+| 29  | GS       | 61  | =        | 93  | ]        | 125 | }        |
+| 30  | RS       | 62  | >        | 94  | ^        | 126 | ~        |
+| 31  | US       | 63  | ?        | 95  | _        | 127 | DEL      |
 
-### Funcția isdigit
+## Funcții pe tipul `#!cpp char`
 
-Funcția `isdigit()` primește ca parametru un caracter `c`, returnând o valoare
-diferită de 0 dacă acesta este cifră sau 0 dacă nu este.
+Biblioteca standard `#!cpp <cctype>` din C++ oferă un set de funcții predefinite
+utile pentru verificarea proprietăților caracterelor individuale. Aceste funcții
+simplifică validarea și manipularea stringurilor, fiind ideale pentru lucrul cu
+date de tip text.
+
+<!-- markdownlint-disable-file MD024 -->
+### Funcția `#!cpp isdigit`
+
+```cpp
+int isdigit(int ch);
+```
+
+Verifică dacă un caracter anume este una din cele zece cifre zecimale:
+(0123456789).
+
+#### Parametri
+
+- `#!cpp ch` - caracterul de clasificat
+
+#### Valoare returnată
+
+O valoare diferită de zero în cazul în care caracterul este un caracter numeric,
+zero în caz contrar.
+
+#### Exemplu
 
 ```c++
-    char c1 = '3';
-    char c2 = 'A';
-
-    cout << isdigit(c1) << endl; //se va afișa ceve diferit de 0
-    cout << isdigit(c2) << endl; //se va afișa 0
+cout << isdigit('5') << '\n'; // 1
+cout << isdigit('z') << '\n'; // 0
+cout << isdigit('Q') << '\n'; // 0
+cout << isdigit('.') << '\n'; // 0
 ```
 
-### Funcția isalpha
-
-Funcția `isalpha` returnează o valoare diferită de 0 dacă caracterul este
-alfabetic sau 0 dacă acesta nu este alfabetic.
+### Funcția `#!cpp isalpha`
 
 ```cpp
-    char c1 = '2';
-    char c2 = 'A';
-
-    cout << isalpha(c1) << endl; //se va afișa 0
-    cout << isalpha(c2) << endl; //se va afișa ceva diferit de 0
+int alpha(int ch);
 ```
 
-### Funcția isalnum
+Verifică dacă un caracter anume este alfabetic. Următoarele caractere sunt
+considerate alfabetice:
 
-Aceasta returnează dacă un caracter este alfanumeric sau nu.
+- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- literele mici abcdefghijklmnopqrstuvwxyz
+
+#### Parametri
+
+- `#!cpp ch` - caracterul de clasificat
+
+#### Valoare returnată
+
+O valoare diferită de zero în cazul în care caracterul este alfabetic,
+zero în caz contrar.
+
+#### Exemplu
 
 ```cpp
-    char c1 = 'a';
-    char c2 = '?';
-
-    cout << isalnum(c1) << endl; //se returnează ceva diferit de 0
-    cout << isalnum(c2) << endl; //se returnează 0
+cout << isalpha('3') << '\n'; // 0
+cout << isalpha('A') << '\n'; // 1
+cout << isalpha('a') << '\n'; // 1
+cout << isalpha('?') << '\n'; // 0
 ```
 
-### Funcțiile isupper și islower
-
-Funcția `isupper` returnează 0 dacă un caracter este literă mică, și o valoare
-diferită de 0 dacă este literă mare. Asemănător, `islower` returnează o valoare
-diferită de 0 dacă litera este mică și 0 dacă litera este mare.
-
-=== "isupper"
-
-    ```c++
-        char c1 = 'a';
-        char c2 = 'A';
-    
-        cout << isupper(c1) << endl; //se va afișa 0
-        cout << isupper(c2) << endl; //se va afișa ceva diferit de 0
-    ```
-
-=== "islower"
-
-    ```c++
-        char c1 = 'a';
-        char c2 = 'A';
-
-        cout << islower(c1) << endl; //se va afișa ceva diferit de 0
-        cout << islower(c2) << endl; //se va afișa 0
-    ```
-
-### Funcțiile toupper și tolower
-
-Aceste funcții convertesc un caracter din literă mare în literă mică sau invers.
+### Funcția `#!cpp isalnum`
 
 ```cpp
-    char c1 = 'a';
-    char c2 = 'A';
-
-    cout << (char)(toupper(c1)) << endl; //se va afișa 'A'
-    cout << (char)(tolower(c2)) << endl; //se va afișa 'a'
+int isalnum(int ch);
 ```
 
-## Șiruri de caractere și biblioteca cstring
+Verifică dacă un caracter anume este alfanumeric. Următoarele caractere sunt
+considerate alfanumerice:
 
-Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de
+- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- literele mici abcdefghijklmnopqrstuvwxyz
+- cifrele 0123456789
+
+!!! note "Observație"
+    `#!cpp isalnum(ch)` este echivalent cu `#!cpp isdigit(ch) && isalpha(ch)`.
+
+#### Parametri
+
+- `#!cpp ch` - caracterul de clasificat
+
+#### Valoare returnată
+
+O valoare diferită de zero în cazul în care caracterul este alfanumeric, zero în
+caz contrar.
+
+#### Exemplu
+
+```cpp
+cout << isalpha('3') << '\n'; // 0
+cout << isalpha('A') << '\n'; // 1
+cout << isalpha('a') << '\n'; // 1
+cout << isalpha('?') << '\n'; // 0
+```
+
+### Funcțiile `#!cpp islower` și `#!cpp isupper`
+
+```cpp
+int islower(int ch);
+int isupper(int ch);
+```
+
+Verifică dacă un caracter anume este clasificat ca fiind unul mic, respectiv
+mare. Implicit, C consideră literele mari ca fiind ABCDEFGHIJKLMNOPQRSTUVWXYZ,
+iar cele mici ca abcdefghijklmnopqrstuvwxyz.
+
+#### Parametri
+
+- `#!cpp ch` - caracterul de clasificat
+
+#### Valoare returnată
+
+O valoare diferită de zero în cazul în care caracterul este mic, respectiv mare,
+zero în caz contrar.
+
+#### Exemplu
+
+```cpp
+cout << isupper('3') << '\n'; // 0
+cout << isupper('A') << '\n'; // 1
+cout << islower('a') << '\n'; // 1
+cout << islower('?') << '\n'; // 0
+```
+
+### Funcțiile `#!cpp tolower` și `#!cpp toupper`
+
+```cpp
+int toupper(int ch);
+int tolower(int ch);
+```
+
+Convertește un caracter dat într-o literă mare, respectiv mică, respectiv mare.
+C consideră literele mari ca fiind ABCDEFGHIJKLMNOPQRSTUVWXYZ, iar cele mici ca
+abcdefghijklmnopqrstuvwxyz.
+
+#### Parametri
+
+- `#!cpp ch` - caracterul de convertit
+
+#### Valoare returnată
+
+Caracterul convertit sau `ch` dacă nu se poate efectua conversia.
+
+#### Exemplu
+
+```cpp
+cout << (char)toupper('a') << '\n'; // A
+cout << (char)toupper('A') << '\n'; // A
+cout << (char)toupper('3') << '\n'; // 3
+cout << (char)toupper('@') << '\n'; // @
+
+cout << (char)tolower('a') << '\n'; // a
+cout << (char)tolower('A') << '\n'; // a
+cout << (char)tolower('3') << '\n'; // 3
+cout << (char)tolower('@') << '\n'; // @
+```
+
+## Șiruri de caractere și biblioteca `#!cpp <cstring>`
+
+<!-- Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de
 caractere constă în folosirea metodelor care există și în limbajul C, metode
-care sunt incluse în bibiloteca `<cstring>`.
+care sunt incluse în bibiloteca `#!cpp <cstring>`.
 
 Un șir de caractere poate fi inițializat în diverse moduri, așa cum se poate
 vedea în exemplele menționate mai jos. Se poate observa că afișarea se face
 foarte ușor, la fel ca la orice variabilă, spre deosebire de arrays de tipuri
-întregi sau reale.
+întregi sau reale. -->
+
+Biblioteca `#!cpp <cstring>` oferă o suită de funcții utile pentru lucrul cu
+șiruri de caractere în stilul C. Aceasta poate fi utilizată pentru manipularea
+șirurilor de caractere (vectori de tip `#!cpp char`) prin funcții standardizate.
+
+### Inițializarea șirurilor de caractere
+
+Un șir de caractere poate fi inițializat în diferite moduri. Exemplele de mai
+jos ilustrează câteva tehnici comune:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    
-    char c[6] = "roalgo";
-    cout << c << '\n';
-    
-    char c2[] = {'r', 'o', 'a', 'l', 'g', 'o', '\0'}; // acel '\0' e obligatoriu
-    cout << c2 << '\n';
-    
-    char message[] = "roalgo este cel mai bun server de informatica";
-    cout << message << '\n';
-    
-    cout << message[9] << '\n'; // t
+    // Automat adaugă '\0' (caracterul nul).
+    // Din acest motiv, lungimea lui `c` este dată de lungimea
+    // șirului de caractere + 1, pentru '\0'.
+    char nume[7] = "roalgo";
+    cout << nume << '\n';
+
+    // Creăm un vector de caractere manual. C++ poate determina
+    // automat mărimea vectorului, deci nu este nevoie să îl
+    // scriem.
+    char caractere[] = {'r', 'o', 'a', 'l', 'g', 'o', '\0'};
+    cout << caractere << '\n';
+
+    // Putem atribui și un șir de caractere direct, ca la primul
+    // exemplu.
+    char adevar[] = "roalgo este cel mai bun server de informatica";
+    cout << adevar << '\n';
+
+    // Afișează 't'
+    cout << adevar[9] << '\n';
+
+    // Afișează 'roalgo'.
+    for (int i = 0; i < 6; i++) {
+        cout << adevar[i];
+    }
+    cout << '\n';
     return 0;
 }
 ```
 
-În cele ce urmează, vom prezenta cele mai utilizate funcții pe care le puteți
+<!-- În cele ce urmează, vom prezenta cele mai utilizate funcții pe care le puteți
 folosi pentru a lucra cu șiruri de caractere mai ușor. Toate aceste funcții vor
-necesita includerii bibliotecii cstring, menționată anterior.
+necesita includerii bibliotecii `#!cpp <cstring>`, menționată anterior. -->
 
 ### Citirea șirurilor de caractere
+
+În C++, există mai multe moduri de a citi șiruri de caractere, în funcție de ce
+anume dorim să citim (un cuvânt, o linie completă sau un număr specificat de
+caractere). Alegerea metodei de citire poate afecta rezultatul, în funcție de
+modul în care sunt delimitate datele (spațiu, newline etc.).
 
 Un șir de caractere poate fi citit în diverse moduri, fie la fel ca la vectori
 (caracter cu caracter), fie putem citi toate valorile deodată, iar în funcție de
@@ -223,17 +375,17 @@ funcția getline și fixând numărul de caractere pe care vrem să-l citim.
 Să presupunem că șirul de caractere este `roalgo este cel mai bun server de
 informatica`. În funcție de cum citim acest șir, vom avea rezultate diferite.
 
-Funcția cin.getline are ca parametri șirul în care se va stoca rezultatul
-citirii și numărul maxim de caractere permis, citind șirul până la întâlnirea
-caracterului de newline, un exemplu ar fi `cin.getline(s, x)`, unde s este șirul
-dat și x este lungimea lui.
+Funcția `#!cpp cin.getline` are ca parametri șirul în care se va stoca
+rezultatul citirii și numărul maxim de caractere permis, citind șirul până la
+întâlnirea caracterului de newline, un exemplu ar fi `#!cpp cin.getline(s, x)`,
+unde s este șirul dat și x este lungimea lui.
 
 Citirea fără o funcție specifică se poate face cu cin, dar se va citi până la
 primul spațiu.
 
-Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur
+Există și funcția `#!cpp cin.get()`, care poate fi folosit fie pentru un singur
 caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să
-citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
+citim o linie completă, deci funcția `#!cpp cin.getline()` devine mai utilă.
 
 ```cpp
 #include <iostream>
@@ -242,13 +394,18 @@ using namespace std;
 
 int main() {
     char s[100];
-    cin >> s; 
-    cout << s << '\n'; // roalgo
-    
-    cin.get(); // sare peste urmatorul caracter, de obicei spatiu sau newline
-    
-    cin.getline(s, 100); // citeste cel mult 100 de caractere, pana la newline, sare si peste newline
-    cout << s << '\n'; // roalgo este cel mai bun server de informatica
+    cin >> s;
+
+    cout << s << '\n';
+
+    // Sare peste următorul caracter, de obicei spațiu sau newline.
+    cin.get();
+
+    // Citește cel mult 100 de caractere, până la newline,
+    // dar sare și de acesta.
+    cin.getline(s, 100);
+
+    cout << s << '\n';
     return 0;
 }
 ```
