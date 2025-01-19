@@ -42,25 +42,25 @@ tablou să-l stocheze, precum și dimensiunea pe care vrem să o atribuim acestu
 tablou.
 
 De exemplu, `#!cpp int v[101][101];` înseamnă ca am declarat un tablou
-bidimensional cu $101$ linii, fiecare tablou având $101$ elemente, pozițiile
-fiind numărate de la $0$ la $100$ (cu alte cuvinte, am declarat $101$ tablouri).
+bidimensional cu 101 linii, fiecare tablou având 101 elemente, pozițiile fiind
+numărate de la 0 la 100 (cu alte cuvinte, am declarat 101 tablouri).
 
 !!! note "Împărțirea tablourilor"
 
     Colocvial, vom împărți aceste tablouri în linii și coloane, astfel, vom spune
-    despre elementul de pe poziția $(2, 6)$ că se află pe linia $2$ și coloana $6$.
-    De asemenea, liniile vor fi numerotate de sus în jos, iar coloanele de la stânga
-    la dreapta, ceea ce este în contrast cu sistemul de coordonate xOy folosit în
-    geometria analitică.
+    despre elementul de pe poziția (2, 6) că se află pe linia 2 și coloana 6. De
+    asemenea, liniile vor fi numerotate de sus în jos, iar coloanele de la 
+    stânga la dreapta, ceea ce este în contrast cu sistemul de coordonate xOy 
+    folosit în geometria analitică.
 
 !!! note "Observație"
 
-    La fel ca la vectori, dacă vreți să lucrați cu valorile indexate de la $1$, va
-    trebui să adăugați $1$ la dimensiunile pe care le declarați. 
+    La fel ca la vectori, dacă vreți să lucrați cu valorile indexate de la 1, va
+    trebui să adăugați 1 la dimensiunile pe care le declarați.
 
 Pentru a atribui o valoare unei anumite poziții, se va proceda similar ca la o
-variabilă obișnuită, de exemplu `#!cpp v[1][5] = 7;` înseamnă că pe linia $1$ și
-coloana $5$, vom avea acum valoarea $7$.
+variabilă obișnuită, de exemplu `#!cpp v[1][5] = 7;` înseamnă că pe linia 1 și
+coloana 5, vom avea acum valoarea 7.
 
 ### Problemă exemplu - [sumapare2 de pe pbinfo](https://www.pbinfo.ro/probleme/767/sumapare2)
 
@@ -107,7 +107,7 @@ O listă foarte bună cu probleme suplimentare de acest tip se găsește
 
 #### Exercițiu adaptat dintr-un model al examenului de bacalaureat
 
-Să se genereze o matrice cu dimensiunea $7 \cdot 7$ cu următoarea formă:
+Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
 
 ```
 2 2 2 2 2 2 2
@@ -119,10 +119,10 @@ Să se genereze o matrice cu dimensiunea $7 \cdot 7$ cu următoarea formă:
 2 4 4 4 4 4 2
 ```
 
-Pentru a rezolva acest exercițiu, putem observa faptul că primele $4$ linii sunt
-pline de $2$, iar începând de la linia $5$, vom începe să avem valori egale cu
-$4$ începând de la mijloc, intervalul valorilor extinzându-se la stânga și
-dreapta cu câte $1$ pentru fiecare linie următoare.
+Pentru a rezolva acest exercițiu, putem observa faptul că primele 4 linii sunt
+pline de 2, iar începând de la linia 5, vom începe să avem valori egale cu
+4 începând de la mijloc, intervalul valorilor extinzându-se la stânga și
+dreapta cu câte 1 pentru fiecare linie următoare.
 
 ```cpp
 for (int i = 1; i <= 7; i++) {
@@ -189,7 +189,7 @@ int main() {
 ### Problemă exemplu - [genmat23 de pe pbinfo](https://www.pbinfo.ro/probleme/1585/genmat23)
 
 Pentru a rezolva această problemă, vom vrea să aflăm pentru fiecare poziție
-distanța față de marginea matricii și apoi vom colora pătratele cu $0$ sau $1$
+distanța față de marginea matricii și apoi vom colora pătratele cu 0 sau 1
 după caz.
 
 ```cpp
@@ -249,44 +249,44 @@ tipuri de probleme.
 ### Împărțirea matricilor pătratice. Diagonale, zone și regiuni
 
 Mai întâi, deoarece matricea este pătratică, putem să ne gândim la diagonalele
-matricii drept granițe pentru împărțirea matricii pe zone, astfel creându-se $4$
+matricii drept granițe pentru împărțirea matricii pe zone, astfel creându-se 4
 regiuni.
 
 !!! info "Diagonala principală"
 
     Definim diagonala principală a unei matrici pătratice segmentul care unește
-    punctele situate în pozițiile $(1, 1)$ și $(n, n)$, astfel încât această linie
-    acoperă toate punctele cu coordonatele de forma $(i, i)$.
+    punctele situate în pozițiile (1, 1) și (n, n), astfel încât această linie
+    acoperă toate punctele cu coordonatele de forma (i, i).
 
 !!! info "Diagonala secundară"
 
     Definim diagonala secundară a unei matrici pătratice segmentul care unește
-    punctele situate în pozițiile $(1, n)$ și $(n, 1)$, astfel încât această linie
-    acoperă toate punctele cu coordonatele de forma $(i, n - i + 1)$.
+    punctele situate în pozițiile (1, n) și (n, 1), astfel încât această linie
+    acoperă toate punctele cu coordonatele de forma (i, n - i + 1).
 
 !!! note "Observație"
 
-    Dacă indexăm matricea de la $0$, diagonala secundară unește pozițiile $(0, n-1)$
-    și $(n-1, 0)$, punctele acoperite având coordonatele $(i, n - i - 1)$.
+    Dacă indexăm matricea de la 0, diagonala secundară unește pozițiile (0, n-1)
+    și (n-1, 0), punctele acoperite având coordonatele (i, n - i - 1).
 
 O consecință a prezenței acestor diagonale reprezintă împărțirea matricii pe
 zone, în funcție de orientarea raportată la diagonale, zonele fiind definite
-presupunând indexarea matricii de la $1$.
+presupunând indexarea matricii de la 1.
 
-Astfel, putem defini $4$ zone, după cum urmează:
+Astfel, putem defini 4 zone, după cum urmează:
 
 - zona de nord: Pozițiile situate deasupra ambelor diagonale (cu portocaliu pe
-  desen). Pentru ca un punct să fie în zona de nord, $i < j$ și $i + j < n + 1$.
+  desen). Pentru ca un punct să fie în zona de nord, i < j și i + j < n + 1.
 - zona de vest: Pozițiile situate deasupra diagonalei secundare (cu roșu pe
-  desen). Pentru ca un punct să fie în zona de vest, $i > j$ și $i + j < n + 1$.
+  desen). Pentru ca un punct să fie în zona de vest, i > j și i + j < n + 1.
 - zona de est: Pozițiile situate deasupra diagonalei principale (cu albastru pe
-  desen). Pentru ca un punct să fie în zona de est, $i < j$ și $i + j > n + 1$.
+  desen). Pentru ca un punct să fie în zona de est, i < j și i + j > n + 1.
 - zona de sud: Pozițiile situate dedesubtul ambelor diagonale (cu galben pe
-  desen). Pentru ca un punct să fie în zona de sud, $i > j$ și $i + j > n + 1$.
+  desen). Pentru ca un punct să fie în zona de sud, i > j și i + j > n + 1.
 
 !!! note "Observație"
 
-    Pentru valori impare ale lui $n$, diagonalele se intersectează în punctul din
+    Pentru valori impare ale lui n, diagonalele se intersectează în punctul din
     mijlocul matricii.
 
 - În desen, diagonala principală reprezintă zonele cu roz pe desen, iar diagonala secundară, zonele cu verde pe desen. (punctul din mijloc este hașurat cu verde).
@@ -404,11 +404,11 @@ spirală, dar aici ne vom concentra pe două dintre variante.
 
 #### Varianta 1 - acoperim fiecare zonă concentrică
 
-O primă variantă constă în a simula cele $4$ mutări pentru fiecare zonă
+O primă variantă constă în a simula cele 4 mutări pentru fiecare zonă
 concentrică și să folosim foruri imbricate pentru a avea scrise parcurgerile.
 
 Cu alte cuvinte, acoperim fiecare zonă colorată diferit în imaginea de mai jos
-și începem mereu de pe linia și coloana $i$.
+și începem mereu de pe linia și coloana i.
 
 ![](../images/matrici/tinta.png)
 
@@ -461,17 +461,17 @@ int main() {
 O variantă alternativă este aceea de a observa modul în care se execută
 mișcările de către algoritmul explicat la primul pas.
 
-Vom lua drept exemplu $n = 4$.
+Vom lua drept exemplu n = 4.
 
-- $4$ pași la dreapta
-- $3$ pași în jos
-- $3$ pași la stânga
-- $2$ pași în sus
-- $2$ pași la dreapta
-- $1$ pas în jos
-- $1$ pas la stânga
+- 4 pași la dreapta
+- 3 pași în jos
+- 3 pași la stânga
+- 2 pași în sus
+- 2 pași la dreapta
+- 1 pas în jos
+- 1 pas la stânga
 
-Se poate observa faptul că după ce facem primul pas și avem $n$ mutări,
+Se poate observa faptul că după ce facem primul pas și avem n mutări,
 lungimile mutărilor se repetă câte două, astfel putem folosi [vectorii de
 direcție](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie) pentru a
 implementa aceste mutări foarte ușor, fără mari probleme.
@@ -534,14 +534,14 @@ De obicei, cele mai frecvente rotații sunt cele la stânga sau la dreapta, dar
 avem de-a face și cu alte tipuri de mișcări, precum transpozițiile sau
 oglindirea valorilor.
 
-Se poate observa faptul că după o rotire a matricii cu $90^\circ$, prima linie
-va deveni prima coloană scrisă invers, a doua coloană va deveni a doua coloană
+Se poate observa faptul că după o rotire a matricii cu 90°, prima linie va
+deveni prima coloană scrisă invers, a doua coloană va deveni a doua coloană
 scrisă invers ș.a.m.d.
 
 !!! note "Rotații mai mari"
 
-    Dacă vrem să rotim matricea cu valori mai mari de $90^\circ$, putem simula rotirile
-    de $90^\circ$ de mai multe ori, ajungând la același rezultat.
+    Dacă vrem să rotim matricea cu valori mai mari de 90°, putem simula rotirile
+    de 90° de mai multe ori, ajungând la același rezultat.
 
 !!! note "Rotații la dreapta"
 
@@ -551,7 +551,7 @@ scrisă invers ș.a.m.d.
 
 Aici se poate găsi soluția problemei [rotire de pe
 pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim
-matricea la stânga cu $90^o$.
+matricea la stânga cu 90°.
 
 ```cpp
 #include <fstream>
@@ -591,7 +591,7 @@ int main() {
 ### Bordarea unei matrici
 
 Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze
-faptul că nu vrem să trecem prin acele poziții (de exemplu, $-1$).
+faptul că nu vrem să trecem prin acele poziții (de exemplu, -1).
 
 ```cpp
 for (int i = 0; i <= m+1; i++) {
@@ -623,10 +623,10 @@ articolul cu secvențe.
 declarăm fie la fel cum declarăm matricile, fie folosind variantele din STL,
 care vor fi detaliate în articolul corespunzător.
 
-De exemplu, `#!cpp int v[101][101][101];` reprezintă un "cub" de dimensiuni $101
-\cdot 101 \cdot 101$. La fel ca la celelalte tablouri, cu cât avem mai multe
+De exemplu, `#!cpp int v[101][101][101];` reprezintă un "cub" de dimensiuni 101
+× 101 × 101. La fel ca la celelalte tablouri, cu cât avem mai multe
 dimensiuni, cu atât cantitatea de memorie crește, iar în cele mai multe cazuri,
-nu vom avea nevoie de mai mult de $3-4$ dimensiuni.
+nu vom avea nevoie de mai mult de 3–4 dimensiuni.
 
 ## Concluzii
 
