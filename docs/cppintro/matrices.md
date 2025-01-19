@@ -74,14 +74,14 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
-    
+
     int mat[n][m];
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> mat[i][j];
         }
     }
-    
+
     int sumpar = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
@@ -90,7 +90,7 @@ int main() {
             }
         }
     }
-    
+
     cout << sumpar << '\n';
     return 0;
 }
@@ -129,12 +129,10 @@ for (int i = 1; i <= 7; i++) {
     for (int j = 1; j <= 7; j++) {
         if (i <= 4) {
             mat[i][j] = 2;
-        }
-        else {
+        } else {
             if (j >= 4 - (i - 5) && j <= 4 + (i + 5)) {
                 mat[i][j] = 4;
-            }
-            else {
+            } else {
                 mat[i][j] = 2;
             }
         }
@@ -154,26 +152,26 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
-    int grid[n+1][n+1];
-    
+
+    int grid[n + 1][n + 1];
+
     // prima coloana
     for (int i = 1; i <= n; i++) {
         grid[i][1] = i;
     }
-    
+
     // ultima linie
     for (int i = 1; i <= n; i++) {
         grid[n][i] = n;
     }
-    
+
     // restul matricii
-    for (int i = n-1; i >= 1; i--) {
+    for (int i = n - 1; i >= 1; i--) {
         for (int j = 2; j <= n; j++) {
-            grid[i][j] = grid[i][j-1] + grid[i+1][j-1];
+            grid[i][j] = grid[i][j - 1] + grid[i + 1][j - 1];
         }
     }
-    
+
     // afisarea
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
@@ -181,7 +179,7 @@ int main() {
         }
         cout << '\n';
     }
-    
+
     return 0;
 }
 ```
@@ -199,9 +197,9 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
-    int mat[n+1][n+1];
-    
+
+    int mat[n + 1][n + 1];
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             int dist = i - 1;
@@ -216,22 +214,21 @@ int main() {
             }
             if (dist % 2 == 0) {
                 mat[i][j] = 1;
-            }
-            else {
+            } else {
                 mat[i][j] = 0;
             }
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             cout << mat[i][j] << " ";
         }
         cout << '\n';
     }
-    
+
     return 0;
-}   
+} 
 ```
 
 ## Matricile pătratice
@@ -306,24 +303,24 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
+
     int fr[1000] = {0};
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             int x;
             cin >> x;
-            if (i > j && i + j > n+1) {
+            if (i > j && i + j > n + 1) {
                 fr[x]++;
             }
         }
     }
-    
+
     for (int i = 0; i < 1000; i++) {
         if (fr[i] >= 2) {
             cout << i << " ";
         }
     }
-    
+
     return 0;
 }
 ```
@@ -337,25 +334,25 @@ punctele de pe prima linie și apoi cele de pe ultima coloană. Indiferent de
 parcurgere, vom merge în jos ulterior.
 
 ```cpp
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
 int main() {
     ifstream cin("diagonal.in");
     ofstream cout("diagonal.out");
-    
+
     char grid[100][100];
-    
+
     int n = 0;
     while (cin >> grid[n]) {
         n++;
     }
-    
+
     // diagonala principala
-    
-    for (int L = n-1; L >= 0; L--) {
+
+    for (int L = n - 1; L >= 0; L--) {
         int L2 = L;
         for (int C = 0; L2 < n && C < n; L2++, C++) {
             cout << grid[L2][C];
@@ -367,21 +364,21 @@ int main() {
             cout << grid[L][C2];
         }
     }
-    
+
     cout << '\n';
-    
+
     // diagonala secundara
-    
+
     for (int C = 0; C < n; C++) {
         int C2 = C;
         for (int L = 0; L < n && C2 >= 0; L++, C2--) {
             cout << grid[L][C2];
         }
     }
-    
+
     for (int L = 1; L < n; L++) {
         int L2 = L;
-        for (int C = n-1; L2 < n && C >= 0; L2++, C--) {
+        for (int C = n - 1; L2 < n && C >= 0; L2++, C--) {
             cout << grid[L2][C];
         }
     }
@@ -429,29 +426,29 @@ int oy[4] = {1, 0, -1, 0};
 int main() {
     int n;
     fin >> n;
-    
-    int grid[n+1][n+1];
+
+    int grid[n + 1][n + 1];
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             fin >> grid[i][j];
         }
     }
-    
-    for (int L = 1; L <= n/2 + n%2; L++) {
+
+    for (int L = 1; L <= n / 2 + n % 2; L++) {
         for (int C = L; C <= n - L + 1; C++) {
             fout << grid[L][C] << " ";
         }
-        for (int CC = L+1; CC <= n - L + 1; CC++) {
+        for (int CC = L + 1; CC <= n - L + 1; CC++) {
             fout << grid[CC][n - L + 1] << " ";
         }
         for (int C = n - L; C >= L; C--) {
             fout << grid[n - L + 1][C] << " ";
         }
-        for (int CC = n - L; CC >= L+1; CC--) {
+        for (int CC = n - L; CC >= L + 1; CC--) {
             fout << grid[CC][L] << " ";
         }
     }
-        
+
     return 0;
 }
 ```
@@ -494,19 +491,19 @@ int oy[4] = {1, 0, -1, 0};
 int main() {
     int n;
     fin >> n;
-    
-    int grid[n+1][n+1];
+
+    int grid[n + 1][n + 1];
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             fin >> grid[i][j];
         }
     }
-    
+
     int L = 1;
     int C = 0;
-    int dir = 0; // directia curenta
-    int cnt = n; // numarul de mutari
-    int rem = 1; // cate serii cu acest numar de mutari mai avem
+    int dir = 0;  // directia curenta
+    int cnt = n;  // numarul de mutari
+    int rem = 1;  // cate serii cu acest numar de mutari mai avem
     while (cnt > 0) {
         for (int i = 1; i <= cnt; i++) {
             L += ox[dir];
@@ -520,7 +517,7 @@ int main() {
             cnt--;
         }
     }
-        
+
     return 0;
 }
 ```
@@ -560,24 +557,24 @@ using namespace std;
 int main() {
     ifstream cin("rotire.in");
     ofstream cout("rotire.out");
-    
+
     int n, m;
     cin >> n >> m;
-    
+
     int grid[11][11], grid2[11][11];
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> grid[i][j];
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
-            grid2[m-j+1][i] = grid[i][j];
+            grid2[m - j + 1][i] = grid[i][j];
         }
     }
-    
+
     for (int i = 1; i <= m; i++) {
         for (int j = 1; j <= n; j++) {
             cout << grid2[i][j] << " ";
@@ -594,11 +591,11 @@ Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze
 faptul că nu vrem să trecem prin acele poziții (de exemplu, -1).
 
 ```cpp
-for (int i = 0; i <= m+1; i++) {
-    mat[0][i] = mat[n+1][i] = -1; // bordarea liniilor 0 si n+1
+for (int i = 0; i <= m + 1; i++) {
+    mat[0][i] = mat[n + 1][i] = -1;  // bordarea liniilor 0 si n+1
 }
-for (int i = 0; i <= n+1; i++) {
-    mat[i][0] = mat[i][m+1] = -1; // bordarea coloanelor 0 si m+1
+for (int i = 0; i <= n + 1; i++) {
+    mat[i][0] = mat[i][m + 1] = -1;  // bordarea coloanelor 0 si m+1
 }
 ```
 
