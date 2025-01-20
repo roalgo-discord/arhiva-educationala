@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="96.247mm" height="96.202mm" version="1.1" viewBox="0 0 96.247 96.202" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-25.479 -36.709)">
+  <g fill="#ffd23f" stroke="#806600">
+   <g stroke-width=".5">
+    <path d="m52.719 99.617h15.049v15.049h-15.049z"/>
+    <path d="m34.816 99.617h15.049v15.049h-15.049z"/>
+    <path d="m88.524 99.617h15.049v15.049h-15.049z"/>
+    <path d="m106.43 99.617h15.049v15.049h-15.049z"/>
+    <path d="m70.621 99.617h15.049v15.049h-15.049z"/>
+    <path d="m52.719 117.56h15.049v15.049h-15.049z"/>
+    <path d="m34.816 117.56h15.049v15.049h-15.049z"/>
+    <path d="m88.524 117.56h15.049v15.049h-15.049z"/>
+    <path d="m106.43 117.56h15.049v15.049h-15.049z"/>
+    <path d="m70.621 117.56h15.049v15.049h-15.049z"/>
+   </g>
+   <path d="m34.816 45.786h15.049v15.049h-15.049z" stroke-width=".49999"/>
+  </g>
+  <path d="m34.765 36.907h86.762v6.5005h-86.762z" fill="#9a18c9" stroke="#540d6e" stroke-width=".39774"/>
+  <path transform="rotate(90)" d="m45.735-32.23h86.926v6.5001h-86.926z" fill="#9a18c9" stroke="#540d6e" stroke-width=".5"/>
+  <g fill="#ffd23f" stroke="#806600" stroke-width=".5">
+   <path d="m88.524 45.786h15.049v15.049h-15.049z"/>
+   <path d="m106.43 45.786h15.049v15.049h-15.049z"/>
+   <path d="m70.621 45.786h15.049v15.049h-15.049z"/>
+   <path d="m52.719 45.786h15.049v15.049h-15.049z"/>
+   <path d="m34.816 63.73h15.049v15.049h-15.049z"/>
+   <path d="m88.524 63.73h15.049v15.049h-15.049z"/>
+   <path d="m106.43 63.73h15.049v15.049h-15.049z"/>
+   <path d="m70.621 63.73h15.049v15.049h-15.049z"/>
+   <path d="m52.719 63.73h15.049v15.049h-15.049z"/>
+   <path d="m34.816 81.673h15.049v15.049h-15.049z"/>
+   <path d="m88.524 81.673h15.049v15.049h-15.049z"/>
+   <path d="m106.43 81.673h15.049v15.049h-15.049z"/>
+   <path d="m70.621 81.673h15.049v15.049h-15.049z"/>
+   <path d="m52.719 81.673h15.049v15.049h-15.049z"/>
+  </g>
+  <g fill="#f3fcf0" stroke-width=".5">
+   <path d="m42.341 41.669c0.63288 0 1.0548-0.53199 1.0548-1.5226s-0.42192-1.4997-1.0548-1.4997c-0.63288 0-1.0548 0.50447-1.0548 1.4997 0 0.9906 0.42192 1.5226 1.0548 1.5226zm0-0.54575c-0.21555 0-0.38523-0.19262-0.38523-0.97684 0-0.78881 0.16969-0.94932 0.38523-0.94932 0.21096 0 0.38523 0.16051 0.38523 0.94932 0 0.78422-0.17427 0.97684-0.38523 0.97684z" aria-label="0"/>
+   <path d="m59.301 41.614h1.8849v-0.57326h-0.54116v-2.3389h-0.52282c-0.20638 0.133-0.41734 0.21096-0.73378 0.27058v0.44027h0.54575v1.6281h-0.63288z" aria-label="1"/>
+   <path d="m77.121 41.641h2.0683v-0.59619h-0.62371c-0.133 0-0.33478 0.01835-0.48613 0.0321 0.49071-0.47695 0.96767-0.94932 0.96767-1.4721 0-0.5595-0.39899-0.93098-0.97684-0.93098-0.41275 0-0.68333 0.16051-0.96767 0.48154l0.36689 0.36689c0.14217-0.15134 0.30268-0.28892 0.50447-0.28892 0.24306 0 0.3944 0.14217 0.3944 0.41734 0 0.40358-0.53199 0.92181-1.2474 1.5547z" aria-label="2"/>
+   <path d="m96.012 41.669c0.59161 0 1.0961-0.30268 1.0961-0.84843 0-0.37606-0.23848-0.60995-0.57326-0.70626v-0.01834c0.31186-0.133 0.48154-0.34854 0.48154-0.64205 0-0.51823-0.40358-0.80715-1.0227-0.80715-0.35313 0-0.65123 0.14217-0.92181 0.37606l0.35772 0.43109c0.17886-0.16051 0.3302-0.24765 0.53199-0.24765 0.22013 0 0.34396 0.10548 0.34396 0.30268 0 0.22013-0.16051 0.37147-0.66957 0.37147v0.49988c0.62371 0 0.76129 0.14676 0.76129 0.38982 0 0.21096-0.17886 0.32561-0.45861 0.32561-0.2293 0-0.44485-0.11924-0.62371-0.28892l-0.32561 0.44944c0.21555 0.24765 0.55033 0.41275 1.0227 0.41275z" aria-label="3"/>
+   <path d="m113.5 40.394 0.34396-0.59161c0.0825-0.16969 0.1651-0.33479 0.23848-0.50447h0.0183c-9e-3 0.19262-0.0229 0.47696-0.0229 0.66498v0.43109zm0.57785 1.2199h0.6604v-0.67874h0.3302v-0.54116h-0.3302v-1.6923h-0.87595l-1.0365 1.7381v0.4953h1.252z" aria-label="4"/>
+   <path d="m29.06 54.822c0.63288 0 1.0548-0.53199 1.0548-1.5226 0-0.9906-0.42192-1.4997-1.0548-1.4997s-1.0548 0.50447-1.0548 1.4997c0 0.9906 0.42192 1.5226 1.0548 1.5226zm0-0.54575c-0.21555 0-0.38523-0.19262-0.38523-0.97684 0-0.78881 0.16968-0.94932 0.38523-0.94932 0.21096 0 0.38523 0.16051 0.38523 0.94932 0 0.78422-0.17427 0.97684-0.38523 0.97684z" aria-label="0"/>
+   <path d="m28.104 72.711h1.8849v-0.57326h-0.54116v-2.3389h-0.52282c-0.20637 0.133-0.41734 0.21096-0.73378 0.27058v0.44026h0.54575v1.6281h-0.63288z" aria-label="1"/>
+   <path d="m28.028 90.682h2.0683v-0.59619h-0.62371c-0.133 0-0.33479 0.01834-0.48613 0.0321 0.49071-0.47695 0.96767-0.94932 0.96767-1.4721 0-0.5595-0.39899-0.93098-0.97684-0.93098-0.41275 0-0.68333 0.16051-0.96767 0.48154l0.36689 0.36689c0.14217-0.15134 0.30268-0.28892 0.50447-0.28892 0.24306 0 0.3944 0.14217 0.3944 0.41734 0 0.40358-0.53199 0.92181-1.2474 1.5547z" aria-label="2"/>
+   <path d="m29.014 108.65c0.59161 0 1.0961-0.30268 1.0961-0.84843 0-0.37606-0.23848-0.60995-0.57326-0.70626v-0.0183c0.31186-0.133 0.48154-0.34855 0.48154-0.64206 0-0.51823-0.40358-0.80715-1.0227-0.80715-0.35313 0-0.65123 0.14217-0.92181 0.37606l0.35772 0.43109c0.17886-0.16051 0.3302-0.24765 0.53199-0.24765 0.22013 0 0.34396 0.10548 0.34396 0.30269 0 0.22013-0.16051 0.37147-0.66957 0.37147v0.49989c0.62371 0 0.76129 0.14675 0.76129 0.38981 0 0.21096-0.17886 0.32562-0.45861 0.32562-0.2293 0-0.44485-0.11924-0.62371-0.28893l-0.32561 0.44944c0.21555 0.24765 0.55033 0.41275 1.0227 0.41275z" aria-label="3"/>
+   <path d="m28.631 125.32 0.34396-0.59161c0.08255-0.16969 0.1651-0.33479 0.23848-0.50447h0.01834c-0.0092 0.19262-0.02293 0.47695-0.02293 0.66498v0.4311zm0.57785 1.2199h0.6604v-0.67874h0.3302v-0.54116h-0.3302v-1.6923h-0.87594l-1.0365 1.7381v0.4953h1.252z" aria-label="4"/>
+  </g>
+  <g fill="#000000" font-family="'Source Sans Pro'" font-size="5.6444px" font-weight="bold" stroke-width=".5">
+   <text x="59.612717" y="53.027283" opacity=".58806" style="paint-order:stroke fill markers" xml:space="preserve"><tspan fill="#000000" stroke-width=".5"/></text>
+   <text x="40.839176" y="55.103119" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="40.839176" y="55.103119" fill="#000000" stroke-width=".5">0</tspan></text>
+   <text x="58.750332" y="55.103119" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="58.750332" y="55.103119" fill="#000000" stroke-width=".5">4</tspan></text>
+   <text x="76.675598" y="55.136986" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="76.675598" y="55.136986" fill="#000000" stroke-width=".5">2</tspan></text>
+   <text x="94.572632" y="55.103119" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="94.572632" y="55.103119" fill="#000000" stroke-width=".5">9</tspan></text>
+   <text x="112.40758" y="55.103119" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="112.40758" y="55.103119" fill="#000000" stroke-width=".5">1</tspan></text>
+   <text x="40.912556" y="73.012825" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="40.912556" y="73.012825" fill="#000000" stroke-width=".5">5</tspan></text>
+   <text x="112.52329" y="73.012825" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="112.52329" y="73.012825" fill="#000000" stroke-width=".5">5</tspan></text>
+   <text x="58.741863" y="73.046692" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="58.741863" y="73.046692" fill="#000000" stroke-width=".5">0</tspan></text>
+   <text x="76.675598" y="73.080559" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="76.675598" y="73.080559" fill="#000000" stroke-width=".5">2</tspan></text>
+   <text x="94.555702" y="73.046692" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="94.555702" y="73.046692" fill="#000000" stroke-width=".5">4</tspan></text>
+   <text x="40.83353" y="90.990265" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="40.83353" y="90.990265" fill="#000000" stroke-width=".5">8</tspan></text>
+   <text x="58.699532" y="90.990265" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="58.699532" y="90.990265" fill="#000000" stroke-width=".5">1</tspan></text>
+   <text x="76.638908" y="90.990265" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="76.638908" y="90.990265" fill="#000000" stroke-width=".5">8</tspan></text>
+   <text x="94.578278" y="91.024132" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="94.578278" y="91.024132" fill="#000000" stroke-width=".5">2</tspan></text>
+   <text x="112.52329" y="90.956398" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="112.52329" y="90.956398" fill="#000000" stroke-width=".5">5</tspan></text>
+   <text x="40.847645" y="108.93385" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="40.847645" y="108.93385" fill="#000000" stroke-width=".5">4</tspan></text>
+   <text x="112.48096" y="108.9677" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="112.48096" y="108.9677" fill="#000000" stroke-width=".5">2</tspan></text>
+   <text x="58.750332" y="108.93385" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="58.750332" y="108.93385" fill="#000000" stroke-width=".5">4</tspan></text>
+   <text x="76.63044" y="108.93385" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="76.63044" y="108.93385" fill="#000000" stroke-width=".5">6</tspan></text>
+   <text x="94.572632" y="108.93385" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="94.572632" y="108.93385" fill="#000000" stroke-width=".5">9</tspan></text>
+   <text x="40.918198" y="126.87742" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="40.918198" y="126.87742" fill="#000000" stroke-width=".5">3</tspan></text>
+   <text x="58.820885" y="126.87742" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="58.820885" y="126.87742" fill="#000000" stroke-width=".5">3</tspan></text>
+   <text x="94.572632" y="126.87742" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="94.572632" y="126.87742" fill="#000000" stroke-width=".5">9</tspan></text>
+   <text x="112.52894" y="126.87742" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="112.52894" y="126.87742" fill="#000000" stroke-width=".5">3</tspan></text>
+   <text x="76.653015" y="126.87742" style="paint-order:stroke fill markers" xml:space="preserve"><tspan x="76.653015" y="126.87742" fill="#000000" stroke-width=".5">4</tspan></text>
+  </g>
+ </g>
+</svg>

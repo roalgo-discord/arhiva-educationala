@@ -3,7 +3,7 @@ tags:
     - matrici
     - implementare
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
@@ -12,12 +12,11 @@ tags:
 
 După ce v-ați obișnuit cu [tablourile
 unidimensionale](https://edu.roalgo.ro/cppintro/arrays/), a venit timpul să
-generalizăm lucrurile și pentru tablourile bidimensionale (colocvial numite,
-matrici) și cele cu mai multe dimensiuni.
+generalizăm lucrurile și pentru tablourile bidimensionale (cunoscute colocvial
+ca *matrici*) și cele cu mai multe dimensiuni.
 
-Cel mai simplu mod de a defini o matrice este acela că reprezintă un vector de
-vectori, acesta fiind și modul în care matricea este stocată în memorie (liniile
-sunt situate consecutiv în memorie).
+O matrice este, în esență, un vector de vectori. În memorie, matricea este
+stocată astfel încât liniile să fie plasate una după alta în ordine consecutivă.
 
 De-a lungul acestui articol, vom discuta diferite moduri de a parcurge
 matricile, precum și elemente care apar des în exerciții probleme și cum să le
@@ -27,114 +26,337 @@ dificile, precum și tablourile multidimensionale.
 
 ## Declararea, parcurgerea și umplerea matricilor statice
 
-Pentru a declara matricile, putem folosi ambele variante (fie cea inspirată din
-limbajul C, fie cea bazată pe metodele din STL). În acest articol ne vom
-concentra pe varianta statică, păstrând metodele din STL pentru articolul
-corespunzător.
+În C++, matricele pot fi declarate în două moduri:
 
-Pentru a citi și parcurge valorile din matrice, vom folosi de regulă o structură
-repetitivă, precum for sau while, citind valorile pe rând, la fel cum am proceda
-cu variabile obișnuite. Spre deosebire de vectori, vom avea nevoie (de regulă)
-de structuri repetitive imbricate.
+- Forma clasică, specifică limbajului C.
+- Variante moderne bazate pe biblioteci din STL (abordată într-un [articol
+  separat](./stl.md)).
 
-În mod similar cu declararea vectorilor, ne trebuie un tip de date pe care acest
-tablou să-l stocheze, precum și dimensiunea pe care vrem să o atribuim acestui
-tablou.
+În acest articol, ne concentrăm pe **matricile statice**, adică matrici care au
+dimensiuni fixe și nu pot fi extinse.
 
-De exemplu, `#!cpp int v[101][101];` înseamnă ca am declarat un tablou
-bidimensional cu 101 linii, fiecare tablou având 101 elemente, pozițiile fiind
-numărate de la 0 la 100 (cu alte cuvinte, am declarat 101 tablouri).
+### Declarație și structură
 
-!!! note "Împărțirea tablourilor"
+Pentru declararea unei matrice statice, aveți nevoie de:
 
-    Colocvial, vom împărți aceste tablouri în linii și coloane, astfel, vom spune
-    despre elementul de pe poziția (2, 6) că se află pe linia 2 și coloana 6. De
-    asemenea, liniile vor fi numerotate de sus în jos, iar coloanele de la 
-    stânga la dreapta, ceea ce este în contrast cu sistemul de coordonate xOy 
-    folosit în geometria analitică.
+1. Tipul de date al elementelor (e.g., `#!cpp int`, `#!cpp float`).
+2. Dimensiunile matricei.
+
+!!! example "Exemplu"
+    ```cpp
+    int matrice[101][101];
+    ```
+
+Aceasta definește o matrice cu 101 linii și 101 coloane, fiecare element fiind
+de tip `#!cpp int`. Indicii sunt numerotați de la 0 la 100.
+
+<figure markdown="span">
+  ![O matrice cu 5 rânduri și 8 coloane](./images/matrices/matrix_1.svg){ width="100%" loading=lazy }
+  <!-- <figcaption>O matrice cu 5 rânduri și 8 coloane</figcaption> -->
+</figure>
+
+Următoarea matrice are 5 rânduri și 8 coloane și este indexată de la 0. Pentru a
+accesa elementul de pe al treilea rând și a cincea coloană, folosim `#!cpp
+matrice[2][4]`. Așa ar arăta pe matricea noastră:
+
+<figure markdown="span">
+  ![Accesarea elementului de pe al treilea rând și a cincea coloană](./images/matrices/matrix_2.svg){ width="100%" loading=lazy }
+</figure>
+
+!!! note "Reprezentarea matricii"
+    În terminologia uzuală:
+
+    - Liniile sunt numerotate de sus în jos.
+    - Coloanele sunt numerotate de la stânga la dreapta.
+
+    Spre deosebire de sistemul de coordonate cartezian (xOy) din geometrie, axa
+    liniilor corespunde „verticalei”, iar axa coloanelor „orizontalului”. Dacă în
+    matematică elementul poziționat x unități la dreapta și y unități în sus este
+    $a_{x,y}$, în cazul C++ avem y unități în jos și x unități la dreapta și 
+    notăm elementul cu `#!cpp a[y][x]`. Ca un ghid, țineți minte indexarea din 
+    C++ ca fiind `#!cpp a[rand][coloana]`.
 
 !!! note "Observație"
 
-    La fel ca la vectori, dacă vreți să lucrați cu valorile indexate de la 1, va
-    trebui să adăugați 1 la dimensiunile pe care le declarați.
+    Dacă preferați să lucrați cu indici numerotați de la 1, pur și simplu 
+    adăugați 1 la dimensiunile declarate și folosiți direct numărul ca atare,
+    exact ca în cazul vectorilor uzuali.
 
-Pentru a atribui o valoare unei anumite poziții, se va proceda similar ca la o
-variabilă obișnuită, de exemplu `#!cpp v[1][5] = 7;` înseamnă că pe linia 1 și
-coloana 5, vom avea acum valoarea 7.
+    !!! example "Exemplu"
+        ```cpp
+        // Numerotare de la 1 la 101.
+        int matrice[102][102];
+        ```
+
+    În acel caz, matricea va fi stocată astfel:
+    <figure markdown="span">
+    ![O matrice unde indexarea începe de la 1; există spații goale pentru elementele cu rândul sau coloana 0.](./images/matrices/matrix_index_1.svg){ width="100%" loading=lazy }
+    </figure>
+
+### Parcurgere și atribuire de valori
+
+Valorile matricei pot fi accesate și modificate similar cu variabilele
+obișnuite, utilizând indicii.
+
+!!! example "Exemplu"
+    ```cpp
+    // Pe linia 1 și coloana 5 vom avea acum valoarea 7.
+    matrice[1][5] = 7;
+    ```
+
+Pentru a parcurge elementele, de regulă se folosesc structuri repetitive
+imbricate.
+
+!!! example "Exemplu de parcurgere și afișare"
+    ```cpp
+    // r semnifică rândul și c semnifică coloana.
+    for (int r = 0; r < n; ++r) {
+        for (int c = 0; c < m; ++c) {
+            cout << matrice[r][c] << " ";
+        }
+        cout << '\n';
+    }
+    ```
+
+!!! note "Notă"
+
+    Cea mai comună convenție este `i` pentru rând și `j` pentru
+    coloană. Am ales `r` și `c` pentru că e mai simplu de reținut
+    de la ce vin.
 
 ### Problemă exemplu - [sumapare2 de pe pbinfo](https://www.pbinfo.ro/probleme/767/sumapare2)
 
-Aici puteți observa cum citim valorile din matrice și apoi parcurgem matricea
-pentru a aduna valorile pare care apar în ea.
+Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor
+pare din ea. Soluția poate fi implementată astfel:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n, m;
-    cin >> n >> m;
+    // Citirea dimensiunilor matricei
+    int randuri, coloane;
+    cin >> randuri >> coloane;
 
-    int mat[n][m];
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cin >> mat[i][j];
+    // Declararea matricei
+    int mat[randuri][coloane];
+
+    // Citirea elementelor
+    for (int r = 0; r < randuri; r++) {
+        for (int c = 0; c < coloane; c++) {
+            cin >> mat[r][c];
         }
     }
 
-    int sumpar = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            if (mat[i][j] % 2 == 0) {
-                sumpar += mat[i][j];
+    // Calculul sumei numerelor pare
+    int suma = 0;
+    for (int r = 0; r < randuri; r++) {
+        for (int c = 0; c < coloane; c++) {
+            if (mat[r][c] % 2 == 0) {
+                suma += mat[r][c];
             }
         }
     }
 
-    cout << sumpar << '\n';
+    // Afișarea rezultatului
+    cout << suma << '\n';
+
     return 0;
 }
 ```
 
+!!! note "Notă"
+
+    O altă convenție comună este `n` pentru numărul de rânduri și
+    `m` pentru numărul de coloane. Dacă în matematică am avea o matrice de `m`
+    coloane și `n` rânduri ca fiind de dimensiune m × n, în informatică va fi
+    `#!cpp mat[n][m]`. Pentru a fi expliciți, folosim `randuri` și `coloane` 
+    în acest articol.
+
+### Matrici pătratice
+
+!!! note "Definiție"
+    O matrice unde numărul de rânduri și numărul de coloane coincid se numește
+    **matrice pătratică**.
+
+În acest caz, folosim pentru ambele dimensiuni o singură variabilă. De obicei se
+folosește `n`, însă în acest articol vom folosi `dim` (de la *dimensiune*). Așa
+arată una:
+
+<figure markdown="span">
+  ![O matrice pătratică cu 5 rânduri și 5 coloane](./images/matrices/matrix_patratica_1.svg){ width="100%" loading=lazy }
+</figure>
+
+Într-o matrice pătratică avem *diagonale*. Distingem două diagonale:
+
+- **Diagonala principală** este diagonala care începe din colțul stânga-sus și
+  se termină în colțul dreapta-jos.
+- **Diagonala secundară** este diagonala care începe din colțul dreapta-sus și
+  se termină în cel stânga-jos.
+
+Următoarea poză arată diagonala principală a matricei de mai sus:
+
+<figure markdown="span">
+  ![Diagonala principală a matricei de mai sus](./images/matrices/matrix_patratica_diag_principala.svg){ width="100%" loading=lazy }
+</figure>
+
+Elementele care aparțin acestei diagonale se află la (0, 0), (1, 1), (2, 2), (3,
+3), (4, 4). De aici, putem deriva faptul că elementele diagonalei principale
+sunt cele pentru care rândul coincide cu coloana. Asta ne permite să scriem
+următorul cod care parcurge diagonala principală:
+
+```cpp
+for (int r = 0; r < dim; ++r) {
+    for (int c = 0; c < dim; ++c) {
+        if (r == c) {
+            // Fă ceva cu matrice[r][c]
+        }
+    }
+}
+```
+
+Din moment ce rândul coincide cu coloana, putem scăpa de al doilea `#!cpp for`,
+pentru a obține acest cod:
+
+```cpp
+for (int i = 0; i < dim; ++i) {
+    // Fă ceva cu matrice[i][i]
+}
+```
+
+Același lucru se aplică pentru indexarea de la 1, doar că va fi
+`#!cpp for (int i = 1; i <= dim; ++i)`.
+
+Pentru matricea noastră, așa va arăta diagonala secundară:
+
+<figure markdown="span">
+  ![Diagonala secundara a matricei de mai sus](./images/matrices/matrix_patratica_diag_secundara.svg){ width="100%" loading=lazy }
+</figure>
+
+Elementele care aparțin acestei diagonale se află la (0, 4), (1, 3), (2, 2), (3,
+1), (4, 0). Remarcăm că dacă adunăm rândul și coloana, obținem 4, care este cu
+unu mai mic decât dimensiunea matricei. Asta ne permite să scriem
+următorul cod care parcurge diagonala secundară:
+
+```cpp
+for (int r = 0; r < dim; ++r) {
+    for (int c = 0; c < dim; ++c) {
+        if (r + c == dim - 1) {
+            // Fă ceva cu matrice[r][c]
+        }
+    }
+}
+```
+
+La fel ca în cazul diagonalei principale, putem folosi un singur `#!cpp for`.
+Din condiția de mai sus putem scoate `#!cpp c`. Mai exact, putem muta `#!cpp r`
+în partea cealaltă pentru a obține `#!cpp c == dim - r + 1`. Acum putem scrie
+codul:
+
+```cpp
+for (int r = 0; r < dim; ++r) {
+    int c = dim - r - 1;
+
+    // Fă ceva cu matrice[r][c]
+}
+```
+
+Dacă matricea este indexată de la 1, atunci atât `#!cpp r`, cât și `#!cpp c` vor
+avea un 1 în plus, așadar condiția devine `#!cpp r - 1 + c - 1 == dim - 1` sau
+`#!cpp r + c == dim + 1`, sau `#!cpp c == dim - r + 1`. Pentru indexare de la 1,
+așa va arăta codul:
+
+```cpp
+for (int r = 1; r <= dim; ++r) {
+    int c = dim - r + 1;
+
+    // Fă ceva cu matrice[r][c]
+}
+```
+
+Cu indexarea la 0, scădem 1, iar cu indexare de la 1, adăugăm 1.
+
+!!! note "Observație"
+    Dacă dimensiunea este impară, atunci cele două diagonale au un element
+    comun. În caz contrar, diagonalele nu vor avea elemente comune.
+
+Firește, dacă avem o diagonală, putem vorbi și despre elementele de deasupra sau
+de sub ea.
+
+Așa arată elementele de deasupra, respectiv de sub diagonala principală:
+
+<figure markdown="span">
+  ![Ce e sub și peste diagonala principală a matricei](./images/matrices/matrix_patratica_diag_principala_regiuni.svg){ width="100%" loading=lazy  }
+</figure>
+
+Așa arată elementele de deasupra, respectiv de sub diagonala secundară:
+
+<figure markdown="span">
+  ![Ce e sub și peste diagonala secundară a matricei](./images/matrices/matrix_patratica_diag_secondara_regiuni.svg){ width="100%" loading=lazy  }
+</figure>
+
+Indicii urmează următoarele reguli:
+
+|                  |        Deasupra         |           Sub           |
+| ---------------- | :---------------------: | :---------------------: |
+| Diag. principală |      `#!cpp r < c`      |      `#!cpp r > c`      |
+| Diag. secundară  | `#!cpp r + c < dim - 1` | `#!cpp r + c > dim - 1` |
+
+Este ușor să țineți minte următoarea regulă: deasupra e mai mic, sub e mai mare.
+
+Intersecția acestor regiuni formează patru regiuni: de nord, sud, vest și est.
+Elementele din aceste regiuni sunt determinate de aceste condiții:
+
+- **Nord**:
+    - **Deasupra** diagonalei principale și **deasupra** diagonalei secundare.
+    - **Formula**: `#!cpp r < c && r + c < dim - 1`.
+- **Sud**:
+    - **Sub** diagonala principală și **sub** diagonala secundară.
+    - **Formula**: `#!cpp r > c && r + c > dim - 1`.
+- **Vest**:
+    - **Sub** diagonala principală și **deasupra** diagonalei secundare.
+    - **Formula**: `#!cpp r > c && r + c < dim - 1`.
+- **Est**:
+    - **Deasupra** diagonalei principale și **sub** diagonala secundară.
+    - **Formula**: `#!cpp r < c && r + c > dim - 1`.
+
 ### Genererări de matrice
 
-Multe probleme cu matrici, în special cele date la examenele de bacalaureat și
-admitere, necesită diverse generări și construiri de matrice. Aici vom prezenta
-câteva exerciții și probleme rezolvate.
+Multe probleme ce implică matrici, în special cele întâlnite la examenele de
+bacalaureat și admitere, necesită generarea și construcția de matrici specifice.
+În această secțiune, vom prezenta câteva exerciții și probleme rezolvate,
+oferind explicații clare și optimizări acolo unde este cazul.
 
 O listă foarte bună cu probleme suplimentare de acest tip se găsește
 [aici](https://www.pbinfo.ro/?pagina=probleme-lista&tag=48).
 
 #### Exercițiu adaptat dintr-un model al examenului de bacalaureat
 
-Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
+!!! note "Enunț"
+    Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
 
-```
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 4 2 2 2
-2 2 4 4 4 2 2
-2 4 4 4 4 4 2
-```
+    ```text
+    2 2 2 2 2 2 2
+    2 2 2 2 2 2 2
+    2 2 2 2 2 2 2
+    2 2 2 2 2 2 2
+    2 2 2 4 2 2 2
+    2 2 4 4 4 2 2
+    2 4 4 4 4 4 2
+    ```
 
-Pentru a rezolva acest exercițiu, putem observa faptul că primele 4 linii sunt
-pline de 2, iar începând de la linia 5, vom începe să avem valori egale cu
-4 începând de la mijloc, intervalul valorilor extinzându-se la stânga și
-dreapta cu câte 1 pentru fiecare linie următoare.
+Pentru a rezolva acest exercițiu, putem observa faptul că toată matricea este
+umplută cu 2, cu excepția regiunii de sud unde avem 4. La problemele de
+bacalaureat de obicei indexarea este de la 1, așa că vom urma și noi această
+regulă.
 
 ```cpp
-for (int i = 1; i <= 7; i++) {
-    for (int j = 1; j <= 7; j++) {
-        if (i <= 4) {
-            mat[i][j] = 2;
+for (int r = 1; r <= 7; r++) {
+    for (int c = 1; c <= 7; c++) {
+        if (r > c && r + c > 7 + 1) {
+            mat[r][c] = 4;
         } else {
-            if (j >= 4 - (i - 5) && j <= 4 + (i + 5)) {
-                mat[i][j] = 4;
-            } else {
-                mat[i][j] = 2;
-            }
+            mat[r][c] = 2;
         }
     }
 }
@@ -150,32 +372,32 @@ din enunț, în ordinea în care sunt date. Ulterior, vom afișa matricea rezult
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
+    // Citirea dimensiunii
+    int dim;
+    cin >> dim;
 
-    int grid[n + 1][n + 1];
+    int mat[21][21];
 
-    // prima coloana
-    for (int i = 1; i <= n; i++) {
-        grid[i][1] = i;
+    for (int i = 1; i <= dim; i++) {
+        // Prima coloană
+        mat[i][1] = i;
+
+        // Ultima linie
+        mat[dim][i] = dim;
     }
 
-    // ultima linie
-    for (int i = 1; i <= n; i++) {
-        grid[n][i] = n;
-    }
-
-    // restul matricii
-    for (int i = n - 1; i >= 1; i--) {
-        for (int j = 2; j <= n; j++) {
-            grid[i][j] = grid[i][j - 1] + grid[i + 1][j - 1];
+    // De la penultima linie la prima
+    for (int r = dim - 1; r >= 1; r--) {
+        // De la a doua coloană la ultima
+        for (int c = 2; c <= dim; c++) {
+            mat[r][c] = mat[r][c - 1] + mat[r + 1][c - 1];
         }
     }
 
-    // afisarea
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            cout << grid[i][j] << " ";
+    // Afișare matrice
+    for (int i = 1; i <= dim; i++) {
+        for (int j = 1; j <= dim; j++) {
+            cout << mat[i][j] << " ";
         }
         cout << '\n';
     }
@@ -195,100 +417,49 @@ după caz.
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
+    int dim;
+    cin >> dim;
 
-    int mat[n + 1][n + 1];
+    int mat[dim + 1][dim + 1];
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            int dist = i - 1;
-            if (n - i < dist) {
-                dist = n - i;
+    for (int r = 1; r <= dim; r++) {
+        for (int c = 1; c <= dim; c++) {
+            int sus = r - 1;
+            int stanga = c - 1;
+            int jos = dim - r;
+            int dreapta = dim - c;
+
+            // Determinăm distanța minimă față de margini
+            int distanta = sus;
+            if (stanga < distanta) {
+                distanta = stanga;
             }
-            if (j - 1 < dist) {
-                dist = j - 1;
+            if (jos < distanta) {
+                distanta = jos;
             }
-            if (n - j < dist) {
-                dist = n - j;
+            if (dreapta < distanta) {
+                distanta = dreapta;
             }
-            if (dist % 2 == 0) {
-                mat[i][j] = 1;
+
+            // Dacă distanța este pară, punem 1, altfel punem 0
+            if (distanta % 2 == 0) {
+                mat[r][c] = 1;
             } else {
-                mat[i][j] = 0;
+                mat[r][c] = 0;
             }
         }
     }
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            cout << mat[i][j] << " ";
+    for (int r = 1; r <= dim; r++) {
+        for (int c = 1; c <= dim; c++) {
+            cout << mat[r][c] << " ";
         }
         cout << '\n';
     }
 
     return 0;
-} 
+}
 ```
-
-## Matricile pătratice
-
-!!! info "Definiție"
-    O matrice pătratică este o matrice care are un număr egal de linii și coloane.
-
-Deși în mod structural, aceste matrici nu sunt diferite față de matricile
-"dreptunghiulare", această structură simetrică ne permită să operăm mult mai
-multe tipuri de operații.
-
-În cele ce urmează, vom defini diverse noțiuni întâlnite frecvent în aceste
-tipuri de probleme.
-
-### Împărțirea matricilor pătratice. Diagonale, zone și regiuni
-
-Mai întâi, deoarece matricea este pătratică, putem să ne gândim la diagonalele
-matricii drept granițe pentru împărțirea matricii pe zone, astfel creându-se 4
-regiuni.
-
-!!! info "Diagonala principală"
-
-    Definim diagonala principală a unei matrici pătratice segmentul care unește
-    punctele situate în pozițiile (1, 1) și (n, n), astfel încât această linie
-    acoperă toate punctele cu coordonatele de forma (i, i).
-
-!!! info "Diagonala secundară"
-
-    Definim diagonala secundară a unei matrici pătratice segmentul care unește
-    punctele situate în pozițiile (1, n) și (n, 1), astfel încât această linie
-    acoperă toate punctele cu coordonatele de forma (i, n - i + 1).
-
-!!! note "Observație"
-
-    Dacă indexăm matricea de la 0, diagonala secundară unește pozițiile (0, n-1)
-    și (n-1, 0), punctele acoperite având coordonatele (i, n - i - 1).
-
-O consecință a prezenței acestor diagonale reprezintă împărțirea matricii pe
-zone, în funcție de orientarea raportată la diagonale, zonele fiind definite
-presupunând indexarea matricii de la 1.
-
-Astfel, putem defini 4 zone, după cum urmează:
-
-- zona de nord: Pozițiile situate deasupra ambelor diagonale (cu portocaliu pe
-  desen). Pentru ca un punct să fie în zona de nord, i < j și i + j < n + 1.
-- zona de vest: Pozițiile situate deasupra diagonalei secundare (cu roșu pe
-  desen). Pentru ca un punct să fie în zona de vest, i > j și i + j < n + 1.
-- zona de est: Pozițiile situate deasupra diagonalei principale (cu albastru pe
-  desen). Pentru ca un punct să fie în zona de est, i < j și i + j > n + 1.
-- zona de sud: Pozițiile situate dedesubtul ambelor diagonale (cu galben pe
-  desen). Pentru ca un punct să fie în zona de sud, i > j și i + j > n + 1.
-
-!!! note "Observație"
-
-    Pentru valori impare ale lui n, diagonalele se intersectează în punctul din
-    mijlocul matricii.
-
-- În desen, diagonala principală reprezintă zonele cu roz pe desen, iar diagonala secundară, zonele cu verde pe desen. (punctul din mijloc este hașurat cu verde).
-
-![](../images/matrici/diagonals.png)
 
 #### Problemă exemplu - [zona1 de pe pbinfo](https://www.pbinfo.ro/probleme/782/zona1)
 
@@ -301,22 +472,25 @@ răspunsul cerut.
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
+    int dim;
+    cin >> dim;
 
-    int fr[1000] = {0};
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            int x;
-            cin >> x;
-            if (i > j && i + j > n + 1) {
-                fr[x]++;
+    int frecventa[1000] = {0};
+    for (int r = 1; r <= dim; r++) {
+        for (int c = 1; c <= dim; c++) {
+            int elem;
+            cin >> elem;
+
+            // Verificăm dacă este în zona de sud:
+            // sub diagonala principală și sub diagonala secundară.
+            if (r > c && r + c > dim + 1) {
+                frecventa[elem]++;
             }
         }
     }
 
     for (int i = 0; i < 1000; i++) {
-        if (fr[i] >= 2) {
+        if (frecventa[i] >= 2) {
             cout << i << " ";
         }
     }
@@ -340,48 +514,58 @@ parcurgere, vom merge în jos ulterior.
 using namespace std;
 
 int main() {
-    ifstream cin("diagonal.in");
-    ofstream cout("diagonal.out");
+    ifstream in("diagonal.in");
+    ofstream out("diagonal.out");
 
-    char grid[100][100];
+    char mat[100][100];
 
-    int n = 0;
-    while (cin >> grid[n]) {
-        n++;
+    int dim = 0;
+    while (in >> mat[dim]) {
+        dim++;
     }
 
-    // diagonala principala
+    // Diagonala principală
 
-    for (int L = n - 1; L >= 0; L--) {
-        int L2 = L;
-        for (int C = 0; L2 < n && C < n; L2++, C++) {
-            cout << grid[L2][C];
-        }
-    }
-    for (int C = 1; C < n; C++) {
-        int C2 = C;
-        for (int L = 0; L < n && C2 < n; L++, C2++) {
-            cout << grid[L][C2];
+    for (int start = dim - 1; start >= 0; start--) {
+        int r = start, c = 0;
+        while (r < dim && c < dim) {
+            out << mat[r][c];
+            r++;
+            c++;
         }
     }
 
-    cout << '\n';
-
-    // diagonala secundara
-
-    for (int C = 0; C < n; C++) {
-        int C2 = C;
-        for (int L = 0; L < n && C2 >= 0; L++, C2--) {
-            cout << grid[L][C2];
+    for (int start = 1; start < dim; start++) {
+        int r = 0, c = start;
+        while (r < dim && c < dim) {
+            out << mat[r][c];
+            r++;
+            c++;
         }
     }
 
-    for (int L = 1; L < n; L++) {
-        int L2 = L;
-        for (int C = n - 1; L2 < n && C >= 0; L2++, C--) {
-            cout << grid[L2][C];
+    out << '\n';
+
+    // Diagonala secundară
+
+    for (int start = 0; start < dim; start++) {
+        int r = 0, c = start;
+        while (r < dim && c >= 0) {
+            out << mat[r][c];
+            r++;
+            c--;
         }
     }
+
+    for (int start = 1; start < dim; start++) {
+        int r = start, c = dim - 1;
+        while (r < dim && c >= 0) {
+            out << mat[r][c];
+            r++;
+            c--;
+        }
+    }
+
     return 0;
 }
 ```
@@ -401,7 +585,7 @@ spirală, dar aici ne vom concentra pe două dintre variante.
 
 #### Varianta 1 - acoperim fiecare zonă concentrică
 
-O primă variantă constă în a simula cele 4 mutări pentru fiecare zonă
+O primă variantă constă în a simula cele patru mutări pentru fiecare zonă
 concentrică și să folosim foruri imbricate pentru a avea scrise parcurgerile.
 
 Cu alte cuvinte, acoperim fiecare zonă colorată diferit în imaginea de mai jos
@@ -417,35 +601,45 @@ folosește această tehnică.
 #include <fstream>
 using namespace std;
 
-ifstream fin("spirala.in");
+ifstream in("spirala.in");
 ofstream fout("spirala.out");
 
-int ox[4] = {0, 1, 0, -1};
-int oy[4] = {1, 0, -1, 0};
-
 int main() {
-    int n;
-    fin >> n;
+    int dim;
+    in >> dim;
 
-    int grid[n + 1][n + 1];
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            fin >> grid[i][j];
+    int mat[dim + 1][dim + 1];
+
+    // Citirea matricei
+    for (int i = 1; i <= dim; i++) {
+        for (int j = 1; j <= dim; j++) {
+            in >> mat[i][j];
         }
     }
 
-    for (int L = 1; L <= n / 2 + n % 2; L++) {
-        for (int C = L; C <= n - L + 1; C++) {
-            fout << grid[L][C] << " ";
+    int N = dim / 2 + dim % 2;
+
+    // Iterăm pentru fiecare zonă concentrică
+    for (int r = 1; r <= N; r++) {
+        
+        // Dreapta
+        for (int c = r; c <= dim - r + 1; c++) {
+            fout << mat[r][c] << " ";
         }
-        for (int CC = L + 1; CC <= n - L + 1; CC++) {
-            fout << grid[CC][n - L + 1] << " ";
+
+        // Jos
+        for (int c = r + 1; c <= dim - r + 1; c++) {
+            fout << mat[c][dim - r + 1] << " ";
         }
-        for (int C = n - L; C >= L; C--) {
-            fout << grid[n - L + 1][C] << " ";
+
+        // Stânga
+        for (int c = dim - r; c >= r; c--) {
+            fout << mat[dim - r + 1][c] << " ";
         }
-        for (int CC = n - L; CC >= L + 1; CC--) {
-            fout << grid[CC][L] << " ";
+
+        // Dreapta
+        for (int c = dim - r; c >= r + 1; c--) {
+            fout << mat[c][r] << " ";
         }
     }
 
@@ -481,40 +675,61 @@ folosește această tehnică.
 #include <fstream>
 using namespace std;
 
-ifstream fin("spirala.in");
-ofstream fout("spirala.out");
-
-// dreapta, jos, stanga, sus
-int ox[4] = {0, 1, 0, -1};
-int oy[4] = {1, 0, -1, 0};
+// Dreapta, jos, stânga, sus
+int deltaX[4] = {0, 1, 0, -1};
+int deltaY[4] = {1, 0, -1, 0};
 
 int main() {
-    int n;
-    fin >> n;
+    ifstream in("spirala.in");
+    ofstream out("spirala.out");
 
-    int grid[n + 1][n + 1];
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            fin >> grid[i][j];
+    int dim;
+    in >> dim;
+
+    int mat[dim + 1][dim + 1];
+    for (int r = 1; r <= dim; r++) {
+        for (int c = 1; c <= dim; c++) {
+            in >> mat[r][c];
         }
     }
 
-    int L = 1;
-    int C = 0;
-    int dir = 0;  // directia curenta
-    int cnt = n;  // numarul de mutari
-    int rem = 1;  // cate serii cu acest numar de mutari mai avem
-    while (cnt > 0) {
-        for (int i = 1; i <= cnt; i++) {
-            L += ox[dir];
-            C += oy[dir];
-            fout << grid[L][C] << " ";
+    // Rândul curent
+    int rand = 1;
+
+    // Coloana curentă (pornind din afara matricii)
+    int coloana = 0;
+
+    // Direcția curentă (0: dreapta, 1: jos, 2: stânga, 3: sus)
+    int directie = 0;
+
+    // Numărul de pași pe care trebuie să îi facem înainte de
+    // a schimba direcția
+    int pasiRamasi = dim;
+
+    // Numărul de schimbări de direcție rămase pentru acest număr de pași
+    int schimbari = 1;
+
+    // Algoritmul de parcurgere în spirală
+    while (pasiRamasi > 0) {
+        // Mergem în direcția curentă pentru pașii rămași
+        for (int pas = 1; pas <= pasiRamasi; pas++) {
+            rand += deltaX[directie];
+            coloana += deltaY[directie];
+
+            out << mat[rand][coloana] << " ";
         }
-        dir = (dir + 1) % 4;
-        rem--;
-        if (rem == 0) {
-            rem = 2;
-            cnt--;
+
+        // Schimbăm direcția în sensul acelor de ceasornic
+        directie = (directie + 1) % 4;
+
+        // Un set de mutări rămase este gata
+        schimbari--;
+
+        // Dacă s-au efectuat două schimbări, reducem numărul de pași rămași
+        if (schimbari == 0) {
+            schimbari = 2;
+            // Reducem dimensiunea spiralei
+            pasiRamasi--;
         }
     }
 
@@ -555,31 +770,32 @@ matricea la stânga cu 90°.
 using namespace std;
 
 int main() {
-    ifstream cin("rotire.in");
-    ofstream cout("rotire.out");
+    ifstream in("rotire.in");
+    ofstream out("rotire.out");
 
-    int n, m;
-    cin >> n >> m;
+    int randuri, coloane;
+    in >> randuri >> coloane;
 
-    int grid[11][11], grid2[11][11];
+    int mat[11][11];
+    int matRot[11][11];
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            cin >> grid[i][j];
+    for (int r = 1; r <= randuri; r++) {
+        for (int c = 1; c <= coloane; c++) {
+            in >> mat[r][c];
         }
     }
 
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            grid2[m - j + 1][i] = grid[i][j];
+    for (int r = 1; r <= randuri; r++) {
+        for (int c = 1; c <= coloane; c++) {
+            matRot[coloane - c + 1][r] = mat[r][c];
         }
     }
 
-    for (int i = 1; i <= m; i++) {
-        for (int j = 1; j <= n; j++) {
-            cout << grid2[i][j] << " ";
+    for (int r = 1; r <= coloane; r++) {
+        for (int c = 1; c <= randuri; c++) {
+            out << matRot[r][c] << " ";
         }
-        cout << '\n';
+        out << '\n';
     }
     return 0;
 }
@@ -591,11 +807,20 @@ Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze
 faptul că nu vrem să trecem prin acele poziții (de exemplu, -1).
 
 ```cpp
-for (int i = 0; i <= m + 1; i++) {
-    mat[0][i] = mat[n + 1][i] = -1;  // bordarea liniilor 0 si n+1
+for (int c = 0; c <= coloane + 1; c++) {
+    // Bordarea liniei 0
+    mat[0][c] = -1;
+
+    // Bordarea ultimei linii
+    mat[randuri + 1][c] = -1;
 }
-for (int i = 0; i <= n + 1; i++) {
-    mat[i][0] = mat[i][m + 1] = -1;  // bordarea coloanelor 0 si m+1
+
+for (int r = 0; r <= randuri + 1; r++) {
+    // Bordarea primei coloane
+    mat[r][0] = -1;
+
+    // Bordarea ultimei coloane
+    mat[r][coloane + 1] = -1;
 }
 ```
 
