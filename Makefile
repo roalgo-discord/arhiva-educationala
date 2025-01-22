@@ -6,7 +6,7 @@ CONFIG_FILE = mkdocs.yml
 OUTPUT_DIR = site
 IMAGE_NAME = mkdocs-arhiva
 CONTAINER_NAME = docker-arhiva
-DOCKER = 0
+DOCKER ?= 0
 
 .DEFAULT_GOAL := help
 
