@@ -56,7 +56,7 @@ ifeq ($(DOCKER),1)
 else
 	@echo "Serving MkDocs locally..."
 	@. $(VENV_DIR)/bin/activate && \
-	$(MKDOCS) serve -a localhost:$(PORT) -f $(CONFIG_FILE)
+	$(MKDOCS) serve -a 0.0.0.0:$(PORT) -f $(CONFIG_FILE)
 endif
 
 clean:
