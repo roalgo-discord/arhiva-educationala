@@ -330,6 +330,8 @@ int main() {
 - [Baraj Seniori 2023 sirbun](https://kilonova.ro/problems/556)
 - [Infoarena nane](https://infoarena.ro/problema/nane)
 - [Infoarena teren](https://www.infoarena.ro/problema/teren)
+- [USACO Paired Up
+](https://usaco.org/index.php?page=viewproblem2&cpid=738)
 - [USACO Social
   Distancing](http://www.usaco.org/index.php?page=viewproblem2&cpid=1038)
 - [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
@@ -347,6 +349,14 @@ int main() {
   Codeforces](https://codeforces.com/group/swEqtABRxe/contest/227531/problem/C)
 - [Two Pointers -
   Codeforces](https://codeforces.com/problemset?tags=two+pointers)
+- [Quiz Master -
+Codeforces](https://codeforces.com/contest/1777/problem/C)
+- [Into Blocks (easy) -
+Codeforces](https://codeforces.com/contest/1209/problem/G1)
+- [Slime Escape -
+Codeforces](https://codeforces.com/contest/1734/problem/D)
+- [Range Deletion -
+Codeforces](https://codeforces.com/contest/1167/problem/E)
 - [Two Pointers Step 1 - Codeforces
   EDU](https://codeforces.com/edu/course/2/lesson/9/1/practice)
 - [Two Pointers Step 2 - Codeforces

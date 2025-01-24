@@ -322,6 +322,7 @@ metodă auxiliară utilă când vine vorba de alte tehnici.
 ### Probleme de pe Codeforces
 
 - [Good Subarrays](https://codeforces.com/contest/1398/problem/C)
+- [Robert Hood and Mrs Hood](https://codeforces.com/contest/2014/problem/D)
 - [Running Miles](https://codeforces.com/contest/1826/problem/D)
 - [Irreductible Anagrams](https://codeforces.com/contest/1291/problem/D)
 - [Attribute Checks](https://codeforces.com/contest/2025/problem/D)
