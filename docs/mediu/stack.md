@@ -18,6 +18,7 @@ numim această structură de date stivă.
 ## Noțiuni introductive
 
 !!! info "Ce este o stivă?"
+
     Stiva (în engleză, stack) este o structură de date liniară abstractă, pentru
     care sunt definite operațiile de adăugare a unui element și eliminare a unui
     element și aceste operații se realizează la un singur capăt al structurii,
@@ -32,6 +33,7 @@ Operațiile pe care o stivă le poate efectua în timp constant sunt:
 4. **empty()**: Spune dacă stiva este goală.
 
 !!! note "Observație"
+
     Valorile vor fi procesate conform principiului **LIFO**, adică **last in,
     first out**.
 
@@ -167,39 +169,42 @@ Dacă stiva este goală, atunci răspunsul este $-1$, altfel este indicele
 elementului de pe vârful stivei. Apoi, îl adăugăm pe el însuși în stivă.
 
 !!! note "Observație importantă"
+
     Pe stivă vom reține indici, nu valori. Acest lucru va fi valabil pentru o
     mare parte din problemele de stivă pe care le rezolvați.
 
 !!! example "Exemplu"
-    Vom face o simulare a acestui algoritm, folosindu-ne de exemplul din problemă,
-    $v = [1 \ 2 \ 3 \ 6 \ 4 \ 5 \ 3 \ 2 \ 1 \ 10]$. Ca în problemă, vectorul va fi
-    indexat de la $0$.
+
+    Vom face o simulare a acestui algoritm, folosindu-ne de exemplul din
+    problemă, $v = [1 \ 2 \ 3 \ 6 \ 4 \ 5 \ 3 \ 2 \ 1 \ 10]$. Ca în problemă,
+    vectorul va fi indexat de la $0$.
 
     - Suntem la indicele $0$, $stiva = []$. Răspunsul va fi -1.
-    - Suntem la indicele $1$, $stiva = [0]$, dar îl scoatem, iar apoi $stiva = []$.
-    Răspunsul va fi $-1$.
-    - Suntem la indicele $2$, $stiva = [1]$, dar îl scoatem, iar apoi $stiva = []$.
-    Răspunsul va fi $-1$.
-    - Suntem la indicele $3$, $stiva = [2]$, dar îl scoatem, iar apoi $stiva = []$.
-    Răspunsul va fi $-1$.
+    - Suntem la indicele $1$, $stiva = [0]$, dar îl scoatem, iar apoi $stiva =
+      []$. Răspunsul va fi $-1$.
+    - Suntem la indicele $2$, $stiva = [1]$, dar îl scoatem, iar apoi $stiva =
+      []$. Răspunsul va fi $-1$.
+    - Suntem la indicele $3$, $stiva = [2]$, dar îl scoatem, iar apoi $stiva =
+      []$. Răspunsul va fi $-1$.
     - Suntem la indicele $4$, $stiva = [3]$. Răspunsul va fi $3$.
-    - Suntem la indicele $5$, $stiva = [3 \ 4]$, dar îl scoatem pe $4$. Răspunsul va
-    fi $3$.
+    - Suntem la indicele $5$, $stiva = [3 \ 4]$, dar îl scoatem pe $4$.
+      Răspunsul va fi $3$.
     - Suntem la indicele $6$, $stiva = [3 \ 5]$. Răspunsul va fi $5$.
     - Suntem la indicele $7$, $stiva = [3 \ 5 \ 6]$. Răspunsul va fi $6$.
     - Suntem la indicele $8$, $stiva = [3 \ 5 \ 6 \ 7]$. Răspunsul va fi $7$.
     - Suntem la indicele $9$, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe
-    toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
+      toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
 
 Această rezolvare are complexitatea $\mathcal{O}(N)$, pentru că fiecare element
 va fi pus pe stivă și scos, deci se vor face cel mult două operații pentru
 fiecare.
 
 !!! note "Analiza amortizată"
+
     Pentru a înțelege de ce complexitatea este liniară, puteți citi
     [aici](https://edu.roalgo.ro/mediu/amortised-analysis/) mai multe detalii.
 
-Detaliii de implementare: vom reține o matrice $raspuns[tip - 1][i]$ care va
+Detalii de implementare: vom reține o matrice $raspuns[tip - 1][i]$ care va
 reprezenta răspunsul la o întrebare de tipul $tip \ i$. De asemenea, vom folosi
 o santinelă, care va fi o valoare care va fi mereu mai mică (sau mai mare, în
 funcție de caz) decât orice valoare din vector. Pentru mai multe detalii, vezi
@@ -368,7 +373,7 @@ Mai întâi, vom defini urmatoarele două functii:
 1. $canJoin(x, y) = 1$ dacă putem unifica $x$ si $y$, $0$ altfel
 2. $join(x, y) =$ rezultatul unificării dintre $x$ si $y$
 
-Sa simplificăm enunțul astfel: Găsim primul $i (1 < i <= n)$ pentru care
+Sa simplificăm enunțul astfel: Găsim primul $i (1 < i \leq n)$ pentru care
 $canJoin(a_{i - 1}, a_i) = 1$ (dacă nu există atunci terminăm procedeul). Setăm
 $a_{i - 1}$ la $join(a_{i - 1}, a_i)$ si scoatem $a_i$ din șir. Acum, dacă $i >
 2$ și $canJoin(a_{i - 2}, a_{i - 1}) = 0$ continuăm căutarea de la $i + 1$.
@@ -526,14 +531,14 @@ vârful din stivă și continuăm cu $i + 1$. Punctele b) și c) pot fi rezolvat
 1. $S_i = S_{i + 1}$, unde $i$ și $i + 1$ sunt parantezele interschimbate.
    Atunci, răspunsul va rămâne exact la fel, deci nu este o operație swap validă
 2. $S_i = )$ și $S_{i + 1} = ($. În acest caz, există un $a (a < i)$ și un $b (i
-   + 1 < b)$ astfel încât $S_a = ($, $S_b = )$, și $(a, i)$, respectiv $(i + 1,
+   - 1 < b)$ astfel încât $S_a = ($, $S_b = )$, și $(a, i)$, respectiv $(i + 1,
    b)$ formau perechi. Costurile lor însumate vor fi $i - a + b - i - 1 = b - a
-   + 1$. Când interschimbăm $S_i$ cu $S_{i + 1}$ obținem perechile $(a, b)$ și
+   - 1$. Când interschimbăm $S_i$ cu $S_{i + 1}$ obținem perechile $(a, b)$ și
    $(i, i + 1)$, ale căror costuri însumate dau $b - a + 1$. Deci răspunsul a
    crescut cu $2$, ceea ce înseamnă că nu este o operație swap validă.
 3. $S_i = ($ și $S_{i + 1} = )$. Dacă nu există nici un $a (a < i)$ astfel încât
    $S_a = ($ și perechea lui $a$ (pe care o notăm cu $b$) să fie mai mare ca $i
-   + 1$, atunci operația nu ar fi validă, deoarece nu am avea pereche pentru
+   - 1$, atunci operația nu ar fi validă, deoarece nu am avea pereche pentru
    $S_i$ dacă $S_i = )$. Mai întai, avem perechile $(a, b)$ și $(i, i + 1)$.
    După cum am văzut la cazul $2$, răspunsul ar fi mai mic cu $2$ dacă perechile
    ar fi $(a, i)$ și $(i + 1, b)$. Deci operația swap este validă.
@@ -682,45 +687,45 @@ multe similarități între problemele care implică folosirea stivei.
 
 ## Probleme suplimentare
 
-+ [Advertisement - CSES](https://cses.fi/problemset/task/1142) (O versiune mai
+- [Advertisement - CSES](https://cses.fi/problemset/task/1142) (O versiune mai
   ușoară a problemei skyline)
-+ [Maximum Building I - CSES](https://cses.fi/problemset/task/1147) (O versiune
+- [Maximum Building I - CSES](https://cses.fi/problemset/task/1147) (O versiune
   putin mai grea a problemei skyline)
-+ [inundație - ONI 2022 VI](https://kilonova.ro/problems/1593) (Cerințele 2 și 3
+- [inundație - ONI 2022 VI](https://kilonova.ro/problems/1593) (Cerințele 2 și 3
   pot fi rezolvate folosind o stivă, necesită și căutare binară).
-+ [fuziune - ONI 2023 Baraj Juniori](https://kilonova.ro/problems/554) (Problemă
+- [fuziune - ONI 2023 Baraj Juniori](https://kilonova.ro/problems/554) (Problemă
   asemănătoare cu unific, dar necesită lucru cu numere mari și numere prime)
-+ [șiruri - ONI 2022 VI](https://kilonova.ro/submissions/62356) (Problemă
+- [șiruri - ONI 2022 VI](https://kilonova.ro/submissions/62356) (Problemă
   asemănătoare cu unific)
-+ [tower - Shumen 2016 Juniori](https://www.nerdarena.ro/problema/tower) (Nu vă
+- [tower - Shumen 2016 Juniori](https://www.nerdarena.ro/problema/tower) (Nu vă
   speriați că este de la Shumen, problema este doar o aplicație la
   stack_max_min)
-+ [maxp - ONI 2013 VIII](https://kilonova.ro/problems/836) (O altă aplicație la
+- [maxp - ONI 2013 VIII](https://kilonova.ro/problems/836) (O altă aplicație la
   problema stack_max_min)
-+ [changemin - ONI 2022 X](https://kilonova.ro/problems/1602) (O aplicație
+- [changemin - ONI 2022 X](https://kilonova.ro/problems/1602) (O aplicație
   similară cu stack_max_min)
-+ [reactii - ONI 2009 X](https://kilonova.ro/problems/1325) (Problemă
+- [reactii - ONI 2009 X](https://kilonova.ro/problems/1325) (Problemă
   asemănătoare cu unific)
-+ [cladiri - Lot 2007 seniori](https://kilonova.ro/problems/2340)
-+ [dag - ONI 2019 Baraj Seniori](https://kilonova.ro/problems/410) (Problemă
+- [cladiri - Lot 2007 seniori](https://kilonova.ro/problems/2340)
+- [dag - ONI 2019 Baraj Seniori](https://kilonova.ro/problems/410) (Problemă
   care se folosește de tehnica de la stack_max_min)
-+ [leftmax - OJI 2020 X](https://kilonova.ro/problems/929) (Problemă care se
+- [leftmax - OJI 2020 X](https://kilonova.ro/problems/929) (Problemă care se
   folosește de tehinca de la stack_max_min)
-+ Alte probleme cu stiva de pe [kilonova](https://kilonova.ro/tags/314)
+- Alte probleme cu stiva de pe [kilonova](https://kilonova.ro/tags/314)
 
 ## Bibliografie și lectură suplimentară
 
-+ [std::stack - cppreference](https://en.cppreference.com/w/cpp/container/stack)
-+ [Articolul de pe USACO Guide despre
+- [std::stack - cppreference](https://en.cppreference.com/w/cpp/container/stack)
+- [Articolul de pe USACO Guide despre
   stivă](https://usaco.guide/gold/stacks?lang=cpp)
-+ [Stiva - CPPI Sync](https://cppi.sync.ro/materia/stive.html)
-+ [Un video despre stivă, pentru a vă ajuta să înțelegeți mai bine acest
+- [Stiva - CPPI Sync](https://cppi.sync.ro/materia/stive.html)
+- [Un video despre stivă, pentru a vă ajuta să înțelegeți mai bine acest
   concept.](https://www.youtube.com/watch?v=I37kGX-nZEI)
-+ [Un video despre analiza amortizată, vă va ajuta să înțelegeți mai bine
+- [Un video despre analiza amortizată, vă va ajuta să înțelegeți mai bine
   rezolvarea problemei *stack_max_min* și de ce are complexitatea
   $\mathcal{O}(N)$](https://www.youtube.com/watch?v=T7W5E-5mljc)
-+ [Stiva - pbinfo](https://www.pbinfo.ro/articole/19577/stiva)
-+ [Algopedia -
+- [Stiva - pbinfo](https://www.pbinfo.ro/articole/19577/stiva)
+- [Algopedia -
   Stive](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_2_-_26_sep_2019#Stive)
-+ [Algopedia - Analiza amortizată, mai multe detalii despre problema
+- [Algopedia - Analiza amortizată, mai multe detalii despre problema
   stack_max_min](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_11_-_21_nov_2019#Lec%C8%9Bie_-_analiz%C4%83_amortizat%C4%83)

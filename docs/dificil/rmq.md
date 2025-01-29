@@ -35,15 +35,16 @@ lifting**.
 
 !!! warning "Atenție"
 
-    Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea intervalului și
-    $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va
-    crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii
-    puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
+    Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea
+    intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul
+    implementării va crește foarte mult. Unoeri, acest lucru poate duce și la
+    TLE. Mai multe detalii puteți găsi în
+    [acest blog](https://codeforces.com/blog/entry/75611).
 
 !!! note "Observație"
 
-    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de
-    asemenea, folosind binary lifting. Căutarea binară în
+    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat,
+    de asemenea, folosind binary lifting. Căutarea binară în
     [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea,
     binary lifting.
 
@@ -124,17 +125,18 @@ precalculate).
 
 !!! note "Observație"
 
-    Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest lucru
-    nu ne afectează, deoarece $min(x, x) = x$.
+    Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest
+    lucru nu ne afectează, deoarece $min(x, x) = x$.
 
 !!! note "Observație"
 
-    Vom precalcula un vector $lg2_i = $ cel mai mare $j$ astfel încât $2^j \leq i$.
-    Acest vector ne va ajuta să calculăm $lg$ ușor.
+    Vom precalcula un vector $lg2_i = $ cel mai mare $j$ astfel încât $2^j \leq
+    i$. Acest vector ne va ajuta să calculăm $lg$ ușor.
 
 Tabloul $spt$ se calculează la fel ca înainte.
 
-Sursa de accepted (la problema [Static Range Minimum Queries](https://cses.fi/problemset/task/1647)):
+Sursa de accepted (la problema
+[Static Range Minimum Queries](https://cses.fi/problemset/task/1647)):
 
 ```cpp
 #include <iostream>
@@ -199,9 +201,9 @@ int main() {
 !!! note "Observație"
 
     RMQ poate fi folosit cu orice operație $f$ care este
-    [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) = x$
-    (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat
-    mai sus, noi repetăm anumite elemente.
+    [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) =
+    x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am
+    observat mai sus, noi repetăm anumite elemente.
 
 ## RMQ 2D
 
@@ -220,19 +222,24 @@ Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ maximul
 elementelor din submatricea cu colțul stânga-sus la $(i, j)$ și cu colțul
 dreapta-jos la $(l+2^i-1, c+2^j-1)$ din $maxp$.
 
-$$
-spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}
-$$
+$$ spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\
+max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0
+\\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j
+= 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1,
+l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j >
+0 \end{cases} $$
 
 Să vedem cum se calculează răspunsul pentru o întrebare pe un dreptunghi cu
 colțul stânga-sus în $(l_1, c_1)$ și coltul dreapta-jos în $(l_2, c_2)$. Fie
 $lgl = $ cel mai mare număr astfel încât $2^{lgl} \leq l_2-l_1+1$ și $lgc = $
 cel mai mare număr astfel încât $2^lgc \leq c_2-c_1+1$.
 
-$$query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_2 - 2^{lgc} + 1})$$
+$$ query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2
+- 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2
+- 2^{lgl} + 1, c_2 - 2^{lgc} + 1}) $$
 
 Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece
-unele rezultate pot ieși din dreptunhiul în care suntem întrebați. Așa că, vom
+unele rezultate pot ieși din dreptunghiul în care suntem întrebați. Așa că, vom
 [căuta binar](https://edu.roalgo.ro/usor/binary-search/) răspunsul.
 
 Cum verificăm dacă avem vreun pătrat de latură cel puțin $k$? Vom verifica dacă:
@@ -245,7 +252,7 @@ latură cel puțin $k$.
 Sursa de Accepted:
 
 ```cpp
-#include <iostream>
+# include <iostream>
 
 const int MAXN = 1'000;
 const int LOGN = 11;
@@ -380,7 +387,8 @@ adica o problemă în care avem actualizări de forma $a_i = max(a_i, x)$, pentr
 $l \leq i \leq r$. O putem rezolva asemănător, folosind aceleași intervale ca la
 RMQ normal și modificând astfel:
 
-$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1}, x)$$
+$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} =
+max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 
 Apoi, valoarea $a_i$ finală va fi maximul dintre toate valorile din orice
 interval care este actualizat în $spt$ și include $i$. Calculăm această valoare
@@ -395,7 +403,7 @@ Sursa de accepted (la problema [Glad You Came de pe
 codeforces](https://codeforces.com/gym/102114/problem/G))
 
 ```cpp
-#include <iostream>
+# include <iostream>
 
 const int MAXN = 100'000;
 const int MAXVAL = 1 << 30;
@@ -544,8 +552,8 @@ intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
 Sursa de 100 de puncte:
 
 ```cpp
-#include <fstream>
-#include <ctype.h>
+# include <fstream>
+# include <ctype.h>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -657,8 +665,8 @@ fel ca la adăugare.
 Sursa de accepted la G1:
 
 ```cpp
-#include <iostream>
-#include <map>
+# include <iostream>
+# include <map>
 
 const int MAXN = 200'000;
 
@@ -770,8 +778,8 @@ nxt_{i-1, j}}$$
 Sursa de accepted:
 
 ```cpp
-#include <iostream>
-#include <map>
+# include <iostream>
+# include <map>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -849,7 +857,7 @@ void buildTable() {
         sum[0][i] = 1LL * rez[i] * (stiva[sp - 1] - i);
         stiva[sp++] = i;
     }
-    
+
     for (i = 1; i < LOGN; i++) {
         for (j = 0; j <= n; j++) {
             nxt[i][j] = nxt[i - 1][nxt[i - 1][j]];
@@ -896,9 +904,10 @@ int main() {
 ```
 
 !!! note "Observatie"
-    
+
     Această soluție este foarte asemănătoare cu soluția la problema
-    [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul de
+    [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul
+    de
     [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/#binary-lifting)
 
 ## Concluzii

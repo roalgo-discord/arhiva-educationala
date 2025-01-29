@@ -32,8 +32,8 @@ intervalului [32, 127].
 
 !!! note "Codificarea caracterelor"
 
-    Standardul care atribuie valori caracterelor se numește ASCII (American 
-    Standard Code for Information Interchange). Caracterele din intervalul 
+    Standardul care atribuie valori caracterelor se numește ASCII (American
+    Standard Code for Information Interchange). Caracterele din intervalul
     [0, 31] nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
 
 Printre cele mai importante coduri ASCII sunt:
@@ -45,22 +45,12 @@ Printre cele mai importante coduri ASCII sunt:
 
 ### Transformări între litere și cifre
 
-<!-- Pentru a putea lucra cu caracterele fără a fi nevoiți să ținem cont de codul lor
-ASCII (cifrele să fie notate cu valori de la $0$ la $9$, iar literele cu valori
-de la $0$ la $25$), tot ce trebuie să facem este să scădem caracterul
-corespunzător celei mai mici cifre/litere, mai jos găsiți exemple în C++.
-
-!!! note "Transformarea caracterelor"
-
-    Pentru a converti o literă mare în literă mică, valoarea caracterului trebuie
-    crescută cu $32$, iar pentru operația de a converti litera mică în mare,
-    valoarea trebuie scăzută cu $32$. -->
-
 Putem simplifica lucrul cu caractere folosind valorile ASCII, fără a gestiona
 direct codurile. De exemplu:
 
 - **Cifre**: Scădeți '0' din caracter.
-- **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
+- **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și
+  mici.
 
 ```cpp
 #include <iostream>
@@ -191,8 +181,8 @@ considerate alfabetice:
 
 #### Valoare returnată
 
-O valoare diferită de zero în cazul în care caracterul este alfabetic,
-zero în caz contrar.
+O valoare diferită de zero în cazul în care caracterul este alfabetic, zero în
+caz contrar.
 
 #### Exemplu
 
@@ -301,15 +291,6 @@ cout << (char)tolower('@') << '\n'; // @
 
 ## Șiruri de caractere și biblioteca `#!cpp <cstring>`
 
-<!-- Prima și cea mai simplă variantă de a avea acces la lucrul cu șiruri de
-caractere constă în folosirea metodelor care există și în limbajul C, metode
-care sunt incluse în bibiloteca `#!cpp <cstring>`.
-
-Un șir de caractere poate fi inițializat în diverse moduri, așa cum se poate
-vedea în exemplele menționate mai jos. Se poate observa că afișarea se face
-foarte ușor, la fel ca la orice variabilă, spre deosebire de arrays de tipuri
-întregi sau reale. -->
-
 Biblioteca `#!cpp <cstring>` oferă o suită de funcții utile pentru lucrul cu
 șiruri de caractere în stilul C. Aceasta poate fi utilizată pentru manipularea
 șirurilor de caractere (vectori de tip `#!cpp char`) prin funcții standardizate.
@@ -352,10 +333,6 @@ int main() {
     return 0;
 }
 ```
-
-<!-- În cele ce urmează, vom prezenta cele mai utilizate funcții pe care le puteți
-folosi pentru a lucra cu șiruri de caractere mai ușor. Toate aceste funcții vor
-necesita includerii bibliotecii `#!cpp <cstring>`, menționată anterior. -->
 
 ### Citirea șirurilor de caractere
 
@@ -556,8 +533,8 @@ este unul din tipurile prezente în [STL](https://edu.roalgo.ro/cppintro/stl/),
 foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
 Pentru a putea folosi această structură de date, va trebui să includem
-biblioteca ``<string>``. Se remarcă faptul că există diferențe semnificative
-față de cum folosim șirurile de caractere din C.
+biblioteca `<string>`. Se remarcă faptul că există diferențe semnificative față
+de cum folosim șirurile de caractere din C.
 
 În ceea ce privește citirea, funcția getline va avea o sintaxă un pic diferită,
 fiind scrisă astfel:

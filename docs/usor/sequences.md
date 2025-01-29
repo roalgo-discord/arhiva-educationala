@@ -22,12 +22,13 @@ tehnicilor de rezolvare a acestor probleme devine esențială.
 
 !!! info "Definiție"
 
-    O secvență reprezintă un șir de valori, de regulă dispuse consecutiv într-un șir
-    mai mare sau poate reprezenta chiar un șir de sine stătător.
+    O secvență reprezintă un șir de valori, de regulă dispuse consecutiv într-un
+    șir mai mare sau poate reprezenta chiar un șir de sine stătător.
 
 !!! example "Exemplu"
 
-    În vectorul $30$, $32$, $19$, $8$, $11$, $6$, putem spune următoarele lucruri:
+    În vectorul $30$, $32$, $19$, $8$, $11$, $6$, putem spune următoarele
+    lucruri:
 
     - $19, 8, 11$ este o secvență care începe de la poziția $3$ și se termină la
       poziția $5$ a șirului inițial
@@ -37,8 +38,8 @@ tehnicilor de rezolvare a acestor probleme devine esențială.
 !!! note "Observație"
 
     În diverse contexte, secvențe precum $19, 8, 11$ sunt numite și subsecvențe,
-    deoarece sunt obținute prin eliminarea de valori de la începutul și sfârșitul
-    secvenței de mai sus.
+    deoarece sunt obținute prin eliminarea de valori de la începutul și
+    sfârșitul secvenței de mai sus.
 
 Pentru a prelucra aceste secvențe și subsecvențe, o primă soluție constă în
 păstrarea valorilor în memorie folosind vectori, iar mai apoi, în funcție de ce
@@ -46,7 +47,7 @@ cere problema, să parcurgem toate variantele de a crea subsecvențe în șirul 
 sau eventual să verificăm diverse proprietăți, parcurgând valorile una câte una.
 
 !!! note "Observație"
-    
+
     Numărul de subsecvențe ale unui șir cu lungimea $n$ este $\frac{n \cdot
     (n+1)}{2}$.
 

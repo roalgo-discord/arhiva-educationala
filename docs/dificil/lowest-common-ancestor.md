@@ -141,8 +141,8 @@ Codul de mai jos se bazează pe precalculările menționate mai sus.
 
 !!! note "Observație"
 
-    LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele două,
-    apoi rezultatul cu al treilea nod și așa mai departe.
+    LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele
+    două, apoi rezultatul cu al treilea nod și așa mai departe.
 
 ```cpp
 int solve(int a, int b) {

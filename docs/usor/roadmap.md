@@ -80,7 +80,9 @@ Această secțiune își propune să vă ducă de la baze și să puteți ajunge
 rezolvați probleme ușoare, precum și să vă familiarizați cu algoritmica,
 limbajul C++ și în general, tehnici de bază de rezolvare a problemelor.
 
-!!! note "Secțiune specială" Aceste noțiuni de bază sunt discutate și
+!!! note "Secțiune specială"
+
+    Aceste noțiuni de bază sunt discutate și
     [aici](https://edu.roalgo.ro/usor/how-to-start/#notiuni-cu-care-sa-incepi),
     dar vom relua discuția și mai jos.
 
@@ -262,7 +264,7 @@ folosesc aceste tehnici.
 ## Capitolul 6 - Structuri de date, lucrul cu arbori, probleme speciale
 
 Aici începem să lucrăm cu structurile de date care ne ajută să răspundem la
-întrebări și să performăm actualizări într-un timp rapid. De asemenea, lucrăm în
+întrebări și să efectuăm actualizări într-un timp rapid. De asemenea, lucrăm în
 moduri mai detaliate cu arbori și grafuri, dar și cu alte tipuri de probleme pe
 care le întâlniți la concursuri.
 

@@ -31,15 +31,16 @@ relații de recurență. Aceste șiruri se numesc recurente.
 
 !!! info "Ce este un șir de numere recurente?"
 
-    Un șir recurent este un șir de numere naturale ai căror termeni sunt legați prin
-    intermediul unei relații de recurență, sau în alte cuvinte, fiecare termen are o
-    valoare care depinde de valoarea unuia sau mai multor termeni anteriori.
+    Un șir recurent este un șir de numere naturale ai căror termeni sunt legați
+    prin intermediul unei relații de recurență, sau în alte cuvinte, fiecare
+    termen are o valoare care depinde de valoarea unuia sau mai multor termeni
+    anteriori.
 
 !!! example "Exemplu"
 
-    Un exemplu foarte simplu reprezintă șirul numerelor naturale pare, pentru care
-    este binecunoscut faptul că fiecare valoare este cu $2$ mai mare decât valoarea
-    anterioară ($0, 2, 4, 6, 8, \dots$).
+    Un exemplu foarte simplu reprezintă șirul numerelor naturale pare, pentru
+    care este binecunoscut faptul că fiecare valoare este cu $2$ mai mare decât
+    valoarea anterioară ($0, 2, 4, 6, 8, \dots$).
 
 În general, ne va interesa să putem genera aceste șiruri și să găsim regulile de
 generare pentru diverse șiruri de numere naturale. Vom continua prin a prezenta
@@ -62,9 +63,7 @@ aritmetice sunt $x, x + r, x + 2 \cdot r, \dots$
 În general, pentru a afla suma primilor $n$ termeni ai unei progresii
 aritmetice, putem folosi formula următoare:
 
-\[
-S = n \cdot x + \frac{(n-1) \cdot n}{2} \cdot r
-\]
+\[ S = n \cdot x + \frac{(n-1) \cdot n}{2} \cdot r \]
 
 Fiecare dintre cei $n$ termeni conține $x$, iar apoi următorii termeni au și $r,
 2 \cdot r, \dots, (n-1) \cdot r$.
@@ -166,9 +165,7 @@ aritmetice sunt $x, x \cdot r, x \cdot r^2, \dots$
 În general, pentru a afla suma primilor $n$ termeni ai unei progresii
 geometrice, putem folosi formula următoare:
 
-\[
-S = x \cdot \frac{r^n - 1}{r - 1}
-\]
+\[ S = x \cdot \frac{r^n - 1}{r - 1} \]
 
 În mod particular, dacă $r = 1$, suma primilor $n$ termeni este $n \cdot x$,
 deoarece toți termenii sunt constanți.
@@ -180,9 +177,9 @@ suma prin inducție.
 
 !!! info "Factorialul unui număr natural"
 
-    În matematică, factorialul unui număr întreg pozitiv $n$, notat cu $n!$, este
-    egal cu produsul numerelor naturale pozitive mai mici sau egale cu $n$. Este o
-    funcție numerică discretă și o operație unară (cu un singur operand).
+    În matematică, factorialul unui număr întreg pozitiv $n$, notat cu $n!$,
+    este egal cu produsul numerelor naturale pozitive mai mici sau egale cu $n$.
+    Este o funcție numerică discretă și o operație unară (cu un singur operand).
 
 Cu alte cuvinte, $n! = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot n$
 
@@ -200,12 +197,13 @@ Primele câteva valori ale lui $n!$ sunt următoarele:
 - $6! = 720$
 
 !!! note "Observație"
+
     Prin convenție, $0! = 1$.
 
 !!! note "Observație"
 
-    Factorialul poate fi definit și în funcție de valorile anterioare, unde $n! =
-    (n-1)! \cdot n$, iar $0! = 1$.
+    Factorialul poate fi definit și în funcție de valorile anterioare, unde $n!
+    = (n-1)! \cdot n$, iar $0! = 1$.
 
 Se poate remarca faptul că valorile factorialelor cresc foarte repede:
 
@@ -241,22 +239,19 @@ adaugă încă un zero, la fel și cele multiplu de $125 = 5^3$ ș.a.m.d.
 
 Astfel, numărul de zerouri de la finalul scrierii lui $n!$ este dat de formula
 
-\[
-    \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{5^2}
-    \right\rfloor + \dots + \left\lfloor \frac{n}{5^k} \right\rfloor
-\]
+\[ \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{5^2}
+\right\rfloor + \dots + \left\lfloor \frac{n}{5^k} \right\rfloor \]
 
 unde $\lfloor x \rfloor$ reprezintă partea întreagă a lui $x$, iar $5^k$ este
 cea mai mare putere a lui $5$ mai mică sau egală cu $n$.
 
 !!! note "Formula lui Legendre"
 
-    În mod similar, putem defini pentru un număr prim oarecare $p$ acest rezultat
-    sub forma următoare: 
+    În mod similar, putem defini pentru un număr prim oarecare $p$ acest
+    rezultat sub forma următoare:
 
-    \[
-        \left\lfloor \frac{n}{p} \right\rfloor + \left\lfloor \frac{n}{p^2} \right\rfloor + \dots + \left\lfloor \frac{n}{p^k} \right\rfloor
-    \]
+    \[ \left\lfloor \frac{n}{p} \right\rfloor + \left\lfloor \frac{n}{p^2}
+    \right\rfloor + \dots + \left\lfloor \frac{n}{p^k} \right\rfloor \]
     
     Acest rezultat este cunoscut sub numele de formula lui Legendre.
 
@@ -286,9 +281,9 @@ int main() {
 
 !!! info "Șirul lui Fibonacci"
 
-    Șirul $0, 1, 1, 2, 3, 5, 8, \dots$, unde fiecare termen se poate afla ca fiind
-    suma a doi termeni precedenți se numește șirul lui Fibonacci, denumite după
-    matematicianul italian cu același nume.
+    Șirul $0, 1, 1, 2, 3, 5, 8, \dots$, unde fiecare termen se poate afla ca
+    fiind suma a doi termeni precedenți se numește șirul lui Fibonacci, denumite
+    după matematicianul italian cu același nume.
 
 Așa cum s-a menționat și în definiție, vom nota $F_n$ ca fiind cel de-al $n$-lea
 număr Fibonacci, iar aceste numere pot fi definite astfel:
@@ -328,8 +323,8 @@ cout << b << '\n';
 !!! note "Algoritm mai rapid"
 
     Există un algoritm mai rapid, care rulează în $O(\log n)$ care se bazează pe
-    cunoștințe mai avansate de algebră liniară și lucru cu matrici. Pentru mai multe
-    detalii, puteți citi [aici](https://edu.roalgo.ro/dificil/pow-mat/).
+    cunoștințe mai avansate de algebră liniară și lucru cu matrici. Pentru mai
+    multe detalii, puteți citi [aici](https://edu.roalgo.ro/dificil/pow-mat/).
 
 #### Problema exemplu - [fibosum pbinfo](https://www.pbinfo.ro/probleme/257/fibosum)
 

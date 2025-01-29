@@ -36,7 +36,9 @@ while (!gata) {
 ```
 
 !!! note "Observație"
-    Multe probleme de clasa a V-a și de clasa a VI-a (matrice) necesita simularea soluției.
+
+    Multe probleme de clasa a V-a și de clasa a VI-a (matrice) necesita
+    simularea soluției.
 
 ## Problema exemplu - [simulare](https://kilonova.ro/problems/3237)
 
@@ -261,6 +263,7 @@ Anumite probleme se generează într-un mod care poate fi stabilit de o formulă
 Soluția problemei se poate deduce studiind transformarea șirului până când
 acesta devine “A sortat”.
 
+<!-- ma doare sa vad asta... -->
 De exemplu, pentru $N=8$, aplicând de $N$ ori regula $A$ se obțin șirurile:
 ![](../images/simulation/asort-imagine.png)
 

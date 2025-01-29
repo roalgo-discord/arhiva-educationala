@@ -14,40 +14,34 @@ tags:
 
 ## Introducere
 
-De multe ori, avem de-a face cu probleme unde găsim o
-soluție care folosește o metodă de tip brute-force care
-funcționează destul de încet dar nu o putem optimiza folosind
-structurile de date obișnuite. Pentru aceste tipuri de probleme,
-de multe ori putem apela la structurile de date din STL, fie că
-este vorba de a afla rapid frecvența unei valori mai mari, fie
-că vrem să ștergem o anumită valoare rapid sau să avem alte tipuri
-de precalculări.
+De multe ori, avem de-a face cu probleme unde găsim o soluție care folosește o
+metodă de tip brute-force care funcționează destul de încet dar nu o putem
+optimiza folosind structurile de date obișnuite. Pentru aceste tipuri de
+probleme, de multe ori putem apela la structurile de date din STL, fie că este
+vorba de a afla rapid frecvența unei valori mai mari, fie că vrem să ștergem o
+anumită valoare rapid sau să avem alte tipuri de precalculări.
 
-În acest articol, vom prezenta câteva exemple de probleme care nu
-sunt dificile și prezintă aplicații ale acestor structuri de date,
-aplicații de o dificultate ușoară sau medie, utile pentru oricine
-vrea să se obișnuiască cu funcțiile acestor biblioteci ce compun
-STL.
+În acest articol, vom prezenta câteva exemple de probleme care nu sunt dificile
+și prezintă aplicații ale acestor structuri de date, aplicații de o dificultate
+ușoară sau medie, utile pentru oricine vrea să se obișnuiască cu funcțiile
+acestor biblioteci ce compun STL.
 
 ## Problema [Subarray Sums II - CSES](https://cses.fi/problemset/task/1661)
 
-Pentru a rezolva această problemă, putem pleca de la una din soluțiile
-care are complexitatea $O(n^2)$. Această soluție calculează sumele
-parțiale ale șirului și fixează capetele din stânga și dreapta,
-folosindu-se de sumele parțiale calculate anterior pentru a număra
-secvențele cu suma $s$.
+Pentru a rezolva această problemă, putem pleca de la una din soluțiile care are
+complexitatea $O(n^2)$. Această soluție calculează sumele parțiale ale șirului
+și fixează capetele din stânga și dreapta, folosindu-se de sumele parțiale
+calculate anterior pentru a număra secvențele cu suma $s$.
 
-O îmbunătățire pe care o putem face constă în faptul că dacă fixăm
-una din sumele din expresia anterioară (să zicem că fixăm $sum[r]$),
-trebuie să aflăm câte poziții $l$ există
-astfel încât $sum[r] - sum[l] = s$.
+O îmbunătățire pe care o putem face constă în faptul că dacă fixăm una din
+sumele din expresia anterioară (să zicem că fixăm $sum[r]$), trebuie să aflăm
+câte poziții $l$ există astfel încât $sum[r] - sum[l] = s$.
 
-Acest lucru se poate face stocând cu ajutorul unui map
-frecvența fiecărei sume (inițializăm la început suma $0$
-cu frecvența $1$, corespunzătoare unui șir gol),
-iar pentru fiecare $i$, vom actualiza datele din map
-și vom aduna la răspuns frecvența sumei căutate.
-Astfel, complexitatea algoritmului va deveni $O(n \log n)$.
+Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sume
+(inițializăm la început suma $0$ cu frecvența $1$, corespunzătoare unui șir
+gol), iar pentru fiecare $i$, vom actualiza datele din map și vom aduna la
+răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni
+$O(n \log n)$.
 
 ```cpp
 #include <iostream>
@@ -77,25 +71,24 @@ int main() {
 ## Problema [Eugene and an array - Codeforces](https://codeforces.com/contest/1333/problem/C)
 
 !!! note "Soluție video"
-    Această problemă are soluția video descrisă [aici](https://www.youtube.com/watch?v=XR_ZQvr9zyU)
 
-Pentru a rezolva această problemă, trebuie să găsim
-o proprietate a sumelor parțiale care să ne ajute
-să prevenim numărarea unor subsecvențe care au
+    Această problemă are soluția video descrisă
+    [aici](https://www.youtube.com/watch?v=XR_ZQvr9zyU)
+
+Pentru a rezolva această problemă, trebuie să găsim o proprietate a sumelor
+parțiale care să ne ajute să prevenim numărarea unor subsecvențe care au
 subsecvențe cu suma $0$.
 
-O idee pe care am putea-o folosi este aceea de a afla
-pentru poziția curentă, cel mai mare capăt stâng astfel
-încât suma elementelor dintre acele două poziții să fie
-egală cu $0$. Următorul pas ar fi să observăm faptul
-că capătul maxim din stânga pentru care există o
-poziție $j > i$ astfel încât suma de la poziția
-$i+1$ la $j$ să fie $0$ este limita superioară
-de la care putem adăuga subsecvențele la răspuns.
+O idee pe care am putea-o folosi este aceea de a afla pentru poziția curentă,
+cel mai mare capăt stâng astfel încât suma elementelor dintre acele două poziții
+să fie egală cu $0$. Următorul pas ar fi să observăm faptul că capătul maxim din
+stânga pentru care există o poziție $j > i$ astfel încât suma de la poziția
+$i+1$ la $j$ să fie $0$ este limita superioară de la care putem adăuga
+subsecvențele la răspuns.
 
-De aici, ne mai rămâne un singur pas, și anume folosirea
-unei structuri de tip std::map pentru a ține evidența
-celor mai recente poziții unde se găsește o anumită sumă parțială.
+De aici, ne mai rămâne un singur pas, și anume folosirea unei structuri de tip
+std::map pentru a ține evidența celor mai recente poziții unde se găsește o
+anumită sumă parțială.
 
 ```cpp
 #include <iostream>
@@ -133,24 +126,19 @@ int main() {
 
 ## Problema [ramen - OJI 2018](https://kilonova.ro/problems/24)
 
-Pentru a rezolva această problemă, plecăm de la
-următoarea presupunere, care se poate demonstra foarte ușor:
-Dacă o porție de mâncare ajunge la persoana aflată la poziția $x$,
-iar această persoană are o comandă deja,
-respectiva persoană va lua porția, chiar
-dacă nu este porția pe care a comandat-o.
+Pentru a rezolva această problemă, plecăm de la următoarea presupunere, care se
+poate demonstra foarte ușor: Dacă o porție de mâncare ajunge la persoana aflată
+la poziția $x$, iar această persoană are o comandă deja, respectiva persoană va
+lua porția, chiar dacă nu este porția pe care a comandat-o.
 
-Pe baza acestui fapt, putem să sortăm comenzile
-în ordine crescătoare a poziției persoanei care
-face acea comandă și la fiecare pas, persoana
-respectivă va obține prima comandă care trece
-în dreptul ei, după ce a făcut comanda,
+Pe baza acestui fapt, putem să sortăm comenzile în ordine crescătoare a poziției
+persoanei care face acea comandă și la fiecare pas, persoana respectivă va
+obține prima comandă care trece în dreptul ei, după ce a făcut comanda,
 indiferent de timpul necesar pentru pregătirea ei.
 
-Pentru a putea simula acest proces, vom folosi
-o structură de tip set, care ne permite inserarea
-și ștergerea valorilor în timp logaritmic. Mai
-jos găsiți o soluție care obține punctajul maxim.
+Pentru a putea simula acest proces, vom folosi o structură de tip set, care ne
+permite inserarea și ștergerea valorilor în timp logaritmic. Mai jos găsiți o
+soluție care obține punctajul maxim.
 
 ```cpp
 #include <iostream>
@@ -192,13 +180,11 @@ int main() {
 
 ## Concluzii
 
-Aceste tipuri de probleme se dovedesc a fi foarte ușor de
-abordat odată ce avem la dispozițiie facilitățile potrivite,
-deoarece simplificările găsite sunt acum mult mai ușor de
-impleemntat. Totuși, trebuie avut în vedere că aceste
-structuri de date nu sunt mereu cea mai optimă variantă și
-este bine să ne gândim la abordări care să se muleze și pe
-restricțiile problemelor în sine.
+Aceste tipuri de probleme se dovedesc a fi foarte ușor de abordat odată ce avem
+la dispoziție facilitățile potrivite, deoarece simplificările găsite sunt acum
+mult mai ușor de implementat. Totuși, trebuie avut în vedere că aceste structuri
+de date nu sunt mereu cea mai optimă variantă și este bine să ne gândim la
+abordări care să se muleze și pe restricțiile problemelor în sine.
 
 ## Probleme suplimentare
 

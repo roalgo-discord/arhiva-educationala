@@ -114,6 +114,7 @@ int main() {
 ### Soluții pentru evitarea overflow-ului
 
 !!! note "Observație"
+
     Trebuie avut grijă la faptul că dacă rezultatul operației depășește valoarea
     maximă sau minimă a tipului de date în care acesta este păstrat, vom avea
     overflow-uri, care trebuie evitate cu orice preț.
@@ -134,7 +135,7 @@ cout << 594943 * (long long)204232 << '\n';  // ok
 cout << 594943 * 204232LL << '\n';           // echivalent
 ```
 
-O altă soluție pentru evitarea overflowurilor în cazul în care trebuie să
+O altă soluție pentru evitarea overflow-urilor în cazul în care trebuie să
 verificăm dacă produsele depășesc o anumită valoare este să verificăm rezultatul
 împărțirii unui deîmpărțit la un împărțitor. Cu alte cuvinte, în loc să
 verificăm dacă $a \cdot b \geq c$, vom verifica dacă $\frac{c}{a} \geq b$. Un
@@ -205,8 +206,8 @@ examenele de bacalaureat și admitere.
     rând, deoarece operatorul de decrementare este postfixat, instrucțiunea
     `a--` va produce efect abia după afișare, $a$ devenind $5$ ulterior. Apoi,
     deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va
-    produce efect înainte de afișare, $b$ devenind $9$, deci suma devine
-    $14$. Similar, $a$ și $b$ devin $4$ și $8$, deci diferența este $4$.
+    produce efect înainte de afișare, $b$ devenind $9$, deci suma devine $14$.
+    Similar, $a$ și $b$ devin $4$ și $8$, deci diferența este $4$.
 
 ### Operații aritmetice pe numere reale
 
@@ -315,7 +316,7 @@ pentru a simplifica calculele. De obicei, când vrem să facem asta, scopul este
 acela de a aduce termenii ce se pot păstra în același mod împreună.
 
 Dacă vrem să aflăm câte perechi de forma $(i, j)$ există cu proprietatea că $x_i
-+ x_j = y_i + y_j$, este mai simplu să aflăm câte perechi există cu proprietatea
+- x_j = y_i + y_j$, este mai simplu să aflăm câte perechi există cu proprietatea
 că $x_i - y_i = y_j - x_j = -(x_j - y_j)$, lucru ce se poate afla mult mai ușor
 folosind vectori de frecvență.
 

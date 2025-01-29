@@ -13,7 +13,8 @@ tags:
     - [Dinamici pe arbori](https://edu.roalgo.ro/dificil/tree-dp/)
     - [Cicluri în grafuri](https://edu.roalgo.ro/mediu/cycles/)
 
-În cele ce urmează, vom prezenta componentele biconexe, algoritmul prin care le aflăm și cum putem folosi aceste informații în probleme.
+În cele ce urmează, vom prezenta componentele biconexe, algoritmul prin care le
+aflăm și cum putem folosi aceste informații în probleme.
 
 ## Introducere
 
@@ -28,22 +29,24 @@ recomandă studiul parcurgerii grafurilor și dinamicilor pe arbore.
 !!! info "Definiție"
 
     Într-un graf neorientat, componentele biconexe sunt submulțimi maximale de
-    noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care aparțin
-    unei astfel de componente, se poate ajunge de la $a$ la $b$ chiar și dacă
-    scoatem un nod din graful rezultat.
+    noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care
+    aparțin unei astfel de componente, se poate ajunge de la $a$ la $b$ chiar și
+    dacă scoatem un nod din graful rezultat.
 
 !!! note "Observație"
 
     Se poate observa că componentele biconexe sunt o versiune mai avansată a
-    componentelor conexe, prelucrarea lor va fi una mai specifică și așa cum veți
-    vedea în acest articol, destul de ușor de aplicat după câteva exemple explicate.
+    componentelor conexe, prelucrarea lor va fi una mai specifică și așa cum
+    veți vedea în acest articol, destul de ușor de aplicat după câteva exemple
+    explicate.
 
 !!! example "Exemplu"
 
-    De exemplu, dacă avem următorul graf: $n = 8$, $m = 9$ și următoarele muchii de
-    tip $(a, b)$: $(1, 2)$,$ (2, 3)$,$ (3, 4)$,$ (4, 1)$,$ (1, 5)$,$ (5, 6)$,$ (6,
-    7)$,$ (7, 5)$,$ (7, 8)$, componentele biconexe sunt $\{1, 2, 3, 4\}$, $\{7,
-    8\}$, $\{5, 6, 7\}$ și $\{1, 5\}$. Mai jos găsiți un desen reprezentativ.  
+    De exemplu, dacă avem următorul graf: $n = 8$, $m = 9$ și următoarele muchii
+    de tip $(a, b)$: $(1, 2)$,$ (2, 3)$,$ (3, 4)$,$ (4, 1)$,$ (1, 5)$,$ (5,
+    6)$,$ (6, 7)$,$ (7, 5)$,$ (7, 8)$, componentele biconexe sunt $\{1, 2, 3,
+    4\}$, $\{7, 8\}$, $\{5, 6, 7\}$ și $\{1, 5\}$. Mai jos găsiți un desen  
+    reprezentativ.
 
 ![](../images/bcc/bcc.png)
 
@@ -55,32 +58,32 @@ DFS.
 ## Arborele DFS (DFS Tree)
 
 !!! note "Observație"
-    
-    Recomandăm în mod special [acest blog](https://codeforces.com/blog/entry/68138)
-    de pe Codeforces pentru înțelegerea conceptului și chiar pentru explicații
-    suplimentare pentru unele conținuturi care vor fi prezentate ulterior în acest
-    articol.
+
+    Recomandăm în mod special
+    [acest blog](https://codeforces.com/blog/entry/68138) de pe Codeforces
+    pentru înțelegerea conceptului și chiar pentru explicații suplimentare
+    pentru unele conținuturi care vor fi prezentate ulterior în acest articol.
 
 !!! info "Definiție"
-    
-    Un arbore DFS este un arbore pe care îl obținem parcurgând un graf neorientat
-    folosind o parcurgere DFS, dacă păstrăm doar muchiile care au fost folosite
-    pentru a apela DFS din noduri noi.
+
+    Un arbore DFS este un arbore pe care îl obținem parcurgând un graf
+    neorientat folosind o parcurgere DFS, dacă păstrăm doar muchiile care au
+    fost folosite pentru a apela DFS din noduri noi.
 
 Deoarece grafurile cu care lucrăm nu sunt arbori, se impune împărțirea muchiilor
 grafului în funcție de apartenența la arborele DFS.
 
 !!! info "Definiție"
-    
-    Muchiile care nu aparțin arborelui DFS, dar aparțin grafului inițial reprezintă
-    muchii de întoarcere.
+
+    Muchiile care nu aparțin arborelui DFS, dar aparțin grafului inițial
+    reprezintă muchii de întoarcere.
 
 !!! note "Observație"
-    
-    Se poate observa că în funcție de ordinea în care se realizează parcurgerea DFS,
-    unele muchii principale pot deveni muchii de întoarcere și invers, dar există
-    muchii care nu vor fi niciodată muchii de întoarcere, acestea devenind subiectul
-    nostru de discuție ulterior în articol.
+
+    Se poate observa că în funcție de ordinea în care se realizează parcurgerea
+    DFS, unele muchii principale pot deveni muchii de întoarcere și invers, dar
+    există muchii care nu vor fi niciodată muchii de întoarcere, acestea
+    devenind subiectul nostru de discuție ulterior în articol.
 
 În desenul de mai jos, muchiile îngroșate reprezintă arborele DFS. Muchiile care
 nu sunt îngroșate reprezintă muchiile de întoarcere.
@@ -99,7 +102,7 @@ scoatem din graf, acesta nu va mai fi conex. Un astfel de exemplu în desenul de
 mai sus este muchia $(2, 4)$.
 
 !!! note "Observație"
-    
+
     O muchie de întoarcere nu va fi niciodata o muchie critică, arborele DFS s-a
     putut construi deja fără ea.
 

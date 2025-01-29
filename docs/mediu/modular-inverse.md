@@ -44,13 +44,12 @@ $(\frac{A}{B}) \mod{M} = (A \cdot B^{-1}) \mod{M}$.
 
 !!! note "Mica teoremă a lui Fermat"
 
-    Dacă $p$ este un număr prim și $a$ este un număr întreg prim cu $p$, atunci $a^{p-1} \equiv 1 \pmod{p}$.
+    Dacă $p$ este un număr prim și $a$ este un număr întreg prim cu $p$, atunci
+    $a^{p-1} \equiv 1 \pmod{p}$.
 
 Congruența se mai poate scrie ca:
 
-$$
-a \cdot a^{p - 2} \equiv 1 \pmod{p}
-$$
+$$ a \cdot a^{p - 2} \equiv 1 \pmod{p} $$
 
 Se poate observa ușor că de fapt inversul modular al lui $a$ este $a^{p - 2}$,
 care poate fi calculat rapid folosind exponențierea logaritmică.
@@ -61,8 +60,8 @@ Luăm în considerare următoarea identitate:
 
 !!! note "Identitatea lui Bézout"
 
-    Fie numerele întregi $A$, $B$ și $d = cmmdc(A, B)$. Atunci, există cel puțin o
-    pereche de numere întregi $x$ și $y$ astfel încat $Ax + By = d$.
+    Fie numerele întregi $A$, $B$ și $d = cmmdc(A, B)$. Atunci, există cel puțin
+    o pereche de numere întregi $x$ și $y$ astfel încat $Ax + By = d$.
 
 Daca $A$ și $M$ sunt prime între ele, atunci există $x_1$ și $y_1$ astfel încât
 $Ax_1 + My_1 = 1$. De aici reiese faptul că $Ax_1 \equiv 1 \pmod{M}$, adică
@@ -74,13 +73,9 @@ $x_2$ și $y_2$ care satisfac $Mx_2 + ry_2 = 1$.
 
 Dar
 
-$$
-\begin{align*}
-r = A - M \cdot c &\implies Mx_2 + (A - M \cdot c)y_2 = 1\\
-&\iff Mx_2 + Ay_2 - M \cdot c \cdot y_2 = 1\\
-&\iff Ay_2 + M(x_2 - c \cdot y_2) = 1
-\end{align*}
-$$
+$$ \begin{align*} r = A - M \cdot c &\implies Mx_2 + (A - M \cdot c)y_2 = 1\\
+&\iff Mx_2 + Ay_2 - M \cdot c \cdot y_2 = 1\\ &\iff Ay_2 + M(x_2 - c \cdot y_2)
+= 1 \end{align*} $$
 
 Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor
 \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid,
@@ -95,6 +90,7 @@ egal cu $1$ și astfel vom seta $x_1 = 1$, iar $y_1$ poate lua orice valoare, de
 exemplu tot $1$.
 
 !!! warning "Atenție"
+
     Valoarea lui $x_1$ poate fi și negativă. Dacă este necesară o valoare
     pozitivă atunci facem operația $x_1 = x_1 + M$.
 

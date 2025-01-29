@@ -20,27 +20,29 @@ Astfel, se impune folosirea unui vector de frecvență.
 
 !!! info "Definiție"
 
-    Așa cum sugerează și numele, un vector de frecvență este o structură de date de
-    tip tablou pe care o folosim pentru a ține în memorie de câte ori apare fiecare
-    element într-un șir de numere.
+    Așa cum sugerează și numele, un vector de frecvență este o structură de date
+    de tip tablou pe care o folosim pentru a ține în memorie de câte ori apare
+    fiecare element într-un șir de numere.
 
 !!! example "Exemplu"
 
-    De exemplu, dacă șirul nostru conține valorile $8, 1, 4, 1, 6, 3, 5, 2, 2, 4$,
-    vectorul de frecvență va avea următoarea formă: $0, 2, 2, 1, 1, 1, 1, 0, 1$, cu
-    semnificația că $0$ nu apare deloc, $1$ apare de două ori, $2$ apare de două
-    ori, iar celelalte valori, cu excepția lui $7$, apar o singură dată.
+    De exemplu, dacă șirul nostru conține valorile $8, 1, 4, 1, 6, 3, 5, 2, 2,
+    4$, vectorul de frecvență va avea următoarea formă: $0, 2, 2, 1, 1, 1, 1, 0,
+    1$, cu semnificația că $0$ nu apare deloc, $1$ apare de două ori, $2$ apare
+    de două ori, iar celelalte valori, cu excepția lui $7$, apar o singură dată.
 
-Această structură de date se folosește atunci când numerele (sau în general, datele cu care lucrăm) pot lua puține valori distincte sau se află într-un interval mic.
+Această structură de date se folosește atunci când numerele (sau în general,
+datele cu care lucrăm) pot lua puține valori distincte sau se află într-un
+interval mic.
 
 !!! note "Observație"
 
-    În general, vrem să folosim vectorii de frecvență dacă stocarea informațiilor
-    legat de valorile pe care le folosim devine mult mai facilă din punct de vedere
-    al memoriei sau timpului comparat cu stocarea lor în vectorul deja existent. În
-    probleme, acest lucru se remarcă mai ales dacă valorile nu sunt foarte mari
-    (până în $10^6$) sau dacă diferența dintre cel mai mare și cel mai mic element
-    este mică.
+    În general, vrem să folosim vectorii de frecvență dacă stocarea
+    informațiilor legat de valorile pe care le folosim devine mult mai facilă
+    din punct de vedere al memoriei sau timpului comparat cu stocarea lor în
+    vectorul deja existent. În probleme, acest lucru se remarcă mai ales dacă
+    valorile nu sunt foarte mari (până în $10^6$) sau dacă diferența dintre cel
+    mai mare și cel mai mic element este mică.
 
 Pe parcursul acestui articol, voi prezenta câteva probleme, pentru a explica
 diferitele variații ale acestei metode precum și alte moduri în care putem
@@ -48,9 +50,9 @@ păstra acest vector în memorie.
 
 !!! note "Vector caracteristic"
 
-    În unele cărți și articole, dacă vectorul de frecvență este folosit doar pentru
-    a verifica existența unor valori, se mai folosește denumirea de vector
-    caracteristic.
+    În unele cărți și articole, dacă vectorul de frecvență este folosit doar
+    pentru a verifica existența unor valori, se mai folosește denumirea de
+    vector caracteristic.
 
 ## Problema [cifreord de pe pbinfo](https://www.pbinfo.ro/probleme/244/cifreord)
 
@@ -251,8 +253,9 @@ apare în șir.
 
 !!! note "Observație"
 
-    Deși datele de intrare sunt date drept o matrice de dimensiune $n$, nu trebuie
-    să folosim vreun tablou bidimensional pentru a rezolva această problemă.
+    Deși datele de intrare sunt date drept o matrice de dimensiune $n$, nu
+    trebuie să folosim vreun tablou bidimensional pentru a rezolva această
+    problemă.
 
 ```cpp
 #include <fstream>

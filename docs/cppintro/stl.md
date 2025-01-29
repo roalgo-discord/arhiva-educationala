@@ -64,9 +64,9 @@ numărul de valori cu care se lucrează.
 !!! note "Observație"
 
     Pentru a compara doi vectori, va trebui să aibă aceeași dimensiune și tip de
-    date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile egale
-    pe aceeași poziție. În mod similar, atribuirea se va face curățând eventual
-    pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
+    date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile
+    egale pe aceeași poziție. În mod similar, atribuirea se va face curățând
+    eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
 
 ```cpp
 vector<int> v; // declararea vectorului
@@ -107,8 +107,8 @@ liniare, exact cum sunt și pe tablourile statice.
 !!! note "Iteratori"
 
     Valori precum `v.begin()`, `v.end()` se numesc iteratori, aceștia vor fi
-    prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și de
-    sfârșit din vector.
+    prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și
+    de sfârșit din vector.
 
 ```cpp
 // aceste operatii sunt liniare
@@ -140,11 +140,12 @@ acest caz pentru a parcurge valorile din vectorul vals.
 
 !!! warning "Tipuri unsigned"
 
-    Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a face
-    cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul expresiei
-    va fi si el unsigned, rezultatul dând underflow. Pentru a evita asta, putem fie
-    să rescriem expresiile pentru a conține adunări, fie prin a folosi indicatorul
-    (int) pentru a schimba tipul de date la int, care este un tip de date signed.
+    Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a
+    face cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul
+    expresiei va fi si el unsigned, rezultatul dând underflow. Pentru a evita
+    asta, putem fie să rescriem expresiile pentru a conține adunări, fie prin a
+    folosi indicatorul (int) pentru a schimba tipul de date la int, care este un
+    tip de date signed.
 
 ```cpp
 // afisari si prelucrari
@@ -167,8 +168,8 @@ Această structură de date este folosită mai rar, dar poate fi utilă în cazu
 care vrem să lucrăm cu un array care are avantajele array-urilor din C, dar fără
 majoritatea dezavantajelor acestora.
 
-Sintaxa unui array va fi de tipul `array<tip, dimensiune> nume;`. De regulă,
-nu există diferențe semnificative de performanță între `std::vector` și
+Sintaxa unui array va fi de tipul `array<tip, dimensiune> nume;`. De regulă, nu
+există diferențe semnificative de performanță între `std::vector` și
 `std::array`, deci în aproape toate cazurile, putem folosi `std::vector` fără
 probleme, funcțiile pe care `std::array` le are sunt incluse în funcțiile
 vectorului.
@@ -249,8 +250,9 @@ Inițializarea unui pair se poate face similar cu cea a unui vector.
 În cazul elementelor de tip pair compuse, în mod similar cu struct, notațiile
 vor fi la fel compuse.
 
-De exemplu, dacă avem `pair<pair<int, int>, pair<int, int>> p = { {2, 4}, {1, 3}
-};`, cele patru elemente vor putea fi declarate și accesate după cum urmează:
+De exemplu, dacă avem
+`#!cpp pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};`, cele patru
+elemente vor putea fi declarate și accesate după cum urmează:
 
 ```cpp
 pair<int, int> pr = make_pair(5, 8);
@@ -271,7 +273,8 @@ mult mai ușoară decât ați face-o dacă ați folosi `pair` sau `vector`, prof
 de avantajul că putem ține tipuri de date diferite în fiecare dintre poziții.
 Pentru a folosi tuple, va trebui să includeți `<tuple>`.
 
-Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vor face acest lucru mult mai ușor.
+Chiar dacă putem ține valori multiple folosind pair-uri imbricate, tuplurile vor
+face acest lucru mult mai ușor.
 
 - `tuple<tip1, tip2, ..., tipN> t`: Creăm un tuplu cu $N$ valori, a $i$-a
   valoare având $tip_i$.
@@ -282,7 +285,8 @@ Chiar dacă putem ține valori multiple folosind pairuri imbricate, tuplurile vo
 - `get<i>(t)`: Returnează cea de-a $i$-a valoare din tuplul $t$. Putem folosi
   această sintaxă și pentru a schimba valoarea din $t$.
 
-Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă.
+Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile
+dacă $i$ nu este o constantă.
 
 ```cpp
 tuple<int,  int,  int> t{3, 4, 5};
@@ -310,38 +314,38 @@ cout << s1 << " " << s2 << " " << x << '\n'; // Hello world 100
 
 Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze
 elementele unui container STL. Ei sunt implementați numai la structurile cu
-acces aleatoriu (toate mai puțin  `queue`,  `stack`  și  `priority_queue`).
+acces aleatoriu (toate mai puțin `queue`, `stack` și `priority_queue`).
 
 ### Glosar iteratori
 
-- range reprezintă un interval de elemente de tip  `[start, end)`.
+- range reprezintă un interval de elemente de tip `[start, end)`.
 - iterator de început: iterator care marchează începutul unui range.
 - iterator past-the-end: iterator care marchează finalul unui range. Deși uneori
   poate fi accesat, în cele mai multe cazuri accesarea lui duce la erori (de
-  exemplu, rezultatul pentru  `.end()`).
+  exemplu, rezultatul pentru `.end()`).
 
 ### Cum obțin un iterator?
 
-- `.begin()`  - iterator la primul element din structură;
-- `.end()`  - iterator past-the-end pentru structură;
-- `.rbegin()`  - iterator invers la ultimul element din structură;
-- `.rend()`  - iterator invers past-the-beginning pentru structură.
+- `.begin()` - iterator la primul element din structură;
+- `.end()` - iterator past-the-end pentru structură;
+- `.rbegin()` - iterator invers la ultimul element din structură;
+- `.rend()` - iterator invers past-the-beginning pentru structură.
 
 ### Ce pot face cu un iterator?
 
 - Să parcurgi structura
   - Fiecare iterator permite să îl incrementezi (`++it`) să se ducă mai departe.
-  - Putem folosi și  `it++`, dar de obicei este mai lent.
+  - Putem folosi și `it++`, dar de obicei este mai lent.
 - Să îl pui drept parametru la o funcție
-  - Multe funcții din  `<algorithm>`  care merg pe range-uri cer un iterator de
+  - Multe funcții din `<algorithm>` care merg pe range-uri cer un iterator de
     început și un iterator "past-the-end".
-    - De exemplu, funcția  `sort()`  cere doi iteratori: unul care marchează
-      începutul și elementul de după sfârșit (cum ar fi  `begin()`  și
+    - De exemplu, funcția `sort()` cere doi iteratori: unul care marchează
+      începutul și elementul de după sfârșit (cum ar fi `begin()` și
       `end()`).
-  - Structurile  `std::vector`  și  `std::deque`  oferă și funcțiile  `.erase()`
-    și  `.insert()`
-    - Funcția  `.insert()`  adaugă un element înaintea elementului iteratorului.
-    - Funcția  `.erase()`  poate primi un singur argument, elementul care să fie
+  - Structurile `std::vector` și `std::deque` oferă și funcțiile `.erase()`
+    și `.insert()`
+    - Funcția `.insert()` adaugă un element înaintea elementului iteratorului.
+    - Funcția `.erase()` poate primi un singur argument, elementul care să fie
       șters, sau două argumente, range-ul pe care să îl șteargă.
 - Foarte multe funcții returnează iteratori, exemple fiind funcțiile
   `lower_bound()` și `upper_bound()` din diverse structuri de date precum
@@ -408,9 +412,9 @@ folosire a acestor instrucțiuni.
 !!! note "Accesarea pozițiilor oarecare"
 
     Spre deosebire de `stack` și `queue`, `deque` permite accesarea pozițiilor
-    oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque` este
-    un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic mai
-    redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
+    oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque`
+    este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
+    mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
 
 ```cpp
 deque<int> d;
@@ -635,7 +639,7 @@ algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui
 Dijkstra](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-lui-dijkstra) pe
 grafuri cu costuri.
 
-Pentru a folosi această structură de date, biblioteca `<queue>`  este necesară.
+Pentru a folosi această structură de date, biblioteca `<queue>` este necesară.
 Sintaxa unei cozi de priorități este `priority_queue<tip> nume`. Mai jos găsiți
 un exemplu de implementare a acestei structuri de date.
 
@@ -656,8 +660,8 @@ while (!pq.empty()) {
 !!! note "Accesarea valorilor în ordine crescătoare"
 
     Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le
-    adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie adăugăm
-    un comparator custom. Mai jos aveți sintaxa cu comparator custom.
+    adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
+    adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
 ```cpp
 struct cmp {
@@ -706,8 +710,8 @@ typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_upda
 
 !!! note "Alte tipuri de date"  
 
-    Pentru a folosi policy based data structures și cu alte tipuri de date, trebuie
-    înlocuite cele două inturi cu tipul de date potrivit. De exemplu, 
+    Pentru a folosi policy based data structures și cu alte tipuri de date,
+    trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
     
     ```cpp
     typedef tree<int,
@@ -717,7 +721,7 @@ typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_upda
              tree_order_statistics_node_update> order_set;
     ``` 
     
-    ne permite să ținem pairuri și să operăm în mod similar, fiind foarte util
+    ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
     atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai
     complexe.
 
@@ -766,7 +770,7 @@ Codeforces](https://codeforces.com/contest/1915/problem/F).
 
 ## Concluzii
 
-Structurile de date din STL sunt unul dintre cele mai importante tooluri pe care
+Structurile de date din STL sunt unul dintre cele mai importante unelte pe care
 le puteți folosi în programare și cunoașterea lor este esențială pentru a putea
 fi programatori cât mai buni. De asemenea, flexibilitatea lor ușurează multe
 implementări în special în condiții de concurs, unde timpul este limitat.

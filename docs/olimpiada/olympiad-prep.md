@@ -42,7 +42,7 @@ articolul despre abordarea olimpiadei, acest sfat trebuie să-l aveți în veder
 Nu în ultimul rând, este foarte important să privești parcursul tău la
 informatică și ca o activitate socială. Fie că e vorba de colegii tăi de la
 clasă, profesorul tău sau prietenii pe care ți-i faci pe serverul nostru, latura
-socială a parcuruslui la informatică este mult mai importantă decât pare. Poți
+socială a parcursului la informatică este mult mai importantă decât pare. Poți
 progresa mult mai repede, în special dacă lucrezi împreună cu colegi de diverse
 niveluri, astfel încât nelămuririle tale să fie rezolvate mai ușor.
 

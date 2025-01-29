@@ -20,13 +20,14 @@ Să începem cu următoarea problemă:
 
 ### [CSES - Distinct Colors](https://cses.fi/problemset/task/1139)
 
-Pentru a rezolva această problemă, ar fi necesar să știm pentru fiecare nod câte valori diferite se află în mulțimea nodurilor din subarborele său.
+Pentru a rezolva această problemă, ar fi necesar să știm pentru fiecare nod câte
+valori diferite se află în mulțimea nodurilor din subarborele său.
 
 !!! note "Observație"
 
     Pentru un nod, ar fi destul să ținem într-o structură de tip `set` valorile
-    nodurilor din subarborele său (pe care îl vom nota cu $s$), iar răspunsul pentru
-    el ar fi `s[nod].size()`.
+    nodurilor din subarborele său (pe care îl vom nota cu $s$), iar răspunsul
+    pentru el ar fi `s[nod].size()`.
 
 Astfel, am putea să facem o parcurgere `DFS` a arborelui, unde mulțimii fiecărui
 nod îi vom adăuga valoarea sa și valorile din mulțimile fiilor săi. Apoi, putem
@@ -91,8 +92,8 @@ acestei probleme.
 !!! note "Observație"
 
     Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în
-    timp constant. Așadar, dacă avem 2 seturi, $s_1$ și $s_2$, `std::swap(s1, s2)`,
-    sau alternativ `s1.swap(s2)`, va lua $O(1)$.
+    timp constant. Așadar, dacă avem 2 seturi, $s_1$ și $s_2$,
+    `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $O(1)$.
 
 Așadar, în cazul în care mărimea setului unui fiu este mai mare decât cea a
 setului nodului, le putem interschimba între ele. De aici vine și numele

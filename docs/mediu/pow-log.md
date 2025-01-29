@@ -32,6 +32,7 @@ presupune că $a$ și $b$ sunt numere naturale, cuprinse între $0$ și $mod - 1
 ### Adunarea modulară
 
 !!! note "Observație"
+
     $(a + b)\ \% \ mod = (a \ \% \ mod + b \ \% \ mod) \ \% \ mod$. Practic,
     dacă adunăm două numere și facem modulo, e același lucru cu a face modulo
     separat, iar mai apoi, să facem modulo la final.
@@ -51,6 +52,7 @@ if (sum >= mod) { // mult mai rapid decat %
 ### Scăderea modulară
 
 !!! note "Observație"
+
     $(a - b)\ \% \ mod = (a\ \% \ mod - b \ \% \ mod + mod) \ \% \ mod$.
     Practic, dacă scădem două numere și facem modulo, e același lucru cu a face
     modulo separat, iar mai apoi, să facem modulo la final.
@@ -71,6 +73,7 @@ if (sum < 0) { // mult mai rapid decat %
 ### Înmulțirea modulară
 
 !!! note "Observație"
+
     $(a \cdot b)\ \% \ mod = ((a \ \% \ mod) \cdot (b \ \% \ mod)) \ \% \ mod$.
     Practic, dacă înmulțim două numere și facem modulo, e același lucru cu a
     face modulo separat, iar mai apoi, să facem modulo la final.
@@ -107,6 +110,7 @@ Totuși, nu am folosit încă o proprietate esențială pentru a optimiza calcul
 mai sus.
 
 !!! note "Observație"
+
     $a^b = \left(a^{\frac{n}{2}}\right)^2$ cu alte cuvinte, dacă $n$ este par,
     putem să aflăm $a^\frac{n}{2}$ și apoi să-l ridicăm la pătrat.
 

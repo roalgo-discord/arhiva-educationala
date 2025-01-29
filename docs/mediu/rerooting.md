@@ -28,6 +28,7 @@ date pe care le folosim.
 ## Problema [Tree Distances](https://cses.fi/problemset/task/1132) de pe CSES
 
 !!! note "Observație"
+
     Această problemă are o soluție video explicată chiar de autor, pe care o
     puteți accesa [aici](https://www.youtube.com/watch?v=DZA4mYWpPno)
 
@@ -45,6 +46,7 @@ ne rămâne de făcut este să adunăm $1$ la aceste valori. Evident, pentru o
 frunză, $maxdist[i] = 0$.
 
 !!! note "Observație"
+
     Se poate observa faptul că în codul de mai jos am ales drept rădăcină nodul
     $1$, aceasta fiind o convenție utilizată în cele mai multe probleme cu
     arbori, chiar și atunci când nu ni se precizează în mod specific rădăcina
@@ -179,9 +181,7 @@ Pentru fiecare copil $c$ al lui $i$, există $dp[c]$ moduri de a colora
 subarborele său dacă $i$ este colorat negru. Acest lucru înseamnă că avem
 recurența
 
-$$
-dp[i]=1+\prod_{c \in \text{Copiii lui } i} dp[c]
-$$
+$$ dp[i]=1+\prod_{c \in \text{Copiii lui } i} dp[c] $$
 
 unde produsul corespunde colorării nodului $i$ în negru, iar $1$ corespunde
 colorării nodului $i$ în alb.
@@ -204,9 +204,8 @@ eficient $dp2[i]$?
 
 Recurența de bază pentru a calcula $dp2[i]$ este
 
-$$
-dp2[i] = 1+dp2[\text{Părintele lui } i] \cdot \prod_{s \in \text{Frații lui } i} dp[s]
-$$
+$$ dp2[i] = 1+dp2[\text{Părintele lui } i] \cdot \prod_{s \in \text{Frații lui }
+i} dp[s] $$
 
 unde produsul corespunde colorării părintelui lui $i$ în negru, iar $1$
 corespunde colorării părintelui lui $i$ în alb.
@@ -218,9 +217,7 @@ copil (deoarece nu putem găsi inversul modular ușor).
 Cu toate acestea, observați că dacă nodul $i$ este al $k$-lea copil al
 părintelui său, putem folosi produse prefix și sufix pentru a calcula
 
-$$
-\prod_{s \in \text{Frații lui } i}dp[s]
-$$
+$$ \prod_{s \in \text{Frații lui } i}dp[s] $$
 
 fără a folosi împărțirea. (Adică găsim produsul lui $dp[s]$ pentru frații de la
 primul la al $(k - 1)$-lea copil al părintelui lui $i$, produsul lui $dp[s]$

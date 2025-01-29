@@ -21,10 +21,10 @@ ce numim în limbajul C++ funcții sau subprograme.
 
 !!! info "Funcție"
 
-    O funcție sau un subprogram reprezintă o secvență de cod care poate fi apelată
-    de utilizator pentru a fi executată de mai multe ori, fără a fi nevoie să
-    rescriem acel cod. Aceasta poate fi apelată fie din programul principal, fie
-    dintr-o altă funcție.
+    O funcție sau un subprogram reprezintă o secvență de cod care poate fi
+    apelată de utilizator pentru a fi executată de mai multe ori, fără a fi
+    nevoie să rescriem acel cod. Aceasta poate fi apelată fie din programul
+    principal, fie dintr-o altă funcție.
 
 În limbajul C++, avem atât funcții de sistem (deja cunoscute de biblioteci) și
 funcții definite de utilizator.
@@ -82,37 +82,36 @@ O funcție este formată din două părți principale: antetul (declararea func�
     Antetul unei funcții este format din următoarele componente:
 
     - **Tipul de returnare (tip)**. Reprezintă tipul valorii întoarse de
-        funcție. Poate fi orice tip de date cunoscut în limbajul C++, inclusiv
-        containere din STL.
+      funcție. Poate fi orice tip de date cunoscut în limbajul C++, inclusiv
+      containere din STL.
   
-        Dacă funcția nu întoarce nicio valoare, se utilizează tipul void, care
-        semnifică un tip gol.
+        Dacă funcția nu întoarce nicio valoare, se utilizează tipul
+        `#!cpp void`, care semnifică un tip gol.
   
         !!! warning "Atenție"
   
-              În cazul funcțiilor cu tipul de returnare diferit de `#!cpp void`,
-              omisiunea unei valori returnate generează, de obicei, un warning
-              la compilare. În unele cazuri, comportamentul programului devine
-              imprevizibil (undefined behavior).
+            În cazul funcțiilor cu tipul de returnare diferit de `#!cpp void`,
+            omisiunea unei valori returnate generează, de obicei, un warning la
+            compilare. În unele cazuri, comportamentul programului devine
+            imprevizibil (undefined behavior).
 
     - **Numele funcției**. Este ales de utilizator și trebuie să respecte
-       regulile de numire ale identificatorilor (de exemplu, să nu înceapă cu
-       cifre, să nu conțină caractere speciale, etc.).
+      regulile de numire ale identificatorilor (de exemplu, să nu înceapă cu
+      cifre, să nu conțină caractere speciale, etc.).
 
     - **Parametrii funcției**. Sunt variabilele pe care funcția le primește la
-        apel. Fiecare parametru are un tip de date și un nume.
+      apel. Fiecare parametru are un tip de date și un nume.
 
         !!! note "Observație"
 
-            Parametrii funcției nu sunt obligatorii. Totuși,
-            aceștia fac funcția mai flexibilă și reutilizabilă în diverse
-            contexte.
+            Parametrii funcției nu sunt obligatorii. Totuși, aceștia fac funcția
+            mai flexibilă și reutilizabilă în diverse contexte.
 
 2. **Corpul funcției**.
 
-     Corpul funcției include instrucțiunile specifice care
-     determină comportamentul funcției. Acestea pot fi orice instrucțiuni C++
-     valide, respectând regulile de sintaxă și compilare.
+     Corpul funcției include instrucțiunile specifice care determină
+     comportamentul funcției. Acestea pot fi orice instrucțiuni C++ valide,
+     respectând regulile de sintaxă și compilare.
 
 3. **Returnarea valorii**.
 
@@ -128,20 +127,18 @@ O funcție este formată din două părți principale: antetul (declararea func�
         returnate va genera, de obicei, un warning la compilare și poate duce la
         un comportament imprevizibil (_undefined behavior_).
 
-        !!! example "Exemplu"
-
-            ```cpp
-            int aduna(int a, int b) {
-                return a + b;
-            }
-            ```
+        ```cpp
+        int aduna(int a, int b) {
+            return a + b;
+        }
+        ```
 
         !!! warning "Atenție"
 
-            Într-o funcție cu tip non-`#!cpp void`, _toate_ căile
-            posibile de execuție trebuie să aibă o valoare returnată. Pe 
-            scurt, nu poți avea unele locuri de unde returnezi și altele de 
-            unde nu. Deci, așa ceva nu e posibil:
+            Într-o funcție cu tip non-`#!cpp void`, _toate_ căile posibile de
+            execuție trebuie să aibă o valoare returnată. Pe scurt, nu poți avea
+            unele locuri de unde returnezi și altele de unde nu. Deci, așa ceva
+            nu e posibil:
 
             ```cpp
             char c(int n) {
@@ -161,15 +158,14 @@ O funcție este formată din două părți principale: antetul (declararea func�
         return;` poate fi folosit doar pentru a încheia executarea funcției mai
         devreme.
 
-        !!! example "Exemplu"
-            ```cpp
-            void afiseaza_mesaj() {
-                cout << "Salut!" << endl;
+        ```cpp
+        void afiseaza_mesaj() {
+            cout << "Salut!" << endl;
 
-                // Opțional:
-                // return;
-            }
-            ```
+            // Opțional:
+            // return;
+        }
+        ```
 
 ## Utilizarea funcțiilor
 
@@ -207,8 +203,8 @@ respectivă și va genera o eroare.
     }
     ```
 
-    În acest exemplu, funcția `#!cpp sum_div` este definită deasupra funcției 
-    `#!cpp main`, ceea ce face ca aceasta să poată fi utilizată fără alte 
+    În acest exemplu, funcția `#!cpp sum_div` este definită deasupra funcției
+    `#!cpp main`, ceea ce face ca aceasta să poată fi utilizată fără alte
     declarații suplimentare.
 
 === "Cod greșit (lipsa definiției înainte de apel)"
@@ -241,16 +237,10 @@ respectivă și va genera o eroare.
     }
     ```
 
-    În acest caz, funcția `#!cpp sum_div` este definită după funcția 
-    `#!cpp main`, dar fără o declarație prealabilă (antet). Din această cauză, 
-    compilatorul generează o eroare, deoarece nu poate identifica funcția 
+    În acest caz, funcția `#!cpp sum_div` este definită după funcția
+    `#!cpp main`, dar fără o declarație prealabilă (antet). Din această cauză,
+    compilatorul generează o eroare, deoarece nu poate identifica funcția
     `#!cpp sum_div`.
-
-<!-- 
-Totuși, limbajul C++ permite și scrierea funcțiilor sub programul principal, cu
-condiția ca antetele să fie scrise deasupra funcției main. Codul de mai jos
-poate fi modificat astfel:
- -->
 
 Dacă dorim să definim funcțiile după funcția `#!cpp main`, putem folosi o
 declarație prealabilă (**prototip**) care să indice existența funcției și
@@ -323,11 +313,8 @@ long long sum_div(int numar) {
 
 ### Funcții care nu returnează nimic (funcții `#!cpp void`)
 
-În limbajul C++, o funcție care nu returnează nimic are întotdeauna tipul  `#!cpp void`.
-
-<!-- Acestea sunt frecvent utilizate atunci când avem nevoie să efectuăm anumite
-operații în mod recursiv (vom explica ulterior acest concept) dar și atunci când
-vrem să modificăm anumite variabile pe care le utilizăm ulterior în program. -->
+În limbajul C++, o funcție care nu returnează nimic are întotdeauna tipul
+`#!cpp void`.
 
 Acest tip de funcții este utilizat, de exemplu, pentru a realiza operații care
 nu necesită un rezultat întors, cum ar fi modificarea unor variabile globale sau
@@ -338,13 +325,6 @@ rezultatul să fie ținut fie cu ajutorul unei variabile globale, fie cu ajutoru
 unei variabile care va prelua rezultatul prin referință.
 
 ### Funcții care întorc valori prin parametri
-
-<!-- Aceste funcții sunt de regulă de tipul void, iar singura diferență față de
-celelalte tipuri de funcții este acela că în loc să returneze valorile direct,
-se folosesc de variabile auxiliare care de regulă sunt declarate altundeva, iar
-modificarea lor duce la modificări în adresa de memorie în care au fost
-declarate (cu alte cuvinte, dacă modificăm ceva la ele, se va modifica și în
-funcția/programul în care au fost declarate). -->
 
 Aceste funcții, de obicei de tip void, nu returnează valori direct prin
 utilizarea cuvântului cheie `#!cpp return`. În schimb, ele modifică valorile
@@ -360,7 +340,7 @@ modificare la nivel global în program.
 
     Atunci când utilizăm parametri transmiși prin referință, este important ca
     variabilele să fie inițializate înainte de a fi trimise funcției. Altfel,
-    există riscul apariției unor erori cauzate de utilizarea unor valori 
+    există riscul apariției unor erori cauzate de utilizarea unor valori
     neinițializate.
 
 Mai jos este exemplificată o funcție care calculează suma cifrelor unui număr,
@@ -440,9 +420,9 @@ până la rezolvarea cazurilor de bază.
 
 !!! note "Cazurile de bază"
 
-    Pe lângă instrucțiunile obișnuite oricărei funcții, o funcție recursivă are și
-    unul sau mai multe **cazuri de bază**, care sunt obligatorii pentru a evita apelarea
-    la infinit a aceleiași funcții.
+    Pe lângă instrucțiunile obișnuite oricărei funcții, o funcție recursivă are
+    și unul sau mai multe **cazuri de bază**, care sunt obligatorii pentru a
+    evita apelarea la infinit a aceleiași funcții.
 
 Astfel, pentru fiecare apel al unei funcții se adaugă pe stivă o zonă de memorie
 în care se memorează variabilele locale și parametrii pentru apelul curent.
@@ -450,7 +430,7 @@ Această zonă a stivei va exista până la finalul apelului, după care se va
 elibera. Dacă din apelul curent se face un alt apel, se adaugă pe stivă o nouă
 zonă de memorie, iar conținutul zonei anterioare este inaccesibil până la
 finalul acelui apel. Aceste operații se fac la fel și dacă al doilea apel este
-un autoapel al unei funcții recursive.
+un auto-apel al unei funcții recursive.
 
 Aici puteți vedea cum aflăm în mod recursiv valoarea lui $n!$ folosind o funcție
 recursivă.
@@ -593,19 +573,6 @@ int cifmin(int numar) {
 
 ### Funcții cu parametru implicit
 
-<!-- Uneori, atunci când scriem funcții, avem anumite variabile care vor fi mereu
-inițializate cu aceeași valoare, ceea ce impune un tratament diferit în cadrul
-funcțiilor pe care le scriem. Astfel, se impune folosirea unor parametri
-impliciți, care să poată fi inițializate cu o anumită valoare în lipsa unei alte
-apelări.
-
-Aceste funcții se numesc funcții cu parametru implicit.
-
-Pentru a scrie o funcție cu parametri impliciți, trebuie să menționăm mai întâi
-parametrii obișnuiți, iar mai apoi, cei impliciți.
-
-De exemplu, prima declarare este incorectă, dar cea de-a doua este corectă. -->
-
 Uneori, atunci când scriem funcții, avem parametri care primesc aceeași valoare
 implicită. Acesta este cazul funcțiilor cu parametru implicit. Parametrii
 impliciți se mai numesc și _opționali_, pentru că nu este nevoie să-i scriem
@@ -684,10 +651,10 @@ int main() {
 
 !!! note "Funcțiile lambda"
 
-    Cunoașterea acestora este opțională în contextul examenelor de bacalaureat și
-    admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari la
-    olimpiadă. Totuși, acestea nu reprezintă un element care trebuie obligatoriu
-    învățat.
+    Cunoașterea acestora este opțională în contextul examenelor de bacalaureat
+    și admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari
+    la olimpiadă. Totuși, acestea nu reprezintă un element care trebuie
+    obligatoriu învățat.
 
 Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor
 funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții

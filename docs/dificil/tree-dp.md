@@ -13,60 +13,57 @@ tags:
 
 ## Introducere
 
-În ceea ce privește studiul programării dinamice, un tip de probleme
-frecvent întâlnit reprezintă dinamica pe arbori. Deși abordarea lor
-nu este foarte diferită față de alte probleme care implică diverse
-recurențe, există câteva sfaturi specifice care vă pot ajuta, împreună
-cu proprietăți specifice acestui tip de probleme.
+În ceea ce privește studiul programării dinamice, un tip de probleme frecvent
+întâlnit reprezintă dinamica pe arbori. Deși abordarea lor nu este foarte
+diferită față de alte probleme care implică diverse recurențe, există câteva
+sfaturi specifice care vă pot ajuta, împreună cu proprietăți specifice acestui
+tip de probleme.
 
-De obicei, atunci când abordăm aceste probleme, vrem să ne gândim la modul
-în care un nod și copiii lui interacționează, de regulă starea pentru un
-nod $i$ (vom denumi generic această stare $dp[i]$, chiar dacă în
-multe situații vom avea și alte dimensiuni) are rezultatul definit în
-funcție de rezultatele fiilor săi. Modul în care găsim aceste relații,
-precum și diverse optimizări vor fi prezentate pe parcursul acestui articol,
-prin diverse exemple.
+De obicei, atunci când abordăm aceste probleme, vrem să ne gândim la modul în
+care un nod și copiii lui interacționează, de regulă starea pentru un nod $i$
+(vom denumi generic această stare $dp[i]$, chiar dacă în multe situații vom avea
+și alte dimensiuni) are rezultatul definit în funcție de rezultatele fiilor săi.
+Modul în care găsim aceste relații, precum și diverse optimizări vor fi
+prezentate pe parcursul acestui articol, prin diverse exemple.
 
-Aceste probleme apar foarte des la olimpiadele și concursurile de
-informatică românești, dinamicile pe arbore fiind un tip de problemă
-preferat de propunător, dat fiind faptul că se regăsește aproape în
-fiecare an măcar la una din etapele competiției, deci se impune
-cunoașterea celor mai importante abordări. De asemenea, concursuri
-precum USACO Gold și Platinum au un număr ridicat de asemenea probleme,
-de multe ori laolaltă cu diferite structuri de date.
+Aceste probleme apar foarte des la olimpiadele și concursurile de informatică
+românești, dinamicile pe arbore fiind un tip de problemă preferat de propunător,
+dat fiind faptul că se regăsește aproape în fiecare an măcar la una din etapele
+competiției, deci se impune cunoașterea celor mai importante abordări. De
+asemenea, concursuri precum USACO Gold și Platinum au un număr ridicat de
+asemenea probleme, de multe ori laolaltă cu diferite structuri de date.
 
 ## Problema [Tree Matching - CSES](https://cses.fi/problemset/task/1130/)
 
-Pentru a rezolva această problemă, ne putem gândi la un caz foarte
-simplu, și anume cazul când avem o rădăcină și un anumit număr
-de fii. În acest caz, ce putem face este fie să nu conectăm nodul
-curent la un alt nod, fie să îl conectăm la unul din acele noduri.
+Pentru a rezolva această problemă, ne putem gândi la un caz foarte simplu, și
+anume cazul când avem o rădăcină și un anumit număr de fii. În acest caz, ce
+putem face este fie să nu conectăm nodul curent la un alt nod, fie să îl
+conectăm la unul din acele noduri.
 
-Astfel, putem deduce două tipuri de cazuri pe care le putem considera
-în dinamica noastră, ceea ce motivează prezența unei dinamici cu două
-dimensiuni. În mod formal, vom avea următoarele definiții:
+Astfel, putem deduce două tipuri de cazuri pe care le putem considera în
+dinamica noastră, ceea ce motivează prezența unei dinamici cu două dimensiuni.
+În mod formal, vom avea următoarele definiții:
 
-- $dp[0][i]$ va reprezenta răspunsul maxim dacă nu am folosit nodul $i$
-în vreo muchie.
-- $dp[1][i]$ va reprezenta răspunsul maxim dacă am folosit nodul $i$
-în vreo muchie.
+- $dp[0][i]$ va reprezenta răspunsul maxim dacă nu am folosit nodul $i$ în vreo
+  muchie.
+- $dp[1][i]$ va reprezenta răspunsul maxim dacă am folosit nodul $i$ în vreo
+  muchie.
 
-Pentru a defini $dp[0][i]$, este simplu să ne gândim la faptul că
-vom vrea să preluăm răspunsurile maxime de la fii, deci putem scrie
-$dp[0][i]$ ca fiind $\sum \max(dp[0][x], dp[1][x])$ pentru toți fiii $x$
-ai nodului $i$.
+Pentru a defini $dp[0][i]$, este simplu să ne gândim la faptul că vom vrea să
+preluăm răspunsurile maxime de la fii, deci putem scrie $dp[0][i]$ ca fiind
+$\sum \max(dp[0][x], dp[1][x])$ pentru toți fiii $x$ ai nodului $i$.
 
-În mod similar, pentru a defini $dp[1][i]$, vom vrea să cuplăm nodul $i$
-cu unul din fiii săi, iar mai apoi să preluăm toate maximele de la
-celelalte noduri. Astfel, $dp[1][i]$ va fi egal cu
-$\max (1 + dp[0][x]+ \sum \max(dp[0][x_0], dp[1][x_0]))$, unde $x$ este
-fiul ales, iar $x_0$ reprezintă oricare din ceilalți fii ai nodului $i$.
+În mod similar, pentru a defini $dp[1][i]$, vom vrea să cuplăm nodul $i$ cu unul
+din fiii săi, iar mai apoi să preluăm toate maximele de la celelalte noduri.
+Astfel, $dp[1][i]$ va fi egal cu $\max (1 + dp[0][x]+ \sum \max(dp[0][x_0],
+dp[1][x_0]))$, unde $x$ este fiul ales, iar $x_0$ reprezintă oricare din
+ceilalți fii ai nodului $i$.
 
-Implementarea acestei soluții se poate face folosind o parcurgere de tip
-DFS, complexitatea fiind una liniară. Chiar dacă această problemă este
-una introductivă, are foarte multe aspecte care sunt folosite în
-dinamicile pe arbore, în special legate de combinarea subproblemelor și
-folosirea unei game largi de cazuri pentru a ajunge la soluția dorită.
+Implementarea acestei soluții se poate face folosind o parcurgere de tip DFS,
+complexitatea fiind una liniară. Chiar dacă această problemă este una
+introductivă, are foarte multe aspecte care sunt folosite în dinamicile pe
+arbore, în special legate de combinarea subproblemelor și folosirea unei game
+largi de cazuri pentru a ajunge la soluția dorită.
 
 Mai jos puteți găsi codul sursă la această problemă.
 
@@ -122,11 +119,11 @@ int main() {
 
 ## Problema [The Fair Nut and Best Path](https://codeforces.com/problemset/problem/1083/A)
 
-Pentru a calcula cantitatea maximă de combustibil pe care o putem avea
-la finalul unui drum, vom vrea să ținem minte cantitatea maximă
-pe un lanț care pleacă dintr-un nod anume spre unul din fiii săi, iar
-eventual să unim două lanțuri pentru a putea considera cazul când
-rădăcina curentă reprezintă punctul de intersecție a două asemenea drumuri.
+Pentru a calcula cantitatea maximă de combustibil pe care o putem avea la
+finalul unui drum, vom vrea să ținem minte cantitatea maximă pe un lanț care
+pleacă dintr-un nod anume spre unul din fiii săi, iar eventual să unim două
+lanțuri pentru a putea considera cazul când rădăcina curentă reprezintă punctul
+de intersecție a două asemenea drumuri.
 
 Calcularea cantității maxime pentru un lanț este relativ facilă, deoarece
 putem păstra o recurență de tip $dp[i]$ pentru fiecare posibil nod,
@@ -198,11 +195,11 @@ int main() {
 
 ## Problema [Arbore ONI 2016](https://kilonova.ro/problems/188)
 
-Pentru a rezolva această problemă, ne vom gândi în mod similar cu
-prima problemă la o soluție care va avea două cazuri pentru fiecare
-nod, dacă păstrăm acel nod sau nu în arbore, abordare ce duce la
-calcularea atât a numărului maxim de componente conexe, cât și a
-calculării numărului de moduri de a ajunge la acest număr.
+Pentru a rezolva această problemă, ne vom gândi în mod similar cu prima problemă
+la o soluție care va avea două cazuri pentru fiecare nod, dacă păstrăm acel nod
+sau nu în arbore, abordare ce duce la calcularea atât a numărului maxim de
+componente conexe, cât și a calculării numărului de moduri de a ajunge la acest
+număr.
 
 Vom avea două cazuri, dacă decidem să păstrăm nodul curent, vom
 aduna răspunsurile maxime de la fiecare fiu, iar în caz contrar, vom
@@ -319,20 +316,20 @@ int main() {
 ## Problema [Museum CEOI 2017](https://oj.uz/problem/view/CEOI17_museum)
 
 !!! note "Observație importantă"
-    [Acest blog](https://codeforces.com/blog/entry/100910)
-    va detalia o tehnică folosită pentru această problemă care ne
-    ajută să optimizăm complexitatea cu un factor de $n$.
 
-Există foarte multe dinamici pe arbore care au o soluție care după
-un număr de observații, se reduc la un rucsac sau o idee similară.
-De regulă, vom vrea să ordonăm nodurile după numărul de noduri din
-subarbore pentru a reduce numărul de operații efectuat atunci când
-actualizăm răspunsurile din dinamica noastră.
+    [Acest blog](https://codeforces.com/blog/entry/100910) va detalia o tehnică
+    folosită pentru această problemă care ne ajută să optimizăm complexitatea cu
+    un factor de $n$.
 
-Acest lucru se va observa și în cazul problemei noastre, unde vom avea
-o dinamică de tip $dp[0/1][i][j]$, care reprezintă cel mai mic cost
-al unui traseu ce începe în nodul $i$, vizitează nodul $j$ și se întoarce
-sau nu la nodul $i$ (1 - se întoarce, 0 - nu se întoarce).
+Există foarte multe dinamici pe arbore care au o soluție care după un număr de
+observații, se reduc la un rucsac sau o idee similară. De regulă, vom vrea să
+ordonăm nodurile după numărul de noduri din subarbore pentru a reduce numărul de
+operații efectuat atunci când actualizăm răspunsurile din dinamica noastră.
+
+Acest lucru se va observa și în cazul problemei noastre, unde vom avea o
+dinamică de tip $dp[0/1][i][j]$, care reprezintă cel mai mic cost al unui traseu
+ce începe în nodul $i$, vizitează nodul $j$ și se întoarce sau nu la nodul $i$
+(1 - se întoarce, 0 - nu se întoarce).
 
 Pentru a calcula această dinamică, vom avea pentru fiecare nod un rucsac
 care trece prin variantele de a continua un anume drum, în funcție de
@@ -470,8 +467,8 @@ unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform
 precalculării anterioare, iar acest număr $DMAX$ este egal cu $31$ deoarece
 orice număr de la $1$ la $m$ are cel mult $5$ factori primi distincți.
 
-Pentru mai multe detalii de implementare, recomandăm consultarea sursei de mai jos.
-
+Pentru mai multe detalii de implementare, recomandăm consultarea sursei de mai
+jos.
 
 ```cpp
 #include <iostream>
@@ -573,7 +570,6 @@ int main() {
 
 ## Problema [Compressed Tree - Codeforces](https://codeforces.com/problemset/problem/1901/E)
 
-
 Pentru această problemă, vom avea o dinamică pe două dimensiuni care va
 ține cont de următoarele cazuri:
 
@@ -588,10 +584,11 @@ gândul la o abordare în care sortăm sumele în ordine descrescătoare,
 luând mereu termenii pozitivi, iar dacă este necesar, să completăm cu
 un număr de termeni până ajungem la doi, respectiv trei copii luați.
 
-Ulterior, în funcție de numărul de fii, se pot deduce ușor câteva
-cazuri care puse laolaltă, ne duc la soluția cerută, așa cum se poate
-observa în codul de mai jos. În mod alternativ, puteți consulta și [soluția
-oficială](https://codeforces.com/blog/entry/122645) propusă de autorii competiției.
+Ulterior, în funcție de numărul de fii, se pot deduce ușor câteva cazuri care
+puse laolaltă, ne duc la soluția cerută, așa cum se poate observa în codul de
+mai jos. În mod alternativ, puteți consulta și [soluția
+oficială](https://codeforces.com/blog/entry/122645) propusă de autorii
+competiției.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -689,53 +686,38 @@ int main() {
 
 ## Concluzii
 
-Dinamicile pe arbore apar foarte des în competițiile de informatică
-românești și nu numai, iar experiența căpătată cu aceste tipuri de
-probleme se dovedește a fi foarte importantă pentru obținerea unor
-rezultate foarte bune la olimpiadă, în special la ONI și baraj în
-clasele XI-XII.
+Dinamicile pe arbore apar foarte des în competițiile de informatică românești și
+nu numai, iar experiența căpătată cu aceste tipuri de probleme se dovedește a fi
+foarte importantă pentru obținerea unor rezultate foarte bune la olimpiadă, în
+special la ONI și baraj în clasele XI-XII.
 
-Recomandăm lucratul a cât mai multe probleme, atât din această
-listă cât și din celelalte articole menționate anterior, în special
-cel despre rerooting, care are concepte mai simple, dar care se leagă
-de cunoștințele prezentate aici.
+Recomandăm lucratul a cât mai multe probleme, atât din această listă cât și din
+celelalte articole menționate anterior, în special cel despre rerooting, care
+are concepte mai simple, dar care se leagă de cunoștințele prezentate aici.
 
 ## Probleme suplimentare
 
-- [AtCoder Independent Set
-](https://atcoder.jp/contests/dp/tasks/dp_p)
+- [AtCoder Independent Set](https://atcoder.jp/contests/dp/tasks/dp_p)
 - [OJI 2019 Tairos](https://kilonova.ro/problems/22)
 - [OJI 2008 Iepuri](https://kilonova.ro/problems/45)
-- [Nastia Plays with a Tree Codeforces
-](https://codeforces.com/contest/1521/problem/D)
+- [Nastia Plays with a Tree Codeforces](https://codeforces.com/contest/1521/problem/D)
 - [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
-- [USACO Gold Barn Painting
-](https://usaco.org/index.php?page=viewproblem2&cpid=766)
-- [USACO Gold Delegation
-](http://www.usaco.org/index.php?page=viewproblem2&cpid=1019)
+- [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2&cpid=766)
+- [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2&cpid=1019)
 - [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
-- [Moisil 2024 Arborele frumos
-](https://kilonova.ro/problems/2568/)
+- [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
 - [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
 - [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
 - [ONI 2018 tricolor](https://kilonova.ro/problems/151)
-- [ONI 2021 Baraj Seniori Arbsumpow
-](https://kilonova.ro/problems/67/)
-- [ONI 2019 Baraj Seniori Anarhie
-](https://kilonova.ro/problems/409/)
+- [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
+- [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)
 - [CSES Creating Offices](https://cses.fi/problemset/task/1752)
-- [Miss Punyverse Codeforces
-](https://codeforces.com/contest/1280/problem/D)
-- [IOI 2007 Training
-](https://oj.uz/problem/view/IOI07_training)
-- [Probleme cu DP pe arbore de pe Kilonova
-](https://kilonova.ro/problems?tags=275%2C284)
-- [Probleme cu DP pe arbore de pe Codeforces
-](https://codeforces.com/problemset?tags=dp,trees)
+- [Miss Punyverse Codeforces](https://codeforces.com/contest/1280/problem/D)
+- [IOI 2007 Training](https://oj.uz/problem/view/IOI07_training)
+- [Probleme cu DP pe arbore de pe Kilonova](https://kilonova.ro/problems?tags=275%2C284)
+- [Probleme cu DP pe arbore de pe Codeforces](https://codeforces.com/problemset?tags=dp,trees)
 
 ## Resurse suplimentare
 
-- [DP on Trees - USACO Guide
-](https://usaco.guide/gold/dp-trees)
-- [DP on Trees tutorial - Codeforces
-](https://codeforces.com/blog/entry/20935)
+- [DP on Trees - USACO Guide](https://usaco.guide/gold/dp-trees)
+- [DP on Trees tutorial - Codeforces](https://codeforces.com/blog/entry/20935)

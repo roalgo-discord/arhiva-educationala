@@ -83,9 +83,7 @@ de maxime crește cu $1$ doar dacă inserăm această valoare la începutul
 permutării, în caz contrar acest număr rămâne același. Astfel, putem să calculăm
 numărul de permutări de lungime $n$ cu $k$ maxime folosind următoarea recurență:
 
-$$
-    dp[i][j] = (i-1) \cdot dp[i-1][j] + dp[i-1][j-1]
-$$
+$$ dp[i][j] = (i-1) \cdot dp[i-1][j] + dp[i-1][j-1] $$
 
 unde $dp[0][0] = 1$.
 
@@ -95,9 +93,9 @@ jos puteți găsi implementarea completă a soluției problemei date.
 !!! note "Soluție detaliată"
 
     O demonstrație detaliată a acestei abordări, precum și legătura cu [numerele
-    Stirling](https://edu.roalgo.ro/mediu/intro-combinatorics/#numerele-stirling) se
-    poate găsi
-    [aici](https://math.stackexchange.com/questions/1978388/counting-permutations-with-k-maximums)
+    Stirling](https://edu.roalgo.ro/mediu/intro-combinatorics/#numerele-stirling)
+    se poate găsi
+    [aici](https://math.stackexchange.com/questions/1978388/counting-permutations-with-k-maximums).
 
 ```cpp
 #include <fstream>
@@ -181,7 +179,9 @@ int main() {
 
 ## Problema 2 - [Permutation - AtCoder DP](https://atcoder.jp/contests/dp/tasks/dp_t)
 
-Pentru a rezolva această problemă, vrem să găsim o metodă de a plasa valorile în permutare și de a păstra informații suficiente pentru a putea grupa celelalte valori.
+Pentru a rezolva această problemă, vrem să găsim o metodă de a plasa valorile în
+permutare și de a păstra informații suficiente pentru a putea grupa celelalte
+valori.
 
 Plasarea primei valori este ușoară, putem presupune fiecare valoare de la $1$ la
 $n$ ca fiind adăugată în permutare. Totuși, încă nu am răspuns la întrebarea
@@ -365,7 +365,7 @@ de elemente adiacente de forma $x, x+1$.
 Soluția poate fi găsită în $dp[N][0]$, iar cazul de bază este $dp[1][0] = 1$.
 
 Cât despre relația de recurență, să presupunem că avem o stare $(i,j)$ și vrem
-să inserăm elementul $i+1$. Distinguem trei cazuri:
+să inserăm elementul $i+1$. Distingem trei cazuri:
 
 1. Inserăm elementul $i+1$ imediat după elementul $i$. Trebuie să actualizăm
    $dp[i+1][j+1]$.

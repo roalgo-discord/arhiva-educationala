@@ -42,10 +42,9 @@ Pentru declararea unei matrice statice, aveți nevoie de:
 1. Tipul de date al elementelor (e.g., `#!cpp int`, `#!cpp float`).
 2. Dimensiunile matricei.
 
-!!! example "Exemplu"
-    ```cpp
-    int matrice[101][101];
-    ```
+```cpp
+int matrice[101][101];
+```
 
 Aceasta definește o matrice cu 101 linii și 101 coloane, fiecare element fiind
 de tip `#!cpp int`. Indicii sunt numerotați de la 0 la 100.
@@ -64,6 +63,7 @@ matrice[2][4]`. Așa ar arăta pe matricea noastră:
 </figure>
 
 !!! note "Reprezentarea matricii"
+
     În terminologia uzuală:
 
     - Liniile sunt numerotate de sus în jos.
@@ -78,15 +78,14 @@ matrice[2][4]`. Așa ar arăta pe matricea noastră:
 
 !!! note "Observație"
 
-    Dacă preferați să lucrați cu indici numerotați de la 1, pur și simplu 
+    Dacă preferați să lucrați cu indici numerotați de la 1, pur și simplu
     adăugați 1 la dimensiunile declarate și folosiți direct numărul ca atare,
     exact ca în cazul vectorilor uzuali.
 
-    !!! example "Exemplu"
-        ```cpp
-        // Numerotare de la 1 la 101.
-        int matrice[102][102];
-        ```
+    ```cpp
+    // Numerotare de la 1 la 101.
+    int matrice[102][102];
+    ```
 
     În acel caz, matricea va fi stocată astfel:
     <figure markdown="span">
@@ -98,11 +97,10 @@ matrice[2][4]`. Așa ar arăta pe matricea noastră:
 Valorile matricei pot fi accesate și modificate similar cu variabilele
 obișnuite, utilizând indicii.
 
-!!! example "Exemplu"
-    ```cpp
-    // Pe linia 1 și coloana 5 vom avea acum valoarea 7.
-    matrice[1][5] = 7;
-    ```
+```cpp
+// Pe linia 1 și coloana 5 vom avea acum valoarea 7.
+matrice[1][5] = 7;
+```
 
 Pentru a parcurge elementele, de regulă se folosesc structuri repetitive
 imbricate.
@@ -120,9 +118,8 @@ imbricate.
 
 !!! note "Notă"
 
-    Cea mai comună convenție este `i` pentru rând și `j` pentru
-    coloană. Am ales `r` și `c` pentru că e mai simplu de reținut
-    de la ce vin.
+    Cea mai comună convenție este `i` pentru rând și `j` pentru coloană. Am ales
+    `r` și `c` pentru că e mai simplu de reținut de la ce vin.
 
 ### Problemă exemplu - [sumapare2 de pe pbinfo](https://www.pbinfo.ro/probleme/767/sumapare2)
 
@@ -167,15 +164,16 @@ int main() {
 
 !!! note "Notă"
 
-    O altă convenție comună este `n` pentru numărul de rânduri și
-    `m` pentru numărul de coloane. Dacă în matematică am avea o matrice de `m`
-    coloane și `n` rânduri ca fiind de dimensiune m × n, în informatică va fi
-    `#!cpp mat[n][m]`. Pentru a fi expliciți, folosim `randuri` și `coloane` 
-    în acest articol.
+    O altă convenție comună este `n` pentru numărul de rânduri și `m` pentru
+    numărul de coloane. Dacă în matematică am avea o matrice de `m` coloane și
+    `n` rânduri ca fiind de dimensiune m × n, în informatică va fi
+    `#!cpp mat[n][m]`. Pentru a fi expliciți, folosim `randuri` și `coloane` în
+    acest articol.
 
 ### Matrici pătratice
 
 !!! note "Definiție"
+
     O matrice unde numărul de rânduri și numărul de coloane coincid se numește
     **matrice pătratică**.
 
@@ -235,8 +233,8 @@ Pentru matricea noastră, așa va arăta diagonala secundară:
 
 Elementele care aparțin acestei diagonale se află la (0, 4), (1, 3), (2, 2), (3,
 1), (4, 0). Remarcăm că dacă adunăm rândul și coloana, obținem 4, care este cu
-unu mai mic decât dimensiunea matricei. Asta ne permite să scriem
-următorul cod care parcurge diagonala secundară:
+unu mai mic decât dimensiunea matricei. Asta ne permite să scriem următorul cod
+care parcurge diagonala secundară:
 
 ```cpp
 for (int r = 0; r < dim; ++r) {
@@ -277,6 +275,7 @@ for (int r = 1; r <= dim; ++r) {
 Cu indexarea la 0, scădem 1, iar cu indexare de la 1, adăugăm 1.
 
 !!! note "Observație"
+
     Dacă dimensiunea este impară, atunci cele două diagonale au un element
     comun. În caz contrar, diagonalele nu vor avea elemente comune.
 
@@ -308,19 +307,19 @@ Intersecția acestor regiuni formează patru regiuni: de nord, sud, vest și est
 Elementele din aceste regiuni sunt determinate de aceste condiții:
 
 - **Nord**:
-    - **Deasupra** diagonalei principale și **deasupra** diagonalei secundare.
-    - **Formula**: `#!cpp r < c && r + c < dim - 1`.
+  - **Deasupra** diagonalei principale și **deasupra** diagonalei secundare.
+  - **Formula**: `#!cpp r < c && r + c < dim - 1`.
 - **Sud**:
-    - **Sub** diagonala principală și **sub** diagonala secundară.
-    - **Formula**: `#!cpp r > c && r + c > dim - 1`.
+  - **Sub** diagonala principală și **sub** diagonala secundară.
+  - **Formula**: `#!cpp r > c && r + c > dim - 1`.
 - **Vest**:
-    - **Sub** diagonala principală și **deasupra** diagonalei secundare.
-    - **Formula**: `#!cpp r > c && r + c < dim - 1`.
+  - **Sub** diagonala principală și **deasupra** diagonalei secundare.
+  - **Formula**: `#!cpp r > c && r + c < dim - 1`.
 - **Est**:
-    - **Deasupra** diagonalei principale și **sub** diagonala secundară.
-    - **Formula**: `#!cpp r < c && r + c > dim - 1`.
+  - **Deasupra** diagonalei principale și **sub** diagonala secundară.
+  - **Formula**: `#!cpp r < c && r + c > dim - 1`.
 
-### Genererări de matrice
+### Generări de matrice
 
 Multe probleme ce implică matrici, în special cele întâlnite la examenele de
 bacalaureat și admitere, necesită generarea și construcția de matrici specifice.
@@ -333,6 +332,7 @@ O listă foarte bună cu probleme suplimentare de acest tip se găsește
 #### Exercițiu adaptat dintr-un model al examenului de bacalaureat
 
 !!! note "Enunț"
+
     Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
 
     ```text
@@ -409,8 +409,8 @@ int main() {
 ### Problemă exemplu - [genmat23 de pe pbinfo](https://www.pbinfo.ro/probleme/1585/genmat23)
 
 Pentru a rezolva această problemă, vom vrea să aflăm pentru fiecare poziție
-distanța față de marginea matricii și apoi vom colora pătratele cu 0 sau 1
-după caz.
+distanța față de marginea matricii și apoi vom colora pătratele cu 0 sau 1 după
+caz.
 
 ```cpp
 #include <iostream>
@@ -586,7 +586,7 @@ spirală, dar aici ne vom concentra pe două dintre variante.
 #### Varianta 1 - acoperim fiecare zonă concentrică
 
 O primă variantă constă în a simula cele patru mutări pentru fiecare zonă
-concentrică și să folosim foruri imbricate pentru a avea scrise parcurgerile.
+concentrică și să folosim bucle imbricate pentru a avea scrise parcurgerile.
 
 Cu alte cuvinte, acoperim fiecare zonă colorată diferit în imaginea de mai jos
 și începem mereu de pe linia și coloana i.
@@ -662,8 +662,8 @@ Vom lua drept exemplu n = 4.
 - 1 pas în jos
 - 1 pas la stânga
 
-Se poate observa faptul că după ce facem primul pas și avem n mutări,
-lungimile mutărilor se repetă câte două, astfel putem folosi [vectorii de
+Se poate observa faptul că după ce facem primul pas și avem n mutări, lungimile
+mutărilor se repetă câte două, astfel putem folosi [vectorii de
 direcție](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie) pentru a
 implementa aceste mutări foarte ușor, fără mari probleme.
 
@@ -757,9 +757,9 @@ scrisă invers ș.a.m.d.
 
 !!! note "Rotații la dreapta"
 
-    Dacă vrem să rotim matricea la dreapta, vom folosi aceeași logică, unde prima
-    linie va deveni ultima coloană, a doua linie va deveni penultima coloană
-    ș.a.m.d.
+    Dacă vrem să rotim matricea la dreapta, vom folosi aceeași logică, unde
+    prima linie va deveni ultima coloană, a doua linie va deveni penultima
+    coloană ș.a.m.d.
 
 Aici se poate găsi soluția problemei [rotire de pe
 pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim
@@ -846,9 +846,9 @@ declarăm fie la fel cum declarăm matricile, fie folosind variantele din STL,
 care vor fi detaliate în articolul corespunzător.
 
 De exemplu, `#!cpp int v[101][101][101];` reprezintă un "cub" de dimensiuni 101
-× 101 × 101. La fel ca la celelalte tablouri, cu cât avem mai multe
-dimensiuni, cu atât cantitatea de memorie crește, iar în cele mai multe cazuri,
-nu vom avea nevoie de mai mult de 3–4 dimensiuni.
+× 101 × 101. La fel ca la celelalte tablouri, cu cât avem mai multe dimensiuni,
+cu atât cantitatea de memorie crește, iar în cele mai multe cazuri, nu vom avea
+nevoie de mai mult de 3–4 dimensiuni.
 
 ## Concluzii
 

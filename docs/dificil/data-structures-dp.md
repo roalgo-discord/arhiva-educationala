@@ -5,7 +5,7 @@ tags:
     - structuri de date
 ---
 
-!!! example "Cunoștințe necesare"   
+!!! example "Cunoștințe necesare"
     - [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
     - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
 

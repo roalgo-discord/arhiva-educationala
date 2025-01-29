@@ -42,8 +42,8 @@ datorită numărului redus de biți pe care îl au numerele în binar.
 
 !!! info "Observație"
 
-    Arborii indexați binar sunt mereu indexați de la $1$, deoarece altfel, am avea
-    de-a face cu $0$, care nu are un bit nesemnificativ egal cu $1$.
+    Arborii indexați binar sunt mereu indexați de la $1$, deoarece altfel, am
+    avea de-a face cu $0$, care nu are un bit nesemnificativ egal cu $1$.
 
 ### Cum funcționează operația de update?
 
@@ -66,6 +66,8 @@ poate vedea pe desen:
   poziție
 - $16$ - poziția celui mai nesemnificativ bit este $3$, adunăm $2^4 = 16$ la
   poziție, algoritmul ia sfârșit.
+
+  <!-- TODO: trebuie sa refac desenul de aici -->
 
 ![Un exemplu de update pentru poziția $3$](../images/fenwick/fenwick-update.png)
 

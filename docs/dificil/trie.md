@@ -164,7 +164,7 @@ numerelor.
 Un exemplu bun este chiar problema [xormax](https://kilonova.ro/problems/1984),
 unde ni se dă un vector cu $N$ elemente și trebuie să aflăm care este suma xor
 maximă a unui interval. Suma _xor_ a unui interval cu capetele $[L, R]$ este
-valoarea  $v_L \oplus v_{L+1} \oplus \dots \oplus v_R$, unde $\oplus$ este
+valoarea $v_L \oplus v_{L+1} \oplus \dots \oplus v_R$, unde $\oplus$ este
 operatorul _xor_ pe biți.
 
 Pentru a rezolva problema putem parcurge vectorul de la stânga la dreapta și să
@@ -484,16 +484,18 @@ proprietăți:
 - Să nu existe $j \leq M,\, j \neq i$, sau un cuvânt $cuv$ din cele $N$, astfel
   încât cuvântul $j$ să fie prefix pentru cuvântul $i$, sau $cuv$ să fie prefix
   pentru $i$.
-- *Să nu existe $j \leq M,\, j \neq i$, sau un cuvânt $cuv$ din cele $N$, astfel
+- Să nu existe $j \leq M,\, j \neq i$, sau un cuvânt $cuv$ din cele $N$, astfel
   încât cuvântul $i$ să fie prefix pentru cuvântul $j$, sau $i$ să fie prefix
   pentru $cuv$.
 
 ### Soluție
 
-Prima idee ar fi să sortam vectorul $x$. Fie $dp_i$ = în câte moduri putem alege primele $i$ cuvinte. Putem considera
-toate posibilitățile de a forma șirurile , iar abia apoi să vedem cum eliminăm pe cele care nu sunt bune. Cu alte
-cuvinte, fie $(s_1, s_2, .. , s_{i-1})$ primele $i-1$ cuvinte alese astfel încât să respecte condițiile impuse de
-problemă. Sunt în total $dp_{i-1} \cdot K^{x_i}$ moduri de a forma un set de șiruri cu primele $i$ cuvinte.
+Prima idee ar fi să sortam vectorul $x$. Fie $dp_i$ = în câte moduri putem alege
+primele $i$ cuvinte. Putem considera toate posibilitățile de a forma șirurile ,
+iar abia apoi să vedem cum eliminăm pe cele care nu sunt bune. Cu alte cuvinte,
+fie $(s_1, s_2, .. , s_{i-1})$ primele $i-1$ cuvinte alese astfel încât să
+respecte condițiile impuse de problemă. Sunt în total $dp_{i-1} \cdot K^{x_i}$
+moduri de a forma un set de șiruri cu primele $i$ cuvinte.
 
 !!! info "Observație"
 
@@ -504,18 +506,19 @@ problemă. Sunt în total $dp_{i-1} \cdot K^{x_i}$ moduri de a forma un set de �
     $s_y$, fie invers, ceea ce este fals, pentru că noi am generat primele $i-1$
     cuvinte optim.
 
-Astfel dacă pentru fiecare cuvânt $k$, $k < i$, putem să scădem din numărul total de posibilități șirurile unde $s_k$ este prefix pentru $s_i$, nu vom elimina două configurații la fel.
+Astfel dacă pentru fiecare cuvânt $k$, $k < i$, putem să scădem din numărul
+total de posibilități șirurile unde $s_k$ este prefix pentru $s_i$, nu vom
+elimina două configurații la fel.
 
-$$
-dp_i = dp_{i-1} \cdot K^{x_i} - dp_{i-1} \cdot \sum_{j = 1}^{i-1} K^{x_i - x_j}
-$$
+$$ dp_i = dp_{i-1} \cdot K^{x_i} - dp_{i-1} \cdot \sum_{j = 1}^{i-1} K^{x_i -
+x_j} $$
 
 !!! info "Observație"
 
-    Nu există două cuvinte, unul provenit din cele $N$ date și celălalt ($s_k$) din
-    primele $i-1$ astfel încât ambele să fie prefixe pentru $s_i$. Dacă ambele sunt
-    prefixe pentru $s_i$, atunci fie $s_k$ este prefix pentru un cuvânt din cele
-    $N$, fie invers.
+    Nu există două cuvinte, unul provenit din cele $N$ date și celălalt ($s_k$)
+    din primele $i-1$ astfel încât ambele să fie prefixe pentru $s_i$. Dacă
+    ambele sunt prefixe pentru $s_i$, atunci fie $s_k$ este prefix pentru un
+    cuvânt din cele $N$, fie invers.
 
 Deci, putem să fixam un cuvânt din cele $N$ date inițial și să eliminăm numărul
 de posibilități ca el să fie prefix pentru $s_i$. Datorită observației, nu vom
@@ -524,7 +527,7 @@ elimina o posibilitate dacă a fost eliminată deja în prima etapă.
 În mod natural vom zice că din dp-ul nostru vom scădea în mod similar $dp_{i-1}
 \cdot \sum_{j = 1}^{N} K^{x_i - len(j)}$, unde $len(j)$ = lungimea cuvântului
 $j$, cu $x_i \geq len(j)$. Însă nu este adevărat, pentru că dacă avem două
-cuvinte $x$ și  $y$ , unde $x$ este prefix pentru $y$, atunci suma de mai sus va
+cuvinte $x$ și $y$ , unde $x$ este prefix pentru $y$, atunci suma de mai sus va
 număra 2 configurații de două ori. Observăm că nouă ne trebuie practic doar
 acele cuvinte $x$, pentru care nu există alt cuvânt $y$, cu $y$ prefix pentru
 $x$, iar $len(x) \leq x_i$.
@@ -694,7 +697,7 @@ dp direct pe trie. Astfel, fie $dp[nod][i]$ = numărul minim de operații pentru
 tasta $i$ cuvinte cu prefixul format din lanțul de la rădăcină la $nod$. Acum,
 pentru un nod fixat din trie-ul nostru, putem presupune că în momentul tastării
 vom începe mereu cu șirul format de la rădăcină la $nod$, în loc de $\emptyset$.
-De exemplu, dacă cuvintele au prefixul \textit{abab}, atunci noi vom presupune o
+De exemplu, dacă cuvintele au prefixul *abab*, atunci noi vom presupune o
 succesiune validă de operații: $abab \rightarrow abab\textbf{c} \rightarrow
 \dots \rightarrow abab\textbf{c} \rightarrow abab$. Putem deci face un rucsac
 pentru fiii nodului, $dp1[i][j]$ = care e numărul minim de operații pentru a
@@ -724,9 +727,9 @@ Problema constă în faptul că secvența de cod de mai sus rulează pentru fiec
 nod din trie, ceea ce ar rezulta într-o complexitate de $O(N \cdot K^2)$. Doar
 că, în practică soluția are complexitatea de $O(N \cdot K)$. În momentul în care
 facem rucsac pe un arbore, este foarte important să fim atenți la memoria și la
-timpul consumate. Observăm faptul că cele două bucle merg până la $\min(sz[nod],
-k)$, lucru ce  îmbunătățește timpul de execuție considerabil. Puteți citi mai
-multe din [soluția problemei
+timpul consumate. Observăm faptul că cele două bucle merg până la
+$\min(sz[nod], k)$, lucru ce îmbunătățește timpul de execuție considerabil.
+Puteți citi mai multe din [soluția problemei
 Barricades](http://www.lookingforachallengethebook.com/uploads/1/4/5/5/14555448/preview-_looking_for_a_challenge.pdf),
 iar sursa completă o puteți vizualiza
 [aici](https://kilonova.ro/submissions/140069).

@@ -21,7 +21,7 @@ sau sub denumirea sa din engleză, pigeonhole principle.
 !!! info "Definiție"
 
     Dacă avem $n+1$ obiecte și $n$ cutii, indiferent cum vom aranja obiectele în
-    cutii, vom avea cu siguranță o cutie care va avea cel puțin două obiecte. 
+    cutii, vom avea cu siguranță o cutie care va avea cel puțin două obiecte.
 
 Există foarte multe moduri de a demonstra acest lucru, dar un mod foarte simplu
 de a face acest lucru este acela de a pleca de la un caz simplu ($2$ obiecte și
@@ -140,7 +140,7 @@ Acest principiu este unul foarte important, iar cunoștințele de la matematică
 devin foarte utile în contextul problemelor de algoritmică, în special unele din
 cele tradițional încadrate în categoria problemelor ad-hoc.
 
-Recomandăm de asemenea urmărirea materialor din resursele suplimentare, chiar
+Recomandăm de asemenea urmărirea materialelor din resursele suplimentare, chiar
 dacă unele dintre acestea sunt mai degrabă orientate spre olimpiada de
 matematică, deoarece fac unele aplicații mai dificile mai ușor de rezolvat.
 

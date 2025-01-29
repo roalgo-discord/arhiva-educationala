@@ -11,6 +11,7 @@ tags:
     - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
 
 !!! note "Conținutul articolului"
+
     O bună parte din conținutul acestui articol este preluat din cursul creat de
     același autor pentru lotul de juniori din 2023, curs care se poate găsi
     [aici](https://sepi.ro/assets/upload-file/articole/curs_DSU.pdf)
@@ -267,23 +268,23 @@ int main() {
 
 !!! info "Cerință"
 
-    Pe o tabla patratica impartita in $N^2$ patratele ($N$ linii si $N$ coloane), se
-    afla asezate $N^2$ bile (cate una in fiecare patratica a tablei). Lui Gigel ii
-    plac bilele foarte mult, astfel ca el ia, pe rand, cate o bila de pe tabla, pana
-    cand nu mai ramane pe tabla nici o bila. Gigel este, de asemenea, un baiat
-    foarte curios. El a constatat ca bilele pot fi impartite in componente conexe,
-    astfel:
+    Pe o tabla patratica impartita in $N^2$ patratele ($N$ linii si $N$
+    coloane), se afla asezate $N^2$ bile (cate una in fiecare patratica a
+    tablei). Lui Gigel ii plac bilele foarte mult, astfel ca el ia, pe rand,
+    cate o bila de pe tabla, pana cand nu mai ramane pe tabla nici o bila. Gigel
+    este, de asemenea, un baiat foarte curios. El a constatat ca bilele pot fi
+    impartite in componente conexe, astfel:
 
     - fiecare bila face parte din exact o componenta conexa
 
-    - daca 2 bile sunt invecinate pe orizontala sau verticala, atunci ele fac parte
-    din aceeasi componenta conexa (adica daca una se afla imediat deasupra,
-    dedesubtul, la dreapta sau la stanga celeilalte)
+    - daca 2 bile sunt invecinate pe orizontala sau verticala, atunci ele fac
+      parte din aceeasi componenta conexa (adica daca una se afla imediat
+      deasupra, dedesubtul, la dreapta sau la stanga celeilalte)
 
-    Dimensiunea unei componente conexe este egala cu numarul de bile care fac parte
-    din componenta conexa respectiva. Dupa fiecare bila luata, Gigel vrea sa stie
-    care este valoarea maxima dintre dimensiunile componentelor conexe din care fac
-    parte bilele ramase.
+    Dimensiunea unei componente conexe este egala cu numarul de bile care fac
+    parte din componenta conexă respectivă. Dupa fiecare bila luata, Gigel vrea
+    sa stie care este valoarea maxima dintre dimensiunile componentelor conexe
+    din care fac parte bilele ramase.
 
 Mai întâi, trebuie observat faptul că problema determinării conectivității
 dinamice este una foarte dificil de rezolvat (vezi [acest articol de pe
@@ -400,6 +401,7 @@ int main() {
 ## Problema [Secvmax](https://www.infoarena.ro/problema/secvmax)
 
 !!! info "Cerință"
+
     Fiona are o secventa de $N$ numere naturale. Ea se întreabă din când în când
     pentru un anumit număr $Q$ care este cea mai lungă subsecvență care are
     toate numerele mai mici sau egale cu $Q$. Ajutați-o pe Fiona să își răspundă
@@ -522,13 +524,16 @@ int main() {
 ## Problema [joingraf](https://kilonova.ro/problems/1907)
 
 !!! info "Cerință"
-    A fost ziua lui Traian de curând, iar el a primit în dar un graf cu $N$ noduri.
-    La început, fiecare nod era într-o componentă conexă, singur. Dar apoi, câinele
-    lui Traian a venit și i-a spus $Q$ întrebări de forma următoare:
 
-    * $1 \ x \ y$: Adaugă la graful tău muchiile $(x, x + 1), (x + 1, x + 2), \dots
-    , (y - 1, y)$
-    * $2 \ x \ y$: Spune dacă nodurile $x$ și $y$ sunt în aceeași componentă conexă.
+    A fost ziua lui Traian de curând, iar el a primit în dar un graf cu $N$
+    noduri. La început, fiecare nod era într-o componentă conexă, singur. Dar
+    apoi, câinele lui Traian a venit și i-a spus $Q$ întrebări de forma
+    următoare:
+
+    * $1 \ x \ y$: Adaugă la graful tău muchiile $(x, x + 1), (x + 1, x + 2),
+      \dots , (y - 1, y)$
+    * $2 \ x \ y$: Spune dacă nodurile $x$ și $y$ sunt în aceeași componentă
+      conexă.
 
 Pentru a rezolva această problemă există mai multe abordări, plecând de la
 diverse moduri de a gândi problema, dar în contextul pădurilor de mulțimi
@@ -539,12 +544,12 @@ De exemplu, să luăm $n = 7$. Atunci, la început intervalele vor fi: $[1, 1], 
 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]$. Dacă unim muchiile de la $3$ la
 $6$, intervalele vor deveni: $[1, 1], [2, 2], [3, 6], [7, 7]$.
 
-Atunci, putem folosi o structură de tip DSU. Vom reține $par_i = $ "părintele"
+Atunci, putem folosi o structură de tip DSU. Vom reține $par_i$ ca "părintele"
 nodului $i$, sau mai ușor de înțeles, capătul stânga al intervalului în care
 este nodul $i$. Este nevoie să reținem doar capătul dreapta, deoarece capătul
 dreapta al secvenței curente este predecesorul capătului stânga al secvenței
-următoare. Vom reține și $nxt_i = $ capătul stânga al secvenței de după secvența
-în care este $i$.
+următoare. Vom reține și $nxt_i$ capătul stânga al secvenței de după secvența în
+care este $i$.
 
 Iar atunci când avem update cu $x, y$, mergem la fiecare secvență până la $y$
 (adică când avansăm de la $p$ la următoarea, facem $p = nxt_p$) și o reunim cu

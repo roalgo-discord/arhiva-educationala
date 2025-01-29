@@ -15,6 +15,7 @@ tags:
 ## Teorie
 
 !!! info "Definitie"
+
     Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o
     ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$
     lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la

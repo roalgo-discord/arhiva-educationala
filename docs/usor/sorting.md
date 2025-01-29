@@ -64,9 +64,9 @@ structurii repetitive.
 
 !!! note "Observație"
 
-    Numărul de interschimbări făcut de algoritmul bubble sort este egal cu numărul
-    de inversiuni al vectorului dat, observație ce se va dovedi a fi foarte utilă
-    pentru multe conținuturi mai avansate.
+    Numărul de interschimbări făcut de algoritmul bubble sort este egal cu
+    numărul de inversiuni al vectorului dat, observație ce se va dovedi a fi
+    foarte utilă pentru multe conținuturi mai avansate.
 
 ```cpp
 int v[1001], n;
@@ -175,10 +175,10 @@ Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
 
 !!! note "Observație"
 
-    Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea pivotului
-    într-o poziție previzibilă (la început, la mijloc sau la sfârșit duce la cazuri
-    nefavorabile) poate duce la soluții care în cel mai rău caz să aibă o
-    complexitate de $O(n^2)$.
+    Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea
+    pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit
+    duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz
+    să aibă o complexitate de $O(n^2)$.
 
 ```cpp
 vector<int> quicksort (vector<int> v) {
@@ -237,8 +237,8 @@ puteți studia mai multe în acest articol.
 
 !!! note "Observație"
 
-    Este de remarcat că acest algoritm poate fi folosit pentru a calcula numărul de
-    inversiuni al unui șir.
+    Este de remarcat că acest algoritm poate fi folosit pentru a calcula numărul
+    de inversiuni al unui șir.
 
 ```cpp
 void mergesort (vector<int> &v, int L, int R) {
@@ -390,9 +390,9 @@ valoare din șir.
 
 !!! note "Observație"
 
-    Este de remarcat că acest algoritm poate fi implementat și folosind `std::map`,
-    complexitatea de timp fiind mai mare cu $\log n$ din cauza operațiilor specifice
-    acestei structuri de date.
+    Este de remarcat că acest algoritm poate fi implementat și folosind
+    `std::map`, complexitatea de timp fiind mai mare cu $\log n$ din cauza
+    operațiilor specifice acestei structuri de date.
 
 ```cpp
 int n;

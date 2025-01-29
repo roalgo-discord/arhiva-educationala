@@ -23,14 +23,16 @@ Vom începe prin a relua definiția discutată la articolul anterior [despre
 grafuri](https://edu.roalgo.ro/usor/graphs/).
 
 !!! info "Ciclu"
+
     O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă
     $(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$.
     Un ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j <
     k$.
 
     Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă,
-    pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge tot la
-    nodul $v_1$. Un ciclu simplu este un ciclu în care nu se repetă noduri.
+    pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge
+    tot la nodul $v_1$. Un ciclu simplu este un ciclu în care nu se repetă
+    noduri.
 
 În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea
 ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate.
@@ -42,11 +44,13 @@ informatică.
 ## Cicluri euleriene
 
 !!! info "Ciclu eulerian"
+
     Un lanț eulerian este un lanț care conține toate muchiile exact o singură
     dată (dar nodurile se pot vizita iar). Un ciclu eulerian este un lanț
     eulerian care începe și se termină în același nod.
 
 !!! note "Gradele nodurilor"
+
     Mai întâi, o condiție necesară și suficientă este aceea că toate nodurile
     trebuie să poată fi vizitate, iar gradele nodurilor să fie pare.
 
@@ -59,6 +63,7 @@ deci am fi nevoiți să ieșim de acolo cu ultima muchie, contradicție. Dacă n
 începem acolo, vom fi la un moment dat blocați, deci avem iar contradicție.
 
 !!! info "Lanț eulerian când avem noduri cu grad impar"
+
     Totuși, putem construi un lanț eulerian dacă avem noduri cu grad impar,
     atâta timp cât avem exact două noduri cu grad impar și începem și terminăm
     în nodurile cu grad impar.
@@ -111,8 +116,6 @@ void euler (int node) {
     sol.push_back(node);
 }
 
-
-
 int main() {
     ifstream cin("ciclueuler.in");
     ofstream cout("ciclueuler.out");
@@ -156,6 +159,7 @@ int main() {
 ```
 
 !!! note "Observație"
+
     Algoritmul lui Fleury se poate implementa și iterativ, folosind un principiu
     similar cu cel descris mai sus, implementarea putând fi făcută cu o stivă
     sau un deque.
@@ -193,6 +197,7 @@ Dacă avem mai mult de $2$ noduri cu grad impar, atunci nu avem soluție. În mo
 similar, și dacă nu putem parcurge toate muchiile.
 
 !!! note "Observație"
+
     Se poate observa faptul că algoritmul dat este foarte similar cu cel descris
     pentru ciclul eulerian.
 
@@ -285,6 +290,7 @@ int main() {
 ## Cicluri hamiltoniene
 
 !!! info "Ciclu hamiltonian"
+
     Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură
     dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate
     nodurile exact o singură dată.
@@ -367,6 +373,7 @@ articol](https://edu.roalgo.ro/mediu/bitmask-dp/#problema-hamiltonian-flights).
 ## Grafuri funcționale
 
 !!! info "Grafuri funcționale"
+
     Un graf funcțional este un graf orientat cu $n$ noduri și $n$ muchii, cu
     proprietatea că fiecare nod are o singură muchie care pleacă din el.
 
@@ -380,10 +387,11 @@ independent. Vom folosi câteva exemple pentru a prezenta acest concept în
 diverse probleme de la competiții de informatică.
 
 !!! warning "Ciclurile permutarilor"  
+
     Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei
     secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective)
-    a articolului despre permutări, unde se vorbește de ciclurile unei permutări și
-    aplicațiile care implică grafuri funcționale
+    a articolului despre permutări, unde se vorbește de ciclurile unei permutări
+    și aplicațiile care implică grafuri funcționale
 
 ### Problemă exemplu - [Mouse Hunt - Codeforces](https://codeforces.com/contest/1027/problem/D)
 

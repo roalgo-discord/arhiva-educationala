@@ -227,9 +227,9 @@ codul de mai jos.
 
 !!! note "Observație"
     
-    Există totuși o soluție greedy corectă pentru această problemă, fiind una destul
-    de dificilă, în ciuda codului scurt, detaliile fiind explicate în acest paper,
-    pe care îl puteți găsi
+    Există totuși o soluție greedy corectă pentru această problemă, fiind una
+    destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în
+    acest paper, pe care îl puteți găsi
     [aici](https://www.mimuw.edu.pl/~idziaszek/termity/termity.pdf)
 
 ```cpp

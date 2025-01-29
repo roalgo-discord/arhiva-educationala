@@ -61,17 +61,19 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
 
 !!! info "Regula produsului"
 
-    Numărul de moduri de a alege o pereche de valori, una din $A$ și una din $B$ este $n\cdot m$.
+    Numărul de moduri de a alege o pereche de valori, una din $A$ și una din $B$
+    este $n\cdot m$.
 
 !!! example "Exemplu"
+
     Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
 
-    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile posibile
-    ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$. 
+    Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile
+    posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$.
 
-    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot $9$
-    variante ($10$, din care excludem cea egala cu $a$), astfel numărul total de
-    variante este $9 \cdot 9 = 81$.
+    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot
+    $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul
+    total de variante este $9 \cdot 9 = 81$.
 
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule
 independente care contribuie la răspunsul final.
@@ -80,41 +82,41 @@ independente care contribuie la răspunsul final.
 
 !!! info "Permutare"
 
-    O permutare a unei mulțimi reprezintă o aranjare a elementelor dintr-o mulțime
-    $M$ finită într-o ordine diferită. Dacă cardinalul mulțimii $|M| = n$, numărul
-    de permutări ale unei mulțimi de $n$ valori este $n!$.
+    O permutare a unei mulțimi reprezintă o aranjare a elementelor dintr-o
+    mulțime $M$ finită într-o ordine diferită. Dacă cardinalul mulțimii $|M| =
+    n$, numărul de permutări ale unei mulțimi de $n$ valori este $n!$.
 
-    De exemplu, pentru $n = 3$, cele $6$ permutări ale mulțimii $\{1, 2, 3\}$ sunt
-    următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$, $\{2, 1, 3\}$, $\{2, 3, 1\}$, $\{3,
-    1, 2\}$,  $\{3, 2, 1\}$
+    De exemplu, pentru $n = 3$, cele $6$ permutări ale mulțimii $\{1, 2, 3\}$
+    sunt următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$, $\{2, 1, 3\}$, $\{2, 3,
+    1\}$, $\{3, 1, 2\}$, $\{3, 2, 1\}$
 
 În probleme, există diverse cazuri particulare ale permutărilor care devin
 foarte utile în rezolvarea unor probleme de combinatorică.
 
 !!! info "Deranjamente"
 
-    Un deranjament este o permutare fără puncte fixe, adică $\forall i$, $p_i\neq
-    i$.
+    Un deranjament este o permutare fără puncte fixe, adică $\forall i$,
+    $p_i\neq i$.
 
-    Numărul de deranjamente cu $n$ elemente este egal cu $D_n = (n-1)\cdot (D_{n-1}
-    + D_{n-2})$, unde $D_0 = 1$ și $D_1 = 0$. Acest concept a fost util printre
-    altele la rezolvarea problemei [Poseidon](https://kilonova.ro/problems/2506),
-    dată la OJI 2024, clasa a X-a.
+    Numărul de deranjamente cu $n$ elemente este egal cu $D_n = (n-1)\cdot
+    (D_{n-1} + D_{n-2})$, unde $D_0 = 1$ și $D_1 = 0$. Acest concept a fost util
+    printre altele la rezolvarea problemei
+    [Poseidon](https://kilonova.ro/problems/2506), dată la OJI 2024, clasa a
+    X-a.
 
 !!! info "Permutări cu repetiții"
 
     Definim o permutare cu repetiții ca fiind o secvență de $n$ numere, care are
-    proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se pot
-    repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au $n$
-    elemente este
+    proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se
+    pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au
+    $n$ elemente este
 
-    $$
-    \frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}
-    $$ 
+    $$ \frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k =
+    1}^{n}\frac{1}{F_k!} $$
     
-    unde $F_i$ reprezintă frecvența la care apare $i$ în permutare. 
-    Acest concept se regăsește într-un număr de probleme date în special la 
-    loturile de juniori.
+    unde $F_i$ reprezintă frecvența la care apare $i$ în permutare. Acest
+    concept se regăsește într-un număr de probleme date în special la loturile
+    de juniori.
 
 Mai jos puteți găsi o secvență de cod pe care o putem folosi pentru a genera
 toate permutările unui șir. Funcția `#!cpp std::next_permutation` nu va genera
@@ -177,9 +179,9 @@ for (int mask = 0; mask < totalSubsets; ++mask) {
 
 Un aranjament de $n$ elemente luate câte $k$ reprezintă o submulțime ordonată a
 lui $A$ de $k$ elemente. De exemplu, aranjamente de $4$ luate câte $3$ ale
-mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$,
-$\{1, 3, 4\}$, $\{2, 1, 3\}$, $\{2, 1, 4\}$, $\{2, 3, 4\}$, $\{3, 1, 2\}$,
-$\{3, 1, 4\}$, $\{3, 2, 4\}$, $\{4, 1, 2\}$, $\{4, 1, 3\}$, $\{4, 2, 3\}$
+mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1,
+3, 4\}$, $\{2, 1, 3\}$, $\{2, 1, 4\}$, $\{2, 3, 4\}$, $\{3, 1, 2\}$, $\{3, 1,
+4\}$, $\{3, 2, 4\}$, $\{4, 1, 2\}$, $\{4, 1, 3\}$, $\{4, 2, 3\}$
 
 Similar permutărilor, aranjamentele pot fi considerate funcții injective
 definite pe mulțimea $\{1, 2, 3,\dots, k\}$ cu valori în $\{1, 2, 3,\dots, n\}$
@@ -202,30 +204,25 @@ elemente dar într-o ordine diferită, se numără o singură dată.
 
 Formula pentru combinări de $n$ luate câte $k$, care se notează cu $C_n^k$
 (alternativ, veți mai putea găsi notații precum ${}_{n}C_{k}$, $C(n, k)$ sau
-$\binom{n}{k}$ este
-$$
-C_n^k = \frac{n!}{k!\cdot (n-k)!}
-$$ unde $C_0^0 = C_n^n = 1$.
+$\binom{n}{k}$ este $$ C_n^k = \frac{n!}{k!\cdot (n-k)!} $$ unde $C_0^0 = C_n^n
+= 1$.
 
 Există numeroase moduri și proprietăți de a lega valoarea lui $C_n^k$ de alte
 valori combinatoriale, cele mai importante fiind următoarele:
 
 - $C_{n}^{k} =C_{n-1}^{k} +C_{n-1}^{k-1}$, deoarece:
 
-$$
-\begin{align*}
-C_n^k = \frac{n!}{k! (n-k)!} &= \frac{n(n - 1)!}{k! (n-k)!}\\
-&= \frac{k(n - 1)!}{k!  (n - k)!} + \frac{(n-k)(n - 1)!}{k!  (n - k)!}\\
-&= \frac{(n - 1)!}{(k - 1)!  (n - k)!} + \frac{(n - 1)!}{k!  (n - k - 1)!}\\
-&= C_{n-1}^{k-1} +C_{n-1}^{k}
-\end{align*}
-$$
+$$ \begin{align*} C_n^k &= \frac{n!}{k! (n-k)!}\\ &= \frac{n(n - 1)!}{k!
+(n-k)!}\\ &= \frac{k(n - 1)!}{k! (n - k)!} + \frac{(n-k)(n - 1)!}{k! (n - k)!}\\
+&= \frac{(n - 1)!}{(k - 1)! (n - k)!} + \frac{(n - 1)!}{k! (n - k - 1)!}\\ &=
+C_{n-1}^{k-1} +C_{n-1}^{k} \end{align*} $$
 
-- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca fiind
-$$
-C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1) + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k}
-$$
-- $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei specifice.
+- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca
+  fiind
+  $$ C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1)
+  + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k} $$
+- $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei
+  specifice.
 - $\sum_{i=0}^{n} C_n^i = 2^n$
 
 De multe ori, pentru a calcula combinările, vom folosi [triunghiul lui
@@ -339,7 +336,8 @@ int main() {
 ```
 
 1.  Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul
-    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p - 2}$.
+    în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p -
+    2}$.
 
 ### Partiții
 
@@ -414,14 +412,11 @@ multe ori la olimpiadele de informatică pentru juniori.
 Șirul numerelor Catalan este $1, 1, 2, 5, 14, 42, \dots$ și formula pentru
 aflarea celui de-al $i$-lea număr Catalan este:
 
-$$
-C_n = \frac{1}{n+1}\cdot C_{2n}^{n} =\frac{(2n)!}{(n+1)! n!} = \prod_{k = 2}^{n} \frac{n + k}{k}
-$$
+$$ C_n = \frac{1}{n+1}\cdot C_{2n}^{n} =\frac{(2n)!}{(n+1)! n!} = \prod_{k =
+2}^{n} \frac{n + k}{k} $$
 
-Computațional vorbind, se folosește deseori forma recursivă, cu $C_0 = 1$ și
-$$
-C_n = \sum_{i = 1}^n C_{i - 1}C_{n - i} = \frac{2(2n - 1)}{n + 1} C_{n - 1}
-$$
+Computațional vorbind, se folosește deseori forma recursivă, cu $C_0 = 1$ și $$
+C_n = \sum_{i = 1}^n C_{i - 1}C_{n - i} = \frac{2(2n - 1)}{n + 1} C_{n - 1} $$
 
 Printre altele, numerele Catalan apar în aplicații precum:
 

@@ -25,8 +25,9 @@ pași spre a optimiza diverse abordări.
 
 !!! note "Observație"
 
-    În jargonul algoritmic românesc, această tehnică este numită dinamică pe stări
-    exponențiale, denotând numărul exponențial de stări (de regulă, $2^N$ stări)
+    În jargonul algoritmic românesc, această tehnică este numită dinamică pe
+    stări exponențiale, denotând numărul exponențial de stări (de regulă, $2^N$
+    stări)
 
 ## Introducere și aplicare
 
@@ -42,10 +43,11 @@ suficient de mic, care are proprietatea că submulțimile sale pot constitui st�
 
 !!! note "Observație"
 
-    Nu este obligatoriu ca starea pe care o folosim să fie legată strict de șirul de
-    numere dat. De foarte multe ori, vom aplica această tehnică atunci când avem o
-    particularitate care poate fi transpusă în submulțimi (un exemplu ar fi atunci
-    când avem puține valori distincte sau un set de litere al alfabetului).
+    Nu este obligatoriu ca starea pe care o folosim să fie legată strict de
+    șirul de numere dat. De foarte multe ori, vom aplica această tehnică atunci
+    când avem o particularitate care poate fi transpusă în submulțimi (un
+    exemplu ar fi atunci când avem puține valori distincte sau un set de litere
+    al alfabetului).
 
 În cele mai multe cazuri, vorbim de dinamici de tipul $dp[msk]$ sau
 $dp[msk][i]$, unde ambele reprezintă răspunsul optim pentru submulțimea
@@ -73,10 +75,10 @@ problema dată.
 
 !!! note "Observație"
 
-    De-a lungul soluțiilor prezentate, se va observa preferința pentru indexarea de
-    la $0$ a pozițiilor, motivul fiind unul ce ține de eficiența de timp și memorie
-    (dacă am fi indexat de la $1$, am fi avut nevoie de două ori mai multe măști,
-    deoarece măștile care conțineau poziția $0$ deveneau inutile).
+    De-a lungul soluțiilor prezentate, se va observa preferința pentru indexarea
+    de la $0$ a pozițiilor, motivul fiind unul ce ține de eficiența de timp și
+    memorie (dacă am fi indexat de la $1$, am fi avut nevoie de două ori mai
+    multe măști, deoarece măștile care conțineau poziția $0$ deveneau inutile).
 
 ```cpp
 #include <fstream>

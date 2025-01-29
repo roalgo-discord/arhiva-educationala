@@ -6,7 +6,7 @@ tags:
     - sortare
 ---
 
-!!! example "Cunoștințe necesare"   ]
+!!! example "Cunoștințe necesare"
     - [Concepte fundamentale de geometrie](https://edu.roalgo.ro/mediu/basic-geometry/)
     - [Stiva](https://edu.roalgo.ro/mediu/stack/)
     - [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/)

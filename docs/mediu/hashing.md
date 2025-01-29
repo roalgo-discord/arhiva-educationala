@@ -75,10 +75,9 @@ $29$ sau $31$).
 
 !!! info "Observație"
 
-    Numerele prime sunt recomandate pentru crearea hashurilor
-    deoarece neavând divizori comuni cu alte numere, riscul de a ajunge la valori
-    egale cu $0$ este mult mai scăzut, ceea ce reduce semnificativ riscul unor
-    coliziuni.
+    Numerele prime sunt recomandate pentru crearea hashurilor deoarece neavând
+    divizori comuni cu alte numere, riscul de a ajunge la valori egale cu $0$
+    este mult mai scăzut, ceea ce reduce semnificativ riscul unor coliziuni.
 
 Un alt aspect important ce trebuie prezentat constă în prezentarea modului în
 care calculăm hashul unei subsecvențe a unui șir de caractere de la poziția $L$
@@ -88,10 +87,10 @@ $x_L$, hashul subsecvenței $[L, R]$ va fi $y - x \cdot base^{R - L + 1}$.
 
 !!! info "Observație"
 
-    Deoarece în majoritatea cazurilor avem de păstrat valoarea
-    modulo $X$, va trebui să fim atenți în ceea ce privește calculul hashului și
-    evitarea valorilor negative ale operației modulo. Acum, tot ce ne mai rămâne de
-    făcut e să explicăm cum să calculăm aceste hashuri și să putem ajusta parametrii
+    Deoarece în majoritatea cazurilor avem de păstrat valoarea modulo $X$, va
+    trebui să fim atenți în ceea ce privește calculul hashului și evitarea
+    valorilor negative ale operației modulo. Acum, tot ce ne mai rămâne de făcut
+    e să explicăm cum să calculăm aceste hashuri și să putem ajusta parametrii
     în funcție de problemele care trebuie rezolvate.
 
 ### Implementarea și folosirea hashurilor
@@ -258,15 +257,15 @@ int main() {
 
 !!! info "Observație"
 
-    Deși `unordered_map` este o structură de date destul de eficientă
-    și foarte utilă în concursuri, se recomandă evitarea ei la rundele de
-    Codeforces, unde datorită perioadei de open hacking de 12 ore de la rundele Div.
-    3, Div. 4 și educationale, soluțiile care folosesc `unordered_map` sunt
-    vulnerabile hackurilor ce se folosesc de tehnicile descrise [în acest
+    Deși `unordered_map` este o structură de date destul de eficientă și foarte
+    utilă în concursuri, se recomandă evitarea ei la rundele de Codeforces, unde
+    datorită perioadei de open hacking de 12 ore de la rundele Div. 3, Div. 4 și
+    educationale, soluțiile care folosesc `unordered_map` sunt vulnerabile
+    hackurilor ce se folosesc de tehnicile descrise [în acest
     blog](https://codeforces.com/blog/entry/62393). O alternativă constă în
     folosirea unui hash custom, sau și mai simplu, folosirea map-ului chiar dacă
-    pierdem un factor de $O(\log n)$. Totuși, la olimpiade nu se generează de regulă
-    teste anti-unordered map.
+    pierdem un factor de $O(\log n)$. Totuși, la olimpiade nu se generează de
+    regulă teste anti-unordered map.
 
 ## Xor Hashing
 

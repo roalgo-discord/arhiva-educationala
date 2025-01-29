@@ -69,13 +69,13 @@ aceștia fiind următorii:
 
 !!! note "Observație"
 
-    În mod particular, dacă $L$ și $R$ se află în aceeași grupă, vom putea afla brut
-    răspunsul cerut, considerând pe rând fiecare valoare din interval.
+    În mod particular, dacă $L$ și $R$ se află în aceeași grupă, vom putea afla
+    brut răspunsul cerut, considerând pe rând fiecare valoare din interval.
 
 !!! example "Exemplu"
 
-    De exemplu, dacă dimensiunea unei grupări este $5$, iar intervalul $[L, R]$ este
-    $[7, 21]$, răspunsul se va afla în modul următor:
+    De exemplu, dacă dimensiunea unei grupări este $5$, iar intervalul $[L, R]$
+    este $[7, 21]$, răspunsul se va afla în modul următor:
 
     - Intervalul $[7, 9]$: Fiind o grupare care nu se află în întregime în
       interogarea dată, vom procesa valorile într-o manieră brută. 
@@ -83,7 +83,7 @@ aceștia fiind următorii:
       întregime în interogarea dată, le vom procesa folosind precalcularea făcută
       anterior pentru grupările întregi. 
     - Intervalul $[20, 21]$: Fiind o grupare care nu se află în întregime în
-      interogarea dată, vom procesa valorile într-o manieră brută. 
+      interogarea dată, vom procesa valorile într-o manieră brută.
 
 ## Când folosim aceste tehnici?
 
@@ -105,7 +105,7 @@ mai devreme sau mai târziu.
 Deși această problemă se poate rezolva într-un mod mai eficient folosind arborii
 de intervale, actualizările și interogările reprezintă un exemplu foarte bun
 pentru ilustrarea acestei tehnici. Se va observa faptul că pentru fiecare bucată
-din vector se va ține suma acesteia, iar queryurile vor fi procesate conform
+din vector se va ține suma acesteia, iar query-urile vor fi procesate conform
 descrierii de mai sus.
 
 ```cpp
@@ -186,8 +186,8 @@ int main() {
 
 !!! note "Observație"
 
-    Această problemă, împreună cu variații ale ei este explicată în detaliu și în
-    acest [blog](https://codeforces.com/blog/entry/129324) de pe Codeforces.
+    Această problemă, împreună cu variații ale ei este explicată în detaliu și
+    în acest [blog](https://codeforces.com/blog/entry/129324) de pe Codeforces.
 
 Pentru a rezolva această problemă, trebuie să ne folosim de faptul că știm o
 valoare minimă a acestei diferențe, aceasta fiind raportul dintre diferența
@@ -236,39 +236,40 @@ long long maxDifference(const vector<int>& v) {
 }
 ```
 
-## Împărțirea queryurilor în bucăți de radical - Algoritmul lui Mo
+## Împărțirea query-urilor în bucăți de radical - Algoritmul lui Mo
 
 Pentru a calcula query-uri mai complicate, de multe ori ne putem gândi la a
 grupa query-urile pentru a face actualizările și interogările mai puțin
 costisitoare din punct de vedere al timpului. O metodă foarte populară de a face
 acest lucru constă în gruparea query-urilor în funcție de grupa în care se află
-poziția de start, iar în caz de egalitate, queryurile se ordonează crescător în
+poziția de start, iar în caz de egalitate, query-urile se ordonează crescător în
 funcție de capătul din dreapta.
 
 Această metodă se numește Algoritmul lui Mo și prin folosirea ei pentru a
-reordona queryurile, ne asigurăm că numărul de operații pe care îl facem în
+reordona query-urile, ne asigurăm că numărul de operații pe care îl facem în
 medie la fiecare query este de $O(\sqrt n)$, lucru ce se poate motiva prin
 însumarea a două elemente de complexitate:
 
-- Dacă avem două (sau mai multe) queryuri din același bucket, capătul din stânga
-  se va mișca cu cel mult $\sqrt n$, iar numărul total de pași pe care îi facem
-  la dreapta este de $n$. Deoarece numărul de bucketuri este $O(\sqrt n)$,
-  atunci contribuția la complexitate de la aceste queryuri este $O(n \sqrt n)$.
+- Dacă avem două (sau mai multe) query-uri din același bucket, capătul din
+  stânga se va mișca cu cel mult $\sqrt n$, iar numărul total de pași pe care îi
+  facem la dreapta este de $n$. Deoarece numărul de bucket-uri este $O(\sqrt
+  n)$, atunci contribuția la complexitate de la aceste query-uri este $O(n \sqrt
+  n)$.
 
-- Dacă avem două queryuri din bucketuri diferite, putem avea în cel mai rău caz
-  $n$ pași, dar deoarece numărul de bucketuri este $O(\sqrt n)$, atunci
-  contribuția la complexitate de la aceste queryuri este $O(n \sqrt n)$.
+- Dacă avem două query-uri din bucket-uri diferite, putem avea în cel mai rău
+  caz $n$ pași, dar deoarece numărul de bucket-uri este $O(\sqrt n)$, atunci
+  contribuția la complexitate de la aceste query-uri este $O(n \sqrt n)$.
 
 În total, complexitatea se reduce la $O(n \sqrt n)$, presupunând că operațiile
 auxiliare pe care le efectuăm se realizează în timp constant.
 
 !!! note "Observație"
 
-    Pentru a optimiza mai mult această metodă, putem să sortăm invers elementele din
-    aceeași grupă dacă avem de-a face cu grupe cu un număr par, deoarece putem
-    astfel să alternăm direcția în care adăugăm și scoatem valori la capătul din
-    dreapta, constanta reducându-se cu un factor de aproximativ $2$ în majoritatea
-    cazurilor.
+    Pentru a optimiza mai mult această metodă, putem să sortăm invers elementele
+    din aceeași grupă dacă avem de-a face cu grupe cu un număr par, deoarece
+    putem astfel să alternăm direcția în care adăugăm și scoatem valori la
+    capătul din dreapta, constanta reducându-se cu un factor de aproximativ $2$
+    în majoritatea cazurilor.
 
 Pentru a explica acest algoritm, voi prezenta o problemă clasică ce folosește
 această metodă.
@@ -281,12 +282,12 @@ lucru ce îl putem realiza folosind algoritmul lui Mo. Tot ce ne rămâne de fă
 este să ținem doi vectori de frecvență, unul cu frecvența fiecărui element, iar
 cel de-al doilea, cu frecvența frecvenței elementelor.
 
-Se poate observa că queryurile sunt ordonate după raportul dintre capătul din
-stânga și dimensiunea bucketului, iar în caz de egalitate, după capătul din
-dreapta. De asemenea, pe măsură ce procesăm queryurile, vom ajusta capetele
+Se poate observa că query-urile sunt ordonate după raportul dintre capătul din
+stânga și dimensiunea bucket-ului, iar în caz de egalitate, după capătul din
+dreapta. De asemenea, pe măsură ce procesăm query-urile, vom ajusta capetele
 stânga și dreapta în funcție de operațiile pe care trebuie să le facem, adăugând
 sau scoțând valori după caz, așa cum se poate observa în funcția în care
-procesăm efectiv queryurile.
+procesăm efectiv query-urile.
 
 Mai jos puteți găsi o implementare detaliată a problemei menționate mai sus,
 aceasta fiind un exemplu clasic al algoritmului lui Mo.
@@ -386,7 +387,7 @@ int main() {
 }
 ```
 
-## Procesarea datelor în funcție de tipul queryurilor sau a frecventelor
+## Procesarea datelor în funcție de tipul query-urilor sau a frecventelor
 
 În alte tipuri de probleme, suntem nevoiți să rezolvăm două probleme diferite pe
 care să le combinăm pentru a obține o soluție cât mai bună posibil, practic
@@ -562,14 +563,14 @@ int main() {
 }
 ```
 
-## Recalcularea datelor după un număr fix de queryuri
+## Recalcularea datelor după un număr fix de query-uri
 
 Mai există și alte probleme în care răspunsul final constă în unirea unor
 răspunsuri precalculate, împreună cu un număr mic de elemente schimbate care
 trebuie procesate separat. Deși nu avem prezentate probleme de acest fel, acest
 tip de abordare este foarte popular mai ales atunci când lucrăm cu unele tipuri
-de queryuri pe arbore, unde de multe ori este optim să recalculăm răspunsurile
-odată la $\sqrt n$ queryuri.
+de query-uri pe arbore, unde de multe ori este optim să recalculăm răspunsurile
+odată la $\sqrt n$ query-uri.
 
 Problema de mai jos reprezintă un exemplu mai simplu care combină și
 cunoștințele căpătate anterior la algoritmul lui Mo.
@@ -577,14 +578,14 @@ cunoștințele căpătate anterior la algoritmul lui Mo.
 ### Problema [Rangemode](https://www.infoarena.ro/problema/rangemode) de pe infoarena
 
 Pentru a rezolva această problemă, vom pleca de la soluția obișnuită pe care o
-avem folosind algoritmul lui Mo, unde sortăm queryurile în ordine crescătoare a
+avem folosind algoritmul lui Mo, unde sortăm query-urile în ordine crescătoare a
 grupei de unde încep. Dacă am proceda conform unui Mo obișnuit, ar trebui să
 ținem și un set în care să păstrăm frecvențele maxime deoarece avem nevoie să
-aflăm elementul minim cu frecvența maximă. Totuți, o complexitate de genul $O(q
+aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $O(q
 \sqrt n \log n)$ este prea înceată.
 
-Ne putem gândi acum la ce se întâmplă cu adevărat când rulăm updateurile și
-queryurile într-un bucket al algoritmului lui Mo. Noi continuăm să progresăm
+Ne putem gândi acum la ce se întâmplă cu adevărat când rulăm update-urile și
+query-urile într-un bucket al algoritmului lui Mo. Noi continuăm să progresăm
 spre capătul dreapta al vectorului, adăugând valorile în structura noastră de
 date. Singurele ajustări pe care trebuie să le facem sunt atunci când trebuie să
 ne mișcăm în bucata parțială de la începutul query-urilor, bucată care are o

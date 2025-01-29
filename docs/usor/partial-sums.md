@@ -50,6 +50,7 @@ for (int i = 1; i <= n; i++) {
 
 După calculare, putem începe să răspunem la întrebări. Răspunsul nostru pentru
 un interval $[st, dr]$, unde $1 \leq st \leq dr \leq n$ va fi: $suma \ = sp[dr]
+
 - sp[st - 1]$
 
 Faptul că răspunsul nostru este dat de o formulă, va face ca timpul nostru
@@ -132,6 +133,7 @@ submatricea determinată de colțurile stânga-sus de coordonate $(x, y)$ și
 dreapta-jos de coordonate $(z, t)$. Dacă ar fi să adunăm formulele demonstrate
 în ultimele două cazuri $(sp[z][t] - sp[x - 1][t] - sp[z][y - 1])$, noi o să
 scădem de două ori suma din submatricea determinată de colțurile $(1, 1)$ și $(x
+
 - 1, y - 1)$, în timp ce noi o adunăm doar o dată. Așadar, la formulă se va
 aduna și suma din submatricea respectivă, pentru a compensa deficitul.
 
@@ -175,7 +177,7 @@ rezolva această problemă în timp constant, chiar și dacă o extindem pe mai 
 dimensiuni (două axe, $3$ axe etc.).
 
 !!! note "Observație"
-    
+
     Deși în algoritmica românească, această tehnică este cunoscută sub numele de
     Șmenul lui Mars, numele ei standard este difference arrays.
 

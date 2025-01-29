@@ -13,13 +13,20 @@ tags:
 
 ## Introducere
 
-In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asociată cu un **vector**, însă numărul de elemente este constant pe parcursul rulării programului. În linii mari, **bitset** nu aduce o contribuție mare asupra corectitudinii unui algoritm, sau nu reprezintă o tehnică  propriu-zisă, fiind folosit de cele mai multe ori doar pentru a face optimizări semnificative asupra timpului sau memoriei.
+In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asociată
+cu un **vector**, însă numărul de elemente este constant pe parcursul rulării
+programului. În linii mari, **bitset** nu aduce o contribuție mare asupra
+corectitudinii unui algoritm, sau nu reprezintă o tehnică propriu-zisă, fiind
+folosit de cele mai multe ori doar pentru a face optimizări semnificative asupra
+timpului sau memoriei.
 
 ### Sintaxă
 
-- ```std::bitset``` se regăsește in librăriile```<bitset>``` sau ```<bits/stdc++.h>```.
-- Linia ```bitset<N> b;``` declară un bitset cu exact $N$ biți, $N$ este constantă, i.e. se specifică explicit valoarea acesteia la declarare.
-- De asemenenea putem declara un **bitset** care să conțină biții unui număr: ```bitset<10> b(13)```.
+- `std::bitset` se regăsește in librăriile`<bitset>` sau `<bits/stdc++.h>`.
+- Linia `bitset<N> b;` declară un bitset cu exact $N$ biți, $N$ este constantă,
+  i.e. se specifică explicit valoarea acesteia la declarare.
+- De asemenenea putem declara un **bitset** care să conțină biții unui număr:
+  `bitset<10> b(13)`.
 
 ```cpp
 bitset<10> b;
@@ -39,19 +46,19 @@ int main(){
 
 !!! note "Observații"
     - Elementele sunt indexate de la $0$.
-    - `cout << b;` va afișa toate elementale de la **dreapta la stanga**.
+    - `cout << b;` va afișa toate elementele de la **dreapta la stanga**.
     - Este prezent `operator[]`.
 
 ### Operatori permiși
 
-- ```operator==``` și ```operator!=``` compară conținutul cu alt ```bitset```.
-- ```operator[]``` accesează valoarea unui bit la o poziție anume.
-- ```operator&=``` operator binar **ȘI**.
-- ```operator|=``` operator binar **SAU**.
-- ```operator^=``` operator binar **XOR**.
-- ```operator~``` operator binar **NOT**.
-- ```operator<<=``` shift pe biți la stanga.
-- ```operator>>=``` shift pe biți la dreapta.
+- `operator==` și `operator!=` compară conținutul cu alt `bitset`.
+- `operator[]` accesează valoarea unui bit la o poziție anume.
+- `operator&=` operator binar **ȘI**.
+- `operator|=` operator binar **SAU**.
+- `operator^=` operator binar **XOR**.
+- `operator~` operator binar **NOT**.
+- `operator<<=` shift pe biți la stanga.
+- `operator>>=` shift pe biți la dreapta.
 
 ```cpp
 bitset<10> b;
@@ -79,20 +86,26 @@ int main(){
 
 !!! note "Observație"
 
-    Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente egale
-    cu $1$ să "iasă" din **bitset**, atunci valorile de $1$ aferente se vor pierde  
+    Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente
+    egale cu $1$ să "iasă" din **bitset**, atunci valorile de $1$ aferente se
+    vor pierde  
     permanent.
 
 ### Funcții permise
 
-- ```_Find_first()``` returnează prima poziție a unui bit setat (cea cu index minim).
-- ```_Find_next(int pos)``` returnează următorul bit setat după poz, iar în cazul în care nu există va returna lungimea **bitsetului**
-- ```.count()``` returnează numărul de biți setați.
-- ```.reset()``` resetează toți biții la $0$.
-- ```.flip(int pos)``` $b[pos]$ devine $b[pos]$ **xor** $1$, i.e. schimbă bitul $pos$ din $0$ în $1$ și invers.
-- ```.to_string()``` va converti **bitsetul** într-un **string**.
-- ```.to_ulong()``` va converti **bitsetul** într-un ```unsigned long```.
-- ```.to_ullong()``` va converti **bitsetul** într-un ```unsigned long long```.
+<!-- me when dau functii de gcc ca fiind litera de lege... bravo sefule -->
+
+- `_Find_first()` returnează prima poziție a unui bit setat (cea cu index
+  minim).
+- `_Find_next(int pos)` returnează următorul bit setat după poz, iar în cazul în
+  care nu există va returna lungimea **bitsetului**
+- `.count()` returnează numărul de biți setați.
+- `.reset()` resetează toți biții la $0$.
+- `.flip(int pos)`: $b[pos]$ devine $b[pos]$ **xor** $1$, i.e. schimbă bitul
+  $pos$ din $0$ în $1$ și invers.
+- `.to_string()` va converti **bitsetul** într-un **string**.
+- `.to_ulong()` va converti **bitsetul** într-un `unsigned long`.
+- `.to_ullong()` va converti **bitsetul** într-un `unsigned long long`.
 
 ```cpp
 bitset<10> b;
@@ -122,13 +135,14 @@ int main(){
 ```
 
 !!! note "Observație"
-    La fel cum putem declara `bitset<N> b(val)`, la fel de bine putem atribui `b =
-    val`, dar în ambele cazuri  se vor copia doar primii $N$ biți.
 
-## ```std::bitset``` în programare competitivă
+    La fel cum putem declara `bitset<N> b(val)`, la fel de bine putem atribui `b
+    = val`, dar în ambele cazuri se vor copia doar primii $N$ biți.
+
+## `std::bitset` în programare competitivă
 
 Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri
-de date cum ar fi ```int```, dar datorită dimensiunilor mari pe care le poate
+de date cum ar fi `int`, dar datorită dimensiunilor mari pe care le poate
 suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare
 crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente,
 convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în
@@ -139,8 +153,8 @@ elemente $N$.
 
 !!! note "Atenție"
 
-    Notații de tipul $O (\frac{N}{32})$ sau $O (\frac{N}{64})$ nu sunt
-    corecte, pentru că de cele mai multe ori [constantele sunt
+    Notații de tipul $O (\frac{N}{32})$ sau $O (\frac{N}{64})$ nu sunt corecte,
+    pentru că de cele mai multe ori [constantele sunt
     ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae),
     de aceea se folosește variabila $w$.
 
@@ -215,14 +229,14 @@ int main() {
 
 ### Problema [strehaia](https://kilonova.ro/problems/684?list_id=461)
 
-Avem $n$ probleme, a $i$-a având $k_i$ subtaskuri, fiecare cu un număr de puncte
-între $1$ și $100$. Problema ne cere să calculăm numărul total de punctaje
-distincte care se pot forma în urma rezolvări celor $n$ probleme.
+Avem $n$ probleme, a $i$-a având $k_i$ subtask-uri, fiecare cu un număr de
+puncte între $1$ și $100$. Problema ne cere să calculăm numărul total de
+punctaje distincte care se pot forma în urma rezolvări celor $n$ probleme.
 
 O primă observație este că problemele pot fi luate independent, ceea ce înseamnă
-că nu contează ce subtaskuri are o anumită problemă, ci câte subtaskuri au un
-anumit punctaj. Fie $fr[i]$ numărul de subtaskuri cu $i$ puncte, și $dp[i] = 1$
-dacă există un set de subtaskuri cu suma $i$. Este destul de clar că putem
+că nu contează ce subtask-uri are o anumită problemă, ci câte subtask-uri au un
+anumit punctaj. Fie $fr[i]$ numărul de subtask-uri cu $i$ puncte, și $dp[i] = 1$
+dacă există un set de subtask-uri cu suma $i$. Este destul de clar că putem
 constitui următorul rucsac:
 
 ```cpp
@@ -254,18 +268,18 @@ for(int i = 1; i <= 100; i++){
 }
 ```
 
-Cu operatorul `|=` păstrăm sumele deja calculate în **dp**, iar cu
-operatorul `<<` vom face tranzițiile, cu alte cuvinte dacă shiftăm fiecare
-bit cu $i$ poziții, toate sumele prezente în **dp** vor crește cu $i$, sintaxă
-echivalentă cu `dp[s + i] |= dp[s];`.
+Cu operatorul `|=` păstrăm sumele deja calculate în **dp**, iar cu operatorul
+`<<` vom face tranzițiile, cu alte cuvinte dacă shiftăm fiecare bit cu $i$
+poziții, toate sumele prezente în **dp** vor crește cu $i$, sintaxă echivalentă
+cu `dp[s + i] |= dp[s];`.
 
-Complexitatea devine $O ( S \cdot maxsum \cdot  \frac{1}{w} )$, care este încă
+Complexitatea devine $O ( S \cdot maxsum \cdot \frac{1}{w} )$, care este încă
 prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$.
 Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j =
-0}^{p-1} 2^j  + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să
+0}^{p-1} 2^j + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să
 construim fiecare număr de la $1$ la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p +
 1$, vom putea reprezenta fiecare număr de la $1$ la $fr_i$, ceea ce implică
-faptul că și în dp-ul nostru vor fi prezentate toate combinațiile  de a lua
+faptul că și în dp-ul nostru vor fi prezentate toate combinațiile de a lua
 numărul $i$.
 
 ```cpp
@@ -318,11 +332,11 @@ int main() {
 }
 ```
 
-Timpul se reduce la $O ( log(S) \cdot maxsum \cdot  \frac{1}{w} )$
+Timpul se reduce la $O ( log(S) \cdot maxsum \cdot \frac{1}{w} )$
 
 ### Problema [Copaci](https://kilonova.ro/problems/2805), Lot 2024 Baraj 2 Juniori
 
-Ni se dă o matrice (o vom nota $M$) cu $N \cdot N$  elemente și un string $S$,
+Ni se dă o matrice (o vom nota $M$) cu $N \cdot N$ elemente și un string $S$,
 ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel
 mai mare prefix al șirului $S$ care poate fi reprezentat ca un drum valid în
 matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice
@@ -345,7 +359,7 @@ $$
 $S = \textcolor{blue}{6} \text{281864292913}$
 
 Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În
-momentul în care  decidem să ne mutăm poziția din matrice, ar trebui luat în
+momentul în care decidem să ne mutăm poziția din matrice, ar trebui luat în
 considerare fiecare element adiacent cu măcar o poziție colorată deja. Pentru o
 linie, acest lucru presupune "shiftarea" la stânga și la dreapta a fiecarui
 element deja marcat. Mai concret, dacă $G_l$ reprezintă mulțimea de puncte
@@ -472,7 +486,7 @@ Problema se rezumă la : află pentru fiecare nod care este $S$-ul care
 maximizează contribuția, adună rezultatele și afișează răspunsul.
 
 Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida
-folosind dp. Similar cu  a doua problemă discutată, putem optimiza dp-ul cu
+folosind dp. Similar cu a doua problemă discutată, putem optimiza dp-ul cu
 ajutorul unui **bitset**, complexitatea finală fiind $O(\frac{N^2}{w})$.
 
 ### Program Cpp
@@ -522,7 +536,7 @@ ca să stricăm corectitudinea la dp. Dacă repetăm procesul până când un el
 apare de maxim $2$ ori, iar împreună cu o proprietate care zice că : "Pentru un
 șir $S$ cu $N$ elemente și suma elementelor $R$ $\Rightarrow$ sunt maxim
 $O(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi
-**bitset** nu vor fi  mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea
+**bitset** nu vor fi mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea
 se reduce la $O(\frac{N \sqrt N}{w})$.
 
 Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul $5$. Așadar ne
@@ -535,8 +549,8 @@ chestia asta întră destul de lejer în timp (sunt ironic lol) .
 Avem (cred) $2$ metode:
 
 - Îl scriem noi de mână;
-- (Mai nou) Îl putem folosi pe acela întrodus în librăria
-  ```<tr2/dynamic_bitset>```.
+- (Mai nou) Îl putem folosi pe acela introdus în librăria
+  `<tr2/dynamic_bitset>`.
 
 Un **bitset** dinamic scris de mână arată în felul următor:
 
@@ -603,7 +617,7 @@ exemplu, dacă reprezentăm armatele ca un șir de biți (unde bitul $i$ este se
 dacă există un soldat cu puterea $i$), atunci soldații care rămân în viață sunt
 prezenți în **suma xor** a celor doua șiruri.
 
-Avem $Q$ queriuri $(l,r)$ și trebuie să aflăm câți soldați rămân în viață dacă
+Avem $Q$ query-uri $(l,r)$ și trebuie să aflăm câți soldați rămân în viață dacă
 se vor lupta armatele $l, l + 1, \dots, r$.
 
 Fie $b_i$ un bitset cu soldații armatei $i$. Răspunsul este practic numărul de

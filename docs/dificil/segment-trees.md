@@ -19,14 +19,14 @@ acesta suferă **modificări în timp real**?
 
 !!! note "Observație"
 
-    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici simple
-    precum vectori de [sume parțiale](../usor/partial-sums.md) sau
+    Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici
+    simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau
     [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde
-    vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de
-    query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și pentru RMQ.
-    Însă, pentru actualizări, trebuie reconstruit tot tabelul de valori, ceea ce
-    duce la o complexitate de $O(n)$ pentru sume parțiale și $O(n \log n)$ pentru
-    RMQ.
+    vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile
+    de query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și
+    pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de
+    valori, ceea ce duce la o complexitate de $O(n)$ pentru sume parțiale și
+    $O(n \log n)$ pentru RMQ.
 
 **Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint
 în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest
@@ -44,10 +44,13 @@ apărute în concursurile de programare competitivă. Fără prea multă vorbăr
 ## Problema clasică
 
 !!! note "Problema"
-    Fie un vector $A$ cu $N$ elemente. Asupra lui se vor face $M$ operații de tipul:
+
+    Fie un vector $A$ cu $N$ elemente. Asupra lui se vor face $M$ operații de
+    tipul:
 
     - `update(pos, val)` - actualizează valoarea de pe poziția `pos` în `val`
-    - `query(x, y)` - aflați suma elementelor din intervalul $[x, y]$, $(A_{st} + A_{st+1} + ... + A_{dr})$
+    - `query(x, y)` - aflați suma elementelor din intervalul $[x, y]$, $(A_{st}
+      + A_{st+1} + ... + A_{dr})$
 
 ## Structura unui arbore de intervale
 
@@ -73,7 +76,8 @@ acestui vector se construiește astfel:
     Deși conceptul de arbore de intervale este unul de tip arbore binar, în
     practică, structura este stocată în memorie sub forma unui vector. Astfel,
     fiecare nod din arbore corespunde unei poziții din acest vector, ceea ce ne
-    permite să accesăm eficient nodurile arborelui folosind operații de indexare.
+    permite să accesăm eficient nodurile arborelui folosind operații de
+    indexare.
 
 Să considerăm vectorul $A=[5,8,6,3,2,7,2,6]$, arborele de intervale asociat
 vectorului $A$ va arăta în felul următor:
@@ -82,9 +86,9 @@ vectorului $A$ va arăta în felul următor:
 
 ### Care este memoria necesara stocarii ?
 
-- Numărul de frunze: Arborele de intervale are  N frunze, câte una pentru
-  fiecare element din vectorul original. Aceste frunze sunt reprezentate în
-  ultimul nivel al arborelui.
+- Numărul de frunze: Arborele de intervale are N frunze, câte una pentru fiecare
+  element din vectorul original. Aceste frunze sunt reprezentate în ultimul
+  nivel al arborelui.
 - Numărul de noduri interne: avem $N-1$ noduri interne.
 - Înălțimea maximă a unui arbore binar complet cu $N$ frunze este $\lceil
   \log_2(N) \rceil$.
@@ -104,10 +108,10 @@ $$
 !!! note "Observație"
 
     Dimensiunea $4 \cdot N$ asigură faptul că avem suficient spațiu pentru a
-    construi un arbore de intervale complet, indiferent de dimensiunea vectorului
-    original. Această alocare permite menținerea unui arbore echilibrat și
-    eficient, permițând efectuarea de operații de actualizare și interogare
-    într-un mod optim.
+    construi un arbore de intervale complet, indiferent de dimensiunea
+    vectorului original. Această alocare permite menținerea unui arbore
+    echilibrat și eficient, permițând efectuarea de operații de actualizare și
+    interogare într-un mod optim.
 
 ## Operații elementare
 
@@ -132,10 +136,11 @@ proces este realizat în codul de mai jos prin apeluri recursive, unde funcția
 noduri sunt apoi actualizate.
 
 !!! info "De reținut"
-    
-    Arborii de intervale funcționează eficient doar cu **operații asociative** (ex:
-    suma, maximul, minimul, cmmdc). Asociativitatea permite combinarea rezultatelor
-    din subintervale fără a afecta corectitudinea rezultatului final.
+
+    Arborii de intervale funcționează eficient doar cu **operații asociative**
+    (ex: suma, maximul, minimul, cmmdc). Asociativitatea permite combinarea
+    rezultatelor din subintervale fără a afecta corectitudinea rezultatului
+    final.
 
 Mai jos sunt prezentate două modalități de implementare, atât recursivă, cât și
 iterativă:
@@ -219,21 +224,21 @@ void update(int pos, int val, int node, int st, int dr) {
 
 ### Operatia de query
 
-Când dorim să efectuăm o interogare pe un interval \([x, y]\), scopul este de a
+Când dorim să efectuăm o interogare pe un interval $[x, y]$, scopul este de a
 găsi rapid răspunsul pentru acest subinterval fără a fi nevoie să parcurgem toți
 termenii din vectorul inițial. Arborele de intervale face acest lucru prin
-împărțirea intervalului \([x, y]\) în subintervale mai mici, pe care le combină
+împărțirea intervalului $[x, y]$ în subintervale mai mici, pe care le combină
 pentru a găsi răspunsul final.
 
-Această descompunere se bazează pe faptul că, pentru orice interval \([st, dr]\)
-gestionat de un nod din arbore, avem trei cazuri:
+Această descompunere se bazează pe faptul că, pentru orice interval
+$[st, dr]$ gestionat de un nod din arbore, avem trei cazuri:
 
 1. **Interval complet în afara intervalului de interogare** (gri închis): Dacă
-   intervalul \([st, dr]\) nu se suprapune cu intervalul \([x, y]\), atunci acel
+   intervalul $[st, dr]$ nu se suprapune cu intervalul $[x, y]$, atunci acel
    interval nu contribuie la răspuns și putem returna direct 0 sau altă valoare
    de identitate (pentru maxim, minim etc.).
 2. **Interval complet inclus în intervalul de interogare** (portocaliu): Dacă
-   intervalul \([st, dr]\) este complet inclus în intervalul \([x, y]\),
+   intervalul $[st, dr]$ este complet inclus în intervalul $[x, y]$,
    returnăm valoarea stocată în nodul respectiv, deoarece aceasta reprezintă
    deja răspunsul pentru întregul interval.
 3. **Interval parțial suprapus** (galben): În acest caz, descompunem intervalul
@@ -264,22 +269,23 @@ int query(int x, int y, int node, int st, int dr) {
 
 ## Probleme rezolvate
 
-!!! info "Tip" Înainte de a trece la problemele rezolvate, te încurajez să
-    încerci să **implementezi** structura de date și **să rezolvi singur**
-    câteva probleme de bază. Încearcă să implementezi arborele de intervale
-    pentru a calcula suma și maximul pe un interval dat. În modul acesta vei
-    vedea unde ai neclarități. După ce te-ai convins că ai înțeles tot ce s-a
-    discutat până acum, te invit să discutăm câteva probleme mai interesante.
-    **Un alt mic sfat ar fi să încerci problema înainte de a urmări rezolvarea
-    completă.**
+!!! info "Tip"
+
+    Înainte de a trece la problemele rezolvate, te încurajez să încerci să
+    **implementezi** structura de date și **să rezolvi singur** câteva probleme
+    de bază. Încearcă să implementezi arborele de intervale pentru a calcula
+    suma și maximul pe un interval dat. În modul acesta vei vedea unde ai
+    neclarități. După ce te-ai convins că ai înțeles tot ce s-a discutat până
+    acum, te invit să discutăm câteva probleme mai interesante. **Un alt mic
+    sfat ar fi să încerci problema înainte de a urmări rezolvarea completă.**
 
 ### 1. [Arbint](https://infoarena.ro/problema/arbint)
 
-Fie un vector \( A \) cu \( N \) elemente naturale. Asupra lui se vor face \( M
-\) operații, codificate astfel în fișierul de intrare:
+Fie un vector $ A $ cu $ N $ elemente naturale. Asupra lui se vor face $ M $
+operații, codificate astfel în fișierul de intrare:
 
-- `0 a b` - Să se determine maximul din intervalul \([a, b]\).
-- `1 a b` - Valoarea elementului de pe poziția \( a \) va deveni \( b \).
+- `0 a b` - Să se determine maximul din intervalul $[a, b]$.
+- `1 a b` - Valoarea elementului de pe poziția $ a $ va deveni $ b $.
 
 Problema de bază, identică cu cea pe care am rezolvat-o anterior, singura
 diferență este că acum trebuie să calculăm elementul maxim. Soluția mea o puteți
@@ -288,11 +294,11 @@ vedea [aici](https://infoarena.ro/job_detail/3239964?action=view-source).
 ### 2. [Maxq - ONI 2007](https://kilonova.ro/problems/157)
 
 Johnie a început să se joace cu un vector de numere. El dispune inițial de un
-vector \( V \) cu \( N \) numere întregi și poate efectua următoarele operații:
+vector $ V $ cu $ N $ numere întregi și poate efectua următoarele operații:
 
-- Schimbarea elementului de pe poziția \( p \) cu un alt număr întreg;
-- Aflarea subsecvenței de sumă maximă din \( V \) inclusă între indicii \( a \)
-  și \( b \).
+- Schimbarea elementului de pe poziția $ p $ cu un alt număr întreg;
+- Aflarea subsecvenței de sumă maximă din $ V $ inclusă între indicii $ a $
+  și $ b $.
 
 Pentru rezolvarea acestei probleme vom adopta aceeași strategie, vom analiza
 modul în care putem combina două segmente de lungime $L/2$ într-un singur
@@ -346,6 +352,7 @@ Node merge(Node L, Node R) {
 ```
 
 !!! info "Întrebare"
+
     Cu ce valori inițializăm frunzele arborelui?
 
 Iată o posibila implementare a acestei probleme in C++:
@@ -434,13 +441,12 @@ int main() {
 ### 3. [NrInversiuni](https://www.pbinfo.ro/probleme/3206/nrinversiuni)
 
 În această problemă, trebuie să determinăm numărul de inversiuni dintr-o
-permutare dată a unui vector de lungime \( n \). O inversiune este o pereche
-ordonată \((i, j)\) astfel încât \( 1 \leq i < j \leq n \) și \( v[i] > v[j] \).
+permutare dată a unui vector de lungime $ n $. O inversiune este o pereche
+ordonată $(i, j)$ astfel încât $ 1 \leq i < j \leq n $ și $ v[i] > v[j] $.
 
 **Soluția naivă** ar presupune să verificăm pentru fiecare pereche de elemente
-\((i, j)\) dacă \( v[i] > v[j] \). Acest lucru necesită două bucle imbricate,
-una pentru \( i \) și alta pentru \( j \), ceea ce duce la o complexitate de \(
-O(n^2) \).
+$(i, j)$ dacă $ v[i] > v[j] $. Acest lucru necesită două bucle imbricate, una
+pentru $ i $ și alta pentru $ j $, ceea ce duce la o complexitate de $ O(n^2) $.
 
 **Soluția optimă**. Această problemă poate fi rezolvată eficient cu ajutorul
 arborilor de intervale. Observația esențială este că fiecare element formează
@@ -449,8 +455,8 @@ vector. Pentru a implementa soluția, folosim un arbore de intervale care ne
 ajută să menținem numărul de elemente mai mare decât un anumit element pe măsură
 ce parcurgem vectorul.
 
-**Notă:** Folosind această metodă, complexitatea algoritmului se reduce la \(
-O(n \log n) \).
+**Notă:** Folosind această metodă, complexitatea algoritmului se reduce la $ O(n
+\log n) $.
 
 Iată cum se poate implementa soluția:
 

@@ -34,6 +34,7 @@ De exemplu, dacă șirul nostru este $v = \{4, 9, 41, 22, 14, 7, 44 \}$, după
 normalizare, vrem să obținem $v = \{1, 3, 6, 5, 4, 2, 7 \}$.
 
 !!! note "Observație"
+
     Dacă avem mai multe valori egale, nu are importanță dacă le vom atribui
     aceeași valoare sau valori diferite, așa cum veți putea vedea în
     implementarea de mai jos.
@@ -50,6 +51,7 @@ Codul de mai jos sortează șirul și află pentru fiecare valoare din șirul in
 poziția pe care s-ar afla în șirul normalizat.
 
 !!! note "Observație"
+
     Există structuri de date care fac acest lucru și fără a fi nevoie de
     prelucrări adiționale, precum [Policy based data
     structures](https://codeforces.com/blog/entry/11080), dar în multe situații,
@@ -128,6 +130,7 @@ cele $n$ intervale date. Complexitatea ar fi $O(n \cdot maxval)$, ceea ce este
 mult prea încet pentru o soluție optimă.
 
 !!! note "Observație"
+
     Singurele puncte în care se schimbă numărul de intervale acoperite de un
     punct sunt acelea unde începe și se termină un interval, deci numărul de
     puncte relevante scade la $2 \cdot n$.

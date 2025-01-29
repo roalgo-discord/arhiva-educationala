@@ -40,17 +40,17 @@ Pentru $\forall p \in \mathbb{N}$, $p$ număr prim, și $\forall k \in
 
 - funcția identică $I(p^k) = p^k$;
 - funcția putere $P_a(p^k) = p^{ka}$, unde $a$ este constantă (nu confundăm cu
-  funcția exponențiala $f_a(p^k) = a^{p^k}$);
+  funcția exponențială $f_a(p^k) = a^{p^k}$);
 - funcția unitate $U(p^k) = [p^k = 1]$;
 - funcția divizorilor $\sigma (p^k)$ = numărul de divizori ai lui $p^k$;
-- indicatorul lui Euler $\varphi(p^k) $ = $p^{k} - p^{k-1}$, câte numere $x$, cu
-  $1 \leq x \leq p^k$ și $cmmdc(x, p^k) = 1$ există
+- indicatorul lui Euler $\varphi(p^k) = p^{k} - p^{k-1}$, câte numere $x$, cu $1
+  \leq x \leq p^k$ și $\operatorname{cmmdc}(x, p^k) = 1$ există
 - funcția Möbius $\mu(p^k) = [k = 0] - [k = 1]$.
 
 !!! note "Definiție"
 
-    Două funcții multiplicative, $f(n)$ și $g(n)$, sunt identice dacă pentru oricare
-    $p$ număr prim și oricare $k \geq 0$, $g(p^k) = f(p^k)$.
+    Două funcții multiplicative, $f(n)$ și $g(n)$, sunt identice dacă pentru
+    oricare $p$ număr prim și oricare $k \geq 0$, $g(p^k) = f(p^k)$.
 
 ## Precalcularea funcțiilor multiplicative
 
@@ -87,7 +87,7 @@ Observăm că fiecare număr compus $X$ este parcurs de către cel de-al doilea 
 de mai multe ori. Dacă am putea să iterăm prin fiecare număr compus exact o
 singură dată am ajunge la complexitatea de $O(N)$. Reținem într-un vector
 auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele prime până
-când un număr prim  divide $i$.
+când un număr prim divide $i$.
 
 ```cpp
 
@@ -107,26 +107,26 @@ for (int i = 2; i <= n; i++) {
 
 !!! note "Demonstrație"
 
-    Ca să demonstrăm faptul că ciurul de mai sus iterează prin fiecare număr compus
-    exact odată avem nevoie de cel mai mic factor prim al acestuia, $p$. Să
-    presupunem că $q = i \cdot p$. Pentru oricare $j > i$, $j$ este divizor a lui
-    $q$, presupunem ca $k = \frac{q}{j}$ este prim. Cum $i < j$, atunci $k < p$,
-    însă $p$ este cel mai mic număr prim care divide $q$, deci nu există un astfel
-    $k$. Deci odată luată în considerare perechea $(i, p)$,\, $i \cdot p$ va fi
-    calculat doar o singură dată, transformând complexitatea finală în $O(N)$.
+    Ca să demonstrăm faptul că ciurul de mai sus iterează prin fiecare număr
+    compus exact odată avem nevoie de cel mai mic factor prim al acestuia, $p$.
+    Să presupunem că $q = i \cdot p$. Pentru oricare $j > i$, $j$ este divizor a
+    lui $q$, presupunem ca $k = \frac{q}{j}$ este prim. Cum $i < j$, atunci $k <
+    p$, însă $p$ este cel mai mic număr prim care divide $q$, deci nu există un
+    astfel $k$. Deci odată luată în considerare perechea $(i, p)$,\, $i \cdot p$
+    va fi calculat doar o singură dată, transformând complexitatea finală în
+    $O(N)$.
 
 ### Precalcularea indicatorului lui Euler folosind Ciurul Liniar
 
-Pentru a calcula $\varphi(n)$ trebuie să luam în considerare $3$ cazuri:
+Pentru a calcula $\varphi(n)$ trebuie să luam în considerare 3 cazuri:
 
-- $n$ este prim $\Rightarrow \varphi(n) = n-1$
-- $n = i \cdot p$ și $p \nmid i \Rightarrow \varphi(n) = \varphi(i) \varphi(p)$.
-  _Prin $a \nmid b$ înțelegem : "a nu divide pe b"_.
+- $n$ este prim, deci $\varphi(n) = n-1$
+- $n = i \cdot p$ și $p \nmid i$, deci $\varphi(n) = \varphi(i) \varphi(p)$.
+  (prin $a \nmid b$ înțelegem: "a nu divide pe b").
 - $n = i \cdot p$ și $p \mid i$. Acest caz este uneori greu de tratat, dar din
   fericire știm sigur că $\varphi(ip) = p\varphi(i)\ \forall i, p$.
 
 ```cpp
-
 vector<int> prime;
 vector<int> phi(N), compus(N);
 phi[1] = 1;
@@ -150,10 +150,10 @@ for (int i = 2; i <= N; i++) {
 ### Generalizare a ciurului liniar
 
 Totuși, putem să generalizăm algoritmul prezentat mai sus pentru a funcționa
-pentru oricare funcție multiplicativă. Fie $sml(n) = $ puterea celui mai mic
-factor din descompunerea în factori primi a lui $n$. Pentru oricare $i$ și $p$,
-$p$ cel mai mic număr prim care divide $i$, putem scrie $f(ip) =
-f(\frac{i}{p^{sml(i)}}) \cdot f(p^{sml(i) + 1})$.
+pentru oricare funcție multiplicativă. Fie $\operatorname{sml}(n)$ puterea celui
+mai mic factor din descompunerea în factori primi a lui $n$. Pentru oricare $i$
+și $p$, $p$ cel mai mic număr prim care divide $i$, putem scrie $f(ip) =
+f(\frac{i}{p^{\operatorname{sml}(i)}}) \cdot f(p^{\operatorname{sml}(i) + 1})$.
 
 ```cpp
 vector<int> prime, phi(N+1), compus(N+1), sml(N+1);
@@ -182,21 +182,21 @@ for (int i = 2; i <= N; i++) {
 !!! note "Atenție"
 
     Funcția pow din cod este o funcție scrisă de mână. Nu recomandăm folosirea
-    funcției pow din cmath, din cauza erorilor de precizie. 
+    funcției pow din cmath, din cauza erorilor de precizie.
 
 Gândim similar pentru funcția Möbius:
 
 - $n$ prim $\Rightarrow \mu(n) = -1$
-- $n = i \cdot p$, $p \nmid i \Rightarrow~\mu(n) = \mu(i) \cdot \mu(p)$
-- $n = i \cdot p$, $p \mid i \Rightarrow~\mu(n) = \frac{\mu(i)}{[sml(i)=0]-[sml(i)=1]} \cdot ([sml(i)+1=0]-[sml(i)+1=1])$.
+- $n = i \cdot p$, $p \nmid i$, deci $\mu(n) = \mu(i) \cdot \mu(p)$
+- $n = i \cdot p$, $p \mid i$, deci $\mu(n) =
+  \frac{\mu(i)}{[sml(i)=0]-[sml(i)=1]} \cdot ([sml(i)+1=0]-[sml(i)+1=1])$.
 
 !!! note "Observație"
 
-    În cazul în care fracția de mai sus nu este definită (numitorul este $0$), putem
-    spune din start că $\mu(n) = 0$.
+    În cazul în care fracția de mai sus nu este definită (numitorul este $0$),
+    putem spune din start că $\mu(n) = 0$.
 
 ```cpp
-
 vector<int> prime;
 vector<int> sml(N), mobius(N), composite(N);
 
@@ -268,43 +268,40 @@ va da $1$ doar dacă $n = 1$. Pare nesemnificativă proprietatea, însă este fo
 utilă în rezolvarea multor probleme de informatică.
 
 **Exercițiu $1$:** Calculează câte perechi $(a,b)$ ($1 \leq a,b \leq n$) există
-cu proprietatea că $gcd(a,b) = 1$.
+cu proprietatea că $\operatorname{cmmdc}(a,b) = 1$.
 
-Rezolvare: Noi trebuie să calculăm $\sum_{i=1}^{n} \sum_{j=1}^{n} [cmmdc(i, j) =
+Rezolvare: Noi trebuie să calculăm $\sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i, j) =
 1]$. Ne putem folosi de proprietatea de mai sus și să scriem relația astfel:
 
-$$
-    \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d \mid cmmdc(i,j)} \mu(d)
+$$ \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d \mid \operatorname{cmmdc}(i,j)} \mu(d)
 $$
 
 Iterăm prin toate numerele $\leq n$ în loc de divizorii lui $n$ și obținem
 
-$$
-    \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d = 1}^{n} \mu(d) \cdot [d\mid cmmdc(i,j)] = \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d = 1}^{n} \mu(d) \cdot [d\mid i] \cdot [d\mid j]
-$$
+$$ \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d = 1}^{n} \mu(d) \cdot
+[d\mid \operatorname{cmmdc}(i,j)] = \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d =
+1}^{n} \mu(d) \cdot [d\mid i] \cdot [d\mid j] $$
 
 Rearanjăm termenii și obținem
 
-$$
-    \sum_{d=1}^{n} \mu(d) \left(\sum_{i=1}^{n} [d\mid i]\right) \left(\sum_{j=1}^{n} [d\mid j]\right)
-$$
+$$ \sum_{d=1}^{n} \mu(d) \left(\sum_{i=1}^{n} [d\mid i]\right)
+\left(\sum_{j=1}^{n} [d\mid j]\right) $$
 
 Observăm că
 
-$$
-    \sum_{i=1}^{n} [d\mid i] = \sum_{j=1}^{n} [d\mid j] = \left\lfloor \frac{n}{d} \right\rfloor
-$$
+$$ \sum_{i=1}^{n} [d\mid i] = \sum_{j=1}^{n} [d\mid j] = \left\lfloor
+\frac{n}{d} \right\rfloor $$
 
 deci relația finală devine $\sum_{d=1}^{n} \mu(d) \cdot (\frac{n}{d})^2$, care
 poate fi calculată în $O(n)$.
 
 **Exercițiu 2:** Calculează câte perechi $(a,b)$ exisă, astfel încât $1 \leq a,b
-\leq n$ și $cmmdc(a, b)$ = $P$.
+\leq n$ și $\operatorname{cmmdc}(a, b)$ = $P$.
 
 Rezolvare:
 
 $$
-    \sum_{i=1}^{n} \sum_{j=1}^{n} [cmmdc(i,j) = P] = \sum_{i=1}^{\frac{n}{P}} \sum_{j=1}^{\frac{n}{P}} [cmmdc(i,j) = 1]
+    \sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i,j) = P] = \sum_{i=1}^{\frac{n}{P}} \sum_{j=1}^{\frac{n}{P}} [\operatorname{cmmdc}(i,j) = 1]
 $$
 
 Observăm că e identic cu exercițiul precedent, rezultatul fiind
@@ -313,20 +310,20 @@ $\sum_{d=1}^{\frac{n}{P}} \mu(d) \cdot \left(\frac{n}{dP}\right)^2$.\\
 **Exercițiul 3:** Calculează $\sum_{1 \leq i,j \leq N} lcm(i,j)$, unde $lcm(i,j)
 = $ cel mai mic multiplu comun al numerelor $i$ și $j$.
 
-Rezolvare: Știm totuși că $lcm(i,j) = \dfrac{i\cdot j}{cmmdc(i,j)}$, astfel
+Rezolvare: Știm totuși că $lcm(i,j) = \dfrac{i\cdot j}{\operatorname{cmmdc}(i,j)}$, astfel
 problema ne cere să calculăm suma:
 
 $$
-    \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{cmmdc(i,j)}
+    \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{\operatorname{cmmdc}(i,j)}
 $$
 
 Pentru a ne ușura calculul, putem defini:
 
 $$
-    f(k) = \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{cmmdc(i,j)} \cdot [cmmdc(i,j) = k]
+    f(k) = \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{\operatorname{cmmdc}(i,j)} \cdot [\operatorname{cmmdc}(i,j) = k]
 $$
 
-Observăm deci că dacă știm suma produselor $i \cdot j$, cu $cmmdc(i,j) = k$, fie
+Observăm deci că dacă știm suma produselor $i \cdot j$, cu $\operatorname{cmmdc}(i,j) = k$, fie
 această sumă $p(k)$, atunci rezultatul devine:
 
 $$
@@ -338,8 +335,8 @@ Pentru a calcula $p(k)$ ne putem folosi de funcția mobius astfel:
 $$
 \begin{align*}
 p(k)
-&= \sum_{1 \leq i,j \leq N} i \cdot j \cdot [\text{cmmdc}(i,j) = k] \\
-&= \sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot [\text{cmmdc}(a,b) = 1] \\
+&= \sum_{1 \leq i,j \leq N} i \cdot j \cdot [\operatorname{cmmdc}(i,j) = k] \\
+&= \sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot [\operatorname{cmmdc}(a,b) = 1] \\
 &= \sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot \sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot [d \mid a] \cdot [d \mid b] \\
 &= k^2 \cdot \sum_{d=1}^{\frac{N}{k}} \mu(d) \cdot \left(\sum_{a = 1}^{\frac{N}{k}} a \cdot [d \mid a] \right) \cdot \left(\sum_{b=1}^{\frac{N}{k}} b \cdot [d \mid b] \right)
 \end{align*}
@@ -358,14 +355,12 @@ $$
 
 Deci:
 
-$$
-    p(k) = k^2 \cdot \sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot (\frac{N}{kd} + 1)}{2} \right)^2
-$$
+$$ p(k) = k^2 \cdot \sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot
+\dfrac{\frac{N}{kd} \cdot (\frac{N}{kd} + 1)}{2} \right)^2 $$
 
-Revenim la problema noastră inițială:
-$$
-    f(k) = \frac{p(k)}{k} = k \cdot \sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot (\frac{N}{kd} + 1)}{2} \right)^2
-$$
+Revenim la problema noastră inițială: $$ f(k) = \frac{p(k)}{k} = k \cdot \sum_{d
+= 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot
+(\frac{N}{kd} + 1)}{2} \right)^2 $$
 
 Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $O(N
 \log N)$.
@@ -374,27 +369,35 @@ Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $O(N
 
 ### Problema [sumgcd](https://kilonova.ro/problems/2004) de pe Kilonova
 
-Pentru $N$ și $M$ date la tastatură, trebuie să calculați $\sum_{V} cmmdc(V)$,
-unde $V$ reprezintă un $M$-tuplu. Un $M$-tuplu reprezintă o mulțime de $M$
-elemente nu neapărat distincte cu valori cuprinse între 1 și $N$. Formal, noi
-trebuie să calculam $\sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M =
-1}^{N} cmmdc(i_1, i_2, \dots, i_M)$.
+Pentru $N$ și $M$ date la tastatură, trebuie să calculați $\sum_{V}
+\operatorname{cmmdc}(V)$, unde $V$ reprezintă un $M$-tuplu. Un $M$-tuplu
+reprezintă o mulțime de $M$ elemente nu neapărat distincte cu valori cuprinse
+între 1 și $N$. Formal, noi trebuie să calculam $\sum_{i_1 = 1}^{N} \sum_{i_2 =
+1}^{N} \dots \sum_{i_M = 1}^{N} \operatorname{cmmdc}(i_1, i_2, \dots, i_M)$.
 
 Dacă pentru un $K$ fixat aflăm câte M-tupluri există cu cmmdc-ul egal cu $K$,
 atunci putem rezolva foarte ușor problema. Fie $f(K)$ numărul de tupluri $(m,
-n)$ pentru care $cmmdc(m, n) = K$:
+n)$ pentru care $\operatorname{cmmdc}(m, n) = K$:
 
-$$
-\begin{align*} f(K) &= \sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M = 1}^{N} [\text{cmmdc}(i_1, i_2, \dots, i_M) = K] \\  &= \sum_{i_1 = 1}^{\frac{N}{K}} \sum_{i_2 = 1}^{\frac{N}{K}} \dots \sum_{i_M = 1}^{\frac{N}{K}} [\text{cmmdc}(i_1, i_2, \dots, i_M) = 1] \\  &= \sum_{i_1 = 1}^{\frac{N}{K}} \sum_{i_2 = 1}^{\frac{N}{K}} \dots \sum_{i_M = 1}^{\frac{N}{K}} \sum_{d = 1}^{\frac{N}{K}} \mu(d) \cdot [d \mid i_1] \cdots [d \mid i_M] \\  &= \sum_{d = 1}^{\frac{N}{K}} \mu(d) \cdot \left(\sum_{i_1 = 1}^{\frac{N}{K}} [d \mid i_1]\right) \cdots \left(\sum_{i_M = 1}^{\frac{N}{K}} [d \mid i_M]\right) \\  &= \sum_{d = 1}^{\frac{N}{K}} \mu(d) \cdot \left(\frac{N}{Kd}\right)^M. \end{align*}
-$$
+$$ \begin{align*} f(K) &= \sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M
+= 1}^{N} [\text{cmmdc}(i_1, i_2, \dots, i_M) = K] \\ &= \sum_{i_1 =
+1}^{\frac{N}{K}} \sum_{i_2 = 1}^{\frac{N}{K}} \dots \sum_{i_M = 1}^{\frac{N}{K}}
+[\text{cmmdc}(i_1, i_2, \dots, i_M) = 1] \\ &= \sum_{i_1 = 1}^{\frac{N}{K}}
+\sum_{i_2 = 1}^{\frac{N}{K}} \dots \sum_{i_M = 1}^{\frac{N}{K}} \sum_{d =
+1}^{\frac{N}{K}} \mu(d) \cdot [d \mid i_1] \cdots [d \mid i_M] \\ &= \sum_{d =
+1}^{\frac{N}{K}} \mu(d) \cdot \left(\sum_{i_1 = 1}^{\frac{N}{K}}
+[d \mid i_1]\right) \cdots \left(\sum_{i_M = 1}^{\frac{N}{K}}
+[d \mid i_M]\right) \\ &= \sum_{d = 1}^{\frac{N}{K}} \mu(d) \cdot
+\left(\frac{N}{Kd}\right)^M. \end{align*} $$
 
 Rezultatul problemei este dat de $\sum_{i=1}^{N} f(i) \cdot i$. Complexitatea de
 timp pentru a calcula $f(K)$ este $O(\frac{N}{K}\log{M}), astfel complexitatea
 finală este
 
-$$
-\begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N + \frac{N}{2} + \frac{N}{3} + \cdots + \frac{N}{N}\right) \log{M} \\ &= O\left(N \left(1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{N}\right) \log{M}\right) \\ &= O\left(N \log{N} \log{M}\right). \end{align*}
-$$
+$$ \begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N +
+\frac{N}{2} + \frac{N}{3} + \cdots + \frac{N}{N}\right) \log{M} \\ &= O\left(N
+\left(1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{N}\right) \log{M}\right)
+\\ &= O\left(N \log{N} \log{M}\right). \end{align*} $$
 
 Altă soluție este următoarea:
 
@@ -402,21 +405,17 @@ Vom pune pe cele $M$ poziții doar multiplii de $K$, astfel se formează
 $M^{\lfloor\frac{N}{K} \rfloor}$ șiruri posibile, dintre care scădem $f(K \cdot
 Q), Q \geq 1$.
 
-$$
-\begin{align*} f(K) &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{K \mid i} f(i) \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{i=1}^{N} f(i) \cdot [K \mid i] \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{i=1}^{\frac{N}{K}} f(K \cdot i). \end{align*}
-$$
+$$ \begin{align*} f(K) &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{K
+\mid i} f(i) \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{i=1}^{N}
+f(i) \cdot [K \mid i] \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} -
+\sum_{i=1}^{\frac{N}{K}} f(K \cdot i). \end{align*} $$
 
 Complexitatea devine:
 
-$$
-\begin{align*}
-    \sum_{i=1}^{N} O(\left\lfloor \frac{N}{i} \right\rfloor + \log{M})
-    &= O(N \left(1 + \frac{1}{2} + \frac{1}{3} + \dots \frac{1}{N}\right) + N \log{M}) \\
-    &= O(N \log{N} + N \log{M}) \\
-    &= O(N\left(\log{N} + \log{M}\right)) \\
-    &= O(N\log{(MN)})
-\end{align*}
-$$
+$$ \begin{align*} \sum_{i=1}^{N} O(\left\lfloor \frac{N}{i} \right\rfloor +
+\log{M}) &= O(N \left(1 + \frac{1}{2} + \frac{1}{3} + \dots \frac{1}{N}\right) +
+N \log{M}) \\ &= O(N \log{N} + N \log{M}) \\ &= O(N\left(\log{N} +
+\log{M}\right)) \\ &= O(N\log{(MN)}) \end{align*} $$
 
 Putem precalcula puterile lui $M$, obținem astfel $O(N \log{N})$. Ambele iau
 $100$ puncte.
@@ -424,29 +423,27 @@ $100$ puncte.
 ### Problema [cntgcd](https://kilonova.ro/problems/372)
 
 Se dau două numere naturale $N$ și $D$. Calculați câte perechi de numere $A$ și
-$B$ mai mici ca $N$ există, astfel încât $cmmdc(A,B) = D$. Perechea $(A,B)$ =
-$(B, A)$.
+$B$ mai mici ca $N$ există, astfel încât $cmmdc(A,B) = D$. Perechea $(A,B)$ este
+la fel ca perechea $(B, A)$.
 
 Putem să luăm rezultatul de la primul exercițiu, pentru că probleme sunt
-echivalente. Singura restricție este faptul că perechea $(A,B)$ = $(B,A)$, dar
+echivalente. Singura restricție este faptul că perechea $(A,B) = (B,A)$, dar
 putem efectiv să împărțim rezultatul la 2.
 
-$$
-ans = \frac{\sum_{d=1}^{\frac{N}{D}} \mu(d) \cdot \left(\frac{N}{dD}\right)^2 + 1}{2}
-$$
+$$ ans = \frac{\sum_{d=1}^{\frac{N}{D}} \mu(d) \cdot \left(\frac{N}{dD}\right)^2
++ 1}{2} $$
 
 Soluția ia undeva la $45$ puncte, datorită faptului că $D \leq N \leq 10^9$.
 
-Fie $f(n)$ = numărul de perechi $(A,B)$, unde $cmmdc(A,B) = 1$. Noi trebuie să
-calculăm practic $f(\left\lfloor \frac{N}{D} \right\rfloor ) = \sum_{d =
-1}^{\left\lfloor \frac{N}{D} \right\rfloor } \varphi(d)$.
+Fie $f(n)$ = numărul de perechi $(A,B)$, unde $\operatorname{cmmdc}(A,B) = 1$.
+Noi trebuie să calculăm practic $f(\left\lfloor \frac{N}{D} \right\rfloor ) =
+\sum_{d = 1}^{\left\lfloor \frac{N}{D} \right\rfloor } \varphi(d)$.
 
 Pentru $N \leq 10^6$ putem calcula suma brut. Pentru $N > 10^6$ putem elimina
 perechile care au cmmdc-ul 2, 3 etc.
 
-$$
-    f(n) = \frac{n^2 - n}{2} - \sum_{d=2}^{n} f\left(\lfloor \frac{n}{d} \rfloor\right)
-$$
+$$ f(n) = \frac{n^2 - n}{2} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
+\right\rfloor\right) $$
 
 Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $O(\sqrt{N})$
 elemente diferite, putem doar să calculăm câte numere $d_1$ există, astfel încât
@@ -455,9 +452,9 @@ $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
 
 !!! note "Observație"
 
-    Fie $d$ cel mai mic număr astfel încât $\frac{n}{d} = x$. Atunci cel mai mare
-    număr care îndeplinește aceeași proprietate este $\left\lfloor \frac{n}{\lfloor
-    \frac{n}{d} \rfloor} \right\rfloor$.
+    Fie $d$ cel mai mic număr astfel încât $\frac{n}{d} = x$. Atunci cel mai
+    mare număr care îndeplinește aceeași proprietate este $\left\lfloor
+    \frac{n}{\lfloor \frac{n}{d} \rfloor} \right\rfloor$.
 
 ```cpp
 long long f (long long n) {
@@ -491,16 +488,14 @@ Se dau două numere $K$ și $N$. Să se afle $T$, numărul de tupluri formate di
 $K$ elemente $(X_1, X_2, X_3, \dots , X_K)$ cu proprietatea că:
 
 - $1 \leq X_1 \leq X_2 \leq \dots \leq X_K \leq N$.
-- $cmmdc(X_1, X_2, \dots, X_K) = 1$.
+- $\operatorname{cmmdc}(X_1, X_2, \dots, X_K) = 1$.
 
 #### Soluție de $75 \rightarrow 80$ (sau chiar $100$) de puncte
 
 Ne vom folosi de funcția Möbius pentru a calcula rezultatul. Dacă facem
 abstracție de prima proprietate, răspunsul nostru devine:
 
-$$
-    \sum_{d=1}^{N} \mu(d) \cdot \lfloor \frac{N}{d} \rfloor ^K
-$$
+$$ \sum_{d=1}^{N} \mu(d) \cdot \lfloor \frac{N}{d} \rfloor ^K $$
 
 Ce înseamnă însă $\lfloor \dfrac{N}{d} \rfloor ^ K$? Reprezintă numărul de
 șiruri de lungime $K$ , unde $X_i$ este multiplu de $d$. Ca să numărăm doar
@@ -510,9 +505,8 @@ egal cu $N-K+1 \choose K$.
 
 Rezultatul nostru devine:
 
-$$
-    \sum_{d=1}^{N} \mu(d) \cdot {\left\lfloor \frac{N}{d} \right\rfloor - K + 1 \choose K}
-$$
+$$ \sum_{d=1}^{N} \mu(d) \cdot {\left\lfloor \frac{N}{d} \right\rfloor - K + 1
+\choose K} $$
 
 Soluția rulează în $O(N)$ cu $O(N)$ sau $O(N \cdot \log N)$ precalcularea.
 
@@ -569,18 +563,19 @@ int main() {
 
 Ne folosim de ideea prezentată la problema anterioară.
 
-$$
-    f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d} \right\rfloor \right).
-$$
+$$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
+\right\rfloor \right). $$
 
 !!! note "Observație"
 
-    Deducem cu puternicele noastre simțuri că modulul ($M$)  în problema asta este
-    mult mai mic decât $N$, astfel putem să calculăm combinările mult mai rapid:
+    Deducem cu puternicele noastre simțuri că modulul ($M$) în problema asta
+    este mult mai mic decât $N$, astfel putem să calculăm combinările mult mai
+    rapid:
 
-- $n \leq M \rightarrow$ putem precalcula combinările în $O(M)$.
-<!-- ce naiba e cu formatarea asta? -->
-- $\displaystyle n > M \rightarrow {n \choose k} \%\  M = {\lfloor \frac{n}{mod} \rfloor \choose \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\  \%\ M$
+- $n \leq M$, deci putem precalcula combinările în $O(M)$. <!-- ce naiba e cu
+  formatarea asta? -->
+- $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
+  \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$
 
 ```cpp
 #include <bits/stdc++.h>

@@ -26,6 +26,7 @@ brute-force clasic, utilizarea cea mai des întâlnită pentru meet in the middl
 este atunci când trebuie să lucrăm cu submulțimi.
 
 !!! "Observație"
+
     Deoarece spațiul de căutare se împarte în două, complexitatea exponențială
     va crește mult mai greu, meet in the middle devenind util pentru probleme la
     care dimensiunea datelor de intrare este cel mult $40-45$.

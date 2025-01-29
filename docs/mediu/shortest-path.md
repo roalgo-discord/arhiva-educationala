@@ -20,21 +20,22 @@ parcurgere al unui traseu sau alte criterii, precum dificultatea de parcurgere a
 drumului ales etc.
 
 !!! example "Exemplu"
-    De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
-    Acest traseu poate fi parcurs în două moduri principale, fiecare cu avantajele
-    și dezavantajele lui.
 
-    - Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h, traseu
-    dificil
-    - Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu ceva
-    mai ușor
+    De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
+    Acest traseu poate fi parcurs în două moduri principale, fiecare cu
+    avantajele și dezavantajele lui.
+
+    - Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h,
+      traseu dificil
+    - Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu
+      ceva mai ușor
 
     Chiar dacă cele două drumuri au o distanță identică, diferența este dată de
-    timpul de parcurgere și de dificultatea traseului în sine. Deși primul traseu
-    necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea traseu este
-    semnificativ mai ușor din punct de vedere al dificultății din punct de vedere
-    rutier (după părerea autorului), fapt ce îi dă un cost mai mic, fiind preferat
-    primului, în ciuda timpului și distanței mai mari. 
+    timpul de parcurgere și de dificultatea traseului în sine. Deși primul
+    traseu necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea
+    traseu este semnificativ mai ușor din punct de vedere al dificultății din
+    punct de vedere rutier (după părerea autorului), fapt ce îi dă un cost mai
+    mic, fiind preferat primului, în ciuda timpului și distanței mai mari.
 
 În cele ce urmează, vom discuta despre algoritmii ce ne ajută să aflăm drumuri
 minime, modelând aceste probleme folosind grafurile orientate și neorientate,
@@ -47,11 +48,13 @@ asociate costuri. Pentru a înțelege mai ușor noțiunea de cost pentru o muchi
 ne vom raporta la exemplul folosit anterior.
 
 !!! info "Definiție"
+
     Un drum minim între două noduri $a$ și $b$ este un lanț simplu cu capetele
     în $a$ și $b$ cu proprietatea că costul total al muchiilor de pe lanț este
     minim.
 
 !!! note "Observație"
+
     Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii
     este egal cu $1$.
 
@@ -72,13 +75,15 @@ costuri pozitive, condiția minimă necesară este aceea să nu avem cicluri
 negative.
 
 !!! note "Observație"
+
     Algoritmul este numit după [un informatician
     olandez](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra), iar o pronunție
-    corectă a numelui lui este ```daikstra``` (pentru fanii fotbalului,
-    gândiți-vă la Virgil Van Dijk), nu ```diștra```, ```jikstra``` sau alte
-    variante total greșite, care sunt folosite foarte des.
+    corectă a numelui lui este "daikstra" (pentru fanii fotbalului, gândiți-vă
+    la Virgil Van Dijk), nu "diștra", "jikstra" sau alte variante total greșite,
+    care sunt folosite foarte des.
 
 !!! info "Definiție"
+
     Un ciclu negativ este un ciclu cu proprietatea că suma costurilor muchiilor
     de pe ciclu este negativă.
 
@@ -171,8 +176,8 @@ cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de
 date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui
 pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
 
-După aplicarea acestor optimivdeile fiind aceleași, cu excepția folosirii unei
-cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
+După aplicarea acestor optimizări, ideile fiind aceleași, cu excepția folosirii
+unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
 
 ```cpp
 #include <iostream>
@@ -352,6 +357,7 @@ int main() {
 ```
 
 !!! note "Observație"
+
     Există o variație a acestui algoritm, foarte des folosită în cazul unor
     probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
     algoritm este folosit cu succes în multe probleme de informatică, ca o
@@ -408,6 +414,7 @@ int main() {
 ```
 
 !!! note "Observație"
+
     Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să
     începem cu nodul pe care îl vom folosi drept cel intermediar $(k, i, j)$,
     celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest
@@ -438,6 +445,7 @@ deque) în care vom alterna cozile în care adăugăm nodurile, după cum urmeaz
   deque-ului, dacă folosim această structură de date)
 
 !!! note "Observație"
+
     Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura
     noastră de date de cel mult $2$ ori, complexitatea devenind liniară, spre
     deosebire de o abordare standard folosind BFS, în care complexitatea pe cel

@@ -35,11 +35,11 @@ vedere următoarele aspecte specifice:
   trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și
   anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
 
-!!! note "Observație"
+  !!! note "Observație"
 
-    În concursuri, folosirea valorii de $10^8$ operații pe secundă este o estimare
-    precisă, care este folosită de regulă și de propunătorii de probleme atunci când
-    se decid limitele de timp.
+      În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
+      estimare precisă, care este folosită de regulă și de propunătorii de
+      probleme atunci când se decid limitele de timp.
 
 - Exemple de operații simple: operațiile aritmetice simple, incrementările,
   operațiile pe biți etc.
@@ -180,7 +180,7 @@ Acestea sunt aproximări pentru diverse clase de complexități, trebuie să ave
 în vedere limita de timp și sfaturile date anterior, împreună cu
 particularitățile problemei.
 
-|          $n$          |       Complexități posibile        |
+| $n$                   | Complexități posibile              |
 | --------------------- | ---------------------------------- |
 | $n \leq 10$           | $O(n!)$, $O(n^7)$, $O(n^6)$        |
 | $n \leq 20$           | $O(2^n \cdot n)$, $O(n^5)$         |

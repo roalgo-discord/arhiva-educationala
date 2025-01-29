@@ -26,6 +26,7 @@ alte variații ale acestui tip de probleme, ni se poate cere și aflarea distan�
 minime între două sau mai multe puncte.
 
 !!! info "Resursă foarte utilă"
+
     Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași,
     atât pentru valoarea istorică, cât și pentru claritatea explicațiilor
     grafice, soft educațional pe care îl găsiți
@@ -258,6 +259,7 @@ punct, vom adăuga vecinul în coadă, la fiecare pas prelucrând primul punct c
 pentru a evita ciclarea la infinit.
 
 !!! note "Observație"
+
     Se poate observa că acest algoritm este un caz particular al parcurgerii BFS
     de pe grafuri, ambele fiind iterative și operând în același mod, folosind o
     coadă.
@@ -266,6 +268,7 @@ Mai jos, puteți găsi o implementare bazată pe o coadă, în stilul algoritmul
 lui Lee, care rezolvă problema Counting Rooms, prezentată mai sus.
 
 !!! note "Observație importantă"
+
     Deși în majoritatea cazurilor putem folosi fie metoda fill, fie metoda
     iterativă, atunci când avem nevoie să aflăm distanța dintre două sau mai
     multe puncte, singura metodă optimă este cea iterativă, bazată pe coadă,
@@ -709,9 +712,10 @@ int main() {
 ### Implementare cu priority queue
 
 !!! note "Observație"
-    Nodurile se introduc în priority queue cu - în față deoarece vrem să ținem
-    elementele în ordine crescătoare, iar implementarea standard a priority
-    queue le ține în ordine descrescătoare.
+
+    Nodurile se introduc în priority queue cu minus în față deoarece vrem să
+    ținem elementele în ordine crescătoare, iar implementarea standard a
+    priority queue le ține în ordine descrescătoare.
 
 ```cpp
 #include <bits/stdc++.h>

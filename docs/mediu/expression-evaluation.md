@@ -22,6 +22,7 @@ probleme la care avem nevoie de noțiunile specifice evaluării unor expresii
 aritmetice (parsing în engleză).
 
 !!! note "Observație"
+
     A nu se confunda denumirea de parsing cu cea de la parsarea datelor de
     intrare, chiar dacă ambele se ocupă de procesarea unor șiruri de caractere,
     parsarea datelor este o metodă folosită pentru îmbunătățirea vitezei de
@@ -180,6 +181,7 @@ mai sus, ținând cont de prioritățile descrise în enunț. Pentru optimizarea
 implementării, vom folosi structurile de date din STL.
 
 !!! note "Observație"
+
     Se poate observa faptul că chiar și după ce adaptăm implementarea la
     operațiile din problemă, structura de bază a codului rămâne aceeași.
 

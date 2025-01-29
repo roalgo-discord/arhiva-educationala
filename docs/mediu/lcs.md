@@ -20,6 +20,7 @@ problema subșirului comun maximal.
 ## Subșirul comun maximal
 
 !!! info "Definiție"
+
     Definim subșirul comun maximal a două șiruri de caractere $a$ și $b$ ca
     fiind un subșir $s$ care are proprietatea că pentru fiecare dintre șirurile
     de caractere $a$ și $b$, $s$ este un subșir al acelui șir de caractere. De
@@ -27,6 +28,7 @@ problema subșirului comun maximal.
     `cdac`.
 
 !!! note "Observație"
+
     Pot exista mai multe subșiruri comune maximale, de obicei ne interesează
     lungimea subșirului comun maximal. Dacă vrem să reconstituim subșirul comun
     maximal, așa cum procedăm și la alte tipuri de dinamici, ne putem ține o

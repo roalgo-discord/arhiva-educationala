@@ -46,9 +46,7 @@ O soluție foarte cunoscută a acestei probleme constă în folosirea unei dinam
 poziția $i$. Tranzițiile vor fi foarte simple, fiecare poziție este comparată cu
 fiecare, complexitatea soluției ajungând la $O(n^2).
 
-$$
-dp[i] = \max_{\substack{j < i \\\\ v[j] < v[i]}} \left(dp[j] + 1\right)
-$$
+$$ dp[i] = \max_{\substack{j < i\\v[j] < v[i]}} \left(dp[j] + 1\right) $$
 
 Evident, dacă nu există o poziție $j < i$ care respectă condiția de mai sus,
 $dp[i] = 1$.

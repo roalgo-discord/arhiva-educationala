@@ -18,6 +18,7 @@ concursuri de informatică românești, precum și informații legate de ce treb
 să înveți și formatul concursurilor.
 
 !!! info "Disclaimer"
+
     Acest articol are un caracter **neoficial** și reprezintă totalitatea
     informațiilor strânse de autor de-a lungul experienței sale la olimpiadă,
     atât ca participant, cât și ca propunător, împreună cu informațiile culese
@@ -32,6 +33,7 @@ de gimnaziu și liceu. Competiția este organizată separat pentru fiecare clas�
 astfel ai posibilitatea să concurezi cu alți elevi din aceeași clasă cu tine.
 
 !!! note "Observație"
+
     Poți concura și la o clasă superioară vârstei tale, iar în mod particular
     dacă ești într-o clasă mai mică de clasa a cincea, poți concura la olimpiadă
     la clasa a V-a și [chiar s-o
@@ -90,6 +92,7 @@ real, serverul de concurs este bazat pe [Contest Management System
 olimpiadele internaționale de informatică.
 
 !!! note "Observație"
+
     Până în anul $2020$, sistemul de evaluare era unul bazat pe colectarea
     soluțiilor participanților folosind un stick USB, rezultatele fiind aflate
     după câteva ore de la finalizarea concursului, acestea fiind publicate pe
@@ -171,6 +174,7 @@ Premii oferite de SEPI:
 aceasta fiind echivalentul calificării la proba de baraj.
 
 !!! note "Observație"
+
     Dacă există punctaje egale, comisia poate decide acordarea aceluiași
     premiu/medalie sau departajarea folosind regulamentul în vigoare.
 

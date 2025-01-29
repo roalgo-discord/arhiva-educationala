@@ -27,7 +27,7 @@ fi tot mai bun la rezolvarea problemelor de informatică și nu numai.
 În primul rând, pentru a putea fi un bun programator, trebuie să ai cunoștințe
 decente de matematică. Nu trebuie să fii olimpic sau să ai alte cunoștințe
 avansate, dar un nivel decent este important. Mai formal, drept un minim,
-trebuie să fii familarizat cu noțiunile de matematică din clasele primare și
+trebuie să fii familiarizat cu noțiunile de matematică din clasele primare și
 ideal, și cele din clasele V-VIII (dacă ești în gimnaziu și citești asta,
 trebuie să fii la zi cu materia de la clasă, iar pe parcurs, pe măsură ce veți
 învăța mai multe, vei putea fi înaintea materiei).
@@ -46,10 +46,11 @@ precum și unde le găsiți la noi în arhivă. Pentru fiecare secțiune, recoma
 
 !!! note "Observație"
 
-    Pentru cei familiarizați cu programa pentru olimpiadă, această listă este foarte
-    similară cu programa clasei a cincea de la olimpiadă. Chiar dacă multe alte
-    roadmap-uri online sugerează prioritizarea structurilor de date mai avansate,
-    tehnicile de rezolvare a problemelor sunt mult mai importante pentru început.
+    Pentru cei familiarizați cu programa pentru olimpiadă, această listă este
+    foarte similară cu programa clasei a cincea de la olimpiadă. Chiar dacă
+    multe alte roadmap-uri online sugerează prioritizarea structurilor de date
+    mai avansate, tehnicile de rezolvare a problemelor sunt mult mai importante
+    pentru început.
 
 ### Elemente de limbaj
 

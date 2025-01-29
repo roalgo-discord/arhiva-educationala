@@ -8,7 +8,7 @@ tags:
 ## Introducere
 
 Atunci când scrieți programe pentru a rezolva diverse probleme de algoritmică,
-veți avea de-a face în mod inevitabil cu buguri (erori/greșeli) care vă fac
+veți avea de-a face în mod inevitabil cu bug-uri (erori/greșeli) care vă fac
 soluția să fie greșită. În acest articol, vom prezenta cele mai importante
 lucruri pe care să le aveți în vedere atunci când scrieți soluții, precum și
 metode pe care să le folosiți când soluțiile sunt greșite.
@@ -16,7 +16,7 @@ metode pe care să le folosiți când soluțiile sunt greșite.
 ## Cele mai frecvente erori de implementare
 
 În cele mai multe cazuri, erorile apar din cauza unor greșeli ce pot fi evitate.
-Dintre cele mai frecvente motive pentru care apar bugurile, vom enumera
+Dintre cele mai frecvente motive pentru care apar bug-urile, vom enumera
 următoarele:
 
 ### Variabile neinițializate
@@ -29,6 +29,7 @@ $385$ la final, dar deoarece această variabilă nu este inițializată, răspun
 va fi diferit.
 
 !!! note "Observație"
+
     În funcție de setările mediului vostru, outputul poate fi $385$. Totuși,
     acesta este un undefined behavior, așa cum vom vorbi și mai târziu în acest
     articol.
@@ -43,9 +44,10 @@ for (int i = 1; i <= n; i++) {
 cout << s << '\n';
 ```
 
-### Overflowuri
+### Overflow-uri
 
 !!! info "Definiție"
+
     Situația în care o variabilă care poate avea o valoare mai mare decât
     limitele tipului de date care îi este asignat se numește overflow.
 
@@ -67,8 +69,8 @@ cout << 1LL * n * (n + 1) / 2 << '\n'; // ok
 și de egalitate poate duce la schimbarea totală a rezultatelor.
 
 De exemplu, aici plasarea egalității din if-uri trebuie să fie corectă, altfel
-instrucțiunile defin total diferite. În mod similar, putem avea aceeași eroare
-când folosim operatori precum &&, ||, dacă folosim &, | etc.
+instrucțiunile devin total diferite. În mod similar, putem avea aceeași eroare
+când folosim operatori precum `&&`, `||`, dacă folosim `&`, `|` etc.
 
 ```cpp
 if (x == 3) { // se verifica daca x = 3
@@ -142,6 +144,7 @@ int main() {
 ### Undefined behavior
 
 !!! note "Undefined behavior"
+
     Atunci când accesăm memorie care nu există, dar programul nu se oprește din
     rulat, avem de-a face cu o situație ce se numește undefined behavior.
 
@@ -246,13 +249,13 @@ anevoios și greu de utilizat.
 
 ### Stress testing
 
-O metodă foarte importantă și utilă în special atunci când bugurile sunt greu de
-găsit constă în crearea unui program (sau mai multe) care să poată genera teste
-de evaluare care să folosească la evaluarea sursei scrise de tine. Aceste teste,
-odată create, pot fi rulate pentru a depista erori. În general, vrei să ai un
-program corect, dar încet și un program rapid, dar greșit, care va fi corectat
-(sau demonstrat că este eronat indiferent de situație). Unele metode implică și
-folosirea unui program separat pentru generarea datelor de intrare.
+O metodă foarte importantă și utilă în special atunci când bug-urile sunt greu
+de găsit constă în crearea unui program (sau mai multe) care să poată genera
+teste de evaluare care să folosească la evaluarea sursei scrise de tine. Aceste
+teste, odată create, pot fi rulate pentru a depista erori. În general, vrei să
+ai un program corect, dar încet și un program rapid, dar greșit, care va fi
+corectat (sau demonstrat că este eronat indiferent de situație). Unele metode
+implică și folosirea unui program separat pentru generarea datelor de intrare.
 
 În ceea ce privește generatorul de teste, vrem să putem genera foarte multe
 teste mici (valori ale lui $n$ suficient de mici care să poată permite unei
@@ -265,7 +268,7 @@ Una dintre cele mai ușoare metode (și cea mai practică în condițiile unor
 concursuri fizice) este aceea cu un singur program. Modul de funcționare constă
 în adăugarea programelor menționate anterior drept funcții într-un program, iar
 mai apoi, folosim un generator suficient de puternic și teste bine create pentru
-a detecta eventualele buguri.
+a detecta eventualele bug-uri.
 
 Un exemplu de cod poate fi găsit mai jos.
 

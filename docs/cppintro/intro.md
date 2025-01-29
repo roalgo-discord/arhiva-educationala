@@ -59,12 +59,12 @@ imperativă și funcțională.
 
 !!! note "Observație"
 
-    Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau veți
-    ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți avea de-a
-    face cu foarte multe limbaje de programare, iar deși arhiva noastră se
-    concentrează pe limbajul C++ datorită avantajelor sale în ceea ce privește
-    algoritmica, nu există vreun limbaj de programare care să fie în totalitate
-    inutil.
+    Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau
+    veți ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți
+    avea de-a face cu foarte multe limbaje de programare, iar deși arhiva
+    noastră se concentrează pe limbajul C++ datorită avantajelor sale în ceea ce
+    privește algoritmica, nu există vreun limbaj de programare care să fie în
+    totalitate inutil.
 
 ## Limbajul de programare C++
 
@@ -149,10 +149,10 @@ afișa rezultatele.
 
 !!! note "Observație"
 
-    Pentru a vedea modificările la răspunsurile generate, trebuie să compilați 
-    și să rulați din nou executabilul, în caz contrar datele vor fi afișate 
-    conform cu versiunea anterioară a programului. Pare a fi o observație banală,
-    însă este o greșeală comună să uiți să recompilezi codul sursă.
+    Pentru a vedea modificările la răspunsurile generate, trebuie să compilați
+    și să rulați din nou executabilul, în caz contrar datele vor fi afișate
+    conform cu versiunea anterioară a programului. Pare a fi o observație
+    banală, însă este o greșeală comună să uiți să recompilezi codul sursă.
 
 ### Inițializarea programului
 

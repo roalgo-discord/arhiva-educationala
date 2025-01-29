@@ -25,6 +25,7 @@ facilități în plus.
 ## Introducere și sintaxă
 
 !!! info "Definiție"
+
     Un deque (double-ended queue) este o structură de date liniară, similară cu
     stiva și coada, cu proprietatea că suportă operațiile specifice stivelor și
     cozilor în timp constant. Așa cum îi zice și numele, practic este o coadă
@@ -32,6 +33,7 @@ facilități în plus.
     ambele capete.
 
 !!! note "Observație"
+
     Complexitatea menționată mai sus este cel puțin pentru implementarea din STL
     (std::deque) una amortizată, cu alte cuvinte, $n$ operații făcute pe un
     deque vor fi $O(n)$, dar asta nu garantează faptul că fiecare operație va
@@ -172,6 +174,7 @@ fel ca la problema precedentă, dacă poziția $i - b - 1$ încă este în deque
 vom scoate.
 
 !!! note "Observație"
+
     Vrem să scădem din suma curentă o sumă cât mai mică pentru a avea o sumă
     maximă, deoarece $sp[i]$ este elementul fix, invariant.
 

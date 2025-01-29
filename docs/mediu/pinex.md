@@ -19,6 +19,7 @@ mulți algoritmi elementari studiați până acum, formalizând discuția și ad
 mai multe asemenea probleme în discuție.
 
 !!! info "Definiție"
+
     Principiul includerii și al excluderii (de asemenea denumit pinex) este un
     principiu matematic care este folosit atunci când vrem să aflăm reuniunea a
     două sau mai multe mulțimi, generalizându-se modul de calculare a
@@ -35,9 +36,7 @@ regăsesc în cel puțin una dintre mulțimi putem să scădem din suma cardinal
 lui $A$ și $B$, cardinalul intersecției celor două mulțimi. Mai formal, vom avea
 următoarea formulă:
 
-$$
-|A \cup B| = |A| + |B| - |A \cap B|
-$$
+$$ |A \cup B| = |A| + |B| - |A \cap B| $$
 
 Se poate observa că versiuni rudimentare ale acestei tehnici au fost folosite și
 în cazul calculării unor răspunsuri pe baza sumelor parțiale (suma valorilor de
@@ -99,6 +98,7 @@ Pentru a aplica aceeași formulă pentru trei sau mai multe mulțimi, vom prezen
 o proprietate importantă care ne va ajuta de-a lungul formulelor viitoare.
 
 !!! note "Observație"
+
     Pentru a calcula răspunsul unei probleme la care va trebui să aplicăm acest
     principiu, vom aduna mereu la răspuns numărul elementelor care se află
     într-un număr impar de mulțimi și vom scădea din răspuns cele care apar
@@ -108,28 +108,27 @@ o proprietate importantă care ne va ajuta de-a lungul formulelor viitoare.
 
 De exemplu, când avem trei mulțimi, formula de mai devreme devine
 
-$$
-|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
-$$
+$$ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| +
+|A \cap B \cap C| $$
 
 În mod general, dacă avem $k$ mulțimi, răspunsul va deveni următorul, unde $A_i$
 reprezintă cea de-a $i$-a mulțime:
 
-$$
-\left| \bigcup_{i=1}^n A_i \right| = \sum_{i=1}^n|A_i| - \sum_{1\leq i<j\leq n} |A_i \cap A_j| + \sum _{1\leq i<j<k\leq n}|A_i \cap A_j \cap A_k| - \cdots + (-1)^{n-1} | A_1 \cap \cdots \cap A_n |
-$$
+$$ \left| \bigcup_{i=1}^n A_i \right| = \sum_{i=1}^n|A_i| - \sum_{1\leq i<j\leq
+n} |A_i \cap A_j| + \sum _{1\leq i<j<k\leq n}|A_i \cap A_j \cap A_k| - \cdots +
+(-1)^{n-1} | A_1 \cap \cdots \cap A_n | $$
 
 Pe scurt, formula va deveni următoarea:
 
-$$
-\bigg|\bigcup_{i=1}^nA_i \bigg|= \sum_{0 \neq J \in \{1, 2,...,n\} } (-1)^{|J|-1} \bigg| \bigcap_{j \in J} A_j \bigg|
-$$
+$$ \bigg|\bigcup_{i=1}^nA_i \bigg|= \sum_{0 \neq J \in \{1, 2,...,n\} }
+(-1)^{|J|-1} \bigg| \bigcap_{j \in J} A_j \bigg| $$
 
 Acest lucru ne garantează că pentru un element care apare în mai multe mulțimi,
 deși este adunat individual de mai multe ori, se scad părțile care apar în plus
 în calculul final.
 
 !!! note "Observație"
+
     Dacă avem de-a face cu o problemă la care trebuie să recurgem la aflarea
     complementului răspunsului folosind PINEX, termenii care se adună și cei
     care se scad se inversează.
@@ -145,20 +144,20 @@ care trebuie avut grijă este obținerea produselor submulțimilor, pentru a evi
 overflow-urile.
 
 ```cpp
-#include <iostream>
-#include <vector>
+# include <iostream>
+# include <vector>
 
 using namespace std;
- 
+
 int main() {
     long long n, k;
     cin >> n >> k;
-    
+
     vector<long long> v(k);
     for (int i = 0; i < k; ++i) {
         cin >> v[i];
     }
-    
+
     long long sum = 0;
     for (int msk = 1; msk < (1<<k); ++msk) {
         long long prod = 1;
@@ -181,7 +180,7 @@ int main() {
             sum -= n/prod;
         }
     }
-    
+
     cout << sum;
     return 0;
 }
@@ -207,24 +206,24 @@ deja aflate la pașii anteriori, când am verificat valori mai mari ale celui ma
 mare divizor comun. Mai jos se poate vedea o asemenea implementare.
 
 ```cpp
-#include <iostream>
-#include <vector>
- 
+# include <iostream>
+# include <vector>
+
 using namespace std;
- 
+
 int main()
 {
     vector<long long> fr(1000001), cnt(1000001);
-    
+
     int n;
     cin >> n;
-    
+
     for (int i = 1; i <= n; ++i) {
         int val;
         cin >> val;
         fr[val]++;
     }
-    
+
     long long ans = 1LL * n * (n-1) / 2;
     for (int i = 1000000; i >= 2; --i) {
         long long val = 0;
@@ -239,7 +238,7 @@ int main()
         }
         ans -= cnt[i];
     }
-    
+
     cout << ans;
     return 0;
 }
@@ -265,21 +264,24 @@ i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i
 ^j$ moduri.
 
 !!! note "Observație"
+
     Să calculam $f(n, i)$. Fie $k$ numărul de factori primi ai lui $n$ și fie
     $exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla
     numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți
     vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule
-    au suma elementelor egală cu $exp_K$. Această formulă este studoiată în
+    au suma elementelor egală cu $exp_K$. Această formulă este studiată în
     articolul de [Stars and
     Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars).
     Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
 
 !!! note "Observație"
+
     Descompunerea în factori primi o vom face folosind numerele prime, pe care
     le vom precalcula folosind [ciurul lui
-    eratostene](https://edu.roalgo.ro/usor/sieve/).
+    Eratostene](https://edu.roalgo.ro/usor/sieve/).
 
 !!! note "Observație"
+
     Unele calcule pot fi foarte mari, mai mari decât poate stoca tipul **long
     long**. De aceea, vom folosi
     [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
@@ -287,9 +289,9 @@ i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu $1$ în $C _i
 Sursa de 100 de puncte:
 
 ```cpp
-#include <fstream>
-#include <string>
-#include <algorithm>
+# include <fstream>
+# include <string>
+# include <algorithm>
 
 std::ifstream fin("pmo.in");
 std::ofstream fout("pmo.out");

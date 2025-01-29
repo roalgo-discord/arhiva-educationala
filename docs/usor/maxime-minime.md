@@ -22,10 +22,10 @@ Vom prezenta cazurile cele mai simple, urmate de implementări mai generalizate
 și în final, diverse probleme clasice care implică maxime și minime.
 
 !!! note "Detalii de implementare"
-    
+
     În general, pentru a afla valoarea minimă în loc de cea maximă, vom vrea să
-    schimbăm semnul (`<` în loc de `>`). Acest lucru va fi adevărat și în cazul în
-    care permitem egalități, care fac implementările mai ușoare.
+    schimbăm semnul (`<` în loc de `>`). Acest lucru va fi adevărat și în cazul
+    în care permitem egalități, care fac implementările mai ușoare.
 
 ## Maximul și minimul dintre două numere
 
@@ -160,7 +160,7 @@ vom folosi atunci când vrem să generalizăm aflarea maximului sau minimului un
 
 Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea
 pleca de la cazul de bază cu $2$ numere, iar pentru fiecare număr nou adăugat,
-vom verifica dacă valoarea nou adaugată este mai mare decât maximul de până acum
+vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum
 (sau mai mică decât minimul, după caz).
 
 Pentru a afla acest răspuns, putem fie să plecăm cu răspunsul egal cu prima
@@ -247,7 +247,7 @@ int main() {
 Pentru a extinde problema la $k$ valori, va fi necesară cunoașterea
 [vectorilor](https://edu.roalgo.ro/cppintro/arrays/), ceea ce face această
 aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar
-vom ține cele mai mari/mici $k$ valori într-un vector și vom performa
+vom ține cele mai mari/mici $k$ valori într-un vector și vom efectua
 modificările în mod corespunzător.
 
 Mai jos, veți găsi o implementare care află cele mai mici $k$ valori dintr-un

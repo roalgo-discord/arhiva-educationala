@@ -18,8 +18,8 @@ tags:
 
     O structură repetitivă este o structură pe care o folosim pentru a coordona
     programul să ia aceleași decizii de mai multe ori, atâta timp cât o anumită
-    condiție este îndeplinită. Acest lucru se poate întâmpla de un număr fixat de
-    ori sau de un număr variat de ori. 
+    condiție este îndeplinită. Acest lucru se poate întâmpla de un număr fixat
+    de ori sau de un număr variat de ori.
 
 Cele trei structuri repetitive din C++ sunt while, do..while și for. Deși
 acestea au în mare parte același rol, funcționează într-un mod diferit și
@@ -34,9 +34,9 @@ anumite structuri, deci ne vom concentra pe a arăta cele mai potrivite exemple
 !!! info "Definiție"
 
     Structura repetitivă while este o **structură repetitivă cu test inițial și
-    număr necunoscut de pași** pe care o folosim pentru a coordona programul să ia
-    aceleași decizii atâta timp cât o anumită condiție este îndeplinită și nu știm
-    numărul de pași pe care vrem să-l facem.
+    număr necunoscut de pași** pe care o folosim pentru a coordona programul să
+    ia aceleași decizii atâta timp cât o anumită condiție este îndeplinită și nu
+    știm numărul de pași pe care vrem să-l facem.
 
 Sintaxa while-ului este de regulă, următoarea:
 
@@ -48,9 +48,9 @@ while (conditie) {
 
 !!! note "Observație"
 
-    În mod particular, această structură repetitivă este folosită pentru a citi un
-    număr necunoscut de date atunci când lucrăm cu fișiere text, lucru ce se poate
-    vedea mai ales în problemele ce se dau în variantele de bacalaureat la
+    În mod particular, această structură repetitivă este folosită pentru a citi
+    un număr necunoscut de date atunci când lucrăm cu fișiere text, lucru ce se
+    poate vedea mai ales în problemele ce se dau în variantele de bacalaureat la
     informatică.
 
 ```cpp
@@ -63,12 +63,12 @@ while (fin >> x) {
 ## Structura do..while
 
 !!! info "Definiție"
-    
+
     Structura repetitivă do-while este o **structură repetitivă cu test final și
-    număr necunoscut de pași** pe care o folosim pentru a coordona programul să ia
-    aceleași decizii atâta timp cât o anumită condiție este îndeplinită și nu știm
-    numărul de pași pe care vrem să-l facem, **dar vrem să rulăm instrucțiunile
-    măcar o dată**.
+    număr necunoscut de pași** pe care o folosim pentru a coordona programul să
+    ia aceleași decizii atâta timp cât o anumită condiție este îndeplinită și nu
+    știm numărul de pași pe care vrem să-l facem, **dar vrem să rulăm
+    instrucțiunile măcar o dată**.
 
 Sintaxa do..while-ului este de regulă, următoarea:
 
@@ -81,13 +81,13 @@ do {
 ## Structura for
 
 !!! info "Definiție"
-    
-    Structura repetitivă for este o **structură repetitivă cu test inițial și număr
-    cunoscut de pași** pe care o folosim pentru a coordona programul să ia aceleași
-    decizii când știm numărul de pași pe care vrem să-l facem. Deși **for se poate
-    scrie și folosind rigorile while-ului**, având număr necunoscut de pași, se
-    preferă folosirea for-ului când știm câți pași vrem să facem, respectiv a
-    while-ului în caz contrar.
+
+    Structura repetitivă for este o **structură repetitivă cu test inițial și
+    număr cunoscut de pași** pe care o folosim pentru a coordona programul să ia
+    aceleași decizii când știm numărul de pași pe care vrem să-l facem. Deși
+    **for se poate scrie și folosind rigorile while-ului**, având număr
+    necunoscut de pași, se preferă folosirea for-ului când știm câți pași vrem
+    să facem, respectiv a while-ului în caz contrar.
 
 ```cpp
 for (instructiune_initiala; conditie; actualizare) {

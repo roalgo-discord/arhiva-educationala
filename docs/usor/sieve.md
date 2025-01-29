@@ -75,12 +75,17 @@ for (int i = 2; i <= n; i++) {
 
 !!! note "Observație"
 
-    E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse vor
-    fi cele marcate cu $1$.
+    E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse
+    vor fi cele marcate cu $1$.
 
 ### Optimizări ale implementării
 
-Deși algoritmul în sine este deja foarte rapid, în practică concurenții tind să aplice diverse optimizări de constantă inspirate din optimizările ce se pot aplica algoritmului de aflare a divizorilor unui număr $n$. Printre altele, putem vorbi de începerea celui de-al doilea for de la $i^2$ (primul număr compus care nu a fost marcat anterior va fi mereu $i^2$) sau de procesarea lui $2$, urmată de procesarea numerelor impare din $2$ în $2$.
+Deși algoritmul în sine este deja foarte rapid, în practică concurenții tind să
+aplice diverse optimizări de constantă inspirate din optimizările ce se pot
+aplica algoritmului de aflare a divizorilor unui număr $n$. Printre altele,
+putem vorbi de începerea celui de-al doilea for de la $i^2$ (primul număr compus
+care nu a fost marcat anterior va fi mereu $i^2$) sau de procesarea lui $2$,
+urmată de procesarea numerelor impare din $2$ în $2$.
 
 ```cpp
 int prim[100001];
@@ -97,10 +102,11 @@ for (int i = 3; i <= n; i += 2) {
 ```
 
 !!! note "Observație"
-    
-    Trebuie avut grijă la cel de-al doilea for deoarece expresia `int j = i * i;`
-    poate cauza overflow dacă implementarea nu este una corespunzătoare. De aceea,
-    concurenții pot folosi o optimizare similară și pentru primul for.
+
+    Trebuie avut grijă la cel de-al doilea for deoarece expresia
+    `int j = i * i;` poate cauza overflow dacă implementarea nu este una
+    corespunzătoare. De aceea, concurenții pot folosi o optimizare similară și
+    pentru primul for.
 
 ```cpp
 int prim[100001];

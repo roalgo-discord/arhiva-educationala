@@ -33,10 +33,11 @@ oricare două cifre adiacente sunt diferite, vom introduce mai întâi o
 proprietate foarte importantă:
 
 !!! note "Observație"
-    
-    În majoritatea problemelor cu digit dp, pentru a afla răspunsul în intervalul
-    $[a, b]$, vom scădea din răspunsul pentru intervalul $[1, b]$, răspunsul pentru
-    intervalul $[1, a-1]$, într-o manieră similară cu cea de la sumele parțiale.
+
+    În majoritatea problemelor cu digit dp, pentru a afla răspunsul în
+    intervalul $[a, b]$, vom scădea din răspunsul pentru intervalul $[1, b]$,
+    răspunsul pentru intervalul $[1, a-1]$, într-o manieră similară cu cea de la
+    sumele parțiale.
 
 În cazul acestei probleme, vom defini $dp[i][j]$ drept numărul de numere cu $i$
 cifre care au ultima cifră $j$. În mod evident, din $dp[i][j]$ vom avea

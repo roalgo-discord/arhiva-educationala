@@ -26,6 +26,7 @@ eficientă. Aici intervine algoritmul de _căutare binară_.
 ## Prezentarea algoritmului
 
 !!! note "Notă"
+
     De acum încolo, se va presupune că șirul nostru este sortat crescător.
     Căutarea binară pe un șir nesortat va da mereu răspunsuri eronate.
 
@@ -79,7 +80,8 @@ int cb_naiv(int n) {
 }
 ```
 
-Implementarea de mai sus este una corectă, dar se pot întâlni următoarele bug-uri:
+Implementarea de mai sus este una corectă, dar se pot întâlni următoarele
+bug-uri:
 
 - Schimbarea în $l = mij$ și $r = mij$ va face ca programul nostru să ruleze
   într-o buclă infinită (deoarece ambele valori vor atinge la un moment dat
@@ -118,11 +120,11 @@ Această căutare binară se bazează pe principiul menționat mai sus: noi
 ne interesează. Formula de mai sus pentru calcularea mijlocului este echivalentă
 cu cea din prima căutare, dar mai mult, nu are cum să ne dea overflow.
 
-De fiecare dată când mijlocul nostru verifică _condiție_, noi facem un „salt”
-de la o poziție $l$ la alta. La finalul căutării, indicele $l$ final va fi
-defapt o sumă a salturilor, iar ca pe orice număr întreg, noi acest număr îl
-putem descompune într-o altă bază numerică. Hai să vedem cum putem rafina
-această idee cu o altă implementare mai jos.
+De fiecare dată când mijlocul nostru verifică _condiție_, noi facem un „salt” de
+la o poziție $l$ la alta. La finalul căutării, indicele $l$ final va fi defapt o
+sumă a salturilor, iar ca pe orice număr întreg, noi acest număr îl putem
+descompune într-o altă bază numerică. Hai să vedem cum putem rafina această idee
+cu o altă implementare mai jos.
 
 ## Căutarea binară a lui Mihai Pătrașcu
 
@@ -152,8 +154,9 @@ Pătrașcu](http://people.csail.mit.edu/mip/), sau căutarea pe biți.
 
 În mare parte, aceste căutări binare ne vor da aceeași complexitate peste tot,
 în schimb, când vrem să implementăm algoritmul de Lowest Common Ancestor (LCA)
-cu Binary Lifting, căutarea binară pe biți reduce algoritmul de la $O(\log^2{H})$
-la $O(\log{H})$, unde $H$ reprezintă adâncimea maximă a arborelui.
+cu Binary Lifting, căutarea binară pe biți reduce algoritmul de la
+$O(\log^2{H})$ la $O(\log{H})$, unde $H$ reprezintă adâncimea maximă a
+arborelui.
 
 ## Căutarea binară pe răspuns
 
@@ -296,6 +299,7 @@ double cb_double() {
 ### Problema [Equation](https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E) de pe Codeforces Edu
 
 !!! note "Observație"
+
     Pentru a accesa această problemă, trebuie să vă înregistrați în prealabil la
     aceste cursuri, intrând în secțiunea ITMO Academy - Pilot Course, pe care o
     găsiți [aici](https://codeforces.com/edu/courses)

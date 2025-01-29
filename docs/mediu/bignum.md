@@ -17,43 +17,33 @@ din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu
 fiecare $a_i$ satisfăcând $0 \leq a_i \leq 9$, și $a_{n-1} \neq 0$. Valoarea
 numărului este dată de:
 
-$$
-\overline{a_{n-1} a_{n-2} \cdots a_1 a_0} = \sum_{k=0}^{n-1} a_k \cdot 10^k
+$$ \overline{a_{n-1} a_{n-2} \cdots a_1 a_0} = \sum_{k=0}^{n-1} a_k \cdot 10^k
 $$
 
 Această sumă poate fi descompusă în:
 
-$$
-\overline{a_{n-1} a_{n-2} \cdots a_1 a_0} = a_{n-1} \cdot 10^{n-1} + a_{n-2}
-\cdot 10^{n-2} + \ldots + a_1 \cdot 10^1 + a_0 \cdot 10^0
-$$
+$$ \overline{a_{n-1} a_{n-2} \cdots a_1 a_0} = a_{n-1} \cdot 10^{n-1} + a_{n-2}
+\cdot 10^{n-2} + \ldots + a_1 \cdot 10^1 + a_0 \cdot 10^0 $$
 
 Similar, fie $(\overline{a_{n-1} a_{n-2} \ldots a_1 a_0})_b$ un număr în baza
 $b$, format din $n$ cifre, unde $a_i$ îndeplinește aceleași condiții ca mai sus.
 Valoarea numărului este dată de:
 
-$$
-\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = \sum_{k=0}^{n-1} a_k \cdot b^k
+$$ \overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = \sum_{k=0}^{n-1} a_k \cdot b^k
 $$
 
 Această sumă poate fi descompusă în:
 
-$$
-\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = a_{n-1} \cdot b^{n-1} + a_{n-2}
-\cdot b^{n-2} + \ldots + a_1 \cdot b^1 + a_0 \cdot b^0
-$$
+$$ \overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = a_{n-1} \cdot b^{n-1} + a_{n-2}
+\cdot b^{n-2} + \ldots + a_1 \cdot b^1 + a_0 \cdot b^0 $$
 
 Numerele mari sunt esențiale pentru calcule ce depășesc limita de $2^{63} - 1$.
 Acestea se bazează pe reprezentarea cifrică a numerelor. De exemplu, să
 reprezentăm numărul $82534$ folosind definiția numerelor în baza $10$:
 
-$$
-\begin{align*}
-82534 &= 80000 + 2000 + 500 + 30 + 4\\
-&= 8 \cdot 10000 + 2 \cdot 1000 + 5 \cdot 100 + 3 \cdot 10 + 4 \cdot 1\\
-&= 8 \cdot 10^{4} + 2 \cdot 10^3 + 5 \cdot 10^2 + 3 \cdot 10^1 + 4 \cdot 10^0 \\
-\end{align*}
-$$
+$$ \begin{align*} 82534 &= 80000 + 2000 + 500 + 30 + 4\\ &= 8 \cdot 10000 + 2
+\cdot 1000 + 5 \cdot 100 + 3 \cdot 10 + 4 \cdot 1\\ &= 8 \cdot 10^{4} + 2 \cdot
+10^3 + 5 \cdot 10^2 + 3 \cdot 10^1 + 4 \cdot 10^0 \\ \end{align*} $$
 
 ## Reprezentarea numerelor în memorie
 
@@ -64,6 +54,7 @@ cifre. Considerăm un număr mare, pe care îl descompunem în cifrele sale
 componente și le stocăm într-un vector.
 
 !!! example "Exemplu"
+
     De exemplu, numărul $82534$ poate fi stocat într-un vector $v$ astfel:
 
     $$
@@ -76,26 +67,24 @@ componente și le stocăm într-un vector.
 
 ### Reprezentarea inversă
 
-Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}
-$ în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune
-$n$ este definită astfel:
+Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $
+în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune $n$
+este definită astfel:
 
-$$
-v[i] = a_{n-i},\,\forall\ 0 \leq i < n
-$$
+$$ v[i] = a_{n-i},\,\forall\ 0 \leq i < n $$
 
 unde $n$ este numărul de cifre ale numărului natural $N$, iar $v[0]$ reprezintă
 cifra unităților, $v[1]$ cifra zecilor ș.a.m.d.
 
 !!! note "Observație"
 
-    Numerotarea cifrelor de la coadă, ca în exemplul anterior, este opțională, dar
-    este indicată pentru simplificare, deoarece este mult mai simplu să efectuăm
-    operațiile dacă păstrăm numărul în memorie în ordine inversă față de cum l-am
-    scrie în mod obișnuit. Practic, adăugarea unor valori la pozițiile mai
-    nesemnificative este o operație mult mai des întâlnită decât adăugarea la
-    începutul numărului, iar când e nevoie, putem crește lungimea numărului plasând
-    noua cifră pe poziția $n$, $v[n]$ ținând această valoare.
+    Numerotarea cifrelor de la coadă, ca în exemplul anterior, este opțională,
+    dar este indicată pentru simplificare, deoarece este mult mai simplu să
+    efectuăm operațiile dacă păstrăm numărul în memorie în ordine inversă față
+    de cum l-am scrie în mod obișnuit. Practic, adăugarea unor valori la
+    pozițiile mai nesemnificative este o operație mult mai des întâlnită decât
+    adăugarea la începutul numărului, iar când e nevoie, putem crește lungimea
+    numărului plasând noua cifră pe poziția $n$, $v[n]$ ținând această valoare.
 
 ### Citirea și afișarea unui număr mare
 
@@ -105,7 +94,7 @@ unităților). Pentru afișare, procedăm invers, începând de la cea mai
 semnificativă cifră.
 
 ```cpp
-#include <iostream>
+# include <iostream>
 using namespace std;
 
 // Lungimea maximă a numărului
@@ -143,9 +132,9 @@ numărului, cum ar fi adăugarea sau eliminarea cifrelor.
 
 ### Reprezentarea inversă
 
-Fie un număr natural $N $ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}
-$ în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune
-$n $ este definită astfel:
+Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $
+în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune $n
+$ este definită astfel:
 
 $$
 \begin{gather*}
@@ -158,6 +147,7 @@ unde $v[0]$ reprezintă cifra unităților, $v[1]$ cifra zecilor ș.a.m.d., și 
 este numărul de cifre ale numărului natural $N$.
 
 !!! example "Exemplu"
+
     De exemplu, numărul $82534$ va fi stocat astfel:
 
     $$
@@ -202,7 +192,7 @@ numărului este salvată în prima poziție a vectorului pentru a facilita acces
 Iată cum arată implementarea:
 
 ```cpp
-#include <iostream>
+# include <iostream>
 using namespace std;
 
 // Lungimea maximă a numărului
@@ -250,8 +240,8 @@ $v[0]$.
 #### Crearea vectorului si inserarea/ștergerea cifrelor la inceput
 
 ```cpp
-#include <iostream>
-#include <vector>
+# include <iostream>
+# include <vector>
 
 using namespace std;
 
@@ -356,7 +346,7 @@ for (int i = 1; i <= b[0]; i++) {
 // Gestionarea împrumutului
 for (int i = a[0]; i >= 1; i--) {
     // Dacă cifra este negativă, „ne împrumutăm”
-    // Adăugăm 10 la cifra curentă și scădem 1 de la cifra următoare pentru a 
+    // Adăugăm 10 la cifra curentă și scădem 1 de la cifra următoare pentru a
     // face împrumutul.
     if (a[i] < 0) {
         a[i] += 10;
@@ -426,8 +416,8 @@ for (int i = 1; i <= a[0]; i++) {
     val /= 10;
 }
 
-// Gestionarea transportului rămas după înmulțire. 
-// Pentru fiecare cifră din val, lărgim numărul și stocăm ultima cifră din val 
+// Gestionarea transportului rămas după înmulțire.
+// Pentru fiecare cifră din val, lărgim numărul și stocăm ultima cifră din val
 // ca prima cifră din număr.
 for (; val; val /= 10) {
     a[0]++;
@@ -518,7 +508,7 @@ este baza pe care o folosim (implicit e $10$, dar poate fi ajustată).
 ```cpp
 bool ok = false;
 
-// Parcurgem de la cea mai semnificativă cifră către cea mai puțin semnificativă 
+// Parcurgem de la cea mai semnificativă cifră către cea mai puțin semnificativă
 // cifră
 for (int i = a[0]; i >= 1; i--) {
     if (ok) {
@@ -545,7 +535,9 @@ for (int i = a[0]; i >= 1; i--) {
 ## Optimizări ce se pot face la implementare
 
 Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca
-$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$ și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre.
+$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$
+și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea
+individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre.
 
 Această optimizare poate fi utilă mai ales în situația în care foarte multe
 calcule sunt necesare sau limita de timp este strânsă. Un astfel de exemplu
@@ -554,7 +546,9 @@ complet de soluții (totuși, în prezent, o mare parte din acele probleme cer
 răspunsul modulo un număr prim).
 
 De asemenea, așa cum veți observa mai târziu, există diverse metode de a
-optimiza operațiile de înmulțire, folosind diverși algoritmi precum algoritmul lui Karatsuba sau FFT, dar aceștia nu fac obiectul discuției noastre din acest articol.
+optimiza operațiile de înmulțire, folosind diverși algoritmi precum algoritmul
+lui Karatsuba sau FFT, dar aceștia nu fac obiectul discuției noastre din acest
+articol.
 
 ## Probleme suplimentare
 

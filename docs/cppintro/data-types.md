@@ -28,8 +28,8 @@ articolele lor corespunzătoare.
 !!! info "Definiție"
 
     O variabilă este o locație de memorie care stochează o valoare de un anumit
-    tip. Aceasta este caracterizată printr-o adresă, un identificator, un tip
-    de date și un domeniu de vizibilitate.
+    tip. Aceasta este caracterizată printr-o adresă, un identificator, un tip de
+    date și un domeniu de vizibilitate.
 
 Orice variabilă este caracterizată de:
 
@@ -82,6 +82,7 @@ unde:
     ```
 
 !!! note "Observații"
+
     - Dimensiunea memoriei ocupate de o variabilă depinde de
       tipul de date (ex.: `#!cpp int` ocupă 4 bytes în majoritatea sistemelor).
 
@@ -131,7 +132,7 @@ drept corespondent un caracter din codul ASCII (mai multe detalii vor fi oferite
 
     Printre altele, există și tipul de date `#!cpp __int128`, care ne permite să
     păstrăm numere pe 128 de biți, despre care vom vorbi ulterior în articol,
-    deoarece cunoașterea lui nu este necesară decât pentru aplicații mai 
+    deoarece cunoașterea lui nu este necesară decât pentru aplicații mai
     avansate de la olimpiadă.
 
 ### Tipurile de date `#!cpp unsigned`
@@ -169,14 +170,14 @@ mari pentru calculele noastre.
 
     Atunci când valoarea păstrată într-un tip de date depășește valoarea maximă
     permisă, se întâmplă ceea ce numim overflow. Cu alte cuvinte, valoarea se
-    întoarce la valoarea minimă permisă, ceea ce face calculele viitoare să devină
-    eronate.
+    întoarce la valoarea minimă permisă, ceea ce face calculele viitoare să
+    devină eronate.
 
 !!! note "Underflow"
 
-    În mod similar, putem vorbi și de underflow, când valorile devin mai mici decât
-    valorile minime permise, dar această situație se întâlnește mult mai rar în
-    practică.
+    În mod similar, putem vorbi și de underflow, când valorile devin mai mici
+    decât valorile minime permise, dar această situație se întâlnește mult mai
+    rar în practică.
 
 Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmulțim
 două valori care deși ambele se încadrează în `#!cpp int`, suma (sau produsul
@@ -200,8 +201,8 @@ convertirea datelor.
 !!! note "Numere mai mari"
 
     În unele probleme, chiar și numerele pe 64 (sau 128) de biți nu sunt
-    îndeajuns de mari, așa că se impune păstrarea datelor sub formă de vectori, mai
-    multe detalii despre asta puteți găsi în [acest
+    îndeajuns de mari, așa că se impune păstrarea datelor sub formă de vectori,
+    mai multe detalii despre asta puteți găsi în [acest
     articol](https://edu.roalgo.ro/mediu/bignum/), după ce vă familiarizați cu
     lucrul cu algoritmi mai dificili decât scopul acestui articol.
 
@@ -228,9 +229,9 @@ privește verificarea egalității.
 
 !!! note "Observație"
 
-    Atunci când scriem coduri mai simple sau avem de-a face cu un examen de tipul
-    celui de bacalaureat, nu este nevoie să folosim această metodă pentru a verifica
-    egalitatea dintre numere, putem verifica folosind metoda uzuală.
+    Atunci când scriem coduri mai simple sau avem de-a face cu un examen de
+    tipul celui de bacalaureat, nu este nevoie să folosim această metodă pentru
+    a verifica egalitatea dintre numere, putem verifica folosind metoda uzuală.
 
 Astfel, pentru a verifica egalitatea dintre două numere reale mai mari, putem
 incorpora `eps` astfel:

@@ -21,24 +21,24 @@ tags:
 !!! info "Definiție"
 
     Într-un graf orientat, componentele tare conexe sunt submulțimi maximale de
-    noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care aparțin
-    unei astfel de componente, se poate ajunge și de la $a$ la $b$, și de la $b$ la
-    $a$ folosind muchiile existente.
+    noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care
+    aparțin unei astfel de componente, se poate ajunge și de la $a$ la $b$, și
+    de la $b$ la $a$ folosind muchiile existente.
 
 !!! note "Observație"
 
-    Se poate observa că componentele tare conexe sunt versiunea componentelor conexe
-    pentru grafurile orientate. Deși definițiile sunt similare, se va observa că
-    aflarea lor va fi mai dificilă decât cea a componentelor conexe, care constă
-    într-o simplă parcurgere.
+    Se poate observa că componentele tare conexe sunt versiunea componentelor
+    conexe pentru grafurile orientate. Deși definițiile sunt similare, se va
+    observa că aflarea lor va fi mai dificilă decât cea a componentelor conexe,
+    care constă într-o simplă parcurgere.
 
 !!! example "Exemplu"
 
-    De exemplu, dacă avem următorul graf: $n = 8$, $m = 12$ și următoarele muchii de
-    tip $(a, b)$: $(1, 2)$,$ (2, 6)$,$ (6, 7)$,$ (7, 6)$,$ (3, 1)$,$ (3, 4)$,$ (2,
-    3)$,$ (4, 5)$,$ (5, 4)$,$ (6, 5)$,$ (5, 8)$,$ (8, 7)$, componentele tare conexe
-    sunt $\{1, 2, 3\}$ și $\{4, 5, 6, 7, 8\}$. Mai jos găsiți un desen
-    reprezentativ.  
+    De exemplu, dacă avem următorul graf: $n = 8$, $m = 12$ și următoarele
+    muchii de tip $(a, b)$: $(1, 2)$,$ (2, 6)$,$ (6, 7)$,$ (7, 6)$,$ (3, 1)$,$
+    (3, 4)$,$ (2, 3)$,$ (4, 5)$,$ (5, 4)$,$ (6, 5)$,$ (5, 8)$,$ (8, 7)$,
+    componentele tare conexe sunt $\{1, 2, 3\}$ și $\{4, 5, 6, 7, 8\}$. Mai jos
+    găsiți un desen reprezentativ.  
 
 ![](../images/scc/scc.png)
 
@@ -58,10 +58,11 @@ componentele tare conexe.
 
 !!! info "Graf transpus"
 
-    Într-un graf orientat, un graf transpus $G'$ este un graf care are proprietatea
-    că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va conține muchia
-    $(b, a)$. Cu alte cuvinte, muchiile sunt inversate. Pentru mai multe informații,
-    puteți accesa [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
+    Într-un graf orientat, un graf transpus $G'$ este un graf care are
+    proprietatea că pentru fiecare muchie $(a, b)$ care se află în $G$, $G'$ va
+    conține muchia $(b, a)$. Cu alte cuvinte, muchiile sunt inversate. Pentru
+    mai multe informații, puteți accesa
+    [acest link](https://en.wikipedia.org/wiki/Transpose_graph).
 
 Pe scurt, algoritmul va parcurge mai întâi nodurile într-o manieră similară cu
 cea de la algoritmul pentru aflarea componentelor conexe, singura diferență
@@ -249,14 +250,14 @@ enunța mai jos.
 
 !!! info "Compresarea componentelor tare conexe"
 
-    Dacă compresăm componentele tari conexe într-un singur nod, noul graf rezultat
-    devine aciclic, fapt care ne ajută să aplicăm dinamicile specifice grafurilor
-    orientate aciclice.
+    Dacă compresăm componentele tari conexe într-un singur nod, noul graf
+    rezultat devine aciclic, fapt care ne ajută să aplicăm dinamicile specifice
+    grafurilor orientate aciclice.
 
 !!! note "Observație"
 
-    Algoritmul lui Kosaraju ne oferă componentele tare conexe în ordinea sortării
-    topologice din graful rezultat.
+    Algoritmul lui Kosaraju ne oferă componentele tare conexe în ordinea
+    sortării topologice din graful rezultat.
 
 ## Problema [Coin Collector](https://cses.fi/problemset/task/1686/)
 

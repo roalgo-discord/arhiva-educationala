@@ -32,8 +32,8 @@ mai populare tehnici date la concursurile de algoritmică.
 !!! note "Observație"
 
     Aproape în fiecare an la OJI și ONI clasele XI-XII se dă o problemă care
-    necesită o soluție bazată pe metoda programării dinamice, problemele de acest
-    tip regăsindu-se și în foarte multe concursuri mai dificile.
+    necesită o soluție bazată pe metoda programării dinamice, problemele de
+    acest tip regăsindu-se și în foarte multe concursuri mai dificile.
 
 ## Termenii specifici ai programării dinamice
 
@@ -114,12 +114,12 @@ utiliza mai multe abordări.
 <!-- Problems -->
 ## Probleme clasice
 
-<!-- Beginning -->
-Pentru a ne dezvolta intuiția în ceea ce privește această tehnică, este necesar
-să înțelegem mecanismul pe care se bazează problemele clasice.
+<!-- Beginning --> Pentru a ne dezvolta intuiția în ceea ce privește această
+tehnică, este necesar să înțelegem mecanismul pe care se bazează problemele
+clasice.
 
 Este esențial să rezolvăm cât mai multe probleme de DP pentru a deveni fluenți
-în elaborarea soluților.
+în elaborarea soluțiilor.
 
 <!-- First Problem -->
 ### Problema [Frog 1](https://atcoder.jp/contests/dp/tasks/dp_a)
@@ -323,12 +323,12 @@ complexitatea acestei soluții este $O(n \cdot k)$.
 
 !!! info "Cerință"
 
-    Astăzi, la ora domnului **profesor Tetris**, ți s-a pus următoarea întrebare:
-    „Dacă eu îți dau $N$ tipuri de monede, având acces la o infinitate de monede $C$
-    de acele tipuri, află modalitatea optimă de a obține suma $S$”. Pe momentul orei
-    tu nu ai știut cum să răspunzi, Însă acum, mai determinat ca niciodată, vrei să
-    rezolvi această problem, având în față un document educational de 5 stele
-    Micheline. Rezolvă problema!
+    Astăzi, la ora domnului **profesor Tetris**, ți s-a pus următoarea
+    întrebare: „Dacă eu îți dau $N$ tipuri de monede, având acces la o
+    infinitate de monede $C$ de acele tipuri, află modalitatea optimă de a
+    obține suma $S$”. Pe momentul orei tu nu ai știut cum să răspunzi, Însă
+    acum, mai determinat ca niciodată, vrei să rezolvi această problem, având în
+    față un document educational de 5 stele Micheline. Rezolvă problema!
 
     Vom defini modalitatea optimă de a obține suma $S$ ca fiind modalitatea prin
     care utilizezi cât mai puține monede per total!
@@ -364,13 +364,14 @@ abordare și scriere a sursei și modalități de tranziție.
 === "Recursiv"
     !!! note "Explicație"
 
-        Pentru a găsi soluția optimă, noi vom avea vectorul dp care se utilizează pentru
-        memoizare, el având forma următoare: dp[suma de bani rămasă de acoperit] = nr de
-        bacnote necesare pentru a ajunge la suma de bani rămasă de acoperit curentă.
+        Pentru a găsi soluția optimă, noi vom avea vectorul dp care se
+        utilizează pentru memoizare, el având forma următoare:
+        dp[suma de bani rămasă de acoperit] = nr de bacnote necesare pentru a
+        ajunge la suma de bani rămasă de acoperit curentă.
         
-        Pentru asta ne vom utiliza de o recursiune care are ca parametrii de stare suma
-        de bani care a rămas de plătit, numărul de monede pe care l-am utilizat până
-        acum și vectorul de denominații accesibile.
+        Pentru asta ne vom utiliza de o recursiune care are ca parametrii de
+        stare suma de bani care a rămas de plătit, numărul de monede pe care
+        l-am utilizat până acum și vectorul de denominații accesibile.
 
     ```cpp
     #include <iostream>
@@ -417,11 +418,12 @@ abordare și scriere a sursei și modalități de tranziție.
 === "Iterativ"
     !!! note "Explicație"
 
-        Pentru a găsi soluția optimă, noi vom trece prin fiecare sumă de bani care este
-        mai mică decât $S$, încercând, dacă putem, să continuăm să adăugăm bacnote
-        astfel încât să ajungem la suma de bani dorită. Pentru acest lucru vom ține un
-        vector dp de forma următoare: dp[sumă de bani totală] = numărul de bacnote
-        necesare pentru a ajunge la această sumă de bani.
+        Pentru a găsi soluția optimă, noi vom trece prin fiecare sumă de bani
+        care este mai mică decât $S$, încercând, dacă putem, să continuăm să
+        adăugăm bacnote astfel încât să ajungem la suma de bani dorită. Pentru
+        acest lucru vom ține un vector dp de forma următoare:
+        dp[sumă de bani totală] = numărul de bacnote necesare pentru a ajunge la
+        această sumă de bani.
 
     ```cpp
     #include <algorithm>
@@ -496,9 +498,9 @@ iterativă a problemei.
 
 !!! note "Observație"
 
-    Deoarece avem nevoie doar de valorile din ziua precedentă, nu este necesar să
-    păstrăm în memorie toată matricea, ci doar ultimele două linii, optimizare pe
-    care o vom prezenta în detaliu mai jos.
+    Deoarece avem nevoie doar de valorile din ziua precedentă, nu este necesar
+    să păstrăm în memorie toată matricea, ci doar ultimele două linii,
+    optimizare pe care o vom prezenta în detaliu mai jos.
 
 === "Recursiv"
 
@@ -584,9 +586,9 @@ iterativă a problemei.
 
     !!! info "Explicație"
         
-        Deoarece avem nevoie doar de ultimele două linii, nu vom ține toată matricea,
-        mutând mereu valorile calculate pe prima linie pentru a păstra corectitudinea
-        recurenței.
+        Deoarece avem nevoie doar de ultimele două linii, nu vom ține toată
+        matricea, mutând mereu valorile calculate pe prima linie pentru a păstra
+        corectitudinea recurenței.
 
     ```cpp
     #include <algorithm>
@@ -639,10 +641,10 @@ precedentă, aflate la o distanță de cel mult $1$, cu condiția să putem pune
 pe poziția $i$.
 
 !!! note "Observatie"
-    
+
     Pentru a calcula numărul de soluții modulo $x$, vom folosi operatorul $\%$
-    (mod). Dar deoarece aici avem nevoie doar de operații de adunare, putem pur și
-    simplu să efectuăm operațiile de adunare și să folosim scăderi în mod
+    (mod). Dar deoarece aici avem nevoie doar de operații de adunare, putem pur
+    și simplu să efectuăm operațiile de adunare și să folosim scăderi în mod
     convenabil, reușind astfel să optimizăm soluția.
 
 ```cpp

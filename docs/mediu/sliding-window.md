@@ -17,12 +17,14 @@ problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru
 problemele în care trebuie să iterăm prin ferestre de lungime fixă.
 
 !!! info "Definiție"
+
     Fereastra glisantă (în engleză _sliding window_) reprezintă o metodă de
     rezolvare a problemelor care implică folosirea informației acumulate pentru
     a face tranzițiile între subsecvențe de lungime $k$ cu ușurință, fără a fi
     nevoie de recalcularea răspunsului pentru toate secvențele de lungime $k$.
 
 !!! note "Observație"
+
     Pe parcursul acestui articol, veți observa diferite structuri de date
     folosite pentru aplicarea conceptelor de aici. Toate acestea vor avea un
     element comun, folosirea unor precalculări pentru a facilita obținerea

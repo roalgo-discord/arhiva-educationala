@@ -110,6 +110,7 @@ int main() {
 ## Problema turnurilor din Hanoi - [Tower of Hanoi - CSES](https://cses.fi/problemset/task/2165/)
 
 !!! note "Observație"
+
     Această problemă este una foarte celebră, fiind studiată de foarte mulți ani
     - [Tower of Hanoi](hhttps://en.wikipedia.org/wiki/Tower_of_Hanoi)
 

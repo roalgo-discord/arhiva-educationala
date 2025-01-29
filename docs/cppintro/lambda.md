@@ -42,58 +42,58 @@ Dacă dorim să dăm un nume unei lambda, atunci putem adăuga în față `auto 
 Captura permite copierea sau modificarea unor valori. Există mai multe variante
 de a defini captura, fiecare cu scop specific.
 
-- `[x]` copiază valoarea ca `const`.
+- `[x]` copiază valoarea ca `#!cpp const`:
 
-  ```cpp
-  int main() {
-    int x = 15;
-    auto add = [x](int cnt) -> int {
-      return x + cnt;
-    };
-    std::cout << add(10); // 25
-  }
-  ```
+    ```cpp
+    int main() {
+      int x = 15;
+      auto add = [x](int cnt) -> int {
+        return x + cnt;
+      };
+      std::cout << add(10); // 25
+    }
+    ```
 
-  Dacă încercăm să compilăm varianta de mai sus, aceasta va funcționa corect,
-  însă varianta de mai jos nu va funcționa.
+    Dacă încercăm să compilăm varianta de mai sus, aceasta va funcționa corect,
+    însă varianta de mai jos nu va funcționa.
 
-  ```cpp
-  int main() {
-    int x = 15;
-    auto add = [x](int cnt) -> void {
-      x += cnt;
-      // nu va merge pentru că valoarea este constantă
-    };
-    std::cout << x;
-  }
-  ```
+    ```cpp
+    int main() {
+      int x = 15;
+      auto add = [x](int cnt) -> void {
+        x += cnt;
+        // nu va merge pentru că valoarea este constantă
+      };
+      std::cout << x;
+    }
+    ```
 
-- `[&x]` face referință la valoarea inițială, permițând să fie modificată
+- `[&x]` face referință la valoarea inițială, permițând să fie modificată:
 
-  ```cpp
-  int main() {
-    int x = 15;
-    auto add = [&x](int cnt) -> void {
-      x += cnt;
-    };
-    add(10);
-    std::cout << x; // 25
-  }
-  ```
+    ```cpp
+    int main() {
+      int x = 15;
+      auto add = [&x](int cnt) -> void {
+        x += cnt;
+      };
+      add(10);
+      std::cout << x; // 25
+    }
+    ```
 
-- `[=]` copiază toate valorile, similar cu `[x]`
+- `[=]` copiază toate valorile, similar cu `[x]`:
 
-  ```cpp
-  int main() {
-    int x = 15;
-    auto add = [=](int cnt) -> int {
-      return x + cnt;
-    };
-    std::cout << add(10); // 25
-  }
-  ```
+    ```cpp
+    int main() {
+      int x = 15;
+      auto add = [=](int cnt) -> int {
+        return x + cnt;
+      };
+      std::cout << add(10); // 25
+    }
+    ```
 
-- `[&]` face referință la toate valorile, similar cu `[&x]`
+- `[&]` face referință la toate valorile, similar cu `[&x]`:
 
   ```cpp
   int main() {
@@ -106,12 +106,13 @@ de a defini captura, fiecare cu scop specific.
   }
   ```
 
-Putem defini și mai multe valori care să fie capturate
+Putem defini și mai multe valori care să fie capturate:
 
 ```cpp
 int main() {
   int x = 10, y = 15;
-  auto add = [&x, y]() { // x poate fi modificat, y e constant
+  // x poate fi modificat, y e constant
+  auto add = [&x, y]() { 
     x += y;
   };
 
@@ -124,7 +125,7 @@ int main() {
 
 Există o situație în care nici o variantă de captură nu acoperă ce dorim, și
 anume atunci când vrem să modificăm valoarea fără a o afecta pe cea inițială. În
-această situație există `mutable`.
+această situație există `#!cpp mutable`.
 
 ```cpp
 int main() {
@@ -137,14 +138,16 @@ int main() {
 
   int y = add(10);
   std::cout << x << ' ' << y; // 15 25
-  // Observăm că x rămâne valoarea inițială în afara funcției, dar e diferită în funcție
+  
+  // Observăm că x rămâne valoarea inițială în 
+  // afara funcției, dar e diferită în funcție
 }
 ```
 
 ### Tipul de retur
 
 O funcție lambda trebuie să definească tipul de retur, similar cu o funcție
-normală. Acesta este definit prin adaugând `#!cpp -> tip` după parametri.
+normală. Acesta este definit prin a adăuga `#!cpp -> tip` după parametri.
 
 ```cpp
 int main() {
@@ -152,7 +155,7 @@ int main() {
     return n * (n + 1) / 2;
   };
 
-  cout << gauss(10); // 55
+  std::cout << gauss(10); // 55
 }
 ```
 
@@ -162,7 +165,9 @@ tipul de return este determinat automat.
 
 ```cpp
 int main() {
-  auto gauss = [](int n) { // tipul a fost determinat de compilator
+
+  // tipul a fost determinat de compilator
+  auto gauss = [](int n) { 
     return n * (n + 1) / 2;
   };
 
@@ -183,12 +188,14 @@ int main() {
   for (auto &[x, y] : v)
     std::cin >> x >> y;
 
-  std::sort(v.begin(), v.end(), [](std::pair<int, int> a, std::pair<int, int> b) {
-    // sortăm descrescător după a doua valoare, dacă sunt identice, crescător după prima
-    if (a.second == b.second)
-      return a.first < b.first;
-    return a.second > b.second;
-  });
+  std::sort(v.begin(), v.end(), 
+            [](std::pair<int, int> a, std::pair<int, int> b) {
+              // sortăm descrescător după a doua valoare, dacă sunt identice
+              // altfel crescător după prima
+              if (a.second == b.second)
+                return a.first < b.first;
+              return a.second > b.second;
+            });
 }
 ```
 

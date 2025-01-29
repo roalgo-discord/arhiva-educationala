@@ -29,7 +29,8 @@ De-a lungul acestui articol, vom lucra cu numere reprezentate în formă binară
 (în baza $2$), deci formate din cifre de $0$ și de $1$. De exemplu, dacă vrem să
 scriem numărul $27$ în binar, reprezentarea acestuia va fi:
 
-$$27_{(10)} = 00011011_{(2)} = 0 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0$$
+$$27_{(10)} = 00011011_{(2)} = 0 \cdot 2^7 + 0 \cdot 2^6 + 0 \cdot 2^5 + 1 \cdot
+2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0$$
 
 Deși de obicei nu lucrăm cu zerourile nesemnificative, în acest caz ele au fost
 prezentate pentru înțelegerea conceptului, precum și datorită faptului că așa
@@ -45,10 +46,10 @@ indiferent de baza de la care plecăm, atâta timp cât baza $10$ este parte din
 calculele noastre.
 
 !!! note "Observație"
-    
+
     În general, dacă vrem să transformăm din baza $a$ în baza $b$, un algoritm
-    foarte ușor de implementat va fi să transformăm mai întâi din baza $a$ în baza
-    $10$, iar mai apoi să transformăm din baza $10$ în baza $b$.
+    foarte ușor de implementat va fi să transformăm mai întâi din baza $a$ în
+    baza $10$, iar mai apoi să transformăm din baza $10$ în baza $b$.
 
 ### Transformarea unui număr din baza $10$ în baza $k$
 
@@ -57,6 +58,7 @@ numărul la $k$, până când numărul va deveni $0$, iar resturile împărțiri
 care le obținem vor crea numărul în baza $k$, în ordine inversă.
 
 !!! example "Exemplu"
+
     De exemplu, dacă vrem să convertim numărul $46$ în baza $2$, vom obține
     următoarele câturi și resturi.
 
@@ -68,8 +70,8 @@ care le obținem vor crea numărul în baza $k$, în ordine inversă.
     - $n = 1$, $\frac{1}{2} = 0$, restul $1$.
 
     Dacă luăm resturile împărțirilor la $2$ în ordine inversă, obținem $101110$,
-    număr care se poate verifica că ne va returna $n = 46$ daca îl convertim în baza
-    $10$. 
+    număr care se poate verifica că ne va returna $n = 46$ daca îl convertim în
+    baza $10$.
 
 Mai jos puteți găsi o scurtă implementare în limbajul C++.
 
@@ -101,6 +103,7 @@ k^i$, unde $cif$ este cifra curentă, $k$ este baza de la care plecăm și $i$ e
 numărul pasului la care suntem.
 
 !!! example "Exemplu"
+
     De exemplu, dacă vrem să convertim numărul $10110$ în baza $10$, vom avea
     următoarele cifre:
 
@@ -110,7 +113,7 @@ numărul pasului la care suntem.
     - poziția $3$: cifra este $0$, se adună $0$ la numărul în baza $10$.
     - poziția $4$: cifra este $1$, se adună $2^4$ la numărul în baza $10$.
 
-    Adunate, aceste puteri ne vor da $22$, acesta fiind numărul in baza $10$. 
+    Adunate, aceste puteri ne vor da $22$, acesta fiind numărul in baza $10$.
 
 Mai jos puteți găsi o scurtă implementare în limbajul C++.
 
@@ -163,11 +166,11 @@ puteți găsi un tabel de adevăr a acestei operații, notată în limbajele C/C
 
 !!! example "Exemplu"
 
-    De exemplu, dacă aplicăm operația pentru $12$ și $23$, reprezentările lor binare
-    sunt $01100$, respectiv $10111$ (am pus un zero nesemnificativ în fața lui $12$
-    pentru a ne asigura că numerele au același număr de biți), rezultatul operației
-    AND este $4$, deoarece bitul de pe poziția $2$ este singurul bit egal cu $1$ în
-    ambele numere.
+    De exemplu, dacă aplicăm operația pentru $12$ și $23$, reprezentările lor
+    binare sunt $01100$, respectiv $10111$ (am pus un zero nesemnificativ în
+    fața lui $12$ pentru a ne asigura că numerele au același număr de biți),
+    rezultatul operației AND este $4$, deoarece bitul de pe poziția $2$ este
+    singurul bit egal cu $1$ în ambele numere.
 
 ### Operatorul OR ("sau" pe biți)
 
@@ -184,11 +187,12 @@ C/C++ cu `|`:
 | $1$ | $1$ | $1$ |
 
 !!! example "Exemplu"
-    De exemplu, dacă aplicăm operația pentru $12$ și $19$, reprezentările lor binare
-    sunt $01100$, respectiv $10011$ (am pus un zero nesemnificativ în fața lui $12$
-    pentru a ne asigura că numerele au același număr de biți), rezultatul operației
-    OR este $27$, deoarece fiecare din cei $5$ biți apare în măcar unul din numerele
-    date, cu excepția bitului $2$.  
+
+    De exemplu, dacă aplicăm operația pentru $12$ și $19$, reprezentările lor
+    binare sunt $01100$, respectiv $10011$ (am pus un zero nesemnificativ în
+    fața lui $12$ pentru a ne asigura că numerele au același număr de biți),
+    rezultatul operației OR este $27$, deoarece fiecare din cei $5$ biți apare
+    în măcar unul din numerele date, cu excepția bitului $2$.  
 
 ### Operatorul XOR ("sau exclusiv" pe biți)
 
@@ -205,12 +209,13 @@ C/C++ cu `^`:
 | $1$ | $1$ | $0$ |
 
 !!! example "Exemplu"
-    De exemplu, dacă aplicăm operația pentru $12$ și $22$, reprezentările lor binare
-    sunt $01100$, respectiv $10110$ (am pus un zero nesemnificativ în fața lui $12$
-    pentru a ne asigura că numerele au același număr de biți), rezultatul operației
-    XOR este $26$, deoarece bitul de pe poziția $2$ este singurul bit egal cu $1$ în
-    ambele numere, iar ceilalți biți apar o singură dată, cu excepția bitului $0$,
-    care nu este fixat în niciunul dintre numere.
+
+    De exemplu, dacă aplicăm operația pentru $12$ și $22$, reprezentările lor
+    binare sunt $01100$, respectiv $10110$ (am pus un zero nesemnificativ în
+    fața lui $12$ pentru a ne asigura că numerele au același număr de biți),
+    rezultatul operației XOR este $26$, deoarece bitul de pe poziția $2$ este
+    singurul bit egal cu $1$ în ambele numere, iar ceilalți biți apar o singură
+    dată, cu excepția bitului $0$, care nu este fixat în niciunul dintre numere.
 
 ### Shiftarea pe biți
 
@@ -226,9 +231,11 @@ un număr cu o putere a lui $2$. Modul de folosire al acestui operator este
 `a<<b`, care are semnificația că înmulțim $a$ cu $2^b$.
 
 !!! note "Observație"
+
     În mod particular, `1<<x` ne va returna în timp constant $2^x$, iar pentru
-    puterile lui $2$ mai mari de $30$, se impune folosirea notației `1LL<<x`, pentru
-    a ne asigura că lucrăm în spațiul numerelor din tipul de date long long.
+    puterile lui $2$ mai mari de $30$, se impune folosirea notației `1LL<<x`,
+    pentru a ne asigura că lucrăm în spațiul numerelor din tipul de date long
+    long.
 
 Shiftarea la dreapta, notată cu `>>` este folosită atunci când vrem să împărțim
 un număr cu o putere a lui $2$. Modul de folosire al acestui operator este
@@ -242,41 +249,48 @@ probleme. Aici voi menționa cele mai frecvent întâlnite asemenea proprietăț
 precizând pentru fiecare dintre ele utilitatea ei.
 
 !!! note "Observație"
-    Înainte de toate, vrem să reamintim faptul că $2^i > \sum_{x=0}^{i-1} 2^x$, deci
-    cu alte cuvinte, dacă vom avea de făcut o alegere între o putere a lui $2$ și
-    unele puteri mai mici ale lui $2$, alegerea unei puteri mai mari ne va garanta
-    un răspuns optim, chiar dacă am putea alege ulterior o serie de puteri ale lui
-    $2$.
+
+    Înainte de toate, vrem să reamintim faptul că $2^i > \sum_{x=0}^{i-1} 2^x$,
+    deci cu alte cuvinte, dacă vom avea de făcut o alegere între o putere a lui
+    $2$ și unele puteri mai mici ale lui $2$, alegerea unei puteri mai mari ne
+    va garanta un răspuns optim, chiar dacă am putea alege ulterior o serie de
+    puteri ale lui $2$.
 
 !!! note "Observație"
+
     Un alt aspect important, care va fi folosit în majoritatea problemelor ce
     țin de operații pe biți este acela că putem trata biții de pe poziții
     diferite în mod independent, fără a afecta corectitudinea soluției găsite.
 
 !!! info "Legătura dintre suma numerelor, AND și XOR"
+
     Pentru oricare două valori $a$ și $b$ mai mari sau egale cu $0$, $a + b = 2
     \cdot (a \& b) + (a \oplus b)$.
 
-    Această proprietate se poate demonstra ușor folosind independența biților și evaluând expresia pentru toate modurile în care putem asigna valori biților.
+    Această proprietate se poate demonstra ușor folosind independența biților și
+    evaluând expresia pentru toate modurile în care putem asigna valori biților.
 
 !!! info "Mici verificări cu impact major"
 
     - Pentru a verifica dacă $n$ este o putere a lui $2$, este îndeajuns să
-      verificăm valoarea expresiei $n \ \& \ (n-1)$. Dacă aceasta este $0$, înseamnă
-      că $n$ și $n-1$ nu au biți în comun, iar singurul caz în care acest lucru se
-      poate întâmpla este dacă $n$ este putere a lui $2$ (reprezentarea binară a lui
-      $n$ ar fi $100 \dots 0$, iar cea a lui $n-1$ ar fi $011 \dots 1$.)
-    
+      verificăm valoarea expresiei $n \ \& \ (n-1)$. Dacă aceasta este $0$,
+      înseamnă că $n$ și $n-1$ nu au biți în comun, iar singurul caz în care
+      acest lucru se poate întâmpla este dacă $n$ este putere a lui $2$
+      (reprezentarea binară a lui $n$ ar fi $100 \dots 0$, iar cea a lui $n-1$
+      ar fi $011 \dots 1$.)
+
     - Pentru a verifica dacă pentru o valoare $n$, bitul de pe poziția $x$ este
-      setat, este îndeajuns să aflăm dacă rezultatul expresiei $(n \ \& \ (1<<x))
-      \neq 0$. Deoarece $2^x$   este o putere a lui $2$, singurul mod în care
-      expresia ar fi nenulă este când bitul de pe poziția $x$ este setat în $n$.
-        
-    - Pentru a afla valoarea celui mai nesemnificativ bit, este îndeajuns să folosim
-      operația $x \ \& \ (-x)$, motivul pentru care această operație funcționează
-      este acela că în cazul lui $-x$, biții vor fi inversați, cu excepția ultimului
-      bit, care va rămâne la fel, datorită modului în care sunt dispuse în memorie
-      numerele negative (bitul de semn va fi mereu setat în cazul lor).
+      setat, este îndeajuns să aflăm dacă rezultatul expresiei $(n \ \& \
+      (1<<x)) \neq 0$. Deoarece $2^x$ este o putere a lui $2$, singurul mod în
+      care expresia ar fi nenulă este când bitul de pe poziția $x$ este setat în
+      $n$.
+
+    - Pentru a afla valoarea celui mai nesemnificativ bit, este îndeajuns să
+      folosim operația $x \ \& \ (-x)$, motivul pentru care această operație
+      funcționează este acela că în cazul lui $-x$, biții vor fi inversați, cu
+      excepția ultimului bit, care va rămâne la fel, datorită modului în care
+      sunt dispuse în memorie numerele negative (bitul de semn va fi mereu setat
+      în cazul lor).
 
 ## Lucrul cu submulțimi
 
@@ -291,7 +305,7 @@ detaliu submulțimile din perspectiva combinatoricii. Totuși, aplicațiile
 prezentate acolo se aplică în totalitate și din perspectiva articolului curent.
 
 !!! note "Lectură suplimentară"
-    
+
     Alternativ, puteți citi mai multe detalii de pe articolul de pe
     [cp-algorithms](https://cp-algorithms.com/algebra/all-submasks.html) despre
     enumerarea submulțimilor.

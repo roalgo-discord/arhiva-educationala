@@ -76,6 +76,7 @@ fii. În funcție de tipul acestui arbore putem defini următoarele feluri de
 arbori binari.
 
 !!! note "Observatie"
+
     Arborii binari, datorită structurii lor foarte versatile, ajung să
     reprezinte o fundație solidă în vederea înțelegerii foarte multor algoritmi
     și structuri de date arborescente, foarte multe implementări ale

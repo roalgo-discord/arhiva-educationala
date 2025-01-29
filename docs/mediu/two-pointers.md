@@ -32,7 +32,7 @@ Pentru a folosi această metodă, e nevoie să stăpânim lucrul cu secvențe ș
 și căutarea binară, deoarece pentru multe dintre exemplele ce vor fi menționate,
 există soluții și folosind acest algoritm. Nu în ultimul rând, pentru anumite
 probleme e posibil să fie nevoie de structuri de date adiționale, cum ar fi map
-sau set .
+sau set.
 
 În ceea ce privește modul în care începem implementările, avem două tipuri
 majore de implementări, în funcție de algoritm. Merită menționat faptul că

@@ -66,40 +66,41 @@ frecvent întâlnite sunt acestea:
 
 !!! note "Observație"
 
-    În preajma anului nou, în spirit de sărbătoare, verdictul Accepted este înlocuit
-    cu Happy New Year!
+    În preajma anului nou, în spirit de sărbătoare, verdictul Accepted este
+    înlocuit cu Happy New Year!
 
 ## Competițiile și sistemul de rating
 
 ### Diviziile și ratingurile de pe Codeforces
 
-În funcție de nivelul dovedit la concursurile de pe Codeforces, nivel măsurat prin rating, concurenții pot avea următoarele culori și titluri:
+În funcție de nivelul dovedit la concursurile de pe Codeforces, nivel măsurat
+prin rating, concurenții pot avea următoarele culori și titluri:
 
-|           Titlu           |                                  Culoare                                  |  Rating   | Divizie |
-| ------------------------- | ------------------------------------------------------------------------- | --------- | ------- |
-| Newbie                    | <span style="color: gray">■</span>                                        | 0-1199    | 4, 3, 2 |
-| Pupil                     | <span style="color: green">■</span>                                       | 1200-1399 | 4, 3, 2 |
-| Specialist                | <span style="color: cyan">■</span>                                        | 1400-1599 | 3, 2    |
-| Expert                    | <span style="color: blue">■</span>                                        | 1600-1899 | 2       |
-| Candidate Master          | <span style="color: purple">■</span>                                      | 1900-2099 | 2, 1    |
-| Master                    | <span style="color: orange">■</span>                                      | 2100-2299 | 1       |
-| International Master      | <span style="color: darkorange">■</span>                                  | 2300-2399 | 1       |
-| Grandmaster               | <span style="color: red">■</span>                                         | 2400-2599 | 1       |
-| International Grandmaster | <span style="color: darkred">■</span>                                     | 2600-2999 | 1       |
-| Legendary Grandmaster     | <span style="color: black">■</span> <span style="color: darkred">■</span> | 3000+     | 1       |
+| Titlu                     | Culoare                                                                 | Rating    | Divizie |
+| ------------------------- | ----------------------------------------------------------------------- | --------- | ------- |
+| Newbie                    | <span style="color:gray">■</span>                                       | 0-1199    | 4, 3, 2 |
+| Pupil                     | <span style="color:green">■</span>                                      | 1200-1399 | 4, 3, 2 |
+| Specialist                | <span style="color:cyan">■</span>                                       | 1400-1599 | 3, 2    |
+| Expert                    | <span style="color:blue">■</span>                                       | 1600-1899 | 2       |
+| Candidate Master          | <span style="color:purple">■</span>                                     | 1900-2099 | 2, 1    |
+| Master                    | <span style="color:orange">■</span>                                     | 2100-2299 | 1       |
+| International Master      | <span style="color:darkorange">■</span>                                 | 2300-2399 | 1       |
+| Grandmaster               | <span style="color:red">■</span>                                        | 2400-2599 | 1       |
+| International Grandmaster | <span style="color:darkred">■</span>                                    | 2600-2999 | 1       |
+| Legendary Grandmaster     | <span style="color:black">■</span> <span style="color:darkred">■</span> | 3000+     | 1       |
 
 !!! note "Observație"
 
     Un singur român a atins rankul de legendary grandmaster, [Costin Andrei
-    Oncescu](https://codeforces.com/profile/geniucos), acesta participând și [de 3
-    ori la IOI](https://stats.ioinformatics.org/people/6003).
+    Oncescu](https://codeforces.com/profile/geniucos), acesta participând și [de
+    3 ori la IOI](https://stats.ioinformatics.org/people/6003).
 
 !!! note "Server internațional pentru cei cu rating 1900+"
 
-    Există un server neoficial de Discord care cuprinde cea mai mare comunitate de
-    utilizatori care sunt în Div. 1, [AC](https://discord.gg/RFfkprBt7r), accesul la
-    discuții fiind disponibil celor cu rating peste $1900$, ei fiind creatorii
-    botului TLE, pe care îl avem și noi.
+    Există un server neoficial de Discord care cuprinde cea mai mare comunitate
+    de utilizatori care sunt în Div. 1, [AC](https://discord.gg/RFfkprBt7r),
+    accesul la discuții fiind disponibil celor cu rating peste $1900$, ei fiind
+    creatorii botului TLE, pe care îl avem și noi.
 
 Inițial, un concurent are rating $0$, dar după $6$ concursuri în care ratingul
 este unul provizoriu, acesta devine unul conform cu abilitățile dovedite de
@@ -132,11 +133,11 @@ pot cauza o scădere mai accentuată a ratingului.
 
 !!! note "Atenție"
 
-    Nu vei obține mereu un rating mai mare decât ai avut la o rundă anterioară, dar
-    asta este ceva ce nu trebuie să te demoralizeze, deoarece e o parte normală din
-    viața fiecărui competitor. Ce poți face în schimb este să înveți din greșeli și
-    la competițiile viitoare, să încerci să le eviți. Mai multe detalii ulterior în
-    articol.
+    Nu vei obține mereu un rating mai mare decât ai avut la o rundă anterioară,
+    dar asta este ceva ce nu trebuie să te demoralizeze, deoarece e o parte
+    normală din viața fiecărui competitor. Ce poți face în schimb este să înveți
+    din greșeli și la competițiile viitoare, să încerci să le eviți. Mai multe
+    detalii ulterior în articol.
 
 Există și alte competiții pe Codeforces, precum Kotlin Heroes, runde de ICPC și
 multe alte competiții neoficiale, dar ne vom rezuma la competițiile oficiale.
@@ -235,17 +236,18 @@ rundele de Div. 1 odată ce sunteți eligibili pentru ele.
 
 !!! note "Concursuri virtuale - simulări"
 
-    Chiar dacă nu aveți cum să ajungeți la runde sau vreți să simulați runde ce au
-    avut loc în trecut, puteți face asta folosind feature-ul Virtual Participation
-    ce apare dacă intrați [aici](https://codeforces.com/contests).
+    Chiar dacă nu aveți cum să ajungeți la runde sau vreți să simulați runde ce
+    au avut loc în trecut, puteți face asta folosind feature-ul Virtual
+    Participation ce apare dacă intrați
+    [aici](https://codeforces.com/contests).
 
 !!! note "Upsolving"
 
-    O altă recomandare pe care o avem este ca după fiecare concurs pe care îl dați,
-    să rezolvați 1-2 probleme care nu ați reușit să le rezolvați în timpul
-    concursului, împreună cu tot ce ține de algoritmii sau tehnicile care trebuie
-    știute pentru rezolvarea acelor probleme. În specialitate, această parte a
-    competițiilor de informatică se numește upsolving.
+    O altă recomandare pe care o avem este ca după fiecare concurs pe care îl
+    dați, să rezolvați 1-2 probleme care nu ați reușit să le rezolvați în timpul
+    concursului, împreună cu tot ce ține de algoritmii sau tehnicile care
+    trebuie știute pentru rezolvarea acelor probleme. În specialitate, această
+    parte a competițiilor de informatică se numește upsolving.
 
 ## Botul TLE
 
@@ -265,10 +267,10 @@ bine să vă concentrați pe problemele pe care le aveți de rezolvat.
 !!! note "Observație"
 
     În general, e bine ca în timpul concursurilor să vă concentrați strict pe ce
-    aveți de făcut și nu pe ce rezultate au prietenii, colegii, rivalii voștri etc.
-    Concursurile trebuie să le priviți mai întâi ca o luptă cu voi înșiși și nu cu
-    ceilalți din jurul vostru, pentru că oricând veți găsi lucruri care trebuie
-    îmbunătățite.
+    aveți de făcut și nu pe ce rezultate au prietenii, colegii, rivalii voștri
+    etc. Concursurile trebuie să le priviți mai întâi ca o luptă cu voi înșiși
+    și nu cu ceilalți din jurul vostru, pentru că oricând veți găsi lucruri care
+    trebuie îmbunătățite.
 
 Dintre cele mai populare comenzi ale botului, vom enumăra următoarele:
 
@@ -281,12 +283,12 @@ Dintre cele mai populare comenzi ale botului, vom enumăra următoarele:
   este că dacă nu vreți să rezolvați o anumită problemă, trebuie să așteptați
   două ore până când veți folosi comanda din nou.
 
-!!! note "Observație"
+  !!! note "Observație"
 
-    Dacă vreți să rezolvați probleme mai grele sau mai ușoare, puteți scrie `;gitgud
-    x`, unde $x$ este un multiplu de $100$ reprezentând diferența față de ratingul
-    vostru curent. De asemenea, puteți vedea toate variantele de a folosi această
-    comandă pe server.
+      Dacă vreți să rezolvați probleme mai grele sau mai ușoare, puteți scrie
+      `;gitgud x`, unde $x$ este un multiplu de $100$ reprezentând diferența față
+      de ratingul vostru curent. De asemenea, puteți vedea toate variantele de a
+      folosi această comandă pe server.
 
 - `;gimme` - această comandă vă permite să rezolvați o problemă cu un rating
   egal cu ratingul vostru, fără a fi constrânși de condițiile specifice comenzii
@@ -316,8 +318,8 @@ idei, dați spoilere sau alte asemenea în timpul concursului.
 
 !!! note "Observație"
 
-    Totuși, dacă găsiți o problemă similară cu cea din concurs care s-a dat anterior
-    și modificați soluția acelei probleme, nu constituie fraudă.
+    Totuși, dacă găsiți o problemă similară cu cea din concurs care s-a dat
+    anterior și modificați soluția acelei probleme, nu constituie fraudă.
 
 ### Greșeli comune în timpul rundelor
 

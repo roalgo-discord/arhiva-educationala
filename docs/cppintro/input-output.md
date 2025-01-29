@@ -35,16 +35,9 @@ câteva exemple fiind regăsite mai jos.
 
 !!! note "Observație"
 
-    Deși există și metode de citire și afișare din C (cum ar fi funcțiile 
-    `#!c scanf` și `#!c printf`), utilizarea metodelor din C++ este mult mai 
+    Deși există și metode de citire și afișare din C (cum ar fi funcțiile
+    `#!c scanf` și `#!c printf`), utilizarea metodelor din C++ este mult mai
     intuitivă și simplă.
-
-<!-- Atunci când folosiți intrarea și ieșirea standard, după ce compilați programul
-și nu apare nicio eroare, va trebui să rulați executabilul generat și să
-introduceți datele de intrare conform descrierii problemei și a programului
-scris de voi anterior. În cazul în care ați procedat cum trebuie, veți obține un
-răspuns conform cu ceea ce ați scris. În caz contrar, va trebui să verificați ce
-ați scris și eventual, să modificați programul. -->
 
 După ce compilați programul și nu apar erori, va trebui să rulați executabilul
 și să introduceți datele de intrare conform descrierii problemei. Dacă totul
@@ -90,12 +83,12 @@ Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
 
 !!! note "`#!cpp endl` vs `#!cpp '\n'`"
 
-    Ați observat probabil că pentru a introduce o linie nouă, am folosit atât `#!cpp
-    '\n'` cât și `#!cpp endl`. Deși par a fi echivalente, există diferențe
-    semnificative. Instrucțiunea `#!cpp endl` nu doar că introduce o linie nouă,
-    dar și curăță bufferul (unde sunt stocate temporar datele afișate), ceea ce 
-    o face mai lentă decât `#!cpp '\n'`. Acest lucru devine important atunci 
-    când lucrăm cu un volum mare de date.
+    Ați observat probabil că pentru a introduce o linie nouă, am folosit atât
+    `#!cpp '\n'` cât și `#!cpp endl`. Deși par a fi echivalente, există
+    diferențe semnificative. Instrucțiunea `#!cpp endl` nu doar că introduce o
+    linie nouă, dar și curăță buffer-ul (unde sunt stocate temporar datele
+    afișate), ceea ce o face mai lentă decât `#!cpp '\n'`. Acest lucru devine
+    important atunci când lucrăm cu un volum mare de date.
 
 ## Citirea și afișarea folosind fișiere
 
@@ -113,11 +106,11 @@ ofstream fout("date.out");
 
 !!! note "Numele fișierelor"
 
-    Deși aici am folosit `#!cpp fin` și `#!cpp fout` pentru a putea menționa aceste
-    fluxuri (stream-uri) de date, putem folosi orice nume vrem atâta timp cât nu
-    avem și alte variabile numite astfel. În mod particular, putem numi acestea
-    chiar și `#!cpp cin`, respectiv `#!cpp cout` atâta timp cât nu avem inclusă
-    biblioteca `#!cpp <iostream>`.
+    Deși aici am folosit `#!cpp fin` și `#!cpp fout` pentru a putea menționa
+    aceste fluxuri (stream-uri) de date, putem folosi orice nume vrem atâta timp
+    cât nu avem și alte variabile numite astfel. În mod particular, putem numi
+    acestea chiar și `#!cpp cin`, respectiv `#!cpp cout` atâta timp cât nu avem
+    inclusă biblioteca `#!cpp <iostream>`.
 
 Programul de mai sus va fi identic, singura diferență fiind adăugarea
 facilităților care ne permit să citim datele din fișiere.
@@ -161,9 +154,10 @@ int main() {
 
 !!! note "Citirea unui număr necunoscut de valori"
 
-    Dacă avem de citit un număr necunoscut de valori, trebuie să folosim structura
-    repetitivă `#!cpp while`, așa cum veți observa în [articolul
-    nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această temă.
+    Dacă avem de citit un număr necunoscut de valori, trebuie să folosim
+    structura repetitivă `#!cpp while`, așa cum veți observa în [articolul
+    nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această
+    temă.
 
 ## Afișarea specializată
 
@@ -214,9 +208,9 @@ int main() {
 
 !!! note "Observație"
 
-    Fără manipulatorul `#!cpp fixed`, `#!cpp setprecision` controlează numărul total
-    de cifre. După aplicarea lui `#!cpp fixed`, controlează doar numărul de zecimale
-    afişate.
+    Fără manipulatorul `#!cpp fixed`, `#!cpp setprecision` controlează numărul
+    total de cifre. După aplicarea lui `#!cpp fixed`, controlează doar numărul
+    de zecimale afişate.
 
 ## Concluzii
 

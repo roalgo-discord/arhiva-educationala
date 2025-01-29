@@ -49,7 +49,7 @@ lor, $V_i$ și $W_i$ și știm greutatea maximă admisă a rucsacului, $G$.
 
 O primă soluție care pare ușor de găsit este cea pe care am descris-o mai sus,
 pe modelul rucsacului fracționar, însă aceasta nu merge, deoarece putem găsi
-foarte ușor un contraexemplu. Un asemenea test ar fi $N = 3$, $G = 4$, $V_1 =
+foarte ușor un contra-exemplu. Un asemenea test ar fi $N = 3$, $G = 4$, $V_1 =
 9$, $W_1 = 3$, $V_2 = 5$, $W_2 = 2$, $V_3 = 5$, $W_3 = 2$. Un algoritm greedy ar
 lua primul obiect deoarece raportul dintre valoare și greutate este maxim, dar
 soluția optimă constă în luarea ultimelor două obiecte, care chiar dacă au
@@ -250,17 +250,24 @@ Vom explica modul de aplicare al acestui truc folosind un exemplu, ca mai apoi
 să arătăm o implementare de acest fel.
 
 !!! example "Exemplu"
+
     Dacă avem un element cu frecvența $20$ și greutatea individuală $W$, mai
     întâi vom scădea puteri ale lui $2$ tot mai mari, iar mai apoi restul rămas
     va fi folosit și el.
 
-    - $20 - 1 = 19$, putem folosi $1$, deci înmulțim puterea cu $2$. Vom crea un obiect cu greutate $1 \cdot W$.
-    - $19 - 2 = 17$, putem folosi $2$, deci înmulțim puterea cu $2$. Vom crea un obiect cu greutate $2 \cdot W$.
-    - $17 - 4 = 13$, putem folosi $4$, deci înmulțim puterea cu $2$. Vom crea un obiect cu greutate $4 \cdot W$.
-    - $13 - 8 = 5$, putem folosi $8$, deci înmulțim puterea cu $2$. Vom crea un obiect cu greutate $8 \cdot W$.
-    - $5 - 16 = -11$, nu putem folosi $16$, așa că folosim numărul rămas, $5$.  Vom crea un obiect cu greutate $5 \cdot W$.
+    - $20 - 1 = 19$, putem folosi $1$, deci înmulțim puterea cu $2$. Vom crea un
+      obiect cu greutate $1 \cdot W$.
+    - $19 - 2 = 17$, putem folosi $2$, deci înmulțim puterea cu $2$. Vom crea un
+      obiect cu greutate $2 \cdot W$.
+    - $17 - 4 = 13$, putem folosi $4$, deci înmulțim puterea cu $2$. Vom crea un
+      obiect cu greutate $4 \cdot W$.
+    - $13 - 8 = 5$, putem folosi $8$, deci înmulțim puterea cu $2$. Vom crea un
+      obiect cu greutate $8 \cdot W$.
+    - $5 - 16 = -11$, nu putem folosi $16$, așa că folosim numărul rămas, $5$.
+      Vom crea un obiect cu greutate $5 \cdot W$.
 
-    Cu alte cuvinte, am împărțit un obiect cu frecvența $20$ în $5$ obiecte echivalente, cu frecvențele $1, 2, 4, 8$ și $5$. 
+    Cu alte cuvinte, am împărțit un obiect cu frecvența $20$ în $5$ obiecte
+    echivalente, cu frecvențele $1, 2, 4, 8$ și $5$.
 
 Un exemplu de problemă în care se poate aplica acest truc este [strehaia de la
 RoAlgo Contest 2](https://kilonova.ro/problems/684). Puteți găsi implementarea

@@ -15,13 +15,13 @@ tags:
 !!! info "Definiție"
 
     Indicatorul lui Euler este un rezultat matematic care este folosit pentru a
-    număra câte valori prime cu $n$ sunt în intervalul $[1, n]$. Acesta este notat
-    cu $\varphi (n)$.
+    număra câte valori prime cu $n$ sunt în intervalul $[1, n]$. Acesta este
+    notat cu $\varphi (n)$.
 
 !!! example "Exemplu"
 
     De exemplu, $\varphi (12) = 4$, deoarece $1$, $5$, $7$ și $11$ sunt prime cu
-    $12$. 
+    $12$.
 
 Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e
 vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere
@@ -39,9 +39,7 @@ fie să găsim o formulă care se bazează pe o observație mai avansată.
 Cu alte cuvinte, dacă știm factorii primi care apar în reprezentarea lui $n$, îi
 notăm $p_1$, $p_2$, $\dots$, $p_k$, formula va deveni următoarea:
 
-$$
-n \cdot \prod_{1}^{k} \frac{p_i - 1}{p_i}
-$$
+$$ n \cdot \prod_{1}^{k} \frac{p_i - 1}{p_i} $$
 
 De exemplu, pentru $n = 30$, $\varphi (n) = \frac{2 - 1}{2} \cdot \frac{3 -
 1}{3} \cdot \frac{5 - 1}{5} = 8$
@@ -51,6 +49,7 @@ cu cel pentru aflarea divizorilor primi ai unui număr, codul de mai jos
 rezolvând problema [Phi](https://www.pbinfo.ro/probleme/2642/phi) de pe pbinfo.
 
 !!! note "Observație"
+
     Trebuie avut grijă să împărțim mai întâi răspunsul la $i$ și apoi să
     înmulțim cu $(i-1)$, pentru a evita un overflow care nu este necesar, dat
     fiind că $\varphi \ (n) \leq n$.
@@ -133,9 +132,7 @@ int main() {
 Gauss a descoperit o proprietate care va fi foarte utilă în contextul calculelor
 noastre viitoare și în special la funcția Mobius.
 
-$$
-\sum_{d|n} \varphi \ (d) = n
-$$
+$$ \sum_{d|n} \varphi(d) = n $$
 
 Această sumă este calculată pentru toți divizorii lui $n$.
 

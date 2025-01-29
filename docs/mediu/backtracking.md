@@ -45,9 +45,9 @@ apoi vom avea două cazuri distincte:
 
 !!! note "Observație"
 
-    Procesul descris la punctul $2$ poate fi optimizat prin păstrarea în memorie a
-    unui alt șir, care să ne ofere informația despre existența unei anumite valori
-    în permutare.
+    Procesul descris la punctul $2$ poate fi optimizat prin păstrarea în memorie
+    a unui alt șir, care să ne ofere informația despre existența unei anumite
+    valori în permutare.
 
 Deoarece sunt $n!$ permutări, complexitatea soluției va fi $O(n! \cdot n)$.
 
@@ -100,11 +100,11 @@ numărăm variantele corecte.
 
 !!! note "Observație"
 
-    Soluția de mai jos folosește funcția `next_permutation`, care ia ca parametri
-    începutul și sfârșitul unei secvențe de valori și generează următoarea permutare
-    în ordine lexicografică a șirului curent. De remarcat este faptul că se poate
-    folosi și soluția de mai sus, împreună cu observațiile specifice acestei
-    probleme.
+    Soluția de mai jos folosește funcția `next_permutation`, care ia ca
+    parametri începutul și sfârșitul unei secvențe de valori și generează
+    următoarea permutare în ordine lexicografică a șirului curent. De remarcat
+    este faptul că se poate folosi și soluția de mai sus, împreună cu
+    observațiile specifice acestei probleme.
 
 ```cpp
 #include <iostream>

@@ -50,9 +50,9 @@ articol](https://usaco.guide/general/running-code-locally?lang=cpp).
 
 !!! note "Observație"
 
-    Această soluție trebuie să fie una strict temporară. Niciun programator serios
-    nu se bazează strict pe editoare online, editoarele locale au multe avantaje
-    comparativ cu cele online.
+    Această soluție trebuie să fie una strict temporară. Niciun programator
+    serios nu se bazează strict pe editoare online, editoarele locale au multe
+    avantaje comparativ cu cele online.
 
 Totuși, dacă dorești să nu lucrezi folosind un compilator și un editor, există
 soluții online pentru a scrie cod în limbajul C++. O asemenea opțiune pe care
