@@ -49,8 +49,11 @@ fiind discutate în documentele ulterioare. Aceste noțiuni se vor găsi foarte 
 
 !!! note "Observație"
 
-    $a \cdot b = (a, b) \cdot [a, b]$. Drept concluzie, $(a, b) = \frac{a \cdot
-    b}{[a, b]}$.
+    $a \cdot b = (a, b) \cdot [a, b]$. Drept concluzie:
+    
+    $$
+    (a, b) = \frac{a \cdot b}{[a, b]}
+    $$.
 
 Pentru aflarea celui mai mare divizor comun a două numere, există doi algoritmi
 principali. Primul dintre ei se bazează pe scăderi repetate, la fiecare pas
@@ -73,10 +76,10 @@ scădere cu o singură împărțire, algoritmul devenind mult mai eficient.
 
     De exemplu, să analizăm numerele 40 și 18.
 
-    * $a = 40, b = 18$. $a \% b = 4$, noile valori fiind $a = 18, b = 4$;
-    * $a = 18, b = 4$. $a \% b = 2$, noile valori fiind $a = 4, b = 2$;
-    * $a = 4, b = 2$. $a \% b = 0$, noile valori fiind $a = 2, b = 0$;
-    * $a = 2, b = 0$. Deoarece $b = 0$, continuarea algoritmului ne-ar duce la
+    * $a = 40$, $b = 18$. $a \% b = 4$, noile valori fiind $a = 18$, $b = 4$;
+    * $a = 18$, $b = 4$. $a \% b = 2$, noile valori fiind $a = 4$, $b = 2$;
+    * $a = 4$, $b = 2$. $a \% b = 0$, noile valori fiind $a = 2$, $b = 0$;
+    * $a = 2$, $b = 0$. Deoarece $b = 0$, continuarea algoritmului ne-ar duce la
       împărțiri la 0, operație ce nu este validă.
 
 Mai jos puteți găsi implementarea în C++ a cmmdc-ului și a cmmmc-ului, program
@@ -87,36 +90,7 @@ Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi la
 $cmmdc(a, b)$ și apoi să înmulțim cu $b$, pentru a evita un potențial overflow.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int cmmdc(int a, int b) {
-    while (b > 0) {
-        int c = a % b;
-        a = b;
-        b = c;
-    }
-    return a;
-}
-
-long long cmmmc(int a, int b) { 
-    return 1LL * a / cmmdc(a, b) * b; 
-}
-
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) {
-        int a, b;
-        cin >> a >> b;
-
-        int gcd = cmmdc(a, b);
-        long long lcm = cmmmc(a, b);
-        cout << gcd << " " << lcm << '\n';
-    }
-    return 0;
-}
+--8<-- "usor/divizibilitate/cmmmc.cpp"
 ```
 
 !!! note "Notă"
@@ -209,124 +183,7 @@ Fiecare tip de întrebare a fost implementat folosind o funcție separată pentr
 arăta diferențele ce pot apărea de la un tip de întrebare la alta.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-bool isPrime(int n) {
-    // n == 0 || n == 1
-    if (n <= 1) {
-        return false;
-    }
-
-    // n == 2 || n == 3
-    if (n <= 3) {
-        return true;
-    }
-
-    if (n % 2 == 0 || n % 3 == 0) {
-        return false;
-    }
-
-    // Iterăm prin toți divizorii primi, care-s de forma 6k ± 1
-    for (int d = 5; d * d <= n; d += 6) {
-        if (n % d == 0 || n % (d + 2) == 0) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-int countDivisors(int n) {
-    int count = 0;
-
-    for (int div = 1; div * div <= n; ++div) {
-        if (n % div == 0) {
-            // Dacă div = n/div, atunci înseamnă că avem un singur 
-            // divizor distinct.
-            count += (div == n / div) ? 1 : 2;
-        }
-    }
-    return count;
-}
-
-int countPrimeDivisors(int n) {
-    int count = 0;
-
-    for (int div = 2; div * div <= n; ++div) {
-        if (n % div == 0) {
-            count++;
-
-            // Eliminăm toți multiplii de i, deoarece am contorizat 
-            // deja divizorul.
-            while (n % div == 0) {
-                n /= div;
-            }
-        }
-    }
-
-    if (n > 1) {
-        count++;
-    }
-
-    return count;
-}
-
-void printPrimeDivisors(int n) {
-    for (int div = 2; div * div <= n; ++div) {
-        if (n % div == 0) {
-            int cnt = 0;
-
-            // Dacă am găsit un divizor, calculăm exponentul său.
-            while (n % div == 0) {
-                cnt++;
-                n /= div;
-            }
-
-            cout << div << " " << cnt << '\n';
-        }
-    }
-    
-    if (n > 1) {
-        cout << n << " 1\n";
-    }
-}
-
-void solveQuery(int type, int n) {
-    switch (type) {
-        case 1:
-            cout << (isPrime(n) ? "YES" : "NO") << '\n';
-            break;
-        case 2:
-            cout << countDivisors(n) << '\n';
-            break;
-        case 3:
-            cout << countPrimeDivisors(n) << '\n';
-            break;
-        case 4:
-            printPrimeDivisors(n);
-            break;
-        default:
-            break;
-    }
-}
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-
-    while (t--) {
-        int type, number;
-        cin >> type >> number;
-
-        solveQuery(type, number);
-    }
-
-    return 0;
-}
+--8<-- "usor/divizibilitate/divizibilitate.cpp"
 ```
 
 ## Probleme suplimentare
