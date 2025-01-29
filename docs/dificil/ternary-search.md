@@ -151,7 +151,7 @@ int main() {
 ## Problema exemplu - [Devu and his Brother](https://codeforces.com/contest/439/problem/D)
 
 În această problemă avem doi vectori $a$ și $b$ și putem crește/scădea o valoare
-dintr-unul din cei doi vectori cu costul $1$. Vrem să aflăm costul minim pentru
+dintr-unul din cei doi vectori cu costul 1. Vrem să aflăm costul minim pentru
 ca minimul din vectorul $a$ să fie cel puțin egal cu maximul din vectorul $b$.
 
 Se poate observa că e clar că vrem să creștem valorile din $a$ și să scădem

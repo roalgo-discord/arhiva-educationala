@@ -27,11 +27,11 @@ tehnicilor de rezolvare a acestor probleme devine esențială.
 
 !!! example "Exemplu"
 
-    În vectorul $30$, $32$, $19$, $8$, $11$, $6$, putem spune următoarele
+    În vectorul 30, 32, 19, 8, 11, 6, putem spune următoarele
     lucruri:
 
-    - $19, 8, 11$ este o secvență care începe de la poziția $3$ și se termină la
-      poziția $5$ a șirului inițial
+    - $19, 8, 11$ este o secvență care începe de la poziția 3 și se termină la
+      poziția 5 a șirului inițial
     - $30, 19, 11$ nu este o secvență a șirului de mai sus (în schimb, este un
       subșir, noțiune pe care o vom discuta în articolele ulterioare)
 
@@ -71,7 +71,7 @@ pare, impare, prime, nule, ordonate crescător, egale etc.).
 Problema are mai multe soluții, cu complexități diverse. În toate soluțiile vom
 determina $lenmax, stmax$ și $drmax$, $lenmax$ fiind lungimea maximă a secvenței
 găsite, $stmax$ fiind capătul din stânga al șirului găsit, $drmax$ fiind capătul
-din dreapta al șirului găsit. Inițial, putem inițializa $lenmax$ cu $0$, $stmax$
+din dreapta al șirului găsit. Inițial, putem inițializa $lenmax$ cu 0, $stmax$
 și $drmax$ cu $-1$ pentru a marca faptul că nu am găsit încă nicio secvență cu
 condițiile cerute.
 

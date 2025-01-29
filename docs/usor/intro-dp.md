@@ -483,7 +483,7 @@ alegem de două ori aceeași activitate.
 
 Astfel, vom defini $dp[i][j]$ ca fiind suma maximă a satisfacției dacă am
 parcurs primele $i$ zile, iar ultima activitate a fost de tipul $j$, $j$ fiind
-$0$, $1$ sau $2$, în funcție de activitatea aleasă.
+0, 1 sau 2, în funcție de activitatea aleasă.
 
 Pentru a calcula $dp[i][j]$, va trebui să ne raportăm la sumele din ziua
 precedentă, corespunzătoare celorlalte două activități deoarece nu avem voie să
@@ -637,7 +637,7 @@ Astfel, vom defini $dp[i][j]$ ca fiind numărul de moduri de a crea un șir cu $
 numere, dacă valoarea de pe poziția $i$ este $j$.
 
 Pentru a afla $dp[i][j]$, va trebui să ne raportăm la valorile de pe poziția
-precedentă, aflate la o distanță de cel mult $1$, cu condiția să putem pune $j$
+precedentă, aflate la o distanță de cel mult 1, cu condiția să putem pune $j$
 pe poziția $i$.
 
 !!! note "Observatie"

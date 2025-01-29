@@ -189,8 +189,8 @@ informații cu privire la diferența față de numărul de până acum (mai mare
 sau mai mic). Se poate observa că implementarea va fi mult mai simplă, așa cum
 veți putea vedea mai jos.
 
-Acum, dinamica noastră va fi de forma $dp[i][j][x]$, unde $x$ va fi egal cu $0$,
-$1$ sau $2$ în funcție de prefixul de până acum și prefixul lui $n$. La final,
+Acum, dinamica noastră va fi de forma $dp[i][j][x]$, unde $x$ va fi egal cu 0,
+1 sau 2 în funcție de prefixul de până acum și prefixul lui $n$. La final,
 vom aduna stările corespunzătoare numerelor cu mai puține cifre și cele cu
 același număr de cifre, dar cu prefix mai mic sau egal.
 

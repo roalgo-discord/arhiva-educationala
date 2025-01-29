@@ -16,7 +16,7 @@ tags:
 ## Introducere
 
 Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le
-obținem pe parcurs. O simulare necesită $3$ lucruri:
+obținem pe parcurs. O simulare necesită 3 lucruri:
 
 1. O stare care poate fi descrisă în mod unic, prin niște variabile
 2. O măsură de timp, un tact (care, de obicei, este definit de problemă)
@@ -178,9 +178,9 @@ tuturor elementelor
 
 Fie $getNext(n) =$ numărul care urmează după $n$.
 
-Cum toate numerele sunt de la $1$ la $999$, rezultă, din [principiul
+Cum toate numerele sunt de la 1 la 999, rezultă, din [principiul
 cutiei](https://ro.wikipedia.org/wiki/Principiul_lui_Dirichlet), că, după maxim
-$1000$ de numere, vom găsi două egale. Secvența dintre ele se va repeta la
+1000 de numere, vom găsi două egale. Secvența dintre ele se va repeta la
 nesfârșit.
 
 Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclului.
@@ -277,19 +277,19 @@ Studiind exemplul, observăm că:
 
 1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția
    $K$ este impară atunci numărul căutat este egal cu $(R+K) \% N$ sau $N$ dacă
-   acest rest este $0$. Dacă poziția $K$ este pară, atunci numarul căutat este
-   egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este $0$.
+   acest rest este 0. Dacă poziția $K$ este pară, atunci numarul căutat este
+   egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este 0.
 
 2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă
    poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R) \% N$ sau
-   $N$ dacă acest rest este $0$. Dacă poziția $K$ este pară, atunci numărul
-   căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este $0$.
+   $N$ dacă acest rest este 0. Dacă poziția $K$ este pară, atunci numărul
+   căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este 0.
 
 3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat”
    este $poz = (N+T-R) \% N$. Altfel, $poz = (T+R) \% N$. În ambele situații,
    dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”,
    determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor,
-   respectiv $poz+1$ (sau $1$) pentru succesor folosindu-ne de rezultatele
+   respectiv $poz+1$ (sau 1) pentru succesor folosindu-ne de rezultatele
    menționate mai sus.
 
 Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este

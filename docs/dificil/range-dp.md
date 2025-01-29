@@ -11,7 +11,7 @@ tags:
 
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
 atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru
-șiruri cu o lungime relativ mică (de regulă, cel mult $500$), folosind drept
+șiruri cu o lungime relativ mică (de regulă, cel mult 500), folosind drept
 stări anterioare subsecvențe de lungime mai mică ale șirului dat.
 
 Această tehnică este numită în specialitate range dp, fiind găsită în articolele
@@ -27,7 +27,7 @@ tranzițiilor fiind foarte similar de la o problemă la alta:
 - Dacă știm răspunsurile pentru subsecvențele de lungime mai mică, putem calcula
   răspunsul pentru orice subsecvență $[L, R]$ de o lungime mai mare
 - Putem combina subsecvențe disjuncte în mod independent
-- De regulă, $n$ (dimensiunea șirului) este cel mult $500$.
+- De regulă, $n$ (dimensiunea șirului) este cel mult 500.
 
 ## Cum aplicăm tehnica?
 
@@ -52,7 +52,7 @@ Mai întâi, ne-am putea gândi la soluții de tip backtracking care sunt foarte
 încete sau soluții greedy care încearcă să obțină pătrate cât mai mari, dar
 aceste abordări eșuează pe diverse teste.
 
-Deoarece dimensiunile dreptunghiurilor sunt cel mult $500$, putem să ne gândim
+Deoarece dimensiunile dreptunghiurilor sunt cel mult 500, putem să ne gândim
 la o dinamică de două dimensiuni, unde $dp[i][j]$ va ține numărul minim de
 tăieturi necesare pentru a ajunge la un dreptunghi de dimensiunile $i$ și $j$.
 

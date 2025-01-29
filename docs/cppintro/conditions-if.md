@@ -86,8 +86,8 @@ Astfel, operatorii de comparație sunt următorii:
 !!! note "Observație"
 
     Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune
-    de tipul `#!cpp if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai
-    apoi verifică dacă $n$ este diferit de $0$.
+    de tipul `#!cpp if (n = 5)` atribuie mai întâi valoarea 5 lui $n$, iar mai
+    apoi verifică dacă $n$ este diferit de 0.
 
 ## Operatori logici
 

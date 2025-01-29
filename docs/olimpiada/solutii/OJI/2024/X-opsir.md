@@ -16,38 +16,38 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2505/).
 
-## Cerința $1$ 
+## Cerința 1 
 
-Subtask $1$
+Subtask 1
 
 Pentru fiecare șir se construiește un vector de frecvență ce memorează numărul de apariții al fiecărei litere. Pe baza acestora se determină apoi câte caractere distincte există în cele 2 șiruri.
 
 Pentru fiecare caracter distinct ce apare se determină în care dintre șiruri apare de mai multe ori folosindu-se vectorii de frecvență.
 
-## Cerința $2$
+## Cerința 2
 
-Subtask $2$ - $S$ e sortat
+Subtask 2 - $S$ e sortat
 
-În această situație putem aplica o operație de tip $2$ pe tot șirul $T$, eliminând apoi literele care apar în plus. Abordarea e echivalentă cu a verifica dacă, pentru fiecare caracter distinct, frecvența sa în $T$ e mai mare decât frecvența sa în $S$.
+În această situație putem aplica o operație de tip 2 pe tot șirul $T$, eliminând apoi literele care apar în plus. Abordarea e echivalentă cu a verifica dacă, pentru fiecare caracter distinct, frecvența sa în $T$ e mai mare decât frecvența sa în $S$.
 
-Subtask $3$ - $S$ poate fi obținut doar prin operații de tip $1$
+Subtask 3 - $S$ poate fi obținut doar prin operații de tip 1
 
 Problema e echivalentă cu a verifica daca $S$ e subșir al lui $T$, ceea ce se poate face cu un algoritm Greedy.
 
-Subtask $4$ - fără restricții
+Subtask 4 - fără restricții
 
-Să presupunem că există o succesiune de lungime $L$ de operații de tip $1$ și $2$ care pot transforma șirul $T$ în șirul $S$ (adica e validă ca soluție): $op_1, op_2, op_3 \dots op_L$. Dacă încercăm să interschimbăm $2$ operații consecutive din această succesiune (fie ele $op_i$ și $op_{i+1}$, $1 \leq i < L$) pentru a obține tot o succesiune validă, putem observa următoarele cazuri:
+Să presupunem că există o succesiune de lungime $L$ de operații de tip 1 și 2 care pot transforma șirul $T$ în șirul $S$ (adica e validă ca soluție): $op_1, op_2, op_3 \dots op_L$. Dacă încercăm să interschimbăm 2 operații consecutive din această succesiune (fie ele $op_i$ și $op_{i+1}$, $1 \leq i < L$) pentru a obține tot o succesiune validă, putem observa următoarele cazuri:
 
-- $op_i$ și $op_{i+1}$ sunt operații de tip $1$: echivalent cu a șterge $2$ poziții din șirul $T$. Acestea pot fi șterse în orice ordine (cu o eventuală recalculare de indecși)
-- $op_i$ și $op_{i+1}$ sunt operații de tip $2$: din criteriul colorării din cerință știm că intervalele sunt disjuncte, deci nu contează ordinea în care se realizează aceste operații
+- $op_i$ și $op_{i+1}$ sunt operații de tip 1: echivalent cu a șterge 2 poziții din șirul $T$. Acestea pot fi șterse în orice ordine (cu o eventuală recalculare de indecși)
+- $op_i$ și $op_{i+1}$ sunt operații de tip 2: din criteriul colorării din cerință știm că intervalele sunt disjuncte, deci nu contează ordinea în care se realizează aceste operații
 - $op_i$ și $op_{i+1}$ sunt operații de tipuri diferite: echivalent cu a șterge o poziție și a sorta un interval, operații care se pot realiza în orice ordine (cu eventuale recalculări de indecși)
 
-Aceste observații ne arată faptul că putem interschimba $2$ operații consecutive dintr-o succesiune validă (cu anumite modificări) pentru a obține tot o succesiune validă. Considerăm în continuare că ”am adus”, prin interschimbări, operațiile de tip $1$ pe primele poziții din succesiune.
+Aceste observații ne arată faptul că putem interschimba 2 operații consecutive dintr-o succesiune validă (cu anumite modificări) pentru a obține tot o succesiune validă. Considerăm în continuare că ”am adus”, prin interschimbări, operațiile de tip 1 pe primele poziții din succesiune.
 
-De asemenea, considerăm că am efectuat deja aceste operații de tip $1$. Astfel, obținem
+De asemenea, considerăm că am efectuat deja aceste operații de tip 1. Astfel, obținem
 din șirul $T$ un șir de lungime $n$ și o mulțime de intervale disjuncte ce corespund sortărilor ce urmează a fi efectuate.
 
-Să considerăm partiționarea șirului $S$ în subsecvențe crescătoare maximale. Fie p numărul subsecvențelor din această partiționare. În acest caz, orice interval din mulțimea precizată anterior va avea capetele în aceeași subsecvență din această partiționare. Observăm că, dacă înlocuim toate operațiile de tip $2$ rămase cu câte o operație de tip $2$ pentru fiecare subsecvență din partiționarea șirului $S$ obținem același rezultat.
+Să considerăm partiționarea șirului $S$ în subsecvențe crescătoare maximale. Fie p numărul subsecvențelor din această partiționare. În acest caz, orice interval din mulțimea precizată anterior va avea capetele în aceeași subsecvență din această partiționare. Observăm că, dacă înlocuim toate operațiile de tip 2 rămase cu câte o operație de tip 2 pentru fiecare subsecvență din partiționarea șirului $S$ obținem același rezultat.
 
 Astfel, folosindu-ne din nou de interschimbări, putem obține o succesiune de operații în care au loc mai întâi toate sortările, iar fiecare element din șirul $T$ este inclus în cel puțin o sortare.
 

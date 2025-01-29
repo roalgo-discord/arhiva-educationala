@@ -16,42 +16,42 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2506/).
 
-## Cerința $1$
+## Cerința 1
 
-Subtask $1$. Cazul unei singure insule.
+Subtask 1. Cazul unei singure insule.
 
-Se va afișa numărul de valori diferite de $0$ și $-1$ din matrice.
+Se va afișa numărul de valori diferite de 0 și $-1$ din matrice.
 
-Subtask $2$. Cazul $N = 1$.
+Subtask 2. Cazul $N = 1$.
 
-Pentru acest caz, se poate parcurge șirul către stânga, începând cu celula de start, până la întâlnirea primei valori de $-1$, apoi către dreapta, într-un mod similar. Se vor număra valorile diferite de $0$ și $-1$.
+Pentru acest caz, se poate parcurge șirul către stânga, începând cu celula de start, până la întâlnirea primei valori de $-1$, apoi către dreapta, într-un mod similar. Se vor număra valorile diferite de 0 și $-1$.
 
-Subtask $3$. Restul punctajului.
+Subtask 3. Restul punctajului.
 
 Pentru restul punctajului, se va aplica algoritmul de flood fill, pornind din celula de start.
 
-## Cerința $2$
+## Cerința 2
 
 Se vor procesa individual toate insulele din matrice, folosind algoritmul de flood fill,
 și se vor număra comorile din fiecare. Notăm cu $D(n)$ numărul de permutări de $n$ elemente, fără puncte fixe. Rezultatul va consta în produsul valorilor $D(x_i)$, unde $x_i$ este numărul de comori de pe o insulă. Diferențele de punctaj sunt date de modul de calcul al valorilor $D(n)$. Notăm cu $nc$ numărul maxim de comori dintr-o insulă.
 
-Subtask $4$. Cazul $nc \leq 4$.
+Subtask 4. Cazul $nc \leq 4$.
 
 Se pot calcula “pe hârtie” valorile $D(x_i)$, fiind numere mici.
 
-Subtask $5$. Cazul $nc \leq 8$.
+Subtask 5. Cazul $nc \leq 8$.
 
 Se pot genera toate permutările de câte $k$ elemente, $k \leq nc$ care respectă condiția dată, cu ajutorul metodei backtracking.
 
-Subtask $6$. Restul punctajului.
+Subtask 6. Restul punctajului.
 
 Este necesară calcularea șirului $D$ într-un mod mai eficient. Pentru ilustrarea metodei, ne imaginăm că vrem să “dezordonăm” șirul format din elementele $1, 2, 3, \dots, n$, în această ordine. Pe fiecare poziție, se poate amplasa orice număr diferit de numărul de ordine al poziției respective.
 
-Notăm cu $k$ numărul care se va amplasa pe poziția $1$. Problema se împarte în două cazuri, în funcție de elementul de pe poziția $k$.
+Notăm cu $k$ numărul care se va amplasa pe poziția 1. Problema se împarte în două cazuri, în funcție de elementul de pe poziția $k$.
 
-- Amplasăm numărul $1$ pe poziția $k$. Problema se reduce la a calcula $D(n−2)$, pentru că
-pe poziția $1$ avem valoarea $k$, iar pe poziția $k$ avem valoare $1$ și restul de $n −2$ valori se pot permuta independent de cele două cu respectarea cerinței inițiale.
-- Amplasăm un număr diferit de $1$ pe poziția $k$. Pentru fiecare poziție din cele cuprinse între $2$ și $n$, există $n − 2$ elemente care pot fi amplasate pe poziția respecitvă. Pentru pozițiile diferite de $k$, nu se pot amplasa $k$ (pentru că apare deja pe prima poziție) sau elementul cu indicele poziției respective. Pentru poziția $k$, nu se pot amplasa $k$ sau $1$ (pentru că suntem în cazul $2$). Problema se reduce la a calcula $D(n−1)$, fiindcă trebuie să amplasăm valorile pe pozițiile cuprinse între $2$ și $n$ (adică $n − 1$ poziții în total) și avem $n − 2$ variante pentru fiecare. 
+- Amplasăm numărul 1 pe poziția $k$. Problema se reduce la a calcula $D(n−2)$, pentru că
+pe poziția 1 avem valoarea $k$, iar pe poziția $k$ avem valoare 1 și restul de $n −2$ valori se pot permuta independent de cele două cu respectarea cerinței inițiale.
+- Amplasăm un număr diferit de 1 pe poziția $k$. Pentru fiecare poziție din cele cuprinse între 2 și $n$, există $n − 2$ elemente care pot fi amplasate pe poziția respecitvă. Pentru pozițiile diferite de $k$, nu se pot amplasa $k$ (pentru că apare deja pe prima poziție) sau elementul cu indicele poziției respective. Pentru poziția $k$, nu se pot amplasa $k$ sau 1 (pentru că suntem în cazul 2). Problema se reduce la a calcula $D(n−1)$, fiindcă trebuie să amplasăm valorile pe pozițiile cuprinse între 2 și $n$ (adică $n − 1$ poziții în total) și avem $n − 2$ variante pentru fiecare. 
 
 Datorită faptului că numărul $k$ se poate alege în $n − 1$ moduri, formula finală este: $D(n) = (n − 1) \cdot (D(n − 2) + D(n − 1))$, calculele se vor efectua modulo $10^9 + 7$.
 

@@ -23,7 +23,7 @@ Facem o parcurgere în lățime din $X$ și o parcurgere în lățime pornind di
 
 Un vârf $z$ are proprietatea de a aparține tuturor drumurilor optime dintre $X$ și $Y$ dacă și numai dacă $d(X,z) + d(Y,z) = d(X,Y)$, iar $nr(X,z) \cdot nr(Y,z) = nr(X,Y)$.
 
-În final, numărăm câte noduri sunt singurele noduri de pe lanțurile optime aflate la distanța $d$, unde $d$ este o valoare între $0$ și $d(X, Y)$.
+În final, numărăm câte noduri sunt singurele noduri de pe lanțurile optime aflate la distanța $d$, unde $d$ este o valoare între 0 și $d(X, Y)$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

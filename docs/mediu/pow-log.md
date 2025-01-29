@@ -27,7 +27,7 @@ expresii de acest gen mult mai rapid.
 
 Înainte să prezentăm subiectul articolului, trebuie să prezentăm niște
 fundamente care ne vor ajuta să înțelegem mai bine conceptul de aici. Vom
-presupune că $a$ și $b$ sunt numere naturale, cuprinse între $0$ și $mod - 1$.
+presupune că $a$ și $b$ sunt numere naturale, cuprinse între 0 și $mod - 1$.
 
 ### Adunarea modulară
 
@@ -81,7 +81,7 @@ if (sum < 0) { // mult mai rapid decat %
 Deși nu putem optimiza calculul modulului, trebuie să fim atenți la
 posibilitatea ca rezultatul să nu devină mai mare decât valoarea maximă a
 tipurilor de date folosite în probleme (de regulă, tipul int). Folosirea valorii
-`1LL` (scrierea lui $1$ folosind tipul de date `long long`) rezolvă această
+`1LL` (scrierea lui 1 folosind tipul de date `long long`) rezolvă această
 problemă.
 
 ```cpp
@@ -122,9 +122,9 @@ $a^b$ este egal cu una din următoarele două expresii:
 - $a^{n-1} \cdot a$, dacă $n$ este impar.
 - $({a^\frac{n}{2}}) \cdot ({a^\frac{n}{2}})$, dacă $n$ este par.
 
-Pentru $n = 0$, răspunsul este evident $1$.
+Pentru $n = 0$, răspunsul este evident 1.
 
-Astfel, prin împărțirile treptate la $2$ ale exponentului, reducem complexitatea
+Astfel, prin împărțirile treptate la 2 ale exponentului, reducem complexitatea
 la $O(\log n)$, unde $n$ este exponentul.
 
 Acest algoritm se poate implementa atât recursiv, cât și iterativ, acestea fiind

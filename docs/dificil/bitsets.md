@@ -45,7 +45,7 @@ int main(){
 ```
 
 !!! note "Observații"
-    - Elementele sunt indexate de la $0$.
+    - Elementele sunt indexate de la 0.
     - `cout << b;` va afișa toate elementele de la **dreapta la stanga**.
     - Este prezent `operator[]`.
 
@@ -87,7 +87,7 @@ int main(){
 !!! note "Observație"
 
     Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente
-    egale cu $1$ să "iasă" din **bitset**, atunci valorile de $1$ aferente se
+    egale cu 1 să "iasă" din **bitset**, atunci valorile de 1 aferente se
     vor pierde  
     permanent.
 
@@ -100,9 +100,9 @@ int main(){
 - `_Find_next(int pos)` returnează următorul bit setat după poz, iar în cazul în
   care nu există va returna lungimea **bitsetului**
 - `.count()` returnează numărul de biți setați.
-- `.reset()` resetează toți biții la $0$.
-- `.flip(int pos)`: $b[pos]$ devine $b[pos]$ **xor** $1$, i.e. schimbă bitul
-  $pos$ din $0$ în $1$ și invers.
+- `.reset()` resetează toți biții la 0.
+- `.flip(int pos)`: $b[pos]$ devine $b[pos]$ **xor** 1, i.e. schimbă bitul
+  $pos$ din 0 în 1 și invers.
 - `.to_string()` va converti **bitsetul** într-un **string**.
 - `.to_ulong()` va converti **bitsetul** într-un `unsigned long`.
 - `.to_ullong()` va converti **bitsetul** într-un `unsigned long long`.
@@ -144,7 +144,7 @@ int main(){
 Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri
 de date cum ar fi `int`, dar datorită dimensiunilor mari pe care le poate
 suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare
-crucială ce constă în gruparea **biților** în grupe de câte $32$ elemente,
+crucială ce constă în gruparea **biților** în grupe de câte 32 elemente,
 convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în
 bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce
 deci că complexitatea pentru o astfel de operație este $O ( \frac{N}{w} )$ ,
@@ -165,11 +165,11 @@ dacă într-un graf orientat aciclic avem drum de la un nod la altul.
 
 Considerăm următoare abordare: $dp[u][v] = 1$ dacă afirmația este adevarată.
 Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă
-fixăm o rădăcină, i.e. un nod cu gradul interior $0$ neeliminat până în prezent,
+fixăm o rădăcină, i.e. un nod cu gradul interior 0 neeliminat până în prezent,
 atunci putem "propaga" dp-ul în fiecare fiu al său, adică `dp[f_j][x] |=
 dp[r_i][x]`, cu condiția că muchia dintre $r_i$ și $f_j$ să nu fie eliminată.
-Observăm că pentru $2$ noduri $u$ și $v$, `dp[u][x] |= dp[v][x]` este
-echivalentul la `b1 |= b2`, unde $b1$ și $b2$ reprezintă $2$ `std::bitset`-uri.
+Observăm că pentru 2 noduri $u$ și $v$, `dp[u][x] |= dp[v][x]` este
+echivalentul la `b1 |= b2`, unde $b1$ și $b2$ reprezintă 2 `std::bitset`-uri.
 Deci dacă în loc de `vector<vector<int>> dp(n + 1, vector<int>(n + 1))` am pune
 `vector<bitset<const int>> dp(n + 1)`, am putea face tranzițiile în $O (
 \frac{N}{w} )$, complexitatea finală fiind $O ( \frac{N^2}{w} )$.
@@ -230,7 +230,7 @@ int main() {
 ### Problema [strehaia](https://kilonova.ro/problems/684?list_id=461)
 
 Avem $n$ probleme, a $i$-a având $k_i$ subtask-uri, fiecare cu un număr de
-puncte între $1$ și $100$. Problema ne cere să calculăm numărul total de
+puncte între 1 și 100. Problema ne cere să calculăm numărul total de
 punctaje distincte care se pot forma în urma rezolvări celor $n$ probleme.
 
 O primă observație este că problemele pot fi luate independent, ceea ce înseamnă
@@ -274,11 +274,11 @@ poziții, toate sumele prezente în **dp** vor crește cu $i$, sintaxă echivale
 cu `dp[s + i] |= dp[s];`.
 
 Complexitatea devine $O ( S \cdot maxsum \cdot \frac{1}{w} )$, care este încă
-prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de $2$.
+prea mare. Putem să o optimizăm "comprimând" fiecare $fr_i$ în puteri de 2.
 Considerăm cel mai mic $p$ pentru care $2^p \leq fr_i$, astfel $fr_i = \sum_{j =
-0}^{p-1} 2^j + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de $2$ putem să
-construim fiecare număr de la $1$ la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p +
-1$, vom putea reprezenta fiecare număr de la $1$ la $fr_i$, ceea ce implică
+0}^{p-1} 2^j + fr_i - 2^p + 1$. Folosind primele $p-1$ puteri de 2 putem să
+construim fiecare număr de la 1 la $2^{p}-1$, și cu ajutorul la $fr_i - 2^p +
+1$, vom putea reprezenta fiecare număr de la 1 la $fr_i$, ceea ce implică
 faptul că și în dp-ul nostru vor fi prezentate toate combinațiile de a lua
 numărul $i$.
 
@@ -337,7 +337,7 @@ Timpul se reduce la $O ( log(S) \cdot maxsum \cdot \frac{1}{w} )$
 ### Problema [Copaci](https://kilonova.ro/problems/2805), Lot 2024 Baraj 2 Juniori
 
 Ni se dă o matrice (o vom nota $M$) cu $N \cdot N$ elemente și un string $S$,
-ambele conținând cifre de la $0$ la $9$. Problema ne cere să aflăm care e cel
+ambele conținând cifre de la 0 la 9. Problema ne cere să aflăm care e cel
 mai mare prefix al șirului $S$ care poate fi reprezentat ca un drum valid în
 matricea noastră. Un drum este valid dacă începe în oricare poziție din matrice
 și următorul element are exact o latură comună cu cel actual, iar fiecare
@@ -358,7 +358,7 @@ $$
 
 $S = \textcolor{blue}{6} \text{281864292913}$
 
-Cu albastru sunt marcate elementele care coincid cu prefixul de lungime $1$. În
+Cu albastru sunt marcate elementele care coincid cu prefixul de lungime 1. În
 momentul în care decidem să ne mutăm poziția din matrice, ar trebui luat în
 considerare fiecare element adiacent cu măcar o poziție colorată deja. Pentru o
 linie, acest lucru presupune "shiftarea" la stânga și la dreapta a fiecarui
@@ -374,7 +374,7 @@ $$
 $$
 
 Singura problemă pe care o întâmpinăm este dată de corelarea corectă a fiecarei
-poziți din drum cu cea din șirul $S$. Adică, elementul cu valoarea $3$ nu ar
+poziți din drum cu cea din șirul $S$. Adică, elementul cu valoarea 3 nu ar
 trebui marcat, deoarece $S_2 = 2$. Există o soluție totuși pentru problema
 noastră, care constă în reținerea în alt **bitset** , în funcție de sensul în
 care shiftăm, dacă există o poziție $p$ pentru care $M_{l,p} = S_i$ și
@@ -448,7 +448,7 @@ bun ar fi:
 
 ### Problema [PermuteTree-Hard](https://codeforces.com/contest/1856/problem/E2)
 
-Pentru un arbore cu $n$ noduri (rădăcină este nodul $1$) și o permutare $a$,
+Pentru un arbore cu $n$ noduri (rădăcină este nodul 1) și o permutare $a$,
 definim $f(a)$ ca fiind numărul de perechi $(u,v)$ pentru care $a_u <
 a_{lca(u,v)} < a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al
 celor două noduri. Problema ne cere să aflăm care ar fi valoarea maximă pe care
@@ -531,22 +531,22 @@ Valori pentru $n$ care depășesc $10^5$ cu greu întră în timp, iar pentru $n
 O optimizare importantă, care nu ține de **bitset**, ci mai mult de
 **programarea dinamică**, este similară (daca nu chiar identică) cu algoritmul
 de **comprimare** explicat la problema **strehaia**. Dacă un element apare de
-mai mult de $3$ ori : $x, x, x$ , putem să lipim pe 2 dintre ei : $x, 2x$, fără
+mai mult de 3 ori : $x, x, x$ , putem să lipim pe 2 dintre ei : $x, 2x$, fără
 ca să stricăm corectitudinea la dp. Dacă repetăm procesul până când un element
-apare de maxim $2$ ori, iar împreună cu o proprietate care zice că : "Pentru un
+apare de maxim 2 ori, iar împreună cu o proprietate care zice că : "Pentru un
 șir $S$ cu $N$ elemente și suma elementelor $R$ $\Rightarrow$ sunt maxim
 $O(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi
 **bitset** nu vor fi mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea
 se reduce la $O(\frac{N \sqrt N}{w})$.
 
-Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul $5$. Așadar ne
+Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul 5. Așadar ne
 vom folosi de **bitset dinamic**, iar în loc să declarăm bitsetul mereu cu
 $10^6$ elemente, îl vom declara cu $sz_v$ elemente. Foarte suprinzător dar
 chestia asta întră destul de lejer în timp (sunt ironic lol) .
 
 ### Cum facem un bitset să fie dinamic?
 
-Avem (cred) $2$ metode:
+Avem (cred) 2 metode:
 
 - Îl scriem noi de mână;
 - (Mai nou) Îl putem folosi pe acela introdus în librăria
@@ -611,7 +611,7 @@ consecutive ca la final să dăm merge la rezultate.
 
 Avem $N$ armate care sunt în război una cu alta, iar fiecare armată este
 alcătuită din soldați cu diferite puteri (o armată are maxim un soldat cu o
-anumită putere) numerotate de la $1$ la $P$. Dacă $2$ armate se luptă, vor
+anumită putere) numerotate de la 1 la $P$. Dacă 2 armate se luptă, vor
 rămâne în viață doar soldații care nu își regăsesc puterea în armata inamică. De
 exemplu, dacă reprezentăm armatele ca un șir de biți (unde bitul $i$ este setat
 dacă există un soldat cu puterea $i$), atunci soldații care rămân în viață sunt

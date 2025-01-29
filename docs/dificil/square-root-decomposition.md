@@ -47,7 +47,7 @@ restricții mai mici.
 
 !!! note "Observație"
 
-    Vom presupune în cele ce urmează că indexarea valorilor se face de la $0$.
+    Vom presupune în cele ce urmează că indexarea valorilor se face de la 0.
 
 De regulă, vom vrea să ținem memorate informații pentru fiecare grupă, iar
 atunci când actualizăm o valoare, operația va fi efectuată în timp constant,
@@ -74,7 +74,7 @@ aceștia fiind următorii:
 
 !!! example "Exemplu"
 
-    De exemplu, dacă dimensiunea unei grupări este $5$, iar intervalul $[L, R]$
+    De exemplu, dacă dimensiunea unei grupări este 5, iar intervalul $[L, R]$
     este $[7, 21]$, răspunsul se va afla în modul următor:
 
     - Intervalul $[7, 9]$: Fiind o grupare care nu se află în întregime în
@@ -268,7 +268,7 @@ auxiliare pe care le efectuăm se realizează în timp constant.
     Pentru a optimiza mai mult această metodă, putem să sortăm invers elementele
     din aceeași grupă dacă avem de-a face cu grupe cu un număr par, deoarece
     putem astfel să alternăm direcția în care adăugăm și scoatem valori la
-    capătul din dreapta, constanta reducându-se cu un factor de aproximativ $2$
+    capătul din dreapta, constanta reducându-se cu un factor de aproximativ 2
     în majoritatea cazurilor.
 
 Pentru a explica acest algoritm, voi prezenta o problemă clasică ce folosește

@@ -37,22 +37,22 @@ poate (că nu știm sigur dacă există!) afla în a doua jumătate, altfel, se 
 afla în prima jumătate. Mai departe, nu va mai fi necesar sa analizăm tot șirul,
 ci doar jumătatea relevantă (cea în care considerăm noi că există o șansă să
 găsim valoarea noastră), și algoritmul se va repeta până când lungimea devine
-$1$ și putem determina răspunsul. Dat fiind faptul că noi la fiecare pas
-împărțim la $2$ lungimea șirului, acest lucru ne va da complexitate logaritmică
+1 și putem determina răspunsul. Dat fiind faptul că noi la fiecare pas
+împărțim la 2 lungimea șirului, acest lucru ne va da complexitate logaritmică
 la determinarea răspunsului, deci vom avea complexitate $O(Q \log N)$ (dacă
 șirul nostru nu este sortat din input, se mai adaugă și un $O(N \log N)$ la
 complexitate), cu memorie $O(N)$.
 
 Pentru o înțelegere mai clară a algoritmului, să presupunem următorul exemplu:
-se dă un șir sortat crescător unde apar toate numerele de la $1$ la $100$, și se
-cere să determinăm dacă există în șir valoarea $72$.
+se dă un șir sortat crescător unde apar toate numerele de la 1 la 100, și se
+cere să determinăm dacă există în șir valoarea 72.
 
 ![](../images/cautari/cb-light.svg#only-light){ width="70%" }
 ![](../images/cautari/cb-dark.svg#only-dark){ width="70%" }
 
 O întrebare la care trebuie totuși dat răspuns este: De ce împărțim în două
-jumătăți și de ce nu în $3$ treimi? Da, $\log_3 N < \log_2 N$, dar numărul de
-verificări efectuate va fi mai mare la împărțirea în $3$ treimi, deci în
+jumătăți și de ce nu în 3 treimi? Da, $\log_3 N < \log_2 N$, dar numărul de
+verificări efectuate va fi mai mare la împărțirea în 3 treimi, deci în
 continuare este mai eficient să împărțim în două jumătăți. În mod inductiv se va
 demonstra pentru orice împărțire posibilă.
 
@@ -141,11 +141,11 @@ void cb3_patrascu(int n) {
 }
 ```
 
-Baza în care noi vom descompune suma va fi baza $2$, pentru a menține în
+Baza în care noi vom descompune suma va fi baza 2, pentru a menține în
 continuare complexitatea $\log_2 N$. Inițial, vom pleca cu un exponent $e$, unde
 $2^e$ va reprezenta lungimea secvenței pe care o analizăm (atenție să nu ieșim
 din vector!). Chiar dacă noi vom analiza inițial o lungime care este putere de
-$2$, care foarte probabil să fie diferită de $N$, se poate demonstra foarte ușor
+2, care foarte probabil să fie diferită de $N$, se poate demonstra foarte ușor
 că noi (dacă o să fie necesar), vom putea căuta valori și în acea secvență
 neacoperită inițial. Lăsăm această demonstrație ca temă pentru cititor.
 
@@ -265,12 +265,12 @@ int main() {
 
 Pentru a căuta binar pe numere reale, trebuie să avem grijă la un detaliu foarte
 important. Deoarece avem nevoie de o precizie de câteva zecimale (de regulă, un
-număr mai mare, cel puțin $6$), trebuie să evităm situațiile în care rămânem
+număr mai mare, cel puțin 6), trebuie să evităm situațiile în care rămânem
 blocați într-un loop infinit, pericol în care ne-am putea afla folosind
 abordarea existentă.
 
 Astfel, soluția care se impune este folosirea unui for pentru a fixa numărul de
-iterații (de regulă, nu mai mare de $100$, în cele mai multe cazuri $50$ de
+iterații (de regulă, nu mai mare de 100, în cele mai multe cazuri 50 de
 iterații ale funcției sunt îndeajuns).
 
 ```cpp
@@ -306,7 +306,7 @@ double cb_double() {
 
 Deși această problemă poate fi rezolvată și folosind ecuații matematice,
 căutarea binară a răspunsului devine o soluție elegantă care evită complicații
-fără rost. Fixând un număr de $100$ de iterații, se ajunge la răspuns foarte
+fără rost. Fixând un număr de 100 de iterații, se ajunge la răspuns foarte
 simplu și eficient.
 
 ```cpp

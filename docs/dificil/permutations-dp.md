@@ -59,7 +59,7 @@ obligatorie.
 ## Problema 1 - [perm - infoarena](https://infoarena.ro/problema/perm)
 
 Pentru a rezolva această problemă, vom încerca să construim permutarea pas cu
-pas, crescându-i lungimea cu $1$. După cum știm, prima poziție va fi mereu o
+pas, crescându-i lungimea cu 1. După cum știm, prima poziție va fi mereu o
 valoare maximă, lucru ce va fi esențial în soluția pe care o vom prezenta în
 cele ce urmează.
 
@@ -67,19 +67,19 @@ Astfel, dacă avem o permutare de lungime $i$ cu $j$ maxime, vrem să putem
 construi o permutare de lungime $i+1$ într-un mod care să ne ușureze calculul
 maximelor. Mai întâi, inserarea lui $i+1$ în permutare ar face lucrurile
 anevoioase, deoarece în funcție de poziția în care este inserat, numărul de
-maxime ar putea lua orice valoare de la $1$ la $j+1$, lucru ce face această
+maxime ar putea lua orice valoare de la 1 la $j+1$, lucru ce face această
 abordare nepractică.
 
 Totuși, ne putem gândi și altfel în ceea ce privește generarea unei permutări de
 lungime $i+1$. În loc să inserăm $i+1$ undeva în permutare, vrem să plecăm de la
-inserarea lui $1$, lucru ce îl putem face cu ușurință dacă ne gândim la
-permutarea pe care o avem, presupunând toate valorile mai mari cu $1$. De
+inserarea lui 1, lucru ce îl putem face cu ușurință dacă ne gândim la
+permutarea pe care o avem, presupunând toate valorile mai mari cu 1. De
 exemplu, dacă permutarea curentă este $[2, 1, 5, 3, 4]$, noul șir ar fi $[3, 2,
 6, 4, 5]$. Astfel, numărul de maxime, precum și poziția lor rămân identice, iar
-acum, tot ce trebuie să facem este să poziționăm $1$ în permutare.
+acum, tot ce trebuie să facem este să poziționăm 1 în permutare.
 
-Deoarece $1$ este cea mai mică valoare, decizia este una foarte simplă, numărul
-de maxime crește cu $1$ doar dacă inserăm această valoare la începutul
+Deoarece 1 este cea mai mică valoare, decizia este una foarte simplă, numărul
+de maxime crește cu 1 doar dacă inserăm această valoare la începutul
 permutării, în caz contrar acest număr rămâne același. Astfel, putem să calculăm
 numărul de permutări de lungime $n$ cu $k$ maxime folosind următoarea recurență:
 
@@ -183,7 +183,7 @@ Pentru a rezolva această problemă, vrem să găsim o metodă de a plasa valori
 permutare și de a păstra informații suficiente pentru a putea grupa celelalte
 valori.
 
-Plasarea primei valori este ușoară, putem presupune fiecare valoare de la $1$ la
+Plasarea primei valori este ușoară, putem presupune fiecare valoare de la 1 la
 $n$ ca fiind adăugată în permutare. Totuși, încă nu am răspuns la întrebarea
 anterioară legat de păstrarea unor informații suficiente pentru numărarea
 corectă a soluțiilor.
@@ -279,10 +279,10 @@ Pentru a rezolva această problemă, vom folosi din nou metoda programării
 dinamice.
 
 Vom defini $dp[i][j]$ ca fiind numărul de permutări ale primelor $i$ valori care
-au $j$ inversiuni. Deoarece vom adăuga valorile de la $1$ la $n$, pentru fiecare
+au $j$ inversiuni. Deoarece vom adăuga valorile de la 1 la $n$, pentru fiecare
 valoare nou adăugată, vom avea un număr de inversiuni corespunzător cu poziția
-pe care o adăugăm (dacă adăugăm pe poziția $1$, avem $i$ inversiuni în plus,
-apoi pentru poziția $2$, $i-1$ etc.)
+pe care o adăugăm (dacă adăugăm pe poziția 1, avem $i$ inversiuni în plus,
+apoi pentru poziția 2, $i-1$ etc.)
 
 Cu alte cuvinte, $dp[i][j] = \sum_{j - i + 1}^j dp[i-1][x]$, recurență ce se
 poate calcula în $O(n^3)$ folosind sume parțiale, calculul complexității fiind

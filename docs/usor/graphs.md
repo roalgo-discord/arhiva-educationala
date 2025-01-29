@@ -105,7 +105,7 @@ Voi continua prin a defini termeni ce se dovedesc a fi esențiali pentru
     $$ \sum_{v \in V} \deg(v) = 2k,\,k \in \mathbb{N} $$
 
     Explicația este dată de faptul că pentru fiecare muchie adăugată, gradul a
-    două noduri crește cu $1$.
+    două noduri crește cu 1.
 
 !!! info "Lanț"
 
@@ -229,7 +229,7 @@ Să considerăm graful neorientat din figura următoare:
 ![](../images/grafuri/graf-dark.svg#only-dark){ width = "50%" }
 </figure>
 
-Acest graf are $13$ noduri și $12$ muchii, acestea fiind $(1, 4)$, $(1, 3)$,
+Acest graf are 13 noduri și 12 muchii, acestea fiind $(1, 4)$, $(1, 3)$,
 $(4, 9)$, $(9, 3)$, $(4, 2)$, $(4, 6)$, $(2, 6)$, $(2, 5)$, $(8, 12)$, $(8,
 11)$, $(8, 10)$, $(8, 7)$.
 
@@ -347,7 +347,7 @@ depth-first search), una din parcurgerile optime pentru această problemă.
 
     Se remarcă faptul că un nod va fi vizitat la un moment dat doar o singură
     dată, deci dacă avem muchiile $(1, 2)$, $(1, 3)$ și $(2, 3)$, iar DFS-ul
-    pleacă din $1$, $2$ va fi accesat din $1$, iar $3$ va fi accesat din $2$.
+    pleacă din 1, 2 va fi accesat din 1, iar 3 va fi accesat din 2.
 
 !!! note "Observație"
 
@@ -556,7 +556,7 @@ int main() {
 
 ## Problema [grarb](https://www.infoarena.ro/problema/grarb) de pe infoarena
 
-Se dă un graf $G$ neorientat cu $N$ noduri numerotate de la $1$ la $N$ și $M$
+Se dă un graf $G$ neorientat cu $N$ noduri numerotate de la 1 la $N$ și $M$
 muchii. Determinați numărul minim de muchii care trebuie eliminate și numărul
 minim de muchii care trebuie adăugate în graful $G$ astfel încât acesta sa
 devina arbore.
@@ -625,7 +625,7 @@ afle nodurile ce aparțin tuturor lanțurilor optime între $X$ și $Y$.
 
 Pentru a rezolva această problemă, va trebui mai întâi să aflăm folosind o
 parcurgere de tip BFS distanțele minime de la $X$ și $Y$ spre toate celelalte
-noduri. Apoi, pentru fiecare distanță $d$ de la $0$ la $\operatorname{dist}(X,
+noduri. Apoi, pentru fiecare distanță $d$ de la 0 la $\operatorname{dist}(X,
 Y)$, vrem să aflăm câte noduri se află pe unul din drumurile optime de la $X$ la
 $Y$ la o distanță $d$ față de $X$. În cele din urmă, vrem să afișăm nodurile
 situate la distanțele care apar o singură dată în mulțimea nodurilor ce fac

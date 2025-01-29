@@ -25,7 +25,7 @@ rezolvate decât în cazul folosirii unui stil de cod concis.
 De-a lungul acestei arhive, soluțiile prezentate de noi vor folosi stilul de cod
 Google, cu următoarele caracteristici:
 
-- $4$ spații la indentare;
+- 4 spații la indentare;
 - Folosirea acoladelor pentru orice structură alternativă și repetitivă;
 - Acolada deschisă se pune în același rând cu definiția structurii;
 - Acolada închisă se pune în rândul de după finalul structurii;

@@ -541,8 +541,8 @@ disjuncte, ne vom concentra pe soluția cu DSU.
 
 Mai întâi, trebuie să observăm că componentele conexe sunt ca niște intervale.
 De exemplu, să luăm $n = 7$. Atunci, la început intervalele vor fi: $[1, 1], [2,
-2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]$. Dacă unim muchiile de la $3$ la
-$6$, intervalele vor deveni: $[1, 1], [2, 2], [3, 6], [7, 7]$.
+2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7]$. Dacă unim muchiile de la 3 la
+6, intervalele vor deveni: $[1, 1], [2, 2], [3, 6], [7, 7]$.
 
 Atunci, putem folosi o structură de tip DSU. Vom reține $par_i$ ca "părintele"
 nodului $i$, sau mai ușor de înțeles, capătul stânga al intervalului în care

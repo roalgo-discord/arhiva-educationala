@@ -15,7 +15,7 @@ tags:
 
 ## Introducere
 
-Fie un arbore $G$ cu $N$ noduri, iar rădăcina acestuia să fie în nodul $1$.
+Fie un arbore $G$ cu $N$ noduri, iar rădăcina acestuia să fie în nodul 1.
 
 Ideea din spatele algoritmului este de a **sparge arborele în mai multe
 lanțuri** pentru a atinge rădăcina din orice nod din arbore în timp
@@ -136,9 +136,9 @@ void dfs(int node) {
 Se dă un arbore cu $N$ noduri, fiecare având asociată o valoare $v_i$, $1 \leq i
 \leq N$. Se dau $M$ operații de forma $(t, x, y)$, cu următoarea semnificație:
 
-- dacă $t$ este $0$, operația este de tipul update, iar valoarea $v_x$ asociata
+- dacă $t$ este 0, operația este de tipul update, iar valoarea $v_x$ asociata
   nodului cu indicele $x$ devine $y$;
-- dacă $t$ este $1$, operația este de tipul query și se cere să se afișeze
+- dacă $t$ este 1, operația este de tipul query și se cere să se afișeze
   valoarea maximă asociată unui nod aflat pe lanțul elementar care unește
   nodurile $x$ și $y$.
 
@@ -153,7 +153,7 @@ când vom ajunge cu cele două noduri în același lanț. Această operațiune e
 chiar cea de la
 [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
 
-O implementare de $100$ de puncte poate fi citită mai jos:
+O implementare de 100 de puncte poate fi citită mai jos:
 
 ```cpp
 #include <fstream>
@@ -356,14 +356,14 @@ $O(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe u
 lanț care leagă două noduri, aceasta va intra în complexitate $O((\log N)^2)$,
 deoarece putem parcurge maxim $\log N$ lanțuri în tot arborele.
 
-În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor $2$ noduri,
-astfel încât acesta să fie la o distanță cât mai mare, iar cele $2$ stringuri
+În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor 2 noduri,
+astfel încât acesta să fie la o distanță cât mai mare, iar cele 2 stringuri
 formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $O(\log
 N)$ al $K$ strămoș pentru nodul $x$, iar de căutarea binară pentru a afla
 valoarea $K$ în timp logaritmic. Astfel rezultă o complexitate finală de
 $O((\log N)^3)$ pentru fiecare query și $O(\log N)$ pentru update.
 
-O implementare de $100$ de puncte poate fi citită mai jos:
+O implementare de 100 de puncte poate fi citită mai jos:
 
 ```cpp
 /// Autor: Ardelean Raul, CNVL - Baia Mare

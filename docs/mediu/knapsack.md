@@ -240,9 +240,9 @@ ca cel prezentat mai sus.
 #### Trucul "$\log_2$"
 
 Așa cum îi zice și numele, vom vrea să descompunem frecvențele obiectelor în
-sume de puteri ale lui $2$, astfel încât să putem acoperi oricare număr de la
-$1$ la frecvența numărului, cu cât mai puține obiecte. Motivul pentru care
-folosim puterile lui $2$ și nu numere consecutive este acela că în cazul în care
+sume de puteri ale lui 2, astfel încât să putem acoperi oricare număr de la
+1 la frecvența numărului, cu cât mai puține obiecte. Motivul pentru care
+folosim puterile lui 2 și nu numere consecutive este acela că în cazul în care
 frecvențele cresc foarte rapid, vom avea nevoie de foarte puține numere (de
 exemplu, $1 + 2 + 4 + 8 = 1 + 2 + 3 + 4 + 5$).
 
@@ -251,23 +251,23 @@ să arătăm o implementare de acest fel.
 
 !!! example "Exemplu"
 
-    Dacă avem un element cu frecvența $20$ și greutatea individuală $W$, mai
-    întâi vom scădea puteri ale lui $2$ tot mai mari, iar mai apoi restul rămas
+    Dacă avem un element cu frecvența 20 și greutatea individuală $W$, mai
+    întâi vom scădea puteri ale lui 2 tot mai mari, iar mai apoi restul rămas
     va fi folosit și el.
 
-    - $20 - 1 = 19$, putem folosi $1$, deci înmulțim puterea cu $2$. Vom crea un
+    - $20 - 1 = 19$, putem folosi 1, deci înmulțim puterea cu 2. Vom crea un
       obiect cu greutate $1 \cdot W$.
-    - $19 - 2 = 17$, putem folosi $2$, deci înmulțim puterea cu $2$. Vom crea un
+    - $19 - 2 = 17$, putem folosi 2, deci înmulțim puterea cu 2. Vom crea un
       obiect cu greutate $2 \cdot W$.
-    - $17 - 4 = 13$, putem folosi $4$, deci înmulțim puterea cu $2$. Vom crea un
+    - $17 - 4 = 13$, putem folosi 4, deci înmulțim puterea cu 2. Vom crea un
       obiect cu greutate $4 \cdot W$.
-    - $13 - 8 = 5$, putem folosi $8$, deci înmulțim puterea cu $2$. Vom crea un
+    - $13 - 8 = 5$, putem folosi 8, deci înmulțim puterea cu 2. Vom crea un
       obiect cu greutate $8 \cdot W$.
-    - $5 - 16 = -11$, nu putem folosi $16$, așa că folosim numărul rămas, $5$.
+    - $5 - 16 = -11$, nu putem folosi 16, așa că folosim numărul rămas, 5.
       Vom crea un obiect cu greutate $5 \cdot W$.
 
-    Cu alte cuvinte, am împărțit un obiect cu frecvența $20$ în $5$ obiecte
-    echivalente, cu frecvențele $1, 2, 4, 8$ și $5$.
+    Cu alte cuvinte, am împărțit un obiect cu frecvența 20 în 5 obiecte
+    echivalente, cu frecvențele $1, 2, 4, 8$ și 5.
 
 Un exemplu de problemă în care se poate aplica acest truc este [strehaia de la
 RoAlgo Contest 2](https://kilonova.ro/problems/684). Puteți găsi implementarea

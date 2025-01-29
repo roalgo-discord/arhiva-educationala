@@ -147,7 +147,7 @@ int main() {
 
 ### Problema [stack_max_min](https://kilonova.ro/problems/2107)
 
-Problema ne dă un șir de numere și $4$ întrebări pentru câte o poziție:
+Problema ne dă un șir de numere și 4 întrebări pentru câte o poziție:
 
 1. Cel mai apropiat indice la stânga, unde elementul este mai mare decât poziția
    din întrebare.
@@ -177,22 +177,22 @@ elementului de pe vârful stivei. Apoi, îl adăugăm pe el însuși în stivă.
 
     Vom face o simulare a acestui algoritm, folosindu-ne de exemplul din
     problemă, $v = [1 \ 2 \ 3 \ 6 \ 4 \ 5 \ 3 \ 2 \ 1 \ 10]$. Ca în problemă,
-    vectorul va fi indexat de la $0$.
+    vectorul va fi indexat de la 0.
 
-    - Suntem la indicele $0$, $stiva = []$. Răspunsul va fi -1.
-    - Suntem la indicele $1$, $stiva = [0]$, dar îl scoatem, iar apoi $stiva =
+    - Suntem la indicele 0, $stiva = []$. Răspunsul va fi -1.
+    - Suntem la indicele 1, $stiva = [0]$, dar îl scoatem, iar apoi $stiva =
       []$. Răspunsul va fi $-1$.
-    - Suntem la indicele $2$, $stiva = [1]$, dar îl scoatem, iar apoi $stiva =
+    - Suntem la indicele 2, $stiva = [1]$, dar îl scoatem, iar apoi $stiva =
       []$. Răspunsul va fi $-1$.
-    - Suntem la indicele $3$, $stiva = [2]$, dar îl scoatem, iar apoi $stiva =
+    - Suntem la indicele 3, $stiva = [2]$, dar îl scoatem, iar apoi $stiva =
       []$. Răspunsul va fi $-1$.
-    - Suntem la indicele $4$, $stiva = [3]$. Răspunsul va fi $3$.
-    - Suntem la indicele $5$, $stiva = [3 \ 4]$, dar îl scoatem pe $4$.
-      Răspunsul va fi $3$.
-    - Suntem la indicele $6$, $stiva = [3 \ 5]$. Răspunsul va fi $5$.
-    - Suntem la indicele $7$, $stiva = [3 \ 5 \ 6]$. Răspunsul va fi $6$.
-    - Suntem la indicele $8$, $stiva = [3 \ 5 \ 6 \ 7]$. Răspunsul va fi $7$.
-    - Suntem la indicele $9$, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe
+    - Suntem la indicele 4, $stiva = [3]$. Răspunsul va fi 3.
+    - Suntem la indicele 5, $stiva = [3 \ 4]$, dar îl scoatem pe 4.
+      Răspunsul va fi 3.
+    - Suntem la indicele 6, $stiva = [3 \ 5]$. Răspunsul va fi 5.
+    - Suntem la indicele 7, $stiva = [3 \ 5 \ 6]$. Răspunsul va fi 6.
+    - Suntem la indicele 8, $stiva = [3 \ 5 \ 6 \ 7]$. Răspunsul va fi 7.
+    - Suntem la indicele 9, $stiva = [3 \ 5 \ 6 \ 7 \ 8]$, dar le scoatem pe
       toate, iar apoi $stiva = []$. Răspunsul va fi $-1$.
 
 Această rezolvare are complexitatea $\mathcal{O}(N)$, pentru că fiecare element
@@ -370,7 +370,7 @@ int main() {
 
 Mai întâi, vom defini urmatoarele două functii:
 
-1. $canJoin(x, y) = 1$ dacă putem unifica $x$ si $y$, $0$ altfel
+1. $canJoin(x, y) = 1$ dacă putem unifica $x$ si $y$, 0 altfel
 2. $join(x, y) =$ rezultatul unificării dintre $x$ si $y$
 
 Sa simplificăm enunțul astfel: Găsim primul $i (1 < i \leq n)$ pentru care
@@ -535,12 +535,12 @@ vârful din stivă și continuăm cu $i + 1$. Punctele b) și c) pot fi rezolvat
    b)$ formau perechi. Costurile lor însumate vor fi $i - a + b - i - 1 = b - a
    - 1$. Când interschimbăm $S_i$ cu $S_{i + 1}$ obținem perechile $(a, b)$ și
    $(i, i + 1)$, ale căror costuri însumate dau $b - a + 1$. Deci răspunsul a
-   crescut cu $2$, ceea ce înseamnă că nu este o operație swap validă.
+   crescut cu 2, ceea ce înseamnă că nu este o operație swap validă.
 3. $S_i = ($ și $S_{i + 1} = )$. Dacă nu există nici un $a (a < i)$ astfel încât
    $S_a = ($ și perechea lui $a$ (pe care o notăm cu $b$) să fie mai mare ca $i
    - 1$, atunci operația nu ar fi validă, deoarece nu am avea pereche pentru
    $S_i$ dacă $S_i = )$. Mai întai, avem perechile $(a, b)$ și $(i, i + 1)$.
-   După cum am văzut la cazul $2$, răspunsul ar fi mai mic cu $2$ dacă perechile
+   După cum am văzut la cazul 2, răspunsul ar fi mai mic cu 2 dacă perechile
    ar fi $(a, i)$ și $(i + 1, b)$. Deci operația swap este validă.
 
 Observăm că singurul caz în care operația swap este validă este atunci când $S_i
@@ -549,7 +549,7 @@ mai mare ca $i + 1$. Acest lucru se poate simplifica astfel: Căutăm un $i$ car
 respectă următoarele condiții:
 
 1. $S_i = )$
-2. Înainte să scoatem perechea lui $i$, stiva trebuie să aiba cel puțin $2$
+2. Înainte să scoatem perechea lui $i$, stiva trebuie să aiba cel puțin 2
    elemente
 3. Vârful stivei trebuie să aibă valoarea $i - 1$.
 

@@ -15,7 +15,7 @@ tags:
 
 ## Problema inițială
 
-Să presupunem că avem un șir $V$ de $N$ numere indexat de la $1$, iar asupra
+Să presupunem că avem un șir $V$ de $N$ numere indexat de la 1, iar asupra
 șirului primim mai multe întrebări de forma: _care este suma valorilor cuprinse
 între pozițiile $st$ și $dr$ (inclusiv) în șir?_
 
@@ -174,7 +174,7 @@ interval în parte și să verificăm dacă punctul nostru este inclus sau nu î
 interval. Soluția este ușor de intuit și de implementat, dar programul nostru ar
 avea complexitate $(Q \cdot K)$. Șmenul lui Marius Andrei (_Mars_) ne poate
 rezolva această problemă în timp constant, chiar și dacă o extindem pe mai multe
-dimensiuni (două axe, $3$ axe etc.).
+dimensiuni (două axe, 3 axe etc.).
 
 !!! note "Observație"
 
@@ -224,7 +224,7 @@ for (int i = 1; i <= n; i++) {
 Atenție la faptul că suma pe prefixul $1, 2, \dots, i$ va fi ținută în
 $mars[i]$. Revenind la problema noastră inițială, răspunsul la fiecare întrebare
 va fi în $mars[x]$, astfel obținând $O(1)$ pe query. Evident, dacă vrem să
-adăugăm o valoare $z$ în loc de $1$ pe interval, acest lucru se poate realiza
+adăugăm o valoare $z$ în loc de 1 pe interval, acest lucru se poate realiza
 foarte ușor:
 
 ```cpp
@@ -281,7 +281,7 @@ for (int i = 1; i <= n; i++) {
 În final, în urma operațiilor de adăugare, dacă vrem să știm ce valoare se află
 pe poziția $(i, j)$, răspunsul va fi dat de $A_{i, j}$.
 
-Șmenul lui Mars poate fi extins și pe $3$ dimensiuni sau chiar mai multe, iar
+Șmenul lui Mars poate fi extins și pe 3 dimensiuni sau chiar mai multe, iar
 abordarea pe mai multe dimensiuni se va realiza identic, dar o să fie rar
 întâlnit în problemele de algoritmică cazuri în care să se ceară șmenul lui Mars
 pe mai mult de două dimensiuni.

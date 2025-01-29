@@ -213,7 +213,7 @@ int main() {
 
 ## Problema [cetate](https://kilonova.ro/problems/917)
 
-Pentru rezolvarea cerinței $2$ a acestei probleme, putem fixa două linii și să
+Pentru rezolvarea cerinței 2 a acestei probleme, putem fixa două linii și să
 aplicăm o tehnică similară folosind deque, aflând suma maximă folosindu-ne de
 sumele parțiale de pe coloane, mai jos fiind codul de la cerința a doua,
 întreaga submisie putând fi accesată

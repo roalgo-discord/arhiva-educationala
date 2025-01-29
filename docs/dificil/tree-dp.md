@@ -436,9 +436,9 @@ Pentru a rezolva această problemă, ne vom folosi de faptul că valoarea
 lui $M$ este foarte mică, ceea ce ne duce cu gândul la o dinamică care
 să implice fiecare valoare posibilă a CMMDC-ului în parte.
 
-Mai întâi, vom precalcula pentru fiecare număr $i$ de la $1$ la $m$ toate
+Mai întâi, vom precalcula pentru fiecare număr $i$ de la 1 la $m$ toate
 numerele cu proprietatea că cmmdc-ul dintre ele și $i$ este diferit
-de $1$ și care nu au niciun factor prim în descompunerea lor mai mult
+de 1 și care nu au niciun factor prim în descompunerea lor mai mult
 de o dată.
 
 Acest lucru ne va ajuta să prevenim numărarea de mai multe ori a acelorlași
@@ -464,8 +464,8 @@ a răspunsurilor pentru numerele care sunt multiplu ale acelui divizor.
 Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea
 unui [PINEX](https://edu.roalgo.ro/mediu/pinex/), deci $O(n \cdot m \cdot DMAX)$,
 unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform
-precalculării anterioare, iar acest număr $DMAX$ este egal cu $31$ deoarece
-orice număr de la $1$ la $m$ are cel mult $5$ factori primi distincți.
+precalculării anterioare, iar acest număr $DMAX$ este egal cu 31 deoarece
+orice număr de la 1 la $m$ are cel mult 5 factori primi distincți.
 
 Pentru mai multe detalii de implementare, recomandăm consultarea sursei de mai
 jos.

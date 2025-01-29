@@ -24,8 +24,8 @@ sau sub denumirea sa din engleză, pigeonhole principle.
     cutii, vom avea cu siguranță o cutie care va avea cel puțin două obiecte.
 
 Există foarte multe moduri de a demonstra acest lucru, dar un mod foarte simplu
-de a face acest lucru este acela de a pleca de la un caz simplu ($2$ obiecte și
-$1$ cutie), caz care este evident, adevărat. Apoi, fiecare obiect adăugat va fi
+de a face acest lucru este acela de a pleca de la un caz simplu (2 obiecte și
+1 cutie), caz care este evident, adevărat. Apoi, fiecare obiect adăugat va fi
 în cutia lui, deci vom avea cu siguranță o cutie cu cel puțin două obiecte.
 
 În informatică, de cele mai multe ori, acest principiu este aplicat atunci când
@@ -50,7 +50,7 @@ $n-1$ resturi posibile). Datorită acestui fapt, putem găsi mereu o soluție la
 această problemă.
 
 Pentru a afla aceste resturi, putem construi un vector de resturi parțiale și
-dacă avem un multiplu de $n$, afișăm acea valoare împreună cu valorile de $0$,
+dacă avem un multiplu de $n$, afișăm acea valoare împreună cu valorile de 0,
 iar dacă găsim două resturi parțiale egale, vom afișa diferența între cele două
 numere, iar mai apoi îndeajuns de mult zerouri până ce avem $n$ cifre.
 

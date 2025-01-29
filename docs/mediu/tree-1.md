@@ -43,7 +43,7 @@ arborii.
 Pe lângă termenii folosiți la grafuri, vom mai defini câțiva termeni care sunt
 frecvent utilizați în contextul arborilor.
 
-- Un nod cu gradul $1$ se numește frunză.
+- Un nod cu gradul 1 se numește frunză.
 - Definim nivelul unui nod ca fiind distanța de la rădăcină la acesta.
 - Pentru o muchie $(x, y)$ cu $nivel_x < nivel_y$, vom spune că $x$ este
   părintele lui $y$.
@@ -91,7 +91,7 @@ arbori binari.
   cu excepția ultimului nivel, nivelul $k$ conține eventual mai puțin de $2^h$
   noduri, acestea fiind grupate de regulă în partea stângă..
 - Arbore binar echilibrat - un arbore binar în care pentru fiecare nod,
-  înălțimea subarborilor din stânga și din dreapta diferă cu cel mult $1$.
+  înălțimea subarborilor din stânga și din dreapta diferă cu cel mult 1.
 - Arbore binar de căutare - un arbore binar în care fiecare nod are o cheie
   unică de identificare care respectă următoarele condiții: pentru orice
   subarbore, cheile nodurilor din subarborele stâng sunt mai mici decât cheia
@@ -143,7 +143,7 @@ ei.
 
 Pentru a rezolva această problemă, va trebui să parcurgem arborele (de preferat,
 folosind un DFS) de la rădăcină, cu scopul de a ajunge pe rând la toate frunzele
-arborelui. Pentru fiecare frunză, dimensiunea subarborelui său va fi $1$, iar
+arborelui. Pentru fiecare frunză, dimensiunea subarborelui său va fi 1, iar
 pentru fiecare nod care nu e frunză, va fi suma subarborilor fiilor săi. În
 final, vom avea un algoritm ce rulează în $O(n)$.
 

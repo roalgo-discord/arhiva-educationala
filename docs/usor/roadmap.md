@@ -25,7 +25,7 @@ cont de dificultatea relativă a acestora.
 acestor noțiuni, acesta fiind un roadmap pe care îl recomandăm tuturor
 pasionaților de algoritmi și structuri de date, și nu numai.
 
-Cu alte cuvinte, vom putea spune că sunteți la $10$ capitole distanță de a putea
+Cu alte cuvinte, vom putea spune că sunteți la 10 capitole distanță de a putea
 ajunge la olimpiada internațională de informatică. Totuși, aceste capitole
 necesită foarte multă muncă, timp și efort pentru a fi studiate și înțelese
 temeinic.
@@ -48,7 +48,7 @@ relativ crescătoare a dificultății.
 
 ## Capitolul 0 - Articole generale
 
-Chiar dacă acesta este capitolul $0$, se recomandă întoarcerea la el de fiecare
+Chiar dacă acesta este capitolul 0, se recomandă întoarcerea la el de fiecare
 dată când concurați sau vreți să aflați mai multe despre ce vă așteaptă.
 
 ### Informații generale și programa olimpiadelor

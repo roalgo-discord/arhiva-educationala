@@ -78,7 +78,7 @@ contexte în viață, dar pe care vom insista mai puțin:
   spre obținerea unui job dorit. Nivelul acestor probleme este cuprins între
   admitere și olimpiadă, cu mici excepții.
 - olimpiada pe echipe (IIOT) și concursul ICPC pe echipe între studenți:
-  concursuri pe echipe de $3$ sau $4$ oameni, în care un grup mai mare de elevi
+  concursuri pe echipe de 3 sau 4 oameni, în care un grup mai mare de elevi
   rezolvă un număr larg de probleme într-un interval scurt de timp, cu scopul de
   a obține cât mai multe puncte, folosindu-se de abilitățile individuale și de
   lucrul în echipă.

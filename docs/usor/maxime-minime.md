@@ -151,7 +151,7 @@ Mai jos implementăm ambele variante.
     }
     ```
 
-Deși ambele variante sunt corecte, se poate observa că varianta $2$ este mai
+Deși ambele variante sunt corecte, se poate observa că varianta 2 este mai
 simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe care o
 vom folosi atunci când vrem să generalizăm aflarea maximului sau minimului unui
 șir de valori.
@@ -159,7 +159,7 @@ vom folosi atunci când vrem să generalizăm aflarea maximului sau minimului un
 ## Maximul și minimul dintre $n$ numere
 
 Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea
-pleca de la cazul de bază cu $2$ numere, iar pentru fiecare număr nou adăugat,
+pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat,
 vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum
 (sau mai mică decât minimul, după caz).
 

@@ -72,7 +72,7 @@ puține numere pentru a putea răspunde la aceste întrebări, fără să folosi
 multă memorie. Așa cum sugerează și numele articolului, vom folosi reprezentarea
 binară a numerelor pentru a putea calcula aceste răspunsuri. Cu alte cuvinte,
 pentru fiecare nod știm deja primul lui strămoș, ceea ce ne dă ideea de a afla
-strămoșii pentru pozițiile corespunzătoare puterilor lui $2$ mai mici sau egale
+strămoșii pentru pozițiile corespunzătoare puterilor lui 2 mai mici sau egale
 cu $n$.
 
 Astfel, vom integra în parcurgerea DFS obișnuită construcția acestei matrici,
@@ -80,8 +80,8 @@ unde `anc[i][j]` va reprezenta cel de-al $2^i$-lea strămoș al nodului $j$.
 Pentru a afla `anc[i][j]`, dacă $i = 0$, atunci `anc[i][j]` va fi părintele
 nodului $j$, altfel, va fi `anc[i-1][anc[i-1][nod]]`, practic va fi cel de-al
 $2^{i-1}$-lea strămoș al celui de-al $2^{i-1}$ lea strămoș al nodului curent,
-astfel folosind proprietatea că o putere a lui $2$ e dublul puterii precedente a
-lui $2$, construind acest șir din aproape în aproape.
+astfel folosind proprietatea că o putere a lui 2 e dublul puterii precedente a
+lui 2, construind acest șir din aproape în aproape.
 
 Pentru a afla apoi un strămoș situat la poziția $x$ față de un nod $y$, tot ce
 va trebui să facem va fi să parcurgem invers, începând de la nodul curent,

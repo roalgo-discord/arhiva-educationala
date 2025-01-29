@@ -15,48 +15,48 @@ tags:
 ## Ce este ciurul lui Eratostene?
 
 Ciurul lui Eratostene este o metodă eficientă de afla toate numerele prime între
-$1$ și $n$, folosindu-ne de proprietățile corespunzătoare numerelor naturale,
+1 și $n$, folosindu-ne de proprietățile corespunzătoare numerelor naturale,
 precum și de relațiile dintre divizori și multipli. Pe lângă aplicația sa
 principală, se va dovedi a fi un algoritm foarte util pentru foarte multe tipuri
 de precalculări care sunt centrate în jurul aflării divizorilor sau a altor
-valori ce se calculează în funcție de divizorii numerelor de la $1$ la $n$.
+valori ce se calculează în funcție de divizorii numerelor de la 1 la $n$.
 
-Pentru a afla numerele prime de la $1$ la $n$, vom avea un algoritm simplu, care
-va lua la rând numerele de la $2$ la $n$ și pentru fiecare număr nemarcat de la
-$2$ la $n$, se vor marca toți multiplii acestuia. Astfel, numerele nemarcate
+Pentru a afla numerele prime de la 1 la $n$, vom avea un algoritm simplu, care
+va lua la rând numerele de la 2 la $n$ și pentru fiecare număr nemarcat de la
+2 la $n$, se vor marca toți multiplii acestuia. Astfel, numerele nemarcate
 sunt numerele prime, acestea nefiind marcate anterior de momentul accesării lor,
-iar numerele marcate sunt numerele compuse. Se remarcă faptul că $1$, nefiind
+iar numerele marcate sunt numerele compuse. Se remarcă faptul că 1, nefiind
 număr prim, nu este luat în considerare.
 
-Să exemplificăm algoritmul pentru numerele de la $2$ la $30$. Voi descrie doar
+Să exemplificăm algoritmul pentru numerele de la 2 la 30. Voi descrie doar
 pașii ce exemplifică ce se întâmplă când avem de-a face cu numere prime.
 
-- La pasul $i = 2$, $2$ este marcat drept număr prim, iar acesta va marca
-  numerele pare de la $4$ la $30$ drept compuse $(4, 6, 8, 10, 12, 14, 16, 18,
+- La pasul $i = 2$, 2 este marcat drept număr prim, iar acesta va marca
+  numerele pare de la 4 la 30 drept compuse $(4, 6, 8, 10, 12, 14, 16, 18,
   20$, $22, 24, 26, 28, 30)$.
-- La pasul $i = 3$, $3$ este marcat drept număr prim, iar acesta va marca
-  numerele multiplu de $3$ de la $6$ la $30$ drept compuse $(6, 9, 12, 15, 18,
+- La pasul $i = 3$, 3 este marcat drept număr prim, iar acesta va marca
+  numerele multiplu de 3 de la 6 la 30 drept compuse $(6, 9, 12, 15, 18,
   21, 24, 27, 30)$.
-- La pasul $i = 5$, $5$ este marcat drept număr prim, iar acesta va marca
-  numerele multiplu de $5$ de la $10$ la $30$ drept compuse $(10, 15, 20, 25,
+- La pasul $i = 5$, 5 este marcat drept număr prim, iar acesta va marca
+  numerele multiplu de 5 de la 10 la 30 drept compuse $(10, 15, 20, 25,
   30)$.
-- La pasul $i = 7$, $7$ este marcat drept număr prim, iar acesta va marca
-  numerele multiplu de $7$ de la $14$ la $30$ drept compuse $(14, 21, 28)$.
-- La pasul $i = 11$, $11$ este marcat drept număr prim, iar acesta va marca
-  numerele multiplu de $11$ de la $22$ la $30$ drept compuse $(22)$.
-- La pasul $i = 13$, $13$ este marcat drept număr prim, iar acesta va marca
-  numerele multiplu de $13$ de la $26$ la $30$ drept compuse $(26)$.
-- La pașii $i = 17$, $i = 23$, $i = 29$, $17$, $23$ și $29$ sunt marcați drept
-  numere prime, dar multiplii lor mai mari ca ei sunt mai mari ca $30$,
+- La pasul $i = 7$, 7 este marcat drept număr prim, iar acesta va marca
+  numerele multiplu de 7 de la 14 la 30 drept compuse $(14, 21, 28)$.
+- La pasul $i = 11$, 11 este marcat drept număr prim, iar acesta va marca
+  numerele multiplu de 11 de la 22 la 30 drept compuse $(22)$.
+- La pasul $i = 13$, 13 este marcat drept număr prim, iar acesta va marca
+  numerele multiplu de 13 de la 26 la 30 drept compuse $(26)$.
+- La pașii $i = 17$, $i = 23$, $i = 29$, 17, 23 și 29 sunt marcați drept
+  numere prime, dar multiplii lor mai mari ca ei sunt mai mari ca 30,
   nemaifiind marcați drept numere compuse, chiar dacă sunt, deoarece nu fac
-  parte din scopul rulării algoritmului nostru pentru numerele până la $30$.
+  parte din scopul rulării algoritmului nostru pentru numerele până la 30.
 
 ![](../images/sieve/sieve.png)
 
-Un exemplu de vizualizare pentru numerele de la $1$ la $16$
+Un exemplu de vizualizare pentru numerele de la 1 la 16
 
 Algoritmul se dovedește a fi o optimizare față de metoda standard de aflare
-pentru toate numerele de la $1$ la $n$ a primalității, complexitatea devenind
+pentru toate numerele de la 1 la $n$ a primalității, complexitatea devenind
 $O(n \log \log n)$ pentru aflarea primalității pentru toate numerele, respectiv
 $O(n \log n)$ pentru majoritatea celorlalte tipuri de prelucrări. De asemenea,
 și implementarea se dovedește a fi una foarte scurtă, ciurul putând fi scris în
@@ -76,7 +76,7 @@ for (int i = 2; i <= n; i++) {
 !!! note "Observație"
 
     E de remarcat că numerele prime vor fi cele nemarcate, iar numerele compuse
-    vor fi cele marcate cu $1$.
+    vor fi cele marcate cu 1.
 
 ### Optimizări ale implementării
 
@@ -84,8 +84,8 @@ Deși algoritmul în sine este deja foarte rapid, în practică concurenții tin
 aplice diverse optimizări de constantă inspirate din optimizările ce se pot
 aplica algoritmului de aflare a divizorilor unui număr $n$. Printre altele,
 putem vorbi de începerea celui de-al doilea for de la $i^2$ (primul număr compus
-care nu a fost marcat anterior va fi mereu $i^2$) sau de procesarea lui $2$,
-urmată de procesarea numerelor impare din $2$ în $2$.
+care nu a fost marcat anterior va fi mereu $i^2$) sau de procesarea lui 2,
+urmată de procesarea numerelor impare din 2 în 2.
 
 ```cpp
 int prim[100001];
@@ -289,7 +289,7 @@ int main() {
 
 Pentru un număr natural a definim costul ca fiind valoarea absolută (modulul)
 diferenței dintre a și numărul prim cel mai apropiat de a. Asupra unui șir de
-$n$ numere naturale, situate pe poziții numerotate de la $1$ la $n$, se aplică,
+$n$ numere naturale, situate pe poziții numerotate de la 1 la $n$, se aplică,
 în ordine, o succesiune de $q$ operații. O operație constă dintr-o înlocuire și
 o afișare și este descrisă sub forma $i \ x \ p$, cu semnificația: mai întâi
 înlocuim cu $x$ elementul din șir de pe poziția $i$; apoi afișăm suma minimă
@@ -304,8 +304,8 @@ determine:
   date în forma precizată.
 
 Pentru a rezolva problema, vom precalcula pentru fiecare valoare răspunsul optim
-pentru fiecare număr de la $1$ la $a$ folosind ciurul lui Eratostene. Apoi,
-parcurgem valorile de la $1$ la $a$ pentru a afla răspunsul optim după ce am
+pentru fiecare număr de la 1 la $a$ folosind ciurul lui Eratostene. Apoi,
+parcurgem valorile de la 1 la $a$ pentru a afla răspunsul optim după ce am
 aflat numerele prime din șir.
 
 Pentru a rezolva query-urile, voi folosi un vector de frecventa pentru a tine

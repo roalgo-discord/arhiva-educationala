@@ -89,7 +89,7 @@ while (ok == true) {
 ### Insertion sort
 
 Sortarea prin inserție sau insertion sort este un algoritm elementar de sortare
-care pune pe rând fiecare valoare între pozițiile $2$ și $n$ pe poziția
+care pune pe rând fiecare valoare între pozițiile 2 și $n$ pe poziția
 potrivită în ordinea sortată a valorilor până la acea poziție inclusiv.
 
 ```cpp
@@ -135,12 +135,12 @@ fi banală, fiind nevoie de o singură linie de cod. Se găsește în biblioteca
 `algorithm`.
 
 Pentru a scrie funcția, trebuie să știm adresa de început (de regulă, poziția
-$0$ sau $1$ din șir) și adresa de final, cea de final fiind incrementată cu $1$
+0 sau 1 din șir) și adresa de final, cea de final fiind incrementată cu 1
 deoarece intervalul pe care îl vom folosi pentru funcția descrisă este închis la
 stânga și deschis la dreapta. După cum se va observa mai jos, vom putea adăuga
 funcții de comparare pentru a folosi `#!cpp std::sort` la valoarea sa adevărată.
 Mai jos am atașat două exemple de aplicare a funcției, pe vector indexat de la
-$0$, respectiv $1$.
+0, respectiv 1.
 
 ```cpp
 int v[1001], n;

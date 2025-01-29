@@ -22,12 +22,12 @@ să înveți și formatul concursurilor.
     Acest articol are un caracter **neoficial** și reprezintă totalitatea
     informațiilor strânse de autor de-a lungul experienței sale la olimpiadă,
     atât ca participant, cât și ca propunător, împreună cu informațiile culese
-    de pe siteul olimpiadei, așa cum erau ele în septembrie $2024$. Pentru
+    de pe siteul olimpiadei, așa cum erau ele în septembrie 2024. Pentru
     informații oficiale, contactați organizatorii olimpiadei.
 
 ## Olimpiada Națională de Informatică (ONI)
 
-Cu o tradiție de aproape $5$ decenii în diverse forme, olimpiada națională de
+Cu o tradiție de aproape 5 decenii în diverse forme, olimpiada națională de
 informatică este principala competiție de algoritmică românească pentru elevii
 de gimnaziu și liceu. Competiția este organizată separat pentru fiecare clasă,
 astfel ai posibilitatea să concurezi cu alți elevi din aceeași clasă cu tine.
@@ -39,11 +39,11 @@ astfel ai posibilitatea să concurezi cu alți elevi din aceeași clasă cu tine
     la clasa a V-a și [chiar s-o
     câștigi](https://www.nerdarena.ro/utilizator/Traian_7109).
 
-Această olimpiadă s-a ținut în fiecare an cu excepția anului $2020$, atunci când
+Această olimpiadă s-a ținut în fiecare an cu excepția anului 2020, atunci când
 restricțiile impuse de virusul COVID-19 au forțat anularea fazelor de după cea
 județeană.
 
-Începând cu anul $2021$, olimpiada este organizată de [Societatea pentru
+Începând cu anul 2021, olimpiada este organizată de [Societatea pentru
 Excelență și Performanță în Informatică (SEPI)](https://sepi.ro/), organizație
 creată de profesori, studenți și alți membri ai comisiilor de lucru ale
 olimpiadelor naționale de-a lungul anilor, cu scopul de a asigura continuitatea
@@ -78,22 +78,22 @@ numită etapa locală.
 În unele județe, acest concurs este unul organizat într-un format similar celui
 de la OJI, fiind o primă selecție pentru elevi. Un astfel de exemplu este
 județul Iași, unde Olimpiada Municipală de Informatică are o tradiție de peste
-$20$ de ani, problemele din anii anteriori găsindu-se
+20 de ani, problemele din anii anteriori găsindu-se
 [aici](https://kilonova.ro/problem_lists/149).
 
-Fiecare problemă din concurs valorează $100$ de puncte, punctajul obținut fiind
+Fiecare problemă din concurs valorează 100 de puncte, punctajul obținut fiind
 corespunzător calității soluțiilor pe care le trimiți. Cu alte cuvinte, cu cât
 soluția ta trece de mai multe teste în restricțiile impuse (timp și memorie), cu
 atât vei obține mai multe puncte.
 
-Începând cu anul $2021$, sistemul de evaluare folosit este unul automat, în timp
+Începând cu anul 2021, sistemul de evaluare folosit este unul automat, în timp
 real, serverul de concurs este bazat pe [Contest Management System
 (CMS)](https://cms-dev.github.io/), sistemul folosit la competițiile și
 olimpiadele internaționale de informatică.
 
 !!! note "Observație"
 
-    Până în anul $2020$, sistemul de evaluare era unul bazat pe colectarea
+    Până în anul 2020, sistemul de evaluare era unul bazat pe colectarea
     soluțiilor participanților folosind un stick USB, rezultatele fiind aflate
     după câteva ore de la finalizarea concursului, acestea fiind publicate pe
     siteul [olimpiada.info](https://olimpiada.info).
@@ -116,20 +116,20 @@ mijlocul lunii martie.
 Aceasta constă într-o singură probă de concurs, ce are loc la un centru
 județean, iar în funcție de clasa în care ești, proba are următorul format:
 
-- Clasele V-VIII: O singură probă de concurs, cu durata de $3$ ore și care
-  conține $2$ probleme.
-- Clasele IX-XII: O singură probă de concurs, cu durata de $4$ ore și care
-  conține $3$ probleme.
+- Clasele V-VIII: O singură probă de concurs, cu durata de 3 ore și care
+  conține 2 probleme.
+- Clasele IX-XII: O singură probă de concurs, cu durata de 4 ore și care
+  conține 3 probleme.
 
 Pentru a te califica la etapa națională, trebuie să obții măcar $40\%$ din
-punctajul maxim ($80$ sau $120$ de puncte, în funcție de clasă) și să respecți
+punctajul maxim (80 sau 120 de puncte, în funcție de clasă) și să respecți
 măcar unul din cele două criterii:
 
 - Rezultatul obținut este cel mai bun din județul/sectorul de unde ești
 - Rezultatul obținut nu este cel mai bun din județul/sectorul de unde ești, dar
   este în primele $90 - x$ locuri, unde $x$ este numărul de elevi care s-au
-  calificat conform primului criteriu (locul $1$ pe județ/sector). În situația
-  în care sunt mai mulți elevi pe locul $90$ cu punctaj egal, toți se califică
+  calificat conform primului criteriu (locul 1 pe județ/sector). În situația
+  în care sunt mai mulți elevi pe locul 90 cu punctaj egal, toți se califică
   la etapa națională.
 
 Pentru a rezolva problemele date în anii anteriori, puteți să accesați
@@ -145,7 +145,7 @@ alt oraș, iar în mod uzual, olimpiada are loc în fiecare an în orașe diferi
 
 Deși au existat diferite formate de-a lungul istoriei, în prezent, proba
 olimpiadei naționale de informatică este la fel pentru gimnaziu și liceu,
-constând într-o singură probă ce are $3$ probleme și $4$ ore de concurs.
+constând într-o singură probă ce are 3 probleme și 4 ore de concurs.
 
 Pentru a rezolva problemele date în anii anteriori, puteți să accesați
 următoarea listă: [ONI pe Kilonova](https://kilonova.ro/problem_lists/524).
@@ -157,17 +157,17 @@ distincții:
 
 Premii oferite de Ministerul Educației:
 
-- Premiile I, II și III care se acordă primilor $3$ clasați la olimpiadă.
+- Premiile I, II și III care se acordă primilor 3 clasați la olimpiadă.
 - Mențiuni care se acordă următorilor $15\%$ dintre participanți.
 
 Premii oferite de SEPI:
 
 - Medalie de aur - se acordă primilor $\frac{1}{12}$ participanți (dacă la
-  olimpiadă participă $90$ de elevi, de regulă se acordă $7-8$ medalii de aur)
+  olimpiadă participă 90 de elevi, de regulă se acordă $7-8$ medalii de aur)
 - Medalie de argint - se acordă următorilor $\frac{2}{12}$ participanți (dacă la
-  olimpiadă participă $90$ de elevi, de regulă se acordă $15$ medalii de argint)
+  olimpiadă participă 90 de elevi, de regulă se acordă 15 medalii de argint)
 - Medalie de bronz - se acordă următorilor $\frac{3}{12}$ participanți (dacă la
-  olimpiadă participă $90$ de elevi, de regulă se acordă $22-23$ medalii de
+  olimpiadă participă 90 de elevi, de regulă se acordă $22-23$ medalii de
   bronz)
 
 În general, primii $50\%$ dintre participanți obțin o medalie la olimpiadă,
@@ -198,20 +198,20 @@ unul din membrii lotului național de seniori sau juniori.
 Spre deosebire de OJI și ONI, barajul constă în subiecte unice pentru grupa de
 vârstă (juniori și seniori), după cum urmează:
 
-- Juniori: o singură probă de concurs, cu $3$ probleme și $4$ ore. Se califică
-  $20$ de elevi la lotul de juniori.
-- Seniori: două probe de concurs, cu $3$ probleme și $5$ ore. Se califică $30$
+- Juniori: o singură probă de concurs, cu 3 probleme și 4 ore. Se califică
+  20 de elevi la lotul de juniori.
+- Seniori: două probe de concurs, cu 3 probleme și 5 ore. Se califică 30
   de elevi la lotul de seniori.
 
 Un elev junior este un elev care este eligibil pentru participarea la Olimpiada
 Europeană de Informatică pentru Juniori (EJOI), ceea ce presupune de regulă a fi
 născut în anul $x - 15$ sau mai târziu. De exemplu, elevii eligibili pentru EJOI
-$2024$ au fost cei născuți în $2009$ sau mai târziu.
+2024 au fost cei născuți în 2009 sau mai târziu.
 
 Un elev senior este un elev care este eligibil pentru participarea la Olimpiada
 Internațională de Informatică (IOI), ceea ce presupune de regulă a avea cel mult
-$19$ ani împliniți atunci când IOI are loc. De exemplu, elevii eligibili pentru
-IOI $2024$ au fost cei născuți în septembrie $2004$ sau mai târziu.
+19 ani împliniți atunci când IOI are loc. De exemplu, elevii eligibili pentru
+IOI 2024 au fost cei născuți în septembrie 2004 sau mai târziu.
 
 Pentru a rezolva problemele date în anii anteriori, puteți să accesați
 următoarele liste:
@@ -221,11 +221,11 @@ următoarele liste:
 
 Locurile corespunzătoare loturilor naționale se acordă astfel:
 
-Se acordă câte două locuri fiecărei clase, locuri ce revin celor mai buni $2$
-elevi de la acea clasă, atâta timp cât obțin măcar $20$ de puncte la juniori,
-respectiv $30$ de puncte la seniori.
+Se acordă câte două locuri fiecărei clase, locuri ce revin celor mai buni 2
+elevi de la acea clasă, atâta timp cât obțin măcar 20 de puncte la juniori,
+respectiv 30 de puncte la seniori.
 
-Celelalte $12$, respectiv $22$ de locuri se acordă elevilor rămași cu punctajele
+Celelalte 12, respectiv 22 de locuri se acordă elevilor rămași cu punctajele
 cele mai mari la proba/probele de baraj.
 
 De asemenea, în funcție de rezultatele obținute la probele de baraj (juniori și
@@ -240,8 +240,8 @@ Dacă ai ajuns la lot, vei avea șansa să reprezinți România la concursurile
 internaționale de juniori sau seniori, cu condiția să te plasezi în primele
 locuri la lotul național.
 
-Formatul concursurilor este același cu cel de la baraj, $3$ probleme și $4$ ore
-la juniori, respectiv $3$ probleme și $5$ ore la seniori, nivelul problemelor
+Formatul concursurilor este același cu cel de la baraj, 3 probleme și 4 ore
+la juniori, respectiv 3 probleme și 5 ore la seniori, nivelul problemelor
 fiind similar rigorilor concursurilor internaționale la care participă țara
 noastră.
 
@@ -251,25 +251,25 @@ următoarele liste:
 - [Lot Juniori pe Kilonova](https://kilonova.ro/problem_lists/689).
 - [Lot Seniori pe Kilonova](https://kilonova.ro/problem_lists/225).
 
-În anul $2024$, lotul național a fost format din două tabere de pregătire și
+În anul 2024, lotul național a fost format din două tabere de pregătire și
 selecție, care au avut loc la Cluj-Napoca și Orăștie în luna mai. Fiecare dintre
 tabere a avut două probe de concurs, numeroase activități educative dar și
 excursii și multe alte experiențe.
 
-În prima tabără, $30$ de seniori și $20$ de juniori au participat, iar la
-finalul primelor două baraje, primii $20$ de seniori și $12$ juniori s-au
+În prima tabără, 30 de seniori și 20 de juniori au participat, iar la
+finalul primelor două baraje, primii 20 de seniori și 12 juniori s-au
 calificat la lotul restrâns de informatică.
 
-În cea de-a doua tabără, $20$ de seniori și $12$ juniori au participat, iar la
+În cea de-a doua tabără, 20 de seniori și 12 juniori au participat, iar la
 finalul celor patru baraje, s-au ales echipele reprezentative în funcție de
 rezultatele obținute de elevi de-a lungul barajelor.
 
-De regulă, primii $4$ seniori reprezintă România la IOI și CEOI, iar următorii
-$4$ seniori reprezintă România la BOI. În funcție de competițiile care mai apar,
+De regulă, primii 4 seniori reprezintă România la IOI și CEOI, iar următorii
+4 seniori reprezintă România la BOI. În funcție de competițiile care mai apar,
 membrii lotului pot reprezenta țara noastră și la alte competiții, precum RMI,
 IATI etc.
 
-De regulă, primii $4$ juniori reprezintă România la EJOI și JBOI, iar membrii
+De regulă, primii 4 juniori reprezintă România la EJOI și JBOI, iar membrii
 lotului restrâns reprezintă România la Info(1) Cup. În funcție de competițiile
 care mai apar, membrii lotului pot reprezenta țara noastră și la alte
 competiții, precum IATI etc.

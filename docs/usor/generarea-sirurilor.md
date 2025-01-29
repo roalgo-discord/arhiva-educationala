@@ -39,7 +39,7 @@ relații de recurență. Aceste șiruri se numesc recurente.
 !!! example "Exemplu"
 
     Un exemplu foarte simplu reprezintă șirul numerelor naturale pare, pentru
-    care este binecunoscut faptul că fiecare valoare este cu $2$ mai mare decât
+    care este binecunoscut faptul că fiecare valoare este cu 2 mai mare decât
     valoarea anterioară ($0, 2, 4, 6, 8, \dots$).
 
 În general, ne va interesa să putem genera aceste șiruri și să găsim regulile de
@@ -52,7 +52,7 @@ unele șiruri foarte întâlnite în probleme.
 
     O progresie aritmetică este un șir de numere astfel încât diferența dintre
     termenii consecutivi este constantă. De exemplu șirul $5, 7, 9, 11, 13, 15,
-    \dots$ este o progresie aritmetică cu o diferență comună de $2$.
+    \dots$ este o progresie aritmetică cu o diferență comună de 2.
 
 În general, putem defini o progresie aritmetică folosind primul termen și
 diferența între termeni consecutivi.
@@ -126,7 +126,7 @@ int main() {
 #### Problemă rezolvată - [sir1 pbinfo](https://www.pbinfo.ro/probleme/243/sir1)
 
 Pentru a rezolva această problemă, ne folosim de proprietățile sumei lui Gauss
-(progresie aritmetică cu rația $1$). Astfel, aflăm câte grupe complete de valori
+(progresie aritmetică cu rația 1). Astfel, aflăm câte grupe complete de valori
 există în șir și apoi aflăm valoarea corespunzătoare ultimei grupe rămase.
 
 ```cpp
@@ -154,7 +154,7 @@ int main() {
 
     O progresie geometrică este un șir de numere astfel încât raportul dintre
     termenii consecutivi este constant. De exemplu șirul $2, 4, 8, 16, 32, 64,
-    \dots$ este o progresie geometrică cu raportul $2$.
+    \dots$ este o progresie geometrică cu raportul 2.
 
 În general, putem defini o progresie geometrică folosind primul termen și
 raportul între termeni consecutivi.
@@ -214,12 +214,12 @@ Se poate remarca faptul că valorile factorialelor cresc foarte repede:
   pe care o putem stoca într-o variabilă de tip long long)
 
 De asemenea, valorile factorialelor, începând de la $5!$ se termină toate cu
-$0$.
+0.
 
 În mod particular, putem afla numărul de zerouri de la sfârșitul lui $n!$ ținând
-cont de faptul că pentru a obține un zero, trebuie să avem un factor de $2$ și
-unul de $5$ ($2 \cdot 5 = 10$), iar factorii de $5$ apar mult mai rar decât cei
-de $2$.
+cont de faptul că pentru a obține un zero, trebuie să avem un factor de 2 și
+unul de 5 ($2 \cdot 5 = 10$), iar factorii de 5 apar mult mai rar decât cei
+de 2.
 
 În general, pe lângă aplicațiile ce implică noțiuni mai simple, factorialele se
 vor dovedi a fi esențiale în ceea ce privește combinatorica, unde apar în multe
@@ -228,12 +228,12 @@ formule, începând de la noțiunile legate de
 
 #### Problemă exemplu - [Trailing Zeroes](https://cses.fi/problemset/task/1618)
 
-Această problemă ne cere fix cerința de mai sus, aflarea numărului de $0$ de la
+Această problemă ne cere fix cerința de mai sus, aflarea numărului de 0 de la
 sfârșitul factorialului pentru un număr $n$ dat. Deoarece știm că avem un număr
-suficient de factori de $2$ în acest produs, trebuie să analizăm de câte ori
-apare $5$ în reprezentarea în factori primi a factorialului.
+suficient de factori de 2 în acest produs, trebuie să analizăm de câte ori
+apare 5 în reprezentarea în factori primi a factorialului.
 
-În primul rând, fiecare număr divizibil cu $5$ adaugă un zero la acest produs.
+În primul rând, fiecare număr divizibil cu 5 adaugă un zero la acest produs.
 Dar acest lucru nu este suficient deoarece numerele multiplu de $25 = 5^2$
 adaugă încă un zero, la fel și cele multiplu de $125 = 5^3$ ș.a.m.d.
 
@@ -243,7 +243,7 @@ Astfel, numărul de zerouri de la finalul scrierii lui $n!$ este dat de formula
 \right\rfloor + \dots + \left\lfloor \frac{n}{5^k} \right\rfloor \]
 
 unde $\lfloor x \rfloor$ reprezintă partea întreagă a lui $x$, iar $5^k$ este
-cea mai mare putere a lui $5$ mai mică sau egală cu $n$.
+cea mai mare putere a lui 5 mai mică sau egală cu $n$.
 
 !!! note "Formula lui Legendre"
 
@@ -299,7 +299,7 @@ valori consecutive Fibonacci se apropie de [numărul de
 aur](https://en.wikipedia.org/wiki/Golden_ratio).
 
 Datorită acestui fapt, numerele Fibonacci cresc destul de repede, deja cel de-al
-$100$-lea număr Fibonacci se apropie de limita maximă a long long,
+100-lea număr Fibonacci se apropie de limita maximă a long long,
 [aici](https://r-knott.surrey.ac.uk/Fibonacci/fibtable.html) putând fi găsită o
 asemenea listă.
 

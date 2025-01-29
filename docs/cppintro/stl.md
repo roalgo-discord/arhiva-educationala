@@ -40,7 +40,7 @@ vectori](https://edu.roalgo.ro/cppintro/arrays/).
 ### Structura std::vector
 
 Aceasta este cea mai simplă structură de date din STL, fiind un tablou cu
-lungime dinamică, care este indexat de la $0$. Pentru a putea folosi această
+lungime dinamică, care este indexat de la 0. Pentru a putea folosi această
 structură de date, va trebui să includem biblioteca `<vector>`.
 
 Sintaxa unui vector va fi de tipul `vector<tip> nume;`, unde tip poate fi orice
@@ -462,7 +462,7 @@ Dintre cele mai importante funcții, vom enumera următoarele:
 
 - Atribuirea: `mp[x] = y;` face valoarea cheii $x$ să devină $y$. În mod
   particular, dacă încercăm să lucrăm cu o cheie $x_1$ neinițializată, ea va fi
-  inițializată cu $0$, așa cum se va putea vedea în codul de mai jos.
+  inițializată cu 0, așa cum se va putea vedea în codul de mai jos.
 - Găsirea unui element: `mp.find(x) != mp.end()` verifică dacă $x$ există în
   map, fără a crea un element nou în map.
 - Ștergerea: `mp.erase(x)` șterge instanța cheii $x$ din map. Dacă $x$ nu se
@@ -693,7 +693,7 @@ rapidă, complexitatea operațiilor fiind $O(\log n)$, la fel ca la set și map.
 Această structură de date ne va permite să folosim facilitățile setului,
 împreună cu două funcții noi:
 
-- `find_by_order(k)` - Al $k$-lea cel mai mare element, începând de la $0$.
+- `find_by_order(k)` - Al $k$-lea cel mai mare element, începând de la 0.
 - `order_of_key(x)` - Numărul de valori strict mai mici decât $x$.
 
 Pentru a putea folosi această structură de date, trebuie să declarăm următoarele

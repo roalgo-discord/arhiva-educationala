@@ -20,7 +20,7 @@ memora informațiile, numite și _chei_.
 
 Numărul de fii al unui nod este în mare parte influențat de tipul informațiilor
 memorate, dar de cele mai multe ori, un Trie este folosit pentru reținerea
-șirurilor de caractere, astfel fiecare nod având maxim $26$ fii.
+șirurilor de caractere, astfel fiecare nod având maxim 26 fii.
 
 Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvintele
 să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că
@@ -332,7 +332,7 @@ int main() {
 
 În această problemă ni se dau $n-1$ numere, unde al $i$-lea are valoarea $a_i$,
 iar noi trebuie să construim alt vector $b$, cu $n$ elemente, astfel încât să
-existe toate numerele de la $0$ la $n-1$ în $b$, iar $b_i \oplus b_{i+1} = a_i$.
+existe toate numerele de la 0 la $n-1$ în $b$, iar $b_i \oplus b_{i+1} = a_i$.
 
 În primul rând, dacă $b_i = 0$ atunci $b_{i+1} = a_i$, $b_{i+1} \oplus b_{i+2} =
 a_{i+1}$ , deci $b_{i+2} = a_i \oplus a_{i+1}$ și $b_{i+3} = a_i \oplus a_{i+1}
@@ -344,7 +344,7 @@ a_{j-1}$. Proprietatea se respectă și pentru oricare $j < i$, avem $b_j = a_j
 În al doilea rând, enunțul problemei asigură faptul că mereu va exista soluție.
 Dar când nu avem soluție? Păi în momentul în care se repetă două elemente în
 vectorul $b$, ceea ce înseamnă faptul că trebuie să existe o secvență cu suma
-_xor_ egală cu $0$. Pentru simplitate vom spune că pe poziția $k$ va fi $b_k =
+_xor_ egală cu 0. Pentru simplitate vom spune că pe poziția $k$ va fi $b_k =
 0$. Dacă $i < j$ și $b_i = b_j$ și $j < k$, atunci $a_i \oplus a_{i+1} \oplus
 a_{i+2} \oplus \dots \oplus a_{j-1} = 0$, analog pentru $i > j > k$. Dacă $i < k
 < j$ și $b_i = b_j$ atunci $b_i = a_i \oplus a_{i+1} \oplus \dots \oplus
@@ -353,11 +353,11 @@ a_{k-1}$, $b_j = a_k \oplus a_{k+1} \dots \oplus a_{j-1}$. Prin urmare $a_i
 vectorul $b$ elementele vor fi distincte.
 
 În al treilea rând, observăm că vectorul $b$ este generat în funcție de ce
-valoare are $k$. Deci o primă idee ar fi să fixăm mai întâi unde vom pune $0$-ul
+valoare are $k$. Deci o primă idee ar fi să fixăm mai întâi unde vom pune 0-ul
 în vectorul $b$ și să-l construim în $O(n)$, complexitatea temporală fiind
 $O(n^2)$. Dar putem să ne folosim de a doua observație, și anume că mereu
 vectorul $b$ va avea elementele distincte. Deci ne este suficient să știm care
-va fi valoarea maximă din $b$ dacă $0$-ul se află pe poziția $k$. Pentru a face
+va fi valoarea maximă din $b$ dacă 0-ul se află pe poziția $k$. Pentru a face
 asta putem să folosim 2 trie-uri, unul pentru sufix, altul pentru prefix,
 complexitatea finală devenind $O(n \log n)$.
 
@@ -704,7 +704,7 @@ pentru fiii nodului, $dp1[i][j]$ = care e numărul minim de operații pentru a
 tasta $j$ cuvinte din primii $i$ fii. Pentru că prefixul necesită
 $\text{len}(prefix)$ operații de adăugare și ștergere, vom începe $dp$-ul nostru
 cu $2 \cdot \text{len}(prefix)$ operații deja făcute. Cu alte cuvinte, pentru a
-tasta $0$ cuvinte vom face $dp1[0][0] = 2 \cdot \text{len}(prefix)$. În momentul
+tasta 0 cuvinte vom face $dp1[0][0] = 2 \cdot \text{len}(prefix)$. În momentul
 în care trecem de la $i$ la $i+1$ avem 2 cazuri: fie nu luăm fiul respectiv în
 considerare, fie alegem $p$ șiruri pe care le vom tasta în $dp[fiu(i)][p] - 2
 \cdot \text{len}(prefix)$ operații.

@@ -36,7 +36,7 @@ majoritatea algoritmilor mai complecși.
 
 ### Incrementarea unui contor binar
 
-Dacă vrem să păstrăm un contor binar de lungime $n$, pentru a aduna un $1$ la o
+Dacă vrem să păstrăm un contor binar de lungime $n$, pentru a aduna un 1 la o
 valoare, se poate întâmpla să schimbăm valoarea tuturor biților din șirul pe
 care îl aveam (cel mult $n$), deci s-ar putea spune că complexitatea unei
 asemenea operații este $O(n)$.

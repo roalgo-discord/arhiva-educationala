@@ -188,12 +188,12 @@ while (!dq.empty()) {
 Această problemă se reduce la aflarea unui lanț eulerian în graful descris în
 enunț.
 
-Graful din enunț are doar $10$ noduri și vom folosi proprietățile descrise mai
+Graful din enunț are doar 10 noduri și vom folosi proprietățile descrise mai
 devreme în articol, unde am menționat faptul că este obligatoriu să începem
 dintr-un nod cu grad impar pentru a avea lanț eulerian. Dacă toate nodurile au
 grad par, nu contează de unde începem.
 
-Dacă avem mai mult de $2$ noduri cu grad impar, atunci nu avem soluție. În mod
+Dacă avem mai mult de 2 noduri cu grad impar, atunci nu avem soluție. În mod
 similar, și dacă nu putem parcurge toate muchiile.
 
 !!! note "Observație"

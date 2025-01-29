@@ -494,7 +494,7 @@ void f(int x) {
 ```
 
 - $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
-- $f(12)$ - $12 \% 3 = 0$, deci intrăm în if, **afișăm $3$** și apelăm $f(4)$.
+- $f(12)$ - $12 \% 3 = 0$, deci intrăm în if, **afișăm 3** și apelăm $f(4)$.
 - $f(4)$ - $4 \% 3 = 1$, deci intrăm în else și apelăm $f(1)$.
 - $f(1)$ - $1 \% 3 = 1$, deci intrăm în else și apelăm $f(0)$.
 - $f(0)$ - deoarece $x = 0$, nu se face niciun apel suplimentar, iar funcția se
@@ -504,7 +504,7 @@ void f(int x) {
 - $f(12)$ - după apelul lui $f(4)$, secvența se termină.
 - $f(38)$ - după apelul lui $f(12)$, **afișăm $38 \% 3 = 2$**.
 
-Astfel, secvența finală afișată va fi $3112$.
+Astfel, secvența finală afișată va fi 3112.
 
 ### Exercițiu admitere - Care este valoarea lui $g(2, 1)$?
 

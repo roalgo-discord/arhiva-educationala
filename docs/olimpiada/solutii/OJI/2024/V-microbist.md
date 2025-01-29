@@ -14,13 +14,13 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2517/).
 
-Cerința $1$: Pentru a afla scorul final, vom parcurge șirul de goluri și vom număra câte goluri a marcat fiecare echipă. Pentru aceasta putem folosi două variabile contor pe care să le actualizăm în momentul citirii în funcție de echipa care marchează.
+Cerința 1: Pentru a afla scorul final, vom parcurge șirul de goluri și vom număra câte goluri a marcat fiecare echipă. Pentru aceasta putem folosi două variabile contor pe care să le actualizăm în momentul citirii în funcție de echipa care marchează.
 
-Cerința $2$: Pentru a determina câte scoruri au fost egale, vom ține evidența numărului de goluri marcate de fiecare echipă, la fel ca mai sus, și vom incrementa un contor de fiecare dată când scorurile devin egale.
+Cerința 2: Pentru a determina câte scoruri au fost egale, vom ține evidența numărului de goluri marcate de fiecare echipă, la fel ca mai sus, și vom incrementa un contor de fiecare dată când scorurile devin egale.
 
-Cerința $3$: Putem determina secvențe de elemente egale aflate pe poziții consecutive. O astfel de secvență este revenire în forță dacă atunci când ea începe, echipa pe care o reprezintă este condusă și atunci când se termină echipa pe care o reprezintă conduce cu un gol.
+Cerința 3: Putem determina secvențe de elemente egale aflate pe poziții consecutive. O astfel de secvență este revenire în forță dacă atunci când ea începe, echipa pe care o reprezintă este condusă și atunci când se termină echipa pe care o reprezintă conduce cu un gol.
 
-Detectarea și calcularea revenirii în forță pentru cerința $3$:
+Detectarea și calcularea revenirii în forță pentru cerința 3:
 
 După primul gol, se actualizează scorul echipei corespunzătoare și se determină echipa care este condusă. Pentru următoarele goluri marcate vom ține cont de următoarele aspecte:
 

@@ -38,7 +38,7 @@ sumele din expresia anterioară (să zicem că fixăm $sum[r]$), trebuie să afl
 câte poziții $l$ există astfel încât $sum[r] - sum[l] = s$.
 
 Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sume
-(inițializăm la început suma $0$ cu frecvența $1$, corespunzătoare unui șir
+(inițializăm la început suma 0 cu frecvența 1, corespunzătoare unui șir
 gol), iar pentru fiecare $i$, vom actualiza datele din map și vom aduna la
 răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni
 $O(n \log n)$.
@@ -77,13 +77,13 @@ int main() {
 
 Pentru a rezolva această problemă, trebuie să găsim o proprietate a sumelor
 parțiale care să ne ajute să prevenim numărarea unor subsecvențe care au
-subsecvențe cu suma $0$.
+subsecvențe cu suma 0.
 
 O idee pe care am putea-o folosi este aceea de a afla pentru poziția curentă,
 cel mai mare capăt stâng astfel încât suma elementelor dintre acele două poziții
-să fie egală cu $0$. Următorul pas ar fi să observăm faptul că capătul maxim din
+să fie egală cu 0. Următorul pas ar fi să observăm faptul că capătul maxim din
 stânga pentru care există o poziție $j > i$ astfel încât suma de la poziția
-$i+1$ la $j$ să fie $0$ este limita superioară de la care putem adăuga
+$i+1$ la $j$ să fie 0 este limita superioară de la care putem adăuga
 subsecvențele la răspuns.
 
 De aici, ne mai rămâne un singur pas, și anume folosirea unei structuri de tip

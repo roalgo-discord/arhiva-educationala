@@ -193,7 +193,7 @@ Gândim similar pentru funcția Möbius:
 
 !!! note "Observație"
 
-    În cazul în care fracția de mai sus nu este definită (numitorul este $0$),
+    În cazul în care fracția de mai sus nu este definită (numitorul este 0),
     putem spune din start că $\mu(n) = 0$.
 
 ```cpp
@@ -252,8 +252,8 @@ for (int i = 1; i < N; i++) {
 
 ## Inversiunea lui Möbius
 
-Ultimele din cele $3$ funcții prezentate la începutul articolului sunt mai
-cunoscute ca restul, însă noi ne vom folosi cel mai mult de ultimele $2$, anume
+Ultimele din cele 3 funcții prezentate la începutul articolului sunt mai
+cunoscute ca restul, însă noi ne vom folosi cel mai mult de ultimele 2, anume
 indicatorul lui Euler și funcția Möbius.
 
 Fie $g(n)$ = $\sum_{d\mid n} f(d)$. Inversiunea lui Möbius ne spune:
@@ -264,10 +264,10 @@ Fie $g(n)$ = $\sum_{d\mid n} f(d)$. Inversiunea lui Möbius ne spune:
 
 Cu toate astea, o proprietate mai importantă este $\sum_{d\mid n} \mu(d) =
 U(n)$. Ceea ce sugerează expresia este că pentru oricare număr natural $n$ suma
-va da $1$ doar dacă $n = 1$. Pare nesemnificativă proprietatea, însă este foarte
+va da 1 doar dacă $n = 1$. Pare nesemnificativă proprietatea, însă este foarte
 utilă în rezolvarea multor probleme de informatică.
 
-**Exercițiu $1$:** Calculează câte perechi $(a,b)$ ($1 \leq a,b \leq n$) există
+**Exercițiu 1:** Calculează câte perechi $(a,b)$ ($1 \leq a,b \leq n$) există
 cu proprietatea că $\operatorname{cmmdc}(a,b) = 1$.
 
 Rezolvare: Noi trebuie să calculăm $\sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i, j) =
@@ -418,7 +418,7 @@ N \log{M}) \\ &= O(N \log{N} + N \log{M}) \\ &= O(N\left(\log{N} +
 \log{M}\right)) \\ &= O(N\log{(MN)}) \end{align*} $$
 
 Putem precalcula puterile lui $M$, obținem astfel $O(N \log{N})$. Ambele iau
-$100$ puncte.
+100 puncte.
 
 ### Problema [cntgcd](https://kilonova.ro/problems/372)
 
@@ -433,7 +433,7 @@ putem efectiv să împărțim rezultatul la 2.
 $$ ans = \frac{\sum_{d=1}^{\frac{N}{D}} \mu(d) \cdot \left(\frac{N}{dD}\right)^2
 + 1}{2} $$
 
-Soluția ia undeva la $45$ puncte, datorită faptului că $D \leq N \leq 10^9$.
+Soluția ia undeva la 45 puncte, datorită faptului că $D \leq N \leq 10^9$.
 
 Fie $f(n)$ = numărul de perechi $(A,B)$, unde $\operatorname{cmmdc}(A,B) = 1$.
 Noi trebuie să calculăm practic $f(\left\lfloor \frac{N}{D} \right\rfloor ) =
@@ -490,7 +490,7 @@ $K$ elemente $(X_1, X_2, X_3, \dots , X_K)$ cu proprietatea că:
 - $1 \leq X_1 \leq X_2 \leq \dots \leq X_K \leq N$.
 - $\operatorname{cmmdc}(X_1, X_2, \dots, X_K) = 1$.
 
-#### Soluție de $75 \rightarrow 80$ (sau chiar $100$) de puncte
+#### Soluție de $75 \rightarrow 80$ (sau chiar 100) de puncte
 
 Ne vom folosi de funcția Möbius pentru a calcula rezultatul. Dacă facem
 abstracție de prima proprietate, răspunsul nostru devine:

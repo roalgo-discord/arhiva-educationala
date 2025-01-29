@@ -20,8 +20,8 @@ tags:
 
 !!! example "Exemplu"
 
-    De exemplu, $\varphi (12) = 4$, deoarece $1$, $5$, $7$ și $11$ sunt prime cu
-    $12$.
+    De exemplu, $\varphi (12) = 4$, deoarece 1, 5, 7 și 11 sunt prime cu
+    12.
 
 Această funcție se va dovedi utilă în multe probleme de algoritmică, fie că e
 vorba de aflarea unor răspunsuri referitoare la divizorii comuni ai unor numere
@@ -32,7 +32,7 @@ resturilor.
 ## Calcularea funcției și proprietățile acesteia
 
 Pentru a calcula $\varphi (n)$, putem fie să verificăm pentru fiecare număr de
-la $1$ la $n$ dacă $(i, n) = 1$, unde cu $(a, b)$ am notat [cel mai mare divizor
+la 1 la $n$ dacă $(i, n) = 1$, unde cu $(a, b)$ am notat [cel mai mare divizor
 comun](../usor/divisibility.md#notiuni-introductive) al numerelor $a$ și $b$,
 fie să găsim o formulă care se bazează pe o observație mai avansată.
 
@@ -74,9 +74,9 @@ int Phi(int n) {
 }
 ```
 
-## Calcularea funcției pentru toate valorile de la $1$ la $n$
+## Calcularea funcției pentru toate valorile de la 1 la $n$
 
-Pentru a calcula $\varphi (i)$ pentru toate valorile de la $1$ la $n$, tot ce
+Pentru a calcula $\varphi (i)$ pentru toate valorile de la 1 la $n$, tot ce
 trebuie să facem este să folosim o precalculare similară cu cea descrisă la
 [ciurul lui Eratostene](../usor/sieve.md).
 
@@ -136,8 +136,8 @@ $$ \sum_{d|n} \varphi(d) = n $$
 
 Această sumă este calculată pentru toți divizorii lui $n$.
 
-De exemplu, divizorii lui $10$ sunt $1$, $2$, $5$ și $10$. Suma valorilor lui
-$\varphi (i)$ este $1$ + $1$ + $4$ + $4$ = $10$.
+De exemplu, divizorii lui 10 sunt 1, 2, 5 și 10. Suma valorilor lui
+$\varphi (i)$ este 1 + 1 + 4 + 4 = 10.
 
 Folosind această proprietate putem calcula toate valorilor indicatorului lui
 Euler în $O(n \log n)$ ca la ciurul lui Eratostene, dar implementarea este una

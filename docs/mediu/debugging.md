@@ -25,12 +25,12 @@ Uneori, poți avea nevoie de variabile locale, fie că e vorba într-o funcție 
 chiar în funcția main. Inițializare acestor variabile este obligatorie, iar
 nerespectarea acestei reguli poate duce la erori ce de multe ori nu sunt
 depistate de mediul vostru de lucru. De exemplu, $s$ ar trebui să fie egal cu
-$385$ la final, dar deoarece această variabilă nu este inițializată, răspunsul
+385 la final, dar deoarece această variabilă nu este inițializată, răspunsul
 va fi diferit.
 
 !!! note "Observație"
 
-    În funcție de setările mediului vostru, outputul poate fi $385$. Totuși,
+    În funcție de setările mediului vostru, outputul poate fi 385. Totuși,
     acesta este un undefined behavior, așa cum vom vorbi și mai târziu în acest
     articol.
 
@@ -111,7 +111,7 @@ matematică și în informatică.
 
 De obicei, dacă avem o poziție care este accesată dar nu există în șir, atunci
 programul se va opri din rulat și veți avea un verdict de tipul runtime error
-(programul iese cu un verdict diferit de $0$). Dintre cele mai frecvente
+(programul iese cu un verdict diferit de 0). Dintre cele mai frecvente
 situații în care apar erori, putem menționa accesările pozițiilor negative sau
 pozițiilor prea mari. Mai jos găsiți exemple în care avem de-a face cu asemenea
 erori.
@@ -182,8 +182,8 @@ anumite detalii de implementare.
 
 În mod evident, dacă ideea de la care pleacă soluția voastră este complet
 greșită, trebuie să vă gândiți iar și să analizați cu mai multă atenție ce aveți
-de făcut și cum puteți rezolva problema dată. Totuși, punctajul de $100$ poate
-fi mai aproape de voi decât ați crede, chiar și după un verdict de $0$.
+de făcut și cum puteți rezolva problema dată. Totuși, punctajul de 100 poate
+fi mai aproape de voi decât ați crede, chiar și după un verdict de 0.
 
 Câteva dintre cele mai dese erori care se fac și pot fi reparate repede sunt
 următoarele:

@@ -46,16 +46,16 @@ veți vedea mai târziu, vom putea micșora șansa de a avea o asemenea coliziun
 ### Cum aplicăm un hash pe un șir de caractere
 
 În cazul majorității problemelor, vom avea de-a face cu șiruri de caractere ce
-conțin litere mici sau mari ale alfabetului englez (în total, $26$ de litere) și
+conțin litere mici sau mari ale alfabetului englez (în total, 26 de litere) și
 care au o lungime de un ordin cel mult $10^6$. Din nou, dacă apar și alte
 caractere, va trebui să ajustăm parametrii dupa o regulă bine precizată.
 
 Să presupunem pentru un moment că putem stoca numere arbitrar de mari în timp
-constant, putând să efectuăm operații pe ele. Dat fiind că sunt $26$ de litere,
-ne putem gândi la folosirea bazei $26$ pentru a stoca un număr corespunzător
+constant, putând să efectuăm operații pe ele. Dat fiind că sunt 26 de litere,
+ne putem gândi la folosirea bazei 26 pentru a stoca un număr corespunzător
 unui șir de caractere, fiecare poziție având o valoare egală cu $26^{n - i - 1}
 \cdot ind_i$, unde $n$ este lungimea șirului de caractere, $i$ este poziția
-caracterului curent iar $ind_i$ este poziția din alfabet (cu indexare de la $0$)
+caracterului curent iar $ind_i$ este poziția din alfabet (cu indexare de la 0)
 a caracterului de pe poziția $i$. De exemplu, dacă $s_i = d$, $ind_i = 3$ (_d_
 este cea de-a patra literă din alfabet).
 
@@ -70,13 +70,13 @@ folosită, dar și ca o noutate, vom stoca numerele modulo $m$, care va fi de
 regulă un număr **prim** mare, valori potrivite sunt de regulă $10^9 + 7$, $998
 \ 244 \ 353$ sau $10^9 + 9$. În mod similar, vom vrea să folosim o bază $b$ care
 va fi și ea un număr prim, mai mare decât numărul de caractere distincte pe care
-îl putem avea (dat fiind că avem $26$ de litere, alegeri bune pentru bază ar fi
-$29$ sau $31$).
+îl putem avea (dat fiind că avem 26 de litere, alegeri bune pentru bază ar fi
+29 sau 31).
 
 !!! info "Observație"
 
     Numerele prime sunt recomandate pentru crearea hashurilor deoarece neavând
-    divizori comuni cu alte numere, riscul de a ajunge la valori egale cu $0$
+    divizori comuni cu alte numere, riscul de a ajunge la valori egale cu 0
     este mult mai scăzut, ceea ce reduce semnificativ riscul unor coliziuni.
 
 Un alt aspect important ce trebuie prezentat constă în prezentarea modului în
@@ -271,10 +271,10 @@ int main() {
 
 O altă tehnică ce merită menționată, dat fiind faptul că a apărut relativ
 recent, este cea a xor hashurilor. Pe scurt, modul cum funcționează este că
-pentru fiecare valoare care apare în șir (de regulă, o permutare de la $1$ la
+pentru fiecare valoare care apare în șir (de regulă, o permutare de la 1 la
 $n$ sau în general un interval de valori mici), vom vrea să o înlocuim cu o
 valoare aleasă aleator într-un înterval foarte mare (de regulă, numerele întregi
-pe $32$ de biți).
+pe 32 de biți).
 
 Această tehnică ne ajută să putem afla cu ușurință dacă un set de numere într-un
 anumit interval apare într-o subsecvență sau într-un șir de numere (de regulă,
@@ -286,7 +286,7 @@ o permutare a mulțimii $\{1, 2, \dots, n\}$.
 Pentru această problemă, se poate observa că este un exemplu clasic al folosirii
 tehnicii xor hashing (soluția oficială folosește o combinație de proprietăți
 matematice) deoarece putem genera un număr aleator pentru fiecare valoare de la
-$1$ la $n$ iar mai apoi când verificăm fiecare secvență brut, folosim valorile
+1 la $n$ iar mai apoi când verificăm fiecare secvență brut, folosim valorile
 xor-urilor parțiale pentru a determina cu o probabilitate de aproximativ $100
 \%$ dacă obținem o permutare a mulțimii $\{1, 2, \dots, n\}$. O sursă
 demonstrativă se poate găsi mai jos, [submisia putând fi accesată

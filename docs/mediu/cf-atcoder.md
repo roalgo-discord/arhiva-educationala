@@ -49,7 +49,7 @@ Spre deosebire de problemele cu care sunteți obișnuiți de la olimpiade sau de
 Pbinfo, verdictele care pot apărea pe Codeforces sunt diferite. Cele mai
 frecvent întâlnite sunt acestea:
 
-- Accepted: Ați rezolvat problema corect, echivalent punctajului de $100$ de
+- Accepted: Ați rezolvat problema corect, echivalent punctajului de 100 de
   puncte de la olimpiade. În timpul concursului puteți găsi verdictul Pretests
   passed, similar în scop cu Accepted.
 - Wrong answer on test x: Ați rezolvat corect problema pentru primele $x-1$
@@ -99,10 +99,10 @@ prin rating, concurenții pot avea următoarele culori și titluri:
 
     Există un server neoficial de Discord care cuprinde cea mai mare comunitate
     de utilizatori care sunt în Div. 1, [AC](https://discord.gg/RFfkprBt7r),
-    accesul la discuții fiind disponibil celor cu rating peste $1900$, ei fiind
+    accesul la discuții fiind disponibil celor cu rating peste 1900, ei fiind
     creatorii botului TLE, pe care îl avem și noi.
 
-Inițial, un concurent are rating $0$, dar după $6$ concursuri în care ratingul
+Inițial, un concurent are rating 0, dar după 6 concursuri în care ratingul
 este unul provizoriu, acesta devine unul conform cu abilitățile dovedite de
 concurent, mai multe detalli sunt
 [aici](https://codeforces.com/blog/entry/77890). Sistemul prin care se acordă
@@ -163,8 +163,8 @@ Competițiile de pe Codeforces sunt de două tipuri, după cum urmează:
     problemei curente, se recomandă citirea următoarei probleme pentru a avea o
     șansă la obținerea unor puncte în plus.
 
-De regulă, competițiile durează între $120$ și $150$ minute ($2$ ore - $2.5$
-ore), rareori durând $180$ minute în cazul unor runde mai dificile și încep vara
+De regulă, competițiile durează între 120 și 150 minute (2 ore - $2.5$
+ore), rareori durând 180 minute în cazul unor runde mai dificile și încep vara
 în jurul orei 17:35 sau iarna în jurul 16:35, cu mici excepții.
 
 În cazul rundelor menționate în prima categorie, soluțiile vor fi testate doar
@@ -172,7 +172,7 @@ pe o parte din testele finale ale problemei (_preteste_), iar verdictul de
 Accepted va fi înlocuit în timpul rundei cu verdictul Pretests passed.
 
 În cadrul rundelor menționate în cea de-a doua categorie, există o secțiune după
-concurs de $12$ ore, în care orice test care este folosit pentru a da hack la o
+concurs de 12 ore, în care orice test care este folosit pentru a da hack la o
 soluție care obținuse Accepted în timpul concursului va fi folosit pentru a
 evalua toate celelalte soluții, la finalul acestei etape.
 
@@ -230,8 +230,8 @@ atunci.
 În primul rând, cel mai bun antrenament constă în concursurile care apar pe
 platformă, de regulă cam $6-10$ pe lună. Deși nu toate sunt potrivite pentru
 toți concurenții, există mereu câteva runde în fiecare lună care merită date. De
-regulă, recomandăm rundele de Div. 3 și Div. 4 pentru elevii sub $1400$ rating,
-rundele de Div. 2 pot fi date dacă ai cel puțin $1400$ rating și evident,
+regulă, recomandăm rundele de Div. 3 și Div. 4 pentru elevii sub 1400 rating,
+rundele de Div. 2 pot fi date dacă ai cel puțin 1400 rating și evident,
 rundele de Div. 1 odată ce sunteți eligibili pentru ele.
 
 !!! note "Concursuri virtuale - simulări"
@@ -286,7 +286,7 @@ Dintre cele mai populare comenzi ale botului, vom enumăra următoarele:
   !!! note "Observație"
 
       Dacă vreți să rezolvați probleme mai grele sau mai ușoare, puteți scrie
-      `;gitgud x`, unde $x$ este un multiplu de $100$ reprezentând diferența față
+      `;gitgud x`, unde $x$ este un multiplu de 100 reprezentând diferența față
       de ratingul vostru curent. De asemenea, puteți vedea toate variantele de a
       folosi această comandă pe server.
 

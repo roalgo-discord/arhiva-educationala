@@ -85,9 +85,9 @@ adăugându-i parametrii $x_1$ și $y_1$:
 void euclidExtins(const int a, const int b, int& x1, int& y1);
 ```
 
-În cazul în care parametrul $b$ din funcție este egal cu $0$, atunci $a$ va fi
-egal cu $1$ și astfel vom seta $x_1 = 1$, iar $y_1$ poate lua orice valoare, de
-exemplu tot $1$.
+În cazul în care parametrul $b$ din funcție este egal cu 0, atunci $a$ va fi
+egal cu 1 și astfel vom seta $x_1 = 1$, iar $y_1$ poate lua orice valoare, de
+exemplu tot 1.
 
 !!! warning "Atenție"
 

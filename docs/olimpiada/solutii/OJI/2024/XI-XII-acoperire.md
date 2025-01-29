@@ -16,13 +16,13 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2509/).
 
-Subtask $1$ ($10$ puncte). Pentru $N = 1$, doar trebuie afișat intervalul de la capătul stânga la mijlocul intervalului.
+Subtask 1 (10 puncte). Pentru $N = 1$, doar trebuie afișat intervalul de la capătul stânga la mijlocul intervalului.
 
-Subtask $2$ ($10$ puncte). Când sunt două intervale disjuncte, pentru $K = 2$ doar se face [start,mijloc] pentru fiecare, iar pentru $K = 1$ sunt două cazuri, ca la subtaskul $3$.
+Subtask 2 (10 puncte). Când sunt două intervale disjuncte, pentru $K = 2$ doar se face [start,mijloc] pentru fiecare, iar pentru $K = 1$ sunt două cazuri, ca la subtaskul 3.
 
-Subtask $3$ ($20$ puncte). Când $K = 1$ soluția tot timpul este ori $[primulMijloc, ultimulMijloc]$, ori se termină în ultimul mijloc și trebuie văzut pentru fiecare interval în parte unde poate începe cel mai târziu.
+Subtask 3 (20 puncte). Când $K = 1$ soluția tot timpul este ori $[primulMijloc, ultimulMijloc]$, ori se termină în ultimul mijloc și trebuie văzut pentru fiecare interval în parte unde poate începe cel mai târziu.
 
-Subtask $4$ ($20$ puncte). Când toate intervalele nu se intersectează, ele pot fi sortate oricum, căci bănuim că unii concurenți instinctiv le sortează după unul din capete și apoi încearcă un greedy. Problemele de genul de obicei implică o ordonare și parcurgere a evenimentelor, doar aici trebuia văzut că evenimentele interesante sunt mijloacele.
+Subtask 4 (20 puncte). Când toate intervalele nu se intersectează, ele pot fi sortate oricum, căci bănuim că unii concurenți instinctiv le sortează după unul din capete și apoi încearcă un greedy. Problemele de genul de obicei implică o ordonare și parcurgere a evenimentelor, doar aici trebuia văzut că evenimentele interesante sunt mijloacele.
 
 Observația de bază a problemei este că dacă un segment nou acoperă un segment inițial, atunci trebuie să acopere mijlocul segmentului inițial. Dacă intervalul de acoperiri are lungimea minim jumătate din intervalul initial, este și garantat suficient. Echivalent ar fi să spunem că orice interval de lungime minim $L/2$ acoperă un interval inițial de lungime $L$ dacă și numai dacă conține mijlocul intervalului inițial.
 

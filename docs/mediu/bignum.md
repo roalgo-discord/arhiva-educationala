@@ -12,7 +12,7 @@ tags:
     - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
     - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
 
-Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza $10$, format
+Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza 10, format
 din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu
 fiecare $a_i$ satisfăcând $0 \leq a_i \leq 9$, și $a_{n-1} \neq 0$. Valoarea
 numărului este dată de:
@@ -39,7 +39,7 @@ $$ \overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = a_{n-1} \cdot b^{n-1} + a_{n-2}
 
 Numerele mari sunt esențiale pentru calcule ce depășesc limita de $2^{63} - 1$.
 Acestea se bazează pe reprezentarea cifrică a numerelor. De exemplu, să
-reprezentăm numărul $82534$ folosind definiția numerelor în baza $10$:
+reprezentăm numărul 82534 folosind definiția numerelor în baza 10:
 
 $$ \begin{align*} 82534 &= 80000 + 2000 + 500 + 30 + 4\\ &= 8 \cdot 10000 + 2
 \cdot 1000 + 5 \cdot 100 + 3 \cdot 10 + 4 \cdot 1\\ &= 8 \cdot 10^{4} + 2 \cdot
@@ -55,7 +55,7 @@ componente și le stocăm într-un vector.
 
 !!! example "Exemplu"
 
-    De exemplu, numărul $82534$ poate fi stocat într-un vector $v$ astfel:
+    De exemplu, numărul 82534 poate fi stocat într-un vector $v$ astfel:
 
     $$
     \begin{array}{r|cccccccc}
@@ -148,7 +148,7 @@ este numărul de cifre ale numărului natural $N$.
 
 !!! example "Exemplu"
 
-    De exemplu, numărul $82534$ va fi stocat astfel:
+    De exemplu, numărul 82534 va fi stocat astfel:
 
     $$
     \begin{array}{r|ccccccccc}
@@ -500,10 +500,10 @@ while (a[a[0]] == 0) {
 
 ### Afișarea unui număr mare
 
-Atunci când lucrăm cu o bază mai mare ca $10$, afișarea numărului poate deveni
+Atunci când lucrăm cu o bază mai mare ca 10, afișarea numărului poate deveni
 un pic mai complicată, fiind nevoie de atenție suplimentară pentru a face
 lucrurile să funcționeze. Aici am pus o implementare mai generalizată, unde $b$
-este baza pe care o folosim (implicit e $10$, dar poate fi ajustată).
+este baza pe care o folosim (implicit e 10, dar poate fi ajustată).
 
 ```cpp
 bool ok = false;
@@ -535,9 +535,9 @@ for (int i = a[0]; i >= 1; i--) {
 ## Optimizări ce se pot face la implementare
 
 Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca
-$10$, de regulă putere a lui $10$. Se recomandă folosirea unei baze între $10^6$
+10, de regulă putere a lui 10. Se recomandă folosirea unei baze între $10^6$
 și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea
-individuală a fiecărei poziții drept un număr de $10$ sau mai multe cifre.
+individuală a fiecărei poziții drept un număr de 10 sau mai multe cifre.
 
 Această optimizare poate fi utilă mai ales în situația în care foarte multe
 calcule sunt necesare sau limita de timp este strânsă. Un astfel de exemplu

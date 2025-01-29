@@ -23,20 +23,20 @@ pe care le vom explica aici le putem folosi și pentru numere cu mai multe cifre
 nu este practic să le folosim deoarece putem folosi structurile repetitive
 într-un mod mai simplu și eficient.
 
-Dacă vrem să aflăm cifrele unui număr cu cel mult $3$ cifre, putem să ne folosim
+Dacă vrem să aflăm cifrele unui număr cu cel mult 3 cifre, putem să ne folosim
 de diverse relații matematice pentru a le afla, începând de la ultima la prima.
 
 !!! info "Ultima cifră"
 
     Definim **ultima cifră** a unui număr natural $x$ ca fiind cea mai
     nesemnificativă cifră a acestuia. De exemplu, dacă $x = 491$, ultima cifră a
-    acestui număr este $1$.
+    acestui număr este 1.
 
 Pentru a afla această cifră, ne vom folosi de proprietatea că aceasta este egală
-cu restul împărțirii numărului la $10$, ceea ce ne va da rezultatul dorit.
+cu restul împărțirii numărului la 10, ceea ce ne va da rezultatul dorit.
 
 Pentru a afla următoarele cifre, avem mai multe variante. Fie împărțim numărul
-la $10$ și aflăm de fiecare dată noua cifră a unităților la fel ca la pasul
+la 10 și aflăm de fiecare dată noua cifră a unităților la fel ca la pasul
 precedent, fie vom folosi o formulă modificată pe care o vom prezenta aici:
 
 !!! info "A $k$-a cifră de la coadă"
@@ -101,7 +101,7 @@ nostru nu mai are cifre.
 
 !!! note "Observație"
 
-    În multe probleme, se poate întâmpla ca $n$ să fie egal cu $0$ încă de la
+    În multe probleme, se poate întâmpla ca $n$ să fie egal cu 0 încă de la
     început. În codurile cu `while`, vom pune de regulă un `if` adițional care
     se ocupă de acest caz particular. O alternativă este folosirea instrucțiunii
     `do-while`
@@ -172,21 +172,21 @@ ușoare de olimpiadă.
 
 !!! example "Exemplu"
 
-    De exemplu, să analizăm numărul $1954$.
+    De exemplu, să analizăm numărul 1954.
 
     - $x = 1954$, suma cifrelor este $1 + 9 + 5 + 4 = 19$.
     - $x = 19$, suma cifrelor este $1 + 9 = 10$.
     - $x = 10$, suma cifrelor este $1 + 0 = 1$.
-    - $x = 1$, numărul are o cifră, deci cifra de control este $1$.
+    - $x = 1$, numărul are o cifră, deci cifra de control este 1.
 
-Criteriul de divizibilitate cu $9$ (învățat la matematică în clasa a 5-a) spune
-că $x$ și suma cifrelor lui $x$ dau același rest la împărțirea cu $9$. În
+Criteriul de divizibilitate cu 9 (învățat la matematică în clasa a 5-a) spune
+că $x$ și suma cifrelor lui $x$ dau același rest la împărțirea cu 9. În
 particular, se poate observa faptul că cifra de control este fix rezultatul
 operației $x \% 9$, cu două particularități pe care trebuie să le avem în
 vedere:
 
-- Dacă $x = 0$, cifra de control a lui $x$ este $0$
-- Dacă $x\% 9 = 0$, cifra de control a lui $x$ este $9$.
+- Dacă $x = 0$, cifra de control a lui $x$ este 0
+- Dacă $x\% 9 = 0$, cifra de control a lui $x$ este 9.
 
 Mai jos puteți găsi implementări folosind atât formula simplificată, cât și
 simularea răspunsului.
@@ -247,14 +247,14 @@ simularea răspunsului.
 !!! info "Oglinditul unui număr"
 
     Oglinditul unui număr $n$ reprezintă numărul scris de la dreapta la stânga.
-    De exemplu, dacă $x = 491301$, oglinditul lui $x$ este $103194$. Dacă
-    numărul conține cifre de $0$ la sfârșitul numărului, acestea vor fi ignorate
+    De exemplu, dacă $x = 491301$, oglinditul lui $x$ este 103194. Dacă
+    numărul conține cifre de 0 la sfârșitul numărului, acestea vor fi ignorate
     în oglindit.
 
 !!! info "Numere palindrom"
 
     Dacă $x$ și oglinditul lui $x$ sunt egali, atunci putem spune că $x$ este un
-    număr palindrom. De exemplu, $33133$ și $49594$ sunt numere palindrom. Cu
+    număr palindrom. De exemplu, 33133 și 49594 sunt numere palindrom. Cu
     alte cuvinte, un număr palindrom este un număr care se scrie la fel de la
     stânga la dreapta și invers.
 

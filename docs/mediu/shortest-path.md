@@ -56,7 +56,7 @@ ne vom raporta la exemplul folosit anterior.
 !!! note "Observație"
 
     Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii
-    este egal cu $1$.
+    este egal cu 1.
 
 Pentru a păstra în memorie costul unei muchii, vom ține o variabilă în plus,
 astfel vom fi nevoiți să lucrăm cu structuri sau cu tipuri precum pair, după
@@ -91,7 +91,7 @@ Modul de funcționare al algoritmului este unul foarte simplu:
 
 - Pentru fiecare nod, vom ține un cost total până la el, la început acesta va fi
   inițializat pentru toate nodurile cu valori mari, cu excepția nodului (sau
-  nodurilor) start, care vor avea costul inițial $0$.
+  nodurilor) start, care vor avea costul inițial 0.
 - Cât timp nu am vizitat toate nodurile, alegem nodul cu costul total dintre
   cele nealese. Dacă există mai multe asemenea noduri, oricare poate fi ales.
 - Pentru nodul ales, vom vizita toate nodurile nevizitate, vecine cu el și
@@ -423,14 +423,14 @@ int main() {
 ## Algoritmul 0-1 BFS și variațiile sale
 
 În unele probleme de drum minim, costurile muchiilor sunt valori mici, dar nu
-doar egale cu $1$. Deoarece avem puține costuri, ne putem gândi la optimizări
+doar egale cu 1. Deoarece avem puține costuri, ne putem gândi la optimizări
 care să se folosească de acest lucru pentru a ajunge să avem algoritmi mai
 rapizi, fără a fi nevoie de Dijkstra sau vreun alt algoritm mai general.
 
 ### 0-1 BFS
 
 Un prim exemplu constă în grafurile (sau construcțiile care pot fi reprezentate
-ca și grafuri) în care costurile muchiilor sunt doar $0$ sau $1$. Deoarece avem
+ca și grafuri) în care costurile muchiilor sunt doar 0 sau 1. Deoarece avem
 costuri care nu sunt uniforme, nu vom putea folosi BFS la fel cum am proceda
 într-o problemă obișnuită, dar putem în schimb să profităm de faptul că sunt
 doar două costuri distincte.
@@ -439,15 +439,15 @@ doar două costuri distincte.
 drumul devine unul mai optim decât drumul minim, vom avea două cozi (sau un
 deque) în care vom alterna cozile în care adăugăm nodurile, după cum urmează:
 
-- Dacă costul muchiei este $0$, vom adăuga în coada curentă (sau în vârful
+- Dacă costul muchiei este 0, vom adăuga în coada curentă (sau în vârful
   deque-ului, dacă folosim un deque)
-- Dacă costul muchiei este $1$, vom adăuga în coada următoare (sau la coada
+- Dacă costul muchiei este 1, vom adăuga în coada următoare (sau la coada
   deque-ului, dacă folosim această structură de date)
 
 !!! note "Observație"
 
     Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura
-    noastră de date de cel mult $2$ ori, complexitatea devenind liniară, spre
+    noastră de date de cel mult 2 ori, complexitatea devenind liniară, spre
     deosebire de o abordare standard folosind BFS, în care complexitatea pe cel
     mai rău caz poate fi polinomială (de cele mai multe ori, pătratică raportat
     la numărul de noduri)
@@ -461,7 +461,7 @@ dat, acestea fiind traversate secvențial.
 
 Un exemplu de problemă în care avem această abordare este problema
 [padure](https://www.infoarena.ro/problema/padure), în care vom implementa acest
-algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia $100$ pe
+algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia 100 pe
 problema dată.
 
 ```cpp
@@ -529,7 +529,7 @@ strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a
 folosi $k$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim
 exact ca la 0-1 BFS.
 
-Vom începe prin a adăuga punctul inițial în coada $0$, iar pe parcurs, dacă luăm
+Vom începe prin a adăuga punctul inițial în coada 0, iar pe parcurs, dacă luăm
 punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat
 în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte.
 Acest lucru se poate generaliza și dacă avem $k$ costuri oarecare, putând astfel
@@ -547,7 +547,7 @@ Tractor](https://codeforces.com/gym/104328/problem/C), dată la finala FIICode
 
 Aici vom avea trei costuri distincte, unul dintre ele putând fi ajustat de
 operația descrisă în enunț. Ne vom concentra pe partea în care vom rula
-algoritmul lui Dial, folosind $4$ cozi (costurile sunt $1, 2, 3$).
+algoritmul lui Dial, folosind 4 cozi (costurile sunt $1, 2, 3$).
 
 ```cpp
 #include <iostream>

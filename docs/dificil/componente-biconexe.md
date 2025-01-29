@@ -110,7 +110,7 @@ mai sus este muchia $(2, 4)$.
 
 Punctele de articulație reprezintă nodurile care dacă le scoatem din graf,
 acesta nu va mai fi conex. Un astfel de exemplu în desenul de mai sus este nodul
-$9$.
+9.
 
 ## Algoritmul de aflare a componentelor biconexe
 

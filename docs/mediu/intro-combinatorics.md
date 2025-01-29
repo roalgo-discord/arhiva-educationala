@@ -71,8 +71,8 @@ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = 
     Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile
     posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$.
 
-    Avem $9$ variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot
-    $9$ variante ($10$, din care excludem cea egala cu $a$), astfel numărul
+    Avem 9 variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot
+    9 variante (10, din care excludem cea egala cu $a$), astfel numărul
     total de variante este $9 \cdot 9 = 81$.
 
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule
@@ -86,7 +86,7 @@ independente care contribuie la răspunsul final.
     mulțime $M$ finită într-o ordine diferită. Dacă cardinalul mulțimii $|M| =
     n$, numărul de permutări ale unei mulțimi de $n$ valori este $n!$.
 
-    De exemplu, pentru $n = 3$, cele $6$ permutări ale mulțimii $\{1, 2, 3\}$
+    De exemplu, pentru $n = 3$, cele 6 permutări ale mulțimii $\{1, 2, 3\}$
     sunt următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$, $\{2, 1, 3\}$, $\{2, 3,
     1\}$, $\{3, 1, 2\}$, $\{3, 2, 1\}$
 
@@ -143,13 +143,13 @@ mulțime $M$. Numărul de submulțimi ale lui $M$ este egal cu $2^{|M|}$, deoare
 pentru fiecare element al mulțimii, putem alege dacă să îl includem în
 submulțimea pe care vrem să o creăm sau nu.
 
-Dacă mulțimea $M$ este egală cu $\{0, 1, 1\}$, cele $8$ submulțimi ale ei sunt
+Dacă mulțimea $M$ este egală cu $\{0, 1, 1\}$, cele 8 submulțimi ale ei sunt
 următoarele: $\emptyset$, $\{0\}$, $\{0, 1\}$, $\{0, 1, 2\}$, $\{0, 2\}$,
 $\{1\}$, $\{1, 2\}$, $\{2\}$.
 
 Pentru a putea itera prin toate submulțimile unei mulțimi date, ne putem folosi
 de faptul că fiind $2^n$ asemenea submulțimi, putem identifica fiecare
-submulțime folosind una din reprezentările binare ale numerelor de la $0$ la
+submulțime folosind una din reprezentările binare ale numerelor de la 0 la
 $2^n - 1$, tehnică numită colocvial bitmasks sau măști pe biți. Pentru a vedea
 dacă trebuie să folosim unul din numere sau nu, trebuie doar verificat pentru o
 submulțime dată dacă bitul corespunzător acelei poziții este setat sau nu în
@@ -178,7 +178,7 @@ for (int mask = 0; mask < totalSubsets; ++mask) {
 ### Aranjamente
 
 Un aranjament de $n$ elemente luate câte $k$ reprezintă o submulțime ordonată a
-lui $A$ de $k$ elemente. De exemplu, aranjamente de $4$ luate câte $3$ ale
+lui $A$ de $k$ elemente. De exemplu, aranjamente de 4 luate câte 3 ale
 mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1,
 3, 4\}$, $\{2, 1, 3\}$, $\{2, 1, 4\}$, $\{2, 3, 4\}$, $\{3, 1, 2\}$, $\{3, 1,
 4\}$, $\{3, 2, 4\}$, $\{4, 1, 2\}$, $\{4, 1, 3\}$, $\{4, 2, 3\}$
@@ -195,7 +195,7 @@ $A_n^k = (n - k + 1)\cdot A_n^{k-1}$
 ### Combinări
 
 O combinare de $n$ elemente luate câte $k$ reprezintă o submulțime neordonată a
-lui $A$ de $k$ elemente. De exemplu, combinările de $4$ luate câte $3$ ale
+lui $A$ de $k$ elemente. De exemplu, combinările de 4 luate câte 3 ale
 mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1,
 3, 4\}$, $\{2, 3, 4\}$
 
@@ -361,7 +361,7 @@ neordonate ale lui $i$, unde lungimea acesteia este $j$. Pentru a putea calcula
 această recurență, avem o formulă relativ simplă.
 
 - $p(i, j) = p(i-1, j-1) + p(i-j, j)$, dacă $i\geq 1$ și $j\geq 1$ (cu alte
-  cuvinte, fie adăugăm un $1$ la începutul partiției, fie incrementăm toate
+  cuvinte, fie adăugăm un 1 la începutul partiției, fie incrementăm toate
   elementele din partiție).
 - $p(i, 0) = 0$, pentru $i\geq 1$
 - $p(0, 0) = 1$.
@@ -497,7 +497,7 @@ se regăsesc în probleme legate de numărarea unor partiții.
 
 **Numerele lui Stirling de speța I** numără câte permutări de ordin $n$ cu $k$
 cicluri există, și se notează cu $s(n, k)$. De exemplu, permutarea $1, 4, 2, 3,
-6, 5$ are $2$ cicluri ($1$, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
+6, 5$ are 2 cicluri (1, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt
 $s(0, 0) = 1, s(n, 0) = 0$ și $s(0, k) = 0$, iar formula recurentă este $s(n, k)
 = s(n-1, k-1) + (n-1)\cdot s(n-1, k)$, recurență ce se poate explica recurgând
 la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la

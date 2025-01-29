@@ -173,7 +173,7 @@ int main() {
 ### Incrementarea și decrementarea
 
 În mod particular, în cazul operațiilor de adunare și scădere, putem folosi
-operatorii de incrementare (adunare cu $1$) și decrementare (scădere cu $1$)
+operatorii de incrementare (adunare cu 1) și decrementare (scădere cu 1)
 pentru a face scrierea mai scurtă, sintaxa lor fiind `a++`, respectiv `a--`.
 
 Deși la prima vedere acest operator pare foarte simplu de utilizat,
@@ -199,15 +199,15 @@ examenele de bacalaureat și admitere.
     }
     ```
 
-    Dacă ați răspuns $6$, urmat de $14$, urmat de $-4$, urmat de $4 \ 8$,
+    Dacă ați răspuns 6, urmat de 14, urmat de $-4$, urmat de $4 \ 8$,
     felicitări!
 
     Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul
     rând, deoarece operatorul de decrementare este postfixat, instrucțiunea
-    `a--` va produce efect abia după afișare, $a$ devenind $5$ ulterior. Apoi,
+    `a--` va produce efect abia după afișare, $a$ devenind 5 ulterior. Apoi,
     deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va
-    produce efect înainte de afișare, $b$ devenind $9$, deci suma devine $14$.
-    Similar, $a$ și $b$ devin $4$ și $8$, deci diferența este $4$.
+    produce efect înainte de afișare, $b$ devenind 9, deci suma devine 14.
+    Similar, $a$ și $b$ devin 4 și 8, deci diferența este 4.
 
 ### Operații aritmetice pe numere reale
 
@@ -268,16 +268,16 @@ care le vom folosi în acest articol. Printre altele, vom enumera următoarele:
 
 - Notația pentru sumă: $\sum$ este folosi pentru a nota diverse sume între mai
   multe numere legate între ele printr-o formulă. De exemplu, $\sum_{i=1}^n x$
-  reprezintă suma numerelor de la $1$ la $n$.
+  reprezintă suma numerelor de la 1 la $n$.
 - Notația pentru produs: $\Pi$ este folosi pentru a nota diverse produse între
   mai multe numere legate între ele printr-o formulă. De exemplu, $\Pi_{i=1}^n
-  x$ reprezintă produsul numerelor de la $1$ la $n$.
+  x$ reprezintă produsul numerelor de la 1 la $n$.
 - Notația pentru logaritm: $\log n$ este folosit pentru a nota logaritmul unui
   număr $n$, o valoare folosită frecvent în calculul complexităților. Fără a
   intra prea mult în teoria specifică a logaritmilor (se studiază în clasa a X-a
   la mate-info), putem să-i definim într-un mod aproximativ drept numărul de
   pași necesari pentru a ajunge la un număr subunitar dacă împărțim pe $n$ la
-  $2$. De exemplu, $\log 1000 \approx 10$,  $\log 1000000 \approx 20$ etc.
+  2. De exemplu, $\log 1000 \approx 10$,  $\log 1000000 \approx 20$ etc.
 
 De asemenea, în funcție de algoritmii studiați, veți mai găsi alte notații ce
 folosesc litere din alfabetul grecesc precum $\pi$, $\psi$, $\phi$ etc.
@@ -300,11 +300,11 @@ direct, fie prin inducție matematică.
 
 ### Rezolvarea unor tipuri de ecuații
 
-Pentru ecuația de gradul $1$ și $2$, avem tehnici binecunoscute pentru aflarea
+Pentru ecuația de gradul 1 și 2, avem tehnici binecunoscute pentru aflarea
 soluțiilor, după cum urmează.
 
 - Pentru o ecuație de forma $ax + b = 0$, soluția ecuației este $\frac{-b}{a}$.
-- Pentru o ecuație de forma $ax^2 + bx + c = 0$, avem $0$, $1$ sau $2$ soluții
+- Pentru o ecuație de forma $ax^2 + bx + c = 0$, avem 0, 1 sau 2 soluții
   reale, care pot fi aflate prin formulele $\frac{-b + \sqrt(\Delta)}{2a}$ și
   $\frac{-b - \sqrt(\Delta)}{2a}$, unde $\Delta = b^2 - 4ac$. Dacă $\Delta < 0$,
   nu există soluții reale.
@@ -343,7 +343,7 @@ la altul este $\%$ și acesta ne află restul împărțirii deîmpărțitului la
 În mod particular, dacă $a \% b = 0$, atunci $a$ se împarte exact la $b$.
 
 O altă particularitate a numerelor prime este aceea că numărul aproximativ de
-numere prime între $1$ și $n$ este $\frac{n}{\log n}$, iar în mod similar,
+numere prime între 1 și $n$ este $\frac{n}{\log n}$, iar în mod similar,
 $\sum_{i=1}^n \frac{n}{i} \approx n \log n$.
 
 ## Concluzii

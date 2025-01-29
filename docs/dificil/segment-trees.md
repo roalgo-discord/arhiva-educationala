@@ -64,7 +64,7 @@ pentru intervalul respectiv.
 Să considerăm un vector $A$ de dimensiune $N$. Arborele de intervale asociat
 acestui vector se construiește astfel:
 
-- Rădăcina arborelui va fi nodul $1$ și va avea asociat răspunsul pentru
+- Rădăcina arborelui va fi nodul 1 și va avea asociat răspunsul pentru
   intervalul $[1,n]$.
 - Un nod $k$ are asociat un interval $[st,dr]$, iar acesta are doi fii ce se vor
   afla pe pozițiile $2 \cdot k$ (fiul din stânga) și $2 \cdot k + 1$ (fiul din
@@ -190,8 +190,8 @@ din vectorul inițial. Complexitatea este determinată de înălțimea arborelui
 deoarece actualizarea trebuie propagată de la frunză până la rădăcină.
 
 Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
-arborelui de intervale după ce actualizăm valoarea elementului de pe poziția $5$
-din $2$ în $1$.
+arborelui de intervale după ce actualizăm valoarea elementului de pe poziția 5
+din 2 în 1.
 
 ![](../images/segment-trees/update.svg)
 

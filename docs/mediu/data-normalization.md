@@ -18,7 +18,7 @@ este normalizarea datelor. Cu alte cuvinte, scopul principal al acestei metode
 este acela de a transforma un șir cu valori arbitrare într-un șir cu valori mai
 mici.
 
-De regulă, transformăm valorile într-un șir cu valori între $1$ și $n$, în care
+De regulă, transformăm valorile într-un șir cu valori între 1 și $n$, în care
 fiecare valoare va fi modificată în funcție de poziția acesteia în șirul sortat.
 Deși în multe cazuri, vom putea folosi și alte structuri de date, normalizarea
 devine în multe cazuri o metodă care ne ajută să îmbunătățim constanta de timp
@@ -124,7 +124,7 @@ Pentru a rezolva această problemă, trebuie să găsim o metodă care ne ajută
 procesăm intervalele în așa fel încât să nu trebuiască să avem nevoie de foarte
 multă memorie pentru valorile din intervale.
 
-O primă soluție brută constă în verificarea fiecărui punct posibil de la $1$ la
+O primă soluție brută constă în verificarea fiecărui punct posibil de la 1 la
 $10^9$, iar pentru fiecare punct, verificăm dacă este inclus în fiecare dintre
 cele $n$ intervale date. Complexitatea ar fi $O(n \cdot maxval)$, ceea ce este
 mult prea încet pentru o soluție optimă.
@@ -140,7 +140,7 @@ Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este
 
 O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui
 Mars](../usor/partial-sums.md#smenul-lui-mars), iar pentru fiecare interval,
-putem adăuga $1$ în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$.
+putem adăuga 1 în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$.
 
 Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$,
 iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi

@@ -36,7 +36,7 @@ minim, concept ce va fi subiectul acestui articol.
     De exemplu, dacă avem următorul graf: $n = 5$, $m = 6$ și următoarele muchii
     de tip $(a, b, cost)$: $(1, 2, 3)$, $ (2, 3, 5)$, $ (2, 4, 2)$, $ (3, 4,
     8)$, $ (5, 1, 7)$, $ (5, 4, 4)$, arborele parțial de cost minim va avea
-    costul $14$, alegându-se primele trei muchii și ultima.
+    costul 14, alegându-se primele trei muchii și ultima.
 
 Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi
 sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai

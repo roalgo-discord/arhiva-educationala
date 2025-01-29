@@ -28,8 +28,8 @@ Astfel, se impune folosirea unui vector de frecvență.
 
     De exemplu, dacă șirul nostru conține valorile $8, 1, 4, 1, 6, 3, 5, 2, 2,
     4$, vectorul de frecvență va avea următoarea formă: $0, 2, 2, 1, 1, 1, 1, 0,
-    1$, cu semnificația că $0$ nu apare deloc, $1$ apare de două ori, $2$ apare
-    de două ori, iar celelalte valori, cu excepția lui $7$, apar o singură dată.
+    1$, cu semnificația că 0 nu apare deloc, 1 apare de două ori, 2 apare
+    de două ori, iar celelalte valori, cu excepția lui 7, apar o singură dată.
 
 Această structură de date se folosește atunci când numerele (sau în general,
 datele cu care lucrăm) pot lua puține valori distincte sau se află într-un
@@ -62,7 +62,7 @@ din algoritmii de sortare explicat [aici](https://edu.roalgo.ro/usor/sorting/).
 Totuși, numărul de valori este prea mare și această abordare ar depăși limita de
 timp alocată. În schimb, ne putem folosi de faptul că lucrăm doar cu cifre
 zecimale și le putem afișa pe acestea corespunzător cu frecvența lor. Trebuie să
-avem grijă și să afișăm o linie nouă de fiecare dată când afișăm $20$ de numere,
+avem grijă și să afișăm o linie nouă de fiecare dată când afișăm 20 de numere,
 conform cerinței din enunț.
 
 ```cpp
@@ -105,7 +105,7 @@ int main() {
 
 Pentru a rezolva această problemă, cea mai importantă informație pe care o
 primim din enunț este aceea că valorile care ne interesează sunt strict cele
-care au trei cifre (cu alte cuvinte, cele între $100$ și $999$). Astfel, se
+care au trei cifre (cu alte cuvinte, cele între 100 și 999). Astfel, se
 impune crearea unui vector de frecvență care să poată memora aceste valori și
 după ce citim valorile din șir, se pot afla cu ușurință cele mai mari două
 valori de trei cifre care nu se află în șir.
@@ -162,7 +162,7 @@ C++, și anume la faptul că nu putem păstra indici negativi în vector.
 Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un
 offset) care să ne asigure că lucrăm cu valori non-negative (astfel, intervalul
 devine $[0, 200]$). Ulterior, atunci când afișăm valoarea care nu apare, vom
-scădea $100$ din răspuns pentru a întoarce rezultatul la cel real.
+scădea 100 din răspuns pentru a întoarce rezultatul la cel real.
 
 ```cpp
 #include <fstream>
@@ -203,7 +203,7 @@ int main() {
 
 Pentru a rezolva această problemă, putem ține cifrele într-un vector de
 frecvență și să le afișăm crescător, singura diferență fiind faptul că deoarece
-nu vrem să avem numere care încep cu $0$, vom afișa cea mai mică cifră nenulă la
+nu vrem să avem numere care încep cu 0, vom afișa cea mai mică cifră nenulă la
 început.
 
 ```cpp
@@ -306,7 +306,7 @@ vine cu un cost, și anume faptul că complexitatea operațiilor este $O(\log n)
 spre deosebire de $O(1)$ pentru metoda clasică.  
 
 În privința `std::set`, acesta poate fi folosit în acest context exact ca
-vectorii caracteristici (pentru frecvențe mai mari ca $1$, `std::map` este o
+vectorii caracteristici (pentru frecvențe mai mari ca 1, `std::map` este o
 metodă strict superioară), având posibilitatea să stocăm dinamic valorile care
 apar, fără a avea nevoie de $O(valmax)$ memorie. La fel ca la structura de date
 precedentă, această metodă vine cu un cost, și anume faptul că complexitatea

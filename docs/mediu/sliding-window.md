@@ -42,7 +42,7 @@ această soluție va rula în $O(n^2)$.
 
 Pentru a optimiza soluția brută, vom începe prin a calcula în mod brut suma
 pentru intervalul $[st, dr]$, iar mai apoi ne vom folosi de faptul că numărul de
-valori diferite dintre intervalele $[st, dr]$ și $[st+1, dr+1]$ este exact $2$
+valori diferite dintre intervalele $[st, dr]$ și $[st+1, dr+1]$ este exact 2
 (cu alte cuvinte, valoarea de pe poziția $st$ nu va mai fi considerată, dar
 valoarea de pe poziția $dr+1$ va fi considerată).
 

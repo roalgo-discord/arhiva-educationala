@@ -127,7 +127,7 @@ Acest ultim pas este de departe cel mai dificil deoarece de multe ori se poate
 întâmpla una din cele două situații:
 
 - soluția să pară corectă dar să apară greșeli de idee și/sau submisii care
-  obtin $0$ sau un scor foarte mic.
+  obtin 0 sau un scor foarte mic.
 - soluția să fie corectă dar să fie foarte greu de găsit cel putin o intuiție
   dacă nu o demonstrație completă a acesteia.
 
@@ -158,8 +158,8 @@ Se poate observa că în cazul acestei probleme, este îndeajuns să găsim cât
 soluții pentru valori mici ale lui $n$ pentru a observa un pattern pentru
 valorile pare și impare ale lui $n$. Astfel, pentru $n > 3$, putem pleca de la
 soluția pentru $n - 2$ la care adăugăm perechea [$n, n-1$]. Această soluție este
-una optimă deoarece fiecare element va fi situat la o distanță de $1$ de poziția
-lui, cu excepția lui $3$ când $n$ e impar, care va fi situat la distanța $2$.
+una optimă deoarece fiecare element va fi situat la o distanță de 1 de poziția
+lui, cu excepția lui 3 când $n$ e impar, care va fi situat la distanța 2.
 
 Deși această problemă este una relativ facilă, procesul folosit pentru
 rezolvarea ei va fi regăsit în multe alte probleme de acest gen în viitor.
@@ -208,8 +208,8 @@ $b$ de la dreapta la stânga, iar parcurgerea lor folosind brute force este
 
 Din cele două observații de mai sus, putem deduce un algoritm pentru
 implementarea soluției, care trece prin valori în ordine descrescătoare a
-poziției, iar pentru fiecare valoare, putem să determinăm dacă va fi $0$ sau $1$
-în functie de restul împărțirii la $2$ al sumei valorilor relevante.
+poziției, iar pentru fiecare valoare, putem să determinăm dacă va fi 0 sau 1
+în functie de restul împărțirii la 2 al sumei valorilor relevante.
 
 [Soluție care ia
 accepted](https://atcoder.jp/contests/abc134/submissions/40928822)
@@ -236,7 +236,7 @@ false ipoteze este exact $k$, conform enunțului.
 maximă la fiecare pas. Acest lucru ne duce la o soluție relativ ușor de găsit
 care implică un set (la fiecare pas luăm valoarea maximă și eventual adăugăm
 valoarea nouă în set). Complexitatea este $O(n * k * \log n)$, ceea ce obține
-$50$ de puncte. Cum putem îmbunătăți această soluție?
+50 de puncte. Cum putem îmbunătăți această soluție?
 
 ## Observații suplimentare
 

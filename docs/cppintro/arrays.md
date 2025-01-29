@@ -37,13 +37,13 @@ acestuia. În mod similar cu variabilele simple, ne trebuie un tip de date pe
 care acest tablou să-l stocheze, precum și dimensiunea pe care vrem să o
 atribuim acestui tablou.
 
-De exemplu, `#!cpp int v[101];` înseamnă ca am declarat un tablou cu $101$
-elemente, pozițiile fiind numărate de la $0$ la $100$.
+De exemplu, `#!cpp int v[101];` înseamnă ca am declarat un tablou cu 101
+elemente, pozițiile fiind numărate de la 0 la 100.
 
 !!! note "Observație"
 
-    Dacă preferați să lucrați cu tablouri indexate de la $1$, aveți grijă să
-    adăugați $1$ la dimensiunile pe care le folosiți pentru a adapta tablourile
+    Dacă preferați să lucrați cu tablouri indexate de la 1, aveți grijă să
+    adăugați 1 la dimensiunile pe care le folosiți pentru a adapta tablourile
     la stilul vostru de lucru. De asemenea, nu puteți începe tablourile de la
     indici negativi cum se poate în alte limbaje (Pascal, de pildă) și nici să-i
     folosiți pentru a lua elemente de la final (ca în Python).
@@ -56,8 +56,8 @@ elemente, pozițiile fiind numărate de la $0$ la $100$.
     va fi prezentat STL.
 
 Pentru a atribui o valoare unei anumite poziții, se va proceda similar ca la o
-variabilă obișnuită, de exemplu `#!cpp v[5] = 7;` înseamnă că pe poziția $5$,
-vom avea acum valoarea $7$.
+variabilă obișnuită, de exemplu `#!cpp v[5] = 7;` înseamnă că pe poziția 5,
+vom avea acum valoarea 7.
 
 Pentru a citi un vector, vom folosi de regulă o structură repetitivă, precum for
 sau while, citind valorile pe rând, la fel cum am proceda cu variabile
@@ -66,7 +66,7 @@ obișnuite.
 O altă metodă de a inițializa elementele dintr-un tablou este aceea de a atribui
 valori primelor poziții, idee ce va fi folosită pe parcurs la diverși algoritmi,
 un exemplu notabil fiind flood fill. De exemplu,
-`#!cpp int A[] = {10, 20, 30};` va crea un tablou cu $3$ elemente, unde
+`#!cpp int A[] = {10, 20, 30};` va crea un tablou cu 3 elemente, unde
 `#!cpp A[0] = 10; A[1] = 20;` ș.a.m.d.
 
 ### Problemă exemplu - [afisare0 de pe pbinfo](https://www.pbinfo.ro/probleme/546/afisare0)
@@ -105,7 +105,7 @@ int main() {
 De multe ori în diverse aplicații, putem avea nevoie de operația de inserare și
 de operația de ștergere din tablou, ambele operații fiind foarte importante
 pentru a putea lucra în mod corespunzător cu tablourile. În exemplele pe care le
-voi prezenta mai jos, voi presupune că tablourile sunt indexate de la $1$.
+voi prezenta mai jos, voi presupune că tablourile sunt indexate de la 1.
 
 ### Inserarea în tablou
 

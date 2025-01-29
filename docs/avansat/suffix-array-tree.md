@@ -20,12 +20,12 @@ Spre exemplu, considerăm șirul de sufixe al stringului $banana$ :
 
 | Poziție în suffix array | Indicele de la care începe sufixul |      Sufixul    |
 |:------------------------|:----------------------------------:|----------------:|
-|           $0$           |               $5$                  |        $a$      |
-|           $1$           |               $3$                  |       $ana$     |
-|           $2$           |               $1$                  |     $anana$     |
-|           $3$           |               $0$                  |     $banana$    |
-|           $4$           |               $4$                  |       $na$      |
-|           $6$           |               $2$                  |     $nana$      |
+|           0           |               5                  |        $a$      |
+|           1           |               3                  |       $ana$     |
+|           2           |               1                  |     $anana$     |
+|           3           |               0                  |     $banana$    |
+|           4           |               4                  |       $na$      |
+|           6           |               2                  |     $nana$      |
 
 Astfel, suffix array-ul șirului este $5, 3, 1, 0, 4, 2$. Se observă că deoarece toate sufixele au lungimi diferite, acest rezultat este unic.
 
@@ -36,22 +36,22 @@ Algoritmul pe care îl vom folosi pentru construire are defapt scopul de a sorta
 
 | Indicele de la care începe rotația |     Rotația     |
 |:----------------------------------:|----------------:|
-|               $6$                  |    $\text{\$banana}$  |
-|               $5$                  |    $\text{a\$banan}$  |
-|               $3$                  |    $\text{ana\$ban}$  |
-|               $1$                  |    $\text{anana\$b}$  |
-|               $0$                  |    $\text{banana\$}$  |
-|               $4$                  |    $\text{na\$bana}$  |
-|               $2$                  |    $\text{nana\$ba}$  |
+|               6                  |    $\text{\$banana}$  |
+|               5                  |    $\text{a\$banan}$  |
+|               3                  |    $\text{ana\$ban}$  |
+|               1                  |    $\text{anana\$b}$  |
+|               0                  |    $\text{banana\$}$  |
+|               4                  |    $\text{na\$bana}$  |
+|               2                  |    $\text{nana\$ba}$  |
 
 !!!info "Observație" 
     Se observa că ordinea este identică dupa ce ștergem primul element din tablou. Rotația ce începe cu santinela va fi mereu prima și nu ne modifică rezultatul.
 ## Construire
-Sortarea va fi realizată în $\lceil{\log_2(N)}\rceil$ pași, unde $N$ este mărimea șirului, la pasul $i$ având sortate rotațiile dupa prefixele lor de lungime $2^i$. Pentru a ne ușura munca introducem conceptul de clase de echivalență, fiecarui șir fiindu-i atribuit un număr natural, fie el $C_i$ pentru rotația ce începe din $i$, pe care le recalculăm la fiecare iterație a sortării. Aceste clase de echivalență au următoarele proprietăți : dacă un șir este mai mic lexicografic decât altul atunci are o clasă de echivalență mai mică iar dacă două șiruri sunt egale atunci au aceeași clasă de echivalență. În plus, numarul de clase de echivalență folosite trebuie să fie minim. Bazându-ne pe aceste proprietăți, la pasul $i$ putem sorta prefixele rotațiilor folosind o metodă similară cu radixsort : împărțim prefixul de lungime $2^i$ în două bucăți de lungime $2^{i-1}$ și le sortăm întai după bucata din dreapta apoi după bucata din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea $3$ a claselor de echivalență știim că nu vor depăși niciodată valoarea $N$ și putem folosi metode de sortare în $O(N)$ precum counting sort sau, ce recomand eu, doar ținem un vector de vectori unde $V_i = $ vectorul indicilor sufixelor ale căror clasă de echivalență pe care o comparăm este $i$. Astfel, complexitatea de timp este $O(N \log_2{N})$ iar cea de spațiu este $O(N)$.
+Sortarea va fi realizată în $\lceil{\log_2(N)}\rceil$ pași, unde $N$ este mărimea șirului, la pasul $i$ având sortate rotațiile dupa prefixele lor de lungime $2^i$. Pentru a ne ușura munca introducem conceptul de clase de echivalență, fiecarui șir fiindu-i atribuit un număr natural, fie el $C_i$ pentru rotația ce începe din $i$, pe care le recalculăm la fiecare iterație a sortării. Aceste clase de echivalență au următoarele proprietăți : dacă un șir este mai mic lexicografic decât altul atunci are o clasă de echivalență mai mică iar dacă două șiruri sunt egale atunci au aceeași clasă de echivalență. În plus, numarul de clase de echivalență folosite trebuie să fie minim. Bazându-ne pe aceste proprietăți, la pasul $i$ putem sorta prefixele rotațiilor folosind o metodă similară cu radixsort : împărțim prefixul de lungime $2^i$ în două bucăți de lungime $2^{i-1}$ și le sortăm întai după bucata din dreapta apoi după bucata din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea 3 a claselor de echivalență știim că nu vor depăși niciodată valoarea $N$ și putem folosi metode de sortare în $O(N)$ precum counting sort sau, ce recomand eu, doar ținem un vector de vectori unde $V_i = $ vectorul indicilor sufixelor ale căror clasă de echivalență pe care o comparăm este $i$. Astfel, complexitatea de timp este $O(N \log_2{N})$ iar cea de spațiu este $O(N)$.
 
 ## Câteva detalii de implementare
 
-Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $N$. Spre exemplu, dacă $N = 5$, suntem la pasul $2$ și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației $3$ atunci acestea vor fi clasa rotației $3$ în pasul $1$ respectiv clasa lui $3 + 2 ^ 1 \equiv 0 \pmod{N}$ în pasul $1$. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $\lceil{\log_2(N)}\rceil$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți mai jos implementarea mea :
+Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $N$. Spre exemplu, dacă $N = 5$, suntem la pasul 2 și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației 3 atunci acestea vor fi clasa rotației 3 în pasul 1 respectiv clasa lui $3 + 2 ^ 1 \equiv 0 \pmod{N}$ în pasul 1. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $\lceil{\log_2(N)}\rceil$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți mai jos implementarea mea :
 ```cpp
 
 void reorder(vector<int> r[], vector<int> &p){
@@ -115,28 +115,28 @@ Fie $M$ minimul lungimilor subsecvențelor și $l = \lfloor \log_2{M} \rfloor$. 
 
 ### Cel mai lung prefix comun dintre două subsecvențe
 
-Cautăm binar pe lungimea răspunsului și ne folosim de aplicația $2$ pentru a verifica dacă subsecvențele corespunzătoare sunt egale. $O(\log_2{N})$ pe query.
+Cautăm binar pe lungimea răspunsului și ne folosim de aplicația 2 pentru a verifica dacă subsecvențele corespunzătoare sunt egale. $O(\log_2{N})$ pe query.
 
 
 ## Șirul LCP
 
-Șirul $LCP$ este o structură de date auxiliară șirului de sufixe ce ne deschide o întreagă nouă lume în privința problemelor ce pot fi abordate. Acesta este definit astfel : $LCP_0 = 0$ sau doar rămâne nedefinit iar pentru restul avem $LCP_i = $ cel mai lung prefix comun al sufixelor de pe pozițiile $i$ și $i - 1$ în șirul de sufixe. Acest șir are mai multe metode de construire : cea mai simplă este folosirea repetată a aplicației $3$ de mai sus. Cu toate acestea, dorim să prezentăm și o altă metodă de construire în $O(N)$ care nu necesită menținerea tabloului de clase de la fiecare pas, algoritmul lui Kasai. 
+Șirul $LCP$ este o structură de date auxiliară șirului de sufixe ce ne deschide o întreagă nouă lume în privința problemelor ce pot fi abordate. Acesta este definit astfel : $LCP_0 = 0$ sau doar rămâne nedefinit iar pentru restul avem $LCP_i = $ cel mai lung prefix comun al sufixelor de pe pozițiile $i$ și $i - 1$ în șirul de sufixe. Acest șir are mai multe metode de construire : cea mai simplă este folosirea repetată a aplicației 3 de mai sus. Cu toate acestea, dorim să prezentăm și o altă metodă de construire în $O(N)$ care nu necesită menținerea tabloului de clase de la fiecare pas, algoritmul lui Kasai. 
 
 ### Algoritmul lui Kasai
 
 Acest algoritm se bazează pe două observații:  
 
-$1$. dacă avem doua sufixe care încep de la pozițiile $i$ respectiv $j$ și $lcp(i, j) = x$ atunci $lcp(i + 1, j + 1) \geq x - 1$
+1. dacă avem doua sufixe care încep de la pozițiile $i$ respectiv $j$ și $lcp(i, j) = x$ atunci $lcp(i + 1, j + 1) \geq x - 1$
 
-$2$. $lcp(i, j) = \min\limits_{id = R_i + 1}^{R_j} LCP_{id}$ (lcp-ul dintre oricare două sufixe este minimul din subsecvența formată de pozițiile lor)
+2. $lcp(i, j) = \min\limits_{id = R_i + 1}^{R_j} LCP_{id}$ (lcp-ul dintre oricare două sufixe este minimul din subsecvența formată de pozițiile lor)
 
 Acum că am prezentat aceste două observații, putem continua cu algoritmul: iterăm prin toate sufixele, de la cel mai lung la cel mai scurt, și calculăm valoarea din șirul $LCP$ la poziția în care se află el. 
 
 Dacă notăm cu $l > 0$ valoarea obținută la sufixul precedent, atunci ideea pivotală din spatele acestui algoritm este următoarea: putem incepe compararea direct de la indicele $l$ întrucât știm că lcp-ul este cel puțin $l - 1$. 
 
-De unde știm asta? Fie $i$ sufixul anterior si $j$ sufixul cu care l - am comparat. A se observa ca $j$ apare înaintea lui $i$ în șirul de sufixe. Deoarece avem $l > 0$, putem spune cu certitudine ca sufixul $j + 1$ apare înaintea lui $i + 1$ iar din observația $1$ știm că lcp-ul lor este cel puțin $l - 1$. 
+De unde știm asta? Fie $i$ sufixul anterior si $j$ sufixul cu care l - am comparat. A se observa ca $j$ apare înaintea lui $i$ în șirul de sufixe. Deoarece avem $l > 0$, putem spune cu certitudine ca sufixul $j + 1$ apare înaintea lui $i + 1$ iar din observația 1 știm că lcp-ul lor este cel puțin $l - 1$. 
 
-Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$, atunci ordinea de apariție în șirul de sufixe este $j + 1 \leq k < i + 1$. Folosind observația $2$ obținem că $lcp(k, i + 1) \geq l - 1$. 
+Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$, atunci ordinea de apariție în șirul de sufixe este $j + 1 \leq k < i + 1$. Folosind observația 2 obținem că $lcp(k, i + 1) \geq l - 1$. 
 
 
 Complexitatea de spațiu este evident $O(N)$. Complexitatea de timp necesită mai multă atenție: se observă că decrementăm variabila fun de maxim $N$ ori iar valoarea maximă până la care o putem incrementa este $N$, așadar complexitatea de timp este $O(N)$.

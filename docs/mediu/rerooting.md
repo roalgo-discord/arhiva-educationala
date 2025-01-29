@@ -13,7 +13,7 @@ tags:
 
 În ceea ce privește rezolvarea problemelor cu arbori, in anumite situatii se
 poate observa faptul că avem nevoie de o calculare inițială a răspunsului
-presupunând rădăcina într-un nod oarecare (de regulă, nodul $1$), urmată de
+presupunând rădăcina într-un nod oarecare (de regulă, nodul 1), urmată de
 folosirea acestor răspunsuri pentru generalizarea rezultatelor pentru toate
 rădăcinile posibile. Vom numi tehnica pe care o folosim pentru aceste probleme
 **rerooting**, sau așa cum este cunoscută în jargonul românesc, tehnica celor
@@ -42,13 +42,13 @@ maximă de la nodul $i$ la o frunză din subarborele nodului $i$.
 
 Calculul acestei valori se poate face destul de simplu, deoarece pentru fiecare
 nod $i$, vom ști deja valoarea lui $maxdist$ pentru toți fiii acestuia, tot ce
-ne rămâne de făcut este să adunăm $1$ la aceste valori. Evident, pentru o
+ne rămâne de făcut este să adunăm 1 la aceste valori. Evident, pentru o
 frunză, $maxdist[i] = 0$.
 
 !!! note "Observație"
 
     Se poate observa faptul că în codul de mai jos am ales drept rădăcină nodul
-    $1$, aceasta fiind o convenție utilizată în cele mai multe probleme cu
+    1, aceasta fiind o convenție utilizată în cele mai multe probleme cu
     arbori, chiar și atunci când nu ni se precizează în mod specific rădăcina
     arborelui.
 
@@ -60,7 +60,7 @@ curent).
 
 Pentru a face asta, vom avea nevoie să ținem ca un parametru suplimentar în cea
 de-a doua parcurgere DFS distanța maximă de la nodul curent la un nod care nu se
-află în subarborele său, inițial această distanță fiind $0$ pentru nodul $1$.
+află în subarborele său, inițial această distanță fiind 0 pentru nodul 1.
 Vom nota această distanță $distUp$.
 
 Calcularea acestor distanțe pentru celelalte noduri se va face din aproape în
@@ -169,10 +169,10 @@ int main() {
 
 Să considerăm o problemă mai simplă:
 
-Presupunând că nodul $1$ este colorat negru, în câte moduri putem colora
+Presupunând că nodul 1 este colorat negru, în câte moduri putem colora
 arborele?
 
-Mai întâi, fixăm rădăcina arborelui în nodul $1$. Fie $dp[i]$ numărul de moduri
+Mai întâi, fixăm rădăcina arborelui în nodul 1. Fie $dp[i]$ numărul de moduri
 în care putem colora subarborele nodului $i$ astfel încât fie nodul $i$ este
 colorat negru, fie niciun nod nu este colorat negru. Observați că, dacă $i$ este
 o frunză, atunci $dp[i]=2$ (alegem să colorăm nodul $i$ negru sau nu).
@@ -183,7 +183,7 @@ recurența
 
 $$ dp[i]=1+\prod_{c \in \text{Copiii lui } i} dp[c] $$
 
-unde produsul corespunde colorării nodului $i$ în negru, iar $1$ corespunde
+unde produsul corespunde colorării nodului $i$ în negru, iar 1 corespunde
 colorării nodului $i$ în alb.
 
 Răspunsul la problema mai simplă este astfel $dp[1]-1$. Calculul tuturor
@@ -207,7 +207,7 @@ Recurența de bază pentru a calcula $dp2[i]$ este
 $$ dp2[i] = 1+dp2[\text{Părintele lui } i] \cdot \prod_{s \in \text{Frații lui }
 i} dp[s] $$
 
-unde produsul corespunde colorării părintelui lui $i$ în negru, iar $1$
+unde produsul corespunde colorării părintelui lui $i$ în negru, iar 1
 corespunde colorării părintelui lui $i$ în alb.
 
 Totuși, deoarece $M$ nu este garantat a fi prim, nu putem pur și simplu să găsim

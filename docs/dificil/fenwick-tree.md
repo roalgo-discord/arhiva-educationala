@@ -32,7 +32,7 @@ reprezintă valoarea pe care o stocăm pe poziția $i$. Așa cum îi zice și nu
 fiecare poziție $i$ va ține rezultatele pe un interval egal cu $2^{zeroes}$,
 unde $zeroes$ reprezintă numărul de zerouri de la finalul reprezentării binare a
 lui $i$. Această expresie ne ajută să adunăm sau să scădem valoarea celui mai
-nesemnificativ bit de $1$ din $i$ pentru a putea opera actualizările și
+nesemnificativ bit de 1 din $i$ pentru a putea opera actualizările și
 interogările.
 
 Motivul pentru care se folosește reprezentarea binară a nodurilor este acela că
@@ -42,34 +42,34 @@ datorită numărului redus de biți pe care îl au numerele în binar.
 
 !!! info "Observație"
 
-    Arborii indexați binar sunt mereu indexați de la $1$, deoarece altfel, am
-    avea de-a face cu $0$, care nu are un bit nesemnificativ egal cu $1$.
+    Arborii indexați binar sunt mereu indexați de la 1, deoarece altfel, am
+    avea de-a face cu 0, care nu are un bit nesemnificativ egal cu 1.
 
 ### Cum funcționează operația de update?
 
-Să presupunem că avem un AIB cu $16$ noduri și vrem să actualizăm valoarea de la
-poziția $3$. Pentru a putea face asta, vom rula următorul algoritm, cât timp
+Să presupunem că avem un AIB cu 16 noduri și vrem să actualizăm valoarea de la
+poziția 3. Pentru a putea face asta, vom rula următorul algoritm, cât timp
 valoarea curentă nu e mai mare decât numărul de noduri:
 
 - actualizăm valoarea curentă
 - aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
 - adunăm $2^{lsb}$ la valoarea curentă
 
-De exemplu, pentru nodul $3$ vom trece prin următoarele poziții, după cum se
+De exemplu, pentru nodul 3 vom trece prin următoarele poziții, după cum se
 poate vedea pe desen:
 
-- $3$ - poziția celui mai nesemnificativ bit este $0$, adunăm $2^0 = 1$ la
+- 3 - poziția celui mai nesemnificativ bit este 0, adunăm $2^0 = 1$ la
   poziție
-- $4$ - poziția celui mai nesemnificativ bit este $2$, adunăm $2^2 = 4$ la
+- 4 - poziția celui mai nesemnificativ bit este 2, adunăm $2^2 = 4$ la
   poziție
-- $8$ - poziția celui mai nesemnificativ bit este $3$, adunăm $2^3 = 8$ la
+- 8 - poziția celui mai nesemnificativ bit este 3, adunăm $2^3 = 8$ la
   poziție
-- $16$ - poziția celui mai nesemnificativ bit este $3$, adunăm $2^4 = 16$ la
+- 16 - poziția celui mai nesemnificativ bit este 3, adunăm $2^4 = 16$ la
   poziție, algoritmul ia sfârșit.
 
   <!-- TODO: trebuie sa refac desenul de aici -->
 
-![Un exemplu de update pentru poziția $3$](../images/fenwick/fenwick-update.png)
+![Un exemplu de update pentru poziția 3](../images/fenwick/fenwick-update.png)
 
 Complexitatea operației de update este $O(\log n)$, unde $n$ este dimensiunea
 arborelui indexat binar.
@@ -87,23 +87,23 @@ de la sumele parțiale, unde obținerea lor presupune din nou două calcule, în
 de unul singur.
 
 Mai jos prezint algoritmul general și un exemplu de aplicare al acestuia, pentru
-valoarea $13$.
+valoarea 13.
 
 - adunăm la rezultat valoarea curentă
 - aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
 - scădem $2^{lsb}$ din valoarea curentă.
 
-De exemplu, pentru nodul $13$ vom trece prin următoarele poziții, după cum se
+De exemplu, pentru nodul 13 vom trece prin următoarele poziții, după cum se
 poate vedea pe desen:
 
-- $13$ - poziția celui mai nesemnificativ bit este $0$, scădem $2^0 = 1$ din
+- 13 - poziția celui mai nesemnificativ bit este 0, scădem $2^0 = 1$ din
   poziție
-- $12$ - poziția celui mai nesemnificativ bit este $2$, scădem $2^2 = 4$ din
+- 12 - poziția celui mai nesemnificativ bit este 2, scădem $2^2 = 4$ din
   poziție
-- $8$ - poziția celui mai nesemnificativ bit este $3$, scădem $2^3 = 8$ din
-  poziție, am ajuns la $0$, deci calculul ia sfârșit.
+- 8 - poziția celui mai nesemnificativ bit este 3, scădem $2^3 = 8$ din
+  poziție, am ajuns la 0, deci calculul ia sfârșit.
 
-![Un exemplu de query pentru poziția $13$](../images/fenwick/fenwick-query.png)
+![Un exemplu de query pentru poziția 13](../images/fenwick/fenwick-query.png)
 
 Complexitatea operației de query este $O(\log n)$, unde $n$ este dimensiunea
 arborelui indexat binar.

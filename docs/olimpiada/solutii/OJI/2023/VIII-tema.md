@@ -16,7 +16,7 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/516/).
 
-Pentru cerința $1$, soluție în complexitate $O(\text{ValMax} \times \log(\text{ValMax}) + N)$ obține punctaj maxim, adică 50 de puncte. Folosind Ciurul lui Eratostene, în complexitate $O(\text{ValMax} \times \log(\text{ValMax}))$, se vor determina toate numerele prime $\leq \text{ValMax}$, și pentru fiecare număr compus, reținem cel mai mic și cel mai mare factor prim al său.
+Pentru cerința 1, soluție în complexitate $O(\text{ValMax} \times \log(\text{ValMax}) + N)$ obține punctaj maxim, adică 50 de puncte. Folosind Ciurul lui Eratostene, în complexitate $O(\text{ValMax} \times \log(\text{ValMax}))$, se vor determina toate numerele prime $\leq \text{ValMax}$, și pentru fiecare număr compus, reținem cel mai mic și cel mai mare factor prim al său.
 
 Algoritmul de ciur generează toate numerele prime. În momentul găsirii unui număr prim
 $p$, marcăm toți multiplii lui de la $2 \times p$ până la cel mult ValMax ca fiind neprimi. Pentru fiecare multiplu (notat cu $x$), $p$ devine cel mai mare factor prim al lui $x$ (iar dacă $x$ avea deja un factor prim, $p$ îl suprascrie). Acest lucru este natural, deoarece $p$ este cel mai mare număr prim întâlnit până la acest moment. În plus, dacă la momentul curent $x$ era considerat prim, atunci $p$ devine și cel mai mic factor prim al acestuia.
@@ -26,10 +26,10 @@ egală cu $K$, se realizează în complexitate $O(N)$, folosind doi indici. Pent
 
 Odată determinat $\text{st}$ pentru poziția $i$, dorim să calculăm valoarea $\text{st}'$ pentru poziția $i + 1$. Încorporăm $A[i +1]$ în costul curent. Cât timp costul depășește, este clar că pentru niciun $i$ viitor $A[\text{st}]$ nu va mai fi parte din soluție (deoarece, cu cât vom deplasa $i$ spre dreapta, cu atât mai mult vom depăși și costul $K$). Deci, eliminăm $A[\text{st}]$, și încercăm pe rând valorile $\text{st} + 1$, $\text{st} + 2$, \dots până cănd revenim sub costul $K$. Prima valoare acceptabilă este capătul stâng $\text{st}'$ corespunzător lui $i + 1$.
 
-Pentru o soluție care determină în $O(N^3)$ secvența, a, se obțin aproximativ $20$ de puncte.
-Pentru o soluție care determină în $O(N^2)$ secvența, a, se obțin aproximativ $35$ de puncte.
+Pentru o soluție care determină în $O(N^3)$ secvența, a, se obțin aproximativ 20 de puncte.
+Pentru o soluție care determină în $O(N^2)$ secvența, a, se obțin aproximativ 35 de puncte.
 
-Pentru cerința $2$, soluția în complexitate $O(N)$ obține punctaj maxim, adică 50 de puncte.
+Pentru cerința 2, soluția în complexitate $O(N)$ obține punctaj maxim, adică 50 de puncte.
 
 Considerând, ciurul obținut după transformarea elementelor compuse, vom determina, pentru fiecare poziție $i$ din șir, cât de mult ne putem extinde spre stânga, și spre dreapta cu o secvență care conține cel mai mic factor prim al lui $A[i]$ (notat $fpmin[A[i]]$), respectiv cel mai mare factor prim al lui $A[i]$ (notat $fpmax[A[i]]$), astfel:
 
@@ -43,7 +43,7 @@ Pentru fiecare element $A[i]$, lungimea maximă a secvenței care îl conține, 
 Pentru o soluție care determină în $O(N^3)$ secvența, se obțin aproximativ 20 de puncte.
 Pentru o soluție care determină în $O(N^2)$ secvența, se obțin aproximativ 35 de puncte.
 
-O altă abordare în $O(N)$ folosește aceeași tehnica a celor doi indici de la cerința 1. Pentru un capăt drept $i$, presupunem că am calculat capătul stâng $\text{st}$ care produce cea mai lungă secvență cu c.m.m.d.c. diferit de $1$. Cum actualizăm secvența pentru $i + 1$? Putem menține un vector de frecvență al tuturor factorilor primi din secvența curentă. Când adăugăm sau eliminăm un element în/din secvență, incrementăm sau decrementăm frecvențele celor doi factori (dacă factorii unui element sunt egali, modificăm frecvențele doar cu $1$, nu cu $2$). Atunci o secvență cu c.m.m.d.c. diferit de $1$ are proprietatea că frecvența cel putîn a unui factor de la capătul secvenței este egală cu lungimea secvenței. Când avansăm de la $i$ la $i + 1$, verificăm dacă secvența, $[\text{st}, i + 1]$ mai are aceeași proprietate. Cât timp nu o are, eliminăm capătul stânga al secvenței.
+O altă abordare în $O(N)$ folosește aceeași tehnica a celor doi indici de la cerința 1. Pentru un capăt drept $i$, presupunem că am calculat capătul stâng $\text{st}$ care produce cea mai lungă secvență cu c.m.m.d.c. diferit de 1. Cum actualizăm secvența pentru $i + 1$? Putem menține un vector de frecvență al tuturor factorilor primi din secvența curentă. Când adăugăm sau eliminăm un element în/din secvență, incrementăm sau decrementăm frecvențele celor doi factori (dacă factorii unui element sunt egali, modificăm frecvențele doar cu 1, nu cu 2). Atunci o secvență cu c.m.m.d.c. diferit de 1 are proprietatea că frecvența cel putîn a unui factor de la capătul secvenței este egală cu lungimea secvenței. Când avansăm de la $i$ la $i + 1$, verificăm dacă secvența, $[\text{st}, i + 1]$ mai are aceeași proprietate. Cât timp nu o are, eliminăm capătul stânga al secvenței.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

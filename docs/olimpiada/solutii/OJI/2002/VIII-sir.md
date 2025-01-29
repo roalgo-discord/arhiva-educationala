@@ -17,7 +17,7 @@ tags:
 
 Dacă observăm cum se schimbă șirul de caractere, se poate vedea că dacă avem șirul după $i$ zile, șirul după $i+1$ zile va conține grupe care sunt formate din două valori: dimensiunea unei grupe de cifre consecutive, respectiv cifra în sine. 
 
-De exemplu, după ziua $4$, șirul este $1211$. Avem o grupă de lungime $1$ cu $1$, lungime $1$ cu $2$ și lungime $2$ cu $1$. De aceea, următorul șir va fi $111221$.
+De exemplu, după ziua 4, șirul este 1211. Avem o grupă de lungime 1 cu 1, lungime 1 cu 2 și lungime 2 cu 1. De aceea, următorul șir va fi 111221.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

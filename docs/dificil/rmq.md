@@ -29,8 +29,8 @@ haideți să încercăm o metodă nouă.
 
 Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o
 întrebare pe intervalul $[st, dr]$, îl vom împărți în intervale de lungimi
-puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din
-reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary
+puteri de 2. Lungimile acestor intervale vor fi egale cu biții din
+reprezentarea în baza 2 a lui $dr - st + 1$. Această metodă se cheamă **binary
 lifting**.
 
 !!! warning "Atenție"
@@ -211,7 +211,7 @@ Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF
 713D](https://codeforces.com/contest/713/problem/D).
 
 Să calculăm, mai întâi $maxp_{i, j} = $ latura celui mai mare dreptunghi care
-are doar valori de $1$ și are colțul dreapta-jos în $(i, j)$. Această metodă se
+are doar valori de 1 și are colțul dreapta-jos în $(i, j)$. Această metodă se
 cheamă [programare dinamică](https://edu.roalgo.ro/usor/intro-dp/).
 
 $$
@@ -543,7 +543,7 @@ poziția $i$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-u
 de la $st$ la $i$ adunat cu numărul de R-uri de la $i + 1$ la $dr$. Aceste
 lucruri pot fi calculate ușor folosind sume parțiale.
 
-Fie $prefL_i = $ câte L-uri sunt de la $1$ la $i$ și $suffR_i = $ câte R-uri
+Fie $prefL_i = $ câte L-uri sunt de la 1 la $i$ și $suffR_i = $ câte R-uri
 sunt de la $i$ la $n$. Atunci răspunsul va fi $min(prefL_i - prefL_{st-1} +
 suffR_{i+1} - suffR_{dr+1})$ astfel încât $st - 1 \leq i \leq dr$. Acest lucru
 este echivalent cu a afla minimul expresiei $prefL_i + suffR_{i+1}$ cu $i$ in
@@ -653,13 +653,13 @@ cheamă $fr$ cu frecvența elementelor și înca un [vector de
 frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) care se cheamă $frfr$
 care menține frecvența fiecărei valori din $fr$.
 
-Când adaugăm o valoare, scădem $1$ din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu
-$1$ și adunăm $1$ la noul $frfr_{fr_{val}}$. Dacă $fr_{val}$ este mai mare ca
+Când adaugăm o valoare, scădem 1 din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu
+1 și adunăm 1 la noul $frfr_{fr_{val}}$. Dacă $fr_{val}$ este mai mare ca
 rezulatul curent, atunci setăm rezultatul curent la $fr_{val}$.
 
-Atunci când scoatem o valoare, scădem $1$ din $frfr_{fr_{val}}$. Dacă $fr_{val}$
-era egal cu rezultatul și $frfr_{fr_{val}}$ a devenit $0$, atunci rezultatul
-scade cu $1$, deoarece $frfr_{fr_{val} - 1}$ a crescut cu $1$. Restul rămâne la
+Atunci când scoatem o valoare, scădem 1 din $frfr_{fr_{val}}$. Dacă $fr_{val}$
+era egal cu rezultatul și $frfr_{fr_{val}}$ a devenit 0, atunci rezultatul
+scade cu 1, deoarece $frfr_{fr_{val} - 1}$ a crescut cu 1. Restul rămâne la
 fel ca la adăugare.
 
 Sursa de accepted la G1:

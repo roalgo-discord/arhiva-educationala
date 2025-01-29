@@ -15,11 +15,11 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/512/).
 
-Cerința $1$. Pentru fiecare număr din cele $n$ citite determinăm numărul de cifre. Dacă acesta este egal cu $k$, atunci comparăm numărul cu maximul determinat până atunci, pentru a identifica cel mai mare număr.  
+Cerința 1. Pentru fiecare număr din cele $n$ citite determinăm numărul de cifre. Dacă acesta este egal cu $k$, atunci comparăm numărul cu maximul determinat până atunci, pentru a identifica cel mai mare număr.  
 
-Cerința $2$. Pentru fiecare pereche de valori aflate pe poziții alăturate în șir determinăm valoarea obținută prin unificarea celor două numere în vederea determinării maximului posibil. O variantă pentru a determina valoarea unificată pentru două numere este să considerăm toate cifrele în ordine descrescătoare și să adăugăm la numărul pe care îl formăm acele cifre care apar în scrierea fiecărui număr.  
+Cerința 2. Pentru fiecare pereche de valori aflate pe poziții alăturate în șir determinăm valoarea obținută prin unificarea celor două numere în vederea determinării maximului posibil. O variantă pentru a determina valoarea unificată pentru două numere este să considerăm toate cifrele în ordine descrescătoare și să adăugăm la numărul pe care îl formăm acele cifre care apar în scrierea fiecărui număr.  
 
-Cerința $3$. Trebuie să unificăm câte $k$ valori aflate pe poziții consecutive în șirul dat, iar valoarea obținută ar fi prea mare pentru a putea fi reținută într-o variabilă simplă de memorie. Putem utiliza un vector de numărare în care să reținem, pentru fiecare cifră, în câte dintre numerele dintr-o secvență de $k$ valori aflate pe poziții consecutive în șir, apare cifra respectivă. Pentru a compara numărul curent cu maximul pe care îl determinăm va trebui mai întâi să verificăm dacă am obținut un număr cu mai multe cifre, caz în care ar fi mai mare, sau dacă avem același număr de cifre, verificăm dacă avem o cifră mai mare cu un număr mai mare de apariții. Maximul obținut îl vom afișa, cifră cu cifră, în fișierul de ieșire.  
+Cerința 3. Trebuie să unificăm câte $k$ valori aflate pe poziții consecutive în șirul dat, iar valoarea obținută ar fi prea mare pentru a putea fi reținută într-o variabilă simplă de memorie. Putem utiliza un vector de numărare în care să reținem, pentru fiecare cifră, în câte dintre numerele dintr-o secvență de $k$ valori aflate pe poziții consecutive în șir, apare cifra respectivă. Pentru a compara numărul curent cu maximul pe care îl determinăm va trebui mai întâi să verificăm dacă am obținut un număr cu mai multe cifre, caz în care ar fi mai mare, sau dacă avem același număr de cifre, verificăm dacă avem o cifră mai mare cu un număr mai mare de apariții. Maximul obținut îl vom afișa, cifră cu cifră, în fișierul de ieșire.  
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

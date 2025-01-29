@@ -32,10 +32,10 @@ A --> E((5))
 E --> C
 ```
 
-În acest graf, o sortare topologică validă ar fi: `1, 2, 5, 3, 4` , deoarece $1$
-se află înaintea lui $2$, $5$ înaintea lui $3$, etc. Un alt exemplu ar fi `1, 4,
-5, 2, 3` . O ordine incorectă ar fi însă `1, 4, 2, 3, 5` , deoarece $5$ se află
-după $3$, deși există muchie de la $5$ la $3$.
+În acest graf, o sortare topologică validă ar fi: `1, 2, 5, 3, 4` , deoarece 1
+se află înaintea lui 2, 5 înaintea lui 3, etc. Un alt exemplu ar fi `1, 4,
+5, 2, 3` . O ordine incorectă ar fi însă `1, 4, 2, 3, 5` , deoarece 5 se află
+după 3, deși există muchie de la 5 la 3.
 
 ### Un alt exemplu
 
@@ -67,7 +67,7 @@ Așadar, în sortarea topologică, orice nod se află înaintea vecinilor săi.
 În același timp, într-o parcurgere `DFS`, vom intra în vecinii unui nod după ce
 intrăm în acesta. Putem defini timpul de ieșire al unui nod ca fiind momentul la
 care ne întoarcem din recursivitate înapoi la el (pentru simplitate, timpii pot
-fi numerotați de la $1$ la $n$, unde $n$ este numărul de noduri). Astfel, timpul
+fi numerotați de la 1 la $n$, unde $n$ este numărul de noduri). Astfel, timpul
 de ieșire al unui nod va fi tot timpul mai mare decât cel al vecinilor săi, deci
 pentru a afla ordinea topologică, trebuie doar să sortăm nodurile descrescător
 după timpii de ieșire.
@@ -143,9 +143,9 @@ C((3)) --> A
 C --> B
 ```
 
-Începând dintr-un nod arbitrar (în acest caz, $1$), noi vom vizita doar nodurile
+Începând dintr-un nod arbitrar (în acest caz, 1), noi vom vizita doar nodurile
 în care putem ajunge din el. Însă, în exemplul dat, asta înseamnă că vom ignora
-nodul $3$, care în sortare s-ar afla înaintea lui $1$.
+nodul 3, care în sortare s-ar afla înaintea lui 1.
 
 Pentru a rezolva asta, putem parcurge lista tuturor nodurilor și să verificăm
 pentru fiecare dacă este vizitat sau nu. Pentru orice nod nevizitat, știm că nu
@@ -231,7 +231,7 @@ numărul de muchii. Memoria va fi tot $O(n + m)$.
 
 ### Cerință
 
-Se dau $n$ cursuri, numerotate de la $1$ la $n$ și $m$ condiții ce trebuie
+Se dau $n$ cursuri, numerotate de la 1 la $n$ și $m$ condiții ce trebuie
 îndeplinite, de forma a doi indici, $i$ și $j$, cu proprietatea ca acel curs cu
 numărul $i$ trebuie terminat înaintea cursului cu numărul $j$.
 

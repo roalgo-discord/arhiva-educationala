@@ -19,7 +19,7 @@ ale șirului dat, prin stări care să țină doar posibilele rezultate optime.
 
 Chiar dacă această subtehnică este folosită doar pentru dimensiuni ale datelor
 foarte mici (de regulă, valoarea maximă a lui $N$ într-o problemă de acest gen
-este $20$), bitmask dp se dovedește a fi o unealtă foarte utilă în multe
+este 20), bitmask dp se dovedește a fi o unealtă foarte utilă în multe
 instanțe, chiar și atunci când trebuie să găsim soluții încete pentru a face
 pași spre a optimiza diverse abordări.
 
@@ -60,7 +60,7 @@ tehnică.
 
 ## Problema [teamwork](https://www.pbinfo.ro/probleme/1230/teamwork)
 
-Se poate remarca faptul că sunt cel mult $18$ participanți, iar fiecare trebuie
+Se poate remarca faptul că sunt cel mult 18 participanți, iar fiecare trebuie
 să fie folosit o dată. Generarea tuturor permutărilor ar fi mult prea înceată,
 așa că va trebui să păstrăm informații legate de varianta optimă de a folosi
 toate submulțimile de copii.
@@ -76,9 +76,9 @@ problema dată.
 !!! note "Observație"
 
     De-a lungul soluțiilor prezentate, se va observa preferința pentru indexarea
-    de la $0$ a pozițiilor, motivul fiind unul ce ține de eficiența de timp și
-    memorie (dacă am fi indexat de la $1$, am fi avut nevoie de două ori mai
-    multe măști, deoarece măștile care conțineau poziția $0$ deveneau inutile).
+    de la 0 a pozițiilor, motivul fiind unul ce ține de eficiența de timp și
+    memorie (dacă am fi indexat de la 1, am fi avut nevoie de două ori mai
+    multe măști, deoarece măștile care conțineau poziția 0 deveneau inutile).
 
 ```cpp
 #include <fstream>
@@ -182,9 +182,9 @@ Această problemă este una din variațiile problemei comis-voiajorului sau cum 
 numește în engleză, [Traveling salesman
 problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
 
-Pentru a afla numărul de drumuri de la $0$ la $n-1$ care trec prin toate
+Pentru a afla numărul de drumuri de la 0 la $n-1$ care trec prin toate
 nodurile, vom ține o dinamică de tip $dp[msk][i]$ în care vom ține numărul de
-drumuri care pleacă de la $0$, sunt la nodul $i$ și au trecut prin submulțimea
+drumuri care pleacă de la 0, sunt la nodul $i$ și au trecut prin submulțimea
 de noduri $msk$. Se poate observa că graful dat poate avea muchii multiple,
 acesta fiind motivul pentru care ținem muchiile într-o listă de vecini și nu
 într-o matrice de adiacență.

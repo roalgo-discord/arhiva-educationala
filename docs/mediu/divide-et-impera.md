@@ -62,7 +62,7 @@ De exemplu, un șir strict crescător este format din două șiruri strict
 crescătoare, cu proprietatea că $v[mij] < v[mij+1]$. Putem defini în mod similar
 și un șir strict descrescător.
 
-În cazul acestei probleme, cazul de bază constituie în șirul cu lungime $1$,
+În cazul acestei probleme, cazul de bază constituie în șirul cu lungime 1,
 care este atât strict crescător, cât și strict descrescător. Puteți vedea codul
 sursă mai jos.
 
@@ -114,7 +114,7 @@ int main() {
     Această problemă este una foarte celebră, fiind studiată de foarte mulți ani
     - [Tower of Hanoi](hhttps://en.wikipedia.org/wiki/Tower_of_Hanoi)
 
-Problema constă în mutarea unui șir de $3$ (în varianta generalizată, $n$)
+Problema constă în mutarea unui șir de 3 (în varianta generalizată, $n$)
 discuri de dimensiuni descrescătoare din tija $A$ în tija $B$, folosindu-te de o
 tijă ajutătoare, $C$. La un pas, putem muta un disc dintr-o tijă în alta, cu
 condiția ca tija unde plasăm discul să aibă fie un disc mai mare în vârf, fie să

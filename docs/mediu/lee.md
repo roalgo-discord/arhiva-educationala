@@ -70,7 +70,7 @@ stilul C, tipul de date struct, care permite și alte modificări după caz).
 ### Vectorii de direcție
 
 În majoritatea problemelor de acest tip, personajele noastre se vor deplasa
-folosind mutări succesive pe una dintre cele $4$ sau $8$ direcții care ne sunt
+folosind mutări succesive pe una dintre cele 4 sau 8 direcții care ne sunt
 permise de problemă (de regulă, direcțiile cardinale - nord, est, sud, vest și
 eventual direcțiile diagonale - nord-est, sud-est, sud-vest, nord-vest).
 
@@ -80,7 +80,7 @@ scrierea lor în sensul acelor de ceasornic. Acestea se pot scrie toate la
 început, noi putând folosi fie arrays din C, fie vectori.
 
 Mai jos găsiți modul de declarare a acestor vectori de direcție atunci când
-putem merge doar în direcția celor $4$ vecini cardinali.
+putem merge doar în direcția celor 4 vecini cardinali.
 
 ```cpp
 int ox[] = {-1, 0, 1, 0};
@@ -92,7 +92,7 @@ vector<int> ox = {-1, 0, 1, 0};
 vector<int> oy = {0, 1, 0, -1};
 ```
 
-Pentru a extinde acum la $8$ vecini, vom insera direcțiile intermediare în
+Pentru a extinde acum la 8 vecini, vom insera direcțiile intermediare în
 ordinea acelor de ceasornic, mai jos găsiți modul de declarare a acestor vectori
 de direcție pentru toate direcțiile, începând de la N și terminând cu NV, în
 sens orar.
@@ -639,7 +639,7 @@ minime](./shortest-path.md/#0-1-bfs).
 ## Lee cu structuri de date
 
 În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat
-adiacent din matrice poate avea costuri diferite de $0$ și $1$, în acest caz se
+adiacent din matrice poate avea costuri diferite de 0 și 1, în acest caz se
 impune folosirea unor structuri de date pentru a calcula aceste costuri minime,
 implementarea devenind foarte similară cu cea pe care o veți vedea atunci când
 veți învăța [algoritmul lui

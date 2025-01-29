@@ -261,8 +261,8 @@ int main() {
 ### Tipul `#!cpp __int128`
 
 Pe lângă aceste tipuri, există și tipul de date `#!cpp __int128` care ne permite
-să stocăm valori pe $128$ de biți, având limite între -2<sup>127</sup> si
-2<sup>127</sup> - 1 (numere de aproximativ $37$ de cifre). Acest tip poate fi
+să stocăm valori pe 128 de biți, având limite între -2<sup>127</sup> si
+2<sup>127</sup> - 1 (numere de aproximativ 37 de cifre). Acest tip poate fi
 folosit doar pe [compilatorul
 GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
 

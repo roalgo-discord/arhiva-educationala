@@ -29,7 +29,7 @@ proprietatea că lungimea acestuia este maximă.
 
 De exemplu, dacă $v = \{7, 3, 5, 3, 6, 2, 9, 8 \}$, unul dintre subșirurile
 crescătoare de lungime maximă al acestui șir este $\{ 3, 5, 6, 9 \}$, lungimea
-acestuia fiind $4$.
+acestuia fiind 4.
 
 ## Cum aflăm subșirul crescător maximal?
 

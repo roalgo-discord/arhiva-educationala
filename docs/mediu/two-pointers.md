@@ -105,7 +105,7 @@ $x$.
 
 Pentru a rezolva această problemă, trebuie să folosim o variantă diferită a
 tehnicii celor doi pointeri. Astfel, de data asta vom începe cu un pointer la
-poziția $1$, iar cu celălalt la poziția $n$. Pe parcurs, vom avea trei cazuri în
+poziția 1, iar cu celălalt la poziția $n$. Pe parcurs, vom avea trei cazuri în
 funcție de suma $a_{p_1} + a_{p_2}$, iar dacă găsim două poziții cu suma
 valorilor egală cu $x$, afișăm pozițiile corespunzătoare, altfel modificăm $p_1$
 sau $p_2$ după caz. Dacă nu găsim nicio pereche, afișăm IMPOSSIBLE.
@@ -163,12 +163,12 @@ Nane de pe Jiu, mare algoritmician fiind, vă provoacă să rezolvați o problem
 prea ușoară pentru el. Nane vă dă $N$ numere naturale și un număr $K$. Numim
 subsecvență specială o subsecvență pentru care efectuând operația OR pe biți
 pentru elementele din subsecvență (să numim această operație sumă OR) obținem un
-rezultat care are, în reprezentare binară, cel mult $K$ biți de $1$. Două
+rezultat care are, în reprezentare binară, cel mult $K$ biți de 1. Două
 subsecvențe sunt diferite dacă cel puțin o poziție din una nu se regăsește în
 cealaltă. Scrieți un program care să determine numărul de subsecvențe speciale.
 
 Pentru a rezolva această problemă, vom folosi metoda celor doi pointeri pentru a
-afla numărul de secvențe care au suma OR cu cel mult $k$ de $1$, actualizările
+afla numărul de secvențe care au suma OR cu cel mult $k$ de 1, actualizările
 fiind foarte similare cu cele de la celelalte probleme de acest tip. De
 asemenea, deoarece vorbim de suma OR, trebuie să folosim câte un vector de
 frecvență pentru fiecare bit pentru a evita calculele adiționale.
@@ -236,19 +236,19 @@ int main() {
 
 Se consideră un șir format din $N$ caractere din mulțimea {J, O, I}. Se numește
 JOI-șir de nivel $K$ un șir format din $K$ litere J, $K$ litere O și $K$ litere
-I (în această ordine). De exemplu, JJOOII este un JOI-șir de nivel $2$. Bitaro
+I (în această ordine). De exemplu, JJOOII este un JOI-șir de nivel 2. Bitaro
 dorește să transforme șirul $S$ într-un JOI-șir de nivel $K$, utilizând
-următoarele $3$ operații, de oricâte ori și în orice ordine:
+următoarele 3 operații, de oricâte ori și în orice ordine:
 
-- Operația $1$: Bitaro șterge primul caracter din $S$;
-- Operația $2$: Bitaro șterge ultimul caracter din $S$;
-- Operația $3$: Bitaro șterge un caracter din interiorul lui $S$ (care nu este
+- Operația 1: Bitaro șterge primul caracter din $S$;
+- Operația 2: Bitaro șterge ultimul caracter din $S$;
+- Operația 3: Bitaro șterge un caracter din interiorul lui $S$ (care nu este
   nici primul nici ultimul).
 
-Deoarece operațiile de tip $3$ necesită mult timp, Bitaro dorește să transforme
+Deoarece operațiile de tip 3 necesită mult timp, Bitaro dorește să transforme
 șirul $S$ într-un JOI-șir de nivel $K$ folosind un număr minim de operații de
-tip $3$. Scrieți un program care, cunoscând $N$, $S$ și $K$, determină numărul
-minim de operații de tip $3$ necesare pentru a transforma șirul $S$ într-un
+tip 3. Scrieți un program care, cunoscând $N$, $S$ și $K$, determină numărul
+minim de operații de tip 3 necesare pentru a transforma șirul $S$ într-un
 JOI-șir de nivel $K$. Dacă acest lucru nu este posibil, programul va afișa
 valoarea $-1$.
 

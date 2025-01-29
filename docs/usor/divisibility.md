@@ -31,7 +31,7 @@ fiind discutate în documentele ulterioare. Aceste noțiuni se vor găsi foarte 
 
 !!! note "Observație"
 
-    Orice număr $n$ se împarte la $1$ și la el însuși.
+    Orice număr $n$ se împarte la 1 și la el însuși.
 
 !!! info "Definiție"
 
@@ -57,7 +57,7 @@ principali. Primul dintre ei se bazează pe scăderi repetate, la fiecare pas
 scăzându-se din numărul mai mare, numărul mai mic până când cele două valori
 devin egale. Deși pentru multe perechi de numere acest algoritm este destul de
 eficient, atunci când diferența dintre numere este foarte mare, algoritmul va
-rula în timp cvasi-liniar (de exemplu, pentru numerele $3$ și $10^9$, un
+rula în timp cvasi-liniar (de exemplu, pentru numerele 3 și $10^9$, un
 calculator are nevoie de câteva secunde să afle cmmdc-ul folosind acest
 algoritm).
 
@@ -71,13 +71,13 @@ scădere cu o singură împărțire, algoritmul devenind mult mai eficient.
 
 !!! example "Exemplu"
 
-    De exemplu, să analizăm numerele $40$ și $18$.
+    De exemplu, să analizăm numerele 40 și 18.
 
     * $a = 40, b = 18$. $a \% b = 4$, noile valori fiind $a = 18, b = 4$;
     * $a = 18, b = 4$. $a \% b = 2$, noile valori fiind $a = 4, b = 2$;
     * $a = 4, b = 2$. $a \% b = 0$, noile valori fiind $a = 2, b = 0$;
     * $a = 2, b = 0$. Deoarece $b = 0$, continuarea algoritmului ne-ar duce la
-      împărțiri la $0$, operație ce nu este validă.
+      împărțiri la 0, operație ce nu este validă.
 
 Mai jos puteți găsi implementarea în C++ a cmmdc-ului și a cmmmc-ului, program
 ce află cmmdc și cmmmc pentru $t$ perechi de numere. Complexitatea algoritmului
@@ -129,13 +129,13 @@ int main() {
 
 !!! info "Numere prime și compuse"
 
-    Un număr $n \geq 2$ este **număr prim** dacă și numai dacă are doar $2$
-    divizori: $1$ și $n$, în caz contrar fiind **număr compus**.
+    Un număr $n \geq 2$ este **număr prim** dacă și numai dacă are doar 2
+    divizori: 1 și $n$, în caz contrar fiind **număr compus**.
 
 !!! note "Observații"
 
-    1. $0$ și $1$ nu sunt nici numere prime, nici numere compuse.
-    2. $2$ este singurul număr prim par, celelalte numere prime fiind impare.
+    1. 0 și 1 nu sunt nici numere prime, nici numere compuse.
+    2. 2 este singurul număr prim par, celelalte numere prime fiind impare.
 
 Descompunerea în factori primi se bazează pe Teorema fundamentală a aritmeticii,
 dată mai jos:
@@ -150,10 +150,10 @@ dată mai jos:
 
     Se poate observa că numărul maxim de numere prime la care se împarte un
     număr $n$ este foarte mic. De exemplu, pentru $n \leq 10^{9}$, sunt cel mult
-    $9$ numere prime în reprezentarea ca produs de factori primi.
+    9 numere prime în reprezentarea ca produs de factori primi.
 
 Pentru a afla divizorii unui număr natural $n$, cel mai simplu (dar și
-ineficient) algoritm constă în a verifica pe rând fiecare număr $1$ la $n$ și să
+ineficient) algoritm constă în a verifica pe rând fiecare număr 1 la $n$ și să
 verificăm dacă $n$ se împarte exact la acel număr. Pentru a optimiza acest
 algoritm, va trebui să folosim o altă observație importantă.
 
@@ -189,14 +189,14 @@ if (n % d == 0) {
       `YES`, altfel se va afișa `NO`.
 
     * $2\ n$: Să se afle câți divizori are $n$ — de exemplu, dacă $n = 12$, se
-      va afișa $6$ ($1$, $2$, $3$, $4$, $6$, $12$ sunt divizorii lui $12$).
+      va afișa 6 (1, 2, 3, 4, 6, 12 sunt divizorii lui 12).
 
     * $3\ n$: Să se afle numărul divizorilor primi ai lui $n$ — de exemplu, dacă
-      $n = 21$, se va afișa $2$.
+      $n = 21$, se va afișa 2.
 
     * $4\ n$: Să se afișeze descompunerea în factori primi pe care o are un
       număr, fiecare factor fiind scris pe o linie, în ordine **crescătoare** a
-      numerelor prime — de exemplu, dacă $n = 60$, se vor afișa pe $3$ linii
+      numerelor prime — de exemplu, dacă $n = 60$, se vor afișa pe 3 linii
       separate:
 
         ```

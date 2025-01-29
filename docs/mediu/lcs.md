@@ -47,7 +47,7 @@ Pentru a calcula această recurență, avem două cazuri principale:
 - Fie adăugăm un caracter din unul din cele două șiruri, preluând răspunsurile
   din $(i-1, j)$ și $(i, j-1)$
 - Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $(i-1,
-  j-1)$ și adăugând $1$ dacă caracterele sunt egale.
+  j-1)$ și adăugând 1 dacă caracterele sunt egale.
 
 Cu alte cuvinte,
 

@@ -31,7 +31,7 @@ Observații:
 
 2. Descompunerea în factori primi a lui $n$ (mergând până la $\sqrt{n}$) este folosită pentru determinarea numărului său de divizori astfel: $n = p_1^{e_1} \cdot p_2^{e_2} \cdot \ldots \cdot p_k^{e_k},$ atunci numărul $n$ are $(e_1 + 1)(e_2 + 1) \cdots (e_k + 1)$ divizori, conform regulii produsului.
 
-3. Pentru soluția fără ciur, numărul de divizori al lui $n$ poate fi calculat în $O(\sqrt{n})$ și fără formula precedentă. Este suficient să parcurgem divizorii lui $n$ cuprinși între $1$ și $\sqrt{n}$. De fiecare dată când găsim un divizor $d$, deducem că și $\frac{n}{d}$ este un divizor al lui $n$, așa că adunăm $2$ la rezultat. Singura excepție constă în cazul în care $d = \frac{n}{d}$, când se adună doar $1$.
+3. Pentru soluția fără ciur, numărul de divizori al lui $n$ poate fi calculat în $O(\sqrt{n})$ și fără formula precedentă. Este suficient să parcurgem divizorii lui $n$ cuprinși între 1 și $\sqrt{n}$. De fiecare dată când găsim un divizor $d$, deducem că și $\frac{n}{d}$ este un divizor al lui $n$, așa că adunăm 2 la rezultat. Singura excepție constă în cazul în care $d = \frac{n}{d}$, când se adună doar 1.
 
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 

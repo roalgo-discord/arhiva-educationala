@@ -51,7 +51,7 @@ trebuie înainte de concurs.
 
 Recomandarea strictă este să dormiți măcar 7h30m înainte de olimpiadă, iar dacă
 programul de somn nu este compatibil cu cel specific concursurilor (de regulă,
-probele încep la ora $9$ sau $10$), o perioadă de adaptare este mai mult decât
+probele încep la ora 9 sau 10), o perioadă de adaptare este mai mult decât
 necesară. Un alt lucru important este să evitați lucratul de probleme în ziua de
 dinainte de proba de concurs, pentru a fi complet relaxați și detașați de tot ce
 înseamnă algoritmică atunci când intrați în sala de concurs.
@@ -65,7 +65,7 @@ naturală și un regim corespunzător.
 În cele mai multe cazuri, este bine să fii cât mai detașat de ce înseamnă
 algoritmică, probleme sau programare înainte de concurs, deoarece discuțiile
 despre alte probleme au de cele mai multe ori un efect contrar celui așteptat
-(nu vei învăța niciodată o idee nouă cu $30$ de minute înainte de probă, iar
+(nu vei învăța niciodată o idee nouă cu 30 de minute înainte de probă, iar
 memoria ți se va încărca cu o informație probabil inutilă).
 
 Din experiența personală, cele mai potrivite interacțiuni sunt cele complet
@@ -83,7 +83,7 @@ toată lumea este la fel de bine pregătită, vom da sfaturi cât mai generale, 
 Imediat ce primiți subiectele de concurs la olimpiadă, înainte să scrieți orice
 linie de cod, citiți cu atenție **toate** problemele care vi s-au dat. De
 preferat, petreceți câteva minute uitându-vă cu atenție peste fiecare dintre
-probleme (de recomandat, cel puțin $5$ minute/problemă), iar pentru fiecare
+probleme (de recomandat, cel puțin 5 minute/problemă), iar pentru fiecare
 problemă, notați-vă primele idei care vă vin, precum și alte observații pe care
 le faceți.
 
@@ -95,7 +95,7 @@ le faceți.
 
 După această etapă, care ar trebui să ia $15-20$ minute, ar trebui să aveți o
 idee destul de bună legată de dificultatea relativă a problemelor, precum și
-tipurile de algoritmi și idei care vor fi aplicate în cele $3$ probleme. În cele
+tipurile de algoritmi și idei care vor fi aplicate în cele 3 probleme. În cele
 ce urmează, vom vrea să abordăm problemele, de la cea mai ușoară la cea mai
 grea.
 
@@ -165,7 +165,7 @@ aveți până acum.
 
 Concursul poate fi unul greu pentru toată lumea, iar în cazul olimpiadei
 județene, un obiectiv pe care îl puteți avea atunci este să vă asigurați mai
-întâi punctele pentru pragul minim ($80$ sau $120$ de puncte, în funcție de
+întâi punctele pentru pragul minim (80 sau 120 de puncte, în funcție de
 clasă), iar mai apoi să faceți progres începând de acolo.
 
 Un alt gând pe care îl puteți avea este faptul că indiferent de rezultat, vor
@@ -180,7 +180,7 @@ pierd timp prețios cu lucruri care la prima vedere, nu par importante. Câteva
 dintre cele mai frecvente exemple includ:
 
 - Așteptarea unui anumit verdict după o submisie: Coada de evaluare poate fi
-  lungă, iar la o medie de $20$ de submisii per concurs și $1$ minut de
+  lungă, iar la o medie de 20 de submisii per concurs și 1 minut de
   așteptare, puteți pierde până la $10 \%$ din timpul de concurs alocat, ceea ce
   poate face diferența în anumite situații. De asemenea, aceste momente de pauză
   dese pot afecta concentrarea și găsirea ideilor mai dificile. Sfatul pe care
@@ -213,8 +213,8 @@ Chiar dacă succesul este determinat în mare măsură de munca depusă în preg
 continuă de-a lungul anilor, aici am prezentat detalii care pot face diferența
 în anumite situații, și care în general vă ajută să obțineți cele mai bune
 rezultate posibile. Aceste sfaturi nu sunt complete, dar sunt o colecție de
-experiențe adunate de mine de-a lungul celor $8$ ani de competiții naționale,
-precum și a peste $12$ ani de interacționat cu elevi și studenți după diverse
+experiențe adunate de mine de-a lungul celor 8 ani de competiții naționale,
+precum și a peste 12 ani de interacționat cu elevi și studenți după diverse
 probe.
 
 ## Resurse suplimentare

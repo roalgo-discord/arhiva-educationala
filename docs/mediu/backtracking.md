@@ -39,13 +39,13 @@ apoi vom avea două cazuri distincte:
 
 1. Suntem la finalul permutării: în acest caz, vom afișa permutarea generată.
 2. Nu suntem la finalul permutării: în acest caz, vom încerca să adăugăm fiecare
-   valoare de la $1$ la $n$ pe următoarea poziție a permutării. Pentru a putea
+   valoare de la 1 la $n$ pe următoarea poziție a permutării. Pentru a putea
    face asta, va trebui să parcurgem șirul de numere obținut până acum pentru a
    evita plasarea aceleiași valori de două ori (o permutare nu are dubluri).
 
 !!! note "Observație"
 
-    Procesul descris la punctul $2$ poate fi optimizat prin păstrarea în memorie
+    Procesul descris la punctul 2 poate fi optimizat prin păstrarea în memorie
     a unui alt șir, care să ne ofere informația despre existența unei anumite
     valori în permutare.
 
