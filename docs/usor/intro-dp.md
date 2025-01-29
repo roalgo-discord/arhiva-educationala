@@ -143,88 +143,26 @@ Pentru a calcula $dp[i]$, ne vom folosi de informațiile din enunț, și anume
 faptul că avem voie să sărim pe o poziție aflată la cel mult două unități de
 poziția curentă, astfel $dp[i]$ va fi egal cu următoarea formulă:
 
-\[
-    dp[i] = min(dp[i-1] + abs(v[i] - v[i-1]), dp[i-2] + abs(v[i] - v[i-2]))
-\]
+$$
+    {dp}_{i} = \min(dp_{i-1} + |v_i - v_{i-1}|, dp_{i-2} + |v_i - v_{i-2}|)
+$$
 
-Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$, iar
-complexitatea acestei soluții este $O(n)$.
+unde $|x| = \operatorname{abs}(x)$ este valoarea absolută. Cazul de bază constă
+în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar complexitatea
+acestei soluții este $O(n)$.
 
 Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 
 === "Recursiv"
 
     ```cpp
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int solve(int poz, const vector<int> &v, vector<int> &dp) {
-        // cazuri de baza
-        if (poz == 1) {
-            return 0;
-        }
-        if (poz == 2) {
-            return abs(v[2] - v[1]);
-        }
-        // evitarea calculelor redundante
-        if (dp[poz] != -1) {
-            return dp[poz];
-        }
-
-        dp[poz] = min(solve(poz - 1, v, dp) + abs(v[poz - 1] - v[poz]),
-                    solve(poz - 2, v, dp) + abs(v[poz - 2] - v[poz]));
-        return dp[poz];
-    }
-
-    int main() {
-        int n;
-        cin >> n;
-
-        vector<int> v(n + 1);
-        vector<int> dp(n + 1, -1);
-
-        for (int i = 1; i <= n; i++) {
-            cin >> v[i];
-        }
-
-        cout << solve(n, v, dp) << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/frog1_rec.cpp"
     ```
 
 === "Iterativ"
 
     ```cpp
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-
-        vector<int> v(n + 1);
-        vector<int> dp(n + 1);
-
-        for (int i = 1; i <= n; i++) {
-            cin >> v[i];
-        }
-
-        for (int i = 2; i <= n; i++) {
-            if (i == 2) {
-                dp[i] = abs(v[i] - v[i - 1]);
-            } else {
-                dp[i] = min(dp[i - 1] + abs(v[i] - v[i - 1]),
-                            dp[i - 2] + abs(v[i] - v[i - 2]));
-            }
-        }
-
-        cout << dp[n] << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/frog1_iter.cpp"
     ```
 
 <!-- Second Problem -->
@@ -239,83 +177,23 @@ Spre deosebire de problema precedentă, pentru a calcula $dp[i]$, ne vom folosi
 de informațiile din enunț, recurența de la Frog 1 va fi extinsă pentru a acoperi
 $k$ poziții.
 
-\[
-dp[i] = min(dp[i-x] + abs(v[i] - v[i-x])), \forall x \leq k
-\]
+$$
+dp_i = \min (dp_{i-x} + |v_i - v_{i-x}|),\,\forall x \leq k
+$$
 
-Cazul de bază constă în faptul că $dp[1] = 0$ și $dp[2] = abs(v[1] - v[2])$, iar
+Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar
 complexitatea acestei soluții este $O(n \cdot k)$.
 
 === "Recursiv"
 
     ```cpp
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int solve(int poz, int diff, const vector<int> &v, vector<int> &dp) {
-        if (poz == 1) {
-            return 0;
-        }
-        if (dp[poz] != -1) {
-            return dp[poz];
-        }
-
-        dp[poz] = (1 << 30);  // 2^30
-        for (int i = 1; i <= diff; i++) {
-            if (poz - i >= 1) {
-                dp[poz] = min(dp[poz], solve(poz - i, diff, v, dp) +
-                                        abs(v[poz] - v[poz - i]));
-            }
-        }
-        return dp[poz];
-    }
-    int main() {
-        int n, k;
-        cin >> n >> k;
-
-        vector<int> v(n + 1);
-        vector<int> dp(n + 1, -1);
-
-        for (int i = 1; i <= n; i++) {
-            cin >> v[i];
-        }
-
-        cout << solve(n, k, v, dp) << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/frog2_rec.cpp"
     ```
+
 === "Iterativ"
 
     ```cpp
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int main() {
-        int n, k;
-        cin >> n >> k;
-
-        vector<int> v(n + 1);
-        vector<int> dp(n + 1, 1 << 30);  // 2 ^ 30
-
-        for (int i = 1; i <= n; i++) {
-            cin >> v[i];
-        }
-
-        for (int i = 2; i <= n; i++) {
-            for (int j = 1; j <= k; j++) {
-                if (i - j >= 1) {
-                    dp[i] = min(dp[i], dp[i - j] + abs(v[i] - v[i - j]));
-                }
-            }
-        }
-
-        cout << dp[n] << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/frog2_iter.cpp"
     ```
 
 <!-- Third Problem -->
@@ -366,53 +244,15 @@ abordare și scriere a sursei și modalități de tranziție.
 
         Pentru a găsi soluția optimă, noi vom avea vectorul dp care se
         utilizează pentru memoizare, el având forma următoare:
-        dp[suma de bani rămasă de acoperit] = nr de bacnote necesare pentru a
-        ajunge la suma de bani rămasă de acoperit curentă.
+        dp[suma de bani rămasă de acoperit] = numărul de bacnote necesare pentru
+        a ajunge la suma de bani rămasă de acoperit curentă.
         
-        Pentru asta ne vom utiliza de o recursiune care are ca parametrii de
-        stare suma de bani care a rămas de plătit, numărul de monede pe care
-        l-am utilizat până acum și vectorul de denominații accesibile.
+        Pentru asta ne vom utiliza de o recursie care are ca parametri de stare
+        suma de bani care a rămas de plătit, numărul de monede pe care l-am
+        utilizat până acum și vectorul de denominații accesibile.
 
     ```cpp
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    const int MAXIM_SUMA_MONEDE = 100000;
-
-    int N, S;
-    vector<int> dp(MAXIM_SUMA_MONEDE + 1);
-
-    void solve(const int suma, const int nr_monede, const vector<int>& monede) {
-        if (suma == 0) {
-            return;
-        }
-
-        for (const auto moneda : monede) {
-            if (suma >= moneda) {
-                if (dp[suma - moneda] > nr_monede + 1) {
-                    dp[suma - moneda] = nr_monede + 1;
-                    solve(suma - moneda, nr_monede + 1, monede);
-                }
-            }
-        }
-    }
-
-    int main() {
-        cin >> N >> S;
-
-        vector<int> monede(N, 0);
-
-        for (auto& moneda : monede) {
-            cin >> moneda;
-        }
-
-        solve(S, 0, monede);
-
-        cout << dp[0];
-        return 0;
-    }
+    --8<-- "usor/dp/moneda_rec.cpp"
     ```
 
 === "Iterativ"
@@ -426,44 +266,7 @@ abordare și scriere a sursei și modalități de tranziție.
         această sumă de bani.
 
     ```cpp
-    #include <algorithm>
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    const int MAXIM_SUMA_MONEDE = 100000;
-
-    int N, S;
-    vector<int> dp(MAXIM_SUMA_MONEDE + 1);
-
-    int main() {
-        cin >> N >> S;
-        vector<int> coins(N);
-        for (int i = 0; i < N; i++) {
-            cin >> coins[i];
-        }
-        for (int i : coins) {
-            dp[i] = 1;
-        }
-
-        for (int i = 1; i < S; i++) {
-            if (dp[i] != 0) {
-                for (int coin : coins) {
-                    if (i + coin <= S) {
-                        if (dp[i + coin] == 0) {
-                            dp[i + coin] = dp[i] + 1;
-                        } else {
-                            dp[i + coin] = min(dp[i + coin], dp[i] + 1);
-                        }
-                    }
-                }
-            }
-        }
-
-        cout << dp[S];
-        return 0;
-    }
+    --8<-- "usor/dp/moneda_iter.cpp"
     ```
 
 <!-- Fourth Problem -->
@@ -481,17 +284,17 @@ faptul că vom avea nevoie de o nouă dimensiune pentru a păstra informații cu
 privire la ultima activitate efectuată de el, pentru a evita o situație în care
 alegem de două ori aceeași activitate.
 
-Astfel, vom defini $dp[i][j]$ ca fiind suma maximă a satisfacției dacă am
+Astfel, vom defini $dp_{i,j}$ ca fiind suma maximă a satisfacției dacă am
 parcurs primele $i$ zile, iar ultima activitate a fost de tipul $j$, $j$ fiind
 0, 1 sau 2, în funcție de activitatea aleasă.
 
-Pentru a calcula $dp[i][j]$, va trebui să ne raportăm la sumele din ziua
+Pentru a calcula $dp_{i,j}$, va trebui să ne raportăm la sumele din ziua
 precedentă, corespunzătoare celorlalte două activități deoarece nu avem voie să
 alegem aceeași activitate iar.
 
-\[
-dp[i][j] = \max(dp[i-1][x]) + v[j],\,\forall x \neq j
-\]
+$$
+dp_{i,j} = \max(dp_{i-1,x} + v_j),\,\forall x \neq j
+$$
 
 Din nou ca la celelalte probleme, puteți găsi mai jos abordarea recursivă și cea
 iterativă a problemei.
@@ -505,81 +308,13 @@ iterativă a problemei.
 === "Recursiv"
 
     ```cpp
-    #include <algorithm>
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int solve(const int poz, const vector<vector<int>> &v, vector<vector<int>> &dp,
-            const int activ) {
-        if (poz == 1) {
-            return v[poz][activ];
-        }
-        if (dp[poz][activ] != -1) {
-            return dp[poz][activ];
-        }
-
-        dp[poz][activ] = 0;
-        for (int i = 0; i < 3; i++) {
-            if (i != activ) {
-                dp[poz][activ] = max(dp[poz][activ], solve(poz - 1, v, dp, i));
-            }
-        }
-
-        dp[poz][activ] += v[poz][activ];
-        return dp[poz][activ];
-    }
-
-    int main() {
-        int n;
-        cin >> n;
-
-        vector<vector<int>> v(n + 1, vector<int>(3));
-        vector<vector<int>> dp(n + 1, vector<int>(3, -1));
-
-        for (int i = 1; i <= n; i++) {
-            cin >> v[i][0] >> v[i][1] >> v[i][2];
-        }
-
-        cout << max({solve(n, v, dp, 0), solve(n, v, dp, 1), solve(n, v, dp, 2)})
-            << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/vacation_iter.cpp"
     ```
 
 === "Iterativ"
 
     ```cpp
-    #include <algorithm>
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-
-        vector<vector<int>> dp(n + 1, vector<int>(3));
-
-        for (int i = 1; i <= n; i++) {
-            int a, b, c;
-            cin >> a >> b >> c;
-            if (i == 1) {
-                dp[1][0] = a;
-                dp[1][1] = b;
-                dp[1][2] = c;
-            } else {
-                dp[i][0] = max(dp[i - 1][1], dp[i - 1][2]) + a;
-                dp[i][1] = max(dp[i - 1][0], dp[i - 1][2]) + b;
-                dp[i][2] = max(dp[i - 1][0], dp[i - 1][1]) + c;
-            }
-        }
-
-        cout << max({dp[n][0], dp[n][1], dp[n][2]}) << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/vacation_iter.cpp"
     ```
 
 === "Iterativ optimizat"
@@ -591,38 +326,7 @@ iterativă a problemei.
         corectitudinea recurenței.
 
     ```cpp
-    #include <algorithm>
-    #include <iostream>
-    #include <vector>
-
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-
-        vector<vector<int>> dp(2, vector<int>(3));
-
-        for (int i = 1; i <= n; i++) {
-            int a, b, c;
-            cin >> a >> b >> c;
-            if (i == 1) {
-                dp[0][0] = a;
-                dp[0][1] = b;
-                dp[0][2] = c;
-            } else {
-                dp[1][0] = max(dp[0][1], dp[0][2]) + a;
-                dp[1][1] = max(dp[0][0], dp[0][2]) + b;
-                dp[1][2] = max(dp[0][0], dp[0][1]) + c;
-
-                swap(dp[0], dp[1]);
-                fill(dp[1].begin(), dp[1].end(), 0);
-            }
-        }
-
-        cout << max({dp[0][0], , dp[0][1], dp[0][2]}) << '\n';
-        return 0;
-    }
+    --8<-- "usor/dp/vacation_iter_optim.cpp"
     ```
 
 <!-- Fifth problem -->
@@ -633,12 +337,12 @@ Pentru această problemă, trebuie să aflăm numărul de șiruri pe care le put
 construi astfel încât să respecte condițiile din enunț cu privire la valorile
 deja setate și la diferența dintre ele.
 
-Astfel, vom defini $dp[i][j]$ ca fiind numărul de moduri de a crea un șir cu $i$
+Astfel, vom defini $dp_{i,j}$ ca fiind numărul de moduri de a crea un șir cu $i$
 numere, dacă valoarea de pe poziția $i$ este $j$.
 
-Pentru a afla $dp[i][j]$, va trebui să ne raportăm la valorile de pe poziția
-precedentă, aflate la o distanță de cel mult 1, cu condiția să putem pune $j$
-pe poziția $i$.
+Pentru a afla $dp_{i,j}$, va trebui să ne raportăm la valorile de pe poziția
+precedentă, aflate la o distanță de cel mult 1, cu condiția să putem pune $j$ pe
+poziția $i$.
 
 !!! note "Observatie"
 
@@ -648,57 +352,7 @@ pe poziția $i$.
     convenabil, reușind astfel să optimizăm soluția.
 
 ```cpp
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-const int MOD = 1000000007;
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-
-    vector<int> vals(n + 1);
-    for (int i = 1; i <= n; i++) {
-        cin >> vals[i];
-    }
-
-    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
-
-    for (int i = 1; i <= m; i++) {
-        if (vals[1] == 0 || vals[1] == i) {
-            dp[1][i] = 1;
-        }
-    }
-
-    for (int i = 2; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            if (vals[i] && vals[i] != j) {
-                continue;
-            }
-            for (int dif = -1; dif <= 1; dif++) {
-                if (j + dif > 0 && j + dif <= m) {
-                    dp[i][j] += dp[i - 1][j + dif];
-                    if (dp[i][j] >= MOD) {
-                        dp[i][j] -= MOD;
-                    }
-                }
-            }
-        }
-    }
-
-    int ans = 0;
-    for (int i = 1; i <= m; i++) {
-        ans += dp[n][i];
-        if (ans >= MOD) {
-            ans -= MOD;
-        }
-    }
-
-    cout << ans << '\n';
-    return 0;
-}
+--8<-- "usor/dp/array_description.cpp"
 ```
 
 <!-- Sixth problem -->
@@ -709,50 +363,17 @@ Pentru această problemă, trebuie să aflăm numărul de moduri de a parcurge
 matricea din colțul stânga-sus în colțul dreapta-jos prin mișcări în jos și la
 dreapta, fără să parcurgem pătrate acoperite de ziduri.
 
-Deoarece avem de-a face cu o matrice, putem ține $dp[i][j]$ ca fiind numărul de
+Deoarece avem de-a face cu o matrice, putem ține $dp_{i,j}$ ca fiind numărul de
 moduri de a parcurge matricea dacă am ajuns la pătratul $(i, j)$. Deoarece putem
 ajunge la $(i, j)$ din pătratele de sus și stânga, acestea vor fi cele două
 rezultate care contribuie la răspunsul dat.
 
-Astfel, $dp[i][j] = dp[i-1][j] + dp[i][j-1]$.
+Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
 
 ### Soluție
 
 ```cpp
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-const int MOD = 1000000007;
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-
-    vector<vector<char>> grid(n + 1, vector<char>(m + 1));
-    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            cin >> grid[i][j];
-        }
-    }
-
-    dp[1][1] = 1;
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            if (grid[i][j] != '#') {
-                dp[i][j] += dp[i - 1][j] + dp[i][j - 1];
-                if (dp[i][j] >= MOD) {
-                    dp[i][j] -= MOD;
-                }
-            }
-        }
-    }
-
-    cout << dp[n][m] << '\n';
-    return 0;
-}
+--8<-- "usor/dp/grid1.cpp"
 ```
 
 <!-- Seventh problem -->
@@ -761,116 +382,13 @@ int main() {
 === "Recursiv"
 
     ```cpp
-    #include <fstream>
-
-    using namespace std;
-    ifstream fin("sumtri1.in");
-    ofstream fout("sumtri1.out");
-
-    const int MAX_N = 101;
-
-    using matrixB = bool[MAX_N][MAX_N];
-    using matrixI = int[MAX_N][MAX_N];
-
-    matrixB change;
-    matrixI triunghi, dp;
-
-    int n;
-    int ans;
-
-    int solve(const int lin, const int col) {
-        if (dp[lin][col] != 0) {
-            return dp[lin][col];
-        }
-        if (lin > n) {
-            return 0;
-        }
-
-        const int left = solve(lin + 1, col);
-        const int right = solve(lin + 1, col + 1);
-
-        if (left < right) {
-            dp[lin][col] = triunghi[lin][col] + left;
-            change[lin][col] = false;
-        } else {
-            dp[lin][col] = triunghi[lin][col] + right;
-            change[lin][col] = true;
-        }
-        return dp[lin][col];
-    }
-
-    int main() {
-        fin >> n;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
-                fin >> triunghi[i][j];
-            }
-        }
-
-        fout << solve(1, 1) << '\n';
-        
-
-        for (int l = 1, c = 1; l <= n; l++) {
-            fout << triunghi[l][c] << ' ';
-            if (change[l][c]) {
-                c++;
-            }
-        }
-        return 0;
-    }
+    --8<-- "usor/dp/sumtri1_rec.cpp"
     ```
 
 === "Iterativ"
 
     ```cpp
-    #include <fstream>
-
-    using namespace std;
-    ifstream fin("sumtri1.in");
-    ofstream fout("sumtri1.out");
-
-    const int MAX_N = 101;
-
-    using matrix = int[MAX_N][MAX_N];
-
-    int n;
-    matrix triunghi, dp, cale;
-
-    int main() {
-        fin >> n;
-
-        for (int i = 1; i <= n; ++i) {
-            for (int j = 1; j <= i; ++j) {
-                fin >> triunghi[i][j];
-                if (i == n) {
-                    dp[n][j] = triunghi[n][j];
-                }
-            }
-        }
-
-        for (int i = n - 1; i > 0; --i) {
-            for (int j = 1; j <= i; ++j) {
-                dp[i][j] = triunghi[i][j];
-                if (dp[i + 1][j + 1] < dp[i + 1][j]) {
-                    dp[i][j] += dp[i + 1][j + 1];
-                    cale[i][j] = j + 1;
-                } else {
-                    dp[i][j] += dp[i + 1][j];
-                    cale[i][j] = j;
-                }
-            }
-        }
-
-        fout << dp[1][1] << '\n';
-
-        int j = 1;
-        for (int i = 1; i <= n; ++i) {
-            fout << triunghi[i][j] << " ";
-            j = cale[i][j];
-        }
-
-        return 0;
-    }
+    --8<-- "usor/dp/sumtri1_iter.cpp"
     ```
 
 <!-- Extra stuff -->
