@@ -17,7 +17,7 @@ RoAlgo.
 Deși sunt multe stiluri de cod care pot fi utilizate, un stil de cod bun este
 unul ușor de înțeles și concis, deoarece în timpul unui concurs de algoritmică,
 ideile pe care le găsești trebuie implementate destul de rapid și fără a avea
-riscul de a suferi de pe urma unor buguri care iau mult mai mult timp să fie
+riscul de a suferi de pe urma unor bug-uri care iau mult mai mult timp să fie
 rezolvate decât în cazul folosirii unui stil de cod concis.
 
 ## Coding style-ul Arhivei Educaționale RoAlgo
@@ -152,7 +152,7 @@ similar dar acoladele apar mereu pe rânduri separate.
 
 În general, orice stil folosiți trebuie să aibă o logică clară și să fie ușor de
 citit pentru oricine vrea să vă urmeze ideea la o problemă, evident fără a cauza
-dificultăți majore în ceea ce privește debuggingul.
+dificultăți majore în ceea ce privește debugging-ul.
 
 De asemenea, recomandăm și [acest ghid de pe
 Codeforces](https://codeforces.com/blog/entry/64218).
