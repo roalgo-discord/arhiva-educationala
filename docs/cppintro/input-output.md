@@ -44,34 +44,7 @@ După ce compilați programul și nu apar erori, va trebui să rulați executabi
 este corect, veți obține rezultatul așteptat.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Declaram variabilele
-    int n, a, b;
-
-    // Citim o singură valoare
-    cin >> n;
-
-    // Citim două valori separate prin spațiu
-    cin >> a >> b;
-
-    /* Alternativ, putem să citim toate cele 3 variabile pe același rând:
-    cin >> n >> a >> b;
-    */
-
-    // Afișăm o singură valoare
-    cout << n;
-
-    // Afișăm două valori separate prin spațiu, urmate de o linie nouă
-    cout << a << " " << b << '\n';
-
-    // Afișăm din nou n, urmat de o linie nouă
-    cout << n << endl;
-
-    return 0;
-}
+--8<-- "cppintro/io/io1.cpp"
 ```
 
 Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
@@ -100,8 +73,7 @@ să le afișeze. Tipul `#!cpp ifstream` declară un flux de citire din fișier,
 `#!cpp ofstream` declară unul de scriere în fișier.
 
 ```cpp
-ifstream fin("date.in");
-ofstream fout("date.out");
+--8<-- "cppintro/io/io2.cpp"
 ```
 
 !!! note "Numele fișierelor"
@@ -116,40 +88,7 @@ Programul de mai sus va fi identic, singura diferență fiind adăugarea
 facilităților care ne permit să citim datele din fișiere.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-ifstream fin("date.in");
-ofstream fout("date.out");
-
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Declaram variabilele
-    int n, a, b;
-
-    // Citim o singură valoare
-    fin >> n;
-
-    // Citim două valori separate prin spațiu
-    fin >> a >> b;
-
-    /* Alternativ, putem să citim toate cele 3 variabile pe același rând:
-    fin >> n >> a >> b;
-    */
-
-    // Afișăm o singură valoare
-    fout << n;
-
-    // Afișăm două valori separate prin spațiu, urmate de o linie nouă
-    fout << a << " " << b << '\n';
-
-    // Afișăm din nou n, urmat de o linie nouă
-    fout << n << endl;
-
-    return 0;
-}
+--8<-- "cppintro/io/io3.cpp"
 ```
 
 !!! note "Citirea unui număr necunoscut de valori"
@@ -189,21 +128,7 @@ De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $\pi$, putem face
 asta folosind următoarele instrucțiuni:
 
 ```cpp
-#include <cmath>
-#include <iomanip>
-#include <iostream>
-using namespace std;
-
-int main() {
-    double pi = atan(1) * 4;  // pi in functie de arctg
-                              // arctg(1) = π/4
-
-    cout << setprecision(7) << pi << '\n';           // 3.141593
-    cout << setprecision(7) << 10 * pi << '\n';      // 31.41593
-    cout << fixed << setprecision(7) << pi << '\n';  // 3.1415927
-    cout << setprecision(7) << pi * 10 << '\n';      // 31.4159265
-    return 0;
-}
+--8<-- "cppintro/io/io4.cpp"
 ```
 
 !!! note "Observație"

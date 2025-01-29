@@ -69,16 +69,7 @@ numărul de valori cu care se lucrează.
     eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
 
 ```cpp
-vector<int> v; // declararea vectorului
-vector<int> vals = {1, 4, 0, 1, 3, 5}; // initializam un vector cu 6 valori
-vector<int> v2(12); // initializam un vector cu 12 valori, toate 0
-vector<int> copie = v2;
-if (v2 == copie) {
-    cout << "Egal\n";
-}
-else {
-    cout << "Inegal\n";
-}
+--8<-- "cppintro/stl/stl01.cpp"
 ```
 
 Pentru a declara tablouri bidimensionale, sau chiar tablouri multidimensionale,
@@ -88,12 +79,7 @@ implementările unor modele matematice sau a unor structuri de date mai complexe
 despre care veți învăța după ce prindeți mai multă experiență.
 
 ```cpp
-vector<vector<int>> grid(3, vector<int> (2)); // declararea matricii cu 3 linii si 2 coloane
-vector<vector<vector<int>>> cube; // declararea cubului
-vector<vector<int>> grid2(n); // declaram n linii
-for (int i = 0; i < n; i++) {
-    grid2.resize(i+1); // matrice triunghiulara
-}
+--8<-- "cppintro/stl/stl02.cpp"
 ```
 
 #### Inserări, ștergeri și alte ajustări
@@ -111,20 +97,7 @@ liniare, exact cum sunt și pe tablourile statice.
     de sfârșit din vector.
 
 ```cpp
-// aceste operatii sunt liniare
-grid.resize(5, vector<int>(8)); // gridul va avea 5 linii si 8 coloane 
-v2.resize(7, -3); // redimensionam vectorul sa aiba 7 valori, toate -3
-v.resize(5); // redimensionam vectorul sa aiba 5 elemente
-
-// aceste operatii se fac in O(1)
-v.push_back(x); // adaugarea elementului x la final 
-v.pop_back(); // eliminarea elementului de la final
-
-// aceste operatii sunt liniare 
-v.insert(v.begin() + 2, 6); // inseram 6 la pozitia 2
-v.insert(v.begin() + 3, 5, 9); // inseram 9 de 5 ori incepand de la pozitia 3
-v.erase(v.begin() + 4); // stergem valoarea de la pozitia 4
-v.erase(v.begin() + 2, v.begin() + 5); // stergem valorile de la pozitia 2 la pozitia 4
+--8<-- "cppintro/stl/stl03.cpp"
 ```
 
 #### Afișări în vector
@@ -148,18 +121,7 @@ acest caz pentru a parcurge valorile din vectorul vals.
     tip de date signed.
 
 ```cpp
-// afisari si prelucrari
-cout << vals[3] << '\n'; // accesam vals[3], al patrulea element
-cout << v2.size() << '\n'; // dimensiunea vectorului (se va afisa 7)
-vals[1] = -9;
-
-for (int i = 0; i < (int) vals.size(); i++) { // afisam vectorul vals
-    cout << vals[i] << " ";
-}
-
-for (auto nr : vals) { // afisam vectorul vals folosind auto
-    cout << nr << " ";
-}
+--8<-- "cppintro/stl/stl04.cpp"
 ```
 
 ### Structura std::array
@@ -175,9 +137,7 @@ probleme, funcțiile pe care `std::array` le are sunt incluse în funcțiile
 vectorului.
 
 ```cpp
-array<int,  25> arr; // array cu 25 de elemente de tip int
-arr[4] = 3;
-cout << arr[5] << '\n';
+--8<-- "cppintro/stl/stl05.cpp"
 ```
 
 ### Structura std::string
@@ -197,11 +157,7 @@ folosim șirurile de caractere din C.
 Sintaxa unui string va fi de tipul `string nume;`
 
 ```cpp
-string s = "abacaba";
-s[0] = 'c';
-cout << s.size() << '\n'; // 7
-s[6] = 0; // caracterul nul
-cout << s << " " << s.size() << '\n'; // abacab 7 (nu se schimba sizeul)
+--8<-- "cppintro/stl/stl06.cpp"
 ```
 
 În mod particular, pe lângă funcțiile vectorului, vom putea concatena două
@@ -210,10 +166,7 @@ atenți cum folosim acest operator, pentru a evita efectuarea prea înceată a
 operațiilor.
 
 ```cpp
-string s = "roalgo";
-string t = "top";
-s += t; // roalgotop
-s = s + t; // roalgotoptop
+--8<-- "cppintro/stl/stl07.cpp"
 ```
 
 Deși în cazul numerelor naturale, aceste operații sunt echivalente, în cazul
@@ -223,14 +176,7 @@ unește și apoi atribuie rezultatul șirului. Această diferență devine mai
 dramatică în situații precum cea de mai jos.
 
 ```cpp
-string s;
-for (int i = 1; i <= 1000000; i++) { // O(n)
-    s += 'a';
-}
-string t;
-for (int i = 1; i <= 1000000; i++) { // O(n^2)
-    t = t + 'a';
-}
+--8<-- "cppintro/stl/stl08.cpp"
 ```
 
 ### Structura std::pair
@@ -255,14 +201,7 @@ De exemplu, dacă avem
 elemente vor putea fi declarate și accesate după cum urmează:
 
 ```cpp
-pair<int, int> pr = make_pair(5, 8);
-cout << pr.first << '\n';
-cout << pr.second << '\n';
-pair<pair<int, int>, pair<int, int>> p = { {2, 4}, {1, 3} };
-cout << p.first.first << '\n'; // 2
-cout << p.first.second << '\n'; // 4
-cout << p.second.first << '\n'; // 1
-cout << p.second.second << '\n'; // 3
+--8<-- "cppintro/stl/stl09.cpp"
 ```
 
 ### Structura std::tuple
@@ -289,25 +228,13 @@ Această operație merge doar dacă $i$ este o constantă, nu putem schimba valo
 dacă $i$ nu este o constantă.
 
 ```cpp
-tuple<int,  int,  int> t{3, 4, 5};
-int i =  1;
-cout << get<i>(t) << '\n';  // eroare
+--8<-- "cppintro/stl/stl10.cpp"
 ```
 
 Mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
-int a = 3, b = 4, c = 5;
-tuple<int, int, int> t = tie(a, b, c);
-cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << '\n'; // 3 4 5
-get<0>(t)  =  7;
-cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << '\n'; // 7 4 5
-tuple<string, string, int> tp2 = make_tuple("Hello", "world", 100);
-
-string s1, s2;
-int x;
-tie(s1, s2, x)  = tp2;
-cout << s1 << " " << s2 << " " << x << '\n'; // Hello world 100
+--8<-- "cppintro/stl/stl11.cpp"
 ```
 
 ## Iteratori
@@ -368,15 +295,7 @@ cozi](https://edu.roalgo.ro/mediu/queue/), mai jos puteți găsi un exemplu de
 folosire a acestor instrucțiuni.
 
 ```cpp
-queue<int> q;
-q.push(2);
-q.push(4);
-while (!q.empty()) {
-    int val = q.front(); // accesam varful cozii
-    q.pop();
-    cout << val << " "; // afisam 2 4
-}
-cout << '\n';
+--8<-- "cppintro/stl/stl12.cpp"
 ```
 
 ### Structura std::stack
@@ -389,15 +308,7 @@ stive](https://edu.roalgo.ro/mediu/stack/), mai jos puteți găsi un exemplu de
 folosire a acestor instrucțiuni.
 
 ```cpp
-stack<int> s;
-s.push(5);
-s.push(8);
-while (!s.empty()) {
-    int val = s.top(); // accesam varful stivei
-    s.pop();
-    cout << val << " "; // afisam 8 5
-}
-cout << '\n';
+--8<-- "cppintro/stl/stl13.cpp"
 ```
 
 ### Structura std::deque
@@ -417,28 +328,7 @@ folosire a acestor instrucțiuni.
     mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
 
 ```cpp
-deque<int> d;
-d.push_front(4);
-d.push_front(5);
-d.push_back(7);
-d.push_back(8);
-d.push_front(3);
-
-// deque-ul contine 3 5 4 7 8
-int x = d[3]; // putem accesa valori din pozitii oarecare, ca la vector
-
-while (!d.empty()) {
-    int val = d.front(); // accesam prima valoare
-    cout << val << " ";
-    d.pop_front(); // stergem prima valoare
-    if (d.size() > 0) {
-        val = d.back(); // accesam ultima valoare
-        d.pop_back(); // stergem ultima valoare
-        cout << val << " ";
-    }
-}
-cout << '\n';
-// afisam 3 8 5 7 4
+--8<-- "cppintro/stl/stl14.cpp"
 ```
 
 ## Structuri de date arborescente
@@ -482,39 +372,7 @@ deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmic�
 per operație. Mai jos găsiți exemple de utilizare a map-ului.
 
 ```cpp
-map <int, int> mp; 
-
-mp[2] = 5; 
-mp[4] = 6;
-
-cout << mp[2] << '\n'; // 2
-cout << mp[3] << '\n'; // 0
-
-/*
-2 5
-3 0
-4 6
-*/
-for (map<int, int> ::iterator it = mp.begin(); it != mp.end(); it++) {
-    cout << it -> first << " " << it -> second << '\n';
-}
-mp.erase(3);
-  
-mp.clear();
-
-mp[3] = 4;
-mp[3] = 5;
-mp[6] = 1;
-
-for (auto it : mp) {
-    cout << it.first << " " << it.second << '\n';
-}
-if (mp.find(10) != mp.end()) {
-    cout << "Cheia 10 este in map\n";
-}
-else {
-    cout << "Cheia 10 nu este in map\n"; 
-}
+--8<-- "cppintro/stl/stl15.cpp"
 ```
 
 ### Structura std::set
@@ -550,28 +408,7 @@ informații mai avansate, precum poziția relativă, acestea fiind discutate
 ulterior în articol, când vorbim despre policy based data structures.
 
 ```cpp
-set<int> s;
-s.insert(1);  // [1]
-s.insert(14); // [1, 14]
-s.insert(9);  // [1, 9, 14]
-s.insert(2);  // [1, 2, 9, 14]
-cout << *s.upper_bound(7) << '\n';  // 9
-cout << *s.upper_bound(9) << '\n';  // 14
-cout << *s.lower_bound(5) << '\n';  // 9
-cout << *s.lower_bound(9) << '\n';  // 9
-cout << *s.begin() << '\n';  // 1
-cout << *s.rbegin() << '\n';  // 14
-auto it = s.end();
-cout << *(--it) << '\n';  // 14
-s.erase(s.upper_bound(6));  // [1, 2, 14]
-// iterator
-for (set<int> ::iterator it = s.begin(); it != s.end(); it++) { 
-    cout << *it << '\n'; // 1, 2, 14
-}
-// iterator invers
-for (set<int> ::reverse_iterator it2 = s.rbegin(); it2 != s.rend(); it2++) {
-    cout << *it2 << '\n'; // 14, 2, 1
-}
+--8<-- "cppintro/stl/stl16.cpp"
 ```
 
 ### std::unordered_map și std::unordered_set
@@ -644,17 +481,7 @@ Sintaxa unei cozi de priorități este `priority_queue<tip> nume`. Mai jos găsi
 un exemplu de implementare a acestei structuri de date.
 
 ```cpp
-priority_queue<int> pq; 
-pq.push(5); // adaugam valori
-pq.push(9);
-pq.push(1);
-
-while (!pq.empty()) {
-    int val = pq.top(); // varful cozii
-    pq.pop(); // scoatem varful cozii
-    
-    cout << val << " "; // se vor afisa 9, 5, 1 
-}
+--8<-- "cppintro/stl/stl17.cpp"
 ```
 
 !!! note "Accesarea valorilor în ordine crescătoare"
@@ -664,12 +491,7 @@ while (!pq.empty()) {
     adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
 ```cpp
-struct cmp {
-    bool operator()(int a, int b) {
-        return a > b;
-    }
-};
-priority_queue<int, vector<int>, cmp>q;
+--8<-- "cppintro/stl/stl18.cpp"
 ```
 
 ### Policy based data structures
@@ -700,12 +522,7 @@ Pentru a putea folosi această structură de date, trebuie să declarăm următo
 biblioteci, namespace-uri și typedefs:
 
 ```cpp
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-
-using namespace __gnu_pbds;
- 
-typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> order_set;
+--8<-- "cppintro/stl/stl19.cpp"
 ```
 
 !!! note "Alte tipuri de date"  
@@ -714,11 +531,7 @@ typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_upda
     trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
     
     ```cpp
-    typedef tree<int,
-             null_type,
-             less<int>,
-             rb_tree_tag,
-             tree_order_statistics_node_update> order_set;
+    --8<-- "cppintro/stl/stl20.cpp"
     ``` 
     
     ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
@@ -730,38 +543,7 @@ fost folosită în problema [AIB de pe
 pbinfo](https://www.pbinfo.ro/probleme/2725/aib).
 
 ```cpp
-#include <iostream>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
- 
-using namespace std;
-using namespace __gnu_pbds;
- 
-typedef tree<int,
-             null_type,
-             less<int>,
-             rb_tree_tag,
-             tree_order_statistics_node_update> order_set;
- 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int n;
-    cin >> n;
-    
-    order_set X;
-    
-    for (int i = 1; i <= n; i++) {
-        int x;
-        cin >> x;
-        
-        cout << X.order_of_key(x) << " ";
-        X.insert(x);
-        // X.find_by_order(x) ar afla al x-lea cel mai mare element
-    }
-    return 0;
-}
+--8<-- "cppintro/stl/stl21.cpp"
 ```
 
 Pe lângă o mare parte din problemele cu structuri de date, această structură de

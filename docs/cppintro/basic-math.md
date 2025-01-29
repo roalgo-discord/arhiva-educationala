@@ -58,23 +58,7 @@ matematice, se recomandă folosirea parantezelor pentru a simplifica calculele.
 va fi mereu numărul fără virgulă.
 
 ```cpp
-cout << 8  + 2 << '\n'; // 10
-cout << 4  * 3 << '\n'; // 12
-cout << 12 - 5 << '\n'; // 7
-cout << 16 / 4 << '\n'; // 4
-cout << 15 / 4 << '\n'; // 3
-cout << -9 / 3 << '\n'; // -3
-cout << -8 / 3 << '\n'; // -2
-```
-
-```cpp
-cout << 8  + 2 << '\n'; // 10
-cout << 4  * 3 << '\n'; // 12
-cout << 12 - 5 << '\n'; // 7
-cout << 16 / 4 << '\n'; // 4
-cout << 15 / 4 << '\n'; // 3
-cout << -9 / 3 << '\n'; // -3
-cout << -8 / 3 << '\n'; // -2
+--8<-- "cppintro/basic_math/arith_int.cpp"
 ```
 
 În mod particular, pentru operațiile aritmetice de bază, putem folosi prefixarea
@@ -83,32 +67,7 @@ rezolvă corect problema [asii de pe
 pbinfo](https://www.pbinfo.ro/probleme/1260/asii):
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int a, b;
-    cin >> a >> b;
-
-    int sum = a + b;
-
-    int diff = a;
-    diff -= b;
-
-    // Pentru ce e mai sus, puteam scrie și:
-    //
-    //     int diff = a - b;
-    //
-    // diff -= b înseamnă diff = diff - b;
-    //
-    // Similar, putem scrie si a /= b, a += b, a *= b
-
-    int prod = a * b;
-    int ratio = a / b;
-
-    cout << sum << " " << diff << " " << prod << " " << ratio << '\n';
-    return 0;
-}
+--8<-- "cppintro/basic_math/asii.cpp"
 ```
 
 ### Soluții pentru evitarea overflow-ului
@@ -121,18 +80,10 @@ int main() {
 
 Cele mai populare două soluții sunt fie folosirea tipului de date long long
 pentru păstrarea termenilor din operații, fie folosirea operatorului 1LL, fie
-folosirea (long long) pentru convertirea datelor.
+folosirea `(long long)` pentru convertirea datelor.
 
 ```cpp
-cout << 594943 * 204232 << '\n';             // overflow
-
-cout << 1LL * 594943 * 204232 << '\n';       // ok
-
-cout << (long long)594943 * 204232 << '\n';  // ok
-cout << 594943LL * 204232 << '\n';           // echivalent
-
-cout << 594943 * (long long)204232 << '\n';  // ok
-cout << 594943 * 204232LL << '\n';           // echivalent
+--8<-- "cppintro/basic_math/longlong.cpp"
 ```
 
 O altă soluție pentru evitarea overflow-urilor în cazul în care trebuie să
@@ -144,30 +95,7 @@ exemplu de problemă este problema
 găsiți în codul de mai jos.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Cel mai mare număr de tip unsigned long long
-    unsigned long long huge = 18446744073709551615;
-
-    int n;
-    cin >> n;
-    
-    for (int i = 0; i < n; i++) {
-        unsigned long long nr1, nr2;
-        cin >> nr1 >> nr2;
-
-        // Evităm împărțirea la zero
-        if (nr2 && nr1 > huge / nr2) {
-            cout << "Overflow!" << '\n';
-        } else {
-            cout << nr1 * nr2 << '\n';
-        }
-    }
-    
-    return 0;
-}
+--8<-- "cppintro/basic_math/overflow_pbinfo.cpp"
 ```
 
 ### Incrementarea și decrementarea
@@ -182,25 +110,14 @@ neadecvate ale acestora, fiind un subiect des întâlnit în probele grilă la
 examenele de bacalaureat și admitere.
 
 !!! example "Exemplu"
+
     De exemplu, se dă următorul program C++, spuneți ce afișează.
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int a = 6, b = 8;
-
-        cout << (a--) << '\n';
-        cout << (++b) + a << '\n';
-        cout << (--a) - (--b) << '\n';
-        cout << a << " " << b << '\n';
-        return 0;
-    }
+    --8<-- "cppintro/basic_math/example1.cpp"
     ```
 
-    Dacă ați răspuns 6, urmat de 14, urmat de $-4$, urmat de $4 \ 8$,
-    felicitări!
+    Dacă ați răspuns 6, urmat de 14, urmat de -4, urmat de `4 8`, felicitări!
 
     Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul
     rând, deoarece operatorul de decrementare este postfixat, instrucțiunea
@@ -217,14 +134,7 @@ expresia este memorată într-un tip de date întreg, atunci rezultatul va răm�
 întreg.
 
 ```cpp
-cout << 2.5 + 7 << '\n';        // 9.5
-cout << 3 * 2.5 << '\n';        // 7.5
-cout << 2.5 / 2 << '\n';        // 1.25
-cout << 2 / 2.5 << '\n';        // 0.8
-cout << 6.3 / 20 + 24 << '\n';  // 24.315
-
-int x = 6.3 / 20 + 24;
-cout << x << '\n';  // 24
+--8<-- "cppintro/basic_math/arith_real.cpp"
 ```
 
 ### Ridicarea la putere
@@ -243,11 +153,7 @@ O metodă mai simplă constă în a ridica la putere folosind o structură repet
 care calculează $a^b$ în $b$ pași, așa cum se poate vedea mai jos.
 
 ```cpp
-int ans = 0;
-for (int i = 1; i <= b; i++) {
-    ans = ans * a;
-}
-cout << ans << '\n';
+--8<-- "cppintro/basic_math/pow.cpp"
 ```
 
 Pentru cei mai avansați, această operație se poate face [și în timp

@@ -76,28 +76,7 @@ tablou, iar mai apoi să parcurgem valorile pentru a afla multiplii ultimului
 element.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-
-    // Vector cu n elemente
-    int v[n + 1];
-
-    for (int i = 1; i <= n; i++) {
-        cin >> v[i];
-    }
-
-    for (int i = 1; i <= n; i++) {
-        if (v[i] % v[n] == 0) {
-            cout << v[i] << " ";
-        }
-    }
-
-    return 0;
-}
+--8<-- "cppintro/arrays/afisare0.cpp"
 ```
 
 ## Inserarea, ștergerea, inversarea valorilor dintr-un tablou
@@ -115,13 +94,7 @@ pozițiile $n$ și $k$ cu o poziție la dreapta, iar mai apoi vom atribui noua
 valoare pe poziția $k$.  
 
 ```cpp
-for (int i = n; i >= k; i--) {
-    v[i + 1] = v[i];
-}
-
-v[k] = x;
-
-n++;  // (1)
+--8<-- "cppintro/arrays/ins_sterg_inv.cpp:inserare"
 ```
 
 1. Tabloul va avea o valoare în plus, drept pentru care trebuie să creștem în
@@ -133,15 +106,9 @@ n++;  // (1)
     inițiale deoarece altfel, am ajunge să avem aceeași valoare peste tot.
 
     ```cpp
-    for (int i = k; i <= n; i++) {
-        v[i + 1] = v[i];
-    }
-    
-    v[k] = x;
-    
-    n++; 
+    --8<-- "cppintro/arrays/ins_sterg_inv.cpp:inserare_warning"
     ```
-    
+
     Se poate observa cu ușurință că valoarea de pe poziția $k$ va ajunge peste
     tot dacă implementăm așa, ceea ce este greșit.
 
@@ -153,12 +120,7 @@ $k+1$, $k+2$, ..., $n$ cu o poziție mai în spate. Spre deosebire de cazul
 inserării, vom vrea să mutăm valorile în ordine crescătoare a poziției inițiale.
 
 ```cpp
-for (int i = k; i < n; i++) {
-    v[i] = v[i + 1];
-}
-
-
-n--; // (1)
+--8<-- "cppintro/arrays/ins_sterg_inv.cpp:stergere"
 ```
 
 1. Tabloul va avea o valoare în minus, drept pentru care trebuie să scădem în
@@ -170,11 +132,7 @@ n--; // (1)
     deoarece altfel, am ajunge să avem aceeași valoare peste tot.
 
     ```cpp
-    for (int i = n; i > k; i--) {
-        v[i - 1] = v[i];
-    }
-    
-    n--; 
+    --8<-- "cppintro/arrays/ins_sterg_inv.cpp:stergere_warning" 
     ```
 
 ### Inversarea unui tablou
@@ -186,11 +144,7 @@ educativ, am implementat interschimbarea elementelor folosind "regula celor trei
 pahare".
 
 ```cpp
-for (int i = 1; i <= n / 2; i++) {
-    int x = v[i];         // (1)
-    v[i] = v[n - i + 1];  // (2)
-    v[n - i + 1] = x;     // (3)
-}
+--8<-- "cppintro/arrays/ins_sterg_inv.cpp:inversare"
 ```
 
 1. Reținem valoarea lui `#!cpp v[i]` în `x`.
@@ -218,37 +172,7 @@ rămâne mereu cu valori.
     diverse operații pe mulțimi, precum reuniunea, intersecția și diferența.
 
 ```cpp
-int i = 1;
-int j = 1;
-int poz = 0;
-
-// Mergem prin tablou până când am parcurs unul din ele.
-while (i <= n && j <= m) {
-    poz++;
-
-    // Punem în C elementul mai mic dintre A[i] și B[j]
-    if (A[i] <= B[j]) {
-        C[poz] = A[i];
-        i++;
-    } else {
-        C[poz] = B[j];
-        j++;
-    }
-}
-
-// Dacă mai există elemente în A, adaugă-le în C.
-while (i <= n) {
-    poz++;
-    C[poz] = A[i];
-    i++;
-}
-
-// Dacă mai există elemente în B, adaugă-le în C.
-while (j <= m) {
-    poz++;
-    C[poz] = B[j];
-    j++;
-}
+--8<-- "cppintro/arrays/interclasare.cpp"
 ```
 
 ## Rotirea tablourilor
@@ -270,67 +194,19 @@ structură de date ce permite rotația unui tablou cu o singură poziție la st�
 sau dreapta.
 
 ```cpp
-void rotire(int arr[], int n, bool laStanga = true, int k = 1) {
-    k = k % n;
-
-    // Dacă k = 0 (k este multiplu de n), nu facem nimic.
-    if (k == 0) {
-        return;
-    }
-
-    int temp[k];
-    if (laStanga) {
-        rotireLaStanga(arr, n, k);
-    } else {
-        rotireLaDreapta(arr, n, k);
-    }
-}
+--8<-- "cppintro/arrays/rotire.cpp:rotire"
 ```
 
 === "Rotire la stânga"
 
     ```cpp
-    void rotireLaStanga(int arr[], int n, int k) {
-        int temp[k];
-    
-        // Păstrăm primele k elemente
-        for (int i = 0; i < k; ++i) {
-            temp[i] = arr[i];
-        }
-    
-        // Mutăm elementele spre stânga
-        for (int i = 0; i < n - k; ++i) {
-            arr[i] = arr[i + k];
-        }
-    
-        // Plasăm elementele păstrate la sfârșit
-        for (int i = 0; i < k; ++i) {
-            arr[n - k + i] = temp[i];
-        }
-    }
+    --8<-- "cppintro/arrays/rotire.cpp:rotire_stanga"
     ```
 
 === "Rotire la dreapta"
 
     ```cpp
-    void rotireLaDreapta(int arr[], int n, int k) {
-        int temp[k];
-    
-        // Păstrăm ultimele k elemente
-        for (int i = 0; i < k; ++i) {
-            temp[i] = arr[n - k + i];
-        }
-    
-        // Mutăm elementele spre dreapta
-        for (int i = n - 1; i >= k; --i) {
-            arr[i] = arr[i - k];
-        }
-    
-        // Plasăm elementele păstrate la început
-        for (int i = 0; i < k; ++i) {
-            arr[i] = temp[i];
-        }
-    }
+    --8<-- "cppintro/arrays/rotire.cpp:rotire_dreapta"
     ```
 
 ## Sortarea tablourilor

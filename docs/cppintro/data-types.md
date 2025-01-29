@@ -64,7 +64,7 @@ Orice variabilă este caracterizată de:
 Sintaxa generală este:
 
 ```cpp
-tip_de_date identificator1, identificator2, ...;
+--8<-- "cppintro/data_types/datatypes1.cpp"
 ```
 
 unde:
@@ -76,9 +76,7 @@ unde:
 !!! example
 
     ```cpp
-    int numar;
-    double pret, tva;
-    char litera;
+    --8<-- "cppintro/data_types/datatypes2.cpp"
     ```
 
 !!! note "Observații"
@@ -184,13 +182,7 @@ două valori care deși ambele se încadrează în `#!cpp int`, suma (sau produs
 lor) depășește valoarea maximă a tipului de date `#!cpp int`.
 
 ```cpp
-cout << 594943 * 204232 << '\n';        // overflow
-cout << 1LL * 594943 * 204232 << '\n';  // ok
-cout << 594943LL * 204232 << '\n';      // ok
-
-cout << 1000000000 + 2000000000 << '\n';        // overflow
-cout << 0LL + 1000000000 + 2000000000 << '\n';  // ok
-cout << 1000000000LL + 2000000000 << '\n';      // ok
+--8<-- "cppintro/data_types/datatypes3.cpp"
 ```
 
 Cele mai populare două soluții pentru evitarea overflow-ului sunt fie folosirea
@@ -237,25 +229,7 @@ Astfel, pentru a verifica egalitatea dintre două numere reale mai mari, putem
 incorpora `eps` astfel:
 
 ```cpp
-#include <cmath>
-#include <iostream>
-
-using namespace std;
-
-// 10⁻⁹, o valoare reală foarte mică.
-double eps = 1e-9;
-
-int main() {
-    double a, b;
-    cin >> a >> b;
-
-    if (abs(a - b) <= eps) {
-        cout << "Egale" << '\n';
-    } else {
-        cout << "Inegale" << '\n';
-    }
-    return 0;
-}
+--8<-- "cppintro/data_types/datatypes4.cpp"
 ```
 
 ### Tipul `#!cpp __int128`
@@ -272,61 +246,7 @@ este mai jos, vom putea să folosim `#!cpp std::cin >> x` chiar dacă $x$ este
 `#!cpp __int128`.
 
 ```cpp
-#include <algorithm>  // Pentru std::reverse
-#include <iostream>
-#include <string>  // Pentru std::string
-
-// Citire
-std::istream &operator>>(std::istream &in, __int128 &num) {
-    num = 0;
-
-    std::string s;
-    in >> s;
-
-    if (s.empty()) {
-        return in;
-    }
-
-    bool neg = (s[0] == '-');
-    int start = (neg ? 1 : 0);
-
-    for (int i = start; i < s.size(); ++i) {
-        num = num * 10 + (s[i] - '0');
-    }
-
-    if (neg) {
-        num = -num;
-    }
-
-    return in;
-}
-
-// Afișare
-std::ostream &operator<<(std::ostream &out, __int128 num) {
-    if (num == 0) {
-        out << "0";
-        return out;
-    }
-
-    bool neg = (num < 0);
-    if (neg) {
-        num = -num;
-    }
-
-    std::string s;
-    while (num > 0) {
-        s.push_back('0' + num % 10);
-        num /= 10;
-    }
-
-    if (neg) {
-        s.push_back('-');
-    }
-
-    std::reverse(s.begin(), s.end());
-    out << s;
-    return out;
-}
+--8<-- "cppintro/data_types/datatypes5.cpp"
 ```
 
 ## Concluzii

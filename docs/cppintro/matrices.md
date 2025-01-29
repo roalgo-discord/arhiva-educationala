@@ -43,7 +43,7 @@ Pentru declararea unei matrice statice, aveți nevoie de:
 2. Dimensiunile matricei.
 
 ```cpp
-int matrice[101][101];
+--8<-- "cppintro/matrices/matrices01.cpp"
 ```
 
 Aceasta definește o matrice cu 101 linii și 101 coloane, fiecare element fiind
@@ -83,8 +83,7 @@ matrice[2][4]`. Așa ar arăta pe matricea noastră:
     exact ca în cazul vectorilor uzuali.
 
     ```cpp
-    // Numerotare de la 1 la 101.
-    int matrice[102][102];
+    --8<-- "cppintro/matrices/matrices02.cpp"
     ```
 
     În acel caz, matricea va fi stocată astfel:
@@ -98,8 +97,7 @@ Valorile matricei pot fi accesate și modificate similar cu variabilele
 obișnuite, utilizând indicii.
 
 ```cpp
-// Pe linia 1 și coloana 5 vom avea acum valoarea 7.
-matrice[1][5] = 7;
+--8<-- "cppintro/matrices/matrices03.cpp"
 ```
 
 Pentru a parcurge elementele, de regulă se folosesc structuri repetitive
@@ -107,13 +105,7 @@ imbricate.
 
 !!! example "Exemplu de parcurgere și afișare"
     ```cpp
-    // r semnifică rândul și c semnifică coloana.
-    for (int r = 0; r < n; ++r) {
-        for (int c = 0; c < m; ++c) {
-            cout << matrice[r][c] << " ";
-        }
-        cout << '\n';
-    }
+    --8<-- "cppintro/matrices/matrices04.cpp"
     ```
 
 !!! note "Notă"
@@ -127,39 +119,7 @@ Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor
 pare din ea. Soluția poate fi implementată astfel:
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Citirea dimensiunilor matricei
-    int randuri, coloane;
-    cin >> randuri >> coloane;
-
-    // Declararea matricei
-    int mat[randuri][coloane];
-
-    // Citirea elementelor
-    for (int r = 0; r < randuri; r++) {
-        for (int c = 0; c < coloane; c++) {
-            cin >> mat[r][c];
-        }
-    }
-
-    // Calculul sumei numerelor pare
-    int suma = 0;
-    for (int r = 0; r < randuri; r++) {
-        for (int c = 0; c < coloane; c++) {
-            if (mat[r][c] % 2 == 0) {
-                suma += mat[r][c];
-            }
-        }
-    }
-
-    // Afișarea rezultatului
-    cout << suma << '\n';
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices05.cpp"
 ```
 
 !!! note "Notă"
@@ -204,22 +164,14 @@ sunt cele pentru care rândul coincide cu coloana. Asta ne permite să scriem
 următorul cod care parcurge diagonala principală:
 
 ```cpp
-for (int r = 0; r < dim; ++r) {
-    for (int c = 0; c < dim; ++c) {
-        if (r == c) {
-            // Fă ceva cu matrice[r][c]
-        }
-    }
-}
+--8<-- "cppintro/matrices/matrices06.cpp"
 ```
 
 Din moment ce rândul coincide cu coloana, putem scăpa de al doilea `#!cpp for`,
 pentru a obține acest cod:
 
 ```cpp
-for (int i = 0; i < dim; ++i) {
-    // Fă ceva cu matrice[i][i]
-}
+--8<-- "cppintro/matrices/matrices07.cpp"
 ```
 
 Același lucru se aplică pentru indexarea de la 1, doar că va fi
@@ -237,13 +189,7 @@ unu mai mic decât dimensiunea matricei. Asta ne permite să scriem următorul c
 care parcurge diagonala secundară:
 
 ```cpp
-for (int r = 0; r < dim; ++r) {
-    for (int c = 0; c < dim; ++c) {
-        if (r + c == dim - 1) {
-            // Fă ceva cu matrice[r][c]
-        }
-    }
-}
+--8<-- "cppintro/matrices/matrices08.cpp"
 ```
 
 La fel ca în cazul diagonalei principale, putem folosi un singur `#!cpp for`.
@@ -252,11 +198,7 @@ Din condiția de mai sus putem scoate `#!cpp c`. Mai exact, putem muta `#!cpp r`
 codul:
 
 ```cpp
-for (int r = 0; r < dim; ++r) {
-    int c = dim - r - 1;
-
-    // Fă ceva cu matrice[r][c]
-}
+--8<-- "cppintro/matrices/matrices09.cpp"
 ```
 
 Dacă matricea este indexată de la 1, atunci atât `#!cpp r`, cât și `#!cpp c` vor
@@ -265,11 +207,7 @@ avea un 1 în plus, așadar condiția devine `#!cpp r - 1 + c - 1 == dim - 1` sa
 așa va arăta codul:
 
 ```cpp
-for (int r = 1; r <= dim; ++r) {
-    int c = dim - r + 1;
-
-    // Fă ceva cu matrice[r][c]
-}
+--8<-- "cppintro/matrices/matrices10.cpp"
 ```
 
 Cu indexarea la 0, scădem 1, iar cu indexare de la 1, adăugăm 1.
@@ -351,15 +289,7 @@ bacalaureat de obicei indexarea este de la 1, așa că vom urma și noi această
 regulă.
 
 ```cpp
-for (int r = 1; r <= 7; r++) {
-    for (int c = 1; c <= 7; c++) {
-        if (r > c && r + c > 7 + 1) {
-            mat[r][c] = 4;
-        } else {
-            mat[r][c] = 2;
-        }
-    }
-}
+--8<-- "cppintro/matrices/matrices11.cpp"
 ```
 
 ### Problemă exemplu - [genmat25 de pe pbinfo](https://www.pbinfo.ro/probleme/2822/genmat25)
@@ -368,42 +298,7 @@ Pentru a rezolva această problemă, trebuie să urmăm cu atenție instrucțiun
 din enunț, în ordinea în care sunt date. Ulterior, vom afișa matricea rezultată.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Citirea dimensiunii
-    int dim;
-    cin >> dim;
-
-    int mat[21][21];
-
-    for (int i = 1; i <= dim; i++) {
-        // Prima coloană
-        mat[i][1] = i;
-
-        // Ultima linie
-        mat[dim][i] = dim;
-    }
-
-    // De la penultima linie la prima
-    for (int r = dim - 1; r >= 1; r--) {
-        // De la a doua coloană la ultima
-        for (int c = 2; c <= dim; c++) {
-            mat[r][c] = mat[r][c - 1] + mat[r + 1][c - 1];
-        }
-    }
-
-    // Afișare matrice
-    for (int i = 1; i <= dim; i++) {
-        for (int j = 1; j <= dim; j++) {
-            cout << mat[i][j] << " ";
-        }
-        cout << '\n';
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices12.cpp"
 ```
 
 ### Problemă exemplu - [genmat23 de pe pbinfo](https://www.pbinfo.ro/probleme/1585/genmat23)
@@ -413,52 +308,7 @@ distanța față de marginea matricii și apoi vom colora pătratele cu 0 sau 1 
 caz.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int dim;
-    cin >> dim;
-
-    int mat[dim + 1][dim + 1];
-
-    for (int r = 1; r <= dim; r++) {
-        for (int c = 1; c <= dim; c++) {
-            int sus = r - 1;
-            int stanga = c - 1;
-            int jos = dim - r;
-            int dreapta = dim - c;
-
-            // Determinăm distanța minimă față de margini
-            int distanta = sus;
-            if (stanga < distanta) {
-                distanta = stanga;
-            }
-            if (jos < distanta) {
-                distanta = jos;
-            }
-            if (dreapta < distanta) {
-                distanta = dreapta;
-            }
-
-            // Dacă distanța este pară, punem 1, altfel punem 0
-            if (distanta % 2 == 0) {
-                mat[r][c] = 1;
-            } else {
-                mat[r][c] = 0;
-            }
-        }
-    }
-
-    for (int r = 1; r <= dim; r++) {
-        for (int c = 1; c <= dim; c++) {
-            cout << mat[r][c] << " ";
-        }
-        cout << '\n';
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices13.cpp"
 ```
 
 #### Problemă exemplu - [zona1 de pe pbinfo](https://www.pbinfo.ro/probleme/782/zona1)
@@ -468,35 +318,7 @@ elementele matricii, le vom adăuga într-un vector de frecvență pentru a obț
 răspunsul cerut.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int dim;
-    cin >> dim;
-
-    int frecventa[1000] = {0};
-    for (int r = 1; r <= dim; r++) {
-        for (int c = 1; c <= dim; c++) {
-            int elem;
-            cin >> elem;
-
-            // Verificăm dacă este în zona de sud:
-            // sub diagonala principală și sub diagonala secundară.
-            if (r > c && r + c > dim + 1) {
-                frecventa[elem]++;
-            }
-        }
-    }
-
-    for (int i = 0; i < 1000; i++) {
-        if (frecventa[i] >= 2) {
-            cout << i << " ";
-        }
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices14.cpp"
 ```
 
 #### Problemă exemplu - [diagonal de pe nerdarena](https://www.nerdarena.ro/problema/diagonal)
@@ -508,66 +330,7 @@ punctele de pe prima linie și apoi cele de pe ultima coloană. Indiferent de
 parcurgere, vom merge în jos ulterior.
 
 ```cpp
-#include <fstream>
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    ifstream in("diagonal.in");
-    ofstream out("diagonal.out");
-
-    char mat[100][100];
-
-    int dim = 0;
-    while (in >> mat[dim]) {
-        dim++;
-    }
-
-    // Diagonala principală
-
-    for (int start = dim - 1; start >= 0; start--) {
-        int r = start, c = 0;
-        while (r < dim && c < dim) {
-            out << mat[r][c];
-            r++;
-            c++;
-        }
-    }
-
-    for (int start = 1; start < dim; start++) {
-        int r = 0, c = start;
-        while (r < dim && c < dim) {
-            out << mat[r][c];
-            r++;
-            c++;
-        }
-    }
-
-    out << '\n';
-
-    // Diagonala secundară
-
-    for (int start = 0; start < dim; start++) {
-        int r = 0, c = start;
-        while (r < dim && c >= 0) {
-            out << mat[r][c];
-            r++;
-            c--;
-        }
-    }
-
-    for (int start = 1; start < dim; start++) {
-        int r = start, c = dim - 1;
-        while (r < dim && c >= 0) {
-            out << mat[r][c];
-            r++;
-            c--;
-        }
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices15.cpp"
 ```
 
 ## Alte parcurgeri și modificări în matrice
@@ -598,53 +361,7 @@ Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema
 folosește această tehnică.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-ifstream in("spirala.in");
-ofstream fout("spirala.out");
-
-int main() {
-    int dim;
-    in >> dim;
-
-    int mat[dim + 1][dim + 1];
-
-    // Citirea matricei
-    for (int i = 1; i <= dim; i++) {
-        for (int j = 1; j <= dim; j++) {
-            in >> mat[i][j];
-        }
-    }
-
-    int N = dim / 2 + dim % 2;
-
-    // Iterăm pentru fiecare zonă concentrică
-    for (int r = 1; r <= N; r++) {
-        
-        // Dreapta
-        for (int c = r; c <= dim - r + 1; c++) {
-            fout << mat[r][c] << " ";
-        }
-
-        // Jos
-        for (int c = r + 1; c <= dim - r + 1; c++) {
-            fout << mat[c][dim - r + 1] << " ";
-        }
-
-        // Stânga
-        for (int c = dim - r; c >= r; c--) {
-            fout << mat[dim - r + 1][c] << " ";
-        }
-
-        // Dreapta
-        for (int c = dim - r; c >= r + 1; c--) {
-            fout << mat[c][r] << " ";
-        }
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices16.cpp"
 ```
 
 #### Varianta 2 - folosind vectori de direcție
@@ -672,69 +389,7 @@ Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema
 folosește această tehnică.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-// Dreapta, jos, stânga, sus
-int deltaX[4] = {0, 1, 0, -1};
-int deltaY[4] = {1, 0, -1, 0};
-
-int main() {
-    ifstream in("spirala.in");
-    ofstream out("spirala.out");
-
-    int dim;
-    in >> dim;
-
-    int mat[dim + 1][dim + 1];
-    for (int r = 1; r <= dim; r++) {
-        for (int c = 1; c <= dim; c++) {
-            in >> mat[r][c];
-        }
-    }
-
-    // Rândul curent
-    int rand = 1;
-
-    // Coloana curentă (pornind din afara matricii)
-    int coloana = 0;
-
-    // Direcția curentă (0: dreapta, 1: jos, 2: stânga, 3: sus)
-    int directie = 0;
-
-    // Numărul de pași pe care trebuie să îi facem înainte de
-    // a schimba direcția
-    int pasiRamasi = dim;
-
-    // Numărul de schimbări de direcție rămase pentru acest număr de pași
-    int schimbari = 1;
-
-    // Algoritmul de parcurgere în spirală
-    while (pasiRamasi > 0) {
-        // Mergem în direcția curentă pentru pașii rămași
-        for (int pas = 1; pas <= pasiRamasi; pas++) {
-            rand += deltaX[directie];
-            coloana += deltaY[directie];
-
-            out << mat[rand][coloana] << " ";
-        }
-
-        // Schimbăm direcția în sensul acelor de ceasornic
-        directie = (directie + 1) % 4;
-
-        // Un set de mutări rămase este gata
-        schimbari--;
-
-        // Dacă s-au efectuat două schimbări, reducem numărul de pași rămași
-        if (schimbari == 0) {
-            schimbari = 2;
-            // Reducem dimensiunea spiralei
-            pasiRamasi--;
-        }
-    }
-
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices17.cpp"
 ```
 
 ### Transpunerea elementelor în matrice
@@ -766,39 +421,7 @@ pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim
 matricea la stânga cu 90°.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-int main() {
-    ifstream in("rotire.in");
-    ofstream out("rotire.out");
-
-    int randuri, coloane;
-    in >> randuri >> coloane;
-
-    int mat[11][11];
-    int matRot[11][11];
-
-    for (int r = 1; r <= randuri; r++) {
-        for (int c = 1; c <= coloane; c++) {
-            in >> mat[r][c];
-        }
-    }
-
-    for (int r = 1; r <= randuri; r++) {
-        for (int c = 1; c <= coloane; c++) {
-            matRot[coloane - c + 1][r] = mat[r][c];
-        }
-    }
-
-    for (int r = 1; r <= coloane; r++) {
-        for (int c = 1; c <= randuri; c++) {
-            out << matRot[r][c] << " ";
-        }
-        out << '\n';
-    }
-    return 0;
-}
+--8<-- "cppintro/matrices/matrices18.cpp"
 ```
 
 ### Bordarea unei matrici
@@ -807,21 +430,7 @@ Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze
 faptul că nu vrem să trecem prin acele poziții (de exemplu, -1).
 
 ```cpp
-for (int c = 0; c <= coloane + 1; c++) {
-    // Bordarea liniei 0
-    mat[0][c] = -1;
-
-    // Bordarea ultimei linii
-    mat[randuri + 1][c] = -1;
-}
-
-for (int r = 0; r <= randuri + 1; r++) {
-    // Bordarea primei coloane
-    mat[r][0] = -1;
-
-    // Bordarea ultimei coloane
-    mat[r][coloane + 1] = -1;
-}
+--8<-- "cppintro/matrices/matrices19.cpp"
 ```
 
 ### Căutarea unor elemente și secvențe în matrici

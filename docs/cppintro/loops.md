@@ -41,9 +41,7 @@ anumite structuri, deci ne vom concentra pe a arăta cele mai potrivite exemple
 Sintaxa while-ului este de regulă, următoarea:
 
 ```cpp
-while (conditie) {
-    // instructiuni
-}
+--8<-- "cppintro/loops/loops1.cpp"
 ```
 
 !!! note "Observație"
@@ -54,10 +52,7 @@ while (conditie) {
     informatică.
 
 ```cpp
-int x;
-while (fin >> x) {
-    // instructiuni
-}
+--8<-- "cppintro/loops/loops2.cpp"
 ```
 
 ## Structura do..while
@@ -73,9 +68,7 @@ while (fin >> x) {
 Sintaxa do..while-ului este de regulă, următoarea:
 
 ```cpp
-do {
-    // instructiuni
-}while (conditie);
+--8<-- "cppintro/loops/loops3.cpp"
 ```
 
 ## Structura for
@@ -90,9 +83,7 @@ do {
     să facem, respectiv a while-ului în caz contrar.
 
 ```cpp
-for (instructiune_initiala; conditie; actualizare) {
-    // instructiuni
-}
+--8<-- "cppintro/loops/loops4.cpp"
 ```
 
 Un astfel de exemplu ar fi cel de mai jos. Se poate remarca că putem actualiza
@@ -100,10 +91,7 @@ valoarea lui $i$ așa cum vrem noi, nefiind limitați la operatorii de
 incrementare și decrementare.
 
 ```cpp
-int s = 0;
-for (int i = 1; i <= n; i = i + 2) {
-    s = s + i;
-}
+--8<-- "cppintro/loops/loops5.cpp"
 ```
 
 ## Exemplu
@@ -115,56 +103,19 @@ pbinfo folosind diverse structuri repetitive.
 === "while"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-        
-        int x = 1;
-        while (x <= n) {
-            cout << x * 2 << " ";
-            x++;
-        }
-        return 0;
-    }
+    --8<-- "cppintro/loops/loops6.cpp"
     ```
 
 === "for"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-        
-        for (int i = 1; i <= n; i++) {
-            cout << i*2 << " ";
-        }
-        return 0;
-    }
+    --8<-- "cppintro/loops/loops7.cpp"
     ```
 
 === "do..while"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int n;
-        cin >> n;
-        
-        int x = 1;
-        do{
-            cout << x * 2 << " ";
-            x++;
-        }while (x <= n);
-        return 0;
-    }
+    --8<-- "cppintro/loops/loops8.cpp"
     ```
 
 ## Structuri repetitive imbricate
@@ -181,21 +132,7 @@ că primul for va avea $n$ pași, dar în cadrul acestui for, avem un alt for ca
 are $i$ pași.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-    
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << j << " ";
-        }
-        cout << '\n';
-    }
- return 0;
-}
+--8<-- "cppintro/loops/loops9.cpp"
 ```
 
 ## Resurse suplimentare

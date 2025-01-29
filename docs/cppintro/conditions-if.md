@@ -28,21 +28,17 @@ opțiuni pentru realizarea acestui lucru.
 astfel încât putem să direcționăm programul în funcție de rezultatele
 expresiilor logice menționate.
 
-Pe lângă `if..else`, există și instrucțiunea switch-case, care funcționează
-într-o manieră similară, trecând prin fiecare caz pe rând fără a mai fi nevoie
-de if-uri și else-uri.
+Pe lângă `#!cpp if..else`, există și instrucțiunea `#!cpp switch..case`, care
+funcționează într-o manieră similară, trecând prin fiecare caz pe rând fără a
+mai fi nevoie de `#!cpp if`-uri și `#!cpp else`-uri.
 
 Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni.
 
 ```cpp
-if (n == 5) {
-    // Instrucțiune
-} else {
-    // Altă instrucțiune
-}
+--8<-- "cppintro/if/if1.cpp"
 ```
 
-Blocul `else` este opțional.
+Blocul `#!cpp else` este opțional.
 
 Dacă condiția nu este deja o valoare logică, cum este cea returnată de
 operatorii de comparație, va fi considerată adevărată dacă aceasta este nenulă.
@@ -52,16 +48,7 @@ instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de
 condiții:
 
 ```cpp
-if (x) {
-    // Dacă x este adevărat
-    // ...
-} else if (y) {
-    // Dacă x este fals, dar y este adevărat
-    // ...
-} else {
-    // Dacă și x, și y sunt false
-    // ...
-}
+--8<-- "cppintro/if/if2.cpp"
 ```
 
 ## Operatori de comparație
@@ -103,33 +90,7 @@ operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
     |     1     |       0       |
 
     ```cpp
-    int a = 5;
-    int b = 8;
-
-    // 1. a < 5 == 5 < 5 == false
-    // 2. not false == true
-    //
-    // => not (a < 5) == true
-
-    cout << not (a < 5); // 1
-
-    // 1. (a == b) == (5 == 8) == false 
-    // 2. !false == true
-    //
-    // => !(a == b) == true
-
-    cout << !(a == b); // 1
-
-    // 1. în !a, a este transformat în true sau false
-    //    (0 este false, în rest este true)
-    // 2. !a == !5 == !true == false
-    // 3. false este convertit la 0, iar true la 1
-    // 4. 0 < 1 == true
-    // 5. not true == false
-    //
-    // => not (!a > 1) == false
-
-    cout << not (!a < 1); // 0
+    --8<-- "cppintro/if/if3.cpp"
     ```
 
 - **Conjuncția** - notată cu `#!cpp &&` sau `#!cpp and`, reprezintă „și” logic.
@@ -144,39 +105,7 @@ operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
     |     1     |     1     |        1        |
 
     ```cpp
-    int a = 1;
-    int b = 3;
-
-    // 1. a < 1 == 1 < 1 == false
-    // 2. b > 3 == 3 > 3 == false
-    // 3. false && false == false
-    //
-    // => (a < 1) && (b > 3) == false
-
-    cout << (a < 1) && (b > 3); // 0
-
-    // 1. b < 5 == 3 < 5   == true
-    // 2. a > -4 == 1 > -4 == true
-    //
-    // 3. not (b < 5)      == false
-    // 4. not (a > -4)     == false
-    //
-    // 5. false && false   == false
-    //
-    // => not (b < 5) and not (a > -4) == false
-
-    cout << not (b < 5) and not (a > -4); // 0
-
-    // 1. b >= 3 == 3 >= 3   == true
-    // 2. a > 4  == 1 > 4    == false
-    //
-    // 3. !(a > 4) == !false == true
-    //
-    // 4. true && true       == true
-    //
-    // => (b >= 3) && !(a > 4) == true
-
-    cout << (b >= 3) && !(a > 4); // 1
+    --8<-- "cppintro/if/if4.cpp"
     ```
 
 - **Disjuncția** - notată cu `#!cpp ||` sau `#!cpp or`, reprezintă „sau” logic.
@@ -191,49 +120,7 @@ operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
     |     1     |     1     |       1        |
 
     ```cpp
-    int x = 0;
-    int y = 5;
-
-    // 1. x != 0 == 0 != 0  == false
-    // 2. y == 0 == 5 == 0  == false
-    //
-    // 3. false or false    == false
-    //
-    // => (x != 0) or (y == 0) == false
-
-    cout << (x != 0) or (y == 0);  // 0
-
-    // 1. x + y > 10 == 0 + 5 > 10 == false
-    // 2. x - y < 0 == 0 - 5 < 0   == true
-    //
-    // 3. not (x - y < 0)          == !true == false
-    //
-    // 4. false or false           == false
-    //
-    // => (x + y > 10) or !(x - y < 0) == false
-
-    cout << (x + y > 10) or not (x - y < 0);  // 0
-
-    // 1. x == 1 == 0 == 1      == false
-    // 2. y == 10 == 5 == 10    == false
-    //
-    // 3. false || false        == false
-    //
-    // => (x == 1) || (y == 10) == false
-
-    cout << (x == 1) || (y == 10);  // 0
-
-    // 1. x < 0 == 0 < 0        == false
-    // 2. y > 10 == 5 > 10      == false
-    //
-    // 3. !(x < 0) == !false    == true
-    // 4. !(y > 10) == !false   == true
-    //
-    // 5. true || true          == true
-    //
-    // => !(x < 0) || !(y > 10) == true
-
-    cout << !(x < 0) || !(y > 10);  // 1
+    --8<-- "cppintro/if/if5.cpp"
     ```
 
 ## Exemplu
@@ -246,80 +133,13 @@ switch-case.
 === "if-else"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int s, c, n;
-        cin >> s >> c >> n;
-
-        if (s % n == 0 && s % c == 0) {
-            // Dacă ambele condiții sunt îndeplinite
-            cout << "CN" << '\n';
-        } else {
-            if (s % n == 0) {
-                // Dacă prima condiție este îndeplinită
-                cout << "N" << '\n';
-            } else {
-                if (s % c == 0) {
-                    // Dacă a doua condiție este îndeplinită
-                    cout << "C" << '\n';
-                } else {
-                    // Dacă nicio condiție nu este îndeplinită
-                    cout << "nimic" << '\n';
-                }
-            }
-        }
-        return 0;
-    }
+    --8<-- "cppintro/if/if6.cpp"
     ```
 
 === "switch-case"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int s, c, n;
-        cin >> s >> c >> n;
-
-        // Combinăm condiția într-o singură valoare
-        int condition = (s % n == 0) * 1 + (s % c == 0) * 2;
-
-        /*-----------------------------------*\
-        | s % n == 0 | s % c == 0 | condition |
-        |------------|------------|-----------|
-        | 0          | 0          | 0         |
-        | 1          | 0          | 1         |
-        | 0          | 1          | 2         |
-        | 1          | 1          | 3         |
-        \*-----------------------------------*/
-
-        switch (condition) {
-        case 3:
-            // Dacă ambele condiții sunt îndeplinite
-            // (s % n == 0 && s % c == 0)
-            cout << "CN" << '\n';
-            break;
-        case 1:
-            // Dacă prima condiție este îndeplinită
-            // (s % n == 0)
-            cout << "N" << '\n';
-            break;
-        case 2:
-            // Dacă a doua condiție este îndeplinită
-            // (s % c == 0)
-            cout << "C" << '\n';
-            break;
-        default:
-            // Dacă nicio condiție este îndeplinită
-            cout << "nimic" << '\n';
-            break;
-        }
-
-        return 0;
-    }
+    --8<-- "cppintro/if/if7.cpp"
     ```
 
 ## Prioritatea operatorilor
@@ -335,11 +155,7 @@ urmează următoarea ordine de prioritate:
 De exemplu:
 
 ```cpp
-int x = 1;
-int y = 0;
-int z = 2;
-
-cout << !(x && y) || z; // 1
+--8<-- "cppintro/if/if8.cpp"
 ```
 
 1. `#!cpp x && y` este evaluat mai întâi: `#!cpp 1 && 0 == false`.
@@ -348,10 +164,7 @@ cout << !(x && y) || z; // 1
    Rezultatul va fi 1.
 
 ```cpp
-cout << A || B && C;       // A || (B && C)
-cout << A && B || C && D;  // (A && B) || (C && D)
-cout << A && B && C || D;  // ((A && B) && C) || D
-cout << !A && B || C;      // ((!A) && B) || C
+--8<-- "cppintro/if/if9.cpp"
 ```
 
 Ca să fie prioritățile mai ușor de ținut minte, putem face analogie cu algebra
@@ -402,41 +215,11 @@ disjuncția, chiar dacă nu merge în algebra normală ($x + yz \neq (x + y)(x +
 z)$). Următoarele exemple sunt echivalente:
 
 ```cpp
-if ((a && b) || (a && c)) {
-    // ...
-}
-
-if (a && b) {
-    if (a && c) {
-        
-    }
-}
-
-if (a) {
-    if (b || c) {
-        // ...
-    }
-}
-
-if (a && (b || c)) {
-    // ...
-}
+--8<-- "cppintro/if/if10.cpp"
 ```
 
 ```cpp
-if ((a || b) && (a || c)) {
-    // ...
-}
-
-if (a || b) {
-    if (a || c) {
-        // ...
-    }
-}
-
-if (a || (b && c)) {
-    // ...
-}
+--8<-- "cppintro/if/if11.cpp"
 ```
 
 În plus, avem și identități:
@@ -457,11 +240,8 @@ eficient. Din moment ce știm că `#!cpp x && false == false` (și că
 `#!cpp false && x == false`), dacă avem `#!cpp x && y` și `x` este evaluat la
 fals, atunci nu mai este nevoie să evaluăm și `y`. Aici este un exemplu:
 
-```#cpp
-int b = 0;
-if (b != 0 && a / b != 0) {
-    // ...
-}
+```cpp
+--8<-- "cppintro/if/if12.cpp"
 ```
 
 Dacă `b` este 0, atunci toată expresia devine falsă fără a evalua `a / b != 0`,
@@ -550,17 +330,7 @@ Următoarele două exemple sunt echivalente, iar această rescriere poate fi uti
 ramură este scurtă sau dacă negația este altfel întortochiată):
 
 ```cpp
-if (!A && !B) {
-    fa_ceva();
-} else {
-    fa_altceva();
-}
-
-if (A || B) {
-    fa_altceva();
-} else {
-    fa_ceva();
-}
+--8<-- "cppintro/if/if13.cpp"
 ```
 
 Există și niște echivalențe cu negația care sunt utile în manipularea

@@ -95,26 +95,7 @@ generate de conjectura lui Collatz, preluând un număr natural de la tastatură
     multe rânduri, vom folosi perechea `#!cpp /* */`.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-
-    while (n > 1) {
-        cout << n << " ";
-        if (n % 2 == 0) {
-            n = n / 2;
-        }
-        else {
-            n = n * 3 + 1;
-        }
-    }
-
-    cout << n << '\n';
-    return 0;
-}
+--8<-- "cppintro/intro/intro.cpp"
 ```
 
 ### Elemente de bază ale sintaxei C++

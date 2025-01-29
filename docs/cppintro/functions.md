@@ -69,9 +69,7 @@ programare.
 În general, o funcție are următorul șablon:
 
 ```cpp
-tip nume (tip_1 nume_1, tip_2 nume_2, ..., tip_k nume_k) {
-    // Instrucțiuni
-}
+--8<-- "cppintro/functions/functions1.cpp"
 ```
 
 O funcție este formată din două părți principale: antetul (declararea funcției)
@@ -128,9 +126,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
         un comportament imprevizibil (_undefined behavior_).
 
         ```cpp
-        int aduna(int a, int b) {
-            return a + b;
-        }
+        --8<-- "cppintro/functions/functions2.cpp"
         ```
 
         !!! warning "Atenție"
@@ -141,14 +137,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
             nu e posibil:
 
             ```cpp
-            char c(int n) {
-                if (n <= 80) {
-                    return 'C';
-                }
-                // Pentru n > 80, funcția nu returnează nimic,
-                // deci funcția are undefined behavior în acel
-                // domeniu.
-            }
+            --8<-- "cppintro/functions/functions3.cpp"
             ```
 
     - **Pentru funcții de tip `#!cpp void`**:
@@ -159,12 +148,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
         devreme.
 
         ```cpp
-        void afiseaza_mesaj() {
-            cout << "Salut!" << endl;
-
-            // Opțional:
-            // return;
-        }
+        --8<-- "cppintro/functions/functions4.cpp"
         ```
 
 ## Utilizarea funcțiilor
@@ -177,30 +161,7 @@ respectivă și va genera o eroare.
 === "Cod corect (definirea înainte de folosire)"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    long long sum_div(int numar) {
-        long long suma = 0;
-        for (int divizor = 1; divizor * divizor <= numar; divizor++) {
-            if (numar % divizor == 0) {
-                suma += divizor;
-
-                if (divizor * divizor != numar) {
-                    suma += numar / divizor;
-                }
-            }
-        }
-        return suma;
-    }
-
-    int main() {
-        int numar;
-        cin >> numar;
-
-        cout << sum_div(numar) << '\n';
-        return 0;
-    }
+    --8<-- "cppintro/functions/functions5.cpp"
     ```
 
     În acest exemplu, funcția `#!cpp sum_div` este definită deasupra funcției
@@ -210,31 +171,7 @@ respectivă și va genera o eroare.
 === "Cod greșit (lipsa definiției înainte de apel)"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-        int numar;
-        cin >> numar;
-
-        // Eroare! Funcția `sum_div` nu este cunoscută în acest moment.
-        cout << sum_div(numar) << '\n';
-        return 0;
-    }
-
-    long long sum_div(int numar) {
-        long long suma = 0;
-        for (int divizor = 1; divizor * divizor <= numar; divizor++) {
-            if (numar % divizor == 0) {
-                suma += divizor;
-
-                if (divizor * divizor != numar) {
-                    suma += numar / divizor;
-                }
-            }
-        }
-        return suma;
-    }
+    --8<-- "cppintro/functions/functions6.cpp"
     ```
 
     În acest caz, funcția `#!cpp sum_div` este definită după funcția
@@ -247,33 +184,7 @@ declarație prealabilă (**prototip**) care să indice existența funcției și
 semnătura acesteia.
 
 ```cpp
-
-#include <iostream>
-using namespace std;
-
-long long sum_div(int numar);
-
-int main() {
-    int numar;
-    cin >> numar;
-
-    cout << sum_div(numar) << '\n';
-    return 0;
-}
-
-long long sum_div(int numar) {
-    long long suma = 0;
-    for (int divizor = 1; divizor * divizor <= numar; divizor++) {
-        if (numar % divizor == 0) {
-            suma += divizor;
-
-            if (divizor * divizor != numar) {
-                suma += numar / divizor;
-            }
-        }
-    }
-    return suma;
-}
+--8<-- "cppintro/functions/functions7.cpp"
 ```
 
 ## Clasificarea funcțiilor după valorile pe care le întorc
@@ -289,19 +200,7 @@ De exemplu, următoarea funcție primește un număr întreg ca parametru și
 returnează suma divizorilor săi:
 
 ```cpp
-long long sum_div(int numar) {
-    long long suma = 0;
-    for (int divizor = 1; divizor * divizor <= numar; divizor++) {
-        if (numar % divizor == 0) {
-            suma += divizor;
-
-            if (divizor * divizor != numar) {
-                suma += numar / divizor;
-            }
-        }
-    }
-    return suma;
-}
+--8<-- "cppintro/functions/functions8.cpp"
 ```
 
 !!! note "Observație"
@@ -347,14 +246,7 @@ Mai jos este exemplificată o funcție care calculează suma cifrelor unui numă
 actualizând direct variabila care va stoca rezultatul:
 
 ```cpp
-void sum_cif(int numar, int &suma) {
-    suma = 0;
-    
-    while (numar > 0) {
-        suma += numar % 10;
-        numar /= 10;
-    }
-}
+--8<-- "cppintro/functions/functions9.cpp"
 ```
 
 ### Funcții care folosesc variabile auxiliare
@@ -367,16 +259,7 @@ globale poate duce la dificultăți în menținerea codului, fiind recomandată 
 în cazuri bine justificate.
 
 ```cpp
-int suma = 0;
-
-void sum_cif(int numar) {
-    suma = 0;
-    
-    while (numar > 0) {
-        suma += numar % 10;
-        numar /= 10;
-    }
-}
+--8<-- "cppintro/functions/functions10.cpp"
 ```
 
 În acest caz, variabila globală `#!cpp suma` este actualizată direct în funcție,
@@ -392,16 +275,7 @@ Exemplul următor prezintă o implementare iterativă pentru calcularea sumei
 cifrelor unui număr $n$:
 
 ```cpp
-int sum_cif(int numar) {
-    int suma = 0;
-
-    while (numar > 0) {
-        suma += numar % 10;
-        numar /= 10;
-    }
-
-    return suma;
-}
+--8<-- "cppintro/functions/functions11.cpp"
 ```
 
 În general, funcțiile iterative tind să fie mai rapide decât cele recursive și
@@ -436,16 +310,7 @@ Aici puteți vedea cum aflăm în mod recursiv valoarea lui $n!$ folosind o func
 recursivă.
 
 ```cpp
-int factorial(int n) {
-    // Cazul de bază
-    if (n <= 1) {
-        return 1;
-    }
-
-    // Apel recursiv
-    return factorial(n - 1) * n;
-}
-
+--8<-- "cppintro/functions/functions12.cpp"
 ```
 
 Se poate observa faptul că ne folosim de definiția lui $n!$, iar pentru a afla
@@ -480,17 +345,7 @@ unde apelurile următoare au loc.
 ### Exercițiu bacalaureat - Care este valoarea lui $f(38)$?
 
 ```cpp
-void f(int x) {
-    if (x) {
-        if (x % 3 == 0) {
-            cout << 3;
-            f(x / 3);
-        } else {
-            f(x / 3);
-            cout << x % 3;
-        }
-    }
-}
+--8<-- "cppintro/functions/functions13.cpp"
 ```
 
 - $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
@@ -509,17 +364,7 @@ Astfel, secvența finală afișată va fi 3112.
 ### Exercițiu admitere - Care este valoarea lui $g(2, 1)$?
 
 ```cpp
-int g(int x, int y) {
-    if (x > 0) {
-        if (y == 0) {
-            return g(x - 1, 1);
-        }
-        if (y > 0) {
-            return g(x - 1, g(x, y - 1));
-        }
-    }
-    return y + 1;
-}
+--8<-- "cppintro/functions/functions14.cpp"
 ```
 
 - $g(2, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(1, g(2, 0))$.
@@ -553,20 +398,7 @@ ultima cifră) și ultima cifră $n~\%~10$. Acest principiu face implementarea
 recursivă mult mai simplă.
 
 ```cpp
-int cifmin(int numar) {
-    if (numar < 10) {
-        return numar;
-    }
-
-    int ultima_cifra = numar % 10;
-    int min_rest = cifmin(numar / 10);
-
-    if (ultima_cifra < min_rest) {
-        return ultima_cifra;
-    } else {
-        return min_rest;
-    }
-}
+--8<-- "cppintro/functions/functions15.cpp"
 ```
 
 ## Alte tipuri de funcții
@@ -582,24 +414,17 @@ când apelăm funcția.
 parametrii obișnuiți (sau „obligatorii”, dacă menținem analogia). De exemplu:
 
 ```cpp
-// Greșit!
-int medie(int a = 0, int b) {
-    // ...
-}
-
+--8<-- "cppintro/functions/functions16.cpp"
 ```
 
 ```cpp
-// Corect
-int medie(int b, int a = 0) {
-    // ...
-}
+--8<-- "cppintro/functions/functions17.cpp"
 ```
 
 Motivul este următorul: dacă am avea următoarea funcție:
 
 ```cpp
-int fun(int y = 1, int x, int k = 4);
+--8<-- "cppintro/functions/functions18.cpp"
 ```
 
 atunci în momentul în care apelăm `#!cpp fun(10, 2)`, este ambiguu ce valoare ia
@@ -617,34 +442,7 @@ Se remarcă faptul că atunci când apelăm această funcție din main, mențion
 valorii parametrului $s$ nu este necesară.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-int suma_cifre(int numar, int suma = 0) {
-    if (numar == 0) {
-        return suma;
-    }
-
-    return suma_cifre(numar / 10, suma + numar % 10);
-}
-
-int main() {
-    ifstream fin("div3.in");
-    ofstream fout("div3.out");
-
-    int n;
-    fin >> n;
-
-    for (int i = 0; i < n; i++) {
-        int numar;
-        fin >> numar;
-
-        if (suma_cifre(numar) % 3 == 0) {
-            fout << numar << " ";
-        }
-    }
-    return 0;
-}
+--8<-- "cppintro/functions/functions19.cpp"
 ```
 
 ### (Opțional) Funcțiile lambda

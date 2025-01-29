@@ -53,38 +53,7 @@ direct codurile. De exemplu:
   mici.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    char c = '5';
-    cout << (int)c << '\n';          // 53 - ASCII pentru '5'
-    cout << (int)(c - '0') << '\n';  // 5  - convertește caracterul '5' în număr
-
-    c = 'P';
-    cout << (int)c << '\n';          // 80 - ASCII pentru 'P'
-    cout << (int)(c - 'A') << '\n';  // 15 - indexul 'P' în alfabet
-
-    c += 32;                         // 'P' -> 'p'
-    cout << (int)c << '\n';          // 112 - ASCII pentru 'p'
-    cout << (int)(c - 'a') << '\n';  // 15  - indexul 'p' în alfabetul mic
-
-    c = 'g';
-    cout << (int)c << '\n';          // 103 - ASCII pentru 'g'
-    cout << (int)(c - 'a') << '\n';  // 6   - indexul 'g' în alfabetul mic
-
-    c -= 32;                         // 'g' -> 'G'
-    cout << (int)c << '\n';          // 71  - ASCII pentru 'G'
-    cout << (int)(c - 'A') << '\n';  // 6   - indexul 'G' în alfabetul mare
-
-    c = 35;             // caracterul '#'
-    cout << c << '\n';  // #
-
-    c = 99;             // caracterul 'c'
-    cout << c << '\n';  // c
-
-    return 0;
-}
+--8<-- "cppintro/strings/strings01.cpp"
 ```
 
 Lista completă a codurilor pentru caractere se găsește
@@ -93,40 +62,7 @@ Pentru conveniență, o voi reproduce aici:
 
 <!-- markdownlint-disable MD038 -->
 
-| Dec | Caracter | Dec | Caracter | Dec | Caracter | Dec | Caracter |
-| --- | -------- | --- | -------- | --- | -------- | --- | -------- |
-| 0   | NUL      | 32  | ` `      | 64  | @        | 96  | `        |
-| 1   | SOH      | 33  | !        | 65  | A        | 97  | a        |
-| 2   | STX      | 34  | "        | 66  | B        | 98  | b        |
-| 3   | ETX      | 35  | #        | 67  | C        | 99  | c        |
-| 4   | EOT      | 36  | $        | 68  | D        | 100 | d        |
-| 5   | ENQ      | 37  | %        | 69  | E        | 101 | e        |
-| 6   | ACK      | 38  | &        | 70  | F        | 102 | f        |
-| 7   | BEL      | 39  | '        | 71  | G        | 103 | g        |
-| 8   | BS       | 40  | (        | 72  | H        | 104 | h        |
-| 9   | TAB      | 41  | )        | 73  | I        | 105 | i        |
-| 10  | LF       | 42  | *        | 74  | J        | 106 | j        |
-| 11  | VT       | 43  | +        | 75  | K        | 107 | k        |
-| 12  | FF       | 44  | ,        | 76  | L        | 108 | l        |
-| 13  | CR       | 45  | -        | 77  | M        | 109 | m        |
-| 14  | SO       | 46  | .        | 78  | N        | 110 | n        |
-| 15  | SI       | 47  | /        | 79  | O        | 111 | o        |
-| 16  | DLE      | 48  | 0        | 80  | P        | 112 | p        |
-| 17  | DC1      | 49  | 1        | 81  | Q        | 113 | q        |
-| 18  | DC2      | 50  | 2        | 82  | R        | 114 | r        |
-| 19  | DC3      | 51  | 3        | 83  | S        | 115 | s        |
-| 20  | DC4      | 52  | 4        | 84  | T        | 116 | t        |
-| 21  | NAK      | 53  | 5        | 85  | U        | 117 | u        |
-| 22  | SYN      | 54  | 6        | 86  | V        | 118 | v        |
-| 23  | ETB      | 55  | 7        | 87  | W        | 119 | w        |
-| 24  | CAN      | 56  | 8        | 88  | X        | 120 | x        |
-| 25  | EM       | 57  | 9        | 89  | Y        | 121 | y        |
-| 26  | SUB      | 58  | :        | 90  | Z        | 122 | z        |
-| 27  | ESC      | 59  | ;        | 91  | [        | 123 | {        |
-| 28  | FS       | 60  | <        | 92  | \        | 124 | &#124;   |
-| 29  | GS       | 61  | =        | 93  | ]        | 125 | }        |
-| 30  | RS       | 62  | >        | 94  | ^        | 126 | ~        |
-| 31  | US       | 63  | ?        | 95  | _        | 127 | DEL      |
+--8<-- "cppintro/strings/ascii.md"
 
 ## Funcții pe tipul `#!cpp char`
 
@@ -157,10 +93,7 @@ zero în caz contrar.
 #### Exemplu
 
 ```c++
-cout << isdigit('5') << '\n'; // 1
-cout << isdigit('z') << '\n'; // 0
-cout << isdigit('Q') << '\n'; // 0
-cout << isdigit('.') << '\n'; // 0
+--8<-- "cppintro/strings/strings02.cpp:isdigit"
 ```
 
 ### Funcția `#!cpp isalpha`
@@ -187,10 +120,7 @@ caz contrar.
 #### Exemplu
 
 ```cpp
-cout << isalpha('3') << '\n'; // 0
-cout << isalpha('A') << '\n'; // 1
-cout << isalpha('a') << '\n'; // 1
-cout << isalpha('?') << '\n'; // 0
+--8<-- "cppintro/strings/strings02.cpp:isalpha"
 ```
 
 ### Funcția `#!cpp isalnum`
@@ -221,10 +151,7 @@ caz contrar.
 #### Exemplu
 
 ```cpp
-cout << isalpha('3') << '\n'; // 0
-cout << isalpha('A') << '\n'; // 1
-cout << isalpha('a') << '\n'; // 1
-cout << isalpha('?') << '\n'; // 0
+--8<-- "cppintro/strings/strings02.cpp:isalnum"
 ```
 
 ### Funcțiile `#!cpp islower` și `#!cpp isupper`
@@ -250,10 +177,9 @@ zero în caz contrar.
 #### Exemplu
 
 ```cpp
-cout << isupper('3') << '\n'; // 0
-cout << isupper('A') << '\n'; // 1
-cout << islower('a') << '\n'; // 1
-cout << islower('?') << '\n'; // 0
+--8<-- "cppintro/strings/strings02.cpp:islower"
+
+--8<-- "cppintro/strings/strings02.cpp:isupper"
 ```
 
 ### Funcțiile `#!cpp tolower` și `#!cpp toupper`
@@ -278,15 +204,9 @@ Caracterul convertit sau `ch` dacă nu se poate efectua conversia.
 #### Exemplu
 
 ```cpp
-cout << (char)toupper('a') << '\n'; // A
-cout << (char)toupper('A') << '\n'; // A
-cout << (char)toupper('3') << '\n'; // 3
-cout << (char)toupper('@') << '\n'; // @
+--8<-- "cppintro/strings/strings02.cpp:tolower"
 
-cout << (char)tolower('a') << '\n'; // a
-cout << (char)tolower('A') << '\n'; // a
-cout << (char)tolower('3') << '\n'; // 3
-cout << (char)tolower('@') << '\n'; // @
+--8<-- "cppintro/strings/strings02.cpp:toupper"
 ```
 
 ## Șiruri de caractere și biblioteca `#!cpp <cstring>`
@@ -301,37 +221,7 @@ Un șir de caractere poate fi inițializat în diferite moduri. Exemplele de mai
 jos ilustrează câteva tehnici comune:
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Automat adaugă '\0' (caracterul nul).
-    // Din acest motiv, lungimea lui `c` este dată de lungimea
-    // șirului de caractere + 1, pentru '\0'.
-    char nume[7] = "roalgo";
-    cout << nume << '\n';
-
-    // Creăm un vector de caractere manual. C++ poate determina
-    // automat mărimea vectorului, deci nu este nevoie să îl
-    // scriem.
-    char caractere[] = {'r', 'o', 'a', 'l', 'g', 'o', '\0'};
-    cout << caractere << '\n';
-
-    // Putem atribui și un șir de caractere direct, ca la primul
-    // exemplu.
-    char adevar[] = "roalgo este cel mai bun server de informatica";
-    cout << adevar << '\n';
-
-    // Afișează 't'
-    cout << adevar[9] << '\n';
-
-    // Afișează 'roalgo'.
-    for (int i = 0; i < 6; i++) {
-        cout << adevar[i];
-    }
-    cout << '\n';
-    return 0;
-}
+--8<-- "cppintro/strings/strings03.cpp"
 ```
 
 ### Citirea șirurilor de caractere
@@ -365,26 +255,7 @@ caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să
 citim o linie completă, deci funcția `#!cpp cin.getline()` devine mai utilă.
 
 ```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-int main() {
-    char s[100];
-    cin >> s;
-
-    cout << s << '\n';
-
-    // Sare peste următorul caracter, de obicei spațiu sau newline.
-    cin.get();
-
-    // Citește cel mult 100 de caractere, până la newline,
-    // dar sare și de acesta.
-    cin.getline(s, 100);
-
-    cout << s << '\n';
-    return 0;
-}
+--8<-- "cppintro/strings/strings04.cpp"
 ```
 
 ### Funcția strlen
@@ -393,8 +264,7 @@ Funcția strlen ia drept parametru un șir de caractere și returnează lungimea
 acestuia.
 
 ```cpp
-char message[] = "roalgo este cel mai bun server de informatica";
-cout << strlen(message) << '\n'; // 45
+--8<-- "cppintro/strings/strings05.cpp:strlen"
 ```
 
 ### Funcția strcpy și strncpy
@@ -406,21 +276,13 @@ Aceste funcții nu adaugă caracterul `\0` la finalul șirului.
 === "strcpy"
 
     ```cpp
-    char sursa[11] = "hello";
-    char destinatie[11] = "world";
-    cout << sursa << " " << destinatie << '\n'; //se va afisa "hello world"
-    strcpy(destinatie, sursa);
-    cout << sursa << " " << destinatie << '\n'; //se va afisa "hello hello"
+    --8<-- "cppintro/strings/strings05.cpp:strcpy"
     ```
 
 === "strncpy"
 
     ```cpp
-    char sursa[11] = "caine";
-    char destinatie[11] = "paine";
-    cout << sursa << " " << destinatie << '\n'; //se va afisa "caine paine"
-    strncpy(destinatie, sursa, 1);
-    cout << sursa << " " << destinatie << '\n'; //se va afisa "caine caine"
+    --8<-- "cppintro/strings/strings05.cpp:strncpy"
     ```
 
 ### Funcțiile strcat și strncat
@@ -433,21 +295,13 @@ sursă. Iată un exemplu:
 === "strcat"
 
     ```cpp
-    char sursa[11] = "hello ";
-    char destinatie[11] = "world";
-    cout << sursa << " " << destinatie <<'\n'; //se va afisa "hello world"
-    strcat(destinatie, sursa);
-    cout << destinatie; //se va afisa "worldhello"
+    --8<-- "cppintro/strings/strings05.cpp:strcat"
     ```
 
 === "strncat"
 
     ```cpp
-    char sursa[20] = "informatica";
-    char destinatie[20] = "mate";
-    cout << sursa << " " << destinatie <<'\n'; //se va afisa "informatica mate"
-    strncat(destinatie, sursa, 4);
-    cout << destinatie; //se va afisa "mateinfo"
+    --8<-- "cppintro/strings/strings05.cpp:strncat"
     ```
 
 ### Funcția strchr și strrchr
@@ -459,21 +313,13 @@ respectiv ultima apariție a unui caracter într-un șir. Mai exact se va afișa
 === "strchr"
 
     ```cpp
-    char string[] = "serverul roalgo este plin de persoane pasionate de algoritmica";
-    char *myPtr = strchr(string, 'p');
-    if (myPtr != NULL) {
-        cout << myPtr; // se va afisa "plin de persoane pasionate de algoritmica"
-    }
+    --8<-- "cppintro/strings/strings05.cpp:strchr"
     ```
 
 === "strrchr"
 
     ```cpp
-    char string[] = "serverul roalgo este plin de persoane pasionate de algoritmica";
-    char *myPtr = strrchr(string, 'p');
-    if (myPtr != NULL) {
-        cout << myPtr; // se va afisa "pasionate de algoritmica"
-    }
+    --8<-- "cppintro/strings/strings05.cpp:strrchr"
     ```
 
 ### Funcția strcmp
@@ -488,14 +334,7 @@ Aceasta poate returna 3 valori:
   alfabetic vorbind.
 
 ```cpp
-char str1[] = "abc";
-char str2[] = "abc";
-cout << strcmp(str1, str2) << '\n'; // se va afișa 0 deoarece șirurile sunt la fel
-
-char str3[] = "def";
-char str4[] = "ghi";
-cout << strcmp(str3, str4) << '\n'; // se va afișa -1 deoarece primul șir este înaintea celui de al doilea
-cout << strcmp(str4, str3) << '\n'; // se va afișa 1 deoarece primul șir este după cel de al doilea
+--8<-- "cppintro/strings/strings05.cpp:strcmp"
 ```
 
 ### Funcția strstr
@@ -504,9 +343,7 @@ Această funcție primește două șiruri de caractere, s1 și s2, ca argumente 
 găsește prima apariție a șirului s2 în șirul s1.
 
 ```cpp
-char str1[] = "abcdefghijklmnop";
-char str2[] = "fgh";
-cout << strstr(str1, str2); // se va afișa "fghijklmnop"
+--8<-- "cppintro/strings/strings05.cpp:strstr"
 ```
 
 ### Funcția strtok
@@ -516,12 +353,7 @@ următorul token. Trebuie apelată într-o structură repetitivă pentru a obți
 toate token-urile.
 
 ```cpp
-char str[] = "wow-ce-multe-cuvinte-in-acest-sir";
-char* token = strtok(str, " - ");
-while (token != NULL) {
-    cout << token << " "; // se va afișa "wow ce multe cuvinte in acest sir"
-    token = strtok(NULL, " - ");
-}
+--8<-- "cppintro/strings/strings05.cpp:strtok"
 ```
 
 ## Tipul de date std::string
@@ -540,19 +372,13 @@ de cum folosim șirurile de caractere din C.
 fiind scrisă astfel:
 
 ```cpp
-string s;
-getline (cin, s);
-cout << s << '\n';
+--8<-- "cppintro/strings/strings06.cpp:read"
 ```
 
-Sintaxa unui string va fi de tipul ``string nume;``
+Sintaxa unui string va fi de tipul `string nume;`
 
 ```cpp
-string s = "abacaba";
-s[0] = 'c';
-cout << s.size() << '\n'; // 7
-s[6] = 0; // caracterul nul
-cout << s << " " << s.size() << '\n'; // abacab 7 (nu se schimba sizeul)
+--8<-- "cppintro/strings/strings06.cpp:idk"
 ```
 
 În mod particular, vom putea concatena două șiruri de caractere cu ușurință,
@@ -560,10 +386,7 @@ folosind operatorul `+`. Totuși, trebuie să fim atenți cum folosim acest
 operator, pentru a evita efectuarea prea înceată a operațiilor.
 
 ```cpp
-string s = "roalgo";
-string t = "top";
-s += t; // roalgotop
-s = s + t; // roalgotoptop
+--8<-- "cppintro/strings/strings06.cpp:concat"
 ```
 
 Deși în cazul numerelor naturale, aceste operații sunt echivalente, în cazul
@@ -573,14 +396,7 @@ unește și apoi atribuie rezultatul șirului. Această diferență devine mai
 dramatică în situații precum cea de mai jos.
 
 ```cpp
-string s;
-for (int i = 1; i <= 1000000; i++) { // O(n)
-    s += 'a';
-}
-string t;
-for (int i = 1; i <= 1000000; i++) { // O(n^2)
-    t = t + 'a';
-}
+--8<-- "cppintro/strings/strings06.cpp:loops"
 ```
 
 Putem folosi și funcții specifice care caută prima sau ultima apariție a unui
@@ -588,25 +404,7 @@ anumit caracter în șir, precum find sau find_last_of, care au complexitate
 liniară. Tipul returnat este size_t, dar acesta poate fi folosit și ca int.
 
 ```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-int main()
-{
-
-    string str = "roalgo este cel mai bun server din romania";
-    size_t first = str.find('e'); // 7
-    size_t last = str.find_last_of('e'); // 28
-    
-    if (first != string::npos) {
-        cout << first << '\n';
-    }
-    if (last != string::npos) {
-        cout << last << '\n';
-    }
-    return 0;
-}
+--8<-- "cppintro/strings/strings07.cpp"
 ```
 
 ## Concluzii
