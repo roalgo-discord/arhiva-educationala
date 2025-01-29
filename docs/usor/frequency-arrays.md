@@ -66,39 +66,7 @@ avem grijă și să afișăm o linie nouă de fiecare dată când afișăm 20 de
 conform cerinței din enunț.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-ifstream fin("cifreord.in");
-ofstream fout("cifreord.out");
-
-int main() {
-    int n;
-    fin >> n;
-    
-    int fr[10] = {0};
-    for (int i = 1; i <= n; i++) {
-        int x;
-        fin >> x;
-        
-        fr[x]++;
-    }
-    
-    int cnt = 0; 
-    for (int i = 0; i <= 9; i++) {
-        while (fr[i] > 0) {
-            fout << i << " ";
-            cnt++;
-            if (cnt == 20) {
-                fout << '\n';
-                cnt = 0;
-            }
-            fr[i]--;
-        }
-    }
-    
-    return 0;
-}
+--8<-- "usor/frequency_arrays/cifreord.cpp"
 ```
 
 ## Problema [numere1 de pe pbinfo](https://www.pbinfo.ro/probleme/525/numere1)
@@ -111,45 +79,7 @@ după ce citim valorile din șir, se pot afla cu ușurință cele mai mari două
 valori de trei cifre care nu se află în șir.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-    
-    int fr[1000] = {0}; // toate valorile sunt initializate cu 0
-    for (int i = 1; i <= n; i++) {
-        int x;
-        cin >> x;
-        
-        if (x >= 100 && x <= 999) {
-            fr[x]++;
-        }
-    }
-    
-    int a = 0, b = 0;
-    for (int i = 999; i >= 100; i--) {
-        if (fr[i] == 0) {
-            if (a == 0) {
-                a = i;
-            }
-            else {
-                if (b == 0) {
-                    b = i;
-                }
-            }
-        }
-    }
-    
-    if (a == 0 || b == 0) {
-        cout << "NU EXISTA";
-    }
-    else {
-        cout << b << " " << a << '\n';
-    }
- return 0;
-}
+--8<-- "usor/frequency_arrays/numere1.cpp"
 ```
 
 ## Problema [nrlipsa2 de pe pbinfo](https://www.pbinfo.ro/probleme/1744/nrlipsa2)
@@ -165,38 +95,7 @@ devine $[0, 200]$). Ulterior, atunci când afișăm valoarea care nu apare, vom
 scădea 100 din răspuns pentru a întoarce rezultatul la cel real.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-ifstream fin("nrlipsa2.in");
-ofstream fout("nrlipsa2.out");
-
-int main() {
-    int v[201] = {0};
-    int x;
-    
-    while (fin >> x) {
-        if (x >= -100 && x <= 100) {
-            v[x+100]++;
-        }
-    }
-    
-    int gasit = 0;
-    for (int i = 0; i <= 200; i++) {
-        if (v[i] == 0) {
-            fout << i - 100 << '\n';
-            // alternativ, puteam da return 0 aici sa iesim din program
-            gasit = 1; 
-            break;
-        }
-    }
-    
-    if (gasit == 0) {
-     fout << "nu exista";
-    }
-    
-    return 0;
-}
+--8<-- "usor/frequency_arrays/nrlipsa2.cpp"
 ```
 
 ## Problema [mincifre de pe pbinfo](https://www.pbinfo.ro/probleme/1546/mincifre)
@@ -207,40 +106,8 @@ nu vrem să avem numere care încep cu 0, vom afișa cea mai mică cifră nenul�
 început.
 
 ```cpp
-#include <fstream>
-using namespace std;
+--8<-- "usor/frequency_arrays/mincifre.cpp"
 
-ifstream fin("mincifre.in");
-ofstream fout("mincifre.out");
-
-int main() {
-    
-    char d;
-    int fr[10] = {0};
-    
-    while (fin >> d) {
-        fr[d - '0']++;
-    }
-    
-    // aflam cea mai mica cifra nenula
-    for (int i = 1; i <= 9; i++) {
-        if (fr[i] > 0) {
-            fout << i;
-            fr[i]--;
-            break;
-        }
-    }
-    
-    // afisam cifrele in ordine crescatoare
-    for (int i = 0; i <= 9; i++) {
-        while (fr[i] > 0) {
-            fout << i;
-            fr[i]--;
-        }
-    }
-    
-    return 0;
-}
 ```
 
 ## Problema [numere OJI 2005](https://kilonova.ro/problems/735)
@@ -258,36 +125,7 @@ apare în șir.
     problemă.
 
 ```cpp
-#include <fstream>
-#include <vector>
-using namespace std;
-
-ifstream fin("numere.in");
-ofstream fout("numere.out");
-
-int main() {
-    int n;
-    fin >> n;
-    
-    vector <int> fr(n*n+1);
-    for (int i = 1; i <= n * n; i++) {
-        int x;
-        fin >> x;
-        fr[x] = 1;
-    }
-    
-    int fi = 0, lst = 0;
-    for (int i = 1; i <= n * n; i++) {
-        if (fr[i] == 0) {
-            if(fi == 0) {
-                fi = i;
-            }
-            lst = i;
-        }
-    }
-    fout << fi << " " << lst;
-    return 0;
-}
+--8<-- "usor/frequency_arrays/numere.cpp"
 ```
 
 ## Vectori de frecvență dinamici - map și set
@@ -297,16 +135,16 @@ când vrem să păstrăm valori relativ mici. Dar ce facem atunci când valorile
 mari?
 
 În acest caz, se impune folosirea unor structuri de date mai avansate, cum ar fi
-`std::map` și `std::set`.
+`#!cpp std::map` și `#!cpp std::set`.
 
-În privința `std::map`, acesta poate fi folosit în acest context exact ca
+În privința `#!cpp std::map`, acesta poate fi folosit în acest context exact ca
 vectorii de frecvență, având posibilitatea să stocăm dinamic frecvența valorilor
 care apar, fără a avea nevoie de $O(valmax)$ memorie. Totuși, această metodă
 vine cu un cost, și anume faptul că complexitatea operațiilor este $O(\log n)$,
 spre deosebire de $O(1)$ pentru metoda clasică.  
 
-În privința `std::set`, acesta poate fi folosit în acest context exact ca
-vectorii caracteristici (pentru frecvențe mai mari ca 1, `std::map` este o
+În privința `#!cpp std::set`, acesta poate fi folosit în acest context exact ca
+vectorii caracteristici (pentru frecvențe mai mari ca 1, `#!cpp std::map` este o
 metodă strict superioară), având posibilitatea să stocăm dinamic valorile care
 apar, fără a avea nevoie de $O(valmax)$ memorie. La fel ca la structura de date
 precedentă, această metodă vine cu un cost, și anume faptul că complexitatea
@@ -315,31 +153,7 @@ operațiilor este $O(\log n)$, spre deosebire de $O(1)$ pentru metoda clasică.
 ### Problema [map de pe pbinfo](https://www.pbinfo.ro/probleme/2217/map)
 
 ```cpp
-#include <map>
-#include <fstream>
-#include <iostream>
-
-using namespace std;
-
-ifstream fin("map.in");
-ofstream fout("map.out");
-
-int n;
-
-map<long long, int> mp;
-
-int main() {
-    fin >> n;
-    
-    for (int i = 1; i <= n; ++i) {
-        long long val;
-        fin >> val;
-        mp[val]++;
-        fout << mp[val] << " ";
-    }
-
-    return 0;
-}
+--8<-- "usor/frequency_arrays/map.cpp"
 ```
 
 ## Concluzii
