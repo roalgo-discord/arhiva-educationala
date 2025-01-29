@@ -21,7 +21,8 @@ opțiuni pentru realizarea acestui lucru.
 !!! info "Definiție"
 
     O structură alternativă este o structură pe care o folosim pentru a coordona
-    programul să ia decizii diferite în funcție de rezultatul unei expresii logice.
+    programul să ia decizii diferite în funcție de rezultatul unei expresii
+    logice.
 
 În limbajul C++, structura alternativă este reprezentată de blocul if..else,
 astfel încât putem să direcționăm programul în funcție de rezultatele
@@ -84,17 +85,17 @@ Astfel, operatorii de comparație sunt următorii:
 
 !!! note "Observație"
 
-    Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune de
-    tipul `#!cpp if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai apoi
-    verifică dacă $n$ este diferit de $0$.
+    Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune
+    de tipul `#!cpp if (n = 5)` atribuie mai întâi valoarea $5$ lui $n$, iar mai
+    apoi verifică dacă $n$ este diferit de $0$.
 
 ## Operatori logici
 
 De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind
 operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
 
-- **Negația** - notată cu `#!cpp !` sau  `#!cpp not`, inversează valoarea de
-    adevăr a unei expresii.
+- **Negația** - notată cu `#!cpp !` sau `#!cpp not`, inversează valoarea de
+  adevăr a unei expresii.
 
     | `#!cpp x` | `#!cpp not x` |
     | :-------: | :-----------: |
@@ -132,8 +133,8 @@ operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
     ```
 
 - **Conjuncția** - notată cu `#!cpp &&` sau `#!cpp and`, reprezintă „și” logic.
-  Pentru ca o expresie compusă să fie adevărată, **toți membrii ei trebuie să fie
-  adevărați.**
+  Pentru ca o expresie compusă să fie adevărată, **toți membrii ei trebuie să
+  fie adevărați.**
 
     | `#!cpp x` | `#!cpp y` | `#!cpp x and y` |
     | :-------: | :-------: | :-------------: |
@@ -397,8 +398,8 @@ are loc și distributivitatea:
 Ne putem aduce aminte de ea dacă luăm expresia echivalentă $x \cdot (y + z) = x
 \cdot y + x \cdot z$. Dacă o privim în sens invers, ne permite să „dăm în
 factori” expresii logice. Aceeași relație are loc și dacă inversăm conjuncția cu
-disjuncția, chiar dacă nu merge în algebra normală
-($x + yz \neq (x + y)(x + z)$). Următoarele exemple sunt echivalente:
+disjuncția, chiar dacă nu merge în algebra normală ($x + yz \neq (x + y)(x +
+z)$). Următoarele exemple sunt echivalente:
 
 ```cpp
 if ((a && b) || (a && c)) {
@@ -452,10 +453,9 @@ De la matematică, știm și că $x \cdot 0 = 0$, care este adevărat și aici:
 - `#!cpp x && false == false`.
 
 C++ folosește **scurtcircuitarea** pentru a evalua expresiile logice în mod
-eficient. Din moment ce știm că `#!cpp x && false == false`
-(și că `#!cpp false && x == false`), dacă avem `#!cpp x && y` și `x` este
-evaluat la fals, atunci nu mai este nevoie să evaluăm și `y`. Aici este un
-exemplu:
+eficient. Din moment ce știm că `#!cpp x && false == false` (și că
+`#!cpp false && x == false`), dacă avem `#!cpp x && y` și `x` este evaluat la
+fals, atunci nu mai este nevoie să evaluăm și `y`. Aici este un exemplu:
 
 ```#cpp
 int b = 0;
@@ -470,9 +470,9 @@ condiția.
 
 !!! note "Observație"
 
-    Din moment ce tot ce nu este zero se transformă în `#!cpp true` și 0 se 
+    Din moment ce tot ce nu este zero se transformă în `#!cpp true` și 0 se
     transformă în `#!cpp false`, putem înlocui `#!cpp x != 0` cu `#!cpp x`, ceva
-    comun în C++. Analog, `#!cpp x == 0` poate fi scris ca `#!cpp !x`. 
+    comun în C++. Analog, `#!cpp x == 0` poate fi scris ca `#!cpp !x`.
 
 Scurtcircuitarea se aplică și pentru disjuncție (`||`). Dacă prima parte a
 `x || y` este adevărată, atunci toată expresia este adevărată.
@@ -495,13 +495,13 @@ Următoarele relații se numesc legea absorbției:
 
 Pe scurt, dacă `x` e adevărat, e irelevant că și `x && y` e adevărat. De
 asemenea, dacă pe noi ne interesează proprietatea `x`, nu contează ca `x || y` e
-adevărat, pentru că noi vrem doar `x`.  De pildă, dacă noi vrem să căutăm toate
+adevărat, pentru că noi vrem doar `x`. De pildă, dacă noi vrem să căutăm toate
 numerele pare, nu ne interesează ca unele din ele sunt și multipli de 10. Dacă
 avem `#!cpp (x <= 10) && (x <= 10 || x % 2 == 0)`, atunci ori avem numere mai
 mici decât 10, ori numere pari mai mici decât 10, dar acestea tot sunt mai mici
 decât 10, deci doar prima condiție contează. Analog, pentru
-`#!cpp (x > 5) || (x > 5 && x < 10)`, știm că `#!cpp x > 5`
-este fie adevărat în ambele expresii, fie în niciuna din ele.
+`#!cpp (x > 5) || (x > 5 && x < 10)`, știm că `#!cpp x > 5` este fie adevărat în
+ambele expresii, fie în niciuna din ele.
 
 Și negația are niște proprietăți utile. În primul rând, avem:
 
@@ -556,7 +556,7 @@ if (!A && !B) {
     fa_altceva();
 }
 
-if (A && B) {
+if (A || B) {
     fa_altceva();
 } else {
     fa_ceva();
