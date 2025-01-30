@@ -48,7 +48,7 @@ Astfel, am demonstrat că putem folosi o strategie de tip divide et impera pentr
 a aborda această problemă, așa cum se poate vedea în segmentul de cod de mai jos:
 
 ```cpp
---8<-- "avansat/segtree/binsearch.cpp"
+--8<-- "dificil/segtree/binsearch.cpp"
 ```
 
 ### Problemă exemplu: [Hotel Queries - CSES](https://cses.fi/problemset/task/1143)
@@ -61,7 +61,7 @@ care oamenii se cazează la hotel.
 Mai jos puteți vedea codul sursă pentru problema dată.
 
 ```cpp
---8<-- "avansat/segtree/hotelqueries.cpp"
+--8<-- "dificil/segtree/hotelqueries.cpp"
 ```
 
 ## Actualizări pe interval - Lazy Propagation
@@ -110,7 +110,7 @@ transferăm conținutul unui query de la un nod la unul din fii, precum și fapt
 că realizăm actualizările imediat ce vizităm un nod.
 
 ```cpp
---8<-- "avansat/segtree/rangeupdatequeries.cpp"
+--8<-- "dificil/segtree/rangeupdatequeries.cpp"
 ```
 
 ### Problema [Simple - Info1Cup 2019](https://kilonova.ro/problems/3424)
@@ -129,7 +129,7 @@ Apoi, vom avea grijă la implementarea soluției finale să includem aceste date
 răspunsul final.
 
 ```cpp
---8<-- "avansat/segtree/simple.cpp"
+--8<-- "dificil/segtree/simple.cpp"
 ```
 
 ### Problema [Range Updates and Sums CSES](https://cses.fi/problemset/task/1735)
@@ -146,7 +146,7 @@ operație folosit. Ulterior, queryurile de sumă devin asemănătoare celor obi�
 Mai jos găsiți soluția care ia accepted.
 
 ```cpp
---8<-- "avansat/segtree/rangeupdateandsums.cpp"
+--8<-- "dificil/segtree/rangeupdateandsums.cpp"
 ```
 
 ## Concluzii
