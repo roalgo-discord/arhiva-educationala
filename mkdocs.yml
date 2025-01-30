@@ -88,8 +88,7 @@ markdown_extensions:
           line_spans: __span
           pygments_lang_class: true
     - pymdownx.inlinehilite
-    - pymdownx.snippets:
-            base_path: ["docs/codes"]
+    - pymdownx.snippets
     - pymdownx.keys
     - admonition
     - pymdownx.details
@@ -237,6 +236,7 @@ nav:
           - Structuri de date:
                 - Descompuneri în bucăți de radical (Square Root Decomposition): dificil/square-root-decomposition.md
                 - Arbori de intervale: dificil/segment-trees.md
+                - Arbori de intervale (căutare binară, lazy propagation): dificil/segment-trees-part2.md
                 - Arbori indexați binar: dificil/fenwick-tree.md
                 - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
                 - Trie (arbore de prefixe): dificil/trie.md
