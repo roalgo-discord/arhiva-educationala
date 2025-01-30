@@ -77,50 +77,7 @@ valori, iar mai apoi să verificăm dacă diferențele între oricare două valo
 distincte consecutive sunt egale.
 
 ```cpp
-#include <fstream>
-using namespace std;
-
-ifstream fin("progresie3.in");
-ofstream fout("progresie3.out");
-
-int main() {
-    int v[1001] = {0};
-    int x;
-    while (fin >> x) {
-        v[x] = 1;
-    }
-    
-    int ans = -1;
-    int prv = -1;
-    
-    bool rau = 0;
-    for (int i = 0; i <= 1000; i++) {
-        if (v[i] == 1) {
-            if (prv == -1) {
-                prv = i;
-            }
-            else {
-                if (ans == -1) {
-                    ans = i - prv;
-                }
-                else {
-                    if (i - prv != ans) {
-                        rau = 1;
-                    }
-                }
-                prv = i;
-            }
-        }
-    }
-    
-    if (rau == 1) {
-        fout << "NU" << '\n';
-    }
-    else {
-        fout << ans << '\n';
-    }
-    return 0;
-}
+--8<-- "usor/gen_sir/progresie3.cpp"
 ```
 
 #### Problemă rezolvată - [sir1 pbinfo](https://www.pbinfo.ro/probleme/243/sir1)
@@ -130,22 +87,7 @@ Pentru a rezolva această problemă, ne folosim de proprietățile sumei lui Gau
 există în șir și apoi aflăm valoarea corespunzătoare ultimei grupe rămase.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-    
-    int total = 1;
-    while (n > total) { // scadem grupele complete
-        n -= total;
-        total++;
-    }
-    
-    cout << total - n + 1 << '\n'; // valoarea ramasa
-    return 0;
-}
+--8<-- "usor/gen_sir/sir1.cpp"
 ```
 
 ### Progresii geometrice
@@ -256,25 +198,7 @@ cea mai mare putere a lui 5 mai mică sau egală cu $n$.
     Acest rezultat este cunoscut sub numele de formula lui Legendre.
 
 ```cpp
-#include <iostream>
-using namespace std;
- 
-int main() {
-    
-    long long n;
-    cin >> n;
-    
-    long long ans = 0;
-    long long p5 = 5;
-    
-    while (n >= p5) {
-        ans += n/p5;
-        p5 *= 5;
-    }
-    
-    cout << ans << '\n';
-    return 0;
-}
+--8<-- "usor/gen_sir/trailing_zeroes.cpp"
 ```
 
 ### Șirul lui Fibonacci
@@ -310,14 +234,7 @@ Pentru a afla cel de-al $n$-lea număr Fibonacci, putem folosi un algoritm destu
 de simplu, care se bazează pe un for sau un while.
 
 ```cpp
-int a = 0;
-int b = 1;
-for (int i = 2; i <= n; i++) {
-    int c = a + b;
-    a = b;
-    b = c;
-}
-cout << b << '\n';
+--8<-- "usor/gen_sir/fibonacci.cpp"
 ```
 
 !!! note "Algoritm mai rapid"
@@ -333,29 +250,7 @@ mici sau egale cu $n$, iar mai apoi să construim suma folosind termeni în ordi
 descrescătoare.
 
 ```cpp
-#include <iostream>
-using namespace std;
-int n, nr, v[150];
-
-int main() {
-
-    cin >> n;
-    v[1] = 1;
-    v[2] = 2;
-    int z = 2;
-    while (v[z] <= n) {
-        ++z;
-        v[z] = v[z-1] + v[z-2];
-    }
-    while (n > 0) {
-        while (n >= v[z]) {
-            cout << v[z] << " ";
-            n -= v[z];
-        }
-        --z;
-    }
-    return 0;
-}
+--8<-- "usor/gen_sir/fibosum.cpp"
 ```
 
 ## Concluzii
