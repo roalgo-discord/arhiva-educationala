@@ -59,25 +59,7 @@ este suficient, deci trebuie să verificăm și cele mai mici două valori pentr
 acoperi toate cazurile ce pot apărea. Mai jos puteți găsi soluția problemei.
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
-int main() {
-    int n;
-    cin >> n;
-    
-    vector<int> v(n+1);
-    for (int i = 1; i <= n; i++) {
-        cin >> v[i];
-    }
-    
-    sort(v.begin() + 1, v.begin() + n + 1);
-    cout << max(1LL * v[n-1] * v[n], 1LL * v[1] * v[2]) << '\n';
-    return 0;
-}
+--8<-- "usor/greedy/prodmax1.cpp"
 ```
 
 ## Problema [Movie Festival - Problema spectacolelor](https://cses.fi/problemset/task/1629) de pe cses
@@ -110,32 +92,7 @@ vom alege primul film care are un timp inițial mai mare decât timpul de final
 precedent.
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    
-    int n;
-    cin >> n;
-    
-    vector<pair<int, int> > events(n+1);
-    for (int i = 1; i <= n; ++i) {
-        cin >> events[i].second >> events[i].first;
-    }
-        
-    sort(events.begin() + 1, events.begin() + n + 1);
-    
-    int ans = 0;
-    int lst = 0;
-    for (int i = 1; i <= n; ++i) {
-        if (events[i].second >= lst) {
-            ++ans, lst = events[i].first;
-        }
-    }
- 
-    cout << ans;
-    return 0;
-}
+--8<-- "usor/greedy/moviefestival.cpp"
 ```
 
 ## Problema [moscraciun2](https://www.pbinfo.ro/probleme/4010/moscraciun2) de pe pbinfo
@@ -146,35 +103,7 @@ cadourile cu costul cel mai mic, optimizând la fiecare pas această parte a
 răspunsului, fiind lacomi în privința alegerii cadourilor cu prețul cel mai mic.
 
 ```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-    
-    vector<int> fr(101);
-    for (int i = 1; i <= m; i++) {
-        int pr, cnt;
-        cin >> pr >> cnt;
-        fr[pr] += cnt;
-    }
-    
-    int ans = 0;
-    for (int i = 0; i <= 100; i++) {
-        ans += min(n, fr[i]) * i;
-        n -= min(n, fr[i]);
-    }
-    
-    if (n > 0) {
-        cout << "imposibil" << '\n';
-    }
-    else {
-       cout << ans << '\n';
-    }
-    return 0;
-}
+--8<-- "usor/greedy/moscraciun2.cpp"
 ```
 
 ## Concluzii preliminare
