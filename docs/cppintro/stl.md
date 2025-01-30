@@ -5,7 +5,7 @@ tags:
     - structuri de date
 ---
 
-**Autori**: Ștefan-Cosmin Dăscălescu, Alex Vasiluță
+**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu, Alex Vasiluță
 
 ## Introducere
 

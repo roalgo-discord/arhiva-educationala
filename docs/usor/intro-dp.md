@@ -4,7 +4,7 @@ tags:
     - DP
 ---
 
-**Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu
+**Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)

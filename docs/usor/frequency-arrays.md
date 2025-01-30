@@ -5,7 +5,7 @@ tags:
     - implementare
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)

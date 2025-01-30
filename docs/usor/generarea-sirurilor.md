@@ -5,7 +5,7 @@ tags:
     - fibonacci
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
