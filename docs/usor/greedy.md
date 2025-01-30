@@ -4,7 +4,7 @@ tags:
     - greedy
 ---
 
-- *Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
+- **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
     - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)

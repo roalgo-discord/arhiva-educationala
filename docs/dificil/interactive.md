@@ -171,9 +171,13 @@ la modul în care găsim idei noi și originale pentru aceste probleme.
 - [AtCoder HonestOrUnkind](https://atcoder.jp/contests/arc070/tasks/arc070_d)
 - [Codeforces Ehab and the Big Finale](https://codeforces.com/problemset/problem/1174/F)
 - [IOI 2015 Towns](https://oj.uz/problem/view/IOI15_towns)
+- [Round 64 - CsAcademy](https://csacademy.com/contest/round-64)
 - [Probleme interactive de pe kilonova](https://kilonova.ro/tags/301)
 - [Probleme interactive de pe codeforces](https://codeforces.com/problemset?tags=interactive)
 
 ## Resurse suplimentare
 
+- [Introduction to Interactive Problems](https://mamnoonsiam.github.io/cp-classes/week-4/overview)
 - [Interactive Problems: Guide for Participants](https://codeforces.com/blog/entry/45307)
+- [Interactive and Communication Problems](https://usaco.guide/adv/interactive)
+- [Interactive, output only & Communication Task - HKOI](https://assets.hkoi.org/training2017/nbt.pdf)
