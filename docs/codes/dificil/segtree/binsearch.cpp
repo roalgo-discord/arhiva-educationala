@@ -1,19 +1,23 @@
-int query (int node, int L, int R, int Lq, int Rq, int x) {
-    if (R < Lq || L > Rq) {
-        return -1; // nu exista valoarea
+int query(int node, int start, int end, int query_start, int query_end, int x) {
+    // nu există valoarea
+    if (end < query_start || start > query_end) {
+        return -1;
     }
-    if (L == R) {
-        if (segtree[L] >= x) {
-            return L;
+
+    if (start == end) {
+        if (segtree[start] >= x) {
+            return start;
         }
-        return -1; // nu am gasit valoarea
+
+        // nu am găsit valoarea
+        return -1;
     }
-    int mid = (L + R) / 2;
-    int ansLeft = query(node << 1, L, mid, Lq, Rq, x);
-    if (ansLeft != -1) {
-        return ansLeft;
+
+    int mid = start + (end - start) / 2;
+    int left_result = query(node << 1, start, mid, query_start, query_end, x);
+    if (left_result != -1) {
+        return left_result;
     }
-    else {
-        return query(node << 1|1, mid+1, R, Lq, Rq, x);
-    }
+
+    return query(node << 1 | 1, mid + 1, end, query_start, query_end, x);
 }

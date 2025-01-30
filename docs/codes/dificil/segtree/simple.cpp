@@ -2,143 +2,179 @@
 #include <vector>
 
 struct str {
-    long long minEven, maxEven, minOdd, maxOdd;
+    long long min_even, max_even;
+    long long min_odd, max_odd;
 };
 
-class SegmentTree { 
-  private:
-    int n;
-    std::vector<str> segtree;
-    std::vector<long long> lazy;
+class SegmentTree {
+private:
+    int size_;
+    std::vector<str> segtree_;
+    std::vector<long long> lazy_;
 
-  public:
+public:
     void init(int sz) {
-        n = sz;
-        segtree.resize(1 + 4 * sz);
-        lazy.resize(1 + 4 * sz);
+        size_ = sz;
+        segtree_.resize(1 + 4 * sz);
+        lazy_.resize(1 + 4 * sz);
     }
-    void lz(int node, int L, int R) {
-        if (segtree[node].minEven != -1) {
-            segtree[node].minEven += lazy[node];
-            segtree[node].maxEven += lazy[node];
+
+    void lazy(int node, int start, int end) {
+        if (segtree_[node].min_even != -1) {
+            segtree_[node].min_even += lazy_[node];
+            segtree_[node].max_even += lazy_[node];
         }
-        if (segtree[node].minOdd != -1) {
-            segtree[node].minOdd += lazy[node];
-            segtree[node].maxOdd += lazy[node];
+
+        if (segtree_[node].min_odd != -1) {
+            segtree_[node].min_odd += lazy_[node];
+            segtree_[node].max_odd += lazy_[node];
         }
-        if (lazy[node] % 2 == 1) {
-            std::swap(segtree[node].minOdd, segtree[node].minEven);
-            std::swap(segtree[node].maxOdd, segtree[node].maxEven);
+
+        if (lazy_[node] % 2 == 1) {
+            std::swap(segtree_[node].min_odd, segtree_[node].min_even);
+            std::swap(segtree_[node].max_odd, segtree_[node].max_even);
         }
-        if (L != R) {
-            lazy[node << 1] += lazy[node];
-            lazy[node << 1 | 1] += lazy[node];
+
+        if (start != end) {
+            lazy_[node << 1] += lazy_[node];
+            lazy_[node << 1 | 1] += lazy_[node];
         }
-        lazy[node] = 0;
+
+        lazy_[node] = 0;
     }
-    str cmp (str X, str Y) {
+
+    str cmp(str lhs, str rhs) {
         str ans = {-1, -1, -1, -1};
-        if (X.minEven != -1) {
-            ans.minEven = X.minEven;
+
+        if (lhs.min_even != -1) {
+            ans.min_even = lhs.min_even;
         }
-        if (ans.minEven == -1 || (Y.minEven != -1 && Y.minEven < ans.minEven)) {
-            ans.minEven = Y.minEven;
+
+        if (ans.min_even == -1
+            || (rhs.min_even != -1 && rhs.min_even < ans.min_even)) {
+            ans.min_even = rhs.min_even;
         }
-        if (X.minOdd != -1) {
-            ans.minOdd = X.minOdd;
+
+        if (lhs.min_odd != -1) {
+            ans.min_odd = lhs.min_odd;
         }
-        if (ans.minOdd == -1 || (Y.minOdd != -1 && Y.minOdd < ans.minOdd)) {
-            ans.minOdd = Y.minOdd;
+
+        if (ans.min_odd == -1
+            || (rhs.min_odd != -1 && rhs.min_odd < ans.min_odd)) {
+            ans.min_odd = rhs.min_odd;
         }
-        if (X.maxEven != -1) {
-            ans.maxEven = X.maxEven;
+
+        if (lhs.max_even != -1) {
+            ans.max_even = lhs.max_even;
         }
-        if (ans.maxEven == -1 || (Y.maxEven != -1 && Y.maxEven > ans.maxEven)) {
-            ans.maxEven = Y.maxEven;
+
+        if (ans.max_even == -1
+            || (rhs.max_even != -1 && rhs.max_even > ans.max_even)) {
+            ans.max_even = rhs.max_even;
         }
-        if (X.maxOdd != -1) {
-            ans.maxOdd = X.maxOdd;
+
+        if (lhs.max_odd != -1) {
+            ans.max_odd = lhs.max_odd;
         }
-        if (ans.maxOdd == -1 || (Y.maxOdd != -1 && Y.maxOdd > ans.maxOdd)) {
-            ans.maxOdd = Y.maxOdd;
+
+        if (ans.max_odd == -1
+            || (rhs.max_odd != -1 && rhs.max_odd > ans.max_odd)) {
+            ans.max_odd = rhs.max_odd;
         }
+
         return ans;
     }
-    void build(int node, int L, int R, std::vector<int> &v) {
-        if (L == R) {
-            if (v[L] % 2 == 0) {
-                segtree[node] = {v[L], v[L], -1, -1};
+
+    void build(int node, int start, int end, std::vector<int> &data) {
+        if (start == end) {
+            if (data[start] % 2 == 0) {
+                segtree_[node] = {data[start], data[start], -1, -1};
+            } else {
+                segtree_[node] = {-1, -1, data[start], data[start]};
             }
-            else {
-                segtree[node] = {-1, -1, v[L], v[L]};
-            }
             return;
         }
-        int mid = (L + R) / 2;
-        build(node << 1, L, mid, v);
-        build(node << 1 | 1, mid + 1, R, v);
-        segtree[node] = cmp(segtree[node << 1], segtree[node << 1 | 1]);
+
+        int mid = start + (end - start) / 2;
+
+        build(node << 1, start, mid, data);
+        build(node << 1 | 1, mid + 1, end, data);
+        segtree_[node] = cmp(segtree_[node << 1], segtree_[node << 1 | 1]);
     }
-    void update(int node, int L, int R, int Lq, int Rq, int val) {
-        if (lazy[node]) {
-            lz(node, L, R);
+
+    void update(int node, int start, int end, int query_start, int query_end,
+                int val) {
+        if (lazy_[node]) {
+            lazy(node, start, end);
         }
-        if (R < Lq || L > Rq) {
+
+        if (end < query_start || start > query_end) {
             return;
         }
-        if (Lq <= L && R <= Rq) {
-            lazy[node] = val;
-            lz(node, L, R);
+
+        if (query_start <= start && end <= query_end) {
+            lazy_[node] = val;
+            lazy(node, start, end);
             return;
         }
-        int mid = (L + R) / 2;
-        update(node << 1, L, mid, Lq, Rq, val);
-        update(node << 1 | 1, mid + 1, R, Lq, Rq, val);
-        segtree[node] = cmp(segtree[node << 1], segtree[node << 1 | 1]);
+
+        int mid = start + (end - start) / 2;
+
+        update(node << 1, start, mid, query_start, query_end, val);
+        update(node << 1 | 1, mid + 1, end, query_start, query_end, val);
+
+        segtree_[node] = cmp(segtree_[node << 1], segtree_[node << 1 | 1]);
     }
-    str query(int node, int L, int R, int Lq, int Rq) {
-        if (lazy[node]) {
-            lz(node, L, R);
+
+    str query(int node, int start, int end, int query_start, int query_end) {
+        if (lazy_[node]) {
+            lazy(node, start, end);
         }
-        if (R < Lq || L > Rq) {
+
+        if (end < query_start || start > query_end) {
             return {-1, -1, -1, -1};
         }
-        if (Lq <= L && R <= Rq) {
-            return segtree[node];
+
+        if (query_start <= start && end <= query_end) {
+            return segtree_[node];
         }
-        int mid = (L + R) / 2;
-        return cmp(query(node << 1, L, mid, Lq, Rq), query(node << 1 | 1, mid + 1, R, Lq, Rq));
+
+        int mid = start + (end - start) / 2;
+        return cmp(query(node << 1, start, mid, query_start, query_end),
+                   query(node << 1 | 1, mid + 1, end, query_start, query_end));
     }
 };
 
-SegmentTree st;
+SegmentTree segtree;
 int main() {
     int n;
     std::cin >> n;
 
-    st.init(n);
+    segtree.init(n);
 
-    std::vector<int> v(n + 1);
-    for (int i = 1; i <= n; i++)
-        std::cin >> v[i];
-    
-    int q;
-    std::cin >> q;
-    
-    st.build(1, 1, n, v);
-    for (int i = 1; i <= q; i++) {
+    std::vector<int> values(n + 1);
+    for (int i = 1; i <= n; i++) {
+        std::cin >> values[i];
+    }
+
+    int queries;
+    std::cin >> queries;
+
+    segtree.build(1, 1, n, values);
+
+    for (int i = 1; i <= queries; i++) {
         int t;
         std::cin >> t;
+
         if (t == 0) {
-            int L, R, val;
-            std::cin >> L >> R >> val;
-            st.update(1, 1, n, L, R, val);
-        } 
-        else {
-            int L, R;
-            std::cin >> L >> R;
-            str ans = st.query(1, 1, n, L, R);
-            std::cout << ans.minEven << " " << ans.maxOdd << '\n';
+            int start, end, value;
+            std::cin >> start >> end >> value;
+            segtree.update(1, 1, n, start, end, value);
+        } else {
+            int start, end;
+            std::cin >> start >> end;
+            str ans = segtree.query(1, 1, n, start, end);
+            std::cout << ans.min_even << " " << ans.max_odd << '\n';
         }
     }
     return 0;
