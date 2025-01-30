@@ -7,8 +7,6 @@ tags:
 
 # Soluția problemei patrate (OJI 2018, clasa a V-a)
 
-!!! example "Cunoștințe necesare"
-
 **Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
