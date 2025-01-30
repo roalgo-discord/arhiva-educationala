@@ -362,45 +362,13 @@ abordare împreună cu o funcție:
 === "DFS"
 
     ```cpp
-    vector<vector<int>> graph;
-
-    void dfs(int node, vector<bool>& visited) {
-        visited[node] = true;
-
-        // Ca exemplu
-        cout << node << ' '; 
-
-        for (int neighbor : graph[node]) {
-            if (!visited[neighbor]) {
-                dfs(neighbor, visited);
-            }
-        }
-    }
+    --8<-- "usor/graphs/dfsbfs.cpp:dfs"
     ```
 
 === "BFS"
 
     ```cpp
-    vector<vector<int>> graph;
-    vector<int> dist; 
-    queue<int> q; 
-
-    void bfs(int startNode) {
-        q.push(startNode);
-        dist[startNode] = 0;
-
-        while (!q.empty()) {
-            int node = q.front();
-            q.pop();
-
-            for (auto neighbor : graph[node]) {
-                if (dist[neighbor] == -1) { 
-                    dist[neighbor] = dist[node] + 1; 
-                    q.push(neighbor); 
-                }
-            }
-        }
-    }
+    --8<-- "usor/graphs/dfsbfs.cpp:bfs"
     ```
 
 ## Problema [Connected components](https://kilonova.ro/problems/2036) de pe kilonova
@@ -413,50 +381,7 @@ parcurgerea DFS pentru a afla toate nodurile din care apelăm DFS din funcția
 `main`, acesta fiind și răspunsul la problema noastră.
 
 ```cpp
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-vector<vector<int>> adj;
-vector<bool> visited;
-
-void dfs(int node) {
-    visited[node] = true;
-
-    for (int next : adj[node]) {
-        if (!visited[next]) {
-            dfs(next);
-        }
-    }
-}
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-
-    adj.resize(n + 1);
-    visited.resize(n + 1, false);
-
-    for (int i = 0; i < m; ++i) {
-        int a, b;
-        cin >> a >> b;
-
-        adj[a].push_back(b);
-        adj[b].push_back(a);
-    }
-
-    int cc = 0;
-    for (int i = 1; i <= n; ++i) {
-        if (!visited[i]) {
-            ++cc;
-            dfs(i);
-        }
-    }
-
-    cout << cc << '\n';
-    return 0;
-}
+--8<-- "usor/graphs/connectedcomponents.cpp"
 ```
 
 ## Drumuri minime. Parcurgerea BFS
@@ -508,50 +433,7 @@ Pentru a rezolva această problemă, vom pleca cu un BFS din nodul $S$ și vom a
 pe parcurs, distanțele minime față de toate celelalte noduri.
 
 ```cpp
-#include <iostream>
-#include <queue>
-#include <vector>
-
-using namespace std;
-
-int main() {
-    int n, m, s;
-    cin >> n >> m >> s;
-
-    vector<vector<int>> graf(n);
-    vector<int> ans(n, -1);
-    queue<int> q;
-
-    for (int i = 0; i < m; i++) {
-        int a, b;
-        cin >> a >> b;
-        graf[a].push_back(b);
-        graf[b].push_back(a);
-    }
-
-    ans[s] = 0;
-    q.push(s);
-
-    while (!q.empty()) {
-        int nod = q.front();
-        q.pop();
-
-        for (auto x : graf[nod]) {
-            if (ans[x] == -1) {
-                ans[x] = ans[nod] + 1;
-                q.push(x);
-            }
-        }
-    }
-
-    for (const auto& x : ans) {
-        cout << x << " ";
-    }
-
-    cout << '\n';
-
-    return 0;
-}
+--8<-- "usor/graphs/simpleshortestpath.cpp"
 ```
 
 ## Problema [grarb](https://www.infoarena.ro/problema/grarb) de pe infoarena
@@ -562,60 +444,15 @@ minim de muchii care trebuie adăugate în graful $G$ astfel încât acesta sa
 devina arbore.
 
 Această problemă se împarte în două subprobleme relativ ușor de identificat -
-aflarea componentelor conexe ale grafului (dacă avem $nr$ componente conexe, va
-fi nevoie de $nr - 1$ muchii pentru a transforma graful într-unul conex), precum
+aflarea componentelor conexe ale grafului (dacă avem $C$ componente conexe, va
+fi nevoie de $C - 1$ muchii pentru a transforma graful într-unul conex), precum
 și aflarea numărului de muchii care trebuie scoase pentru a transforma graful în
 arbore (la final, trebuie să ne rămână $N-1$ muchii). Astfel, vom avea nevoie de
-$nr - 1$ muchii noi și va trebui să scoatem $M + nr - 1 - (N - 1)$ = $M + nr -
-N$ muchii pentru a avea un arbore.
+$C - 1$ muchii noi și va trebui să scoatem $M + C - 1 - (N - 1)$ = $M + C - N$
+muchii pentru a avea un arbore.
 
 ```cpp
-#include <fstream>
-#include <vector>
-
-using namespace std;
-
-
-vector<vector<int>> adj;
-vector<bool> visited;
-
-void dfs(int nod) {
-    visited[nod] = true;
-    for (int next : adj[nod]) {
-        if (!visited[next]) dfs(next);
-    }
-}
-
-int main() {
-    ifstream fin("grarb.in");
-    ofstream fout("grarb.out");
-
-    int n, m, nr = 0;
-
-    fin >> n >> m;
-
-    adj.resize(n);
-    visited.resize(n, false);
-
-    for (int i = 1; i <= m; i++) {
-        int a, b;
-        fin >> a >> b;
-        adj[a].push_back(b);
-        adj[b].push_back(a);
-    }
-
-    for (int i = 0; i < n; i++)
-        if (!visited[i]) {
-            dfs(i);
-            nr++;
-        }
-
-    // Numărul de muchii ce trebuiesc șterse
-    fout << m + nr - 1 - (n - 1) << '\n';
-    // Numărul de componente conectate
-    fout << nr - 1 << '\n';
-    return 0;
-}
+--8<-- "usor/graphs/grarb.cpp"
 ```
 
 ## Problema [Graf (OJI 2006)](https://kilonova.ro/problems/49) de pe kilonova
@@ -634,90 +471,7 @@ parte din cel puțin un drum optim de la $X$ la $Y$.
 Codul sursă se poate viziona mai jos.
 
 ```cpp
-#include <fstream>
-#include <queue>
-#include <vector>
-using namespace std;
-
-constexpr int MAXN = 7500;
-
-vector<vector<int>> graph(MAXN + 1);
-vector<int> ans;
-
-void bfs(int startNode, vector<int>& dist) {
-    queue<int> q;
-    q.push(startNode);
-    dist[startNode] = 0;
-
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
-
-        for (auto neighbor : graph[node]) {
-            if (dist[neighbor] == -1) {
-                dist[neighbor] = dist[node] + 1;
-                q.push(neighbor);
-            }
-        }
-    }
-}
-
-vector<int> distX, distY, solFreq;
-
-int main() {
-    distX.reserve(MAXN + 1);
-    distY.reserve(MAXN + 1);
-    solFreq.reserve(MAXN + 1);
-
-    ifstream fin("graf.in");
-    ofstream fout("graf.out");
-
-    int n, m, x, y;
-    fin >> n >> m >> x >> y;
-
-    while (m--) {
-        int a, b;
-        fin >> a >> b;
-        graph[a].push_back(b);
-        graph[b].push_back(a);
-    }
-
-    distX.resize(n + 1, -1);
-    distY.resize(n + 1, -1);
-    solFreq.resize(n + 1, 0);
-
-    bfs(x, distX);
-    bfs(y, distY);
-
-    int totalDist = distX[y];
-    // Lungimea totală a drumului va fi egală cu distX[y].
-    for (int i = 1; i <= n; i++) {
-        if (distX[i] == -1 || distY[i] == -1) {
-            continue;
-        }
-
-        if (distX[i] + distY[i] == totalDist) {
-            solFreq[distX[i]]++;
-        }
-    }
-
-    for (int i = 1; i <= n; i++) {
-        if (distX[i] == -1 || distY[i] == -1) {
-            continue;
-        }
-
-        if (distX[i] + distY[i] == totalDist && solFreq[distX[i]] == 1) {
-            ans.push_back(i);
-        }
-    }
-
-    fout << ans.size() << '\n';
-    for (const auto& node : ans) {
-        fout << node << ' ';
-    }
-
-    return 0;
-}
+--8<-- "usor/graphs/graf.cpp"
 ```
 
 ## Detectarea unui ciclu simplu - [Round Trip CSES](https://cses.fi/problemset/task/1669/)
@@ -739,74 +493,7 @@ algoritm care este foarte simplu și ușor de înțeles constă în următorii p
 Mai jos găsiți implementarea C++ a soluției descrise mai sus.
 
 ```cpp
-#include <iostream>
-#include <vector>
- 
-using namespace std;
- 
-vector<vector<int>> graph;
-vector<int> visited, prv;
- 
-int fi, lst;
-void dfs(int parent, int node) {
-    visited[node] = 1;
-    for (int i = 0; i < (int) graph[node].size(); i++) {
-        int nxt = graph[node][i];
-        if (nxt == parent) {
-            continue;
-        }
-        if (visited[nxt]) {
-            fi = node;
-            lst = nxt;
-        }
-        else {
-            prv[nxt] = node;
-            dfs(node, nxt);
-        }
-    }
-}
-int main() {
-    
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int n, m;
-    cin >> n >> m;
-    
-    graph.resize(n+1);
-    prv.resize(n+1);
-    visited.resize(n+1);
-    for (int i = 1; i <= m; i++) {
-        int a, b;
-        cin >> a >> b;
-        graph[a].push_back(b);
-        graph[b].push_back(a);
-    }
-    
-    for (int i = 1; i <= n; i++) {
-        if (!visited[i]) {
-            dfs(0, i);
-        }
-    }
-    
-    if (fi == 0) {
-        cout << "IMPOSSIBLE";
-        return 0;
-    }
-    vector<int> cycle;
-    cycle.push_back(fi);
-    while (lst != fi) {
-        cycle.push_back(lst);
-        lst = prv[lst];
-    }
-    cycle.push_back(fi);
-    
-    cout << cycle.size() << '\n';
-    for (auto x : cycle) {
-        cout << x << " ";
-    }
-    return 0;
-}
+--8<-- "usor/graphs/roundtrip.cpp"
 ```
 
 ## Probleme suplimentare
