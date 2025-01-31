@@ -10,7 +10,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
 
 <div class="grid cards" markdown>
 
-- **Code::Blocks**
+- :simple-codeblocks: **Code::Blocks**
 
     ---
 
@@ -23,7 +23,7 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
 
     [:octicons-arrow-right-24: Instalare și configurare](./codeblocks.md)
 
-- **Visual Studio**
+- :material-microsoft-visual-studio: **Visual Studio**
 
     ---
 
@@ -50,9 +50,9 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     pentru diverse nevoi ale dezvoltatorilor. Rulează pe Windows, macOS, Linux,
     FreeBSD, OpenBSD și NetBSD.
 
-    [:octicons-arrow-right-24: Instalare și configurare](./qt-creator.md)
+    [:octicons-arrow-right-24: Instalare și configurare](./qt-creator.md) -->
 
-- **CLion**
+- :simple-clion: **CLion**
 
     ---
 
@@ -65,13 +65,12 @@ fundamental mai complex. Totuși, cele mai bune opțiuni sunt:
     instrumentelor sale avansate și integrării cu diverse sisteme de control al
     versiunilor. Rulează pe Windows, macOS și Linux.
 
-    [:octicons-arrow-right-24: Instalare și configurare](./clion.md) -->
+    [:octicons-arrow-right-24: Instalare și configurare](./clion.md)
 
 </div>
 
-<!-- !!! warning "Atenție"
+!!! warning "Atenție"
 
     CLion, spre deosebire de celelalte opțiuni, nu este gratis. Totuși, dacă
     ești eligibil, poți avea un cont de student ceea ce îți oferă acces la
-    CLion, precum și la alte produse marca JetBrains. -->
-
+    CLion, precum și la alte produse marca JetBrains.
