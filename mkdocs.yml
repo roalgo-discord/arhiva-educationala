@@ -867,6 +867,7 @@ not_in_nav: |
   olimpiada/solutii/baraj-lot/lot-*.md
   usor/intro-cpp.md
 
+
 extra_javascript:
     - javascripts/katex.js
     - https://unpkg.com/katex@0/dist/katex.min.js
