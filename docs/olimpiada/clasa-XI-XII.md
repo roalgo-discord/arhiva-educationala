@@ -15,7 +15,7 @@ conținuturi în arhiva noastră.
 
 Pe lângă conținuturile de mai jos, programa include și materia clasei a zecea,
 care poate fi accesată în [articolul
-corespunzător](https://edu.roalgo.ro/olimpiada/clasa-X/).
+corespunzător](./clasa-X.md).
 
 !!! note "Observație"
     Următoarele capitole sunt atât pentru etapa județeană, cât și pentru etapa națională.
@@ -24,67 +24,67 @@ corespunzător](https://edu.roalgo.ro/olimpiada/clasa-X/).
 
 - Programare dinamică pe arbori și grafuri
   - Programare dinamică pe grafuri - [link
-    articol](https://edu.roalgo.ro/dificil/graph-dp/)
+    articol](../dificil/graph-dp.md)
   - Programare dinamică pe arbore - [link
-    articol](https://edu.roalgo.ro/dificil/tree-dp/)
+    articol](../dificil/tree-dp.md)
 - Programare dinamică pe stări exponențiale (bitmask DP) - [link
-  articol](https://edu.roalgo.ro/mediu/bitmask-dp/)
+  articol](../mediu/bitmask-dp.md)
 
-## Grafuri orientate și neorientate - [link articol](https://edu.roalgo.ro/usor/graphs/)
+## Grafuri orientate și neorientate - [link articol](../usor/graphs.md)
 
 - Terminologie (graf neorientat, graf orientat, lanţ, lanţ elementar, drum, drum
   elementar, ciclu, ciclu elementar, circuit, circuit elementar, grad, graf
   parţial, subgraf, conexitate, tare conexitate, arbore, graf ponderat, arbore
   parţial, arbore parţial de cost minim) - [link
-  articol](https://edu.roalgo.ro/usor/graphs/#terminologie)
+  articol](../usor/graphs.md#terminologie)
 - Tipuri speciale de grafuri (graf complet, graf hamiltonian, graf eulerian,
   graf bipartit, graf turneu) - [link
-  articol](https://edu.roalgo.ro/usor/graphs/#cateva-tipuri-speciale-de-grafuri)
+  articol](../usor/graphs.md#cateva-tipuri-speciale-de-grafuri)
 - Reprezentarea grafurilor (matrice de adiacenţă, liste de adiacenţă, lista
   muchiilor/arcelor) - [link
-  articol](https://edu.roalgo.ro/usor/graphs/#lucrul-cu-grafuri-moduri-de-reprezentare-in-memorie)
+  articol](../usor/graphs.md#lucrul-cu-grafuri-moduri-de-reprezentare-in-memorie)
 - Grafuri ponderate. Reprezentarea grafurilor ponderate (matricea costurilor,
   liste de adiacență cu costuri, lista muchiilor/arcelor cu costuri) - [link
-  articol](https://edu.roalgo.ro/mediu/shortest-path/#introducere)
+  articol](../mediu/shortest-path.md#introducere)
 - Algoritmi de prelucrare a grafurilor
   - Parcurgerea grafurilor în lăţime (BFS), în adâncime (DFS), parcurgerea
     euleriană
     - DFS - [link
-      articol](https://edu.roalgo.ro/usor/graphs/#conexitate-parcurgerea-dfs)
+      articol](../usor/graphs.md#conexitate-parcurgerea-dfs)
     - BFS - [link
-      articol](https://edu.roalgo.ro/usor/graphs/#drumuri-minime-parcurgerea-bfs)
+      articol](../usor/graphs.md#drumuri-minime-parcurgerea-bfs)
   - Determinarea componentelor conexe ale unui graf neorientat - [link
-    articol](https://edu.roalgo.ro/usor/graphs/#conexitate-parcurgerea-dfs)
+    articol](../usor/graphs.md#conexitate-parcurgerea-dfs)
   - Determinarea componentelor tare conexe ale unui graf orientat. Algoritmul
     Kosaraju-Sharir. Graful componentelor tare-conexe - [link
-    articol](https://edu.roalgo.ro/dificil/componente-tare-conexe/)
+    articol](../dificil/componente-tare-conexe.md)
   - Determinarea matricei lanţurilor/drumurilor (algoritmul Roy-Warshall) -
     [link
-    articol](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-floyd-warshall-roy-floyd)
+    articol](../mediu/shortest-path.md#algoritmul-floyd-warshall-roy-floyd)
   - Descompunerea unui graf orientat fără circuite pe niveluri. Sortare
-    topologică - [link articol](https://edu.roalgo.ro/mediu/toposort/)
+    topologică - [link articol](../mediu/toposort.md)
   - Determinarea drumurilor de cost minim într-un graf. Algoritmul lui Dijkstra,
     algoritmul Bellman-Ford, algoritmul Roy-Floyd - [link
-    articol](https://edu.roalgo.ro/mediu/shortest-path/)
+    articol](../mediu/shortest-path.md)
   - Determinarea unui lanț/ciclu hamiltonian - [link
-    articol](https://edu.roalgo.ro/mediu/cycles/#cicluri-hamiltoniene)
+    articol](../mediu/cycles.md#cicluri-hamiltoniene)
   - Determinarea unui lanț/ciclu eulerian - [link
-    articol](https://edu.roalgo.ro/mediu/cycles/#cicluri-euleriene)
+    articol](../mediu/cycles.md#cicluri-euleriene)
 
 ## Arbori
 
-- Definiție, proprietăți - [link articol](https://edu.roalgo.ro/mediu/tree-1/)
-- Arbori parțiali - [link articol](https://edu.roalgo.ro/mediu/apcm/)
+- Definiție, proprietăți - [link articol](../mediu/tree-1.md)
+- Arbori parțiali - [link articol](../mediu/apcm.md)
 - Arbori parţiali de cost minim (algoritmul lui Kruskal și algoritmul lui Prim)
-  - [link articol](https://edu.roalgo.ro/mediu/apcm/)
+  - [link articol](../mediu/apcm.md)
 
-## Structuri de date arborescente  - [link articol](https://edu.roalgo.ro/cppintro/stl/)
+## Structuri de date arborescente  - [link articol](../cppintro/stl.md)
 
 - Arbori cu rădăcină (definiţie, proprietăţi, reprezentarea arborilor cu
   rădăcină) - [link
-  articol](https://edu.roalgo.ro/mediu/tree-1/#terminologie-de-baza)
+  articol](../mediu/tree-1.md#terminologie-de-baza)
 - Arbori binari (definiţie, proprietăţi specifice; reprezentarea arborilor
-  binari) - [link articol](https://edu.roalgo.ro/mediu/tree-1/#arbori-binari)
+  binari) - [link articol](../mediu/tree-1.md#arbori-binari)
 - Operații pe structuri de date (interogări, actualizări)
 - Arbore binar complet – definiţie, proprietăţi, reprezentare secvenţială
 - Heap-uri – definiţie, proprietăţi, operaţii specifice (inserare nod,
@@ -92,7 +92,7 @@ corespunzător](https://edu.roalgo.ro/olimpiada/clasa-X/).
 - Arbore binar de căutare – definiţie, proprietăţi, operaţii specifice (inserare
   nod, ştergere nod, căutare element) (std::set în C++)
 - Reprezentarea mulțimilor disjuncte. Algoritmii Union-Find - [link
-  articol](https://edu.roalgo.ro/mediu/dsu/)
+  articol](../mediu/dsu.md)
 
 !!! note "Observație"
     Următoarele capitole sunt doar pentru etapa națională
@@ -101,29 +101,29 @@ corespunzător](https://edu.roalgo.ro/olimpiada/clasa-X/).
 
 - Determinarea punctelor de articulație, a punților și descompunerea grafurilor
   în componente biconexe. - [link
-  articol](https://edu.roalgo.ro/dificil/componente-biconexe/)
+  articol](../dificil/componente-biconexe.md)
 - Algoritmul lui Dial (optimizarea algoritmului lui Dijkstra pentru grafuri cu
   ponderi dintr-un interval mic de valori) - [link
-  articol](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-0-1-bfs-si-variatiile-sale)
+  articol](../mediu/shortest-path.md#algoritmul-0-1-bfs-si-variatiile-sale)
 
 ## Structuri de date arborescente
 
 - Determinarea celui mai apropiat strămoș comun a două noduri dintr-un arbore
   (lowest common ancestor - LCA) - [link
-  articol](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
+  articol](../dificil/lowest-common-ancestor.md)
 - Determinarea diametrului unui arbore - [link
-  articol](https://edu.roalgo.ro/mediu/tree-1/#problema-exemplu-aflarea-diametrului-unui-arbore)
+  articol](../mediu/tree-1.md#problema-exemplu-aflarea-diametrului-unui-arbore)
 - Arbori indexați binar - [link
-  articol](https://edu.roalgo.ro/dificil/fenwick-tree/)
+  articol](../dificil/fenwick-tree.md)
 - Arbori de intervale - [link
-  articol](https://edu.roalgo.ro/dificil/segment-trees/)
+  articol](../dificil/segment-trees.md)
 
-## Square Root Decomposition. Algoritmul lui Mo - [link articol](https://edu.roalgo.ro/dificil/square-root-decomposition/)
+## Square Root Decomposition. Algoritmul lui Mo - [link articol](../dificil/square-root-decomposition.md)
 
-## Range Minimum Query (RMQ) - [link articol](https://edu.roalgo.ro/dificil/rmq/)
+## Range Minimum Query (RMQ) - [link articol](../dificil/rmq.md)
 
-## Tehnica Meet in the Middle - [link articol](https://edu.roalgo.ro/mediu/mitm/)
+## Tehnica Meet in the Middle - [link articol](../mediu/mitm.md)
 
-## Ridicarea la putere a matricilor în timp logaritmic. Rezolvarea recurențelor liniare - [link articol](https://edu.roalgo.ro/dificil/pow-mat/)
+## Ridicarea la putere a matricilor în timp logaritmic. Rezolvarea recurențelor liniare - [link articol](../dificil/pow-mat.md)
 
-## Principiul includerii și excluderii. Funcția Mobius - [link articol](https://edu.roalgo.ro/mediu/pinex/)
+## Principiul includerii și excluderii. Funcția Mobius - [link articol](../mediu/pinex.md)

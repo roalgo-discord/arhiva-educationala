@@ -11,9 +11,9 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"  
-    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
-    - [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
-    - [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
+    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](./pow-log.md)
+    - [Invers modular](./modular-inverse.md)
+    - [Principiul includerii și excluderii](./pinex.md)
 
 Combinatorica este una din ramurile principale ale matematicii, precum și una
 din cele patru ramuri din care se dau problemele de la olimpiada internațională
@@ -37,13 +37,13 @@ olimpiada clasei a zecea. Ulterior, poate să se regăsească și ca subprobleme
 probele ulterioare de seniori, într-o măsură mai mică.
 
 Pentru a putea parcurge acest capitol, recomandăm citirea în prealabil a
-articolelor despre [aritmetica modulară](https://edu.roalgo.ro/mediu/pow-log),
-[divizibilitate](https://edu.roalgo.ro/usor/divisibility/) și în general să
+articolelor despre [aritmetica modulară](./pow-log),
+[divizibilitate](../usor/divisibility.md) și în general să
 aveți o înțelegere a conceptelor matematice din capitolele anterioare. Va fi
 foarte importantă și înțelegerea conceptului de invers modular, deoarece deși în
 cele mai multe probleme vom avea de-a face cu modulo numere prime, uneori va
 trebui să știm să implementăm și algoritmul de aflare al [inversul
-modular](https://edu.roalgo.ro/mediu/modular-inverse/).
+modular](./modular-inverse.md).
 
 ## Noțiuni teoretice fundamentale
 

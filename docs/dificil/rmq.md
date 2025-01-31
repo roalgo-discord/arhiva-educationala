@@ -10,8 +10,8 @@ tags:
 **Autor**: Traian Mihai Danciu
 
 !!! example "Cunoștințe necesare"
-    - [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
+    - [Sume parțiale](../usor/partial-sums.md)
 
 ## Introducere
 
@@ -24,7 +24,7 @@ acest articol).
 
 Să luăm ca exemplu problema [Static Range Sum
 Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem
-rezolva folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), dar
+rezolva folosind [sume parțiale](../usor/partial-sums.md), dar
 haideți să încercăm o metodă nouă.
 
 Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o
@@ -43,9 +43,9 @@ lifting**.
 
 !!! note "Observație"
 
-    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat,
+    [LCA](./lowest-common-ancestor.md) este calculat,
     de asemenea, folosind binary lifting. Căutarea binară în
-    [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea,
+    [AIB](./fenwick-tree.md) folosește, de asemenea,
     binary lifting.
 
 Sursa de 100:
@@ -212,7 +212,7 @@ Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF
 
 Să calculăm, mai întâi $maxp_{i, j} = $ latura celui mai mare dreptunghi care
 are doar valori de 1 și are colțul dreapta-jos în $(i, j)$. Această metodă se
-cheamă [programare dinamică](https://edu.roalgo.ro/usor/intro-dp/).
+cheamă [programare dinamică](../usor/intro-dp.md).
 
 $$
 maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}
@@ -240,7 +240,7 @@ $$ query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2
 
 Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece
 unele rezultate pot ieși din dreptunghiul în care suntem întrebați. Așa că, vom
-[căuta binar](https://edu.roalgo.ro/usor/binary-search/) răspunsul.
+[căuta binar](../usor/binary-search.md) răspunsul.
 
 Cum verificăm dacă avem vreun pătrat de latură cel puțin $k$? Vom verifica dacă:
 
@@ -393,7 +393,7 @@ max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 Apoi, valoarea $a_i$ finală va fi maximul dintre toate valorile din orice
 interval care este actualizat în $spt$ și include $i$. Calculăm această valoare
 folosind un proces similar cu propagarea lazy de la [arbori de
-intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din
+intervale](./segment-trees.md). Rezultatul din
 $spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j +
 2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne
 asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe
@@ -647,10 +647,10 @@ este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i
 
 Să precalculam $rez_i = $ frecvența elementului majoritar din intervalul $[i, i
 + k)$ ($k - rez_l$ va fi răspunsul nostru la un query). $rez$ poate fi calculat
-folosind [sliding window](https://edu.roalgo.ro/mediu/sliding-window/). Vom
-menține un [map](https://edu.roalgo.ro/cppintro/stl/#structura-stdmap) care se
+folosind [sliding window](../mediu/sliding-window.md). Vom
+menține un [map](../cppintro/stl.md#structura-stdmap) care se
 cheamă $fr$ cu frecvența elementelor și înca un [vector de
-frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) care se cheamă $frfr$
+frecvență](../usor/frequency-arrays.md) care se cheamă $frfr$
 care menține frecvența fiecărei valori din $fr$.
 
 Când adaugăm o valoare, scădem 1 din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu
@@ -761,7 +761,7 @@ vom afla pentru câți $j > i$ avem $max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i
 De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că
 nu există $l \leq p < i$ astfel încât $rez_p = rez_i$. Fie $nxt_{0, i} = $ cel
 mai mic $j > i$ astfel încât $rez_j >= rez_i$, lucru pe care îl vom afla cu
-[stivă](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0,
+[stivă](../mediu/stack.md#problema-stack_max_min). Fie $sum_{0,
 i} = rez_i \cdot (i - nxt_{0, i})$.
 
 Acum, să presupunem că avem un arbore, în care $nxt_{0, i}$ reprezintă părintele
@@ -908,7 +908,7 @@ int main() {
     Această soluție este foarte asemănătoare cu soluția la problema
     [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul
     de
-    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/#binary-lifting)
+    [LCA](./lowest-common-ancestor.md#binary-lifting)
 
 ## Concluzii
 

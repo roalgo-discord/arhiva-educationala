@@ -7,8 +7,8 @@ tags:
 # Soluția problemei graf (OJI 2006, clasele XI-XII)
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în STL](../../../../cppintro/stl.md)
+    - [Introducere în teoria grafurilor](../../../../usor/graphs.md)
 
 **Autor soluție**: Victor Manz
 

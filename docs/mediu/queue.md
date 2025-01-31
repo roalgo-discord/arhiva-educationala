@@ -9,8 +9,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 ## Introducere și definiție
 

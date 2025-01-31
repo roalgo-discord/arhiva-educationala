@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+    - [Căutarea binară](../usor/binary-search.md)
 
 ## Introducere
 

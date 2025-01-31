@@ -33,7 +33,7 @@ lotul de seniori.
 
 - [baraj seniori](https://kilonova.ro/problem_lists/516)
 - [lot seniori](https://kilonova.ro/problem_lists/225)
-- [listă concursuri](https://edu.roalgo.ro/mediu/contest-list/)
+- [listă concursuri](../mediu/contest-list.md)
 
 ## Alte sfaturi și recomandări
 

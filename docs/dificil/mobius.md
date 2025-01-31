@@ -9,9 +9,9 @@ tags:
 **Autor**: Matei Ionescu
 
 !!! example "Cunoștințe necesare"
-    - [Principiul includerii și excluderii](https://edu.roalgo.ro/mediu/pinex/)
-    - [Indicatorul lui Euler](https://edu.roalgo.ro/mediu/euler-totient/)
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Principiul includerii și excluderii](../mediu/pinex.md)
+    - [Indicatorul lui Euler](../mediu/euler-totient.md)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 ## Noțiuni introductive
 

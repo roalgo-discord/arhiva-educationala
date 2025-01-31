@@ -9,9 +9,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Stiva](./stack.md)
+    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 
@@ -27,7 +27,7 @@ aritmetice (parsing în engleză).
     intrare, chiar dacă ambele se ocupă de procesarea unor șiruri de caractere,
     parsarea datelor este o metodă folosită pentru îmbunătățirea vitezei de
     citire a datelor, mai multe detalii puteți găsi
-    [aici](https://edu.roalgo.ro/cppintro/fast-io/).
+    [aici](../cppintro/fast-io.md).
 
 Toate aceste probleme conțin următoarele particularități:
 

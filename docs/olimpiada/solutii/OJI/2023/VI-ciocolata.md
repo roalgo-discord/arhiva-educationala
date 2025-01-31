@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Ciocolata (OJI 2023, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
+    - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
 
 **Autor soluție**: Vlad-Mihai Bogdan
 

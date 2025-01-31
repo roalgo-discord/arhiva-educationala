@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Bomboane (OJI 2024, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
+    - [Divizibilitatea](../../../../usor/divisibility.md)
 
 **Autor soluție**: Marius Nicoli
 

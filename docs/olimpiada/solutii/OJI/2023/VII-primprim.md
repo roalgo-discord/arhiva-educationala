@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Primprim (OJI 2023, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
-    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
+    - [Ciurul lui Eratostene](../../../../usor/sieve.md)
+    - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
 
 **Autor soluție**: Ștefan-Cosmin Dăscălescu
 

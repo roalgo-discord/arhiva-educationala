@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Panglica (OJI 2002, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    - [Abordarea problemelor cu secvențe](../../../../usor/sequences.md)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 

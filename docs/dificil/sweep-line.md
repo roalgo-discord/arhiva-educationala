@@ -6,8 +6,8 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"
-    - [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/)
-    - [Concepte fundamentale de geometrie](https://edu.roalgo.ro/mediu/basic-geometry/)
+    - [Algoritmi de sortare](../usor/sorting.md)
+    - [Concepte fundamentale de geometrie](../mediu/basic-geometry.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Microbist (OJI 2024, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime/)
+    - [Maxime și minime](../../../../usor/maxime-minime.md)
 
 **Autor soluție**: Dorin-Mircea Rotar
 

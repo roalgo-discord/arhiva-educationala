@@ -32,8 +32,8 @@ aritmetica și algebra.
 Dacă acest lucru a reprezentat pentru tine o problemă, recomandăm să
 recapitulezi noțiunile matematice, cele mai importante pentru scopul acestei
 arhive și a materiei de la informatică le poți găsi în articolele noastre despre
-[noțiuni introductive](https://edu.roalgo.ro/cppintro/basic-math/), precum și
-cel despre [divizibilitate](https://edu.roalgo.ro/usor/divisibility/).
+[noțiuni introductive](../cppintro/basic-math.md), precum și
+cel despre [divizibilitate](./divisibility.md).
 
 ## Înțelegerea primelor lecții
 
@@ -45,7 +45,7 @@ ușurință.
 În general, este important să faceți teme și eventual să lucrați suplimentar mai
 ales atunci când începeți să înțelegeți programarea, și mai ales să accesați
 resursele pe care le punem la dispoziție, urmărind primele niveluri ale
-[roadmapului](https://edu.roalgo.ro/usor/roadmap/) nostru.
+[roadmapului](./roadmap.md) nostru.
 
 ## Pune cât mai multe întrebări
 

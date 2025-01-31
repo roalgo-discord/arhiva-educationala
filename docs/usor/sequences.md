@@ -8,8 +8,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Structura repetitivă](../cppintro/loops.md)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 În algoritmică, dar și în alte domenii, suntem nevoiți de multe ori să lucrăm cu
 secvențe de valori și se impune folosirea unor abordări specifice pentru a
@@ -251,7 +251,7 @@ cout << summax << " " << stmax " " << drmax << '\n';
 
 Acest algoritm poate fi extins și pe matrice, observația de bază fiind aceea că
 putem fixa linia de început și linia de final, iar mai apoi folosind [sume
-parțiale](https://edu.roalgo.ro/usor/partial-sums/), să aplicăm algoritmul de
+parțiale](./partial-sums.md), să aplicăm algoritmul de
 mai sus.
 
 Mai jos puteți găsi soluția de la problema [Submatrix

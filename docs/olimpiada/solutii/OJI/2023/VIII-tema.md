@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Tema (OJI 2023, clasa a VIII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    - [Two Pointers](https://edu.roalgo.ro/mediu/two-pointers/)
+    - [Ciurul lui Eratostene](../../../../usor/sieve.md)
+    - [Sume parțiale](../../../../usor/partial-sums.md)
+    - [Two Pointers](../../../../mediu/two-pointers.md)
 
 **Autor soluție**: Daniela Lica
 

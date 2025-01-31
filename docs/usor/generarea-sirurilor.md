@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Structura repetitivă](../cppintro/loops.md)
 
 ## Introducere
 
@@ -72,7 +72,7 @@ Fiecare dintre cei $n$ termeni conține $x$, iar apoi următorii termeni au și 
 
 Pentru a afla în mod eficient dacă toate valorile aparțin aceleiași progresii
 aritmetice, trebuie să ținem un [vector de
-frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) în care memorăm aceste
+frecvență](./frequency-arrays.md) în care memorăm aceste
 valori, iar mai apoi să verificăm dacă diferențele între oricare două valori
 distincte consecutive sunt egale.
 
@@ -166,7 +166,7 @@ de 2.
 În general, pe lângă aplicațiile ce implică noțiuni mai simple, factorialele se
 vor dovedi a fi esențiale în ceea ce privește combinatorica, unde apar în multe
 formule, începând de la noțiunile legate de
-[permutări](https://edu.roalgo.ro/mediu/intro-combinatorics/#permutari).
+[permutări](../mediu/intro-combinatorics.md#permutari).
 
 #### Problemă exemplu - [Trailing Zeroes](https://cses.fi/problemset/task/1618)
 
@@ -241,7 +241,7 @@ de simplu, care se bazează pe un for sau un while.
 
     Există un algoritm mai rapid, care rulează în $O(\log n)$ care se bazează pe
     cunoștințe mai avansate de algebră liniară și lucru cu matrici. Pentru mai
-    multe detalii, puteți citi [aici](https://edu.roalgo.ro/dificil/pow-mat/).
+    multe detalii, puteți citi [aici](../dificil/pow-mat.md).
 
 #### Problema exemplu - [fibosum pbinfo](https://www.pbinfo.ro/probleme/257/fibosum)
 

@@ -8,8 +8,8 @@ tags:
 **Autor**: Matei Ionescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+    - [Introducere în STL](../cppintro/stl.md)
+    - [Operații pe biți](../mediu/bitwise-ops.md)
 
 ## Introducere
 

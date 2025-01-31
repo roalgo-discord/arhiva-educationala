@@ -5,7 +5,7 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

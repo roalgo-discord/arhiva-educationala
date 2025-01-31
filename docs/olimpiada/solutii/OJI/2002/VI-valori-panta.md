@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Valori-pantă (OJI 2002, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    - [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime/)
-    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Maxime și minime](../../../../usor/maxime-minime.md)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 

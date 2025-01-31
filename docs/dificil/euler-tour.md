@@ -5,9 +5,9 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)  
-    - [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
-    - [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
+    - [Introducere în arbori](../mediu/tree-1.md)  
+    - [Arbori de intervale](./segment-trees.md)
+    - [LCA](./lowest-common-ancestor.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

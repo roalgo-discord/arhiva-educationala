@@ -35,7 +35,7 @@ cele ce urmează.
 
 Deși acest articol poate fi parcurs fără cunoștințe anterioare, se recomandă
 parcurgerea [articolului anterior despre
-vectori](https://edu.roalgo.ro/cppintro/arrays/).
+vectori](./arrays.md).
 
 ### Structura std::vector
 
@@ -147,7 +147,7 @@ caractere, remarcându-se prin faptul că spre deosebire de șirurile de caracte
 din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$.
 
 Se recomandă citirea în prealabil a [articolului următor despre șiruri de
-caractere](https://edu.roalgo.ro/cppintro/strings/).
+caractere](./strings.md).
 
 De asemenea, toate proprietățile vectorului se aplică și pentru `std::string`.
 Pentru a putea folosi această structură de date, va trebui să includem
@@ -291,7 +291,7 @@ acces aleatoriu (toate mai puțin `queue`, `stack` și `priority_queue`).
 unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca `<queue>`.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre
-cozi](https://edu.roalgo.ro/mediu/queue/), mai jos puteți găsi un exemplu de
+cozi](../mediu/queue.md), mai jos puteți găsi un exemplu de
 folosire a acestor instrucțiuni.
 
 ```cpp
@@ -304,7 +304,7 @@ folosire a acestor instrucțiuni.
 unei stive. Pentru a folosi std::stack, avem nevoie de biblioteca ``<stack>``.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre
-stive](https://edu.roalgo.ro/mediu/stack/), mai jos puteți găsi un exemplu de
+stive](../mediu/stack.md), mai jos puteți găsi un exemplu de
 folosire a acestor instrucțiuni.
 
 ```cpp
@@ -317,7 +317,7 @@ folosire a acestor instrucțiuni.
 unui deque. Pentru a folosi std::deque, avem nevoie de biblioteca `<deque>`.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre
-deques](https://edu.roalgo.ro/mediu/deque/), mai jos puteți găsi un exemplu de
+deques](../mediu/deque.md), mai jos puteți găsi un exemplu de
 folosire a acestor instrucțiuni.
 
 !!! note "Accesarea pozițiilor oarecare"
@@ -418,7 +418,7 @@ acționează în mod similar cu structuri de tip hashmap, codificând valorile s
 diverse forme pentru a evita coliziuni de diverse moduri. Totuși, aici nu vom
 discuta teoria din spatele hashurilor, ci doar containerele în sine [articolul
 nostru despre
-hashing](https://edu.roalgo.ro/mediu/hashing/#hash-tables-si-unordered-map).
+hashing](../mediu/hashing.md#hash-tables-si-unordered-map).
 Deși funcțiile pe care cele două structuri de date le au sunt identice cu cele
 ale echivalentelor lor sortate, uneori pot deveni foarte utile în concursuri.
 
@@ -473,7 +473,7 @@ heap-ului.
 mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce
 face această structură de date principala metodă de a implementa diverși
 algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui
-Dijkstra](https://edu.roalgo.ro/mediu/shortest-path/#algoritmul-lui-dijkstra) pe
+Dijkstra](../mediu/shortest-path.md#algoritmul-lui-dijkstra) pe
 grafuri cu costuri.
 
 Pentru a folosi această structură de date, biblioteca `<queue>` este necesară.

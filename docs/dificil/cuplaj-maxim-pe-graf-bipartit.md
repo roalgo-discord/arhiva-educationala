@@ -5,7 +5,7 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

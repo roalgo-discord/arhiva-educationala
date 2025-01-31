@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Parking (OJI 2024, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
-    - [Coada](https://edu.roalgo.ro/mediu/queue/)
-    - [(Opțional): Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Simularea soluției](../../../../usor/simulating-solution.md)
+    - [Coada](../../../../mediu/queue.md)
+    - [(Opțional): Introducere în STL](../../../../cppintro/stl.md)
 
 **Autor soluție**: Florentina Ungureanu
 

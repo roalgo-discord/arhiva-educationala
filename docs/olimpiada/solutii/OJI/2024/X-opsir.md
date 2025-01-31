@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Opsir (OJI 2024, clasa a X-a)
 
 !!! example "Cunoștințe necesare"
-    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
-    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
-    - [Abordarea problemelor ad-hoc](https://edu.roalgo.ro/mediu/ad-hoc/)
+    - [Șiruri de caractere](../../../../cppintro/strings.md)
+    - [Introducere în Metoda Greedy](../../../../usor/greedy.md)
+    - [Abordarea problemelor ad-hoc](../../../../mediu/ad-hoc.md)
 
 **Autor soluție**: Ștefan-Alexandru Popescu
 

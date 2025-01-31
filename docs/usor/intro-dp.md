@@ -7,8 +7,8 @@ tags:
 **Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Introducere în Metoda Greedy](./greedy.md)
+    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

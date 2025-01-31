@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
 atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru

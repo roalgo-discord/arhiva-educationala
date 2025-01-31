@@ -9,9 +9,9 @@ tags:
 **Autor**: Traian Mihai Danciu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+    - [Structura repetitivă](../cppintro/loops.md)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
 
 ## Introducere
 
@@ -355,14 +355,14 @@ int main() {
 
 Mai intai, vom construi matricea in modul descris. Dupa aceea, va trebuie sa
 simulam drumul din problema. Pentru a afla usor urmatoarea pozitie, vom folosi
-[vectori de directie](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie).
+[vectori de directie](../mediu/lee.md#vectorii-de-directie).
 După ce aflăm directța în care mergem, vom marca poziția ca vizitată (adică
 setăm valoarea din matrice la $VISITED$, o constantă care va fi egală cu $-1$
 sau cu orice valoare care nu poate apărea in matrice).
 
 De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom
 [borda
-matricea](https://edu.roalgo.ro/mediu/lee/#evitarea-accesarii-unor-patrate-din-afara-matricii)
+matricea](../mediu/lee.md#evitarea-accesarii-unor-patrate-din-afara-matricii)
 cu valoarea $VISITED$.
 
 Sursa de 100 de puncte:

@@ -7,8 +7,8 @@ tags:
 **Autori**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 În multe probleme în care lucrăm cu secvențe de valori, suntem nevoiți să
 procesăm valorile pe rând, asemenea unui teanc de obiecte. Pentru a formaliza
@@ -202,7 +202,7 @@ fiecare.
 !!! note "Analiza amortizată"
 
     Pentru a înțelege de ce complexitatea este liniară, puteți citi
-    [aici](https://edu.roalgo.ro/mediu/amortised-analysis/) mai multe detalii.
+    [aici](./amortised-analysis.md) mai multe detalii.
 
 Detalii de implementare: vom reține o matrice $raspuns[tip - 1][i]$ care va
 reprezenta răspunsul la o întrebare de tipul $tip \ i$. De asemenea, vom folosi

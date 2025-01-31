@@ -7,9 +7,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Coada](https://edu.roalgo.ro/mediu/queue/)
-    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
-    - [Sliding Window](https://edu.roalgo.ro/mediu/sliding-window/)
+    - [Coada](./queue.md)
+    - [Stiva](./stack.md)
+    - [Sliding Window](./sliding-window.md)
 
 Probabil că până acum, v-ati obișnuit cu folosirea stivelor și a cozilor în
 diverse probleme de algoritmică, iar deși aceste structuri de date sunt foarte
@@ -106,7 +106,7 @@ Motivul principal pentru care folosim deque-urile este acela de a putea performa
 operații pe secvențe de lungime fixă, fiind una din tehnicile des folosite în
 cazul problemelor ce folosesc tehnica sliding window (sau în română, fereastra
 glisantă), subiect discutat în [acest
-articol](https://edu.roalgo.ro/mediu/sliding-window/). Acesta va fi și scopul
+articol](./sliding-window.md). Acesta va fi și scopul
 principal al acestui articol, acela de a prezenta cele mai des întâlnite
 aplicații ale deque-ului.
 
@@ -358,7 +358,7 @@ int main() {
 ## Concluzie
 
 Deque este o structură de date foarte utilă pentru foarte multe probleme ce
-folosesc [sliding window](https://edu.roalgo.ro/mediu/sliding-window/), precum
+folosesc [sliding window](./sliding-window.md), precum
 și în ceea ce privește multe optimizări care pleacă de la aplicații care în mod
 normal s-ar rezolva cu o stivă sau o coadă.
 

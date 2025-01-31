@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Santinele (OJI 2024, clasa a IX-a)
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în Metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
+    - [Introducere în Metoda Greedy](../../../../usor/greedy.md)
 
 **Autor soluție**: Cristian Frâncu
 

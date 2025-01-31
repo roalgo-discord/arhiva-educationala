@@ -8,9 +8,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
-    - [Numere mari](https://edu.roalgo.ro/mediu/bignum/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Combinatorică](../mediu/intro-combinatorics.md)
+    - [Numere mari](../mediu/bignum.md)
 
 ## Introducere
 
@@ -26,7 +26,7 @@ competițiile de matematică.
 Chiar dacă aceste probleme nu sunt dintre cele mai des întâlnite la competiții,
 modul de gândire a acestor rezolvări poate deveni folositor și în ceea ce
 privește alte tipuri de aplicații, precum cele de la [range
-dp](https://edu.roalgo.ro/dificil/range-dp/).
+dp](./range-dp.md).
 
 Ca o remarcă, ne vom concentra mai ales pe probleme care nu pot fi rezolvate
 folosind formule combinatoriale, dar vom prezenta câteva exemple care au mai
@@ -34,7 +34,7 @@ multe abordări, pentru a ușura înțelegerea acestei metode. De asemenea, deș
 există și alte tipuri de probleme care se reduc la formalizarea permutărilor
 folosind recurențe specifice programării dinamice, le vom discuta în articolele
 specifice lor, precum aflarea numărului de [cicluri
-hamiltoniene](https://edu.roalgo.ro/mediu/bitmask-dp/#problema-hamiltonian-flights),
+hamiltoniene](../mediu/bitmask-dp.md#problema-hamiltonian-flights),
 iar în general, cunoașterea dinamicii pe stări exponențiale este necesară pentru
 înțelegerea acestei tehnice.
 
@@ -53,7 +53,7 @@ de probleme:
 În cele ce urmează, vom prezenta diverse exemple de probleme și modul de a
 aplica aceste principii. Uneori, vom avea nevoie de calcularea altor recurențe,
 iar cunoașterea formulelor de la
-[combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/) este
+[combinatorică](../mediu/intro-combinatorics.md) este
 obligatorie.
 
 ## Problema 1 - [perm - infoarena](https://infoarena.ro/problema/perm)
@@ -93,7 +93,7 @@ jos puteți găsi implementarea completă a soluției problemei date.
 !!! note "Soluție detaliată"
 
     O demonstrație detaliată a acestei abordări, precum și legătura cu [numerele
-    Stirling](https://edu.roalgo.ro/mediu/intro-combinatorics/#numerele-stirling)
+    Stirling](../mediu/intro-combinatorics.md#numerele-stirling)
     se poate găsi
     [aici](https://math.stackexchange.com/questions/1978388/counting-permutations-with-k-maximums).
 
@@ -446,7 +446,7 @@ dificil fără experiență anterioară. Chiar dacă aceste probleme nu apar la 
 des precum alte probleme de programare dinamică, se dovedesc a fi provocări
 interesante și de multe ori, dificile, ducând și la alte idei interesante, așa
 cum vom discuta în articolul despre subtehnica [connected component
-DP](https://edu.roalgo.ro/avansat/component-dp/), care are la bază problemele
+DP](../avansat/component-dp.md), care are la bază problemele
 din această categorie.
 
 ## Probleme suplimentare

@@ -7,8 +7,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Combinatorică](../mediu/intro-combinatorics.md)
 
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
 atunci când vine vorba de a număra câte numere au o anumită proprietate într-un

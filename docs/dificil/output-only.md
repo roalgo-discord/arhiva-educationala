@@ -6,8 +6,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Algoritmi randomizați](https://edu.roalgo.ro/dificil/random-algorithms/)
-    - [Abordarea problemelor interactive](https://edu.roalgo.ro/dificil/interactive/)
+    - [Algoritmi randomizați](./random-algorithms.md)
+    - [Abordarea problemelor interactive](./interactive.md)
 
 ## Introducere
 

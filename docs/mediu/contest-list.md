@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 Pe lângă olimpiada de informatică, prezentată mai devreme [în acest
-articol](https://edu.roalgo.ro/olimpiada/olympiad-info/), există numeroase
+articol](../olimpiada/olympiad-info.md), există numeroase
 concursuri și olimpiade pentru elevii de gimnaziu, liceu și chiar și pentru
 studenți. Nu în ultimul rând, există numeroase platforme cu concursuri online cu
 diverse reguli care permit oricărui entuziast de algoritmică să se mențină în

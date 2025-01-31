@@ -6,10 +6,10 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Abordarea concursurilor de pe Codeforces/AtCoder](https://edu.roalgo.ro/mediu/cf-atcoder/)
-    - [Abordarea problemelor ad-hoc](https://edu.roalgo.ro/mediu/ad-hoc/)
-    - [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
-    - [Tehnica divide et impera](https://edu.roalgo.ro/mediu/divide-et-impera/)
+    - [Abordarea concursurilor de pe Codeforces/AtCoder](../mediu/cf-atcoder.md)
+    - [Abordarea problemelor ad-hoc](../mediu/ad-hoc.md)
+    - [Căutarea binară](../usor/binary-search.md)
+    - [Tehnica divide et impera](../mediu/divide-et-impera.md)
 
 ## Introducere
 

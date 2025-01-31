@@ -9,8 +9,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
-    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
+    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](./divisibility.md)
+    - [Vectori de frecvență](./frequency-arrays.md)
 
 ## Ce este ciurul lui Eratostene?
 

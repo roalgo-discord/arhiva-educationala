@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Palindrom (OJI 2023, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
-    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
+    - [Prelucrarea cifrelor](../usor/digits-manipulation.md)
+    - [Simularea soluției](../usor/simulating-solution.md)
 
 **Autor soluție**: Emanuela Cerchez
 

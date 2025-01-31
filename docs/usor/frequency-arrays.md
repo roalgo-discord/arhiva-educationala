@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 ## Introducere
 
@@ -57,7 +57,7 @@ păstra acest vector în memorie.
 ## Problema [cifreord de pe pbinfo](https://www.pbinfo.ro/probleme/244/cifreord)
 
 O soluție posibilă pentru această problemă este să sortăm valorile folosind unul
-din algoritmii de sortare explicat [aici](https://edu.roalgo.ro/usor/sorting/).
+din algoritmii de sortare explicat [aici](./sorting.md).
 
 Totuși, numărul de valori este prea mare și această abordare ar depăși limita de
 timp alocată. În schimb, ne putem folosi de faptul că lucrăm doar cu cifre
@@ -162,7 +162,7 @@ Vectorii de frecvență sunt o metodă foarte populară, ce folosește această
 structură de date cu scopul de a ține memorat numărul de valori egale cu o
 anumită valoare. Aceștia sunt folositori pentru foarte multe tipuri de probleme
 și reprezintă parte esențială a altor algoritmi, precum [ciurul lui
-Eratostene](https://edu.roalgo.ro/usor/sieve/).
+Eratostene](./sieve.md).
 
 De asemenea, aceștia se regăsesc frecvent în subiectele de bacalaureat și
 admitere, mai ales atunci când problemele cer aflarea eficientă a unei soluții

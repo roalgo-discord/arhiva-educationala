@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
+    - [Variabile și tipuri de date simple](./data-types.md)
 
 ## Introducere
 

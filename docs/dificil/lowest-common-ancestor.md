@@ -8,18 +8,18 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)
-    - [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Introducere în arbori](../mediu/tree-1.md)
+    - [Range Minimum Query (RMQ)](./rmq.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 ## Introducere
 
 Pentru a putea folosi acest articol la adevărata lui valoare, se recomandă
-citirea [articolului despre arbori](https://edu.roalgo.ro/mediu/tree-1/) pentru
+citirea [articolului despre arbori](../mediu/tree-1.md) pentru
 a vă familiariza cu noțiunile discutate aici. De asemenea, pentru anumite
 concepte, vor fi necesare cunoștințe suplimentare în ceea ce privește
 structurile de date, programarea dinamică și [lucrul cu
-STL](https://edu.roalgo.ro/cppintro/stl/). În cele ce urmează, vom discuta
+STL](../cppintro/stl.md). În cele ce urmează, vom discuta
 problema aflării celui mai mic strămoș comun, împreună cu câteva tehnici
 necesare pentru înțelegerea ei.
 

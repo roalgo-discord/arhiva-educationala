@@ -9,8 +9,8 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-    - [Păduri de mulțimi disjuncte (DSU)](https://edu.roalgo.ro/mediu/dsu/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
+    - [Păduri de mulțimi disjuncte (DSU)](./dsu.md)
 
 În diverse probleme de grafuri, suntem nevoiți să alegem o mulțime de muchii
 care formează un graf conex, iar costul să fie cât mai mic. În cele mai multe
@@ -263,7 +263,7 @@ int main() {
 
     Uneori, nu este posibil să construim un APM, dar trebuie să raportăm că nu
     se poate. Vom face acest lucru printr-o metodă similară cu cea de la [Bubble
-    Sort](https://edu.roalgo.ro/usor/sorting/#bubble-sort): vom menține o
+    Sort](../usor/sorting.md#bubble-sort): vom menține o
     variabilă care să ne spună dacă am reușit să unim vreo pereche de componente
     conexe. Dacă până acum nu am obținut un arbore și nu mai avem cum să folosim
     vreo muchie, atunci putem să declarăm că nu se poate obține un APM.

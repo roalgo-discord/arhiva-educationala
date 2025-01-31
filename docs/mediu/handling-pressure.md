@@ -7,8 +7,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Cum te pregătești pentru olimpiadă?](https://edu.roalgo.ro/olimpiada/olympiad-prep/)
-    - [Cum ajungi tot mai bun la concursuri?](https://edu.roalgo.ro/mediu/contest-improvement/)
+    - [Cum te pregătești pentru olimpiadă?](../olimpiada/olympiad-prep.md)
+    - [Cum ajungi tot mai bun la concursuri?](./contest-improvement.md)
 
 ## Introducere
 

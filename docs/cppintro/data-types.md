@@ -9,7 +9,7 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
+    - [Primul program în C++](./intro.md)
 
 Așa cum ați observat atunci când am prezentat primul program în articolul
 precedent, fiecare componentă are mai multe caracteristici, una dintre cele mai
@@ -19,8 +19,8 @@ Ulterior, voi împărți în cele ce urmează tipurile de date simple în funcț
 valorile care sunt păstrate.
 
 Totuși, unele tipuri de date mai complexe, cum ar fi
-[vectorii](https://edu.roalgo.ro/usor/arrays/) sau
-[matricile](https://edu.roalgo.ro/usor/matrices/), vor fi discutate în
+[vectorii](../usor/arrays.md) sau
+[matricile](../usor/matrices.md), vor fi discutate în
 articolele lor corespunzătoare.
 
 ## Variabile
@@ -155,7 +155,7 @@ De cele mai multe ori, tipurile de date pe care le folosim sunt
 Pe lângă tipurile de date menționate anterior, există și tipul de date void,
 care deși nu are valori și operații, este necesar pentru a indica faptul că o
 metodă, o funcție sau un program nu returnează nimic, așa cum veți vedea
-ulterior când studiați [funcțiile](https://edu.roalgo.ro/cppintro/functions/).
+ulterior când studiați [funcțiile](./functions.md).
 
 ### Sfaturi practice și evitarea overflow-ului
 
@@ -195,7 +195,7 @@ convertirea datelor.
     În unele probleme, chiar și numerele pe 64 (sau 128) de biți nu sunt
     îndeajuns de mari, așa că se impune păstrarea datelor sub formă de vectori,
     mai multe detalii despre asta puteți găsi în [acest
-    articol](https://edu.roalgo.ro/mediu/bignum/), după ce vă familiarizați cu
+    articol](../mediu/bignum.md), după ce vă familiarizați cu
     lucrul cu algoritmi mai dificili decât scopul acestui articol.
 
 ## Tipuri de date reale
@@ -238,7 +238,7 @@ Pe lângă aceste tipuri, există și tipul de date `#!cpp __int128` care ne per
 să stocăm valori pe 128 de biți, având limite între -2<sup>127</sup> si
 2<sup>127</sup> - 1 (numere de aproximativ 37 de cifre). Acest tip poate fi
 folosit doar pe [compilatorul
-GCC](https://edu.roalgo.ro/cppintro/compilers/windows/mingw64/).
+GCC](./compilers/windows/mingw64.md).
 
 Noi nu putem să citim și să afișăm direct `#!cpp __int128`, deci va trebui să ne
 implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum

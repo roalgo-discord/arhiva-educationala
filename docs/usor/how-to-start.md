@@ -54,30 +54,30 @@ precum și unde le găsiți la noi în arhivă. Pentru fiecare secțiune, recoma
 
 ### Elemente de limbaj
 
-- [Instalarea primului editor/IDE C++](https://edu.roalgo.ro/cppintro/)
-- [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
+- [Instalarea primului editor/IDE C++](../cppintro.md)
+- [Primul program în C++](../cppintro.mdintro/)
 - [Variabile și tipuri de date
-  simple](https://edu.roalgo.ro/cppintro/data-types/)
+  simple](../cppintro.mddata-types/)
 - [Operatori și expresii. Cunoștințe matematice de
-  bază](https://edu.roalgo.ro/cppintro/basic-math/)
-- [Citirea și afișarea datelor](https://edu.roalgo.ro/cppintro/input-output/)
-- [Structura alternativă](https://edu.roalgo.ro/cppintro/conditions-if/)
-- [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
-- [Coding Style](https://edu.roalgo.ro/cppintro/coding-style/)
-- [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+  bază](../cppintro.mdbasic-math/)
+- [Citirea și afișarea datelor](../cppintro.mdinput-output/)
+- [Structura alternativă](../cppintro.mdconditions-if/)
+- [Structura repetitivă](../cppintro.mdloops/)
+- [Coding Style](../cppintro.mdcoding-style/)
+- [Vectori (tablouri unidimensionale)](../cppintro.mdarrays/)
 
 ### Algoritmi și tehnici introductive
 
 - [Prelucrarea cifrelor unui
-  număr](https://edu.roalgo.ro/usor/digits-manipulation/)
-- [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime)
+  număr](./digits-manipulation.md)
+- [Maxime și minime](./maxime-minime)
 - [Generarea șirurilor de
-  numere](https://edu.roalgo.ro/usor/generarea-sirurilor/)
-- [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
-- [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+  numere](./generarea-sirurilor.md)
+- [Divizibilitatea](./divisibility.md)
+- [Abordarea problemelor cu secvențe](./sequences.md)
 - [Principiul lui Dirichlet (principiul
-  cutiei)](https://edu.roalgo.ro/usor/dirichlet/)
-- [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/) - Doar algoritmii
+  cutiei)](./dirichlet.md)
+- [Algoritmi de sortare](./sorting.md) - Doar algoritmii
   în $O(n^2)$ și funcția `std::sort`
 
 ## Sfaturi practice

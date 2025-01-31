@@ -8,9 +8,9 @@ tags:
 **Autor**: Alexandru Toma
 
 !!! example "Cunoștințe necesare"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
-    - [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Abordarea problemelor cu secvențe](../usor/sequences.md)
+    - [Range Minimum Query (RMQ)](./rmq.md)
 
 În competițiile de informatică și la olimpiadă se întâlnesc adesea probleme care
 implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula
@@ -21,7 +21,7 @@ acesta suferă **modificări în timp real**?
 
     Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici
     simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau
-    [RMQ](../dificil/rmq.md) (Range Minimum Query). Totuși, în scenariile unde
+    [RMQ](./rmq.md) (Range Minimum Query). Totuși, în scenariile unde
     vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile
     de query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și
     pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de

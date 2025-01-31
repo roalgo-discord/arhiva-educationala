@@ -8,9 +8,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
+    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
+    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Ron (OJI 2024, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Ciurul lui Eratostene](https://edu.roalgo.ro/usor/sieve/)
-    - [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
+    - [Ciurul lui Eratostene](../../../../usor/sieve.md)
+    - [Căutarea binară](../../../../usor/binary-search.md)
     
 **Autor soluție**: Filonela Bălașa
 

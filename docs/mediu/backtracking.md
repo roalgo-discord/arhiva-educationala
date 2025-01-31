@@ -9,9 +9,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
-    - [Tehnica divide et impera](https://edu.roalgo.ro/mediu/divide-et-impera/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Simularea soluției](../usor/simulating-solution.md)
+    - [Tehnica divide et impera](./divide-et-impera.md)
 
 ## Introducere
 

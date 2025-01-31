@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Birocrație (OJI 2024, clasele XI-XII)
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Introducere în programarea dinamică](../../../../usor/intro-dp.md)
 
 **Autor soluție**: Zoltan Szabó
 

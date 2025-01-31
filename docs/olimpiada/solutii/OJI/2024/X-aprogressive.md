@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Aprogressive (OJI 2024, clasa a X-a)
 
 !!! example "Cunoștințe necesare"
-    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
-    - [Tehnica divide et impera](https://edu.roalgo.ro/mediu/divide-et-impera/)
+    - [Simularea soluției](../../../../usor/simulating-solution.md)
+    - [Tehnica divide et impera](../../../../mediu/divide-et-impera.md)
 
 **Autor soluție**: Gheorghe-Eugen Nodea
 

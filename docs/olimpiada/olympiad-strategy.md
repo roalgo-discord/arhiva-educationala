@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Cum te pregătești pentru olimpiadă?](https://edu.roalgo.ro/olimpiada/olympiad-prep/)
+    - [Cum te pregătești pentru olimpiadă?](./olympiad-prep.md)
 
 ## Introducere
 
@@ -141,7 +141,7 @@ concurs: debuggingul.
 !!! note "Observație"
 
     Pentru mai multe detalii, accesați acest articol
-    [aici](https://edu.roalgo.ro/mediu/debugging/),
+    [aici](../mediu/debugging.md),
 
 Mai întâi, e bine să verificăm erorile mici (overflow-uri, erori de scriere și
 alte asemenea), iar dacă nu obținem încă punctele, trebuie să începem să ne

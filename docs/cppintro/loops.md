@@ -11,8 +11,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
-    - [Structura alternativă](https://edu.roalgo.ro/cppintro/conditions-if/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](./basic-math.md)
+    - [Structura alternativă](./conditions-if.md)
 
 !!! info "Definiție"
 

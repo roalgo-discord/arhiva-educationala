@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Cum ajungi să stăpânești materia de la clasă?](https://edu.roalgo.ro/usor/schoolwork/)
+    - [Cum ajungi să stăpânești materia de la clasă?](./schoolwork.md)
 
 ## Introducere
 
@@ -101,7 +101,7 @@ anii trecuți la admiterile de la facultatea în cauză, precum și subiectele d
 celelalte facultăți de profil. Un alt sfat util este acela de a avea bine pusă
 la punct materia de bacalaureat, împreună cu capitole suplimentare (în arhiva
 noastră, trebuie să știți toată materia de la secțiunile ușor și mediu, sau dacă
-v-ați uitat la [roadmap](https://edu.roalgo.ro/usor/roadmap/), primele 5
+v-ați uitat la [roadmap](./roadmap.md), primele 5
 capitole).
 
 ## Concluzii

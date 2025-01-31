@@ -6,7 +6,7 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"   
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)  
+    - [Introducere în arbori](../mediu/tree-1.md)  
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
 

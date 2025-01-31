@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Joc (OJI 2002, clasa a VII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Simularea soluției](https://edu.roalgo.ro/usor/simulating-solution/)
+    - [Simularea soluției](../../../../usor/simulating-solution.md)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 
