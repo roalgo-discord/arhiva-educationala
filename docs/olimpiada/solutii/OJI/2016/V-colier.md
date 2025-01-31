@@ -8,7 +8,7 @@ tags:
 # Soluția problemei colier (OJI 2016, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation)
+    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation.html)
 
 **Autor soluție**: Traian Mihai Danciu
 

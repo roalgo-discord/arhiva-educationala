@@ -9,7 +9,7 @@ tags:
 # Soluția problemei aur (OJI 2019, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation)
+    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation.html)
 
 **Autor soluție**: Traian Mihai Danciu
 
