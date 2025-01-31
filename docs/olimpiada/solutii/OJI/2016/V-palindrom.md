@@ -41,28 +41,6 @@ using namespace std;
 ifstream fin("palindrom.in");
 ofstream fout("palindrom.out");
 
-long long oglindit(int n) {
-    long long r = 0;
-    while (n > 0) {
-        r = r * 10 + n % 10;
-        n /= 10;
-    }
-    return r;
-}
-
-// completez pref cu rasturnatul sau, iar daca mij = 1 ultima cifra nu o mai rastorn
-long long completeaza(int p, int mij) {
-    long long answer = p;
-    if (mij == 1) {
-        p /= 10;
-    }
-    int p10 = 1;
-    while (p10 <= p) {
-        p10 *= 10;
-    }
-    return answer * p10 + oglindit(p);
-}
-
 int main() {
     int c, n;
     fin >> c >> n;
@@ -71,7 +49,13 @@ int main() {
         for (int i = 1; i <= n; i++) {
             int val;
             fin >> val;
-            if (val == oglindit(val)) {
+            long long ogl = 0;
+            int copie = val;
+            while (copie > 0) {
+                ogl = ogl * 10 + copie % 10;
+                copie /= 10;
+            }
+            if (val == ogl) {
                 cnt++;
             }
         }
@@ -81,7 +65,12 @@ int main() {
         for (int i = 1; i <= n; i++) {
             int val;
             fin >> val;
-            long long ogl = oglindit(val);
+            long long ogl = 0;
+            int copie = val;
+            while (copie > 0) {
+                ogl = ogl * 10 + copie % 10;
+                copie /= 10;
+            }
             int nrdif = 0;
             while (val > 0) {
                 if (val % 10 != ogl % 10) {
@@ -112,16 +101,44 @@ int main() {
             if (doar_noua) {
                 fout << val + 2 << " ";
             } else {
-                int primele = 0; // primele k+r cifre
+                int primele = 0;  // primele k+r cifre
                 for (int j = 0; j < nrcifre / 2 + nrcifre % 2; j++) {
                     p10 /= 10;
                     primele = primele * 10 + (val / p10 % 10);
                 }
-                long long answer = 0;
-                if (completeaza(primele, nrcifre % 2) <= val) {
-                    answer = completeaza(primele + 1, nrcifre % 2);
-                } else {
-                    answer = completeaza(primele, nrcifre % 2);
+                // completez primele cu rasturnatul sau, iar daca nrcifre % 2 =
+                // 1 ultima cifra nu o mai rastorn
+                long long answer = primele;
+                copie = primele;
+                if (nrcifre % 2 == 1) {
+                    copie /= 10;
+                }
+                p10 = 1;
+                while (p10 <= copie) {
+                    p10 *= 10;
+                }
+                long long ogl = 0;
+                while (copie > 0) {
+                    ogl = ogl * 10 + copie % 10;
+                    copie /= 10;
+                }
+                answer = answer * p10 + ogl;
+                if (answer <= val) {
+                    primele++;  // incerc acum cu primele + 1
+                    answer = primele;
+                    if (nrcifre % 2 == 1) {
+                        primele /= 10;
+                    }
+                    p10 = 1;
+                    while (p10 <= primele) {
+                        p10 *= 10;
+                    }
+                    ogl = 0;
+                    while (primele > 0) {
+                        ogl = ogl * 10 + primele % 10;
+                        primele /= 10;
+                    }
+                    answer = answer * p10 + ogl;
                 }
                 fout << answer << " ";
             }

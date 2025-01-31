@@ -64,7 +64,20 @@ int main() {
         for (int i = 1; i <= n; i++) {
             int val;
             fin >> val;
-            if (tip(val) == 1) {
+            int maxcif = 0, pozmax = 0, mincif = 10, pozmin = 0, poz = 0;
+            while (val > 0) {
+                poz++;
+                if (val % 10 > maxcif) {
+                    maxcif = val % 10;
+                    pozmax = poz;
+                }
+                if (val % 10 < mincif) {
+                    mincif = val % 10;
+                    pozmin = poz;
+                }
+                val /= 10;
+            }
+            if (pozmin > pozmax) {
                 cnt++;
             }
         }
@@ -74,7 +87,26 @@ int main() {
         for (int i = 1; i <= n; i++) {
             int val;
             fin >> val;
-            int valtip = tip(val);
+            int maxcif = 0, pozmax = 0, mincif = 10, pozmin = 0, poz = 0,
+                copie = val;
+            while (copie > 0) {
+                poz++;
+                if (copie % 10 > maxcif) {
+                    maxcif = copie % 10;
+                    pozmax = poz;
+                }
+                if (copie % 10 < mincif) {
+                    mincif = copie % 10;
+                    pozmin = poz;
+                }
+                copie /= 10;
+            }
+            int valtip;
+            if (pozmin > pozmax) {
+                valtip = 1;
+            } else {
+                valtip = 2;
+            }
             if (i == 1) {
                 prim = valtip;
             } else {

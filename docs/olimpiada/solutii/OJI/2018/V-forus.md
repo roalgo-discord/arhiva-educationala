@@ -35,19 +35,6 @@ using namespace std;
 ifstream fin("forus.in");
 ofstream fout("forus.out");
 
-int nrdivizori(int n) {
-    int cnt = 0;
-    for (int i = 1; i * i <= n; i++) {
-        if (n % i == 0) {
-            cnt++;
-            if (n / i != i) {
-                cnt++;
-            }
-        }
-    }
-    return cnt;
-}
-
 int main() {
     int c, n;
     fin >> c >> n;
@@ -76,13 +63,29 @@ int main() {
             while (p10prefix <= val) {
                 p10prefix *= 10;
             }
-            int p10sufix = 1, sufix = 0, rasp = val, raspdiv = nrdivizori(val);
+            int rasp = val, raspdiv = 0;
+            for (int d = 1; d * d <= val; d++) {
+                if (val % d == 0) {
+                    raspdiv++;
+                    if (val / d != d) {
+                        raspdiv++;
+                    }
+                }
+            }
+            int p10sufix = 1, sufix = 0;
             while (val >= 10) {
                 sufix += p10sufix * (val % 10);
                 p10prefix /= 10;
                 if (val % 10 > 0) {
-                    int nrnou = sufix * p10prefix + val / 10;
-                    int nrdiv = nrdivizori(nrnou);
+                    int nrnou = sufix * p10prefix + val / 10, nrdiv = 0;
+                    for (int d = 1; d * d <= nrnou; d++) {
+                        if (nrnou % d == 0) {
+                            nrdiv++;
+                            if (nrnou / d != d) {
+                                nrdiv++;
+                            }
+                        }
+                    }
                     if (nrdiv < raspdiv) {
                         raspdiv = nrdiv;
                         rasp = nrnou;

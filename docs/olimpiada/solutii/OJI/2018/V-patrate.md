@@ -24,31 +24,29 @@ Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
 #include <fstream>
-	
+
 using namespace std;
-	
+
 ifstream fin("patrate.in");
 ofstream fout("patrate.out");
-	
-int main()
-{
+
+int main() {
     int c, n, i;
-    bool st = true;
-    fin>>c>>n;
+    fin >> c >> n;
 
     if (c == 1) {
-        fout<<(1+2*n)*(1+2*n)-(1+2*(n-1))*(1+2*(n-1));
+        fout << (1 + 2 * n) * (1 + 2 * n)
+                    - (1 + 2 * (n - 1)) * (1 + 2 * (n - 1));
+    } else {
+        int i = 0;
+        while (!((2 * i - 1) * (2 * i - 1) <= n
+                 && n <= (2 * i + 1) * (2 * i + 1) - 1)) {
+            i++;
+        }
+
+        fout << i;
     }
-    else {
-    	i = 0;
-    	while (!((2*i-1)*(2*i-1) <= n && n <= (2*i+1)*(2*i+1)-1)) {
-    		i++;
-    	}
-	
-        fout<<i;
-    }
-	
+
     return 0;
-	
 }
 ```

@@ -36,121 +36,109 @@ using namespace std;
 ifstream fin("cartele.in");
 ofstream fout("cartele.out");
 
-int main()
-{
-    int n, i, h, m, s, baieti = 0, fete = 0, ps, maxim = 0, cs, aux = 0;
-    short cerinta;
-    bool bine = false;
-    char g, c;
-    fin>>cerinta>>n;
-    
+int main() {
+    int cerinta, n;
+    fin >> cerinta >> n;
+
     if (cerinta == 1) {
-        for (i = 0; i < n; i++) {
-            fin>>g>>c>>h>>m>>s;
-            
+        int baieti = 0, fete = 0;
+        for (int i = 0; i < n; i++) {
+            char g, c;
+            int h, m, s;
+            fin >> g >> c >> h >> m >> s;
+
             if (g == 'b') {
                 if (c == 'i') {
                     baieti++;
-                }
-                else {
+                } else {
                     baieti--;
                 }
-            }
-            else {
+            } else {
                 if (c == 'i') {
                     fete++;
-                }
-                else {
+                } else {
                     fete--;
                 }
             }
         }
-        
-        fout<<baieti<<' '<<fete;
-    }
-    else if (cerinta == 2) {
-        for (i = 0; i < n; i++) {
-            fin>>g>>c>>h>>m>>s;
-            
+
+        fout << baieti << ' ' << fete;
+    } else if (cerinta == 2) {
+        int baieti = 0, fete = 0, bine = false, ps, maxim = 0;
+        for (int i = 0; i < n; i++) {
+            char g, c;
+            int h, m, s;
+            fin >> g >> c >> h >> m >> s;
+
             if (g == 'b') {
                 if (c == 'i') {
                     baieti++;
-                }
-                else {
+                } else {
                     baieti--;
                 }
-            }
-            else {
+            } else {
                 if (c == 'i') {
                     fete++;
-                }
-                else {
+                } else {
                     fete--;
                 }
             }
-            
+
             if (bine) {
                 bine = false;
-                cs = s+60*m+60*60*h;
-                maxim += cs-ps;
+                maxim += s + 60 * m + 60 * 60 * h - ps;
             }
-            
+
             if (baieti == fete && baieti != 0) {
                 bine = true;
-                ps = s+60*m+60*60*h;
+                ps = s + 60 * m + 60 * 60 * h;
             }
         }
-        
-        fout<<maxim;
-    }
-    else {
-        for (i = 0; i < n; i++) {
-            fin>>g>>c>>h>>m>>s;
-            
+
+        fout << maxim;
+    } else {
+        int baieti = 0, fete = 0, bine = false, ps, maxim = 0, aux = 0, cs;
+        for (int i = 0; i < n; i++) {
+            char g, c;
+            int h, m, s;
+            fin >> g >> c >> h >> m >> s;
+
             if (g == 'b') {
                 if (c == 'i') {
                     baieti++;
-                }
-                else {
+                } else {
                     baieti--;
                 }
-            }
-            else {
+            } else {
                 if (c == 'i') {
                     fete++;
-                }
-                else {
+                } else {
                     fete--;
                 }
             }
-            
-            if (bine) {
-                cs = s+60*m+60*60*h;
-                
-                if (baieti%2 != 1) {
-                    maxim = max(maxim, cs-ps+aux);
-                }
+
+            if (bine && baieti % 2 == 0) {
+                cs = s + 60 * m + 60 * 60 * h;
+                maxim = max(maxim, cs - ps + aux);
             }
-            
-            if (baieti%2) {
+
+            if (baieti % 2) {
                 if (bine) {
-                    aux += cs-ps;
-                }
-                else {
+                    aux += cs - ps;
+                } else {
                     aux = 0;
                 }
-                
+
                 bine = true;
-                ps = s+60*m+60*60*h;
-            }
-            else {
+                ps = s + 60 * m + 60 * 60 * h;
+            } else {
                 bine = false;
             }
         }
-        
-        fout<<maxim;
+
+        fout << maxim;
     }
-    
+
     return 0;
 }
 ```

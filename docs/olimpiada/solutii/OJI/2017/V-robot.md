@@ -47,88 +47,78 @@ Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 #include <fstream>
 
 using namespace std;
-	
+
 ifstream fin("robot.in");
 ofstream fout("robot.out");
-	
-int main()
-{
+
+int main() {
     short cerinta, comenzi = 0, cifra = 0, aux;
     char comanda;
-    fin>>cerinta;
-	
+    fin >> cerinta;
+
     if (cerinta == 1) {
-        fin>>comanda;
-	
+        fin >> comanda;
+
         while (comanda != 'T') {
             if (comanda == 'A') {
                 comenzi++;
             }
-	
-            fin>>comanda;
+
+            fin >> comanda;
         }
 
-        fout<<comenzi;
-    }
-    else if (cerinta == 2) {
-        fin>>comanda;
+        fout << comenzi;
+    } else if (cerinta == 2) {
+        fin >> comanda;
 
         while (comanda != 'T') {
             if (comanda == 'D') {
-                fin>>comanda;
-                cifra += comanda-'0';
-	
+                fin >> comanda;
+                cifra += comanda - '0';
+
                 if (cifra > 9) {
                     cifra -= 10;
                 }
-            }
-            else if (comanda == 'S') {
-                fin>>comanda;
-                aux = comanda-'0';
-	
+            } else if (comanda == 'S') {
+                fin >> comanda;
+                aux = comanda - '0';
+
                 if (aux > cifra) {
                     aux -= cifra;
-                    cifra = 10-aux;
-                }
-                else {
+                    cifra = 10 - aux;
+                } else {
                     cifra -= aux;
                 }
+            } else {
+                fout << cifra;
             }
-            else {
-                fout<<cifra;
-            }
-            fin>>comanda;
+            fin >> comanda;
         }
-    }
-    else {
-        while (fin>>comanda) {
-            aux = comanda-'0';
-	
+    } else {
+        while (fin >> comanda) {
+            aux = comanda - '0';
+
             if (cifra > aux) {
-                if (cifra-aux <= 10-cifra+aux) {
-                    fout<<'S'<<cifra-aux;
+                if (cifra - aux <= 10 - cifra + aux) {
+                    fout << 'S' << cifra - aux;
+                } else {
+                    fout << 'D' << 10 - cifra + aux;
                 }
-                else {
-                    fout<<'D'<<10-cifra+aux;
-                }
-            }
-            else if (aux > cifra) {
-                if (aux-cifra <= 10-aux+cifra) {
-                    fout<<'D'<<aux-cifra;
-                }
-                else {
-                    fout<<'S'<<10-aux+cifra;
+            } else if (aux > cifra) {
+                if (aux - cifra <= 10 - aux + cifra) {
+                    fout << 'D' << aux - cifra;
+                } else {
+                    fout << 'S' << 10 - aux + cifra;
                 }
             }
             cifra = aux;
-	
-            fout<<'A';
+
+            fout << 'A';
         }
-	
-        fout<<'T';
+
+        fout << 'T';
     }
-	
+
     return 0;
-	
 }
 ```

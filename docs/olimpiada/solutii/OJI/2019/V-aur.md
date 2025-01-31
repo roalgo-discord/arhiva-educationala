@@ -42,50 +42,54 @@ using namespace std;
 ifstream fin("aur.in");
 ofstream fout("aur.out");
 
-int main()
-{
-    long long nr = 0, maxim = 0, put = 1, cnt = 0, cerinta, n, k;
-    char c;
-    fin>>cerinta>>n;
-    
+int main() {
+    int cerinta, n;
+    fin >> cerinta >> n;
+
     if (cerinta == 1) {
-        while (fin>>c) {
+        int cnt = 0;
+        char c;
+        while (fin >> c) {
             cnt++;
         }
-        
-        fout<<cnt;
-    }
-    else if (cerinta == 2) {
-        fin>>k;
-        
-        while (fin>>c) {
+
+        fout << cnt;
+    } else if (cerinta == 2) {
+        int k;
+        fin >> k;
+        int cnt = 0;
+        char c;
+        while (fin >> c) {
             cnt++;
-            
+
             if (cnt == k) {
-                fout<<c;
+                fout << c;
             }
         }
-    }
-    else {
-        fin>>k;
-        
+    } else {
+        int k;
+        fin >> k;
+
+        int put = 1;
         while (k > 0) {
             put *= 10;
             k--;
         }
-        
-        while (fin>>c) {
-            nr = nr*10+c-'0';
-            nr = nr%put;
-            
+
+        int nr = 0, maxim = 0;
+        char c;
+        while (fin >> c) {
+            nr = nr * 10 + c - '0';
+            nr = nr % put;
+
             if (nr > maxim) {
                 maxim = nr;
             }
         }
-        
-        fout<<maxim;
+
+        fout << maxim;
     }
-    
+
     return 0;
 }
 ```
