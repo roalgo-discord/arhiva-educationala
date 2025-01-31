@@ -17,13 +17,15 @@ tags:
 
 # Cerința 1
 
-Vom găsi pentru fiecare număr cifra maximă, a câta cifră este și la fel pentru cifra minimă. Dacă cifra minimă este înainte de cifra unităților, numărul este de tip 1.
+Vom găsi pentru fiecare număr cifra maximă, a câta cifră este și la fel pentru cifra minimă. Dacă cifra minimă este înainte de cifra maximă, numărul este de tip 1.
+
+Pentru a ne ușura implementarea, vom numerota pozițiile de la ultima cifră la prima, deci numărul va fi de tip 1 dacă poziția cifrei minime este mai mare decât poziția cifrei maxime.
 
 # Cerința 2
 
 Din fiecare pereche de numere adiacente (unul lângă celălalt) de același tip, noi trebuie să păstrăm doar unul. Chiar dacă avem trei la rând de același tip, din primele două va rămâne doar unul, iar din aceste două va rămâne doar unul. Aveam două perechi de numere adiacente de același tip și am eliminat două numere.
 
-Deci noi trebuie să calculăm câte perechi de numere adiacente au acelașit tip, fie acest număr $P$. Răspunsul va fi $N - P$. De notat este faptul că numerele $1$ și $N$ sunt adiacente și trebuie să le luăm și pe ele în considerare.
+Deci noi trebuie să calculăm câte perechi de numere adiacente au același tip, fie acest număr $P$. Răspunsul va fi $N - P$ (pentru că ștergem exact $P$ numere, unul din fiecare astfel de pereche, cum am zis și mai sus). De notat este faptul că numerele $1$ și $N$ sunt adiacente și trebuie să le luăm și pe ele în considerare.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

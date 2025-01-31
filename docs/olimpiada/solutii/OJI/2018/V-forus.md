@@ -25,6 +25,8 @@ Observăm că atunci când facem o tăietură, noi vom lua un prefix și un sufi
 
 Numărul de divizori va fi calculat la fel cum este prezentat în articolul de divizibilitate menționat mai sus, iar alipirea se va face înmulțind sufixul cu 10 la puterea numărului de cifre din prefix (pe care îl vom calcula la fel cum facem cu prefixul).
 
+Pentru mai multe detalii vedeți implementarea.
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
