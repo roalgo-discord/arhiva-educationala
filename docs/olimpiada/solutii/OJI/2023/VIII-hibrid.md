@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Hibrid (OJI 2023, clasa a VIII-a)
 
 !!! example "Cunoștințe necesare"
-    - [Maxime și minime](https://edu.roalgo.ro/usor/maxime-minime/)
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    - [Șmenul lui Mars](https://edu.roalgo.ro/usor/partial-sums/#smenul-lui-mars)
+    - [Maxime și minime](../../../../usor/maxime-minime.md)
+    - [Sume parțiale](../../../../usor/partial-sums.md)
+    - [Șmenul lui Mars](../../../../usor/partial-sums.md#smenul-lui-mars)
 
 **Autor soluție**: Andrei Onuț
 

@@ -18,15 +18,15 @@ specifice claselor de gimnaziu.
 
 ## Programa
 
-- [Clasa a V-a](https://edu.roalgo.ro/olimpiada/clasa-V/)
-- [Clasa a VI-a](https://edu.roalgo.ro/olimpiada/clasa-VI/)
-- [Clasa a VII-a](https://edu.roalgo.ro/olimpiada/clasa-VII/)
-- [Clasa a VIII-a](https://edu.roalgo.ro/olimpiada/clasa-VIII/)
-- [Baraj, lot juniori](https://edu.roalgo.ro/olimpiada/baraj-lot-juniori/)
+- [Clasa a V-a](./clasa-V.md)
+- [Clasa a VI-a](./clasa-VI.md)
+- [Clasa a VII-a](./clasa-VII.md)
+- [Clasa a VIII-a](./clasa-VIII.md)
+- [Baraj, lot juniori](./baraj-lot-juniori.md)
 
 ## Sfaturi utile
 
-Pe lângă roadmapul prezentat [aici](https://edu.roalgo.ro/usor/roadmap/), în
+Pe lângă roadmapul prezentat [aici](../usor/roadmap.md), în
 ceea ce privește materia de gimnaziu, recomandăm mai ales rezolvarea problemelor
 date în anii anteriori la olimpiada de informatică, linkuri care pot fi găsite
 în articolele corespunzătoare claselor respective.

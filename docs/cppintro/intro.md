@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Instalarea primului editor C/C++](https://edu.roalgo.ro/cppintro/)
+    - [Instalarea primului editor C/C++](./.md)
 
 !!! note "Observație"
 

@@ -9,7 +9,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Primul program în C++](https://edu.roalgo.ro/cppintro/intro/)
+    - [Primul program în C++](./intro.md)
 
 În acest articol, vom explora metodele de citire și afișare a datelor în
 limbajul C++.
@@ -95,7 +95,7 @@ facilităților care ne permit să citim datele din fișiere.
 
     Dacă avem de citit un număr necunoscut de valori, trebuie să folosim
     structura repetitivă `#!cpp while`, așa cum veți observa în [articolul
-    nostru](https://edu.roalgo.ro/cppintro/loops/#structura-while) pe această
+    nostru](./loops.md#structura-while) pe această
     temă.
 
 ## Afișarea specializată

@@ -9,7 +9,7 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Structura repetitivă](./loops.md)
 
 ## Introducere
 
@@ -284,7 +284,7 @@ sunt de preferat atunci când putem implementa un program folosind ambele metode
 ## Funcții recursive
 
 !!! example "Cunoștințe necesare"
-    - [Funcții recursive](https://edu.roalgo.ro/cppintro/functions/#functii-recursive)
+    - [Funcții recursive](./functions.md#functii-recursive)
 
 Spre deosebire de funcțiile iterative, cele recursive se pot auto-apela și acest
 lucru poate fi foarte folositor atunci când avem nevoie să aflăm răspunsul
@@ -459,7 +459,7 @@ funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții
 lambda.
 
 Vezi pagina dedicată
-[funcțiilor lambda](https://edu.roalgo.ro/cppintro/lambda/).
+[funcțiilor lambda](./lambda.md).
 
 ## Concluzii
 

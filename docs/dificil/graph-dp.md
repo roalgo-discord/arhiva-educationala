@@ -5,9 +5,9 @@ tags:
 ---
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-    - [Dinamici pe arbori](https://edu.roalgo.ro/dificil/tree-dp/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
+    - [Dinamici pe arbori](./tree-dp.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

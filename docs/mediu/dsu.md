@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 !!! note "Conținutul articolului"
 
@@ -621,7 +621,7 @@ int main() {
 Acest articol este menit să introducă audiența în folosirea pădurilor de mulțimi
 disjuncte, punând accentul pe funcționalitățile de bază, fără a menționa alte
 aplicații importante, cum ar fi [algoritmul lui
-Kruskal](https://edu.roalgo.ro/mediu/apcm/#algoritmul-lui-kruskal) sau
+Kruskal](./apcm.md#algoritmul-lui-kruskal) sau
 algoritmii folosiți pentru dynamic connectivity. De asemenea, pădurile de
 mulțimi disjuncte pot fi folosite pentru a scurta foarte mult implementările
 aplicațiilor simple la grafuri.

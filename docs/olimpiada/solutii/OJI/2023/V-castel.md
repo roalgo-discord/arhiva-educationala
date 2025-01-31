@@ -7,7 +7,7 @@ tags:
 # Soluția problemei Castel (OJI 2023, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Eugenia-Cristiana Iordaiche
 

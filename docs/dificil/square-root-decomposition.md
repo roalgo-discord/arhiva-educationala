@@ -8,9 +8,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    - [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Sume parțiale](../usor/partial-sums.md)
+    - [Algoritmi de sortare](../usor/sorting.md)
 
 În multe probleme de algoritmică, suntem nevoiți să împărțim datele în grupe mai
 mici pentru a ajunge să obținem soluții optime sau cel puțin suficient de rapide

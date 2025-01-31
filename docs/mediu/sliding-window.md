@@ -7,11 +7,11 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Two Pointers](https://edu.roalgo.ro/mediu/two-pointers/)
-    - [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    - [Two Pointers](./two-pointers.md)
+    - [Abordarea problemelor cu secvențe](../usor/sequences.md)
 
 Așa cum am menționat în articolul despre [lucrul cu
-secvențe](https://edu.roalgo.ro/usor/sequences/), acestea se regăsesc în foarte
+secvențe](../usor/sequences.md), acestea se regăsesc în foarte
 multe tipuri de probleme, iar deși acolo am discutat în special despre
 problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru
 problemele în care trebuie să iterăm prin ferestre de lungime fixă.

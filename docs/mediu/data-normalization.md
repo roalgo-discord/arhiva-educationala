@@ -7,9 +7,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](../usor/sorting.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 În unele probleme, suntem nevoiți să prelucrăm datele de intrare, astfel încât
 să putem efectua operații de actualizare și interogare ale datelor mult mai

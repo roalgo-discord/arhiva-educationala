@@ -7,9 +7,9 @@ tags:
 # Soluția problemei Poseidon (OJI 2024, clasa a X-a)
 
 !!! example "Cunoștințe necesare"
-    - [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Introducere în combinatorică](https://edu.roalgo.ro/mediu/intro-combinatorics/)
+    - [Algoritmul lui Lee. Flood Fill](../../../../mediu/lee.md)
+    - [Introducere în STL](../../../../cppintro/stl.md)
+    - [Introducere în combinatorică](../../../../mediu/intro-combinatorics.md)
 
 **Autor soluție**: Ioana Gabor
 

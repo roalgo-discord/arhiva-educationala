@@ -7,9 +7,9 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Variabile și tipuri de date simple](https://edu.roalgo.ro/cppintro/data-types/)
-    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Variabile și tipuri de date simple](../cppintro/data-types.md)
+    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
+    - [Structura repetitivă](../cppintro/loops.md)
 
 În informatică și în programare, bitul reprezintă unitatea de bază pentru
 stocarea informațiilor în memorie. Orice activitate desfășurată folosind un

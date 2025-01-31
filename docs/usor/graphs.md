@@ -9,11 +9,11 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Algoritmul lui Lee. Flood Fill](https://edu.roalgo.ro/mediu/lee/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Coada](https://edu.roalgo.ro/mediu/queue/)
-    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Algoritmul lui Lee. Flood Fill](../mediu/lee.md)
+    - [Introducere în STL](../cppintro/stl.md)
+    - [Coada](../mediu/queue.md)
+    - [Stiva](../mediu/stack.md)
+    - [Subprograme](../cppintro/functions.md)
 
 În cele ce urmează vom prezenta o structură de date cu foarte multe aplicații
 atât în algoritmică, cât și în viața de zi cu zi, acestea fiind grafurile.

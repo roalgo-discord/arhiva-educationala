@@ -14,9 +14,9 @@ rezultate tot mai bune la concursuri sau examene?"
 Deși este o întrebare care pare simplă, are un răspuns complicat, iar aici ne
 vom propune să discutăm despre concursuri și examene la modul general, iar
 ulterior, puteți citi
-[acest articol](https://edu.roalgo.ro/olimpiada/olympiad-improvement/) pentru
+[acest articol](../olimpiada/olympiad-improvement.md) pentru
 sfaturi adaptate la olimpiadele de informatică, precum și
-[acest articol](https://edu.roalgo.ro/usor/bac-admitere/), pentru sfaturi
+[acest articol](../usor/bac-admitere.md), pentru sfaturi
 adaptate la examenul de bacalaureat sau pentru admitere.
 
 De-a lungul acestui articol, vom discuta sfaturi generale, precum și greșeli
@@ -24,7 +24,7 @@ frecvente pe care le fac concurenții pe parcursul lor educațional.
 
 De asemenea, vom face o introducere și asupra diferitelor formate ale
 concursurilor, împreună cu particularitățile lor, iar în
-[acest articol](https://edu.roalgo.ro/mediu/handling-pressure/), vom discuta
+[acest articol](./handling-pressure.md), vom discuta
 despre gestionarea presiunii și așteptărilor ce apar pe măsură ce aveți mai
 multă experiență, precum și alte sfaturi utile.
 
@@ -104,7 +104,7 @@ Odată ce știți ce aveți de făcut, trebuie să studiați materia de care ave
 nevoie pentru aceste probe. Într-o situație ideală, studiul vostru este unul
 constant și de lungă durată, dar dacă din diverse motive nu ați învățat la timp
 anumite concepte sau capitole, recomandăm urmarea acestui
-[roadmap](https://edu.roalgo.ro/usor/roadmap/) pentru olimpiadă, iar pentru
+[roadmap](../usor/roadmap.md) pentru olimpiadă, iar pentru
 examenele de bacalaureat și admitere, recomandăm citirea conținuturilor din
 capitolele ușor (și unele din secțiunea mediu) ale acestei arhive.
 
@@ -186,9 +186,9 @@ mai dificile.
 
 ## Articole suplimentare
 
-- [Cum ajungi să iei rezultate tot mai bune la olimpiadă?](https://edu.roalgo.ro/olimpiada/olympiad-improvement/)
-- [Cum să te pregătești pentru bacalaureat și admitere?](https://edu.roalgo.ro/usor/bac-admitere/)
-- [Cum gestionezi presiunea concursurilor?](https://edu.roalgo.ro/mediu/handling-pressure/)
+- [Cum ajungi să iei rezultate tot mai bune la olimpiadă?](../olimpiada/olympiad-improvement.md)
+- [Cum să te pregătești pentru bacalaureat și admitere?](../usor/bac-admitere.md)
+- [Cum gestionezi presiunea concursurilor?](./handling-pressure.md)
 - [Ghid complet pentru concursurile de informatica -
   infoarena](https://www.infoarena.ro/ghid-complet-pentru-concursurile-de-informatica)
 - [Psihologia concursurilor de informatica -

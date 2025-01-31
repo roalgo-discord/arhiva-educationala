@@ -8,9 +8,9 @@ tags:
 **Autor**: Matei Ionescu
 
 !!! example "Cunoștințe necesare"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Introducere în STL](../cppintro/stl.md)
+    - [Șiruri de caractere](../cppintro/strings.md)
 
 ## Ce este un Trie
 

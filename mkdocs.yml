@@ -4,6 +4,7 @@ site_url: https://edu.roalgo.ro
 site_description: >
     O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
     și nu numai.
+use_directory_urls: false
 theme:
     name: material
     features:
@@ -210,6 +211,7 @@ nav:
                 - Deque: mediu/deque.md
           - Introducere în combinatorică: mediu/intro-combinatorics.md
           - Concepte fundamentale de geometrie: mediu/basic-geometry.md
+          - Algoritmi STL: mediu/algorithms.md
           - Altele:
                 - Operații pe biți: mediu/bitwise-ops.md
                 - Numere mari: mediu/bignum.md

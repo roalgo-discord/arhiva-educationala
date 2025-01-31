@@ -6,12 +6,12 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Vectori (tablouri unidimensionale)](./arrays.md)
 
 ## Introducere
 
 După ce v-ați obișnuit cu [tablourile
-unidimensionale](https://edu.roalgo.ro/cppintro/arrays/), a venit timpul să
+unidimensionale](./arrays.md), a venit timpul să
 generalizăm lucrurile și pentru tablourile bidimensionale (cunoscute colocvial
 ca *matrici*) și cele cu mai multe dimensiuni.
 
@@ -381,7 +381,7 @@ Vom lua drept exemplu n = 4.
 
 Se poate observa faptul că după ce facem primul pas și avem n mutări, lungimile
 mutărilor se repetă câte două, astfel putem folosi [vectorii de
-direcție](https://edu.roalgo.ro/mediu/lee/#vectorii-de-directie) pentru a
+direcție](../mediu/lee.md#vectorii-de-directie) pentru a
 implementa aceste mutări foarte ușor, fără mari probleme.
 
 Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema

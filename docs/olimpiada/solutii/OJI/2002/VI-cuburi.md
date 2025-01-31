@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Cuburi (OJI 2002, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    - [Vectori de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/)
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
+    - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
+    - [Sume parțiale](../../../../usor/partial-sums.md)
 
 **Autor**: Ștefan-Cosmin Dăscălescu
 

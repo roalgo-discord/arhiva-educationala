@@ -9,7 +9,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 ## Introducere
 
@@ -20,7 +20,7 @@ neorientate, iar mai apoi vom discuta și despre un tip special de grafuri,
 grafurile funcționale.
 
 Vom începe prin a relua definiția discutată la articolul anterior [despre
-grafuri](https://edu.roalgo.ro/usor/graphs/).
+grafuri](../usor/graphs.md).
 
 !!! info "Ciclu"
 
@@ -37,7 +37,7 @@ grafuri](https://edu.roalgo.ro/usor/graphs/).
 În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea
 ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate.
 Modul de implementare a acestor algoritmi va fi exclusiv folosind structuri și
-metode din [STL](https://edu.roalgo.ro/cppintro/stl/), scopul acestor aplicații
+metode din [STL](../cppintro/stl.md), scopul acestor aplicații
 fiind în special aplicațiile care apar la olimpiadele și concursurile de
 informatică.
 
@@ -368,7 +368,7 @@ int main() {
 Ulterior, în alte probleme precum cele în care avem nevoie de dinamici pe măști,
 vom discuta aplicații avansate ale acestor cicluri, așa cum sunt prezentate [în
 acest
-articol](https://edu.roalgo.ro/mediu/bitmask-dp/#problema-hamiltonian-flights).
+articol](./bitmask-dp.md#problema-hamiltonian-flights).
 
 ## Grafuri funcționale
 
@@ -638,8 +638,8 @@ Lucrul cu cicluri este important în ceea ce privește teoria grafurilor, iar
 observarea diverselor proprietăți pe care ciclurile le au poate fi importantă în
 contextul a multor probleme de teoria grafurilor, dar și ulterior, atunci când
 veți învăța unii algoritmi mai dificili, precum aceia pentru [componentele tare
-conexe](https://edu.roalgo.ro/dificil/componente-tare-conexe/) sau [componentele
-biconexe](https://edu.roalgo.ro/dificil/componente-biconexe/).
+conexe](../dificil/componente-tare-conexe.md) sau [componentele
+biconexe](../dificil/componente-biconexe.md).
 
 ## Probleme suplimentare
 

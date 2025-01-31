@@ -6,7 +6,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 ## Introducere
 

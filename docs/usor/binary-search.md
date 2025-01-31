@@ -9,8 +9,8 @@ tags:
 **Autor**: Andrei-Cristian Ivan, Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](https://edu.roalgo.ro/usor/sorting/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](./sorting.md)
 
 Să presupunem că avem un șir de $N$ numere și memorie astfel încât să putem
 reține _doar_ șirul (plus evident alte variabile, dar nu foarte multe). Noi

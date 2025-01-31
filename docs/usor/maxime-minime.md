@@ -9,7 +9,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Structura repetitivă](../cppintro/loops.md)
 
 ## Introducere
 
@@ -245,7 +245,7 @@ int main() {
 ## Aflarea celor mai mari/mici $k$ valori
 
 Pentru a extinde problema la $k$ valori, va fi necesară cunoașterea
-[vectorilor](https://edu.roalgo.ro/cppintro/arrays/), ceea ce face această
+[vectorilor](../cppintro/arrays.md), ceea ce face această
 aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar
 vom ține cele mai mari/mici $k$ valori într-un vector și vom efectua
 modificările în mod corespunzător.

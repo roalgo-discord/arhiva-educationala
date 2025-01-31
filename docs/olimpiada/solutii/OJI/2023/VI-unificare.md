@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Unificare (OJI 2023, clasa a VI-a)
 
 !!! example "Cunoștințe necesare"
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Sume parțiale](../../../../usor/partial-sums.md)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Raluca Costineanu
 

@@ -8,9 +8,9 @@ tags:
 **Autori**: Ștefan-Cosmin Dăscălescu, Luca Valentin Mureșan
 
 !!! example "Cunoștințe necesare"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
-    - [Range Minimum Query (RMQ)](https://edu.roalgo.ro/dificil/rmq/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Operații pe biți](../mediu/bitwise-ops.md)
+    - [Range Minimum Query (RMQ)](./rmq.md)
 
 ## Ce este un arbore indexat binar?
 
@@ -149,7 +149,7 @@ este poziția în vectorul sortat a celei mai din dreapta valori din șir egală
 valoarea de la poziția curentă.
 
 Deoarece valorile din șir sunt destul de mari, trebuie să [normalizăm
-datele](https://edu.roalgo.ro/arhiva-educationala/mediu/data-normalization/),
+datele](../arhiva-educationala/mediu/data-normalization.md),
 iar mai apoi să folosim AIB pentru a rezolva problema.
 
 ```cpp
@@ -232,9 +232,8 @@ binară în $O(\log n)$.
 
 Pentru a căuta binar în AIB în $O(\log n)$, vom folosi o tehnică similară cu
 [căutarea binară pe
-biți](https://edu.roalgo.ro/usor/binary-search/#cautarea-binara-a-lui-mihai-patrascu),
-verificând dacă adăugarea a $2^k$ poziții în AIB ne-ar duce peste valoarea
-cerută sau nu.
+biți](../usor/binary-search.md#cautarea-binara-a-lui-mihai-patrascu), verificând
+dacă adăugarea a $2^k$ poziții în AIB ne-ar duce peste valoarea cerută sau nu.
 
 ```cpp
 #include <iostream>

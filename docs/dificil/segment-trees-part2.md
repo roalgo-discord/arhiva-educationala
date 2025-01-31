@@ -8,12 +8,12 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
+    - [Arbori de intervale](./segment-trees.md)
 
 ## Introducere
 
 Așa cum ați văzut și în
-[articolul anterior](https://edu.roalgo.ro/dificil/segment-trees/) pe această
+[articolul anterior](./segment-trees.md) pe această
 temă, arborii de intervale se dovedesc a fi o structură de date foarte
 puternică, care ne ajută în foarte multe tipuri de probleme. În cele ce urmează,
 vom prezenta un set de operații adiționale pe care le putem face folosind

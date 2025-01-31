@@ -8,8 +8,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
+    - [Introducere în arbori](./tree-1.md)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 În ceea ce privește rezolvarea problemelor cu arbori, in anumite situatii se
 poate observa faptul că avem nevoie de o calculare inițială a răspunsului

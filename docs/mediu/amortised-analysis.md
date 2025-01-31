@@ -8,8 +8,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
-    - [Stiva](https://edu.roalgo.ro/mediu/stack/)
+    - [Operații pe biți](./bitwise-ops.md)
+    - [Stiva](./stack.md)
 
 ## Ce este analiza amortizată?
 
@@ -56,7 +56,7 @@ complexitatea reală a acestei incrementări este $O(1)$.
 ### Ciurul lui Eratostene
 
 Deși am vorbit în detaliu de acest algoritm și în [articolul său
-specific](https://edu.roalgo.ro/usor/sieve/), nu am discutat foarte mult
+specific](../usor/sieve.md), nu am discutat foarte mult
 complexitatea sa.
 
 ```cpp
@@ -85,7 +85,7 @@ câți pași facem de fapt pentru un $n$ fixat.
 ### Operațiile specifice stivei
 
 Așa cum s-a observat în articolul nostru despre
-[stivă](https://edu.roalgo.ro/usor/sieve/), la un moment dat, putem scoate un
+[stivă](../usor/sieve.md), la un moment dat, putem scoate un
 număr mare de valori, în special dacă valoarea pe care o adăugăm este cea mai
 mare sau cea mai mică de până acum.
 
@@ -103,7 +103,7 @@ complexitatea pentru operații precum găsirea valorilor devine constantă.
 
 ### Păduri de mulțimi disjuncte
 
-Deși intrăm mai mult în detalii [aici](https://edu.roalgo.ro/mediu/dsu/), se
+Deși intrăm mai mult în detalii [aici](./dsu.md), se
 poate demonstra cu ușurință faptul că complexitatea totală a operațiilor, dacă
 aplicăm optimizările descrise acolo devine $O(n \log^{*} n)$, chiar dacă
 operațiile individuale sunt de ordin liniar.

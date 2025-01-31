@@ -7,8 +7,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Structura repetitivă](../cppintro/loops.md)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 ## Fundamente și cunoștințe necesare
 
@@ -107,8 +107,8 @@ for (int i = 2; i <= n; i++) {
 ```
 
 !!! example "Cunoștințe necesare pentru următoarele capitole"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 ## Algoritmi de sortare în $O(n \log n)$
 

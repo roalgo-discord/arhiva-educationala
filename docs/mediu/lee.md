@@ -12,10 +12,10 @@ tags:
 **Autor:** Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
-    - [Coada](https://edu.roalgo.ro/mediu/queue/)
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
+    - [Coada](./queue.md)
+    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 
@@ -61,7 +61,7 @@ cunoașterea cozii este obligatorie, detalii despre modul de implementare, precu
 stivei și a recursivității este obligatorie, detalii despre modul de folosire al
 stivei pot fi găsite [aici](./stack.md), iar informații despre implementarea
 funcțiilor recursive se găsesc
-[aici](https://edu.roalgo.ro/cppintro/functions/).
+[aici](../cppintro/functions.md).
 
 O altă noțiune care se recomandă a fi cunoscută în prealabil este tipul de date
 pair sau o alternativă a acestuia (tuple sau dacă preferați implementările în
@@ -634,7 +634,7 @@ int main() {
 Deși acest algoritm este folosit în principal pentru problemele de drumuri
 minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum
 se precizează în [articolul nostru despre drumuri
-minime](./shortest-path.md/#0-1-bfs).
+minime](./shortest-path.md.md#0-1-bfs).
 
 ## Lee cu structuri de date
 

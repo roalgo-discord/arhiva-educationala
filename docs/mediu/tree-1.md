@@ -8,7 +8,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 ## Introducere
 

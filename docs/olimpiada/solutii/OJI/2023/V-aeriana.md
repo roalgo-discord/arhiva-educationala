@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Aeriana (OJI 2023, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Divizibilitatea](https://edu.roalgo.ro/usor/divisibility/)
-    - [Prelucrarea cifrelor](https://edu.roalgo.ro/usor/digits-manipulation/)
+    - [Divizibilitatea](../../../../usor/divisibility.md)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Ioana Gabor
 

@@ -9,8 +9,8 @@ tags:
 **Autori**: Susan, Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](https://edu.roalgo.ro/cppintro/basic-math/)
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
+    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza 10, format
 din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu

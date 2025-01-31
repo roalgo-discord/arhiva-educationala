@@ -14,14 +14,14 @@ conținuturi în arhiva noastră.
 
 Pe lângă conținuturile de mai jos, programa include și materia clasei a șaptea,
 care poate fi accesată în [articolul
-corespunzător](https://edu.roalgo.ro/olimpiada/clasa-VII/).
+corespunzător](./clasa-VII.md).
 
 !!! note "Observație"
     Următoarele capitole sunt atât pentru etapa județeană, cât și pentru etapa națională.
 
-## Șiruri de caractere. Funcții specifice - [link articol](https://edu.roalgo.ro/cppintro/strings/)
+## Șiruri de caractere. Funcții specifice - [link articol](../cppintro/strings.md)
 
-## Generarea elementelor combinatoriale prin algoritmi de tip succesor - [link articol](https://edu.roalgo.ro/mediu/backtracking/)
+## Generarea elementelor combinatoriale prin algoritmi de tip succesor - [link articol](../mediu/backtracking.md)
 
 - Submulțimi  
 - Produs cartezian
@@ -33,11 +33,11 @@ corespunzător](https://edu.roalgo.ro/olimpiada/clasa-VII/).
 !!! note "Observație"
     Următoarele capitole sunt doar pentru etapa națională
 
-## Coada. Aplicații specifice - [link articol](https://edu.roalgo.ro/mediu/queue/)
+## Coada. Aplicații specifice - [link articol](../mediu/queue.md)
 
-## Coada cu dublă prioritate (deque). Aplicații specifice - [link articol](https://edu.roalgo.ro/mediu/deque/)
+## Coada cu dublă prioritate (deque). Aplicații specifice - [link articol](../mediu/deque.md)
 
-## Elemente de geometrie - [link articol](https://edu.roalgo.ro/mediu/basic-geometry/)
+## Elemente de geometrie - [link articol](../mediu/basic-geometry.md)
 
 - sistemul de coordonate cartezian în plan
 - puncte în planul cartezian

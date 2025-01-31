@@ -7,7 +7,7 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
 
 !!! example "Cunoștințe necesare"
-    - [Structura repetitivă](https://edu.roalgo.ro/cppintro/loops/)
+    - [Structura repetitivă](./loops.md)
 
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).
@@ -216,7 +216,7 @@ algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi
 complexitate $O(n^2)$, $O(n \log n)$ și multe alte clase de complexități.
 
 Pentru mai multe detalii, recomandăm citirea articolului pe acest subiect, pe
-care îl puteți găsi [aici](https://edu.roalgo.ro/usor/sorting/).
+care îl puteți găsi [aici](../usor/sorting.md).
 
 ## Concluzii
 

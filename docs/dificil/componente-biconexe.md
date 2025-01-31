@@ -9,9 +9,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-    - [Dinamici pe arbori](https://edu.roalgo.ro/dificil/tree-dp/)
-    - [Cicluri în grafuri](https://edu.roalgo.ro/mediu/cycles/)
+    - [Introducere în teoria grafurilor](../usor/graphs.md)
+    - [Dinamici pe arbori](./tree-dp.md)
+    - [Cicluri în grafuri](../mediu/cycles.md)
 
 În cele ce urmează, vom prezenta componentele biconexe, algoritmul prin care le
 aflăm și cum putem folosi aceste informații în probleme.

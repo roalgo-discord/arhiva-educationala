@@ -9,10 +9,10 @@ tags:
 **Autor**: Radu Mocănașu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)  
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
-    - [Păduri de mulțimi disjuncte (DSU)](https://edu.roalgo.ro/mediu/dsu/)
+    - [Introducere în arbori](../mediu/tree-1.md)  
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Introducere în STL](../cppintro/stl.md)
+    - [Păduri de mulțimi disjuncte (DSU)](../mediu/dsu.md)
 
 ## Introducere
 

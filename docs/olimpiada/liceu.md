@@ -18,14 +18,14 @@ specifice claselor de liceu.
 
 ## Programa
 
-- [Clasa a IX-a](https://edu.roalgo.ro/olimpiada/clasa-IX/)
-- [Clasa a X-a](https://edu.roalgo.ro/olimpiada/clasa-X/)
-- [Clasele XI-XII](https://edu.roalgo.ro/olimpiada/clasa-XI-XII/)
-- [Baraj, lot seniori](https://edu.roalgo.ro/olimpiada/baraj-lot-seniori/)
+- [Clasa a IX-a](./clasa-IX.md)
+- [Clasa a X-a](./clasa-X.md)
+- [Clasele XI-XII](./clasa-XI-XII.md)
+- [Baraj, lot seniori](./baraj-lot-seniori.md)
 
 ## Sfaturi utile
 
-Pe lângă roadmapul prezentat [aici](https://edu.roalgo.ro/usor/roadmap/), în
+Pe lângă roadmapul prezentat [aici](../usor/roadmap.md), în
 ceea ce privește materia de liceu, recomandăm mai ales rezolvarea problemelor
 date în anii anteriori la olimpiada de informatică, linkuri care pot fi găsite
 în articolele corespunzătoare claselor respective.
@@ -41,7 +41,7 @@ pentru a reuși la concurs.
 
 Spre deosebire de clasele de gimnaziu, participarea la alte competiții este mult
 mai importantă, o listă de concursuri la care puteți participa poate fi găsită
-[aici](https://edu.roalgo.ro/mediu/contest-list/).
+[aici](../mediu/contest-list.md).
 
 ## Concluzii
 

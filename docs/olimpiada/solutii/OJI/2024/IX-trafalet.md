@@ -7,8 +7,8 @@ tags:
 # Soluția problemei Trafalet (OJI 2024, clasa a IX-a)
 
 !!! example "Cunoștințe necesare"
-    - [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-    - [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
+    - [Sume parțiale](../../../../usor/partial-sums.md)
+    - [Abordarea problemelor cu secvențe](../../../../usor/sequences.md)
 
 **Autor soluție**: Toma Ariciu
 

@@ -8,8 +8,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Operații pe biți](./bitwise-ops.md)
 
 Atunci când vorbim de tipuri de probleme pentru care apelăm la soluții bazate pe
 metoda programării dinamice, dinamicile pe măști pe biți (_bitmask dp_) se

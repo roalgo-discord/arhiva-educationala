@@ -7,9 +7,9 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în arbori](https://edu.roalgo.ro/mediu/tree-1/)  
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Tehnica celor două DFS-uri (rerooting)](https://edu.roalgo.ro/mediu/rerooting/)
+    - [Introducere în arbori](../mediu/tree-1.md)  
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Tehnica celor două DFS-uri (rerooting)](../mediu/rerooting.md)
 
 ## Introducere
 
@@ -462,7 +462,7 @@ pas, vom ține cont de numărul de factori primi și de suma parțială
 a răspunsurilor pentru numerele care sunt multiplu ale acelui divizor.
 
 Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea
-unui [PINEX](https://edu.roalgo.ro/mediu/pinex/), deci $O(n \cdot m \cdot DMAX)$,
+unui [PINEX](../mediu/pinex.md), deci $O(n \cdot m \cdot DMAX)$,
 unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform
 precalculării anterioare, iar acest număr $DMAX$ este egal cu 31 deoarece
 orice număr de la 1 la $m$ are cel mult 5 factori primi distincți.

@@ -7,8 +7,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-    - [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
+    - [Introducere în programarea dinamică](../usor/intro-dp.md)
+    - [Șiruri de caractere](../cppintro/strings.md)
 
 Problema subșirului comun maximal este o altă problemă foarte importantă care
 are aplicații în domenii diverse precum genetică, bioinformatică și procesarea

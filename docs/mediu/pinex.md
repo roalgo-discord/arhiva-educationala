@@ -8,8 +8,8 @@ tags:
 **Autor**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
 
 !!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](https://edu.roalgo.ro/usor/divisibility/)
-    - [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
+    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
+    - [Operații pe biți](./bitwise-ops.md)
 
 În unele probleme de algoritmică, suntem nevoiți să calculăm numărul de
 răspunsuri care se potrivesc cu o anumită regulă, dar numărarea directă a
@@ -271,20 +271,20 @@ i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu 1 în $C _i
     vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule
     au suma elementelor egală cu $exp_K$. Această formulă este studiată în
     articolul de [Stars and
-    Bars](https://edu.roalgo.ro/mediu/intro-combinatorics/?h=stars#stars-and-bars).
+    Bars](./intro-combinatorics.md?h=stars#stars-and-bars).
     Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
 
 !!! note "Observație"
 
     Descompunerea în factori primi o vom face folosind numerele prime, pe care
     le vom precalcula folosind [ciurul lui
-    Eratostene](https://edu.roalgo.ro/usor/sieve/).
+    Eratostene](../usor/sieve.md).
 
 !!! note "Observație"
 
     Unele calcule pot fi foarte mari, mai mari decât poate stoca tipul **long
     long**. De aceea, vom folosi
-    [__int128](https://edu.roalgo.ro/cppintro/data-types/#tipul-__int128).
+    [__int128](../cppintro/data-types.md#tipul-__int128).
 
 Sursa de 100 de puncte:
 

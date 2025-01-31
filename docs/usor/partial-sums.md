@@ -10,8 +10,8 @@ tags:
 **Autor**: Andrei-Cristian Ivan
 
 !!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](https://edu.roalgo.ro/cppintro/arrays/)
-    - [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
+    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
+    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
 
 ## Problema inițială
 

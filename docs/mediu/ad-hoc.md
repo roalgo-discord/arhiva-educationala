@@ -102,7 +102,7 @@ la barajul de juniori din 2016.
 !!! note "Observație"
 
     Soluția acestei probleme este explicată în arhiva noastră
-    [aici](https://edu.roalgo.ro/usor/simulating-solution/#problema-exemplu-asort-baraj-2016-juniori)
+    [aici](../usor/simulating-solution.md#problema-exemplu-asort-baraj-2016-juniori)
 
 ### Folosiți-vă de diferite restricții speciale din enunț (dacă apar asemenea restricții)
 

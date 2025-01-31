@@ -7,9 +7,9 @@ tags:
 # Soluția problemei ramen (OJI 2018, clasele XI-XII)
 
 !!! example "Cunoștințe necesare"
-    - [Introducere în metoda Greedy](https://edu.roalgo.ro/usor/greedy/)
-    - [Algoritmi de sortare](https://edu.roalgo.ro/usor/sorting/)
-    - [Introducere în STL](https://edu.roalgo.ro/cppintro/stl/)
+    - [Introducere în metoda Greedy](../../../../usor/greedy.md)
+    - [Algoritmi de sortare](../../../../usor/sorting.md)
+    - [Introducere în STL](../../../../cppintro/stl.md)
 
 **Autor soluție**: Ștefan-Cosmin Dăscălescu
 

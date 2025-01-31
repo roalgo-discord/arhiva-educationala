@@ -7,8 +7,8 @@ tags:
 **Autor**: Andrei Iuoraș
 
 !!! example "Cunoștințe necesare"
-    - [Subprograme](https://edu.roalgo.ro/cppintro/functions/)
-    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
+    - [Subprograme](../cppintro/functions.md)
+    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](./pow-log.md)
 
 ## Problema
 
@@ -21,7 +21,7 @@ $B \ne 0$, egalitatea $\frac{A}{B} \mod{M} = \frac{A \mod{M}}{B \mod{M}}
 \mod{M}$ nu este întotdeauna adevărată.
 
 Se recomandă citirea informațiilor din articolul despre [matematică de
-bază](https://edu.roalgo.ro/cppintro/basic-math/) înainte de a citi noțiunile de
+bază](../cppintro/basic-math.md) înainte de a citi noțiunile de
 aici.
 
 ## Ce este inversul modular?

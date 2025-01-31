@@ -6,9 +6,9 @@ tags:
 ---
 **Autor**: Raul Ardelean
 
-!!! example "Cunoștințe necesare"   
-    - [Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/)
-    - [Arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/)
+!!! example "Cunoștințe necesare"
+    - [Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.md)
+    - [Arbori de intervale](../dificil/segment-trees.md)
 
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri
 și update-uri într-un timp eficient pe un **arbore**.
@@ -151,7 +151,7 @@ Pentru operația de tip update, putem opera doar pe lanțul unde se află nodul 
 Pentru operația de tip query, va trebuie să parcurgem mai multe lanțuri până
 când vom ajunge cu cele două noduri în același lanț. Această operațiune este
 chiar cea de la
-[Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
+[Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.md).
 
 O implementare de 100 de puncte poate fi citită mai jos:
 
@@ -345,8 +345,8 @@ int main() {
 ### Problema [Struct arbore{}](https://kilonova.ro/problems/2844/)
 
 Această problemă necesită cunoștințe de la
-[string hashing](https://edu.roalgo.ro/mediu/hashing/), respectiv
-[Lowest common ancestor (LCA)](https://edu.roalgo.ro/dificil/lowest-common-ancestor/).
+[string hashing](../mediu/hashing.md), respectiv
+[Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.md).
 
 În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $O(1)$
 valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va
