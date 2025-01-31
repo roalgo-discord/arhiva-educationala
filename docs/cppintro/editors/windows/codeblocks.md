@@ -9,27 +9,30 @@ hide:
 
 Pentru a instala Code::Blocks:
 
-1.  Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
-    binary release".
+1. Mergi pe site-ul oficial, la secțiunea Downloads și apoi apasă "Download the
+   binary release".
 
-    [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
+     [Link direct :material-open-in-new:](https://www.codeblocks.org/downloads/binaries/#imagesoswindows48pnglogo-microsoft-windows){ .md-button .md-button--primary }
 
-2.  Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
-    recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
-    `codeblocks-20.03-nosetup.zip`.
+2. Alege `codeblocks-20.03-setup.exe`. Ambele mirror-uri sunt bune, însă
+   recomand Sourceforge. Dacă vrei să ai o instalare portabilă, alege
+   `codeblocks-20.03-nosetup.zip`.
 
     [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download){ .md-button .md-button--primary }
-
+  
     !!! warning "Atenție"
-
-        Nu alege variantele cu MinGW. Acele installere vin cu o versiune învechită de
-        MinGW (vin cu GCC 8.1, mai precis). Pentru cea mai bună experiență, avem
-        nevoie de cel mai nou compilator. [Vezi instrucțiuni aici :material-open-in-new:](./../../compilers/windows/mingw64.md) pentru cum poți instala ultima versiune de GCC.
-
-3.  După ce s-a descărcat, rulează installerul (care ar trebui să fie numit
-    `codeblocks-20.03-setup.exe`). Procesul nu durează mult, de cele mai multe
-    ori este un minut. Setările implicite sunt bune, așa că poți apăsa Next până
-    când s-a terminat de instalat.
+  
+        Nu alege variantele cu MinGW. Acele installere vin cu o versiune
+        învechită de MinGW (vin cu GCC 8.1, mai precis). Pentru cea mai bună
+        experiență, avem nevoie de cel mai nou compilator.
+         
+        [Vezi instrucțiuni aici :material-open-in-new:](./../../compilers/windows/mingw64.md)
+        pentru cum poți instala ultima versiune de GCC.
+  
+3. După ce s-a descărcat, rulează installerul (care ar trebui să fie numit
+   `codeblocks-20.03-setup.exe`). Procesul nu durează mult, de cele mai multe
+   ori este un minut. Setările implicite sunt bune, așa că poți apăsa Next până
+   când s-a terminat de instalat.
 
 ## Configurare și utilizare
 
@@ -59,25 +62,25 @@ Ești întâmpinat de această fereastră albă orbitoare:
 
 Pașii pentru a crea un proiect sunt:
 
-1.  Fie te poți duce în bara de meniu și să alegi File > New > Project, fie poți
+1. Fie te poți duce în bara de meniu și să alegi File > New > Project, fie poți
     din Start here (prima fereastră care apare) și apoi apasă Create a new
     project.
-2.  Indiferent de metoda aleasă, ajungi la această fereastră:
+2. Indiferent de metoda aleasă, ajungi la această fereastră:
     <figure markdown="span">
     ![](./codeblocks/cb-new-project.png){ loading=lazy }
     </figure>
     Alege prin dublu clic Console application (engl. Aplicație în consolă).
-3.  În acest stadiu, vei fi întâmpinat de "wizard". Acesta te va ghida în
+3. În acest stadiu, vei fi întâmpinat de "wizard". Acesta te va ghida în
     crearea unei aplicații noi. Așa arată:
     <figure markdown="span">
     ![](./codeblocks/image.png){ loading=lazy }
     </figure>
     Apasă Next.
-4.  De aici, alege C++ (este o introducere de C++, la urma urmei) și apasă Next.
+4. De aici, alege C++ (este o introducere de C++, la urma urmei) și apasă Next.
     <figure markdown="span">
     ![](./codeblocks/image-1.png){ loading=lazy }
     </figure>
-5.  Aici este pasul unde alegi titlul proiectului, precum și folderul
+5. Aici este pasul unde alegi titlul proiectului, precum și folderul
     proiectului.
     <figure markdown="span">
     ![](./codeblocks/image-3.png){ loading=lazy }
@@ -98,9 +101,10 @@ Pașii pentru a crea un proiect sunt:
     ![](./codeblocks/image-4.png){ loading=lazy }
     </figure>
 
-6.  Aici este pasul unde alegem compilatorul. Dacă ai instalat GCC și îl
+6. Aici este pasul unde alegem compilatorul. Dacă ai instalat GCC și îl
 recunoaște corespunzător, atunci prima opțiune va fi GNU GCC Compiler. Lasă tot
 bifat așa cum e implicit și apasă Next și apoi Finish la următorul ecran.
+
 <figure markdown="span">
 ![](./codeblocks/image-5.png){ loading=lazy }
 </figure>
@@ -185,30 +189,35 @@ motive tehnice care nu sunt în controlul proiectului Code::Blocks, nu o să ave
 vreodată interfața cu temă întunecată (pe alte platforme însă se poate), dar
 putem schimba tema editorului. Pentru a rezolva această problemă:
 
-1.  Mergi la
-    [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes).
-    Acolo o să vezi mai multe teme.
-2.  Descarcă următorul fișier de configurare (care este exact cel de pe site,
-    însă prezervat pentru conveniența cititorului):
-    
-    [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
-    
-3.  **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
-    vreo fereastră ascunsă.
-4.  Caută locația unde este instalat Code::Blocks și deschide folderul
-    corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
-5.  Ai un executabil numit `cb_share_config.exe`. Rulează-l.
-6.  În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
-    descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la
-    `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
-7.  În partea stângă, bifează tot din listă. Asigură-te că fereastra ta arată
+1. Mergi la
+   [această pagină arhivată](http://web.archive.org/web/20200225073702/http://wiki.codeblocks.org/index.php?title=Syntax_highlighting_custom_colour_themes).
+   Acolo o să vezi mai multe teme.
+2. Descarcă următorul fișier de configurare (care este exact cel de pe site,
+   însă prezervat pentru conveniența cititorului):
+
+     [colour_themes.conf :material-download:](./codeblocks/colour_themes.conf){ .md-button .md-button--primary }
+
+3. **Închide Code::Blocks**. Acest pas este critic, deci asigură-te că nu ai
+   vreo fereastră ascunsă.
+4. Caută locația unde este instalat Code::Blocks și deschide folderul
+   corespunzător. Ar trebui să fie în `C:\Program Files\CodeBlocks`.
+5. Ai un executabil numit `cb_share_config.exe`. Rulează-l.
+6. În stânga (la sursă), selectează fișierul `colour_themes.conf` pe care l-ai
+   descărcat mai înainte. În dreapta, alege fișierul implicit. Acesta se află la
+   `C:\Users\{nume utilizator}\AppData\Roaming\CodeBlocks\default.conf`.
+7. În partea stângă, bifează tot din listă. Asigură-te că fereastra ta arată
     așa:
+
     <figure markdown="span">
     ![](./codeblocks/image-9.png){ loading=lazy }
     </figure>
-8.  Apasă Transfer și răspunde cu Yes când ți se cere.
-9.  Apasă pe Save.
+
+8. Apasă Transfer și răspunde cu Yes când ți se cere.
+
+9. Apasă pe Save.
+
 10. Închide programul și deschide Code::Blocks înapoi.
+
 11. Alege o temă din Settings > Editor > Syntax highlighting. Eu personal
     folosesc Son of Obsidian, dar asta rămâne la latitudinea ta.
 
@@ -276,11 +285,11 @@ Totuși, există câteva scurtături pe care le vom seta noi:
 
     - ++f9++ pentru a compila și rula codul;
     - ++shift+alt+f5++ (sau ce ți-ai setat) pentru a formata codul. Chiar insist
-      pe această scurtătură, și ar trebui să o rulezi la fiecare schimbare.
-      În majoritatea timpului tu vei ajunge să citești codul tău sau codul altora,
-      deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu stă
-      să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba. Nu pot
-      sublinia destul importanța acestui lucru.
+      pe această scurtătură, și ar trebui să o rulezi la fiecare schimbare. În
+      majoritatea timpului tu vei ajunge să citești codul tău sau codul altora,
+      deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu
+      stă să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba.
+      Nu pot sublinia destul importanța acestui lucru.
 
 ## Formatare
 
@@ -346,9 +355,9 @@ void Foo()
 
 La Formatting schimbăm următoarele setări:
 
-1.  Selectăm "Break one-line headers". Un "header" în acest context este orice
-    instrucțiune (`if`, `while`, `else` etc.). Cu această opțiune, și cele pe
-    care le-am setat mai înainte, transformăm:
+1. Selectăm "Break one-line headers". Un "header" în acest context este orice
+   instrucțiune (`if`, `while`, `else` etc.). Cu această opțiune, și cele pe
+   care le-am setat mai înainte, transformăm:
 
     ```cpp
     void Foo(bool isFoo)
@@ -377,9 +386,9 @@ La Formatting schimbăm următoarele setări:
     Acoladele fac intenția noastră mai clară și ne permit să adăugăm mai multe
     instrucțiuni în viitor fără mult efort. În plus, este mai uniform.
 
-2.  Selectăm "Closes whitespace in the angle brackets of template definitions".
-    Pe vremuri, din cauza unui defect în standard și în compilatoare, nu puteai
-    scrie asta:
+2. Selectăm "Closes whitespace in the angle brackets of template definitions".
+   Pe vremuri, din cauza unui defect în standard și în compilatoare, nu puteai
+   scrie asta:
 
     ```cpp
     Stack<int, List<int>> stack1;
@@ -392,15 +401,16 @@ La Formatting schimbăm următoarele setări:
     ```
 
     Acum toate compilatoarele au evoluat, deci este sigur să activezi opțiunea
-    asta. 2. Activează "Enable line breaking". Acest lucru garantează faptul că
-    o linie va fi împărțită dacă trece de o lungime anume. Eu setez valoarea la
-    80 de obicei, însă 120 este acceptabil dacă ai mai mult spațiu orizontal.
+    asta. De asemenea, activează "Enable line breaking". Acest lucru garantează
+    faptul că o linie va fi împărțită dacă trece de o lungime anume. Eu setez
+    valoarea la 80 de obicei, însă 120 este acceptabil dacă ai mai mult spațiu
+    orizontal.
 
 La Padding selectăm:
 
-1.  Pad empty lines around header blocks (e.g. 'if', 'while'...). Ce face
-    setarea pe scurt este că înconjoară cu o linie nouă înainte de și după
-    fiecare header. Transformă:
+1. Pad empty lines around header blocks (e.g. 'if', 'while'...). Ce face setarea
+   pe scurt este că înconjoară cu o linie nouă înainte de și după fiecare
+   header. Transformă:
 
     ```cpp
     isFoo = true;
@@ -426,29 +436,34 @@ La Padding selectăm:
     isBar = false;
     ```
 
-2.  Insert space padding around operators. Așa cum zice și numele, pune spații
-    în jurul operatorilor. În loc de `1+1`, devine `1 + 1`.
-3.  Insert space padding between a header and the following paren. Dacă activăm
-    asta, "dezlipim" paranteza de `if`/`while`/...
-4.  Remove extra space padding around parentheses. Combinat cu ultima setare,
-    avem un singur spațiu. Ele transformă:
+2. Insert space padding around operators. Așa cum zice și numele, pune spații în
+   jurul operatorilor. În loc de `1+1`, devine `1 + 1`.
+3. Insert space padding between a header and the following paren. Dacă activăm
+   asta, "dezlipim" paranteza de `if`/`while`/...
+4. Remove extra space padding around parentheses. Combinat cu ultima setare,
+   avem un singur spațiu. Ele transformă:
+
     ```cpp
     if ( isFoo( ( a+2 ), b ) ) {
         bar ( a, b );
     }
     ```
+
     în
+
     ```cpp
     if (isFoo((a + 2), b)) {
         bar(a, b);
     }
     ```
+
     Această opțiune nu va șterge spațiile în plus în jurul operatorilor, din
     păcate. Există opțiunea în versiunile beta de Code::Blocks, însă nu sunt
     stabile.
-5.  Setăm Pointer alignment și Reference alignment la Name. S-au purtat războaie
-    seculare pe această temă, însă le prefer pe cât posibil să fie la fel,
-    indiferent de alinierea aleasă.
+
+5. Setăm Pointer alignment și Reference alignment la Name. S-au purtat războaie
+   seculare pe această temă, însă le prefer pe cât posibil să fie la fel,
+   indiferent de alinierea aleasă.
 
 Acum că am făcut aceste setări, acest exemplu:
 
