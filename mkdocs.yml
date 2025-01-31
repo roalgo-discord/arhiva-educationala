@@ -853,6 +853,20 @@ nav:
                                         - Nestemate: olimpiada/solutii/OJI/2024/XI-XII-nestemate.md
                                         - Acoperire: olimpiada/solutii/OJI/2024/XI-XII-acoperire.md
 
+not_in_nav: |
+  licenta.md
+  codes/cppintro/strings/ascii.md
+  cppintro/linux.md
+  cppintro/macOS.md
+  cppintro/windows.md
+  cppintro/compilers/*/*.md
+  cppintro/editors/*/*.md
+  mediu/index.md
+  mediu/important-formulas.md
+  olimpiada/solutii/baraj-lot/baraj-*.md
+  olimpiada/solutii/baraj-lot/lot-*.md
+  usor/intro-cpp.md
+
 extra_javascript:
     - javascripts/katex.js
     - https://unpkg.com/katex@0/dist/katex.min.js
