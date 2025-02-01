@@ -13,7 +13,7 @@ tags:
 
 ## Introducere
 
-Ai rezolvat foarte multe probleme și poate ți-ai pus întrebarea: "Oare dacă nu
+Ai rezolvat foarte multe probleme și poate ți-ai pus întrebarea: "Oare nu
 cumva pot și eu să creez o problemă la rândul meu?" Răspunsul este afirmativ,
 oricine poate crea o problemă nouă, dar așa cum se întâmplă și atunci când ne
 gândim la idei pentru rezolvarea problemelor, nu toate ideile sunt bune (a se
