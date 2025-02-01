@@ -9,7 +9,7 @@ tags:
 # Soluția problemei aur (OJI 2019, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation.html)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Traian Mihai Danciu
 
@@ -20,7 +20,7 @@ tags:
 
 Putem citi toate numerele și să calculăm pentru fiecare câte cifre are (notăm acest număr cu $ncf$). Acum trebuie să aflăm suma $ncf$-urilor.
 
-Mai ușor, putem citi caracter cu caracter cifrele (citind cu `while (fin >> c)` într-o variabilă c de tip char, așa cum este menționat și în [acest](../../../../../cppintro/loops.html) articol) și să numărăm câte sunt. Vom folosi pentru celelalte cerințe această metodă, deoarece este mai ușoară decât să citim numerele și să le prelucrăm cifrele.
+Mai ușor, putem citi caracter cu caracter cifrele (citind cu `while (fin >> c)` într-o variabilă c de tip char, așa cum este menționat și în [acest](../../../../cppintro/loops.md) articol) și să numărăm câte sunt. Vom folosi pentru celelalte cerințe această metodă, deoarece este mai ușoară decât să citim numerele și să le prelucrăm cifrele.
 
 ## Cerința 2
 

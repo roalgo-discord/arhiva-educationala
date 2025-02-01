@@ -31,7 +31,7 @@ corespunzător](./clasa-VI.md).
 - Tehnica Two Pointers - [link
   articol](../mediu/two-pointers.md)
 - Tablouri de diferențe - Difference Arrays - [link
-  articol](../usor/partial-sums/?h=#smenul-lui-mars)
+  articol](../usor/partial-sums.md?h=#smenul-lui-mars)
 - Determinarea secvenței de sumă maximă - [link
   articol](../usor/sequences.md#subsecventa-de-suma-maxima)
 - Determinarea elementului majoritar
@@ -60,13 +60,13 @@ corespunzător](./clasa-VI.md).
 ## Operații cu numere mari - [link articol](../mediu/bignum.md)
 
 - Adunarea numerelor mari - [link
-  articol](../mediu/bignum.md#adunarea-numerelor-mari/)
+  articol](../mediu/bignum.md?h=#adunarea-numerelor-mari)
 - Scăderea numerelor mari - [link
-  articol](../mediu/bignum.md#scaderea-numerelor-mari)
+  articol](../mediu/bignum.md?h=#scaderea-numerelor-mari)
 - Înmulțirea unui număr mare cu un număr natural - [link
-  articol](../mediu/bignum.md#inmultirea-unui-numar-mare-cu-un-numar-mic)
+  articol](../mediu/bignum.md?h=#inmultirea-unui-numar-mare-cu-un-numar-mic)
 - Împărțirea cu rest a unui număr mare la un număr natural nenul - [link
-  articol](../mediu/bignum.md#impartirea-unui-numar-mare-la-un-numar-mic)
+  articol](../mediu/bignum.md?h=#impartirea-unui-numar-mare-la-un-numar-mic)
 
 ## Algoritmul de exponențiere rapidă - [link articol](../mediu/pow-log.md#ridicarea-la-putere-in-timp-logaritmic)
 

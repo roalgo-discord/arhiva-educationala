@@ -634,7 +634,7 @@ int main() {
 Deși acest algoritm este folosit în principal pentru problemele de drumuri
 minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum
 se precizează în [articolul nostru despre drumuri
-minime](./shortest-path.md.md#0-1-bfs).
+minime](./shortest-path.md#0-1-bfs).
 
 ## Lee cu structuri de date
 

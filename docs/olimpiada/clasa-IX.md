@@ -64,14 +64,12 @@ conținuturi în arhiva noastră.
   maximale cu o anumită proprietate, numărarea secvențelor, determinarea
   secvenței de sumă maximă, prelucrarea secvențelor de lungime fixată, tehnica
   Two Pointers, tablouri de diferențe - Difference Arrays)
-  - Probleme cu secvențe: - [link
-    articol](../mediu/sequences.md)
+  - Probleme cu secvențe: - [link articol](../usor/sequences.md)
   - Determinarea secvenței de sumă maximă - [link
-    articol](../mediu/sequences.md#subsecventa-de-suma-maxima)
-  - Prelucrarea secvențelor de lungime fixată - [link
-    articol](../mediu/sliding-window.md)
-  - Tehnica Two Pointers - [link
-    articol](../mediu/two-pointers.md)
+    articol](../usor/sequences.md#subsecventa-de-suma-maxima)
+  - Prelucrarea secvențelor de lungime fixată -
+    [link articol](../mediu/sliding-window.md)
+  - Tehnica Two Pointers - [link articol](../mediu/two-pointers.md)
   - Tablouri de diferențe - Difference Arrays - [link
     articol](../usor/partial-sums.md?h=#smenul-lui-mars)
 
@@ -104,8 +102,7 @@ conținuturi în arhiva noastră.
 ## Utilizarea funcțiilor din biblioteca STL pentru sortare și căutare
 
 - Introducere STL - [link articol](../cppintro/stl.md)
-- Funcția pentru sortare - [link
-  articol](../usor/sorting.md#functia-stdsort)
+- Funcția pentru sortare - [link articol](../usor/sorting.md?h=#functia-stdsort)
 - Funcții pentru căutarea binară - [link
   articol](../usor/binary-search.md#functii-de-sistem-pentru-cautarea-binara)
 

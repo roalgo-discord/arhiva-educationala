@@ -149,7 +149,7 @@ este poziția în vectorul sortat a celei mai din dreapta valori din șir egală
 valoarea de la poziția curentă.
 
 Deoarece valorile din șir sunt destul de mari, trebuie să [normalizăm
-datele](../arhiva-educationala/mediu/data-normalization.md),
+datele](../mediu/data-normalization.md),
 iar mai apoi să folosim AIB pentru a rezolva problema.
 
 ```cpp

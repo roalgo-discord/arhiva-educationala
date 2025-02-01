@@ -7,8 +7,8 @@ tags:
 # Soluția problemei pic (OJI 2016, clasa a IX-a)
 
 !!! example "Cunoștințe necesare"
-    - [Simularea soluției](../usor/simulating-solution.md)
-    - [Căutarea binară](../usor/binary-search.md)
+    - [Simularea soluției](../../../../usor/simulating-solution.md)
+    - [Căutarea binară](../../../../usor/binary-search.md)
 
 
 **Autor soluție**: Ștefan-Cosmin Dăscălescu

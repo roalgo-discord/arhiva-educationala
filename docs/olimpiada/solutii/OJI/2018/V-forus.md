@@ -7,8 +7,8 @@ tags:
 # Soluția problemei forus (OJI 2018, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation.html)
-    - [Divizibilitate](../../../../../usor/divisibility.html)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
+    - [Divizibilitate](../../../../usor/divisibility.md)
 
 **Autor soluție**: Traian Mihai Danciu
 

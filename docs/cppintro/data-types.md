@@ -19,8 +19,8 @@ Ulterior, voi împărți în cele ce urmează tipurile de date simple în funcț
 valorile care sunt păstrate.
 
 Totuși, unele tipuri de date mai complexe, cum ar fi
-[vectorii](../usor/arrays.md) sau
-[matricile](../usor/matrices.md), vor fi discutate în
+[vectorii](../cppintro/arrays.md) sau
+[matricile](../cppintro/matrices.md), vor fi discutate în
 articolele lor corespunzătoare.
 
 ## Variabile

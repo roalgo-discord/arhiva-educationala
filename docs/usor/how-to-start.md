@@ -54,23 +54,22 @@ precum și unde le găsiți la noi în arhivă. Pentru fiecare secțiune, recoma
 
 ### Elemente de limbaj
 
-- [Instalarea primului editor/IDE C++](../cppintro.md)
-- [Primul program în C++](../cppintro.mdintro/)
-- [Variabile și tipuri de date
-  simple](../cppintro.mddata-types/)
+- [Instalarea primului editor/IDE C++](../cppintro/index.md)
+- [Primul program în C++](../cppintro/intro.md)
+- [Variabile și tipuri de date simple](../cppintro/data-types.md)
 - [Operatori și expresii. Cunoștințe matematice de
-  bază](../cppintro.mdbasic-math/)
-- [Citirea și afișarea datelor](../cppintro.mdinput-output/)
-- [Structura alternativă](../cppintro.mdconditions-if/)
-- [Structura repetitivă](../cppintro.mdloops/)
-- [Coding Style](../cppintro.mdcoding-style/)
-- [Vectori (tablouri unidimensionale)](../cppintro.mdarrays/)
+  bază](../cppintro/basic-math.md)
+- [Citirea și afișarea datelor](../cppintro/input-output.md)
+- [Structura alternativă](../cppintro/conditions-if.md)
+- [Structura repetitivă](../cppintro/loops.md)
+- [Coding Style](../cppintro/coding-style.md)
+- [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 ### Algoritmi și tehnici introductive
 
 - [Prelucrarea cifrelor unui
   număr](./digits-manipulation.md)
-- [Maxime și minime](./maxime-minime)
+- [Maxime și minime](./maxime-minime.md)
 - [Generarea șirurilor de
   numere](./generarea-sirurilor.md)
 - [Divizibilitatea](./divisibility.md)

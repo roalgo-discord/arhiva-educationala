@@ -8,7 +8,7 @@ tags:
 # Soluția problemei palindrom (OJI 2016, clasa a V-a)
 
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../../usor/digits-manipulation.html)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Traian Mihai Danciu
 

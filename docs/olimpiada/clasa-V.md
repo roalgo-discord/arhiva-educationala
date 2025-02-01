@@ -22,7 +22,7 @@ conținuturi în arhiva noastră.
 ## Algoritmi elementari
 
 - Tipuri simple de date. Tipul întreg (pe 4 octeți), tipul logic - [link
-  articol](../cppintro/data-types/?h=dat#tipuri-de-date-ce-pastreaza-numere-intregi)
+  articol](../cppintro/data-types.md?h=dat#tipuri-de-date-ce-pastreaza-numere-intregi)
 - Structura liniară, alternativă și repetitivă:
   - Structura liniară: [link
     articol](../cppintro/basic-math.md)

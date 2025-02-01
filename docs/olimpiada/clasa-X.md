@@ -42,7 +42,7 @@ care poate fi accesată în [articolul corespunzător](./clasa-IX.md).
 ## Operații cu numere mari - [link articol](../mediu/bignum.md)
 
 - Adunarea numerelor mari - [link
-  articol](../mediu/bignum.md#adunarea-numerelor-mari/)
+  articol](../mediu/bignum.md#adunarea-numerelor-mari)
 - Scăderea numerelor mari - [link
   articol](../mediu/bignum.md#scaderea-numerelor-mari)
 - Înmulțirea unui număr mare cu un număr natural - [link

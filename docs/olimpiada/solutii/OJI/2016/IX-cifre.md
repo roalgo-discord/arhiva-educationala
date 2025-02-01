@@ -6,12 +6,10 @@ tags:
 
 # Soluția problemei cifre (OJI 2016, clasa a IX-a)
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
 !!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../usor/digits-manipulation.md)
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
-    - [Maxime și minime](../usor/digits-manipulation.md)
+    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
+    - [Operatori și expresii. Cunoștințe matematice de bază](../../../../cppintro/basic-math.md)
+    - [Maxime și minime](../../../../usor/digits-manipulation.md)
 
 **Autor soluție**: Ștefan-Cosmin Dăscălescu
 
