@@ -202,7 +202,7 @@ puteți consulta [aici](https://kilonova.ro/posts/problem-guide#checker) și
 exemple specifice pentru kilonova.
 
 ```cpp
---8<-- "dificil/problemsetting/generator.cpp"
+--8<-- "dificil/problemsetting/checker.cpp"
 ```
 
 Deși testlib.h nu dă erori în ceea ce privește generarea datelor, scrierea unui
@@ -237,3 +237,4 @@ chiar la concursurile marca RoAlgo.
 - [Polygon.Codeforces Tutorial - A Guide to Problem Preparation [Part 1]](https://quangloc99.github.io/posts/polygon-codeforces-tutorial/)
 - [Sectiunea testlib - codeforces](https://codeforces.com/testlib)
 - [On problemsetting - codeforces](https://codeforces.com/blog/entry/70178)
+- [Problemsetting - oiwiki](https://oi-wiki.org/contest/problemsetting/)
