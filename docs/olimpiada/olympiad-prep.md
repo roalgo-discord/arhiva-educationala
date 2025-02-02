@@ -1,14 +1,14 @@
 ---
+id: olympiad-prep
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - olympiad-info
 tags:
     - meta
     - sfaturi
     - olimpiada
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Informații despre olimpiada de informatică](./olympiad-info.md)
 
 ## Introducere
 

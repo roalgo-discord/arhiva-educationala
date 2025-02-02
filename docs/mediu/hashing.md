@@ -1,17 +1,17 @@
 ---
+id: hashing
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - strings
+    - pow-log
+    - modular-inverse
+    - bitwise-ops
 tags:
     - hashing
     - siruri de caractere
     - matematica
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Șiruri de caractere](../cppintro/strings.md)
-    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](./pow-log.md)
-    - [Invers modular](./modular-inverse.md)
-    - [Operații pe biți](./bitwise-ops.md)
 
 În informatică și în algoritmică, de multe ori avem de-a face cu stocarea unei
 cantități semnificative de informație fără să putem să o stocăm în intregime,

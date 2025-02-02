@@ -1,18 +1,20 @@
 ---
+id: strings
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Denisa-Maria Ursu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - data-types
+  - arrays
+  - matrices
 tags:
-    - C++
-    - implementare
-    - optimizare
-    - siruri de caractere
+  - C++
+  - implementare
+  - optimizare
+  - siruri de caractere
 toc_depth: 3
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Denisa-Maria Ursu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Variabile și tipuri de date simple](./data-types.md)
-    - [Vectori (tablouri unidimensionale)](./arrays.md)
-    - [Matrici (tablouri bidimensionale)](./matrices.md)
 
 ## Introducere
 
@@ -23,12 +25,11 @@ vom analiza ambele opțiuni, incluzând avantajele și dezavantajele lor.
 
 ## Tipul `#!cpp char` și tabelul ASCII
 
-Așa cum ați văzut când am discutat despre [tipurile de
-date](./data-types.md), limbajul C++ dispune de tipul
-de date `#!cpp char`, utilizat pentru a stoca caractere. Deși valorile stocate
-într-un `#!cpp char` sunt în intervalul [-128, 127] (pentru reprezentări cu
-semn), cele mai utilizate caractere sunt cele afișabile, care aparțin
-intervalului [32, 127].
+Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.md),
+limbajul C++ dispune de tipul de date `#!cpp char`, utilizat pentru a stoca
+caractere. Deși valorile stocate într-un `#!cpp char` sunt în intervalul
+[-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt
+cele afișabile, care aparțin intervalului [32, 127].
 
 !!! note "Codificarea caracterelor"
 

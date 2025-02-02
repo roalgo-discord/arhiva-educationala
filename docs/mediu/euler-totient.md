@@ -1,14 +1,14 @@
 ---
+id: euler-totient
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - divisibility
 tags:
     - matematica
     - divizori
     - precalculari
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
 
 ## Introducere
 

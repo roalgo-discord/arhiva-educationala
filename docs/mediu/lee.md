@@ -1,4 +1,13 @@
 ---
+id: lee
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Teodor Ștefan Manolea
+prerequisites:
+    - arrays
+    - matrices
+    - queue
+    - functions
 tags:
     - structuri de date
     - Coadă
@@ -8,14 +17,6 @@ tags:
     - BFS
     - DFS
 ---
-
-**Autor:** Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
-    - [Coada](./queue.md)
-    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

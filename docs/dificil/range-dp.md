@@ -1,13 +1,13 @@
 ---
+id: range-dp
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
 tags:
     - programare dinamica
     - intervale
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
 atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru

@@ -1,20 +1,20 @@
 ---
+id: tree-1
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
 tags:
     - arbori
     - grafuri
     - diametru
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
-
 ## Introducere
 
 Arborii sunt un tip particular de grafuri, aceștia fiind denumirea folosită
 pentru a defini grafurile neorientate conexe și aciclice. Se poate remarca
-faptul că reprezentarea grafică a acestora seamană foarte mult cu configurația
+faptul că reprezentarea grafică a acestora seamănă foarte mult cu configurația
 unui arbore din pădure, diferența majoră fiind faptul că rădăcina arborelui este
 plasată de obicei în partea de sus a desenului, în contrast cu poziția reală a
 unei rădăcini. Nu suntem totuși la ora de biologie, așa că vom continua cu

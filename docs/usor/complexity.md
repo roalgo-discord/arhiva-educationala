@@ -1,14 +1,14 @@
 ---
+id: complexity
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - loops
 tags:
     - notiuni de baza
     - memorie
     - timp
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
 
 ## Introducere
 

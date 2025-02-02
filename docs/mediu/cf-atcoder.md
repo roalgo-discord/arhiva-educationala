@@ -1,12 +1,13 @@
 ---
+id: cf-atcoder
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - practice
     - concursuri
     - rating
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

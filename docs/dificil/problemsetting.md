@@ -1,15 +1,15 @@
 ---
+id: problemsetting
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - debugging
 tags:
     - meta
     - sfaturi
     - comisie
     - olimpiada
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Cum repari o soluție greșită?](../mediu/debugging.md)
 
 ## Introducere
 

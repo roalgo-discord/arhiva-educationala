@@ -1,4 +1,12 @@
 ---
+id: intro-combinatorics
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - pow-log
+    - modular-inverse
+    - pinex
 tags:
     - matematica
     - combinatorica
@@ -7,13 +15,6 @@ tags:
     - aranjamente
     - combinari
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"  
-    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](./pow-log.md)
-    - [Invers modular](./modular-inverse.md)
-    - [Principiul includerii și excluderii](./pinex.md)
 
 Combinatorica este una din ramurile principale ale matematicii, precum și una
 din cele patru ramuri din care se dau problemele de la olimpiada internațională

@@ -1,14 +1,14 @@
 ---
+id: sorting
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - loops
+    - arrays
 tags:
     - sortare
     - optimizare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 ## Fundamente și cunoștințe necesare
 

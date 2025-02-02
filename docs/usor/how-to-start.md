@@ -1,4 +1,7 @@
 ---
+id: how-to-start
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - roadmap
@@ -6,10 +9,7 @@ tags:
     - olimpiada
     - bacalaureat
     - interviuri
- 
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

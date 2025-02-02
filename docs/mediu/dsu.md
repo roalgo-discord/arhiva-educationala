@@ -1,14 +1,14 @@
 ---
+id: dsu
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
 tags:
     - vectori 
     - arbori 
     - multimi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 !!! note "Conținutul articolului"
 

@@ -1,16 +1,16 @@
 ---
+id: trie
+author:
+    - Matei Ionescu
+prerequisites:
+    - functions
+    - stl
+    - strings
 tags:
     - arbori
     - structuri de date
     - siruri de caractere
 ---
-
-**Autor**: Matei Ionescu
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
-    - [Introducere în STL](../cppintro/stl.md)
-    - [Șiruri de caractere](../cppintro/strings.md)
 
 ## Ce este un Trie
 

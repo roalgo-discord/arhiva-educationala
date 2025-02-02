@@ -1,18 +1,17 @@
 ---
+id: fast-io
+author:
+  - Ștefan-Cosmin Dăscălescu
+prerequisites:
+  - input-output
+  - strings
 tags:
-    - input
-    - output
-    - implementare
-    - parsare
-    - optimizare
+  - input
+  - output
+  - implementare
+  - parsare
+  - optimizare
 ---
-
-!!! example "Cunoștințe necesare"
-    - [Citirea și afișarea datelor](./input-output.md)
-    - [Șiruri de caractere](./strings.md)
-
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

@@ -1,16 +1,17 @@
 ---
+id: conditions-if
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - data-types
+  - basic-math
 tags:
-    - C++
-    - introducere
-    - if
-    - structura alternativa
+  - C++
+  - introducere
+  - if
+  - structura alternativa
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Variabile și tipuri de date simple](./data-types.md)
-    - [Operatori și expresii. Cunoștințe matematice de bază](./basic-math.md)
 
 ## Introducere și instrucțiunile if..else, respectiv switch-case
 

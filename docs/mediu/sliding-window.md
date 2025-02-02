@@ -1,14 +1,14 @@
 ---
+id: sliding-window
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - two-pointers
+    - sequences
 tags:
     - secvente
     - precalculare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Two Pointers](./two-pointers.md)
-    - [Abordarea problemelor cu secvențe](../usor/sequences.md)
 
 Așa cum am menționat în articolul despre [lucrul cu
 secvențe](../usor/sequences.md), acestea se regăsesc în foarte

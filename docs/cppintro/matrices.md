@@ -1,12 +1,14 @@
 ---
+id: matrices
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - arrays
 tags:
-    - matrici
-    - implementare
+  - matrici
+  - implementare
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](./arrays.md)
 
 ## Introducere
 

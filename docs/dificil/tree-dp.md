@@ -1,15 +1,15 @@
 ---
+id: tree-dp
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - tree-1
+    - intro-dp
+    - rerooting
 tags:
     - programare dinamica
     - arbori
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în arbori](../mediu/tree-1.md)  
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Tehnica celor două DFS-uri (rerooting)](../mediu/rerooting.md)
 
 ## Introducere
 

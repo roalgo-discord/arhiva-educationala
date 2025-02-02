@@ -1,16 +1,17 @@
 ---
+id: problemsetting
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Traian Mihai Danciu
+prerequisites:
+    - graphs
+    - dsu
 tags:
     - grafuri
     - greedy
     - arbori
     - sortare
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
-    - [Păduri de mulțimi disjuncte (DSU)](./dsu.md)
 
 În diverse probleme de grafuri, suntem nevoiți să alegem o mulțime de muchii
 care formează un graf conex, iar costul să fie cât mai mic. În cele mai multe

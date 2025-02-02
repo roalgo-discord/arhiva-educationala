@@ -1,10 +1,11 @@
 ---
+id: schoolwork
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - sfaturi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

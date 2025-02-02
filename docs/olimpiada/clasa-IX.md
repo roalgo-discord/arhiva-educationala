@@ -14,6 +14,7 @@ SEPI](https://sepi.ro/assets/upload-file/oni2024/Programa%20pentru%20olimpiada%2
 conținuturi în arhiva noastră.
 
 !!! note "Observație"
+
     Următoarele capitole sunt atât pentru etapa județeană, cât și pentru etapa
     națională.
 
@@ -25,7 +26,10 @@ conținuturi în arhiva noastră.
   - Structura alternativă: [link articol](../cppintro/conditions-if.md)
   - Structura repetitivă: [link articol](../cppintro/loops.md)
 - Prelucrarea cifrelor numerelor naturale scrise în baza 10 - [link articol](../usor/digits-manipulation.md)
-- Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc prin algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea fracțiilor, descompunerea numerelor în factori primi) - [link articol](../usor/divisibility.md)
+- Divizibilitate (divizorii numerelor naturale, numere prime, determinarea cmmdc
+  prin algoritmul lui Euclid, cmmmc, numere prime între ele, simplificarea
+  fracțiilor, descompunerea numerelor în factori primi) -
+  [link articol](../usor/divisibility.md)
 - Calculul unor expresii (de exemplu, factorial, ridicare la putere) - [link articol](../cppintro/basic-math.md)
 - Algoritmul de exponențiere rapidă - [link articol](../mediu/pow-log.md#ridicarea-la-putere-in-timp-logaritmic)
 

@@ -1,4 +1,9 @@
 ---
+id: toposort
+author:
+    - Radu Mocănașu
+prerequisites:
+    - graphs
 tags:
     - grafuri
     - grafuri orientate
@@ -6,11 +11,6 @@ tags:
     - sortare
     - recursivitate
 ---
-
-**Autor**: Radu Mocănașu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 ## Teorie
 

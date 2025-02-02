@@ -1,16 +1,16 @@
 ---
+id: stl-sorting-searching
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - greedy
+    - sorting
+    - stl
 tags:
     - meta
     - greedy
     - structuri de date
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în metoda Greedy](../usor/greedy.md)
-    - [Algoritmi de sortare](../usor/sorting.md)
-    - [Introducere în STL](../cppintro/stl.md)
 
 ## Introducere
 

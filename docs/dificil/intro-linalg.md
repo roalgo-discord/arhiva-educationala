@@ -1,11 +1,11 @@
 ---
+id: intro-linalg
+prerequisites:
+    - basic-math
 tags:
     - matematica
     - algebra liniara
 ---
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

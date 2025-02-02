@@ -1,4 +1,5 @@
 ---
+id: olympiad-improvement
 tags:
     - meta
     - sfaturi

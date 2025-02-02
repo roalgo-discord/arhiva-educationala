@@ -1,4 +1,10 @@
 ---
+id: partial-sums
+author:
+    - Andrei-Cristian Ivan
+prerequisites:
+    - arrays
+    - matrices
 tags:
     - sume partiale
     - implementare
@@ -6,12 +12,6 @@ tags:
     - difference arrays
     - mars
 ---
-
-**Autor**: Andrei-Cristian Ivan
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
 
 ## Problema inițială
 

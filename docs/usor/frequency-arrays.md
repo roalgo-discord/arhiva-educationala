@@ -1,14 +1,15 @@
 ---
+id: frequency-arrays
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - arrays
 tags:
     - vectori 
     - frecventa
     - implementare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 ## Introducere
 

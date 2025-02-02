@@ -1,4 +1,5 @@
 ---
+id: z-function
 tags:
     - implementare
     - siruri de caractere

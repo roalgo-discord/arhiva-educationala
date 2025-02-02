@@ -1,15 +1,15 @@
 ---
+id: algorithms
+author:
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - sorting
+    - stl
+    - lambda
 tags:
     - algoritmi
     - stl
 ---
-
-**Autor**: Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Algoritmi de sortare](../usor/sorting.md)
-    - [Introducere în STL](../cppintro/stl.md)
-    - [Funcții lambda](../cppintro/lambda.md)
 
 Până în acest punct, am învățat câțiva algoritmi, de la
 [sortare](../usor/sorting.md), [sume parțiale](../usor/partial-sums.md) și

@@ -1,10 +1,12 @@
 ---
+id: roadmap
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - sfaturi
     - pas cu pas
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

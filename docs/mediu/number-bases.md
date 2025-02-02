@@ -1,13 +1,13 @@
 ---
+id: number-bases
+prerequisites:
+    - divisibility
+    - basic-math
 tags:
     - implementare
     - biti
     - optimizare
 ---
-
-!!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

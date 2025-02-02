@@ -1,14 +1,14 @@
 ---
+id: handling-pressure
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - olympiad-prep
+    - contest-improvement
 tags:
     - meta
     - sfaturi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Cum te pregătești pentru olimpiadă?](../olimpiada/olympiad-prep.md)
-    - [Cum ajungi tot mai bun la concursuri?](./contest-improvement.md)
 
 ## Introducere
 

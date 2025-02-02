@@ -1,15 +1,15 @@
 ---
+id: two-pointers
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - sequences
+    - binary-search
 tags:
     - vectori
     - sortare
     - cautari
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Abordarea problemelor cu secvențe](../usor/sequences.md)
-    - [Căutarea binară](../usor/binary-search.md)
 
 ## Fundamente și cunoștințe necesare
 

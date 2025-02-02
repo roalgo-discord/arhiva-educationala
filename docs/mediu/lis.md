@@ -1,17 +1,17 @@
 ---
+id: lis
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
+    - binary-search
+    - segment-trees
 tags:
     - programare dinamica
     - structuri de date
     - optimizari
     - subsiruri
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Căutarea binară (pentru primul algoritm)](../usor/binary-search.md)
-    - [Arbori de intervale (pentru cel de-al doilea algoritm)](../dificil/segment-trees.md)
 
 În cele ce urmează, vom prezenta problema aflării celui mai lung subșir
 crescător dintr-un șir, prezentând o serie de algoritmi care rezolvă această

@@ -1,13 +1,14 @@
 ---
+id: intro
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - index
 tags:
-    - C++
-    - introducere
+  - C++
+  - introducere
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Instalarea primului editor C/C++](./index.md)
 
 !!! note "Observație"
 

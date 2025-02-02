@@ -1,10 +1,11 @@
 ---
+id: contest-improvement
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - sfaturi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

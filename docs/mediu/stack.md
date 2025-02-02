@@ -1,14 +1,15 @@
 ---
+id: stack
+author:
+    - Traian Mihai Danciu
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - arrays
+    - stl
 tags:
     - stiva
     - structuri de date
 ---
-
-**Autori**: Traian Mihai Danciu, Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Introducere în STL](../cppintro/stl.md)
 
 În multe probleme în care lucrăm cu secvențe de valori, suntem nevoiți să
 procesăm valorile pe rând, asemenea unui teanc de obiecte. Pentru a formaliza

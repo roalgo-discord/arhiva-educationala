@@ -1,15 +1,15 @@
 ---
+id: bitsets
+author:
+    - Matei Ionescu
+prerequisites:
+    - stl
+    - bitwise-ops
 tags:
     - implementare
     - biti
     - optimizare
 ---
-
-**Autor**: Matei Ionescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în STL](../cppintro/stl.md)
-    - [Operații pe biți](../mediu/bitwise-ops.md)
 
 ## Introducere
 

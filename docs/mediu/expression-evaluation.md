@@ -1,17 +1,17 @@
 ---
+id: expression-evaluation
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - arrays
+    - stack
+    - functions
 tags:
     - stiva
     - expresii
     - implementare
     - recursivitate
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Stiva](./stack.md)
-    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

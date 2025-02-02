@@ -1,15 +1,15 @@
 ---
+id: sequences
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - loops
+    - arrays
 tags:
     - secvente
     - sortare
     - ad-hoc
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
 
 În algoritmică, dar și în alte domenii, suntem nevoiți de multe ori să lucrăm cu
 secvențe de valori și se impune folosirea unor abordări specifice pentru a

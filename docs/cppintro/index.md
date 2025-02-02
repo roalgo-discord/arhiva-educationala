@@ -1,15 +1,14 @@
 ---
-title: "Introducere în C++"
+id: index
+title: Introducere în C++
 hide:
   - navigation
   - toc
 ---
 
-**Autor**: Ștefan-Iulian Alecu, Ștefan-Cosmin Dăscălescu
-
-Bine ai venit! Sunt Ștefan și te voi asista în călătoria ta de a învăța C++.
-Acest curs a fost gândit de la bun început să fie practic și adaptat la limbajul
-C++ modern (C++11 și mai încolo).
+Bine ai venit! Te vom asista în călătoria ta de a învăța C++. Acest curs a fost
+gândit de la bun început să fie practic și adaptat la limbajul C++ modern (C++11
+și mai încolo).
 
 ## Compilator și editor local
 

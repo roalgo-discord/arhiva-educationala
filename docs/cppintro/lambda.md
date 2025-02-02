@@ -1,11 +1,12 @@
 ---
+id: lambda
+author:
+  - Susan
 tags:
-    - C++
-    - functii
-    - lambda
+  - C++
+  - functii
+  - lambda
 ---
-
-**Autor**: Susan
 
 ## Un ghid pentru începători despre funcții lambda în C++
 

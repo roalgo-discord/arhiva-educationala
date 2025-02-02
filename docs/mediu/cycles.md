@@ -1,15 +1,15 @@
 ---
+id: cycles
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
 tags:
     - C++
     - implementare
     - grafuri
     - cicluri
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 ## Introducere
 

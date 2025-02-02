@@ -1,14 +1,15 @@
 ---
+id: mitm
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - stl
+    - bitwise-ops
 tags:
     - optimizari
     - precalculare
     - brute force
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în STL](../cppintro/stl.md)
-    - [Operații pe biți](./bitwise-ops.md)
 
 ## Introducere
 

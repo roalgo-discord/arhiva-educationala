@@ -1,14 +1,14 @@
 ---
+id: basic-math
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - data-types
 tags:
     - matematica
     - aritmetica
     - C++
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Variabile și tipuri de date simple](./data-types.md)
 
 ## Introducere
 

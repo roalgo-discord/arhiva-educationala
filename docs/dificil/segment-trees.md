@@ -1,16 +1,16 @@
 ---
+id: segment-trees
+author:
+    - Alexandru Toma
+prerequisites:
+    - functions
+    - sequences
+    - rmq
 tags:
     - structuri de date
     - arbori
     - queryuri
 ---
-
-**Autor**: Alexandru Toma
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
-    - [Abordarea problemelor cu secvențe](../usor/sequences.md)
-    - [Range Minimum Query (RMQ)](./rmq.md)
 
 În competițiile de informatică și la olimpiadă se întâlnesc adesea probleme care
 implică operarea pe subsecvențele unui vector. Spre exemplu, cum putem calcula

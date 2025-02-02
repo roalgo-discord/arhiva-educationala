@@ -1,16 +1,17 @@
 ---
+id: fenwick-tree
+author: 
+  - Ștefan-Cosmin Dăscălescu
+  - Luca Valentin Mureșan
+prerequisites:
+    - functions
+    - bitwise-ops
+    - rmq
 tags:
     - structuri de date
     - arbori indexati binar
     - optimizare
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Luca Valentin Mureșan
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
-    - [Operații pe biți](../mediu/bitwise-ops.md)
-    - [Range Minimum Query (RMQ)](./rmq.md)
 
 ## Ce este un arbore indexat binar?
 

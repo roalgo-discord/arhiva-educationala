@@ -1,14 +1,15 @@
 ---
+id: hld
+author:
+    - Raul Ardelean
+prerequisites:
+    - lowest-common-ancestor
+    - segment-trees
 tags:
     - structuri de date
     - arbori
     - optimizare
 ---
-**Autor**: Raul Ardelean
-
-!!! example "Cunoștințe necesare"
-    - [Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.md)
-    - [Arbori de intervale](../dificil/segment-trees.md)
 
 **Heavy-light decomposition** este o tehnică ce ne ajută să efectuăm query-uri
 și update-uri într-un timp eficient pe un **arbore**.

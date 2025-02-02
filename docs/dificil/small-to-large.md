@@ -1,18 +1,18 @@
 ---
+id: small-to-large
+author:
+    - Radu Mocănașu
+prerequisites:
+    - tree-1
+    - intro-dp
+    - stl
+    - dsu
 tags:
     - structuri de date
     - arbori 
     - STL
     - dsu
 ---
-
-**Autor**: Radu Mocănașu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în arbori](../mediu/tree-1.md)  
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Introducere în STL](../cppintro/stl.md)
-    - [Păduri de mulțimi disjuncte (DSU)](../mediu/dsu.md)
 
 ## Introducere
 

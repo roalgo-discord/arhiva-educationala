@@ -1,16 +1,16 @@
 ---
+id: square-root-decomposition
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - arrays
+    - partial-sums
+    - sorting
 tags:
     - structuri de date
     - optimizari
     - precalculari
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Sume parțiale](../usor/partial-sums.md)
-    - [Algoritmi de sortare](../usor/sorting.md)
 
 În multe probleme de algoritmică, suntem nevoiți să împărțim datele în grupe mai
 mici pentru a ajunge să obținem soluții optime sau cel puțin suficient de rapide

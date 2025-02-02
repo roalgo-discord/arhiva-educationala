@@ -1,13 +1,13 @@
 ---
+id: bac-admitere
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - schoolwork
 tags:
     - meta
     - sfaturi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Cum ajungi să stăpânești materia de la clasă?](./schoolwork.md)
 
 ## Introducere
 

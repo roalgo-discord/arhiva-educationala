@@ -1,14 +1,14 @@
 ---
+id: modular-inverse
+author:
+    - Andrei Iuoraș
+prerequisites:
+    - functions
+    - pow-log
 tags:
     - matematica
     - combinatorica
 ---
-
-**Autor**: Andrei Iuoraș
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
-    - [Aritmetică modulară. Ridicare la putere în timp logaritmic](./pow-log.md)
 
 ## Problema
 

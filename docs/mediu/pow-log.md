@@ -1,16 +1,16 @@
 ---
+id: pow-log
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - basic-math
+    - divisibility
+    - functions
 tags:
     - algebra
     - optimizari
     - modulo
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
-    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

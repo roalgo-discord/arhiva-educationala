@@ -1,15 +1,15 @@
 ---
+id: shortest-path
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
 title: Algoritmi pentru drumuri minime
 tags:
     - grafuri
     - drumuri minime
     - dijsktra
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
 
 Aflarea drumului minim între două sau mai multe locații este una dintre cele mai
 importante probleme pe care oamenii au fost nevoiți să le rezolve de-a lungul

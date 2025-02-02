@@ -1,11 +1,14 @@
 ---
+id: game-theory
 tags:
     - jocuri
     - nim
     - sprague-grundy
 ---
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
+[github](https://github.com/roalgo-discord/arhiva-educationala) sau pe
+[serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
 
 Mai jos găsiți resurse pe care le puteți citi până atunci.
 

@@ -1,16 +1,16 @@
 ---
+id: lowest-common-ancestor
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - tree-1
+    - rmq
+    - stl
 tags:
     - arbori
     - grafuri
     - structuri de date
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în arbori](../mediu/tree-1.md)
-    - [Range Minimum Query (RMQ)](./rmq.md)
-    - [Introducere în STL](../cppintro/stl.md)
 
 ## Introducere
 

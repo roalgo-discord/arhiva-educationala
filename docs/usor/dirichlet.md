@@ -1,14 +1,14 @@
 ---
+id: dirichlet
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - basic-math
 tags:
     - matematica
     - perioada
     - optimizare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
 
 ## Introducere
 

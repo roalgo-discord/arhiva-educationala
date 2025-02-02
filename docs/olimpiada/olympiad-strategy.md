@@ -1,14 +1,14 @@
 ---
+id: olympiad-strategy
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - olympiad-prep
 tags:
     - meta
     - sfaturi
     - strategie
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Cum te pregătești pentru olimpiadă?](./olympiad-prep.md)
 
 ## Introducere
 

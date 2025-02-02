@@ -1,17 +1,17 @@
 ---
+id: componente-biconexe
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - cycles
+    - graphs
+    - tree-dp
 tags:
     - grafuri neorientate
     - programare dinamica
     - parcurgeri
     - cicluri
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
-    - [Dinamici pe arbori](./tree-dp.md)
-    - [Cicluri în grafuri](../mediu/cycles.md)
 
 În cele ce urmează, vom prezenta componentele biconexe, algoritmul prin care le
 aflăm și cum putem folosi aceste informații în probleme.

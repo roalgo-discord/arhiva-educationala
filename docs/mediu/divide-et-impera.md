@@ -1,14 +1,14 @@
 ---
+id: divide-et-impera
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - functions
 tags:
     - functii
     - recursivitate
     - olimpiada
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

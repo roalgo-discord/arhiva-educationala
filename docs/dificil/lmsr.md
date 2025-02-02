@@ -1,4 +1,5 @@
 ---
+id: lmsr
 tags:
     - implementare
     - siruri de caractere

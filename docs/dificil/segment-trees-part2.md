@@ -1,14 +1,14 @@
 ---
+id: segment-trees-part2
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - segment-trees
 tags:
     - structuri de date
     - arbori de intervale
     - lazy propagation
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Arbori de intervale](./segment-trees.md)
 
 ## Introducere
 

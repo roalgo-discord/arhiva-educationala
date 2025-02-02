@@ -1,17 +1,17 @@
 ---
+id: mobius
+author:
+    - Matei Ionescu
+prerequisites:
+    - pinex
+    - euler-totient
+    - intro-dp
 tags:
     - matematica
     - combinatorica
     - multimi
     - implementare
 ---
-
-**Autor**: Matei Ionescu
-
-!!! example "Cunoștințe necesare"
-    - [Principiul includerii și excluderii](../mediu/pinex.md)
-    - [Indicatorul lui Euler](../mediu/euler-totient.md)
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 ## Noțiuni introductive
 

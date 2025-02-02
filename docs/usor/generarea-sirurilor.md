@@ -1,14 +1,15 @@
 ---
+id: generarea-sirurilor
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - loops
 tags:
     - vectori
     - siruri
     - fibonacci
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
 
 ## Introducere
 

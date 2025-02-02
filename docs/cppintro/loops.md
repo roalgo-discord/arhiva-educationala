@@ -1,4 +1,10 @@
 ---
+id: loops
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - basic-math
+    - conditions-if
 tags:
     - C++
     - introducere
@@ -7,12 +13,6 @@ tags:
     - do-while
     - structura repetitiva
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](./basic-math.md)
-    - [Structura alternativă](./conditions-if.md)
 
 !!! info "Definiție"
 

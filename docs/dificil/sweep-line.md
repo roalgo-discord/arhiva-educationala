@@ -1,13 +1,15 @@
 ---
+id: sweep-line
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - sorting
+    - basic-geometry
 tags:
     - geometrie
     - sortare
     - structuri de date
 ---
-
-!!! example "Cunoștințe necesare"
-    - [Algoritmi de sortare](../usor/sorting.md)
-    - [Concepte fundamentale de geometrie](../mediu/basic-geometry.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

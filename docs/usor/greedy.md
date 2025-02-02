@@ -1,14 +1,15 @@
 ---
+id: greedy
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - arrays
+    - sorting
 tags:
     - sortare
     - greedy
 ---
-
-- **Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](./sorting.md)
 
 De multe ori atunci când trebuie să rezolvăm probleme algoritmice (și nu numai),
 suntem nevoiți să gândim lacom, alegând cea mai bună variantă la un moment dat.

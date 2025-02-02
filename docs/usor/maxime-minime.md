@@ -1,15 +1,15 @@
 ---
+id: maxime-minime
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - loops
 tags:
     - structura repetitiva
     - maxim
     - minim
     - vector
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
 
 ## Introducere
 

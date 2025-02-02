@@ -1,15 +1,16 @@
 ---
+id: functions
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+    - loops
 tags:
   - C++
   - functii
   - implementare
   - recursivitate
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](./loops.md)
 
 ## Introducere
 

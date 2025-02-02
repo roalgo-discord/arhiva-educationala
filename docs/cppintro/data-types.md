@@ -1,15 +1,16 @@
 ---
+id: data-types
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - intro
 tags:
   - C++
   - introducere
   - variabile
   - tipuri de date
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Primul program în C++](./intro.md)
 
 Așa cum ați observat atunci când am prezentat primul program în articolul
 precedent, fiecare componentă are mai multe caracteristici, una dintre cele mai

@@ -1,17 +1,17 @@
 ---
+id: simulating-solution
+author:
+    - Traian Mihai Danciu
+prerequisites:
+    - loops
+    - arrays
+    - matrices
 tags:
     - C++
     - implementare
     - optimizare
     - simulare
 ---
-
-**Autor**: Traian Mihai Danciu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
 
 ## Introducere
 

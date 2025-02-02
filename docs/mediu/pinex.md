@@ -1,15 +1,16 @@
 ---
+id: pinex
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Traian Mihai Danciu
+prerequisites:
+    - divisibility
+    - bitwise-ops
 tags:
     - matematica
     - combinatorica
     - multimi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Traian Mihai Danciu
-
-!!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](../usor/divisibility.md)
-    - [Operații pe biți](./bitwise-ops.md)
 
 În unele probleme de algoritmică, suntem nevoiți să calculăm numărul de
 răspunsuri care se potrivesc cu o anumită regulă, dar numărarea directă a

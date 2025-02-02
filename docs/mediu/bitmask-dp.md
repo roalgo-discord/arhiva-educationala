@@ -1,15 +1,15 @@
 ---
+id: bitmask-dp
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
+    - bitwise-ops
 tags:
     - programare dinamica
     - operatii pe biti
     - submultimi
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Operații pe biți](./bitwise-ops.md)
 
 Atunci când vorbim de tipuri de probleme pentru care apelăm la soluții bazate pe
 metoda programării dinamice, dinamicile pe măști pe biți (_bitmask dp_) se

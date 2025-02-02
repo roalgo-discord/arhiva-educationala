@@ -1,14 +1,14 @@
 ---
+id: digit-dp
+author: 
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
+    - intro-combinatorics
 tags:
     - programare dinamica
     - cifre
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Combinatorică](../mediu/intro-combinatorics.md)
 
 În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
 atunci când vine vorba de a număra câte numere au o anumită proprietate într-un

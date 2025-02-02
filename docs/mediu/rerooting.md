@@ -1,15 +1,15 @@
 ---
+id: rerooting
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - tree-1
+    - intro-dp
 tags:
     - grafuri
     - arbori
     - programare dinamica
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în arbori](./tree-1.md)
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 În ceea ce privește rezolvarea problemelor cu arbori, in anumite situatii se
 poate observa faptul că avem nevoie de o calculare inițială a răspunsului

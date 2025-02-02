@@ -1,9 +1,11 @@
 ---
+id: ad-hoc
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - probleme
     - meta
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Conținutul articolului"
 

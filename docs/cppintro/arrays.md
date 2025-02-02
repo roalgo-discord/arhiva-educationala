@@ -1,13 +1,14 @@
 ---
+id: arrays
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - loops
 tags:
-    - vectori
-    - implementare
+  - vectori
+  - implementare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](./loops.md)
 
 Una din primele structuri de date pe care orice programator o folosește,
 indiferent de limbajul de programare folosit este tabloul (array în engleză).

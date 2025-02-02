@@ -1,15 +1,15 @@
 ---
+id: deque
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - queue
+    - stack
+    - sliding-window
 tags:
     - vectori
     - structuri de date
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Coada](./queue.md)
-    - [Stiva](./stack.md)
-    - [Sliding Window](./sliding-window.md)
 
 Probabil că până acum, v-ati obișnuit cu folosirea stivelor și a cozilor în
 diverse probleme de algoritmică, iar deși aceste structuri de date sunt foarte

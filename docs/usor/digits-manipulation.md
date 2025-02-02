@@ -1,14 +1,14 @@
 ---
+id: digits-manipulation
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - loops
 tags:
     - cifre
     - matematica
     - structura repetitiva
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Structura repetitivă](../cppintro/loops.md)
 
 !!! note "Observație"
 

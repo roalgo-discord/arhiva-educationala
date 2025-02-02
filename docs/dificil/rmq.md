@@ -1,4 +1,10 @@
 ---
+id: rmq
+author:
+    - Traian Mihai Danciu
+prerequisites:
+    - matrices
+    - partial-sums
 tags:
     - structuri de date
     - RMQ
@@ -6,12 +12,6 @@ tags:
     - sparse table
     - binary lifting
 ---
-
-**Autor**: Traian Mihai Danciu
-
-!!! example "Cunoștințe necesare"
-    - [Matrici (tablouri bidimensionale)](../cppintro/matrices.md)
-    - [Sume parțiale](../usor/partial-sums.md)
 
 ## Introducere
 

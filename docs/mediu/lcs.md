@@ -1,14 +1,14 @@
 ---
+id: lcs
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
+    - strings
 tags:
     - programare dinamica
     - siruri de caractere
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Șiruri de caractere](../cppintro/strings.md)
 
 Problema subșirului comun maximal este o altă problemă foarte importantă care
 are aplicații în domenii diverse precum genetică, bioinformatică și procesarea

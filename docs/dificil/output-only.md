@@ -1,13 +1,13 @@
 ---
+id: output-only
+author: 
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - random-algorithms
+    - interactive
 tags:
     - output only
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Algoritmi randomizați](./random-algorithms.md)
-    - [Abordarea problemelor interactive](./interactive.md)
 
 ## Introducere
 

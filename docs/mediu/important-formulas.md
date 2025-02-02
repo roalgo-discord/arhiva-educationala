@@ -1,4 +1,5 @@
 ---
+id: important-formulas
 tags:
     - matematica
     - implementare

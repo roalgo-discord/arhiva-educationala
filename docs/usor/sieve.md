@@ -1,16 +1,16 @@
 ---
+id: sieve
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - divisibility
+    - frequency-arrays
 tags:
     - matematica
     - numere prime
     - divizori
     - precalculari
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](./divisibility.md)
-    - [Vectori de frecvență](./frequency-arrays.md)
 
 ## Ce este ciurul lui Eratostene?
 

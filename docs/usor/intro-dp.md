@@ -1,14 +1,16 @@
 ---
+id: intro-dp
+author:
+    - Teodor-Ștefan Manolea
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - greedy
+    - functions
 tags:
     - programare dinamica
     - DP
 ---
-
-**Autori**: Teodor-Ștefan Manolea, Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în Metoda Greedy](./greedy.md)
-    - [Subprograme](../cppintro/functions.md)
 
 ## Introducere
 

@@ -1,15 +1,15 @@
 ---
+id: data-normalization
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - arrays
+    - sorting
+    - stl
 tags:
     - normalizare
     - implementare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Algoritmi de sortare - Doar algoritmii în $O(n^2)$ și funcția std::sort](../usor/sorting.md)
-    - [Introducere în STL](../cppintro/stl.md)
 
 În unele probleme, suntem nevoiți să prelucrăm datele de intrare, astfel încât
 să putem efectua operații de actualizare și interogare ale datelor mult mai

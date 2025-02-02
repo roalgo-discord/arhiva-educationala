@@ -1,4 +1,5 @@
 ---
+id: kmp
 tags:
     - siruri de caractere
     - potrivire

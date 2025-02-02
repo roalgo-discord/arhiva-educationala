@@ -1,14 +1,14 @@
 ---
+id: ternary-search
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - binary-search
 tags:
     - sortare
     - cautari
     - matematica
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Căutarea binară](../usor/binary-search.md)
 
 ## Introducere
 

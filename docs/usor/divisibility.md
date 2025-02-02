@@ -1,15 +1,16 @@
 ---
+id: divisibility
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Ștefan-Iulian Alecu
+prerequisites:
+    - basic-math
+    - loops
 tags:
     - matematica
     - divizori
     - numere prime
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.md)
-    - [Structura repetitivă](../cppintro/loops.md)
 
 De-a lungul parcursului vostru în domeniul algoritmicii, precum și de multe ori
 în diferite olimpiade și concursuri de informatică, va trebui să rezolvați multe

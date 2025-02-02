@@ -1,12 +1,13 @@
 ---
+id: knapsack
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
 tags:
     - optimizare
     - programare dinamica
 ---
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 ## Introducere
 

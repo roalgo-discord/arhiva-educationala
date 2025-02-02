@@ -1,15 +1,15 @@
 ---
+id: amortised-analysis
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - bitwise-ops
+    - stack
 tags:
     - optimizare
     - coada
     - stiva
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Operații pe biți](./bitwise-ops.md)
-    - [Stiva](./stack.md)
 
 ## Ce este analiza amortizată?
 

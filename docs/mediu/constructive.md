@@ -1,4 +1,5 @@
 ---
+id: constructive
 tags:
     - ad hoc
     - probleme constructive

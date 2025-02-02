@@ -1,11 +1,12 @@
 ---
+id: olympiad-info
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - meta
     - olimpiada
     - informatii
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Introducere
 

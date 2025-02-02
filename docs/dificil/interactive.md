@@ -1,15 +1,15 @@
 ---
+id: interactive
+author: 
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - cf-atcoder
+    - ad-hoc
+    - binary-search
+    - divide-et-impera
 tags:
     - interactive
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Abordarea concursurilor de pe Codeforces/AtCoder](../mediu/cf-atcoder.md)
-    - [Abordarea problemelor ad-hoc](../mediu/ad-hoc.md)
-    - [Căutarea binară](../usor/binary-search.md)
-    - [Tehnica divide et impera](../mediu/divide-et-impera.md)
 
 ## Introducere
 

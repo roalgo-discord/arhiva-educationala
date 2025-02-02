@@ -1,17 +1,17 @@
 ---
+id: backtracking
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - functions
+    - simulating-solution
+    - divide-et-impera
 tags:
     - brute force
     - implementare
     - recursivitate
     - cautare completa
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Subprograme](../cppintro/functions.md)
-    - [Simularea soluției](../usor/simulating-solution.md)
-    - [Tehnica divide et impera](./divide-et-impera.md)
 
 ## Introducere
 

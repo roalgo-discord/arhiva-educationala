@@ -1,11 +1,12 @@
 ---
+id: coding-style
+author: 
+  - Ștefan-Cosmin Dăscălescu
 tags:
-    - C++
-    - introducere
-    - coding style
+  - C++
+  - introducere
+  - coding style
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 ## Fundamente
 

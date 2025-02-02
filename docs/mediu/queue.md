@@ -1,16 +1,16 @@
 ---
+id: queue
+author:
+    - Ștefan-Cosmin Dăscălescu
+    - Teodor Ștefan Manolea
+prerequisites:
+    - debugging
 title: Coada
 tags:
     - structuri de date
     - coada
     - STL
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Teodor Ștefan Manolea
-
-!!! example "Cunoștințe necesare"
-    - [Vectori (tablouri unidimensionale)](../cppintro/arrays.md)
-    - [Introducere în STL](../cppintro/stl.md)
 
 ## Introducere și definiție
 

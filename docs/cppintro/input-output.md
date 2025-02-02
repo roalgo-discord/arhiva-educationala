@@ -1,15 +1,16 @@
 ---
+id: input-output
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+prerequisites:
+  - intro
 tags:
-    - C++
-    - introducere
-    - citire
-    - afisare
+  - C++
+  - introducere
+  - citire
+  - afisare
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu
-
-!!! example "Cunoștințe necesare"
-    - [Primul program în C++](./intro.md)
 
 În acest articol, vom explora metodele de citire și afișare a datelor în
 limbajul C++.

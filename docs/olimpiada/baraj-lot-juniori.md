@@ -7,9 +7,15 @@ tags:
 
 ## Introducere
 
-Aici găsiți programa pentru barajul și lotul de juniori pentru Olimpiada de Informatică, conform [programei create de SEPI](https://sepi.ro/assets/upload-file/oni2024/Programa%20pentru%20olimpiada%20de%20informatica_gimnaziu%20si%20liceu.pdf) în anul școlar 2023-2024, împreună cu locurile de unde puteți învăța aceste conținuturi în arhiva noastră.
+Aici găsiți programa pentru barajul și lotul de juniori pentru Olimpiada de
+Informatică, conform
+[programei create de SEPI](https://sepi.ro/assets/upload-file/oni2024/Programa%20pentru%20olimpiada%20de%20informatica_gimnaziu%20si%20liceu.pdf)
+în anul școlar 2023-2024, împreună cu locurile de unde puteți învăța aceste
+conținuturi în arhiva noastră.
 
-Pe lângă conținuturile de mai jos, programa include și materia clasei a opta (care include celelalte programe pentru clasele de gimnaziu), care poate fi accesată în [articolul corespunzător](./clasa-VIII.md).
+Pe lângă conținuturile de mai jos, programa include și materia clasei a opta
+(care include celelalte programe pentru clasele de gimnaziu), care poate fi
+accesată în [articolul corespunzător](./clasa-VIII.md).
 
 ## Baraj juniori
 
@@ -25,21 +31,35 @@ Pe lângă conținuturile de mai jos, programa include și materia clasei a opta
   - Problema rucsacului - [link articol](../mediu/knapsack.md)
   - Subșir comun maximal - [link articol](../mediu/lcs.md)
   - Subșir crescător maximal - [link articol](../mediu/lis.md)
-- Principiul includerii și excluderii. Funcția Mobius - [link articol](../mediu/pinex.md) - nu apare în programă, dar se recomandă cunoașterea noțiunilor explicate aici
+- Principiul includerii și excluderii. Funcția Mobius -
+  [link articol](../mediu/pinex.md) - nu apare în programă, dar se recomandă
+  cunoașterea noțiunilor explicate aici
 
 ## Lot Juniori
 
 !!! note "Observație"
-    Materia include noțiunile din programa de baraj și noțiunile din programa claselor V-VIII.
 
-Programa lotului de juniori include toate noțiunile din [programa EJOI](https://sepi.ro/assets/upload-file/oni2024/EJOI_syllabus.pdf) și programa claselor V-VIII și a barajului, împreună cu o listă de noțiuni suplimentare.
+    Materia include noțiunile din programa de baraj și noțiunile din programa
+    claselor V-VIII.
 
-Mai jos vom enunța lucrurile care nu au fost incluse în articolele anterioare, care reprezintă un nivel minim al cunoștințelor ce trebuie acumulate, elevii de top de multe ori învățând și noțiuni suplimentare.
+Programa lotului de juniori include toate noțiunile din
+[programa EJOI](https://sepi.ro/assets/upload-file/oni2024/EJOI_syllabus.pdf) și
+programa claselor V-VIII și a barajului, împreună cu o listă de noțiuni
+suplimentare.
 
-În general, trebuie să fiți familiari cu tot ce se află în secțiunile Ușor și Mediu ale arhivei noastre, dar voi puncta o listă de conținuturi foarte importante și frecvent întâlnite în probleme. De asemenea, trebuie să fiți familiarizați cu sintaxa C++ și în special cu STL.
+Mai jos vom enunța lucrurile care nu au fost incluse în articolele anterioare,
+care reprezintă un nivel minim al cunoștințelor ce trebuie acumulate, elevii de
+top de multe ori învățând și noțiuni suplimentare.
+
+În general, trebuie să fiți familiari cu tot ce se află în secțiunile Ușor și
+Mediu ale arhivei noastre, dar voi puncta o listă de conținuturi foarte
+importante și frecvent întâlnite în probleme. De asemenea, trebuie să fiți
+familiarizați cu sintaxa C++ și în special cu STL.
 
 - Matematică:
-  - Introducere în combinatorică - [link articol](../mediu/intro-combinatorics.md) - se dă foarte des la concursurile de juniori, începând de la lot
+  - Introducere în combinatorică -
+    [link articol](../mediu/intro-combinatorics.md) - se dă foarte des la
+    concursurile de juniori, începând de la lot
   - Invers modular - [link articol](../mediu/modular-inverse.md)
 - Teoria grafurilor și arbori:
   - Introducere în grafuri - [link articol](../usor/graphs.md)

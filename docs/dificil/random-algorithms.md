@@ -1,4 +1,5 @@
 ---
+id: random-algorithms
 tags:
     - randomizare
     - euristici

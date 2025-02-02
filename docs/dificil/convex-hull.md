@@ -1,15 +1,17 @@
 ---
+id: convex-hull
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - basic-geometry
+    - stack
+    - sorting
 tags:
     - geometrie
     - stiva
     - infasuratoare convexa
     - sortare
 ---
-
-!!! example "Cunoștințe necesare"
-    - [Concepte fundamentale de geometrie](../mediu/basic-geometry.md)
-    - [Stiva](../mediu/stack.md)
-    - [Algoritmi de sortare](../usor/sorting.md)
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
 [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul

@@ -1,11 +1,12 @@
 ---
+id: contest-list
+author:
+    - Ștefan-Cosmin Dăscălescu
 tags:
     - concursuri
     - pregatire
     - olimpiada
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 Pe lângă olimpiada de informatică, prezentată mai devreme [în acest
 articol](../olimpiada/olympiad-info.md), există numeroase

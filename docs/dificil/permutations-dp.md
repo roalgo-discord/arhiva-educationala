@@ -1,16 +1,16 @@
 ---
+id: permutations-dp
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
+    - intro-combinatorics
+    - bignum
 tags:
     - programare dinamica
     - permutari
     - DP
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
-    - [Combinatorică](../mediu/intro-combinatorics.md)
-    - [Numere mari](../mediu/bignum.md)
 
 ## Introducere
 

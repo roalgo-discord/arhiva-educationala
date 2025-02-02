@@ -1,11 +1,14 @@
 ---
+id: stl
+author:
+  - Ștefan-Cosmin Dăscălescu
+  - Ștefan-Iulian Alecu
+  - Alex Vasiluță
 tags:
-    - C++
-    - implementare
-    - structuri de date
+  - C++
+  - implementare
+  - structuri de date
 ---
-
-**Autori**: Ștefan-Cosmin Dăscălescu, Ștefan-Iulian Alecu, Alex Vasiluță
 
 ## Introducere
 

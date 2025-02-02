@@ -1,17 +1,17 @@
 ---
+id: componente-tare-conexe
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
+    - toposort
+    - cycles
+    - intro-dp
 tags:
     - grafuri orientate
     - parcurgeri
     - cicluri
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    - [Introducere în teoria grafurilor](../usor/graphs.md)
-    - [Sortare topologică](../mediu/toposort.md)
-    - [Cicluri în grafuri](../mediu/cycles.md)
-    - [Introducere în programarea dinamică](../usor/intro-dp.md)
 
 ## Introducere
 
