@@ -1,5 +1,5 @@
 ---
-id: problemsetting
+id: apcm
 author:
     - Ștefan-Cosmin Dăscălescu
     - Traian Mihai Danciu
