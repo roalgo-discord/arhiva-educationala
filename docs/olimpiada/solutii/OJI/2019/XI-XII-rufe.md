@@ -33,7 +33,7 @@ Această distribuție a distanțelor ne duce cu gândul la a reprezenta aceste
 regiuni ale matricii, împărțind astfel suprafața în patru zone, pentru care putem
 simplifica răspunsurile foarte mult, după modelul de mai jos.
 
-![](../images/olimpiada/oji/2019-rufe-1.png)
+![](../../../../images/olimpiada/oji/2019-rufe-1.png)
 
 Apoi, deoarece cu cât ne apropiem mai mult de origine, vom acoperi tot mai multe
 puncte, ne putem gândi la o căutare binară pe răspuns, scopul nostru este să
@@ -43,7 +43,7 @@ Deoarece am împărțit în patru regiuni, este îndeajuns să aflăm aria
 suprafețelor acoperite, care se reduce la aria unor triunghiuri cu puncte
 în jurul colțurilor cele mai îndepărtate, un exemplu fiind arătat mai jos.
 
-![](../images/olimpiada/oji/2019-rufe-2.png).
+![](../../../../images/olimpiada/oji/2019-rufe-2.png)
 
 Folosind formulele pentru aria unui triunghi dreptunghic (mai multe detalii
 puteți găsi în implementare, numărul de cazuri necesare devine mult mai mic,
