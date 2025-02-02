@@ -69,9 +69,9 @@ extra:
             provider: custom
 
 copyright: >
-      Accest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
-      multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de licență
-      </a>.
+      Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
+      multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de
+      licență </a>.
 
 markdown_extensions:
       - pymdownx.arithmatex:
