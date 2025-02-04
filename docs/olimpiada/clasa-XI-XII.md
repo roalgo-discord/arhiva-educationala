@@ -75,8 +75,8 @@ corespunzător](./clasa-X.md).
 
 - Definiție, proprietăți - [link articol](../mediu/tree-1.md)
 - Arbori parțiali - [link articol](../mediu/apcm.md)
-- Arbori parţiali de cost minim (algoritmul lui Kruskal și algoritmul lui Prim)
-  - [link articol](../mediu/apcm.md)
+- Arbori parţiali de cost minim (algoritmul lui Kruskal și algoritmul lui 
+Prim - [link articol](../mediu/apcm.md)
 
 ## Structuri de date arborescente  - [link articol](../cppintro/stl.md)
 

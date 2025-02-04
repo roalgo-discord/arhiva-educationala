@@ -705,6 +705,7 @@ are concepte mai simple, dar care se leagă de cunoștințele prezentate aici.
 - [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2&cpid=766)
 - [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2&cpid=1019)
 - [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
+- [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
 - [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
 - [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
 - [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)

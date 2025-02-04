@@ -192,6 +192,8 @@ abordări care să se muleze și pe restricțiile problemelor în sine.
 - [CSES Apartments](https://cses.fi/problemset/task/1084/)
 - [OJI 2023 parcare](https://kilonova.ro/problems/500)
 - [USACO Silver Convention II](https://usaco.org/index.php?page=viewproblem2&cpid=859)
+- [Codeforces Voting (easy)](https://codeforces.com/contest/1251/problem/E1)
+- [Codeforces Good Subarrays](https://codeforces.com/problemset/problem/1398/C)
 - [Codeforces William and Robot](https://codeforces.com/gym/104002/problem/E)
 - [OJI 2024 parking](https://kilonova.ro/problems/24)
 - [USACO Gold Snow Boots](http://www.usaco.org/index.php?page=viewproblem2&cpid=813)

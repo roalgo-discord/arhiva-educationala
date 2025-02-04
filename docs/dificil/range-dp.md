@@ -282,6 +282,7 @@ modifica stările și modul de calcul.
 - [ONI 2008 Baraj Seniori stiva](https://kilonova.ro/problems/1789)
 - [Zuma Codeforces](https://codeforces.com/problemset/problem/607/B)
 - [ONI 2023 Baraj Seniori bt](https://kilonova.ro/problems/557/)
+- [ONI 2005 Baraj Seniori evantai](https://kilonova.ro/problems/1869/)
 - [Empty String CSES](https://cses.fi/problemset/task/1080)
 - [Queries for Number of Palindromes
   Codeforces](https://codeforces.com/contest/245/problem/H)

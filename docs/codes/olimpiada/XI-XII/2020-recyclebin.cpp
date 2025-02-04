@@ -1,5 +1,4 @@
 #include <fstream>
-using namespace std;
 
 int n, v[1002], dp[1002][1002];
 bool viz[1002][1002];

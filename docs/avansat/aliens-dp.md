@@ -19,6 +19,8 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Probleme suplimentare
 
+- [Codeforces Pictures with Kittens](https://codeforces.com/problemset/problem/1077/F2)
+
 ## Resurse suplimentare
 
 - [Attack on Aliens](https://mamnoonsiam.github.io/posts/attack-on-aliens.html)

@@ -8,7 +8,7 @@ tags:
 
 Aici găsiți Arhiva Educațională creată de comunitatea RoAlgo, centrată în jurul
 [serverului de Discord](https://discord.gg/roalgo) cu același nume, RoAlgo fiind
-cea mai mare comunitate de algoritmică din România, cu aproape 3000 de membri.
+cea mai mare comunitate de algoritmică din România, cu peste 3000 de membri.
 
 Scopul acestui proiect este de a crea cea mai completă arhivă educațională
 pentru un student interesat de programarea competitivă, concentrându-se, de

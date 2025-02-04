@@ -414,6 +414,7 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
   Sequences](https://atcoder.jp/contests/abc312/tasks/abc312_d)
 - [AtCoder I hate Non Integer
   Number](https://atcoder.jp/contests/abc262/tasks/abc262_d)
+- [Not Escaping Codeforces](https://codeforces.com/contest/1627/problem/E)
 - [Problemele cu DP de pe Kilonova](https://kilonova.ro/tags/275)
 - [Problemele intre rating 500 si 1400 de
   aici](https://atcoder-tags.herokuapp.com/tag_search/Dynamic-Programming)
