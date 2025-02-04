@@ -1,17 +1,17 @@
 ---
+id: hashing
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - strings
+    - pow-log
+    - modular-inverse
+    - bitwise-ops
 tags:
     - hashing
     - siruri de caractere
     - matematica
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"   
-    * [Șiruri de caractere](https://edu.roalgo.ro/cppintro/strings/)
-    * [Aritmetică modulară. Ridicare la putere în timp logaritmic](https://edu.roalgo.ro/mediu/pow-log/)
-    * [Invers modular](https://edu.roalgo.ro/mediu/modular-inverse/)
-    * [Operații pe biți](https://edu.roalgo.ro/mediu/bitwise-ops/)
 
 În informatică și în algoritmică, de multe ori avem de-a face cu stocarea unei
 cantități semnificative de informație fără să putem să o stocăm în intregime,
@@ -46,16 +46,16 @@ veți vedea mai târziu, vom putea micșora șansa de a avea o asemenea coliziun
 ### Cum aplicăm un hash pe un șir de caractere
 
 În cazul majorității problemelor, vom avea de-a face cu șiruri de caractere ce
-conțin litere mici sau mari ale alfabetului englez (în total, $26$ de litere) și
+conțin litere mici sau mari ale alfabetului englez (în total, 26 de litere) și
 care au o lungime de un ordin cel mult $10^6$. Din nou, dacă apar și alte
 caractere, va trebui să ajustăm parametrii dupa o regulă bine precizată.
 
 Să presupunem pentru un moment că putem stoca numere arbitrar de mari în timp
-constant, putând să efectuăm operații pe ele. Dat fiind că sunt $26$ de litere,
-ne putem gândi la folosirea bazei $26$ pentru a stoca un număr corespunzător
+constant, putând să efectuăm operații pe ele. Dat fiind că sunt 26 de litere,
+ne putem gândi la folosirea bazei 26 pentru a stoca un număr corespunzător
 unui șir de caractere, fiecare poziție având o valoare egală cu $26^{n - i - 1}
 \cdot ind_i$, unde $n$ este lungimea șirului de caractere, $i$ este poziția
-caracterului curent iar $ind_i$ este poziția din alfabet (cu indexare de la $0$)
+caracterului curent iar $ind_i$ este poziția din alfabet (cu indexare de la 0)
 a caracterului de pe poziția $i$. De exemplu, dacă $s_i = d$, $ind_i = 3$ (_d_
 este cea de-a patra literă din alfabet).
 
@@ -70,15 +70,14 @@ folosită, dar și ca o noutate, vom stoca numerele modulo $m$, care va fi de
 regulă un număr **prim** mare, valori potrivite sunt de regulă $10^9 + 7$, $998
 \ 244 \ 353$ sau $10^9 + 9$. În mod similar, vom vrea să folosim o bază $b$ care
 va fi și ea un număr prim, mai mare decât numărul de caractere distincte pe care
-îl putem avea (dat fiind că avem $26$ de litere, alegeri bune pentru bază ar fi
-$29$ sau $31$).
+îl putem avea (dat fiind că avem 26 de litere, alegeri bune pentru bază ar fi
+29 sau 31).
 
-!!! info "Observație" 
+!!! info "Observație"
 
-    Numerele prime sunt recomandate pentru crearea hashurilor
-    deoarece neavând divizori comuni cu alte numere, riscul de a ajunge la valori
-    egale cu $0$ este mult mai scăzut, ceea ce reduce semnificativ riscul unor
-    coliziuni.
+    Numerele prime sunt recomandate pentru crearea hashurilor deoarece neavând
+    divizori comuni cu alte numere, riscul de a ajunge la valori egale cu 0
+    este mult mai scăzut, ceea ce reduce semnificativ riscul unor coliziuni.
 
 Un alt aspect important ce trebuie prezentat constă în prezentarea modului în
 care calculăm hashul unei subsecvențe a unui șir de caractere de la poziția $L$
@@ -86,12 +85,12 @@ la poziția $R$, lungimea acestuia fiind $R - L + 1$. Dacă știm hashul pentru
 intervalul $[1, R]$ și hashul pentru intervalul $[1, L-1]$, să le notăm $x_R$ și
 $x_L$, hashul subsecvenței $[L, R]$ va fi $y - x \cdot base^{R - L + 1}$.
 
-!!! info "Observație" 
+!!! info "Observație"
 
-    Deoarece în majoritatea cazurilor avem de păstrat valoarea
-    modulo $X$, va trebui să fim atenți în ceea ce privește calculul hashului și
-    evitarea valorilor negative ale operației modulo. Acum, tot ce ne mai rămâne de
-    făcut e să explicăm cum să calculăm aceste hashuri și să putem ajusta parametrii
+    Deoarece în majoritatea cazurilor avem de păstrat valoarea modulo $X$, va
+    trebui să fim atenți în ceea ce privește calculul hashului și evitarea
+    valorilor negative ale operației modulo. Acum, tot ce ne mai rămâne de făcut
+    e să explicăm cum să calculăm aceste hashuri și să putem ajusta parametrii
     în funcție de problemele care trebuie rezolvate.
 
 ### Implementarea și folosirea hashurilor
@@ -258,24 +257,24 @@ int main() {
 
 !!! info "Observație"
 
-    Deși `unordered_map` este o structură de date destul de eficientă
-    și foarte utilă în concursuri, se recomandă evitarea ei la rundele de
-    Codeforces, unde datorită perioadei de open hacking de 12 ore de la rundele Div.
-    3, Div. 4 și educationale, soluțiile care folosesc `unordered_map` sunt
-    vulnerabile hackurilor ce se folosesc de tehnicile descrise [în acest
+    Deși `unordered_map` este o structură de date destul de eficientă și foarte
+    utilă în concursuri, se recomandă evitarea ei la rundele de Codeforces, unde
+    datorită perioadei de open hacking de 12 ore de la rundele Div. 3, Div. 4 și
+    educationale, soluțiile care folosesc `unordered_map` sunt vulnerabile
+    hackurilor ce se folosesc de tehnicile descrise [în acest
     blog](https://codeforces.com/blog/entry/62393). O alternativă constă în
     folosirea unui hash custom, sau și mai simplu, folosirea map-ului chiar dacă
-    pierdem un factor de $O(\log n)$. Totuși, la olimpiade nu se generează de regulă
-    teste anti-unordered map.
+    pierdem un factor de $O(\log n)$. Totuși, la olimpiade nu se generează de
+    regulă teste anti-unordered map.
 
 ## Xor Hashing
 
 O altă tehnică ce merită menționată, dat fiind faptul că a apărut relativ
 recent, este cea a xor hashurilor. Pe scurt, modul cum funcționează este că
-pentru fiecare valoare care apare în șir (de regulă, o permutare de la $1$ la
+pentru fiecare valoare care apare în șir (de regulă, o permutare de la 1 la
 $n$ sau în general un interval de valori mici), vom vrea să o înlocuim cu o
 valoare aleasă aleator într-un înterval foarte mare (de regulă, numerele întregi
-pe $32$ de biți).
+pe 32 de biți).
 
 Această tehnică ne ajută să putem afla cu ușurință dacă un set de numere într-un
 anumit interval apare într-o subsecvență sau într-un șir de numere (de regulă,
@@ -287,7 +286,7 @@ o permutare a mulțimii $\{1, 2, \dots, n\}$.
 Pentru această problemă, se poate observa că este un exemplu clasic al folosirii
 tehnicii xor hashing (soluția oficială folosește o combinație de proprietăți
 matematice) deoarece putem genera un număr aleator pentru fiecare valoare de la
-$1$ la $n$ iar mai apoi când verificăm fiecare secvență brut, folosim valorile
+1 la $n$ iar mai apoi când verificăm fiecare secvență brut, folosim valorile
 xor-urilor parțiale pentru a determina cu o probabilitate de aproximativ $100
 \%$ dacă obținem o permutare a mulțimii $\{1, 2, \dots, n\}$. O sursă
 demonstrativă se poate găsi mai jos, [submisia putând fi accesată
@@ -369,34 +368,31 @@ int main() {
 
 ### Probleme de la olimpiade
 
-* [subsecvente OJI 2013](https://kilonova.ro/problems/36)
-* [Carry Bit IIOT 2023-24](https://kilonova.ro/problems/2165)
-* [sp Lot juniori 2021](https://kilonova.ro/problems/1702)
-* [gimigpt Lot Juniori 2024](https://kilonova.ro/problems/2836/)
-* [mixperm Lot juniori 2017](https://kilonova.ro/problems/1690)
-* [Palindrome String](https://kilonova.ro/problems/1903)
-* [sap RoAlgo Contest 6 - XOR Hashing](https://kilonova.ro/problems/1802)
-* [toska Stelele Informaticii - XOR Hashing](https://kilonova.ro/problems/2098/)
-* [Bovine Genomics
+- [subsecvente OJI 2013](https://kilonova.ro/problems/36)
+- [Carry Bit IIOT 2023-24](https://kilonova.ro/problems/2165)
+- [sp Lot juniori 2021](https://kilonova.ro/problems/1702)
+- [gimigpt Lot Juniori 2024](https://kilonova.ro/problems/2836/)
+- [mixperm Lot juniori 2017](https://kilonova.ro/problems/1690)
+- [Palindrome String](https://kilonova.ro/problems/1903)
+- [sap RoAlgo Contest 6 - XOR Hashing](https://kilonova.ro/problems/1802)
+- [toska Stelele Informaticii - XOR Hashing](https://kilonova.ro/problems/2098/)
+- [Bovine Genomics
   USACO](http://www.usaco.org/index.php?page=viewproblem2&cpid=741)
-* [RMI 2017 Hangman
+- [RMI 2017 Hangman
   2](https://csacademy.com/contest/rmi-2017-day-1/task/hangman2/)
-* [Probleme cu hashing de pe kilonova](https://kilonova.ro/tags/322)
-* [Probleme cu hashing de pe
+- [Probleme cu hashing de pe kilonova](https://kilonova.ro/tags/322)
+- [Probleme cu hashing de pe
   infoarena](https://www.infoarena.ro/cauta-probleme?tag_id[]=432)
-
 
 ### Probleme de pe alte siteuri
 
-
-* [Finding Periods](https://cses.fi/problemset/task/1733/)
-* [Sum of Four Values](https://cses.fi/problemset/task/1642)
-* [Fullmetal Alchemist II](https://codeforces.com/gym/104048/problem/K)
-* [Mysterious Crime](https://codeforces.com/contest/1043/problem/D)
-* [The Number of Subpermutations](https://codeforces.com/contest/1175/problem/F)
-* [Alte probleme cu hashing de pe
+- [Finding Periods](https://cses.fi/problemset/task/1733/)
+- [Sum of Four Values](https://cses.fi/problemset/task/1642)
+- [Fullmetal Alchemist II](https://codeforces.com/gym/104048/problem/K)
+- [Mysterious Crime](https://codeforces.com/contest/1043/problem/D)
+- [The Number of Subpermutations](https://codeforces.com/contest/1175/problem/F)
+- [Alte probleme cu hashing de pe
   Codeforces](https://codeforces.com/problemset?tags=hashing)
-
 
 ### Bibliografie și lectură suplimentară
 
@@ -404,16 +400,16 @@ Am ordonat resursele suplimentare în ordinea dificultății înțelegerii și �
 ordine logică pentru a ușura obținerea de cunoștinte despre tehnicile,
 abordările și problemele discutate în acest curs.
 
-* [Cartea SEPI F1 - Capitolul 12 (pagina 171) - Căutări în șiruri de caractere.
+- [Cartea SEPI F1 - Capitolul 12 (pagina 171) - Căutări în șiruri de caractere.
   Algoritmul Rabin-Karp - Articol
   Recomandat](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [Articol USACO Guide - String
+- [Articol USACO Guide - String
   Hashing](https://usaco.guide/gold/string-hashing?lang=cpp)
-* [Articol USACO Guide - Hash maps](https://usaco.guide/gold/hashmaps?lang=cpp)
-* [XOR Hashing TUTORIAL](https://codeforces.com/blog/entry/85900)
-* [On the mathematics behind rolling hashes and anti-hash
+- [Articol USACO Guide - Hash maps](https://usaco.guide/gold/hashmaps?lang=cpp)
+- [XOR Hashing TUTORIAL](https://codeforces.com/blog/entry/85900)
+- [On the mathematics behind rolling hashes and anti-hash
   tests](https://codeforces.com/blog/entry/60442)
-* [Articolul de pe cppi.sync](https://cppi.sync.ro/materia/hashuri.html)
-* [Hash tables](https://www.infoarena.ro/tabele-hash-scurta-prezentare)
-* [Hash tables - prezentare
+- [Articolul de pe cppi.sync](https://cppi.sync.ro/materia/hashuri.html)
+- [Hash tables](https://www.infoarena.ro/tabele-hash-scurta-prezentare)
+- [Hash tables - prezentare
   detaliata](https://www.infoarena.ro/tabele-hash-prezentare-detaliata)

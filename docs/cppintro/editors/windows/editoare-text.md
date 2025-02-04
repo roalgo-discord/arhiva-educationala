@@ -10,10 +10,9 @@ calități de la un editor de text pentru C++:
 
 - Syntax highlighting (evidențierea sintaxei), pentru a putea distinge ușor
   cuvintele cheie și a putea citi codul mai ușor;
-- Completare automată (și sugestii) pentru a putea completa rapid și
-  eficient codul;
-- Indentare automată (și formatare), pentru a păstra un stil
-  consistent;
+- Completare automată (și sugestii) pentru a putea completa rapid și eficient
+  codul;
+- Indentare automată (și formatare), pentru a păstra un stil consistent;
 - Funcții de căutare și înlocuire;
 - Numărarea liniilor și coloanelor;
 - Suport pentru extensii;
@@ -23,7 +22,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
 
 <div class="grid cards" markdown>
 
-- **Visual Studio Code**
+- :material-microsoft-visual-studio-code: **Visual Studio Code**
 
     ---
 
@@ -34,7 +33,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
 
     [:octicons-arrow-right-24: Instalare și configurare](./visual-studio-code.md)
 
-- **Sublime Text 4**
+- :simple-sublimetext: **Sublime Text 4**
 
     ---
 
@@ -45,7 +44,7 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
 
      [:octicons-arrow-right-24: Instalare și configurare](./sublime-text-4.md)
 
-- **Notepad++**
+- :simple-notepadplusplus: **Notepad++**
 
     ---
 
@@ -61,9 +60,9 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
 
 !!! note "Notă"
 
-    În afară de aceste editoare, mai există și altele, precum Netbeans și eternele
-    Vim/Neovim și Emacs. Deși autorul le folosește pe ultimele două (Emacs
-    îndeosebi), procesul de a le configura este mai anevoios și nu sunt cele mai
-    bune pe Windows și sunt în afara scopului acestui articol introductiv. De
-    asemenea, există Kate și Geany, ambele cu suport bun pentru C++ și alternative
-    solide pentru Notepad++, pe care autorul le recomandă.
+    În afară de aceste editoare, mai există și altele, precum Netbeans și
+    eternele Vim/Neovim și Emacs. Deși autorul le folosește pe ultimele două
+    (Emacs îndeosebi), procesul de a le configura este mai anevoios și nu sunt
+    cele mai bune pe Windows și sunt în afara scopului acestui articol
+    introductiv. De asemenea, există Kate și Geany, ambele cu suport bun pentru
+    C++ și alternative solide pentru Notepad++, pe care autorul le recomandă.

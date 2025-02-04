@@ -1,4 +1,9 @@
 ---
+id: cycles
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - graphs
 tags:
     - C++
     - implementare
@@ -6,47 +11,79 @@ tags:
     - cicluri
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"   
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-
 ## Introducere
 
-În general, când vine vorba de lucrul cu cicluri în problemele cu grafuri, lucrurile pot fi mai dificile, iar din acest motiv vrem să formalizăm procesul de aflare a unor cicluri în grafuri, fie că e vorba de grafuri orientate sau neorientate, iar mai apoi vom discuta și despre un tip special de grafuri, grafurile funcționale. 
+În general, când vine vorba de lucrul cu cicluri în problemele cu grafuri,
+lucrurile pot fi mai dificile, iar din acest motiv vrem să formalizăm procesul
+de aflare a unor cicluri în grafuri, fie că e vorba de grafuri orientate sau
+neorientate, iar mai apoi vom discuta și despre un tip special de grafuri,
+grafurile funcționale.
 
-Vom începe prin a relua definiția discutată la articolul anterior [despre grafuri](https://edu.roalgo.ro/usor/graphs/).
+Vom începe prin a relua definiția discutată la articolul anterior [despre
+grafuri](../usor/graphs.md).
 
 !!! info "Ciclu"
-    O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă $(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$.
-    Un ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j < k$.
+
+    O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă
+    $(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$.
+    Un ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j <
+    k$.
 
     Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă,
-    pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge tot la
-    nodul $v_1$. Un ciclu simplu este un ciclu în care nu se repetă noduri.
+    pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge
+    tot la nodul $v_1$. Un ciclu simplu este un ciclu în care nu se repetă
+    noduri.
 
-În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate. Modul de implementare a acestor algoritmi va fi exclusiv folosind structuri și metode din [STL](https://edu.roalgo.ro/cppintro/stl/), scopul acestor aplicații fiind în special aplicațiile care apar la olimpiadele și concursurile de informatică. 
+În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea
+ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate.
+Modul de implementare a acestor algoritmi va fi exclusiv folosind structuri și
+metode din [STL](../cppintro/stl.md), scopul acestor aplicații
+fiind în special aplicațiile care apar la olimpiadele și concursurile de
+informatică.
 
 ## Cicluri euleriene
 
 !!! info "Ciclu eulerian"
-    Un lanț eulerian este un lanț care conține toate muchiile exact o singură dată (dar nodurile se pot vizita iar). Un ciclu eulerian este un lanț eulerian care începe și se termină în același nod. 
+
+    Un lanț eulerian este un lanț care conține toate muchiile exact o singură
+    dată (dar nodurile se pot vizita iar). Un ciclu eulerian este un lanț
+    eulerian care începe și se termină în același nod.
 
 !!! note "Gradele nodurilor"
-    Mai întâi, o condiție necesară și suficientă este aceea că toate nodurile trebuie să poată fi vizitate, iar gradele nodurilor să fie pare.
 
-Acest lucru poate fi arătat ușor, presupunând că putem avea un ciclu eulerian care să conțină un nod cu grad impar. Dacă începem ciclul nostru acolo, nu îl vom putea termina acolo, deoarece după ce folosim o muchie să părăsim nodul, vom avea un număr par de muchii adiacente nodului curent. Jumătate dintre ele ar trebui să fie folosite pentru a intra acolo, cealaltă jumătate pentru a ieși, deci am fi nevoiți să ieșim de acolo cu ultima muchie, contradicție. Dacă nu începem acolo, vom fi la un moment dat blocați, deci avem iar contradicție. 
+    Mai întâi, o condiție necesară și suficientă este aceea că toate nodurile
+    trebuie să poată fi vizitate, iar gradele nodurilor să fie pare.
+
+Acest lucru poate fi arătat ușor, presupunând că putem avea un ciclu eulerian
+care să conțină un nod cu grad impar. Dacă începem ciclul nostru acolo, nu îl
+vom putea termina acolo, deoarece după ce folosim o muchie să părăsim nodul, vom
+avea un număr par de muchii adiacente nodului curent. Jumătate dintre ele ar
+trebui să fie folosite pentru a intra acolo, cealaltă jumătate pentru a ieși,
+deci am fi nevoiți să ieșim de acolo cu ultima muchie, contradicție. Dacă nu
+începem acolo, vom fi la un moment dat blocați, deci avem iar contradicție.
 
 !!! info "Lanț eulerian când avem noduri cu grad impar"
-    Totuși, putem construi un lanț eulerian dacă avem noduri cu grad impar, atâta timp cât avem exact două noduri cu grad impar și începem și terminăm în nodurile cu grad impar. 
 
-Pentru a afla dacă graful dat admite un ciclu eulerian, vom putea folosi algoritmul lui Fleury. 
+    Totuși, putem construi un lanț eulerian dacă avem noduri cu grad impar,
+    atâta timp cât avem exact două noduri cu grad impar și începem și terminăm
+    în nodurile cu grad impar.
 
-Algoritmul lui Fleury este unul recursiv, acesta bazându-se pe faptul că pentru un nod oarecare, atâta timp cât mai avem muchii adiacente cu el care nu au fost folosite, vom apela recursiv funcția pentru nodul adiacent muchiei curente. Dacă la un moment dat avem o muchie nefolosită, o marcăm drept vizitată și mergem mai departe. Se remarcă faptul că nodurile sunt adăugate la răspuns în ordinea inversă în care apelăm funcțiile.
+Pentru a afla dacă graful dat admite un ciclu eulerian, vom putea folosi
+algoritmul lui Fleury.
 
-În general, dacă identificăm faptul că o problemă necesită cicluri euleriene, odată ce avem implementarea de bază completă, o mare parte din problemă este completă, algoritmul fiind relativ ușor de învățat. 
+Algoritmul lui Fleury este unul recursiv, acesta bazându-se pe faptul că pentru
+un nod oarecare, atâta timp cât mai avem muchii adiacente cu el care nu au fost
+folosite, vom apela recursiv funcția pentru nodul adiacent muchiei curente. Dacă
+la un moment dat avem o muchie nefolosită, o marcăm drept vizitată și mergem mai
+departe. Se remarcă faptul că nodurile sunt adăugate la răspuns în ordinea
+inversă în care apelăm funcțiile.
 
-Mai jos se poate observa o implementare C++ pentru problema [ciclueuler de pe infoarena](https://www.infoarena.ro/problema/ciclueuler).
+În general, dacă identificăm faptul că o problemă necesită cicluri euleriene,
+odată ce avem implementarea de bază completă, o mare parte din problemă este
+completă, algoritmul fiind relativ ușor de învățat.
+
+Mai jos se poate observa o implementare C++ pentru problema [ciclueuler de pe
+infoarena](https://www.infoarena.ro/problema/ciclueuler).
 
 ```cpp
 #include <fstream>
@@ -78,8 +115,6 @@ void euler (int node) {
     }
     sol.push_back(node);
 }
-
-
 
 int main() {
     ifstream cin("ciclueuler.in");
@@ -124,7 +159,10 @@ int main() {
 ```
 
 !!! note "Observație"
-    Algoritmul lui Fleury se poate implementa și iterativ, folosind un principiu similar cu cel descris mai sus, implementarea putând fi făcută cu o stivă sau un deque. 
+
+    Algoritmul lui Fleury se poate implementa și iterativ, folosind un principiu
+    similar cu cel descris mai sus, implementarea putând fi făcută cu o stivă
+    sau un deque.
 
 ```cpp
 deque<int> dq;
@@ -147,14 +185,21 @@ while (!dq.empty()) {
 
 ### Problemă exemplu - [Domino](https://www.infoarena.ro/problema/domino)
 
-Această problemă se reduce la aflarea unui lanț eulerian în graful descris în enunț. 
+Această problemă se reduce la aflarea unui lanț eulerian în graful descris în
+enunț.
 
-Graful din enunț are doar $10$ noduri și vom folosi proprietățile descrise mai devreme în articol, unde am menționat faptul că este obligatoriu să începem dintr-un nod cu grad impar pentru a avea lanț eulerian. Dacă toate nodurile au grad par, nu contează de unde începem.
+Graful din enunț are doar 10 noduri și vom folosi proprietățile descrise mai
+devreme în articol, unde am menționat faptul că este obligatoriu să începem
+dintr-un nod cu grad impar pentru a avea lanț eulerian. Dacă toate nodurile au
+grad par, nu contează de unde începem.
 
-Dacă avem mai mult de $2$ noduri cu grad impar, atunci nu avem soluție. În mod similar, și dacă nu putem parcurge toate muchiile.
+Dacă avem mai mult de 2 noduri cu grad impar, atunci nu avem soluție. În mod
+similar, și dacă nu putem parcurge toate muchiile.
 
 !!! note "Observație"
-    Se poate observa faptul că algoritmul dat este foarte similar cu cel descris pentru ciclul eulerian. 
+
+    Se poate observa faptul că algoritmul dat este foarte similar cu cel descris
+    pentru ciclul eulerian.
 
 ```cpp
 #include <fstream>
@@ -245,13 +290,20 @@ int main() {
 ## Cicluri hamiltoniene
 
 !!! info "Ciclu hamiltonian"
-    Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate nodurile exact o singură dată. 
 
-În general, pentru a afla un ciclu hamiltonian, putem folosi metode de tip brute-force, precum backtracking. 
+    Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură
+    dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate
+    nodurile exact o singură dată.
 
-Aici puteți găsi implementarea în C++ pentru problema [Hamilton de pe pbinfo](https://www.pbinfo.ro/probleme/548/hamilton).
+În general, pentru a afla un ciclu hamiltonian, putem folosi metode de tip
+brute-force, precum backtracking.
 
-Se poate observa că pentru a optimiza implementarea, am folosit o mască pe biți pentru a ține nodurile deja vizitate, dar algoritmul va rămâne unul exponențial din punct de vedere al timpului și memoriei utilizate.
+Aici puteți găsi implementarea în C++ pentru problema [Hamilton de pe
+pbinfo](https://www.pbinfo.ro/probleme/548/hamilton).
+
+Se poate observa că pentru a optimiza implementarea, am folosit o mască pe biți
+pentru a ține nodurile deja vizitate, dar algoritmul va rămâne unul exponențial
+din punct de vedere al timpului și memoriei utilizate.
 
 ```cpp
 #include <fstream>
@@ -313,25 +365,44 @@ int main() {
 }
 ```
 
-Ulterior, în alte probleme precum cele în care avem nevoie de dinamici pe măști, vom discuta aplicații avansate ale acestor cicluri, așa cum sunt prezentate [în acest articol](https://edu.roalgo.ro/mediu/bitmask-dp/#problema-hamiltonian-flights).
+Ulterior, în alte probleme precum cele în care avem nevoie de dinamici pe măști,
+vom discuta aplicații avansate ale acestor cicluri, așa cum sunt prezentate [în
+acest
+articol](./bitmask-dp.md#problema-hamiltonian-flights).
 
 ## Grafuri funcționale
 
-!!! info "Grafuri funcționale"    
-    Un graf funcțional este un graf orientat cu $n$ noduri și $n$ muchii, cu proprietatea că fiecare nod are o singură muchie care pleacă din el. 
+!!! info "Grafuri funcționale"
 
-Cu alte cuvinte, aceste grafuri sunt o reuniune de cicluri, împreună cu niște lanțuri atașate de ele. 
+    Un graf funcțional este un graf orientat cu $n$ noduri și $n$ muchii, cu
+    proprietatea că fiecare nod are o singură muchie care pleacă din el.
 
-Aceste grafuri, datorită formei lor speciale, au multe proprietăți interesante și fac prelucrarea lor mai ușoară. De multe ori, vom vrea să filtrăm nodurile care nu fac parte din cicluri, iar mai apoi, să lucrăm cu fiecare ciclu în mod independent. Vom folosi câteva exemple pentru a prezenta acest concept în diverse probleme de la competiții de informatică.
+Cu alte cuvinte, aceste grafuri sunt o reuniune de cicluri, împreună cu niște
+lanțuri atașate de ele.
+
+Aceste grafuri, datorită formei lor speciale, au multe proprietăți interesante
+și fac prelucrarea lor mai ușoară. De multe ori, vom vrea să filtrăm nodurile
+care nu fac parte din cicluri, iar mai apoi, să lucrăm cu fiecare ciclu în mod
+independent. Vom folosi câteva exemple pentru a prezenta acest concept în
+diverse probleme de la competiții de informatică.
 
 !!! warning "Ciclurile permutarilor"  
-    Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective) a articolului despre permutări, unde se vorbește de ciclurile unei permutări și aplicațiile care implică grafuri funcționale
+
+    Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei
+    secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective)
+    a articolului despre permutări, unde se vorbește de ciclurile unei permutări
+    și aplicațiile care implică grafuri funcționale
 
 ### Problemă exemplu - [Mouse Hunt - Codeforces](https://codeforces.com/contest/1027/problem/D)
 
-Pentru a rezolva această problemă, vrem să filtrăm nodurile care nu aparțin ciclurilor, iar algoritmul pe care îl vom prezenta mai jos va fi unul standard, care va fi aplicat în multe asemenea probleme. 
+Pentru a rezolva această problemă, vrem să filtrăm nodurile care nu aparțin
+ciclurilor, iar algoritmul pe care îl vom prezenta mai jos va fi unul standard,
+care va fi aplicat în multe asemenea probleme.
 
-Practic, vom vrea să plecăm de la fiecare nod nevizitat și să parcurgem graful până când dăm de un nod deja vizitat. Apoi, vom vrea să reconstruim ciclul care pleacă de la nodul vizitat, dacă acest pas este prima oară când am vizitat nodul în cauză. 
+Practic, vom vrea să plecăm de la fiecare nod nevizitat și să parcurgem graful
+până când dăm de un nod deja vizitat. Apoi, vom vrea să reconstruim ciclul care
+pleacă de la nodul vizitat, dacă acest pas este prima oară când am vizitat nodul
+în cauză.
 
 ```cpp
 #include <iostream>
@@ -389,11 +460,16 @@ int main() {
 
 ### Problemă suplimentară - [Milk Exchange - USACO Bronze](https://usaco.org/index.php?page=viewproblem2&cpid=1396)
 
-Pentru a rezolva această problemă, va trebui să reducem șirul dat la un graf funcțional, graf pentru care știm că unele noduri vor fi noduri de unde doar se va da lapte, iar alte noduri sunt noduri care doar vor primi lapte. Nodurile din prima categorie vor da treptat laptele celor din cea de-a doua categorie. 
+Pentru a rezolva această problemă, va trebui să reducem șirul dat la un graf
+funcțional, graf pentru care știm că unele noduri vor fi noduri de unde doar se
+va da lapte, iar alte noduri sunt noduri care doar vor primi lapte. Nodurile din
+prima categorie vor da treptat laptele celor din cea de-a doua categorie.
 
-Astfel, vom afla ciclurile începând din fiecare nod care va da lapte, iar pe parcurs, vom însuma cantitățile de lapte și vom verifica dacă avem nevoie de mai mult de $m$ secunde pentru a finaliza procesul. 
+Astfel, vom afla ciclurile începând din fiecare nod care va da lapte, iar pe
+parcurs, vom însuma cantitățile de lapte și vom verifica dacă avem nevoie de mai
+mult de $m$ secunde pentru a finaliza procesul.
 
-Cu alte cuvinte, vom rezolva problema independent pentru fiecare ciclu din graf. 
+Cu alte cuvinte, vom rezolva problema independent pentru fiecare ciclu din graf.
 
 ```cpp
 
@@ -462,9 +538,13 @@ int main() {
 
 ### Problema [Cyclic Operations - Codeforces](https://codeforces.com/contest/1867/problem/D)
 
-Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $k = 1$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $k$. 
+Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $k =
+1$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În
+caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe
+create de graful dat au lungime $k$.
 
-Acest lucru poate fi ușor demonstrat folosind periodicitatea operației date în enunț. Pentru mai multe detalii, recomandăm citirea soluției oficiale.
+Acest lucru poate fi ușor demonstrat folosind periodicitatea operației date în
+enunț. Pentru mai multe detalii, recomandăm citirea soluției oficiale.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -554,43 +634,62 @@ int main() {
 
 ## Concluzii
 
-Lucrul cu cicluri este important în ceea ce privește teoria grafurilor, iar observarea diverselor proprietăți pe care ciclurile le au poate fi importantă în contextul a multor probleme de teoria grafurilor, dar și ulterior, atunci când veți învăța unii algoritmi mai dificili, precum aceia pentru [componentele tare conexe](https://edu.roalgo.ro/dificil/componente-tare-conexe/) sau [componentele biconexe](https://edu.roalgo.ro/dificil/componente-biconexe/).
+Lucrul cu cicluri este important în ceea ce privește teoria grafurilor, iar
+observarea diverselor proprietăți pe care ciclurile le au poate fi importantă în
+contextul a multor probleme de teoria grafurilor, dar și ulterior, atunci când
+veți învăța unii algoritmi mai dificili, precum aceia pentru [componentele tare
+conexe](../dificil/componente-tare-conexe.md) sau [componentele
+biconexe](../dificil/componente-biconexe.md).
 
 ## Probleme suplimentare
 
-* [CSES Mail Delivery](https://cses.fi/problemset/task/1691)
-* [pbinfo drum hamiltonian](https://www.pbinfo.ro/probleme/579/drum-hamiltonian)
-* [Codeforces Badge](https://codeforces.com/contest/1020/problem/B)
-* [CSES Teleporters Path](https://cses.fi/problemset/task/1693)
-* [OJI 2014 cartite](https://kilonova.ro/problems/33)
-* [USACO Bronze Swapity Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1013)
-* [USACO Silver Bovine Shuffle](https://usaco.org/index.php?page=viewproblem2&cpid=764)
-* [CSES Planets Cycles](https://cses.fi/problemset/task/1751)
-* [Codeforces Lucky Permutation](https://codeforces.com/contest/1768/problem/D)
-* [infoarena domino](https://www.infoarena.ro/problema/domino)
-* [infoarena johnie](https://www.infoarena.ro/problema/johnie)
-* [USACO Silver Redistributing Gifts](https://usaco.org/index.php?page=viewproblem2&cpid=1206)
-* [Codeforces Yet Another Sorting Problem](https://codeforces.com/contest/1591/problem/D)
-* [Codeforces Jewel of Data Structure Problems](https://codeforces.com/gym/104197/problem/J)
-* [Codeforces Shifting String](https://codeforces.com/contest/1690/problem/F)
-* [USACO Silver Visits](https://usaco.org/index.php?page=viewproblem2&cpid=1230)
-* [USACO Silver Swapity Swapity Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1014)
-* [Codeforces Square Root of Permutation](https://codeforces.com/contest/612/problem/E)
-* [Codeforces Inversion Counting](https://codeforces.com/contest/911/problem/D)
-* [CEOI 2005 depot](https://cses.fi/191/list/) - se intră în cont și se dă upsolving pentru a accesa problema
-* [Lot Seniori 2014 Evacuare](https://kilonova.ro/problems/1978)
-* [Lot Seniori 2016 politic](https://kilonova.ro/problems/1924)
-* [infoarena zaharel](https://infoarena.ro/problema/zaharel)
-* [ONI 2024 sim](https://kilonova.ro/problems/2642)
-* [Lot Seniori 2011 amici](https://kilonova.ro/problems/2234)
-* [IOI 2011 Tropical Garden](https://oj.uz/problem/view/IOI11_garden)
+- [CSES Mail Delivery](https://cses.fi/problemset/task/1691)
+- [pbinfo drum hamiltonian](https://www.pbinfo.ro/probleme/579/drum-hamiltonian)
+- [Codeforces Badge](https://codeforces.com/contest/1020/problem/B)
+- [CSES Teleporters Path](https://cses.fi/problemset/task/1693)
+- [OJI 2014 cartite](https://kilonova.ro/problems/33)
+- [USACO Bronze Swapity
+  Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1013)
+- [USACO Silver Bovine
+  Shuffle](https://usaco.org/index.php?page=viewproblem2&cpid=764)
+- [CSES Planets Cycles](https://cses.fi/problemset/task/1751)
+- [Codeforces Lucky Permutation](https://codeforces.com/contest/1768/problem/D)
+- [infoarena domino](https://www.infoarena.ro/problema/domino)
+- [infoarena johnie](https://www.infoarena.ro/problema/johnie)
+- [USACO Silver Redistributing
+  Gifts](https://usaco.org/index.php?page=viewproblem2&cpid=1206)
+- [Codeforces Yet Another Sorting
+  Problem](https://codeforces.com/contest/1591/problem/D)
+- [Codeforces Jewel of Data Structure
+  Problems](https://codeforces.com/gym/104197/problem/J)
+- [Codeforces Shifting String](https://codeforces.com/contest/1690/problem/F)
+- [USACO Silver Visits](https://usaco.org/index.php?page=viewproblem2&cpid=1230)
+- [USACO Silver Swapity Swapity
+  Swap](https://usaco.org/index.php?page=viewproblem2&cpid=1014)
+- [Codeforces Square Root of
+  Permutation](https://codeforces.com/contest/612/problem/E)
+- [Codeforces Inversion Counting](https://codeforces.com/contest/911/problem/D)
+- [CEOI 2005 depot](https://cses.fi/191/list/) - se intră în cont și se dă
+  upsolving pentru a accesa problema
+- [Lot Seniori 2014 Evacuare](https://kilonova.ro/problems/1978)
+- [Lot Seniori 2016 politic](https://kilonova.ro/problems/1924)
+- [infoarena zaharel](https://infoarena.ro/problema/zaharel)
+- [ONI 2024 sim](https://kilonova.ro/problems/2642)
+- [Lot Seniori 2011 amici](https://kilonova.ro/problems/2234)
+- [IOI 2011 Tropical Garden](https://oj.uz/problem/view/IOI11_garden)
 
 ## Resurse suplimentare
 
-* [Eulerian path - cp-algorithms](https://cp-algorithms.com/graph/euler_path.html)
-* [Euler paths and circuits - Discrete Mathematics: An Open Introduction](https://discrete.openmathbooks.org/dmoi2/sec_paths.html)
-* [Cicluri euleriene - wikipedia](https://en.wikipedia.org/wiki/Eulerian_path)
-* [Cicluri hamiltoniene - wikipedia](https://en.wikipedia.org/wiki/Hamiltonian_path)
-* [Problema gasirii drumului hamiltonian - wikipedia](https://en.wikipedia.org/wiki/Hamiltonian_path_problem)
-* [Cicluri ale permutarilor - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_13_-_5_dec_2019#Cicluri_ale_permut%C4%83rilor)
-* [Grafuri funcționale - USACO Guide](https://usaco.guide/silver/func-graphs?lang=cpp)
+- [Eulerian path -
+  cp-algorithms](https://cp-algorithms.com/graph/euler_path.html)
+- [Euler paths and circuits - Discrete Mathematics: An Open
+  Introduction](https://discrete.openmathbooks.org/dmoi2/sec_paths.html)
+- [Cicluri euleriene - wikipedia](https://en.wikipedia.org/wiki/Eulerian_path)
+- [Cicluri hamiltoniene -
+  wikipedia](https://en.wikipedia.org/wiki/Hamiltonian_path)
+- [Problema gasirii drumului hamiltonian -
+  wikipedia](https://en.wikipedia.org/wiki/Hamiltonian_path_problem)
+- [Cicluri ale permutarilor -
+  Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_13_-_5_dec_2019#Cicluri_ale_permut%C4%83rilor)
+- [Grafuri funcționale - USACO
+  Guide](https://usaco.guide/silver/func-graphs?lang=cpp)

@@ -2,325 +2,878 @@
 site_name: Arhiva Educationala RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
-  O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
-  și nu numai.
+      O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
+      și nu numai.
+use_directory_urls: false
 theme:
-  name: material
-  features:
-    - content.code.annotate
-    - content.code.copy
-    - content.action.edit
-    - search.suggest
-    - search.share
-    - search.highlight
-    - navigation.instant
-    - navigation.footer
-    - navigation.tabs
-    - navigation.instant.progress
-    - navigation.tracking
-    - navigation.indexes
-    - toc.follow
-    - toc.integrate
-    - navigation.top
-  icon:
-    icon:
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
-  language: ro
-  font: false
-  palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to auto mode
+      name: material
+      features:
+            - content.code.annotate
+            - content.code.copy
+            - content.action.edit
+            - search.suggest
+            - search.share
+            - search.highlight
+            - navigation.instant
+            - navigation.footer
+            - navigation.tabs
+            - navigation.instant.progress
+            - navigation.tracking
+            - navigation.indexes
+            - toc.follow
+            - toc.integrate
+            - navigation.top
+      icon:
+            icon:
+            admonition:
+                  note: octicons/tag-16
+                  abstract: octicons/checklist-16
+                  info: octicons/info-16
+                  tip: octicons/squirrel-16
+                  success: octicons/check-16
+                  question: octicons/question-16
+                  warning: octicons/alert-16
+                  failure: octicons/x-circle-16
+                  danger: octicons/zap-16
+                  bug: octicons/bug-16
+                  example: octicons/beaker-16
+                  quote: octicons/quote-16
+      language: ro
+      font: false
+      palette:
+            - media: "(prefers-color-scheme)"
+              toggle:
+                    icon: material/brightness-auto
+                    name: Switch to auto mode
 
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+            - media: "(prefers-color-scheme: light)"
+              scheme: default
+              toggle:
+                    icon: material/brightness-7
+                    name: Switch to dark mode
 
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  custom_dir: overrides
+            - media: "(prefers-color-scheme: dark)"
+              scheme: slate
+              toggle:
+                    icon: material/brightness-4
+                    name: Switch to light mode
+      custom_dir: overrides
 
 extra:
-  social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/roalgo
-      name: Hai pe discord!
-  generator: false
-  analytics:
-    provider: custom
+      social:
+            - icon: fontawesome/brands/discord
+              link: https://discord.gg/roalgo
+              name: Hai pe discord!
+      generator: false
+      analytics:
+            provider: custom
 
 copyright: >
-  Accest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
-  multe detali consultă <a href="/arhiva-educationala/licenta">pagina de licență
-  </a>.
+      Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
+      multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de
+      licență </a>.
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.keys
-  - admonition
-  - pymdownx.details
-  - def_list
-  - attr_list
-  - md_in_html
-  - pymdownx.tabbed:
-      alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-  - toc:
-      permalink: '#'
+      - pymdownx.arithmatex:
+              generic: true
+      - pymdownx.emoji:
+              emoji_index: !!python/name:material.extensions.emoji.twemoji
+              emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      - pymdownx.superfences:
+              custom_fences:
+                    - name: mermaid
+                      class: mermaid
+                      format: !!python/name:pymdownx.superfences.fence_code_format
+      - pymdownx.highlight:
+              anchor_linenums: true
+              line_spans: __span
+              pygments_lang_class: true
+      - pymdownx.inlinehilite
+      - pymdownx.snippets:
+              base_path: ["docs/codes"]
+      - pymdownx.keys
+      - admonition
+      - pymdownx.details
+      - def_list
+      - attr_list
+      - md_in_html
+      - pymdownx.tabbed:
+              alternate_style: true
+              slugify: !!python/object/apply:pymdownx.slugs.slugify
+                    kwds:
+                          case: lower
+      - toc:
+              permalink: "#"
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 plugins:
-  - search:
-      enabled: true
-      lang: ro
-  # - awesome-pages
-  - tags
-  - social:
-      enabled: !ENV [CI, false]
-      cards_layout_options:
-        font_family: Roboto
-        font_variant: Condensed
+      - search:
+              enabled: true
+              lang: ro
+      # - awesome-pages
+      - tags
+      - social:
+              enabled: !ENV [CI, false]
+              cards_layout_options:
+                    font_family: Roboto
+                    font_variant: Condensed
 
 nav:
-  - Acasă: index.md
-  - Introducere în C++:
-      - cppintro/index.md
-      - Primul program în C++: cppintro/intro.md
-      - Variabile și tipuri de date simple: cppintro/data-types.md
-      - Citirea și afișarea datelor: cppintro/input-output.md
-      - Operatori și expresii. Cunoștințe matematice de bază: cppintro/basic-math.md
-      - Structura alternativă: cppintro/conditions-if.md
-      - Structura repetitivă: cppintro/loops.md
-      - Coding style: cppintro/coding-style.md
-      - Vectori (tablouri unidimensionale): cppintro/arrays.md
-      - Matrici (tablouri bidimensionale): cppintro/matrices.md
-      - Subprograme: cppintro/functions.md
-      - Funcții Lambda: cppintro/lambda.md
-      - Introducere în STL: cppintro/stl.md
-      - Șiruri de caractere: cppintro/strings.md
-      - Liste înlănțuite: cppintro/linked-lists.md
-      - Citire rapidă. Parsarea datelor: cppintro/fast-io.md
-  - Ușor:
-      - Informații utile:
-          - De unde începi?: usor/how-to-start.md
-          - Ordinea învățării conținuturilor (roadmap): usor/roadmap.md
-          - Cum ajungi să stăpânești materia de la clasă?: usor/schoolwork.md
-          - Cum să te pregătești pentru bacalaureat și admitere?: usor/bac-admitere.md
-      - Concepte fundamentale:
-          - Complexități: usor/complexity.md
-          - Maxime și minime: usor/maxime-minime.md
-          - Prelucrarea cifrelor: usor/digits-manipulation.md
-          - Simularea soluției: usor/simulating-solution.md
-          - Vectori de frecvență: usor/frequency-arrays.md
-          - Abordarea problemelor cu secvențe: usor/sequences.md
-      - Algebră:
-          - Generarea șirurilor de numere: usor/generarea-sirurilor.md
-          - Divizibilitatea: usor/divisibility.md
-          - Ciurul lui Eratostene: usor/sieve.md
-          - Principiul lui Dirichlet (principiul cutiei): usor/dirichlet.md
-      - Sortare și căutare:
-          - Algoritmi de sortare: usor/sorting.md
-          - Introducere în Metoda Greedy: usor/greedy.md
-          - Sume parțiale. Șmenul lui Mars: usor/partial-sums.md
-          - Căutarea binară: usor/binary-search.md
-      - Introducere în programarea dinamică: usor/intro-dp.md
-      - Introducere în teoria grafurilor: usor/graphs.md
-  - Mediu:
-      - Informații utile:
-          - Cum repari o soluție greșită?: mediu/debugging.md
-          - Cum ajungi tot mai bun la concursuri?: mediu/contest-improvement.md
-          - Listă de concursuri relevante: mediu/contest-list.md
-          - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
-      - Concepte fundamente și de limbaj:
-          - Căutare completă. Tehnica Backtracking: mediu/backtracking.md
-          - Tehnica divide et impera: mediu/divide-et-impera.md
-      - Tehnici de rezolvare a problemelor:
-          - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
-          - Abordarea problemelor constructive: mediu/constructive.md
-          - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
-      - Algebră:
-          - Indicatorul lui Euler: mediu/euler-totient.md
-          - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md
-          - Baze de numerație: mediu/number-bases.md
-          - Principiul includerii și excluderii (pinex): mediu/pinex.md
-          - Invers modular: mediu/modular-inverse.md
-      - Sortare și căutare:
-          - Two pointers: mediu/two-pointers.md
-          - Sliding window: mediu/sliding-window.md
-         # - Algoritmi de sortare: mediu/sorting-algorithms.md
-      - Programare dinamică:
-          - Problema rucsacului: mediu/knapsack.md
-          - Subșir maximal:
-              - Subșir comun maximal: mediu/lcs.md
-              - Subșir crescător maximal: mediu/lis.md
-          - Dinamică pe stări exponențiale (bitmask DP): mediu/bitmask-dp.md
-      - Teoria grafurilor:
-          - Cicluri în grafuri. Grafuri funcționale: mediu/cycles.md
-          - Introducere în arbori. Diametrul unui arbore: mediu/tree-1.md
-          - Sortare topologică: mediu/toposort.md
-          - Păduri de mulțimi disjuncte (DSU): mediu/dsu.md
-          - Arbore parțial de cost minim: mediu/apcm.md
-          - Algoritmi pentru drumuri minime: mediu/shortest-path.md
-          - Tehnica celor două DFS-uri (rerooting): mediu/rerooting.md
-      - Structuri de date:
-          - Coada: mediu/queue.md
-          - Stiva: mediu/stack.md
-          - Analiza amortizată: mediu/amortised-analysis.md
-          - Algoritmul lui Lee. Flood Fill: mediu/lee.md
-          - Evaluarea unei expresii: mediu/expression-evaluation.md
-          - Deque: mediu/deque.md
-      - Introducere în combinatorică: mediu/intro-combinatorics.md
-      - Concepte fundamentale de geometrie: mediu/basic-geometry.md
-      - Altele:
-          - Operații pe biți: mediu/bitwise-ops.md
-          - Numere mari: mediu/bignum.md
-          - Normalizarea datelor: mediu/data-normalization.md
-          - Hashing: mediu/hashing.md
-          - Meet in the Middle: mediu/mitm.md
-  - Dificil:
-      - Pregătirea problemelor:
-          - Cum propui și pregătești o problemă?: dificil/problemsetting.md
-      - Tehnici de rezolvare a problemelor:
-          - Probleme interactive: dificil/interactive.md
-          - Probleme output only: dificil/output-only.md
-      - Căutare ternară: dificil/ternary-search.md
-      - Programare dinamică:
-          - Programare dinamică pe grafuri: dificil/graph-dp.md
-          - Programare dinamică pe arbore: dificil/tree-dp.md
-          - Programare dinamică pe intervale (range DP): dificil/range-dp.md
-          - Programare dinamică pe cifre (digit DP): dificil/digit-dp.md
-          - Programare dinamică pe permutări: dificil/permutations-dp.md
-          - Programare dinamică cu structuri de date: dificil/data-structures-dp.md
-      - Teoria grafurilor:
-          - Componente tare conexe: dificil/componente-tare-conexe.md
-          - Componente biconexe: dificil/componente-biconexe.md
-          - Cuplaj maxim pe graf bipartit: dificil/cuplaj-maxim-pe-graf-bipartit.md
-      - Structuri de date:
-          - Descompuneri în bucăți de radical (Square Root Decomposition): dificil/square-root-decomposition.md
-          - Arbori de intervale: dificil/segment-trees.md
-          - Arbori indexați binar: dificil/fenwick-tree.md
-          - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
-          - Trie (arbore de prefixe): dificil/trie.md
-      - Algebră:
-          - Funcția Möbius: dificil/mobius.md
-          - Introducere în algebră liniară: dificil/intro-linalg.md
-          - Ridicare la putere a unei matrici: dificil/pow-mat.md
-      - Geometrie:
-          - Înfășurătoare convexă: dificil/convex-hull.md
-          - Baleiere (sweep line): dificil/sweep-line.md
-      - Algoritmi pe șiruri de caractere:
-          - Rotație lexicografică minimă: dificil/lmsr.md
-          - Knuth-Morris-Pratt (KMP): dificil/kmp.md
-          - Z Function: dificil/z-function.md
-      - Lucrul pe arbori:
-          - Binary lifting. Lowest common ancestor (LCA): dificil/lowest-common-ancestor.md
-          - Small to large: dificil/small-to-large.md
-          - Structuri de date pe arbore (Euler tour): dificil/euler-tour.md
-      - Altele:
-          - Bitsets: dificil/bitsets.md
-          - Algoritmi randomizați: dificil/random-algorithms.md
-  - Avansat:
-      - Algebră:
-          - Algoritmi de compresie și de corectare a erorilor:
-              - Coduri Gray: avansat/gray-codes.md
-              - Codarea Huffman: avansat/huffman.md
-              - Run-length encoding: avansat/rle.md
-          - Teorema chineză a resturilor (CRT): avansat/crt.md
-          - Introducere în probabilități: avansat/intro-probability.md
-          - FFT, NTT etc.: avansat/fft.md
-          - Recurențe liniare: avansat/linear-recurrences.md
-      - Programare dinamică:
-          - Convex Hull Trick: avansat/convex-hull-trick.md
-          - Programare dinamică pe divide et impera: avansat/dc-dp.md
-          - Aliens DP: avansat/aliens-dp.md
-          - Knuth DP: avansat/knuth-dp.md
-          - Component DP: avansat/component-dp.md
-      - Teoria grafurilor:
-          - Fluxuri: avansat/fluxuri.md
-          - Tipuri speciale de grafuri: avansat/special-graphs.md
-          - Dynamic connectivity: avansat/dynamic-connectivity.md
-          - 2-SAT: avansat/2-sat.md
-      - Structuri de date:
-          - Aho-Corasick: avansat/aho-corasick.md
-          - Treap-uri: avansat/treaps.md
-          - Heavy light decomposition (HLD): avansat/hld.md
-          - Centroid decomposition: avansat/centroid-decomposition.md
-          - Arbore virtual (virtual tree): avansat/virtual-tree.md
-          - Arbore de intervale persistenți: avansat/persistent-segment-tree.md
-          - Arbore Li Chao: avansat/li-chao.md
-      - Algoritmul lui Gauss: avansat/gauss-algorithm.md
-      - Algoritmi pe șiruri de caractere:
-          - Algoritmul lui Manacher: avansat/manacher.md
-          - Tablou/arbore de sufixe: avansat/suffix-array-tree.md
-      - Altele:
-          - Matematică avansată: avansat/advanced-math.md
-          - Teoria jocurilor: avansat/game-theory.md
-          - Funcții generatoare: avansat/generating-functions.md
-  - Olimpiadă:
-      - Strategie: 
-          - Informații despre olimpiada de informatică: olimpiada/olympiad-info.md
-          - Cum te pregătești pentru olimpiadă?: olimpiada/olympiad-prep.md
-          - Cum abordezi proba de concurs la olimpiadă?: olimpiada/olympiad-strategy.md
-          - Cum ajungi să iei rezultate tot mai bune la olimpiadă?: olimpiada/olympiad-improvement.md
-      - Programă:
-          - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
-          - Gimnaziu:
-              - Sfaturi generale pentru gimnaziu: olimpiada/gimnaziu.md
-              - Clasa a V-a: olimpiada/clasa-V.md
-              - Clasa a VI-a: olimpiada/clasa-VI.md
-              - Clasa a VII-a: olimpiada/clasa-VII.md
-              - Clasa a VIII-a: olimpiada/clasa-VIII.md
-              - Baraj și lot juniori: olimpiada/baraj-lot-juniori.md
-          - Liceu:
-              - Sfaturi generale pentru liceu: olimpiada/liceu.md
-              - Clasa a IX-a: olimpiada/clasa-IX.md
-              - Clasa a X-a: olimpiada/clasa-X.md
-              - Clasele XI-XII: olimpiada/clasa-XI-XII.md
-              - Baraj și lot seniori: olimpiada/baraj-lot-seniori.md
+      - Acasă: index.md
+      - Introducere în C++:
+              - cppintro/index.md
+              - Primul program în C++: cppintro/intro.md
+              - Variabile și tipuri de date simple: cppintro/data-types.md
+              - Citirea și afișarea datelor: cppintro/input-output.md
+              - Operatori și expresii. Cunoștințe matematice de bază: cppintro/basic-math.md
+              - Structura alternativă: cppintro/conditions-if.md
+              - Structura repetitivă: cppintro/loops.md
+              - Coding style: cppintro/coding-style.md
+              - Vectori (tablouri unidimensionale): cppintro/arrays.md
+              - Matrici (tablouri bidimensionale): cppintro/matrices.md
+              - Subprograme: cppintro/functions.md
+              - Funcții Lambda: cppintro/lambda.md
+              - Introducere în STL: cppintro/stl.md
+              - Șiruri de caractere: cppintro/strings.md
+              - Liste înlănțuite: cppintro/linked-lists.md
+              - Citire rapidă. Parsarea datelor: cppintro/fast-io.md
+      - Ușor:
+              - Informații utile:
+                      - De unde începi?: usor/how-to-start.md
+                      - Ordinea învățării conținuturilor (roadmap): usor/roadmap.md
+                      - Cum ajungi să stăpânești materia de la clasă?: usor/schoolwork.md
+                      - Cum să te pregătești pentru bacalaureat și admitere?: usor/bac-admitere.md
+              - Concepte fundamentale:
+                      - Complexități: usor/complexity.md
+                      - Maxime și minime: usor/maxime-minime.md
+                      - Prelucrarea cifrelor: usor/digits-manipulation.md
+                      - Simularea soluției: usor/simulating-solution.md
+                      - Vectori de frecvență: usor/frequency-arrays.md
+                      - Abordarea problemelor cu secvențe: usor/sequences.md
+              - Algebră:
+                      - Generarea șirurilor de numere: usor/generarea-sirurilor.md
+                      - Divizibilitatea: usor/divisibility.md
+                      - Ciurul lui Eratostene: usor/sieve.md
+                      - Principiul lui Dirichlet (principiul cutiei): usor/dirichlet.md
+              - Sortare și căutare:
+                      - Algoritmi de sortare: usor/sorting.md
+                      - Introducere în Metoda Greedy: usor/greedy.md
+                      - Sume parțiale. Șmenul lui Mars: usor/partial-sums.md
+                      - Căutarea binară: usor/binary-search.md
+              - Introducere în programarea dinamică: usor/intro-dp.md
+              - Introducere în teoria grafurilor: usor/graphs.md
+      - Mediu:
+              - Informații utile:
+                      - Cum repari o soluție greșită?: mediu/debugging.md
+                      - Cum ajungi tot mai bun la concursuri?: mediu/contest-improvement.md
+                      - Listă de concursuri relevante: mediu/contest-list.md
+                      - Cum gestionezi presiunea concursurilor?: mediu/handling-pressure.md
+                      - Abordarea concursurilor de pe Codeforces/AtCoder: mediu/cf-atcoder.md
+              - Tehnici de rezolvare a problemelor:
+                      - Abordarea problemelor ad-hoc: mediu/ad-hoc.md
+                      - Abordarea problemelor constructive: mediu/constructive.md
+                      - Căutare completă. Tehnica Backtracking: mediu/backtracking.md
+                      - Tehnica divide et impera: mediu/divide-et-impera.md
+              - Algebră:
+                      - Indicatorul lui Euler: mediu/euler-totient.md
+                      - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md
+                      - Baze de numerație: mediu/number-bases.md
+                      - Principiul includerii și excluderii (pinex): mediu/pinex.md
+                      - Invers modular: mediu/modular-inverse.md
+              - Sortare și căutare:
+                      - Two pointers: mediu/two-pointers.md
+                      - Sliding window: mediu/sliding-window.md
+                      - Aplicații ale STL în problemele de căutare și sortare: mediu/stl-sorting-searching.md
+                      # - Algoritmi de sortare: mediu/sorting-algorithms.md
+              - Programare dinamică:
+                      - Problema rucsacului: mediu/knapsack.md
+                      - Subșir maximal:
+                              - Subșir comun maximal: mediu/lcs.md
+                              - Subșir crescător maximal: mediu/lis.md
+                      - Dinamică pe stări exponențiale (bitmask DP): mediu/bitmask-dp.md
+              - Teoria grafurilor:
+                      - Cicluri în grafuri. Grafuri funcționale: mediu/cycles.md
+                      - Introducere în arbori. Diametrul unui arbore: mediu/tree-1.md
+                      - Sortare topologică: mediu/toposort.md
+                      - Păduri de mulțimi disjuncte (DSU): mediu/dsu.md
+                      - Arbore parțial de cost minim: mediu/apcm.md
+                      - Algoritmi pentru drumuri minime: mediu/shortest-path.md
+                      - Tehnica celor două DFS-uri (rerooting): mediu/rerooting.md
+              - Structuri de date:
+                      - Coada: mediu/queue.md
+                      - Stiva: mediu/stack.md
+                      - Analiza amortizată: mediu/amortised-analysis.md
+                      - Algoritmul lui Lee. Flood Fill: mediu/lee.md
+                      - Evaluarea unei expresii: mediu/expression-evaluation.md
+                      - Deque: mediu/deque.md
+              - Introducere în combinatorică: mediu/intro-combinatorics.md
+              - Concepte fundamentale de geometrie: mediu/basic-geometry.md
+              - Algoritmi STL: mediu/algorithms.md
+              - Altele:
+                      - Operații pe biți: mediu/bitwise-ops.md
+                      - Numere mari: mediu/bignum.md
+                      - Normalizarea datelor: mediu/data-normalization.md
+                      - Hashing: mediu/hashing.md
+                      - Meet in the Middle: mediu/mitm.md
+      - Dificil:
+              - Pregătirea problemelor:
+                      - Cum propui și pregătești o problemă?: dificil/problemsetting.md
+              - Tehnici de rezolvare a problemelor:
+                      - Probleme interactive: dificil/interactive.md
+                      - Probleme output only: dificil/output-only.md
+              - Căutare ternară: dificil/ternary-search.md
+              - Programare dinamică:
+                      - Programare dinamică pe grafuri: dificil/graph-dp.md
+                      - Programare dinamică pe arbore: dificil/tree-dp.md
+                      - Programare dinamică pe intervale (range DP): dificil/range-dp.md
+                      - Programare dinamică pe cifre (digit DP): dificil/digit-dp.md
+                      - Programare dinamică pe permutări: dificil/permutations-dp.md
+                      - Programare dinamică cu structuri de date: dificil/data-structures-dp.md
+              - Teoria grafurilor:
+                      - Componente tare conexe: dificil/componente-tare-conexe.md
+                      - Componente biconexe: dificil/componente-biconexe.md
+                      - Cuplaj maxim pe graf bipartit: dificil/cuplaj-maxim-pe-graf-bipartit.md
+              - Structuri de date:
+                      - Descompuneri în bucăți de radical (Square Root Decomposition): dificil/square-root-decomposition.md
+                      - Arbori de intervale: dificil/segment-trees.md
+                      - Arbori de intervale (căutare binară, lazy propagation): dificil/segment-trees-part2.md
+                      - Arbori indexați binar: dificil/fenwick-tree.md
+                      - Sparse Table. Binary Lifting. Range Minimum Query (RMQ): dificil/rmq.md
+                      - Trie (arbore de prefixe): dificil/trie.md
+              - Algebră:
+                      - Funcția Möbius: dificil/mobius.md
+                      - Introducere în algebră liniară: dificil/intro-linalg.md
+                      - Ridicare la putere a unei matrici: dificil/pow-mat.md
+              - Geometrie:
+                      - Înfășurătoare convexă: dificil/convex-hull.md
+                      - Baleiere (sweep line): dificil/sweep-line.md
+              - Algoritmi pe șiruri de caractere:
+                      - Rotație lexicografică minimă: dificil/lmsr.md
+                      - Knuth-Morris-Pratt (KMP): dificil/kmp.md
+                      - Z Function: dificil/z-function.md
+              - Lucrul pe arbori:
+                      - Binary lifting. Lowest common ancestor (LCA): dificil/lowest-common-ancestor.md
+                      - Small to large: dificil/small-to-large.md
+                      - Structuri de date pe arbore (Euler tour): dificil/euler-tour.md
+              - Altele:
+                      - Bitsets: dificil/bitsets.md
+                      - Algoritmi randomizați: dificil/random-algorithms.md
+      - Avansat:
+              - Algebră:
+                      - Algoritmi de compresie și de corectare a erorilor:
+                              - Coduri Gray: avansat/gray-codes.md
+                              - Codarea Huffman: avansat/huffman.md
+                              - Run-length encoding: avansat/rle.md
+                      - Teorema chineză a resturilor (CRT): avansat/crt.md
+                      - Introducere în probabilități: avansat/intro-probability.md
+                      - FFT, NTT etc.: avansat/fft.md
+                      - Recurențe liniare: avansat/linear-recurrences.md
+              - Programare dinamică:
+                      - Convex Hull Trick: avansat/convex-hull-trick.md
+                      - Programare dinamică pe divide et impera: avansat/dc-dp.md
+                      - Aliens DP: avansat/aliens-dp.md
+                      - Knuth DP: avansat/knuth-dp.md
+                      - Component DP: avansat/component-dp.md
+              - Teoria grafurilor:
+                      - Fluxuri: avansat/fluxuri.md
+                      - Tipuri speciale de grafuri: avansat/special-graphs.md
+                      - Dynamic connectivity: avansat/dynamic-connectivity.md
+                      - 2-SAT: avansat/2-sat.md
+              - Structuri de date:
+                      - Aho-Corasick: avansat/aho-corasick.md
+                      - Treap-uri: avansat/treaps.md
+                      - Heavy light decomposition (HLD): avansat/hld.md
+                      - Centroid decomposition: avansat/centroid-decomposition.md
+                      - Arbore virtual (virtual tree): avansat/virtual-tree.md
+                      - Arbore de intervale persistenți: avansat/persistent-segment-tree.md
+                      - Arbore Li Chao: avansat/li-chao.md
+              - Algoritmul lui Gauss: avansat/gauss-algorithm.md
+              - Algoritmi pe șiruri de caractere:
+                      - Algoritmul lui Manacher: avansat/manacher.md
+                      - Tablou/arbore de sufixe: avansat/suffix-array-tree.md
+              - Altele:
+                      - Matematică avansată: avansat/advanced-math.md
+                      - Teoria jocurilor: avansat/game-theory.md
+                      - Funcții generatoare: avansat/generating-functions.md
+      - Olimpiadă:
+              - Strategie:
+                      - Informații despre olimpiada de informatică: olimpiada/olympiad-info.md
+                      - Cum te pregătești pentru olimpiadă?: olimpiada/olympiad-prep.md
+                      - Cum abordezi proba de concurs la olimpiadă?: olimpiada/olympiad-strategy.md
+                      - Cum ajungi să iei rezultate tot mai bune la olimpiadă?: olimpiada/olympiad-improvement.md
+              - Programă:
+                      - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
+                      - Gimnaziu:
+                              - Sfaturi generale pentru gimnaziu: olimpiada/gimnaziu.md
+                              - Clasa a V-a: olimpiada/clasa-V.md
+                              - Clasa a VI-a: olimpiada/clasa-VI.md
+                              - Clasa a VII-a: olimpiada/clasa-VII.md
+                              - Clasa a VIII-a: olimpiada/clasa-VIII.md
+                              - Baraj și lot juniori: olimpiada/baraj-lot-juniori.md
+                      - Liceu:
+                              - Sfaturi generale pentru liceu: olimpiada/liceu.md
+                              - Clasa a IX-a: olimpiada/clasa-IX.md
+                              - Clasa a X-a: olimpiada/clasa-X.md
+                              - Clasele XI-XII: olimpiada/clasa-XI-XII.md
+                              - Baraj și lot seniori: olimpiada/baraj-lot-seniori.md
+              - Probleme rezolvate:
+                      - Olimpiada Județeană de Informatică (OJI):
+                              - OJI 2002-2009:
+                                      - OJI 2002:
+                                              - Clasa a V-a:
+                                                      - Balaur: olimpiada/solutii/OJI/2002/V-balaur.md
+                                                      - La școală: olimpiada/solutii/OJI/2002/V-lascoala.md
+                                              - Clasa a VI-a:
+                                                      - Valori-pantă: olimpiada/solutii/OJI/2002/VI-valori-panta.md
+                                                      - Cuburi: olimpiada/solutii/OJI/2002/VI-cuburi.md
+                                              - Clasa a VII-a:
+                                                      - Panglică: olimpiada/solutii/OJI/2002/VII-panglica.md
+                                                      - Joc: olimpiada/solutii/OJI/2002/VII-joc.md
+                                              - Clasa a VIII-a:
+                                                      - Sir: olimpiada/solutii/OJI/2002/VIII-sir.md
+                                                      - Anagrame: olimpiada/solutii/OJI/2002/VIII-anagrame.md
+                                              - Clasa a IX-a:
+                                                      - Poarta: olimpiada/solutii/OJI/2002/IX-poarta.md
+                                                      - Mouse: olimpiada/solutii/OJI/2002/IX-mouse.md
+                                              - Clasa a X-a:
+                                                      - Triang: olimpiada/solutii/OJI/2002/X-triang.md
+                                                      - Cod: olimpiada/solutii/OJI/2002/X-cod.md
+                                              - Clasele XI-XII:
+                                                      - Urgenta: olimpiada/solutii/OJI/2002/XI-XII-urgenta.md
+                                                      - Nunta: olimpiada/solutii/OJI/2002/XI-XII-nunta.md
+                                      - OJI 2003:
+                                              - Clasa a V-a:
+                                                      - Exponent: olimpiada/solutii/OJI/2003/V-exponent.md
+                                                      - Pinochio: olimpiada/solutii/OJI/2003/V-pinochio.md
+                                              - Clasa a VI-a:
+                                                      - Visul: olimpiada/solutii/OJI/2003/VI-visul.md
+                                                      - Gardul: olimpiada/solutii/OJI/2003/VI-gardul.md
+                                              - Clasa a VII-a:
+                                                      - Sir: olimpiada/solutii/OJI/2003/VII-sir.md
+                                                      - Paranteze: olimpiada/solutii/OJI/2003/VII-paranteze.md
+                                              - Clasa a VIII-a:
+                                                      - Templu: olimpiada/solutii/OJI/2003/VIII-templu.md
+                                                      - Tort: olimpiada/solutii/OJI/2003/VIII-tort.md
+                                              - Clasa a IX-a:
+                                                      - Text: olimpiada/solutii/OJI/2003/IX-text.md
+                                                      - Numere: olimpiada/solutii/OJI/2003/IX-numere.md
+                                              - Clasa a X-a:
+                                                      - Spirala: olimpiada/solutii/OJI/2003/X-spirala.md
+                                                      - Taxe: olimpiada/solutii/OJI/2003/X-taxe.md
+                                              - Clasele XI-XII:
+                                                      - Compus: olimpiada/solutii/OJI/2003/XI-XII-compus.md
+                                                      - Zmeu: olimpiada/solutii/OJI/2003/XI-XII-zmeu.md
+                                      - OJI 2004:
+                                              - Clasa a V-a:
+                                                      - Cifre: olimpiada/solutii/OJI/2004/V-cifre.md
+                                                      - Concurs: olimpiada/solutii/OJI/2004/V-concurs.md
+                                              - Clasa a VI-a:
+                                                      - control: olimpiada/solutii/OJI/2004/VI-control.md
+                                                      - vanatoare: olimpiada/solutii/OJI/2004/VI-vanatoare.md
+                                              - Clasa a VII-a:
+                                                      - siruri: olimpiada/solutii/OJI/2004/VII-siruri.md
+                                                      - NU te supăra, FRATE!: olimpiada/solutii/OJI/2004/VII-nsf.md
+                                              - Clasa a VIII-a:
+                                                      - culmi: olimpiada/solutii/OJI/2004/VIII-culmi.md
+                                                      - ron: olimpiada/solutii/OJI/2004/VIII-ron.md
+                                              - Clasa a IX-a:
+                                                      - expresie: olimpiada/solutii/OJI/2004/IX-expresie.md
+                                                      - reactivi: olimpiada/solutii/OJI/2004/IX-reactivi.md
+                                              - Clasa a X-a:
+                                                      - perle: olimpiada/solutii/OJI/2004/X-perle.md
+                                                      - rj: olimpiada/solutii/OJI/2004/X-rj.md
+                                              - Clasele XI-XII:
+                                                      - mosia: olimpiada/solutii/OJI/2004/XI-XII-mosia.md
+                                                      - lanterna: olimpiada/solutii/OJI/2004/XI-XII-lanterna.md
+                                      - OJI 2005:
+                                              - Clasa a V-a:
+                                                      - Multimi: olimpiada/solutii/OJI/2005/V-multimi.md
+                                                      - Ucif: olimpiada/solutii/OJI/2005/V-ucif.md
+                                              - Clasa a VI-a:
+                                                      - Numere: olimpiada/solutii/OJI/2005/VI-numere.md
+                                                      - Sir: olimpiada/solutii/OJI/2005/VI-sir.md
+                                              - Clasa a VII-a:
+                                                      - Ocr: olimpiada/solutii/OJI/2005/VII-ocr.md
+                                                      - Tabel: olimpiada/solutii/OJI/2005/VII-tabel.md
+                                              - Clasa a VIII-a:
+                                                      - Muzica: olimpiada/solutii/OJI/2005/VIII-muzica.md
+                                                      - Volei: olimpiada/solutii/OJI/2005/VIII-volei.md
+                                              - Clasa a IX-a:
+                                                      - Numere: olimpiada/solutii/OJI/2005/IX-numere.md
+                                                      - Maxd: olimpiada/solutii/OJI/2005/IX-maxd.md
+                                              - Clasa a X-a:
+                                                      - Lacusta: olimpiada/solutii/OJI/2005/X-lacusta.md
+                                                      - Scara: olimpiada/solutii/OJI/2005/X-scara.md
+                                              - Clasele XI-XII:
+                                                      - Lant: olimpiada/solutii/OJI/2005/XI-XII-lant.md
+                                                      - Scara: olimpiada/solutii/OJI/2005/XI-XII-scara.md
+                                      - OJI 2006:
+                                              - Clasa a V-a:
+                                                      - Case: olimpiada/solutii/OJI/2006/V-case.md
+                                                      - Vraji: olimpiada/solutii/OJI/2006/V-vraji.md
+                                              - Clasa a VI-a:
+                                                      - Piramida: olimpiada/solutii/OJI/2006/VI-piramida.md
+                                                      - Cifre: olimpiada/solutii/OJI/2006/VI-cifre.md
+                                              - Clasa a VII-a:
+                                                      - Harry: olimpiada/solutii/OJI/2006/VII-harry.md
+                                                      - Grupe: olimpiada/solutii/OJI/2006/VII-grupe.md
+                                              - Clasa a VIII-a:
+                                                      - Elfi: olimpiada/solutii/OJI/2006/VIII-elfi.md
+                                                      - Mare: olimpiada/solutii/OJI/2006/VIII-mare.md
+                                              - Clasa a IX-a:
+                                                      - Flori: olimpiada/solutii/OJI/2006/IX-flori.md
+                                                      - Pluton: olimpiada/solutii/OJI/2006/IX-pluton.md
+                                              - Clasa a X-a:
+                                                      - Ecuatii: olimpiada/solutii/OJI/2006/X-ecuatii.md
+                                                      - Sudest: olimpiada/solutii/OJI/2006/X-sudest.md
+                                              - Clasele XI-XII:
+                                                      - Graf: olimpiada/solutii/OJI/2006/XI-XII-graf.md
+                                                      - Secretul cifrului: olimpiada/solutii/OJI/2006/XI-XII-cifru.md
+                                      - OJI 2007:
+                                              - Clasa a V-a:
+                                                      - Telecabina: olimpiada/solutii/OJI/2007/V-telecabina.md
+                                                      - Test: olimpiada/solutii/OJI/2007/V-test.md
+                                              - Clasa a VI-a:
+                                                      - Cod: olimpiada/solutii/OJI/2007/VI-cod.md
+                                                      - Furnica: olimpiada/solutii/OJI/2007/VI-furnica.md
+                                              - Clasa a VII-a:
+                                                      - Ceas: olimpiada/solutii/OJI/2007/VII-ceas.md
+                                                      - Excel: olimpiada/solutii/OJI/2007/VII-excel.md
+                                              - Clasa a VIII-a:
+                                                      - Afise: olimpiada/solutii/OJI/2007/VIII-afise.md
+                                                      - Dreptc: olimpiada/solutii/OJI/2007/VIII-dreptc.md
+                                              - Clasa a IX-a:
+                                                      - Paritate: olimpiada/solutii/OJI/2007/IX-paritate.md
+                                                      - Cartele: olimpiada/solutii/OJI/2007/IX-cartele.md
+                                              - Clasa a X-a:
+                                                      - Alee: olimpiada/solutii/OJI/2007/X-alee.md
+                                                      - Dir: olimpiada/solutii/OJI/2007/X-dir.md
+                                              - Clasele XI-XII:
+                                                      - Numere: olimpiada/solutii/OJI/2007/XI-XII-numere.md
+                                                      - Cezar: olimpiada/solutii/OJI/2007/XI-XII-cezar.md
+                                      - OJI 2008:
+                                              - Clasa a V-a:
+                                                      - Numere: olimpiada/solutii/OJI/2008/V-numere.md
+                                                      - Schi: olimpiada/solutii/OJI/2008/V-schi.md
+                                              - Clasa a VI-a:
+                                                      - Turnuri: olimpiada/solutii/OJI/2008/VI-turnuri.md
+                                                      - Pagini: olimpiada/solutii/OJI/2008/VI-pagini.md
+                                              - Clasa a VII-a:
+                                                      - Culori: olimpiada/solutii/OJI/2008/VII-culori.md
+                                                      - Virus: olimpiada/solutii/OJI/2008/VII-virus.md
+                                              - Clasa a VIII-a:
+                                                      - Numar: olimpiada/solutii/OJI/2008/VIII-numar.md
+                                                      - Turist: olimpiada/solutii/OJI/2008/VIII-turist.md
+                                              - Clasa a IX-a:
+                                                      - Concurs: olimpiada/solutii/OJI/2008/IX-concurs.md
+                                                      - Pluricex: olimpiada/solutii/OJI/2008/IX-pluricex.md
+                                              - Clasa a X-a:
+                                                      - Colaj: olimpiada/solutii/OJI/2008/X-colaj.md
+                                                      - Piața: olimpiada/solutii/OJI/2008/X-piata.md
+                                              - Clasele XI-XII:
+                                                      - Iepuri: olimpiada/solutii/OJI/2008/XI-XII-iepuri.md
+                                                      - Numar: olimpiada/solutii/OJI/2008/XI-XII-numar.md
+                                      - OJI 2009:
+                                              - Clasa a V-a:
+                                                      - Divizor: olimpiada/solutii/OJI/2009/V-divizor.md
+                                                      - Inimioare: olimpiada/solutii/OJI/2009/V-inimioare.md
+                                              - Clasa a VI-a:
+                                                      - Factori: olimpiada/solutii/OJI/2009/VI-factori.md
+                                                      - Ruleta: olimpiada/solutii/OJI/2009/VI-ruleta.md
+                                              - Clasa a VII-a:
+                                                      - Grad: olimpiada/solutii/OJI/2009/VII-grad.md
+                                                      - Startrek: olimpiada/solutii/OJI/2009/VII-startrek.md
+                                              - Clasa a VIII-a:
+                                                      - Problema 235: olimpiada/solutii/OJI/2009/VIII-235.md
+                                                      - Vecini: olimpiada/solutii/OJI/2009/VIII-vecini.md
+                                              - Clasa a IX-a:
+                                                      - Expresie: olimpiada/solutii/OJI/2009/IX-expresie.md
+                                                      - Placare: olimpiada/solutii/OJI/2009/IX-placare.md
+                                              - Clasa a X-a:
+                                                      - Insule: olimpiada/solutii/OJI/2009/X-insule.md
+                                                      - Rețetă: olimpiada/solutii/OJI/2009/X-reteta.md
+                                              - Clasele XI-XII:
+                                                      - Cerc: olimpiada/solutii/OJI/2009/XI-XII-cerc.md
+                                                      - Project Management: olimpiada/solutii/OJI/2009/XI-XII-pm.md
+                              - OJI 2010-2019:
+                                      - OJI 2010:
+                                              - Clasa a V-a:
+                                                      - Sir: olimpiada/solutii/OJI/2010/V-sir.md
+                                                      - Tren: olimpiada/solutii/OJI/2010/V-tren.md
+                                              - Clasa a VI-a:
+                                                      - Loto: olimpiada/solutii/OJI/2010/VI-loto.md
+                                                      - Submit: olimpiada/solutii/OJI/2010/VI-submit.md
+                                              - Clasa a VII-a:
+                                                      - Cuvinte: olimpiada/solutii/OJI/2010/VII-cuvinte.md
+                                                      - Zar: olimpiada/solutii/OJI/2010/VII-zar.md
+                                              - Clasa a VIII-a:
+                                                      - Cladiri: olimpiada/solutii/OJI/2010/VIII-cladiri.md
+                                                      - Secvente: olimpiada/solutii/OJI/2010/VIII-secvente.md
+                                              - Clasa a IX-a:
+                                                      - Livada: olimpiada/solutii/OJI/2010/IX-livada.md
+                                                      - Numar: olimpiada/solutii/OJI/2010/IX-numar.md
+                                              - Clasa a X-a:
+                                                      - Expozitie: olimpiada/solutii/OJI/2010/X-expozitie.md
+                                                      - Text: olimpiada/solutii/OJI/2010/X-text.md
+                                              - Clasele XI-XII:
+                                                      - Immortal: olimpiada/solutii/OJI/2010/XI-XII-immortal.md
+                                                      - Joc: olimpiada/solutii/OJI/2010/XI-XII-joc.md
+                                      - OJI 2011:
+                                              - Clasa a V-a:
+                                                      - Magic: olimpiada/solutii/OJI/2011/V-magic.md
+                                                      - Numerus: olimpiada/solutii/OJI/2011/V-numerus.md
+                                              - Clasa a VI-a:
+                                                      - Carte: olimpiada/solutii/OJI/2011/VI-carte.md
+                                                      - Grad: olimpiada/solutii/OJI/2011/VI-grad.md
+                                              - Clasa a VII-a:
+                                                      - Grupe: olimpiada/solutii/OJI/2011/VII-grupe.md
+                                                      - Litere: olimpiada/solutii/OJI/2011/VII-litere.md
+                                              - Clasa a VIII-a:
+                                                      - Adunscad: olimpiada/solutii/OJI/2011/VIII-adunscad.md
+                                                      - Comp: olimpiada/solutii/OJI/2011/VIII-comp.md
+                                              - Clasa a IX-a:
+                                                      - Vase: olimpiada/solutii/OJI/2011/IX-vase.md
+                                                      - Cri: olimpiada/solutii/OJI/2011/IX-cri.md
+                                              - Clasa a X-a:
+                                                      - Ai: olimpiada/solutii/OJI/2011/X-ai.md
+                                                      - Expresie: olimpiada/solutii/OJI/2011/X-expresie.md
+                                              - Clasele XI-XII:
+                                                      - Suma: olimpiada/solutii/OJI/2011/XI-XII-suma.md
+                                                      - Ubuntzei: olimpiada/solutii/OJI/2011/XI-XII-ubuntzei.md
+                                      - OJI 2012:
+                                              - Clasa a V-a:
+                                                      - Alice: olimpiada/solutii/OJI/2012/V-alice.md
+                                                      - Porumb: olimpiada/solutii/OJI/2012/V-porumb.md
+                                              - Clasa a VI-a:
+                                                      - Cifru: olimpiada/solutii/OJI/2012/VI-cifru.md
+                                                      - Flori: olimpiada/solutii/OJI/2012/VI-flori.md
+                                              - Clasa a VII-a:
+                                                      - Arme: olimpiada/solutii/OJI/2012/VII-arme.md
+                                                      - Triunghi: olimpiada/solutii/OJI/2012/VII-triunghi.md
+                                              - Clasa a VIII-a:
+                                                      - Deal: olimpiada/solutii/OJI/2012/VIII-deal.md
+                                                      - Ozn: olimpiada/solutii/OJI/2012/VIII-ozn.md
+                                              - Clasa a IX-a:
+                                                      - Elicop: olimpiada/solutii/OJI/2012/IX-elicop.md
+                                                      - Roata: olimpiada/solutii/OJI/2012/IX-roata.md
+                                              - Clasa a X-a:
+                                                      - Compresie: olimpiada/solutii/OJI/2012/X-compresie.md
+                                                      - Culori: olimpiada/solutii/OJI/2012/X-culori.md
+                                              - Clasele XI-XII:
+                                                      - Blis: olimpiada/solutii/OJI/2012/XI-XII-blis.md
+                                                      - Parc: olimpiada/solutii/OJI/2012/XI-XII-parc.md
+                                      - OJI 2013:
+                                              - Clasa a V-a:
+                                                      - Bete: olimpiada/solutii/OJI/2013/V-bete.md
+                                                      - Chibrituri: olimpiada/solutii/OJI/2013/V-chibrituri.md
+                                              - Clasa a VI-a:
+                                                      - Cladiri: olimpiada/solutii/OJI/2013/VI-cladiri.md
+                                                      - Galbeni: olimpiada/solutii/OJI/2013/VI-galbeni.md
+                                              - Clasa a VII-a:
+                                                      - Compar: olimpiada/solutii/OJI/2013/VII-compar.md
+                                                      - Unific: olimpiada/solutii/OJI/2013/VII-unific.md
+                                              - Clasa a VIII-a:
+                                                      - Maxp: olimpiada/solutii/OJI/2013/VIII-maxp.md
+                                                      - Puncte: olimpiada/solutii/OJI/2013/VIII-puncte.md
+                                              - Clasa a IX-a:
+                                                      - Betasah: olimpiada/solutii/OJI/2013/IX-betasah.md
+                                                      - Clepsidru: olimpiada/solutii/OJI/2013/IX-clepsidru.md
+                                              - Clasa a X-a:
+                                                      - Calcule: olimpiada/solutii/OJI/2013/X-calcule.md
+                                                      - Zona: olimpiada/solutii/OJI/2013/X-zona.md
+                                              - Clasele XI-XII:
+                                                      - Biperm: olimpiada/solutii/OJI/2013/XI-XII-biperm.md
+                                                      - Subsecvente: olimpiada/solutii/OJI/2013/XI-XII-subsecvente.md
+                                      - OJI 2014:
+                                              - Clasa a V-a:
+                                                      - Martisoare: olimpiada/solutii/OJI/2014/V-martisoare.md
+                                                      - Piramide: olimpiada/solutii/OJI/2014/V-piramide.md
+                                              - Clasa a VI-a:
+                                                      - Imprimanta: olimpiada/solutii/OJI/2014/VI-imprimanta.md
+                                                      - Munte: olimpiada/solutii/OJI/2014/VI-munte.md
+                                              - Clasa a VII-a:
+                                                      - Patrat: olimpiada/solutii/OJI/2014/VII-patrat.md
+                                                      - Schi: olimpiada/solutii/OJI/2014/VII-schi.md
+                                              - Clasa a VIII-a:
+                                                      - Arrows: olimpiada/solutii/OJI/2014/VIII-arrows.md
+                                                      - Tcif: olimpiada/solutii/OJI/2014/VIII-tcif.md
+                                              - Clasa a IX-a:
+                                                      - Cool: olimpiada/solutii/OJI/2014/IX-cool.md
+                                                      - Pseudobil: olimpiada/solutii/OJI/2014/IX-pseudobil.md
+                                              - Clasa a X-a:
+                                                      - Ferma: olimpiada/solutii/OJI/2014/X-ferma.md
+                                                      - Triunghi: olimpiada/solutii/OJI/2014/X-triunghi.md
+                                              - Clasele XI-XII:
+                                                      - Cartite: olimpiada/solutii/OJI/2014/XI-XII-cartite.md
+                                                      - Fractii2: olimpiada/solutii/OJI/2014/XI-XII-fractii2.md
+                                      - OJI 2015:
+                                              - Clasa a V-a:
+                                                      - Cuart: olimpiada/solutii/OJI/2015/V-cuart.md
+                                                      - Speciale: olimpiada/solutii/OJI/2015/V-speciale.md
+                                              - Clasa a VI-a:
+                                                      - Covor: olimpiada/solutii/OJI/2015/VI-covor.md
+                                                      - Ordine: olimpiada/solutii/OJI/2015/VI-ordine.md
+                                              - Clasa a VII-a:
+                                                      - Ech: olimpiada/solutii/OJI/2015/VII-ech.md
+                                                      - Lasere: olimpiada/solutii/OJI/2015/VII-lasere.md
+                                              - Clasa a VIII-a:
+                                                      - Dominant: olimpiada/solutii/OJI/2015/VIII-dominant.md
+                                                      - Pavare: olimpiada/solutii/OJI/2015/VIII-pavare.md
+                                              - Clasa a IX-a:
+                                                      - Arc: olimpiada/solutii/OJI/2015/IX-arc.md
+                                                      - Defrag: olimpiada/solutii/OJI/2015/IX-defrag.md
+                                              - Clasa a X-a:
+                                                      - Charlie: olimpiada/solutii/OJI/2015/X-charlie.md
+                                                      - panda: olimpiada/solutii/OJI/2015/X-panda.md
+                                              - Clasele XI-XII:
+                                                      - 2sah: olimpiada/solutii/OJI/2015/XI-XII-2sah.md
+                                                      - Dragoni: olimpiada/solutii/OJI/2015/XI-XII-dragoni.md
+                                      - OJI 2016:
+                                              - Clasa a V-a:
+                                                      - Colier: olimpiada/solutii/OJI/2016/V-colier.md
+                                                      - Palindrom: olimpiada/solutii/OJI/2016/V-palindrom.md
+                                              - Clasa a VI-a:
+                                                      - Cifre: olimpiada/solutii/OJI/2016/VI-cifre.md
+                                                      - Litere: olimpiada/solutii/OJI/2016/VI-litere.md
+                                              - Clasa a VII-a:
+                                                      - Axyz: olimpiada/solutii/OJI/2016/VII-axyz.md
+                                                      - Galerie: olimpiada/solutii/OJI/2016/VII-galerie.md
+                                              - Clasa a VIII-a:
+                                                      - Arma: olimpiada/solutii/OJI/2016/VIII-arma.md
+                                                      - Ks: olimpiada/solutii/OJI/2016/VIII-ks.md
+                                              - Clasa a IX-a:
+                                                      - Cifre: olimpiada/solutii/OJI/2016/IX-cifre.md
+                                                      - Pic: olimpiada/solutii/OJI/2016/IX-pic.md
+                                              - Clasa a X-a:
+                                                      - Interesant: olimpiada/solutii/OJI/2016/X-interesant.md
+                                                      - Miting: olimpiada/solutii/OJI/2016/X-miting.md
+                                              - Clasele XI-XII:
+                                                      - Elicoptere: olimpiada/solutii/OJI/2016/XI-XII-elicoptere.md
+                                                      - Summax: olimpiada/solutii/OJI/2016/XI-XII-summax.md
+                                      - OJI 2017:
+                                              - Clasa a V-a:
+                                                      - Numere: olimpiada/solutii/OJI/2017/V-numere.md
+                                                      - Robot: olimpiada/solutii/OJI/2017/V-robot.md
+                                              - Clasa a VI-a:
+                                                      - Accesibil: olimpiada/solutii/OJI/2017/VI-accesibil.md
+                                                      - Fermier: olimpiada/solutii/OJI/2017/VI-fermier.md
+                                              - Clasa a VII-a:
+                                                      - Cursuri: olimpiada/solutii/OJI/2017/VII-cursuri.md
+                                                      - Joc: olimpiada/solutii/OJI/2017/VII-joc.md
+                                              - Clasa a VIII-a:
+                                                      - Tablou: olimpiada/solutii/OJI/2017/VIII-tablou.md
+                                                      - Triunghiuri: olimpiada/solutii/OJI/2017/VIII-triunghiuri.md
+                                              - Clasa a IX-a:
+                                                      - Ace: olimpiada/solutii/OJI/2017/IX-ace.md
+                                                      - Admitere: olimpiada/solutii/OJI/2017/IX-admitere.md
+                                                      - Roboti: olimpiada/solutii/OJI/2017/IX-roboti.md
+                                              - Clasa a X-a:
+                                                      - Caps: olimpiada/solutii/OJI/2017/X-caps.md
+                                                      - Rover: olimpiada/solutii/OJI/2017/X-rover.md
+                                                      - Sir: olimpiada/solutii/OJI/2017/X-sir.md
+                                              - Clasele XI-XII:
+                                                      - Armonica: olimpiada/solutii/OJI/2017/XI-XII-armonica.md
+                                                      - Ninjago: olimpiada/solutii/OJI/2017/XI-XII-ninjago.md
+                                                      - Permutare: olimpiada/solutii/OJI/2017/XI-XII-permutare.md
+                                      - OJI 2018:
+                                              - Clasa a V-a:
+                                                      - Patrate: olimpiada/solutii/OJI/2018/V-patrate.md
+                                                      - Forus: olimpiada/solutii/OJI/2018/V-forus.md
+                                              - Clasa a VI-a:
+                                                      - Numere: olimpiada/solutii/OJI/2018/VI-numere.md
+                                                      - Turnuri: olimpiada/solutii/OJI/2018/VI-turnuri.md
+                                              - Clasa a VII-a:
+                                                      - Puzzle: olimpiada/solutii/OJI/2018/VII-puzzle.md
+                                                      - Tbile: olimpiada/solutii/OJI/2018/VII-tbile.md
+                                              - Clasa a VIII-a:
+                                                      - Cruce: olimpiada/solutii/OJI/2018/VIII-cruce.md
+                                                      - Pal: olimpiada/solutii/OJI/2018/VIII-pal.md
+                                              - Clasa a IX-a:
+                                                      - Cufar: olimpiada/solutii/OJI/2018/IX-cufar.md
+                                                      - Fadema: olimpiada/solutii/OJI/2018/IX-fadema.md
+                                                      - Tnia: olimpiada/solutii/OJI/2018/IX-tnia.md
+                                              - Clasa a X-a:
+                                                      - Castel: olimpiada/solutii/OJI/2018/X-castel.md
+                                                      - Eq4: olimpiada/solutii/OJI/2018/X-eq4.md
+                                                      - Turnuri: olimpiada/solutii/OJI/2018/X-turnuri.md
+                                              - Clasele XI-XII:
+                                                      - Galeti: olimpiada/solutii/OJI/2018/XI-XII-galeti.md
+                                                      - Ramen: olimpiada/solutii/OJI/2018/XI-XII-ramen.md
+                                                      - Aquapark: olimpiada/solutii/OJI/2018/XI-XII-aquapark.md
+                                      - OJI 2019:
+                                              - Clasa a V-a:
+                                                      - Aur: olimpiada/solutii/OJI/2019/V-aur.md
+                                                      - Cartele: olimpiada/solutii/OJI/2019/V-cartele.md
+                                              - Clasa a VI-a:
+                                                      - Album: olimpiada/solutii/OJI/2019/VI-album.md
+                                                      - Maxim: olimpiada/solutii/OJI/2019/VI-maxim.md
+                                              - Clasa a VII-a:
+                                                      - Poarta: olimpiada/solutii/OJI/2019/VII-poarta.md
+                                                      - Valutar: olimpiada/solutii/OJI/2019/VII-valutar.md
+                                              - Clasa a VIII-a:
+                                                      - Cate3cifre: olimpiada/solutii/OJI/2019/VIII-cate3cifre.md
+                                                      - Paralele: olimpiada/solutii/OJI/2019/VIII-paralele.md
+                                              - Clasa a IX-a:
+                                                      - Abx: olimpiada/solutii/OJI/2019/IX-abx.md
+                                                      - Deminare: olimpiada/solutii/OJI/2019/IX-deminare.md
+                                                      - Mostenire: olimpiada/solutii/OJI/2019/IX-mostenire.md
+                                              - Clasa a X-a:
+                                                      - Pif: olimpiada/solutii/OJI/2019/X-pif.md
+                                                      - Traseu: olimpiada/solutii/OJI/2019/X-traseu.md
+                                                      - Yinyang: olimpiada/solutii/OJI/2019/X-yinyang.md
+                                              - Clasele XI-XII:
+                                                      - Conexidad: olimpiada/solutii/OJI/2019/XI-XII-conexidad.md
+                                                      - Rufe: olimpiada/solutii/OJI/2019/XI-XII-rufe.md
+                                                      - Tairos: olimpiada/solutii/OJI/2019/XI-XII-tairos.md
+                              - OJI 2020-2024:
+                                      - OJI 2020:
+                                              - Clasa a V-a:
+                                                      - Cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
+                                                      - Tai: olimpiada/solutii/OJI/2020/V-tai.md
+                                              - Clasa a VI-a:
+                                                      - Forta: olimpiada/solutii/OJI/2020/VI-forta.md
+                                                      - Furnica: olimpiada/solutii/OJI/2020/VI-furnica.md
+                                              - Clasa a VII-a:
+                                                      - Foto: olimpiada/solutii/OJI/2020/VII-foto.md
+                                                      - Wind: olimpiada/solutii/OJI/2020/VII-wind.md
+                                              - Clasa a VIII-a:
+                                                      - Datorii: olimpiada/solutii/OJI/2020/VIII-datorii.md
+                                                      - Triunghi: olimpiada/solutii/OJI/2020/VIII-triunghi.md
+                                              - Clasa a IX-a:
+                                                      - Buldo: olimpiada/solutii/OJI/2020/IX-buldo.md
+                                                      - Cetate: olimpiada/solutii/OJI/2020/IX-cetate.md
+                                                      - Spiralmatrix: olimpiada/solutii/OJI/2020/IX-spiralmatrix.md
+                                              - Clasa a X-a:
+                                                      - Alinieri: olimpiada/solutii/OJI/2020/X-alinieri.md
+                                                      - Arh: olimpiada/solutii/OJI/2020/X-arh.md
+                                                      - Leftmax: olimpiada/solutii/OJI/2020/X-leftmax.md
+                                              - Clasele XI-XII:
+                                                      - Ateleport: olimpiada/solutii/OJI/2020/XI-XII-ateleport.md
+                                                      - Partit: olimpiada/solutii/OJI/2020/XI-XII-partit.md
+                                                      - RecycleBin: olimpiada/solutii/OJI/2020/XI-XII-recyclebin.md
+                                      - OJI 2021:
+                                              - Clasa a V-a:
+                                                      - Concurs: olimpiada/solutii/OJI/2021/V-concurs.md
+                                                      - Sir: olimpiada/solutii/OJI/2021/V-sir.md
+                                              - Clasa a VI-a:
+                                                      - Formula1: olimpiada/solutii/OJI/2021/VI-formula1.md
+                                                      - Seism: olimpiada/solutii/OJI/2021/VI-seism.md
+                                              - Clasa a VII-a:
+                                                      - Campionat: olimpiada/solutii/OJI/2021/VII-campionat.md
+                                                      - Exclusiv: olimpiada/solutii/OJI/2021/VII-exclusiv.md
+                                              - Clasa a VIII-a:
+                                                      - Cartofi: olimpiada/solutii/OJI/2021/VIII-cartofi.md
+                                                      - Tunel: olimpiada/solutii/OJI/2021/VIII-tunel.md
+                                              - Clasa a IX-a:
+                                                      - Aproape: olimpiada/solutii/OJI/2021/IX-aproape.md
+                                                      - Cochilie: olimpiada/solutii/OJI/2021/IX-cochilie.md
+                                                      - Logic: olimpiada/solutii/OJI/2021/IX-logic.md
+                                              - Clasa a X-a:
+                                                      - Labirint: olimpiada/solutii/OJI/2021/X-labirint.md
+                                                      - SDistanțe: olimpiada/solutii/OJI/2021/X-sdistante.md
+                                                      - Tort: olimpiada/solutii/OJI/2021/X-tort.md
+                                              - Clasele XI-XII:
+                                                      - Polihroniade: olimpiada/solutii/OJI/2021/XI-XII-polihroniade.md
+                                                      - Bob: olimpiada/solutii/OJI/2021/XI-XII-bob.md
+                                                      - Dreptunghi: olimpiada/solutii/OJI/2021/XI-XII-dreptunghi.md
+                                      - OJI 2022:
+                                              - Clasa a V-a:
+                                                      - Ceas: olimpiada/solutii/OJI/2022/V-ceas.md
+                                                      - Sss: olimpiada/solutii/OJI/2022/V-sss.md
+                                              - Clasa a VI-a:
+                                                      - Cmmdc: olimpiada/solutii/OJI/2022/VI-cmmdc.md
+                                                      - Vecine: olimpiada/solutii/OJI/2022/VI-vecine.md
+                                              - Clasa a VII-a:
+                                                      - Patratele: olimpiada/solutii/OJI/2022/VII-patratele.md
+                                                      - Pseudocmp: olimpiada/solutii/OJI/2022/VII-pseudocmp.md
+                                              - Clasa a VIII-a:
+                                                      - Pelican: olimpiada/solutii/OJI/2022/VIII-pelican.md
+                                                      - Strips: olimpiada/solutii/OJI/2022/VIII-strips.md
+                                              - Clasa a IX-a:
+                                                      - Balba: olimpiada/solutii/OJI/2022/IX-balba.md
+                                                      - Oneout: olimpiada/solutii/OJI/2022/IX-oneout.md
+                                                      - Pergament: olimpiada/solutii/OJI/2022/IX-pergament.md
+                                              - Clasa a X-a:
+                                                      - Circular: olimpiada/solutii/OJI/2022/X-circular.md
+                                                      - Pulsar: olimpiada/solutii/OJI/2022/X-pulsar.md
+                                                      - Transport: olimpiada/solutii/OJI/2022/X-transport.md
+                                              - Clasele XI-XII:
+                                                      - Dulciuri: olimpiada/solutii/OJI/2022/XI-XII-dulciuri.md
+                                                      - Investitie: olimpiada/solutii/OJI/2022/XI-XII-investitie.md
+                                                      - Superhedgy: olimpiada/solutii/OJI/2022/XI-XII-superhedgy.md
+                                      - OJI 2023:
+                                              - Clasa a V-a:
+                                                      - Aeriana: olimpiada/solutii/OJI/2023/V-aeriana.md
+                                                      - Castel: olimpiada/solutii/OJI/2023/V-castel.md
+                                              - Clasa a VI-a:
+                                                      - Ciocolata: olimpiada/solutii/OJI/2023/VI-ciocolata.md
+                                                      - Unificare: olimpiada/solutii/OJI/2023/VI-unificare.md
+                                              - Clasa a VII-a:
+                                                      - Palindrom: olimpiada/solutii/OJI/2023/VII-palindrom.md
+                                                      - Primprim: olimpiada/solutii/OJI/2023/VII-primprim.md
+                                              - Clasa a VIII-a:
+                                                      - Hibrid: olimpiada/solutii/OJI/2023/VIII-hibrid.md
+                                                      - Tema: olimpiada/solutii/OJI/2023/VIII-tema.md
+                                              - Clasa a IX-a:
+                                                      - Cufere: olimpiada/solutii/OJI/2023/IX-cufere.md
+                                                      - Fibosnek: olimpiada/solutii/OJI/2023/IX-fibosnek.md
+                                                      - Partitura: olimpiada/solutii/OJI/2023/IX-partitura.md
+                                              - Clasa a X-a:
+                                                      - Arhitect: olimpiada/solutii/OJI/2023/X-arhitect.md
+                                                      - Bingo: olimpiada/solutii/OJI/2023/X-bingo.md
+                                                      - Fotbal: olimpiada/solutii/OJI/2023/X-fotbal.md
+                                              - Clasele XI-XII:
+                                                      - Parcare: olimpiada/solutii/OJI/2023/XI-XII-parcare.md
+                                                      - Turcane: olimpiada/solutii/OJI/2023/XI-XII-turcane.md
+                                                      - Veri: olimpiada/solutii/OJI/2023/XI-XII-veri.md
+                                      - OJI 2024:
+                                              - Clasa a V-a:
+                                                      - Bomboane: olimpiada/solutii/OJI/2024/V-bomboane.md
+                                                      - Microbist: olimpiada/solutii/OJI/2024/V-microbist.md
+                                              - Clasa a VI-a:
+                                                      - Avid: olimpiada/solutii/OJI/2024/VI-avid.md
+                                                      - Perechi: olimpiada/solutii/OJI/2024/VI-perechi.md
+                                              - Clasa a VII-a:
+                                                      - Parking: olimpiada/solutii/OJI/2024/VII-parking.md
+                                                      - Ron: olimpiada/solutii/OJI/2024/VII-ron.md
+                                              - Clasa a VIII-a:
+                                                      - Mun: olimpiada/solutii/OJI/2024/VIII-mun.md
+                                                      - Robotron: olimpiada/solutii/OJI/2024/VIII-robotron.md
+                                              - Clasa a IX-a:
+                                                      - Macarie: olimpiada/solutii/OJI/2024/IX-macarie.md
+                                                      - Santinele: olimpiada/solutii/OJI/2024/IX-santinele.md
+                                                      - Trafalet: olimpiada/solutii/OJI/2024/IX-trafalet.md
+                                              - Clasa a X-a:
+                                                      - Aprogressive: olimpiada/solutii/OJI/2024/X-aprogressive.md
+                                                      - Opsir: olimpiada/solutii/OJI/2024/X-opsir.md
+                                                      - Poseidon: olimpiada/solutii/OJI/2024/X-poseidon.md
+                                              - Clasele XI-XII:
+                                                      - Birocratie: olimpiada/solutii/OJI/2024/XI-XII-birocratie.md
+                                                      - Nestemate: olimpiada/solutii/OJI/2024/XI-XII-nestemate.md
+                                                      - Acoperire: olimpiada/solutii/OJI/2024/XI-XII-acoperire.md
+
+not_in_nav: |
+      licenta.md
+      codes/cppintro/strings/ascii.md
+      cppintro/linux.md
+      cppintro/macOS.md
+      cppintro/windows.md
+      cppintro/compilers/*/*.md
+      cppintro/editors/*/*.md
+      mediu/index.md
+      mediu/important-formulas.md
+      olimpiada/solutii/baraj-lot/baraj-*.md
+      olimpiada/solutii/baraj-lot/lot-*.md
+      usor/intro-cpp.md
 
 extra_javascript:
-  - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+      - javascripts/katex.js
+      - https://unpkg.com/katex@0/dist/katex.min.js
+      - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 extra_css:
-  - https://unpkg.com/katex@0/dist/katex.min.css
-  - stylesheets/style.css
+      - https://unpkg.com/katex@0/dist/katex.min.css
+      - stylesheets/style.css

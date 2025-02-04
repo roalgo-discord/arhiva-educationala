@@ -1,4 +1,9 @@
 ---
+id: toposort
+author:
+    - Radu Mocănașu
+prerequisites:
+    - graphs
 tags:
     - grafuri
     - grafuri orientate
@@ -7,17 +12,16 @@ tags:
     - recursivitate
 ---
 
-**Autor**: Radu Mocănașu
-
-!!! example "Cunoștințe necesare"   
-    * [Introducere în teoria grafurilor](https://edu.roalgo.ro/usor/graphs/)
-
 ## Teorie
 
 !!! info "Definitie"
-    Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$ lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la $A$ la $B$, $$P_A < P_B $$
 
-### Spre exemplu:
+    Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o
+    ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$
+    lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la
+    $A$ la $B$, $$P_A < P_B $$
+
+### Spre exemplu
 
 ```mermaid
 graph LR
@@ -27,9 +31,13 @@ A --> D((4))
 A --> E((5))
 E --> C
 ```
-În acest graf, o sortare topologică validă ar fi: `1, 2, 5, 3, 4` , deoarece $1$ se află înaintea lui $2$, $5$ înaintea lui $3$, etc. Un alt exemplu ar fi `1, 4, 5, 2, 3` . O ordine incorectă ar fi însă `1, 4, 2, 3, 5` , deoarece $5$ se află după $3$, deși există muchie de la $5$ la $3$.
 
-### Un alt exemplu:
+În acest graf, o sortare topologică validă ar fi: `1, 2, 5, 3, 4` , deoarece 1
+se află înaintea lui 2, 5 înaintea lui 3, etc. Un alt exemplu ar fi `1, 4,
+5, 2, 3` . O ordine incorectă ar fi însă `1, 4, 2, 3, 5` , deoarece 5 se află
+după 3, deși există muchie de la 5 la 3.
+
+### Un alt exemplu
 
 ```mermaid
 graph LR
@@ -39,19 +47,34 @@ C((4)) --> A
 D --> C
 ```
 
-Acest graf conține un ciclu (de fapt chiar este unul), mai exact $1, 2, 3, 4$ . Astfel, putem alege 2 noduri, $A$ și $B$, astfel încât ele aparțin aceluiași ciclu (se poate ajunge de la $A$ la $B$ și viceversa). Dar asta implică faptul că în sortarea topologică, $A$ se află în fața lui $B$, dar și că $B$ se află înaintea lui $A$, ceea ce duce la o contradicție. Așadar, într-un graf ce conține un ciclu, nu există nicio sortare topologică.
+Acest graf conține un ciclu (de fapt chiar este unul), mai exact $1, 2, 3, 4$ .
+Astfel, putem alege 2 noduri, $A$ și $B$, astfel încât ele aparțin aceluiași
+ciclu (se poate ajunge de la $A$ la $B$ și viceversa). Dar asta implică faptul
+că în sortarea topologică, $A$ se află în fața lui $B$, dar și că $B$ se află
+înaintea lui $A$, ceea ce duce la o contradicție. Așadar, într-un graf ce
+conține un ciclu, nu există nicio sortare topologică.
 
 ## Algoritmul
 
 Întâi, vom presupune că graful este aciclic.
 
-Numim vecin al unui nod $U$, un nod $V$, astfel încât există muchie de la $U$ la $V$. Însă, știm că pentru orice două noduri $U$ și $V$, pentru care există muchie de la $U$ la $V$, $U$ se află înaintea lui $V$ în ordinea topologică.
+Numim vecin al unui nod $U$, un nod $V$, astfel încât există muchie de la $U$ la
+$V$. Însă, știm că pentru orice două noduri $U$ și $V$, pentru care există
+muchie de la $U$ la $V$, $U$ se află înaintea lui $V$ în ordinea topologică.
 
 Așadar, în sortarea topologică, orice nod se află înaintea vecinilor săi.
 
-În același timp, într-o parcurgere `DFS`, vom intra în vecinii unui nod după ce intrăm în acesta. Putem defini timpul de ieșire al unui nod ca fiind momentul la care ne întoarcem din recursivitate înapoi la el (pentru simplitate, timpii pot fi numerotați de la $1$ la $n$, unde $n$ este numărul de noduri). Astfel, timpul de ieșire al unui nod va fi tot timpul mai mare decât cel al vecinilor săi, deci pentru a afla ordinea topologică, trebuie doar să sortăm nodurile descrescător după timpii de ieșire.
+În același timp, într-o parcurgere `DFS`, vom intra în vecinii unui nod după ce
+intrăm în acesta. Putem defini timpul de ieșire al unui nod ca fiind momentul la
+care ne întoarcem din recursivitate înapoi la el (pentru simplitate, timpii pot
+fi numerotați de la 1 la $n$, unde $n$ este numărul de noduri). Astfel, timpul
+de ieșire al unui nod va fi tot timpul mai mare decât cel al vecinilor săi, deci
+pentru a afla ordinea topologică, trebuie doar să sortăm nodurile descrescător
+după timpii de ieșire.
 
-Pentru a face acest lucru mai simplu, putem doar să adăugăm nodurile într-o listă goală, pe care o vom inversa la sfârșit. Să ne uităm la următoarea secvență de cod:
+Pentru a face acest lucru mai simplu, putem doar să adăugăm nodurile într-o
+listă goală, pe care o vom inversa la sfârșit. Să ne uităm la următoarea
+secvență de cod:
 
 ```c++
 #include <algorithm>
@@ -110,7 +133,8 @@ int main() {
 }
 ```
 
-Acest cod este însă greșit și nu va da rezultatul corect pentru anumite cazuri. Să luăm următorul exemplu:
+Acest cod este însă greșit și nu va da rezultatul corect pentru anumite cazuri.
+Să luăm următorul exemplu:
 
 ```mermaid
 graph LR
@@ -119,11 +143,18 @@ C((3)) --> A
 C --> B
 ```
 
-Începând dintr-un nod arbitrar (în acest caz, $1$), noi vom vizita doar nodurile în care putem ajunge din el. Însă, în exemplul dat, asta înseamnă că vom ignora nodul $3$, care în sortare s-ar afla înaintea lui $1$.
+Începând dintr-un nod arbitrar (în acest caz, 1), noi vom vizita doar nodurile
+în care putem ajunge din el. Însă, în exemplul dat, asta înseamnă că vom ignora
+nodul 3, care în sortare s-ar afla înaintea lui 1.
 
-Pentru a rezolva asta, putem parcurge lista tuturor nodurilor și să verificăm pentru fiecare dacă este vizitat sau nu. Pentru orice nod nevizitat, știm că nu se poate ajunge la el din niciun nod vizitat, deci este corect să spunem că orice nod nevizitat se poate afla înaintea nodurilor deja vizitate.
+Pentru a rezolva asta, putem parcurge lista tuturor nodurilor și să verificăm
+pentru fiecare dacă este vizitat sau nu. Pentru orice nod nevizitat, știm că nu
+se poate ajunge la el din niciun nod vizitat, deci este corect să spunem că
+orice nod nevizitat se poate afla înaintea nodurilor deja vizitate.
 
-Așadar, pentru orice nod nevizitat, putem începe o parcurgere `DFS` din el și putem adăuga în continuare nodurile în lista finală, în funcție de timpul lor de ieșire.
+Așadar, pentru orice nod nevizitat, putem începe o parcurgere `DFS` din el și
+putem adăuga în continuare nodurile în lista finală, în funcție de timpul lor de
+ieșire.
 
 ```c++
 #include <algorithm>
@@ -187,25 +218,39 @@ int main() {
 }
 ```
 
-Acest cod este corect și va returna o sortare topologică validă (nu neapărat unică). 
+Acest cod este corect și va returna o sortare topologică validă (nu neapărat
+unică).
 
-### Complexitatea algoritmului:
+### Complexitatea algoritmului
 
-Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$ numărul de muchii. Memoria va fi tot $O(n + m)$.
+Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea
+complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$
+numărul de muchii. Memoria va fi tot $O(n + m)$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
 
-### Cerință:
+### Cerință
 
-Se dau $n$ cursuri, numerotate de la $1$ la $n$ și $m$ condiții ce trebuie îndeplinite, de forma a doi indici, $i$ și $j$, cu proprietatea ca acel curs cu numărul $i$ trebuie terminat înaintea cursului cu numărul $j$.
+Se dau $n$ cursuri, numerotate de la 1 la $n$ și $m$ condiții ce trebuie
+îndeplinite, de forma a doi indici, $i$ și $j$, cu proprietatea ca acel curs cu
+numărul $i$ trebuie terminat înaintea cursului cu numărul $j$.
 
 $$1 \leqslant i < j \leqslant n$$
 
-Se cere să se afișeze o ordine în care să fie făcute aceste cursuri, astfel încât toate condițiile să fie îndeplinite. Dacă nu există nicio soluție, se va afișa "IMPOSSIBLE".
+Se cere să se afișeze o ordine în care să fie făcute aceste cursuri, astfel
+încât toate condițiile să fie îndeplinite. Dacă nu există nicio soluție, se va
+afișa "IMPOSSIBLE".
 
-### Soluție: 
+### Soluție
 
-Nu este greu să ne dăm seama că acele 'condiții' pot fi reprezentate ca niște muchii orientate într-un graf, iar ordinea validă a realizării task-urilor va fi cea din sortarea topologică a grafului rezultat. În cazul în care graful conține cicluri, algoritmul tot va returna o anumită ordine a nodurilor. Astfel, putem parcurge din nou fiecare condiție și să verificăm dacă fiecare condiție e îndeplinită, iar dacă nu e, înseamnă că nu avem soluție. Putem verifica acest lucru ușor ținând minte într-un vector pozițiile nodurilor din sortarea topologică și să le comparăm, cum este evidențiat și în acest cod:
+Nu este greu să ne dăm seama că acele 'condiții' pot fi reprezentate ca niște
+muchii orientate într-un graf, iar ordinea validă a realizării task-urilor va fi
+cea din sortarea topologică a grafului rezultat. În cazul în care graful conține
+cicluri, algoritmul tot va returna o anumită ordine a nodurilor. Astfel, putem
+parcurge din nou fiecare condiție și să verificăm dacă fiecare condiție e
+îndeplinită, iar dacă nu e, înseamnă că nu avem soluție. Putem verifica acest
+lucru ușor ținând minte într-un vector pozițiile nodurilor din sortarea
+topologică și să le comparăm, cum este evidențiat și în acest cod:
 
 ```c++
 #include <algorithm>
@@ -277,19 +322,20 @@ int main() {
 
 ## Probleme suplimentare
 
-* [Infoarena - Sortare Topologica](https://www.infoarena.ro/problema/sortaret)
-* [CSES Course Schedule](https://cses.fi/problemset/task/1679)
-* [Infoarena Path](https://www.infoarena.ro/problema/path)
-* [RoAlgo Contest #4 Leximin](https://kilonova.ro/problems/1016)
-* [Codeforces Fox and Names](https://codeforces.com/problemset/problem/510/C)
-* [Infoarena easygraph](https://www.infoarena.ro/problema/easygraph)
-* [IATI Shumen 2024 xy](https://kilonova.ro/problems/2627)
-* [RoAlgo Contest #2 somnoros](https://kilonova.ro/problems/677)
-* [Infoarena alpin](https://infoarena.ro/problema/alpin)
-* [Codeforces Gym Permutation Counting](https://codeforces.com/gym/103741/problem/H)
-
+- [Infoarena - Sortare Topologica](https://www.infoarena.ro/problema/sortaret)
+- [CSES Course Schedule](https://cses.fi/problemset/task/1679)
+- [Infoarena Path](https://www.infoarena.ro/problema/path)
+- [RoAlgo Contest #4 Leximin](https://kilonova.ro/problems/1016)
+- [Codeforces Fox and Names](https://codeforces.com/problemset/problem/510/C)
+- [Infoarena easygraph](https://www.infoarena.ro/problema/easygraph)
+- [IATI Shumen 2024 xy](https://kilonova.ro/problems/2627)
+- [RoAlgo Contest #2 somnoros](https://kilonova.ro/problems/677)
+- [Infoarena alpin](https://infoarena.ro/problema/alpin)
+- [Codeforces Gym Permutation
+  Counting](https://codeforces.com/gym/103741/problem/H)
 
 ## Resurse suplimentare
 
-* [Topological Sorting - cp-algorithms](https://cp-algorithms.com/graph/topological-sort.html)
-* [Topological Sorting - USACO Guide](https://usaco.guide/gold/toposort)
+- [Topological Sorting -
+  cp-algorithms](https://cp-algorithms.com/graph/topological-sort.html)
+- [Topological Sorting - USACO Guide](https://usaco.guide/gold/toposort)

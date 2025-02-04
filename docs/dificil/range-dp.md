@@ -1,44 +1,70 @@
 ---
+id: range-dp
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - intro-dp
 tags:
     - programare dinamica
     - intervale
 ---
 
-**Autor**: Ștefan-Cosmin Dăscălescu
+În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice
+atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru
+șiruri cu o lungime relativ mică (de regulă, cel mult 500), folosind drept
+stări anterioare subsecvențe de lungime mai mică ale șirului dat.
 
-!!! example "Cunoștințe necesare"   
-    * [Introducere în programarea dinamică](https://edu.roalgo.ro/usor/intro-dp/)
-
-În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice atunci când vine vorba de a afla diverse răspunsuri minime sau maxime pentru șiruri cu o lungime relativ mică (de regulă, cel mult $500$), folosind drept stări anterioare subsecvențe de lungime mai mică ale șirului dat. 
-
-Această tehnică este numită în specialitate range dp, fiind găsită în articolele românești și sub numele de metoda mixtă a programării dinamice.
+Această tehnică este numită în specialitate range dp, fiind găsită în articolele
+românești și sub numele de metoda mixtă a programării dinamice.
 
 ## Condiții necesare
 
-Această tehnică apare preponderent în probleme care respectă cât mai multe din condițiile menționate aici, implementarea și modul de gândire al stărilor și tranzițiilor fiind foarte similar de la o problemă la alta:
+Această tehnică apare preponderent în probleme care respectă cât mai multe din
+condițiile menționate aici, implementarea și modul de gândire al stărilor și
+tranzițiilor fiind foarte similar de la o problemă la alta:
 
-* Se pot găsi soluții greedy destul de ușor, dar fără succes
-* Dacă știm răspunsurile pentru subsecvențele de lungime mai mică, putem calcula răspunsul pentru orice subsecvență $[L, R]$ de o lungime mai mare
-* Putem combina subsecvențe disjuncte în mod independent
-* De regulă, $n$ (dimensiunea șirului) este cel mult $500$. 
+- Se pot găsi soluții greedy destul de ușor, dar fără succes
+- Dacă știm răspunsurile pentru subsecvențele de lungime mai mică, putem calcula
+  răspunsul pentru orice subsecvență $[L, R]$ de o lungime mai mare
+- Putem combina subsecvențe disjuncte în mod independent
+- De regulă, $n$ (dimensiunea șirului) este cel mult 500.
 
 ## Cum aplicăm tehnica?
 
-Pe scurt, ceea ce vrem să facem este să avem o stare de tip $dp[i][j]$ care să ne țină răspunsul pentru intervalul $[i, j]$ și să calculăm valoarea acestei stări fixând poziția $k$ pe care o vom folosi pentru a împărți subsecvența noastră în două subsecvențe disjuncte (de regulă, $[i, k]$ și $[k+1, j]$), a căror reuniune să fie subsecvența $[i, j]$.
+Pe scurt, ceea ce vrem să facem este să avem o stare de tip $dp[i][j]$ care să
+ne țină răspunsul pentru intervalul $[i, j]$ și să calculăm valoarea acestei
+stări fixând poziția $k$ pe care o vom folosi pentru a împărți subsecvența
+noastră în două subsecvențe disjuncte (de regulă, $[i, k]$ și $[k+1, j]$), a
+căror reuniune să fie subsecvența $[i, j]$.
 
-O altă particularitate des întâlnită va fi să iterăm subsecvențele în ordine crescătoare a lungimilor pentru a avea răspunsurile calculate în ordine. Alternativ, vom putea implementa această soluție și recursiv, făcând calculele mai ușoare, așa cum veți putea vedea în exemplele ulterioare. 
+O altă particularitate des întâlnită va fi să iterăm subsecvențele în ordine
+crescătoare a lungimilor pentru a avea răspunsurile calculate în ordine.
+Alternativ, vom putea implementa această soluție și recursiv, făcând calculele
+mai ușoare, așa cum veți putea vedea în exemplele ulterioare.
 
 ## Un prim exemplu - [Problema Rectangle Cutting](https://cses.fi/problemset/task/1744)
 
-Această problemă ne cere să aflăm numărul minim de tăieturi pe care le putem face astfel încât să împărțim dreptunghiul inițial cu dimensiunile $a$ și $b$ în pătrate. 
+Această problemă ne cere să aflăm numărul minim de tăieturi pe care le putem
+face astfel încât să împărțim dreptunghiul inițial cu dimensiunile $a$ și $b$ în
+pătrate.
 
-Mai întâi, ne-am putea gândi la soluții de tip backtracking care sunt foarte încete sau soluții greedy care încearcă să obțină pătrate cât mai mari, dar aceste abordări eșuează pe diverse teste. 
+Mai întâi, ne-am putea gândi la soluții de tip backtracking care sunt foarte
+încete sau soluții greedy care încearcă să obțină pătrate cât mai mari, dar
+aceste abordări eșuează pe diverse teste.
 
-Deoarece dimensiunile dreptunghiurilor sunt cel mult $500$, putem să ne gândim la o dinamică de două dimensiuni, unde $dp[i][j]$ va ține numărul minim de tăieturi necesare pentru a ajunge la un dreptunghi de dimensiunile $i$ și $j$. 
+Deoarece dimensiunile dreptunghiurilor sunt cel mult 500, putem să ne gândim
+la o dinamică de două dimensiuni, unde $dp[i][j]$ va ține numărul minim de
+tăieturi necesare pentru a ajunge la un dreptunghi de dimensiunile $i$ și $j$.
 
-Un caz de bază evident este acela când $i = j$, unde $dp[i][j] = 0$. Acum, trebuie să ne gândim la tăieturile pe care le putem face, acestea pot fi fie orizontale, fie verticale, atâta timp cât păstrăm laturile drept numere întregi. 
+Un caz de bază evident este acela când $i = j$, unde $dp[i][j] = 0$. Acum,
+trebuie să ne gândim la tăieturile pe care le putem face, acestea pot fi fie
+orizontale, fie verticale, atâta timp cât păstrăm laturile drept numere întregi.
 
-Cu alte cuvinte, vom putea fixa punctul în care vom face tăietura și de acolo, vom folosi rezultatele calculate anterior, sau în cazul soluției recursive, le vom calcula la rândul lor până când toate valorile au fost calculate. Complexitatea acestei soluții va fi $O(n^3)$, unde $n$ este maximul dintre $a$ și $b$. 
+Cu alte cuvinte, vom putea fixa punctul în care vom face tăietura și de acolo,
+vom folosi rezultatele calculate anterior, sau în cazul soluției recursive, le
+vom calcula la rândul lor până când toate valorile au fost calculate.
+Complexitatea acestei soluții va fi $O(n^3)$, unde $n$ este maximul dintre $a$
+și $b$.
 
 Mai jos puteți găsi implementările iterative și recursive ale acestei probleme.
 
@@ -115,11 +141,20 @@ Mai jos puteți găsi implementările iterative și recursive ale acestei proble
 
 ## Un exemplu mai dificil - [Greedy Pie Eaters](https://usaco.org/index.php?page=viewproblem2&cpid=972)
 
-În această problemă, vrem să ne asigurăm că putem folosi vaci cu o greutate totală cât mai mare, știind că fiecare vacă va mânca toate prăjiturile din intervalul corespunzător. 
+În această problemă, vrem să ne asigurăm că putem folosi vaci cu o greutate
+totală cât mai mare, știind că fiecare vacă va mânca toate prăjiturile din
+intervalul corespunzător.
 
-Vom începe prin a precalcula pentru fiecare mod posibil de a tăia un interval, cea mai bună variantă de a face asta, folosind o dinamică de tipul $bstcut[i][j][p]$, unde această stare reprezintă suma maximă pe care o putem obține din intervalul $[i, j]$ dacă tăiem intervalul în poziția $p$. 
+Vom începe prin a precalcula pentru fiecare mod posibil de a tăia un interval,
+cea mai bună variantă de a face asta, folosind o dinamică de tipul
+$bstcut[i][j][p]$, unde această stare reprezintă suma maximă pe care o putem
+obține din intervalul $[i, j]$ dacă tăiem intervalul în poziția $p$.
 
-După ce avem această dinamică calculată, vom putea rezolva această problemă folosind o altă dinamică pe două dimensiuni, unde $dp[i][j]$ reprezintă răspunsul optim pentru intervalul $[i, j]$. Această dinamică va putea fi implementată recursiv, fixând pozițiile în care asignăm o vacă sau fixând intervalele pe care le vom împărți, acestea fiind calculate independent. 
+După ce avem această dinamică calculată, vom putea rezolva această problemă
+folosind o altă dinamică pe două dimensiuni, unde $dp[i][j]$ reprezintă
+răspunsul optim pentru intervalul $[i, j]$. Această dinamică va putea fi
+implementată recursiv, fixând pozițiile în care asignăm o vacă sau fixând
+intervalele pe care le vom împărți, acestea fiind calculate independent.
 
 ```cpp
 #include <fstream>
@@ -178,12 +213,24 @@ int main() {
 
 ### Un alt tip de range dp - [Atcoder DP Contest Deque](https://atcoder.jp/contests/dp/tasks/dp_l)
 
-Deși această problemă nu se încadrează complet în definiția dată mai sus, modul relativ facil pe care îl avem pentru calcularea rezultatelor stărilor o va putea încadra în această categorie. 
+Deși această problemă nu se încadrează complet în definiția dată mai sus, modul
+relativ facil pe care îl avem pentru calcularea rezultatelor stărilor o va putea
+încadra în această categorie.
 
-Din nou, o soluție greedy ușor de găsit nu este fezabilă, majoritatea greedy-urilor cunoscute având cazuri pe care soluția pică. Astfel, suntem limitați la a avea o abordare bazată pe metoda programării dinamice, unde $dp[i][j]$ reprezintă răspunsul maxim dacă începem din subsecvența $[i, j]$. La fiecare pas, avem de fixat una din cele două valori pe care o folosim, răspunsul fiind preluat din secvențele de lungime mai mică, așa cum se poate vedea în codul de mai jos. 
+Din nou, o soluție greedy ușor de găsit nu este fezabilă, majoritatea
+greedy-urilor cunoscute având cazuri pe care soluția pică. Astfel, suntem
+limitați la a avea o abordare bazată pe metoda programării dinamice, unde
+$dp[i][j]$ reprezintă răspunsul maxim dacă începem din subsecvența $[i, j]$. La
+fiecare pas, avem de fixat una din cele două valori pe care o folosim, răspunsul
+fiind preluat din secvențele de lungime mai mică, așa cum se poate vedea în
+codul de mai jos.
 
 !!! note "Observație"
-    Există totuși o soluție greedy corectă pentru această problemă, fiind una destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în acest paper, pe care îl puteți găsi [aici](https://www.mimuw.edu.pl/~idziaszek/termity/termity.pdf)
+    
+    Există totuși o soluție greedy corectă pentru această problemă, fiind una
+    destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în
+    acest paper, pe care îl puteți găsi
+    [aici](https://www.mimuw.edu.pl/~idziaszek/termity/termity.pdf)
 
 ```cpp
 #include <iostream>
@@ -213,32 +260,44 @@ int main()
 
 ## Concluzii
 
-După cum se poate vedea, Range DP este o tehnică care se dovedește a fi foarte utilă în multe contexte, iar faptul că implementările vor fi similare de la problemă la problemă va face înțelegerea și aplicarea principiului mai ușoară decât în cazul altor dinamici, unde este necesară o experiență mai mare pentru a modifica stările și modul de calcul.
+După cum se poate vedea, Range DP este o tehnică care se dovedește a fi foarte
+utilă în multe contexte, iar faptul că implementările vor fi similare de la
+problemă la problemă va face înțelegerea și aplicarea principiului mai ușoară
+decât în cazul altor dinamici, unde este necesară o experiență mai mare pentru a
+modifica stările și modul de calcul.
 
 ## Probleme suplimentare
 
-* [podm infoarena](https://www.infoarena.ro/problema/podm)
-* [Slimes AtCoder DP](https://atcoder.jp/contests/dp/tasks/dp_n)
-* [Space Jazz SAPO](https://saco-evaluator.org.za/cms/sapo2015z/tasks/jazz/description)
-* [Mean Info1Cup](https://oj.uz/problem/view/info1cup19_mean)
-* [bmatrix infoarena](https://www.infoarena.ro/problema/bmatrix)
-* [redu infoarena](https://infoarena.ro/problema/redu)
-* [ONI 2010 Triunghi](https://kilonova.ro/problems/1353)
-* [Taming the Herd USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=815)
-* [ONI 2009 Baraj Seniori maxpal](https://kilonova.ro/problems/1778/)
-* [ONI 2008 Baraj Seniori stiva](https://kilonova.ro/problems/1789)
-* [Zuma Codeforces](https://codeforces.com/problemset/problem/607/B)
-* [ONI 2023 Baraj Seniori bt](https://kilonova.ro/problems/557/)
-* [Empty String CSES](https://cses.fi/problemset/task/1080)
-* [Queries for Number of Palindromes Codeforces](https://codeforces.com/contest/245/problem/H)
-* [3SUM USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=994)
-* [Replace on Segment Codeforces](https://codeforces.com/contest/1922/problem/F)
-* [Interesting Problem (Hard Version) Codeforces](https://codeforces.com/contest/1987/problem/F2)
-* [Probleme de pe kilonova cu Range DP](https://kilonova.ro/tags/278)
-* [Probleme de pe pbinfo cu Range DP](https://www.pbinfo.ro/probleme/eticheta/121/programare-dinamica-metoda-mixta)
+- [podm infoarena](https://www.infoarena.ro/problema/podm)
+- [Slimes AtCoder DP](https://atcoder.jp/contests/dp/tasks/dp_n)
+- [Space Jazz
+  SAPO](https://saco-evaluator.org.za/cms/sapo2015z/tasks/jazz/description)
+- [Mean Info1Cup](https://oj.uz/problem/view/info1cup19_mean)
+- [bmatrix infoarena](https://www.infoarena.ro/problema/bmatrix)
+- [redu infoarena](https://infoarena.ro/problema/redu)
+- [ONI 2010 Triunghi](https://kilonova.ro/problems/1353)
+- [Taming the Herd USACO
+  Gold](https://usaco.org/index.php?page=viewproblem2&cpid=815)
+- [ONI 2009 Baraj Seniori maxpal](https://kilonova.ro/problems/1778/)
+- [ONI 2008 Baraj Seniori stiva](https://kilonova.ro/problems/1789)
+- [Zuma Codeforces](https://codeforces.com/problemset/problem/607/B)
+- [ONI 2023 Baraj Seniori bt](https://kilonova.ro/problems/557/)
+- [Empty String CSES](https://cses.fi/problemset/task/1080)
+- [Queries for Number of Palindromes
+  Codeforces](https://codeforces.com/contest/245/problem/H)
+- [3SUM USACO Gold](https://usaco.org/index.php?page=viewproblem2&cpid=994)
+- [Replace on Segment Codeforces](https://codeforces.com/contest/1922/problem/F)
+- [Interesting Problem (Hard Version)
+  Codeforces](https://codeforces.com/contest/1987/problem/F2)
+- [Probleme de pe kilonova cu Range DP](https://kilonova.ro/tags/278)
+- [Probleme de pe pbinfo cu Range
+  DP](https://www.pbinfo.ro/probleme/eticheta/121/programare-dinamica-metoda-mixta)
 
-## Lectură suplimentară 
+## Lectură suplimentară
 
-* [Articolul despre Range DP de pe USACO Guide](https://usaco.guide/gold/dp-ranges?lang=cpp)
-* [Tehnici avansate de programare dinamică - Infoarena](https://www.infoarena.ro/pd)
-* [Some Interval DP Problems and State Reduction - Codeforces](https://codeforces.com/blog/entry/108850)
+- [Articolul despre Range DP de pe USACO
+  Guide](https://usaco.guide/gold/dp-ranges?lang=cpp)
+- [Tehnici avansate de programare dinamică -
+  Infoarena](https://www.infoarena.ro/pd)
+- [Some Interval DP Problems and State Reduction -
+  Codeforces](https://codeforces.com/blog/entry/108850)

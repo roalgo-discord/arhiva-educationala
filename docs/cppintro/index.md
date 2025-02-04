@@ -1,17 +1,16 @@
 ---
-title: "Introducere în C++"
+id: index
+title: Introducere în C++
 hide:
   - navigation
   - toc
 ---
 
-**Autor**: Ștefan-Iulian Alecu, Ștefan-Cosmin Dăscălescu
+Bine ai venit! Te vom asista în călătoria ta de a învăța C++. Acest curs a fost
+gândit de la bun început să fie practic și adaptat la limbajul C++ modern (C++11
+și mai încolo).
 
-Bine ai venit! Sunt Ștefan și te voi asista în călătoria ta de a învăța C++.
-Acest curs a fost gândit de la bun început să fie practic și adaptat la limbajul
-C++ modern (C++11 și mai încolo).
-
-## Compilator și editor local 
+## Compilator și editor local
 
 Pentru a putea începe, avem nevoie de un _compilator_. Un compilator este un
 program care traduce codul sursă scris într-un limbaj (în cazul nostru, C++) în
@@ -43,20 +42,29 @@ Pentru început, ce sistem de operare folosești?
 
 </div>
 
-Pentru alte opțiuni, recomandăm [acest articol](https://usaco.guide/general/running-code-locally?lang=cpp). 
-
+Pentru alte opțiuni, recomandăm [acest
+articol](https://usaco.guide/general/running-code-locally?lang=cpp).
 
 ## Editoare online
 
-!!! note "Observație"   
-    Această soluție trebuie să fie una strict temporară. Niciun programator serios nu se bazează strict pe editoare online, editoarele locale au multe avantaje comparativ cu cele online. 
+!!! note "Observație"
 
-Totuși, dacă dorești să nu lucrezi folosind un compilator și un editor, există soluții online pentru a scrie cod în limbajul C++. O asemenea opțiune pe care autorii arhivei o recomandă este [USACO Guide IDE](https://ide.usaco.guide/). 
+    Această soluție trebuie să fie una strict temporară. Niciun programator
+    serios nu se bazează strict pe editoare online, editoarele locale au multe
+    avantaje comparativ cu cele online.
 
-Pentru alte opțiuni, recomandăm [acest articol](https://usaco.guide/general/running-code-online). 
+Totuși, dacă dorești să nu lucrezi folosind un compilator și un editor, există
+soluții online pentru a scrie cod în limbajul C++. O asemenea opțiune pe care
+autorii arhivei o recomandă este [USACO Guide IDE](https://ide.usaco.guide/).
+
+Pentru alte opțiuni, recomandăm [acest
+articol](https://usaco.guide/general/running-code-online).
 
 ## Concluzii
 
-Editoarele locale sunt mult mai folositoare decât cele online, deoarece permit o varietate de opțiuni și sunt mult mai versatile, fiind și folosite la concursurile reale de programare competitivă, inclusiv olimpiadă. 
+Editoarele locale sunt mult mai folositoare decât cele online, deoarece permit o
+varietate de opțiuni și sunt mult mai versatile, fiind și folosite la
+concursurile reale de programare competitivă, inclusiv olimpiadă.
 
-După ți-ai instalat compilatorul și editorul dorit, te invităm să explorezi facilitățile limbajului C++, începând cu [acest articol](./intro.md).
+După ți-ai instalat compilatorul și editorul dorit, te invităm să explorezi
+facilitățile limbajului C++, începând cu [acest articol](./intro.md).

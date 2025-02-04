@@ -1,15 +1,15 @@
 ---
+id: two-pointers
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - sequences
+    - binary-search
 tags:
     - vectori
     - sortare
     - cautari
 ---
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! example "Cunoștințe necesare"
-    * [Abordarea problemelor cu secvențe](https://edu.roalgo.ro/usor/sequences/)
-    * [Căutarea binară](https://edu.roalgo.ro/usor/binary-search/)
 
 ## Fundamente și cunoștințe necesare
 
@@ -32,12 +32,12 @@ Pentru a folosi această metodă, e nevoie să stăpânim lucrul cu secvențe ș
 și căutarea binară, deoarece pentru multe dintre exemplele ce vor fi menționate,
 există soluții și folosind acest algoritm. Nu în ultimul rând, pentru anumite
 probleme e posibil să fie nevoie de structuri de date adiționale, cum ar fi map
-sau set .
+sau set.
 
 În ceea ce privește modul în care începem implementările, avem două tipuri
 majore de implementări, în funcție de algoritm. Merită menționat faptul că
 acești pointeri sunt de fapt variabile corespunzătoare indicilor din vector la
-care ne aflăm la momentul respectiv. 
+care ne aflăm la momentul respectiv.
 
 În primul rând, vorbim de problemele în care vrem să plecăm de la prima poziție
 și să procesăm secvențele care respectă o anumită proprietate monotonă
@@ -105,7 +105,7 @@ $x$.
 
 Pentru a rezolva această problemă, trebuie să folosim o variantă diferită a
 tehnicii celor doi pointeri. Astfel, de data asta vom începe cu un pointer la
-poziția $1$, iar cu celălalt la poziția $n$. Pe parcurs, vom avea trei cazuri în
+poziția 1, iar cu celălalt la poziția $n$. Pe parcurs, vom avea trei cazuri în
 funcție de suma $a_{p_1} + a_{p_2}$, iar dacă găsim două poziții cu suma
 valorilor egală cu $x$, afișăm pozițiile corespunzătoare, altfel modificăm $p_1$
 sau $p_2$ după caz. Dacă nu găsim nicio pereche, afișăm IMPOSSIBLE.
@@ -163,12 +163,12 @@ Nane de pe Jiu, mare algoritmician fiind, vă provoacă să rezolvați o problem
 prea ușoară pentru el. Nane vă dă $N$ numere naturale și un număr $K$. Numim
 subsecvență specială o subsecvență pentru care efectuând operația OR pe biți
 pentru elementele din subsecvență (să numim această operație sumă OR) obținem un
-rezultat care are, în reprezentare binară, cel mult $K$ biți de $1$. Două
+rezultat care are, în reprezentare binară, cel mult $K$ biți de 1. Două
 subsecvențe sunt diferite dacă cel puțin o poziție din una nu se regăsește în
 cealaltă. Scrieți un program care să determine numărul de subsecvențe speciale.
 
 Pentru a rezolva această problemă, vom folosi metoda celor doi pointeri pentru a
-afla numărul de secvențe care au suma OR cu cel mult $k$ de $1$, actualizările
+afla numărul de secvențe care au suma OR cu cel mult $k$ de 1, actualizările
 fiind foarte similare cu cele de la celelalte probleme de acest tip. De
 asemenea, deoarece vorbim de suma OR, trebuie să folosim câte un vector de
 frecvență pentru fiecare bit pentru a evita calculele adiționale.
@@ -236,19 +236,19 @@ int main() {
 
 Se consideră un șir format din $N$ caractere din mulțimea {J, O, I}. Se numește
 JOI-șir de nivel $K$ un șir format din $K$ litere J, $K$ litere O și $K$ litere
-I (în această ordine). De exemplu, JJOOII este un JOI-șir de nivel $2$. Bitaro
+I (în această ordine). De exemplu, JJOOII este un JOI-șir de nivel 2. Bitaro
 dorește să transforme șirul $S$ într-un JOI-șir de nivel $K$, utilizând
-următoarele $3$ operații, de oricâte ori și în orice ordine:
+următoarele 3 operații, de oricâte ori și în orice ordine:
 
-* Operația $1$: Bitaro șterge primul caracter din $S$;
-* Operația $2$: Bitaro șterge ultimul caracter din $S$;
-* Operația $3$: Bitaro șterge un caracter din interiorul lui $S$ (care nu este
+- Operația 1: Bitaro șterge primul caracter din $S$;
+- Operația 2: Bitaro șterge ultimul caracter din $S$;
+- Operația 3: Bitaro șterge un caracter din interiorul lui $S$ (care nu este
   nici primul nici ultimul).
 
-Deoarece operațiile de tip $3$ necesită mult timp, Bitaro dorește să transforme
+Deoarece operațiile de tip 3 necesită mult timp, Bitaro dorește să transforme
 șirul $S$ într-un JOI-șir de nivel $K$ folosind un număr minim de operații de
-tip $3$. Scrieți un program care, cunoscând $N$, $S$ și $K$, determină numărul
-minim de operații de tip $3$ necesare pentru a transforma șirul $S$ într-un
+tip 3. Scrieți un program care, cunoscând $N$, $S$ și $K$, determină numărul
+minim de operații de tip 3 necesare pentru a transforma șirul $S$ într-un
 JOI-șir de nivel $K$. Dacă acest lucru nu este posibil, programul va afișa
 valoarea $-1$.
 
@@ -322,36 +322,58 @@ int main() {
 
 ### Probleme de la olimpiade
 
-* [Infoarena 3secv](https://infoarena.ro/problema/3secv)
-* [JOI JJOOII 2](https://oj.uz/problem/view/JOI20_ho_t2)
-* [pbinfo maru](https://www.pbinfo.ro/probleme/2943/maru)
-* [NOI Singapore Global Warming](https://oj.uz/problem/view/NOI13_gw)
-* [Baraj Seniori 2023 sirbun](https://kilonova.ro/problems/556)
-* [Infoarena nane](https://infoarena.ro/problema/nane)
-* [Infoarena teren](https://www.infoarena.ro/problema/teren)
-* [USACO Social Distancing](http://www.usaco.org/index.php?page=viewproblem2&cpid=1038)
-* [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
-* [USACO Wormhole Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
-* [USACO Sprinklers](http://usaco.org/index.php?page=viewproblem2&cpid=794)
-* [USACO Cow Dating](http://usaco.org/index.php?page=viewproblem2&cpid=924)
-* [Probleme cu two pointers de pe kilonova](https://kilonova.ro/tags/291)
-* [Probleme cu two pointers de pe pbinfo](https://www.pbinfo.ro/probleme/eticheta/144/two-pointers)
-
+- [Infoarena 3secv](https://infoarena.ro/problema/3secv)
+- [JOI JJOOII 2](https://oj.uz/problem/view/JOI20_ho_t2)
+- [CSES Apartments](https://cses.fi/problemset/task/1084/)
+- [pbinfo maru](https://www.pbinfo.ro/probleme/2943/maru)
+- [NOI Singapore Global Warming](https://oj.uz/problem/view/NOI13_gw)
+- [Baraj Seniori 2023 sirbun](https://kilonova.ro/problems/556)
+- [Infoarena nane](https://infoarena.ro/problema/nane)
+- [Infoarena teren](https://www.infoarena.ro/problema/teren)
+- [USACO Paired Up
+](https://usaco.org/index.php?page=viewproblem2&cpid=738)
+- [USACO Social
+  Distancing](http://www.usaco.org/index.php?page=viewproblem2&cpid=1038)
+- [USACO MooTube](http://www.usaco.org/index.php?page=viewproblem2&cpid=789)
+- [USACO Wormhole
+  Sort](http://www.usaco.org/index.php?page=viewproblem2&cpid=992)
+- [USACO Sprinklers](http://usaco.org/index.php?page=viewproblem2&cpid=794)
+- [USACO Cow Dating](http://usaco.org/index.php?page=viewproblem2&cpid=924)
+- [Probleme cu two pointers de pe kilonova](https://kilonova.ro/tags/291)
+- [Probleme cu two pointers de pe
+  pbinfo](https://www.pbinfo.ro/probleme/eticheta/144/two-pointers)
 
 ### Probleme de pe Codeforces
 
-* [Towers - Codeforces](https://codeforces.com/group/swEqtABRxe/contest/227531/problem/C)
-* [Two Pointers - Codeforces](https://codeforces.com/problemset?tags=two+pointers)
-* [Two Pointers Step 1 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/1/practice)
-* [Two Pointers Step 2 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/2/practice)
-* [Two Pointers Step 3 - Codeforces EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)
-    
+- [Towers -
+  Codeforces](https://codeforces.com/group/swEqtABRxe/contest/227531/problem/C)
+- [Two Pointers -
+  Codeforces](https://codeforces.com/problemset?tags=two+pointers)
+- [Quiz Master -
+Codeforces](https://codeforces.com/contest/1777/problem/C)
+- [Into Blocks (easy) -
+Codeforces](https://codeforces.com/contest/1209/problem/G1)
+- [Slime Escape -
+Codeforces](https://codeforces.com/contest/1734/problem/D)
+- [Range Deletion -
+Codeforces](https://codeforces.com/contest/1167/problem/E)
+- [Two Pointers Step 1 - Codeforces
+  EDU](https://codeforces.com/edu/course/2/lesson/9/1/practice)
+- [Two Pointers Step 2 - Codeforces
+  EDU](https://codeforces.com/edu/course/2/lesson/9/2/practice)
+- [Two Pointers Step 3 - Codeforces
+  EDU](https://codeforces.com/edu/course/2/lesson/9/3/practice)
 
 ## Bibliografie și lectură suplimentară
 
-* [Two Pointers - USACO Guide](https://usaco.guide/silver/two-pointers?lang=cpp)
-* [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO Academy](https://codeforces.com/edu/courses)
-* [Curs despre Two Pointers - Codeforces (este necesar un cont pentru a putea accesa acest curs, plus accesarea linkului de mai sus)](https://codeforces.com/edu/course/2/lesson/9)
-* [Using the Two Pointers Technique](https://algodaily.com/lessons/using-the-two-pointer-technique)
-* [Edu - Two pointers](https://codeforces.com/blog/entry/87248)
-* [Competitive Programmer's Handbook - Capitolul 8](https://cses.fi/book/book.pdf)
+- [Two Pointers - USACO Guide](https://usaco.guide/silver/two-pointers?lang=cpp)
+- [Link ce trebuie accesat pentru inscrierea la cursul despre DSU facut de ITMO
+  Academy](https://codeforces.com/edu/courses)
+- [Curs despre Two Pointers - Codeforces (este necesar un cont pentru a putea
+  accesa acest curs, plus accesarea linkului de mai
+  sus)](https://codeforces.com/edu/course/2/lesson/9)
+- [Using the Two Pointers
+  Technique](https://algodaily.com/lessons/using-the-two-pointer-technique)
+- [Edu - Two pointers](https://codeforces.com/blog/entry/87248)
+- [Competitive Programmer's Handbook - Capitolul
+  8](https://cses.fi/book/book.pdf)

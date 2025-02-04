@@ -2,4 +2,4 @@
 title: Mediu
 ---
 
-In accesta categorie sunt toate de dificultate medie
+In aceasta categorie sunt toate de dificultate medie

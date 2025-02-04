@@ -1,4 +1,10 @@
 ---
+id: rmq
+author:
+    - Traian Mihai Danciu
+prerequisites:
+    - matrices
+    - partial-sums
 tags:
     - structuri de date
     - RMQ
@@ -7,30 +13,42 @@ tags:
     - binary lifting
 ---
 
-**Autor**: Traian Mihai Danciu
-
-!!! example "Cunoștințe necesare"   
-    * [Matrici (tablouri bidimensionale)](https://edu.roalgo.ro/cppintro/matrices/)
-    * [Sume parțiale](https://edu.roalgo.ro/usor/partial-sums/)
-
 ## Introducere
 
-**Sparse Table** este o structură de date care ne ajută, în principal, să răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în acest articol).
+**Sparse Table** este o structură de date care ne ajută, în principal, să
+răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log
+n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în
+acest articol).
 
 ## Sparse Table. Binary Lifting
 
-Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem rezolva folosind [sume parțiale](https://edu.roalgo.ro/usor/partial-sums/), dar haideți să încercăm o metodă nouă.
+Să luăm ca exemplu problema [Static Range Sum
+Queries](https://cses.fi/problemset/task/1646) de pe CSES. Desigur că o putem
+rezolva folosind [sume parțiale](../usor/partial-sums.md), dar
+haideți să încercăm o metodă nouă.
 
-Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o întrebare pe intervalul $[st, dr]$, îl vom împărți în intervale de lungimi puteri de $2$. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza $2$ a lui $dr - st + 1$. Această metodă se cheamă **binary lifting**.
+Fie $spt_{i, j}$ suma numerelor din intervalul $[j, j + 2^i)$. Când avem o
+întrebare pe intervalul $[st, dr]$, îl vom împărți în intervale de lungimi
+puteri de 2. Lungimile acestor intervale vor fi egale cu biții din
+reprezentarea în baza 2 a lui $dr - st + 1$. Această metodă se cheamă **binary
+lifting**.
 
 !!! warning "Atenție"
 
-    Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611). 
+    Este foarte important ca, în $spt_{i, j}$, $2^i$ să fie lungimea
+    intervalului și $j$ să fie primul element. Dacă implementăm altfel, timpul
+    implementării va crește foarte mult. Unoeri, acest lucru poate duce și la
+    TLE. Mai multe detalii puteți găsi în
+    [acest blog](https://codeforces.com/blog/entry/75611).
 
 !!! note "Observație"
-    [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/) este calculat, de asemenea, folosind binary lifting. Căutarea binară în [AIB](https://edu.roalgo.ro/dificil/fenwick-tree/) folosește, de asemenea, binary lifting.
 
-Sursa de Accepted:
+    [LCA](./lowest-common-ancestor.md) este calculat,
+    de asemenea, folosind binary lifting. Căutarea binară în
+    [AIB](./fenwick-tree.md) folosește, de asemenea,
+    binary lifting.
+
+Sursa de 100:
 
 ```cpp
 #include <iostream>
@@ -94,21 +112,31 @@ int main() {
 }
 ```
 
-## Range Minimum Query 
+## Range Minimum Query
 
-Așa cum îi spune și numele, la **Range Minimum Query (RMQ)**, avem întrebări la care trebuie să răspundem cu minimul pe un interval. Vom folosi un sparse table.
+Așa cum îi spune și numele, la **Range Minimum Query (RMQ)**, avem întrebări la
+care trebuie să răspundem cu minimul pe un interval. Vom folosi un sparse table.
 
-Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea $2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja precalculate). 
+Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două
+intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai
+mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea
+$2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja
+precalculate).
 
 !!! note "Observație"
-    Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest lucru nu ne afectează, deoarece $min(x, x) = x$.
+
+    Noi repetăm elementele din intervalul $(st + 2^{lg}, dr - 2^{lg})$. Acest
+    lucru nu ne afectează, deoarece $min(x, x) = x$.
 
 !!! note "Observație"
-    Vom precalcula un vector $lg2_i = $ cel mai mare $j$ astfel încât $2^j \leq i$. Acest vector ne va ajuta să calculăm $lg$ ușor.
+
+    Vom precalcula un vector $lg2_i = $ cel mai mare $j$ astfel încât $2^j \leq
+    i$. Acest vector ne va ajuta să calculăm $lg$ ușor.
 
 Tabloul $spt$ se calculează la fel ca înainte.
 
-Sursa de accepted (la problema [Static Range Minimum Queries](https://cses.fi/problemset/task/1647)):
+Sursa de accepted (la problema
+[Static Range Minimum Queries](https://cses.fi/problemset/task/1647)):
 
 ```cpp
 #include <iostream>
@@ -171,36 +199,60 @@ int main() {
 ```
 
 !!! note "Observație"
-    RMQ poate fi folosit cu orice operație $f$ care este [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) = x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
+
+    RMQ poate fi folosit cu orice operație $f$ care este
+    [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $f(x, x) =
+    x$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am
+    observat mai sus, noi repetăm anumite elemente.
 
 ## RMQ 2D
 
-Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF 713D](https://codeforces.com/contest/713/problem/D).
+Putem face RMQ și pe matrice. Să luam ca exemplu problema [CF
+713D](https://codeforces.com/contest/713/problem/D).
 
-Să calculăm, mai întâi $maxp_{i, j} = $ latura celui mai mare dreptunghi care are doar valori de $1$ și are colțul dreapta-jos în $(i, j)$. Această metodă se cheamă [programare dinamică](https://edu.roalgo.ro/usor/intro-dp/).
+Să calculăm, mai întâi $maxp_{i, j} = $ latura celui mai mare dreptunghi care
+are doar valori de 1 și are colțul dreapta-jos în $(i, j)$. Această metodă se
+cheamă [programare dinamică](../usor/intro-dp.md).
 
-$$maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}$$
+$$
+maxp_{i, j} = \begin{cases} 0 &\text{dacă } i = 0 \text{ sau } j = 0 \\ 0 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 0 \\ min(maxp_{i-1, j}, maxp_{i, j-1}, maxp_{i-1, j-1}) + 1 &\text{dacă } i, j > 0 \text{ și } a_{i, j} = 1 \end{cases}
+$$
 
-Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ maximul elementelor din submatricea cu colțul stânga-sus la $(i, j)$ și cu colțul dreapta-jos la $(l+2^i-1, c+2^j-1)$ din $maxp$.
+Acum, să vedem cum se calculează $spt$. Fie $spt_{i, j, l, c} = $ maximul
+elementelor din submatricea cu colțul stânga-sus la $(i, j)$ și cu colțul
+dreapta-jos la $(l+2^i-1, c+2^j-1)$ din $maxp$.
 
-$$spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\ max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0 \\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j = 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1, l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j > 0 \end{cases}$$
+$$ spt_{i, j, l, c} = \begin{cases} maxp_{l, c} &\text{dacă } i = 0, j = 0 \\
+max(spt_{i-1, j, l, c}, spt_{i-1, j, l, c + 2^{i-1}}) &\text{dacă } i = 0, j > 0
+\\ max(spt_{i, j-1, l, c}, spt_{i, j-1, l + 2^{i-1}, c}) &\text{dacă } i > 0, j
+= 0 \\ max(spt_{i-1, j-1, l, c}, spt_{i-1, j-1, l + 2^{i-1}, c}, spt_{i-1, j-1,
+l, c + 2^{j-1}}, spt_{i-1, j-1, l + 2^{i-1}, c + 2^{j-1}}) &\text{dacă } i, j >
+0 \end{cases} $$
 
-Să vedem cum se calculează răspunsul pentru o întrebare pe un dreptunghi cu colțul stânga-sus în $(l_1, c_1)$ și coltul dreapta-jos în $(l_2, c_2)$. Fie $lgl = $ cel mai mare număr astfel încât $2^{lgl} \leq l_2-l_1+1$ și $lgc = $ cel mai mare număr astfel încât $2^lgc \leq c_2-c_1+1$.
+Să vedem cum se calculează răspunsul pentru o întrebare pe un dreptunghi cu
+colțul stânga-sus în $(l_1, c_1)$ și coltul dreapta-jos în $(l_2, c_2)$. Fie
+$lgl = $ cel mai mare număr astfel încât $2^{lgl} \leq l_2-l_1+1$ și $lgc = $
+cel mai mare număr astfel încât $2^lgc \leq c_2-c_1+1$.
 
-$$query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2 - 2^{lgl} + 1, c_2 - 2^{lgc} + 1})$$
+$$ query(l_1, c_1, l_2, c_2) = max(spt_{lgl, lgc, l_1, c_1}, spt_{lgl, lgc, l_2
+- 2^{lgl} + 1, c_1}, spt_{lgl, lgc, l_1, c_2 - 2^{lgc} + 1}, spt_{lgl, lgc, l_2
+- 2^{lgl} + 1, c_2 - 2^{lgc} + 1}) $$
 
-Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece unele rezultate pot ieși din dreptunhiul în care suntem întrebați. Așa că, vom [căuta binar](https://edu.roalgo.ro/usor/binary-search/) răspunsul.
+Mai departe, observăm că noi nu avem cum sa aflăm direct răspunsul, deoarece
+unele rezultate pot ieși din dreptunghiul în care suntem întrebați. Așa că, vom
+[căuta binar](../usor/binary-search.md) răspunsul.
 
 Cum verificăm dacă avem vreun pătrat de latură cel puțin $k$? Vom verifica dacă:
 
 $$query(l_2-k+1, c_2-k+1, l_2, c-2) \geq k$$
 
-Adică vom verifica dacă există vreun colț dreapta-jos care formează un pătrat de latură cel puțin $k$.
+Adică vom verifica dacă există vreun colț dreapta-jos care formează un pătrat de
+latură cel puțin $k$.
 
 Sursa de Accepted:
 
 ```cpp
-#include <iostream>
+# include <iostream>
 
 const int MAXN = 1'000;
 const int LOGN = 11;
@@ -330,16 +382,28 @@ int main() {
 
 ## Reverse RMQ
 
-Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări, adica o problemă în care avem actualizări de forma $a_i = max(a_i, x)$, pentru $l \leq i \leq r$. O putem rezolva asemănător, folosind aceleași intervale ca la RMQ normal și modificând astfel:
+Putem să rezolvăm și probleme în care avem doar actualizări, fără întrebări,
+adica o problemă în care avem actualizări de forma $a_i = max(a_i, x)$, pentru
+$l \leq i \leq r$. O putem rezolva asemănător, folosind aceleași intervale ca la
+RMQ normal și modificând astfel:
 
-$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} = max(spt_{lg, dr - 2^{lg} + 1}, x)$$
+$$spt_{lg, st} = max(spt_{lg, st}, x) \\ spt_{lg, dr - 2^{lg} + 1} =
+max(spt_{lg, dr - 2^{lg} + 1}, x)$$
 
-Apoi, valoarea $a_i$ finală va fi maximul dintre toate valorile din orice interval care este actualizat în $spt$ și include $i$. Calculăm această valoare folosind un proces similar cu propagarea lazy de la [arbori de intervale](https://edu.roalgo.ro/dificil/segment-trees/). Rezultatul din $spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j + 2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe detalii vedeți implementarea.
+Apoi, valoarea $a_i$ finală va fi maximul dintre toate valorile din orice
+interval care este actualizat în $spt$ și include $i$. Calculăm această valoare
+folosind un proces similar cu propagarea lazy de la [arbori de
+intervale](./segment-trees.md). Rezultatul din
+$spt_{i, j}$ va fi propagat doar în $spt_{i - 1, j}$ și $spt_{i - 1, j +
+2^{i-1}}$, deoarece acestea sunt singurele intervale necesare pentru a ne
+asigura că rezultatul ajunge la toate pozițiile din șir. Pentru mai multe
+detalii vedeți implementarea.
 
-Sursa de accepted (la problema [Glad You Came de pe codeforces](https://codeforces.com/gym/102114/problem/G))
+Sursa de accepted (la problema [Glad You Came de pe
+codeforces](https://codeforces.com/gym/102114/problem/G))
 
 ```cpp
-#include <iostream>
+# include <iostream>
 
 const int MAXN = 100'000;
 const int MAXVAL = 1 << 30;
@@ -440,11 +504,14 @@ int main() {
 
 ## RMQ sau Arbori de intervale?
 
-Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideți să comparăm aceste două structuri de date.
+Arborii de intervale (AINT) pot face tot ce poate face RMQ, dar haideți să
+comparăm aceste două structuri de date.
 
 ### Comparație în funcție de timp
 
-RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Însă, RMQ are complexitate $O(1)$ per query, În timp ce AINT are $O(\log n)$ per query.
+RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Însă,
+RMQ are complexitate $O(1)$ per query, În timp ce AINT are $O(\log n)$ per
+query.
 
 ### Comparație în funcție de memorie
 
@@ -452,27 +519,41 @@ RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
 
 ### Alte precizări
 
-AINT poate rezolva și alte probleme pe care RMQ nu le poate rezolva. La astfel de probleme, putem folosi un Sparse Table normal, rezultând aceeași complexitate ca la AINT la query-uri. Acest lucru înseamnă că AINT este mai folositor în acest caz, chiar dacă este mai greu de implementat.
+AINT poate rezolva și alte probleme pe care RMQ nu le poate rezolva. La astfel
+de probleme, putem folosi un Sparse Table normal, rezultând aceeași complexitate
+ca la AINT la query-uri. Acest lucru înseamnă că AINT este mai folositor în
+acest caz, chiar dacă este mai greu de implementat.
 
-În același timp, AINT poate trata și actualizări împreună cu interogări, iar RMQ nu le poate trata. În această situație, RMQ nu intră în calcul atunci când dorim să găsim cea mai bună structură de date pentru a rezolva o anumită problemă.
+În același timp, AINT poate trata și actualizări împreună cu interogări, iar RMQ
+nu le poate trata. În această situație, RMQ nu intră în calcul atunci când dorim
+să găsim cea mai bună structură de date pentru a rezolva o anumită problemă.
 
 ### Concluzie
 
-AINT este, de obicei, mai folositor ca RMQ, mai puțin atunci când numărul de query-uri este cu mult mai mare decât numărul de elemente sau atunci când dorim să nu scriem prea multe linii de cod.
+AINT este, de obicei, mai folositor ca RMQ, mai puțin atunci când numărul de
+query-uri este cu mult mai mare decât numărul de elemente sau atunci când dorim
+să nu scriem prea multe linii de cod.
 
 ## Probleme rezolvate
 
 ### Problema [Lot 2023 Juniori excursie](https://kilonova.ro/problems/619)
 
-Observăm că indicatoarele trebuie să fie de forma RRR...RLLL..L. Să fixam poziția $i$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-uri de la $st$ la $i$ adunat cu numărul de R-uri de la $i + 1$ la $dr$. Aceste lucruri pot fi calculate ușor folosind sume parțiale.
+Observăm că indicatoarele trebuie să fie de forma RRR...RLLL..L. Să fixam
+poziția $i$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-uri
+de la $st$ la $i$ adunat cu numărul de R-uri de la $i + 1$ la $dr$. Aceste
+lucruri pot fi calculate ușor folosind sume parțiale.
 
-Fie $prefL_i = $ câte L-uri sunt de la $1$ la $i$ și $suffR_i = $ câte R-uri sunt de la $i$ la $n$. Atunci răspunsul va fi $min(prefL_i - prefL_{st-1} + suffR_{i+1} - suffR_{dr+1})$ astfel încât $st - 1 \leq i \leq dr$. Acest lucru este echivalent cu a afla minimul expresiei $prefL_i + suffR_{i+1}$ cu $i$ in intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
+Fie $prefL_i = $ câte L-uri sunt de la 1 la $i$ și $suffR_i = $ câte R-uri
+sunt de la $i$ la $n$. Atunci răspunsul va fi $min(prefL_i - prefL_{st-1} +
+suffR_{i+1} - suffR_{dr+1})$ astfel încât $st - 1 \leq i \leq dr$. Acest lucru
+este echivalent cu a afla minimul expresiei $prefL_i + suffR_{i+1}$ cu $i$ in
+intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
 
 Sursa de 100 de puncte:
 
 ```cpp
-#include <fstream>
-#include <ctype.h>
+# include <fstream>
+# include <ctype.h>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -558,19 +639,34 @@ int main() {
 
 #### Versiunea ușoară, [G1](https://codeforces.com/contest/2009/problem/G2)
 
-Să rezolvăm mai întâi versiunea ușoară. Noi trebuie să avem $b_i = b_{i+1} - 1 = b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Să scădem $i$ din această relație: $b_i - i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i - i$.
+Să rezolvăm mai întâi versiunea ușoară. Noi trebuie să avem $b_i = b_{i+1} - 1 =
+b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$. Să scădem $i$ din această relație: $b_i -
+i = b_{i+1} - (i+1) = b_{i+2} - (i+2) = .. = b_{i+k-1} - (i+k-1)$. Acest lucru
+este echivalent cu: $a_i = a_{i+1} = a_{i+2} = .. = a_{i+k-1}$, unde $a_i = b_i
+- i$.
 
-Să precalculam $rez_i = $ frecvența elementului majoritar din intervalul $[i, i + k)$ ($k - rez_l$ va fi răspunsul nostru la un query). $rez$ poate fi calculat folosind [sliding window](https://edu.roalgo.ro/mediu/sliding-window/). Vom menține un [map](https://edu.roalgo.ro/cppintro/stl/#structura-stdmap) care se cheamă $fr$ cu frecvența elementelor și înca un [vector de frecvență](https://edu.roalgo.ro/usor/frequency-arrays/) care se cheamă $frfr$ care menține frecvența fiecărei valori din $fr$.
+Să precalculam $rez_i = $ frecvența elementului majoritar din intervalul $[i, i
++ k)$ ($k - rez_l$ va fi răspunsul nostru la un query). $rez$ poate fi calculat
+folosind [sliding window](../mediu/sliding-window.md). Vom
+menține un [map](../cppintro/stl.md#structura-stdmap) care se
+cheamă $fr$ cu frecvența elementelor și înca un [vector de
+frecvență](../usor/frequency-arrays.md) care se cheamă $frfr$
+care menține frecvența fiecărei valori din $fr$.
 
-Când adaugăm o valoare, scădem $1$ din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu $1$ și adunăm $1$ la noul $frfr_{fr_{val}}$. Dacă $fr_{val}$ este mai mare ca rezulatul curent, atunci setăm rezultatul curent la $fr_{val}$.
+Când adaugăm o valoare, scădem 1 din $frfr_{fr_{val}}$, creștem $fr_{val}$ cu
+1 și adunăm 1 la noul $frfr_{fr_{val}}$. Dacă $fr_{val}$ este mai mare ca
+rezulatul curent, atunci setăm rezultatul curent la $fr_{val}$.
 
-Atunci când scoatem o valoare, scădem $1$ din $frfr_{fr_{val}}$. Dacă $fr_{val}$ era egal cu rezultatul și $frfr_{fr_{val}}$ a devenit $0$, atunci rezultatul scade cu $1$, deoarece $frfr_{fr_{val} - 1}$ a crescut cu $1$. Restul rămâne la fel ca la adăugare.
+Atunci când scoatem o valoare, scădem 1 din $frfr_{fr_{val}}$. Dacă $fr_{val}$
+era egal cu rezultatul și $frfr_{fr_{val}}$ a devenit 0, atunci rezultatul
+scade cu 1, deoarece $frfr_{fr_{val} - 1}$ a crescut cu 1. Restul rămâne la
+fel ca la adăugare.
 
 Sursa de accepted la G1:
 
 ```cpp
-#include <iostream>
-#include <map>
+# include <iostream>
+# include <map>
 
 const int MAXN = 200'000;
 
@@ -655,19 +751,35 @@ int main() {
 
 #### Versiunea grea
 
-Noi trebuie, de fapt, să avem o subsecvență (contiguă) de exact $k$ elemente. Observăm că $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$ (încercăm fiecare subsecvență de $k$ elemente). Așa că, răspunsul nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
+Noi trebuie, de fapt, să avem o subsecvență (contiguă) de exact $k$ elemente.
+Observăm că $f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, ..,
+rez_{r-k+1})$ (încercăm fiecare subsecvență de $k$ elemente). Așa că, răspunsul
+nostru este $\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$.
 
-Vom găsi, pentru fiecare $i$, la câte sume contribuie $rez_i$. Cu alte cuvinte, vom afla pentru câți $j > i$ avem $max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i$. De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că nu există $l \leq p < i$ astfel încât $rez_p = rez_i$. Fie $nxt_{0, i} = $ cel mai mic $j > i$ astfel încât $rez_j >= rez_i$, lucru pe care îl vom afla cu [stivă](https://edu.roalgo.ro/mediu/stack/#problema-stack_max_min). Fie $sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$.
+Vom găsi, pentru fiecare $i$, la câte sume contribuie $rez_i$. Cu alte cuvinte,
+vom afla pentru câți $j > i$ avem $max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i$.
+De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că
+nu există $l \leq p < i$ astfel încât $rez_p = rez_i$. Fie $nxt_{0, i} = $ cel
+mai mic $j > i$ astfel încât $rez_j >= rez_i$, lucru pe care îl vom afla cu
+[stivă](../mediu/stack.md#problema-stack_max_min). Fie $sum_{0,
+i} = rez_i \cdot (i - nxt_{0, i})$.
 
-Acum, să presupunem că avem un arbore, în care $nxt_{0, i}$ reprezintă părintele lui $i$ și $sum_{0, i}$ reprezintă costul muchiei de la $i$ la părintele lui $i$. Noi vom pleca de la $l$ și vom tot merge în tatăl nodului, până când indicele tatălui este mai mare decât $r$. Pentru a afla al câtelea tată este cu ușurinta, vom precalcula $nxt_{i, j} = $ al $2^i$-lea tată al lui $j$ și $sum_{i, j} = $ suma costurilor muchiilor lanțului de la $j$ la cel de-al $2^i$-lea tată al lui $j$.
+Acum, să presupunem că avem un arbore, în care $nxt_{0, i}$ reprezintă părintele
+lui $i$ și $sum_{0, i}$ reprezintă costul muchiei de la $i$ la părintele lui
+$i$. Noi vom pleca de la $l$ și vom tot merge în tatăl nodului, până când
+indicele tatălui este mai mare decât $r$. Pentru a afla al câtelea tată este cu
+ușurinta, vom precalcula $nxt_{i, j} = $ al $2^i$-lea tată al lui $j$ și
+$sum_{i, j} = $ suma costurilor muchiilor lanțului de la $j$ la cel de-al
+$2^i$-lea tată al lui $j$.
 
-$$nxt_{i, j} = nxt_{i-1, nxt_{i-1, j}} \\ sum_{i, j} = sum_{i-1, j} + sum_{i-1, nxt_{i-1, j}}$$
+$$nxt_{i, j} = nxt_{i-1, nxt_{i-1, j}} \\ sum_{i, j} = sum_{i-1, j} + sum_{i-1,
+nxt_{i-1, j}}$$
 
 Sursa de accepted:
 
 ```cpp
-#include <iostream>
-#include <map>
+# include <iostream>
+# include <map>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -745,7 +857,7 @@ void buildTable() {
         sum[0][i] = 1LL * rez[i] * (stiva[sp - 1] - i);
         stiva[sp++] = i;
     }
-    
+
     for (i = 1; i < LOGN; i++) {
         for (j = 0; j <= n; j++) {
             nxt[i][j] = nxt[i - 1][nxt[i - 1][j]];
@@ -792,40 +904,55 @@ int main() {
 ```
 
 !!! note "Observatie"
-    Această soluție este foarte asemănătoare cu soluția la problema [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul de [LCA](https://edu.roalgo.ro/dificil/lowest-common-ancestor/#binary-lifting)
+
+    Această soluție este foarte asemănătoare cu soluția la problema
+    [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul
+    de
+    [LCA](./lowest-common-ancestor.md#binary-lifting)
 
 ## Concluzii
 
-Sparse Table este una dintre structurile de date care răspunde la întrebări pe un interval într-un șir static. Chiar dacă arborii de intervale pot face aproape tot ce poate face și Sparse Table, de obicei cu o complexitate chiar mai bună, Sparse Table este mai ușor de implementat. De asemenea, am văzut că RMQ poate avea multe avantaje, dar și dezavantaje față de AINT.
+Sparse Table este una dintre structurile de date care răspunde la întrebări pe
+un interval într-un șir static. Chiar dacă arborii de intervale pot face aproape
+tot ce poate face și Sparse Table, de obicei cu o complexitate chiar mai bună,
+Sparse Table este mai ușor de implementat. De asemenea, am văzut că RMQ poate
+avea multe avantaje, dar și dezavantaje față de AINT.
 
 ## Probleme suplimentare
 
-* [ONI 2021 Baraj Juniori cartita](https://kilonova.ro/problems/1096)
-* [Info1Cup 2021 wonderland](https://kilonova.ro/problems/3147)
-* [CF 1175E](https://codeforces.com/contest/1175/problem/E)
-* [CF 191C](https://codeforces.com/problemset/problem/191/C)
-* [CF 1328E](https://codeforces.com/contest/1328/problem/E)
-* [CF 1702G2](https://codeforces.com/contest/1702/problem/G2)
-* [CF 832D](https://codeforces.com/problemset/problem/832/D)
-* [RMI 2020 Sum Zero](https://oj.uz/problem/view/RMI20_sumzero)
-* [EJOI 2021 consecutive1](https://www.pbinfo.ro/probleme/3860/consecutive1)
-* [PBinfo minisecvente](https://www.pbinfo.ro/probleme/2865/minisecvente)
-* [PBinfo divquery](https://www.pbinfo.ro/probleme/1735/divquery)
-* [infoarena euclid](https://infoarena.ro/problema/euclid)
-* [infoarena plantatie](https://infoarena.ro/problema/plantatie)
-* [CodeChef Maximum of GCDs](https://www.codechef.com/problems/KSIZEGCD)
-* [Substring Restrictions - CS Academy](https://csacademy.com/contest/round-15/task/substring-restrictions/)
-* [Problemele cu Sparse Table de la articolul de pe CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html#practice-problems)
-* [Probleme cu RMQ de pe kilonova](https://kilonova.ro/tags/289)
-* [Probleme cu Binary Lifting de pe kilonova](https://kilonova.ro/tags/708)
-* [Problemele de RMQ din acest blog](https://codeforces.com/blog/entry/55274)
-* [Problemele din acest blog](https://codeforces.com/blog/entry/70418)
+- [ONI 2021 Baraj Juniori cartita](https://kilonova.ro/problems/1096)
+- [Info1Cup 2021 wonderland](https://kilonova.ro/problems/3147)
+- [CF 1175E](https://codeforces.com/contest/1175/problem/E)
+- [CF 191C](https://codeforces.com/problemset/problem/191/C)
+- [CF 1328E](https://codeforces.com/contest/1328/problem/E)
+- [CF 1702G2](https://codeforces.com/contest/1702/problem/G2)
+- [CF 832D](https://codeforces.com/problemset/problem/832/D)
+- [RMI 2020 Sum Zero](https://oj.uz/problem/view/RMI20_sumzero)
+- [EJOI 2021 consecutive1](https://www.pbinfo.ro/probleme/3860/consecutive1)
+- [PBinfo minisecvente](https://www.pbinfo.ro/probleme/2865/minisecvente)
+- [PBinfo divquery](https://www.pbinfo.ro/probleme/1735/divquery)
+- [infoarena euclid](https://infoarena.ro/problema/euclid)
+- [infoarena plantatie](https://infoarena.ro/problema/plantatie)
+- [CodeChef Maximum of GCDs](https://www.codechef.com/problems/KSIZEGCD)
+- [Substring Restrictions - CS
+  Academy](https://csacademy.com/contest/round-15/task/substring-restrictions/)
+- [Problemele cu Sparse Table de la articolul de pe CP
+  algorithms](https://cp-algorithms.com/data_structures/sparse-table.html#practice-problems)
+- [Probleme cu RMQ de pe kilonova](https://kilonova.ro/tags/289)
+- [Probleme cu Binary Lifting de pe kilonova](https://kilonova.ro/tags/708)
+- [Problemele de RMQ din acest blog](https://codeforces.com/blog/entry/55274)
+- [Problemele din acest blog](https://codeforces.com/blog/entry/70418)
 
 ## Resurse suplimentare
 
-* [RMQ - SEPI Infobits F1 (pag. 63)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [Sparse Table - CP algorithms](https://cp-algorithms.com/data_structures/sparse-table.html)
-* Recomandat - [Sparse Table - Codeforces](https://codeforces.com/blog/entry/101083)
-* Recomandat - [Binary Lifting - Codeforces](https://codeforces.com/blog/entry/100826)
-* [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
-* [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe query](https://codeforces.com/blog/entry/78931)
+- [RMQ - SEPI Infobits F1 (pag.
+  63)](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
+- [Sparse Table - CP
+  algorithms](https://cp-algorithms.com/data_structures/sparse-table.html)
+- Recomandat - [Sparse Table -
+  Codeforces](https://codeforces.com/blog/entry/101083)
+- Recomandat - [Binary Lifting -
+  Codeforces](https://codeforces.com/blog/entry/100826)
+- [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
+- [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe
+  query](https://codeforces.com/blog/entry/78931)
