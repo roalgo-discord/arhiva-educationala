@@ -47,10 +47,10 @@ vedere următoarele aspecte specifice:
   împărțirii etc.
 
 În general, constantele mici pot fi ignorate în calculul complexitatilor. De
-exemplu, $O(N)$ este echivalent cu $O(3 \cdot N)$ și $O(2 \cdot N)$. Mai jos
+exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(3 \cdot N)$ și $\mathcal{O}(2 \cdot N)$. Mai jos
 puteți găsi exemple de cod, împreună cu complexitățile lor.
 
-Acest cod are complexitatea $O(1)$, operațiile fiind constante.
+Acest cod are complexitatea $\mathcal{O}(1)$, operațiile fiind constante.
 
 ```cpp
 int a = 5;
@@ -59,7 +59,7 @@ int c = 4;
 int d = a + b + c + 153;
 ```
 
-Aceste coduri au complexitatea $O(n)$, numărul de operații fiind cel făcut în
+Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel făcut în
 structura repetitivă.
 
 ```cpp
@@ -76,8 +76,8 @@ while (i < n) {
 }
 ```
 
-În ciuda constantelor care apar, codurile au din nou complexitatea $O(n)$.
-Aceste coduri au complexitatea $O(n)$, numărul de operații fiind cel făcut în
+În ciuda constantelor care apar, codurile au din nou complexitatea $\mathcal{O}(n)$.
+Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel făcut în
 structura repetitivă.
 
 ```cpp
@@ -93,7 +93,7 @@ for (int i = 1; i <= n + 758458; i++) {
 ```
 
 Dacă avem de-a face cu mai multe structuri repetitive imbricate, complexitatea
-se va înmulți, complexitatea codului de mai jos este $O(n \cdot m)$.
+se va înmulți, complexitatea codului de mai jos este $\mathcal{O}(n \cdot m)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
@@ -105,8 +105,8 @@ for (int i = 1; i <= n; i++) {
 
 Dacă avem de-a face cu diverse repetitive imbricate în diferite blocuri de cod,
 complexitatea va deveni egală cu cea mai costisitoare structură de acest gen,
-complexitatea se va înmulți, complexitatea codului de mai jos este $O(n \cdot
-m)$, în ciuda bucății care are complexitate $O(n)$.
+complexitatea se va înmulți, complexitatea codului de mai jos este $\mathcal{O}(n \cdot
+m)$, în ciuda bucății care are complexitate $\mathcal{O}(n)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
@@ -125,15 +125,15 @@ Aici prezentăm câteva exemple de complexități, care vor fi utile pe parcurs.
 este nevoie să știți algoritmii de aici încă, ei vor fi prezentați și învățați
 de-a lungul parcursului vostru în lumea algoritmicii.
 
-- Formule matematice care calculează un răspuns: $O(1)$
-- Căutarea binară: $O(\log n)$
-- Folosirea unor structuri de date precum set, map: $O(\log n)$ per operație
-- Aflarea divizorilor unui număr: $O(\sqrt{n})$
-- Citirea sau parcurgerea a $n$ valori: $O(n)$
-- Sortarea unui vector cu $n$ valori: de obicei $O(n \log n)$
-- Parcurgerea tuturor submulțimilor de lungime 2: $O(n^2)$.
-- Parcurgerea tuturor submulțimilor: $O(2^n)$
-- Parcurgerea tuturor permutărilor: $O(n!)$
+- Formule matematice care calculează un răspuns: $\mathcal{O}(1)$
+- Căutarea binară: $\mathcal{O}(\log n)$
+- Folosirea unor structuri de date precum set, map: $\mathcal{O}(\log n)$ per operație
+- Aflarea divizorilor unui număr: $\mathcal{O}(\sqrt{n})$
+- Citirea sau parcurgerea a $n$ valori: $\mathcal{O}(n)$
+- Sortarea unui vector cu $n$ valori: de obicei $\mathcal{O}(n \log n)$
+- Parcurgerea tuturor submulțimilor de lungime 2: $\mathcal{O}(n^2)$.
+- Parcurgerea tuturor submulțimilor: $\mathcal{O}(2^n)$
+- Parcurgerea tuturor permutărilor: $\mathcal{O}(n!)$
 
 ## Complexitatea de memorie
 
@@ -182,15 +182,15 @@ particularitățile problemei.
 
 | $n$                   | Complexități posibile              |
 | --------------------- | ---------------------------------- |
-| $n \leq 10$           | $O(n!)$, $O(n^7)$, $O(n^6)$        |
-| $n \leq 20$           | $O(2^n \cdot n)$, $O(n^5)$         |
-| $n \leq 100$          | $O(n^4)$                           |
-| $n \leq 500$          | $O(n^3)$                           |
-| $n \leq 10 \ 000$     | $O(n^2)$                           |
-| $n \leq 10^5$         | $O(n \sqrt n)$                     |
-| $n \leq 5 \cdot 10^5$ | $O(n \log n)$                      |
-| $n \leq 10^7$         | $O(n)$                             |
-| $n \leq 10^{18}$      | $O(\log^2 n)$, $O(\log n)$, $O(1)$ |
+| $n \leq 10$           | $\mathcal{O}(n!)$, $\mathcal{O}(n^7)$, $\mathcal{O}(n^6)$        |
+| $n \leq 20$           | $\mathcal{O}(2^n \cdot n)$, $\mathcal{O}(n^5)$         |
+| $n \leq 100$          | $\mathcal{O}(n^4)$                           |
+| $n \leq 500$          | $\mathcal{O}(n^3)$                           |
+| $n \leq 10 \ 000$     | $\mathcal{O}(n^2)$                           |
+| $n \leq 10^5$         | $\mathcal{O}(n \sqrt n)$                     |
+| $n \leq 5 \cdot 10^5$ | $\mathcal{O}(n \log n)$                      |
+| $n \leq 10^7$         | $\mathcal{O}(n)$                             |
+| $n \leq 10^{18}$      | $\mathcal{O}(\log^2 n)$, $\mathcal{O}(\log n)$, $\mathcal{O}(1)$ |
 
 ## Concluzii
 

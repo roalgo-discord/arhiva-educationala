@@ -82,7 +82,7 @@ problema.
 ## Problema [Tulip Bouquet - IIOT](https://kilonova.ro/problems/2086)
 
 Pentru a rezolva această problemă, ne putem gândi în primul rând la dinamica
-relativ simplă, dar înceată în $O(n \cdot k^2)$ care are tranziții în $O(k)$.
+relativ simplă, dar înceată în $\mathcal{O}(n \cdot k^2)$ care are tranziții în $\mathcal{O}(k)$.
 
 Obiectivul principal va fi să optimizăm această soluție, iar cel mai simplu
 mod de a face acest lucru este să ținem o stivă cu pozițiile cele mai relevante
@@ -107,7 +107,7 @@ Mai jos puteți găsi soluția de 100 de puncte, unde sunt mai multe detalii inc
 
 !!! note "Observatie"
     Această problemă se poate rezolva și folosind [șmenul de la Aliens](../avansat/aliens-dp.md)
-    dar aici ne vom concentra pe soluția în $O(n \cdot k)$.
+    dar aici ne vom concentra pe soluția în $\mathcal{O}(n \cdot k)$.
 
 La o primă citire este evident faptul că putem găsi repede o dinamică de tipul
 $dp[i][j]$ ca fiind suma maximă dacă pentru primele $i$ poziții, am folosit $j$
@@ -136,7 +136,7 @@ ne putem gândi mai întâi să păstrăm două dinamici, după cum urmează:
 - dp[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem albastru
 - dp2[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem alb
 
-Soluția în $O(n^2)$ este relativ simplă, pentru alb putem avea o tranziție de la
+Soluția în $\mathcal{O}(n^2)$ este relativ simplă, pentru alb putem avea o tranziție de la
 $i-1$ la $i$, iar pentru albastru, putem fixa un interval și verificăm dacă îl
 putem plasa conform restricțiilor date, adăugând $dp[x-1]$ dacă am putut plasa
 un interval între $x$ și $i$.
@@ -150,7 +150,7 @@ După calcularea acestor valori, putem ține o structură de date (în soluția 
 mai jos, un AIB) care să țină suma valorilor de pe un interval pentru a putea
 folosi restricțiile cu albastru în avantajul nostru.
 
-În cele din urmă, complexitatea devine $O(n \log n)$. Puteți citi soluția de mai
+În cele din urmă, complexitatea devine $\mathcal{O}(n \log n)$. Puteți citi soluția de mai
 jos pentru mai multe detalii, precum și să vizionați videoul de mai sus.
 
 ```cpp

@@ -33,7 +33,7 @@ Cerința 2. Trebuie să determinăm cea mai lungă subsecvență a vectorului $n
 
 Când parcurgerea vectorului $nr$ s-a încheiat, trebuie să comparăm și lungimea ultimei secvențe cu lungimea maximă.  
 
-Pentru punctaje parțiale sunt posibile și abordări de complexitate $O(n^2)$ sau $O(n^3)$.  
+Pentru punctaje parțiale sunt posibile și abordări de complexitate $\mathcal{O}(n^2)$ sau $\mathcal{O}(n^3)$.  
 
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.

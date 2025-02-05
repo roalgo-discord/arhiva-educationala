@@ -206,14 +206,14 @@ funcție de semnul de la poziția curentă.
   nou adăugată este mai mare decât valoarea curentă în ordinea relativă, deci
   poate fi mai mică decât un număr mai mare de valori).
 
-Din păcate, complexitatea acestei abordări este $O(n^4)$, putând fi redusă la
-$O(n^3)$ folosind sume parțiale.
+Din păcate, complexitatea acestei abordări este $\mathcal{O}(n^4)$, putând fi redusă la
+$\mathcal{O}(n^3)$ folosind sume parțiale.
 
 Totuși, există o proprietate foarte importantă pe care nu am folosit-o încă, și
 anume faptul că suma valorilor $bg$ și $sm$ va fi mereu egală cu $n - i$.
 Astfel, putem să reducem numărul de dimensiuni și să ne concentrăm doar pe
 păstrarea valorilor $sm$ în dinamica noastră, acest detaliu făcând optimizarea
-soluției mult mai ușoară, complexitatea finală devenind $O(n^2)$ după aplicarea
+soluției mult mai ușoară, complexitatea finală devenind $\mathcal{O}(n^2)$ după aplicarea
 sumelor parțiale.
 
 Pentru mai multe detalii de implementare, puteți citi soluția de mai jos.
@@ -285,7 +285,7 @@ pe care o adăugăm (dacă adăugăm pe poziția 1, avem $i$ inversiuni în plus
 apoi pentru poziția 2, $i-1$ etc.)
 
 Cu alte cuvinte, $dp[i][j] = \sum_{j - i + 1}^j dp[i-1][x]$, recurență ce se
-poate calcula în $O(n^3)$ folosind sume parțiale, calculul complexității fiind
+poate calcula în $\mathcal{O}(n^3)$ folosind sume parțiale, calculul complexității fiind
 dat de numărul de elemente din permutare $(n)$ și de numărul maxim de inversiuni
 ale unei permutări $(\frac{n \cdot (n-1)}{2})$.
 
@@ -373,7 +373,7 @@ să inserăm elementul $i+1$. Distingem trei cazuri:
    consecutive. Trebuie să actualizăm $dp[i+1][j-1]$.
 3. Inserăm elementul $i+1$ în alt loc, trebuie să actualizăm $dp[i+1][j]$.
 
-Această soluție are o complexitate de $O(N^2)$.
+Această soluție are o complexitate de $\mathcal{O}(N^2)$.
 
 Când $K>1$, putem veni cu o altă strategie de programare dinamică pentru a
 reduce problema la cazul în care $K=1$.
@@ -388,7 +388,7 @@ Calculăm $partitions[i][j]$ = Numărul de moduri de a împărți primii $i$ num
 naturale în $j$ subșiruri, astfel încât niciunul dintre ele să nu aibă lungimea
 mai mare decât $K$. Recurența directă este $partitions[i][j] =
 \sum(partitions[i-x][j-1], 1 \leq x \leq K)$, dar aceasta poate fi redusă la
-$O(1)$ ușor prin calcularea sumelor parțiale. Acum putem număra toate
+$\mathcal{O}(1)$ ușor prin calcularea sumelor parțiale. Acum putem număra toate
 permutările valide care constau în $x$ subșiruri împărțite prin calcularea
 $partitions[N][x] * dp[x][0]$.
 

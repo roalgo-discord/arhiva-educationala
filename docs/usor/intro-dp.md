@@ -151,7 +151,7 @@ $$
 
 unde $|x| = \operatorname{abs}(x)$ este valoarea absolută. Cazul de bază constă
 în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar complexitatea
-acestei soluții este $O(n)$.
+acestei soluții este $\mathcal{O}(n)$.
 
 Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 
@@ -184,7 +184,7 @@ dp_i = \min (dp_{i-x} + |v_i - v_{i-x}|),\,\forall x \leq k
 $$
 
 Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar
-complexitatea acestei soluții este $O(n \cdot k)$.
+complexitatea acestei soluții este $\mathcal{O}(n \cdot k)$.
 
 === "Recursiv"
 

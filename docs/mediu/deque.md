@@ -36,9 +36,9 @@ facilități în plus.
 
     Complexitatea menționată mai sus este cel puțin pentru implementarea din STL
     (std::deque) una amortizată, cu alte cuvinte, $n$ operații făcute pe un
-    deque vor fi $O(n)$, dar asta nu garantează faptul că fiecare operație va
-    lua $O(1)$. Din acest motiv, vom spune că complexitatea unui deque este
-    $O(1)$ amortizat.
+    deque vor fi $\mathcal{O}(n)$, dar asta nu garantează faptul că fiecare operație va
+    lua $\mathcal{O}(1)$. Din acest motiv, vom spune că complexitatea unui deque este
+    $\mathcal{O}(1)$ amortizat.
 
 ### Sintaxă
 
@@ -120,7 +120,7 @@ principiile de funcționare ale stivei.
 În această problemă, se cere aflarea valorii minime pentru toate subsecvențele
 de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este
 folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în
-$O(n \log n)$.
+$\mathcal{O}(n \log n)$.
 
 Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să
 aflăm cea mai apropiată valoare mai mică de la stânga, singura modificare fiind

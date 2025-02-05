@@ -19,7 +19,7 @@ primim mai multe întrebări, de forma: Există valoarea $X$ în șir?
 
 În mod evident, o soluție foarte trivială este să parcurgem manual șirul pentru
 fiecare întrebare, și să vedem dacă elementul cerut apare sau nu în șir, astfel
-obținând complexitate totală de $O(N \cdot Q)$. Singura noastră problemă este că
+obținând complexitate totală de $\mathcal{O}(N \cdot Q)$. Singura noastră problemă este că
 noi o să avem $N$ și $Q$ undeva în jur de $10^6$, ceea ce va face ca această
 abordare să pice clar în timp, deci va trebui găsită o soluție mult mai
 eficientă. Aici intervine algoritmul de _căutare binară_.
@@ -40,9 +40,9 @@ ci doar jumătatea relevantă (cea în care considerăm noi că există o șans�
 găsim valoarea noastră), și algoritmul se va repeta până când lungimea devine
 1 și putem determina răspunsul. Dat fiind faptul că noi la fiecare pas
 împărțim la 2 lungimea șirului, acest lucru ne va da complexitate logaritmică
-la determinarea răspunsului, deci vom avea complexitate $O(Q \log N)$ (dacă
-șirul nostru nu este sortat din input, se mai adaugă și un $O(N \log N)$ la
-complexitate), cu memorie $O(N)$.
+la determinarea răspunsului, deci vom avea complexitate $\mathcal{O}(Q \log N)$ (dacă
+șirul nostru nu este sortat din input, se mai adaugă și un $\mathcal{O}(N \log N)$ la
+complexitate), cu memorie $\mathcal{O}(N)$.
 
 Pentru o înțelegere mai clară a algoritmului, să presupunem următorul exemplu:
 se dă un șir sortat crescător unde apar toate numerele de la 1 la 100, și se
@@ -156,7 +156,7 @@ Pătrașcu](http://people.csail.mit.edu/mip/), sau căutarea pe biți.
 În mare parte, aceste căutări binare ne vor da aceeași complexitate peste tot,
 în schimb, când vrem să implementăm algoritmul de Lowest Common Ancestor (LCA)
 cu Binary Lifting, căutarea binară pe biți reduce algoritmul de la
-$O(\log^2{H})$ la $O(\log{H})$, unde $H$ reprezintă adâncimea maximă a
+$\mathcal{O}(\log^2{H})$ la $\mathcal{O}(\log{H})$, unde $H$ reprezintă adâncimea maximă a
 arborelui.
 
 ## Căutarea binară pe răspuns

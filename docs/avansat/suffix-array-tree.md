@@ -82,10 +82,10 @@ de lungime $2^{i-1}$ și le sortăm întai după bucata din dreapta apoi după b
 din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă
 în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea 3 a
 claselor de echivalență știim că nu vor depăși niciodată valoarea $N$ și putem
-folosi metode de sortare în $O(N)$ precum counting sort sau, ce recomand eu,
+folosi metode de sortare în $\mathcal{O}(N)$ precum counting sort sau, ce recomand eu,
 doar ținem un vector de vectori unde $V_i = $ vectorul indicilor sufixelor ale
 căror clasă de echivalență pe care o comparăm este $i$. Astfel, complexitatea de
-timp este $O(N \log_2{N})$ iar cea de spațiu este $O(N)$.
+timp este $\mathcal{O}(N \log_2{N})$ iar cea de spațiu este $\mathcal{O}(N)$.
 
 ## Câteva detalii de implementare
 
@@ -162,12 +162,12 @@ poziție rotația minim lexicografică.
 Fie $M$ minimul lungimilor subsecvențelor și $l = \lfloor \log_2{M} \rfloor$. Ca
 la $RMQ$, putem compara cele două subsecvențe comparând perechile
 corespunzătoare bucăților în care le împarțim folosind clasele de la pasul $l$.
-$O(1)$ pe query.
+$\mathcal{O}(1)$ pe query.
 
 ### Cel mai lung prefix comun dintre două subsecvențe
 
 Cautăm binar pe lungimea răspunsului și ne folosim de aplicația 2 pentru a
-verifica dacă subsecvențele corespunzătoare sunt egale. $O(\log_2{N})$ pe query.
+verifica dacă subsecvențele corespunzătoare sunt egale. $\mathcal{O}(\log_2{N})$ pe query.
 
 ## Șirul LCP
 
@@ -177,7 +177,7 @@ definit astfel : $LCP_0 = 0$ sau doar rămâne nedefinit iar pentru restul avem
 $LCP_i = $ cel mai lung prefix comun al sufixelor de pe pozițiile $i$ și $i - 1$
 în șirul de sufixe. Acest șir are mai multe metode de construire : cea mai
 simplă este folosirea repetată a aplicației 3 de mai sus. Cu toate acestea,
-dorim să prezentăm și o altă metodă de construire în $O(N)$ care nu necesită
+dorim să prezentăm și o altă metodă de construire în $\mathcal{O}(N)$ care nu necesită
 menținerea tabloului de clase de la fiecare pas, algoritmul lui Kasai.
 
 ### Algoritmul lui Kasai
@@ -208,10 +208,10 @@ Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$, atunci ordinea de
 apariție în șirul de sufixe este $j + 1 \leq k < i + 1$. Folosind observația 2
 obținem că $lcp(k, i + 1) \geq l - 1$.
 
-Complexitatea de spațiu este evident $O(N)$. Complexitatea de timp necesită mai
+Complexitatea de spațiu este evident $\mathcal{O}(N)$. Complexitatea de timp necesită mai
 multă atenție: se observă că decrementăm variabila fun de maxim $N$ ori iar
 valoarea maximă până la care o putem incrementa este $N$, așadar complexitatea
-de timp este $O(N)$.
+de timp este $\mathcal{O}(N)$.
 
 Mai jos aveți un model de implementare:
 
@@ -255,7 +255,7 @@ observă că toate sufixele în care $P$ este prefix vor forma o subsecvență �
 șirul de sufixe. Pentru a numara de câte ori apare $P$ este de ajuns să căutam
 ternar primul sufix în care apare $P$ ca prefix iar apoi să căutam binar cât de
 mult de putem extinde la dreapta astfel încât lcp-ul dintre $P$ și ultimul sufix
-din subsecvență să fie $|P|$. Complexitate: $O(|P| \log {N})$ pe query.
+din subsecvență să fie $|P|$. Complexitate: $\mathcal{O}(|P| \log {N})$ pe query.
 
 !!! warning "Soluția optimă"
 

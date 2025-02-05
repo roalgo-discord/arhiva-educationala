@@ -32,7 +32,7 @@ De aici, putem vedea că un interval de acoperire dintr-o soluție validă poate
 
 Pentru soluția finală căutăm binar lungimea minimă a celui mai lung interval, folosind întrebări de forma: ”Dacă toate intervalele de acoperire au lungima $L$, am putea acoperi cu cel mult $K$ intervale mulțimea celor initiale?”
 
-Întrebarea nouă este mai simplă, și o răspundem printr-o parcurgere a intervalelor inițiale, ordonate după mijloacele lor: Începem un interval de lungime $L$ în primul mijloc și considerăm acoperite toate segmentele cu mijlocul conținut în acesta. Când întâlnim un segment nou care nu este acoperit de ultimul interval adăugat, înseamnă că trebuie să începem un nou interval în mijlocul intervalului inițial. Complexitatea pentru pasul acesta este $O(N)$ odată ce intervalele sunt sortate la început după mijloc.
+Întrebarea nouă este mai simplă, și o răspundem printr-o parcurgere a intervalelor inițiale, ordonate după mijloacele lor: Începem un interval de lungime $L$ în primul mijloc și considerăm acoperite toate segmentele cu mijlocul conținut în acesta. Când întâlnim un segment nou care nu este acoperit de ultimul interval adăugat, înseamnă că trebuie să începem un nou interval în mijlocul intervalului inițial. Complexitatea pentru pasul acesta este $\mathcal{O}(N)$ odată ce intervalele sunt sortate la început după mijloc.
 
 Pentru soluția minimă lexicografic tot ce trebuie făcut e să vedem că dacă intervalele trebuie să înceapă cât mai din stânga, este echivalent cu a vrea ca intervalele să se termine cât mai în stânga, și deci doar facem algoritmul în sens invers după mijloace (pornim ultimul interval în ultimul mijloc, etc.).
 

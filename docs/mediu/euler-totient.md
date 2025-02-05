@@ -44,7 +44,7 @@ $$ n \cdot \prod_{1}^{k} \frac{p_i - 1}{p_i} $$
 De exemplu, pentru $n = 30$, $\varphi (n) = \frac{2 - 1}{2} \cdot \frac{3 -
 1}{3} \cdot \frac{5 - 1}{5} = 8$
 
-Această formulă poate fi calculată în $O(\sqrt n)$ folosind un algoritm similar
+Această formulă poate fi calculată în $\mathcal{O}(\sqrt n)$ folosind un algoritm similar
 cu cel pentru aflarea divizorilor primi ai unui număr, codul de mai jos
 rezolvând problema [Phi](https://www.pbinfo.ro/probleme/2642/phi) de pe pbinfo.
 
@@ -140,7 +140,7 @@ De exemplu, divizorii lui 10 sunt 1, 2, 5 și 10. Suma valorilor lui
 $\varphi (i)$ este 1 + 1 + 4 + 4 = 10.
 
 Folosind această proprietate putem calcula toate valorilor indicatorului lui
-Euler în $O(n \log n)$ ca la ciurul lui Eratostene, dar implementarea este una
+Euler în $\mathcal{O}(n \log n)$ ca la ciurul lui Eratostene, dar implementarea este una
 mai simplă.
 
 ```cpp

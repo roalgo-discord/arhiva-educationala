@@ -250,8 +250,8 @@ for (int n = 1; n <= N; n++) {
 }
 ```
 
-Există o metodă mai eficientă de a calcula $C_n^k$ în timp $O(k)$ și spațiu
-$O(1)$:
+Există o metodă mai eficientă de a calcula $C_n^k$ în timp $\mathcal{O}(k)$ și spațiu
+$\mathcal{O}(1)$:
 
 ```cpp
 const long long C(int n, int k) {
@@ -371,7 +371,7 @@ această recurență, avem o formulă relativ simplă.
 Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă
 folosind această abordare. Din fericire, există o metodă și mai rapidă, care
 folosește [numere pentagonale](https://codeforces.com/blog/entry/104312),
-abordare ce ne duce la o soluție în $O(n\sqrt n)$, pentru mai multe detalii
+abordare ce ne duce la o soluție în $\mathcal{O}(n\sqrt n)$, pentru mai multe detalii
 puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau
 rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
 

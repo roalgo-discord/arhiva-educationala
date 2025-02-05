@@ -192,8 +192,8 @@ int main() {
 }
 ```
 
-După cum se poate observa, această implementare a fost adusă de la $O(n \cdot
-w)$ memorie la $O(w)$ memorie, codul devenind de asemenea mai scurt.
+După cum se poate observa, această implementare a fost adusă de la $\mathcal{O}(n \cdot
+w)$ memorie la $\mathcal{O}(w)$ memorie, codul devenind de asemenea mai scurt.
 
 ### Rucsacul în care putem repeta obiecte de un număr nelimitat de ori
 

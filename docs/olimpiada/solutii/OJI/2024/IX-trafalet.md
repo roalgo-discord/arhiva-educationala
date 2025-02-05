@@ -15,13 +15,13 @@ tags:
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2503/).
 
-Subtask 1: Considerăm fiecare submatrice a matricei inițiale. Punctajul acesteia este reprezentat de diferența în modul dintre suma celulelor albe și suma celulelor negre. Aceste două sume le putem calcula prin parcurgerea submatricei. Rezultatul final este maximul dintre toate punctajele considerate. Complexitate: $O(N^2 \cdot M^2)$ pentru fixarea submatricei, $O(N \cdot M)$ pentru calcularea sumelor. În total, $O(N^3 \cdot M^3)$.
+Subtask 1: Considerăm fiecare submatrice a matricei inițiale. Punctajul acesteia este reprezentat de diferența în modul dintre suma celulelor albe și suma celulelor negre. Aceste două sume le putem calcula prin parcurgerea submatricei. Rezultatul final este maximul dintre toate punctajele considerate. Complexitate: $\mathcal{O}(N^2 \cdot M^2)$ pentru fixarea submatricei, $\mathcal{O}(N \cdot M)$ pentru calcularea sumelor. În total, $\mathcal{O}(N^3 \cdot M^3)$.
 
-Subtask 2: Soluția este aceeași ca la subtaskul precedent, doar că vom optimiza aflarea celor două sume. Astfel, vom precalcula sume parțiale 2D și vom obține punctajul fiecărei submatrice cu ajutorul acestora. Complexitate: $O(N^2 \cdot M^2)$ pentru fixarea submatricei, $O(1)$ pentru calcularea sumelor. În total, $O(N^2 \cdot M^2)$.
+Subtask 2: Soluția este aceeași ca la subtaskul precedent, doar că vom optimiza aflarea celor două sume. Astfel, vom precalcula sume parțiale 2D și vom obține punctajul fiecărei submatrice cu ajutorul acestora. Complexitate: $\mathcal{O}(N^2 \cdot M^2)$ pentru fixarea submatricei, $\mathcal{O}(1)$ pentru calcularea sumelor. În total, $\mathcal{O}(N^2 \cdot M^2)$.
 
 Subtask 3: Pentru început, vom înmulți toate celulele uneia dintre culori cu $-1$. Acum, în loc să calculăm diferența între cele două sume, avem doar de calculat suma în modul. Pentru a rezolva asta, vom fixa două linii, reprezentând latura superioară, respectiv inferioară a submatricei. Am rămas cu un vector, unde elementul de pe poziția $i$ reprezintă suma elementelor de pe coloana $i$, cuprinse între cele două linii fixate anterior.
 
-Problema s-a redus la a calcula secvența de sumă maximă în modul. Aceasta este data de diferența dintre suma parțială maximă și cea minimă. Fie pozițiile acestora Pmax și Pmin. Dacă $P_{max} > P_{min}$, atunci răspunsul îl reprezintă suma intervalului dat de acestea. Dacă $P_{min} > P_{max}$, atunci intervalul dintre cele două este cel de sumă minimă, care, după aplicarea modulului, se transformă în suma maximă. Complexitate: $O(N^2 \cdot M)$.
+Problema s-a redus la a calcula secvența de sumă maximă în modul. Aceasta este data de diferența dintre suma parțială maximă și cea minimă. Fie pozițiile acestora Pmax și Pmin. Dacă $P_{max} > P_{min}$, atunci răspunsul îl reprezintă suma intervalului dat de acestea. Dacă $P_{min} > P_{max}$, atunci intervalul dintre cele două este cel de sumă minimă, care, după aplicarea modulului, se transformă în suma maximă. Complexitate: $\mathcal{O}(N^2 \cdot M)$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -52,7 +52,7 @@ restricții mai mici.
 De regulă, vom vrea să ținem memorate informații pentru fiecare grupă, iar
 atunci când actualizăm o valoare, operația va fi efectuată în timp constant,
 deoarece schimbăm informațiile dintr-o singură grupă. În ceea ce privește
-interogările, complexitatea acestora este $O(\sqrt n)$ deoarece dacă avem un
+interogările, complexitatea acestora este $\mathcal{O}(\sqrt n)$ deoarece dacă avem un
 interval de forma $[L, R]$, noi vom calcula răspunsul folosind trei pași,
 aceștia fiind următorii:
 
@@ -93,11 +93,11 @@ să avem în vedere faptul că dacă avem restricții mai mici (de regulă, cân
 flexibilității pe care o avem, precum și a faptului că putem să variem punctul
 limită în funcție de eficiența celor două abordări.
 
-Cu alte cuvinte, dacă avem o abordare care rulează în $O(a \cdot x)$ și alta
-care rulează în $O(b \cdot \frac{n}{x})$, unde $a$ și $b$ sunt constante,
+Cu alte cuvinte, dacă avem o abordare care rulează în $\mathcal{O}(a \cdot x)$ și alta
+care rulează în $\mathcal{O}(b \cdot \frac{n}{x})$, unde $a$ și $b$ sunt constante,
 punctul de cotitură între cele două abordări este acela în care cele două
 ecuații au valori egale, din acest motiv nefiind mereu optim să abordăm diferit
-începând de la $O(\sqrt n)$, deoarece uneori această schimbare trebuie produsă
+începând de la $\mathcal{O}(\sqrt n)$, deoarece uneori această schimbare trebuie produsă
 mai devreme sau mai târziu.
 
 ### Problema [Dynamic Range Sum Queries](https://cses.fi/problemset/task/1648/) de pe CSES
@@ -247,20 +247,20 @@ funcție de capătul din dreapta.
 
 Această metodă se numește Algoritmul lui Mo și prin folosirea ei pentru a
 reordona query-urile, ne asigurăm că numărul de operații pe care îl facem în
-medie la fiecare query este de $O(\sqrt n)$, lucru ce se poate motiva prin
+medie la fiecare query este de $\mathcal{O}(\sqrt n)$, lucru ce se poate motiva prin
 însumarea a două elemente de complexitate:
 
 - Dacă avem două (sau mai multe) query-uri din același bucket, capătul din
   stânga se va mișca cu cel mult $\sqrt n$, iar numărul total de pași pe care îi
-  facem la dreapta este de $n$. Deoarece numărul de bucket-uri este $O(\sqrt
-  n)$, atunci contribuția la complexitate de la aceste query-uri este $O(n \sqrt
+  facem la dreapta este de $n$. Deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt
+  n)$, atunci contribuția la complexitate de la aceste query-uri este $\mathcal{O}(n \sqrt
   n)$.
 
 - Dacă avem două query-uri din bucket-uri diferite, putem avea în cel mai rău
-  caz $n$ pași, dar deoarece numărul de bucket-uri este $O(\sqrt n)$, atunci
-  contribuția la complexitate de la aceste query-uri este $O(n \sqrt n)$.
+  caz $n$ pași, dar deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt n)$, atunci
+  contribuția la complexitate de la aceste query-uri este $\mathcal{O}(n \sqrt n)$.
 
-În total, complexitatea se reduce la $O(n \sqrt n)$, presupunând că operațiile
+În total, complexitatea se reduce la $\mathcal{O}(n \sqrt n)$, presupunând că operațiile
 auxiliare pe care le efectuăm se realizează în timp constant.
 
 !!! note "Observație"
@@ -397,14 +397,14 @@ pentru datele de care dispunem. Aici am prezentat două asemenea exemple.
 ### Problema [Jumpsum](https://kilonova.ro/problems/481) de pe Kilonova
 
 Pentru a rezolva această problemă, plecăm de la faptul că dacă am vrea să
-rezolvăm un query în mod brut, complexitatea ar fi $O(\frac{n}{y})$, ceea ce
+rezolvăm un query în mod brut, complexitatea ar fi $\mathcal{O}(\frac{n}{y})$, ceea ce
 pentru valori mici ale lui $y$, ne-ar cauza mari probleme din punct de vedere al
 vitezei programului.
 
 Din acest motiv, o idee care se impune imediat este aceea de a precalcula
 răspunsurile pentru cât mai multe valori ale lui $y$, pentru a evita această
 problemă pe viitor. Totuși, nu putem precalcula toate răspunsurile, deoarece
-complexitatea ar deveni $O(n^2)$. Din acest motiv, recurgem la o soluție de
+complexitatea ar deveni $\mathcal{O}(n^2)$. Din acest motiv, recurgem la o soluție de
 compromis, care folosește avantajele ambelor metode, iar din acest motiv, vom
 precalcula răspunsurile pentru toate valorile mai mici de $\sqrt n$, respectiv
 brut pentru toate valorile mai mari de $\sqrt n$, astfel complexitatea devenind
@@ -461,13 +461,13 @@ cel mult $2 \cdot x - 1$, ceea ce ne motivează să avem două abordări diferit
 funcție de frecvența elementelor.
 
 Dacă un element apare de cel puțin $\sqrt n$ ori, putem afla numărul de secvențe
-cu frecvență majoritară în $O(n)$ cu ajutorul unor sume parțiale, numărând o
+cu frecvență majoritară în $\mathcal{O}(n)$ cu ajutorul unor sume parțiale, numărând o
 diferență între valorile care apar și cele care nu apar (reducem problema la un
 șir binar).
 
 Altfel, vom putea fixa poziția primului și ultimului element egal cu valoarea
 curentă, iar cu ajutorul unor cazuri, vom putea ajunge să găsim răspunsul în
-$O(frq^2)$, unde $frq$ este frecvența valorii curente.
+$\mathcal{O}(frq^2)$, unde $frq$ este frecvența valorii curente.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -581,7 +581,7 @@ Pentru a rezolva această problemă, vom pleca de la soluția obișnuită pe car
 avem folosind algoritmul lui Mo, unde sortăm query-urile în ordine crescătoare a
 grupei de unde încep. Dacă am proceda conform unui Mo obișnuit, ar trebui să
 ținem și un set în care să păstrăm frecvențele maxime deoarece avem nevoie să
-aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $O(q
+aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $\mathcal{O}(q
 \sqrt n \log n)$ este prea înceată.
 
 Ne putem gândi acum la ce se întâmplă cu adevărat când rulăm update-urile și

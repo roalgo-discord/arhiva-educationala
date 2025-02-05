@@ -32,7 +32,7 @@ Pentru simplitate vom defini următoarele aspecte:
 Cât și următoarele proprietăți celebre:
 
 - $\sum_{k = 1}^{N} \frac{1}{k} \approx \log{N}$.
-- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are $O(\sqrt N)$
+- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are $\mathcal{O}(\sqrt N)$
   valori distincte.
 
 Pentru $\forall p \in \mathbb{N}$, $p$ număr prim, și $\forall k \in
@@ -79,13 +79,13 @@ for (int i = 2; i <= N; i++) {
 La finalul programului, $k$ va fi număr prim doar dacă $\operatorname{ciur}(k) =
 0$.
 
-Complexitatea de timp este $O(\sum_{k=1}^N \frac{N}{k}) = O(N \log{N})$.
+Complexitatea de timp este $\mathcal{O}(\sum_{k=1}^N \frac{N}{k}) = O(N \log{N})$.
 
 ### Ciur liniar
 
 Observăm că fiecare număr compus $X$ este parcurs de către cel de-al doilea for
 de mai multe ori. Dacă am putea să iterăm prin fiecare număr compus exact o
-singură dată am ajunge la complexitatea de $O(N)$. Reținem într-un vector
+singură dată am ajunge la complexitatea de $\mathcal{O}(N)$. Reținem într-un vector
 auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele prime până
 când un număr prim divide $i$.
 
@@ -114,7 +114,7 @@ for (int i = 2; i <= n; i++) {
     p$, însă $p$ este cel mai mic număr prim care divide $q$, deci nu există un
     astfel $k$. Deci odată luată în considerare perechea $(i, p)$,\, $i \cdot p$
     va fi calculat doar o singură dată, transformând complexitatea finală în
-    $O(N)$.
+    $\mathcal{O}(N)$.
 
 ### Precalcularea indicatorului lui Euler folosind Ciurul Liniar
 
@@ -230,8 +230,8 @@ for (int i = 2; i < N; i++) {
 
 ### Implementare mai populară
 
-Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $O(N \log{N})$
-pentru precalculare, de ce ar intra $O(N)$?
+Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $\mathcal{O}(N \log{N})$
+pentru precalculare, de ce ar intra $\mathcal{O}(N)$?
 
 ```cpp
 vector<int> phi(N), mobius(N);
@@ -293,7 +293,7 @@ $$ \sum_{i=1}^{n} [d\mid i] = \sum_{j=1}^{n} [d\mid j] = \left\lfloor
 \frac{n}{d} \right\rfloor $$
 
 deci relația finală devine $\sum_{d=1}^{n} \mu(d) \cdot (\frac{n}{d})^2$, care
-poate fi calculată în $O(n)$.
+poate fi calculată în $\mathcal{O}(n)$.
 
 **Exercițiu 2:** Calculează câte perechi $(a,b)$ exisă, astfel încât $1 \leq a,b
 \leq n$ și $\operatorname{cmmdc}(a, b)$ = $P$.
@@ -362,7 +362,7 @@ Revenim la problema noastră inițială: $$ f(k) = \frac{p(k)}{k} = k \cdot \sum
 = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot
 (\frac{N}{kd} + 1)}{2} \right)^2 $$
 
-Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $O(N
+Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $\mathcal{O}(N
 \log N)$.
 
 ## Probleme propuse spre rezolvare
@@ -391,7 +391,7 @@ $$ \begin{align*} f(K) &= \sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M
 \left(\frac{N}{Kd}\right)^M. \end{align*} $$
 
 Rezultatul problemei este dat de $\sum_{i=1}^{N} f(i) \cdot i$. Complexitatea de
-timp pentru a calcula $f(K)$ este $O(\frac{N}{K}\log{M}), astfel complexitatea
+timp pentru a calcula $f(K)$ este $\mathcal{O}(\frac{N}{K}\log{M}), astfel complexitatea
 finală este
 
 $$ \begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N +
@@ -417,7 +417,7 @@ $$ \begin{align*} \sum_{i=1}^{N} O(\left\lfloor \frac{N}{i} \right\rfloor +
 N \log{M}) \\ &= O(N \log{N} + N \log{M}) \\ &= O(N\left(\log{N} +
 \log{M}\right)) \\ &= O(N\log{(MN)}) \end{align*} $$
 
-Putem precalcula puterile lui $M$, obținem astfel $O(N \log{N})$. Ambele iau
+Putem precalcula puterile lui $M$, obținem astfel $\mathcal{O}(N \log{N})$. Ambele iau
 100 puncte.
 
 ### Problema [cntgcd](https://kilonova.ro/problems/372)
@@ -445,7 +445,7 @@ perechile care au cmmdc-ul 2, 3 etc.
 $$ f(n) = \frac{n^2 - n}{2} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
 \right\rfloor\right) $$
 
-Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $O(\sqrt{N})$
+Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $\mathcal{O}(\sqrt{N})$
 elemente diferite, putem doar să calculăm câte numere $d_1$ există, astfel încât
 $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
 \rfloor) \cdot nr$.
@@ -480,7 +480,7 @@ long long f (long long n) {
 ```
 
 Complexitatea algoritmului de mai sus este foarte interesantă, ea fiind
-$O(N^\frac{2}{3})$.
+$\mathcal{O}(N^\frac{2}{3})$.
 
 ### Problema [tupleco](https://kilonova.ro/problems/1820)
 
@@ -508,7 +508,7 @@ Rezultatul nostru devine:
 $$ \sum_{d=1}^{N} \mu(d) \cdot {\left\lfloor \frac{N}{d} \right\rfloor - K + 1
 \choose K} $$
 
-Soluția rulează în $O(N)$ cu $O(N)$ sau $O(N \cdot \log N)$ precalcularea.
+Soluția rulează în $\mathcal{O}(N)$ cu $\mathcal{O}(N)$ sau $\mathcal{O}(N \cdot \log N)$ precalcularea.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -572,7 +572,7 @@ $$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
     este mult mai mic decât $N$, astfel putem să calculăm combinările mult mai
     rapid:
 
-- $n \leq M$, deci putem precalcula combinările în $O(M)$. <!-- ce naiba e cu
+- $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$. <!-- ce naiba e cu
   formatarea asta? -->
 - $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
   \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$

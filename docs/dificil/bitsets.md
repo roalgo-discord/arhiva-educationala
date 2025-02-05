@@ -253,7 +253,7 @@ for(int i = 1; i <= 100; i++){
 }
 ```
 
-Complexitatea de timp este $O(S \cdot maxsum)$, unde $S = \sum_{i=1}^{n} k_i$.
+Complexitatea de timp este $\mathcal{O}(S \cdot maxsum)$, unde $S = \sum_{i=1}^{n} k_i$.
 
 Ar trebui să fie destul de evident că putem folosi **bitset** pentru a optimiza
 problema:
@@ -390,7 +390,7 @@ left[a][x][y]) | ((dp[a] >> 1) & right[a][x][y])` unde $S_i = y, S_{i-1} = x$.
 Pentru a tranziționa de pe o linie pe alta (mergem în sus sau în jos), procedăm
 la fel doar că de data asta vom reține `up[l][a][b][p], down[l][a][b][p]`.
 
-Complexitatea este $O(|S| \cdot \frac{N^2}{w})$.
+Complexitatea este $\mathcal{O}(|S| \cdot \frac{N^2}{w})$.
 
 ### O parte din cod (cpp)
 
@@ -487,7 +487,7 @@ maximizează contribuția, adună rezultatele și afișează răspunsul.
 
 Pentru varianta ușoară a problemei putem află dacă $S$ constituie o sumă valida
 folosind dp. Similar cu a doua problemă discutată, putem optimiza dp-ul cu
-ajutorul unui **bitset**, complexitatea finală fiind $O(\frac{N^2}{w})$.
+ajutorul unui **bitset**, complexitatea finală fiind $\mathcal{O}(\frac{N^2}{w})$.
 
 ### Program Cpp
 
@@ -535,9 +535,9 @@ mai mult de 3 ori : $x, x, x$ , putem să lipim pe 2 dintre ei : $x, 2x$, fără
 ca să stricăm corectitudinea la dp. Dacă repetăm procesul până când un element
 apare de maxim 2 ori, iar împreună cu o proprietate care zice că : "Pentru un
 șir $S$ cu $N$ elemente și suma elementelor $R$ $\Rightarrow$ sunt maxim
-$O(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi
+$\mathcal{O}(\sqrt R)$ elemente distincte", rezultă ca în vectorul pe care aplicăm noi
 **bitset** nu vor fi mai mult de $2 \cdot \sqrt{sz_v}$ elemente. Complexitatea
-se reduce la $O(\frac{N \sqrt N}{w})$.
+se reduce la $\mathcal{O}(\frac{N \sqrt N}{w})$.
 
 Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul 5. Așadar ne
 vom folosi de **bitset dinamic**, iar în loc să declarăm bitsetul mereu cu
@@ -687,8 +687,8 @@ int main(){
 }
 ```
 
-Complexitatea de timp rămâne tot $O(\frac{N \cdot P}{w})$ doar că acum memoria e
-$O(N)$.
+Complexitatea de timp rămâne tot $\mathcal{O}(\frac{N \cdot P}{w})$ doar că acum memoria e
+$\mathcal{O}(N)$.
 
 ## Concluzii
 

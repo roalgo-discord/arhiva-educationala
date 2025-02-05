@@ -79,7 +79,7 @@ Pentru exemplele de mai jos, vom afla lungimea celei mai lungi secvențe în car
 toate valorile sunt pare. Dacă există mai multe asemenea secvențe, o vom afla pe
 cea mai din stânga.
 
-### Soluție în $O(n^3)$
+### Soluție în $\mathcal{O}(n^3)$
 
 Cea mai simplă soluție la acest tip de probleme este aceea în care fixăm
 capetele secvenței pe care o verificăm, iar pentru fiecare secvență, verificăm
@@ -106,7 +106,7 @@ for (int i = 1; i <= n; i++) {
 cout << lenmax << " " << stmax << " " << drmax << '\n'; 
 ```
 
-Chiar dacă această soluție este tot $O(n^3)$, în multe cazuri se va dovedi mai
+Chiar dacă această soluție este tot $\mathcal{O}(n^3)$, în multe cazuri se va dovedi mai
 rapidă în practică, deoarece iterând în ordine descrescătoare după lungime, dacă
 găsim o secvență cu proprietatea dorită, atunci ne putem opri.
 
@@ -134,14 +134,14 @@ for (int len = n; len >= 1; len--) {
 cout << lenmax << " " << stmax " " << drmax << '\n'; 
 ```
 
-### Soluție în $O(n^2)$
+### Soluție în $\mathcal{O}(n^2)$
 
 O îmbunătățire pe care o putem face la algoritmul precedent este aceea că dacă
 am verificat deja secvența $[i, j]$, pentru a trece la secvența $[i, j+1]$
 trebuie doar să verificăm poziția $j-1$, fără a mai fi necesară verificarea din
 nou a tuturor pozițiilor în intervalul $[i, j]$. Deoarece acum va fi nevoie de
 doar două foruri pentru a verifica toate secvențele, complexitatea va deveni
-$O(n^2)$.
+$\mathcal{O}(n^2)$.
 
 ```cpp
 int lenmax = 0, stmax = -1, drmax = -1;
@@ -161,7 +161,7 @@ for (int i = 1; i <= n; i++) {
 cout << lenmax << " " << stmax " " << drmax << '\n'; 
 ```
 
-### Soluție în $O(n)$
+### Soluție în $\mathcal{O}(n)$
 
 Totuși, putem rezolva această problemă și mai eficient, deoarece dat fiind
 faptul că valorile pe care le avem vor avea mereu aceleași proprietăți, putem
@@ -187,7 +187,7 @@ for (int i = 1; i <= n; i++) {
 cout << lenmax << " " << stmax " " << drmax << '\n'; 
 ```
 
-### Soluție în $O(n)$ fără vectori
+### Soluție în $\mathcal{O}(n)$ fără vectori
 
 În cazul unor probleme, în special cele care se dau la examenul de bacalaureat,
 se cere găsirea unor soluții eficiente atât din punct de vedere al timpului de

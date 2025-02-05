@@ -224,8 +224,8 @@ unică).
 ### Complexitatea algoritmului
 
 Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea
-complexitate liniară $O(n + m)$, unde $n$ este numărul de noduri, iar $m$
-numărul de muchii. Memoria va fi tot $O(n + m)$.
+complexitate liniară $\mathcal{O}(n + m)$, unde $n$ este numărul de noduri, iar $m$
+numărul de muchii. Memoria va fi tot $\mathcal{O}(n + m)$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
 

@@ -59,7 +59,7 @@ O altă variantă de abordare este să observăm, că $D(n)$ este egal cu număr
 
 Aplicând principiul includerii și excluderii avem: $D(n) = n! − F(n, 1) + F(n, 2) − F(n, 3) + \dots F(n, n)$.
 
-Precalculând valorile factorialelor și a inverșilor modulari a factorialelor modulo $10^9 +7$ până la $10^6$ (valoarea maximă pentru $nc$), putem obține fiecare termen al formulei de mai sus în $O(1)$.
+Precalculând valorile factorialelor și a inverșilor modulari a factorialelor modulo $10^9 +7$ până la $10^6$ (valoarea maximă pentru $nc$), putem obține fiecare termen al formulei de mai sus în $\mathcal{O}(1)$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -145,7 +145,7 @@ Pentru a rezolva această problemă, va trebui să parcurgem arborele (de prefer
 folosind un DFS) de la rădăcină, cu scopul de a ajunge pe rând la toate frunzele
 arborelui. Pentru fiecare frunză, dimensiunea subarborelui său va fi 1, iar
 pentru fiecare nod care nu e frunză, va fi suma subarborilor fiilor săi. În
-final, vom avea un algoritm ce rulează în $O(n)$.
+final, vom avea un algoritm ce rulează în $\mathcal{O}(n)$.
 
 ```cpp
 vector<vector<int> > tree;
@@ -166,14 +166,14 @@ void dfs (int nod, int tata) {
 
 Definim diametrul unui graf ca fiind distanța minimă cea mai mare între două
 noduri din graf. Deși în mod normal, această problemă este NP-hard, în cazul
-unui arbore există un algoritm simplu care funcționează în $O(n)$. Pentru a
+unui arbore există un algoritm simplu care funcționează în $\mathcal{O}(n)$. Pentru a
 putea obține această distanță, avem nevoie de două parcurgeri, ambele pot fi DFS
 sau BFS.
 
 Prima parcurgere este dintr-un nod oarecare, scopul fiind să aflăm cel mai
 îndepărtat nod de acesta. Apoi, vom rula a doua parcurgere din acest nod cel mai
 îndepărtat pentru a afla distanța maximă de la acesta la celelalte noduri din
-arbore. Într-un final, vom obține răspunsul căutat în $O(n)$ folosind doar două
+arbore. Într-un final, vom obține răspunsul căutat în $\mathcal{O}(n)$ folosind doar două
 parcurgeri.
 
 ```cpp

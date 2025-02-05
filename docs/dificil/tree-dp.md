@@ -452,7 +452,7 @@ cu rădăcina în nodul $i$, iar în acel nod avem valoarea $j$.
 Pentru a calcula această dinamică, putem avea mai întâi niște
 tranziții încete care calculează pentru fiecare variantă de a avea
 o valoare pe un nod, numărul de moduri de a avea o valoare pe un fiu,
-dar această abordare ar avea complexitatea $O(n \cdot m^2)$, ceea
+dar această abordare ar avea complexitatea $\mathcal{O}(n \cdot m^2)$, ceea
 ce este prea încet.
 
 O observație importantă pe care o facem este aceea că ne va interesa
@@ -462,7 +462,7 @@ pas, vom ține cont de numărul de factori primi și de suma parțială
 a răspunsurilor pentru numerele care sunt multiplu ale acelui divizor.
 
 Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea
-unui [PINEX](../mediu/pinex.md), deci $O(n \cdot m \cdot DMAX)$,
+unui [PINEX](../mediu/pinex.md), deci $\mathcal{O}(n \cdot m \cdot DMAX)$,
 unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform
 precalculării anterioare, iar acest număr $DMAX$ este egal cu 31 deoarece
 orice număr de la 1 la $m$ are cel mult 5 factori primi distincți.

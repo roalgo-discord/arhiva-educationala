@@ -29,7 +29,7 @@ acestor biblioteci ce compun STL.
 ## Problema [Subarray Sums II - CSES](https://cses.fi/problemset/task/1661)
 
 Pentru a rezolva această problemă, putem pleca de la una din soluțiile care are
-complexitatea $O(n^2)$. Această soluție calculează sumele parțiale ale șirului
+complexitatea $\mathcal{O}(n^2)$. Această soluție calculează sumele parțiale ale șirului
 și fixează capetele din stânga și dreapta, folosindu-se de sumele parțiale
 calculate anterior pentru a număra secvențele cu suma $s$.
 
@@ -41,7 +41,7 @@ Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sum
 (inițializăm la început suma 0 cu frecvența 1, corespunzătoare unui șir
 gol), iar pentru fiecare $i$, vom actualiza datele din map și vom aduna la
 răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni
-$O(n \log n)$.
+$\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>

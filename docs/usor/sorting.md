@@ -24,9 +24,9 @@ dificultății lor de înțelegere, precum și în ordine crescătoare a perform
 menționând în cazul fiecăruia din algoritmi cunoștințele necesare pentru a-i
 putea înțelege și folosi cu succes.
 
-## Algoritmi de sortare în $O(n^2)$
+## Algoritmi de sortare în $\mathcal{O}(n^2)$
 
-Voi începe prin a explica algoritmii de sortare în $O(n^2)$ deoarece aceștia
+Voi începe prin a explica algoritmii de sortare în $\mathcal{O}(n^2)$ deoarece aceștia
 sunt de o dificultate similară, singura cunoștință necesară pentru ei fiind
 lucrul cu tablouri unidimensionale. Performanțele celor trei algoritmi pe care
 îi voi menționa sunt de asemenea foarte similare, dar fiecare din acești
@@ -110,11 +110,11 @@ for (int i = 2; i <= n; i++) {
     - [Subprograme](../cppintro/functions.md)
     - [Introducere în STL](../cppintro/stl.md)
 
-## Algoritmi de sortare în $O(n \log n)$
+## Algoritmi de sortare în $\mathcal{O}(n \log n)$
 
 După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta
-un șir mai repede de $O(n^2)$? Răspunsul este unul afirmativ, existând foarte
-mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $O(n \log
+un șir mai repede de $\mathcal{O}(n^2)$? Răspunsul este unul afirmativ, existând foarte
+mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $\mathcal{O}(n \log
 n)$.
 
 Deși în practică în cadrul concursurilor, de regulă ajungem să ne folosim de
@@ -158,10 +158,10 @@ sort(vx.begin() + 1, vx.end());
 
 QuickSort sau Sortarea rapidă este o metodă eficientă de sortare a unui tablou,
 descoperită de programatorul britanic Tony Hoare. Pentru un set de $n$ valori
-oarecare algoritmul efectuează $O(n \log n)$ comparații, dar în cazul cel mai
-nefavorabil se efectuează $O(n^2)$ comparații. De regulă, acest algoritm este
+oarecare algoritmul efectuează $\mathcal{O}(n \log n)$ comparații, dar în cazul cel mai
+nefavorabil se efectuează $\mathcal{O}(n^2)$ comparații. De regulă, acest algoritm este
 mai rapid decât merge sort sau heap sort atâta timp cât pivotul este ales
-favorabil, cazul cel mai nefavorabil va efectua mereu $O(n \log n)$ comparații.
+favorabil, cazul cel mai nefavorabil va efectua mereu $\mathcal{O}(n \log n)$ comparații.
 
 Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
 (inițial întreg tabloul), astfel:
@@ -178,7 +178,7 @@ Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
     Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea
     pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit
     duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz
-    să aibă o complexitate de $O(n^2)$.
+    să aibă o complexitate de $\mathcal{O}(n^2)$.
 
 ```cpp
 vector<int> quicksort (vector<int> v) {
@@ -225,7 +225,7 @@ vector<int> quicksort (vector<int> v) {
 
 MergeSort este o metodă eficientă de sortare a unui tablou, inventată de
 programatorul John von Neumann. Pentru un set de $n$ valori oarecare algoritmul
-efectuează $O(n \log n)$ comparații, algoritmul fiind același indiferent de
+efectuează $\mathcal{O}(n \log n)$ comparații, algoritmul fiind același indiferent de
 modul în care sunt așezate valorile. Algoritmul funcționează în felul următor.
 
 - Avem lista curentă, o împărțim în două jumătăți egale.
@@ -384,7 +384,7 @@ for (auto x : s) {
 Counting sort este un algoritm de sortare folosit atunci când avem un număr mic
 de elemente distincte, care pot fi ținute într-un vector de frecvență. Acest
 algoritm se poate folosi și dacă intervalul în care sunt așezate valorile este
-unul mic, complexitatea fiind în ambele cazuri $O(n + k)$, unde $n$ este numărul
+unul mic, complexitatea fiind în ambele cazuri $\mathcal{O}(n + k)$, unde $n$ este numărul
 de valori din șir, iar $k$ este diferența dintre cea mai mare și cea mai mică
 valoare din șir.
 

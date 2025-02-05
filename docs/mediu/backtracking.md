@@ -49,7 +49,7 @@ apoi vom avea două cazuri distincte:
     a unui alt șir, care să ne ofere informația despre existența unei anumite
     valori în permutare.
 
-Deoarece sunt $n!$ permutări, complexitatea soluției va fi $O(n! \cdot n)$.
+Deoarece sunt $n!$ permutări, complexitatea soluției va fi $\mathcal{O}(n! \cdot n)$.
 
 ```cpp
 #include <fstream>

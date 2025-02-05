@@ -212,8 +212,8 @@ manieră similară cu a tabelelor hash. Practic, fiecare valoare inserată într
 unordered map este stocată într-o tabelă hash în funcție de valoarea unui hash
 intern calculat de structura de date în sine. Această structură de date ne
 garantează o complexitate foarte bună pe un caz obișnuit, operațiile fiind în
-medie $O(1)$, dar trebuie avut grijă la cazul cel mai prost, unde complexitatea
-unei operații poate atinge și $O(n)$, mai jos găsiți un exemplu de implementare.
+medie $\mathcal{O}(1)$, dar trebuie avut grijă la cazul cel mai prost, unde complexitatea
+unei operații poate atinge și $\mathcal{O}(n)$, mai jos găsiți un exemplu de implementare.
 
 ```cpp
 #include <fstream>
@@ -264,7 +264,7 @@ int main() {
     hackurilor ce se folosesc de tehnicile descrise [în acest
     blog](https://codeforces.com/blog/entry/62393). O alternativă constă în
     folosirea unui hash custom, sau și mai simplu, folosirea map-ului chiar dacă
-    pierdem un factor de $O(\log n)$. Totuși, la olimpiade nu se generează de
+    pierdem un factor de $\mathcal{O}(\log n)$. Totuși, la olimpiade nu se generează de
     regulă teste anti-unordered map.
 
 ## Xor Hashing

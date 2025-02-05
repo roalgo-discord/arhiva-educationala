@@ -39,7 +39,7 @@ majoritatea algoritmilor mai complecși.
 Dacă vrem să păstrăm un contor binar de lungime $n$, pentru a aduna un 1 la o
 valoare, se poate întâmpla să schimbăm valoarea tuturor biților din șirul pe
 care îl aveam (cel mult $n$), deci s-ar putea spune că complexitatea unei
-asemenea operații este $O(n)$.
+asemenea operații este $\mathcal{O}(n)$.
 
 Totuși, dacă analizăm mai în detaliu ce se întâmplă, observăm că deși biții de
 pe pozițiile mai nesemnificative își schimbă valoarea des, biții mai
@@ -51,7 +51,7 @@ Astfel, dacă avem un număr de incrementări fix (să presupunem că acesta est
 $x$), numărul de schimbări care se face este $\frac{x}{2^0} + \frac{x}{2^1} +
 \dots + \frac{x}{2^n}$, unde $n$ este lungimea maximă a acestui număr. Cu alte
 cuvinte, această sumă este de fapt aproximativ egală cu $2 \cdot x$, iar
-complexitatea reală a acestei incrementări este $O(1)$.
+complexitatea reală a acestei incrementări este $\mathcal{O}(1)$.
 
 ### Ciurul lui Eratostene
 
@@ -71,13 +71,13 @@ for (int i = 2; i <= n; i++) {
 ```
 
 La prima vedere, ne-am putea gândi că complexitatea acestui algoritm ar fi
-$O(n^2)$, deoarece avem două foruri și cel de-al doilea for merge de asemenea de
+$\mathcal{O}(n^2)$, deoarece avem două foruri și cel de-al doilea for merge de asemenea de
 la $i$ la $n$.
 
 Totuși, pasul din cel de-al doilea for este de $i$, deci trebuie să analizăm
 câți pași facem de fapt pentru un $n$ fixat.
 
-- $\frac{n}{2} + \frac{n}{3} + \frac{n}{5} + \dots$, sumă care converge la $O(n
+- $\frac{n}{2} + \frac{n}{3} + \frac{n}{5} + \dots$, sumă care converge la $\mathcal{O}(n
   \log \log n)$, datorită proprietăților sumelor armonice. Se poate observa și
   când programul este rulat că viteza lui de execuție este foarte bună în
   practică.
@@ -91,7 +91,7 @@ mare sau cea mai mică de până acum.
 
 Totuși, deoarece pentru fiecare valoare putem să adăugăm și să o scoatem cel
 mult o singură dată, numărul total de operații va fi $2 \cdot n$, iar
-complexitatea algoritmului devine $O(n)$.
+complexitatea algoritmului devine $\mathcal{O}(n)$.
 
 ### Hash table
 
@@ -105,7 +105,7 @@ complexitatea pentru operații precum găsirea valorilor devine constantă.
 
 Deși intrăm mai mult în detalii [aici](./dsu.md), se
 poate demonstra cu ușurință faptul că complexitatea totală a operațiilor, dacă
-aplicăm optimizările descrise acolo devine $O(n \log^{*} n)$, chiar dacă
+aplicăm optimizările descrise acolo devine $\mathcal{O}(n \log^{*} n)$, chiar dacă
 operațiile individuale sunt de ordin liniar.
 
 ## Concluzii

@@ -61,7 +61,7 @@ un nod dat. După cum știți din articolul anterior, un strămoș este un nod l
 care putem ajunge dacă urcăm de-a lungul arbore, din nod în nod până la
 rădăcină. O primă metodă de a afla acest strămoș este de a merge fie folosind un
 vector de părinți calculat anterior, fie folosind o parcurgere, mergând prin
-toți cei $k$ strămoși. Totuși, complexitatea acestui algoritm este $O(k)$, fiind
+toți cei $k$ strămoși. Totuși, complexitatea acestui algoritm este $\mathcal{O}(k)$, fiind
 mult prea încet în cazul în care avem de calculat aceste răspunsuri pentru mai
 multe asemenea noduri.
 
@@ -133,7 +133,7 @@ int solve(int nod, int stp) {
 De foarte multe ori, se pune problema aflării celui mai mic strămoș comun între
 două sau mai multe noduri, într-un timp cât mai eficient. Deși la fel ca la
 subproblema precedentă, putem găsi răspunsul folosind o metodă brută, folosirea
-binary lifting se va dovedi instrumentală pentru aflarea LCA-ului în $O(\log
+binary lifting se va dovedi instrumentală pentru aflarea LCA-ului în $\mathcal{O}(\log
 n)$. Cu alte cuvinte, mai întâi vom vrea să aducem nodurile la același nivel,
 iar mai apoi, urcăm în arbore până când ajungem fix înainte de nodul care ne va
 da răspunsul. Cazul când un nod este strămoșul altuia se tratează anterior.
@@ -172,7 +172,7 @@ int solve(int a, int b) {
 
 !!! note "Observație"
 
-    LCA-ul între două noduri se poate afla și în $O(1)$ per query, folosind o
+    LCA-ul între două noduri se poate afla și în $\mathcal{O}(1)$ per query, folosind o
     precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
 
 ## Probleme suplimentare

@@ -44,7 +44,7 @@ Acest mod de abordare al dinamicii este inspirat din algoritmul lui Kadane pentr
 subsecvența de sumă maximă a unui șir, condițiile fiind identice cu cele
 folosite pentru acest algoritm.
 
-Astfel, complexitatea algoritmului va deveni $O(n^2)$, deoarece suma maximă
+Astfel, complexitatea algoritmului va deveni $\mathcal{O}(n^2)$, deoarece suma maximă
 a unor măști folosite este $n$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.

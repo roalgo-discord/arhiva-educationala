@@ -77,7 +77,7 @@ precum și unde le găsiți la noi în arhivă. Pentru fiecare secțiune, recoma
 - [Principiul lui Dirichlet (principiul
   cutiei)](./dirichlet.md)
 - [Algoritmi de sortare](./sorting.md) - Doar algoritmii
-  în $O(n^2)$ și funcția `std::sort`
+  în $\mathcal{O}(n^2)$ și funcția `std::sort`
 
 ## Sfaturi practice
 

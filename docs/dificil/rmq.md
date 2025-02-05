@@ -16,7 +16,7 @@ tags:
 ## Introducere
 
 **Sparse Table** este o structură de date care ne ajută, în principal, să
-răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log
+răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $\mathcal{O}(\log
 n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în
 acest articol).
 
@@ -120,7 +120,7 @@ care trebuie să răspundem cu minimul pe un interval. Vom folosi un sparse tabl
 Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două
 intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai
 mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea
-$2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja
+$2^{lg}$, deci le putem afla răspunsurile în $\mathcal{O}(1)$ (deoarece le avem deja
 precalculate).
 
 !!! note "Observație"
@@ -509,13 +509,13 @@ comparăm aceste două structuri de date.
 
 ### Comparație în funcție de timp
 
-RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Însă,
-RMQ are complexitate $O(1)$ per query, În timp ce AINT are $O(\log n)$ per
+RMQ este precalculat, la început, în $\mathcal{O}(n \log n)$, iar AINT în $\mathcal{O}(n)$. Însă,
+RMQ are complexitate $\mathcal{O}(1)$ per query, În timp ce AINT are $\mathcal{O}(\log n)$ per
 query.
 
 ### Comparație în funcție de memorie
 
-RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
+RMQ folosește $\mathcal{O}(n \log n)$ memorie, iar AINT folosește $\mathcal{O}(n)$ memorie.
 
 ### Alte precizări
 
@@ -954,5 +954,5 @@ avea multe avantaje, dar și dezavantaje față de AINT.
 - Recomandat - [Binary Lifting -
   Codeforces](https://codeforces.com/blog/entry/100826)
 - [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
-- [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe
+- [Avansat - RMQ cu $\mathcal{O}(N)$ timp de construcție și $\mathcal{O}(1)$ timp pe
   query](https://codeforces.com/blog/entry/78931)

@@ -49,7 +49,7 @@ având o stare de tip $dp[i][j][x]$, cu semnificația că avem costul minim pân
 la nodul $i$, dacă am folosit $j$ teleportări și teleportarea curentă a avut
 $x$ mutări.
 
-Această soluție va avea o complexitate $O(N \cdot K \cdot L \log N)$, fiind
+Această soluție va avea o complexitate $\mathcal{O}(N \cdot K \cdot L \log N)$, fiind
 suficient de bună pentru obținerea celor 100 de puncte.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.

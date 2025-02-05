@@ -68,7 +68,7 @@ Un lucru care se poate remarca este faptul că acest algoritm este centrat în
 jurul muchiilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul
 nostru (sortarea lor, urmată de verificarea individuală). Deoarece sortarea
 muchiilor este de departe cea mai costisitoare parte a algoritmului,
-complexitatea finală a algoritmului va fi $O(m \log m)$.
+complexitatea finală a algoritmului va fi $\mathcal{O}(m \log m)$.
 
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Kruskal.
 
@@ -178,7 +178,7 @@ Un lucru care se poate remarca este faptul că acest algoritm este centrat în
 jurul nodurilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul
 nostru (procesarea lor, urmată de verificarea muchiilor adiacente fiecărui nod).
 Deoarece algoritmul este similar în stil cu algoritmul lui Dijkstra,
-complexitatea finală va fi aceeași cu cea de la Dijkstra, $O((n+m) \log n)$
+complexitatea finală va fi aceeași cu cea de la Dijkstra, $\mathcal{O}((n+m) \log n)$
 
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Prim.
 
@@ -256,8 +256,8 @@ int main() {
 !!! note "Observație"
 
     La fiecare iterare prin graf, numărul de componente conexe se înjumătățește.
-    La început sunt $n - 1$ componente conexe, deci se vor face $O(\log n)$
-    iterații. Astfel, complexitatea algoritmului este $O(m \log n)$, unde $m$
+    La început sunt $n - 1$ componente conexe, deci se vor face $\mathcal{O}(\log n)$
+    iterații. Astfel, complexitatea algoritmului este $\mathcal{O}(m \log n)$, unde $m$
     este numărul de muchii, iar $n$ este numărul de noduri.
 
 !!! note "Observație"
@@ -415,7 +415,7 @@ dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M
 \approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la
 seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior,
 iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm
-varianta sa în $O(n^2)$, similară cu cea prezentată la Dijkstra, pentru a
+varianta sa în $\mathcal{O}(n^2)$, similară cu cea prezentată la Dijkstra, pentru a
 rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
 
 În condiții de concurs, dacă toți algoritmii vor intra în limita de timp,

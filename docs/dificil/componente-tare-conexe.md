@@ -74,7 +74,7 @@ nevizitat la acest pas, vom avea o parcurgere similară cu cea de la primul pas,
 parcurgere efectuată pe graful transpus care ne va da componentele tare conexe,
 acelea fiind cele care sunt vizitate de nodul curent la pasul dat.
 
-Acest algoritm are complexitate $O(n + m)$ și implementarea lui, folosită la
+Acest algoritm are complexitate $\mathcal{O}(n + m)$ și implementarea lui, folosită la
 problema [Planets and Kingdoms](https://cses.fi/problemset/task/1683/) poate fi
 citită mai jos:
 

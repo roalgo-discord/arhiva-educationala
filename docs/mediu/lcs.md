@@ -55,7 +55,7 @@ $$dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1] + x)$$
 
 unde $x = 1$ dacă $a_i = b_j$ și $x = 0$ în caz contrar.
 
-Această abordare va avea complexitatea $O(|a| \cdot |b|)$, unde $|a|$ și $|b|$
+Această abordare va avea complexitatea $\mathcal{O}(|a| \cdot |b|)$, unde $|a|$ și $|b|$
 sunt lungimile celor două șiruri de caractere. Aici puteți găsi o implementare,
 care rezolvă problema [similara de pe
 atcoder](https://atcoder.jp/contests/dp/tasks/dp_f)
@@ -175,8 +175,8 @@ curentă în ordine descrescătoare, scopul nostru fiind acela de a ține un vec
 dp cu proprietatea că $dp[i]$ este cea mai mică poziție din șirul $b$ astfel
 încât am putut ajunge să avem un subșir comun maximal de lungime $i$.
 
-Complexitatea algoritmului va fi $O((n + m) \log n)$, unde $m$ este numărul de
-perechi de caractere egale. Deși cel mai prost caz este $O(n^2 \log n)$, în
+Complexitatea algoritmului va fi $\mathcal{O}((n + m) \log n)$, unde $m$ este numărul de
+perechi de caractere egale. Deși cel mai prost caz este $\mathcal{O}(n^2 \log n)$, în
 practică, algoritmul va fi mult mai eficient. Aici puteți găsi o implementare a
 acestui algoritm, inspirata din [acest
 cod](https://github.com/sgtlaugh/algovault/blob/master/code_library/hunt_szymanski.cpp).

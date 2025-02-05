@@ -16,11 +16,11 @@ tags:
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2515/).
 
 
-Cerința 1: Pentru 27 de puncte, se citesc numerele din fișierul de intrare într-un vector, se parcurg elementele vectorului, iar pentru fiecare element aflat pe poziția $i$, cu $1 \leq i \leq n - 1$, se verifică toate elementele aflate pe pozițiile $j$, cu $i + 1 \leq j \leq n$, numărându-se toate elementele care sunt egale cu oglinditul lui $a_i$ și formează o pereche oglindită cu $a_i$. Complexitatea algoritmului este: $O(n^2)$.
+Cerința 1: Pentru 27 de puncte, se citesc numerele din fișierul de intrare într-un vector, se parcurg elementele vectorului, iar pentru fiecare element aflat pe poziția $i$, cu $1 \leq i \leq n - 1$, se verifică toate elementele aflate pe pozițiile $j$, cu $i + 1 \leq j \leq n$, numărându-se toate elementele care sunt egale cu oglinditul lui $a_i$ și formează o pereche oglindită cu $a_i$. Complexitatea algoritmului este: $\mathcal{O}(n^2)$.
 
-Pentru 50 de puncte, se construiește un vector de frecvență pe baza numerelor citite. Se parcurge vectorul de frecvență și, pentru fiecare valoare $x$ care există în acesta, se calculează oglinditul lui $x$ în variabila $y$. Dacă $y$ există în vectorul de frecvență, este strict mai mare decât $x$ și formează o pereche oglindită cu $x$, atunci se va aduna la numărul de perechi produsul dintre frecvența lui $x$ și frecvența lui $y$. Din moment ce $n$ poate fi $100\,000$, rezultatul poate depăși valoarea maximă reprezentabilă pe tipul de date `int`. Complexitatea algoritmului este: $O(n + \text{max})$, unde $\text{max}$ este numărul maxim din șir.
+Pentru 50 de puncte, se construiește un vector de frecvență pe baza numerelor citite. Se parcurge vectorul de frecvență și, pentru fiecare valoare $x$ care există în acesta, se calculează oglinditul lui $x$ în variabila $y$. Dacă $y$ există în vectorul de frecvență, este strict mai mare decât $x$ și formează o pereche oglindită cu $x$, atunci se va aduna la numărul de perechi produsul dintre frecvența lui $x$ și frecvența lui $y$. Din moment ce $n$ poate fi $100\,000$, rezultatul poate depăși valoarea maximă reprezentabilă pe tipul de date `int`. Complexitatea algoritmului este: $\mathcal{O}(n + \text{max})$, unde $\text{max}$ este numărul maxim din șir.
 
-Cerința 2: Pentru 27 de puncte, se citesc numerele din fișierul de intrare într-un vector. Se parcurg elementele vectorului, iar fiecare element aflat pe poziția $i$, cu $1 \leq i \leq n - 1$, se compune cu toate elementele aflate pe pozițiile $j$, cu $i + 1 \leq j \leq n$, verificându-se dacă cele două valori rezultate din compunere sunt numere palindrom. Pe parcurs, se reține valoarea maximă obținută. Complexitatea algoritmului este: $O(n^2)$.
+Cerința 2: Pentru 27 de puncte, se citesc numerele din fișierul de intrare într-un vector. Se parcurg elementele vectorului, iar fiecare element aflat pe poziția $i$, cu $1 \leq i \leq n - 1$, se compune cu toate elementele aflate pe pozițiile $j$, cu $i + 1 \leq j \leq n$, verificându-se dacă cele două valori rezultate din compunere sunt numere palindrom. Pe parcurs, se reține valoarea maximă obținută. Complexitatea algoritmului este: $\mathcal{O}(n^2)$.
 
 Pentru 50 de puncte, se construiește un vector de frecvență pe baza numerelor citite. Se parcurge vectorul de frecvență și, pentru fiecare valoare $x$ care există în acesta, se calculează oglinditul lui $x$ în variabila $y$. 
 
@@ -28,7 +28,7 @@ Pentru 50 de puncte, se construiește un vector de frecvență pe baza numerelor
 - Din numărul $y$ se elimină pe rând câte o cifră. Se verifică dacă numărul rezultat există în vectorul de frecvență și, în caz afirmativ, se alipește la începutul numărului $x$ inițial.
 - Din numărul $x$ se elimină pe rând câte o cifră. Se verifică dacă numărul rezultat există în vectorul de frecvență și, în caz afirmativ, se alipește la începutul numărului $y$ inițial.
 
-Pe parcurs, dintre toate numerele palindrom obținute în acest proces, se reține maximul. Complexitatea algoritmului este: $O(n + \text{max})$, unde $\text{max}$ este numărul maxim din șir.
+Pe parcurs, dintre toate numerele palindrom obținute în acest proces, se reține maximul. Complexitatea algoritmului este: $\mathcal{O}(n + \text{max})$, unde $\text{max}$ este numărul maxim din șir.
 
 
 Mai jos puteți găsi o soluție care ia punctajul maxim.

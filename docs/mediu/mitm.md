@@ -36,7 +36,7 @@ Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar
 apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții
 generate.
 
-Astfel, complexitatea algoritmului va deveni acum $O(2^{\frac{n}{2}})$.
+Astfel, complexitatea algoritmului va deveni acum $\mathcal{O}(2^{\frac{n}{2}})$.
 
 ### [Problema Meet in the Middle](https://cses.fi/problemset/task/1628/)
 

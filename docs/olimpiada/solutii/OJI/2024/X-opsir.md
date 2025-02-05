@@ -55,7 +55,7 @@ Problema se reduce, în această situație, la a verifica dacă există o parti�
 
 Verificarea se poate face prin următorul algoritm Greedy: pentru fiecare subsecvență din partiționarea lui $S$ (subsecvențele fiind luate de la stânga la dreapta) se determina prefixul de lungime minimă a lui $T$ pentru care frecvențele literelor sale sunt mai mare sau egale decât cele din subsecvența actuală a lui $S$. Se elimină acest prefix și se continuă cu următoarea subsecvență din $S$. Dacă pentru fiecare subsecvență a lui $S$ se găsește un astfel de prefix, atunci răspunsul este DA, altfel răspunsul este NU.
 
-Complexitate timp: $O(n \cdot dimensiune_{alfabet})$.
+Complexitate timp: $\mathcal{O}(n \cdot dimensiune_{alfabet})$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

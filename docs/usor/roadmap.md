@@ -128,7 +128,7 @@ putea trece la noțiuni mai specifice.
 
 - [Complexități](./complexity.md)
 - [Simularea soluției](./simulating-solution.md)
-- [Algoritmi de sortare](./sorting.md) - Doar algoritmii în $O(n^2)$ și
+- [Algoritmi de sortare](./sorting.md) - Doar algoritmii în $\mathcal{O}(n^2)$ și
   funcția std::sort
 - [Ciurul lui Eratostene](./sieve.md)
 - [Sume parțiale](./partial-sums.md) - Doar sumele parțiale

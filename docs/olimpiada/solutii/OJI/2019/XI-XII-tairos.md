@@ -42,7 +42,7 @@ Astfel, pentru a calcula $dp[i]$ și $cntleaves[i]$, ne putem duce înapoi pe ur
 nivelelor și să adunăm produsele dintre valorile de pe nivelurile precedente și
 numărul de frunze de la un anumit nivel.
 
-Complexitatea finală a soluției va fi $O(n \cdot d)$, iar ca un detaliu suplimentar,
+Complexitatea finală a soluției va fi $\mathcal{O}(n \cdot d)$, iar ca un detaliu suplimentar,
 trebuie să fim atenți în ceea ce privește operațiile cu modulo, deoarece
 răspunsurile pot deveni foarte mari.
 

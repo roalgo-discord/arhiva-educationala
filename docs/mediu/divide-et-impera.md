@@ -228,7 +228,7 @@ Pentru a rezolva această problemă, trebuie să plecăm de la șirul inițial �
 bazăm pe faptul că vom avea cel mult $\sqrt n$ frecvențe distincte, fapt ce
 motivează o parcurgere de tip divide et impera, unde excludem mereu valorile cu
 frecvență minimă. Deși în teorie acest algoritm poate avea o complexitate de tip
-$O(n \sqrt n)$, în practică algoritmul va fi foarte rapid și relativ simplu de
+$\mathcal{O}(n \sqrt n)$, în practică algoritmul va fi foarte rapid și relativ simplu de
 implementat.
 
 ```cpp

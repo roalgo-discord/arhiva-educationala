@@ -21,8 +21,8 @@ Să presupunem că avem un șir $V$ de $N$ numere indexat de la 1, iar asupra
 
 Răspunsul pentru această întrebare se poate calcula foarte ușor dacă realizăm
 parcurgerea efectivă a șirului de la poziția $st$ la poziția $dr$ și ne-ar lua
-$O(N)$ pași în cel mai rău caz ca să răspundem la o întrebare, complexitatea
-finală a programului ajungând la $O(N \cdot Q)$, ceea ce pentru valori mai mari
+$\mathcal{O}(N)$ pași în cel mai rău caz ca să răspundem la o întrebare, complexitatea
+finală a programului ajungând la $\mathcal{O}(N \cdot Q)$, ceea ce pentru valori mai mari
 de $10^4$ pentru $N$ și $Q$ ar depăși limitele de timp la majoritatea
 problemelor de algoritmică. Așadar, este nevoie de o optimizare, care se numește
 _„Sume parțiale”_.
@@ -49,13 +49,12 @@ for (int i = 1; i <= n; i++) {
 ```
 
 După calculare, putem începe să răspunem la întrebări. Răspunsul nostru pentru
-un interval $[st, dr]$, unde $1 \leq st \leq dr \leq n$ va fi: $suma \ = sp[dr]
-
-- sp[st - 1]$
+un interval $[st, dr]$, unde $1 \leq st \leq dr \leq n$ va fi:
+$suma = sp[dr] - sp[st - 1]$
 
 Faptul că răspunsul nostru este dat de o formulă, va face ca timpul nostru
-efectuat pentru rezolvarea unei întrebări să fie constant $O(1)$, ceea ce va
-duce ca programul nostru să aibă o complexitate finală $O(N + Q)$, pentru
+efectuat pentru rezolvarea unei întrebări să fie constant $\mathcal{O}(1)$, ceea ce va
+duce ca programul nostru să aibă o complexitate finală $\mathcal{O}(N + Q)$, pentru
 calcularea tabloului $sp$ și pentru citirea și răspunderea la întrebări. Totuși,
 hai să vedem de ce formula menționată mai sus funcționează.
 
@@ -152,7 +151,7 @@ Trecem toți termenii, cu excepția lui $sp[i][j]$, în dreapta și obținem:
 
 $sp[i][j] = sp[i - 1][j] + sp[i][j - 1] - sp[i - 1][j - 1] + A[i][j]$
 
-Deci, tabloul $sp$ se poate calcula destul de ușor în timp $O(N \cdot M)$.
+Deci, tabloul $sp$ se poate calcula destul de ușor în timp $\mathcal{O}(N \cdot M)$.
 Atașăm, mai jos, o secvență de cod în care se calculează matricea $sp$.
 
 ```cpp
@@ -223,7 +222,7 @@ for (int i = 1; i <= n; i++) {
 
 Atenție la faptul că suma pe prefixul $1, 2, \dots, i$ va fi ținută în
 $mars[i]$. Revenind la problema noastră inițială, răspunsul la fiecare întrebare
-va fi în $mars[x]$, astfel obținând $O(1)$ pe query. Evident, dacă vrem să
+va fi în $mars[x]$, astfel obținând $\mathcal{O}(1)$ pe query. Evident, dacă vrem să
 adăugăm o valoare $z$ în loc de 1 pe interval, acest lucru se poate realiza
 foarte ușor:
 

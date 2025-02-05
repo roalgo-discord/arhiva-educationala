@@ -25,8 +25,8 @@ memorate, dar de cele mai multe ori, un Trie este folosit pentru reținerea
 Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvintele
 să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că
 înălțimea arborelui este lungimea maximă a unui cuvânt. Complexitatea de timp
-este $O(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai
-rău caz, este $O({ L \cdot k})$.
+este $\mathcal{O}(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai
+rău caz, este $\mathcal{O}({ L \cdot k})$.
 
 <figure markdown="span">
 ![](../images/trie/trie.png)
@@ -354,12 +354,12 @@ vectorul $b$ elementele vor fi distincte.
 
 În al treilea rând, observăm că vectorul $b$ este generat în funcție de ce
 valoare are $k$. Deci o primă idee ar fi să fixăm mai întâi unde vom pune 0-ul
-în vectorul $b$ și să-l construim în $O(n)$, complexitatea temporală fiind
-$O(n^2)$. Dar putem să ne folosim de a doua observație, și anume că mereu
+în vectorul $b$ și să-l construim în $\mathcal{O}(n)$, complexitatea temporală fiind
+$\mathcal{O}(n^2)$. Dar putem să ne folosim de a doua observație, și anume că mereu
 vectorul $b$ va avea elementele distincte. Deci ne este suficient să știm care
 va fi valoarea maximă din $b$ dacă 0-ul se află pe poziția $k$. Pentru a face
 asta putem să folosim 2 trie-uri, unul pentru sufix, altul pentru prefix,
-complexitatea finală devenind $O(n \log n)$.
+complexitatea finală devenind $\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>
@@ -538,9 +538,9 @@ scădea din dp-ul nostru $dp_{i-1} \cdot K^{x_i - len(cuv)}$ și să oprim
 parcurgerea. Dacă suntem la un nod $node$, acesta are lungimea egală cu $x_i$,
 atunci scădem din dp $dp_{i-1}$ și oprim parcurgerea.
 
-Cu alte cuvinte, o soluție în $O(M^2 + M \cdot S)$ este posibilă, unde $S =
+Cu alte cuvinte, o soluție în $\mathcal{O}(M^2 + M \cdot S)$ este posibilă, unde $S =
 \sum_{i=1}^{N} len(i)$. Putem optimiza soluția, observând că de fiecare dată
-putem face tranzițiile în $O(1)$. Soluția finală devine $O(M + S)$ sau $O(M
+putem face tranzițiile în $\mathcal{O}(1)$. Soluția finală devine $\mathcal{O}(M + S)$ sau $\mathcal{O}(M
 \cdot \log + S)$.
 
 ```cpp
@@ -724,8 +724,8 @@ for (int i = 1; i <= 26; i++) {
 ```
 
 Problema constă în faptul că secvența de cod de mai sus rulează pentru fiecare
-nod din trie, ceea ce ar rezulta într-o complexitate de $O(N \cdot K^2)$. Doar
-că, în practică soluția are complexitatea de $O(N \cdot K)$. În momentul în care
+nod din trie, ceea ce ar rezulta într-o complexitate de $\mathcal{O}(N \cdot K^2)$. Doar
+că, în practică soluția are complexitatea de $\mathcal{O}(N \cdot K)$. În momentul în care
 facem rucsac pe un arbore, este foarte important să fim atenți la memoria și la
 timpul consumate. Observăm faptul că cele două bucle merg până la
 $\min(sz[nod], k)$, lucru ce îmbunătățește timpul de execuție considerabil.

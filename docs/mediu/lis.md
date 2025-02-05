@@ -44,7 +44,7 @@ diverse complexități de timp. În cele ce urmează, le vom prezenta, una câte
 O soluție foarte cunoscută a acestei probleme constă în folosirea unei dinamici,
 în care $dp[i]$ va ține lungimea subșirului crescător maximal care conține
 poziția $i$. Tranzițiile vor fi foarte simple, fiecare poziție este comparată cu
-fiecare, complexitatea soluției ajungând la $O(n^2).
+fiecare, complexitatea soluției ajungând la $\mathcal{O}(n^2).
 
 $$ dp[i] = \max_{\substack{j < i\\v[j] < v[i]}} \left(dp[j] + 1\right) $$
 
@@ -103,7 +103,7 @@ int main() {
 }
 ```
 
-## Soluție în $O(n \log n)$ cu căutare binară
+## Soluție în $\mathcal{O}(n \log n)$ cu căutare binară
 
 Pentru a rezolva această problemă în timp optim, trebuie să observăm că foarte
 mulți candidați pe care îi ținem la soluția anterioară nu își au rostul, fiind
@@ -163,9 +163,9 @@ int main() {
 }
 ```
 
-## Soluție în $O(n \log n)$ cu structuri de date
+## Soluție în $\mathcal{O}(n \log n)$ cu structuri de date
 
-Pentru soluțiile în $O(n \log n)$ care folosesc structuri de date, mai întâi vom
+Pentru soluțiile în $\mathcal{O}(n \log n)$ care folosesc structuri de date, mai întâi vom
 vrea să avem o copie a vectorului inițial, pe care să o sortăm. Recomandăm mai
 întâi familiarizarea cu arborii de intervale sau arborii indexați binar pentru a
 continua, precum și normalizarea dacă nu ați mai folosit această tehnică

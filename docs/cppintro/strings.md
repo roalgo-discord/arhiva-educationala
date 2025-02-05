@@ -361,7 +361,7 @@ toate token-urile.
 
 Această structură de date este echivalentul std::vector pentru șirurile de
 caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere
-din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$. Tipul string
+din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$. Tipul string
 este unul din tipurile prezente în [STL](./stl.md),
 foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 

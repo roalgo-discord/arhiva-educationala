@@ -429,7 +429,7 @@ for (; val; val /= 10) {
 ### Înmulțirea a două numere mari
 
 Înmulțirea a două numere mari va necesita lucrul cu toate cifrele numărului,
-complexitatea algoritmului devenind $O(n_A \cdot n_B)$, unde $n_A$ reprezintă
+complexitatea algoritmului devenind $\mathcal{O}(n_A \cdot n_B)$, unde $n_A$ reprezintă
 numărul de cifre al lui $A$, iar $n_B$, numărul de cifre al lui $B$. Din nou,
 implementarea va fi asemănătoare cu cea învățată în clasele mici la școală.
 

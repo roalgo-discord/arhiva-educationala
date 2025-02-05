@@ -38,7 +38,7 @@ aplica și în cazul unor secvențe de lungime variabilă.
 
 O soluție brută a acestei probleme constă în a calcula pe rând toate sumele
 corespunzătoare intervalelor de lungime egală cu lungimea intervalului dat, dar
-această soluție va rula în $O(n^2)$.
+această soluție va rula în $\mathcal{O}(n^2)$.
 
 Pentru a optimiza soluția brută, vom începe prin a calcula în mod brut suma
 pentru intervalul $[st, dr]$, iar mai apoi ne vom folosi de faptul că numărul de
@@ -47,7 +47,7 @@ valori diferite dintre intervalele $[st, dr]$ și $[st+1, dr+1]$ este exact 2
 valoarea de pe poziția $dr+1$ va fi considerată).
 
 În acest mod, soluția va fi optimizată, atingându-se complexitatea dorită, și
-anume $O(n)$. Mai jos puteți găsi implementarea folosind această metodă.
+anume $\mathcal{O}(n)$. Mai jos puteți găsi implementarea folosind această metodă.
 
 ```cpp
 #include <iostream>
@@ -94,7 +94,7 @@ de lungime $m$.
 În cazul acestei probleme, vom putea folosi o structură de date de tip map
 pentru a stoca frecvențele numerelor din cele două șiruri, implementarea
 folosind acest principiu pentru a ține cu ușurință răspunsul căutat,
-complexitatea devenind $O(n \log n)$.
+complexitatea devenind $\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>

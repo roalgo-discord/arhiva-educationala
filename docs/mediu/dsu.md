@@ -88,7 +88,7 @@ void Union(int a, int b) {
 
 La această operație, vrem să găsim pentru un nod, poziția nodului reprezentativ
 în structura noastră de date. În mod normal, această operație poate face cel
-mult $O(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși,
+mult $\mathcal{O}(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși,
 putem să ne folosim de parcurgerile pe care le facem pentru a reține rezultatele
 pentru toate nodurile de pe parcursul acelui drum, astfel încât la o parcurgere
 ulterioară, numărul de pași să se reducă spre un număr constant, structura
@@ -110,13 +110,13 @@ int Find(int x) {
 
 ### Prime concluzii
 
-Operația union are complexitatea $O(1)$, iar operația de find are complexitatea
-$O(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor
+Operația union are complexitatea $\mathcal{O}(1)$, iar operația de find are complexitatea
+$\mathcal{O}(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor
 și unirea după dimensiunea mulțimilor), numărul total de operații făcute este
-$O(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare
+$\mathcal{O}(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare
 care se poate aproxima ca fiind o constantă.  
 De asemenea, nefolosirea optimizării de compresie a drumurilor ar duce la
-complexitatea $O(n \log n)$, rezultat foarte important în contextul altor
+complexitatea $\mathcal{O}(n \log n)$, rezultat foarte important în contextul altor
 optimizări, cum ar fi [tehnica
 small-to-large](https://usaco.guide/plat/merging?lang=cpp) sau în general în
 demonstrarea diverselor rezultate ce țin de sume armonice.
@@ -556,7 +556,7 @@ Iar atunci când avem update cu $x, y$, mergem la fiecare secvență până la $
 secvența în care este $x$.
 
 Iar la query, verificăm dacă intervalul în care este $x$ este egal cu cel în
-care este $y$. Complexitate: $O(N + Q \ log \ N)$ timp, $O(n)$ memorie.
+care este $y$. Complexitate: $\mathcal{O}(N + Q \ log \ N)$ timp, $\mathcal{O}(n)$ memorie.
 
 ```cpp
 #include <iostream>

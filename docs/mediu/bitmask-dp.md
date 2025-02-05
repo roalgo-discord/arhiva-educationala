@@ -70,7 +70,7 @@ cu masca $msk$. Pentru a face tranziția de la $msk$ la o altă stare, va trebui
 să parcurgem lista de participanți, verificând cu ajutorul operațiilor pe biți
 dacă au mai fost luați sau nu.
 
-Soluția va avea complexitate $O(2^n \cdot n)$, fiind suficient de bună pentru
+Soluția va avea complexitate $\mathcal{O}(2^n \cdot n)$, fiind suficient de bună pentru
 problema dată.
 
 !!! note "Observație"
@@ -131,7 +131,7 @@ gradul de umplere al călătoriei curente. La fiecare pas, fie vom reuși să
 adăugăm călătorul curent în excursia curentă, fie vom începe un alt drum cu
 liftul.
 
-Complexitatea va fi la fel ca la problema precedentă, $O(2^n \cdot n)$, fiind
+Complexitatea va fi la fel ca la problema precedentă, $\mathcal{O}(2^n \cdot n)$, fiind
 suficient de bună pentru cerințele problemei.
 
 ```cpp

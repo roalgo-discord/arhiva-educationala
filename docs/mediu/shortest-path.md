@@ -100,7 +100,7 @@ Modul de funcționare al algoritmului este unul foarte simplu:
 
 ### Implementare suboptimă
 
-Acest algoritm, în forma sa neoptimizată are complexitatea $O(n^2)$ și are drept
+Acest algoritm, în forma sa neoptimizată are complexitatea $\mathcal{O}(n^2)$ și are drept
 unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate
 fi folosit drept o soluție reală este atunci când avem un graf complet, în care
 numărul de muchii se apropie de $n^2$, mai jos putând fi citită o implementare
@@ -162,7 +162,7 @@ int main () {
 
 ### Implementare optimă
 
-Pentru a putea implementa algoritmul în complexitatea sa optimă, $O((n+m) \log
+Pentru a putea implementa algoritmul în complexitatea sa optimă, $\mathcal{O}((n+m) \log
 n)$, va trebui să facem câteva observații critice.
 
 În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate
@@ -174,7 +174,7 @@ apropiat de numărul de noduri, putem ține vecinii folosind liste.
 Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu
 cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de
 date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui
-pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
+pas este redus la $\mathcal{O}(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
 
 După aplicarea acestor optimizări, ideile fiind aceleași, cu excepția folosirii
 unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
@@ -297,7 +297,7 @@ $n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseam
 că sigur am modificat costul minim de două ori din același vecin.
 
 Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel
-mai prost este $O(n \cdot m)$. Implementarea, una foarte similară cu cea a
+mai prost este $\mathcal{O}(n \cdot m)$. Implementarea, una foarte similară cu cea a
 parcurgerii BFS, se poate găsi mai jos.
 
 ```cpp
@@ -362,7 +362,7 @@ int main() {
     probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
     algoritm este folosit cu succes în multe probleme de informatică, ca o
     alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost
-    complexitatea este similară cu cea de la Bellman-Ford, $O(n \cdot m)$.
+    complexitatea este similară cu cea de la Bellman-Ford, $\mathcal{O}(n \cdot m)$.
 
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
 
@@ -379,7 +379,7 @@ Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar
 pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) <
 dist(i, j)$, astfel relaxând drumul dintre cele două noduri.
 
-Complexitatea totală a algoritmului va fi $O(n^3)$, fiind unul dintre algoritmii
+Complexitatea totală a algoritmului va fi $\mathcal{O}(n^3)$, fiind unul dintre algoritmii
 folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale.
 Mai jos găsiți implementarea în limbajul C++.
 

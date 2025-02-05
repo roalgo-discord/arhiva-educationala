@@ -63,7 +63,7 @@ orizontale, fie verticale, atâta timp cât păstrăm laturile drept numere înt
 Cu alte cuvinte, vom putea fixa punctul în care vom face tăietura și de acolo,
 vom folosi rezultatele calculate anterior, sau în cazul soluției recursive, le
 vom calcula la rândul lor până când toate valorile au fost calculate.
-Complexitatea acestei soluții va fi $O(n^3)$, unde $n$ este maximul dintre $a$
+Complexitatea acestei soluții va fi $\mathcal{O}(n^3)$, unde $n$ este maximul dintre $a$
 și $b$.
 
 Mai jos puteți găsi implementările iterative și recursive ale acestei probleme.

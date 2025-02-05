@@ -126,7 +126,7 @@ multă memorie pentru valorile din intervale.
 
 O primă soluție brută constă în verificarea fiecărui punct posibil de la 1 la
 $10^9$, iar pentru fiecare punct, verificăm dacă este inclus în fiecare dintre
-cele $n$ intervale date. Complexitatea ar fi $O(n \cdot maxval)$, ceea ce este
+cele $n$ intervale date. Complexitatea ar fi $\mathcal{O}(n \cdot maxval)$, ceea ce este
 mult prea încet pentru o soluție optimă.
 
 !!! note "Observație"
@@ -135,16 +135,16 @@ mult prea încet pentru o soluție optimă.
     punct sunt acelea unde începe și se termină un interval, deci numărul de
     puncte relevante scade la $2 \cdot n$.
 
-Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este
+Soluția menționată mai sus ar fi optimizată la $\mathcal{O}(n^2)$, ceea ce nu este
 îndeajuns pentru rezolvarea problemei date.
 
 O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui
 Mars](../usor/partial-sums.md#smenul-lui-mars), iar pentru fiecare interval,
-putem adăuga 1 în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$.
+putem adăuga 1 în zona $[st, dr]$, iar complexitatea ar deveni $\mathcal{O}(maxval)$.
 
 Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$,
 iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi
-optimizată la $O(n \log n)$, unele din abordările care merg pot fi fie folosirea
+optimizată la $\mathcal{O}(n \log n)$, unele din abordările care merg pot fi fie folosirea
 șmenului lui Mars pe vectorul cu punctele normalizate, fie sortarea punctelor
 relevante și considerarea lor drept evenimente, mai apoi parcurgându-le în
 ordine crescătoare.

@@ -23,15 +23,15 @@ acesta suferă **modificări în timp real**?
     simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau
     [RMQ](./rmq.md) (Range Minimum Query). Totuși, în scenariile unde
     vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile
-    de query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și
+    de query au o complexitate de $\mathcal{O}(1)$ atât pentru sume parțiale, cât și
     pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de
-    valori, ceea ce duce la o complexitate de $O(n)$ pentru sume parțiale și
-    $O(n \log n)$ pentru RMQ.
+    valori, ceea ce duce la o complexitate de $\mathcal{O}(n)$ pentru sume parțiale și
+    $\mathcal{O}(n \log n)$ pentru RMQ.
 
 **Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint
 în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest
 tip de probleme, permițând efectuarea rapidă de interogări și actualizări în
-$O(\log n)$ pentru ambele operații.
+$\mathcal{O}(\log n)$ pentru ambele operații.
 
 În acest articol, vom explora conceptele de bază ale arborilor de intervale,
 modul de construire și utilizare a acestora, și vom analiza câteva aplicații
@@ -122,10 +122,10 @@ bottom-up, pornind de la frunzele arborelui (care corespund elementelor
 vectorului inițial) și mergând spre rădăcină. La fiecare nivel al arborelui,
 valorile nodurilor se determină pe baza fiilor săi.
 
-Această operație se efectuează în $O(n)$, unde $n$ este numărul de elemente din
+Această operație se efectuează în $\mathcal{O}(n)$, unde $n$ este numărul de elemente din
 vectorul inițial. De reținut că există și o altă variantă de a construi arborele
 prin a actualiza fiecare poziție cu valoarea din vector, însă duce la o
-complexitate de $O(n \log n)$.
+complexitate de $\mathcal{O}(n \log n)$.
 
 ![](../images/segment-trees/build.svg)
 
@@ -185,7 +185,7 @@ veche cu cea nouă. Pe măsură ce revenim din recursivitate, actualizăm fiecar
 nod din drum, recalculând valorile pe baza celor doi fii, pentru a ne asigura că
 arborele rămâne corect.
 
-Această operație se efectuează în $O(\log n)$, unde $n$ este numărul de elemente
+Această operație se efectuează în $\mathcal{O}(\log n)$, unde $n$ este numărul de elemente
 din vectorul inițial. Complexitatea este determinată de înălțimea arborelui,
 deoarece actualizarea trebuie propagată de la frunză până la rădăcină.
 
