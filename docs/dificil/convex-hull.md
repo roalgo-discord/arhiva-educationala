@@ -34,3 +34,4 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 - [Convex Hull - USACO Guide](https://usaco.guide/plat/convex-hull)
 - [Convex hull construction - Graham's scan Algorithm - CP
   Algorithms](https://cp-algorithms.com/geometry/convex-hull.html)
+- [Infasuratoare convexa - CPPI Sync](https://cppi.sync.ro/materia/nf_ur_toarea_convex.html)
