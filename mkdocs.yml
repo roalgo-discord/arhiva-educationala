@@ -273,7 +273,7 @@ nav:
                       - Recurențe liniare: avansat/linear-recurrences.md
               - Programare dinamică:
                       - Convex Hull Trick: avansat/convex-hull-trick.md
-                      - Programare dinamică pe divide et impera: avansat/dc-dp.md
+                      - D&C DP (optimizarea divide et impera): avansat/dc-dp.md
                       - Aliens DP: avansat/aliens-dp.md
                       - Knuth DP: avansat/knuth-dp.md
                       - Component DP: avansat/component-dp.md
