@@ -709,6 +709,7 @@ are concepte mai simple, dar care se leagă de cunoștințele prezentate aici.
 - [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
 - [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
 - [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
+- [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
 - [ONI 2018 tricolor](https://kilonova.ro/problems/151)
 - [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
 - [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)

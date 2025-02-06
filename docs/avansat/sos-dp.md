@@ -1,10 +1,8 @@
 ---
-id: convex-hull-trick
+id: sos-dp
 tags:
     - programare dinamica
     - optimizare
-    - stiva
-    - sortare
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe
@@ -23,5 +21,4 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 
 ## Resurse suplimentare
 
-- [Convex Hull Trick - Jeffrey Xiao](https://jeffreyxiao.me/blog/convex-hull-trick)
-- [Convex Hull Optimization - robert1003](https://robert1003.github.io/2020/02/17/dp-opt-convex-hull-trick.html)
+- [A Simple Introduction to SoS(Sum over Subset) Dynamic Programming - robert1003](https://robert1003.github.io/2020/10/05/dp-sum-over-subset.html)

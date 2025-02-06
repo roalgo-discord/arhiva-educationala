@@ -427,4 +427,6 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
 - [Programare dinamica - CPPI
   Sync](https://cppi.sync.ro/materia/probleme_diverse_dinamica_3.html)
 - [Introduction to DP - USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp)
+- [Dynamic Programming Prologue - Codeforces](https://codeforces.com/blog/entry/102542)
+- [Simple DP Optimizations - Codeforces](https://codeforces.com/blog/entry/104798)
 - [DP Tutorial and Problem List](https://codeforces.com/blog/entry/67679)

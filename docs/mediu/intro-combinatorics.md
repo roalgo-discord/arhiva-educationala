@@ -619,15 +619,16 @@ rezultate importante atât în matematică, cât și în informatică.
 
 ### Alte probleme
 
-- [Bracket Sequences I](https://cses.fi/problemset/task/2064)
-- [Bracket Sequences II](https://cses.fi/problemset/task/2187)
-- [Distributing Apples](https://cses.fi/problemset/task/1716)
-- [Arena](https://codeforces.com/problemset/problem/1606/E)
-- [Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
-- [Almost Identity
+- [CSES Bracket Sequences I](https://cses.fi/problemset/task/2064)
+- [CSES Bracket Sequences II](https://cses.fi/problemset/task/2187)
+- [CSES Distributing Apples](https://cses.fi/problemset/task/1716)
+- [Codeforces Arena](https://codeforces.com/problemset/problem/1606/E)
+- [Codeforces Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
+- [Codeforces Almost Identity
   Permutations](https://codeforces.com/problemset/problem/888/D)
-- [Med and Mex](https://codeforces.com/gym/104520/problem/K)
-- [Different Subsets For All
+- [Codeforces Card Game](https://codeforces.com/contest/2025/problem/E)
+- [Codeforces Med and Mex](https://codeforces.com/gym/104520/problem/K)
+- [Codeforces Different Subsets For All
   Tuples](https://codeforces.com/contest/660/problem/E)
 - [Probleme de combinatorică de pe
   Codeforces](https://codeforces.com/problemset?tags=combinatorics)
@@ -650,6 +651,7 @@ rezultate importante atât în matematică, cât și în informatică.
 - [Elemente de combinatorică, curs predat la lotul de juniori din
   2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
+- [A tutorial of reflection principle in combinatorics](https://codeforces.com/blog/entry/135139)
 - [Problem Solving Guide to Modular Combinatorics and Exponentiation -
   Codeforces](https://codeforces.com/blog/entry/78873)
 - [Binomial coefficient -

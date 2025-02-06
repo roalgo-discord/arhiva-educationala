@@ -185,3 +185,4 @@ acest capitol important și util pentru studiul vostru individual.
 ## Resurse suplimentare
 
 - [Data Structures in Dynamic Programming Week - Codeforces](https://codeforces.com/blog/entry/98926)
+- [Monotone Queue optimization - robert1003](https://robert1003.github.io/2020/02/16/dp-opt-monotone-queue.html)

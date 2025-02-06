@@ -715,3 +715,4 @@ arbore.
 - [Template HLD - Stefdasca](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/heavy-light.cpp)
 - [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
 - [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)
+- [Heavy Light Decomposition - robert1003](https://robert1003.github.io/2020/09/04/heavy-light-decomposition.html)

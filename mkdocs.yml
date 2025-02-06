@@ -277,6 +277,7 @@ nav:
                       - Aliens DP: avansat/aliens-dp.md
                       - Knuth DP: avansat/knuth-dp.md
                       - Component DP: avansat/component-dp.md
+                      - SOS DP: avansat/sos-dp.md
               - Teoria grafurilor:
                       - Fluxuri: avansat/fluxuri.md
                       - Tipuri speciale de grafuri: avansat/special-graphs.md
@@ -305,7 +306,6 @@ nav:
                       - Cum abordezi proba de concurs la olimpiadă?: olimpiada/olympiad-strategy.md
                       - Cum ajungi să iei rezultate tot mai bune la olimpiadă?: olimpiada/olympiad-improvement.md
               - Programă:
-                      - Sfaturi generale pentru a învăța materia: olimpiada/learning-content.md
                       - Gimnaziu:
                               - Sfaturi generale pentru gimnaziu: olimpiada/gimnaziu.md
                               - Clasa a V-a: olimpiada/clasa-V.md

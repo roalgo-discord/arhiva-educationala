@@ -312,3 +312,4 @@ int main() {
   Codeforces](https://codeforces.com/blog/entry/57292)
 - [Binary Indexed Trees - USACO
   Guide](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)
+- [A simple introduction to Fenwick Trees - robert1003](https://robert1003.github.io/2020/01/27/fenwick-tree.html)
