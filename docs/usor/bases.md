@@ -2,6 +2,8 @@
 id: bases
 author:
 - Ștefan-Iulian Alecu
+prerequisites:
+- basic-math
 tags:
 - matematica
 - baze de numeratie
@@ -201,10 +203,12 @@ Această problemă este ceva mai dificilă. Trebuie să determinăm dacă lungim
 unui număr (numărul de biți) este primă. Deoarece numerele din intervalul
 $[a,b]$ sunt foarte mari (până la $10^{18}$), este imposibil să verificăm
 fiecare număr din acest interval. Totuși, observăm că numărul de biți pentru
-orice număr din acest interval este întotdeauna între 1 și 64, deoarece $2^{64}
-> 10^{18}$. Astfel, trebuie doar să verificăm dacă numărul de biți al unui număr
-este prim, ceea ce este mult mai eficient. Așadar, este mai eficient să
-precalculăm numerele prime între 1 și 64. Dacă $a$ și $b$ au un număr prim de
+orice număr din acest interval este întotdeauna între 1 și 64, deoarece
+$2^{64}> 10^{18}$. 
+
+Astfel, trebuie doar să verificăm dacă numărul de biți al unui număr este prim,
+ceea ce este mult mai eficient. Așadar, este mai eficient să precalculăm
+numerele prime între 1 și 64. Dacă $a$ și $b$ au un număr prim de
 biți, începem să numărăm numerele prețioase, pentru că avem $p - a$, respectiv
 $b - p + 1$ numere. După aceea, verificăm toate numerele de la `start` la `stop`
 și dacă $i$ este prim, înseamnă că numerele din intervalul $[2^{i}, 2^{i + 1} -
@@ -217,20 +221,19 @@ Aici este soluția:
 
 ## Probleme suplimentare
 
-- [bazaminima de pe pbinfo](https://www.pbinfo.ro/probleme/427/bazaminima)
-- [ascunsa de pe nerdarena](https://www.nerdarena.ro/problema/ascunsa)
-- [douabaze de pe pbinfo](https://www.pbinfo.ro/probleme/946/douabaze)
-- [criptic de pe nerdarena](https://www.nerdarena.ro/problema/criptic)
-- [zimeria de pe kilonova](https://kilonova.ro/problems/1444)
-- [suc1 de pe nerdarena](https://www.nerdarena.ro/problema/suc1)
-- [psychtraining de pe
-  infoarena](https://www.infoarena.ro/problema/psychtraining)
-- [sticle de pe infoarena](https://www.infoarena.ro/problema/sticle)
-- [puteri35 de pe kilonova](https://kilonova.ro/problems/1636)
-- [cate3cifre de pe kilonova](https://kilonova.ro/problems/912)
-- [copii de pe kilonova](https://kilonova.ro/problems/420)
-- [nop de pe infoarena](https://www.infoarena.ro/problema/nop)
-- [xidartros de pe kilonova](https://kilonova.ro/problems/534)
+- [bazaminima pbinfo](https://www.pbinfo.ro/probleme/427/bazaminima)
+- [ascunsa nerdarena](https://www.nerdarena.ro/problema/ascunsa)
+- [douabaze pbinfo](https://www.pbinfo.ro/probleme/946/douabaze)
+- [criptic nerdarena](https://www.nerdarena.ro/problema/criptic)
+- [ONI 2014 zimeria](https://kilonova.ro/problems/1444)
+- [suc1 nerdarena](https://www.nerdarena.ro/problema/suc1)
+- [psychtraining infoarena](https://www.infoarena.ro/problema/psychtraining)
+- [sticle infoarena](https://www.infoarena.ro/problema/sticle)
+- [Lot 2010 Juniori puteri35](https://kilonova.ro/problems/1636)
+- [OJI 2019 cate3cifre](https://kilonova.ro/problems/912)
+- [ONI 2011 Baraj Seniori copii](https://kilonova.ro/problems/420)
+- [nop infoarena](https://www.infoarena.ro/problema/nop)
+- [ONI 2023 xidartros](https://kilonova.ro/problems/534)
 
 ## Lectură suplimentară
 
