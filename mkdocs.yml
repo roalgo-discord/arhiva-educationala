@@ -155,6 +155,7 @@ nav:
                       - Abordarea problemelor cu secvențe: usor/sequences.md
               - Algebră:
                       - Generarea șirurilor de numere: usor/generarea-sirurilor.md
+                      - Baze de numerație: usor/bases.md
                       - Divizibilitatea: usor/divisibility.md
                       - Ciurul lui Eratostene: usor/sieve.md
                       - Principiul lui Dirichlet (principiul cutiei): usor/dirichlet.md
