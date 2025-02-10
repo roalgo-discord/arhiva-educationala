@@ -21,7 +21,7 @@ următoarele opțiuni:
     Dacă vrei cea mai simplă soluție pentru dezvoltare pe macOS, alege această
     opțiune. Este recomandat pentru majoritatea utilizatorilor.
 
-    [:octicons-arrow-right-24: Vezi instrucțiuni pentru XCode](./editors/macos/xcode.md)
+    [:octicons-arrow-right-24: Vezi instrucțiuni pentru Apple Clang](./compilers/macos/clang.md)
 
 - :sheep:{ .lg .middle } **GCC**
 
@@ -31,7 +31,7 @@ următoarele opțiuni:
     gratuite. Cel mai folosit compilator din această suită este GCC (GNU C
     Compiler).
 
-    Pe macOS, cea mai ușoară metodă de a instala GCC este folosind Homebrew.
+    Pe macOS, cea mai ușoară metodă de a instala GCC este să folosești Homebrew sau MacPorts.
     Dacă ai nevoie de GCC sau nu vrei să instalezi XCode, alege această opțiune.
 
     [:octicons-arrow-right-24: Vezi instrucțiuni pentru GCC](./compilers/macos/gcc.md)
