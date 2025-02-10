@@ -125,7 +125,7 @@ este un proces simplu. Avem nevoie doar de două fișiere într-un folder:
 exact acesta!).
 
 Ca să te duci la un folder, du-te la File > Open Folder. Dacă nu l-ai creat deja, acum ar fi momentul. Apasă ++ctrl+n++ pentru a crea un fișier și copiază următorul conținut (eu schimb doar `PROJECT_NAME` să reflecte proiectul curent/problema curentă):
-```cmake
+```cmake title="CMakeLists.txt"
 cmake_minimum_required(VERSION 3.10..3.99)
 
 set(PROJECT_NAME "problema_interesanta")
@@ -153,7 +153,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 Salvează-l în `CMakeLists.txt` (trebuie să fie exact acest nume!).
 
 Adaugă asta în `main.cpp`:
-```cpp
+```cpp title="main.cpp"
 #include <iostream>
 
 int main() {

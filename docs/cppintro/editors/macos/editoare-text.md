@@ -45,7 +45,17 @@ Următoarele editoare îndeplinesc criteriile de mai sus:
 
      [:octicons-arrow-right-24: Instalare și configurare](./sublime-text-4.md)
 
-- :material-text-box: **TextMate**
+- :simple-zedindustries: **Zed**
+
+    ---
+
+    Zed este un editor de text modern care combină o interfață minimalistă nativ
+    pentru macOS cu funcționalități avansate, inclusiv shortcut-uri similare celor
+    întâlnite în Vim, suport pentru Git și plugin-uri. Acest editor poate să folosească AI precum ChatGPT sau Github Copilot
+
+     [:octicons-arrow-right-24: Instalare și configurare](./zed.md)
+
+- :material-flower-poppy: **TextMate**
 
     ---
 

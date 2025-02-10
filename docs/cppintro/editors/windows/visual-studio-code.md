@@ -71,7 +71,7 @@ authors" (pentru că tu ești autorul, logic). Poți opțional să bifezi să ai
 pe care să-l numești tot `main.cpp`, ca data trecută. Adaugă aceste linii în
 fișier:
 
-```cpp
+```cpp title="main.cpp"
 #include <iostream>
 
 int main() {
@@ -182,7 +182,7 @@ Metoda pe care o folosesc eu când folosesc Visual Studio Code este următoarea:
 Cel mai important fișier este `CMakeLists.txt`. El arată așa în momentul de
 față:
 
-```cmake
+```cmake title="CMakeLists.txt"
 cmake_minimum_required(VERSION 3.5.0)
 project(cppintro VERSION 0.1.0 LANGUAGES C CXX)
 add_executable(cppintro main.cpp)
@@ -190,7 +190,7 @@ add_executable(cppintro main.cpp)
 
 Mai trebuie să adăugăm unele chestii. Un CMakeLists.txt adecvat arată astfel:
 
-```cmake
+```cmake title="CMakeLists.txt"
 cmake_minimum_required(VERSION 3.27)
 project(cppintro VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 20)
