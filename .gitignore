@@ -236,6 +236,8 @@ pip-delete-this-directory.txt
 pip-log.txt
 pip-selfcheck.json
 poetry.toml
+poetry.lock
+pyproject.toml
 profile_default/
 pyrightconfig.json
 pythontex-files-*/
