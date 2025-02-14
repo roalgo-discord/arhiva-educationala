@@ -1,32 +1,41 @@
 ---
+id: OJI-2020-VII-wind
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - partial-sums
+    - divisibility
 tags:
     - OJI
     - clasa VII
+    - sume partiale
+    - divizibilitate
 ---
 
 # Soluția problemei wind (OJI 2020, clasa a VII-a)
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
 !!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
+    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/924/).
+
+Pentru a putea împărți cele $n$ eoliene în mod egal în $k$ orașe
+trebuie să determinăm divizorii numărului $n$.
+
+La cerința 1, se determină numărul de divizori al lui $n$. Rezultatul
+va fi numărul de divizori - 1 deoarece se specifică în enunț că se vor
+construi cel puțin două orașe, deci $n$ nu este un divizor valid.
+
+La cerința 2, vom avea nevoie de sume parțiale pentru a afla suma
+energiilor corespunzătoare pe primele i poziții, $suma[i]$ va
+reprezenta suma valorilor energiilor generate (pierdute) de centralele
+de la $1$ la $i$.
+
+Pentru a împărți centralele în mod corect trebuie să detrminăm
+divizorii numărului $n$. Pentru fiecare divizor se parcurge vectorul de
+sume din divizor in divizor și se calculează diferența dintre sumele de 
+pe pozițiile respective, alegându-se împărțirea optimă.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
-using namespace std;
- 
-int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a+b << '\n';
-    return 0;
-}
+--8<-- "olimpiada/VII/2020-wind.cpp"
 ```

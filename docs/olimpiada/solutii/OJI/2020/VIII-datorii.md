@@ -1,7 +1,14 @@
 ---
+id: OJI-2020-VIII-datorii
+author:
+    - Ștefan-Cosmin Dăscălescu
+prerequisites:
+    - simulating-solution
 tags:
     - OJI
     - clasa VIII
+    - implementare
+    - simulare
 ---
 
 # Soluția problemei datorii (OJI 2020, clasa a VIII-a)
