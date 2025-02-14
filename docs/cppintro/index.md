@@ -22,13 +22,13 @@ Pentru început, ce sistem de operare folosești?
 
 <div class="grid cards" markdown>
 
-- :material-microsoft-windows:{ .lg .middle } **Folosesc Windows 10/11**
+- :material-microsoft-windows:{ .lg .middle } **Folosesc Windows**
 
     ---
 
     [:octicons-arrow-right-24: Vezi instrucțiuni](./windows.md)
 
-- :material-apple:{ .lg .middle } **Folosesc macOS (10.15+)**
+- :material-apple:{ .lg .middle } **Folosesc macOS**
 
     ---
 

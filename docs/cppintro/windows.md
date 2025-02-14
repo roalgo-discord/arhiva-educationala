@@ -1,5 +1,5 @@
 ---
-title: Windows 10/11
+title: Windows 10 & 11
 hide:
   - navigation
   - toc
