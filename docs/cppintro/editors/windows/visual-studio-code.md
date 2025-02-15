@@ -65,8 +65,8 @@ Ca să testezi dacă a mers, scrie `#include <ios`. Dacă îți oferă sugestii 
 
 Creează un director gol într-un loc pe care îl știi și apoi navighează până la
 el folosind File > Open Folder (++ctrl+k++ ++ctrl+o++). Dacă ai un popup cu "Do
-you trust the authorss of the files in this folder?", apasă "Yes, I trust the
-authorss" (pentru că tu ești autorul, logic). Poți opțional să bifezi să aibă
+you trust the authors of the files in this folder?", apasă "Yes, I trust the
+authors" (pentru că tu ești autorul, logic). Poți opțional să bifezi să aibă
 încredere și în fișierele din directorul părinte. Apoi poți crea un nou fișier
 pe care să-l numești tot `main.cpp`, ca data trecută. Adaugă aceste linii în
 fișier:
