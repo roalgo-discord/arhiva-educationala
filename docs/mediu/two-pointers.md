@@ -1,7 +1,6 @@
 ---
 id: two-pointers
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - sequences
     - binary-search

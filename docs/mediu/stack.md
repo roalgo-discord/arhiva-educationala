@@ -1,8 +1,6 @@
 ---
 id: stack
-author:
-    - Traian Mihai Danciu
-    - Ștefan-Cosmin Dăscălescu
+authors: [traian, stefdasca]
 prerequisites:
     - arrays
     - stl

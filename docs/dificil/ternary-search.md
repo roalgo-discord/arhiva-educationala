@@ -1,7 +1,6 @@
 ---
 id: ternary-search
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - binary-search
 tags:

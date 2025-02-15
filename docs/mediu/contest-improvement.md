@@ -1,7 +1,6 @@
 ---
 id: contest-improvement
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - sfaturi

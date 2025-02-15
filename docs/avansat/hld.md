@@ -1,7 +1,6 @@
 ---
 id: hld
-author:
-    - Raul Ardelean
+authors: [raul]
 prerequisites:
     - lowest-common-ancestor
     - segment-trees

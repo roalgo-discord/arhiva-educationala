@@ -1,7 +1,6 @@
 ---
 id: partial-sums
-author:
-    - Andrei-Cristian Ivan
+authors: [ivan]
 prerequisites:
     - arrays
     - matrices
@@ -21,11 +20,11 @@ Să presupunem că avem un șir $V$ de $N$ numere indexat de la 1, iar asupra
 
 Răspunsul pentru această întrebare se poate calcula foarte ușor dacă realizăm
 parcurgerea efectivă a șirului de la poziția $st$ la poziția $dr$ și ne-ar lua
-$\mathcal{O}(N)$ pași în cel mai rău caz ca să răspundem la o întrebare, complexitatea
-finală a programului ajungând la $\mathcal{O}(N \cdot Q)$, ceea ce pentru valori mai mari
-de $10^4$ pentru $N$ și $Q$ ar depăși limitele de timp la majoritatea
-problemelor de algoritmică. Așadar, este nevoie de o optimizare, care se numește
-_„Sume parțiale”_.
+$\mathcal{O}(N)$ pași în cel mai rău caz ca să răspundem la o întrebare,
+complexitatea finală a programului ajungând la $\mathcal{O}(N \cdot Q)$, ceea ce
+pentru valori mai mari de $10^4$ pentru $N$ și $Q$ ar depăși limitele de timp la
+majoritatea problemelor de algoritmică. Așadar, este nevoie de o optimizare,
+care se numește _„Sume parțiale”_.
 
 ## Prezentarea conceptului
 

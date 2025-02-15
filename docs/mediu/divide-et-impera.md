@@ -1,7 +1,6 @@
 ---
 id: divide-et-impera
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - functions
 tags:

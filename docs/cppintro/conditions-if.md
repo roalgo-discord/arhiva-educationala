@@ -1,8 +1,6 @@
 ---
 id: conditions-if
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
   - data-types
   - basic-math

@@ -1,7 +1,6 @@
 ---
 id: simulating-solution
-author:
-    - Traian Mihai Danciu
+authors: [traian]
 prerequisites:
     - loops
     - arrays

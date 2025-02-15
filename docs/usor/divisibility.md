@@ -1,8 +1,6 @@
 ---
 id: divisibility
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - basic-math
     - loops

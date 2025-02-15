@@ -3,11 +3,12 @@ tags:
     - OJI
     - clasa V
     - formule
+authors:
+    - traian
 ---
 
 # Soluția problemei patrate (OJI 2018, clasa a V-a)
 
-**Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/893/). 

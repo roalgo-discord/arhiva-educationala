@@ -1,8 +1,6 @@
 ---
 id: bignum
-author:
-    - Susan
-    - Ștefan-Cosmin Dăscălescu
+authors: [susan, stefdasca]
 prerequisites:
     - basic-math
     - arrays

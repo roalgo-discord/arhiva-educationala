@@ -1,7 +1,6 @@
 ---
 id: componente-tare-conexe
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
     - toposort

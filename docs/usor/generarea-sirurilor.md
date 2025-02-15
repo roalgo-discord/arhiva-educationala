@@ -1,8 +1,6 @@
 ---
 id: generarea-sirurilor
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - loops
 tags:

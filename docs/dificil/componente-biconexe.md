@@ -1,7 +1,6 @@
 ---
 id: componente-biconexe
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - cycles
     - graphs

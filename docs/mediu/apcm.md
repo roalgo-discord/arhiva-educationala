@@ -1,8 +1,6 @@
 ---
 id: apcm
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Traian Mihai Danciu
+authors: [stefdasca, traian]
 prerequisites:
     - graphs
     - dsu

@@ -1,8 +1,6 @@
 ---
 id: frequency-arrays
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - arrays
 tags:

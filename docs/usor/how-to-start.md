@@ -1,7 +1,6 @@
 ---
 id: how-to-start
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - roadmap

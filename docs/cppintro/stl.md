@@ -1,9 +1,6 @@
 ---
 id: stl
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Ștefan-Iulian Alecu
-  - Alex Vasiluță
+authors: [stefdasca, stalecu, cnc]
 tags:
   - C++
   - implementare

@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Joc (OJI 2002, clasa a VII-a)
@@ -9,7 +11,6 @@ tags:
 !!! example "Cunoștințe necesare"
     - [Simularea soluției](../../../../usor/simulating-solution.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/706/).

@@ -1,8 +1,6 @@
 ---
 id: greedy
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - arrays
     - sorting

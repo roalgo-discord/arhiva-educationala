@@ -1,7 +1,6 @@
 ---
 id: interactive
-author: 
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - cf-atcoder
     - ad-hoc

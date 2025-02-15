@@ -1,7 +1,6 @@
 ---
 id: roadmap
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - sfaturi

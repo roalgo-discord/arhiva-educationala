@@ -1,8 +1,6 @@
 ---
 id: intro-combinatorics
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - pow-log
     - modular-inverse

@@ -1,7 +1,6 @@
 ---
 id: amortised-analysis
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - bitwise-ops
     - stack

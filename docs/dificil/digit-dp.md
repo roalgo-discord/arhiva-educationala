@@ -1,7 +1,6 @@
 ---
 id: digit-dp
-author: 
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - intro-combinatorics

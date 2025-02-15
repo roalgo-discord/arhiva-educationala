@@ -1,7 +1,6 @@
 ---
 id: mobius
-author:
-    - Matei Ionescu
+authors: [ioma]
 prerequisites:
     - pinex
     - euler-totient

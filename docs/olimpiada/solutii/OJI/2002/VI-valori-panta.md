@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VI
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Valori-pantă (OJI 2002, clasa a VI-a)
@@ -10,7 +12,6 @@ tags:
     - [Maxime și minime](../../../../usor/maxime-minime.md)
     - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/703/).

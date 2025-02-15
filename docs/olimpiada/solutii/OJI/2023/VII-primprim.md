@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Primprim (OJI 2023, clasa a VII-a)
@@ -10,12 +12,18 @@ tags:
     - [Ciurul lui Eratostene](../../../../usor/sieve.md)
     - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
 
-**Autor soluție**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/514/).
 
-Pentru ambele cerințe va fi necesar să determinăm cât mai rapid pentru un număr dat distanța față de cel mai apropiat număr prim. O primă abordare ar fi ca pentru fiecare număr să verificăm mai întâi dacă este prim (în acest caz, costul ar fi 0), iar în caz contrar ne deplasăm la stânga și la dreapta sa până când identificăm un număr prim, calculând apoi costul folosind formula dată din enunț. Totuși, o asemenea abordare ar avea complexitatea O($x * \sqrt{valmax}$), unde $x$ reprezintă distanța maximă față de un număr prim. Deoarece $x$ este cel mult 57, o asemenea abordare nu obține punctaj maxim.
+Pentru ambele cerințe va fi necesar să determinăm cât mai rapid pentru un număr
+dat distanța față de cel mai apropiat număr prim. O primă abordare ar fi ca
+pentru fiecare număr să verificăm mai întâi dacă este prim (în acest caz, costul
+ar fi 0), iar în caz contrar ne deplasăm la stânga și la dreapta sa până când
+identificăm un număr prim, calculând apoi costul folosind formula dată din
+enunț. Totuși, o asemenea abordare ar avea complexitatea O($x * \sqrt{valmax}$),
+unde $x$ reprezintă distanța maximă față de un număr prim. Deoarece $x$ este cel
+mult 57, o asemenea abordare nu obține punctaj maxim.
 
 Pentru a optimiza această abordare, vom precalcula costurile pentru toate numerele de la 1 la $10^6$. Pentru aceasta, vom utiliza ciurul lui Eratostene, pentru a genera numerele prime $\leq 10^6$, urmând ca mai apoi costul să fie calculat în O(1) pentru fiecare număr. Complexitatea precalculării este O($n \log \log n$).
 

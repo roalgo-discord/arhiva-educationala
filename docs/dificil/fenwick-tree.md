@@ -1,8 +1,6 @@
 ---
 id: fenwick-tree
-author: 
-  - Ștefan-Cosmin Dăscălescu
-  - Luca Valentin Mureșan
+authors: [stefdasca, luca]
 prerequisites:
     - functions
     - bitwise-ops

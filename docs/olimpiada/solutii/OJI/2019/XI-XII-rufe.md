@@ -1,7 +1,7 @@
 ---
 id: OJI-2019-XI-XII-rufe
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - binary-search
     - basic-math

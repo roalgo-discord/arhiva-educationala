@@ -1,8 +1,6 @@
 ---
 id: pinex
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Traian Mihai Danciu
+authors: [stefdasca, traian]
 prerequisites:
     - divisibility
     - bitwise-ops

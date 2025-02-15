@@ -1,7 +1,6 @@
 ---
 id: small-to-large
-author:
-    - Radu Mocănașu
+authors: [radu]
 prerequisites:
     - tree-1
     - intro-dp

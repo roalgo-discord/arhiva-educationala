@@ -1,7 +1,6 @@
 ---
 id: range-dp
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
 tags:

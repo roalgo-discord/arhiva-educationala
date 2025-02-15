@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VIII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Anagrame (OJI 2002, clasa a VIII-a)
@@ -10,12 +12,13 @@ tags:
     - [Șiruri de caractere](../../../../cppintro/strings.md)
     - [(Opțional): Introducere în STL](../../../../cppintro/stl.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
-
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/708/).
 
-Această problemă reprezintă un exercițiu de generare a tuturor permutărilor unui șir de caractere care poate avea litere care se repetă. Cea mai simplă metodă constă în aplicarea funcției next_permutation, urmată de afișarea caracterelor în sine. 
+Această problemă reprezintă un exercițiu de generare a tuturor permutărilor unui
+șir de caractere care poate avea litere care se repetă. Cea mai simplă metodă
+constă în aplicarea funcției next_permutation, urmată de afișarea caracterelor
+în sine.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

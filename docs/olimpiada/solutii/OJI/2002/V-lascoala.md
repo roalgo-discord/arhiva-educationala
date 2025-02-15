@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa V
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei La școală (OJI 2002, clasa a V-a)
@@ -9,7 +11,6 @@ tags:
 !!! example "Cunoștințe necesare"
     - [Operatori și expresii. Cunoștințe matematice de bază](../../../../cppintro/basic-math.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/702/).

@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VIII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Sir (OJI 2002, clasa a VIII-a)
@@ -10,7 +12,6 @@ tags:
     - [Șiruri de caractere](../../../../cppintro/strings.md)
     - [(Opțional): Introducere în STL](../../../../cppintro/stl.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/707/).

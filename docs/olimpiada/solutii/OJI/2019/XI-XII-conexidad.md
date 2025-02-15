@@ -1,7 +1,7 @@
 ---
 id: OJI-2019-XI-XII-conexidad
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - graphs
     - sorting

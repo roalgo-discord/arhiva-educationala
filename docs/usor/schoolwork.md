@@ -1,7 +1,6 @@
 ---
 id: schoolwork
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - sfaturi

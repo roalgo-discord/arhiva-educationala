@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa XI-XII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei ramen (OJI 2018, clasele XI-XII)
@@ -11,7 +13,6 @@ tags:
     - [Algoritmi de sortare](../../../../usor/sorting.md)
     - [Introducere în STL](../../../../cppintro/stl.md)
 
-**Autor soluție**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/24/). 

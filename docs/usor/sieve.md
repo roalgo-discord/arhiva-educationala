@@ -1,7 +1,6 @@
 ---
 id: sieve
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - divisibility
     - frequency-arrays

@@ -1,7 +1,6 @@
 ---
 id: segment-trees-part2
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - segment-trees
 tags:

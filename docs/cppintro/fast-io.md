@@ -1,7 +1,6 @@
 ---
 id: fast-io
-author:
-  - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
   - input-output
   - strings

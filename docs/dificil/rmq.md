@@ -1,7 +1,6 @@
 ---
 id: rmq
-author:
-    - Traian Mihai Danciu
+authors: [traian]
 prerequisites:
     - matrices
     - partial-sums

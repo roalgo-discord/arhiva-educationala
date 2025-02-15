@@ -1,7 +1,7 @@
 ---
 id: OJI-2019-XI-XII-tairos
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - intro-dp
     - tree-1

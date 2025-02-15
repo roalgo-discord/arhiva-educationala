@@ -1,7 +1,6 @@
 ---
 id: rerooting
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - tree-1
     - intro-dp

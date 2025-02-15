@@ -1,7 +1,6 @@
 ---
 id: constructive
-author: 
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - ad-hoc
     - cf-atcoder

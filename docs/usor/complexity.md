@@ -1,7 +1,6 @@
 ---
 id: complexity
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:

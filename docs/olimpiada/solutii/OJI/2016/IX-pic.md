@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa IX
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei pic (OJI 2016, clasa a IX-a)
@@ -11,7 +13,6 @@ tags:
     - [Căutarea binară](../../../../usor/binary-search.md)
 
 
-**Autor soluție**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/865).

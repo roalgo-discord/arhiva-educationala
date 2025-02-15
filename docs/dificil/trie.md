@@ -1,7 +1,6 @@
 ---
 id: trie
-author:
-    - Matei Ionescu
+authors: [ioma]
 prerequisites:
     - functions
     - stl

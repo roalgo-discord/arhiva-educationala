@@ -1,7 +1,6 @@
 ---
 id: sweep-line
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - sorting
     - basic-geometry

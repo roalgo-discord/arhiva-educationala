@@ -1,7 +1,6 @@
 ---
 id: dirichlet
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - basic-math
 tags:

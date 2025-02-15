@@ -1,7 +1,6 @@
 ---
 id: euler-totient
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - divisibility
 tags:

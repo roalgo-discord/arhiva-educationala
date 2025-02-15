@@ -1,7 +1,7 @@
 ---
 id: OJI-2020-XI-XII-ateleport
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - shortest-path
     - intro-dp

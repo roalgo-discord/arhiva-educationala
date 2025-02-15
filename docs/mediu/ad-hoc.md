@@ -1,7 +1,6 @@
 ---
 id: ad-hoc
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - probleme
     - meta

@@ -1,7 +1,6 @@
 ---
 id: bitsets
-author:
-    - Matei Ionescu
+authors: [ioma]
 prerequisites:
     - stl
     - bitwise-ops

@@ -1,9 +1,6 @@
 ---
 id: strings
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Denisa-Maria Ursu
-  - Ștefan-Iulian Alecu
+authors: [stefdasca, woob123, stalecu]
 prerequisites:
   - data-types
   - arrays

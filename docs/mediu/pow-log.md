@@ -1,7 +1,6 @@
 ---
 id: pow-log
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - basic-math
     - divisibility

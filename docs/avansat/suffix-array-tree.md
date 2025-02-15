@@ -1,7 +1,6 @@
 ---
 id: suffix-array-tree
-author:
-    - Radu-Teodor Prosie
+authors: [moncalc]
 tags:
     - structuri de date
     - siruri de caractere

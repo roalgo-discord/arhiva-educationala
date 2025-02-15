@@ -1,7 +1,6 @@
 ---
 id: digits-manipulation
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:

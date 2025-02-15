@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VI
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Cuburi (OJI 2002, clasa a VI-a)
@@ -10,7 +12,6 @@ tags:
     - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
     - [Sume parțiale](../../../../usor/partial-sums.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/704/).

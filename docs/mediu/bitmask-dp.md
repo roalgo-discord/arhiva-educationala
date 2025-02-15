@@ -1,7 +1,6 @@
 ---
 id: bitmask-dp
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - bitwise-ops

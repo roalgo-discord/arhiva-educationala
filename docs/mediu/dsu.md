@@ -1,7 +1,6 @@
 ---
 id: dsu
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 tags:

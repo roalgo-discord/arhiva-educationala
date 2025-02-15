@@ -1,7 +1,6 @@
 ---
 id: backtracking
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - functions
     - simulating-solution

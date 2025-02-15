@@ -2,21 +2,30 @@
 {% include "partials/tags.html" %}
 {% endif %}
 
-{# {% include "partials/actions.html" %} #}
-
 {% if "\x3ch1" not in page.content %}
 <h1>{{ page.title | d(config.site_name, true) }}</h1>
 {% endif %}
 
-{% if page.meta.author %}
-<p>
-    {% if page.meta.author | length == 1 %}
-    <b>Autor</b>: {{ page.meta.author[0] }}
+{% if page.meta.authors %}
+  <p>
+    {% set author_list = [] %}
+
+    {% for author_id in page.meta.authors %}
+      {% if config.extra.authors[author_id] %}
+        {% set author_list = author_list.append(config.extra.authors[author_id].name) %}
+      {% else %}
+        {% set author_list = author_list.append(author_id) %} 
+      {% endif %}
+    {% endfor %}
+
+    {% if author_list | length == 1 %}
+      <b>Autor</b>: {{ author_list[0] }}
     {% else %}
-    <b>Autori</b>: {{ page.meta.author | join(', ') }}
+      <b>Autori</b>: {{ author_list | join(', ') }}
     {% endif %}
-</p>
+  </p>
 {% endif %}
+
 
 {% if page.meta.prerequisites %}
 <div class="admonition example">

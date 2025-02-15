@@ -1,9 +1,6 @@
 ---
 id: intro-dp
-author:
-    - Teodor-Ștefan Manolea
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [anomori, stefdasca, stalecu]
 prerequisites:
     - greedy
     - functions

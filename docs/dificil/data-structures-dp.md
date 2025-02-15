@@ -1,7 +1,6 @@
 ---
 id: data-structures-dp
-author: 
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - segment-trees
     - intro-dp

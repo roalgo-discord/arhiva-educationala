@@ -4,6 +4,8 @@ tags:
     - clasa V
     - cifre
     - citire caractere
+authors:
+    - traian
 ---
 
 # Soluția problemei aur (OJI 2019, clasa a V-a)
@@ -11,7 +13,6 @@ tags:
 !!! example "Cunoștințe necesare"
     - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
-**Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/906/). 

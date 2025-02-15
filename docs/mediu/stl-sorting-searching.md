@@ -1,7 +1,6 @@
 ---
 id: stl-sorting-searching
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - greedy
     - sorting

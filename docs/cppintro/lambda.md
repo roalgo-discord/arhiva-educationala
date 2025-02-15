@@ -1,7 +1,6 @@
 ---
 id: lambda
-author:
-  - Susan
+authors: [susan]
 tags:
   - C++
   - functii

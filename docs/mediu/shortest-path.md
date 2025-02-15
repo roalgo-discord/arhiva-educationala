@@ -1,7 +1,6 @@
 ---
 id: shortest-path
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 title: Algoritmi pentru drumuri minime

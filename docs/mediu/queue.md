@@ -1,8 +1,6 @@
 ---
 id: queue
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Teodor Ștefan Manolea
+authors: [stefdasca, anomori]
 prerequisites:
     - debugging
 title: Coada

@@ -1,7 +1,6 @@
 ---
 id: cycles
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 tags:

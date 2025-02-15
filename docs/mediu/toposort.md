@@ -1,7 +1,6 @@
 ---
 id: toposort
-author:
-    - Radu Mocănașu
+authors: [radu]
 prerequisites:
     - graphs
 tags:

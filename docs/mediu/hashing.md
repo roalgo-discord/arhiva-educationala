@@ -1,7 +1,6 @@
 ---
 id: hashing
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - strings
     - pow-log

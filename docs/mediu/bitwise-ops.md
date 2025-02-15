@@ -1,7 +1,6 @@
 ---
 id: bitwise-ops
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - data-types
     - basic-math

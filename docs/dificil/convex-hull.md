@@ -1,7 +1,6 @@
 ---
 id: convex-hull
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - basic-geometry
     - stack

@@ -1,7 +1,6 @@
 ---
 id: mitm
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - stl
     - bitwise-ops

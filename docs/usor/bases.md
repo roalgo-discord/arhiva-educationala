@@ -1,12 +1,11 @@
 ---
 id: bases
-author:
-- Ștefan-Iulian Alecu
+authors: [stalecu]
 prerequisites:
-- basic-math
+    - basic-math
 tags:
-- matematica
-- baze de numeratie
+    - matematica
+    - baze de numeratie
 ---
 
 ## Sisteme de numerație
@@ -17,8 +16,8 @@ tags:
     (denumite convențional „cifre”) și un set de reguli de reprezentare a numerelor
     cu ajutorul simbolurilor respective. Numărul de simboluri constituie *baza*
     sistemului de numerație.
-    
-În general, folosim sisteme de numerație *poziționale*, pentru care pozițiile
+
+În general, folosim sisteme de numerație _poziționale_, pentru care pozițiile
 simbolurilor corespund puterilor bazei sistemului de numerație. Un exemplu de
 sistem de numerație nepozițional este cel roman.
 
@@ -44,14 +43,14 @@ b^1 + c_0 b^0$.
 
 Să vedem niște exemple:
 
-| Numărul dat | Baza | Formula | Valoarea în baza 10 |
-| ----------: | ---- | ------: | :----------------- |
-| 100101 | 2 | $1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$ | 37 |
-| 21012 | 3 | $2 \cdot 3^4 + 1 \cdot 3^3 + 0 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0$ | 194 |
-| 4AF | 16 | $4 \cdot 16^2 + 10 \cdot 16^1 + 15 \cdot 16^0$ | 1199 |
-| 10321 | 4 | $1 \cdot 4^4 + 0 \cdot 4^3 + 3 \cdot 4^2 + 2 \cdot 4^1 + 1 \cdot 4^0$ | 313 |
-| 763 | 8 | $7 \cdot 8^2 + 6 \cdot 8^1 + 3 \cdot 8^0$ | 499 |
-| 43210 | 5 | $4 \cdot 5^4 + 3 \cdot 5^3 + 2 \cdot 5^2 + 1 \cdot 5^1 + 0 \cdot 5^0$ | 2930 |
+| Numărul dat | Baza |                                                                             Formula | Valoarea în baza 10 |
+| ----------: | ---- | ----------------------------------------------------------------------------------: | :------------------ |
+|      100101 | 2    | $1 \cdot 2^5 + 0 \cdot 2^4 + 0 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0$ | 37                  |
+|       21012 | 3    |               $2 \cdot 3^4 + 1 \cdot 3^3 + 0 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0$ | 194                 |
+|         4AF | 16   |                                      $4 \cdot 16^2 + 10 \cdot 16^1 + 15 \cdot 16^0$ | 1199                |
+|       10321 | 4    |               $1 \cdot 4^4 + 0 \cdot 4^3 + 3 \cdot 4^2 + 2 \cdot 4^1 + 1 \cdot 4^0$ | 313                 |
+|         763 | 8    |                                           $7 \cdot 8^2 + 6 \cdot 8^1 + 3 \cdot 8^0$ | 499                 |
+|       43210 | 5    |               $4 \cdot 5^4 + 3 \cdot 5^3 + 2 \cdot 5^2 + 1 \cdot 5^1 + 0 \cdot 5^0$ | 2930                |
 
 Ne putem imagina că procesul de a trece un număr din baza 10 în baza $b$ ar fi
 invers. Să zicem că avem numărul 1199 în baza 10 și vrem să-l convertim în baza
@@ -83,7 +82,9 @@ Algoritmul este următorul:
     Reprezentarea numărului în baza $b$ se obține considerând resturile în ordinea
     *inversă* obținerii lor.
 
-Acest proces se poate extinde și pentru numerele cu virgulă. Luăm numărul 420.69. Știm deja cum să convertim 420. Pentru partea fracțională, este mai ușor dacă descompunem numărul astfel:
+Acest proces se poate extinde și pentru numerele cu virgulă. Luăm numărul
+420.69. Știm deja cum să convertim 420. Pentru partea fracțională, este mai ușor
+dacă descompunem numărul astfel:
 
 $$
 \begin{align*}
@@ -94,7 +95,7 @@ $$
 $$
 
 Algoritmul de mai sus este la fel, doar că pentru partea fracționară trebuie să
-*înmulțim*, nu să împărțim. Vrem să ajungem la câtul zero, și nu putem face asta
+_înmulțim_, nu să împărțim. Vrem să ajungem la câtul zero, și nu putem face asta
 dacă împărțim un număr sub 1 la bază pentru că vom obține numere din ce în ce
 mai mici.
 
@@ -135,7 +136,7 @@ Am ajuns la 3.71 din nou, deci cifrele se repetă. Așadar, $959.53_{(10)} =
     în baza 10 valoarea obținută cu fiecare acest grup, acestea fiind cifrele
     numărului în baza $2^k$. Dacă un grup are mai puțin de $k$ cifre, vom completa
     în față cu cifre 0.
-    
+
 De pildă, să luăm numărul 110010010111110011 și să-l convertim în baza 16. Dacă
 grupăm câte 4 ($16 = 2^4$), vom avea "(00)11 0010 0101 1111 0011" și putem
 converti fiecare grup ca atare (vom avea "3 4 5 15 3", care se traduce în
@@ -204,7 +205,7 @@ unui număr (numărul de biți) este primă. Deoarece numerele din intervalul
 $[a,b]$ sunt foarte mari (până la $10^{18}$), este imposibil să verificăm
 fiecare număr din acest interval. Totuși, observăm că numărul de biți pentru
 orice număr din acest interval este întotdeauna între 1 și 64, deoarece
-$2^{64}> 10^{18}$. 
+$2^{64}> 10^{18}$.
 
 Astfel, trebuie doar să verificăm dacă numărul de biți al unui număr este prim,
 ceea ce este mult mai eficient. Așadar, este mai eficient să precalculăm
@@ -221,27 +222,27 @@ Aici este soluția:
 
 ## Probleme suplimentare
 
-- [bazaminima pbinfo](https://www.pbinfo.ro/probleme/427/bazaminima)
-- [ascunsa nerdarena](https://www.nerdarena.ro/problema/ascunsa)
-- [douabaze pbinfo](https://www.pbinfo.ro/probleme/946/douabaze)
-- [criptic nerdarena](https://www.nerdarena.ro/problema/criptic)
-- [ONI 2014 zimeria](https://kilonova.ro/problems/1444)
-- [suc1 nerdarena](https://www.nerdarena.ro/problema/suc1)
-- [psychtraining infoarena](https://www.infoarena.ro/problema/psychtraining)
-- [sticle infoarena](https://www.infoarena.ro/problema/sticle)
-- [Lot 2010 Juniori puteri35](https://kilonova.ro/problems/1636)
-- [OJI 2019 cate3cifre](https://kilonova.ro/problems/912)
-- [ONI 2011 Baraj Seniori copii](https://kilonova.ro/problems/420)
-- [nop infoarena](https://www.infoarena.ro/problema/nop)
-- [ONI 2023 xidartros](https://kilonova.ro/problems/534)
+-   [bazaminima pbinfo](https://www.pbinfo.ro/probleme/427/bazaminima)
+-   [ascunsa nerdarena](https://www.nerdarena.ro/problema/ascunsa)
+-   [douabaze pbinfo](https://www.pbinfo.ro/probleme/946/douabaze)
+-   [criptic nerdarena](https://www.nerdarena.ro/problema/criptic)
+-   [ONI 2014 zimeria](https://kilonova.ro/problems/1444)
+-   [suc1 nerdarena](https://www.nerdarena.ro/problema/suc1)
+-   [psychtraining infoarena](https://www.infoarena.ro/problema/psychtraining)
+-   [sticle infoarena](https://www.infoarena.ro/problema/sticle)
+-   [Lot 2010 Juniori puteri35](https://kilonova.ro/problems/1636)
+-   [OJI 2019 cate3cifre](https://kilonova.ro/problems/912)
+-   [ONI 2011 Baraj Seniori copii](https://kilonova.ro/problems/420)
+-   [nop infoarena](https://www.infoarena.ro/problema/nop)
+-   [ONI 2023 xidartros](https://kilonova.ro/problems/534)
 
 ## Lectură suplimentară
 
-- [Articolul de baze de numerație de pe
-  CPPI](https://cppi.sync.ro/materia/baze_de_numeratie.html)
-- [Articolul de baze de numerație de pe
-  PBInfo](https://www.pbinfo.ro/articole/5562/baze-de-numeratie)
-- [Lecția 5, clasa a VI-a, 18 octombrie 2018 de pe
-  Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lecția_5_-_18_oct_2018)
-- [Lecția 6, clasa a VI-a, 18 octombrie 2018 de pe
-  Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lecția_6_-_25_oct_2018)
+-   [Articolul de baze de numerație de pe
+    CPPI](https://cppi.sync.ro/materia/baze_de_numeratie.html)
+-   [Articolul de baze de numerație de pe
+    PBInfo](https://www.pbinfo.ro/articole/5562/baze-de-numeratie)
+-   [Lecția 5, clasa a VI-a, 18 octombrie 2018 de pe
+    Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lecția_5_-_18_oct_2018)
+-   [Lecția 6, clasa a VI-a, 18 octombrie 2018 de pe
+    Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lecția_6_-_25_oct_2018)

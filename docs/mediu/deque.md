@@ -1,7 +1,6 @@
 ---
 id: deque
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - queue
     - stack

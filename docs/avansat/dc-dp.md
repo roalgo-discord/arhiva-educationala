@@ -1,7 +1,6 @@
 ---
 id: dc-dp
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - range-dp
@@ -83,7 +82,7 @@ această tehnică.
 ## Problema [RoAlgo Contest #7 suxumetre](https://kilonova.ro/problems/1906)
 
 !!! note "Observație"
-    Acest editorial a fost scris de [Matei Ionescu](https://rocphof.kilonova.ro/person/2375)
+    Acest editorial a fost scris de [ioma](https://rocphof.kilonova.ro/person/2375)
     și [Andrei Chertes](https://rocphof.kilonova.ro/person/102) ca parte a
     [RoAlgo Contest #7](https://kilonova.ro/contests/34)
 

@@ -1,7 +1,6 @@
 ---
 id: sequences
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
     - arrays

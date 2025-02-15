@@ -1,7 +1,7 @@
 ---
 id: OJI-2020-XI-XII-recyclebin
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - bitmask-dp
     - sequences

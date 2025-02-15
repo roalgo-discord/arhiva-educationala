@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa IX
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei cifre (OJI 2016, clasa a IX-a)
@@ -11,7 +13,6 @@ tags:
     - [Operatori și expresii. Cunoștințe matematice de bază](../../../../cppintro/basic-math.md)
     - [Maxime și minime](../../../../usor/digits-manipulation.md)
 
-**Autor soluție**: Ștefan-Cosmin Dăscălescu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/864/). 

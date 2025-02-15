@@ -1,7 +1,6 @@
 ---
 id: expression-evaluation
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - arrays
     - stack

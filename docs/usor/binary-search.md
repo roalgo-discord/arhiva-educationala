@@ -1,8 +1,6 @@
 ---
 id: binary-search
-author:
-    - Andrei-Cristian Ivan
-    - Ștefan-Cosmin Dăscălescu
+authors: [ivan, stefdasca]
 prerequisites:
     - arrays
     - sorting

@@ -3,11 +3,12 @@ tags:
     - OJI
     - clasa V
     - timp
+authors:
+    - traian
 ---
 
 # Soluția problemei cartele (OJI 2019, clasa a V-a)
 
-**Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/907/). 

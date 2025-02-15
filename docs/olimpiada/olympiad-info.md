@@ -1,7 +1,6 @@
 ---
 id: olympiad-info
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - olimpiada

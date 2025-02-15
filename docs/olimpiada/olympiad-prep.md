@@ -1,7 +1,6 @@
 ---
 id: olympiad-prep
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - olympiad-info
 tags:

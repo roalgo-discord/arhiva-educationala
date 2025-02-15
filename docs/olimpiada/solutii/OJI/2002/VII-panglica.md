@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa VII
+authors:
+    - stefdasca
 ---
 
 # Soluția problemei Panglica (OJI 2002, clasa a VII-a)
@@ -9,7 +11,6 @@ tags:
 !!! example "Cunoștințe necesare"
     - [Abordarea problemelor cu secvențe](../../../../usor/sequences.md)
 
-**Autor**: Ștefan-Cosmin Dăscălescu
 
 Pentru a afla lungimea maximă a unei benzi pe care o putem obține, vom avea
 nevoie să știm pentru fiecare culoare prima și ultima pozitie a acesteia în

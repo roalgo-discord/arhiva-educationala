@@ -2,6 +2,8 @@
 tags:
     - OJI
     - clasa V
+authors:
+    - traian
 ---
 
 # Soluția problemei forus (OJI 2018, clasa a V-a)
@@ -10,7 +12,6 @@ tags:
     - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
     - [Divizibilitate](../../../../usor/divisibility.md)
 
-**Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/399/). 

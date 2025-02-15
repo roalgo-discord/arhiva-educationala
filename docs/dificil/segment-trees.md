@@ -1,7 +1,6 @@
 ---
 id: segment-trees
-author:
-    - Alexandru Toma
+authors: [alextm0]
 prerequisites:
     - functions
     - sequences

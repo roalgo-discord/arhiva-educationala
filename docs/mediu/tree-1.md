@@ -1,7 +1,6 @@
 ---
 id: tree-1
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 tags:

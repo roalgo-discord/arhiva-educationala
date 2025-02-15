@@ -1,7 +1,6 @@
 ---
 id: sliding-window
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - two-pointers
     - sequences

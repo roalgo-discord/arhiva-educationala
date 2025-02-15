@@ -1,8 +1,6 @@
 ---
 id: input-output
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
   - intro
 tags:

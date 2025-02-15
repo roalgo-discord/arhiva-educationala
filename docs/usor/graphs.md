@@ -1,8 +1,6 @@
 ---
 id: graphs
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - lee
     - stl

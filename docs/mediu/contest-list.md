@@ -1,7 +1,6 @@
 ---
 id: contest-list
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - concursuri
     - pregatire

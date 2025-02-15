@@ -1,7 +1,6 @@
 ---
 id: square-root-decomposition
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - arrays
     - partial-sums

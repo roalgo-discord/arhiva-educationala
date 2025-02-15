@@ -1,7 +1,6 @@
 ---
 id: data-normalization
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - arrays
     - sorting

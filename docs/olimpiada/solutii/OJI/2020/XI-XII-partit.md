@@ -1,7 +1,7 @@
 ---
 id: OJI-2020-XI-XII-partit
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors:
+    - stefdasca
 prerequisites:
     - intro-combinatorics
     - intro-dp

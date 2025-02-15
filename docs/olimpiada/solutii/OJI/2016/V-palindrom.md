@@ -3,6 +3,8 @@ tags:
     - OJI
     - clasa V
     - cifre
+authors:
+    - traian
 ---
 
 # Soluția problemei palindrom (OJI 2016, clasa a V-a)
@@ -10,7 +12,6 @@ tags:
 !!! example "Cunoștințe necesare"
     - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
 
-**Autor soluție**: Traian Mihai Danciu
 
 !!! note "Link problemă"
     Această problemă poate fi accesată [aici](https://kilonova.ro/problems/867/). 
