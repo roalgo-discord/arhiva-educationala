@@ -3,7 +3,36 @@
 {% endif %}
 
 {% if "\x3ch1" not in page.content %}
-<h1>{{ page.title | d(config.site_name, true) }}</h1>
+<h1>
+  <span>{{ page.title | d(config.site_name, true) }}</span>
+  {% set difficulty_map = {
+    "cppintro": 0,
+    "usor": 1,
+    "mediu": 2,
+    "dificil": 3,
+    "avansat": 4
+  } %}
+  
+  {% set parts = page.file.src_path.split("/") %}
+  {% if parts | length > 1 %}
+    {% set level = parts[0] %}
+    {% set difficulty = difficulty_map[level] if level in difficulty_map else None %}
+  {% else %}
+    {% set difficulty = None %}
+  {% endif %}
+  
+  {% if difficulty != None %}
+  <span class="difficulty-stars" >
+    {% for i in range(difficulty + 1) %}
+      <span class="star-{{ difficulty }}">●</span>
+    {% endfor %}
+      
+    {% for i in range(4 - difficulty) %}
+      <span class="star-empty">●</span>
+    {% endfor %}
+  </span>
+  {% endif %}
+</h1>
 {% endif %}
 
 {% if page.meta.authors %}
@@ -40,11 +69,11 @@
           {% set difficulty = prerequisite.difficulty | int %}
           <span>
             {% for i in range(difficulty + 1) %}
-            <span class="star-{{ difficulty }}">•</span>
+            <span class="star-{{ difficulty }}">●</span>
             {% endfor %}
               
             {% for i in range(4 - difficulty) %}
-              <span class="star-empty">•</span>
+              <span class="star-empty">●</span>
             {% endfor %}
           </span>
         </li>

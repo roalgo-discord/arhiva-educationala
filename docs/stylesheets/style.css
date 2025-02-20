@@ -17,33 +17,47 @@
     --difficulty-avansat: #157dd2;
 }
 
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+h1 .difficulty-stars {
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1;
+}
+
 .star-0 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--difficulty-cppintro);
 }
 
 .star-1 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--difficulty-usor);
 }
 
 .star-2 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--difficulty-mediu);
 }
 
 .star-3 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--difficulty-dificil);
 }
 
 .star-4 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--difficulty-avansat);
 }
 
 .star-empty {
-    font-size: 1rem;
+    font-size: 0.75rem;
     opacity: 0.4;
     color: var(--md-default-fg-color);
 }
