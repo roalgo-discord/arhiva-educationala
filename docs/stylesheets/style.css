@@ -8,6 +8,7 @@
     --difficulty-dificil: rgb(23, 171, 23);
     --difficulty-avansat: rgb(36, 107, 231);
 }
+
 [data-md-color-scheme="default"] {
     --difficulty-cppintro: #e13b1d;
     --difficulty-usor: #e8840a;
