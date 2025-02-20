@@ -28,6 +28,7 @@
 
 {% if page.meta.prerequisites %}
   {% set sorted_prerequisites = prerequisites_data | sort(attribute='difficulty') %}
+  {% if sorted_prerequisites | length > 0 %}
   <div class="admonition example">
     <p class="admonition-title">Cunoștințe necesare</p>
     <ul>
@@ -50,8 +51,7 @@
       {% endfor %}
     </ul>
   </div>
+  {% endif %}
 {% endif %}
 
-
-<!-- Page content -->
 {{ page.content }}
