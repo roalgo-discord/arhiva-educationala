@@ -26,17 +26,30 @@
   </p>
 {% endif %}
 
-
 {% if page.meta.prerequisites %}
-<div class="admonition example">
+  {% set sorted_prerequisites = prerequisites_data | sort(attribute='difficulty') %}
+  <div class="admonition example">
     <p class="admonition-title">Cunoștințe necesare</p>
     <ul>
-        {% set prerequisites = nav.pages | selectattr("meta.id", "in", page.meta.prerequisites) %}
-        {% for p in prerequisites %}
-        <li><a href="{{ p.url | url }}">{{ p.title }}</a></li>
-        {% endfor %}
+      {% for prerequisite in sorted_prerequisites %}
+        <li>
+          <a href="{{ prerequisite.path | replace("docs/", "") | replace(".md", "/") | url }}">{{ prerequisite.title }} </a>
+          <span>&nbsp;</span>
+
+          {% set difficulty = prerequisite.difficulty | int %}
+          <span>
+            {% for i in range(difficulty + 1) %}
+            <span class="star-{{ difficulty }}">•</span>
+            {% endfor %}
+              
+            {% for i in range(4 - difficulty) %}
+              <span class="star-empty">•</span>
+            {% endfor %}
+          </span>
+        </li>
+      {% endfor %}
     </ul>
-</div>
+  </div>
 {% endif %}
 
 

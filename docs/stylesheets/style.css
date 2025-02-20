@@ -1,4 +1,48 @@
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color: #12151A;
-  --md-code-bg-color: #1E2126;
+    --md-default-bg-color: #12151a;
+    --md-code-bg-color: #1e2126;
+
+    --difficulty-cppintro: rgb(220, 23, 23);
+    --difficulty-usor: rgb(233, 128, 0);
+    --difficulty-mediu: rgb(243, 198, 19);
+    --difficulty-dificil: rgb(23, 171, 23);
+    --difficulty-avansat: rgb(36, 107, 231);
+}
+[data-md-color-scheme="default"] {
+    --difficulty-cppintro: #e13b1d;
+    --difficulty-usor: #e8840a;
+    --difficulty-mediu: #ffd700;
+    --difficulty-dificil: #0cc80c;
+    --difficulty-avansat: #157dd2;
+}
+
+.star-0 {
+    font-size: 1rem;
+    color: var(--difficulty-cppintro);
+}
+
+.star-1 {
+    font-size: 1rem;
+    color: var(--difficulty-usor);
+}
+
+.star-2 {
+    font-size: 1rem;
+    color: var(--difficulty-mediu);
+}
+
+.star-3 {
+    font-size: 1rem;
+    color: var(--difficulty-dificil);
+}
+
+.star-4 {
+    font-size: 1rem;
+    color: var(--difficulty-avansat);
+}
+
+.star-empty {
+    font-size: 1rem;
+    opacity: 0.4;
+    color: var(--md-default-fg-color);
 }

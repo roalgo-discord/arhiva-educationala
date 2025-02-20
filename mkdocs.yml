@@ -2,8 +2,8 @@
 site_name: Arhiva Educationala RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
-      O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
-      și nu numai.
+    O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
+    și nu numai.
 theme:
     name: material
     features:
@@ -59,6 +59,7 @@ theme:
     custom_dir: overrides
 
 extra:
+    prerequisites: {}
     social:
         - icon: fontawesome/brands/discord
           link: https://discord.gg/roalgo
@@ -138,6 +139,9 @@ markdown_extensions:
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
+
+hooks:
+    - prerequisites.py
 
 plugins:
     - search:
