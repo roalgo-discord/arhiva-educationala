@@ -29,25 +29,26 @@ ambele având metodele lor specifice de calculare a eficienței.
 Pentru a calcula complexitatea de timp a unui algoritm, trebuie să avem în
 vedere următoarele aspecte specifice:
 
-- În practică, procesoarele moderne pot procesa aproximativ $3 \cdot 10^8$
-  operații simple pe secundă, acest număr depinde în funcție de contextul unde
-  trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și
-  anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
+-  În practică, procesoarele moderne pot procesa aproximativ $3 \cdot 10^8$
+   operații simple pe secundă, acest număr depinde în funcție de contextul unde
+   trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și
+   anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
 
-  !!! note "Observație"
+    !!! note "Observație"
 
-      În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
-      estimare precisă, care este folosită de regulă și de propunătorii de
-      probleme atunci când se decid limitele de timp.
+        În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
+        estimare precisă, care este folosită de regulă și de propunătorii de
+        probleme atunci când se decid limitele de timp.
 
-- Exemple de operații simple: operațiile aritmetice simple, incrementările,
-  operațiile pe biți etc.
-- Exemple de operații care nu sunt simple: aflarea radicalului, aflarea restului
-  împărțirii etc.
+-  Exemple de operații simple: operațiile aritmetice simple, incrementările,
+   operațiile pe biți etc.
+-  Exemple de operații care nu sunt simple: aflarea radicalului, aflarea restului
+   împărțirii etc.
 
 În general, constantele mici pot fi ignorate în calculul complexitatilor. De
-exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(3 \cdot N)$ și $\mathcal{O}(2 \cdot N)$. Mai jos
-puteți găsi exemple de cod, împreună cu complexitățile lor.
+exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(3N)$ și
+$\mathcal{O}(2N)$. Mai jos puteți găsi exemple de cod, împreună cu
+complexitățile lor.
 
 Acest cod are complexitatea $\mathcal{O}(1)$, operațiile fiind constante.
 
@@ -58,36 +59,37 @@ int c = 4;
 int d = a + b + c + 153;
 ```
 
-Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel făcut în
-structura repetitivă.
+Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel
+făcut în structura repetitivă.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
 ```cpp
 int i = 0;
+
 while (i < n) {
-    // cod in timp constant
+    // Cod în timp constant
     i++;
 }
 ```
 
-În ciuda constantelor care apar, codurile au din nou complexitatea $\mathcal{O}(n)$.
-Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel făcut în
-structura repetitivă.
+În ciuda constantelor care apar, codurile au din nou complexitatea
+$\mathcal{O}(n)$. Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de
+operații fiind cel făcut în structura repetitivă.
 
 ```cpp
 for (int i = 1; i <= 5 * n + 17; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
 ```cpp
 for (int i = 1; i <= n + 758458; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
@@ -97,24 +99,26 @@ se va înmulți, complexitatea codului de mai jos este $\mathcal{O}(n \cdot m)$.
 ```cpp
 for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= m; j++) {
-        // cod in timp constant
+        // Cod în timp constant
     }
 }
 ```
 
 Dacă avem de-a face cu diverse repetitive imbricate în diferite blocuri de cod,
 complexitatea va deveni egală cu cea mai costisitoare structură de acest gen,
-complexitatea se va înmulți, complexitatea codului de mai jos este $\mathcal{O}(n \cdot
-m)$, în ciuda bucății care are complexitate $\mathcal{O}(n)$.
+complexitatea se va înmulți, complexitatea codului de mai jos este
+$\mathcal{O}(n \cdot m)$, în ciuda bucății care are complexitate
+$\mathcal{O}(n)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= n; j++) {
-        // cod in timp constant
+        // Cod în timp constant
     }
 }
+
 for (int i = 1; i <= m; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
@@ -141,27 +145,27 @@ folosit.
 
 Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 
-- tipul **int**: 4 bytes, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147 \
-  483 \ 648$ si $2 \ 147 \ 483 \ 647$).
-- tipul **short**: 2 bytes, limite între $-2^{15}$ si $2^{15} - 1$ ($-32  \
+- tipul `#!cpp int`: 4 octeți, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147
+  \ 483 \ 648$ si $2 \ 147 \ 483 \ 647$).
+- tipul `#!cpp short`: 2 octeți, limite între $-2^{15}$ si $2^{15} - 1$ ($-32 \
   768$ si $32 \ 767$).
-- tipul **char**: 1 byte, limite între $-128$ si 127.
-- tipul **bool**: 1 byte, accepta doar 0 sau 1.
-- tipul **long long**: 8 bytes, limite între $-2^{63}$ si $2^{63} - 1$ ($-9 \
-  223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$)
-  * numere de maxim 19 cifre.
+- tipul `#!cpp char`: 1 octet, limite între $-128$ si 127.
+- tipul `#!cpp bool`: 1 octet, accepta doar 0 sau 1.
+- tipul `#!cpp long long`: 8 octeți, limite între $-2^{63}$ si $2^{63} - 1$ ($-9
+  \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \
+  807$) &mdash; numere de maxim 19 cifre.
 
 În privința tipurilor reale, putem enumera următoarele:
 
-- tipul **float**: 4 bytes, limite între aproximativ $-10^{38}$ și $10^{38}$.
-- tipul **double**: 8 bytes, limite între aproximativ $-10^{208}$ și
+- tipul `#!cpp float`: 4 octeți, limite între aproximativ $-10^{38}$ și $10^{38}$.
+- tipul `#!cpp double`: 8 octeți, limite între aproximativ $-10^{208}$ și
   $10^{208}$.
-- tipul **long double**: în funcție de standardul de compilare, cel puțin 8
-  bytes, limite mai mari decât cele de la **double**.
+- tipul `#!cpp long double`: în funcție de standardul de compilare, cel puțin 8
+  octeți, limite mai mari decât cele de la `#!cpp double`.
 
-De exemplu, dacă avem un vector de $10^6$ elemente de tipul **int** și altul de
-$10^5$ elemente de tipul **long long**, vom folosi $4 * 10^6 + 8 * 10^5 =
-4.8*10^6$ bytes = $4.8$ MB.
+De exemplu, dacă avem un vector de $10^6$ elemente de tipul `#!cpp int` și altul
+de $10^5$ elemente de tipul `#!cpp long long`, vom folosi $4 \cdot 10^6 + 8
+\cdot 10^5 = 4.8 \cdot 10^6$ octeți = 4.8 MB.
 
 Este foarte important în cazul complexităților de memorie să aveți în vedere
 faptul că în general la concursuri, se ia în considerare memoria așa cum e
