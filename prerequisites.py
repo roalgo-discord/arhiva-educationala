@@ -1,174 +1,75 @@
 import json
 import os
+import sys
+import frontmatter
 import yaml
-import hashlib
-from collections import defaultdict, deque
+from pathlib import Path
 
 DIFFICULTY_ORDER = {"cppintro": 0, "usor": 1, "mediu": 2, "dificil": 3, "avansat": 4}
-FILE_HASHES = {}
-PREREQ_HASHES = {}
 articles = {}
 
-DATA_DIR = "data"
-HASHES_FILE = os.path.join(DATA_DIR, "hashes.json")
-PREREQS_FILE = os.path.join(DATA_DIR, "prerequisites.json")
+DATA_DIR = Path("data")
+HASHES_FILE = DATA_DIR / "hashes.json"
+PREREQ_FILE = DATA_DIR / "prerequisites.json"
+
+empty_loader = lambda loader, suffix, node: None
+yaml.add_multi_constructor("!", empty_loader)
+yaml.add_multi_constructor(
+    "tag:yaml.org,2002:python/name", empty_loader, Loader=yaml.SafeLoader
+)
+yaml.add_multi_constructor(
+    "tag:yaml.org,2002:python/object", empty_loader, Loader=yaml.SafeLoader
+)
+yaml.add_multi_constructor("!ENV", empty_loader, Loader=yaml.SafeLoader)
 
 
 def ensure_data_files():
-    """Ensure the data directory and necessary JSON files exist."""
-    os.makedirs(DATA_DIR, exist_ok=True)
-
-    if not os.path.exists(HASHES_FILE):
-        with open(HASHES_FILE, "w", encoding="utf-8") as f:
-            json.dump({}, f)
-
-    if not os.path.exists(PREREQS_FILE):
-        with open(PREREQS_FILE, "w", encoding="utf-8") as f:
-            json.dump({}, f)
+    DATA_DIR.mkdir(exist_ok=True)
+    PREREQ_FILE.touch(exist_ok=True)
 
 
 def load_nav_structure():
-    """Load the 'nav' section from mkdocs.yml and populate file_to_title."""
     try:
         with open("mkdocs.yml", "r", encoding="utf-8") as f:
-            lines = f.readlines()
-    except FileNotFoundError:
-        print("Error: mkdocs.yml not found.")
+            nav_data = yaml.safe_load(f) or {}
+    except (FileNotFoundError, yaml.YAMLError) as e:
+        print(f"Error loading mkdocs.yml: {e}", file=sys.stderr)
         return {}
 
-    nav_lines = []
-    in_nav_section = False
-
-    for line in lines:
-        if line.strip().startswith("nav:"):
-            in_nav_section = True
-            nav_lines.append(line.strip())
-        elif in_nav_section:
-            if line.strip() == "" or not line.startswith(" "):
-                break
-            elif line.strip().startswith("#"):
-                continue
-
-            nav_lines.append(line.strip())
-
-    try:
-        nav_data = yaml.safe_load("\n".join(nav_lines))
-    except yaml.YAMLError:
-        print("Error: Unable to parse mkdocs.yml.")
+    if not isinstance(nav_data, dict) or "nav" not in nav_data:
+        print("Warning: 'nav' section missing in mkdocs.yml", file=sys.stderr)
         return {}
 
-    return {
-        list(item.values())[0]: list(item.keys())[0]
-        for item in nav_data["nav"]
-        if isinstance(item, dict)
-        and list(item.values())[0]
-        and list(item.values())[0].endswith(".md")
-    }
+    def parse_nav(section):
+        nav_structure = {}
 
+        def traverse(nav_item, title=None):
+            if isinstance(nav_item, dict):
+                for sub_title, sub_path in nav_item.items():
+                    if isinstance(sub_path, str) and sub_path.endswith(".md"):
+                        nav_structure[sub_path] = sub_title
+                    elif isinstance(sub_path, list):
+                        traverse(sub_path, sub_title)
+            elif isinstance(nav_item, list):
+                for item in nav_item:
+                    traverse(item, title)
 
-def calculate_file_hash(filepath):
-    """Calculate the hash of a file to detect changes, and return the first 16 characters."""
-    hash_sha256 = hashlib.sha256()
-    with open(filepath, "rb") as f:
-        while chunk := f.read(8192):
-            hash_sha256.update(chunk)
-    return hash_sha256.hexdigest()[:16]
+        traverse(section)
+        return nav_structure
 
-
-def calculate_prerequisite_hash(prerequisites):
-    """Calculate a hash for the prerequisites to detect changes, and return the first 16 characters."""
-    hash_sha256 = hashlib.sha256()
-    for prereq in prerequisites:
-        hash_sha256.update(prereq.encode("utf-8"))
-    return hash_sha256.hexdigest()[:16]
+    return parse_nav(nav_data["nav"])
 
 
 def parse_front_matter(filepath):
-    """Extract front matter from a Markdown file."""
-    with open(filepath, "r", encoding="utf-8") as file:
-        lines = file.readlines()
-
     try:
-        start = lines.index("---\n") + 1
-        end = lines.index("---\n", start)
-        return yaml.safe_load("".join(lines[start:end]))
+        with open(filepath, "r", encoding="utf-8") as file:
+            return frontmatter.loads(file.read())
     except ValueError:
         return None
 
 
-def load_previous_hashes():
-    """Load file and prerequisite hashes if available."""
-    try:
-        with open("data/hashes.json", "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
-
-
-def save_file_hashes():
-    """Save current file and prerequisite hashes to a cache."""
-    with open("data/hashes.json", "w", encoding="utf-8") as f:
-        json.dump(FILE_HASHES, f, ensure_ascii=False)
-
-
-def topological_sort():
-    graph = defaultdict(set)
-    in_degree = defaultdict(int)
-
-    for article_id, data in articles.items():
-        in_degree[article_id] = in_degree.get(article_id, 0)
-        for prereq in data["prerequisites"]:
-            graph[prereq].add(article_id)
-            in_degree[article_id] += 1
-            in_degree[prereq] = in_degree.get(prereq, 0)
-
-    queue = deque(
-        sorted(
-            [a for a in articles if in_degree[a] == 0],
-            key=lambda x: DIFFICULTY_ORDER.get(articles[x]["difficulty"], -1),
-        )
-    )
-
-    sorted_articles = []
-    while queue:
-        current = queue.popleft()
-        sorted_articles.append(current)
-        for dependent in graph[current]:
-            in_degree[dependent] -= 1
-            if in_degree[dependent] == 0:
-                queue.append(dependent)
-
-    return sorted_articles
-
-
-def update_prerequisites_json():
-    """Update prerequisites JSON efficiently."""
-    prerequisites_data = {}
-    sorted_articles = topological_sort()
-
-    for article_id, data in articles.items():
-        sorted_prereqs = [pr for pr in sorted_articles if pr in data["prerequisites"]]
-        if sorted_prereqs:
-            prerequisites_data[article_id] = [
-                {
-                    "id": pr,
-                    "path": articles[pr]["path"],
-                    "difficulty": articles[pr]["difficulty"],
-                    "title": articles[pr]["title"],
-                }
-                for pr in sorted_prereqs
-            ]
-
-    if prerequisites_data:
-        with open("data/prerequisites.json", "w", encoding="utf-8") as json_file:
-            json.dump(prerequisites_data, json_file, ensure_ascii=False)
-
-
 def process_articles():
-    """Process all articles, updating prerequisites and file hashes."""
-    global FILE_HASHES, PREREQ_HASHES
-    FILE_HASHES = load_previous_hashes()
-
+    global articles
     nav_structure = load_nav_structure()
 
     for file_path in nav_structure:
@@ -184,67 +85,75 @@ def process_articles():
                     filepath = os.path.join(root, file)
 
                     if filepath.endswith(file_path):
-                        file_hash = calculate_file_hash(filepath)
-
                         metadata = parse_front_matter(filepath)
                         if metadata and "id" in metadata:
-                            prereq_hash = calculate_prerequisite_hash(
-                                metadata.get("prerequisites", [])
-                            )
-                            current_hash = file_hash + prereq_hash
+                            articles[metadata["id"]] = {
+                                "id": metadata["id"],
+                                "path": filepath,
+                                "difficulty": difficulty,
+                                "prerequisites": metadata.get("prerequisites", []),
+                                "title": metadata.get(
+                                    "title", nav_structure[file_path]
+                                ),
+                            }
 
-                            if FILE_HASHES.get(filepath) != current_hash:
-                                articles[metadata["id"]] = {
-                                    "path": filepath,
-                                    "difficulty": difficulty,
-                                    "prerequisites": metadata.get("prerequisites", []),
-                                    "title": metadata.get(
-                                        "title", nav_structure[file_path]
-                                    ),
-                                }
+    update_prerequisites()
 
-                                FILE_HASHES[filepath] = current_hash
 
-    update_prerequisites_json()
-    save_file_hashes()
+def update_prerequisites():
+    prerequisites_data = {}
+
+    for article_id, data in articles.items():
+        prerequisites_list = data["prerequisites"]
+        if prerequisites_list:
+            prerequisites_data[article_id] = [
+                {
+                    "id": prereq_id,
+                    "path": articles[prereq_id]["path"],
+                    "difficulty": articles[prereq_id]["difficulty"],
+                    "title": articles[prereq_id]["title"],
+                }
+                for prereq_id in prerequisites_list
+                if prereq_id in articles
+            ]
+
+    if prerequisites_data:
+        with open(PREREQ_FILE, "w", encoding="utf-8") as json_file:
+            json.dump(prerequisites_data, json_file, ensure_ascii=False)
 
 
 def on_pre_build(config, **kwargs):
-    if not os.path.exists(PREREQS_FILE) or not os.path.exists(HASHES_FILE):
+    if not os.path.exists(PREREQ_FILE):
         ensure_data_files()
 
     process_articles()
 
 
 def on_page_context(context, page, config, **kwargs):
-    """Add prerequisites data to page context."""
+    """Add only direct prerequisites data to page context."""
     prerequisites_data = []
-    global PREREQ_HASHES
+    global articles
 
-    if not PREREQ_HASHES:
-        try:
-            with open(PREREQS_FILE, "r", encoding="utf-8") as f:
-                PREREQ_HASHES = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
-            PREREQ_HASHES = {}
+    if not articles:
+        process_articles()
 
     if "prerequisites" in page.meta:
         prerequisites_list = page.meta["prerequisites"]
         seen_prerequisites = set()
+
         for prerequisite_id in prerequisites_list:
-            if prerequisite_id in PREREQ_HASHES:
-                for prerequisite in PREREQ_HASHES[prerequisite_id]:
-                    if prerequisite["id"] not in seen_prerequisites:
-                        prerequisite_copy = prerequisite.copy()
+            if prerequisite_id in articles:
+                prereq = articles[prerequisite_id]
 
-                        difficulty_value = DIFFICULTY_ORDER.get(
-                            prerequisite_copy["difficulty"], -1
-                        )
-                        prerequisite_copy["difficulty"] = difficulty_value
+                if prerequisite_id not in seen_prerequisites:
+                    prerequisite_copy = {
+                        "id": prereq["id"],
+                        "path": prereq["path"],
+                        "difficulty": DIFFICULTY_ORDER.get(prereq["difficulty"], -1),
+                        "title": prereq["title"],
+                    }
+                    prerequisites_data.append(prerequisite_copy)
+                    seen_prerequisites.add(prerequisite_id)
 
-                        prerequisites_data.append(prerequisite_copy)
-                        seen_prerequisites.add(prerequisite["id"])
-
-        context["prerequisites_data"] = prerequisites_data
-
+    context["prerequisites_data"] = prerequisites_data
     return context

@@ -33,6 +33,7 @@ pycparser==2.22
 Pygments==2.18.0
 pymdown-extensions==10.9
 python-dateutil==2.9.0.post0
+python-frontmatter==1.1.0
 PyYAML==6.0.2
 pyyaml_env_tag==0.1
 regex==2024.7.24

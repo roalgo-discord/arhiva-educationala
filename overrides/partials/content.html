@@ -56,12 +56,11 @@
 {% endif %}
 
 {% if page.meta.prerequisites %}
-  {% set sorted_prerequisites = prerequisites_data | sort(attribute='difficulty') %}
-  {% if sorted_prerequisites | length > 0 %}
+  {% if prerequisites_data | length > 0 %}
   <div class="admonition example">
     <p class="admonition-title">Cunoștințe necesare</p>
     <ul>
-      {% for prerequisite in sorted_prerequisites %}
+      {% for prerequisite in prerequisites_data | sort(attribute='difficulty') %}
         <li>
           <a href="{{ prerequisite.path | replace("docs/", "") | replace(".md", "/") | url }}">{{ prerequisite.title }} </a>
           <span>&nbsp;</span>
