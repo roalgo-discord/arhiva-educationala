@@ -9,6 +9,23 @@ FILE_HASHES = {}
 PREREQ_HASHES = {}
 articles = {}
 
+DATA_DIR = "data"
+HASHES_FILE = os.path.join(DATA_DIR, "hashes.json")
+PREREQS_FILE = os.path.join(DATA_DIR, "prerequisites.json")
+
+
+def ensure_data_files():
+    """Ensure the data directory and necessary JSON files exist."""
+    os.makedirs(DATA_DIR, exist_ok=True)
+
+    if not os.path.exists(HASHES_FILE):
+        with open(HASHES_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f)
+
+    if not os.path.exists(PREREQS_FILE):
+        with open(PREREQS_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f)
+
 
 def load_nav_structure():
     """Load the 'nav' section from mkdocs.yml and populate file_to_title."""
@@ -95,14 +112,15 @@ def save_file_hashes():
 
 
 def topological_sort():
-    """Perform a topological sort based on article dependencies."""
     graph = defaultdict(set)
     in_degree = defaultdict(int)
 
     for article_id, data in articles.items():
+        in_degree[article_id] = in_degree.get(article_id, 0)
         for prereq in data["prerequisites"]:
             graph[prereq].add(article_id)
             in_degree[article_id] += 1
+            in_degree[prereq] = in_degree.get(prereq, 0)
 
     queue = deque(
         sorted(
@@ -192,6 +210,9 @@ def process_articles():
 
 
 def on_pre_build(config, **kwargs):
+    if not os.path.exists(PREREQS_FILE) or not os.path.exists(HASHES_FILE):
+        ensure_data_files()
+
     process_articles()
 
 
@@ -200,13 +221,15 @@ def on_page_context(context, page, config, **kwargs):
     prerequisites_data = []
     global PREREQ_HASHES
 
+    if not PREREQ_HASHES:
+        try:
+            with open(PREREQS_FILE, "r", encoding="utf-8") as f:
+                PREREQ_HASHES = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            PREREQ_HASHES = {}
+
     if "prerequisites" in page.meta:
         prerequisites_list = page.meta["prerequisites"]
-
-        if not PREREQ_HASHES:
-            with open("data/prerequisites.json", "r", encoding="utf-8") as f:
-                PREREQ_HASHES = json.load(f)
-
         seen_prerequisites = set()
         for prerequisite_id in prerequisites_list:
             if prerequisite_id in PREREQ_HASHES:
