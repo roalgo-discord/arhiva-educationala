@@ -5,30 +5,11 @@
 {% if "\x3ch1" not in page.content %}
 <h1>
   <span>{{ page.title | d(config.site_name, true) }}</span>
-  {% set difficulty_map = {
-    "cppintro": 0,
-    "usor": 1,
-    "mediu": 2,
-    "dificil": 3,
-    "avansat": 4
-  } %}
-  
-  {% set parts = page.file.src_path.split("/") %}
-  {% if parts | length > 1 %}
-    {% set level = parts[0] %}
-    {% set difficulty = difficulty_map[level] if level in difficulty_map else None %}
-  {% else %}
-    {% set difficulty = None %}
-  {% endif %}
-  
-  {% if difficulty != None %}
-  <span class="difficulty-stars" >
-    {% for i in range(difficulty + 1) %}
-      <span class="star-{{ difficulty }}">●</span>
-    {% endfor %}
-      
-    {% for i in range(4 - difficulty) %}
-      <span class="star-empty">●</span>
+
+  {% if difficulty is not none and difficulty < 5 %}
+  <span class="difficulty-stars">
+    {% for i in range(5) %}
+      <span class="{{ 'star-' ~ difficulty if i <= difficulty else 'star-empty' }}">●</span>
     {% endfor %}
   </span>
   {% endif %}
@@ -55,31 +36,25 @@
   </p>
 {% endif %}
 
-{% if page.meta.prerequisites %}
-  {% if prerequisites_data | length > 0 %}
-  <div class="admonition example">
-    <p class="admonition-title">Cunoștințe necesare</p>
-    <ul>
-      {% for prerequisite in prerequisites_data | sort(attribute='difficulty') %}
-        <li>
-          <a href="{{ prerequisite.path | replace("docs/", "") | replace(".md", "/") | url }}">{{ prerequisite.title }} </a>
-          <span>&nbsp;</span>
 
-          {% set difficulty = prerequisite.difficulty | int %}
-          <span>
-            {% for i in range(difficulty + 1) %}
-            <span class="star-{{ difficulty }}">●</span>
-            {% endfor %}
-              
-            {% for i in range(4 - difficulty) %}
-              <span class="star-empty">●</span>
-            {% endfor %}
-          </span>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+{% if page.meta.prerequisites and prerequisites_data %}
+<div class="admonition example">
+  <p class="admonition-title">Cunoștințe necesare</p>
+  <ul>
+    {% for prerequisite in prerequisites_data %}
+      <li>
+        <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }} </a>
+        <span>&nbsp;</span>
+
+        <span>
+          {% for i in range(5) %}
+            <span class="{{ 'star-' ~ prerequisite.difficulty if i <= prerequisite.difficulty else 'star-empty' }}">●</span>
+          {% endfor %}
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endif %}
 
 {{ page.content }}
