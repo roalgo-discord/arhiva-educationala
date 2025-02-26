@@ -212,7 +212,7 @@ def on_page_context(context, page, config, **kwargs):
 
     prereqs = [
         {
-            "path": f"{article["path"].as_posix()[:-md_len]}/",
+            "path": article["path"].as_posix()[:-md_len] + "/",
             "difficulty": article["difficulty"],
             "title": article["title"],
         }
