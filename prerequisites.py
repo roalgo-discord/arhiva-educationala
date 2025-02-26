@@ -5,7 +5,8 @@ import sys
 import frontmatter
 import yaml
 from pathlib import Path
-from collections import defaultdict
+import concurrent.futures
+from multiprocessing import Pool
 
 DIFFICULTY_ORDER = {
     "cppintro": 0,
@@ -19,6 +20,8 @@ articles = {}
 
 DATA_DIR = Path("data")
 PREREQ_FILE = DATA_DIR / "prerequisites.json"
+NAV_FILE = DATA_DIR / "nav.json"
+
 
 empty_loader = lambda loader, suffix, node: None
 yaml.add_multi_constructor("!", empty_loader)
@@ -39,7 +42,15 @@ def ensure_data_files():
 
 
 def load_nav_structure():
-    """Load the 'nav' section from mkdocs.yml and populate file_to_title."""
+    """Load the 'nav' section from mkdocs.yml."""
+    if os.path.exists(NAV_FILE):
+        try:
+            with NAV_FILE.open(encoding="utf-8") as f:
+                nav_structure = json.load(f)
+                return nav_structure
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"Error loading cache: {e}", file=sys.stderr)
+
     try:
         with open("mkdocs.yml", "r", encoding="utf-8") as f:
             nav_data = yaml.safe_load(f) or {}
@@ -52,22 +63,30 @@ def load_nav_structure():
         return {}
 
     def parse_nav(section):
-        """Recursively parse the 'nav' section of mkdocs.yml."""
-        nav_structure = {}
+        """Recursively parse the 'nav' section of mkdocs.yml using a generator."""
 
         def traverse(nav_item, title=None):
             if isinstance(nav_item, dict):
                 for sub_title, sub_path in nav_item.items():
                     if isinstance(sub_path, str) and sub_path.endswith(".md"):
-                        nav_structure[sub_path] = {"title": sub_title}
+                        yield sub_path, sub_title
                     elif isinstance(sub_path, list):
-                        traverse(sub_path, sub_title)
+                        yield from traverse(sub_path, sub_title)
             elif isinstance(nav_item, list):
                 for item in nav_item:
-                    traverse(item, title)
+                    yield from traverse(item, title)
 
-        traverse(section)
-        return nav_structure
+        yield from traverse(section)
+
+    nav_structure = {}
+    for sub_path, metadata in parse_nav(nav_data["nav"]):
+        nav_structure[sub_path] = metadata
+
+    try:
+        with NAV_FILE.open("w", encoding="utf-8") as f:
+            json.dump(nav_structure, f, ensure_ascii=False)
+    except IOError as e:
+        print(f"Error saving cache: {e}", file=sys.stderr)
 
     return parse_nav(nav_data["nav"])
 
@@ -81,6 +100,28 @@ def parse_front_matter(filepath):
         return None
 
 
+def process_article(file_path, nav_structure):
+    """Process a single article, mapping it to its prerequisites."""
+    articles = {}
+    rel_path = file_path.relative_to("docs")
+    difficulty = rel_path.parts[0] if rel_path.parts else None
+    if difficulty not in DIFFICULTY_ORDER:
+        return articles
+
+    if str(rel_path) in nav_structure:
+        metadata = parse_front_matter(file_path)
+        if metadata and "id" in metadata:
+            article_id = metadata["id"]
+            articles[article_id] = {
+                "id": article_id,
+                "path": rel_path,
+                "difficulty": DIFFICULTY_ORDER.get(difficulty, -1),
+                "prerequisites": metadata.get("prerequisites", []),
+                "title": metadata.get("title", nav_structure[str(rel_path)]),
+            }
+    return articles
+
+
 def process_articles():
     """Process all articles and map each article to its prerequisites."""
     global articles
@@ -88,28 +129,21 @@ def process_articles():
 
     exclude_dirs = {"images", "javascripts", "stylesheets", "codes"}
 
-    for file_path in Path("docs").rglob("*.md"):
-        if any(file_path.parts[i] in exclude_dirs for i in range(len(file_path.parts))):
-            continue
+    files_to_process = [
+        file_path
+        for file_path in Path("docs").rglob("*.md")
+        if not any(
+            file_path.parts[i] in exclude_dirs for i in range(len(file_path.parts))
+        )
+    ]
 
-        rel_path = file_path.relative_to("docs")
-        difficulty = rel_path.parts[0] if rel_path.parts else None
-        if difficulty not in DIFFICULTY_ORDER:
-            continue
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = executor.map(
+            lambda file: process_article(file, nav_structure), files_to_process
+        )
 
-        if str(rel_path) in nav_structure:
-            metadata = parse_front_matter(file_path)
-            if metadata and "id" in metadata:
-                article_id = metadata["id"]
-                articles[article_id] = {
-                    "id": article_id,
-                    "path": rel_path,
-                    "difficulty": DIFFICULTY_ORDER.get(difficulty, -1),
-                    "prerequisites": metadata.get("prerequisites", []),
-                    "title": metadata.get(
-                        "title", nav_structure[str(rel_path)]["title"]
-                    ),
-                }
+    for result in results:
+        articles.update(result)
 
     update_prerequisites_json()
 
