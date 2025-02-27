@@ -6,10 +6,10 @@
 <h1>
   <span>{{ page.title | d(config.site_name, true) }}</span>
 
-  {% if difficulty is not none and difficulty < 5 %}
+  {% if difficulty is not none and difficulty <= 5 and difficulty >= 0 %}
   <span class="difficulty-stars">
-    {% for i in range(5) %}
-      <span class="{{ 'star-' ~ difficulty if i <= difficulty else 'star-empty' }}">●</span>
+    {% for i in range(difficulty + 1) %}
+      <span class="{{ 'star-' ~ difficulty  }}">●</span>
     {% endfor %}
   </span>
   {% endif %}
@@ -47,11 +47,26 @@
         <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }} </a>
         <span>&nbsp;</span>
 
+        {% if prerequisite.difficulty > -1 and prerequisite.difficulty <= 5 %}
         <span>
-          {% for i in range(5) %}
-            <span class="{{ 'star-' ~ prerequisite.difficulty if i <= prerequisite.difficulty else 'star-empty' }}">●</span>
+          {% for i in range(prerequisite.difficulty + 1) %}
+            <span class="{{ 'star-' ~ prerequisite.difficulty }}">●</span>
           {% endfor %}
+          <span>
+            {% if prerequisite.difficulty == 0 %}
+              (Introducere în C++)
+            {% elif prerequisite.difficulty == 1 %}
+              (Ușor)
+            {% elif prerequisite.difficulty == 2 %}
+              (Mediu)
+            {% elif prerequisite.difficulty == 3 %}
+              (Dificil)
+            {% elif prerequisite.difficulty == 4 %}
+              (Avansat)
+            {% endif %}
+          </span>
         </span>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
