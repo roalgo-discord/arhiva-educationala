@@ -4,7 +4,15 @@
 
 {% if "\x3ch1" not in page.content %}
 <h1>
-  <span>{{ page.title | d(config.site_name, true) }}</span>
+  <span>
+    {% if page.meta.title %}
+      {{ page.meta.title }}
+    {% elif page.title %}
+      {{ page.title | d(config.site_name, true) }}
+    {% else %}
+      {{ config.site_name }}
+    {% endif %}
+  </span>
 
   {% if difficulty is not none and difficulty <= 5 and difficulty >= 0 %}
   <span class="difficulty-stars">
@@ -29,14 +37,12 @@
     {% endfor %}
 
     {% if author_list | length == 1 %}
-      <b>Autor</b>: {{ author_list[0] }}
+      <b>Autor {% if difficulty == 5 %}soluție{% endif %}</b>: {{ author_list[0] }}
     {% else %}
-      <b>Autori</b>: {{ author_list | join(', ') }}
+      <b>Autori {% if difficulty == 5 %}soluție{% endif %}</b>: {{ author_list | join(', ') }}
     {% endif %}
   </p>
 {% endif %}
-
-
 
 {% if page.meta.prerequisites and prerequisites_data %}
 <div class="admonition example">
