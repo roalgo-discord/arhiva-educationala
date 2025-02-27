@@ -98,6 +98,40 @@ extra:
             name: Alexandru Toma
         cnc:
             name: Alex Vasiluță
+        lica:
+            name: Daniela Lica
+        francu:
+            name: Cristian Frâncu
+        ariciu:
+            name: Toma Ariciu
+        nicoli:
+            name: Marius Nicoli
+        rotar:
+            name: Dorin-Mircea Rotar
+        buzatu:
+            name: Giulian Buzatu
+        boca:
+            name: Alina-Gabriela Boca
+        ungureanu:
+            name: Florentina Ungureanu
+        balasa:
+            name: Filonela Bălașa
+        miron:
+            name: Lucia Miron
+        coman:
+            name: Isabela Patricia Coman
+        nodea:
+            name: Gheorghe-Eugen Nodea
+        sapopescu:
+            name: Ștefan-Alexandru Popescu
+        gabor:
+            name: Ioana Gabor
+        ciucu:
+            name: Mihai Ciucu
+        zoltan:
+            name: Zoltan Szabó
+        cismaru:
+            name: Mihaela Cismaru
 
 copyright: >
     Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
