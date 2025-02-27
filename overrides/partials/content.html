@@ -1,27 +1,39 @@
+{% macro render_difficulty_stars(difficulty) %}
+  <span class="difficulty-stars">
+    {% for i in range(difficulty + 1) %}
+      <span class="star-{{ difficulty }}">●</span>
+    {% endfor %}
+  </span>
+{% endmacro %}
+
+{% set difficulty_labels = {
+  0: "Introducere în C++",
+  1: "Ușor",
+  2: "Mediu",
+  3: "Dificil",
+  4: "Avansat"
+} %}
+
+{% macro get_author_name(author_id) %}
+  {% if config.extra.authors[author_id] %}
+    {{ config.extra.authors[author_id].name }}
+  {% else %}
+    {{ author_id }}
+  {% endif %}
+{% endmacro %}
+
 {% if "material/tags" in config.plugins and tags %}
-{% include "partials/tags.html" %}
+  {% include "partials/tags.html" %}
 {% endif %}
 
 {% if "\x3ch1" not in page.content %}
-<h1>
-  <span>
-    {% if page.meta.title %}
-      {{ page.meta.title }}
-    {% elif page.title %}
-      {{ page.title | d(config.site_name, true) }}
-    {% else %}
-      {{ config.site_name }}
-    {% endif %}
-  </span>
+  <h1>
+    <span>{{ page.meta.title | default(page.title | default(config.site_name)) }}</span>
 
-  {% if difficulty is not none and difficulty <= 5 and difficulty >= 0 %}
-  <span class="difficulty-stars">
-    {% for i in range(difficulty + 1) %}
-      <span class="{{ 'star-' ~ difficulty  }}">●</span>
-    {% endfor %}
-  </span>
-  {% endif %}
-</h1>
+    {% if difficulty is not none and difficulty in range(0, 6) %}
+      {{ render_difficulty_stars(difficulty) }}
+    {% endif %}
+  </h1>
 {% endif %}
 
 {% if page.meta.authors %}
@@ -29,54 +41,39 @@
     {% set author_list = [] %}
 
     {% for author_id in page.meta.authors %}
-      {% if config.extra.authors[author_id] %}
-        {% set author_list = author_list.append(config.extra.authors[author_id].name) %}
-      {% else %}
-        {% set author_list = author_list.append(author_id) %} 
-      {% endif %}
+      {% set author_list = author_list.append(get_author_name(author_id)) %}
     {% endfor %}
 
     {% if author_list | length == 1 %}
-      <b>Autor {% if difficulty == 5 %}soluție{% endif %}</b>: {{ author_list[0] }}
+    <b>Autor{% if difficulty == 5 and 'solutii' in page.url %} soluție{% endif %}</b>:
     {% else %}
-      <b>Autori {% if difficulty == 5 %}soluție{% endif %}</b>: {{ author_list | join(', ') }}
+    <b>Autori{% if difficulty == 5 and 'solutii' in page.url %} soluție{% endif %}</b>:
     {% endif %}
+    {{ author_list | join(', ') }}
   </p>
 {% endif %}
 
 {% if page.meta.prerequisites and prerequisites_data %}
-<div class="admonition example">
-  <p class="admonition-title">Cunoștințe necesare</p>
-  <ul>
-    {% for prerequisite in prerequisites_data %}
-      <li>
-        <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }} </a>
-        <span>&nbsp;</span>
-
-        {% if prerequisite.difficulty > -1 and prerequisite.difficulty <= 5 %}
-        <span>
-          {% for i in range(prerequisite.difficulty + 1) %}
-            <span class="{{ 'star-' ~ prerequisite.difficulty }}">●</span>
-          {% endfor %}
-          <span>
-            {% if prerequisite.difficulty == 0 %}
-              (Introducere în C++)
-            {% elif prerequisite.difficulty == 1 %}
-              (Ușor)
-            {% elif prerequisite.difficulty == 2 %}
-              (Mediu)
-            {% elif prerequisite.difficulty == 3 %}
-              (Dificil)
-            {% elif prerequisite.difficulty == 4 %}
-              (Avansat)
-            {% endif %}
-          </span>
-        </span>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+  <div class="admonition example">
+    <p class="admonition-title">Cunoștințe necesare</p>
+    <ul>
+      {% for prerequisite in prerequisites_data %}
+        <li>
+          <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }}</a>
+          {% set diff = prerequisite.difficulty %}
+          {% if diff in range(0, 6) %}
+            {% set stars = range(diff + 1) %}
+            <span>
+              {% for i in stars %}
+                <span class="star-{{ diff }}">●</span>
+              {% endfor %}
+              <span>({{ difficulty_labels[diff] }})</span>
+            </span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endif %}
 
 {{ page.content }}
