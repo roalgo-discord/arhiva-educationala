@@ -1,18 +1,26 @@
-{% macro render_difficulty_stars(difficulty) %}
-  <span class="difficulty-stars">
-    {% for i in range(difficulty + 1) %}
-      <span class="star-{{ difficulty }}">●</span>
-    {% endfor %}
-  </span>
-{% endmacro %}
+{% set diff_pills = {
+  0: "cppintro",
+  1: "usor",
+  2: "mediu",
+  3: "dificil",
+  4: "avansat",
+  5: "olimpiada"
+} %}
 
 {% set difficulty_labels = {
-  0: "Introducere în C++",
+  0: "Intro",
   1: "Ușor",
   2: "Mediu",
   3: "Dificil",
-  4: "Avansat"
+  4: "Avansat",
+  5: "Olimpiadă"
 } %}
+
+{% macro render_difficulty_pill(difficulty) %}
+  <span class="pill diff-{{diff_pills[difficulty]}}">
+    {{ difficulty_labels[difficulty] }}
+  </span>
+{% endmacro %}
 
 {% macro get_author_name(author_id) %}
   {% if config.extra.authors[author_id] %}
@@ -29,10 +37,6 @@
 {% if "\x3ch1" not in page.content %}
   <h1>
     <span>{{ page.meta.title | default(page.title | default(config.site_name)) }}</span>
-
-    {% if difficulty is not none and difficulty in range(0, 6) %}
-      {{ render_difficulty_stars(difficulty) }}
-    {% endif %}
   </h1>
 {% endif %}
 
@@ -56,19 +60,13 @@
 {% if page.meta.prerequisites and prerequisites_data %}
   <div class="admonition example">
     <p class="admonition-title">Cunoștințe necesare</p>
-    <ul>
+    <ul class="prereq-list">
       {% for prerequisite in prerequisites_data %}
-        <li>
+      <li>
           <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }}</a>
           {% set diff = prerequisite.difficulty %}
           {% if diff in range(0, 6) %}
-            {% set stars = range(diff + 1) %}
-            <span>
-              {% for i in stars %}
-                <span class="star-{{ diff }}">●</span>
-              {% endfor %}
-              <span>({{ difficulty_labels[diff] }})</span>
-            </span>
+            {{ render_difficulty_pill(diff) }}
           {% endif %}
         </li>
       {% endfor %}

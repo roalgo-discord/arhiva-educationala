@@ -1,5 +1,5 @@
 ---
-site_name: Arhiva Educationala RoAlgo
+site_name: Arhiva Educațională RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
     O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
@@ -116,8 +116,7 @@ plugins:
     - social:
           enabled: !ENV [CI, false]
           cards_layout_options:
-              font_family: Roboto
-              font_variant: Condensed
+              font_family: Inter
 
 nav:
     - Acasă: index.md

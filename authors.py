@@ -18,13 +18,11 @@ def ensure_data_files():
     """Ensure that the data directory and cache file exist before proceeding."""
     if not DATA_DIR.exists():
         DATA_DIR.mkdir(parents=True, exist_ok=True)
-        print(f"Created directory: {DATA_DIR}")
 
     # Ensure the cache file exists but is empty before writing to it
     if not AUTHORS_MPK.exists():
         try:
             AUTHORS_MPK.touch(exist_ok=True)
-            print(f"Created empty cache file: {AUTHORS_MPK}")
         except Exception as e:
             print(f"Error creating cache file: {e}", file=sys.stderr)
 
@@ -40,7 +38,6 @@ def save_authors_to_cache(authors_data):
         try:
             with AUTHORS_MPK.open("wb") as f:
                 msgpack.dump(authors_data, f)
-            print("Authors data saved to cache.")
         except Exception as e:
             print(f"Error saving authors cache: {e}", file=sys.stderr)
     else:
@@ -51,7 +48,6 @@ def clear_cache_file():
     """Clear the cache file if it's invalid or corrupted."""
     try:
         AUTHORS_MPK.unlink()  # Remove the corrupted cache file
-        print("Cleared invalid cache file.")
     except Exception as e:
         print(f"Error clearing cache file: {e}", file=sys.stderr)
 
@@ -65,13 +61,10 @@ def load_authors():
         try:
             with AUTHORS_MPK.open("rb") as f:
                 # Attempt to load from cache
-                print("Attempting to load from cache...")
                 authors_data = msgpack.load(f)
                 if authors_data:  # Ensure the data is not empty
-                    print("Cache loaded successfully.")
                     return authors_data
                 else:
-                    print("Cache is empty, reloading authors.", file=sys.stderr)
                     clear_cache_file()
         except Exception as e:
             print(f"Error loading authors cache: {e}", file=sys.stderr)
@@ -84,10 +77,8 @@ def load_authors():
         with AUTHORS_FILE.open(encoding="utf-8") as f:
             authors_data = yaml.safe_load(f) or {}
             if not authors_data:
-                print("No authors data found in authors.yml!", file=sys.stderr)
                 return {}
     except (FileNotFoundError, yaml.YAMLError) as e:
-        print(f"Error loading authors.yml: {e}", file=sys.stderr)
         return {}
 
     # Save data to cache for future use
