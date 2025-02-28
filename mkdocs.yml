@@ -25,20 +25,15 @@ theme:
     icon:
         icon:
         admonition:
-            note: octicons/tag-16
-            abstract: octicons/checklist-16
-            info: octicons/info-16
-            tip: octicons/squirrel-16
-            success: octicons/check-16
-            question: octicons/question-16
-            warning: octicons/alert-16
-            failure: octicons/x-circle-16
-            danger: octicons/zap-16
-            bug: octicons/bug-16
-            example: octicons/beaker-16
-            quote: octicons/quote-16
+            note: material/note
+            info: material/information
+            tip: material/lightbulb-on
+            warning: material/alert
+            example: material/format-list-numbered
     language: ro
-    font: false
+    font: 
+      text: Inter
+      code: JetBrains Mono
     palette:
         - media: "(prefers-color-scheme)"
           toggle:
@@ -63,7 +58,7 @@ extra:
     social:
         - icon: fontawesome/brands/discord
           link: https://discord.gg/roalgo
-          name: Hai pe discord!
+          name: Hai pe Discord!
     generator: false
     analytics:
         provider: custom
@@ -117,8 +112,9 @@ plugins:
     - search:
           enabled: true
           lang: ro
-    # - awesome-pages
     - tags
+    - privacy:
+          enabled: !ENV [CI, false]
     - social:
           enabled: !ENV [CI, false]
           cards_layout_options:
