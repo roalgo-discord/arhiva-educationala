@@ -217,7 +217,15 @@ C_{n-1}^{k-1} +C_{n-1}^{k} \end{align*} $$
 
 - Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca
   fiind
-  $$C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1) + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k}$$
+
+    $$
+      \begin{align*}
+      C_n^k &= \prod_{i=1}^{k}\frac{n-i+1}{i}\\
+      &=
+      \frac{n \cdot (n - 1) \cdots (n-(k - 1) + 1) \cdots (n-k+1)}{1\cdot 2\cdot 3\cdots\cdot k}
+      \end{align*}
+    $$
+
 - $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei
   specifice.
 - $\sum_{i=0}^{n} C_n^i = 2^n$
@@ -274,7 +282,7 @@ familiari cu ridicarea la putere în timp logaritmic, vă rugăm să citiți
 articolul pe această temă.
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 const int MOD = 998244353;
@@ -316,7 +324,7 @@ void precalc() {
         fact[i] = (fact[i - 1] * i) % MOD;
     }
 
-    inv[N] = modpow(fact[N], MOD - 2); // (1)
+    inv[N] = modpow(fact[N], MOD - 2);  // (1)
     for (int i = N - 1; i >= 0; --i) {
         inv[i] = (inv[i + 1] * (i + 1)) % MOD;
     }
@@ -362,8 +370,6 @@ această recurență, avem o formulă relativ simplă.
   elementele din partiție).
 - $p(i, 0) = 0$, pentru $i\geq 1$
 - $p(0, 0) = 1$.
-
-<!-- se bagă cineva să scrie despre numerele pentagonale? -- totuși cred ca e peste nivelul intended al articolului, dar mă gândesc că le putem impărți după -->
 
 Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă
 folosind această abordare. Din fericire, există o metodă și mai rapidă, care
@@ -445,7 +451,7 @@ Așa se calculează numărul Catalan:
         return res;
     }
 
-    const unsigned long long catalan(int n) {
+    const unsigned long long catalan(unsigned int n) {
         return C(2 * n, n) / (n + 1);
     }
     ```
@@ -453,16 +459,16 @@ Așa se calculează numărul Catalan:
 === "Calcul cu DP"
 
     ```cpp
-    unsigned long long catalan(unsigned int n)
-    {
+    const unsigned long long catalan(unsigned int n) {
         unsigned long long C[n + 1];
 
         C[0] = C[1] = 1;
 
         for (int i = 2; i <= n; i++) {
             C[i] = 0;
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < i; j++) {
                 C[i] += C[j] * C[i - j - 1];
+            }
         }
 
         return C[n];
@@ -472,7 +478,7 @@ Așa se calculează numărul Catalan:
 === "Calcul direct"
 
     ```cpp
-    const unsigned long long catalan(int n) {
+    const unsigned long long catalan(unsigned int n) {
         unsigned long long res = 1;
 
         for (int i = 1; i <= n; ++i) {
