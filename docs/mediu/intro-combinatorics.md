@@ -217,8 +217,7 @@ C_{n-1}^{k-1} +C_{n-1}^{k} \end{align*} $$
 
 - Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca
   fiind
-  $$C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1)
-  + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k}$$
+  $$C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1) + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k}$$
 - $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei
   specifice.
 - $\sum_{i=0}^{n} C_n^i = 2^n$
