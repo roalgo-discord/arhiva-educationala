@@ -48,9 +48,8 @@ exemple care nu sunt simple includ aflarea radicalului, aflarea restului
 împărțirii etc.
 
 În general, constantele mici pot fi ignorate în calculul complexitatilor. De
-exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(c \cdot N)$ și
-$\mathcal{O}(2N)$. Mai jos puteți găsi exemple de cod, împreună cu
-complexitățile lor.
+exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(c \cdot N)$ pentru un
+$c > 0$. Mai jos puteți găsi exemple de cod, împreună cu complexitățile lor.
 
 Acest cod are complexitatea $\mathcal{O}(1)$, operațiile fiind constante.
 
