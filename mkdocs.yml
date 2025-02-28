@@ -113,8 +113,6 @@ plugins:
           enabled: true
           lang: ro
     - tags
-    - privacy:
-          enabled: !ENV [CI, false]
     - social:
           enabled: !ENV [CI, false]
           cards_layout_options:
