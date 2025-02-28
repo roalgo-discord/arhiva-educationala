@@ -17,36 +17,38 @@ de a măsura calitatea unui algoritm este dat de complexitatea pe care îl are. 
 cele ce urmează vom discuta acest concept și modul în care îl putem aplica în
 probleme.
 
-Înțelegem prin **complexitate** numărul de pași pe care îl face un algoritm în
-funcție de dimensiunea setului de date primite. Cunoașterea acestui concept este
-fundamentală pentru facilitarea rezolvării de probleme.
+Complexitatea unui algoritm reprezintă o măsură a eficienței acestuia în funcție
+de dimensiunea intrării. O bună înțelegere a complexității este esențială pentru
+a putea alege cel mai potrivit algoritm pentru o problemă dată.
 
-În practică, complexitățile sunt de două tipuri, cea de timp și cea de memorie,
-ambele având metodele lor specifice de calculare a eficienței.
+Imaginați-vă că trebuie să căutați un cuvânt într-un dicționar. Dacă îl căutați
+pagină cu pagină, procesul este lent. Dacă folosiți metoda căutării binare
+(deschizând cartea pe la mijloc și eliminând jumătate din pagini la fiecare
+pas), veți ajunge mult mai repede la rezultat.
 
 ## Complexitatea de timp
 
 Pentru a calcula complexitatea de timp a unui algoritm, trebuie să avem în
-vedere următoarele aspecte specifice:
+vedere că în practică, procesoarele moderne pot procesa aproximativ $3 \cdot
+10^8$ operații simple pe secundă, acest număr depinzând în funcție de contextul
+unde trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele
+și anumite evaluatoare de la concursurile oficiale sunt mai rapide decât
+altele).
 
--  În practică, procesoarele moderne pot procesa aproximativ $3 \cdot 10^8$
-   operații simple pe secundă, acest număr depinde în funcție de contextul unde
-   trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și
-   anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
+!!! note "Observație"
 
-    !!! note "Observație"
+    În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
+    estimare precisă, care este folosită de regulă și de propunătorii de
+    probleme atunci când se decid limitele de timp.
 
-        În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
-        estimare precisă, care este folosită de regulă și de propunătorii de
-        probleme atunci când se decid limitele de timp.
-
--  Exemple de operații simple: operațiile aritmetice simple, incrementările,
-   operațiile pe biți etc.
--  Exemple de operații care nu sunt simple: aflarea radicalului, aflarea restului
-   împărțirii etc.
+Prin operație „simplă” înțelegem concret o operație care durează un timp
+constant, indiferent de mărimea intrării. Exemple de operații simple includ
+operațiile aritmetice simple, incrementările, operațiile pe biți etc., iar
+exemple care nu sunt simple includ aflarea radicalului, aflarea restului
+împărțirii etc.
 
 În general, constantele mici pot fi ignorate în calculul complexitatilor. De
-exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(3N)$ și
+exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(c \cdot N)$ și
 $\mathcal{O}(2N)$. Mai jos puteți găsi exemple de cod, împreună cu
 complexitățile lor.
 
@@ -121,6 +123,30 @@ for (int i = 1; i <= m; i++) {
     // Cod în timp constant
 }
 ```
+
+!!! warning "Atenție"
+
+    O greșeală care se face deseori este să presupunem că o complexitate
+    $\mathcal{O}(f(n))$ se menține pentru **valori mici**. Când calculăm
+    complexitățile, ignorăm constantele pentru că vrem să analizăm algoritmul
+    când $n$ devine din ce în ce mai mare. Ne interesează deci rata în care
+    crește timpul de execuție, dar asta nu ne zice nimic legat de timpul
+    concret. Pentru valori mici, nu avem voie să ignorăm constantele și alți
+    termeni, deoarece constantele contează enorm. Din acest punct de vedere,
+    putem vedea $\mathcal{O}$ ca fiind cazul **cel mai rău** al unui algoritm.
+    Notația nu ne zice nimic de cum rulează algoritmul în medie sau în cel mai
+    bun caz.
+    
+    De pildă, dacă avem un algoritm $\mathcal{O}(n)$ pentru care fiecare
+    operație durează 50ms (am putea reprezenta asta ca $\mathcal{O}(50n)$),
+    acesta va fi mai încet decât un algoritm $\mathcal{O}(5n^2)$, unde fiecare
+    operație durează 5ms pentru $n < 10$. Fiecare operație are un cost și există
+    foarte mulți factori care pot influența cum rulează un algoritm (performanța
+    procesorului, memoria disponibilă, cum accesează programul memoria, ce
+    operații au loc etc.). Un algoritm $\mathcal{O}(2n)$ va fi de 2 ori mai
+    rapid decât unul $\mathcal{O}(4n)$, deși ele cresc în același fel. Deci nu
+    vă bazați pe complexități dacă vreți să comparați concret doi algoritmi sau
+    două structuri de date; faceți teste.
 
 ### Exemple de complexități de timp
 
