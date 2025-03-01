@@ -31,9 +31,9 @@ theme:
             warning: material/alert
             example: material/format-list-numbered
     language: ro
-    font: 
-      text: Inter
-      code: JetBrains Mono
+    font:
+        text: Inter
+        code: JetBrains Mono
     palette:
         - media: "(prefers-color-scheme)"
           toggle:
@@ -77,7 +77,7 @@ markdown_extensions:
     - pymdownx.superfences:
           custom_fences:
               - name: mermaid
-                class: mermaid
+              - class: mermaid
                 format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.highlight:
           anchor_linenums: true
@@ -322,52 +322,52 @@ nav:
                       - OJI 2002-2009:
                             - OJI 2002:
                                   - Clasa a V-a:
-                                        - Balaur: olimpiada/solutii/OJI/2002/V-balaur.md
-                                        - La școală: olimpiada/solutii/OJI/2002/V-lascoala.md
+                                        - balaur: olimpiada/solutii/OJI/2002/V-balaur.md
+                                        - La Școală: olimpiada/solutii/OJI/2002/V-lascoala.md
                                   - Clasa a VI-a:
-                                        - Valori-pantă: olimpiada/solutii/OJI/2002/VI-valoripanta.md
-                                        - Cuburi: olimpiada/solutii/OJI/2002/VI-cuburi.md
+                                        - valori-panta: olimpiada/solutii/OJI/2002/VI-valoripanta.md
+                                        - cuburi: olimpiada/solutii/OJI/2002/VI-cuburi.md
                                   - Clasa a VII-a:
-                                        - Panglică: olimpiada/solutii/OJI/2002/VII-panglica.md
-                                        - Joc: olimpiada/solutii/OJI/2002/VII-joc.md
+                                        - panglica: olimpiada/solutii/OJI/2002/VII-panglica.md
+                                        - joc: olimpiada/solutii/OJI/2002/VII-joc.md
                                   - Clasa a VIII-a:
-                                        - Sir: olimpiada/solutii/OJI/2002/VIII-sir.md
-                                        - Anagrame: olimpiada/solutii/OJI/2002/VIII-anagrame.md
+                                        - sir: olimpiada/solutii/OJI/2002/VIII-sir.md
+                                        - anagrame: olimpiada/solutii/OJI/2002/VIII-anagrame.md
                                   - Clasa a IX-a:
-                                        - Poarta: olimpiada/solutii/OJI/2002/IX-poarta.md
-                                        - Mouse: olimpiada/solutii/OJI/2002/IX-mouse.md
+                                        - poarta: olimpiada/solutii/OJI/2002/IX-poarta.md
+                                        - mouse: olimpiada/solutii/OJI/2002/IX-mouse.md
                                   - Clasa a X-a:
                                         - Triang: olimpiada/solutii/OJI/2002/X-triang.md
                                         - Cod: olimpiada/solutii/OJI/2002/X-cod.md
                                   - Clasele XI-XII:
-                                        - Urgenta: olimpiada/solutii/OJI/2002/XI-XII-urgenta.md
-                                        - Nunta: olimpiada/solutii/OJI/2002/XI-XII-nunta.md
+                                        - urgenta: olimpiada/solutii/OJI/2002/XI-XII-urgenta.md
+                                        - nunta: olimpiada/solutii/OJI/2002/XI-XII-nunta.md
                             - OJI 2003:
                                   - Clasa a V-a:
-                                        - Exponent: olimpiada/solutii/OJI/2003/V-exponent.md
-                                        - Pinochio: olimpiada/solutii/OJI/2003/V-pinochio.md
+                                        - exponent: olimpiada/solutii/OJI/2003/V-exponent.md
+                                        - pinochio: olimpiada/solutii/OJI/2003/V-pinochio.md
                                   - Clasa a VI-a:
-                                        - Visul: olimpiada/solutii/OJI/2003/VI-visul.md
-                                        - Gardul: olimpiada/solutii/OJI/2003/VI-gardul.md
+                                        - visul: olimpiada/solutii/OJI/2003/VI-visul.md
+                                        - gardul: olimpiada/solutii/OJI/2003/VI-gardul.md
                                   - Clasa a VII-a:
-                                        - Sir: olimpiada/solutii/OJI/2003/VII-sir.md
-                                        - Paranteze: olimpiada/solutii/OJI/2003/VII-paranteze.md
+                                        - sir: olimpiada/solutii/OJI/2003/VII-sir.md
+                                        - paranteze: olimpiada/solutii/OJI/2003/VII-paranteze.md
                                   - Clasa a VIII-a:
-                                        - Templu: olimpiada/solutii/OJI/2003/VIII-templu.md
-                                        - Tort: olimpiada/solutii/OJI/2003/VIII-tort.md
+                                        - templu: olimpiada/solutii/OJI/2003/VIII-templu.md
+                                        - tort: olimpiada/solutii/OJI/2003/VIII-tort.md
                                   - Clasa a IX-a:
-                                        - Text: olimpiada/solutii/OJI/2003/IX-text.md
-                                        - Numere: olimpiada/solutii/OJI/2003/IX-numere.md
+                                        - text: olimpiada/solutii/OJI/2003/IX-text.md
+                                        - numere: olimpiada/solutii/OJI/2003/IX-numere.md
                                   - Clasa a X-a:
                                         - Spirala: olimpiada/solutii/OJI/2003/X-spirala.md
                                         - Taxe: olimpiada/solutii/OJI/2003/X-taxe.md
                                   - Clasele XI-XII:
-                                        - Compus: olimpiada/solutii/OJI/2003/XI-XII-compus.md
-                                        - Zmeu: olimpiada/solutii/OJI/2003/XI-XII-zmeu.md
+                                        - compus: olimpiada/solutii/OJI/2003/XI-XII-compus.md
+                                        - zmeu: olimpiada/solutii/OJI/2003/XI-XII-zmeu.md
                             - OJI 2004:
                                   - Clasa a V-a:
-                                        - Cifre: olimpiada/solutii/OJI/2004/V-cifre.md
-                                        - Concurs: olimpiada/solutii/OJI/2004/V-concurs.md
+                                        - cifre: olimpiada/solutii/OJI/2004/V-cifre.md
+                                        - concurs: olimpiada/solutii/OJI/2004/V-concurs.md
                                   - Clasa a VI-a:
                                         - control: olimpiada/solutii/OJI/2004/VI-control.md
                                         - vanatoare: olimpiada/solutii/OJI/2004/VI-vanatoare.md
@@ -388,441 +388,441 @@ nav:
                                         - lanterna: olimpiada/solutii/OJI/2004/XI-XII-lanterna.md
                             - OJI 2005:
                                   - Clasa a V-a:
-                                        - Multimi: olimpiada/solutii/OJI/2005/V-multimi.md
-                                        - Ucif: olimpiada/solutii/OJI/2005/V-ucif.md
+                                        - multimi: olimpiada/solutii/OJI/2005/V-multimi.md
+                                        - ucif: olimpiada/solutii/OJI/2005/V-ucif.md
                                   - Clasa a VI-a:
-                                        - Numere: olimpiada/solutii/OJI/2005/VI-numere.md
-                                        - Sir: olimpiada/solutii/OJI/2005/VI-sir.md
+                                        - numere: olimpiada/solutii/OJI/2005/VI-numere.md
+                                        - sir: olimpiada/solutii/OJI/2005/VI-sir.md
                                   - Clasa a VII-a:
-                                        - Ocr: olimpiada/solutii/OJI/2005/VII-ocr.md
-                                        - Tabel: olimpiada/solutii/OJI/2005/VII-tabel.md
+                                        - ocr: olimpiada/solutii/OJI/2005/VII-ocr.md
+                                        - tabel: olimpiada/solutii/OJI/2005/VII-tabel.md
                                   - Clasa a VIII-a:
-                                        - Muzica: olimpiada/solutii/OJI/2005/VIII-muzica.md
-                                        - Volei: olimpiada/solutii/OJI/2005/VIII-volei.md
+                                        - muzica: olimpiada/solutii/OJI/2005/VIII-muzica.md
+                                        - volei: olimpiada/solutii/OJI/2005/VIII-volei.md
                                   - Clasa a IX-a:
-                                        - Numere: olimpiada/solutii/OJI/2005/IX-numere.md
-                                        - Maxd: olimpiada/solutii/OJI/2005/IX-maxd.md
+                                        - numere: olimpiada/solutii/OJI/2005/IX-numere.md
+                                        - maxd: olimpiada/solutii/OJI/2005/IX-maxd.md
                                   - Clasa a X-a:
-                                        - Lacusta: olimpiada/solutii/OJI/2005/X-lacusta.md
+                                        - Lăcusta: olimpiada/solutii/OJI/2005/X-lacusta.md
                                         - Scara: olimpiada/solutii/OJI/2005/X-scara.md
                                   - Clasele XI-XII:
-                                        - Lant: olimpiada/solutii/OJI/2005/XI-XII-lant.md
-                                        - Scara: olimpiada/solutii/OJI/2005/XI-XII-scara.md
+                                        - lant: olimpiada/solutii/OJI/2005/XI-XII-lant.md
+                                        - scara: olimpiada/solutii/OJI/2005/XI-XII-scara.md
                             - OJI 2006:
                                   - Clasa a V-a:
-                                        - Case: olimpiada/solutii/OJI/2006/V-case.md
-                                        - Vraji: olimpiada/solutii/OJI/2006/V-vraji.md
+                                        - case: olimpiada/solutii/OJI/2006/V-case.md
+                                        - vraji: olimpiada/solutii/OJI/2006/V-vraji.md
                                   - Clasa a VI-a:
-                                        - Piramida: olimpiada/solutii/OJI/2006/VI-piramida.md
-                                        - Cifre: olimpiada/solutii/OJI/2006/VI-cifre.md
+                                        - piramida: olimpiada/solutii/OJI/2006/VI-piramida.md
+                                        - cifre: olimpiada/solutii/OJI/2006/VI-cifre.md
                                   - Clasa a VII-a:
-                                        - Harry: olimpiada/solutii/OJI/2006/VII-harry.md
-                                        - Grupe: olimpiada/solutii/OJI/2006/VII-grupe.md
+                                        - harry: olimpiada/solutii/OJI/2006/VII-harry.md
+                                        - grupe: olimpiada/solutii/OJI/2006/VII-grupe.md
                                   - Clasa a VIII-a:
-                                        - Elfi: olimpiada/solutii/OJI/2006/VIII-elfi.md
-                                        - Mare: olimpiada/solutii/OJI/2006/VIII-mare.md
+                                        - elfi: olimpiada/solutii/OJI/2006/VIII-elfi.md
+                                        - mare: olimpiada/solutii/OJI/2006/VIII-mare.md
                                   - Clasa a IX-a:
-                                        - Flori: olimpiada/solutii/OJI/2006/IX-flori.md
-                                        - Pluton: olimpiada/solutii/OJI/2006/IX-pluton.md
+                                        - flori: olimpiada/solutii/OJI/2006/IX-flori.md
+                                        - pluton: olimpiada/solutii/OJI/2006/IX-pluton.md
                                   - Clasa a X-a:
-                                        - Ecuatii: olimpiada/solutii/OJI/2006/X-ecuatii.md
-                                        - Sudest: olimpiada/solutii/OJI/2006/X-sudest.md
+                                        - ecuatii: olimpiada/solutii/OJI/2006/X-ecuatii.md
+                                        - sudest: olimpiada/solutii/OJI/2006/X-sudest.md
                                   - Clasele XI-XII:
-                                        - Graf: olimpiada/solutii/OJI/2006/XI-XII-graf.md
+                                        - graf: olimpiada/solutii/OJI/2006/XI-XII-graf.md
                                         - Secretul cifrului: olimpiada/solutii/OJI/2006/XI-XII-secretulcifrului.md
                             - OJI 2007:
                                   - Clasa a V-a:
-                                        - Telecabina: olimpiada/solutii/OJI/2007/V-telecabina.md
-                                        - Test: olimpiada/solutii/OJI/2007/V-test.md
+                                        - telecabina: olimpiada/solutii/OJI/2007/V-telecabina.md
+                                        - test: olimpiada/solutii/OJI/2007/V-test.md
                                   - Clasa a VI-a:
-                                        - Cod: olimpiada/solutii/OJI/2007/VI-cod.md
-                                        - Furnica: olimpiada/solutii/OJI/2007/VI-furnica.md
+                                        - cod: olimpiada/solutii/OJI/2007/VI-cod.md
+                                        - furnica: olimpiada/solutii/OJI/2007/VI-furnica.md
                                   - Clasa a VII-a:
-                                        - Ceas: olimpiada/solutii/OJI/2007/VII-ceas.md
-                                        - Excel: olimpiada/solutii/OJI/2007/VII-excel.md
+                                        - ceas: olimpiada/solutii/OJI/2007/VII-ceas.md
+                                        - excel: olimpiada/solutii/OJI/2007/VII-excel.md
                                   - Clasa a VIII-a:
-                                        - Afise: olimpiada/solutii/OJI/2007/VIII-afise.md
-                                        - Dreptc: olimpiada/solutii/OJI/2007/VIII-dreptc.md
+                                        - afise: olimpiada/solutii/OJI/2007/VIII-afise.md
+                                        - dreptc: olimpiada/solutii/OJI/2007/VIII-dreptc.md
                                   - Clasa a IX-a:
-                                        - Paritate: olimpiada/solutii/OJI/2007/IX-paritate.md
-                                        - Cartele: olimpiada/solutii/OJI/2007/IX-cartele.md
+                                        - paritate: olimpiada/solutii/OJI/2007/IX-paritate.md
+                                        - cartele: olimpiada/solutii/OJI/2007/IX-cartele.md
                                   - Clasa a X-a:
                                         - Alee: olimpiada/solutii/OJI/2007/X-alee.md
                                         - Dir: olimpiada/solutii/OJI/2007/X-dir.md
                                   - Clasele XI-XII:
-                                        - Numere: olimpiada/solutii/OJI/2007/XI-XII-numere.md
-                                        - Cezar: olimpiada/solutii/OJI/2007/XI-XII-cezar.md
+                                        - numere: olimpiada/solutii/OJI/2007/XI-XII-numere.md
+                                        - cezar: olimpiada/solutii/OJI/2007/XI-XII-cezar.md
                             - OJI 2008:
                                   - Clasa a V-a:
-                                        - Numere: olimpiada/solutii/OJI/2008/V-numere.md
-                                        - Schi: olimpiada/solutii/OJI/2008/V-schi.md
+                                        - numere: olimpiada/solutii/OJI/2008/V-numere.md
+                                        - schi: olimpiada/solutii/OJI/2008/V-schi.md
                                   - Clasa a VI-a:
-                                        - Turnuri: olimpiada/solutii/OJI/2008/VI-turnuri.md
-                                        - Pagini: olimpiada/solutii/OJI/2008/VI-pagini.md
+                                        - turnuri: olimpiada/solutii/OJI/2008/VI-turnuri.md
+                                        - pagini: olimpiada/solutii/OJI/2008/VI-pagini.md
                                   - Clasa a VII-a:
-                                        - Culori: olimpiada/solutii/OJI/2008/VII-culori.md
-                                        - Virus: olimpiada/solutii/OJI/2008/VII-virus.md
+                                        - culori: olimpiada/solutii/OJI/2008/VII-culori.md
+                                        - virus: olimpiada/solutii/OJI/2008/VII-virus.md
                                   - Clasa a VIII-a:
-                                        - Numar: olimpiada/solutii/OJI/2008/VIII-numar.md
-                                        - Turist: olimpiada/solutii/OJI/2008/VIII-turist.md
+                                        - numar: olimpiada/solutii/OJI/2008/VIII-numar.md
+                                        - turist: olimpiada/solutii/OJI/2008/VIII-turist.md
                                   - Clasa a IX-a:
-                                        - Concurs: olimpiada/solutii/OJI/2008/IX-concurs.md
-                                        - Pluricex: olimpiada/solutii/OJI/2008/IX-pluricex.md
+                                        - concurs: olimpiada/solutii/OJI/2008/IX-concurs.md
+                                        - pluricex: olimpiada/solutii/OJI/2008/IX-pluricex.md
                                   - Clasa a X-a:
                                         - Colaj: olimpiada/solutii/OJI/2008/X-colaj.md
                                         - Piața: olimpiada/solutii/OJI/2008/X-piata.md
                                   - Clasele XI-XII:
-                                        - Iepuri: olimpiada/solutii/OJI/2008/XI-XII-iepuri.md
-                                        - Numar: olimpiada/solutii/OJI/2008/XI-XII-numar.md
+                                        - iepuri: olimpiada/solutii/OJI/2008/XI-XII-iepuri.md
+                                        - numar: olimpiada/solutii/OJI/2008/XI-XII-numar.md
                             - OJI 2009:
                                   - Clasa a V-a:
-                                        - Divizor: olimpiada/solutii/OJI/2009/V-divizor.md
-                                        - Inimioare: olimpiada/solutii/OJI/2009/V-inimioare.md
+                                        - divizor: olimpiada/solutii/OJI/2009/V-divizor.md
+                                        - inimioare: olimpiada/solutii/OJI/2009/V-inimioare.md
                                   - Clasa a VI-a:
-                                        - Factori: olimpiada/solutii/OJI/2009/VI-factori.md
-                                        - Ruleta: olimpiada/solutii/OJI/2009/VI-ruleta.md
+                                        - factori: olimpiada/solutii/OJI/2009/VI-factori.md
+                                        - ruleta: olimpiada/solutii/OJI/2009/VI-ruleta.md
                                   - Clasa a VII-a:
-                                        - Grad: olimpiada/solutii/OJI/2009/VII-grad.md
-                                        - Startrek: olimpiada/solutii/OJI/2009/VII-startrek.md
+                                        - grad: olimpiada/solutii/OJI/2009/VII-grad.md
+                                        - startrek: olimpiada/solutii/OJI/2009/VII-startrek.md
                                   - Clasa a VIII-a:
-                                        - Problema 235: olimpiada/solutii/OJI/2009/VIII-235.md
-                                        - Vecini: olimpiada/solutii/OJI/2009/VIII-vecini.md
+                                        - "235": olimpiada/solutii/OJI/2009/VIII-235.md
+                                        - vecini: olimpiada/solutii/OJI/2009/VIII-vecini.md
                                   - Clasa a IX-a:
-                                        - Expresie: olimpiada/solutii/OJI/2009/IX-expresie.md
-                                        - Placare: olimpiada/solutii/OJI/2009/IX-placare.md
+                                        - expresie: olimpiada/solutii/OJI/2009/IX-expresie.md
+                                        - placare: olimpiada/solutii/OJI/2009/IX-placare.md
                                   - Clasa a X-a:
-                                        - Insule: olimpiada/solutii/OJI/2009/X-insule.md
+                                        - insule: olimpiada/solutii/OJI/2009/X-insule.md
                                         - Rețetă: olimpiada/solutii/OJI/2009/X-reteta.md
                                   - Clasele XI-XII:
-                                        - Cerc: olimpiada/solutii/OJI/2009/XI-XII-cerc.md
+                                        - cerc: olimpiada/solutii/OJI/2009/XI-XII-cerc.md
                                         - Project Management: olimpiada/solutii/OJI/2009/XI-XII-projectmanagement.md
                       - OJI 2010-2019:
                             - OJI 2010:
                                   - Clasa a V-a:
-                                        - Sir: olimpiada/solutii/OJI/2010/V-sir.md
-                                        - Tren: olimpiada/solutii/OJI/2010/V-tren.md
+                                        - sir: olimpiada/solutii/OJI/2010/V-sir.md
+                                        - tren: olimpiada/solutii/OJI/2010/V-tren.md
                                   - Clasa a VI-a:
-                                        - Loto: olimpiada/solutii/OJI/2010/VI-loto.md
-                                        - Submit: olimpiada/solutii/OJI/2010/VI-submit.md
+                                        - loto: olimpiada/solutii/OJI/2010/VI-loto.md
+                                        - submit: olimpiada/solutii/OJI/2010/VI-submit.md
                                   - Clasa a VII-a:
-                                        - Cuvinte: olimpiada/solutii/OJI/2010/VII-cuvinte.md
-                                        - Zar: olimpiada/solutii/OJI/2010/VII-zar.md
+                                        - cuvinte: olimpiada/solutii/OJI/2010/VII-cuvinte.md
+                                        - zar: olimpiada/solutii/OJI/2010/VII-zar.md
                                   - Clasa a VIII-a:
-                                        - Cladiri: olimpiada/solutii/OJI/2010/VIII-cladiri.md
-                                        - Secvente: olimpiada/solutii/OJI/2010/VIII-secvente.md
+                                        - cladiri: olimpiada/solutii/OJI/2010/VIII-cladiri.md
+                                        - secvente: olimpiada/solutii/OJI/2010/VIII-secvente.md
                                   - Clasa a IX-a:
-                                        - Livada: olimpiada/solutii/OJI/2010/IX-livada.md
-                                        - Numar: olimpiada/solutii/OJI/2010/IX-numar.md
+                                        - livada: olimpiada/solutii/OJI/2010/IX-livada.md
+                                        - numar: olimpiada/solutii/OJI/2010/IX-numar.md
                                   - Clasa a X-a:
                                         - Expozitie: olimpiada/solutii/OJI/2010/X-expozitie.md
                                         - Text: olimpiada/solutii/OJI/2010/X-text.md
                                   - Clasele XI-XII:
-                                        - Immortal: olimpiada/solutii/OJI/2010/XI-XII-immortal.md
-                                        - Joc: olimpiada/solutii/OJI/2010/XI-XII-joc.md
+                                        - immortal: olimpiada/solutii/OJI/2010/XI-XII-immortal.md
+                                        - joc: olimpiada/solutii/OJI/2010/XI-XII-joc.md
                             - OJI 2011:
                                   - Clasa a V-a:
-                                        - Magic: olimpiada/solutii/OJI/2011/V-magic.md
-                                        - Numerus: olimpiada/solutii/OJI/2011/V-numerus.md
+                                        - magic: olimpiada/solutii/OJI/2011/V-magic.md
+                                        - numerus: olimpiada/solutii/OJI/2011/V-numerus.md
                                   - Clasa a VI-a:
-                                        - Carte: olimpiada/solutii/OJI/2011/VI-carte.md
-                                        - Grad: olimpiada/solutii/OJI/2011/VI-grad.md
+                                        - carte: olimpiada/solutii/OJI/2011/VI-carte.md
+                                        - grad: olimpiada/solutii/OJI/2011/VI-grad.md
                                   - Clasa a VII-a:
-                                        - Grupe: olimpiada/solutii/OJI/2011/VII-grupe.md
-                                        - Litere: olimpiada/solutii/OJI/2011/VII-litere.md
+                                        - grupe: olimpiada/solutii/OJI/2011/VII-grupe.md
+                                        - litere: olimpiada/solutii/OJI/2011/VII-litere.md
                                   - Clasa a VIII-a:
-                                        - Adunscad: olimpiada/solutii/OJI/2011/VIII-adunscad.md
-                                        - Comp: olimpiada/solutii/OJI/2011/VIII-comp.md
+                                        - adunscad: olimpiada/solutii/OJI/2011/VIII-adunscad.md
+                                        - comp: olimpiada/solutii/OJI/2011/VIII-comp.md
                                   - Clasa a IX-a:
-                                        - Vase: olimpiada/solutii/OJI/2011/IX-vase.md
-                                        - Cri: olimpiada/solutii/OJI/2011/IX-cri.md
+                                        - vase: olimpiada/solutii/OJI/2011/IX-vase.md
+                                        - cri: olimpiada/solutii/OJI/2011/IX-cri.md
                                   - Clasa a X-a:
-                                        - Ai: olimpiada/solutii/OJI/2011/X-ai.md
+                                        - ai: olimpiada/solutii/OJI/2011/X-ai.md
                                         - Expresie: olimpiada/solutii/OJI/2011/X-expresie.md
                                   - Clasele XI-XII:
-                                        - Suma: olimpiada/solutii/OJI/2011/XI-XII-suma.md
-                                        - Ubuntzei: olimpiada/solutii/OJI/2011/XI-XII-ubuntzei.md
+                                        - suma: olimpiada/solutii/OJI/2011/XI-XII-suma.md
+                                        - ubuntzei: olimpiada/solutii/OJI/2011/XI-XII-ubuntzei.md
                             - OJI 2012:
                                   - Clasa a V-a:
-                                        - Alice: olimpiada/solutii/OJI/2012/V-alice.md
-                                        - Porumb: olimpiada/solutii/OJI/2012/V-porumb.md
+                                        - alice: olimpiada/solutii/OJI/2012/V-alice.md
+                                        - porumb: olimpiada/solutii/OJI/2012/V-porumb.md
                                   - Clasa a VI-a:
-                                        - Cifru: olimpiada/solutii/OJI/2012/VI-cifru.md
-                                        - Flori: olimpiada/solutii/OJI/2012/VI-flori.md
+                                        - cifru: olimpiada/solutii/OJI/2012/VI-cifru.md
+                                        - flori: olimpiada/solutii/OJI/2012/VI-flori.md
                                   - Clasa a VII-a:
-                                        - Arme: olimpiada/solutii/OJI/2012/VII-arme.md
-                                        - Triunghi: olimpiada/solutii/OJI/2012/VII-triunghi.md
+                                        - arme: olimpiada/solutii/OJI/2012/VII-arme.md
+                                        - triunghi: olimpiada/solutii/OJI/2012/VII-triunghi.md
                                   - Clasa a VIII-a:
-                                        - Deal: olimpiada/solutii/OJI/2012/VIII-deal.md
-                                        - Ozn: olimpiada/solutii/OJI/2012/VIII-ozn.md
+                                        - deal: olimpiada/solutii/OJI/2012/VIII-deal.md
+                                        - ozn: olimpiada/solutii/OJI/2012/VIII-ozn.md
                                   - Clasa a IX-a:
-                                        - Elicop: olimpiada/solutii/OJI/2012/IX-elicop.md
-                                        - Roata: olimpiada/solutii/OJI/2012/IX-roata.md
+                                        - elicop: olimpiada/solutii/OJI/2012/IX-elicop.md
+                                        - roata: olimpiada/solutii/OJI/2012/IX-roata.md
                                   - Clasa a X-a:
                                         - Compresie: olimpiada/solutii/OJI/2012/X-compresie.md
                                         - Culori: olimpiada/solutii/OJI/2012/X-culori.md
                                   - Clasele XI-XII:
-                                        - Blis: olimpiada/solutii/OJI/2012/XI-XII-blis.md
+                                        - blis: olimpiada/solutii/OJI/2012/XI-XII-blis.md
                                         - Parc: olimpiada/solutii/OJI/2012/XI-XII-parc.md
                             - OJI 2013:
                                   - Clasa a V-a:
-                                        - Bete: olimpiada/solutii/OJI/2013/V-bete.md
-                                        - Chibrituri: olimpiada/solutii/OJI/2013/V-chibrituri.md
+                                        - bete: olimpiada/solutii/OJI/2013/V-bete.md
+                                        - chibrituri: olimpiada/solutii/OJI/2013/V-chibrituri.md
                                   - Clasa a VI-a:
-                                        - Cladiri: olimpiada/solutii/OJI/2013/VI-cladiri.md
-                                        - Galbeni: olimpiada/solutii/OJI/2013/VI-galbeni.md
+                                        - galbeni: olimpiada/solutii/OJI/2013/VI-galbeni.md
+                                        - cladiri: olimpiada/solutii/OJI/2013/VI-cladiri.md
                                   - Clasa a VII-a:
-                                        - Compar: olimpiada/solutii/OJI/2013/VII-compar.md
-                                        - Unific: olimpiada/solutii/OJI/2013/VII-unific.md
+                                        - compar: olimpiada/solutii/OJI/2013/VII-compar.md
+                                        - unific: olimpiada/solutii/OJI/2013/VII-unific.md
                                   - Clasa a VIII-a:
-                                        - Maxp: olimpiada/solutii/OJI/2013/VIII-maxp.md
-                                        - Puncte: olimpiada/solutii/OJI/2013/VIII-puncte.md
+                                        - maxp: olimpiada/solutii/OJI/2013/VIII-maxp.md
+                                        - puncte: olimpiada/solutii/OJI/2013/VIII-puncte.md
                                   - Clasa a IX-a:
-                                        - Betasah: olimpiada/solutii/OJI/2013/IX-betasah.md
-                                        - Clepsidru: olimpiada/solutii/OJI/2013/IX-clepsidru.md
+                                        - betasah: olimpiada/solutii/OJI/2013/IX-betasah.md
+                                        - clepsidru: olimpiada/solutii/OJI/2013/IX-clepsidru.md
                                   - Clasa a X-a:
                                         - Calcule: olimpiada/solutii/OJI/2013/X-calcule.md
                                         - Zona: olimpiada/solutii/OJI/2013/X-zona.md
                                   - Clasele XI-XII:
-                                        - Biperm: olimpiada/solutii/OJI/2013/XI-XII-biperm.md
-                                        - Subsecvente: olimpiada/solutii/OJI/2013/XI-XII-subsecvente.md
+                                        - biperm: olimpiada/solutii/OJI/2013/XI-XII-biperm.md
+                                        - subsecvente: olimpiada/solutii/OJI/2013/XI-XII-subsecvente.md
                             - OJI 2014:
                                   - Clasa a V-a:
-                                        - Martisoare: olimpiada/solutii/OJI/2014/V-martisoare.md
-                                        - Piramide: olimpiada/solutii/OJI/2014/V-piramide.md
+                                        - martisoare: olimpiada/solutii/OJI/2014/V-martisoare.md
+                                        - piramide: olimpiada/solutii/OJI/2014/V-piramide.md
                                   - Clasa a VI-a:
-                                        - Imprimanta: olimpiada/solutii/OJI/2014/VI-imprimanta.md
-                                        - Munte: olimpiada/solutii/OJI/2014/VI-munte.md
+                                        - imprimanta: olimpiada/solutii/OJI/2014/VI-imprimanta.md
+                                        - munte: olimpiada/solutii/OJI/2014/VI-munte.md
                                   - Clasa a VII-a:
-                                        - Patrat: olimpiada/solutii/OJI/2014/VII-patrat.md
-                                        - Schi: olimpiada/solutii/OJI/2014/VII-schi.md
+                                        - patrat: olimpiada/solutii/OJI/2014/VII-patrat.md
+                                        - schi: olimpiada/solutii/OJI/2014/VII-schi.md
                                   - Clasa a VIII-a:
-                                        - Arrows: olimpiada/solutii/OJI/2014/VIII-arrows.md
-                                        - Tcif: olimpiada/solutii/OJI/2014/VIII-tcif.md
+                                        - arrows: olimpiada/solutii/OJI/2014/VIII-arrows.md
+                                        - tcif: olimpiada/solutii/OJI/2014/VIII-tcif.md
                                   - Clasa a IX-a:
-                                        - Cool: olimpiada/solutii/OJI/2014/IX-cool.md
-                                        - Pseudobil: olimpiada/solutii/OJI/2014/IX-pseudobil.md
+                                        - cool: olimpiada/solutii/OJI/2014/IX-cool.md
+                                        - pseudobil: olimpiada/solutii/OJI/2014/IX-pseudobil.md
                                   - Clasa a X-a:
                                         - Ferma: olimpiada/solutii/OJI/2014/X-ferma.md
                                         - Triunghi: olimpiada/solutii/OJI/2014/X-triunghi.md
                                   - Clasele XI-XII:
-                                        - Cartite: olimpiada/solutii/OJI/2014/XI-XII-cartite.md
-                                        - Fractii2: olimpiada/solutii/OJI/2014/XI-XII-fractii2.md
+                                        - cartite: olimpiada/solutii/OJI/2014/XI-XII-cartite.md
+                                        - fractii2: olimpiada/solutii/OJI/2014/XI-XII-fractii2.md
                             - OJI 2015:
                                   - Clasa a V-a:
-                                        - Cuart: olimpiada/solutii/OJI/2015/V-cuart.md
-                                        - Speciale: olimpiada/solutii/OJI/2015/V-speciale.md
+                                        - cuart: olimpiada/solutii/OJI/2015/V-cuart.md
+                                        - speciale: olimpiada/solutii/OJI/2015/V-speciale.md
                                   - Clasa a VI-a:
-                                        - Covor: olimpiada/solutii/OJI/2015/VI-covor.md
-                                        - Ordine: olimpiada/solutii/OJI/2015/VI-ordine.md
+                                        - covor: olimpiada/solutii/OJI/2015/VI-covor.md
+                                        - ordine: olimpiada/solutii/OJI/2015/VI-ordine.md
                                   - Clasa a VII-a:
-                                        - Ech: olimpiada/solutii/OJI/2015/VII-ech.md
-                                        - Lasere: olimpiada/solutii/OJI/2015/VII-lasere.md
+                                        - ech: olimpiada/solutii/OJI/2015/VII-ech.md
+                                        - lasere: olimpiada/solutii/OJI/2015/VII-lasere.md
                                   - Clasa a VIII-a:
-                                        - Dominant: olimpiada/solutii/OJI/2015/VIII-dominant.md
-                                        - Pavare: olimpiada/solutii/OJI/2015/VIII-pavare.md
+                                        - dominant: olimpiada/solutii/OJI/2015/VIII-dominant.md
+                                        - pavare: olimpiada/solutii/OJI/2015/VIII-pavare.md
                                   - Clasa a IX-a:
-                                        - Arc: olimpiada/solutii/OJI/2015/IX-arc.md
-                                        - Defrag: olimpiada/solutii/OJI/2015/IX-defrag.md
+                                        - arc: olimpiada/solutii/OJI/2015/IX-arc.md
+                                        - defrag: olimpiada/solutii/OJI/2015/IX-defrag.md
                                   - Clasa a X-a:
-                                        - Charlie: olimpiada/solutii/OJI/2015/X-charlie.md
-                                        - panda: olimpiada/solutii/OJI/2015/X-panda.md
+                                        - charlie: olimpiada/solutii/OJI/2015/X-charlie.md
+                                        - Panda: olimpiada/solutii/OJI/2015/X-panda.md
                                   - Clasele XI-XII:
                                         - 2sah: olimpiada/solutii/OJI/2015/XI-XII-2sah.md
-                                        - Dragoni: olimpiada/solutii/OJI/2015/XI-XII-dragoni.md
+                                        - dragoni: olimpiada/solutii/OJI/2015/XI-XII-dragoni.md
                             - OJI 2016:
                                   - Clasa a V-a:
-                                        - Colier: olimpiada/solutii/OJI/2016/V-colier.md
-                                        - Palindrom: olimpiada/solutii/OJI/2016/V-palindrom.md
+                                        - colier: olimpiada/solutii/OJI/2016/V-colier.md
+                                        - palindrom: olimpiada/solutii/OJI/2016/V-palindrom.md
                                   - Clasa a VI-a:
-                                        - Cifre: olimpiada/solutii/OJI/2016/VI-cifre.md
-                                        - Litere: olimpiada/solutii/OJI/2016/VI-litere.md
+                                        - cifre: olimpiada/solutii/OJI/2016/VI-cifre.md
+                                        - litere: olimpiada/solutii/OJI/2016/VI-litere.md
                                   - Clasa a VII-a:
-                                        - Axyz: olimpiada/solutii/OJI/2016/VII-axyz.md
-                                        - Galerie: olimpiada/solutii/OJI/2016/VII-galerie.md
+                                        - axyz: olimpiada/solutii/OJI/2016/VII-axyz.md
+                                        - galerie: olimpiada/solutii/OJI/2016/VII-galerie.md
                                   - Clasa a VIII-a:
-                                        - Arma: olimpiada/solutii/OJI/2016/VIII-arma.md
-                                        - Ks: olimpiada/solutii/OJI/2016/VIII-ks.md
+                                        - arma: olimpiada/solutii/OJI/2016/VIII-arma.md
+                                        - ks: olimpiada/solutii/OJI/2016/VIII-ks.md
                                   - Clasa a IX-a:
-                                        - Cifre: olimpiada/solutii/OJI/2016/IX-cifre.md
-                                        - Pic: olimpiada/solutii/OJI/2016/IX-pic.md
+                                        - cifre: olimpiada/solutii/OJI/2016/IX-cifre.md
+                                        - pic: olimpiada/solutii/OJI/2016/IX-pic.md
                                   - Clasa a X-a:
                                         - Interesant: olimpiada/solutii/OJI/2016/X-interesant.md
                                         - Miting: olimpiada/solutii/OJI/2016/X-miting.md
                                   - Clasele XI-XII:
-                                        - Elicoptere: olimpiada/solutii/OJI/2016/XI-XII-elicoptere.md
-                                        - Summax: olimpiada/solutii/OJI/2016/XI-XII-summax.md
+                                        - elicoptere: olimpiada/solutii/OJI/2016/XI-XII-elicoptere.md
+                                        - summax: olimpiada/solutii/OJI/2016/XI-XII-summax.md
                             - OJI 2017:
                                   - Clasa a V-a:
-                                        - Numere: olimpiada/solutii/OJI/2017/V-numere.md
-                                        - Robot: olimpiada/solutii/OJI/2017/V-robot.md
+                                        - numere: olimpiada/solutii/OJI/2017/V-numere.md
+                                        - robot: olimpiada/solutii/OJI/2017/V-robot.md
                                   - Clasa a VI-a:
-                                        - Accesibil: olimpiada/solutii/OJI/2017/VI-accesibil.md
-                                        - Fermier: olimpiada/solutii/OJI/2017/VI-fermier.md
+                                        - accesibil: olimpiada/solutii/OJI/2017/VI-accesibil.md
+                                        - fermier: olimpiada/solutii/OJI/2017/VI-fermier.md
                                   - Clasa a VII-a:
-                                        - Cursuri: olimpiada/solutii/OJI/2017/VII-cursuri.md
-                                        - Joc: olimpiada/solutii/OJI/2017/VII-joc.md
+                                        - cursuri: olimpiada/solutii/OJI/2017/VII-cursuri.md
+                                        - joc: olimpiada/solutii/OJI/2017/VII-joc.md
                                   - Clasa a VIII-a:
-                                        - Tablou: olimpiada/solutii/OJI/2017/VIII-tablou.md
-                                        - Triunghiuri: olimpiada/solutii/OJI/2017/VIII-triunghiuri.md
+                                        - tablou: olimpiada/solutii/OJI/2017/VIII-tablou.md
+                                        - triunghiuri: olimpiada/solutii/OJI/2017/VIII-triunghiuri.md
                                   - Clasa a IX-a:
-                                        - Ace: olimpiada/solutii/OJI/2017/IX-ace.md
-                                        - Admitere: olimpiada/solutii/OJI/2017/IX-admitere.md
-                                        - Roboti: olimpiada/solutii/OJI/2017/IX-roboti.md
+                                        - ace: olimpiada/solutii/OJI/2017/IX-ace.md
+                                        - admitere: olimpiada/solutii/OJI/2017/IX-admitere.md
+                                        - roboti: olimpiada/solutii/OJI/2017/IX-roboti.md
                                   - Clasa a X-a:
                                         - Caps: olimpiada/solutii/OJI/2017/X-caps.md
                                         - Rover: olimpiada/solutii/OJI/2017/X-rover.md
-                                        - Sir: olimpiada/solutii/OJI/2017/X-sir.md
+                                        - Șir: olimpiada/solutii/OJI/2017/X-sir.md
                                   - Clasele XI-XII:
-                                        - Armonica: olimpiada/solutii/OJI/2017/XI-XII-armonica.md
-                                        - Ninjago: olimpiada/solutii/OJI/2017/XI-XII-ninjago.md
-                                        - Permutare: olimpiada/solutii/OJI/2017/XI-XII-permutare.md
+                                        - armonica: olimpiada/solutii/OJI/2017/XI-XII-armonica.md
+                                        - ninjago: olimpiada/solutii/OJI/2017/XI-XII-ninjago.md
+                                        - permutare: olimpiada/solutii/OJI/2017/XI-XII-permutare.md
                             - OJI 2018:
                                   - Clasa a V-a:
-                                        - Patrate: olimpiada/solutii/OJI/2018/V-patrate.md
-                                        - Forus: olimpiada/solutii/OJI/2018/V-forus.md
+                                        - forus: olimpiada/solutii/OJI/2018/V-forus.md
+                                        - patrate: olimpiada/solutii/OJI/2018/V-patrate.md
                                   - Clasa a VI-a:
-                                        - Numere: olimpiada/solutii/OJI/2018/VI-numere.md
-                                        - Turnuri: olimpiada/solutii/OJI/2018/VI-turnuri.md
+                                        - numere: olimpiada/solutii/OJI/2018/VI-numere.md
+                                        - turnuri: olimpiada/solutii/OJI/2018/VI-turnuri.md
                                   - Clasa a VII-a:
-                                        - Puzzle: olimpiada/solutii/OJI/2018/VII-puzzle.md
-                                        - Tbile: olimpiada/solutii/OJI/2018/VII-tbile.md
+                                        - puzzle: olimpiada/solutii/OJI/2018/VII-puzzle.md
+                                        - tbile: olimpiada/solutii/OJI/2018/VII-tbile.md
                                   - Clasa a VIII-a:
-                                        - Cruce: olimpiada/solutii/OJI/2018/VIII-cruce.md
-                                        - Pal: olimpiada/solutii/OJI/2018/VIII-pal.md
+                                        - cruce: olimpiada/solutii/OJI/2018/VIII-cruce.md
+                                        - pal: olimpiada/solutii/OJI/2018/VIII-pal.md
                                   - Clasa a IX-a:
-                                        - Cufar: olimpiada/solutii/OJI/2018/IX-cufar.md
-                                        - Fadema: olimpiada/solutii/OJI/2018/IX-fadema.md
-                                        - Tnia: olimpiada/solutii/OJI/2018/IX-tnia.md
+                                        - cufar: olimpiada/solutii/OJI/2018/IX-cufar.md
+                                        - fadema: olimpiada/solutii/OJI/2018/IX-fadema.md
+                                        - tnia: olimpiada/solutii/OJI/2018/IX-tnia.md
                                   - Clasa a X-a:
                                         - Castel: olimpiada/solutii/OJI/2018/X-castel.md
-                                        - Eq4: olimpiada/solutii/OJI/2018/X-eq4.md
+                                        - eq4: olimpiada/solutii/OJI/2018/X-eq4.md
                                         - Turnuri: olimpiada/solutii/OJI/2018/X-turnuri.md
                                   - Clasele XI-XII:
-                                        - Galeti: olimpiada/solutii/OJI/2018/XI-XII-galeti.md
-                                        - Ramen: olimpiada/solutii/OJI/2018/XI-XII-ramen.md
-                                        - Aquapark: olimpiada/solutii/OJI/2018/XI-XII-aquapark.md
+                                        - galeti: olimpiada/solutii/OJI/2018/XI-XII-galeti.md
+                                        - ramen: olimpiada/solutii/OJI/2018/XI-XII-ramen.md
+                                        - aquapark: olimpiada/solutii/OJI/2018/XI-XII-aquapark.md
                             - OJI 2019:
                                   - Clasa a V-a:
-                                        - Aur: olimpiada/solutii/OJI/2019/V-aur.md
-                                        - Cartele: olimpiada/solutii/OJI/2019/V-cartele.md
+                                        - aur: olimpiada/solutii/OJI/2019/V-aur.md
+                                        - cartele: olimpiada/solutii/OJI/2019/V-cartele.md
                                   - Clasa a VI-a:
-                                        - Album: olimpiada/solutii/OJI/2019/VI-album.md
-                                        - Maxim: olimpiada/solutii/OJI/2019/VI-maxim.md
+                                        - album: olimpiada/solutii/OJI/2019/VI-album.md
+                                        - maxim: olimpiada/solutii/OJI/2019/VI-maxim.md
                                   - Clasa a VII-a:
-                                        - Poarta: olimpiada/solutii/OJI/2019/VII-poarta.md
-                                        - Valutar: olimpiada/solutii/OJI/2019/VII-valutar.md
+                                        - poarta: olimpiada/solutii/OJI/2019/VII-poarta.md
+                                        - valutar: olimpiada/solutii/OJI/2019/VII-valutar.md
                                   - Clasa a VIII-a:
-                                        - Cate3cifre: olimpiada/solutii/OJI/2019/VIII-cate3cifre.md
-                                        - Paralele: olimpiada/solutii/OJI/2019/VIII-paralele.md
+                                        - cate3cifre: olimpiada/solutii/OJI/2019/VIII-cate3cifre.md
+                                        - paralele: olimpiada/solutii/OJI/2019/VIII-paralele.md
                                   - Clasa a IX-a:
-                                        - Abx: olimpiada/solutii/OJI/2019/IX-abx.md
-                                        - Deminare: olimpiada/solutii/OJI/2019/IX-deminare.md
-                                        - Mostenire: olimpiada/solutii/OJI/2019/IX-mostenire.md
+                                        - abx: olimpiada/solutii/OJI/2019/IX-abx.md
+                                        - deminare: olimpiada/solutii/OJI/2019/IX-deminare.md
+                                        - mostenire: olimpiada/solutii/OJI/2019/IX-mostenire.md
                                   - Clasa a X-a:
-                                        - Pif: olimpiada/solutii/OJI/2019/X-pif.md
-                                        - Traseu: olimpiada/solutii/OJI/2019/X-traseu.md
-                                        - Yinyang: olimpiada/solutii/OJI/2019/X-yinyang.md
+                                        - yinyang: olimpiada/solutii/OJI/2019/X-yinyang.md
+                                        - pif: olimpiada/solutii/OJI/2019/X-pif.md
+                                        - traseu: olimpiada/solutii/OJI/2019/X-traseu.md
                                   - Clasele XI-XII:
-                                        - Conexidad: olimpiada/solutii/OJI/2019/XI-XII-conexidad.md
-                                        - Rufe: olimpiada/solutii/OJI/2019/XI-XII-rufe.md
-                                        - Tairos: olimpiada/solutii/OJI/2019/XI-XII-tairos.md
+                                        - conexidad: olimpiada/solutii/OJI/2019/XI-XII-conexidad.md
+                                        - rufe: olimpiada/solutii/OJI/2019/XI-XII-rufe.md
+                                        - tairos: olimpiada/solutii/OJI/2019/XI-XII-tairos.md
                       - OJI 2020-2024:
                             - OJI 2020:
                                   - Clasa a V-a:
-                                        - Cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
-                                        - Tai: olimpiada/solutii/OJI/2020/V-tai.md
+                                        - cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
+                                        - tai: olimpiada/solutii/OJI/2020/V-tai.md
                                   - Clasa a VI-a:
-                                        - Forta: olimpiada/solutii/OJI/2020/VI-forta.md
-                                        - Furnica: olimpiada/solutii/OJI/2020/VI-furnica.md
+                                        - forta: olimpiada/solutii/OJI/2020/VI-forta.md
+                                        - furnica: olimpiada/solutii/OJI/2020/VI-furnica.md
                                   - Clasa a VII-a:
-                                        - Foto: olimpiada/solutii/OJI/2020/VII-foto.md
-                                        - Wind: olimpiada/solutii/OJI/2020/VII-wind.md
+                                        - foto: olimpiada/solutii/OJI/2020/VII-foto.md
+                                        - wind: olimpiada/solutii/OJI/2020/VII-wind.md
                                   - Clasa a VIII-a:
-                                        - Datorii: olimpiada/solutii/OJI/2020/VIII-datorii.md
-                                        - Triunghi: olimpiada/solutii/OJI/2020/VIII-triunghi.md
+                                        - datorii: olimpiada/solutii/OJI/2020/VIII-datorii.md
+                                        - triunghi: olimpiada/solutii/OJI/2020/VIII-triunghi.md
                                   - Clasa a IX-a:
-                                        - Buldo: olimpiada/solutii/OJI/2020/IX-buldo.md
-                                        - Cetate: olimpiada/solutii/OJI/2020/IX-cetate.md
-                                        - Spiralmatrix: olimpiada/solutii/OJI/2020/IX-spiralmatrix.md
+                                        - buldo: olimpiada/solutii/OJI/2020/IX-buldo.md
+                                        - cetate: olimpiada/solutii/OJI/2020/IX-cetate.md
+                                        - spiralmatrix: olimpiada/solutii/OJI/2020/IX-spiralmatrix.md
                                   - Clasa a X-a:
-                                        - Alinieri: olimpiada/solutii/OJI/2020/X-alinieri.md
-                                        - Arh: olimpiada/solutii/OJI/2020/X-arh.md
-                                        - Leftmax: olimpiada/solutii/OJI/2020/X-leftmax.md
+                                        - alinieri: olimpiada/solutii/OJI/2020/X-alinieri.md
+                                        - arh: olimpiada/solutii/OJI/2020/X-arh.md
+                                        - leftmax: olimpiada/solutii/OJI/2020/X-leftmax.md
                                   - Clasele XI-XII:
-                                        - Ateleport: olimpiada/solutii/OJI/2020/XI-XII-ateleport.md
-                                        - Partit: olimpiada/solutii/OJI/2020/XI-XII-partit.md
+                                        - ateleport: olimpiada/solutii/OJI/2020/XI-XII-ateleport.md
+                                        - partit: olimpiada/solutii/OJI/2020/XI-XII-partit.md
                                         - RecycleBin: olimpiada/solutii/OJI/2020/XI-XII-recyclebin.md
                             - OJI 2021:
                                   - Clasa a V-a:
-                                        - Concurs: olimpiada/solutii/OJI/2021/V-concurs.md
-                                        - Sir: olimpiada/solutii/OJI/2021/V-sir.md
+                                        - concurs: olimpiada/solutii/OJI/2021/V-concurs.md
+                                        - sir: olimpiada/solutii/OJI/2021/V-sir.md
                                   - Clasa a VI-a:
-                                        - Formula1: olimpiada/solutii/OJI/2021/VI-formula1.md
-                                        - Seism: olimpiada/solutii/OJI/2021/VI-seism.md
+                                        - formula1: olimpiada/solutii/OJI/2021/VI-formula1.md
+                                        - seism: olimpiada/solutii/OJI/2021/VI-seism.md
                                   - Clasa a VII-a:
-                                        - Campionat: olimpiada/solutii/OJI/2021/VII-campionat.md
-                                        - Exclusiv: olimpiada/solutii/OJI/2021/VII-exclusiv.md
+                                        - campionat: olimpiada/solutii/OJI/2021/VII-campionat.md
+                                        - exclusiv: olimpiada/solutii/OJI/2021/VII-exclusiv.md
                                   - Clasa a VIII-a:
-                                        - Cartofi: olimpiada/solutii/OJI/2021/VIII-cartofi.md
-                                        - Tunel: olimpiada/solutii/OJI/2021/VIII-tunel.md
+                                        - cartofi: olimpiada/solutii/OJI/2021/VIII-cartofi.md
+                                        - tunel: olimpiada/solutii/OJI/2021/VIII-tunel.md
                                   - Clasa a IX-a:
-                                        - Aproape: olimpiada/solutii/OJI/2021/IX-aproape.md
-                                        - Cochilie: olimpiada/solutii/OJI/2021/IX-cochilie.md
-                                        - Logic: olimpiada/solutii/OJI/2021/IX-logic.md
+                                        - aproape: olimpiada/solutii/OJI/2021/IX-aproape.md
+                                        - cochilie: olimpiada/solutii/OJI/2021/IX-cochilie.md
+                                        - logic: olimpiada/solutii/OJI/2021/IX-logic.md
                                   - Clasa a X-a:
                                         - Labirint: olimpiada/solutii/OJI/2021/X-labirint.md
                                         - SDistanțe: olimpiada/solutii/OJI/2021/X-sdistante.md
                                         - Tort: olimpiada/solutii/OJI/2021/X-tort.md
                                   - Clasele XI-XII:
+                                        - dreptunghi: olimpiada/solutii/OJI/2021/XI-XII-dreptunghi.md
                                         - Polihroniade: olimpiada/solutii/OJI/2021/XI-XII-polihroniade.md
                                         - Bob: olimpiada/solutii/OJI/2021/XI-XII-bob.md
-                                        - Dreptunghi: olimpiada/solutii/OJI/2021/XI-XII-dreptunghi.md
                             - OJI 2022:
                                   - Clasa a V-a:
-                                        - Ceas: olimpiada/solutii/OJI/2022/V-ceas.md
-                                        - Sss: olimpiada/solutii/OJI/2022/V-sss.md
+                                        - ceas: olimpiada/solutii/OJI/2022/V-ceas.md
+                                        - sss: olimpiada/solutii/OJI/2022/V-sss.md
                                   - Clasa a VI-a:
-                                        - Cmmdc: olimpiada/solutii/OJI/2022/VI-cmmdc.md
-                                        - Vecine: olimpiada/solutii/OJI/2022/VI-vecine.md
+                                        - cmmdc: olimpiada/solutii/OJI/2022/VI-cmmdc.md
+                                        - vecine: olimpiada/solutii/OJI/2022/VI-vecine.md
                                   - Clasa a VII-a:
-                                        - Patratele: olimpiada/solutii/OJI/2022/VII-patratele.md
-                                        - Pseudocmp: olimpiada/solutii/OJI/2022/VII-pseudocmp.md
+                                        - patratele: olimpiada/solutii/OJI/2022/VII-patratele.md
+                                        - pseudocmp: olimpiada/solutii/OJI/2022/VII-pseudocmp.md
                                   - Clasa a VIII-a:
-                                        - Pelican: olimpiada/solutii/OJI/2022/VIII-pelican.md
-                                        - Strips: olimpiada/solutii/OJI/2022/VIII-strips.md
+                                        - pelican: olimpiada/solutii/OJI/2022/VIII-pelican.md
+                                        - strips: olimpiada/solutii/OJI/2022/VIII-strips.md
                                   - Clasa a IX-a:
-                                        - Balba: olimpiada/solutii/OJI/2022/IX-balba.md
-                                        - Oneout: olimpiada/solutii/OJI/2022/IX-oneout.md
-                                        - Pergament: olimpiada/solutii/OJI/2022/IX-pergament.md
+                                        - balba: olimpiada/solutii/OJI/2022/IX-balba.md
+                                        - oneout: olimpiada/solutii/OJI/2022/IX-oneout.md
+                                        - pergament: olimpiada/solutii/OJI/2022/IX-pergament.md
                                   - Clasa a X-a:
-                                        - Circular: olimpiada/solutii/OJI/2022/X-circular.md
-                                        - Pulsar: olimpiada/solutii/OJI/2022/X-pulsar.md
-                                        - Transport: olimpiada/solutii/OJI/2022/X-transport.md
+                                        - circular: olimpiada/solutii/OJI/2022/X-circular.md
+                                        - pulsar: olimpiada/solutii/OJI/2022/X-pulsar.md
+                                        - transport: olimpiada/solutii/OJI/2022/X-transport.md
                                   - Clasele XI-XII:
-                                        - Dulciuri: olimpiada/solutii/OJI/2022/XI-XII-dulciuri.md
-                                        - Investitie: olimpiada/solutii/OJI/2022/XI-XII-investitie.md
-                                        - Superhedgy: olimpiada/solutii/OJI/2022/XI-XII-superhedgy.md
+                                        - dulciuri: olimpiada/solutii/OJI/2022/XI-XII-dulciuri.md
+                                        - investitie: olimpiada/solutii/OJI/2022/XI-XII-investitie.md
+                                        - superhedgy: olimpiada/solutii/OJI/2022/XI-XII-superhedgy.md
                             - OJI 2023:
                                   - Clasa a V-a:
-                                        - Aeriana: olimpiada/solutii/OJI/2023/V-aeriana.md
-                                        - Castel: olimpiada/solutii/OJI/2023/V-castel.md
+                                        - aeriana: olimpiada/solutii/OJI/2023/V-aeriana.md
+                                        - castel: olimpiada/solutii/OJI/2023/V-castel.md
                                   - Clasa a VI-a:
-                                        - Ciocolata: olimpiada/solutii/OJI/2023/VI-ciocolata.md
-                                        - Unificare: olimpiada/solutii/OJI/2023/VI-unificare.md
+                                        - ciocolata: olimpiada/solutii/OJI/2023/VI-ciocolata.md
+                                        - unificare: olimpiada/solutii/OJI/2023/VI-unificare.md
                                   - Clasa a VII-a:
-                                        - Palindrom: olimpiada/solutii/OJI/2023/VII-palindrom.md
-                                        - Primprim: olimpiada/solutii/OJI/2023/VII-primprim.md
+                                        - palindrom: olimpiada/solutii/OJI/2023/VII-palindrom.md
+                                        - primprim: olimpiada/solutii/OJI/2023/VII-primprim.md
                                   - Clasa a VIII-a:
-                                        - Hibrid: olimpiada/solutii/OJI/2023/VIII-hibrid.md
-                                        - Tema: olimpiada/solutii/OJI/2023/VIII-tema.md
+                                        - hibrid: olimpiada/solutii/OJI/2023/VIII-hibrid.md
+                                        - tema: olimpiada/solutii/OJI/2023/VIII-tema.md
                                   - Clasa a IX-a:
-                                        - Cufere: olimpiada/solutii/OJI/2023/IX-cufere.md
-                                        - Fibosnek: olimpiada/solutii/OJI/2023/IX-fibosnek.md
-                                        - Partitura: olimpiada/solutii/OJI/2023/IX-partitura.md
+                                        - fibosnek: olimpiada/solutii/OJI/2023/IX-fibosnek.md
+                                        - partitura: olimpiada/solutii/OJI/2023/IX-partitura.md
+                                        - cufere: olimpiada/solutii/OJI/2023/IX-cufere.md
                                   - Clasa a X-a:
-                                        - Arhitect: olimpiada/solutii/OJI/2023/X-arhitect.md
-                                        - Bingo: olimpiada/solutii/OJI/2023/X-bingo.md
-                                        - Fotbal: olimpiada/solutii/OJI/2023/X-fotbal.md
+                                        - bingo: olimpiada/solutii/OJI/2023/X-bingo.md
+                                        - arhitect: olimpiada/solutii/OJI/2023/X-arhitect.md
+                                        - fotbal: olimpiada/solutii/OJI/2023/X-fotbal.md
                                   - Clasele XI-XII:
                                         - Parcare: olimpiada/solutii/OJI/2023/XI-XII-parcare.md
                                         - Turcane: olimpiada/solutii/OJI/2023/XI-XII-turcane.md
@@ -852,6 +852,862 @@ nav:
                                         - Birocratie: olimpiada/solutii/OJI/2024/XI-XII-birocratie.md
                                         - Nestemate: olimpiada/solutii/OJI/2024/XI-XII-nestemate.md
                                         - Acoperire: olimpiada/solutii/OJI/2024/XI-XII-acoperire.md
+                - Olimpiada Națională de Informatică (ONI):
+                      - ONI 1998-2009:
+                            - ONI 1998:
+                                  - Clasa a IX-a:
+                                        - număr curios: olimpiada/solutii/ONI/1998/IX-numarcurios.md
+                                  - Clasa a X-a:
+                                        - numere: olimpiada/solutii/ONI/1998/X-numere.md
+                                        - monezi: olimpiada/solutii/ONI/1998/X-monezi.md
+                            - ONI 2000:
+                                  - Clasa a IX-a:
+                                        - Comoara: olimpiada/solutii/ONI/2000/IX-comoara.md
+                                        - Cuburi: olimpiada/solutii/ONI/2000/IX-cuburi.md
+                                        - Fibo: olimpiada/solutii/ONI/2000/IX-fibo.md
+                                        - Algor: olimpiada/solutii/ONI/2000/IX-algor.md
+                                        - Cod de identificare: olimpiada/solutii/ONI/2000/IX-coddeidentificare.md
+                                        - Kommando: olimpiada/solutii/ONI/2000/IX-kommando.md
+                                  - Clasa a X-a:
+                                        - Castel: olimpiada/solutii/ONI/2000/X-castel.md
+                                        - Drumuri Scurte: olimpiada/solutii/ONI/2000/X-drumuriscurte.md
+                                        - Scafandrul: olimpiada/solutii/ONI/2000/X-scafandrul.md
+                                        - Călătorie cu Taxiul: olimpiada/solutii/ONI/2000/X-calatoriecutaxiul.md
+                                        - Pariul Broscuțelor: olimpiada/solutii/ONI/2000/X-pariulbroscutelor.md
+                                        - Obiective Turistice: olimpiada/solutii/ONI/2000/X-obiectiveturistice.md
+                                  - Clasele XI-XII:
+                                        - arbore: olimpiada/solutii/ONI/2000/XI-XII-arbore.md
+                                        - moara: olimpiada/solutii/ONI/2000/XI-XII-moara.md
+                                        - puncte: olimpiada/solutii/ONI/2000/XI-XII-puncte.md
+                                        - soicn: olimpiada/solutii/ONI/2000/XI-XII-soicn.md
+                                        - spioni: olimpiada/solutii/ONI/2000/XI-XII-spioni.md
+                                        - tezaur: olimpiada/solutii/ONI/2000/XI-XII-tezaur.md
+                            - ONI 2001:
+                                  - Clasele V-VI:
+                                        - stampile: olimpiada/solutii/ONI/2001/V-VI-stampile.md
+                                        - turneu: olimpiada/solutii/ONI/2001/V-VI-turneu.md
+                                  - Clasele VII-VIII:
+                                        - paianjen: olimpiada/solutii/ONI/2001/VII-VIII-paianjen.md
+                                        - viespi: olimpiada/solutii/ONI/2001/VII-VIII-viespi.md
+                                  - Clasa a IX-a:
+                                        - tablou: olimpiada/solutii/ONI/2001/IX-tablou.md
+                                        - fracții: olimpiada/solutii/ONI/2001/IX-fractii.md
+                                        - ferma: olimpiada/solutii/ONI/2001/IX-ferma.md
+                                        - grup: olimpiada/solutii/ONI/2001/IX-grup.md
+                                        - competiție: olimpiada/solutii/ONI/2001/IX-competitie.md
+                                        - cuvinte: olimpiada/solutii/ONI/2001/IX-cuvinte.md
+                                  - Clasa a X-a:
+                                        - asfaltare: olimpiada/solutii/ONI/2001/X-asfaltare.md
+                                        - alpinistul: olimpiada/solutii/ONI/2001/X-alpinistul.md
+                                        - Oracolul decide!: olimpiada/solutii/ONI/2001/X-oracoluldecide.md
+                                        - pavari: olimpiada/solutii/ONI/2001/X-pavari.md
+                                        - drum: olimpiada/solutii/ONI/2001/X-drum.md
+                                        - alipiri: olimpiada/solutii/ONI/2001/X-alipiri.md
+                                  - Clasele XI-XII:
+                                        - telecomanda: olimpiada/solutii/ONI/2001/XI-XII-telecomanda.md
+                                        - entries: olimpiada/solutii/ONI/2001/XI-XII-entries.md
+                                        - textmare: olimpiada/solutii/ONI/2001/XI-XII-textmare.md
+                                        - relee: olimpiada/solutii/ONI/2001/XI-XII-relee.md
+                                        - robot: olimpiada/solutii/ONI/2001/XI-XII-robot.md
+                                        - Comparari: olimpiada/solutii/ONI/2001/XI-XII-comparari.md
+                            - ONI 2002:
+                                  - Clasa a V-a:
+                                        - tir: olimpiada/solutii/ONI/2002/V-tir.md
+                                        - gigel: olimpiada/solutii/ONI/2002/V-gigel.md
+                                  - Clasa a VI-a:
+                                        - Mititelu' Gates: olimpiada/solutii/ONI/2002/VI-mititelugates.md
+                                        - Cod Secret: olimpiada/solutii/ONI/2002/VI-codsecret.md
+                                  - Clasa a VII-a:
+                                        - arhivare: olimpiada/solutii/ONI/2002/VII-arhivare.md
+                                        - Matrice Monoton Maximala: olimpiada/solutii/ONI/2002/VII-matricemonotonmaximala.md
+                                  - Clasa a VIII-a:
+                                        - Cut&Paste: olimpiada/solutii/ONI/2002/VIII-cutpaste.md
+                                        - Pătrate: olimpiada/solutii/ONI/2002/VIII-patrate.md
+                                  - Clasa a IX-a:
+                                        - pentagon: olimpiada/solutii/ONI/2002/IX-pentagon.md
+                                        - pod: olimpiada/solutii/ONI/2002/IX-pod.md
+                                        - suma: olimpiada/solutii/ONI/2002/IX-suma.md
+                                        - becuri: olimpiada/solutii/ONI/2002/IX-becuri.md
+                                        - cod: olimpiada/solutii/ONI/2002/IX-cod.md
+                                        - discuri: olimpiada/solutii/ONI/2002/IX-discuri.md
+                                  - Clasa a X-a:
+                                        - hotel: olimpiada/solutii/ONI/2002/X-hotel.md
+                                        - lac: olimpiada/solutii/ONI/2002/X-lac.md
+                                        - logic: olimpiada/solutii/ONI/2002/X-logic.md
+                                        - aliniere: olimpiada/solutii/ONI/2002/X-aliniere.md
+                                        - balanta: olimpiada/solutii/ONI/2002/X-balanta.md
+                                        - foto: olimpiada/solutii/ONI/2002/X-foto.md
+                                  - Clasele XI-XII:
+                                        - sistem: olimpiada/solutii/ONI/2002/XI-XII-sistem.md
+                                        - comitat: olimpiada/solutii/ONI/2002/XI-XII-comitat.md
+                                        - Sumdiv: olimpiada/solutii/ONI/2002/XI-XII-sumdiv.md
+                                        - arbore: olimpiada/solutii/ONI/2002/XI-XII-arbore.md
+                                        - seti: olimpiada/solutii/ONI/2002/XI-XII-seti.md
+                                        - decod: olimpiada/solutii/ONI/2002/XI-XII-decod.md
+                            - ONI 2003:
+                                  - Clasa a V-a:
+                                        - Săritura Cangurului: olimpiada/solutii/ONI/2003/V-sarituracangurului.md
+                                        - Numere Prime: olimpiada/solutii/ONI/2003/V-numereprime.md
+                                        - Poarta Orintiei: olimpiada/solutii/ONI/2003/V-poartaorintiei.md
+                                  - Clasa a VI-a:
+                                        - Ora de Sport: olimpiada/solutii/ONI/2003/VI-oradesport.md
+                                        - numar: olimpiada/solutii/ONI/2003/VI-numar.md
+                                        - reorganizare: olimpiada/solutii/ONI/2003/VI-reorganizare.md
+                                  - Clasa a VII-a:
+                                        - Portocal: olimpiada/solutii/ONI/2003/VII-portocal.md
+                                        - Debarcare: olimpiada/solutii/ONI/2003/VII-debarcare.md
+                                        - Domino: olimpiada/solutii/ONI/2003/VII-domino.md
+                                  - Clasa a VIII-a:
+                                        - Cutii de Bomboane: olimpiada/solutii/ONI/2003/VIII-cutiidebomboane.md
+                                        - Matrice Monoton Maximală: olimpiada/solutii/ONI/2003/VIII-matricemonotonmaximala.md
+                                        - cuburi: olimpiada/solutii/ONI/2003/VIII-cuburi.md
+                                  - Clasa a IX-a:
+                                        - circular: olimpiada/solutii/ONI/2003/IX-circular.md
+                                        - scaune: olimpiada/solutii/ONI/2003/IX-scaune.md
+                                        - seti: olimpiada/solutii/ONI/2003/IX-seti.md
+                                        - criptare: olimpiada/solutii/ONI/2003/IX-criptare.md
+                                        - masina: olimpiada/solutii/ONI/2003/IX-masina.md
+                                        - operatii: olimpiada/solutii/ONI/2003/IX-operatii.md
+                                  - Clasa a X-a:
+                                        - asediu: olimpiada/solutii/ONI/2003/X-asediu.md
+                                        - muzeu: olimpiada/solutii/ONI/2003/X-muzeu.md
+                                        - munte: olimpiada/solutii/ONI/2003/X-munte.md
+                                        - partitie: olimpiada/solutii/ONI/2003/X-partitie.md
+                                        - scufita: olimpiada/solutii/ONI/2003/X-scufita.md
+                                        - rubine: olimpiada/solutii/ONI/2003/X-rubine.md
+                                  - Clasele XI-XII:
+                                        - asmin: olimpiada/solutii/ONI/2003/XI-XII-asmin.md
+                                        - cautare: olimpiada/solutii/ONI/2003/XI-XII-cautare.md
+                                        - a007: olimpiada/solutii/ONI/2003/XI-XII-a007.md
+                                        - proc: olimpiada/solutii/ONI/2003/XI-XII-proc.md
+                                        - inter: olimpiada/solutii/ONI/2003/XI-XII-inter.md
+                                        - nr: olimpiada/solutii/ONI/2003/XI-XII-nr.md
+                            - ONI 2004:
+                                  - Clasa a V-a:
+                                        - produs: olimpiada/solutii/ONI/2004/V-produs.md
+                                        - nota: olimpiada/solutii/ONI/2004/V-nota.md
+                                        - printesa: olimpiada/solutii/ONI/2004/V-printesa.md
+                                  - Clasa a VI-a:
+                                        - Spider: olimpiada/solutii/ONI/2004/VI-spider.md
+                                        - Prime Apropiate: olimpiada/solutii/ONI/2004/VI-primeapropiate.md
+                                        - Palindrom: olimpiada/solutii/ONI/2004/VI-palindrom.md
+                                  - Clasa a VII-a:
+                                        - V-uri: olimpiada/solutii/ONI/2004/VII-vuri.md
+                                        - jetoane: olimpiada/solutii/ONI/2004/VII-jetoane.md
+                                        - neo: olimpiada/solutii/ONI/2004/VII-neo.md
+                                  - Clasa a VIII-a:
+                                        - meteor: olimpiada/solutii/ONI/2004/VIII-meteor.md
+                                        - sume: olimpiada/solutii/ONI/2004/VIII-sume.md
+                                        - zar: olimpiada/solutii/ONI/2004/VIII-zar.md
+                                  - Clasa a IX-a:
+                                        - coduri: olimpiada/solutii/ONI/2004/IX-coduri.md
+                                        - Logic: olimpiada/solutii/ONI/2004/IX-logic.md
+                                        - poligon: olimpiada/solutii/ONI/2004/IX-poligon.md
+                                        - sablon: olimpiada/solutii/ONI/2004/IX-sablon.md
+                                        - sir: olimpiada/solutii/ONI/2004/IX-sir.md
+                                        - snipers: olimpiada/solutii/ONI/2004/IX-snipers.md
+                                  - Clasa a X-a:
+                                        - gaina: olimpiada/solutii/ONI/2004/X-gaina.md
+                                        - rez: olimpiada/solutii/ONI/2004/X-rez.md
+                                        - sortari: olimpiada/solutii/ONI/2004/X-sortari.md
+                                        - cuvinte: olimpiada/solutii/ONI/2004/X-cuvinte.md
+                                        - puncte: olimpiada/solutii/ONI/2004/X-puncte.md
+                                        - materom: olimpiada/solutii/ONI/2004/X-materom.md
+                                  - Clasele XI-XII:
+                                        - color: olimpiada/solutii/ONI/2004/XI-XII-color.md
+                                        - magic: olimpiada/solutii/ONI/2004/XI-XII-magic.md
+                                        - turnuri: olimpiada/solutii/ONI/2004/XI-XII-turnuri.md
+                                        - coach: olimpiada/solutii/ONI/2004/XI-XII-coach.md
+                                        - patrate: olimpiada/solutii/ONI/2004/XI-XII-patrate.md
+                                        - base3: olimpiada/solutii/ONI/2004/XI-XII-base3.md
+                            - ONI 2005:
+                                  - Clasa a V-a:
+                                        - baschet: olimpiada/solutii/ONI/2005/V-baschet.md
+                                        - comoara: olimpiada/solutii/ONI/2005/V-comoara.md
+                                        - ingerasi: olimpiada/solutii/ONI/2005/V-ingerasi.md
+                                  - Clasa a VI-a:
+                                        - numar: olimpiada/solutii/ONI/2005/VI-numar.md
+                                        - prieteni: olimpiada/solutii/ONI/2005/VI-prieteni.md
+                                        - robinson: olimpiada/solutii/ONI/2005/VI-robinson.md
+                                  - Clasa a VII-a:
+                                        - cezar: olimpiada/solutii/ONI/2005/VII-cezar.md
+                                        - joc: olimpiada/solutii/ONI/2005/VII-joc.md
+                                        - plinie: olimpiada/solutii/ONI/2005/VII-plinie.md
+                                  - Clasa a VIII-a:
+                                        - aritma: olimpiada/solutii/ONI/2005/VIII-aritma.md
+                                        - bete: olimpiada/solutii/ONI/2005/VIII-bete.md
+                                        - cuburi: olimpiada/solutii/ONI/2005/VIII-cuburi.md
+                                  - Clasa a IX-a:
+                                        - bifo: olimpiada/solutii/ONI/2005/IX-bifo.md
+                                        - romeo: olimpiada/solutii/ONI/2005/IX-romeo.md
+                                        - seceta: olimpiada/solutii/ONI/2005/IX-seceta.md
+                                        - biblos: olimpiada/solutii/ONI/2005/IX-biblos.md
+                                        - joc: olimpiada/solutii/ONI/2005/IX-joc.md
+                                        - pal: olimpiada/solutii/ONI/2005/IX-pal.md
+                                  - Clasa a X-a:
+                                        - antena: olimpiada/solutii/ONI/2005/X-antena.md
+                                        - avere: olimpiada/solutii/ONI/2005/X-avere.md
+                                        - paianjen: olimpiada/solutii/ONI/2005/X-paianjen.md
+                                        - joc: olimpiada/solutii/ONI/2005/X-joc.md
+                                        - suma: olimpiada/solutii/ONI/2005/X-suma.md
+                                        - vizibil: olimpiada/solutii/ONI/2005/X-vizibil.md
+                                  - Clasele XI-XII:
+                                        - masina: olimpiada/solutii/ONI/2005/XI-XII-masina.md
+                                        - matrice: olimpiada/solutii/ONI/2005/XI-XII-matrice.md
+                                        - ziduri: olimpiada/solutii/ONI/2005/XI-XII-ziduri.md
+                                        - csir: olimpiada/solutii/ONI/2005/XI-XII-csir.md
+                                        - lsort: olimpiada/solutii/ONI/2005/XI-XII-lsort.md
+                                        - patrat: olimpiada/solutii/ONI/2005/XI-XII-patrat.md
+                            - ONI 2006:
+                                  - Clasa a V-a:
+                                        - concurs: olimpiada/solutii/ONI/2006/V-concurs.md
+                                        - powerpuff: olimpiada/solutii/ONI/2006/V-powerpuff.md
+                                        - morse: olimpiada/solutii/ONI/2006/V-morse.md
+                                  - Clasa a VI-a:
+                                        - roboti: olimpiada/solutii/ONI/2006/VI-roboti.md
+                                        - suma: olimpiada/solutii/ONI/2006/VI-suma.md
+                                        - tzigla: olimpiada/solutii/ONI/2006/VI-tzigla.md
+                                  - Clasa a VII-a:
+                                        - baschet: olimpiada/solutii/ONI/2006/VII-baschet.md
+                                        - joc: olimpiada/solutii/ONI/2006/VII-joc.md
+                                        - mere: olimpiada/solutii/ONI/2006/VII-mere.md
+                                  - Clasa a VIII-a:
+                                        - adun: olimpiada/solutii/ONI/2006/VIII-adun.md
+                                        - sport: olimpiada/solutii/ONI/2006/VIII-sport.md
+                                        - suma: olimpiada/solutii/ONI/2006/VIII-suma.md
+                                  - Clasa a IX-a:
+                                        - limbaj: olimpiada/solutii/ONI/2006/IX-limbaj.md
+                                        - Șanț: olimpiada/solutii/ONI/2006/IX-sant.md
+                                        - zumzi: olimpiada/solutii/ONI/2006/IX-zumzi.md
+                                        - fact: olimpiada/solutii/ONI/2006/IX-fact.md
+                                        - panouri: olimpiada/solutii/ONI/2006/IX-panouri.md
+                                        - pereți: olimpiada/solutii/ONI/2006/IX-pereti.md
+                                  - Clasa a X-a:
+                                        - Cub: olimpiada/solutii/ONI/2006/X-cub.md
+                                        - Medie: olimpiada/solutii/ONI/2006/X-medie.md
+                                        - Prieteni: olimpiada/solutii/ONI/2006/X-prieteni.md
+                                        - Bombo: olimpiada/solutii/ONI/2006/X-bombo.md
+                                        - Logic: olimpiada/solutii/ONI/2006/X-logic.md
+                                        - SG1: olimpiada/solutii/ONI/2006/X-sg1.md
+                                  - Clasele XI-XII:
+                                        - borg: olimpiada/solutii/ONI/2006/XI-XII-borg.md
+                                        - diamant: olimpiada/solutii/ONI/2006/XI-XII-diamant.md
+                                        - vitale: olimpiada/solutii/ONI/2006/XI-XII-vitale.md
+                                        - matrice: olimpiada/solutii/ONI/2006/XI-XII-matrice.md
+                                        - petrom: olimpiada/solutii/ONI/2006/XI-XII-petrom.md
+                                        - ratina: olimpiada/solutii/ONI/2006/XI-XII-ratina.md
+                            - ONI 2007:
+                                  - Clasa a V-a:
+                                        - ceas: olimpiada/solutii/ONI/2007/V-ceas.md
+                                        - maxim: olimpiada/solutii/ONI/2007/V-maxim.md
+                                        - numere: olimpiada/solutii/ONI/2007/V-numere.md
+                                  - Clasa a VI-a:
+                                        - cifru: olimpiada/solutii/ONI/2007/VI-cifru.md
+                                        - oua: olimpiada/solutii/ONI/2007/VI-oua.md
+                                        - turn: olimpiada/solutii/ONI/2007/VI-turn.md
+                                  - Clasa a VII-a:
+                                        - excel: olimpiada/solutii/ONI/2007/VII-excel.md
+                                        - jetoane: olimpiada/solutii/ONI/2007/VII-jetoane.md
+                                        - politic: olimpiada/solutii/ONI/2007/VII-politic.md
+                                  - Clasa a VIII-a:
+                                        - div3: olimpiada/solutii/ONI/2007/VIII-div3.md
+                                        - sort: olimpiada/solutii/ONI/2007/VIII-sort.md
+                                        - trecere: olimpiada/solutii/ONI/2007/VIII-trecere.md
+                                  - Clasa a IX-a:
+                                        - lacuri: olimpiada/solutii/ONI/2007/IX-lacuri.md
+                                        - secv: olimpiada/solutii/ONI/2007/IX-secv.md
+                                        - triunghi: olimpiada/solutii/ONI/2007/IX-triunghi.md
+                                        - agitatie: olimpiada/solutii/ONI/2007/IX-agitatie.md
+                                        - coduri: olimpiada/solutii/ONI/2007/IX-coduri.md
+                                        - sotron: olimpiada/solutii/ONI/2007/IX-sotron.md
+                                  - Clasa a X-a:
+                                        - castel: olimpiada/solutii/ONI/2007/X-castel.md
+                                        - matrice: olimpiada/solutii/ONI/2007/X-matrice.md
+                                        - randuri: olimpiada/solutii/ONI/2007/X-randuri.md
+                                        - apel: olimpiada/solutii/ONI/2007/X-apel.md
+                                        - excursie: olimpiada/solutii/ONI/2007/X-excursie.md
+                                        - zidar: olimpiada/solutii/ONI/2007/X-zidar.md
+                                  - Clasele XI-XII:
+                                        - log: olimpiada/solutii/ONI/2007/XI-XII-log.md
+                                        - maxq: olimpiada/solutii/ONI/2007/XI-XII-maxq.md
+                                        - tric: olimpiada/solutii/ONI/2007/XI-XII-tric.md
+                                        - desc: olimpiada/solutii/ONI/2007/XI-XII-desc.md
+                                        - felinare: olimpiada/solutii/ONI/2007/XI-XII-felinare.md
+                                        - joc: olimpiada/solutii/ONI/2007/XI-XII-joc.md
+                            - ONI 2008:
+                                  - Clasa a V-a:
+                                        - mere: olimpiada/solutii/ONI/2008/V-mere.md
+                                        - felinare: olimpiada/solutii/ONI/2008/V-felinare.md
+                                        - sir: olimpiada/solutii/ONI/2008/V-sir.md
+                                  - Clasa a VI-a:
+                                        - creioane: olimpiada/solutii/ONI/2008/VI-creioane.md
+                                        - melci: olimpiada/solutii/ONI/2008/VI-melci.md
+                                        - tablou: olimpiada/solutii/ONI/2008/VI-tablou.md
+                                  - Clasa a VII-a:
+                                        - Fi si Cri: olimpiada/solutii/ONI/2008/VII-fisicri.md
+                                        - joc: olimpiada/solutii/ONI/2008/VII-joc.md
+                                        - Rezervatie naturala: olimpiada/solutii/ONI/2008/VII-rezervatienaturala.md
+                                  - Clasa a VIII-a:
+                                        - pm: olimpiada/solutii/ONI/2008/VIII-pm.md
+                                        - reteta: olimpiada/solutii/ONI/2008/VIII-reteta.md
+                                        - submat: olimpiada/solutii/ONI/2008/VIII-submat.md
+                                  - Clasa a IX-a:
+                                        - ab: olimpiada/solutii/ONI/2008/IX-ab.md
+                                        - iepuras: olimpiada/solutii/ONI/2008/IX-iepuras.md
+                                        - palind: olimpiada/solutii/ONI/2008/IX-palind.md
+                                        - auto: olimpiada/solutii/ONI/2008/IX-auto.md
+                                        - div: olimpiada/solutii/ONI/2008/IX-div.md
+                                        - teatru: olimpiada/solutii/ONI/2008/IX-teatru.md
+                                  - Clasa a X-a:
+                                        - banda: olimpiada/solutii/ONI/2008/X-banda.md
+                                        - pavare: olimpiada/solutii/ONI/2008/X-pavare.md
+                                        - poarta: olimpiada/solutii/ONI/2008/X-poarta.md
+                                        - aranjare: olimpiada/solutii/ONI/2008/X-aranjare.md
+                                        - bile: olimpiada/solutii/ONI/2008/X-bile.md
+                                        - subgeom: olimpiada/solutii/ONI/2008/X-subgeom.md
+                                  - Clasele XI-XII:
+                                        - albinuta: olimpiada/solutii/ONI/2008/XI-XII-albinuta.md
+                                        - curent: olimpiada/solutii/ONI/2008/XI-XII-curent.md
+                                        - pviz: olimpiada/solutii/ONI/2008/XI-XII-pviz.md
+                                        - atac: olimpiada/solutii/ONI/2008/XI-XII-atac.md
+                                        - drum: olimpiada/solutii/ONI/2008/XI-XII-drum.md
+                                        - virus: olimpiada/solutii/ONI/2008/XI-XII-virus.md
+                            - ONI 2009:
+                                  - Clasa a V-a:
+                                        - case: olimpiada/solutii/ONI/2009/V-case.md
+                                        - cartonas: olimpiada/solutii/ONI/2009/V-cartonas.md
+                                        - desen: olimpiada/solutii/ONI/2009/V-desen.md
+                                  - Clasa a VI-a:
+                                        - alarma: olimpiada/solutii/ONI/2009/VI-alarma.md
+                                        - nr: olimpiada/solutii/ONI/2009/VI-nr.md
+                                        - tetris: olimpiada/solutii/ONI/2009/VI-tetris.md
+                                  - Clasa a VII-a:
+                                        - patrate: olimpiada/solutii/ONI/2009/VII-patrate.md
+                                        - taxe: olimpiada/solutii/ONI/2009/VII-taxe.md
+                                        - tir: olimpiada/solutii/ONI/2009/VII-tir.md
+                                  - Clasa a VIII-a:
+                                        - parcele: olimpiada/solutii/ONI/2009/VIII-parcele.md
+                                        - dunarea: olimpiada/solutii/ONI/2009/VIII-dunarea.md
+                                        - paralelogram: olimpiada/solutii/ONI/2009/VIII-paralelogram.md
+                                  - Clasa a IX-a:
+                                        - joc: olimpiada/solutii/ONI/2009/IX-joc.md
+                                        - perspic: olimpiada/solutii/ONI/2009/IX-perspic.md
+                                        - rafturi: olimpiada/solutii/ONI/2009/IX-rafturi.md
+                                        - br: olimpiada/solutii/ONI/2009/IX-br.md
+                                        - origami: olimpiada/solutii/ONI/2009/IX-origami.md
+                                        - patrate: olimpiada/solutii/ONI/2009/IX-patrate.md
+                                  - Clasa a X-a:
+                                        - magic: olimpiada/solutii/ONI/2009/X-magic.md
+                                        - reactii: olimpiada/solutii/ONI/2009/X-reactii.md
+                                        - text: olimpiada/solutii/ONI/2009/X-text.md
+                                        - bile: olimpiada/solutii/ONI/2009/X-bile.md
+                                        - check-in: olimpiada/solutii/ONI/2009/X-checkin.md
+                                        - volei: olimpiada/solutii/ONI/2009/X-volei.md
+                                  - Clasele XI-XII:
+                                        - reinvent: olimpiada/solutii/ONI/2009/XI-XII-reinvent.md
+                                        - revolutie: olimpiada/solutii/ONI/2009/XI-XII-revolutie.md
+                                        - sirag: olimpiada/solutii/ONI/2009/XI-XII-sirag.md
+                                        - matrice: olimpiada/solutii/ONI/2009/XI-XII-matrice.md
+                                        - numere: olimpiada/solutii/ONI/2009/XI-XII-numere.md
+                                        - pikachu: olimpiada/solutii/ONI/2009/XI-XII-pikachu.md
+                      - ONI 2010-2019:
+                            - ONI 2010:
+                                  - Clasa a V-a:
+                                        - cluburi: olimpiada/solutii/ONI/2010/V-cluburi.md
+                                        - domino: olimpiada/solutii/ONI/2010/V-domino.md
+                                        - max: olimpiada/solutii/ONI/2010/V-max.md
+                                  - Clasa a VI-a:
+                                        - control: olimpiada/solutii/ONI/2010/VI-control.md
+                                        - figura: olimpiada/solutii/ONI/2010/VI-figura.md
+                                        - joc: olimpiada/solutii/ONI/2010/VI-joc.md
+                                  - Clasa a VII-a:
+                                        - char: olimpiada/solutii/ONI/2010/VII-char.md
+                                        - maraton: olimpiada/solutii/ONI/2010/VII-maraton.md
+                                        - roboti: olimpiada/solutii/ONI/2010/VII-roboti.md
+                                  - Clasa a VIII-a:
+                                        - fractie: olimpiada/solutii/ONI/2010/VIII-fractie.md
+                                        - neuroni: olimpiada/solutii/ONI/2010/VIII-neuroni.md
+                                        - raze: olimpiada/solutii/ONI/2010/VIII-raze.md
+                                  - Clasa a IX-a:
+                                        - CERN: olimpiada/solutii/ONI/2010/IX-cern.md
+                                        - cmmmc: olimpiada/solutii/ONI/2010/IX-cmmmc.md
+                                        - simetric: olimpiada/solutii/ONI/2010/IX-simetric.md
+                                        - pesti: olimpiada/solutii/ONI/2010/IX-pesti.md
+                                        - plaja: olimpiada/solutii/ONI/2010/IX-plaja.md
+                                        - tango: olimpiada/solutii/ONI/2010/IX-tango.md
+                                  - Clasa a X-a:
+                                        - dreptunghiuri: olimpiada/solutii/ONI/2010/X-dreptunghiuri.md
+                                        - gaz: olimpiada/solutii/ONI/2010/X-gaz.md
+                                        - xp: olimpiada/solutii/ONI/2010/X-xp.md
+                                        - mesaje: olimpiada/solutii/ONI/2010/X-mesaje.md
+                                        - petrecere: olimpiada/solutii/ONI/2010/X-petrecere.md
+                                        - triunghi: olimpiada/solutii/ONI/2010/X-triunghi.md
+                                  - Clasele XI-XII:
+                                        - conex: olimpiada/solutii/ONI/2010/XI-XII-conex.md
+                                        - kmax: olimpiada/solutii/ONI/2010/XI-XII-kmax.md
+                                        - submatrix: olimpiada/solutii/ONI/2010/XI-XII-submatrix.md
+                                        - minuni: olimpiada/solutii/ONI/2010/XI-XII-minuni.md
+                                        - diff: olimpiada/solutii/ONI/2010/XI-XII-diff.md
+                                        - stalpi: olimpiada/solutii/ONI/2010/XI-XII-stalpi.md
+                            - ONI 2011:
+                                  - Clasa a V-a:
+                                        - fagure: olimpiada/solutii/ONI/2011/V-fagure.md
+                                        - goe: olimpiada/solutii/ONI/2011/V-goe.md
+                                        - papusa: olimpiada/solutii/ONI/2011/V-papusa.md
+                                  - Clasa a VI-a:
+                                        - joc: olimpiada/solutii/ONI/2011/VI-joc.md
+                                        - talent: olimpiada/solutii/ONI/2011/VI-talent.md
+                                        - xy: olimpiada/solutii/ONI/2011/VI-xy.md
+                                  - Clasa a VII-a:
+                                        - joc: olimpiada/solutii/ONI/2011/VII-joc.md
+                                        - mesaj: olimpiada/solutii/ONI/2011/VII-mesaj.md
+                                        - zar: olimpiada/solutii/ONI/2011/VII-zar.md
+                                  - Clasa a VIII-a:
+                                        - butoane: olimpiada/solutii/ONI/2011/VIII-butoane.md
+                                        - macheta: olimpiada/solutii/ONI/2011/VIII-macheta.md
+                                        - sport: olimpiada/solutii/ONI/2011/VIII-sport.md
+                                  - Clasa a IX-a:
+                                        - poligon: olimpiada/solutii/ONI/2011/IX-poligon.md
+                                        - stalpi: olimpiada/solutii/ONI/2011/IX-stalpi.md
+                                        - tort: olimpiada/solutii/ONI/2011/IX-tort.md
+                                        - ape: olimpiada/solutii/ONI/2011/IX-ape.md
+                                        - ec: olimpiada/solutii/ONI/2011/IX-ec.md
+                                        - furnici: olimpiada/solutii/ONI/2011/IX-furnici.md
+                                  - Clasa a X-a:
+                                        - MXL: olimpiada/solutii/ONI/2011/X-mxl.md
+                                        - Segmente: olimpiada/solutii/ONI/2011/X-segmente.md
+                                        - Tsunami: olimpiada/solutii/ONI/2011/X-tsunami.md
+                                        - Acces: olimpiada/solutii/ONI/2011/X-acces.md
+                                        - Expresie: olimpiada/solutii/ONI/2011/X-expresie.md
+                                        - Telecab: olimpiada/solutii/ONI/2011/X-telecab.md
+                                  - Clasele XI-XII:
+                                        - fotbal: olimpiada/solutii/ONI/2011/XI-XII-fotbal.md
+                                        - ikebana: olimpiada/solutii/ONI/2011/XI-XII-ikebana.md
+                                        - posta: olimpiada/solutii/ONI/2011/XI-XII-posta.md
+                                        - pamant: olimpiada/solutii/ONI/2011/XI-XII-pamant.md
+                                        - radare: olimpiada/solutii/ONI/2011/XI-XII-radare.md
+                                        - xmoto: olimpiada/solutii/ONI/2011/XI-XII-xmoto.md
+                            - ONI 2012:
+                                  - Clasa a V-a:
+                                        - culegere: olimpiada/solutii/ONI/2012/V-culegere.md
+                                        - culori: olimpiada/solutii/ONI/2012/V-culori.md
+                                        - stele: olimpiada/solutii/ONI/2012/V-stele.md
+                                  - Clasa a VI-a:
+                                        - cartier: olimpiada/solutii/ONI/2012/VI-cartier.md
+                                        - medalion: olimpiada/solutii/ONI/2012/VI-medalion.md
+                                        - numar: olimpiada/solutii/ONI/2012/VI-numar.md
+                                  - Clasa a VII-a:
+                                        - bile: olimpiada/solutii/ONI/2012/VII-bile.md
+                                        - proiecte: olimpiada/solutii/ONI/2012/VII-proiecte.md
+                                        - zigzag: olimpiada/solutii/ONI/2012/VII-zigzag.md
+                                  - Clasa a VIII-a:
+                                        - alune: olimpiada/solutii/ONI/2012/VIII-alune.md
+                                        - cuburi: olimpiada/solutii/ONI/2012/VIII-cuburi.md
+                                        - optim: olimpiada/solutii/ONI/2012/VIII-optim.md
+                                  - Clasa a IX-a:
+                                        - palindrom: olimpiada/solutii/ONI/2012/IX-palindrom.md
+                                        - 7segmente: olimpiada/solutii/ONI/2012/IX-7segmente.md
+                                        - copaci: olimpiada/solutii/ONI/2012/IX-copaci.md
+                                        - intersectii: olimpiada/solutii/ONI/2012/IX-intersectii.md
+                                        - sstabil: olimpiada/solutii/ONI/2012/IX-sstabil.md
+                                        - unuzero: olimpiada/solutii/ONI/2012/IX-unuzero.md
+                                  - Clasa a X-a:
+                                        - cutie: olimpiada/solutii/ONI/2012/X-cutie.md
+                                        - gheizere: olimpiada/solutii/ONI/2012/X-gheizere.md
+                                        - plus: olimpiada/solutii/ONI/2012/X-plus.md
+                                        - amedie: olimpiada/solutii/ONI/2012/X-amedie.md
+                                        - drept: olimpiada/solutii/ONI/2012/X-drept.md
+                                        - poly: olimpiada/solutii/ONI/2012/X-poly.md
+                                  - Clasele XI-XII:
+                                        - search: olimpiada/solutii/ONI/2012/XI-XII-search.md
+                                        - urat: olimpiada/solutii/ONI/2012/XI-XII-urat.md
+                                        - zlego: olimpiada/solutii/ONI/2012/XI-XII-zlego.md
+                                        - drumuri: olimpiada/solutii/ONI/2012/XI-XII-drumuri.md
+                                        - minerale: olimpiada/solutii/ONI/2012/XI-XII-minerale.md
+                                        - tarabe: olimpiada/solutii/ONI/2012/XI-XII-tarabe.md
+                            - ONI 2013:
+                                  - Clasa a V-a:
+                                        - extraprime: olimpiada/solutii/ONI/2013/V-extraprime.md
+                                        - greieri: olimpiada/solutii/ONI/2013/V-greieri.md
+                                        - onigim: olimpiada/solutii/ONI/2013/V-onigim.md
+                                  - Clasa a VI-a:
+                                        - divizori: olimpiada/solutii/ONI/2013/VI-divizori.md
+                                        - remi: olimpiada/solutii/ONI/2013/VI-remi.md
+                                        - tetris: olimpiada/solutii/ONI/2013/VI-tetris.md
+                                  - Clasa a VII-a:
+                                        - cursa: olimpiada/solutii/ONI/2013/VII-cursa.md
+                                        - patrate: olimpiada/solutii/ONI/2013/VII-patrate.md
+                                        - secvp: olimpiada/solutii/ONI/2013/VII-secvp.md
+                                  - Clasa a VIII-a:
+                                        - amestec: olimpiada/solutii/ONI/2013/VIII-amestec.md
+                                        - eoliene: olimpiada/solutii/ONI/2013/VIII-eoliene.md
+                                        - sudoku: olimpiada/solutii/ONI/2013/VIII-sudoku.md
+                                  - Clasa a IX-a:
+                                        - aranjare: olimpiada/solutii/ONI/2013/IX-aranjare.md
+                                        - gradina: olimpiada/solutii/ONI/2013/IX-gradina.md
+                                        - split: olimpiada/solutii/ONI/2013/IX-split.md
+                                        - momente: olimpiada/solutii/ONI/2013/IX-momente.md
+                                        - secvente: olimpiada/solutii/ONI/2013/IX-secvente.md
+                                        - spider: olimpiada/solutii/ONI/2013/IX-spider.md
+                                  - Clasa a X-a:
+                                        - cumpanit: olimpiada/solutii/ONI/2013/X-cumpanit.md
+                                        - romb: olimpiada/solutii/ONI/2013/X-romb.md
+                                        - Showroom: olimpiada/solutii/ONI/2013/X-showroom.md
+                                        - flori: olimpiada/solutii/ONI/2013/X-flori.md
+                                        - taxa: olimpiada/solutii/ONI/2013/X-taxa.md
+                                        - zone: olimpiada/solutii/ONI/2013/X-zone.md
+                                  - Clasele XI-XII:
+                                        - amici: olimpiada/solutii/ONI/2013/XI-XII-amici.md
+                                        - bemo: olimpiada/solutii/ONI/2013/XI-XII-bemo.md
+                                        - confuzie: olimpiada/solutii/ONI/2013/XI-XII-confuzie.md
+                                        - ausoara: olimpiada/solutii/ONI/2013/XI-XII-ausoara.md
+                                        - drumuri: olimpiada/solutii/ONI/2013/XI-XII-drumuri.md
+                                        - xnumere: olimpiada/solutii/ONI/2013/XI-XII-xnumere.md
+                            - ONI 2014:
+                                  - Clasa a V-a:
+                                        - "2048": olimpiada/solutii/ONI/2014/V-2048.md
+                                        - babilon: olimpiada/solutii/ONI/2014/V-babilon.md
+                                        - iepurasi: olimpiada/solutii/ONI/2014/V-iepurasi.md
+                                  - Clasa a VI-a:
+                                        - betisoare: olimpiada/solutii/ONI/2014/VI-betisoare.md
+                                        - praslea: olimpiada/solutii/ONI/2014/VI-praslea.md
+                                        - tinta: olimpiada/solutii/ONI/2014/VI-tinta.md
+                                  - Clasa a VII-a:
+                                        - codat: olimpiada/solutii/ONI/2014/VII-codat.md
+                                        - nod: olimpiada/solutii/ONI/2014/VII-nod.md
+                                        - placa: olimpiada/solutii/ONI/2014/VII-placa.md
+                                  - Clasa a VIII-a:
+                                        - cifre: olimpiada/solutii/ONI/2014/VIII-cifre.md
+                                        - solitar: olimpiada/solutii/ONI/2014/VIII-solitar.md
+                                        - tdrept: olimpiada/solutii/ONI/2014/VIII-tdrept.md
+                                  - Clasa a IX-a:
+                                        - harta: olimpiada/solutii/ONI/2014/IX-harta.md
+                                        - qvect: olimpiada/solutii/ONI/2014/IX-qvect.md
+                                        - tg: olimpiada/solutii/ONI/2014/IX-tg.md
+                                        - progresie: olimpiada/solutii/ONI/2014/IX-progresie.md
+                                        - reflex: olimpiada/solutii/ONI/2014/IX-reflex.md
+                                        - traseu: olimpiada/solutii/ONI/2014/IX-traseu.md
+                                  - Clasa a X-a:
+                                        - joc: olimpiada/solutii/ONI/2014/X-joc.md
+                                        - spion: olimpiada/solutii/ONI/2014/X-spion.md
+                                        - zimeria: olimpiada/solutii/ONI/2014/X-zimeria.md
+                                        - Puteri: olimpiada/solutii/ONI/2014/X-puteri.md
+                                        - Răscoala: olimpiada/solutii/ONI/2014/X-rascoala.md
+                                        - Stiva: olimpiada/solutii/ONI/2014/X-stiva.md
+                                  - Clasele XI-XII:
+                                        - avarcolaci: olimpiada/solutii/ONI/2014/XI-XII-avarcolaci.md
+                                        - karb: olimpiada/solutii/ONI/2014/XI-XII-karb.md
+                                        - volum: olimpiada/solutii/ONI/2014/XI-XII-volum.md
+                                        - clepsidra: olimpiada/solutii/ONI/2014/XI-XII-clepsidra.md
+                                        - permutare: olimpiada/solutii/ONI/2014/XI-XII-permutare.md
+                                        - xcmmdc: olimpiada/solutii/ONI/2014/XI-XII-xcmmdc.md
+                            - ONI 2015:
+                                  - Clasa a V-a:
+                                        - iepuras: olimpiada/solutii/ONI/2015/V-iepuras.md
+                                        - inventie: olimpiada/solutii/ONI/2015/V-inventie.md
+                                        - mesaj: olimpiada/solutii/ONI/2015/V-mesaj.md
+                                  - Clasa a VI-a:
+                                        - echer: olimpiada/solutii/ONI/2015/VI-echer.md
+                                        - lightbot: olimpiada/solutii/ONI/2015/VI-lightbot.md
+                                        - teren: olimpiada/solutii/ONI/2015/VI-teren.md
+                                  - Clasa a VII-a:
+                                        - cript: olimpiada/solutii/ONI/2015/VII-cript.md
+                                        - scadere: olimpiada/solutii/ONI/2015/VII-scadere.md
+                                        - tv: olimpiada/solutii/ONI/2015/VII-tv.md
+                                  - Clasa a VIII-a:
+                                        - magic: olimpiada/solutii/ONI/2015/VIII-magic.md
+                                        - restaurare: olimpiada/solutii/ONI/2015/VIII-restaurare.md
+                                        - sort2dist: olimpiada/solutii/ONI/2015/VIII-sort2dist.md
+                                  - Clasa a IX-a:
+                                        - cub: olimpiada/solutii/ONI/2015/IX-cub.md
+                                        - risc: olimpiada/solutii/ONI/2015/IX-risc.md
+                                        - roboti: olimpiada/solutii/ONI/2015/IX-roboti.md
+                                        - casa: olimpiada/solutii/ONI/2015/IX-casa.md
+                                        - leneș: olimpiada/solutii/ONI/2015/IX-lenes.md
+                                        - sipet: olimpiada/solutii/ONI/2015/IX-sipet.md
+                                  - Clasa a X-a:
+                                        - cabana: olimpiada/solutii/ONI/2015/X-cabana.md
+                                        - fence: olimpiada/solutii/ONI/2015/X-fence.md
+                                        - Nmult: olimpiada/solutii/ONI/2015/X-nmult.md
+                                        - Procente: olimpiada/solutii/ONI/2015/X-procente.md
+                                        - Robotics: olimpiada/solutii/ONI/2015/X-robotics.md
+                                        - Șablon: olimpiada/solutii/ONI/2015/X-sablon.md
+                                  - Clasele XI-XII:
+                                        - metrou: olimpiada/solutii/ONI/2015/XI-XII-metrou.md
+                                        - spiridusi: olimpiada/solutii/ONI/2015/XI-XII-spiridusi.md
+                                        - text: olimpiada/solutii/ONI/2015/XI-XII-text.md
+                                        - arbvalmax: olimpiada/solutii/ONI/2015/XI-XII-arbvalmax.md
+                                        - ksecv: olimpiada/solutii/ONI/2015/XI-XII-ksecv.md
+                                        - trenuri: olimpiada/solutii/ONI/2015/XI-XII-trenuri.md
+                            - ONI 2016:
+                                  - Clasa a V-a:
+                                        - norocos: olimpiada/solutii/ONI/2016/V-norocos.md
+                                        - oglinda: olimpiada/solutii/ONI/2016/V-oglinda.md
+                                        - perechi: olimpiada/solutii/ONI/2016/V-perechi.md
+                                  - Clasa a VI-a:
+                                        - cod: olimpiada/solutii/ONI/2016/VI-cod.md
+                                        - perm: olimpiada/solutii/ONI/2016/VI-perm.md
+                                        - robotel: olimpiada/solutii/ONI/2016/VI-robotel.md
+                                  - Clasa a VII-a:
+                                        - birouri: olimpiada/solutii/ONI/2016/VII-birouri.md
+                                        - cristale: olimpiada/solutii/ONI/2016/VII-cristale.md
+                                        - parchet: olimpiada/solutii/ONI/2016/VII-parchet.md
+                                  - Clasa a VIII-a:
+                                        - Cercetasi: olimpiada/solutii/ONI/2016/VIII-cercetasi.md
+                                        - farma: olimpiada/solutii/ONI/2016/VIII-farma.md
+                                        - stele: olimpiada/solutii/ONI/2016/VIII-stele.md
+                                  - Clasa a IX-a:
+                                        - civilizatie: olimpiada/solutii/ONI/2016/IX-civilizatie.md
+                                        - cmmdc: olimpiada/solutii/ONI/2016/IX-cmmdc.md
+                                        - livada: olimpiada/solutii/ONI/2016/IX-livada.md
+                                        - dif2: olimpiada/solutii/ONI/2016/IX-dif2.md
+                                        - leduri: olimpiada/solutii/ONI/2016/IX-leduri.md
+                                        - omogene: olimpiada/solutii/ONI/2016/IX-omogene.md
+                                  - Clasa a X-a:
+                                        - Calc: olimpiada/solutii/ONI/2016/X-calc.md
+                                        - Elmer: olimpiada/solutii/ONI/2016/X-elmer.md
+                                        - Tort: olimpiada/solutii/ONI/2016/X-tort.md
+                                        - Intrus: olimpiada/solutii/ONI/2016/X-intrus.md
+                                        - Movedel: olimpiada/solutii/ONI/2016/X-movedel.md
+                                        - Undo: olimpiada/solutii/ONI/2016/X-undo.md
+                                  - Clasele XI-XII:
+                                        - euro: olimpiada/solutii/ONI/2016/XI-XII-euro.md
+                                        - sushi: olimpiada/solutii/ONI/2016/XI-XII-sushi.md
+                                        - xor: olimpiada/solutii/ONI/2016/XI-XII-xor.md
+                                        - arbore: olimpiada/solutii/ONI/2016/XI-XII-arbore.md
+                                        - calafat: olimpiada/solutii/ONI/2016/XI-XII-calafat.md
+                                        - transform: olimpiada/solutii/ONI/2016/XI-XII-transform.md
+                            - ONI 2017:
+                                  - Clasa a V-a:
+                                        - prime: olimpiada/solutii/ONI/2017/V-prime.md
+                                        - robot: olimpiada/solutii/ONI/2017/V-robot.md
+                                        - roua: olimpiada/solutii/ONI/2017/V-roua.md
+                                  - Clasa a VI-a:
+                                        - faleza: olimpiada/solutii/ONI/2017/VI-faleza.md
+                                        - peste: olimpiada/solutii/ONI/2017/VI-peste.md
+                                        - soricel: olimpiada/solutii/ONI/2017/VI-soricel.md
+                                  - Clasa a VII-a:
+                                        - carte: olimpiada/solutii/ONI/2017/VII-carte.md
+                                        - ghinde: olimpiada/solutii/ONI/2017/VII-ghinde.md
+                                        - submat: olimpiada/solutii/ONI/2017/VII-submat.md
+                                  - Clasa a VIII-a:
+                                        - boats: olimpiada/solutii/ONI/2017/VIII-boats.md
+                                        - doilan: olimpiada/solutii/ONI/2017/VIII-doilan.md
+                                        - Z: olimpiada/solutii/ONI/2017/VIII-z.md
+                                  - Clasa a IX-a:
+                                        - arhipelag: olimpiada/solutii/ONI/2017/IX-arhipelag.md
+                                        - mirror: olimpiada/solutii/ONI/2017/IX-mirror.md
+                                        - okcpp: olimpiada/solutii/ONI/2017/IX-okcpp.md
+                                        - adlic: olimpiada/solutii/ONI/2017/IX-adlic.md
+                                        - bomboane: olimpiada/solutii/ONI/2017/IX-bomboane.md
+                                        - orase: olimpiada/solutii/ONI/2017/IX-orase.md
+                                  - Clasa a X-a:
+                                        - multisum: olimpiada/solutii/ONI/2017/X-multisum.md
+                                        - puzzle: olimpiada/solutii/ONI/2017/X-puzzle.md
+                                        - taietura: olimpiada/solutii/ONI/2017/X-taietura.md
+                                        - 100m: olimpiada/solutii/ONI/2017/X-100m.md
+                                        - camp: olimpiada/solutii/ONI/2017/X-camp.md
+                                        - identice: olimpiada/solutii/ONI/2017/X-identice.md
+                                  - Clasele XI-XII:
+                                        - incurcatura: olimpiada/solutii/ONI/2017/XI-XII-incurcatura.md
+                                        - startrek: olimpiada/solutii/ONI/2017/XI-XII-startrek.md
+                                        - tris: olimpiada/solutii/ONI/2017/XI-XII-tris.md
+                                        - bvarcolaci: olimpiada/solutii/ONI/2017/XI-XII-bvarcolaci.md
+                                        - minarea: olimpiada/solutii/ONI/2017/XI-XII-minarea.md
+                                        - order: olimpiada/solutii/ONI/2017/XI-XII-order.md
+                            - ONI 2018:
+                                  - Clasa a V-a:
+                                        - desen: olimpiada/solutii/ONI/2018/V-desen.md
+                                        - mostenire: olimpiada/solutii/ONI/2018/V-mostenire.md
+                                        - pyk: olimpiada/solutii/ONI/2018/V-pyk.md
+                                  - Clasa a VI-a:
+                                        - descmult: olimpiada/solutii/ONI/2018/VI-descmult.md
+                                        - gazon: olimpiada/solutii/ONI/2018/VI-gazon.md
+                                        - pietre: olimpiada/solutii/ONI/2018/VI-pietre.md
+                                  - Clasa a VII-a:
+                                        - evip: olimpiada/solutii/ONI/2018/VII-evip.md
+                                        - nxy: olimpiada/solutii/ONI/2018/VII-nxy.md
+                                        - viitor: olimpiada/solutii/ONI/2018/VII-viitor.md
+                                  - Clasa a VIII-a:
+                                        - gene: olimpiada/solutii/ONI/2018/VIII-gene.md
+                                        - jocxzero: olimpiada/solutii/ONI/2018/VIII-jocxzero.md
+                                        - laser: olimpiada/solutii/ONI/2018/VIII-laser.md
+                                  - Clasa a IX-a:
+                                        - bazaf: olimpiada/solutii/ONI/2018/IX-bazaf.md
+                                        - mexitate: olimpiada/solutii/ONI/2018/IX-mexitate.md
+                                        - plaja: olimpiada/solutii/ONI/2018/IX-plaja.md
+                                        - bsrec: olimpiada/solutii/ONI/2018/IX-bsrec.md
+                                        - numinum: olimpiada/solutii/ONI/2018/IX-numinum.md
+                                        - roșii mici: olimpiada/solutii/ONI/2018/IX-rosiimici.md
+                                  - Clasa a X-a:
+                                        - anagrame: olimpiada/solutii/ONI/2018/X-anagrame.md
+                                        - multimi: olimpiada/solutii/ONI/2018/X-multimi.md
+                                        - Șiruri: olimpiada/solutii/ONI/2018/X-siruri.md
+                                        - agora: olimpiada/solutii/ONI/2018/X-agora.md
+                                        - grup: olimpiada/solutii/ONI/2018/X-grup.md
+                                        - Proiectoare: olimpiada/solutii/ONI/2018/X-proiectoare.md
+                                  - Clasele XI-XII:
+                                        - aranjare: olimpiada/solutii/ONI/2018/XI-XII-aranjare.md
+                                        - poligon: olimpiada/solutii/ONI/2018/XI-XII-poligon.md
+                                        - tricolor: olimpiada/solutii/ONI/2018/XI-XII-tricolor.md
+                                        - antivirus: olimpiada/solutii/ONI/2018/XI-XII-antivirus.md
+                                        - dungeon: olimpiada/solutii/ONI/2018/XI-XII-dungeon.md
+                                        - zuma: olimpiada/solutii/ONI/2018/XI-XII-zuma.md
+                            - ONI 2019:
+                                  - Clasa a V-a:
+                                        - copii: olimpiada/solutii/ONI/2019/V-copii.md
+                                        - numere: olimpiada/solutii/ONI/2019/V-numere.md
+                                        - trio: olimpiada/solutii/ONI/2019/V-trio.md
+                                  - Clasa a VI-a:
+                                        - maya: olimpiada/solutii/ONI/2019/VI-maya.md
+                                        - optime: olimpiada/solutii/ONI/2019/VI-optime.md
+                                        - roata: olimpiada/solutii/ONI/2019/VI-roata.md
+                                  - Clasa a VII-a:
+                                        - domino: olimpiada/solutii/ONI/2019/VII-domino.md
+                                        - tuburi: olimpiada/solutii/ONI/2019/VII-tuburi.md
+                                        - venus: olimpiada/solutii/ONI/2019/VII-venus.md
+                                  - Clasa a VIII-a:
+                                        - criptografie: olimpiada/solutii/ONI/2019/VIII-criptografie.md
+                                        - drept: olimpiada/solutii/ONI/2019/VIII-drept.md
+                                        - lumini: olimpiada/solutii/ONI/2019/VIII-lumini.md
+                                  - Clasa a IX-a:
+                                        - amat: olimpiada/solutii/ONI/2019/IX-amat.md
+                                        - comun: olimpiada/solutii/ONI/2019/IX-comun.md
+                                        - pro3: olimpiada/solutii/ONI/2019/IX-pro3.md
+                                        - cub: olimpiada/solutii/ONI/2019/IX-cub.md
+                                        - fibofrac: olimpiada/solutii/ONI/2019/IX-fibofrac.md
+                                        - telefon: olimpiada/solutii/ONI/2019/IX-telefon.md
+                                  - Clasa a X-a:
+                                        - artifact: olimpiada/solutii/ONI/2019/X-artifact.md
+                                        - scara: olimpiada/solutii/ONI/2019/X-scara.md
+                                        - walle: olimpiada/solutii/ONI/2019/X-walle.md
+                                        - nozero: olimpiada/solutii/ONI/2019/X-nozero.md
+                                        - pericol: olimpiada/solutii/ONI/2019/X-pericol.md
+                                        - vip: olimpiada/solutii/ONI/2019/X-vip.md
+                                  - Clasele XI-XII:
+                                        - lexicografic: olimpiada/solutii/ONI/2019/XI-XII-lexicografic.md
+                                        - oracol: olimpiada/solutii/ONI/2019/XI-XII-oracol.md
+                                        - TreeGCD: olimpiada/solutii/ONI/2019/XI-XII-treegcd.md
+                                        - compact: olimpiada/solutii/ONI/2019/XI-XII-compact.md
+                                        - hipersimetrie: olimpiada/solutii/ONI/2019/XI-XII-hipersimetrie.md
+                                        - linegraph: olimpiada/solutii/ONI/2019/XI-XII-linegraph.md
+                      - ONI 2020-2024:
+                            - ONI 2021:
+                                  - Clasa a V-a:
+                                        - ktlon: olimpiada/solutii/ONI/2021/V-ktlon.md
+                                        - iepuras: olimpiada/solutii/ONI/2021/V-iepuras.md
+                                        - taieri: olimpiada/solutii/ONI/2021/V-taieri.md
+                                  - Clasa a VI-a:
+                                        - butoi: olimpiada/solutii/ONI/2021/VI-butoi.md
+                                        - pasari: olimpiada/solutii/ONI/2021/VI-pasari.md
+                                        - puternic: olimpiada/solutii/ONI/2021/VI-puternic.md
+                                  - Clasa a VII-a:
+                                        - cat2pal: olimpiada/solutii/ONI/2021/VII-cat2pal.md
+                                        - virus: olimpiada/solutii/ONI/2021/VII-virus.md
+                                        - Zid: olimpiada/solutii/ONI/2021/VII-zid.md
+                                  - Clasa a VIII-a:
+                                        - bile: olimpiada/solutii/ONI/2021/VIII-bile.md
+                                        - secvente: olimpiada/solutii/ONI/2021/VIII-secvente.md
+                                        - valoare: olimpiada/solutii/ONI/2021/VIII-valoare.md
+                                  - Clasa a IX-a:
+                                        - lemans: olimpiada/solutii/ONI/2021/IX-lemans.md
+                                        - oposumi: olimpiada/solutii/ONI/2021/IX-oposumi.md
+                                        - ELHC: olimpiada/solutii/ONI/2021/IX-elhc.md
+                                  - Clasa a X-a:
+                                        - cvintete: olimpiada/solutii/ONI/2021/X-cvintete.md
+                                        - primar: olimpiada/solutii/ONI/2021/X-primar.md
+                                        - expresii: olimpiada/solutii/ONI/2021/X-expresii.md
+                                  - Clasele XI-XII:
+                                        - bisortare: olimpiada/solutii/ONI/2021/XI-XII-bisortare.md
+                                        - SaseG: olimpiada/solutii/ONI/2021/XI-XII-saseg.md
+                                        - cuvinte: olimpiada/solutii/ONI/2021/XI-XII-cuvinte.md
+                            - ONI 2022:
+                                  - Clasa a V-a:
+                                        - culori: olimpiada/solutii/ONI/2022/V-culori.md
+                                        - joc: olimpiada/solutii/ONI/2022/V-joc.md
+                                        - rotire25: olimpiada/solutii/ONI/2022/V-rotire25.md
+                                  - Clasa a VI-a:
+                                        - iluminat: olimpiada/solutii/ONI/2022/VI-iluminat.md
+                                        - inundatie: olimpiada/solutii/ONI/2022/VI-inundatie.md
+                                        - siruri: olimpiada/solutii/ONI/2022/VI-siruri.md
+                                  - Clasa a VII-a:
+                                        - microbuz: olimpiada/solutii/ONI/2022/VII-microbuz.md
+                                        - raza: olimpiada/solutii/ONI/2022/VII-raza.md
+                                        - text: olimpiada/solutii/ONI/2022/VII-text.md
+                                  - Clasa a VIII-a:
+                                        - proeminenta: olimpiada/solutii/ONI/2022/VIII-proeminenta.md
+                                        - rgb: olimpiada/solutii/ONI/2022/VIII-rgb.md
+                                        - subsir: olimpiada/solutii/ONI/2022/VIII-subsir.md
+                                  - Clasa a IX-a:
+                                        - colibri: olimpiada/solutii/ONI/2022/IX-colibri.md
+                                        - geogra: olimpiada/solutii/ONI/2022/IX-geogra.md
+                                        - schi: olimpiada/solutii/ONI/2022/IX-schi.md
+                                  - Clasa a X-a:
+                                        - munte: olimpiada/solutii/ONI/2022/X-munte.md
+                                        - changemin: olimpiada/solutii/ONI/2022/X-changemin.md
+                                        - dragonfruit: olimpiada/solutii/ONI/2022/X-dragonfruit.md
+                                  - Clasele XI-XII:
+                                        - lupusor: olimpiada/solutii/ONI/2022/XI-XII-lupusor.md
+                                        - regate: olimpiada/solutii/ONI/2022/XI-XII-regate.md
+                                        - schema: olimpiada/solutii/ONI/2022/XI-XII-schema.md
+                            - ONI 2023:
+                                  - Clasa a V-a:
+                                        - cadouri: olimpiada/solutii/ONI/2023/V-cadouri.md
+                                        - legos: olimpiada/solutii/ONI/2023/V-legos.md
+                                        - patinaj: olimpiada/solutii/ONI/2023/V-patinaj.md
+                                  - Clasa a VI-a:
+                                        - balon: olimpiada/solutii/ONI/2023/VI-balon.md
+                                        - magictrick: olimpiada/solutii/ONI/2023/VI-magictrick.md
+                                        - puteri3: olimpiada/solutii/ONI/2023/VI-puteri3.md
+                                  - Clasa a VII-a:
+                                        - dominew: olimpiada/solutii/ONI/2023/VII-dominew.md
+                                        - pix: olimpiada/solutii/ONI/2023/VII-pix.md
+                                        - secvmin: olimpiada/solutii/ONI/2023/VII-secvmin.md
+                                  - Clasa a VIII-a:
+                                        - castel: olimpiada/solutii/ONI/2023/VIII-castel.md
+                                        - kth: olimpiada/solutii/ONI/2023/VIII-kth.md
+                                        - struguri: olimpiada/solutii/ONI/2023/VIII-struguri.md
+                                  - Clasa a IX-a:
+                                        - pietricele: olimpiada/solutii/ONI/2023/IX-pietricele.md
+                                        - bolovani: olimpiada/solutii/ONI/2023/IX-bolovani.md
+                                        - nisip: olimpiada/solutii/ONI/2023/IX-nisip.md
+                                  - Clasa a X-a:
+                                        - arcade: olimpiada/solutii/ONI/2023/X-arcade.md
+                                        - comun: olimpiada/solutii/ONI/2023/X-comun.md
+                                        - matrice: olimpiada/solutii/ONI/2023/X-matrice.md
+                                  - Clasele XI-XII:
+                                        - biom: olimpiada/solutii/ONI/2023/XI-XII-biom.md
+                                        - keidei: olimpiada/solutii/ONI/2023/XI-XII-keidei.md
+                                        - xidartros: olimpiada/solutii/ONI/2023/XI-XII-xidartros.md
+                            - ONI 2024:
+                                  - Clasa a V-a:
+                                        - robinhood: olimpiada/solutii/ONI/2024/V-robinhood.md
+                                        - puzzle: olimpiada/solutii/ONI/2024/V-puzzle.md
+                                        - p13: olimpiada/solutii/ONI/2024/V-p13.md
+                                  - Clasa a VI-a:
+                                        - codificare: olimpiada/solutii/ONI/2024/VI-codificare.md
+                                        - esm: olimpiada/solutii/ONI/2024/VI-esm.md
+                                        - sim: olimpiada/solutii/ONI/2024/VI-sim.md
+                                  - Clasa a VII-a:
+                                        - expresie: olimpiada/solutii/ONI/2024/VII-expresie.md
+                                        - pictura: olimpiada/solutii/ONI/2024/VII-pictura.md
+                                        - secv9: olimpiada/solutii/ONI/2024/VII-secv9.md
+                                  - Clasa a VIII-a:
+                                        - geologie: olimpiada/solutii/ONI/2024/VIII-geologie.md
+                                        - kmajo: olimpiada/solutii/ONI/2024/VIII-kmajo.md
+                                        - M and Ms: olimpiada/solutii/ONI/2024/VIII-mandms.md
+                                  - Clasa a IX-a:
+                                        - Apgreid: olimpiada/solutii/ONI/2024/IX-apgreid.md
+                                        - Eras: olimpiada/solutii/ONI/2024/IX-eras.md
+                                        - Spirala: olimpiada/solutii/ONI/2024/IX-spirala.md
+                                  - Clasa a X-a:
+                                        - Dominoes: olimpiada/solutii/ONI/2024/X-dominoes.md
+                                        - Seqstr: olimpiada/solutii/ONI/2024/X-seqstr.md
+                                        - Teze: olimpiada/solutii/ONI/2024/X-teze.md
+                                  - Clasele XI-XII:
+                                        - Arbore: olimpiada/solutii/ONI/2024/XI-XII-arbore.md
+                                        - Detonator: olimpiada/solutii/ONI/2024/XI-XII-detonator.md
+                                        - Zid: olimpiada/solutii/ONI/2024/XI-XII-zid.md
 
 not_in_nav: |
     licenta.md
