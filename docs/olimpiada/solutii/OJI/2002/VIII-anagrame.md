@@ -1,19 +1,15 @@
 ---
+id: OJI-2002-VIII-anagrame
+title: Soluția problemei anagrame (OJI 2002, clasa a VIII-a)
+problem_id: 708
+authors: [stefdasca]
+prerequisites:
+   - strings
+   - stl
 tags:
     - OJI
     - clasa VIII
-authors:
-    - stefdasca
 ---
-
-# Soluția problemei Anagrame (OJI 2002, clasa a VIII-a)
-
-!!! example "Cunoștințe necesare"
-    - [Șiruri de caractere](../../../../cppintro/strings.md)
-    - [(Opțional): Introducere în STL](../../../../cppintro/stl.md)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/708/).
 
 Această problemă reprezintă un exercițiu de generare a tuturor permutărilor unui
 șir de caractere care poate avea litere care se repetă. Cea mai simplă metodă

@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-X-poseidon
 title: Soluția problemei Poseidon (OJI 2024, clasa a X-a)
+problem_id: 2506
 authors: [gabor]
 prerequisites:
     - lee
@@ -10,9 +11,6 @@ tags:
     - OJI
     - clasa X
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2506/).
 
 ## Cerința 1
 
@@ -164,3 +162,4 @@ int main() {
     return 0;
 }
 ```
+

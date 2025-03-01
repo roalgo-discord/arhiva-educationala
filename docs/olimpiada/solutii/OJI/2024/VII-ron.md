@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VII-ron
 title: Soluția problemei Ron (OJI 2024, clasa a VII-a)
+problem_id: 2513
 authors: [balasa]
 prerequisites:
     - sieve
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa VII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2513/).
 
 Observație inițială: O creangă de lungime $lg$ așezată pe riglă cu capătul din
 stânga în dreptul numărului $poz$ reprezintă, din punct de vedere matematic,
@@ -123,3 +121,4 @@ int main() {
     return 0;
 }
 ```
+

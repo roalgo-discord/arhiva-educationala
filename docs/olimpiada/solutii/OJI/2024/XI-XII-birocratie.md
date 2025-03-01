@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-XI-XII-birocratie
-title: Soluția problemei Birocrație (OJI 2024, clasele XI-XII)
+title: Soluția problemei Birocratie (OJI 2024, clasele XI-XII)
+problem_id: 2507
 authors: [zoltan]
 prerequisites:
     - intro-dp
@@ -8,9 +9,6 @@ tags:
     - OJI
     - clasa XI-XII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2507/).
 
 Subtask 1 (12 puncte): În cazul în care $B$ are toate elementele pozitive,
 câștigul maxim se obține prin însumararea tuturor elementelor.

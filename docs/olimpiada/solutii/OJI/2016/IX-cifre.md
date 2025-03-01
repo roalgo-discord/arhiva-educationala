@@ -1,21 +1,17 @@
 ---
+id: OJI-2016-IX-cifre
+title: Soluția problemei cifre (OJI 2016, clasa a IX-a)
+problem_id: 864
+authors:
+    - stefdasca
+prerequisites:
+   - digits-manipulation
+   - basic-math
+   - maxime-minime
 tags:
     - OJI
     - clasa IX
-authors:
-    - stefdasca
 ---
-
-# Soluția problemei cifre (OJI 2016, clasa a IX-a)
-
-!!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
-    - [Operatori și expresii. Cunoștințe matematice de bază](../../../../cppintro/basic-math.md)
-    - [Maxime și minime](../../../../usor/digits-manipulation.md)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/864/). 
 
 De-a lungul acestei abordări, va fi foarte important să ne gândim la folosirea
 cifrelor pentru a codifica numărul de poziții pe care s-a plasat un anumit

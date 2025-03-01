@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-IX-macarie
 title: Soluția problemei Macarie (OJI 2024, clasa a IX-a)
+problem_id: 2501
 authors: [lica]
 prerequisites:
     - sieve
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa IX
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2501/).
 
 Subtask 1: Complexitatea $\mathcal{O}(Valmax \cdot N)$, unde $Valmax$ este
 valoarea maximă din șirul $A$. Pentru fiecare valoare $x$, în ordine de la 1 la

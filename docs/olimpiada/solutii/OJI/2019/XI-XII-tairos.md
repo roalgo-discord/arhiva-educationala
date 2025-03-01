@@ -1,5 +1,7 @@
 ---
 id: OJI-2019-XI-XII-tairos
+title: Soluția problemei tairos (OJI 2019, clasele XI-XII)
+problem_id: 22
 authors:
     - stefdasca
 prerequisites:
@@ -12,10 +14,6 @@ tags:
     - arbori
 ---
 
-# Soluția problemei tairos (OJI 2019, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/22/).
 
 Pentru a rezolva această problemă, trebuie să ne gândim mai întâi la
 o precalculare pe baza arborelui inițial. Astfel, putem face o parcurgere
@@ -42,9 +40,9 @@ Astfel, pentru a calcula $dp[i]$ și $cntleaves[i]$, ne putem duce înapoi pe ur
 nivelelor și să adunăm produsele dintre valorile de pe nivelurile precedente și
 numărul de frunze de la un anumit nivel.
 
-Complexitatea finală a soluției va fi $\mathcal{O}(n \cdot d)$, iar ca un detaliu suplimentar,
-trebuie să fim atenți în ceea ce privește operațiile cu modulo, deoarece
-răspunsurile pot deveni foarte mari.
+Complexitatea finală a soluției va fi $\mathcal{O}(n \cdot d)$, iar ca un
+detaliu suplimentar, trebuie să fim atenți în ceea ce privește operațiile cu
+modulo, deoarece răspunsurile pot deveni foarte mari.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

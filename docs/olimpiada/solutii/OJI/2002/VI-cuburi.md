@@ -1,20 +1,17 @@
 ---
+id: OJI-2002-VI-cuburi
+title: Soluția problemei cuburi (OJI 2002, clasa a VI-a)
+problem_id: 704
+authors:
+    - stefdasca
+prerequisites:
+   - frequency-arrays
+   - partial-sums
 tags:
     - OJI
     - clasa VI
-authors:
-    - stefdasca
 ---
 
-# Soluția problemei Cuburi (OJI 2002, clasa a VI-a)
-
-!!! example "Cunoștințe necesare"
-    - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
-    - [Sume parțiale](../../../../usor/partial-sums.md)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/704/).
 
 Pentru primele două cerințe, vom afla frecvența maximă a unei valori din șir,
 precum și care sunt valorile care au acea frecvență maximă.

@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-XI-XII-nestemate
 title: Soluția problemei Nestemate (OJI 2024, clasele XI-XII)
+problem_id: 2508
 authors: [cismaru]
 prerequisites:
     - stl
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa XI-XII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2508/).
 
 Subtask 1 (11 puncte). Se verifică dacă cele două nestemate au cel puțin o
 proprietate ce coincide, caz în care declarăm că este necesară o singură
@@ -122,3 +120,4 @@ int main() {
     return 0;
 }
 ```
+

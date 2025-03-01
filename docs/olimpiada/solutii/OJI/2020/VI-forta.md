@@ -1,7 +1,9 @@
 ---
 id: OJI-2020-VI-forta
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei forta (OJI 2020, clasa a VI-a)
+problem_id: 921
+authors: 
+    - stefdasca
 prerequisites:
     - sieve
     - divisibility
@@ -11,11 +13,6 @@ tags:
     - numere prime
     - ciur
 ---
-
-# Soluția problemei forta (OJI 2020, clasa a VI-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/921/).
 
 Pentru a afla forța maximă a unei valori din șir, trebuie să aflăm eficient pentru
 fiecare număr câți divizori are. Acest lucru poate fi făcut fie folosind algoritmul

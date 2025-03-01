@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VIII-mun
 title: Soluția problemei Mun (OJI 2024, clasa a VIII-a)
+problem_id: 2510
 authors: [miron]
 prerequisites:
     - strings
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa VIII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2510/).
 
 Cerința 1: Soluția în complexitate $\mathcal{O}(N \log N)$ obține punctaj maxim,
 adică 40 de puncte. Se determină pentru fiecare cod, codul ordonat crescător; se

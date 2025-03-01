@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VII-parking
 title: Soluția problemei Parking (OJI 2024, clasa a VII-a)
+problem_id: 2512
 authors: [ungureanu]
 prerequisites:
     - simulating-solution
@@ -10,9 +11,6 @@ tags:
     - OJI
     - clasa VII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2512/).
 
 Vom reprezenta o mașină ca o structură (struct) cu 4 câmpuri: linia și coloana
 pe care se află mașina, orientarea mașinii (0 pentru orizontal, 1 pentru
@@ -212,3 +210,4 @@ int main() {
     return 0;
 }
 ```
+

@@ -1,20 +1,16 @@
 ---
+id: OJI-2004-VII-nutesuparafrate
+title: Soluția problemei NU te supăra, FRATE! (OJI 2004, clasa a VII-a)
+problem_id: 730
+authors: []
+# prerequisites:
+#    - placeholder
 tags:
     - OJI
-    - clasa XI-XII
+    - clasa VII
 ---
 
-# Soluția problemei Secretul cifrului (OJI 2006, clasele XI-XII)
-
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -1,5 +1,7 @@
 ---
 id: OJI-2020-XI-XII-recyclebin
+title: Soluția problemei RecycleBin (OJI 2020, clasele XI-XII)
+problem_id: 19
 authors:
     - stefdasca
 prerequisites:
@@ -11,10 +13,6 @@ tags:
     - secvente
     - programare dinamica
 ---
-# Soluția problemei recyclebin (OJI 2020, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/19/).
 
 Această problemă poate fi reformulată în felul următor: Se dă un șir de lungime
 $n$ și se scot secvențe de lungimi puteri ale lui 2, cu condiția ca lungimile

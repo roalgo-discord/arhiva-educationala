@@ -1,7 +1,8 @@
 ---
 id: OJI-2020-VI-furnica
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei furnica (OJI 2020, clasa a VI-a)
+problem_id: 922
+authors: [stefdasca]
 prerequisites:
     - simulating-solution
 tags:
@@ -11,10 +12,6 @@ tags:
     - simulare
 ---
 
-# Soluția problemei furnica (OJI 2020, clasa a VI-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/922/).
 
 Pentru rezolvarea problemei identificăm pe traseul furnicii porțiunile în care
 furnica urcă cu câte un centimetru în fiecare 5 secunde, porțiunile

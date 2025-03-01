@@ -1,20 +1,16 @@
 ---
+id: OJI-2015-V-speciale
+title: Soluția problemei speciale (OJI 2015, clasa a V-a)
+problem_id: 855
+authors: []
+# prerequisites:
+#    - placeholder
 tags:
     - OJI
     - clasa V
 ---
 
-# Soluția problemei speciale (OJI 2015, clasa a V-a)
-
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

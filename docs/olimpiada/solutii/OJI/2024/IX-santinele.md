@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-IX-santinele
 title: Soluția problemei Santinele (OJI 2024, clasa a IX-a)
+problem_id: 2502
 authors: [francu]
 prerequisites:
     - greedy
@@ -8,9 +9,6 @@ tags:
     - OJI
     - clasa IX
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2502/).
 
 Subtask 1: Santinela trebuie amplasată în primele $K + 1$ înălțimi. Fie $h_i$
 cel mai din dreapta maxim din primele $K +1$ înălțimi. Atunci, $i$ este cea mai

@@ -1,7 +1,8 @@
 ---
 id: OJI-2020-VII-wind
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei wind (OJI 2020, clasa a VII-a)
+problem_id: 924
+authors: [stefdasca]
 prerequisites:
     - partial-sums
     - divisibility
@@ -12,10 +13,6 @@ tags:
     - divizibilitate
 ---
 
-# Soluția problemei wind (OJI 2020, clasa a VII-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/924/).
 
 Pentru a putea împărți cele $n$ eoliene în mod egal în $k$ orașe
 trebuie să determinăm divizorii numărului $n$.

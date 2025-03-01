@@ -1,19 +1,16 @@
 ---
+id: OJI-2002-V-lascoala
+title: Soluția problemei La Școală (OJI 2002, clasa a V-a)
+problem_id: 702
+authors: 
+    - stefdasca
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa V
-authors:
-    - stefdasca
 ---
 
-# Soluția problemei La școală (OJI 2002, clasa a V-a)
-
-!!! example "Cunoștințe necesare"
-    - [Operatori și expresii. Cunoștințe matematice de bază](../../../../cppintro/basic-math.md)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/702/).
 
 Această problemă poate fi rezolvată aflând cel mai mare pătrat perfect mai mic
 decât $n$, lucru ce se poate afla verificând toate pătratele perfecte și alegând

@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-X-opsir
 title: Soluția problemei Opsir (OJI 2024, clasa a X-a)
+problem_id: 2505
 authors: [sapopescu]
 prerequisites:
     - strings
@@ -10,9 +11,6 @@ tags:
     - OJI
     - clasa X
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2505/).
 
 ## Cerința 1
 

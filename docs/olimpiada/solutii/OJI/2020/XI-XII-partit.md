@@ -1,5 +1,7 @@
 ---
 id: OJI-2020-XI-XII-partit
+title: Soluția problemei partit (OJI 2020, clasele XI-XII)
+problem_id: 18
 authors:
     - stefdasca
 prerequisites:
@@ -12,11 +14,6 @@ tags:
     - partitii
     - programare dinamica
 ---
-
-# Soluția problemei partit (OJI 2020, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/18/).
 
 Pentru a rezolva această problemă, va trebui să observăm mai întâi faptul că
 pentru un număr dat $n$, există $2^{n-1} - 1$ partiții cu suma $n$, lucru ce

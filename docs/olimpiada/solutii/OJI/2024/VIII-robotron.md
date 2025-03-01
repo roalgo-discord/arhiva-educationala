@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VIII-robotron
 title: Soluția problemei Robotron (OJI 2024, clasa a VIII-a)
+problem_id: 2511
 authors: [coman]
 prerequisites:
     - simulating-solution
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa VIII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2511/).
 
 Cerința 1: Pentru determinarea valorilor $M$ și $H$, vom folosi un vector de
 frecvență. Pentru fiecare ecuson, determinăm echipa din care face parte, luând

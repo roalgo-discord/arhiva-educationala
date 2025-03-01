@@ -1,20 +1,16 @@
 ---
+id: OJI-2004-VI-control
+title: Soluția problemei control (OJI 2004, clasa a VI-a)
+problem_id: 727
+authors: []
+# prerequisites:
+#    - placeholder
 tags:
     - OJI
     - clasa VI
 ---
 
-# Soluția problemei control (OJI 2004, clasa a VI-a)
-
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

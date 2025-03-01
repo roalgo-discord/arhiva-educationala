@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-V-bomboane
 title: Soluția problemei Bomboane (OJI 2024, clasa a V-a)
+problem_id: 2516
 authors: [ariciu]
 prerequisites:
     - divisibility
@@ -8,9 +9,6 @@ tags:
     - OJI
     - clasa V
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2516/).
 
 Mai jos, notațiile $N$, $X$, $Y$ au semnificația din enunț.
 

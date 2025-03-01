@@ -1,20 +1,17 @@
 ---
+id: OJI-2023-VII-primprim
+title: Soluția problemei primprim (OJI 2023, clasa a VII-a)
+problem_id: 514
+authors:
+    - stefdasca
+prerequisites:
+   - sieve
+   - frequency-arrays
 tags:
     - OJI
     - clasa VII
-authors:
-    - stefdasca
 ---
 
-# Soluția problemei Primprim (OJI 2023, clasa a VII-a)
-
-!!! example "Cunoștințe necesare"
-    - [Ciurul lui Eratostene](../../../../usor/sieve.md)
-    - [Vectori de frecvență](../../../../usor/frequency-arrays.md)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/514/).
 
 Pentru ambele cerințe va fi necesar să determinăm cât mai rapid pentru un număr
 dat distanța față de cel mai apropiat număr prim. O primă abordare ar fi ca
@@ -25,17 +22,40 @@ enunț. Totuși, o asemenea abordare ar avea complexitatea O($x * \sqrt{valmax}$
 unde $x$ reprezintă distanța maximă față de un număr prim. Deoarece $x$ este cel
 mult 57, o asemenea abordare nu obține punctaj maxim.
 
-Pentru a optimiza această abordare, vom precalcula costurile pentru toate numerele de la 1 la $10^6$. Pentru aceasta, vom utiliza ciurul lui Eratostene, pentru a genera numerele prime $\leq 10^6$, urmând ca mai apoi costul să fie calculat în O(1) pentru fiecare număr. Complexitatea precalculării este O($n \log \log n$).
+Pentru a optimiza această abordare, vom precalcula costurile pentru toate
+numerele de la 1 la $10^6$. Pentru aceasta, vom utiliza ciurul lui Eratostene,
+pentru a genera numerele prime $\leq 10^6$, urmând ca mai apoi costul să fie
+calculat în O(1) pentru fiecare număr. Complexitatea precalculării este O($n
+\log \log n$).
 
-Cerinţa 1. Vom citi succesiv numerele și vom afla succesiv costul pentru fiecare număr de la intrare, reținând într-o variabilă suma costurilor. În funcție de abordarea folosită pentru calcularea costurilor, se pot obține diverse punctaje parțiale, dar punctajul maxim pe cerință se poate obține doar folosind metoda bazată pe ciurul lui Eratostene, abordare explicată mai sus.
+Cerinţa 1. Vom citi succesiv numerele și vom afla succesiv costul pentru fiecare
+număr de la intrare, reținând într-o variabilă suma costurilor. În funcție de
+abordarea folosită pentru calcularea costurilor, se pot obține diverse punctaje
+parțiale, dar punctajul maxim pe cerință se poate obține doar folosind metoda
+bazată pe ciurul lui Eratostene, abordare explicată mai sus.
 
-Cerinţa 2. Pentru această cerință vom citi succesiv operațiile și le vom executa.Pentru a obține un cost total minim trebuie să adunăm cele mai mici $p$ costuri. O abordare eficientă se bazează pe observația că pentru orice număr costul este cel mult 57, fapt ce ne permite să utilizăm un vector de frecvență $fr$, unde $fr[i]$ = numărul de elemente din vectorul $v$ care au costul $i$. 
+Cerinţa 2. Pentru această cerință vom citi succesiv operațiile și le vom
+executa.Pentru a obține un cost total minim trebuie să adunăm cele mai mici $p$
+costuri. O abordare eficientă se bazează pe observația că pentru orice număr
+costul este cel mult 57, fapt ce ne permite să utilizăm un vector de frecvență
+$fr$, unde $fr[i]$ = numărul de elemente din vectorul $v$ care au costul $i$.
 
-Pentru fiecare operație, la modificarea unei valori din vector, vom decrementa frecvența costului pentru vechea valoare și vom incrementa frecvența costului pentru noua valoare. 
+Pentru fiecare operație, la modificarea unei valori din vector, vom decrementa
+frecvența costului pentru vechea valoare și vom incrementa frecvența costului
+pentru noua valoare.
 
-Pentru a determina costul total minim pentru a obține cel puțin $p$ numere prime în vector (valoarea afișată după executarea operației), vom parcurge vectorul de frecvență de la stânga la dreapta ($i=0, \dots, 57$). La fiecare pas $i$, pentru a calcula costul total minim adunăm la o variabilă $cmin$ produsul dintre $fr[i]$ și $i$ (există $fr[i]$ numere care pot fi transformate în numere prime cu costul $i$), iar într-o variabilă $nr$ reținem câte numere prime au fost deja obținute. În momentul în care $nr+fr[i]>p$, parcurgerea se oprește și adunăm la $cmin$ doar costul obținerii celor $p-nr$ numere prime care mai sunt necesare (adică adunăm $fr[i] \cdot (p-nr)$.
+Pentru a determina costul total minim pentru a obține cel puțin $p$ numere prime
+în vector (valoarea afișată după executarea operației), vom parcurge vectorul de
+frecvență de la stânga la dreapta ($i=0, \dots, 57$). La fiecare pas $i$, pentru
+a calcula costul total minim adunăm la o variabilă $cmin$ produsul dintre
+$fr[i]$ și $i$ (există $fr[i]$ numere care pot fi transformate în numere prime
+cu costul $i$), iar într-o variabilă $nr$ reținem câte numere prime au fost deja
+obținute. În momentul în care $nr+fr[i]>p$, parcurgerea se oprește și adunăm la
+$cmin$ doar costul obținerii celor $p-nr$ numere prime care mai sunt necesare
+(adică adunăm $fr[i] \cdot (p-nr)$.
 
-În funcție de cum selectăm cele mai mici $p$ costuri și în funcție de cum calculăm costurile, se pot obține diverse punctaje parțiale. 
+În funcție de cum selectăm cele mai mici $p$ costuri și în funcție de cum
+calculăm costurile, se pot obține diverse punctaje parțiale.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

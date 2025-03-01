@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-X-aprogressive
 title: Soluția problemei Aprogressive (OJI 2024, clasa a X-a)
+problem_id: 2504
 authors: [nodea]
 prerequisites:
     - simulating-solution
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa X
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2504/).
 
 ## Cerința 1
 

@@ -1,7 +1,8 @@
 ---
 id: OJI-2020-VII-foto
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei foto (OJI 2020, clasa a VII-a)
+problem_id: 923
+authors: [stefdasca]
 prerequisites:
     - partial-sums
     - matrices
@@ -10,11 +11,6 @@ tags:
     - clasa VII
     - sume partiale
 ---
-
-# Soluția problemei foto (OJI 2020, clasa a VII-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/923/).
 
 Această problemă are foarte multe soluții posibile, aici voi descrie doar una dintre
 ele.

@@ -1,5 +1,7 @@
 ---
 id: OJI-2019-XI-XII-rufe
+title: Soluția problemei rufe (OJI 2019, clasele XI-XII)
+problem_id: 21
 authors:
     - stefdasca
 prerequisites:
@@ -12,10 +14,6 @@ tags:
     - matematica
 ---
 
-# Soluția problemei rufe (OJI 2019, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/21/).
 
 Pentru a rezolva această problemă, ne putem gândi mai întâi la o soluție înceată,
 care va calcula pentru fiecare punct distanța de la punctul central la toate

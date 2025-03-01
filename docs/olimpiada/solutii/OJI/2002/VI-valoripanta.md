@@ -1,20 +1,15 @@
 ---
+id: OJI-2002-VI-valoripanta
+title: Soluția problemei valori-panta (OJI 2002, clasa a VI-a)
+problem_id: 703
+authors: [stefdasca]
+prerequisites:
+   - maxime-minime
+   - digits-manipulation
 tags:
     - OJI
     - clasa VI
-authors:
-    - stefdasca
 ---
-
-# Soluția problemei Valori-pantă (OJI 2002, clasa a VI-a)
-
-!!! example "Cunoștințe necesare"
-    - [Maxime și minime](../../../../usor/maxime-minime.md)
-    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/703/).
 
 Pentru fiecare număr, putem afla parcurgând cifrele lui dacă toate sunt așezate
 în ordine crescătoare sau descrescătoare, iar mai apoi după ce facem această

@@ -1,18 +1,15 @@
 ---
 id: OJI-2020-V-cartonase
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei cartonase (OJI 2020, clasa a V-a)
+problem_id: 919
+authors:
+    - stefdasca
 prerequisites:
     - loops
 tags:
     - OJI
     - clasa V
 ---
-
-# Soluția problemei cartonase (OJI 2020, clasa a V-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/919/).
 
 Se citesc numerele de pe cartonașe, reținând la un moment dat numerele de pe
 două cartonașe alăturate (citite consecutiv), anume cartonașul precedent și cel

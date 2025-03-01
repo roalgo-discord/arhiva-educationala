@@ -1,6 +1,7 @@
 ---
-id: OJI-2024-IX-santinele
+id: OJI-2024-IX-trafalet
 title: Soluția problemei Trafalet (OJI 2024, clasa a IX-a)
+problem_id: 2503
 authors: [ariciu]
 prerequisites:
     - partial-sums
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa IX
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2503/).
 
 Subtask 1: Considerăm fiecare submatrice a matricei inițiale. Punctajul acesteia
 este reprezentat de diferența în modul dintre suma celulelor albe și suma

@@ -1,7 +1,9 @@
 ---
 id: OJI-2020-V-tai
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei tai (OJI 2020, clasa a V-a)
+problem_id: 920
+authors:
+    - stefdasca
 prerequisites:
     - divisibility
     - loops
@@ -11,14 +13,10 @@ tags:
     - divizibilitate
 ---
 
-# Soluția problemei tai (OJI 2020, clasa a V-a)
 
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/920/).
-
-Pentru a verifica dacă un număr este prim sau nu, folosim un algoritm de numărare
-al divizorilor sau un algoritm care află primul divizor propriu, iar în funcție
-de implementare, se pot obține punctaje parțiale.
+Pentru a verifica dacă un număr este prim sau nu, folosim un algoritm de
+numărare al divizorilor sau un algoritm care află primul divizor propriu, iar în
+funcție de implementare, se pot obține punctaje parțiale.
 
 Pentru a obține punctajul maxim, este optim să verificăm dacă un număr este prim
 folosind algoritmul clasic de aflare al divizorilor în $\sqrt n$.

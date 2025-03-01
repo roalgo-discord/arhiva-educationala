@@ -1,25 +1,24 @@
 ---
+id: OJI-2018-V-patrate
+title: Soluția problemei patrate (OJI 2018, clasa a V-a)
+problem_id: 893
+authors: 
+    - traian
 tags:
     - OJI
     - clasa V
-    - formule
-authors:
-    - traian
 ---
-
-# Soluția problemei patrate (OJI 2018, clasa a V-a)
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/893/). 
 
 ## Cerința 1
 
-Primul element din pătratul $M$ este $(2 \cdot M - 1) ^ 2$, iar ultimul este $(2 \cdot M + 1) ^ 2 - 1$. Sunt $(2 \cdot M + 1) ^ 2 - 1 - (2 \cdot M - 1) + 1 = (2 \cdot M + 1) ^ 2 - (2 \cdot M - 1) ^ 2$ elemente.
+Primul element din pătratul $M$ este $(2 \cdot M - 1) ^ 2$, iar ultimul este $(2
+\cdot M + 1) ^ 2 - 1$. Sunt $(2 \cdot M + 1) ^ 2 - 1 - (2 \cdot M - 1) + 1 = (2
+\cdot M + 1) ^ 2 - (2 \cdot M - 1) ^ 2$ elemente.
 
 ## Cerința 2
 
-Căutăm primul număr $T$ pentru care $(2 \cdot T - 1) ^ 2 \leq N \leq (2 \cdot T + 1) ^ 2 - 1$ (adică $N$ să fie în intervalul de numere de pe pătratul $T$).
+Căutăm primul număr $T$ pentru care $(2 \cdot T - 1) ^ 2 \leq N \leq (2 \cdot
+T + 1) ^ 2 - 1$ (adică $N$ să fie în intervalul de numere de pe pătratul $T$).
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-XI-XII-acoperire
 title: Soluția problemei Acoperire (OJI 2024, clasele XI-XII)
+problem_id: 2509
 authors: [ciucu]
 prerequisites:
     - greedy
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa XI-XII
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2509/).
 
 Subtask 1 (10 puncte). Pentru $N = 1$, doar trebuie afișat intervalul de la
 capătul stânga la mijlocul intervalului.
@@ -154,3 +152,4 @@ int main() {
     return 0;
 }
 ```
+

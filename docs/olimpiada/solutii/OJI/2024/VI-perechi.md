@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VI-perechi
 title: Soluția problemei Perechi (OJI 2024, clasa a VI-a)
+problem_id: 2515
 authors: [boca]
 prerequisites:
     - digits-manipulation
@@ -9,9 +10,6 @@ tags:
     - OJI
     - clasa VI
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2515/).
 
 Cerința 1: Pentru 27 de puncte, se citesc numerele din fișierul de intrare
 într-un vector, se parcurg elementele vectorului, iar pentru fiecare element

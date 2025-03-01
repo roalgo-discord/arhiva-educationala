@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-V-microbist
 title: Soluția problemei Microbist (OJI 2024, clasa a V-a)
+problem_id: 2517
 authors: [rotar]
 prerequisites:
     - maxime-minime
@@ -8,9 +9,6 @@ tags:
     - OJI
     - clasa V
 ---
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2517/).
 
 Cerința 1: Pentru a afla scorul final, vom parcurge șirul de goluri și vom
 număra câte goluri a marcat fiecare echipă. Pentru aceasta putem folosi două

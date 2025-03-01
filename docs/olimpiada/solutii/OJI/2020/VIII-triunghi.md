@@ -1,19 +1,16 @@
 ---
 id: OJI-2020-VIII-triunghi
-author:
-    - Ștefan-Cosmin Dăscălescu
-prerequisites:
-    - partial-sums
+title: Soluția problemei triunghi (OJI 2020, clasa a VIII-a)
+problem_id: 926
+authors: []
+# prerequisites:
+#    - placeholder
 tags:
     - OJI
     - clasa VIII
-    - sume partiale
 ---
 
-# Soluția problemei triunghi (OJI 2020, clasa a VIII-a)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/926/). 
+Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

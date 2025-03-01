@@ -1,21 +1,16 @@
 ---
+id: OJI-2016-IX-pic
+title: Soluția problemei pic (OJI 2016, clasa a IX-a)
+problem_id: 865
+authors: [stefdasca]
+prerequisites:
+   - simulating-solution
+   - binary-search
 tags:
     - OJI
     - clasa IX
-authors:
-    - stefdasca
 ---
 
-# Soluția problemei pic (OJI 2016, clasa a IX-a)
-
-!!! example "Cunoștințe necesare"
-    - [Simularea soluției](../../../../usor/simulating-solution.md)
-    - [Căutarea binară](../../../../usor/binary-search.md)
-
-
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/865).
 
 Pentru a rezolva prima cerință, tot ce trebuie să facem este să parcurgem
 fiecare linie și să calculăm suma capacităților.
@@ -30,6 +25,7 @@ avea tot mai mult progres cu umplerea paharelor, ceea ce impune folosirea unei
 alte metode de a gândi turnarea apei în pahare.
 
 !!! note "Observație"
+
     Acum, ne putem gândi invers: Oare dacă turnăm toată apa la început?
 
 Dacă turnăm toată apa la început, putem verifica în $\mathcal{O}(n^2)$ dacă această

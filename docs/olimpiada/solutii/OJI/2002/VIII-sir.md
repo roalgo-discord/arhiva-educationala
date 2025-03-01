@@ -1,24 +1,24 @@
 ---
+id: OJI-2002-VIII-sir
+title: Soluția problemei sir (OJI 2002, clasa a VIII-a)
+problem_id: 707
+authors: [stefdasca]
+prerequisites:
+   - strings
+   - stl
 tags:
     - OJI
     - clasa VIII
-authors:
-    - stefdasca
 ---
 
-# Soluția problemei Sir (OJI 2002, clasa a VIII-a)
 
-!!! example "Cunoștințe necesare"
-    - [Șiruri de caractere](../../../../cppintro/strings.md)
-    - [(Opțional): Introducere în STL](../../../../cppintro/stl.md)
+Dacă observăm cum se schimbă șirul de caractere, se poate vedea că dacă avem
+șirul după $i$ zile, șirul după $i+1$ zile va conține grupe care sunt formate
+din două valori: dimensiunea unei grupe de cifre consecutive, respectiv cifra în
+sine.
 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/707/).
-
-Dacă observăm cum se schimbă șirul de caractere, se poate vedea că dacă avem șirul după $i$ zile, șirul după $i+1$ zile va conține grupe care sunt formate din două valori: dimensiunea unei grupe de cifre consecutive, respectiv cifra în sine. 
-
-De exemplu, după ziua 4, șirul este 1211. Avem o grupă de lungime 1 cu 1, lungime 1 cu 2 și lungime 2 cu 1. De aceea, următorul șir va fi 111221.
+De exemplu, după ziua 4, șirul este 1211. Avem o grupă de lungime 1 cu 1,
+lungime 1 cu 2 și lungime 2 cu 1. De aceea, următorul șir va fi 111221.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -1,6 +1,7 @@
 ---
 id: OJI-2024-VI-avid
-title: Soluția problemei Microbist (OJI 2024, clasa a VI-a)
+title: Soluția problemei Avid (OJI 2024, clasa a VI-a)
+problem_id: 2514
 authors: [buzatu]
 prerequisites:
     - divizibility
@@ -10,8 +11,6 @@ tags:
     - clasa VI
 ---
 
-!!! note "Link problemă"
-Această problemă poate fi accesată [aici](https://kilonova.ro/problems/2514/).
 
 Cerința 1: Pentru 12 puncte, se citesc numerele din fișierul de intrare într-un
 vector și numărăm câte triplete respectă condiția din enunț. Vom calcula cel mai
