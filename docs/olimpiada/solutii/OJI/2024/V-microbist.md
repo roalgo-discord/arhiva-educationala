@@ -49,30 +49,31 @@ int main() {
 
     int c, n, ga = 0, gb = 0, eq = 1, strk = 0, maxstrk = 0, curr = 0;
     cin >> c >> n;
-    
+
     for (int i = 1; i <= n; i++) {
         int nr;
         cin >> nr;
-        if (nr == 1)
+        if (nr == 1) {
             ga++;
-        else
+        } else {
             gb++;
-        if (ga == gb)
+        }
+        if (ga == gb) {
             eq++;
-        if (i == 1)
+        }
+        if (i == 1) {
             strk = 1;
-        else
-            if (nr == curr)
-                strk++;
-            else
-                strk = 1;
+        } else if (nr == curr) {
+            strk++;
+        } else {
+            strk = 1;
+        }
         curr = nr;
         if (curr == 1) {
             if (ga > gb && ga - strk < gb && ga - gb == 1) {
                 maxstrk = max(maxstrk, strk);
             }
-        }
-        else {
+        } else {
             if (gb > ga && gb - strk < ga && gb - ga == 1) {
                 maxstrk = max(maxstrk, strk);
             }
@@ -82,12 +83,12 @@ int main() {
         cout << ga << " " << gb << '\n';
         return 0;
     }
-    
+
     if (c == 2) {
         cout << eq << '\n';
         return 0;
     }
-    
+
     if (c == 3) {
         cout << maxstrk << '\n';
     }

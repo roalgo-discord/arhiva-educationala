@@ -64,22 +64,21 @@ int sp[1000001], prv[1000001];
 int main() {
     int n;
     cin >> n;
-    
+
     for (int i = 1; i <= n; i++) {
-        sp[i] = (sp[i-1] * 10 + 1) % n;
+        sp[i] = (sp[i - 1] * 10 + 1) % n;
         if (sp[i] == 0) {
             for (int j = 1; j <= i; j++) {
                 cout << 1;
             }
-            for (int j = i+1; j <= n; j++) {
+            for (int j = i + 1; j <= n; j++) {
                 cout << 0;
             }
             return 0;
-        }
-        else {
+        } else {
             if (prv[sp[i]] != 0) {
                 int tot = i - prv[sp[i]];
-                for (int x = prv[sp[i]]+1; x <= i; x++) {
+                for (int x = prv[sp[i]] + 1; x <= i; x++) {
                     cout << 1;
                 }
                 for (int x = 1; x <= n - tot; x++) {
@@ -104,13 +103,12 @@ prefix care se repetă, vom afișa cea mai de la stânga subsecvență.
 ```cpp
 #include <fstream>
 using namespace std;
-    
+
 int n, v, remainders[10002], minL = 10001, minR = 10001;
 int main() {
-    
     ifstream cin("subsecv.in");
     ofstream cout("subsecv.out");
-    
+
     cin >> n;
     remainders[0] = 0;
     for (int i = 1; i < n; i++) {

@@ -63,12 +63,14 @@ int main() {
     if (c == 1) {
         int mx = 0;
         int cnt = 0;
-        for (int i = 0; i <= 99; i++)
+        for (int i = 0; i <= 99; i++) {
             if (v[i].size() > 0) {
                 cnt++;
-                if (v[i].size() > v[mx].size())
+                if (v[i].size() > v[mx].size()) {
                     mx = i;
+                }
             }
+        }
         cout << cnt << " " << mx << '\n';
         return 0;
     }
@@ -78,29 +80,35 @@ int main() {
         int rounds = (1 << 30);
         int code = -1;
         for (int i = 0; i <= 99; i++) {
-            if (!v[i].size())
+            if (!v[i].size()) {
                 continue;
+            }
             vector<pair<int, int>> pv;
-            for (int j = k % v[i].size(); j < v[i].size(); j++)
+            for (int j = k % v[i].size(); j < v[i].size(); j++) {
                 pv.push_back(v[i][j]);
-            for (int j = 0; j < k % v[i].size(); j++)
+            }
+            for (int j = 0; j < k % v[i].size(); j++) {
                 pv.push_back(v[i][j]);
+            }
             long long sum = 0;
-            for (auto x : pv)
+            for (auto x : pv) {
                 sum += x.second;
+            }
             int temp_rounds = pv.size() * (l / sum);
             int rem = l % sum;
             int whoo = 0;
-            if (rem != 0)
+            if (rem != 0) {
                 for (auto x : pv) {
                     rem -= x.second;
                     temp_rounds++;
                     whoo = x.first;
-                    if (rem <= 0)
+                    if (rem <= 0) {
                         break;
+                    }
                 }
-            else
+            } else {
                 whoo = pv.back().first;
+            }
             if (temp_rounds < rounds) {
                 rounds = temp_rounds;
                 winner = i;

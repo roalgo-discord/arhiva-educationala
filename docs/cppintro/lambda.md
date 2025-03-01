@@ -29,7 +29,7 @@ Sintaxa de bază a unei funcții lambda în C++ arată astfel:
 
 ```cpp
 [/*capture*/](/*params*/) -> /*return type*/ {
-  /*function body*/
+    /*function body*/
 }
 ```
 
@@ -45,69 +45,60 @@ de a defini captura, fiecare cu scop specific.
 - `[x]` copiază valoarea ca `#!cpp const`:
 
     ```cpp
-    int main() {
-      int x = 15;
-      auto add = [x](int cnt) -> int {
-        return x + cnt;
-      };
-      std::cout << add(10); // 25
-    }
-    ```
+int main() {
+    int x = 15;
+    auto add = [x](int cnt) -> int { return x + cnt; };
+    std::cout << add(10);  // 25
+}
+```
 
-    Dacă încercăm să compilăm varianta de mai sus, aceasta va funcționa corect,
+    Dacă încercăm să compilăm varianta de mai sus,
+    aceasta va funcționa corect,
     însă varianta de mai jos nu va funcționa.
 
-    ```cpp
-    int main() {
-      int x = 15;
-      auto add = [x](int cnt) -> void {
+    ```cpp int main() {
+    int x = 15;
+    auto add = [x](int cnt) -> void {
         x += cnt;
         // nu va merge pentru că valoarea este constantă
-      };
-      std::cout << x;
-    }
-    ```
-
-- `[&x]` face referință la valoarea inițială, permițând să fie modificată:
-
-    ```cpp
-    int main() {
-      int x = 15;
-      auto add = [&x](int cnt) -> void {
-        x += cnt;
-      };
-      add(10);
-      std::cout << x; // 25
-    }
-    ```
-
-- `[=]` copiază toate valorile, similar cu `[x]`:
-
-    ```cpp
-    int main() {
-      int x = 15;
-      auto add = [=](int cnt) -> int {
-        return x + cnt;
-      };
-      std::cout << add(10); // 25
-    }
-    ```
-
-- `[&]` face referință la toate valorile, similar cu `[&x]`:
-
-  ```cpp
-  int main() {
-    int x = 15;
-    auto add = [&](int cnt) -> void {
-      x += cnt;
     };
+    std::cout << x;
+}
+```
+
+    - `[&x]` face referință la valoarea inițială,
+    permițând să fie modificată :
+
+    ```cpp int main() {
+    int x = 15;
+    auto add = [&x](int cnt) -> void { x += cnt; };
     add(10);
-    std::cout << x; // 25
-  }
-  ```
+    std::cout << x;  // 25
+}
+```
 
-Putem defini și mai multe valori care să fie capturate:
+    - `[=]` copiază toate valorile,
+    similar cu `[x]`:
 
+    ```cpp int main() {
+    int x = 15;
+    auto add = [=](int cnt) -> int { return x + cnt; };
+    std::cout << add(10);  // 25
+}
+```
+
+    - `[&]` face referință la toate valorile,
+    similar cu `[&x]`:
+
+  ```cpp int main() {
+    int x = 15;
+    auto add = [&](int cnt) -> void { x += cnt; };
+    add(10);
+    std::cout << x;  // 25
+}
+```
+
+    Putem defini și mai multe valori care să fie capturate:
 ```cpp
 int main() {
   int x = 10, y = 15;
@@ -129,18 +120,18 @@ această situație există `#!cpp mutable`.
 
 ```cpp
 int main() {
-  int x = 15;
-  auto add = [=](int cnt) -> int mutable {
-    x += 10;
-    std::cout << x; // 25
-    return x;
-  };
+    int x = 15;
+    auto add = [=](int cnt) -> int mutable {
+        x += 10;
+        std::cout << x;  // 25
+        return x;
+    };
 
-  int y = add(10);
-  std::cout << x << ' ' << y; // 15 25
-  
-  // Observăm că x rămâne valoarea inițială în 
-  // afara funcției, dar e diferită în funcție
+    int y = add(10);
+    std::cout << x << ' ' << y;  // 15 25
+
+    // Observăm că x rămâne valoarea inițială în
+    // afara funcției, dar e diferită în funcție
 }
 ```
 
@@ -151,11 +142,9 @@ normală. Acesta este definit prin a adăuga `#!cpp -> tip` după parametri.
 
 ```cpp
 int main() {
-  auto gauss = [](int n) -> int {
-    return n * (n + 1) / 2;
-  };
+    auto gauss = [](int n) -> int { return n * (n + 1) / 2; };
 
-  std::cout << gauss(10); // 55
+    std::cout << gauss(10);  // 55
 }
 ```
 
@@ -165,13 +154,10 @@ tipul de return este determinat automat.
 
 ```cpp
 int main() {
+    // tipul a fost determinat de compilator
+    auto gauss = [](int n) { return n * (n + 1) / 2; };
 
-  // tipul a fost determinat de compilator
-  auto gauss = [](int n) { 
-    return n * (n + 1) / 2;
-  };
-
-  cout << gauss(10); // 55
+    cout << gauss(10);  // 55
 }
 ```
 
@@ -182,20 +168,22 @@ personalizată la sort-ul din STL.
 
 ```cpp
 int main() {
-  int n;
-  std::cin >> n;
-  std::vector<std::pair<int, int>> v(n);
-  for (auto &[x, y] : v)
-    std::cin >> x >> y;
+    int n;
+    std::cin >> n;
+    std::vector<std::pair<int, int>> v(n);
+    for (auto &[x, y] : v) {
+        std::cin >> x >> y;
+    }
 
-  std::sort(v.begin(), v.end(), 
-            [](std::pair<int, int> a, std::pair<int, int> b) {
-              // sortăm descrescător după a doua valoare, dacă sunt identice
-              // altfel crescător după prima
-              if (a.second == b.second)
-                return a.first < b.first;
-              return a.second > b.second;
-            });
+    std::sort(v.begin(), v.end(),
+              [](std::pair<int, int> a, std::pair<int, int> b) {
+                  // sortăm descrescător după a doua valoare, dacă sunt identice
+                  // altfel crescător după prima
+                  if (a.second == b.second) {
+                      return a.first < b.first;
+                  }
+                  return a.second > b.second;
+              });
 }
 ```
 

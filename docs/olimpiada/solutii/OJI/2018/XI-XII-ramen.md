@@ -41,8 +41,9 @@ struct aa {
 };
 aa v[100002];
 bool cmp(aa a, aa b) {
-    if (a.care == b.care)
+    if (a.care == b.care) {
         return a.timp < b.timp;
+    }
     return a.care < b.care;
 }
 int main() {
@@ -58,8 +59,9 @@ int main() {
         ans[v[i].pi] = *it + v[i].care;
         s.erase(it);
     }
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
         out << ans[i] << '\n';
+    }
     return 0;
 }
 ```

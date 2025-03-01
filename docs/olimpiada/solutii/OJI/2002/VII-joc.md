@@ -34,15 +34,17 @@ int main() {
         long long x;
         cin >> x;
         if (x > sm + 1) {
-            if (ans == -1)
+            if (ans == -1) {
                 ans = sm;
-        } 
-        else
+            }
+        } else {
             sm += x;
+        }
     }
 
-    if (ans == -1)
+    if (ans == -1) {
         ans = sm;
+    }
 
     cout << sm;
     return 0;

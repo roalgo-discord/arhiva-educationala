@@ -108,22 +108,26 @@ int main() {
 
     cin >> c >> n >> m;
 
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++)
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
             cin >> grid[i][j];
+        }
+    }
 
     int xp, yp;
-    if (c == 1)
+    if (c == 1) {
         cin >> xp >> yp;
+    }
 
     ans[0] = 1, ans[1] = 0, ans[2] = 1;
-    for (int i = 3; i <= n * m; i++)
+    for (int i = 3; i <= n * m; i++) {
         ans[i] = (1LL * (i - 1) * (ans[i - 1] + ans[i - 2])) % mod;
+    }
 
     int ans1 = 0;
     long long ans2 = 1;
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++)
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
             if (grid[i][j] >= 0 && !viz[i][j]) {
                 queue<pair<int, int>> q;
                 viz[i][j] = 1;
@@ -132,8 +136,9 @@ int main() {
                 bool isP = 0;
                 while (!q.empty()) {
                     pair<int, int> nod = q.front();
-                    if (nod.first == xp && nod.second == yp)
+                    if (nod.first == xp && nod.second == yp) {
                         isP = 1;
+                    }
                     q.pop();
 
                     s.insert(grid[nod.first][nod.second]);
@@ -141,24 +146,30 @@ int main() {
                         int nxtx = nod.first + ox[dir];
                         int nxty = nod.second + oy[dir];
                         if (nxtx >= 1 && nxtx <= n && nxty >= 1 && nxty <= m) {
-                            if (grid[nxtx][nxty] == -1 || viz[nxtx][nxty])
+                            if (grid[nxtx][nxty] == -1 || viz[nxtx][nxty]) {
                                 continue;
+                            }
                             viz[nxtx][nxty] = 1;
                             q.push({nxtx, nxty});
                         }
                     }
                 }
-                if (s.find(0) != s.end())
+                if (s.find(0) != s.end()) {
                     s.erase(0);
-                if (isP)
+                }
+                if (isP) {
                     ans1 = s.size();
+                }
                 ans2 = (1LL * ans2 * ans[s.size()]) % mod;
             }
+        }
+    }
 
-    if (c == 1)
+    if (c == 1) {
         cout << ans1;
-    else
+    } else {
         cout << ans2;
+    }
     return 0;
 }
 ```

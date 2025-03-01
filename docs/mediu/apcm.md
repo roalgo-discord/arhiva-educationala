@@ -71,70 +71,71 @@ complexitatea finală a algoritmului va fi $\mathcal{O}(m \log m)$.
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Kruskal.
 
 ```cpp
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
- 
+
 using namespace std;
- 
+
 /* Procesarea muchiilor */
 struct edges {
     int a, b, c;
 };
 edges v[200001];
- 
-bool cmp (edges a, edges b) {
-    return a.c < b.c;
-}
+
+bool cmp(edges a, edges b) { return a.c < b.c; }
 
 /* Clasa pentru paduri de multimi disjuncte */
-class dsu{
-    private:
-        int n;
-        vector<int> parent, card; 
-    public:
-        void init (int sz) {
-            n = sz;
-            parent.resize(n+1);
-            card.resize(n+1);
-            for (int i = 1; i <= n; i++) {
-                parent[i] = i;
-                card[i] = 1;
-            }
+class dsu {
+private:
+    int n;
+    vector<int> parent, card;
+
+public:
+    void init(int sz) {
+        n = sz;
+        parent.resize(n + 1);
+        card.resize(n + 1);
+        for (int i = 1; i <= n; i++) {
+            parent[i] = i;
+            card[i] = 1;
         }
-        int Find (int x) {
-            if (parent[x] == x) {
-                return x;
-            }
-            return parent[x] = Find(parent[x]);
+    }
+    int Find(int x) {
+        if (parent[x] == x) {
+            return x;
         }
-        void Union (int a, int b) {
-            a = Find(a); b = Find(b);
-            if (a == b) {
-                return;
-            }
-            if (card[b] > card[a]) {
-                swap(a, b);
-            }
-            parent[b] = a;
-            card[a] += card[b];
+        return parent[x] = Find(parent[x]);
+    }
+    void Union(int a, int b) {
+        a = Find(a);
+        b = Find(b);
+        if (a == b) {
+            return;
         }
+        if (card[b] > card[a]) {
+            swap(a, b);
+        }
+        parent[b] = a;
+        card[a] += card[b];
+    }
 };
- 
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, m;
     cin >> n >> m;
-    
+
     for (int i = 0; i < m; i++) {
         cin >> v[i].a >> v[i].b >> v[i].c;
     }
     sort(v, v + m, cmp);
-    
-    dsu links; links.init(n);
-    
+
+    dsu links;
+    links.init(n);
+
     long long cost = 0;
     int mch = 0;
     for (int i = 0; i < m; i++) {
@@ -144,11 +145,10 @@ int main() {
             links.Union(v[i].a, v[i].b);
         }
     }
-    
-    if (mch == n-1) {
+
+    if (mch == n - 1) {
         cout << cost << '\n';
-    }
-    else {
+    } else {
         cout << "IMPOSSIBLE\n";
     }
     return 0;
@@ -182,41 +182,41 @@ Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Prim.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <set>
+#include <vector>
 using namespace std;
 
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<pair<int, int> > > graph(n+1); 
+
+    vector<vector<pair<int, int> > > graph(n + 1);
     for (int i = 1; i <= m; i++) {
         int a, b, c;
         cin >> a >> b >> c;
         graph[a].push_back({b, c});
         graph[b].push_back({a, c});
     }
-    
+
     /* Implementare similara cu cea de la Dijkstra */
-    vector<int> cost(n+1, (1<<30));
+    vector<int> cost(n + 1, (1 << 30));
     cost[1] = 0;
     set<pair<int, int> > s;
     s.insert({0, 1});
-    
+
     long long MST = 0;
     int added = 0;
-    while(!s.empty()) {
+    while (!s.empty()) {
         pair<int, int> smallest = *s.begin();
         s.erase(smallest);
-        
+
         MST += smallest.first;
         cost[smallest.second] = 0;
         added++;
-        for (int i = 0; i < (int) graph[smallest.second].size(); i++) {
+        for (int i = 0; i < (int)graph[smallest.second].size(); i++) {
             int nxt = graph[smallest.second][i].first;
             int val = graph[smallest.second][i].second;
-            
+
             if (val < cost[nxt]) {
                 if (s.find({cost[nxt], nxt}) != s.end()) {
                     s.erase({cost[nxt], nxt});
@@ -226,13 +226,12 @@ int main() {
             }
         }
     }
-    
+
     if (added == n) {
         cout << MST << '\n';
-    }
-    else {
+    } else {
         cout << "IMPOSSIBLE" << '\n';
-    }  
+    }
     return 0;
 }
 ```
@@ -271,21 +270,21 @@ Aici puteți găsi o implementare în C++ a algoritmului lui Boruvka:
 
 ```cpp
 #include <iostream>
- 
+
 const int MAXN = 200'000;
 const int MAXM = 400'000;
- 
+
 int n, m, minedge[MAXN], foundEdge;
 long long rez;
 char viz[MAXM];
- 
+
 struct Edge {
     int u, v, cost;
 } edges[MAXM];
- 
+
 struct DSU {
     int sef[MAXN], cate_comp;
-    
+
     void init(int n) {
         int i;
         cate_comp = n;
@@ -293,14 +292,14 @@ struct DSU {
             sef[i] = i;
         }
     }
-    
+
     int find(int i) {
         if (i == sef[i]) {
             return i;
         }
         return sef[i] = find(sef[i]);
     }
-    
+
     void join(int i, int j) {
         if ((i = find(i)) != (j = find(j))) {
             cate_comp--;
@@ -308,13 +307,12 @@ struct DSU {
         }
     }
 } dsu;
- 
+
 void fastReadWrite() {
-    std::ios_base::sync_with_stdio(false):
-    std::cin.tie(nullptr);
+    std::ios_base::sync_with_stdio(false) : std::cin.tie(nullptr);
     std::cout.tie(nullptr);
 }
- 
+
 void readGraph() {
     int i;
     std::cin >> n >> m;
@@ -324,14 +322,14 @@ void readGraph() {
         edges[i].v--;
     }
 }
- 
+
 void resetComps() {
     int i;
     for (i = 0; i < n; i++) {
         minedge[i] = -1;
     }
 }
- 
+
 // este muchia a mai buna ca muchia b?
 int better(int a, int b) {
     if (b == -1) {
@@ -339,15 +337,16 @@ int better(int a, int b) {
     }
     return edges[a].cost < edges[b].cost;
 }
- 
+
 void processEdges() {
     int i, u, v;
     for (i = 0; i < m; i++) {
-        if (viz[i] == 0) { // daca n-am folosit muchia deja
+        if (viz[i] == 0) {  // daca n-am folosit muchia deja
             u = dsu.find(edges[i].u);
             v = dsu.find(edges[i].v);
-            if (u != v) { // sa nu fie in aceeasi componenta
-                if (better(i, minedge[u])) { // cautam cea mai buna muchie pentru fiecare componenta
+            if (u != v) {                     // sa nu fie in aceeasi componenta
+                if (better(i, minedge[u])) {  // cautam cea mai buna muchie
+                                              // pentru fiecare componenta
                     minedge[u] = i;
                 }
                 if (better(i, minedge[v])) {
@@ -357,41 +356,45 @@ void processEdges() {
         }
     }
 }
- 
+
 void processComps() {
     int i, u, v;
-    for (i = 0; i < n; i++) { // trecem prin fiecare componenta
-        if (minedge[i] != -1 // daca am gasit o muchie pentru componenta in care i e parinte
-                             // daca i nu e parintele unei componente atunci nu o sa fie gasita nicio muchie
-            && viz[minedge[i]] == 0) { // sa nu o fi folosit pentru componenta cu care ne unim deja
-            dsu.join(edges[minedge[i]].u, edges[minedge[i]].v); // unim componentele
-            rez += edges[minedge[i]].cost; // adunam costul
-            viz[minedge[i]] = 1; // am folosit muchia
+    for (i = 0; i < n; i++) {  // trecem prin fiecare componenta
+        if (minedge[i]
+                != -1  // daca am gasit o muchie pentru componenta in care i e
+                       // parinte daca i nu e parintele unei componente atunci
+                       // nu o sa fie gasita nicio muchie
+            && viz[minedge[i]] == 0) {  // sa nu o fi folosit pentru componenta
+                                        // cu care ne unim deja
+            dsu.join(edges[minedge[i]].u,
+                     edges[minedge[i]].v);  // unim componentele
+            rez += edges[minedge[i]].cost;  // adunam costul
+            viz[minedge[i]] = 1;            // am folosit muchia
             foundEdge = 1;
         }
     }
 }
- 
+
 void findMST() {
     int i, u, v;
-    
+
     dsu.init(n);
     rez = 0;
     foundEdge = 1;
-    while (dsu.cate_comp > 1 && foundEdge) { // cat timp nu e arbore si mai putem face ceva
+    while (dsu.cate_comp > 1
+           && foundEdge) {  // cat timp nu e arbore si mai putem face ceva
         foundEdge = 0;
-        resetComps(); // resetam componentele
-        processEdges(); // trecem prin fiecare muchie
-        processComps(); // unim fiecare componenta cu muchia ei cea mai buna
+        resetComps();    // resetam componentele
+        processEdges();  // trecem prin fiecare muchie
+        processComps();  // unim fiecare componenta cu muchia ei cea mai buna
     }
     if (dsu.cate_comp > 1) {
         std::cout << "IMPOSSIBLE\n";
-    }
-    else {
+    } else {
         std::cout << rez << "\n";
     }
 }
- 
+
 int main() {
     fastReadWrite();
     readGraph();

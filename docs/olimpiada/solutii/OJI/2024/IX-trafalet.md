@@ -52,17 +52,19 @@ int main() {
     ofstream cout("trafalet.out");
 
     cin >> n >> m;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> mat[i][j];
-            if ((i + j) & 1)
+            if ((i + j) & 1) {
                 sp[i][j] = sp[i - 1][j] + mat[i][j];
-            else
+            } else {
                 sp[i][j] = sp[i - 1][j] - mat[i][j];
+            }
         }
+    }
 
     long long ans = -(1LL << 60);
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         for (int j = i; j <= n; j++) {
             long long sm = 0, minsp = 0, maxsp = 0;
             for (int q = 1; q <= m; q++) {
@@ -73,6 +75,7 @@ int main() {
                 maxsp = max(maxsp, sm);
             }
         }
+    }
 
     cout << ans << '\n';
     return 0;

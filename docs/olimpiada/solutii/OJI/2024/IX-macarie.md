@@ -54,8 +54,9 @@ int n, m, fr[1000001], sp[1000001];
 
 void sieve() {
     for (int i = 1; i <= 1000000; i++) {
-        for (int j = i; j <= 1000000; j += i)
+        for (int j = i; j <= 1000000; j += i) {
             sp[i] += fr[j];
+        }
         sp[i] += sp[i - 1];
     }
 }
@@ -82,10 +83,11 @@ int main() {
         int ans = 0;
         while (st <= dr) {
             int mid = (st + dr) / 2;
-            if (sp[mid] >= x)
+            if (sp[mid] >= x) {
                 ans = mid, dr = mid - 1;
-            else
+            } else {
                 st = mid + 1;
+            }
         }
 
         cout << ans << " ";

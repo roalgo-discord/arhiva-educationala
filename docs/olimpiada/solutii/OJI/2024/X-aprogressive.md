@@ -97,17 +97,20 @@ void solve(int xa, int ya, int xb, int yb) {
         cout << xa << "," << ya << "," << xb << "," << yb << "," << 0;
     } else {
         vector<int> sum;
-        for (int i = xa; i <= xb; i++)
+        for (int i = xa; i <= xb; i++) {
             sum.push_back(ps(i, ya, i, yb));
+        }
         sort(sum.begin(), sum.end());
         int ratio = sum[1] - sum[0];
         bool ok = 1;
-        for (int i = 2; i < sum.size(); i++)
-            if (sum[i] - sum[i - 1] != ratio)
+        for (int i = 2; i < sum.size(); i++) {
+            if (sum[i] - sum[i - 1] != ratio) {
                 ok = 0;
-        if (ok && ratio != 0)
+            }
+        }
+        if (ok && ratio != 0) {
             cout << xa << "," << ya << "," << xb << "," << yb << "," << ratio;
-        else {
+        } else {
             int midx = (xa + xb) / 2;
             int midy = (ya + yb) / 2;
             solve(xa, ya, midx, midy);
@@ -119,42 +122,49 @@ void solve(int xa, int ya, int xb, int yb) {
     cout << ")";
 }
 int main() {
-
     cin >> c >> n >> m;
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> a[i][j];
             sp[i][j] = sp[i - 1][j] + sp[i][j - 1] - sp[i - 1][j - 1] + a[i][j];
         }
+    }
 
     if (c == 1) {
         vector<int> maxlines;
         maxlines.push_back(1);
-        for (int i = 2; i <= n; i++)
-            if (ps(i, 1, i, m) > ps(maxlines[0], 1, maxlines[0], m))
+        for (int i = 2; i <= n; i++) {
+            if (ps(i, 1, i, m) > ps(maxlines[0], 1, maxlines[0], m)) {
                 maxlines.clear(), maxlines.push_back(i);
-            else if (ps(i, 1, i, m) == ps(maxlines[0], 1, maxlines[0], m))
+            } else if (ps(i, 1, i, m) == ps(maxlines[0], 1, maxlines[0], m)) {
                 maxlines.push_back(i);
-        for (auto x : maxlines)
+            }
+        }
+        for (auto x : maxlines) {
             cout << x << '\n';
+        }
     }
 
     if (c == 2) {
         for (int i = 1; i <= n; i++) {
             vector<int> vals;
-            for (int j = 1; j <= m; j++)
+            for (int j = 1; j <= m; j++) {
                 vals.push_back(a[i][j]);
+            }
             sort(vals.begin(), vals.end());
             bool ok = 1;
             if (m >= 2) {
                 int ratie = vals[1] - vals[0];
-                for (int j = 2; j < vals.size(); j++)
-                    if (vals[j] - vals[j - 1] != ratie)
+                for (int j = 2; j < vals.size(); j++) {
+                    if (vals[j] - vals[j - 1] != ratie) {
                         ok = 0;
+                    }
+                }
             }
-            if (ok)
+            if (ok) {
                 cout << i << '\n';
+            }
         }
     }
 

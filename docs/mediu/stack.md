@@ -61,27 +61,23 @@ int stk[100001];
 int main() {
     int t;
     cin >> t;
-    
-    int pos = 0; 
-    while(t--) {
+
+    int pos = 0;
+    while (t--) {
         int tip;
         cin >> tip;
-        if(tip == 1) {
-            cin >> stk[pos++]; 
-        } 
-        else {
-            if(tip == 2) {
+        if (tip == 1) {
+            cin >> stk[pos++];
+        } else {
+            if (tip == 2) {
                 pos--;
-            } 
-            else {
-                if(tip == 3) {
+            } else {
+                if (tip == 3) {
                     cout << stk[pos - 1] << '\n';
-                } 
-                else {
+                } else {
                     if (pos == 0) {
                         cout << "YES" << '\n';
-                    }
-                    else {
+                    } else {
                         cout << "NO" << '\n';
                     }
                 }
@@ -119,20 +115,16 @@ int main() {
             int val;
             cin >> val;
             st.push(val);
-        } 
-        else {
+        } else {
             if (tip == 2) {
                 st.pop();
-            } 
-            else {
+            } else {
                 if (tip == 3) {
                     cout << st.top() << '\n';
-                } 
-                else {
+                } else {
                     if (st.empty()) {
                         cout << "YES" << '\n';
-                    }
-                    else {
+                    } else {
                         cout << "NO" << '\n';
                     }
                 }
@@ -338,8 +330,7 @@ int main() {
         }
         if (ptr == 0) {
             l[i] = 0;
-        }
-        else {
+        } else {
             l[i] = stk[ptr - 1];
         }
         stk[ptr++] = i;
@@ -353,8 +344,7 @@ int main() {
         int r;  // r = cel mai mic j > i pentru care height[j] < height[i]
         if (ptr == 0) {
             r = n + 1;
-        }
-        else {
+        } else {
             r = stk[ptr - 1];
         }
         stk[ptr++] = i;
@@ -411,7 +401,7 @@ void getMostFrequent() {
     int i, max;
     long long val;
     for (i = 0; i < n; i++) {
-        val = v[i]; // vrem sa pastram valoarea
+        val = v[i];  // vrem sa pastram valoarea
         while (val > 0) {
             fr[val % 10]++;
             val /= 10;
@@ -427,7 +417,7 @@ void getMostFrequent() {
 }
 
 void getDigitFrequencies(long long val, int fr[MAXCF]) {
-    do { // tratam si cazul val = 0
+    do {  // tratam si cazul val = 0
         fr[val % 10]++;
         val /= 10;
     } while (val > 0);
@@ -440,11 +430,11 @@ int canJoin(long long a, long long b) {
     }
     getDigitFrequencies(a, fra);
     getDigitFrequencies(b, frb);
-    i = 0; // cautam prima cifra care apare la ambii
+    i = 0;  // cautam prima cifra care apare la ambii
     while (i < MAXCF && (fra[i] == 0 || frb[i] == 0)) {
         i++;
     }
-    return i < MAXCF; // daca am gasit vreuna
+    return i < MAXCF;  // daca am gasit vreuna
 }
 
 long long removeCommonDigits(long long val, int other_fr[]) {
@@ -457,8 +447,8 @@ long long removeCommonDigits(long long val, int other_fr[]) {
     rez = has_digits = 0;
     while (p > 0) {
         cf = val / p % 10;
-        if (other_fr[cf] == 0) { // daca nu e comuna
-            rez = rez * 10 + cf; // adaugam cifra
+        if (other_fr[cf] == 0) {  // daca nu e comuna
+            rez = rez * 10 + cf;  // adaugam cifra
             has_digits = 1;
         }
         p /= 10;
@@ -470,10 +460,11 @@ long long removeCommonDigits(long long val, int other_fr[]) {
 // asta inseamna ca fra si frb sunt calculate deja
 long long join(long long a, long long b) {
     long long p, rez;
-    a = removeCommonDigits(a, frb); // numarul nou al lui a
-    b = removeCommonDigits(b, fra); // numarul nou al lui b
-    if (a != FARA_CIFRE || b != FARA_CIFRE) { // ambele dispar daca ambele n-au cifre
-        if (a == FARA_CIFRE) { // nu mai conteaza ca nu are cifre
+    a = removeCommonDigits(a, frb);  // numarul nou al lui a
+    b = removeCommonDigits(b, fra);  // numarul nou al lui b
+    if (a != FARA_CIFRE
+        || b != FARA_CIFRE) {   // ambele dispar daca ambele n-au cifre
+        if (a == FARA_CIFRE) {  // nu mai conteaza ca nu are cifre
             a = 0;
         }
         p = 1;
@@ -481,12 +472,12 @@ long long join(long long a, long long b) {
             p *= 10;
         }
         if (b == 0) {
-            p = 10; // si cifra asta trebuie luata in considerare
+            p = 10;  // si cifra asta trebuie luata in considerare
         }
-        if (b == FARA_CIFRE) { // setam la 0 ca sa nu ne afecteze rezultatul
+        if (b == FARA_CIFRE) {  // setam la 0 ca sa nu ne afecteze rezultatul
             b = 0;
         }
-        a = a * p + b; // lipim numerele
+        a = a * p + b;  // lipim numerele
     }
     return a;
 }
@@ -496,13 +487,13 @@ void unifyArray() {
     for (i = 0; i < n; i++) {
         while (sp > 0 && v[i] >= 0 && canJoin(stiva[sp - 1], v[i])) {
             v[i] = join(stiva[sp - 1], v[i]);
-            sp--; // scoatem varful din stiva
+            sp--;  // scoatem varful din stiva
         }
-        if (v[i] != FARA_CIFRE) { // daca mai are cifre
-            stiva[sp++] = v[i]; // adaugam elementul in stiva
+        if (v[i] != FARA_CIFRE) {  // daca mai are cifre
+            stiva[sp++] = v[i];    // adaugam elementul in stiva
         }
     }
-    fout << sp << "\n"; // cate sunt
+    fout << sp << "\n";  // cate sunt
     for (i = 0; i < sp; i++) {
         fout << stiva[i] << " ";
     }
@@ -574,17 +565,18 @@ void calcAnswer() {
     long long rez;
     fin >> n;
     rez = cate = 0;
-    while((ch = fin.get()) != '('); // asta va fi mereu primul caracter
+    while ((ch = fin.get()) != '(')
+        ;  // asta va fi mereu primul caracter
     for (i = 0; i < n; i++) {
         if (ch == DESCHISA) {
-            stiva[sp++] = i; // il adaugam in stiva
-        }
-        else { // INCHISA
-            rez += i - stiva[sp - 1]; // distanta pana la pereche
-            if (sp >= 2 && stiva[sp - 1] == i - 1) { // conditia sa fie valida operatia 
+            stiva[sp++] = i;           // il adaugam in stiva
+        } else {                       // INCHISA
+            rez += i - stiva[sp - 1];  // distanta pana la pereche
+            if (sp >= 2
+                && stiva[sp - 1] == i - 1) {  // conditia sa fie valida operatia
                 cate++;
             }
-            sp--; // scoatem perechea din stiva
+            sp--;  // scoatem perechea din stiva
         }
         ch = fin.get();
     }
@@ -635,12 +627,10 @@ void buildAnswer() {
     pot = i = 1;
     while (i <= n && pot) {
         if (a[i] == a[i - 1]) {
-            stiva[sp++] = i; // il adaugam in stiva
-        }
-        else if (a[i] - a[i - 1] > sp + 1) { // nu avem destule elemente
+            stiva[sp++] = i;                    // il adaugam in stiva
+        } else if (a[i] - a[i - 1] > sp + 1) {  // nu avem destule elemente
             pot = 0;
-        }
-        else {
+        } else {
             answer[i] = a[i - 1];
             for (j = a[i - 1] + 1; j < a[i]; j++) {
                 // folosim elementul si il scoatem
@@ -665,7 +655,7 @@ void writeAnswer() {
     } else {
         for (i = 1; i <= n; i++) {
             std::cout << answer[i] << " ";
-        } 
+        }
         std::cout << "\n";
     }
 }

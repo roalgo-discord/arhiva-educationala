@@ -41,8 +41,7 @@ int main() {
             int cif = aux % 10;
             if (cif > t) {
                 a = 1;
-            } 
-            else {
+            } else {
                 if (cif < t) {
                     b = 1;
                 }

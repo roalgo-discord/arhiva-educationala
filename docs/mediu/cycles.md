@@ -93,16 +93,16 @@ using namespace std;
 vector<vector<pair<int, int>>> graph;
 vector<int> grad, visN, visM, sol;
 
-void dfs (int node) {
+void dfs(int node) {
     visN[node] = 1;
-    for(auto next : graph[node]) {
-        if(!visN[next.first]) {
+    for (auto next : graph[node]) {
+        if (!visN[next.first]) {
             dfs(next.first);
         }
     }
 }
 
-void euler (int node) {
+void euler(int node) {
     while (graph[node].size() > 0) {
         int next = graph[node].back().first;
         int next_edge = graph[node].back().second;
@@ -118,15 +118,15 @@ void euler (int node) {
 int main() {
     ifstream cin("ciclueuler.in");
     ofstream cout("ciclueuler.out");
-    
+
     int n, m;
     cin >> n >> m;
-    
-    graph.resize(n+1);
-    grad.resize(n+1);
-    visN.resize(n+1);
-    visM.resize(m+1);
-    
+
+    graph.resize(n + 1);
+    grad.resize(n + 1);
+    visN.resize(n + 1);
+    visM.resize(m + 1);
+
     for (int i = 1; i <= m; i++) {
         int a, b;
         cin >> a >> b;
@@ -136,20 +136,21 @@ int main() {
         graph[b].push_back({a, i});
     }
     dfs(1);
-    
-    // daca exista un nod nevizitat sau gradul lui e impar, nu avem ciclu eulerian
+
+    // daca exista un nod nevizitat sau gradul lui e impar, nu avem ciclu
+    // eulerian
     int ok = 1;
     for (int i = 1; i <= n; i++) {
         if (visN[i] == 0 || grad[i] % 2 == 1) {
             ok = 0;
         }
     }
-    if(ok == 0) {
+    if (ok == 0) {
         cout << -1 << '\n';
     } else {
         euler(1);
         sol.pop_back();
-        for(auto node : sol) {
+        for (auto node : sol) {
             cout << node << " ";
         }
     }
@@ -201,17 +202,17 @@ similar, și dacă nu putem parcurge toate muchiile.
     pentru ciclul eulerian.
 
 ```cpp
+#include <algorithm>
 #include <fstream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
-    
+
 vector<vector<pair<int, int>>> graph;
 vector<int> grad, visM;
 
-vector<pair<int, int> > sol;
-void euler (int node) {
+vector<pair<int, int>> sol;
+void euler(int node) {
     while (graph[node].size() > 0) {
         int next = graph[node].back().first;
         int next_edge = graph[node].back().second;
@@ -229,19 +230,17 @@ void euler (int node) {
     }
 }
 
-
-
 int main() {
     ifstream cin("domino.in");
     ofstream cout("domino.out");
-    
+
     int n;
     cin >> n;
-    
+
     graph.resize(10);
     grad.resize(10);
-    visM.resize(n+1);
-    
+    visM.resize(n + 1);
+
     for (int i = 1; i <= n; i++) {
         int a, b;
         cin >> a >> b;
@@ -250,7 +249,7 @@ int main() {
         graph[a].push_back({b, i});
         graph[b].push_back({a, -i});
     }
-    
+
     int impar = 0;
     int ok = -1;
     for (int i = 0; i <= 9; i++) {
@@ -258,8 +257,7 @@ int main() {
             if (grad[i] % 2 == 1) {
                 ok = i;
                 impar++;
-            }
-            else {
+            } else {
                 if (ok == -1) {
                     ok = i;
                 }
@@ -268,13 +266,11 @@ int main() {
     }
     if (impar != 0 && impar != 2) {
         cout << 0 << '\n';
-    } 
-    else {
+    } else {
         euler(ok);
-        if ((int) sol.size() != n) {
+        if ((int)sol.size() != n) {
             cout << 0 << '\n';
-        }
-        else {
+        } else {
             cout << 1 << '\n';
             reverse(sol.begin(), sol.end());
             for (auto x : sol) {
@@ -316,45 +312,44 @@ vector<int> sol, cd;
 
 int ord[11];
 
-void bkt (int node, int msk) {
+void bkt(int node, int msk) {
     ord[++ord[0]] = node;
     if (!sol.empty()) {
         return;
     }
     for (auto x : graph[node]) {
-        if (msk == (1<<n) - 1 && x == 1) {
+        if (msk == (1 << n) - 1 && x == 1) {
             for (int i = 1; i <= ord[0]; i++) {
                 sol.push_back(ord[i]);
             }
             sol.push_back(1);
             return;
         }
-        if (msk & (1<<(x-1))) {
+        if (msk & (1 << (x - 1))) {
             continue;
         }
-        bkt(x, msk ^ (1<<(x-1)));
+        bkt(x, msk ^ (1 << (x - 1)));
     }
     --ord[0];
 }
 int main() {
     ifstream cin("hamilton.in");
     ofstream cout("hamilton.out");
-    
+
     cin >> n;
-    graph.resize(n+1);
-    
+    graph.resize(n + 1);
+
     int a, b;
     while (cin >> a >> b) {
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
-    
+
     bkt(1, 1);
-    
+
     if (sol.empty()) {
         cout << 0 << '\n';
-    }
-    else {
+    } else {
         cout << 1 << '\n';
         for (auto x : sol) {
             cout << x << " ";
@@ -406,28 +401,27 @@ pleacă de la nodul vizitat, dacă acest pas este prima oară când am vizitat n
 ```cpp
 #include <iostream>
 #include <vector>
- 
+
 using namespace std;
- 
+
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n;
     cin >> n;
-    
-    vector<int> costs(n+1), graph(n+1);
+
+    vector<int> costs(n + 1), graph(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> costs[i];
     }
     for (int i = 1; i <= n; i++) {
         cin >> graph[i];
     }
-    
+
     int ans = 0;
-    
-    vector<int> visited(n+1), processed(n+1);
+
+    vector<int> visited(n + 1), processed(n + 1);
     for (int i = 1; i <= n; i++) {
         if (!visited[i]) {
             int node = i;
@@ -436,10 +430,10 @@ int main() {
                 visited[node] = 1;
                 node = graph[node];
             }
-            
+
             if (!processed[node]) {
                 int mini = 1000000000;
-                // aflam ciclul 
+                // aflam ciclul
                 while (!processed[node]) {
                     mini = min(mini, costs[node]);
                     processed[node] = i;
@@ -451,7 +445,7 @@ int main() {
             }
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -471,7 +465,6 @@ mult de $m$ secunde pentru a finaliza procesul.
 Cu alte cuvinte, vom rezolva problema independent pentru fiecare ciclu din graf.
 
 ```cpp
-
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -484,35 +477,32 @@ long long sum = 0;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     cin >> n >> m;
     cin >> s;
-    s = ' ' + s; // 1-index string
-    
+    s = ' ' + s;  // 1-index string
+
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
         sum += v[i];
     }
-    
+
     for (int i = 1; i <= n; i++) {
         if (s[i] == 'L') {
             if (i == 1) {
                 cnt[n]++, nxt[i] = n;
+            } else {
+                cnt[i - 1]++, nxt[i] = i - 1;
             }
-            else {
-                cnt[i-1]++, nxt[i] = i-1;
-            }
-        }
-        else {
+        } else {
             if (i == n) {
                 cnt[1]++, nxt[i] = 1;
-            }
-            else {
-                cnt[i+1]++, nxt[i] = i+1;
+            } else {
+                cnt[i + 1]++, nxt[i] = i + 1;
             }
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         if (vis[i] == 0 && cnt[i] == 0) {
             vector<int> cycle;
@@ -523,16 +513,16 @@ int main() {
                 pos = nxt[pos];
             }
             long long noncyclesum = 0;
-            for (int j = 0; j < (int) cycle.size() && cycle[j] != pos; j++) {
+            for (int j = 0; j < (int)cycle.size() && cycle[j] != pos; j++) {
                 noncyclesum += v[cycle[j]];
-            }    
+            }
             sum -= min(m, noncyclesum);
         }
     }
-    
+
     cout << sum << '\n';
     return 0;
-} 
+}
 ```
 
 ### Problema [Cyclic Operations - Codeforces](https://codeforces.com/contest/1867/problem/D)
@@ -548,23 +538,23 @@ enunț. Pentru mai multe detalii, recomandăm citirea soluției oficiale.
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int n, k;
 vector<vector<int> > graph;
 vector<int> visited;
 vector<int> prv;
- 
+
 bool ok;
- 
+
 vector<int> vals;
-void dfs (int nod) {
-    if(ok == 0) {
+void dfs(int nod) {
+    if (ok == 0) {
         return;
     }
-        
+
     vals.push_back(nod);
     prv[nod] = vals.size();
-    
+
     for (int i = 0; i < graph[nod].size(); i++) {
         int poz = graph[nod][i];
         if (prv[poz] != 0) {
@@ -572,8 +562,7 @@ void dfs (int nod) {
                 ok = 0;
                 break;
             }
-        }
-        else {
+        } else {
             if (!visited[nod]) {
                 dfs(poz);
             }
@@ -583,52 +572,51 @@ void dfs (int nod) {
     prv[nod] = 0;
     vals.pop_back();
 }
- 
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int t;
     cin >> t;
-    
+
     for (; t; t--) {
         cin >> n >> k;
-        vector<int> v(n+1);
-        
-        graph.resize(n+1);
-        visited.resize(n+1);
-        prv.resize(n+1);
+        vector<int> v(n + 1);
+
+        graph.resize(n + 1);
+        visited.resize(n + 1);
+        prv.resize(n + 1);
         vals.clear();
-        
+
         for (int i = 1; i <= n; i++) {
             cin >> v[i], visited[i] = 0;
             graph[i].push_back(v[i]);
         }
-        
+
         ok = 1;
-        
+
         if (k == 1) {
             for (int i = 1; i <= n; i++) {
                 if (v[i] != i) {
                     ok = 0;
                 }
             }
-        }
-        else {
+        } else {
             for (int i = 1; i <= n; i++) {
                 if (!visited[i]) {
                     dfs(i);
                 }
+            }
+
+            cout << (ok == 1 ? "YES" : "NO") << '\n';
+
+            graph.clear();
+            visited.clear();
+            prv.clear();
         }
-        
-        cout << (ok == 1 ? "YES" : "NO") << '\n';
-        
-        graph.clear();
-        visited.clear();
-        prv.clear();
+        return 0;
     }
-    return 0;
-}
 ```
 
 ## Concluzii

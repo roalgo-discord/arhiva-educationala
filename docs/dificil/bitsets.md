@@ -29,13 +29,12 @@ timpului sau memoriei.
 
 ```cpp
 bitset<10> b;
-int main(){
- 
- b[0] = 1;
- b[3] = 1;
- b[9] = 1;
+int main() {
+    b[0] = 1;
+    b[3] = 1;
+    b[9] = 1;
 
- cout << b;
+    cout << b;
 }
 ```
 
@@ -61,20 +60,17 @@ int main(){
 
 ```cpp
 bitset<10> b;
-int main(){
- 
- b[0] = 1;
- b <<= 1;
-     cout << b << '\n';
+int main() {
+    b[0] = 1;
+    b <<= 1;
+    cout << b << '\n';
 
+    b ^= 13;
+    cout << b << '\n';
 
- b ^= 13;
- cout << b << '\n';
-  
- b >>= 100;
- cout << b;
+    b >>= 100;
+    cout << b;
 }
-
 ```
 
 ```
@@ -108,21 +104,19 @@ int main(){
 
 ```cpp
 bitset<10> b;
-int main(){
- 
- b[3] = 1;
- cout << b._Find_next(0) << '\n';
- 
- b.flip(0);
- cout << b.to_string() << '\n';
- 
- b = 13;
- cout << b._Find_first() << '\n';
- cout << b << '\n';
- 
- cout << b.to_ullong();
-}
+int main() {
+    b[3] = 1;
+    cout << b._Find_next(0) << '\n';
 
+    b.flip(0);
+    cout << b.to_string() << '\n';
+
+    b = 13;
+    cout << b._Find_first() << '\n';
+    cout << b << '\n';
+
+    cout << b.to_ullong();
+}
 ```
 
 ```
@@ -181,48 +175,44 @@ vector<int> liste[N], d(N);
 int n, m;
 
 void topsort() {
+    queue<int> q;
+    for (int i = 1; i <= n; i++) {
+        if (d[i] == 0) {
+            q.push(i);
+        }
+    }
 
- queue<int> q;
- for (int i = 1; i <= n; i++) {
-  if (d[i] == 0) {
-   q.push(i);
-  }
- }
-
- while (!q.empty()) {
-  int nod = q.front();
-  q.pop();
-  for (auto i : liste[nod]) {
-   v[i][nod] = 1;
-   v[i] |= v[nod];
-   if (--d[i] == 0) {
-    q.push(i);
-   }
-  }
- }
-
-
+    while (!q.empty()) {
+        int nod = q.front();
+        q.pop();
+        for (auto i : liste[nod]) {
+            v[i][nod] = 1;
+            v[i] |= v[nod];
+            if (--d[i] == 0) {
+                q.push(i);
+            }
+        }
+    }
 }
 int main() {
+    cin.tie(0)->sync_with_stdio(0);
+    cin >> n >> m;
+    for (int i = 1; i <= m; i++) {
+        int u, v;
+        cin >> u >> v;
+        liste[u].push_back(v);
+        d[v]++;
+    }
 
- cin.tie(0)->sync_with_stdio(0);
- cin >> n >> m;
- for (int i = 1; i <= m; i++) {
-  int u, v;
-  cin >> u >> v;
-  liste[u].push_back(v);
-  d[v]++;
- }
+    topsort();
 
- topsort();
-
- int q;
- cin >> q;
- while (q--) {
-  int u, a;
-  cin >> u >> a;
-  cout << v[a][u] << '\n';
- }
+    int q;
+    cin >> q;
+    while (q--) {
+        int u, a;
+        cin >> u >> a;
+        cout << v[a][u] << '\n';
+    }
 }
 ```
 
@@ -241,10 +231,10 @@ constitui următorul rucsac:
 ```cpp
 vector<int> dp(maxsum + 1);
 dp[0] = 1;
-for(int i = 1; i <= 100; i++){
-    for(int j = 1; j <= fr[i]; j++){
-        for(int s = 0; s <= maxsum; s++){
-            if(s + i <= maxsum){
+for (int i = 1; i <= 100; i++) {
+    for (int j = 1; j <= fr[i]; j++) {
+        for (int s = 0; s <= maxsum; s++) {
+            if (s + i <= maxsum) {
                 dp[s + i] |= dp[s];
             }
         }
@@ -260,8 +250,8 @@ problema:
 ```cpp
 bitset<maxsum + 1> dp;
 dp[0] = 1;
-for(int i = 1; i <= 100; i++){
-    for(int j = 1; j <= fr[i]; j++){
+for (int i = 1; i <= 100; i++) {
+    for (int j = 1; j <= fr[i]; j++) {
         dp |= (dp << i);
     }
 }
@@ -284,15 +274,15 @@ numărul $i$.
 ```cpp
 dp[0] = 1;
 for (int i = 1; i <= 100; i++) {
- int mask = 1;
- while (fr[i]) {
-  fr[i] -= mask;
-  dp |= (dp << (i * mask));
-  mask *= 2;
-  if (mask > fr[i]) {
-   mask = fr[i];
-  }
- }
+    int mask = 1;
+    while (fr[i]) {
+        fr[i] -= mask;
+        dp |= (dp << (i * mask));
+        mask *= 2;
+        if (mask > fr[i]) {
+            mask = fr[i];
+        }
+    }
 }
 ```
 
@@ -301,33 +291,33 @@ for (int i = 1; i <= 100; i++) {
 ```cpp
 int n;
 vector<int> fr(101);
-bitset < (int)1e6 + 200 > dp;
+bitset<(int)1e6 + 200> dp;
 int main() {
- cin.tie(0)->sync_with_stdio(0);
- cin >> n;
- for (int i = 1; i <= n; i++) {
-  int w;
-  cin >> w;
-  for (int j = 1; j <= w; j++) {
-   int val;
-   cin >> val;
-   fr[val]++;
-  }
- }
- 
- dp[0] = 1;
- for (int i = 1; i <= 100; i++) {
-  int mask = 1;
-  while (fr[i]) {
-   fr[i] -= mask;
-   dp |= (dp << (i * mask));
-   mask *= 2;
-   if (mask > fr[i]) {
-    mask = fr[i];
-   }
-  }
- }
- cout << dp.count();
+    cin.tie(0)->sync_with_stdio(0);
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        int w;
+        cin >> w;
+        for (int j = 1; j <= w; j++) {
+            int val;
+            cin >> val;
+            fr[val]++;
+        }
+    }
+
+    dp[0] = 1;
+    for (int i = 1; i <= 100; i++) {
+        int mask = 1;
+        while (fr[i]) {
+            fr[i] -= mask;
+            dp |= (dp << (i * mask));
+            mask *= 2;
+            if (mask > fr[i]) {
+                mask = fr[i];
+            }
+        }
+    }
+    cout << dp.count();
 }
 ```
 
@@ -395,39 +385,41 @@ Complexitatea este $\mathcal{O}(|S| \cdot \frac{N^2}{w})$.
 
 ```cpp
 int ans = 0;
-vector<bitset<101>> dp(n + 1),new_dp(n + 1);
-for(int i = 1; i <= n; i++){
- for(int j = 1; j <= n; j++){
-     if(M[i][j] == s[1]-'0'){
-  dp[i][j] = 1;
-  ans=1;
-     }
- }
+vector<bitset<101>> dp(n + 1), new_dp(n + 1);
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= n; j++) {
+        if (M[i][j] == s[1] - '0') {
+            dp[i][j] = 1;
+            ans = 1;
+        }
+    }
 }
 
 bitset<101> rest;
-for(int l = 2; l< s.size(); l++){
- 
- int nr1 = s[l-1]-'0',nr2 = s[l]-'0';
- for(int i = 1; i <= n; i++){
-     new_dp[i] = (new_dp[i]|((dp[i]>>1)& right[i][nr1][nr2]));
-     new_dp[i] = (new_dp[i]|((dp[i]<<1)& left[i][nr1][nr2]));
-     if(i > 1) new_dp[i-1] = (new_dp[i-1]|(dp[i]& up[i-1][nr1][nr2]));
-     if(i < n) new_dp[i + 1] = (new_dp[i + 1]|(dp[i]& down[i + 1][nr1][nr2]));
- }
- 
- 
- for(int i = 1; i <= n; i++){
-     if(new_dp[i]._Find_first() != 101){
-  ans = l;
-     }
- 
-     swap(dp[i], new_dp[i]);
-     new_dp[i] &= rest;
- }
- if(ans != l){
-     break;
- }
+for (int l = 2; l < s.size(); l++) {
+    int nr1 = s[l - 1] - '0', nr2 = s[l] - '0';
+    for (int i = 1; i <= n; i++) {
+        new_dp[i] = (new_dp[i] | ((dp[i] >> 1) & right[i][nr1][nr2]));
+        new_dp[i] = (new_dp[i] | ((dp[i] << 1) & left[i][nr1][nr2]));
+        if (i > 1) {
+            new_dp[i - 1] = (new_dp[i - 1] | (dp[i] & up[i - 1][nr1][nr2]));
+        }
+        if (i < n) {
+            new_dp[i + 1] = (new_dp[i + 1] | (dp[i] & down[i + 1][nr1][nr2]));
+        }
+    }
+
+    for (int i = 1; i <= n; i++) {
+        if (new_dp[i]._Find_first() != 101) {
+            ans = l;
+        }
+
+        swap(dp[i], new_dp[i]);
+        new_dp[i] &= rest;
+    }
+    if (ans != l) {
+        break;
+    }
 }
 
 cout << ans << '\n';
@@ -493,34 +485,36 @@ ajutorul unui **bitset**, complexitatea finală fiind $\mathcal{O}(\frac{N^2}{w}
 ```cpp
 int n;
 cin >> n;
-vector<int> sz(n+1);
+vector<int> sz(n + 1);
 vector<vector<int>> liste(n + 1);
-for(int i = 2; i <= n; i++){
+for (int i = 2; i <= n; i++) {
     int p;
     cin >> p;
     liste[p].push_back(i);
     liste[i].push_back(p);
 }
 long long ans = 0;
-function<void(int,int)> dfs = [&](int nod, int p){
+function<void(int, int)> dfs = [&](int nod, int p) {
     sz[nod] = 1;
     bitset<5001> b;
     b[0] = 1;
-    for(auto i : liste[nod]){
-        if(i == p) continue;
-        dfs(i,nod);
+    for (auto i : liste[nod]) {
+        if (i == p) {
+            continue;
+        }
+        dfs(i, nod);
         sz[nod] += sz[i];
         b |= (b << sz[i]);
     }
     long long maxim = 0;
-    for(int i = 1; i <= sz[nod] - 1; i++){
-        if(b[i]){
+    for (int i = 1; i <= sz[nod] - 1; i++) {
+        if (b[i]) {
             maxim = max(maxim, 1LL * i * (sz[nod] - 1 - i));
         }
     }
     ans += maxim;
 };
-dfs(1,1);
+dfs(1, 1);
 cout << ans << '\n';
 ```
 
@@ -558,13 +552,13 @@ Un **bitset** dinamic scris de mână arată în felul următor:
 template <int len = 1>
 void dynamic_bitset(int n) {
     if (n >= len) {
-        dynamic_bitset<std::min(len*2, maxn)>(n);
+        dynamic_bitset<std::min(len * 2, maxn)>(n);
         return;
     }
-    
+
     bitset<len> dp;
-    
-    //do somethine with dp
+
+    // do somethine with dp
 }
 ```
 
@@ -576,14 +570,12 @@ Iar un bitset dinamic din librăria `<tr2/dynamic_bitset>` arată așa:
 ```cpp
 #include <iostream>
 #include <tr2/dynamic_bitset>
-using namespace tr2
-using namespace std;
+using namespace tr2 using namespace std;
 
-int main(){
+int main() {
+    dynamic_bitset<> dp(n);
 
-    dynamic_bitset<>dp(n);
-
-    //do something with dp
+    // do something with dp
 }
 ```
 
@@ -639,50 +631,49 @@ ofstream fout("infinitywar.out");
 #define cout fout
 int n, q, p = 1, maxim;
 
-//bitset<P> b[N];
+// bitset<P> b[N];
 vector<int> v[N];
-int main(){
+int main() {
     cin.tie(0)->sync_with_stdio(0);
     cin >> n >> q;
     vector<pair<int, int>> qr(q + 1);
     vector<int> ans(q + 1);
-    for(int i = 1; i <= n; i++){
+    for (int i = 1; i <= n; i++) {
         int k;
         cin >> k;
-        for(int j = 1; j <= k; j++){
+        for (int j = 1; j <= k; j++) {
             int x;
             cin >> x;
             maxim = max(maxim, x);
             v[i].push_back(x);
         }
     }
-    for(int i = 1; i <= q; i++){
+    for (int i = 1; i <= q; i++) {
         int l, r;
         cin >> l >> r;
         qr[i] = {l, r};
     }
-    while(p <= maxim){
-
+    while (p <= maxim) {
         vector<unsigned long long> b(n + 1);
-        for(int i = 1; i <= n; i++){
-            for(auto j : v[i]){
-                if(p <= j && j <= p + 63){
+        for (int i = 1; i <= n; i++) {
+            for (auto j : v[i]) {
+                if (p <= j && j <= p + 63) {
                     b[i] = 1ULL * b[i] + (1ULL << (j - p));
                 }
             }
             b[i] ^= b[i - 1];
         }
-        for(int i = 1; i <= q; i++){
+        for (int i = 1; i <= q; i++) {
             unsigned long long nr = b[qr[i].second] ^ b[qr[i].first - 1];
             ans[i] += __builtin_popcountll(nr);
         }
         p++;
         p += 63;
     }
-    for(int i = 1; i <= q; i++){
+    for (int i = 1; i <= q; i++) {
         cout << ans[i] << '\n';
     }
-    //cout << 'a';
+    // cout << 'a';
 }
 ```
 

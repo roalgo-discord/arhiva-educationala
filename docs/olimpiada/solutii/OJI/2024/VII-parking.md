@@ -111,36 +111,36 @@ void insert(int L, int C) {
 int main() {
     ifstream cin("parking.in");
     ofstream cout("parking.out");
-    
+
     cin >> c >> n >> m >> k >> q;
     for (int i = 1; i <= k; i++) {
         int L, C;
         cin >> L >> C;
         mat[L][C] = -1;
     }
-    for (int i = 0; i <= m+1; i++) {
+    for (int i = 0; i <= m + 1; i++) {
         if (mat[0][i] != -1) {
             insert(0, i);
         }
-        if (mat[n+1][i] != -1) {
-            insert(n+1, i);
+        if (mat[n + 1][i] != -1) {
+            insert(n + 1, i);
         }
     }
-    for (int i = 0; i <= n+1; i++) {
-        if(mat[i][0] != -1) {
+    for (int i = 0; i <= n + 1; i++) {
+        if (mat[i][0] != -1) {
             insert(i, 0);
         }
-        if(mat[i][m+1] != -1) {
-            insert(i, m+1);
+        if (mat[i][m + 1] != -1) {
+            insert(i, m + 1);
         }
     }
     for (int i = 1; i <= q; i++) {
         int x, y, p;
         cin >> x >> y >> p;
-        mat[x][y] = p+1;
+        mat[x][y] = p + 1;
         insert(x, y);
     }
-    
+
     int cnt = 0;
     int tot = 0;
     for (int stp = 1; stp <= 10000; stp++) {
@@ -154,12 +154,11 @@ int main() {
                 set<int>::iterator x;
                 if (xx == 1) {
                     x = wallsL[i].begin();
-                }
-                else {
+                } else {
                     x = wallsL[i].end(), x--;
                 }
                 int poz = *x;
-                if (poz != 0 && poz != m+1 && mat[i][poz] == 1) {
+                if (poz != 0 && poz != m + 1 && mat[i][poz] == 1) {
                     tot = stp;
                     if (of != poz) {
                         d.push_back({i, poz});
@@ -177,12 +176,11 @@ int main() {
                 set<int>::iterator x;
                 if (xx == 1) {
                     x = wallsC[i].begin();
-                }
-                else {
+                } else {
                     x = wallsC[i].end(), x--;
                 }
                 int poz = *x;
-                if (poz != 0 && poz != n+1 && mat[poz][i] == 2) {
+                if (poz != 0 && poz != n + 1 && mat[poz][i] == 2) {
                     tot = stp;
                     if (of != poz) {
                         d.push_back({poz, i});
@@ -198,7 +196,7 @@ int main() {
             cnt++;
             wallsL[x.first].erase(x.second);
             wallsC[x.second].erase(x.first);
-        }    
+        }
         if (c == 1) {
             break;
         }

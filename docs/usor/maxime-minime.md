@@ -37,23 +37,20 @@ similar, procedăm și pentru valoarea minimă.
 using namespace std;
 
 int main() {
-    
     int a, b;
     cin >> a >> b;
-    
+
     // maxim
-    if (a >= b) { // a este mai mare sau egal ca b
+    if (a >= b) {  // a este mai mare sau egal ca b
         cout << a << '\n';
-    }
-    else { // b este mai mare sau egal ca a
+    } else {  // b este mai mare sau egal ca a
         cout << b << '\n';
     }
 
     // minim
-    if (a <= b) { // a este mai mic sau egal ca b
+    if (a <= b) {  // a este mai mic sau egal ca b
         cout << a << '\n';
-    }
-    else { // b este mai mic sau egal ca a
+    } else {  // b este mai mic sau egal ca a
         cout << b << '\n';
     }
     return 0;
@@ -77,101 +74,105 @@ Mai jos implementăm ambele variante.
 === "Varianta 1"
 
     ```cpp
-    #include <iostream>
-    using namespace std;
+#include <iostream>
+using namespace std;
 
-    int main() {
-        
-        int a, b, c;
-        cin >> a >> b >> c;
-        
-        // maxim 
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
 
-        if (a >= b && a >= c) { // a este mai mare sau egal ca b si c
-            cout << a << '\n';
-        }
-        else {
-            if (b >= a && b >= c) { // b este mai mare sau egal ca a si c
-                cout << b << '\n';
-            }
-            else { // c este mai mare sau egal ca a si b
-                cout << c << '\n';
-            }
-        }
+    // maxim
 
-        // minim 
-        
-        if (a <= b && a <= c) { // a este mai mic sau egal ca b si c
-            cout << a << '\n';
+    if (a >= b && a >= c) {  // a este mai mare sau egal ca b si c
+        cout << a << '\n';
+    } else {
+        if (b >= a && b >= c) {  // b este mai mare sau egal ca a si c
+            cout << b << '\n';
+        } else {  // c este mai mare sau egal ca a si b
+            cout << c << '\n';
         }
-        else {
-            if (b <= a && b <= c) { // b este mai mic sau egal ca a si c
-                cout << b << '\n';
-            }
-            else { // c este mai mic sau egal ca a si b
-                cout << c << '\n';
-            }
-        }
-        return 0;
     }
-    ```
 
-=== "Varianta 2"
+    // minim
+
+    if (a <= b && a <= c) {  // a este mai mic sau egal ca b si c
+        cout << a << '\n';
+    } else {
+        if (b <= a && b <= c) {  // b este mai mic sau egal ca a si c
+            cout << b << '\n';
+        } else {  // c este mai mic sau egal ca a si b
+            cout << c << '\n';
+        }
+    }
+    return 0;
+}
+```
+
+    == = "Varianta 2"
 
     ```cpp
-    #include <iostream>
+#include <iostream>
     using namespace std;
 
-    int main() {
-        
-        int a, b, c;
-        cin >> a >> b >> c;
-        
-        int maxim = a;
-        if (b >= maxim) {
-            maxim = b;
-        }
-        if (c >= maxim) {
-            maxim = c;
-        }
-        
-        cout << maxim << '\n';
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
 
-        int minim = a;
-        if (b <= minim) {
-            minim = b;
-        }
-        if (c <= minim) {
-            minim = c;
-        }
-        
-        cout << minim << '\n';
-        return 0;
+    int maxim = a;
+    if (b >= maxim) {
+        maxim = b;
     }
-    ```
+    if (c >= maxim) {
+        maxim = c;
+    }
 
-Deși ambele variante sunt corecte, se poate observa că varianta 2 este mai
-simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe care o
-vom folosi atunci când vrem să generalizăm aflarea maximului sau minimului unui
-șir de valori.
+    cout << maxim << '\n';
 
-## Maximul și minimul dintre $n$ numere
+    int minim = a;
+    if (b <= minim) {
+        minim = b;
+    }
+    if (c <= minim) {
+        minim = c;
+    }
 
-Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea
-pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat,
-vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum
-(sau mai mică decât minimul, după caz).
+    cout << minim << '\n';
+    return 0;
+}
+```
 
-Pentru a afla acest răspuns, putem fie să plecăm cu răspunsul egal cu prima
-valoare din șir, fie să inițializăm răspunsul cu o valoare care să ne asigure că
-indiferent ce valori avem, răspunsul va fi una din valorile din șir.
+    Deși ambele variante sunt corecte,
+    se poate observa că varianta 2 este mai simplă și mai ușor de utilizat în
+        practică,
+    aceasta fiind și varianta pe care o vom folosi atunci când vrem să
+        generalizăm aflarea maximului sau minimului unui șir de valori.
 
-Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul
-cu o valoare foarte mică ($-10^9$ sau chiar mai mică), iar în caz contrar, cu o
-valoare foarte mare ($10^9$ sau chiar mai mare). În general, se preferă varianta
-în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru
-scopurile noastre, soluție implementată mai jos pentru maxim.
+    ##Maximul și minimul dintre $n$ numere
 
+        Pentru a afla valoarea
+        maximă(sau minimă) a unui șir de $n$ numere,
+    vom putea pleca de la cazul de bază cu 2 numere,
+    iar pentru fiecare număr nou adăugat,
+    vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până
+    acum(sau mai mică decât minimul, după caz)
+        .
+
+    Pentru a afla acest răspuns,
+    putem fie să plecăm cu răspunsul egal cu prima valoare din șir,
+    fie să inițializăm răspunsul cu o valoare care să ne asigure că
+    indiferent ce valori avem,
+    răspunsul va fi una din valorile din șir.
+
+    Astfel,
+    dacă vrem să aflăm valoarea maximă din șir,
+    vrem să inițializăm maximul cu o valoare foarte
+    mică($ - 10 ^ 9 $ sau chiar mai mică),
+    iar în caz contrar,
+    cu o valoare foarte mare($10 ^ 9 $ sau chiar mai mare).În general,
+    se preferă varianta în care inițializăm
+        răspunsul cu o valoare suficient de mare
+        / mică pentru scopurile noastre,
+    soluție implementată mai jos pentru maxim.
 ```cpp
 #include <iostream>
 using namespace std;
@@ -215,27 +216,25 @@ Mai jos, veți găsi o implementare care află cele mai mici două valori dintr-
 using namespace std;
 
 int main() {
-    
     int n;
     cin >> n;
-    
+
     int minim = 1000000000;
     int minim2 = 1000000000;
     for (int i = 1; i <= n; i++) {
         int x;
         cin >> x;
-        
+
         if (x < minim) {
             minim2 = minim;
             minim = x;
-        }
-        else {
+        } else {
             if (x < minim2) {
                 minim2 = x;
             }
         }
     }
-    
+
     cout << minim << " " << minim2 << '\n';
     return 0;
 }
@@ -257,11 +256,10 @@ Mai jos, veți găsi o implementare care află cele mai mici $k$ valori dintr-un
 using namespace std;
 
 int main() {
-    
     int n, k;
     cin >> n >> k;
-    
-    int mini[k+1];
+
+    int mini[k + 1];
     for (int i = 1; i <= k; i++) {
         mini[i] = 1000000000;
     }
@@ -271,16 +269,17 @@ int main() {
         cin >> x;
 
         for (int j = 1; j <= k; j++) {
-            if (x <= mini[j]) { // daca x este mai mic decat al j-lea minim
-                for (int poz = k; poz > j; poz--) { // mutam minimele la dreapta
-                    mini[poz] = mini[poz-1];
+            if (x <= mini[j]) {  // daca x este mai mic decat al j-lea minim
+                for (int poz = k; poz > j;
+                     poz--) {  // mutam minimele la dreapta
+                    mini[poz] = mini[poz - 1];
                 }
-                mini[j] = x; // schimbam al j-lea minim
+                mini[j] = x;  // schimbam al j-lea minim
                 break;
             }
         }
     }
-    
+
     for (int i = 1; i <= k; i++) {
         cout << mini[i] << " ";
     }

@@ -64,35 +64,35 @@ int main() {
 
     int c, n, x, y;
     cin >> c >> n >> x >> y;
-    
+
     if (c == 1) {
-        cout << n/x << '\n';
+        cout << n / x << '\n';
         return 0;
     }
-    
+
     if (c == 2) {
-        for(int i = 2; i * i <= n; i++) {
+        for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) {
-                cout << n/i << '\n';
+                cout << n / i << '\n';
                 return 0;
             }
         }
     }
-    
+
     if (c == 3) {
-        for(int cnt = n; cnt >= n-100; cnt--) {
+        for (int cnt = n; cnt >= n - 100; cnt--) {
             for (int i = 1; i * i <= cnt; i++) {
                 if (cnt % i == 0) {
-                    if (cnt/i >= x && i >= y) {
-                        cout << n-cnt << " " << cnt/i << " " << i << '\n';
+                    if (cnt / i >= x && i >= y) {
+                        cout << n - cnt << " " << cnt / i << " " << i << '\n';
                         return 0;
                     }
                 }
             }
             for (int i = 1; i * i <= cnt; i++) {
                 if (cnt % i == 0) {
-                    if (i >= x && cnt/i >= y) {
-                        cout << n-cnt << " " << i << " " << cnt/i << '\n';
+                    if (i >= x && cnt / i >= y) {
+                        cout << n - cnt << " " << i << " " << cnt / i << '\n';
                         return 0;
                     }
                 }

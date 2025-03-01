@@ -155,17 +155,17 @@ masca pe care o verificăm. Pentru mai multe detalii, puteți vedea codul de mai
 jos.
 
 ```cpp
-const int totalSubsets = 1 << n; // 2^n
+const int totalSubsets = 1 << n;  // 2^n
 
 for (int mask = 0; mask < totalSubsets; ++mask) {
     vector<int> subset;
 
     for (int idx = 0; idx < n; ++idx) {
-        if (mask & (1 << idx)) { // (1)
+        if (mask & (1 << idx)) {  // (1)
             subset.push_back(idx);
         }
     }
-        
+
     process(subset);
 }
 ```
@@ -249,7 +249,7 @@ for (int n = 1; n <= N; n++) {
         if (n == k) {
             C[n][k] = 1;
         } else {
-            C[n][k] = C[n-1][k] + C[n-1][k-1];
+            C[n][k] = C[n - 1][k] + C[n - 1][k - 1];
         }
     }
 }

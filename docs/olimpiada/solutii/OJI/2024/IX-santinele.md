@@ -109,22 +109,25 @@ int arr[2 * NMAX + 5], task, n, k;
 int get_next(int idx) {
     int maxi = INT_MIN, poz = 0;
     for (int i = idx; i <= min(n + 1, idx + k); i++) {
-        if (arr[i] >= maxi)
+        if (arr[i] >= maxi) {
             maxi = arr[i], poz = i;
+        }
     }
     for (int j = poz + 1; j <= min(n + 1, poz + k); j++) {
-        if (arr[j] > arr[poz])
+        if (arr[j] > arr[poz]) {
             return j - 1;
+        }
     }
     return poz + k;
 }
 signed main() {
     fin >> task >> n >> k;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         fin >> arr[i];
-    if (task == 1)
+    }
+    if (task == 1) {
         fout << get_next(1);
-    else {
+    } else {
         int pos = 1, cnt = 0;
         while (pos <= n) {
             pos = get_next(pos) + 1;

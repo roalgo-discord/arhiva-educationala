@@ -49,57 +49,68 @@ int main() {
     for (int i = 1; i <= n; i++) {
         fin >> x;
         v[i] = x;
-        if (f[x] == 0)  // daca culoarea x e intalnita prima data
-            nrculori++; // cresc numarul de culori
+        if (f[x] == 0) {  // daca culoarea x e intalnita prima data
+            nrculori++;   // cresc numarul de culori
+        }
         f[x]++;
-        if (f[x] > fmax)
+        if (f[x] > fmax) {
             fmax = f[x];
+        }
     }
     fout << nrculori << '\n';
     for (int i = 1; i <= 10; i++) {
-        if (f[i] == fmax)
+        if (f[i] == fmax) {
             fout << i << " ";
+        }
     }
     fout << '\n';
     /// cer 3
     for (int i = 1; i <= n; i++) {
-        if (v[i] == v[i - 1])
+        if (v[i] == v[i - 1]) {
             st[i] = st[i - 1] + 1;
-        else
+        } else {
             st[i] = 1;
+        }
         mst[i] = max(mst[i - 1], st[i]);
     }
 
     for (int i = n; i >= 1; i--) {
-        if (v[i] == v[i + 1])
+        if (v[i] == v[i + 1]) {
             dr[i] = dr[i + 1] + 1;
-        else
+        } else {
             dr[i] = 1;
+        }
         mdr[i] = max(mdr[i + 1], dr[i]);
     }
     // lung maxima
-    int p[200002], j = 0; // in p retinem pozitiile de unde pot scoate cuburi pt a obtine lmax
+    int p[200002], j = 0;  // in p retinem pozitiile de unde pot scoate cuburi
+                           // pt a obtine lmax
     int lmax = -1, l;
     for (int i = 1; i <= n; i++) {
-        if (v[i - 1] == v[i + 1])      // daca prin taiere alipesc doua siruri cu aceleasi elemente
-            l = st[i - 1] + dr[i + 1]; // lungimea rezultata e nr de elem egale de la stanga, resp de la dr
-        else
+        if (v[i - 1] == v[i + 1]) {  // daca prin taiere alipesc doua siruri cu
+                                     // aceleasi elemente
+            l = st[i - 1] + dr[i + 1];  // lungimea rezultata e nr de elem egale
+                                        // de la stanga, resp de la dr
+        } else {
             l = 0;
+        }
         l = max(l, max(mst[i - 1], mdr[i + 1]));
-        if (l > lmax) { // daca am obtinut o lungime mai mare , memorez poz elem de taiat, prima in vect p
+        if (l > lmax) {  // daca am obtinut o lungime mai mare , memorez poz
+                         // elem de taiat, prima in vect p
             lmax = l;
             j = 0;
             p[j++] = i;
-        } 
-        else {
-            if (l == lmax) { // daca am obtinut aceeasi lungime , adaugam la lungimea existenta
+        } else {
+            if (l == lmax) {  // daca am obtinut aceeasi lungime , adaugam la
+                              // lungimea existenta
                 p[j++] = i;
             }
         }
     }
 
-    for (int i = 0; i < j; i++)
+    for (int i = 0; i < j; i++) {
         fout << p[i] << " ";
+    }
     return 0;
 }
 ```

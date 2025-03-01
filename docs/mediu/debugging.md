@@ -60,8 +60,8 @@ termeni mai mari.
 
 ```cpp
 int n = 100000;
-cout << n * (n + 1) / 2 << '\n'; // overflow
-cout << 1LL * n * (n + 1) / 2 << '\n'; // ok
+cout << n * (n + 1) / 2 << '\n';        // overflow
+cout << 1LL * n * (n + 1) / 2 << '\n';  // ok
 ```
 
 ### Condiții scrise prost
@@ -74,11 +74,10 @@ instrucțiunile devin total diferite. În mod similar, putem avea aceeași eroar
 când folosim operatori precum `&&`, `||`, dacă folosim `&`, `|` etc.
 
 ```cpp
-if (x == 3) { // se verifica daca x = 3
+if (x == 3) {  // se verifica daca x = 3
     // cod
 }
-if (x = 3) { // x devine 3, dupa se verifica daca este nenul
-
+if (x = 3) {  // x devine 3, dupa se verifica daca este nenul
 }
 ```
 
@@ -99,9 +98,7 @@ oprire.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; i++) {
-
-    }
+    for (int j = 1; j <= n; i++) {}
 }
 ```
 
@@ -118,7 +115,7 @@ pozițiilor prea mari. Mai jos găsiți exemple în care avem de-a face cu aseme
 erori.
 
 ```cpp
-for (int i = n; i >= 1; i++) { // i creste si vom iesi din vector
+for (int i = n; i >= 1; i++) {  // i creste si vom iesi din vector
     cout << v[i] << " ";
 }
 ```
@@ -154,11 +151,10 @@ int main() {
 using namespace std;
 
 int main() {
-
     int arr[8] = {1, 2, 3, 4, 5};
 
     cout << arr[5] << '\n';
-    cout << arr[-1] << '\n'; // undefined behavior, vom avea erori la rulare
+    cout << arr[-1] << '\n';  // undefined behavior, vom avea erori la rulare
 
     return 0;
 }
@@ -230,7 +226,7 @@ particular.
 #include <iostream>
 using namespace std;
 
-int x = 10; 
+int x = 10;
 
 int main() {
     cout << "x = " << x << '\n';  // 10
@@ -277,48 +273,42 @@ Un exemplu de cod poate fi găsit mai jos.
 #include <bits/stdc++.h>
 using namespace std;
 
-mt19937_64 rnd; // 64-bit 
-long long val (bool positive) {
+mt19937_64 rnd;  // 64-bit
+long long val(bool positive) {
     long long ans = rnd();
     if (positive) {
         return abs(ans);
-    }
-    else {
+    } else {
         return ans;
     }
 }
 
 /*
-    Aici adaugam variabilele pe care le vom folosi, trebuie sa fim atenti pentru ca uneori avem nevoie de copii pentru valorile noastre
-    
+    Aici adaugam variabilele pe care le vom folosi, trebuie sa fim atenti pentru
+   ca uneori avem nevoie de copii pentru valorile noastre
+
 */
 
-// Aici generam datele de intrare, de regula se recomanda un input mic pentru rezultate optime
-void gentest() {
-    
-}
+// Aici generam datele de intrare, de regula se recomanda un input mic pentru
+// rezultate optime
+void gentest() {}
 
-// Aici adaugam o solutie corecta, foarte inceata, care va fi folosita pentru a evalua solutia eficienta
-int bruteforce() {
-    
-}
+// Aici adaugam o solutie corecta, foarte inceata, care va fi folosita pentru a
+// evalua solutia eficienta
+int bruteforce() {}
 
-// Aici adaugam solutia eficienta, care desi este rapida, este incorecta si vrem s-o reparam
-int efficient() {
-    
-}
+// Aici adaugam solutia eficienta, care desi este rapida, este incorecta si vrem
+// s-o reparam
+int efficient() {}
 
 //  Daca raspunsurile sunt diferite, vom afisa inputul aici
-void printinput() {
-    
-}
+void printinput() {}
 
-int main()
-{   
+int main() {
     // alegem seedul aleator pentru a avea rezultate diferite mereu
     int seed = std::random_device{}();
     rnd.seed(seed);
-    
+
     int t = 0;
     while (t <= 10000) {
         gentest();

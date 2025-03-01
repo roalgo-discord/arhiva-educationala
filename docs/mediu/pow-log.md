@@ -42,8 +42,8 @@ aritmetic, deoarece operatorul $\%$ este foarte încet. Mai jos puteți găsi un
 exemplu.
 
 ```cpp
-int sum = a+b;
-if (sum >= mod) { // mult mai rapid decat %
+int sum = a + b;
+if (sum >= mod) {  // mult mai rapid decat %
     sum -= mod;
 }
 ```
@@ -63,8 +63,8 @@ mod ne va ajuta să avem rezultate non-negative. Implementarea va fi una
 asemănătoare cu cea de la adunare.
 
 ```cpp
-int sum = a-b;
-if (sum < 0) { // mult mai rapid decat %
+int sum = a - b;
+if (sum < 0) {  // mult mai rapid decat %
     sum += mod;
 }
 ```

@@ -124,8 +124,7 @@ int evaluare() {
         if (EVAL[poz] == '-') {
             poz++;
             R -= termen();
-        }
-        else {
+        } else {
             if (EVAL[poz] == '+') {
                 poz++;
                 R += termen();
@@ -140,8 +139,7 @@ int termen() {
         if (EVAL[poz] == '*') {
             poz++;
             F *= factor();
-        }
-        else {
+        } else {
             if (EVAL[poz] == '/') {
                 poz++;
                 F /= factor();
@@ -156,8 +154,7 @@ int factor() {
         poz++;
         r = evaluare();
         poz++;
-    }
-    else {
+    } else {
         while (EVAL[poz] >= '0' && EVAL[poz] <= '9') {
             r = r * 10 + (EVAL[poz] - '0');
             poz++;
@@ -208,12 +205,10 @@ vector<int> intersect(vector<int> a, vector<int> b) {
             sol.push_back(a[i]);
             ++i;
             ++j;
-        }
-        else { 
+        } else {
             if (a[i] < b[j]) {
                 ++i;
-            }
-            else {
+            } else {
                 ++j;
             }
         }
@@ -223,18 +218,16 @@ vector<int> intersect(vector<int> a, vector<int> b) {
 vector<int> reunion(vector<int> a, vector<int> b) {
     vector<int> sol;
     int i = 0, j = 0;
-    for (; i < a.size() && j < b.size(); ) {
+    for (; i < a.size() && j < b.size();) {
         if (a[i] == b[j]) {
             sol.push_back(a[i]);
             ++i;
             ++j;
-        }
-        else {
+        } else {
             if (a[i] < b[j]) {
                 sol.push_back(a[i]);
                 ++i;
-            }
-            else {
+            } else {
                 sol.push_back(b[j]);
                 ++j;
             }
@@ -244,7 +237,7 @@ vector<int> reunion(vector<int> a, vector<int> b) {
         sol.push_back(a[i]);
         ++i;
     }
-    while (j < b.size()) { 
+    while (j < b.size()) {
         sol.push_back(b[j]);
         ++j;
     }
@@ -276,8 +269,7 @@ vector<int> termen() {
         ++pos;
         sol = eval();
         ++pos;
-    } 
-    else {
+    } else {
         int posi = lit[s2[pos] - 'A'];
         for (int j = 0; j < v[posi].size(); ++j) {
             sol.push_back(v[posi][j]);

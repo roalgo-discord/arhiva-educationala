@@ -152,25 +152,23 @@ datele](../mediu/data-normalization.md),
 iar mai apoi să folosim AIB pentru a rezolva problema.
 
 ```cpp
-#include <fstream>
 #include <algorithm>
+#include <fstream>
 #include <vector>
 
 using namespace std;
 
 vector<int> fenwick, vals, sorted, pos;
 
-bool cmp (int a, int b) {
-    return vals[a] < vals[b];
-}
+bool cmp(int a, int b) { return vals[a] < vals[b]; }
 
-void add (int n, int node, int val) {
+void add(int n, int node, int val) {
     for (; node <= n; node += (node & (-node))) {
         fenwick[node] += val;
     }
 }
 
-int compute (int node) {
+int compute(int node) {
     int ans = 0;
     for (; node; node -= (node & (-node))) {
         ans += fenwick[node];
@@ -179,39 +177,38 @@ int compute (int node) {
 }
 
 int main() {
-    
     ifstream cin("inv.in");
     ofstream cout("inv.out");
-    
+
     int n;
     cin >> n;
-    
-    fenwick.resize(n+1); 
-    vals.resize(n+1); 
-    sorted.resize(n+1);
-    pos.resize(n+1);
-    
+
+    fenwick.resize(n + 1);
+    vals.resize(n + 1);
+    sorted.resize(n + 1);
+    pos.resize(n + 1);
+
     for (int i = 1; i <= n; i++) {
         cin >> vals[i];
         sorted[i] = i;
     }
-    
+
     sort(sorted.begin() + 1, sorted.begin() + n + 1, cmp);
     int cnt = 0;
     for (int i = 1; i <= n; i++) {
-        if (i == 1 || vals[sorted[i]] > vals[sorted[i-1]]) {
+        if (i == 1 || vals[sorted[i]] > vals[sorted[i - 1]]) {
             cnt++;
         }
         pos[sorted[i]] = cnt;
     }
-    
+
     long long ans = 0;
     for (int i = 1; i <= n; i++) {
         ans += i - compute(pos[i]) - 1;
         add(n, pos[i], 1);
     }
-    
-    cout << ans%9917 << '\n';
+
+    cout << ans % 9917 << '\n';
     return 0;
 }
 ```
@@ -246,14 +243,14 @@ long long sum[max_val + 2];
 
 void upd(int pos) {
     int init = pos;
-    for(; pos <= max_val; pos += (pos & (-pos))) {
+    for (; pos <= max_val; pos += (pos & (-pos))) {
         fen[pos]++;
         sum[pos] += init;
     }
 }
 
 long long solve(int k) {
-    int stp = (1<<19);
+    int stp = (1 << 19);
     int poz = 0;
     long long sol = 0;
     while (stp > 0) {
@@ -266,18 +263,16 @@ long long solve(int k) {
 }
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    cin >> q; 
+
+    cin >> q;
     for (; q; --q) {
         int type, k;
         cin >> type >> k;
         if (type == 1) {
             upd(k);
-        }
-        else {
+        } else {
             cout << solve(k) << '\n';
         }
     }

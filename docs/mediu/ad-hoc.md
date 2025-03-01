@@ -57,8 +57,7 @@ de $n$ numere, toate submulțimile mulțimii ${1, 2, ..., n}$ și asa mai depart
 using namespace std;
 
 int main() {
-    int n
-    cin >> n;
+    int n cin >> n;
 
     vector<int> v;
 
@@ -68,21 +67,21 @@ int main() {
 
     // generarea permutarilor multimii 1, 2, .., n
 
-    do{
-       // procesam permutarea
-    } while(next_permutation(v.begin(), v.end()));
+    do {
+        // procesam permutarea
+    } while (next_permutation(v.begin(), v.end()));
 
     // generarea submultimilor multimii 1, 2, .., n
     // avem 2^n submultimi, fiecare dintre ele putand fi reprezentata folosind
     // o masca pe biti
 
-    for (int i = 0; i < (1<<n); i++) {
+    for (int i = 0; i < (1 << n); i++) {
         vector<int> subset;
         for (int j = 0; j < n; j++) {
-            if (i & (1<<j)) {
+            if (i & (1 << j)) {
                 subset.push_back(j);
                 // procesam acel numar ca parte a submultimii gasite
-            }       
+            }
         }
     }
     return 0;

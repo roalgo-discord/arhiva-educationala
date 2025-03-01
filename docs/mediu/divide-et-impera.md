@@ -71,27 +71,27 @@ using namespace std;
 
 int n, v[1001];
 
-int divide (int L, int R) {
+int divide(int L, int R) {
     if (L == R) {
-        return 3; // atat strict crescator cat si strict descrescator
+        return 3;  // atat strict crescator cat si strict descrescator
     }
     int mid = (L + R) / 2;
     int ansL = divide(L, mid);
-    int ansR = divide(mid+1, R);
-    if ((ansL%2 == 1) && (ansR%2 == 1) && v[mid] < v[mid+1]) {
-        return 1; // strict crescator
+    int ansR = divide(mid + 1, R);
+    if ((ansL % 2 == 1) && (ansR % 2 == 1) && v[mid] < v[mid + 1]) {
+        return 1;  // strict crescator
     }
-    if ((ansL >= 2) && (ansR >= 2) && v[mid] > v[mid+1]) {
-        return 2; // strict descrescator
+    if ((ansL >= 2) && (ansR >= 2) && v[mid] > v[mid + 1]) {
+        return 2;  // strict descrescator
     }
-    return 0; // neordonat
+    return 0;  // neordonat
 }
 int main() {
     cin >> n;
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     int ans = divide(1, n);
     if (ans == 1) {
         cout << "strict crescator" << '\n';
@@ -129,20 +129,20 @@ această problemă.
 ```cpp
 #include <iostream>
 using namespace std;
- 
-void hanoi(int cnt, int L, int M, int R) { // mutam din L in R, folosind M
+
+void hanoi(int cnt, int L, int M, int R) {  // mutam din L in R, folosind M
     if (cnt == 0) {
         return;
     }
-    hanoi(cnt-1, L, R, M);
+    hanoi(cnt - 1, L, R, M);
     cout << L << " " << M << '\n';
-    hanoi(cnt-1, R, M, L);
+    hanoi(cnt - 1, R, M, L);
 }
 int main() {
     int n;
     cin >> n;
-    
-    cout << (1<<n) - 1 << '\n';
+
+    cout << (1 << n) - 1 << '\n';
     hanoi(n, 1, 3, 2);
     return 0;
 }
@@ -169,15 +169,17 @@ char mat[1002][1002];
 void Start() {
     f >> c;
     len = strlen(c);
-    for (int i = 0; i < len; ++i)
-        if (c[i] == '*')
+    for (int i = 0; i < len; ++i) {
+        if (c[i] == '*') {
             ++Stars;
-        else if (c[i] >= '0' && c[i] <= '9')
+        } else if (c[i] >= '0' && c[i] <= '9') {
             nr = nr * 10 + c[i] - '0';
-        else if (nr)
+        } else if (nr) {
             nl += nr, nr = 0;
-        else
+        } else {
             ++nl;
+        }
+    }
     g << Stars << '\n';
 }
 void rec(int stl, int stc, int sfl, int sfc) {
@@ -199,14 +201,16 @@ void rec(int stl, int stc, int sfl, int sfc) {
             rec((stl + sfl) / 2 + 1, stc, sfl, (stc + sfc) / 2);
             rec((stl + sfl) / 2 + 1, (stc + sfc) / 2 + 1, sfl, sfc);
         }
-    } 
-    else if (c[poz] >= '0' && c[poz] <= '9') {
+    } else if (c[poz] >= '0' && c[poz] <= '9') {
         int nr = 0;
-        while (c[poz] >= '0' && c[poz] <= '9')
+        while (c[poz] >= '0' && c[poz] <= '9') {
             nr = nr * 10 + c[poz] - '0', ++poz;
-        for (int i = stl; i <= sfl; ++i)
-            for (int j = stc; j <= sfc; ++j)
+        }
+        for (int i = stl; i <= sfl; ++i) {
+            for (int j = stc; j <= sfc; ++j) {
                 mat[i][j] = c[poz];
+            }
+        }
         ++poz;
     }
 }
@@ -214,9 +218,11 @@ int main() {
     Start();
     n = sqrt(nl);
     rec(1, 1, n, n);
-    for (int i = 1; i <= n; g << '\n', ++i)
-        for (int j = 1; j <= n; ++j)
+    for (int i = 1; i <= n; g << '\n', ++i) {
+        for (int j = 1; j <= n; ++j) {
             g << mat[i][j];
+        }
+    }
     return 0;
 }
 ```

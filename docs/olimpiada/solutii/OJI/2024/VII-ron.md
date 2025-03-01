@@ -57,7 +57,7 @@ int c, n;
 bool pr[45002];
 int cnt, poz, pp[45002];
 
-int cb (int x) {
+int cb(int x) {
     int st = 1;
     int dr = cnt;
     int ans = 0;
@@ -66,8 +66,7 @@ int cb (int x) {
         if (pp[mid] <= x) {
             ans = mid;
             st = mid + 1;
-        }
-        else {
+        } else {
             dr = mid - 1;
         }
     }
@@ -76,42 +75,41 @@ int cb (int x) {
 int main() {
     ifstream cin("ron.in");
     ofstream cout("ron.out");
-    
+
     cin >> c >> n;
     vector<pair<int, int> > v(n);
-    
+
     for (int i = 0; i < n; i++) {
         cin >> v[i].first >> v[i].second;
     }
     for (int i = 2; i <= 45000; i++) {
         if (pr[i] == 0) {
-            pp[++cnt] = i*i;
-            for (int j = i+i; j <= 45000; j += i) {
+            pp[++cnt] = i * i;
+            for (int j = i + i; j <= 45000; j += i) {
                 pr[j] = 1;
             }
         }
     }
-    
+
     if (c == 1) {
         int maxi = 0;
         for (int i = 0; i < n; i++) {
-            maxi = max(maxi, cb(v[i].first + v[i].second - 1) - cb(v[i].first - 1));
+            maxi = max(maxi,
+                       cb(v[i].first + v[i].second - 1) - cb(v[i].first - 1));
         }
         cout << maxi << '\n';
     }
     if (c == 2) {
-        sort (v.begin(), v.end());
+        sort(v.begin(), v.end());
         int cnt = 1, lpoz = -1;
         for (int i = 0; i < n; i++) {
             if (i == 0) {
                 lpoz = v[i].first + v[i].second;
-            }
-            else {
+            } else {
                 if (lpoz < v[i].first) {
                     cnt++;
                     lpoz = v[i].first + v[i].second;
-                }
-                else {
+                } else {
                     lpoz = max(lpoz, v[i].first + v[i].second);
                 }
             }

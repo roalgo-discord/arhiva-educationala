@@ -100,8 +100,7 @@ int main() {
                     sum2 += x2;
                     x2--;
                 }
-            } 
-            else {
+            } else {
                 total += 2 * x;
             }
         }

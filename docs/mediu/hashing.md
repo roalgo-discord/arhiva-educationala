@@ -236,17 +236,17 @@ int main() {
         fin >> p >> x;
 
         switch (p) {
-            case Action::INSERT:
-                fr[x] = true;
-                break;
-            case Action::DELETE:
-                fr.erase(x);
-                break;
-            case Action::QUERY:
-                fout << (fr.count(x) > 0) << "\n";
-                break;
-            default:
-                break;
+        case Action::INSERT:
+            fr[x] = true;
+            break;
+        case Action::DELETE:
+            fr.erase(x);
+            break;
+        case Action::QUERY:
+            fout << (fr.count(x) > 0) << "\n";
+            break;
+        default:
+            break;
         }
     }
 
@@ -351,8 +351,8 @@ int main() {
             const int suffa_xor = suffa[j + 1];
             const int suffb_xor = suffb[j + 1];
 
-            if ((prefa[i - 1] ^ secvb ^ suffa_xor) == xr ||
-                (prefb[i - 1] ^ secva ^ suffb_xor) == xr) {
+            if ((prefa[i - 1] ^ secvb ^ suffa_xor) == xr
+                || (prefb[i - 1] ^ secva ^ suffb_xor) == xr) {
                 ans++;
             }
         }

@@ -70,11 +70,14 @@ int main() {
     int n;
     cin >> n;
 
-    vector<vector<int>> v(n + 1, vector<int>(n + 1)), dp(n + 1, vector<int>(n + 1, -(1 << 30))),
+    vector<vector<int>> v(n + 1, vector<int>(n + 1)),
+        dp(n + 1, vector<int>(n + 1, -(1 << 30))),
         dp2(n + 1, vector<int>(n + 1, -(1 << 30)));
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
             cin >> v[i][j];
+        }
+    }
 
     dp[1][1] = v[1][1];
     for (int sum = 2; sum <= n + n; sum++) {
@@ -107,10 +110,12 @@ int main() {
             int col = sum - lin;
             if (lin >= 1 && col >= 1 && lin <= n && col <= n) {
                 if (lin < n) {
-                    dp[lin + 1][col] = max(dp[lin + 1][col], dp[lin][col] + v[lin + 1][col]);
+                    dp[lin + 1][col] =
+                        max(dp[lin + 1][col], dp[lin][col] + v[lin + 1][col]);
                 }
                 if (col < n) {
-                    dp[lin][col + 1] = max(dp[lin][col + 1], dp[lin][col] + v[lin][col + 1]);
+                    dp[lin][col + 1] =
+                        max(dp[lin][col + 1], dp[lin][col] + v[lin][col + 1]);
                 }
             }
         }

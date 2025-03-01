@@ -116,7 +116,6 @@ void dfs(int tata, int nod) {
 
 // Cel de-al k-lea stramos al lui nod
 int solve(int nod, int stp) {
-
     // Parcurgem nivelele pentru a afla stramosul dorit
     for (int i = 18; i >= 0; --i) {
         if (stp >= (1 << i)) {
@@ -164,7 +163,7 @@ int solve(int a, int b) {
             a = anc[i][a], b = anc[i][b];
         }
     }
-    
+
     return anc[0][a];
 }
 ```

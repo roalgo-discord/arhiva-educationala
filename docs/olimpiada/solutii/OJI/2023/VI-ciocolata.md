@@ -52,19 +52,23 @@ int main() {
     int c, n, v[100001];
     cin >> c >> n;
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         cin >> v[i];
+    }
 
     int fr[10001] = {0};
 
     // cerinta 1 se rezolva cu vectori de frecventa
     if (c == 1) {
-        for (int i = 1; i <= n; i++)
+        for (int i = 1; i <= n; i++) {
             fr[v[i]]++;
+        }
         int maxi = 0;
-        for (int i = 1; i <= 10000; i++)
-            if (fr[i] > fr[maxi])
+        for (int i = 1; i <= 10000; i++) {
+            if (fr[i] > fr[maxi]) {
                 maxi = i;
+            }
+        }
         cout << maxi << '\n';
     } else {
         int mindif = 1000000000;
@@ -83,8 +87,9 @@ int main() {
                 j++;
                 sumMihaela -= v[j];
             }
-            if (j != n)
+            if (j != n) {
                 mindif = min(mindif, sumIrina - sumMihaela);
+            }
         }
 
         cout << mindif;

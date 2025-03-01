@@ -46,9 +46,8 @@ $\mathcal{O}(n \log n)$.
 #include <iostream>
 #include <map>
 using namespace std;
- 
+
 int main() {
-    
     map<long long, int> mp;
     long long n, s;
     cin >> n >> s;
@@ -57,7 +56,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int nr;
         cin >> nr;
-        
+
         sum += nr;
         ans += mp[sum - s];
         mp[sum]++;
@@ -110,10 +109,11 @@ int main() {
         cin >> a[i];
         sm += a[i];
         if (mp.find(sm) != mp.end()) {
-            if (sm == 0 && mp[0] == -1)
+            if (sm == 0 && mp[0] == -1) {
                 mx = max(mx, 1);
-            else
+            } else {
                 mx = max(mx, mp[sm] + 1);
+            }
         }
         mp[sm] = i;
         ans = ans + i - mx;
@@ -140,9 +140,9 @@ permite inserarea și ștergerea valorilor în timp logaritmic. Mai jos găsiți
 soluție care obține punctajul maxim.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <set>
-#include <algorithm>
 using namespace std;
 ifstream in("ramen.in");
 ofstream out("ramen.out");
@@ -154,8 +154,9 @@ struct aa {
 };
 aa v[100002];
 bool cmp(aa a, aa b) {
-    if (a.care == b.care)
+    if (a.care == b.care) {
         return a.timp < b.timp;
+    }
     return a.care < b.care;
 }
 int main() {
@@ -171,8 +172,9 @@ int main() {
         ans[v[i].pi] = *it + v[i].care;
         s.erase(it);
     }
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
         out << ans[i] << '\n';
+    }
     return 0;
 }
 ```

@@ -59,7 +59,7 @@ int Phi(int n) {
     for (int i = 2; i * i <= n; i++) {
         if (n % i == 0) {
             ans = ans / i;
-            ans = ans * (i-1);
+            ans = ans * (i - 1);
             while (n % i == 0) {
                 n /= i;
             }
@@ -67,7 +67,7 @@ int Phi(int n) {
     }
     if (n > 1) {
         ans = ans / n;
-        ans = ans * (n-1);
+        ans = ans * (n - 1);
     }
     return ans;
 }
@@ -92,34 +92,34 @@ aflăm pentru fiecare valoare de la intrare câte numere sunt prime cu ea.
 #include <fstream>
 #include <vector>
 using namespace std;
- 
+
 const int n = 1000000;
 int main() {
     ifstream cin("eratostene3.in");
     ofstream cout("eratostene3.out");
-    
-    vector<int> totient(n+1);
+
+    vector<int> totient(n + 1);
     for (int i = 1; i <= n; i++) {
         totient[i] = i;
     }
-    
+
     for (int i = 2; i <= n; i++) {
         // daca numarul inca este prim, trecem prin multipli
-        if (totient[i] == i) { 
+        if (totient[i] == i) {
             for (int j = i; j <= n; j += i) {
                 totient[j] /= i;
-                totient[j] *= (i-1);
+                totient[j] *= (i - 1);
             }
         }
     }
-    
+
     int q;
     cin >> q;
-    
+
     while (q--) {
         int n;
         cin >> n;
-        
+
         cout << totient[n] << " ";
     }
     return 0;
@@ -152,7 +152,7 @@ void phi_1_to_n(int n) {
     }
     for (int i = 2; i <= n; i++) {
         for (int j = 2 * i; j <= n; j += i) {
-              phi[j] -= phi[i];
+            phi[j] -= phi[i];
         }
     }
 }

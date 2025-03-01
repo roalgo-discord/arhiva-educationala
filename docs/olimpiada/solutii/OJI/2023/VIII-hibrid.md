@@ -52,11 +52,13 @@ valorile elementelor din vectorul $\text{fr}[0, \ldots, 70]$, putem utiliza
 următoarea metodă, de tip brute-force:  
 
 ```cpp
-for(int i = 1; i < N; ++i) { /// iteram prin lista coordonatelor de borne
-    int p1 = min(x[i], x[i + 1]); /// capat "stanga" pe axa numerelor intregi
-    int p2 = max(x[i], x[i + 1]); /// capat "dreapta" pe axa numerelor intregi
-    for(int j = p1; j <= p2; ++j) /// iteram prin coordonatele de pe axa numerelor
-        ++fr[j]; /// incrementam numarul de "vizite" prin dreptul coordonatei j
+for (int i = 1; i < N; ++i) {      /// iteram prin lista coordonatelor de borne
+    int p1 = min(x[i], x[i + 1]);  /// capat "stanga" pe axa numerelor intregi
+    int p2 = max(x[i], x[i + 1]);  /// capat "dreapta" pe axa numerelor intregi
+    for (int j = p1; j <= p2;
+         ++j) {   /// iteram prin coordonatele de pe axa numerelor
+        ++fr[j];  /// incrementam numarul de "vizite" prin dreptul coordonatei j
+    }
 }
 ```
 Apoi, pentru cerința $C = 1$, se determină care este indicele minim $i$ $(1 \leq
@@ -93,11 +95,14 @@ translatată în poziția 1, ..., poziția 0 va fi translatată în poziția 300
 ..., poziția 300000 va fi translatată în poziția 600000.  
 
 ```cpp
-for(int i = 1; i < N; ++i) { /// iteram prin lista coordonatelor de borne
-    int p1 = min(x[i], x[i + 1]); /// capat "stanga" pe axa numerelor intregi
-    int p2 = max(x[i], x[i + 1]); /// capat "dreapta" pe axa numerelor intregi
-    for(int j = p1; j <= p2; ++j) /// iteram prin coordonatele de pe axa numerelor
-        ++fr[j + 300000]; /// incrementam numarul de "vizite" prin dreptul coordonatei j
+for (int i = 1; i < N; ++i) {      /// iteram prin lista coordonatelor de borne
+    int p1 = min(x[i], x[i + 1]);  /// capat "stanga" pe axa numerelor intregi
+    int p2 = max(x[i], x[i + 1]);  /// capat "dreapta" pe axa numerelor intregi
+    for (int j = p1; j <= p2;
+         ++j) {            /// iteram prin coordonatele de pe axa numerelor
+        ++fr[j + 300000];  /// incrementam numarul de "vizite" prin dreptul
+                           /// coordonatei j
+    }
 }
 ```
 
@@ -125,13 +130,14 @@ elemente), se va contoriza de câte ori s-a trecut peste fiecare porțiune
 taxabilă.
 
 ```cpp
-for(int i = 1; i < N; ++i) { /// iteram prin lista coordonatelor de borne
-    int p1 = min(x[i], x[i + 1]); /// capat "stanga" pe axa numerelor intregi
-    int p2 = max(x[i], x[i + 1]); /// capat "dreapta" pe axa numerelor intregi
-    for(int j = 1; j <= P; ++j) /// iteram prin lista de coordonate taxabile
+for (int i = 1; i < N; ++i) {       /// iteram prin lista coordonatelor de borne
+    int p1 = min(x[i], x[i + 1]);   /// capat "stanga" pe axa numerelor intregi
+    int p2 = max(x[i], x[i + 1]);   /// capat "dreapta" pe axa numerelor intregi
+    for (int j = 1; j <= P; ++j) {  /// iteram prin lista de coordonate taxabile
         if (p1 < st[j] && st[j] < p2) {
             ++fr2[j];
         }
+    }
 }
 ```
 
@@ -176,10 +182,9 @@ const int NMAX = 300001;
 int t[600005], m[600005], s2[600005], s1[600005], v[200005];
 long long cost[200005], maxx[200005];
 int main() {
-    
     ifstream cin("hibrid.in");
     ofstream cout("hibrid.out");
-    
+
     int cer, k, n;
     cin >> cer >> k >> n;
     for (int i = 1; i <= k; i++) {
@@ -191,14 +196,17 @@ int main() {
         m[b + 1] -= i;
     }
     s1[0] = m[0];
-    for (int i = 1; i <= NMAX * 2; i++)
+    for (int i = 1; i <= NMAX * 2; i++) {
         s1[i] = s1[i - 1] + m[i];
+    }
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
-        if (v[i] < -NMAX)
+        if (v[i] < -NMAX) {
             v[i] = -NMAX;
-        if (v[i] > NMAX)
+        }
+        if (v[i] > NMAX) {
             v[i] = NMAX;
+        }
         v[i] += NMAX;
     }
     for (int i = 1; i < n; i++) {
@@ -208,28 +216,32 @@ int main() {
         t[b]--;
     }
     s2[0] = t[0];
-    for (int i = 1; i <= NMAX * 2; i++)
+    for (int i = 1; i <= NMAX * 2; i++) {
         s2[i] = s2[i - 1] + t[i];
+    }
     int r = 0, sol = -1;
     for (int i = 0; i <= NMAX * 2; i++) {
         if (s1[i] > 0 && s2[i] > 0) {
             if (s2[i] > r) {
                 r = s2[i];
                 sol = s1[i];
-            } else if (s2[i] == r)
+            } else if (s2[i] == r) {
                 sol = min(sol, s1[i]);
+            }
         }
     }
-    if (cer == 1)
+    if (cer == 1) {
         cout << sol;
-    else {
+    } else {
         for (int i = 0; i <= NMAX * 2; i++) {
-            if (s1[i] > 0 && s2[i] > maxx[s1[i]])
+            if (s1[i] > 0 && s2[i] > maxx[s1[i]]) {
                 maxx[s1[i]] = s2[i];
+            }
         }
         long long r2 = 0;
-        for (int i = 1; i <= k; i++)
+        for (int i = 1; i <= k; i++) {
             r2 += maxx[i] * cost[i];
+        }
         cout << r2;
     }
     return 0;

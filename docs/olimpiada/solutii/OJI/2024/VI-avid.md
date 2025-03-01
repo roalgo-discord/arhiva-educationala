@@ -78,7 +78,7 @@ int cntdiv[5000002];
 
 int cmmdc(int a, int b) {
     while (b > 0) {
-        int c = a%b;
+        int c = a % b;
         a = b;
         b = c;
     }
@@ -103,22 +103,21 @@ int main() {
     }
 
     for (int i = 2; i < n; i++) {
-        int x = cmmdc(v[i-1], cmmdc(v[i], v[i+1]));
+        int x = cmmdc(v[i - 1], cmmdc(v[i], v[i + 1]));
         if (cntdiv[x] <= p) {
             cnt++;
             strk++;
             if (strk >= maxstrk) {
                 maxstrk = strk;
             }
-        }
-        else
+        } else {
             strk = 0;
+        }
     }
     if (c == 1) {
         cout << cnt << '\n';
-    }
-    else {
-        cout << maxstrk+2 << '\n';
+    } else {
+        cout << maxstrk + 2 << '\n';
     }
     return 0;
 }

@@ -55,30 +55,30 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1);
+
+    vector<int> v(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     int st, dr;
     cin >> st >> dr;
-    
+
     // aflam suma initiala
     long long sm = 0;
     for (int i = st; i <= dr; i++) {
         sm += v[i];
     }
-    
+
     // ajustam suma initiala folosind cele doua valori care ies/intra
     long long ans = 0;
     while (dr <= n) {
         ans += sm;
         sm -= v[st];
-        sm += v[dr+1];
+        sm += v[dr + 1];
         st++, dr++;
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -101,22 +101,21 @@ complexitatea devenind $\mathcal{O}(n \log n)$.
 #include <vector>
 
 using namespace std;
- 
+
 int main() {
- 
     // linii pentru citirea rapida, necesare pentru codeforces
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t;
     cin >> t;
-    
+
     while (t--) {
         int n, m, k;
         cin >> n >> m >> k;
         map<int, int> mpa, mpb;
-        
-        vector<long long> v(n+1), v2(m+1);
+
+        vector<long long> v(n + 1), v2(m + 1);
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
@@ -130,9 +129,9 @@ int main() {
             mpb[v[i]]++;
             cnt += min(mpa[v[i]], mpb[v[i]]);
             if (i > m) {
-                cnt -= min(mpa[v[i-m]], mpb[v[i-m]]);
-                mpb[v[i-m]]--;
-                cnt += min(mpa[v[i-m]], mpb[v[i-m]]);
+                cnt -= min(mpa[v[i - m]], mpb[v[i - m]]);
+                mpb[v[i - m]]--;
+                cnt += min(mpa[v[i - m]], mpb[v[i - m]]);
             }
             if (i >= m && cnt >= k) {
                 total++;
@@ -158,30 +157,28 @@ std::set.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <set>
+#include <vector>
 
 using namespace std;
- 
-int main() {
 
+int main() {
     int n, k;
     cin >> n >> k;
-    
-    vector<int> v(n+1);
+
+    vector<int> v(n + 1);
     multiset<int> smaller, larger;
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     for (int i = 1; i <= n; i++) {
         smaller.insert(v[i]);
         if (i > k) {
-            if (smaller.find(v[i-k]) != smaller.end()) {
-                smaller.erase(smaller.lower_bound(v[i-k]));
-            }
-            else {
-                larger.erase(larger.lower_bound(v[i-k]));
+            if (smaller.find(v[i - k]) != smaller.end()) {
+                smaller.erase(smaller.lower_bound(v[i - k]));
+            } else {
+                larger.erase(larger.lower_bound(v[i - k]));
             }
         }
         if (i >= k) {

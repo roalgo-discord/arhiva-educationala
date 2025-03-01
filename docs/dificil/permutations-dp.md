@@ -97,22 +97,22 @@ jos puteți găsi implementarea completă a soluției problemei date.
     [aici](https://math.stackexchange.com/questions/1978388/counting-permutations-with-k-maximums).
 
 ```cpp
-#include <fstream>
 #include <cstring>
+#include <fstream>
 using namespace std;
 ifstream f("perm.in");
 ofstream g("perm.out");
 int k, n;
 int base = 1000 * 1000;
 int dp[202][202][202];
-int add (int A[], int B[]) {
+int add(int A[], int B[]) {
     for (int i = 1; i <= A[0]; ++i) {
         B[i] += A[i];
     }
     B[0] = max(A[0], B[0]);
     for (int i = 1; i <= B[0]; ++i) {
-        if(B[i] >= base) {
-            B[i+1]++;
+        if (B[i] >= base) {
+            B[i + 1]++;
             B[i] %= base;
             if (i == B[0]) {
                 ++B[0];
@@ -121,26 +121,26 @@ int add (int A[], int B[]) {
     }
 }
 int C[202];
-void mul (int A[], int B[]) {
+void mul(int A[], int B[]) {
     long long R[202];
     memset(R, 0, sizeof(R));
     R[0] = A[0] + B[0] - 1;
     for (int i = 1; i <= A[0]; ++i) {
         for (int j = 1; j <= B[0]; ++j) {
-            R[i+j-1] += 1LL * A[i] * B[j];
-            if(R[i+j-1] >= base) {
+            R[i + j - 1] += 1LL * A[i] * B[j];
+            if (R[i + j - 1] >= base) {
                 R[0] = max(R[0], 1LL * (i + j));
-                R[i+j] += R[i+j-1]/base;
-                R[i+j-1] %= base;
+                R[i + j] += R[i + j - 1] / base;
+                R[i + j - 1] %= base;
             }
         }
     }
     for (int i = 1; i <= R[0]; ++i) {
         if (R[i] >= base) {
-            R[i+1] += R[i]/base;
+            R[i + 1] += R[i] / base;
             R[i] %= base;
-            if(i == R[0]) {
-                ++R[0]; 
+            if (i == R[0]) {
+                ++R[0];
             }
         }
     }
@@ -152,19 +152,18 @@ int main() {
     f >> n >> k;
     dp[0][0][0] = dp[0][0][1] = 1;
     for (int i = 1; i <= n; ++i) {
-        for(int j = 1; j <= i; ++j) {
-            add(dp[i-1][j], dp[i][j]);
+        for (int j = 1; j <= i; ++j) {
+            add(dp[i - 1][j], dp[i][j]);
             C[0] = 1;
-            C[1] = i-1;
+            C[1] = i - 1;
             mul(C, dp[i][j]);
-            add(dp[i-1][j-1], dp[i][j]);
+            add(dp[i - 1][j - 1], dp[i][j]);
         }
     }
     for (int i = dp[n][k][0]; i >= 1; --i) {
         if (i == dp[n][k][0]) {
             g << dp[n][k][i];
-        }
-        else {
+        } else {
             int val = base / 10;
             while (val > 1 && val > dp[n][k][i]) {
                 g << "0", val /= 10;
@@ -222,52 +221,53 @@ Pentru mai multe detalii de implementare, puteți citi soluția de mai jos.
 #include <vector>
 
 using namespace std;
- 
+
 const int mod = 1000000007;
 
 int main() {
-    
     int n;
     cin >> n;
-    
+
     string s;
     cin >> s;
-    
+
     s = ' ' + s;
-    
-    // dp[i][j] = cate permutari de lungime i exista astfel incat j valori sunt mai mici decat valoarea de pe pozitia i
-    
-    vector<vector<long long>> dp(n+1, vector<long long>(n+1));
+
+    // dp[i][j] = cate permutari de lungime i exista astfel incat j valori sunt
+    // mai mici decat valoarea de pe pozitia i
+
+    vector<vector<long long>> dp(n + 1, vector<long long>(n + 1));
     for (int i = 1; i <= n; i++) {
-        dp[1][i-1] = 1;
+        dp[1][i - 1] = 1;
     }
-    
+
     for (int i = 1; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (s[i] == '<') {
-                // din dp[i][j] putem aduna in dp[i+1][0], dp[i+1][1], ..., dp[i+1][j-1]
-                dp[i+1][0] += dp[i][j];
-                dp[i+1][j] -= dp[i][j];
-            }
-            else {
-                // din dp[i][j] putem aduna in dp[i+1][j], dp[i+1][j+1], ..., dp[i+1][n-i-1]
-                dp[i+1][j] += dp[i][j];
-                dp[i+1][n-i] -= dp[i][j];
+                // din dp[i][j] putem aduna in dp[i+1][0], dp[i+1][1], ...,
+                // dp[i+1][j-1]
+                dp[i + 1][0] += dp[i][j];
+                dp[i + 1][j] -= dp[i][j];
+            } else {
+                // din dp[i][j] putem aduna in dp[i+1][j], dp[i+1][j+1], ...,
+                // dp[i+1][n-i-1]
+                dp[i + 1][j] += dp[i][j];
+                dp[i + 1][n - i] -= dp[i][j];
             }
         }
-        
+
         for (int j = 0; j < n; j++) {
             if (j > 0) {
-                dp[i+1][j] += dp[i+1][j-1];
+                dp[i + 1][j] += dp[i + 1][j - 1];
             }
-            dp[i+1][j] = dp[i+1][j]%mod;
-            if (dp[i+1][j] < mod) {
-                dp[i+1][j] += mod;
+            dp[i + 1][j] = dp[i + 1][j] % mod;
+            if (dp[i + 1][j] < mod) {
+                dp[i + 1][j] += mod;
             }
         }
     }
-    
-    cout << dp[n][0]%mod << '\n';
+
+    cout << dp[n][0] % mod << '\n';
     return 0;
 }
 ```
@@ -304,51 +304,51 @@ int dp[2][12002], sp[2][12002];
 
 const int mod = 30103;
 
-int main() { 
+int main() {
     fin >> n >> k;
-    
-    int mx = n * (n-1) / 2;
-    
+
+    int mx = n * (n - 1) / 2;
+
     dp[0][0] = 1;
-    
+
     for (int i = 0; i <= mx; i++) {
         sp[0][i] = dp[0][i];
         if (i > 0) {
-            sp[0][i] += sp[0][i-1];
+            sp[0][i] += sp[0][i - 1];
         }
     }
-    
+
     for (int i = 2; i <= n; i++) {
-        int maxi = i * (i-1) / 2;
+        int maxi = i * (i - 1) / 2;
         for (int j = 0; j <= maxi; j++) {
             dp[1][j] = sp[0][j];
-            
+
             if (j >= i) {
                 dp[1][j] -= sp[0][j - i];
             }
-            
+
             if (dp[1][j] < 0) {
                 dp[1][j] += mod;
             }
         }
-        
+
         for (int i = 0; i <= mx; i++) {
             sp[0][i] = dp[1][i];
             if (i > 0) {
-                sp[0][i] += sp[0][i-1];
+                sp[0][i] += sp[0][i - 1];
             }
-            
+
             if (sp[0][i] >= mod) {
                 sp[0][i] -= mod;
             }
-                
+
             dp[0][i] = dp[1][i];
             dp[1][i] = 0;
         }
     }
-    
+
     fout << dp[0][k] << '\n';
-    
+
     return 0;
 }
 ```
@@ -403,7 +403,9 @@ int main() {
     dp1[1][0] = 1;
     for (int i = 2; i <= n; ++i) {
         for (int j = 0; j <= i; ++j) {
-            dp1[i][j] = dp1[i-1][j] * (i - j - 1) + (j > 0) * dp1[i-1][j-1] + dp1[i-1][j+1] * (j+1);
+            dp1[i][j] = dp1[i - 1][j] * (i - j - 1)
+                      + (j > 0) * dp1[i - 1][j - 1]
+                      + dp1[i - 1][j + 1] * (j + 1);
             dp1[i][j] %= mod;
         }
     }
@@ -415,12 +417,13 @@ int main() {
         if (i > k) {
             for (int j = 0; j <= i; ++j) {
                 sp[j] = sp[j] - dp2[i - k - 1][j];
-                if(sp[j] < 0)
+                if (sp[j] < 0) {
                     sp[j] += mod;
+                }
             }
         }
         for (int j = i; j >= 1; --j) {
-            dp2[i][j] = sp[j-1];
+            dp2[i][j] = sp[j - 1];
             sp[j] += dp2[i][j];
             if (sp[j] >= mod) {
                 sp[j] -= mod;

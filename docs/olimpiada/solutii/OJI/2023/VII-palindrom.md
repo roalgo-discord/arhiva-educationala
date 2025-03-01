@@ -101,8 +101,7 @@ int main() {
 
     if (cer == 1) {
         cout << ans;
-    } 
-    else {
+    } else {
         cin >> s;
 
         ans = INT_MIN;

@@ -85,7 +85,8 @@ int main() {
         cin >> n >> a >> b;
 
         vector<data> nodes(n + 1);
-        vector<int> cost(n + 1, (1 << 30)), colors(500001, (1 << 30)), passed(500001, 0);
+        vector<int> cost(n + 1, (1 << 30)), colors(500001, (1 << 30)),
+            passed(500001, 0);
         cost[a] = 0;
 
         vector<vector<int>> who(500001);
@@ -103,7 +104,7 @@ int main() {
             int nod = q.front();
             q.pop();
 
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i <= 2; i++) {
                 if (colors[nodes[nod].v[i]] > cost[nod]) {
                     colors[nodes[nod].v[i]] = cost[nod];
                     for (auto x : who[nodes[nod].v[i]]) {
@@ -113,6 +114,7 @@ int main() {
                         }
                     }
                 }
+            }
         }
 
         cout << (cost[b] == (1 << 30) ? -1 : cost[b]) << '\n';

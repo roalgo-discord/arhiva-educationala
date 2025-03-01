@@ -111,24 +111,28 @@ int main() {
         cin >> s >> t;
 
         vector<int> frq(26), frq2(26);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             frq[s[i] - 'a']++;
-        for (int i = 0; i < m; i++)
+        }
+        for (int i = 0; i < m; i++) {
             frq2[t[i] - 'a']++;
+        }
 
         if (c == 1) {
             int cnt = 0;
             for (int i = 0; i < 26; i++) {
-                if (frq[i] || frq2[i])
+                if (frq[i] || frq2[i]) {
                     cnt++;
+                }
             }
             cout << cnt << '\n';
             for (int i = 0; i < 26; i++) {
                 if (frq[i] || frq2[i]) {
-                    if (frq[i] > frq2[i])
+                    if (frq[i] > frq2[i]) {
                         cout << (char)('a' + i) << " " << "S\n";
-                    else
+                    } else {
                         cout << (char)('a' + i) << " " << "T\n";
+                    }
                 }
             }
         } else {
@@ -141,25 +145,30 @@ int main() {
                 int cntdif = 0;
                 while (poz < n) {
                     frqq[s[poz] - 'a']++;
-                    if (frqq[s[poz] - 'a'] == 1)
+                    if (frqq[s[poz] - 'a'] == 1) {
                         cntdif++;
+                    }
                     poz++;
-                    if (poz < n && s[poz] < s[poz - 1])
+                    if (poz < n && s[poz] < s[poz - 1]) {
                         break;
+                    }
                 }
                 while (poz2 < m && cntdif) {
                     frqq2[t[poz2] - 'a']++;
-                    if (frqq2[t[poz2] - 'a'] == frqq[t[poz2] - 'a'])
+                    if (frqq2[t[poz2] - 'a'] == frqq[t[poz2] - 'a']) {
                         cntdif--;
+                    }
                     poz2++;
                 }
-                if (cntdif)
+                if (cntdif) {
                     ok = 0;
+                }
             }
-            if (poz == n && ok)
+            if (poz == n && ok) {
                 cout << "DA\n";
-            else
+            } else {
                 cout << "NU\n";
+            }
         }
     }
     return 0;

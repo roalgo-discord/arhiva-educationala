@@ -61,14 +61,16 @@ int main() {
 
     map<int, int> s;
     vector<string> v(n + 1);
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
         cin >> v[i];
+    }
     sort(v.begin() + 1, v.begin() + n + 1, greater<string>());
     unordered_map<int, vector<string>> s2;
     for (int i = 1; i <= n; i++) {
         int msk = 0;
-        for (int j = 0; j < (int)v[i].size(); j++)
+        for (int j = 0; j < (int)v[i].size(); j++) {
             msk ^= (1 << (v[i][j] - 'A'));
+        }
         s[msk]++;
         s2[msk].push_back(v[i]);
     }
@@ -77,8 +79,9 @@ int main() {
         return 0;
     }
     multiset<int> st;
-    for (auto x : s)
+    for (auto x : s) {
         st.insert(x.second);
+    }
     int cnt = 0;
     int prv = 0;
     while (st.size() + (prv != 0) > 1) {
@@ -86,8 +89,9 @@ int main() {
         st.erase(st.lower_bound(x));
         cnt++;
         x--;
-        if (prv != 0)
+        if (prv != 0) {
             st.insert(prv), prv = 0;
+        }
         prv = x;
     }
     if (c == 2) {
@@ -100,23 +104,27 @@ int main() {
         vector<string> vv;
         set<pair<string, int>> ss;
         for (auto x : s2) {
-            if (prv == -1)
+            if (prv == -1) {
                 prv = x.first;
-            else if (x.second.size() > s2[prv].size())
+            } else if (x.second.size() > s2[prv].size()) {
                 prv = x.first;
+            }
         }
         vv = s2[prv];
         for (auto x : s2) {
-            if (x.first != prv)
+            if (x.first != prv) {
                 ss.insert({x.second.back(), x.first});
+            }
         }
         prv = -1;
         while (rem) {
-            if (prv != -2 &&
-                ((vv.size() >= (rem / 2 + rem % 2) && rem % 2 == 1) || ss.empty() || vv.back() < (*ss.begin()).first)) {
+            if (prv != -2
+                && ((vv.size() >= (rem / 2 + rem % 2) && rem % 2 == 1)
+                    || ss.empty() || vv.back() < (*ss.begin()).first)) {
                 cout << vv.back() << " ";
-                if (prv > 0 && s2[prv].size())
+                if (prv > 0 && s2[prv].size()) {
                     ss.insert({s2[prv].back(), prv});
+                }
                 prv = -2;
                 vv.pop_back();
             } else {
@@ -124,8 +132,9 @@ int main() {
                 ss.erase(px);
                 cout << px.first << " ";
                 s2[px.second].pop_back();
-                if (prv > 0 && s2[prv].size())
+                if (prv > 0 && s2[prv].size()) {
                     ss.insert({s2[prv].back(), prv});
+                }
                 prv = px.second;
             }
             rem--;

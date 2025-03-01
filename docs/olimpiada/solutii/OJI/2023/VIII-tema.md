@@ -105,14 +105,17 @@ int fr[1000005];
 void Ciur() {
     pr[0] = 2;
     pr[1] = 2;
-    for (int i = 2; i <= 1000000; ++i)
-        pr[i] = 1;
     for (int i = 2; i <= 1000000; ++i) {
-        if (pr[i] == 0)
+        pr[i] = 1;
+    }
+    for (int i = 2; i <= 1000000; ++i) {
+        if (pr[i] == 0) {
             continue;
+        }
         for (int j = 2 * i; j <= 1000000; j += i) {
-            if (pr[j] == 1)
+            if (pr[j] == 1) {
                 spd[j] = i;
+            }
             pr[j] = 0;
             gpd[j] = i;
         }
@@ -127,15 +130,18 @@ int main() {
         fin >> v[i];
         spr[i] = spr[i - 1];
         scm[i] = scm[i - 1];
-        if (pr[v[i]] == 1)
+        if (pr[v[i]] == 1) {
             spr[i] += v[i];
-        else if (pr[v[i]] == 0)
+        } else if (pr[v[i]] == 0) {
             scm[i] += v[i];
+        }
     }
     if (C == 1) {
         int ans = 0, st = 1;
         for (int i = 1; i <= n; ++i) {
-            while (st <= i && 1LL * (spr[i] - spr[st - 1]) * (scm[i] - scm[st - 1]) > k) {
+            while (st <= i
+                   && 1LL * (spr[i] - spr[st - 1]) * (scm[i] - scm[st - 1])
+                          > k) {
                 st++;
             }
             ans = max(ans, i - st + 1);
@@ -154,8 +160,9 @@ int main() {
                 S = 1;
             }
             fr[G]++;
-            if (G != S)
+            if (G != S) {
                 fr[S]++;
+            }
             while (loc <= i && (i - loc + 1 > fr[G] && i - loc + 1 > fr[S])) {
                 int G1 = gpd[v[loc]], S1 = spd[v[loc]];
                 if (pr[v[loc]] == 1) {
@@ -167,8 +174,9 @@ int main() {
                     S1 = 1;
                 }
                 fr[G1]--;
-                if (G1 != S1)
+                if (G1 != S1) {
                     fr[S1]--;
+                }
                 loc++;
             }
             if (dr - st + 1 <= i - loc + 1) {

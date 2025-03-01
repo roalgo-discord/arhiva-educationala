@@ -116,48 +116,48 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, q;
     cin >> n >> q;
-    
+
     vector<int> v(n);
     for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
-    
+
     int sz = 450;
-    
-    vector<long long> bk(n/sz + 1);
-    
+
+    vector<long long> bk(n / sz + 1);
+
     for (int i = 0; i < n; i++) {
         bk[i / sz] += v[i];
     }
-    
+
     for (; q; q--) {
         int tp;
         cin >> tp;
-        
+
         if (tp == 1) {
             int pos, val;
             cin >> pos >> val;
-            
+
             pos--;
             bk[pos / sz] += (val - v[pos]);
             v[pos] = val;
         }
-        
+
         else {
             int L, R;
             cin >> L >> R;
-            L--; R--;
-            
+            L--;
+            R--;
+
             long long sum = 0;
             if (L / sz == R / sz) {
                 for (int i = L; i <= R; i++) {
                     sum += v[i];
                 }
-            }
-            else {
+            } else {
                 int pos = L;
                 while (pos / sz == L / sz) {
                     sum += v[pos];
@@ -172,11 +172,11 @@ int main() {
                     pos++;
                 }
             }
-            
+
             cout << sum << '\n';
         }
     }
-    
+
     return 0;
 }
 ```
@@ -202,35 +202,37 @@ long long maxDifference(const vector<int>& v) {
     int max_val = *max_element(v.begin(), v.end());
     double dif = max_val - min_val;
     int num_pairs = v.size() - 1;
-    
+
     int aprox = dif / num_pairs;
-    
+
     int n = v.size();
     double bucket_size = ((double)max_val - min_val) / n;
-    
+
     vector<int> buckets[v.size()];
     for (int i = 0; i < v.size(); i++) {
         dif = v[i] - min_val;
         int bucket = (int)(((double)v[i] - min_val) / bucket_size);
-        
-        if (bucket == v.size()) { bucket--; }
+
+        if (bucket == v.size()) {
+            bucket--;
+        }
         buckets[bucket].push_back(v[i]);
     }
-    
+
     int prev_max = 0;
     long long ans = 0;
     for (int i = 0; i < v.size(); i++) {
         if (!buckets[i].size() == 0) {
             min_val = *min_element(buckets[i].begin(), buckets[i].end());
             max_val = *max_element(buckets[i].begin(), buckets[i].end());
-            
+
             if (i) {
                 ans = max(ans, (long long)min_val - prev_max);
             }
             prev_max = max_val;
         }
     }
-    
+
     return ans;
 }
 ```
@@ -303,13 +305,14 @@ int a[MAX_N + 5], freq[2 * MAX_A + 5], cnt[MAX_A + 5], blockSize;
 struct Query {
     int l, r, k, idx;
 
-    bool operator < (Query other) const {
-        return make_pair(l / blockSize, r) < make_pair(other.l / blockSize, other.r);
+    bool operator<(Query other) const {
+        return make_pair(l / blockSize, r)
+             < make_pair(other.l / blockSize, other.r);
     }
 };
 
-void add (int idx) {
-    int val = a[idx] + MAX_A; 
+void add(int idx) {
+    int val = a[idx] + MAX_A;
 
     if (freq[val] > 0) {
         cnt[freq[val]]--;
@@ -317,8 +320,8 @@ void add (int idx) {
     cnt[++freq[val]]++;
 }
 
-void remove (int idx) {
-    int val = a[idx] + MAX_A; 
+void remove(int idx) {
+    int val = a[idx] + MAX_A;
 
     if (freq[val] > 0) {
         cnt[freq[val]]--;
@@ -326,12 +329,10 @@ void remove (int idx) {
     cnt[--freq[val]]++;
 }
 
-int getAnswer (int idx) {
-    return cnt[idx];
-}
+int getAnswer(int idx) { return cnt[idx]; }
 
-vector<int> MoSAlgorithm (vector<Query> queries) {
-    vector<int> answers (queries.size());
+vector<int> MoSAlgorithm(vector<Query> queries) {
+    vector<int> answers(queries.size());
     sort(queries.begin(), queries.end());
 
     int curL = 0, curR = -1, i;
@@ -360,14 +361,13 @@ vector<int> MoSAlgorithm (vector<Query> queries) {
 }
 
 int main() {
-    
     ifstream cin("fsecv.in");
     ofstream cout("fsecv.out");
 
     int n, q, i;
     cin >> n >> q;
 
-    blockSize = (int) sqrt(n);
+    blockSize = (int)sqrt(n);
     for (i = 1; i <= n; i++) {
         cin >> a[i];
     }
@@ -417,29 +417,28 @@ long long n, q, sp[302][100002], v[302];
 
 int main() {
     cin >> n;
-    
+
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     for (int pas = 1; pas <= min(300, n); pas++) {
         for (int i = 1; i <= n; i++) {
             sp[pas][i] = v[i];
-            if(i > pas) {
+            if (i > pas) {
                 sp[pas][i] += sp[pas][i - pas];
             }
         }
     }
-    
+
     cin >> q;
     for (; q; q--) {
         int x, y;
         cin >> x >> y;
-        
+
         if (y <= min(300, n)) {
             cout << sp[y][x] << '\n';
-        }
-        else {
+        } else {
             long long ans = 0;
             while (x > 0) {
                 ans += v[x];
@@ -477,21 +476,21 @@ ofstream g("bvarcolaci.out");
 int n, v[250002], frq[250002], xx[500002];
 vector<int> pos[250002];
 
-long long fct (long long a, long long b, long long c) {
-    if(a > b) {
+long long fct(long long a, long long b, long long c) {
+    if (a > b) {
         swap(a, b);
     }
     a = min(a, c);
     b = min(b, c);
     if (a + b <= c) {
-        return (a+1) * (b+1);
+        return (a + 1) * (b + 1);
     }
-    long long sol = (a+1);
+    long long sol = (a + 1);
     sol = sol + 1LL * (c - b + 1) * b;
-    int mx = (b-1);
+    int mx = (b - 1);
     int mn = max(0LL, c - a - 1);
-    sol = sol + 1LL * mx * (mx+1)/2;
-    sol = sol - 1LL * mn * (mn+1)/2;
+    sol = sol + 1LL * mx * (mx + 1) / 2;
+    sol = sol - 1LL * mn * (mn + 1) / 2;
     return sol;
 }
 int main() {
@@ -516,35 +515,31 @@ int main() {
                     int disp = frq * 2 - len - 1;
                     int catest;
                     if (j != 0) {
-                        catest = st - pos[i][j-1] - 1;
-                    }
-                    else {
+                        catest = st - pos[i][j - 1] - 1;
+                    } else {
                         catest = st - 1;
                     }
                     int catedr;
                     if (k + 1 == pos[i].size()) {
                         catedr = n - dr;
-                    }
-                    else {
+                    } else {
                         catedr = pos[i][k + 1] - dr - 1;
                     }
                     sol += fct(catest, catedr, disp);
                 }
             }
-        }
-        else {
+        } else {
             memset(xx, 0, sizeof(xx));
             int st = 249999;
             int nr = 0;
             for (int j = 1; j <= n; ++j) {
-                if(v[j] == i) {
-                    frq[j] = frq[j-1] + 1;
+                if (v[j] == i) {
+                    frq[j] = frq[j - 1] + 1;
+                } else {
+                    frq[j] = frq[j - 1] - 1;
                 }
-                else {
-                    frq[j] = frq[j-1] - 1;
-                }
-                ++xx[250000 + frq[j-1]];
-                if (250000 + frq[j-1] <= st) {
+                ++xx[250000 + frq[j - 1]];
+                if (250000 + frq[j - 1] <= st) {
                     ++nr;
                 }
                 while (frq[j] + 250000 <= st) {
@@ -599,9 +594,9 @@ răspunsuri și vom adăuga doar valorile rămase într-o manieră similară, p�
 cu atenție noile răspunsuri pentru valorile rămase.
 
 ```cpp
+#include <algorithm>
 #include <fstream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int n, q, v[100002], ans[100002], frq[100002];
@@ -611,52 +606,56 @@ struct queries {
 };
 queries vq[100002];
 
-bool cmp (queries a, queries b) {
+bool cmp(queries a, queries b) {
     if (a.L / 300 != b.L / 300) {
         return a.L < b.L;
     }
     return a.R < b.R;
 }
 
-void add (int pos, int &mx) {
+void add(int pos, int &mx) {
     frq[v[pos]]++;
-    if (mx == 100001 || frq[v[pos]] > frq[mx] || (frq[v[pos]] == frq[mx] && v[pos] < mx)) {
+    if (mx == 100001 || frq[v[pos]] > frq[mx]
+        || (frq[v[pos]] == frq[mx] && v[pos] < mx)) {
         mx = v[pos];
     }
 }
 int main() {
     ifstream cin("rangemode.in");
     ofstream cout("rangemode.out");
-    
+
     cin >> n >> q;
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     for (int i = 1; i <= q; i++) {
         cin >> vq[i].L >> vq[i].R;
         vq[i].pi = i;
     }
 
     sort(vq + 1, vq + q + 1, cmp);
-    
+
     int pq = 1;
     for (int buk = 0; buk < 350; buk++) {
-        int bg = min(n+1, (buk+1) * 300), mxbigger = 100001;
+        int bg = min(n + 1, (buk + 1) * 300), mxbigger = 100001;
         while (pq <= q) {
             int poz = vq[pq].L / 300;
-            if(poz != buk)
+            if (poz != buk) {
                 break;
-            while (bg <= vq[pq].R) {// adaugam valorile noi
+            }
+            while (bg <= vq[pq].R) {  // adaugam valorile noi
                 add(bg++, mxbigger);
             }
             int mx2 = mxbigger;
             // procesam bucata din stanga
-            for (int Lpos = min(vq[pq].R, (buk+1) * 300 - 1); Lpos >= vq[pq].L; Lpos--) {
+            for (int Lpos = min(vq[pq].R, (buk + 1) * 300 - 1);
+                 Lpos >= vq[pq].L; Lpos--) {
                 add(Lpos, mx2);
             }
             ans[vq[pq].pi] = mx2;
-            for (int Lpos = min(vq[pq].R, (buk+1) * 300 - 1); Lpos >= vq[pq].L; Lpos--) {
+            for (int Lpos = min(vq[pq].R, (buk + 1) * 300 - 1);
+                 Lpos >= vq[pq].L; Lpos--) {
                 frq[v[Lpos]]--;
             }
             pq++;
@@ -665,7 +664,7 @@ int main() {
             frq[i] = 0;
         }
     }
-    
+
     for (int i = 1; i <= q; i++) {
         cout << ans[i] << '\n';
     }

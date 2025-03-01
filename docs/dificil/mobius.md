@@ -64,12 +64,12 @@ Acest algoritm este poate cel mai popular printre elevii de liceu și gimnaziu
 pentru a afla numerele prime într-un interval.
 
 ```cpp
-vector<int> ciur(N+1);
+vector<int> ciur(N + 1);
 ciur[0] = ciur[1] = 1;
 for (int i = 2; i <= N; i++) {
-    if (ciur[i] == 0) { //numarul i este prim
+    if (ciur[i] == 0) {  // numarul i este prim
         for (int j = 2 * i; j <= N; j += i) {
-            ciur[j] = 1; //j se scrie ca i * p
+            ciur[j] = 1;  // j se scrie ca i * p
         }
     }
 }
@@ -89,17 +89,18 @@ auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele prime pâ
 când un număr prim divide $i$.
 
 ```cpp
-
 vector<int> prime;
-vector<int> is_composite(N+1);
+vector<int> is_composite(N + 1);
 
 for (int i = 2; i <= n; i++) {
-    if (!is_composite[i]) 
+    if (!is_composite[i]) {
         prime.push_back(i);
+    }
     for (int j = 0; j < prime.size() && i * prime[j] <= n; j++) {
         is_composite[i * prime[j]] = 1;
-        if (i % prime[j]) 
+        if (i % prime[j]) {
             break;
+        }
     }
 }
 ```
@@ -138,8 +139,7 @@ for (int i = 2; i <= N; i++) {
         compus[i * prime[j]] = 1;
         if (i % prime[j]) {
             phi[i * prime[j]] = phi[i] * phi[prime[j]];
-        }
-        else {
+        } else {
             phi[i * prime[j]] = prime[j] * phi[i];
         }
     }
@@ -155,7 +155,7 @@ mai mic factor din descompunerea în factori primi a lui $n$. Pentru oricare $i$
 f(\frac{i}{p^{\operatorname{sml}(i)}}) \cdot f(p^{\operatorname{sml}(i) + 1})$.
 
 ```cpp
-vector<int> prime, phi(N+1), compus(N+1), sml(N+1);
+vector<int> prime, phi(N + 1), compus(N + 1), sml(N + 1);
 phi[1] = 1;
 for (int i = 2; i <= N; i++) {
     if (!compus[i]) {
@@ -168,10 +168,11 @@ for (int i = 2; i <= N; i++) {
         if (i % prime[j]) {
             phi[i * prime[j]] = phi[i] * phi[prime[j]];
             sml[i * prime[j]] = 1;
-        }
-        else {
-            phi[i * prime[j]] = (phi[i] / (pow(prime[j], sml[i]) - pow(prime[j], sml[i] - 1)));
-            phi[i * prime[j]] *= (pow(prime[j], sml[i] + 1) - pow(prime[j], sml[i]));
+        } else {
+            phi[i * prime[j]] =
+                (phi[i] / (pow(prime[j], sml[i]) - pow(prime[j], sml[i] - 1)));
+            phi[i * prime[j]] *=
+                (pow(prime[j], sml[i] + 1) - pow(prime[j], sml[i]));
             sml[i * prime[j]] = sml[i] + 1;
         }
     }
@@ -211,14 +212,12 @@ for (int i = 2; i < N; i++) {
         if (i % prime[j]) {
             mobius[i * prime[j]] = mobius[i] * mobius[prime[j]];
             sml[i * prime[j]] = 1;
-        }
-        else {
+        } else {
             int cltr = (sml[i] == 0) - (sml[i] == 1);
             int pl = (sml[i] + 1 == 0) - (sml[i] + 1 == 1);
             if (cltr == 0) {
                 mobius[i] = 0;
-            }
-            else {
+            } else {
                 mobius[i * prime[j]] = (mobius[i] / cltr) * pl;
             }
             sml[i * prime[j]] = sml[i] + 1;
@@ -237,10 +236,10 @@ vector<int> phi(N), mobius(N);
 phi[1] = mobius[1] = 1;
 
 for (int i = 2; i < N; i++) {
-    phi[i] = i-1;
+    phi[i] = i - 1;
 }
 for (int i = 1; i < N; i++) {
-    for (int j = 2 * i; j < N; j+=i) {
+    for (int j = 2 * i; j < N; j += i) {
         mobius[j] -= mobius[i];
         if (i > 1) {
             phi[j] -= phi[i];
@@ -456,16 +455,16 @@ $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
     \frac{n}{\lfloor \frac{n}{d} \rfloor} \right\rfloor$.
 
 ```cpp
-long long f (long long n) {
-    //cout << n << '\n';
+long long f(long long n) {
+    // cout << n << '\n';
     if (n <= 1000000) {
-        return sum_phi[n]; //phi(1) + phi(2) + ... + phi(n)
+        return sum_phi[n];  // phi(1) + phi(2) + ... + phi(n)
     }
     if (dp[n]) {
         return dp[n];
-        //am calculat deja rezultatul pt n
+        // am calculat deja rezultatul pt n
     }
-    long long ans = 1LL * (1LL * n * (n + 1)) / 2; 
+    long long ans = 1LL * (1LL * n * (n + 1)) / 2;
     for (int i = 2, dr; i <= n; i = dr + 1) {
         dr = (n / (n / i));
         if (dr > n) {
@@ -514,11 +513,11 @@ Soluția rulează în $\mathcal{O}(N)$ cu $\mathcal{O}(N)$ sau $\mathcal{O}(N \c
 using namespace std;
 const int N = 1e7 + 1, mod = 3000017;
 int n, k;
-ifstream fin ("tupleco.in");
-ofstream fout ("tupleco.out");
+ifstream fin("tupleco.in");
+ofstream fout("tupleco.out");
 #define cin fin
 #define cout fout
-long long C (int n, int k, vector<long long> &f, vector<long long> &invf) {
+long long C(int n, int k, vector<long long> &f, vector<long long> &invf) {
     return (1ULL * f[n] * (1ULL * invf[k] * invf[n - k] % mod) % mod) % mod;
 }
 int main() {
@@ -548,11 +547,9 @@ int main() {
         long long plt = C(lt + k - 1, k, f, invf);
         if (mobius[d] == -1) {
             ans = (1ULL * ans + mod - plt) % mod;
+        } else if (mobius[d] == 1) {
+            ans = (1ULL * ans + plt) % mod;
         }
-        else 
-            if (mobius[d] == 1) {
-                ans = (1ULL * ans + plt) % mod;
-            }
     }
     cout << ans;
 }
@@ -580,28 +577,18 @@ $$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 3e6 + 17, N = 1e6 + 2;
-ifstream fin ("tupleco.in");
-ofstream fout ("tupleco.out");
+ifstream fin("tupleco.in");
+ofstream fout("tupleco.out");
 #define cin fin
 #define cout fout
 struct Mint {
     int val;
-    Mint (int x = 0) {
-        val = x % mod;
-    }
-    Mint (long long x) {
-        val = x % mod;
-    }
-    Mint operator+(Mint oth) {
-        return val + oth.val;
-    }
-    Mint operator*(Mint oth) {
-        return 1LL * val * oth.val;
-    }
-    Mint operator-(Mint oth) {
-        return val - oth.val + mod;
-    }
-    Mint fp (Mint a, long long n){
+    Mint(int x = 0) { val = x % mod; }
+    Mint(long long x) { val = x % mod; }
+    Mint operator+(Mint oth) { return val + oth.val; }
+    Mint operator*(Mint oth) { return 1LL * val * oth.val; }
+    Mint operator-(Mint oth) { return val - oth.val + mod; }
+    Mint fp(Mint a, long long n) {
         Mint p = 1;
         while (n) {
             if (n & 1) {
@@ -622,9 +609,10 @@ struct Mint {
     }
 };
 vector<Mint> f(mod), invf(mod), inv(mod);
-Mint C (int n, int k) {
-    if (n < 0 || k < 0 || n < k)
+Mint C(int n, int k) {
+    if (n < 0 || k < 0 || n < k) {
         return 0;
+    }
     if (n >= mod) {
         return C(n / mod, k / mod) * C(n % mod, k % mod);
     }

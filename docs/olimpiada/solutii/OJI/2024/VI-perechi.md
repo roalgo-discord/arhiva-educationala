@@ -55,8 +55,8 @@ $\text{max}$ este numărul maxim din șir.
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 int c, n, rev[10002], v[100002], fr[10002], cif[12];
@@ -64,13 +64,13 @@ int c, n, rev[10002], v[100002], fr[10002], cif[12];
 int og(int x) {
     int ans = 0;
     while (x > 0) {
-        ans = ans * 10 + x%10;
+        ans = ans * 10 + x % 10;
         x /= 10;
     }
     return ans;
 }
 
-int merge (int a, int b) {
+int merge(int a, int b) {
     int p10 = 10;
     while (p10 <= b) {
         p10 *= 10;
@@ -104,16 +104,16 @@ int main() {
     }
     if (c == 2) {
         int ans = 0;
-        for (int st = 1; st <= 9999; st++) // numarul din stanga
-            for (int mid = -1; mid <= 9; mid++) { // eventual, cifra din mijloc
+        for (int st = 1; st <= 9999; st++) {       // numarul din stanga
+            for (int mid = -1; mid <= 9; mid++) {  // eventual, cifra din mijloc
                 int val = st;
                 if (mid != -1) {
                     val = val * 10 + mid;
                 }
                 int cop = st;
                 int cnt = 0;
-                while (cop) { // numarul din dreapta
-                    cif[cnt++] = cop%10;
+                while (cop) {  // numarul din dreapta
+                    cif[cnt++] = cop % 10;
                     cop /= 10;
                 }
                 for (int i = 0; i < cnt; i++) {
@@ -122,17 +122,22 @@ int main() {
                 int tog = 0;
                 int tval = val;
                 int p10 = 1;
-                while (val) { // trecem prin cifre sa vedem daca cele doua jumatati exista
-                    tog = tog + p10 * (val%10);
+                while (val) {  // trecem prin cifre sa vedem daca cele doua
+                               // jumatati exista
+                    tog = tog + p10 * (val % 10);
                     val /= 10;
                     p10 *= 10;
-                    if (tog <= 10000 && val <= 10000 && fr[tog] && fr[val] && merge(val, tog) == tval) {
-                        if(tog == val && fr[tog] < 2);
-                        else
+                    if (tog <= 10000 && val <= 10000 && fr[tog] && fr[val]
+                        && merge(val, tog) == tval) {
+                        if (tog == val && fr[tog] < 2)
+                            ;
+                        else {
                             ans = max(ans, tval);
+                        }
                     }
                 }
             }
+        }
         cout << ans << '\n';
     }
     return 0;

@@ -180,8 +180,8 @@ Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
     să aibă o complexitate de $\mathcal{O}(n^2)$.
 
 ```cpp
-vector<int> quicksort (vector<int> v) {
-    if(v.size() == 0) {
+vector<int> quicksort(vector<int> v) {
+    if (v.size() == 0) {
         return v;
     }
     ll pivot = 1LL * rand() * rand();
@@ -191,12 +191,10 @@ vector<int> quicksort (vector<int> v) {
     for (int i = 0; i < v.size(); ++i) {
         if (v[i] < v[pivot]) {
             smaller.push_back(v[i]);
-        }
-        else {
+        } else {
             if (v[i] == v[pivot]) {
                 ++same_value;
-            }
-            else {
+            } else {
                 greater.push_back(v[i]);
             }
         }
@@ -240,15 +238,15 @@ puteți studia mai multe în acest articol.
     de inversiuni al unui șir.
 
 ```cpp
-void mergesort (vector<int> &v, int L, int R) {
+void mergesort(vector<int> &v, int L, int R) {
     if (L == R) {
         return;
     }
-    
+
     int mid = (L + R) / 2;
     mergesort(v, L, mid);
-    mergesort(v, mid+1, R);
-    
+    mergesort(v, mid + 1, R);
+
     vector<int> sorted;
     int Lx = L;
     int Rx = mid + 1;
@@ -256,13 +254,12 @@ void mergesort (vector<int> &v, int L, int R) {
         if (v[Lx] <= v[Rx]) {
             sorted.push_back(v[Lx]);
             Lx++;
-        }
-        else {
+        } else {
             sorted.push_back(v[Rx]);
             Rx++;
         }
     }
-    
+
     while (Lx <= mid) {
         sorted.push_back(v[Lx]);
         Lx++;
@@ -291,8 +288,7 @@ heapify fiind o funcție auxiliară care are drept scop plasarea valorii curente
 astfel încât să se păstreze structura de heap.  
 
 ```cpp
-void heapify(vector<int> &v, int n, int pos)
-{
+void heapify(vector<int> &v, int n, int pos) {
     int largest = pos, l = 2 * pos + 1, r = 2 * pos + 2;
     if (l < n && v[l] > v[largest]) {
         largest = l;
@@ -300,18 +296,17 @@ void heapify(vector<int> &v, int n, int pos)
     if (r < n && v[r] > v[largest]) {
         largest = r;
     }
-    if(largest != pos) {
+    if (largest != pos) {
         swap(v[pos], v[largest]);
         heapify(v, n, largest);
     }
 }
 
-void heapSort(vector<int> &v, int n)
-{
-    for (int i = n/2 - 1; i >= 0; i--) {
+void heapSort(vector<int> &v, int n) {
+    for (int i = n / 2 - 1; i >= 0; i--) {
         heapify(v, n, i);
     }
-    for (int i = n - 1; i>=0; i--) {
+    for (int i = n - 1; i >= 0; i--) {
         swap(v[0], v[i]);
         heapify(v, i, 0);
     }
@@ -338,9 +333,7 @@ struct Foo {
 
 Foo v[N + 1];
 
-bool cmp(const Foo x, const Foo y) {
-    return (x.a + x.b) < (y.a + y.b);
-}
+bool cmp(const Foo x, const Foo y) { return (x.a + x.b) < (y.a + y.b); }
 
 sort(v + 1, v + N + 1, cmp);
 
@@ -348,9 +341,7 @@ sort(v + 1, v + N + 1, cmp);
 vector<Foo> foos(N + 1);
 
 sort(foos.begin(), foos.end(),
-     [](const Foo x, const Foo y) {
-        return (x.a + x.b) < (y.a + y.b);
-     });
+     [](const Foo x, const Foo y) { return (x.a + x.b) < (y.a + y.b); });
 ```
 
 ## Sortarea folosind structuri din STL
@@ -370,7 +361,7 @@ for (int i = 0; i < n; i++) {
     s.insert(v[i]);
 }
 
-vector <int> sorted;
+vector<int> sorted;
 for (auto x : s) {
     sorted.push_back(x);
 }
@@ -397,8 +388,8 @@ valoare din șir.
 int n;
 cin >> n;
 
-vector <int> v(n);
-vector <int> frq(MAXVAL);
+vector<int> v(n);
+vector<int> frq(MAXVAL);
 for (int i = 0; i < n; i++) {
     cin >> v[i];
     frq[v[i]]++;
@@ -424,21 +415,22 @@ prelucrarea cifrelor și numerelor în diferite moduri.
 ```cpp
 void radix_sort(vector<int> v, int pwr) {
     if (pwr == 0) {
-        for(int i = 0; i < v.size(); ++i)
+        for (int i = 0; i < v.size(); ++i) {
             v2[poz++] = v[i];
+        }
         return;
     }
     vector<int> a[10];
     for (int i = 0; i < v.size(); ++i) {
         int val = v[i] % pwr;
         if (pwr != 1) {
-            val /= (pwr/10);
+            val /= (pwr / 10);
         }
         a[val].push_back(v[i]);
     }
     for (int i = 0; i < 10; ++i) {
         if (!a[i].empty()) {
-            radix_sort(a[i], pwr/10);
+            radix_sort(a[i], pwr / 10);
         }
     }
 }

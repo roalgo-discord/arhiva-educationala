@@ -29,22 +29,21 @@ ifstream cin("lascoala.in");
 ofstream cout("lascoala.out");
 
 int main() {
-    
     int n;
     cin >> n;
-    
+
     int k = 1;
-    while ((k+1) * (k+1) < n) {
+    while ((k + 1) * (k + 1) < n) {
         k++;
     }
-    cout << n - k*k << '\n';
-    for (int i = k*k; i > 0; i -= k) {
+    cout << n - k * k << '\n';
+    for (int i = k * k; i > 0; i -= k) {
         for (int j = i; j > i - k; j--) {
             cout << j << " ";
         }
         cout << '\n';
     }
-    
+
     return 0;
 }
 ```

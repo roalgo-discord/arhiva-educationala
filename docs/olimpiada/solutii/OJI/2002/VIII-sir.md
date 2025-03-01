@@ -38,17 +38,18 @@ int main() {
         char v = s[0];
         string newS = "";
         for (int i = 1; i < (int)s.size(); i++) {
-            if (s[i] == s[i - 1])
+            if (s[i] == s[i - 1]) {
                 f++;
-            else {
+            } else {
                 newS += to_string(f);
                 newS += v;
                 f = 1;
                 v = s[i];
             }
         }
-        if (f)
+        if (f) {
             newS += to_string(f), newS += v;
+        }
         s = newS;
     }
     out << s;

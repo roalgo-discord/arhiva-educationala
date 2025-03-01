@@ -79,16 +79,16 @@ citită mai jos:
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <stack>
- 
+#include <vector>
+
 using namespace std;
- 
-stack<int>s;
- 
-void dfs (int node, vector<vector<int>> &v, vector<int> &vis) {
+
+stack<int> s;
+
+void dfs(int node, vector<vector<int>> &v, vector<int> &vis) {
     vis[node] = 1;
-    for (int j = 0; j < (int) v[node].size(); ++j) {
+    for (int j = 0; j < (int)v[node].size(); ++j) {
         int nxt = v[node][j];
         if (!vis[nxt]) {
             dfs(nxt, v, vis);
@@ -96,25 +96,25 @@ void dfs (int node, vector<vector<int>> &v, vector<int> &vis) {
     }
     s.push(node);
 }
-void dfs2 (int node, int cnt, vector<vector<int>> &tr, vector<int> &vis2, vector<int> &scc)
-{
+void dfs2(int node, int cnt, vector<vector<int>> &tr, vector<int> &vis2,
+          vector<int> &scc) {
     vis2[node] = 1;
     scc[node] = cnt;
-    for (int j = 0; j < (int) tr[node].size(); ++j) {
+    for (int j = 0; j < (int)tr[node].size(); ++j) {
         int nxt = tr[node][j];
         if (!vis2[nxt]) {
             dfs2(nxt, cnt, tr, vis2, scc);
         }
     }
 }
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<int> vis(n+1), vis2(n+1), scc(n+1);
-    vector<vector<int>> v(n+1), tr(n+1);
-    
+
+    vector<int> vis(n + 1), vis2(n + 1), scc(n + 1);
+    vector<vector<int>> v(n + 1), tr(n + 1);
+
     for (int i = 1; i <= m; ++i) {
         int a, b;
         cin >> a >> b;
@@ -126,7 +126,7 @@ int main() {
             dfs(i, v, vis);
         }
     }
-    
+
     int cnt = 0;
     while (!s.empty()) {
         int node = s.top();
@@ -164,8 +164,8 @@ aceeași problemă de mai sus.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
@@ -204,11 +204,11 @@ void dfs(int node) {
 }
 
 int solve(int n) {
-    idx.resize(n+1, 0);
-    instack.resize(n+1, 0);
-    lowlink.resize(n+1, 0);
-    scc.resize(n+1, 0);
-    
+    idx.resize(n + 1, 0);
+    instack.resize(n + 1, 0);
+    lowlink.resize(n + 1, 0);
+    scc.resize(n + 1, 0);
+
     for (int i = 1; i <= n; i++) {
         if (idx[i] == 0) {
             dfs(i);
@@ -218,21 +218,20 @@ int solve(int n) {
 }
 
 int main() {
-    
     int n, m;
     cin >> n >> m;
-    
-    graph.resize(n+1);
-    
+
+    graph.resize(n + 1);
+
     for (int i = 1; i <= m; i++) {
         int a, b;
         cin >> a >> b;
         graph[a].push_back(b);
     }
-    
+
     cout << solve(n) << '\n';
     for (int i = 1; i <= n; i++) {
-        cout << scc[i]+1 << " ";
+        cout << scc[i] + 1 << " ";
     }
     return 0;
 }
@@ -270,17 +269,17 @@ Soluția va fi din nou, una liniară raportată la dimensiunile grafului.
 
 ```cpp
 #include <iostream>
-#include <vector>
-#include <stack>
 #include <queue>
- 
+#include <stack>
+#include <vector>
+
 using namespace std;
- 
+
 stack<int> s;
- 
-void dfs (int node, vector<vector<int>> &v, vector<int> &vis) {
+
+void dfs(int node, vector<vector<int>> &v, vector<int> &vis) {
     vis[node] = 1;
-    for (int j = 0; j < (int) v[node].size(); ++j) {
+    for (int j = 0; j < (int)v[node].size(); ++j) {
         int nxt = v[node][j];
         if (!vis[nxt]) {
             dfs(nxt, v, vis);
@@ -288,30 +287,30 @@ void dfs (int node, vector<vector<int>> &v, vector<int> &vis) {
     }
     s.push(node);
 }
-void dfs2 (int node, int cnt, vector<vector<int>> &tr, vector<int> &vis2, vector<int> &scc)
-{
+void dfs2(int node, int cnt, vector<vector<int>> &tr, vector<int> &vis2,
+          vector<int> &scc) {
     vis2[node] = 1;
     scc[node] = cnt;
-    for (int j = 0; j < (int) tr[node].size(); ++j) {
+    for (int j = 0; j < (int)tr[node].size(); ++j) {
         int nxt = tr[node][j];
         if (!vis2[nxt]) {
             dfs2(nxt, cnt, tr, vis2, scc);
         }
     }
 }
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<long long> vals(n+1), sum(n+1), dp(n+1);
+
+    vector<long long> vals(n + 1), sum(n + 1), dp(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> vals[i];
     }
-    
-    vector<int> vis(n+1), vis2(n+1), scc(n+1);
-    vector<vector<int>> v(n+1), tr(n+1);
-    
+
+    vector<int> vis(n + 1), vis2(n + 1), scc(n + 1);
+    vector<vector<int>> v(n + 1), tr(n + 1);
+
     for (int i = 1; i <= m; ++i) {
         int a, b;
         cin >> a >> b;
@@ -323,7 +322,7 @@ int main() {
             dfs(i, v, vis);
         }
     }
-    
+
     int cnt = 0;
     while (!s.empty()) {
         int node = s.top();
@@ -333,15 +332,15 @@ int main() {
             dfs2(node, cnt, tr, vis2, scc);
         }
     }
-    
+
     long long ans = 0;
-    
+
     for (int i = 1; i <= n; i++) {
         sum[scc[i]] += vals[i];
     }
-    
-    vector<vector<int>> sccgraph(n+1);
-    vector<int> degree(n+1);
+
+    vector<vector<int>> sccgraph(n + 1);
+    vector<int> degree(n + 1);
     for (int i = 1; i <= n; i++) {
         for (auto nxt : v[i]) {
             if (scc[i] != scc[nxt]) {
@@ -350,20 +349,20 @@ int main() {
             }
         }
     }
-    
+
     queue<int> q;
     for (int i = 1; i <= cnt; i++) {
         if (degree[i] == 0) {
             q.push(i);
         }
     }
-    
-    while (!q.empty()) { 
+
+    while (!q.empty()) {
         int node = q.front();
         q.pop();
         dp[node] += sum[node];
         ans = max(ans, dp[node]);
-        
+
         for (auto nxt : sccgraph[node]) {
             degree[nxt]--;
             if (degree[nxt] == 0) {
@@ -372,7 +371,7 @@ int main() {
             dp[nxt] = max(dp[nxt], dp[node]);
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }

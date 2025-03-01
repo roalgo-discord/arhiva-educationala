@@ -89,10 +89,10 @@ respectată.
 int lenmax = 0, stmax = -1, drmax = -1;
 for (int i = 1; i <= n; i++) {
     for (int j = i; j <= n; j++) {
-        int ok = 1; // daca secventa este buna
+        int ok = 1;  // daca secventa este buna
         for (int poz = i; poz <= j; poz++) {
             if (v[poz] % 2 != 0) {
-                ok = 0; // avem numar impar, deci secventa nu este buna
+                ok = 0;  // avem numar impar, deci secventa nu este buna
             }
         }
         if (ok == 1 && j - i + 1 > lenmax) {
@@ -102,7 +102,7 @@ for (int i = 1; i <= n; i++) {
         }
     }
 }
-cout << lenmax << " " << stmax << " " << drmax << '\n'; 
+cout << lenmax << " " << stmax << " " << drmax << '\n';
 ```
 
 Chiar dacă această soluție este tot $\mathcal{O}(n^3)$, în multe cazuri se va dovedi mai
@@ -114,23 +114,24 @@ int lenmax = 0, stmax = -1, drmax = -1;
 for (int len = n; len >= 1; len--) {
     for (int i = 1; i + len - 1 <= n; i++) {
         int j = i + len - 1;
-        int ok = 1; // daca secventa este buna
+        int ok = 1;  // daca secventa este buna
         for (int poz = i; poz <= j; poz++) {
             if (v[poz] % 2 != 0) {
-                ok = 0; // avem numar impar, deci secventa nu este buna
+                ok = 0;  // avem numar impar, deci secventa nu este buna
             }
         }
         if (ok == 1 && j - i + 1 > lenmax) {
             lenmax = j - i + 1;
             stmax = i;
             drmax = j;
-            // aceste linii de mai jos opresc toate structurile repetitive, break oprind doar cea mai apropiata structura repetitiva
+            // aceste linii de mai jos opresc toate structurile repetitive,
+            // break oprind doar cea mai apropiata structura repetitiva
             i = n;
             len = 0;
         }
     }
 }
-cout << lenmax << " " << stmax " " << drmax << '\n'; 
+cout << lenmax << " " << stmax " " << drmax << '\n';
 ```
 
 ### Soluție în $\mathcal{O}(n^2)$
@@ -145,10 +146,10 @@ $\mathcal{O}(n^2)$.
 ```cpp
 int lenmax = 0, stmax = -1, drmax = -1;
 for (int i = 1; i <= n; i++) {
-    int ok = 1; // daca secventa este buna
+    int ok = 1;  // daca secventa este buna
     for (int j = i; j <= n; j++) {
         if (v[j] % 2 != 0) {
-            ok = 0; // avem numar impar, deci secventa nu este buna
+            ok = 0;  // avem numar impar, deci secventa nu este buna
         }
         if (ok == 1 && j - i + 1 > lenmax) {
             lenmax = j - i + 1;
@@ -157,7 +158,7 @@ for (int i = 1; i <= n; i++) {
         }
     }
 }
-cout << lenmax << " " << stmax " " << drmax << '\n'; 
+cout << lenmax << " " << stmax " " << drmax << '\n';
 ```
 
 ### Soluție în $\mathcal{O}(n)$
@@ -173,8 +174,7 @@ int len = 0;
 for (int i = 1; i <= n; i++) {
     if (v[i] % 2 == 0) {
         len++;
-    }
-    else {
+    } else {
         len = 0;
     }
     if (len > lenmax) {
@@ -183,7 +183,7 @@ for (int i = 1; i <= n; i++) {
         stmax = i - len + 1;
     }
 }
-cout << lenmax << " " << stmax " " << drmax << '\n'; 
+cout << lenmax << " " << stmax " " << drmax << '\n';
 ```
 
 ### Soluție în $\mathcal{O}(n)$ fără vectori
@@ -203,8 +203,7 @@ for (int i = 1; i <= n; i++) {
     cin >> x;
     if (x % 2 == 0) {
         len++;
-    }
-    else {
+    } else {
         len = 0;
     }
     if (len > lenmax) {
@@ -213,7 +212,7 @@ for (int i = 1; i <= n; i++) {
         stmax = i - len + 1;
     }
 }
-cout << lenmax << " " << stmax " " << drmax << '\n'; 
+cout << lenmax << " " << stmax " " << drmax << '\n';
 ```
 
 ## Subsecvența de sumă maximă
@@ -233,8 +232,7 @@ for (int i = 1; i <= n; i++) {
     if (sum < 0) {
         sum = x;
         st = i;
-    }
-    else {
+    } else {
         sum += x;
     }
     if (sum > summax) {
@@ -243,7 +241,7 @@ for (int i = 1; i <= n; i++) {
         stmax = st;
     }
 }
-cout << summax << " " << stmax " " << drmax << '\n'; 
+cout << summax << " " << stmax " " << drmax << '\n';
 ```
 
 ### Subsecvența de sumă maximă pe matrice
@@ -260,25 +258,25 @@ SumMax](https://www.pbinfo.ro/probleme/3410/submatrixsummax) de pe pbinfo.
 #include <iostream>
 using namespace std;
 int n, a[302][302], sp[302][302];
-int sum (int xa, int ya, int xb, int yb) {
-    return sp[xb][yb] - sp[xa-1][yb] - sp[xb][ya-1] + sp[xa-1][ya-1];
+int sum(int xa, int ya, int xb, int yb) {
+    return sp[xb][yb] - sp[xa - 1][yb] - sp[xb][ya - 1] + sp[xa - 1][ya - 1];
 }
 int main() {
     cin >> n;
     for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= n; ++j) {
             cin >> a[i][j];
-            sp[i][j] = sp[i-1][j] + sp[i][j-1] - sp[i-1][j-1] + a[i][j];
+            sp[i][j] = sp[i - 1][j] + sp[i][j - 1] - sp[i - 1][j - 1] + a[i][j];
         }
     }
     int ans = -1001;
     for (int i = 1; i <= n; ++i) {
-        for(int j = i; j <= n; ++j) {
+        for (int j = i; j <= n; ++j) {
             int ssm = 0;
             for (int poz = 1; poz <= n; ++poz) {
                 int sumCol = sum(i, poz, j, poz);
                 ssm = max(ssm + sumCol, sumCol);
-                if(ssm > ans) {
+                if (ssm > ans) {
                     ans = ssm;
                 }
             }

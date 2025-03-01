@@ -99,42 +99,46 @@ jumătățile să se intersecteze. Vă puteți testa implementarea
 implementarea mea :
 
 ```cpp
-void reorder(vector<int> r[], vector<int> &p){
-
-    for(int i = 0,cnt = 0; i < max((int)p.size(), 300); i++){
-            
-            for(auto &it : r[i])
-                p[cnt++] = it;
-            r[i].clear();
+void reorder(vector<int> r[], vector<int> &p) {
+    for (int i = 0, cnt = 0; i < max((int)p.size(), 300); i++) {
+        for (auto &it : r[i]) {
+            p[cnt++] = it;
+        }
+        r[i].clear();
     }
 }
 
-vector<int> suffix(string s){
+vector<int> suffix(string s) {
+    s += "$";
+    int n = s.size();
+    vector<int> c(n), p(n), nc(n), r[max(n, 300)];
 
-    s += "$"; int n = s.size(); vector<int> c(n), p(n), nc(n), r[max(n, 300)];
-    
-    for(int i = 0 ; i < n ; i++) 
+    for (int i = 0; i < n; i++) {
         r[s[i]].emplace_back(i);
-    reorder(r, p); c[p[0]] = 0;
-    
-    for(int i = 1; i < n ; i++) 
-        c[p[i]] = c[p[i-1]] + (int)(s[p[i]] != s[p[i-1]]);
-    
-    for(int len = 1; len < n ; len <<= 1){
+    }
+    reorder(r, p);
+    c[p[0]] = 0;
 
-        for(int i = 0; i < n ; i++)
+    for (int i = 1; i < n; i++) {
+        c[p[i]] = c[p[i - 1]] + (int)(s[p[i]] != s[p[i - 1]]);
+    }
+
+    for (int len = 1; len < n; len <<= 1) {
+        for (int i = 0; i < n; i++) {
             r[c[(p[i] + len) % n]].emplace_back(p[i]);
+        }
         reorder(r, p);
-        
-        for(int i = 0; i < n ; i++)
-            r[c[p[i]]].emplace_back(p[i]);
-        reorder(r, p); nc[p[0]] = 0;
-       
-        for(int i = 1; i < n ; i++){
 
-            pair<int,int> last = {c[p[i-1]], c[(p[i-1]+len)%n]};
-            pair<int,int> now = {c[p[i]], c[(p[i]+len)%n]};
-            nc[p[i]] = nc[p[i-1]] + (int)(last != now);
+        for (int i = 0; i < n; i++) {
+            r[c[p[i]]].emplace_back(p[i]);
+        }
+        reorder(r, p);
+        nc[p[0]] = 0;
+
+        for (int i = 1; i < n; i++) {
+            pair<int, int> last = {c[p[i - 1]], c[(p[i - 1] + len) % n]};
+            pair<int, int> now = {c[p[i]], c[(p[i] + len) % n]};
+            nc[p[i]] = nc[p[i - 1]] + (int)(last != now);
         }
 
         c.swap(nc);
@@ -143,7 +147,6 @@ vector<int> suffix(string s){
     p.erase(p.begin());
     return p;
 }
-
 ```
 
 ## Aplicații elementare ale șirului de sufixe
@@ -215,22 +218,28 @@ de timp este $\mathcal{O}(N)$.
 Mai jos aveți un model de implementare:
 
 ```cpp
-vector<int> lcp(string &s, vector<int> &p){
+vector<int> lcp(string &s, vector<int> &p) {
+    vector<int> r(s.size()), l(s.size(), 0);
+    int n = p.size();
+    for (int i = 0; i < n; i++) {
+        r[p[i]] = i;  /// r[i] = pozitia sufixului i in sirul de sufixe
+    }
 
-    vector<int> r(s.size()), l(s.size(), 0); int n = p.size();
-    for(int i = 0 ; i < n ; i++) 
-        r[p[i]] = i; ///r[i] = pozitia sufixului i in sirul de sufixe
-    
     int fun = 0, j;
-    for(int i = 0 ; i < n ; i++){
-            
-        if(!r[i]) continue;
-        
+    for (int i = 0; i < n; i++) {
+        if (!r[i]) {
+            continue;
+        }
+
         j = p[r[i] - 1];
-        while(i + fun < n && j + fun < n && s[i+fun] == s[j+fun])
+        while (i + fun < n && j + fun < n && s[i + fun] == s[j + fun]) {
             fun++;
-        l[r[i]] = fun; if(fun) fun--;
-    }                   
+        }
+        l[r[i]] = fun;
+        if (fun) {
+            fun--;
+        }
+    }
 
     return l;
 }

@@ -60,23 +60,23 @@ poziția pe care s-ar afla în șirul normalizat.
     opțiune viabilă.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), sorted(n+1);
+
+    vector<int> v(n + 1), sorted(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
         sorted[i] = v[i];
     }
 
     sort(sorted.begin() + 1, sorted.begin() + n + 1);
-    
+
     int maxi = 0;
     for (int i = 1; i <= n; i++) {
         int L = 1;
@@ -87,8 +87,7 @@ int main() {
             if (sorted[mid] < v[i]) {
                 ans = mid;
                 L = mid + 1;
-            }
-            else {
+            } else {
                 R = mid - 1;
             }
         }
@@ -108,12 +107,12 @@ Ne putem gândi pur și simplu la o traversare a șirului în timp liniar,
 presupunând că păstrăm valorile originale folosind perechi.
 
 ```cpp
-int cnt = 0; // numarul de valori distincte
+int cnt = 0;  // numarul de valori distincte
 for (int i = 1; i <= n; i++) {
-  if (sorted[i].first > sorted[i - 1].first) {
-    cnt++;
-  }
-  v[sorted[i].second] = cnt;
+    if (sorted[i].first > sorted[i - 1].first) {
+        cnt++;
+    }
+    v[sorted[i].second] = cnt;
 }
 ```
 
@@ -153,15 +152,15 @@ Deoarece toate punctele sunt distincte, nu este necesar să considerăm într-o
 manieră particulară intrările și ieșirile.
 
 ```cpp
-#include <iostream>
 #include <algorithm>
- 
+#include <iostream>
+
 using namespace std;
- 
+
 int n;
- 
-pair<int, int> p[400002]; 
- 
+
+pair<int, int> p[400002];
+
 int main() {
     cin >> n;
     for (int i = 1; i <= n; ++i) {
@@ -169,20 +168,20 @@ int main() {
         cin >> a >> b;
         // 1 - intrare in restaurant, -1 - iesire din restaurant
         // transformam fiecare moment intr-o pereche
-        p[i*2-1] = {a, 1};
-        p[i*2] = {b, -1};
+        p[i * 2 - 1] = {a, 1};
+        p[i * 2] = {b, -1};
     }
-    
-    sort(p + 1, p + n * 2 + 1); 
-     
+
+    sort(p + 1, p + n * 2 + 1);
+
     int counter = 0, max_counter = 0;
-    for (int i = 1; i <= n*2; ++i) {
-        counter += p[i].second; 
+    for (int i = 1; i <= n * 2; ++i) {
+        counter += p[i].second;
         if (counter > max_counter) {
             max_counter = counter;
         }
     }
-    
+
     cout << max_counter << '\n';
     return 0;
 }

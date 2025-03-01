@@ -74,8 +74,8 @@ Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 #include <bits/stdc++.h>
 using namespace std;
 
-bool cmp(pair<int, int> a, pair<int, int> b) { 
-    return (a.first + a.second) < (b.first + b.second); 
+bool cmp(pair<int, int> a, pair<int, int> b) {
+    return (a.first + a.second) < (b.first + b.second);
 }
 int main() {
     ifstream cin("acoperire.in");
@@ -119,8 +119,9 @@ int main() {
                 vans = intervals;
                 ans = mid;
                 dr = mid - 1;
-            } else
+            } else {
                 st = mid + 1;
+            }
         }
 
         double actualsize = 0.5000 * ans;
@@ -141,11 +142,13 @@ int main() {
         for (auto x : vans) {
             int tval = (2.00 * x.first);
             int tval2 = (2.00 * x.second);
-            if (tval == -1)
+            if (tval == -1) {
                 cout << "-";
+            }
             cout << tval / 2 << (tval % 2 == 0 ? " " : ".5 ");
-            if (tval2 == -1)
+            if (tval2 == -1) {
                 cout << "-";
+            }
             cout << tval2 / 2 << (tval2 % 2 == 0 ? "\n" : ".5\n");
         }
     }
