@@ -7,7 +7,7 @@ int main() {
     cin >> numar_copii >> numar_magazine;
 
     vector<int> stoc_cadouri(101, 0);
-    
+
     for (int i = 1; i <= numar_magazine; i++) {
         int pret, cantitate;
         cin >> pret >> cantitate;

@@ -10,9 +10,7 @@ int cmmdc(int a, int b) {
     return a;
 }
 
-long long cmmmc(int a, int b) { 
-    return 1LL * a / cmmdc(a, b) * b; 
-}
+long long cmmmc(int a, int b) { return 1LL * a / cmmdc(a, b) * b; }
 
 int main() {
     int t;

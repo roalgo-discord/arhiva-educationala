@@ -17,7 +17,7 @@ int main() {
     }
 
     int a = 0, b = 0;
-    
+
     for (int numar = 999; numar >= 100; numar--) {
         if (frecventa[numar] == 0) {
             if (a == 0) {

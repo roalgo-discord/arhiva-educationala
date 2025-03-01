@@ -15,7 +15,7 @@ for (int i = k; i <= n; i++) {
 
 v[k] = x;
 
-n++; 
+n++;
 // --8<-- [end:inserare_warning]
 
 // --8<-- [start:stergere]
@@ -23,7 +23,7 @@ for (int i = k; i < n; i++) {
     v[i] = v[i + 1];
 }
 
-n--; // (1)
+n--;  // (1)
 // --8<-- [end:stergere]
 
 // --8<-- [start:stergere_warning]
@@ -31,7 +31,7 @@ for (int i = n; i > k; i--) {
     v[i - 1] = v[i];
 }
 
-n--; 
+n--;
 // --8<-- [end:stergere_warning]
 
 // --8<-- [start:inversare]

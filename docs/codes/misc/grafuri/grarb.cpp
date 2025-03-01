@@ -12,7 +12,9 @@ vector<bool> visited;
 void dfs(int nod) {
     visited[nod] = true;
     for (int next : adj[nod]) {
-        if (!visited[next]) dfs(next);
+        if (!visited[next]) {
+            dfs(next);
+        }
     }
 }
 
@@ -31,11 +33,12 @@ int main() {
         adj[b].push_back(a);
     }
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
         if (!visited[i]) {
             dfs(i);
             nr++;
         }
+    }
 
     // Numărul de muchii ce trebuiesc șterse
     fout << m + nr - 1 - (n - 1) << '\n';

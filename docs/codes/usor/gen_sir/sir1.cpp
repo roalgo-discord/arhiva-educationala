@@ -6,9 +6,9 @@ int main() {
     cin >> n;
 
     int total = 1;
-    
+
     // Scădem grupele complete
-    while (n > total) {  
+    while (n > total) {
         n -= total;
         total++;
     }

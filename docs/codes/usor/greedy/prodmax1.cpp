@@ -15,8 +15,8 @@ int main() {
 
     sort(numere.begin(), numere.end());
 
-    long long produs_maxim = max(1LL * numere[n - 1] * numere[n - 2], 
-                                 1LL * numere[0]     * numere[1]);
+    long long produs_maxim =
+        max(1LL * numere[n - 1] * numere[n - 2], 1LL * numere[0] * numere[1]);
 
     cout << produs_maxim << '\n';
     return 0;

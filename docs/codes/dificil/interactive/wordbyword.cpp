@@ -1,4 +1,5 @@
 #include <string>
+
 #include "word-by-word.h"
 
 char lit[5];
@@ -15,11 +16,12 @@ std::string solve() {
             a += ch;
         }
         b = guess(a);
-        for (j = 0; j < 5; j++)
+        for (j = 0; j < 5; j++) {
             if (b[j] != 'W') {
                 ch = 5 * i + j + 'a';
                 lit[n++] = ch;
             }
+        }
     }
     if (n < 5) {
         lit[n++] = 'z';

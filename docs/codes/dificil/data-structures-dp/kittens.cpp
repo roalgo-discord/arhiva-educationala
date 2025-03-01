@@ -1,5 +1,5 @@
-#include <iostream>
 #include <deque>
+#include <iostream>
 
 long long n, x, k, dp[5002][5002], v[5002];
 int main() {
@@ -37,8 +37,7 @@ int main() {
     }
     if (maxans == 0) {
         std::cout << -1;
-    }
-    else {
+    } else {
         std::cout << maxans;
     }
     return 0;

@@ -8,8 +8,7 @@ int n;
 vector<int> v(N), ans(N);
 vector<int> xr1(N), xr2(N);
 
-vector<vector<int>> trie1(1, vector<int>(2, -1)),
-                    trie2(1, vector<int>(2, -1));
+vector<vector<int>> trie1(1, vector<int>(2, -1)), trie2(1, vector<int>(2, -1));
 
 vector<int> maxim1(N), maxim2(N);
 
@@ -23,7 +22,6 @@ void insert(vector<vector<int>> &trie, int nr) {
         }
         root = trie[root][bit];
     }
-
 }
 
 int get_max(vector<vector<int>> &trie, int nr) {
@@ -64,7 +62,6 @@ int main() {
         maxim2[i] = get_max(trie2, xr1[i]);
         insert(trie2, xr1[i]);
     }
-
 
     for (int i = 1; i <= n; i++) {
         if (max(maxim1[i], maxim2[i - 1]) == n - 1) {

@@ -31,7 +31,7 @@ int numar_divizori(int numar) {
 
     for (int divizor = 1; divizor * divizor <= numar; ++divizor) {
         if (numar % divizor == 0) {
-            // Dacă divizor = numar/divizor, atunci înseamnă că avem 
+            // Dacă divizor = numar/divizor, atunci înseamnă că avem
             // un singur divizor distinct.
             numar_divizori++;
 
@@ -50,9 +50,9 @@ int numar_divizori_primi(int numar) {
         if (numar % divizor == 0) {
             numar_divizori++;
 
-            // Eliminăm toți multiplii divizorului, deoarece 
+            // Eliminăm toți multiplii divizorului, deoarece
             // l-am contorizat deja.
-            
+
             while (numar % divizor == 0) {
                 numar /= divizor;
             }

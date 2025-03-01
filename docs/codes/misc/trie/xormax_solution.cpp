@@ -56,6 +56,6 @@ int main() {
         ans = max(ans, res);
         insert(xp[i]);
     }
-    
+
     cout << ans;
 }

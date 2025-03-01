@@ -7,8 +7,7 @@ struct Trie {
     Trie *_next[2];
     int _pos;
 
-    explicit Trie(const int value)
-            : _pos{value}, _next{nullptr, nullptr} {}
+    explicit Trie(const int value) : _pos{value}, _next{nullptr, nullptr} {}
 
     Trie() : Trie{-1} {}
 
@@ -18,14 +17,14 @@ struct Trie {
     }
 } *root;
 
-
 void add(const int val, const int idx) {
     Trie *node = root;
 
     for (int i = 29; i >= 0; i--) {
         bool has = (val >> i) & 1;
-        if (node->_next[has] == nullptr)
+        if (node->_next[has] == nullptr) {
             node->_next[has] = new Trie(idx);
+        }
         node = node->_next[has];
     }
 }
@@ -35,12 +34,13 @@ int query(const int val) {
 
     for (int i = 29; i >= 0; i--) {
         bool has = (val >> i) & 1;
-        if (node->_next[!has])
+        if (node->_next[!has]) {
             node = node->_next[!has];
-        else if (node->_next[has])
+        } else if (node->_next[has]) {
             node = node->_next[has];
-        else
+        } else {
             break;
+        }
     }
     return node->_pos;
 }

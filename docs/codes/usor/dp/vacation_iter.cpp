@@ -13,7 +13,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         int a, b, c;
         cin >> a >> b >> c;
-        
+
         if (i == 1) {
             dp[1][0] = a;
             dp[1][1] = b;
