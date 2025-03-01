@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-IX-copaci
 title: Soluția problemei copaci (ONI 2012, clasa a IX-a)
-authors: []
 problem_id: 1379
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

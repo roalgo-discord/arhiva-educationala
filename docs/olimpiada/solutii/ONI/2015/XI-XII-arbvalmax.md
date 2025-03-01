@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-XI-XII-arbvalmax
 title: Soluția problemei arbvalmax (ONI 2015, clasele XI-XII)
-authors: []
 problem_id: 203
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

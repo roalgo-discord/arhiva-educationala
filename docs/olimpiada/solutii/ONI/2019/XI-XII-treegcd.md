@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-XI-XII-treegcd
 title: Soluția problemei TreeGCD (ONI 2019, clasele XI-XII)
-authors: []
 problem_id: 11
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-IX-cuvinte
 title: Soluția problemei cuvinte (ONI 2001, clasa a IX-a)
-authors: []
 problem_id: 1132
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

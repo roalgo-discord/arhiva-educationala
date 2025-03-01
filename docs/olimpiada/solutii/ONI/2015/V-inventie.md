@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-V-inventie
 title: Soluția problemei inventie (ONI 2015, clasa a V-a)
-authors: []
 problem_id: 1455
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-IX-fact
 title: Soluția problemei fact (ONI 2006, clasa a IX-a)
-authors: []
 problem_id: 1237
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

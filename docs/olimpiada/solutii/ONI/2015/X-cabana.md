@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-X-cabana
 title: Soluția problemei cabana (ONI 2015, clasa a X-a)
-authors: []
 problem_id: 1466
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

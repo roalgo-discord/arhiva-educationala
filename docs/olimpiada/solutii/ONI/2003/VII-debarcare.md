@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-VII-debarcare
 title: Soluția problemei Debarcare (ONI 2003, clasa a VII-a)
-authors: []
 problem_id: 1176
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

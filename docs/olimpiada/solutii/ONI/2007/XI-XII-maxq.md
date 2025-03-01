@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-XI-XII-maxq
 title: Soluția problemei maxq (ONI 2007, clasele XI-XII)
-authors: []
 problem_id: 157
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

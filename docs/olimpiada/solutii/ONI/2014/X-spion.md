@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-X-spion
 title: Soluția problemei spion (ONI 2014, clasa a X-a)
-authors: []
 problem_id: 1443
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

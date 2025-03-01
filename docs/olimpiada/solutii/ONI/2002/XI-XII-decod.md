@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-XI-XII-decod
 title: Soluția problemei decod (ONI 2002, clasele XI-XII)
-authors: []
 problem_id: 264
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

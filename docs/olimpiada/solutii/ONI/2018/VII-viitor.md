@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-VII-viitor
 title: Soluția problemei viitor (ONI 2018, clasa a VII-a)
-authors: []
 problem_id: 1534
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-VIII-butoane
 title: Soluția problemei butoane (ONI 2011, clasa a VIII-a)
-authors: []
 problem_id: 1369
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

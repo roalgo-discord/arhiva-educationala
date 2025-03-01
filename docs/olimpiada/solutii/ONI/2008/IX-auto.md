@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-IX-auto
 title: Soluția problemei auto (ONI 2008, clasa a IX-a)
-authors: []
 problem_id: 1285
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

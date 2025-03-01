@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-XI-XII-numere
 title: Soluția problemei numere (ONI 2009, clasele XI-XII)
-authors: []
 problem_id: 178
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

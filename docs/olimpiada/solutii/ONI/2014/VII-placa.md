@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-VII-placa
 title: Soluția problemei placa (ONI 2014, clasa a VII-a)
-authors: []
 problem_id: 1438
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

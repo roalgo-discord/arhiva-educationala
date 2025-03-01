@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VIII-boats
 title: Soluția problemei boats (ONI 2017, clasa a VIII-a)
-authors: []
 problem_id: 1511
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

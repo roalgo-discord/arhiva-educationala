@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-VIII-rgb
 title: Soluția problemei rgb (ONI 2022, clasa a VIII-a)
-authors: []
 problem_id: 1599
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

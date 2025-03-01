@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-VIII-laser
 title: Soluția problemei laser (ONI 2018, clasa a VIII-a)
-authors: []
 problem_id: 1537
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

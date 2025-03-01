@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-XI-XII-schema
 title: Soluția problemei schema (ONI 2022, clasele XI-XII)
-authors: []
 problem_id: 139
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

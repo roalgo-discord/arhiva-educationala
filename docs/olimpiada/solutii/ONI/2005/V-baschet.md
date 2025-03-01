@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-V-baschet
 title: Soluția problemei baschet (ONI 2005, clasa a V-a)
-authors: []
 problem_id: 1216
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VI-butoi
 title: Soluția problemei butoi (ONI 2021, clasa a VI-a)
-authors: []
 problem_id: 1574
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

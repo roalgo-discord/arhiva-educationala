@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-V-iepurasi
 title: Soluția problemei iepurasi (ONI 2014, clasa a V-a)
-authors: []
 problem_id: 1432
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

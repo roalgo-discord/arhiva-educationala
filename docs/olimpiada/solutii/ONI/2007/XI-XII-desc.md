@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-XI-XII-desc
 title: Soluția problemei desc (ONI 2007, clasele XI-XII)
-authors: []
 problem_id: 159
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

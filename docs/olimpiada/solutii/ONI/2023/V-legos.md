@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-V-legos
 title: Soluția problemei legos (ONI 2023, clasa a V-a)
-authors: []
 problem_id: 551
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

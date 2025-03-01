@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-VIII-trecere
 title: Soluția problemei trecere (ONI 2007, clasa a VIII-a)
-authors: []
 problem_id: 1275
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

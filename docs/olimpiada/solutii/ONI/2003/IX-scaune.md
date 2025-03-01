@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-IX-scaune
 title: Soluția problemei scaune (ONI 2003, clasa a IX-a)
-authors: []
 problem_id: 1164
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

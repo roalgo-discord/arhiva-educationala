@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-VI-tetris
 title: Soluția problemei tetris (ONI 2009, clasa a VI-a)
-authors: []
 problem_id: 1317
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

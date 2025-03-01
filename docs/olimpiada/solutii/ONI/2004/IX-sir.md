@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-IX-sir
 title: Soluția problemei sir (ONI 2004, clasa a IX-a)
-authors: []
 problem_id: 1190
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

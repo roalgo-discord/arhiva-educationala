@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-VII-cezar
 title: Soluția problemei cezar (ONI 2005, clasa a VII-a)
-authors: []
 problem_id: 1222
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-VIII-zar
 title: Soluția problemei zar (ONI 2004, clasa a VIII-a)
-authors: []
 problem_id: 1203
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

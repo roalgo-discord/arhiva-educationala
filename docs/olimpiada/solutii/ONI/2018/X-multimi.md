@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-X-multimi
 title: Soluția problemei multimi (ONI 2018, clasa a X-a)
-authors: []
 problem_id: 1539
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

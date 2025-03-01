@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-VI-spider
 title: Soluția problemei Spider (ONI 2004, clasa a VI-a)
-authors: []
 problem_id: 1195
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

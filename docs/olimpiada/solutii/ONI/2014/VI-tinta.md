@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-VI-tinta
 title: Soluția problemei tinta (ONI 2014, clasa a VI-a)
-authors: []
 problem_id: 1435
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

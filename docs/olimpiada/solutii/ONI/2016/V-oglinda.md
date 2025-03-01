@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-V-oglinda
 title: Soluția problemei oglinda (ONI 2016, clasa a V-a)
-authors: []
 problem_id: 1479
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

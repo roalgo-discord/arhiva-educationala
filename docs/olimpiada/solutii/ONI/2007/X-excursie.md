@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-X-excursie
 title: Soluția problemei excursie (ONI 2007, clasa a X-a)
-authors: []
 problem_id: 1280
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

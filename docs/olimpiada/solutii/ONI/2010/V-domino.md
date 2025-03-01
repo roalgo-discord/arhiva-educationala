@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-V-domino
 title: Soluția problemei domino (ONI 2010, clasa a V-a)
-authors: []
 problem_id: 1337
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

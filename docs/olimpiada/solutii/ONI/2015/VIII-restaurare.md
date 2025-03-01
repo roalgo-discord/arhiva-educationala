@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-VIII-restaurare
 title: Soluția problemei restaurare (ONI 2015, clasa a VIII-a)
-authors: []
 problem_id: 1464
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VII-carte
 title: Soluția problemei carte (ONI 2017, clasa a VII-a)
-authors: []
 problem_id: 1508
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

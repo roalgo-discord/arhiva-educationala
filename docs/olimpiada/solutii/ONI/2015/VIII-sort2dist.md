@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-VIII-sort2dist
 title: Soluția problemei sort2dist (ONI 2015, clasa a VIII-a)
-authors: []
 problem_id: 1465
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

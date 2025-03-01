@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-V-concurs
 title: Soluția problemei concurs (ONI 2006, clasa a V-a)
-authors: []
 problem_id: 1240
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

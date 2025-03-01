@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-X-reactii
 title: Soluția problemei reactii (ONI 2009, clasa a X-a)
-authors: []
 problem_id: 1325
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-V-greieri
 title: Soluția problemei greieri (ONI 2013, clasa a V-a)
-authors: []
 problem_id: 1407
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

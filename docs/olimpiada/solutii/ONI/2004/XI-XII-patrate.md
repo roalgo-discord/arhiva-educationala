@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-XI-XII-patrate
 title: Soluția problemei patrate (ONI 2004, clasele XI-XII)
-authors: []
 problem_id: 116
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

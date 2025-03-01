@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VI-peste
 title: Soluția problemei peste (ONI 2017, clasa a VI-a)
-authors: []
 problem_id: 1506
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

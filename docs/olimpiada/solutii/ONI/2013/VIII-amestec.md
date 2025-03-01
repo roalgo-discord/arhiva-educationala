@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-VIII-amestec
 title: Soluția problemei amestec (ONI 2013, clasa a VIII-a)
-authors: []
 problem_id: 1415
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-XI-XII-felinare
 title: Soluția problemei felinare (ONI 2007, clasele XI-XII)
-authors: []
 problem_id: 160
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

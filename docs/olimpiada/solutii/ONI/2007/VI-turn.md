@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-VI-turn
 title: Soluția problemei turn (ONI 2007, clasa a VI-a)
-authors: []
 problem_id: 1269
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

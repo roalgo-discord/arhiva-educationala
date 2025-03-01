@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-X-walle
 title: Soluția problemei walle (ONI 2019, clasa a X-a)
-authors: []
 problem_id: 1564
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

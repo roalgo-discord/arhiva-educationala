@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-V-cartonas
 title: Soluția problemei cartonas (ONI 2009, clasa a V-a)
-authors: []
 problem_id: 1313
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

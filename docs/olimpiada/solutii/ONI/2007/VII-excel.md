@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-VII-excel
 title: Soluția problemei excel (ONI 2007, clasa a VII-a)
-authors: []
 problem_id: 1270
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

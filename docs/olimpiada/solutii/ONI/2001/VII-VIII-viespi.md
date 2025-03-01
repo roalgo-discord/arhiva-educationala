@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-VII-VIII-viespi
 title: Soluția problemei viespi (ONI 2001, clasele VII-VIII)
-authors: []
 problem_id: 1136
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

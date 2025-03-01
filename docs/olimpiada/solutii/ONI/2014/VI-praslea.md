@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-VI-praslea
 title: Soluția problemei praslea (ONI 2014, clasa a VI-a)
-authors: []
 problem_id: 1434
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

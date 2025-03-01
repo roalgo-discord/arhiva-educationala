@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-X-suma
 title: Soluția problemei suma (ONI 2005, clasa a X-a)
-authors: []
 problem_id: 1232
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

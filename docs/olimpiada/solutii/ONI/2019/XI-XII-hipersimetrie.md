@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-XI-XII-hipersimetrie
 title: Soluția problemei hipersimetrie (ONI 2019, clasele XI-XII)
-authors: []
 problem_id: 13
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

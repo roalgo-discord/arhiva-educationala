@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VIII-struguri
 title: Soluția problemei struguri (ONI 2023, clasa a VIII-a)
-authors: []
 problem_id: 543
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

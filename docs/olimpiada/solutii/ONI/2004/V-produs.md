@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-V-produs
 title: Soluția problemei produs (ONI 2004, clasa a V-a)
-authors: []
 problem_id: 1192
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-VIII-reteta
 title: Soluția problemei reteta (ONI 2008, clasa a VIII-a)
-authors: []
 problem_id: 1298
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

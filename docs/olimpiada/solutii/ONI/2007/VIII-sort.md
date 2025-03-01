@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-VIII-sort
 title: Soluția problemei sort (ONI 2007, clasa a VIII-a)
-authors: []
 problem_id: 1274
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

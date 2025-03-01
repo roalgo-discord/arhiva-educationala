@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-XI-XII-entries
 title: Soluția problemei entries (ONI 2001, clasele XI-XII)
-authors: []
 problem_id: 198
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

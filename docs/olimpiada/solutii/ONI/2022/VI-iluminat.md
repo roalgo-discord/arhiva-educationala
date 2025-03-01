@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-VI-iluminat
 title: Soluția problemei iluminat (ONI 2022, clasa a VI-a)
-authors: []
 problem_id: 1592
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-X-magic
 title: Soluția problemei magic (ONI 2009, clasa a X-a)
-authors: []
 problem_id: 1324
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

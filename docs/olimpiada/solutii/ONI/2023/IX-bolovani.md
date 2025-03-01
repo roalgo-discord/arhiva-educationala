@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-IX-bolovani
 title: Soluția problemei bolovani (ONI 2023, clasa a IX-a)
-authors: []
 problem_id: 539
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

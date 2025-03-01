@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-IX-comun
 title: Soluția problemei comun (ONI 2019, clasa a IX-a)
-authors: []
 problem_id: 1545
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

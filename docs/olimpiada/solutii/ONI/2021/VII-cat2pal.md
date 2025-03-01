@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VII-cat2pal
 title: Soluția problemei cat2pal (ONI 2021, clasa a VII-a)
-authors: []
 problem_id: 1577
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

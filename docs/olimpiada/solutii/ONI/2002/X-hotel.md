@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-X-hotel
 title: Soluția problemei hotel (ONI 2002, clasa a X-a)
-authors: []
 problem_id: 1157
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

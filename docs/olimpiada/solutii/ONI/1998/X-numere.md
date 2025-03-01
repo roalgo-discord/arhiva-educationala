@@ -1,8 +1,8 @@
 ---
 id: ONI-1998-X-numere
 title: Soluția problemei numere (ONI 1998, clasa a X-a)
-authors: []
 problem_id: 605
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-VIII-bete
 title: Soluția problemei bete (ONI 2005, clasa a VIII-a)
-authors: []
 problem_id: 1226
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

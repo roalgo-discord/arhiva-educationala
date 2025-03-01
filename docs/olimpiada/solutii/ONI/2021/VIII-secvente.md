@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VIII-secvente
 title: Soluția problemei secvente (ONI 2021, clasa a VIII-a)
-authors: []
 problem_id: 1581
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

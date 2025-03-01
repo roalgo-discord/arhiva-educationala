@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-X-tsunami
 title: Soluția problemei Tsunami (ONI 2011, clasa a X-a)
-authors: []
 problem_id: 1374
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

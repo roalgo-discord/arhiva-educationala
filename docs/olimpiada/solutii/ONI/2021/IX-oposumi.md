@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-IX-oposumi
 title: Soluția problemei oposumi (ONI 2021, clasa a IX-a)
-authors: []
 problem_id: 1569
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-VIII-eoliene
 title: Soluția problemei eoliene (ONI 2013, clasa a VIII-a)
-authors: []
 problem_id: 1416
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

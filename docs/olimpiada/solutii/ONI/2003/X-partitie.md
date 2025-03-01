@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-X-partitie
 title: Soluția problemei partitie (ONI 2003, clasa a X-a)
-authors: []
 problem_id: 1184
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

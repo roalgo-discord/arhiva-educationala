@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-XI-XII-conex
 title: Soluția problemei conex (ONI 2010, clasele XI-XII)
-authors: []
 problem_id: 62
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

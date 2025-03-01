@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-VIII-lumini
 title: Soluția problemei lumini (ONI 2019, clasa a VIII-a)
-authors: []
 problem_id: 1561
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

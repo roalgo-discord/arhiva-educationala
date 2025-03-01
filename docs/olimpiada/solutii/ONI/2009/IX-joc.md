@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-IX-joc
 title: Soluția problemei joc (ONI 2009, clasa a IX-a)
-authors: []
 problem_id: 1306
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

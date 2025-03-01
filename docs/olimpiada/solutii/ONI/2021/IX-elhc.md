@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-IX-elhc
 title: Soluția problemei ELHC (ONI 2021, clasa a IX-a)
-authors: []
 problem_id: 1570
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

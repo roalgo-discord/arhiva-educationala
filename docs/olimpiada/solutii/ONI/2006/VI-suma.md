@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-VI-suma
 title: Soluția problemei suma (ONI 2006, clasa a VI-a)
-authors: []
 problem_id: 1244
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

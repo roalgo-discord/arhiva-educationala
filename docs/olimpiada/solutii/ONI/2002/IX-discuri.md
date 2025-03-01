@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-IX-discuri
 title: Soluția problemei discuri (ONI 2002, clasa a IX-a)
-authors: []
 problem_id: 1148
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

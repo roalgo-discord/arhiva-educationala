@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-IX-plaja
 title: Soluția problemei plaja (ONI 2010, clasa a IX-a)
-authors: []
 problem_id: 1334
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

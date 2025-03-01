@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-VI-cod
 title: Soluția problemei cod (ONI 2016, clasa a VI-a)
-authors: []
 problem_id: 1481
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-V-ktlon
 title: Soluția problemei ktlon (ONI 2021, clasa a V-a)
-authors: []
 problem_id: 1571
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-X-banda
 title: Soluția problemei banda (ONI 2008, clasa a X-a)
-authors: []
 problem_id: 1300
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

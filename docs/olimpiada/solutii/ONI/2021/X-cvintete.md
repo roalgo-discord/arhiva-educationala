@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-X-cvintete
 title: Soluția problemei cvintete (ONI 2021, clasa a X-a)
-authors: []
 problem_id: 1583
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

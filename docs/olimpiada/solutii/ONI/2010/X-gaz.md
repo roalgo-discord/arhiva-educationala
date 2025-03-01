@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-X-gaz
 title: Soluția problemei gaz (ONI 2010, clasa a X-a)
-authors: []
 problem_id: 1349
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

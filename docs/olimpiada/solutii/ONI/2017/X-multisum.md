@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-X-multisum
 title: Soluția problemei multisum (ONI 2017, clasa a X-a)
-authors: []
 problem_id: 1514
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

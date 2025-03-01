@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-XI-XII-atac
 title: Soluția problemei atac (ONI 2008, clasele XI-XII)
-authors: []
 problem_id: 165
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

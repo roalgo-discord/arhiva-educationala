@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-VI-joc
 title: Soluția problemei joc (ONI 2010, clasa a VI-a)
-authors: []
 problem_id: 1341
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

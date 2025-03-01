@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VI-soricel
 title: Soluția problemei soricel (ONI 2017, clasa a VI-a)
-authors: []
 problem_id: 1507
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

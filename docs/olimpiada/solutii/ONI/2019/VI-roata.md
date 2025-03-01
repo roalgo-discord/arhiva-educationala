@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-VI-roata
 title: Soluția problemei roata (ONI 2019, clasa a VI-a)
-authors: []
 problem_id: 1555
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

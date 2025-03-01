@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-VII-neo
 title: Soluția problemei neo (ONI 2004, clasa a VII-a)
-authors: []
 problem_id: 1200
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

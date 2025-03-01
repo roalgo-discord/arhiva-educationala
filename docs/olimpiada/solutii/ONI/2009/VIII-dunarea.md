@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-VIII-dunarea
 title: Soluția problemei dunarea (ONI 2009, clasa a VIII-a)
-authors: []
 problem_id: 1322
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

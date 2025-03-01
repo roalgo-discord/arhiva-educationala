@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-VII-baschet
 title: Soluția problemei baschet (ONI 2006, clasa a VII-a)
-authors: []
 problem_id: 1246
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

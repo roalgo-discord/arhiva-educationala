@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-IX-civilizatie
 title: Soluția problemei civilizatie (ONI 2016, clasa a IX-a)
-authors: []
 problem_id: 1472
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

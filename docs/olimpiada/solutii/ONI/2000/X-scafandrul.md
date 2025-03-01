@@ -1,8 +1,8 @@
 ---
 id: ONI-2000-X-scafandrul
 title: Soluția problemei Scafandrul (ONI 2000, clasa a X-a)
-authors: []
 problem_id: 1125
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

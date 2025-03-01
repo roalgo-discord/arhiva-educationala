@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-VII-text
 title: Soluția problemei text (ONI 2022, clasa a VII-a)
-authors: []
 problem_id: 1597
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-VI-numar
 title: Soluția problemei numar (ONI 2012, clasa a VI-a)
-authors: []
 problem_id: 1388
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-X-aliniere
 title: Soluția problemei aliniere (ONI 2002, clasa a X-a)
-authors: []
 problem_id: 1160
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

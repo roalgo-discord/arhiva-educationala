@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-X-antena
 title: Soluția problemei antena (ONI 2005, clasa a X-a)
-authors: []
 problem_id: 1228
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

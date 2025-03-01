@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-XI-XII-masina
 title: Soluția problemei masina (ONI 2005, clasele XI-XII)
-authors: []
 problem_id: 106
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

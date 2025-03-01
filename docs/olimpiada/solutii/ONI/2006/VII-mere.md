@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-VII-mere
 title: Soluția problemei mere (ONI 2006, clasa a VII-a)
-authors: []
 problem_id: 1248
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

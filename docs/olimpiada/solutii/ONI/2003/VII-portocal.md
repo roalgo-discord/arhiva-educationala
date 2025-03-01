@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-VII-portocal
 title: Soluția problemei Portocal (ONI 2003, clasa a VII-a)
-authors: []
 problem_id: 1175
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

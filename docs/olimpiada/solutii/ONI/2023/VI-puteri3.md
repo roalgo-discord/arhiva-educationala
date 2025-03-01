@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VI-puteri3
 title: Soluția problemei puteri3 (ONI 2023, clasa a VI-a)
-authors: []
 problem_id: 549
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

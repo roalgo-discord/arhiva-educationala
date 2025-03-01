@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-VI-talent
 title: Soluția problemei talent (ONI 2011, clasa a VI-a)
-authors: []
 problem_id: 1364
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

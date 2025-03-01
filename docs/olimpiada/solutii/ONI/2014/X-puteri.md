@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-X-puteri
 title: Soluția problemei Puteri (ONI 2014, clasa a X-a)
-authors: []
 problem_id: 1445
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

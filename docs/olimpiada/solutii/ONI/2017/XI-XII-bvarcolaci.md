@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-XI-XII-bvarcolaci
 title: Soluția problemei bvarcolaci (ONI 2017, clasele XI-XII)
-authors: []
 problem_id: 171
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

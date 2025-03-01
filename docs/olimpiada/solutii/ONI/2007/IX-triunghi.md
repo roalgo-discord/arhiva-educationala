@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-IX-triunghi
 title: Soluția problemei triunghi (ONI 2007, clasa a IX-a)
-authors: []
 problem_id: 1260
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-X-cutie
 title: Soluția problemei cutie (ONI 2012, clasa a X-a)
-authors: []
 problem_id: 1395
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-IX-intersectii
 title: Soluția problemei intersectii (ONI 2012, clasa a IX-a)
-authors: []
 problem_id: 1380
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

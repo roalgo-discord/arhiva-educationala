@@ -1,8 +1,8 @@
 ---
 id: ONI-2000-X-castel
 title: Soluția problemei Castel (ONI 2000, clasa a X-a)
-authors: []
 problem_id: 1123
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-VIII-neuroni
 title: Soluția problemei neuroni (ONI 2010, clasa a VIII-a)
-authors: []
 problem_id: 1346
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-V-taieri
 title: Soluția problemei taieri (ONI 2021, clasa a V-a)
-authors: []
 problem_id: 1573
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

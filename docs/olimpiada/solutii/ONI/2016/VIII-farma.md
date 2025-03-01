@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-VIII-farma
 title: Soluția problemei farma (ONI 2016, clasa a VIII-a)
-authors: []
 problem_id: 1488
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

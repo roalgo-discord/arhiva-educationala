@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-VI-robinson
 title: Soluția problemei robinson (ONI 2005, clasa a VI-a)
-authors: []
 problem_id: 1221
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

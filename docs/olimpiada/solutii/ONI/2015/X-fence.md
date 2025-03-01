@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-X-fence
 title: Soluția problemei fence (ONI 2015, clasa a X-a)
-authors: []
 problem_id: 1467
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-IX-agitatie
 title: Soluția problemei agitatie (ONI 2007, clasa a IX-a)
-authors: []
 problem_id: 1261
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

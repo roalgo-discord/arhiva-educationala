@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-XI-XII-tris
 title: Soluția problemei tris (ONI 2017, clasele XI-XII)
-authors: []
 problem_id: 170
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

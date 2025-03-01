@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-VII-char
 title: Soluția problemei char (ONI 2010, clasa a VII-a)
-authors: []
 problem_id: 1342
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

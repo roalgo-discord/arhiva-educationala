@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-X-stiva
 title: Soluția problemei Stiva (ONI 2014, clasa a X-a)
-authors: []
 problem_id: 1447
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

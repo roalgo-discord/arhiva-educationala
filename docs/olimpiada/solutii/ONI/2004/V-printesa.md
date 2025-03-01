@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-V-printesa
 title: Soluția problemei printesa (ONI 2004, clasa a V-a)
-authors: []
 problem_id: 1194
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

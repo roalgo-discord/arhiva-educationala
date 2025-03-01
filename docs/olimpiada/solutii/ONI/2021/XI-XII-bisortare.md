@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-XI-XII-bisortare
 title: Soluția problemei bisortare (ONI 2021, clasele XI-XII)
-authors: []
 problem_id: 63
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

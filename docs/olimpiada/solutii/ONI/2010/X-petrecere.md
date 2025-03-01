@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-X-petrecere
 title: Soluția problemei petrecere (ONI 2010, clasa a X-a)
-authors: []
 problem_id: 1352
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

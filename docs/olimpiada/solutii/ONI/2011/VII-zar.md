@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-VII-zar
 title: Soluția problemei zar (ONI 2011, clasa a VII-a)
-authors: []
 problem_id: 1368
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

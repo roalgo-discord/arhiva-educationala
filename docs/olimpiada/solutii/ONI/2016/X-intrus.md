@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-X-intrus
 title: Soluția problemei Intrus (ONI 2016, clasa a X-a)
-authors: []
 problem_id: 1493
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-IX-bomboane
 title: Soluția problemei bomboane (ONI 2017, clasa a IX-a)
-authors: []
 problem_id: 1500
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-VIII-magic
 title: Soluția problemei magic (ONI 2015, clasa a VIII-a)
-authors: []
 problem_id: 1463
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

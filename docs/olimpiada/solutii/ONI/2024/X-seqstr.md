@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-X-seqstr
 title: Soluția problemei Seqstr (ONI 2024, clasa a X-a)
-authors: []
 problem_id: 2656
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

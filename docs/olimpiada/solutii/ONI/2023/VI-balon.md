@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VI-balon
 title: Soluția problemei balon (ONI 2023, clasa a VI-a)
-authors: []
 problem_id: 547
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

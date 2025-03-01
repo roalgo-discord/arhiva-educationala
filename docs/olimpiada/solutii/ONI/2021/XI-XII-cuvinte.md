@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-XI-XII-cuvinte
 title: Soluția problemei cuvinte (ONI 2021, clasele XI-XII)
-authors: []
 problem_id: 65
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

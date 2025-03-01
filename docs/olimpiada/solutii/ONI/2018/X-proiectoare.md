@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-X-proiectoare
 title: Soluția problemei Proiectoare (ONI 2018, clasa a X-a)
-authors: []
 problem_id: 1543
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

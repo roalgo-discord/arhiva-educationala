@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-IX-colibri
 title: Soluția problemei colibri (ONI 2022, clasa a IX-a)
-authors: []
 problem_id: 1586
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

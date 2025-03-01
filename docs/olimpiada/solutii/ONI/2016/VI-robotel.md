@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-VI-robotel
 title: Soluția problemei robotel (ONI 2016, clasa a VI-a)
-authors: []
 problem_id: 1483
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

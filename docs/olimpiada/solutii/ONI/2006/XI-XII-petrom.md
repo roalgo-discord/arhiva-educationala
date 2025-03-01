@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-XI-XII-petrom
 title: Soluția problemei petrom (ONI 2006, clasele XI-XII)
-authors: []
 problem_id: 89
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

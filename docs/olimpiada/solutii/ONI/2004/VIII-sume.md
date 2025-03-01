@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-VIII-sume
 title: Soluția problemei sume (ONI 2004, clasa a VIII-a)
-authors: []
 problem_id: 1202
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

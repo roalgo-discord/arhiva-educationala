@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-V-prime
 title: Soluția problemei prime (ONI 2017, clasa a V-a)
-authors: []
 problem_id: 1502
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

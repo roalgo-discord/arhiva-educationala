@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-V-max
 title: Soluția problemei max (ONI 2010, clasa a V-a)
-authors: []
 problem_id: 1338
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

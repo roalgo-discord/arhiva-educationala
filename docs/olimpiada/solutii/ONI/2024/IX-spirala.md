@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-IX-spirala
 title: Soluția problemei Spirala (ONI 2024, clasa a IX-a)
-authors: []
 problem_id: 2654
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

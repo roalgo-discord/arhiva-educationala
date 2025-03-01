@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-X-comun
 title: Soluția problemei comun (ONI 2023, clasa a X-a)
-authors: []
 problem_id: 536
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

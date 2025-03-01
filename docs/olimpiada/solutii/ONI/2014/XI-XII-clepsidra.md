@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-XI-XII-clepsidra
 title: Soluția problemei clepsidra (ONI 2014, clasele XI-XII)
-authors: []
 problem_id: 229
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

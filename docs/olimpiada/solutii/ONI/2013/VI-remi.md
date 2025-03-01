@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-VI-remi
 title: Soluția problemei remi (ONI 2013, clasa a VI-a)
-authors: []
 problem_id: 1410
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

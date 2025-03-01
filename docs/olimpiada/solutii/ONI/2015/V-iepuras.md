@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-V-iepuras
 title: Soluția problemei iepuras (ONI 2015, clasa a V-a)
-authors: []
 problem_id: 1454
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

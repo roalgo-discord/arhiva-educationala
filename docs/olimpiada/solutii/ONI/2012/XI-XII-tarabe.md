@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-XI-XII-tarabe
 title: Soluția problemei tarabe (ONI 2012, clasele XI-XII)
-authors: []
 problem_id: 214
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

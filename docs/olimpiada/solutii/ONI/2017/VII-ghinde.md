@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VII-ghinde
 title: Soluția problemei ghinde (ONI 2017, clasa a VII-a)
-authors: []
 problem_id: 1509
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-VII-cript
 title: Soluția problemei cript (ONI 2015, clasa a VII-a)
-authors: []
 problem_id: 1460
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

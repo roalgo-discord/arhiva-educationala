@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-VIII-doilan
 title: Soluția problemei doilan (ONI 2017, clasa a VIII-a)
-authors: []
 problem_id: 1512
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

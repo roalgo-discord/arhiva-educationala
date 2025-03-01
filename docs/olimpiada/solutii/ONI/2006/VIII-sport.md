@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-VIII-sport
 title: Soluția problemei sport (ONI 2006, clasa a VIII-a)
-authors: []
 problem_id: 1250
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

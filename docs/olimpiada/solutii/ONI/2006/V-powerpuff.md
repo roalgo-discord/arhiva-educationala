@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-V-powerpuff
 title: Soluția problemei powerpuff (ONI 2006, clasa a V-a)
-authors: []
 problem_id: 1241
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

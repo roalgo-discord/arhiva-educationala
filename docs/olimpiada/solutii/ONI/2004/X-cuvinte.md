@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-X-cuvinte
 title: Soluția problemei cuvinte (ONI 2004, clasa a X-a)
-authors: []
 problem_id: 1207
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

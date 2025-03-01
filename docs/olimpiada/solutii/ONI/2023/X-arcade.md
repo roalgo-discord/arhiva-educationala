@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-X-arcade
 title: Soluția problemei arcade (ONI 2023, clasa a X-a)
-authors: []
 problem_id: 535
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

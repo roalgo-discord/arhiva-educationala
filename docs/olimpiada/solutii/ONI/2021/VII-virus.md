@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VII-virus
 title: Soluția problemei virus (ONI 2021, clasa a VII-a)
-authors: []
 problem_id: 1578
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

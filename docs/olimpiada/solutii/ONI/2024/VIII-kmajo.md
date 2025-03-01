@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-VIII-kmajo
 title: Soluția problemei kmajo (ONI 2024, clasa a VIII-a)
-authors: []
 problem_id: 2647
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

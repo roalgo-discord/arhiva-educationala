@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-XI-XII-zid
 title: Soluția problemei Zid (ONI 2024, clasele XI-XII)
-authors: []
 problem_id: 2651
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

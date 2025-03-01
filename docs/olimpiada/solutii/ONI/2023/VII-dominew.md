@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VII-dominew
 title: Soluția problemei dominew (ONI 2023, clasa a VII-a)
-authors: []
 problem_id: 544
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

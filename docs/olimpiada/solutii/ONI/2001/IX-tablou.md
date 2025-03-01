@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-IX-tablou
 title: Soluția problemei tablou (ONI 2001, clasa a IX-a)
-authors: []
 problem_id: 1127
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

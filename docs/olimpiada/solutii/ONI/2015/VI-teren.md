@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-VI-teren
 title: Soluția problemei teren (ONI 2015, clasa a VI-a)
-authors: []
 problem_id: 1459
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

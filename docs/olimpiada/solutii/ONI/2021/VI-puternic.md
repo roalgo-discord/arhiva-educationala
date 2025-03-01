@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VI-puternic
 title: Soluția problemei puternic (ONI 2021, clasa a VI-a)
-authors: []
 problem_id: 1576
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

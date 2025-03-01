@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-VII-raza
 title: Soluția problemei raza (ONI 2022, clasa a VII-a)
-authors: []
 problem_id: 1596
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

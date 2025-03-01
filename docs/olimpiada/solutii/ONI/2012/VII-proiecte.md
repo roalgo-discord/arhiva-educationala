@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-VII-proiecte
 title: Soluția problemei proiecte (ONI 2012, clasa a VII-a)
-authors: []
 problem_id: 1390
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

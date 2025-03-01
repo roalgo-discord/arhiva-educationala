@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-XI-XII-poligon
 title: Soluția problemei poligon (ONI 2018, clasele XI-XII)
-authors: []
 problem_id: 150
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

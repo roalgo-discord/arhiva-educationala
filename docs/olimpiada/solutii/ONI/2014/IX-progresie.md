@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-IX-progresie
 title: Soluția problemei progresie (ONI 2014, clasa a IX-a)
-authors: []
 problem_id: 1427
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

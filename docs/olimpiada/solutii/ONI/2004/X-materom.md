@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-X-materom
 title: Soluția problemei materom (ONI 2004, clasa a X-a)
-authors: []
 problem_id: 1209
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

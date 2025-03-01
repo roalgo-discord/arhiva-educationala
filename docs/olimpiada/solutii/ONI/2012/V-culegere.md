@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-V-culegere
 title: Soluția problemei culegere (ONI 2012, clasa a V-a)
-authors: []
 problem_id: 1383
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

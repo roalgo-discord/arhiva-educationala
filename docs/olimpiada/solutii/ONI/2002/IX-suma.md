@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-IX-suma
 title: Soluția problemei suma (ONI 2002, clasa a IX-a)
-authors: []
 problem_id: 1145
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

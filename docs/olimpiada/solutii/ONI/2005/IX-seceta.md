@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-IX-seceta
 title: Soluția problemei seceta (ONI 2005, clasa a IX-a)
-authors: []
 problem_id: 1212
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

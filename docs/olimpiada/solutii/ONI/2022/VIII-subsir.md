@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-VIII-subsir
 title: Soluția problemei subsir (ONI 2022, clasa a VIII-a)
-authors: []
 problem_id: 1600
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

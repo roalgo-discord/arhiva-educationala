@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-XI-XII-tric
 title: Soluția problemei tric (ONI 2007, clasele XI-XII)
-authors: []
 problem_id: 158
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

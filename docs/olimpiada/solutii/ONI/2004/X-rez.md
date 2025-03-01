@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-X-rez
 title: Soluția problemei rez (ONI 2004, clasa a X-a)
-authors: []
 problem_id: 1205
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

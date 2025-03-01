@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-VI-sim
 title: Soluția problemei sim (ONI 2024, clasa a VI-a)
-authors: []
 problem_id: 2642
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

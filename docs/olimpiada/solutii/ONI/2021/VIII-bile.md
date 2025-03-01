@@ -1,8 +1,8 @@
 ---
 id: ONI-2021-VIII-bile
 title: Soluția problemei bile (ONI 2021, clasa a VIII-a)
-authors: []
 problem_id: 1580
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-V-case
 title: Soluția problemei case (ONI 2009, clasa a V-a)
-authors: []
 problem_id: 1312
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

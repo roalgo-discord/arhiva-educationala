@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-VI-alarma
 title: Soluția problemei alarma (ONI 2009, clasa a VI-a)
-authors: []
 problem_id: 1315
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

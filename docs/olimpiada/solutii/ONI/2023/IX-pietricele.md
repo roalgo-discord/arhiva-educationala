@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-IX-pietricele
 title: Soluția problemei pietricele (ONI 2023, clasa a IX-a)
-authors: []
 problem_id: 538
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

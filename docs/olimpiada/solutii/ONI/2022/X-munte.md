@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-X-munte
 title: Soluția problemei munte (ONI 2022, clasa a X-a)
-authors: []
 problem_id: 1601
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

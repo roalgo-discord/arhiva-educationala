@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-XI-XII-regate
 title: Soluția problemei regate (ONI 2022, clasele XI-XII)
-authors: []
 problem_id: 138
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

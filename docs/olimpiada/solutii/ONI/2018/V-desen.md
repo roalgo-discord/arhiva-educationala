@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-V-desen
 title: Soluția problemei desen (ONI 2018, clasa a V-a)
-authors: []
 problem_id: 1526
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

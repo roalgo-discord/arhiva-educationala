@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-IX-sstabil
 title: Soluția problemei sstabil (ONI 2012, clasa a IX-a)
-authors: []
 problem_id: 1381
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

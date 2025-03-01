@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-XI-XII-proc
 title: Soluția problemei proc (ONI 2003, clasele XI-XII)
-authors: []
 problem_id: 122
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

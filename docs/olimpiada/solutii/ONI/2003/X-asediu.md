@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-X-asediu
 title: Soluția problemei asediu (ONI 2003, clasa a X-a)
-authors: []
 problem_id: 1181
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

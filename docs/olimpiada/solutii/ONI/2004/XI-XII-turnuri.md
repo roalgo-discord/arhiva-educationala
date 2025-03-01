@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-XI-XII-turnuri
 title: Soluția problemei turnuri (ONI 2004, clasele XI-XII)
-authors: []
 problem_id: 114
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

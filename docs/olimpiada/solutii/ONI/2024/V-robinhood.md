@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-V-robinhood
 title: Soluția problemei robinhood (ONI 2024, clasa a V-a)
-authors: []
 problem_id: 2637
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

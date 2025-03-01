@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-X-volei
 title: Soluția problemei volei (ONI 2009, clasa a X-a)
-authors: []
 problem_id: 1329
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

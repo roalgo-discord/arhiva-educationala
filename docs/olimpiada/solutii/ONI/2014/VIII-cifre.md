@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-VIII-cifre
 title: Soluția problemei cifre (ONI 2014, clasa a VIII-a)
-authors: []
 problem_id: 1439
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

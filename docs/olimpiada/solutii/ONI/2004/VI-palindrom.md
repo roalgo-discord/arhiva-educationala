@@ -1,8 +1,8 @@
 ---
 id: ONI-2004-VI-palindrom
 title: Soluția problemei Palindrom (ONI 2004, clasa a VI-a)
-authors: []
 problem_id: 1197
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

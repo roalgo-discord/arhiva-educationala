@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-VIII-fractie
 title: Soluția problemei fractie (ONI 2010, clasa a VIII-a)
-authors: []
 problem_id: 1345
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

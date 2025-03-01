@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VIII-kth
 title: Soluția problemei kth (ONI 2023, clasa a VIII-a)
-authors: []
 problem_id: 542
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

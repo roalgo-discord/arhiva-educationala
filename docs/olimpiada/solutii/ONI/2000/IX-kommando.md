@@ -1,8 +1,8 @@
 ---
 id: ONI-2000-IX-kommando
 title: Soluția problemei Kommando (ONI 2000, clasa a IX-a)
-authors: []
 problem_id: 1122
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

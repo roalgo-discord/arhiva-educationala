@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-X-asfaltare
 title: Soluția problemei asfaltare (ONI 2001, clasa a X-a)
-authors: []
 problem_id: 1137
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

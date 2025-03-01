@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-VII-patrate
 title: Soluția problemei patrate (ONI 2009, clasa a VII-a)
-authors: []
 problem_id: 1318
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

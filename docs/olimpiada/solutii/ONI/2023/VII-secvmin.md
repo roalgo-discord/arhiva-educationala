@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-VII-secvmin
 title: Soluția problemei secvmin (ONI 2023, clasa a VII-a)
-authors: []
 problem_id: 546
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

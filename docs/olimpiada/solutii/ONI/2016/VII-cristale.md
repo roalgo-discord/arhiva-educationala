@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-VII-cristale
 title: Soluția problemei cristale (ONI 2016, clasa a VII-a)
-authors: []
 problem_id: 1485
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

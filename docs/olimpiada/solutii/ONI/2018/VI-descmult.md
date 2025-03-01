@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-VI-descmult
 title: Soluția problemei descmult (ONI 2018, clasa a VI-a)
-authors: []
 problem_id: 1529
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

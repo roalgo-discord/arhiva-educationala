@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-X-agora
 title: Soluția problemei agora (ONI 2018, clasa a X-a)
-authors: []
 problem_id: 1541
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

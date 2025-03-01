@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-X-aranjare
 title: Soluția problemei aranjare (ONI 2008, clasa a X-a)
-authors: []
 problem_id: 1303
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-XI-XII-radare
 title: Soluția problemei radare (ONI 2011, clasele XI-XII)
-authors: []
 problem_id: 195
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

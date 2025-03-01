@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-X-camp
 title: Soluția problemei camp (ONI 2017, clasa a X-a)
-authors: []
 problem_id: 1518
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

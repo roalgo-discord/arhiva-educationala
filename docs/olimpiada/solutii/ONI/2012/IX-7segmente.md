@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-IX-7segmente
 title: Soluția problemei 7segmente (ONI 2012, clasa a IX-a)
-authors: []
 problem_id: 1378
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-VII-pictura
 title: Soluția problemei pictura (ONI 2024, clasa a VII-a)
-authors: []
 problem_id: 2644
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2014-X-joc
 title: Soluția problemei joc (ONI 2014, clasa a X-a)
-authors: []
 problem_id: 1442
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

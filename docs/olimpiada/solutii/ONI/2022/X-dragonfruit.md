@@ -1,8 +1,8 @@
 ---
 id: ONI-2022-X-dragonfruit
 title: Soluția problemei dragonfruit (ONI 2022, clasa a X-a)
-authors: []
 problem_id: 1603
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-VIII-submat
 title: Soluția problemei submat (ONI 2008, clasa a VIII-a)
-authors: []
 problem_id: 1299
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

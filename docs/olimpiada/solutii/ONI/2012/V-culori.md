@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-V-culori
 title: Soluția problemei culori (ONI 2012, clasa a V-a)
-authors: []
 problem_id: 1384
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

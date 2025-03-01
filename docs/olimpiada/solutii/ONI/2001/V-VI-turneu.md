@@ -1,8 +1,8 @@
 ---
 id: ONI-2001-V-VI-turneu
 title: Soluția problemei turneu (ONI 2001, clasele V-VI)
-authors: []
 problem_id: 1134
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

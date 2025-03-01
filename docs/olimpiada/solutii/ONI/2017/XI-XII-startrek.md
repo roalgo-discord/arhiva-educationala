@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-XI-XII-startrek
 title: Soluția problemei startrek (ONI 2017, clasele XI-XII)
-authors: []
 problem_id: 169
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

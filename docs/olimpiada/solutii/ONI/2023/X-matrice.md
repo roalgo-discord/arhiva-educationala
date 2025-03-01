@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-X-matrice
 title: Soluția problemei matrice (ONI 2023, clasa a X-a)
-authors: []
 problem_id: 537
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

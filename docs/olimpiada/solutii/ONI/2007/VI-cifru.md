@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-VI-cifru
 title: Soluția problemei cifru (ONI 2007, clasa a VI-a)
-authors: []
 problem_id: 1267
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

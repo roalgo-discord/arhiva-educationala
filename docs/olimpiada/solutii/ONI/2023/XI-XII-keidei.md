@@ -1,8 +1,8 @@
 ---
 id: ONI-2023-XI-XII-keidei
 title: Soluția problemei keidei (ONI 2023, clasele XI-XII)
-authors: []
 problem_id: 533
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

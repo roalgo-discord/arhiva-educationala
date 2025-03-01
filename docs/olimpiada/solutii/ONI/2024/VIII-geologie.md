@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-VIII-geologie
 title: Soluția problemei geologie (ONI 2024, clasa a VIII-a)
-authors: []
 problem_id: 2646
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

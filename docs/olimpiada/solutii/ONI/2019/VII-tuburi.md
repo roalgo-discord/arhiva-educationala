@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-VII-tuburi
 title: Soluția problemei tuburi (ONI 2019, clasa a VII-a)
-authors: []
 problem_id: 1557
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

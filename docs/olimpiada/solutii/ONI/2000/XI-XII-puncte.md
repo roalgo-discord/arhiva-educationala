@@ -1,8 +1,8 @@
 ---
 id: ONI-2000-XI-XII-puncte
 title: Soluția problemei puncte (ONI 2000, clasele XI-XII)
-authors: []
 problem_id: 2874
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

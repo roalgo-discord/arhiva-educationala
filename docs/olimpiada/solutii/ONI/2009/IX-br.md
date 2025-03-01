@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-IX-br
 title: Soluția problemei br (ONI 2009, clasa a IX-a)
-authors: []
 problem_id: 1309
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

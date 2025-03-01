@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-V-ceas
 title: Soluția problemei ceas (ONI 2007, clasa a V-a)
-authors: []
 problem_id: 1264
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

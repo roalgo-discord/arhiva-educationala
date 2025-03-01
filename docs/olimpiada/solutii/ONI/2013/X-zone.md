@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-X-zone
 title: Soluția problemei zone (ONI 2013, clasa a X-a)
-authors: []
 problem_id: 1423
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

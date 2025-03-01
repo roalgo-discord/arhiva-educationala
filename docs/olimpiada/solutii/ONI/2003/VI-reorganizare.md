@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-VI-reorganizare
 title: Soluția problemei reorganizare (ONI 2003, clasa a VI-a)
-authors: []
 problem_id: 1174
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

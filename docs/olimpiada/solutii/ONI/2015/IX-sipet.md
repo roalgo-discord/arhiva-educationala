@@ -1,8 +1,8 @@
 ---
 id: ONI-2015-IX-sipet
 title: Soluția problemei sipet (ONI 2015, clasa a IX-a)
-authors: []
 problem_id: 1453
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

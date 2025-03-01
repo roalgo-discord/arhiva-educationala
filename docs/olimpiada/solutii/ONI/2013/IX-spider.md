@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-IX-spider
 title: Soluția problemei spider (ONI 2013, clasa a IX-a)
-authors: []
 problem_id: 1405
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

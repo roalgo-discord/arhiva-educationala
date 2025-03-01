@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-IX-stalpi
 title: Soluția problemei stalpi (ONI 2011, clasa a IX-a)
-authors: []
 problem_id: 1355
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

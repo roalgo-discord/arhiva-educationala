@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-XI-XII-patrat
 title: Soluția problemei patrat (ONI 2005, clasele XI-XII)
-authors: []
 problem_id: 111
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

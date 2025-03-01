@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-VI-melci
 title: Soluția problemei melci (ONI 2008, clasa a VI-a)
-authors: []
 problem_id: 1292
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

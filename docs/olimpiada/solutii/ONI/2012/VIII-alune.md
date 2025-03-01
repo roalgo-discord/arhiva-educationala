@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-VIII-alune
 title: Soluția problemei alune (ONI 2012, clasa a VIII-a)
-authors: []
 problem_id: 1392
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

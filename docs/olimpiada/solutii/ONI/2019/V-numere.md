@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-V-numere
 title: Soluția problemei numere (ONI 2019, clasa a V-a)
-authors: []
 problem_id: 1551
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

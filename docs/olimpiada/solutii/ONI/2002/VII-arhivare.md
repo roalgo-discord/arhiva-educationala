@@ -1,8 +1,8 @@
 ---
 id: ONI-2002-VII-arhivare
 title: Soluția problemei arhivare (ONI 2002, clasa a VII-a)
-authors: []
 problem_id: 1153
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

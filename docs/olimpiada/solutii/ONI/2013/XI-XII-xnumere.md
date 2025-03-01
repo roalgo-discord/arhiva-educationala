@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-XI-XII-xnumere
 title: Soluția problemei xnumere (ONI 2013, clasele XI-XII)
-authors: []
 problem_id: 220
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

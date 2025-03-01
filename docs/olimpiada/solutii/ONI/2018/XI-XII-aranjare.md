@@ -1,8 +1,8 @@
 ---
 id: ONI-2018-XI-XII-aranjare
 title: Soluția problemei aranjare (ONI 2018, clasele XI-XII)
-authors: []
 problem_id: 149
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2013-VII-cursa
 title: Soluția problemei cursa (ONI 2013, clasa a VII-a)
-authors: []
 problem_id: 1412
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

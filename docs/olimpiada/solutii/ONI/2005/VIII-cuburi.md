@@ -1,8 +1,8 @@
 ---
 id: ONI-2005-VIII-cuburi
 title: Soluția problemei cuburi (ONI 2005, clasa a VIII-a)
-authors: []
 problem_id: 1227
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

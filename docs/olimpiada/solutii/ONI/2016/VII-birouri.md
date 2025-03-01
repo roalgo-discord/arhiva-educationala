@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-VII-birouri
 title: Soluția problemei birouri (ONI 2016, clasa a VII-a)
-authors: []
 problem_id: 1484
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

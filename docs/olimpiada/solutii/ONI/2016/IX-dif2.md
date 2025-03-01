@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-IX-dif2
 title: Soluția problemei dif2 (ONI 2016, clasa a IX-a)
-authors: []
 problem_id: 1475
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

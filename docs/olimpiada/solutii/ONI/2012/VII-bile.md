@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-VII-bile
 title: Soluția problemei bile (ONI 2012, clasa a VII-a)
-authors: []
 problem_id: 1389
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

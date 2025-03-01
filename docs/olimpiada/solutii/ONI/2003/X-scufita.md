@@ -1,8 +1,8 @@
 ---
 id: ONI-2003-X-scufita
 title: Soluția problemei scufita (ONI 2003, clasa a X-a)
-authors: []
 problem_id: 1185
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

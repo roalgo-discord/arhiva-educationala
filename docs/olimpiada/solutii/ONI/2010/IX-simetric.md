@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-IX-simetric
 title: Soluția problemei simetric (ONI 2010, clasa a IX-a)
-authors: []
 problem_id: 1332
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

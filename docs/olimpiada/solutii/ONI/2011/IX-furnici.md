@@ -1,8 +1,8 @@
 ---
 id: ONI-2011-IX-furnici
 title: Soluția problemei furnici (ONI 2011, clasa a IX-a)
-authors: []
 problem_id: 1359
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

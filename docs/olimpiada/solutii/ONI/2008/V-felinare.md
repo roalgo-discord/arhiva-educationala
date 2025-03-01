@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-V-felinare
 title: Soluția problemei felinare (ONI 2008, clasa a V-a)
-authors: []
 problem_id: 1289
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

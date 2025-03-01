@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-X-xp
 title: Soluția problemei xp (ONI 2010, clasa a X-a)
-authors: []
 problem_id: 1350
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

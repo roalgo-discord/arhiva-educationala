@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-VI-figura
 title: Soluția problemei figura (ONI 2010, clasa a VI-a)
-authors: []
 problem_id: 1340
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

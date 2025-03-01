@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-XI-XII-arbore
 title: Soluția problemei Arbore (ONI 2024, clasele XI-XII)
-authors: []
 problem_id: 2649
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

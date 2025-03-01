@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-VI-tzigla
 title: Soluția problemei tzigla (ONI 2006, clasa a VI-a)
-authors: []
 problem_id: 1245
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

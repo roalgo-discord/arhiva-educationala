@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-XI-XII-euro
 title: Soluția problemei euro (ONI 2016, clasele XI-XII)
-authors: []
 problem_id: 185
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

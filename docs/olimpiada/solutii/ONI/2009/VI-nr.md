@@ -1,8 +1,8 @@
 ---
 id: ONI-2009-VI-nr
 title: Soluția problemei nr (ONI 2009, clasa a VI-a)
-authors: []
 problem_id: 1316
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

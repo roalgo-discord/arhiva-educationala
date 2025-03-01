@@ -1,8 +1,8 @@
 ---
 id: ONI-2024-IX-eras
 title: Soluția problemei Eras (ONI 2024, clasa a IX-a)
-authors: []
 problem_id: 2653
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

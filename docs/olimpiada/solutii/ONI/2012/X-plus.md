@@ -1,8 +1,8 @@
 ---
 id: ONI-2012-X-plus
 title: Soluția problemei plus (ONI 2012, clasa a X-a)
-authors: []
 problem_id: 1397
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

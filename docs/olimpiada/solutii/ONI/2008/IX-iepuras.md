@@ -1,8 +1,8 @@
 ---
 id: ONI-2008-IX-iepuras
 title: Soluția problemei iepuras (ONI 2008, clasa a IX-a)
-authors: []
 problem_id: 1283
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2016-XI-XII-transform
 title: Soluția problemei transform (ONI 2016, clasele XI-XII)
-authors: []
 problem_id: 190
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

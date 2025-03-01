@@ -1,8 +1,8 @@
 ---
 id: ONI-2006-X-logic
 title: Soluția problemei Logic (ONI 2006, clasa a X-a)
-authors: []
 problem_id: 1256
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

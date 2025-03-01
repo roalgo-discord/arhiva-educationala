@@ -1,8 +1,8 @@
 ---
 id: ONI-2007-IX-lacuri
 title: Soluția problemei lacuri (ONI 2007, clasa a IX-a)
-authors: []
 problem_id: 1258
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

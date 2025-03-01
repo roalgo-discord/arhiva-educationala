@@ -1,8 +1,8 @@
 ---
 id: ONI-2019-VI-maya
 title: Soluția problemei maya (ONI 2019, clasa a VI-a)
-authors: []
 problem_id: 1553
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

@@ -1,8 +1,8 @@
 ---
 id: ONI-2010-V-cluburi
 title: Soluția problemei cluburi (ONI 2010, clasa a V-a)
-authors: []
 problem_id: 1336
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```

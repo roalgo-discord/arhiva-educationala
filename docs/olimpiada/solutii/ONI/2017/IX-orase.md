@@ -1,8 +1,8 @@
 ---
 id: ONI-2017-IX-orase
 title: Soluția problemei orase (ONI 2017, clasa a IX-a)
-authors: []
 problem_id: 1501
+authors: []
 # prerequisites:
 #    - placeholder
 tags:
@@ -25,3 +25,4 @@ int main() {
     cout << a+b << '\n';
     return 0;
 }
+```
