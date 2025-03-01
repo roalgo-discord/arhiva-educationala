@@ -74,4 +74,11 @@
   </div>
 {% endif %}
 
+{% if page.meta.problem_id %}
+  <div class="admonition note">
+    <p class="admonition-title">Link problemă</p>
+    <p>Această problemă poate fi accesată <a href="https://kilonova.ro/problems/{{page.meta.problem_id}}/">aici</a>.</p>
+  </div>
+{% endif %}
+
 {{ page.content }}
