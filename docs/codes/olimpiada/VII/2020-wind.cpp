@@ -18,7 +18,9 @@ int main() {
             }
             r *= cur;
         }
-        if (n > 1) r *= 2;
+        if (n > 1) {
+            r *= 2;
+        }
         out << r - 1;
     }
     if (c == 2) {
@@ -28,7 +30,9 @@ int main() {
         }
         for (int i = 2; i <= n; i++) {
             if (!(n % i)) {
-                long long ec = -(1LL << 60), rec, mi = (1LL << 60); // (1LL << 60) = 2^60, un numar foarte mare
+                long long ec = -(1LL << 60), rec,
+                          mi = (1LL << 60);  // (1LL << 60) = 2^60, un numar
+                                             // foarte mare
                 for (int j = 0; j < n; j += n / i) {
                     so[j / (n / i)] = 0;
                     for (int k = j; k < j + n / i; k++) {
@@ -36,8 +40,9 @@ int main() {
                     }
                 }
                 for (int j = 0; j < i; j++) {
-                    if (so[j] < mi || mi == (1LL << 60)) 
+                    if (so[j] < mi || mi == (1LL << 60)) {
                         mi = so[j];
+                    }
                     if (so[j] >= ec || ec == -(1LL << 60)) {
                         ec = so[j];
                         rec = j * (n / i) + 1;

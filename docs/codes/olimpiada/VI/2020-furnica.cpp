@@ -12,48 +12,47 @@ int main() {
                 sum += 5 * (f - rez);
                 sum += 3 * lun;
                 rez = f;
-            } 
-            else if (rez > f) {
-                    sum += 2 * (rez - f);
-                    sum += 3 * lun;
-                    rez = f;
-                } 
-            else if (rez == f) {
+            } else if (rez > f) {
+                sum += 2 * (rez - f);
+                sum += 3 * lun;
+                rez = f;
+            } else if (rez == f) {
                 sum += 3 * lun;
             }
         }
         fout << sum + rez * 2;
-    } 
-    else if (c == 2) {
+    } else if (c == 2) {
         while (n--) {
             fin >> lun >> f;
             if (rez > f) {
-                if (l > lmax) lmax = l;
+                if (l > lmax) {
+                    lmax = l;
+                }
                 l = 0;
                 l += lun;
                 rez = f;
-            } 
-            else if (rez == f) {
-                    l += lun;
-                } 
-            else if (rez < f) {
+            } else if (rez == f) {
+                l += lun;
+            } else if (rez < f) {
                 l += lun;
                 l += (f - rez);
                 rez = f;
             }
         }
-        if (l > lmax) 
+        if (l > lmax) {
             lmax = l;
+        }
         fout << lmax;
-    } 
-    else {
+    } else {
         fin >> k;
         for (int i = 1; i <= n; ++i) {
             fin >> lun >> f;
-            if (rez < f) 
+            if (rez < f) {
                 sum += 5 * (f - rez);
-            if (rez > f) 
+            }
+            if (rez > f) {
                 sum += 2 * (rez - f);
+            }
             if (sum >= k && rez > f) {
                 fout << i - 1;
                 return 0;

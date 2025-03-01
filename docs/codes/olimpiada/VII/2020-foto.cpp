@@ -33,10 +33,13 @@ int main() {
     for (lin = 1; lin <= n; lin++) {
         for (col = 1; col <= m; col++) {
             if (mat[lin][col]) {
-                if (mat[lin - 1][col - 1] == 0 && mat[lin - 1][col + 1] == 0 && mat[lin - 1][col] == 0) {
+                if (mat[lin - 1][col - 1] == 0 && mat[lin - 1][col + 1] == 0
+                    && mat[lin - 1][col] == 0) {
                     num++;
                 }
-                cer2 = max(cer2, ( mat[lin][col] += (mat[lin - 1][col - 1] + mat[lin - 1][col + 1] + mat[lin - 1][col]) ));
+                cer2 = max(cer2, (mat[lin][col] +=
+                                  (mat[lin - 1][col - 1] + mat[lin - 1][col + 1]
+                                   + mat[lin - 1][col])));
             }
         }
     }

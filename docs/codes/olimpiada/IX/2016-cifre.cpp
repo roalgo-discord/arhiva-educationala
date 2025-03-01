@@ -1,8 +1,9 @@
 #include <fstream>
 
-int c[] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6}; // nr de segmente
-int t[] = {2, 7, 2, 3, 3, 4, 2, 5, 1, 2}; // nr de numere pe care le putem obtine
-int mm[] = {1, 5, 1, 2, 2, 3, 1, 2, 0, 0}; // nr de numere mai mari
+int c[] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};  // nr de segmente
+int t[] = {2, 7, 2, 3, 3,
+           4, 2, 5, 1, 2};  // nr de numere pe care le putem obtine
+int mm[] = {1, 5, 1, 2, 2, 3, 1, 2, 0, 0};  // nr de numere mai mari
 int cif[25];
 char s[25];
 unsigned long long p, sol;
@@ -21,8 +22,7 @@ int main() {
             sum += c[cif[i]];
         }
         cout << sum;
-    } 
-    else {
+    } else {
         for (int i = 0; i < k; i++) {
             p = 1;
             for (int j = i + 1; j < k; j++) {

@@ -9,9 +9,7 @@ int N, M, A, B;
 long long K;
 Rect rects[4];
 
-long long tri(long long n) {
-    return n * (n + 1) / 2;
-}
+long long tri(long long n) { return n * (n + 1) / 2; }
 
 bool check(long long val) {
     long long total = 0;
@@ -38,7 +36,7 @@ bool check(long long val) {
 int main() {
     std::ifstream cin("rufe.in");
     std::ofstream cout("rufe.out");
-    
+
     cin >> N >> M >> A >> B >> K;
     rects[0] = {A + B - 2, A - 1, B - 1};
     rects[1] = {A + (M - B) - 1, A - 1, (M - B) + 1};
@@ -49,8 +47,7 @@ int main() {
         int mid = (low + high + 1) / 2;
         if (check(mid)) {
             low = mid;
-        }
-        else {
+        } else {
             high = mid - 1;
         }
     }

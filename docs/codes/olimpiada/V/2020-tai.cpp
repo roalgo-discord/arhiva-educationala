@@ -35,8 +35,7 @@ int main() {
             }
         }
         fout << vmax;
-    }
-    else if (c == 2) {
+    } else if (c == 2) {
         int vmax = 0;
         for (int i = 1; i <= n; i++) {
             fin >> x;
@@ -61,8 +60,7 @@ int main() {
             }
         }
         fout << vmax;
-    }
-    else {
+    } else {
         int vmax = 0;
         for (int i = 1; i <= n; i++) {
             fin >> x;

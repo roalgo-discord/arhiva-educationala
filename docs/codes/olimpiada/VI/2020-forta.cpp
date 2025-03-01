@@ -5,19 +5,21 @@ using namespace std;
 const int MAX_N = 100000;
 int arr[MAX_N];
 
-const int MAX_SIEVE = 45000; 
+const int MAX_SIEVE = 45000;
 bool isPrimeSieve[MAX_SIEVE + 1];
-int primes[50000]; 
+int primes[50000];
 int primesCount;
 
 void buildSieve() {
-    for (int i = 0; i <= MAX_SIEVE; i++) 
+    for (int i = 0; i <= MAX_SIEVE; i++) {
         isPrimeSieve[i] = true;
+    }
     isPrimeSieve[0] = isPrimeSieve[1] = false;
     for (int i = 2; i * i <= MAX_SIEVE; i++) {
         if (isPrimeSieve[i]) {
-            for (int j = i * i; j <= MAX_SIEVE; j += i) 
+            for (int j = i * i; j <= MAX_SIEVE; j += i) {
                 isPrimeSieve[j] = false;
+            }
         }
     }
     primesCount = 0;
@@ -31,7 +33,8 @@ void buildSieve() {
 int getForce(int x) {
     int force = 1;
     int temp = x;
-    for (int i = 0; i < primesCount && (long long)primes[i] * primes[i] <= temp; i++) {
+    for (int i = 0; i < primesCount && (long long)primes[i] * primes[i] <= temp;
+         i++) {
         if (temp % primes[i] == 0) {
             int cnt = 0;
             while (temp % primes[i] == 0) {
@@ -68,8 +71,7 @@ int main() {
             if (f > maxForce) {
                 maxForce = f;
                 bestNumber = arr[i];
-            } 
-            else {
+            } else {
                 if (f == maxForce) {
                     if (arr[i] < bestNumber) {
                         bestNumber = arr[i];
@@ -78,8 +80,7 @@ int main() {
             }
         }
         cout << bestNumber;
-    } 
-    else if (task == 2) {
+    } else if (task == 2) {
         const int MAXF = 2500;
         int freq[MAXF + 1] = {0};
 

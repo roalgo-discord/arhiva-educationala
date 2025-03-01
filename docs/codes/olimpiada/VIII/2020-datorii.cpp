@@ -46,8 +46,7 @@ int main() {
     }
     if (cer == 1) {
         cout << corp.size() << "\n";
-    } 
-	else {
+    } else {
         for (auto e : corp) {
             cout << e.first << " " << sd[e.first] << " " << sp[e.first] << "\n";
         }

@@ -19,8 +19,7 @@ int main() {
             lp = l, rp = r;
         }
         fout << cnt << '\n';
-    } 
-    else if (c == 2) {
+    } else if (c == 2) {
         fin >> lp >> rp;
         lg = 1;
         for (i = 2; i <= n; i++) {
@@ -30,15 +29,13 @@ int main() {
                 if (lg > lgmax) {
                     lgmax = lg;
                 }
-            } 
-            else {
+            } else {
                 lg = 1;
             }
             lp = l, rp = r;
         }
         fout << lgmax << '\n';
-    } 
-    else {
+    } else {
         fin >> lp >> rp;
         lg = 1;
         for (i = 2; i <= n; i++) {
@@ -48,12 +45,10 @@ int main() {
                 if (lg > lgmax) {
                     lgmax = lg;
                     cnt = 1;
-                } 
-                else if (lg == lgmax) {
+                } else if (lg == lgmax) {
                     cnt++;
                 }
-            } 
-            else {
+            } else {
                 lg = 1;
             }
             lp = l, rp = r;
