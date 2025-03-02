@@ -8,6 +8,7 @@ authors: []
 tags:
     - ONI
     - clasa XI-XII
+draft: true
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
