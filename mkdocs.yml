@@ -105,6 +105,7 @@ repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 hooks:
+    - draft.py
     - authors.py
     - prerequisites.py
 
