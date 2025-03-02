@@ -23,6 +23,7 @@ dificultății lor de înțelegere, precum și în ordine crescătoare a perform
 menționând în cazul fiecăruia din algoritmi cunoștințele necesare pentru a-i
 putea înțelege și folosi cu succes.
 
+<div id="algoritmi-de-sortare-in-on2"></div>
 ## Algoritmi de sortare în $\mathcal{O}(n^2)$
 
 Voi începe prin a explica algoritmii de sortare în $\mathcal{O}(n^2)$ deoarece aceștia
@@ -105,9 +106,7 @@ for (int i = 2; i <= n; i++) {
 }
 ```
 
-!!! example "Cunoștințe necesare pentru următoarele capitole"
-    - [Subprograme](../cppintro/functions.md)
-    - [Introducere în STL](../cppintro/stl.md)
+!!! example "Cunoștințe necesare pentru următoarele capitole" - [Subprograme](../cppintro/functions.md) - [Introducere în STL](../cppintro/stl.md)
 
 ## Algoritmi de sortare în $\mathcal{O}(n \log n)$
 
@@ -165,12 +164,12 @@ favorabil, cazul cel mai nefavorabil va efectua mereu $\mathcal{O}(n \log n)$ co
 Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
 (inițial întreg tabloul), astfel:
 
-- se alege un element special al listei, numit pivot;
-- se ordonează elementele listei, astfel încât toate elementele din stânga
-  pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta
-  pivotului să fie mai mari sau egale cu acesta;
-- se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta
-  lui.
+-   se alege un element special al listei, numit pivot;
+-   se ordonează elementele listei, astfel încât toate elementele din stânga
+    pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta
+    pivotului să fie mai mari sau egale cu acesta;
+-   se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta
+    lui.
 
 !!! note "Observație"
 
@@ -225,9 +224,9 @@ programatorul John von Neumann. Pentru un set de $n$ valori oarecare algoritmul
 efectuează $\mathcal{O}(n \log n)$ comparații, algoritmul fiind același indiferent de
 modul în care sunt așezate valorile. Algoritmul funcționează în felul următor.
 
-- Avem lista curentă, o împărțim în două jumătăți egale.
-- Rulăm algoritmul pe fiecare din cele două jumătăți.
-- Se interclasează cele două șiruri rezultate.
+-   Avem lista curentă, o împărțim în două jumătăți egale.
+-   Rulăm algoritmul pe fiecare din cele două jumătăți.
+-   Se interclasează cele două șiruri rezultate.
 
 Acest algoritm folosește principiul Divide et Impera, principiu despre care
 puteți studia mai multe în acest articol.
@@ -285,7 +284,7 @@ pe poziția minimă găsită.
 
 Funcția `heapSort` este apelată din main folosind metoda heapSort, functia
 heapify fiind o funcție auxiliară care are drept scop plasarea valorii curente
-astfel încât să se păstreze structura de heap.  
+astfel încât să se păstreze structura de heap.
 
 ```cpp
 void heapify(vector<int> &v, int n, int pos) {
@@ -450,41 +449,41 @@ binară, diverse probleme ce implică structuri de date și așa mai departe.
 
 ### Probleme de la olimpiade
 
-- [perechi kilonova](https://kilonova.ro/problems/1946)
-- [Probleme cu sortari de pe
-  pbinfo](https://www.pbinfo.ro/probleme/categorii/3/tablouri-unidimensionale-vectori-sortarea-vectorilor)
-- [sir OJI 2005](https://kilonova.ro/problems/740)
-- [USACO Bronze Acowdemia
-  I](https://usaco.org/index.php?page=viewproblem2&cpid=1131)
-- [Pergament OJI 2023](https://kilonova.ro/problems/643)
-- [pseudocmp OJI 2022](https://kilonova.ro/problems/945)
-- [yinyang OJI 2019](https://kilonova.ro/problems/650)
-- [JOI 2018 Stove](https://oj.uz/problem/view/JOI18_stove)
-- [JOI 2018 Art Exhibition](https://oj.uz/problem/view/JOI18_art)
-- [InfoPro insertsort](https://kilonova.ro/problems/1025)
-- [probleme cu sortare de pe Kilonova](https://kilonova.ro/tags/349)
-- [High Card Low Card USACO
-  Gold](https://usaco.org/index.php?page=viewproblem2&cpid=573)
+-   [perechi kilonova](https://kilonova.ro/problems/1946)
+-   [Probleme cu sortari de pe
+    pbinfo](https://www.pbinfo.ro/probleme/categorii/3/tablouri-unidimensionale-vectori-sortarea-vectorilor)
+-   [sir OJI 2005](https://kilonova.ro/problems/740)
+-   [USACO Bronze Acowdemia
+    I](https://usaco.org/index.php?page=viewproblem2&cpid=1131)
+-   [Pergament OJI 2023](https://kilonova.ro/problems/643)
+-   [pseudocmp OJI 2022](https://kilonova.ro/problems/945)
+-   [yinyang OJI 2019](https://kilonova.ro/problems/650)
+-   [JOI 2018 Stove](https://oj.uz/problem/view/JOI18_stove)
+-   [JOI 2018 Art Exhibition](https://oj.uz/problem/view/JOI18_art)
+-   [InfoPro insertsort](https://kilonova.ro/problems/1025)
+-   [probleme cu sortare de pe Kilonova](https://kilonova.ro/tags/349)
+-   [High Card Low Card USACO
+    Gold](https://usaco.org/index.php?page=viewproblem2&cpid=573)
 
 ### Probleme de pe alte siteuri
 
-- [Distinct Numbers](https://cses.fi/problemset/task/1621)
-- [Movie Festival](https://cses.fi/problemset/task/1629)
-- [Towers](https://cses.fi/problemset/task/1073)
-- [Kayaking](https://codeforces.com/contest/863/problem/B)
-- [Movie Festival II](https://cses.fi/problemset/task/1632)
-- [Tasks and Deadlines](https://cses.fi/problemset/task/1630)
-- [Permutator](https://codeforces.com/gym/104520/problem/H)
-- [Playing in a Casino](https://codeforces.com/contest/1808/problem/B)
-- [The Party and Sweets](https://codeforces.com/problemset/problem/1158/A)
-- [USB vs. PS/2](https://codeforces.com/contest/762/problem/B)
+-   [Distinct Numbers](https://cses.fi/problemset/task/1621)
+-   [Movie Festival](https://cses.fi/problemset/task/1629)
+-   [Towers](https://cses.fi/problemset/task/1073)
+-   [Kayaking](https://codeforces.com/contest/863/problem/B)
+-   [Movie Festival II](https://cses.fi/problemset/task/1632)
+-   [Tasks and Deadlines](https://cses.fi/problemset/task/1630)
+-   [Permutator](https://codeforces.com/gym/104520/problem/H)
+-   [Playing in a Casino](https://codeforces.com/contest/1808/problem/B)
+-   [The Party and Sweets](https://codeforces.com/problemset/problem/1158/A)
+-   [USB vs. PS/2](https://codeforces.com/contest/762/problem/B)
 
 ## Bibliografie și lectură suplimentară
 
-- [Introduction to Sorting - USACO
-  Guide](https://usaco.guide/bronze/intro-sorting?lang=cpp)
-- [Greedy Algorithms with
-  Sorting](https://usaco.guide/silver/greedy-sorting?lang=cpp)
-- [Sortarea prin
-  numărare](https://cppi.sync.ro/materia/sortarea_prin_numarare.html?hl=sortare)
-- [Tutorial Video RoAlgo](https://www.youtube.com/watch?v=4vAsp9xgies)
+-   [Introduction to Sorting - USACO
+    Guide](https://usaco.guide/bronze/intro-sorting?lang=cpp)
+-   [Greedy Algorithms with
+    Sorting](https://usaco.guide/silver/greedy-sorting?lang=cpp)
+-   [Sortarea prin
+    numărare](https://cppi.sync.ro/materia/sortarea_prin_numarare.html?hl=sortare)
+-   [Tutorial Video RoAlgo](https://www.youtube.com/watch?v=4vAsp9xgies)
