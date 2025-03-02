@@ -45,72 +45,73 @@ de a defini captura, fiecare cu scop specific.
 - `[x]` copiază valoarea ca `#!cpp const`:
 
     ```cpp
-int main() {
-    int x = 15;
-    auto add = [x](int cnt) -> int { return x + cnt; };
-    std::cout << add(10);  // 25
-}
-```
+    int main() {
+        int x = 15;
+        auto add = [x](int cnt) -> int { return x + cnt; };
+        std::cout << add(10);  // 25
+    }
+    ```
 
-    Dacă încercăm să compilăm varianta de mai sus,
-    aceasta va funcționa corect,
+    Dacă încercăm să compilăm varianta de mai sus, aceasta va funcționa corect,
     însă varianta de mai jos nu va funcționa.
 
-    ```cpp int main() {
-    int x = 15;
-    auto add = [x](int cnt) -> void {
-        x += cnt;
-        // nu va merge pentru că valoarea este constantă
-    };
-    std::cout << x;
-}
-```
+    ```cpp
+    int main() {
+        int x = 15;
+        auto add = [x](int cnt) -> void {
+            x += cnt;
+            // nu va merge pentru că valoarea este constantă
+        };
+        std::cout << x;
+    }
+    ```
 
-    - `[&x]` face referință la valoarea inițială,
-    permițând să fie modificată :
+- `[&x]` face referință la valoarea inițială, permițând să fie modificată :
 
-    ```cpp int main() {
-    int x = 15;
-    auto add = [&x](int cnt) -> void { x += cnt; };
-    add(10);
-    std::cout << x;  // 25
-}
-```
+    ```cpp
+    int main() {
+        int x = 15;
+        auto add = [&x](int cnt) -> void { x += cnt; };
+        add(10);
+        std::cout << x;  // 25
+    }
+    ```
 
-    - `[=]` copiază toate valorile,
-    similar cu `[x]`:
+- `[=]` copiază toate valorile, similar cu `[x]`:
 
-    ```cpp int main() {
-    int x = 15;
-    auto add = [=](int cnt) -> int { return x + cnt; };
-    std::cout << add(10);  // 25
-}
-```
+    ```cpp
+    int main() {
+        int x = 15;
+        auto add = [=](int cnt) -> int { return x + cnt; };
+        std::cout << add(10);  // 25
+    }
+    ```
 
-    - `[&]` face referință la toate valorile,
-    similar cu `[&x]`:
+- `[&]` face referință la toate valorile, similar cu `[&x]`:
 
-  ```cpp int main() {
-    int x = 15;
-    auto add = [&](int cnt) -> void { x += cnt; };
-    add(10);
-    std::cout << x;  // 25
-}
-```
+  ```cpp
+    int main() {
+        int x = 15;
+        auto add = [&](int cnt) -> void { x += cnt; };
+        add(10);
+        std::cout << x;  // 25
+    }
+    ```
 
     Putem defini și mai multe valori care să fie capturate:
-```cpp
-int main() {
-  int x = 10, y = 15;
-  // x poate fi modificat, y e constant
-  auto add = [&x, y]() { 
-    x += y;
-  };
 
-  add();
-  std::cout << x; // 25
-}
-```
+    ```cpp
+    int main() {
+        int x = 10, y = 15;
+        // x poate fi modificat, y e constant
+        auto add = [&x, y]() { 
+            x += y;
+        };
+
+        add();
+        std::cout << x; // 25
+    }
+    ```
 
 #### `mutable`
 
