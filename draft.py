@@ -18,7 +18,6 @@ def on_nav(nav: Navigation, config: Config, files: Files) -> Navigation:
 
     draft_files = set()
     processed_files = set()
-    files_copy = files
 
     for file in files.documentation_pages():
         if file.src_uri not in processed_files:
@@ -51,7 +50,5 @@ def on_nav(nav: Navigation, config: Config, files: Files) -> Navigation:
         return nav_items
 
     filter_nav_items(nav.items)
-
-    files = files_copy
 
     return nav
