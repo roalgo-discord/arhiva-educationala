@@ -106,14 +106,17 @@ for (int i = 2; i <= n; i++) {
 }
 ```
 
-!!! example "Cunoștințe necesare pentru următoarele capitole" - [Subprograme](../cppintro/functions.md) - [Introducere în STL](../cppintro/stl.md)
+!!! example "Cunoștințe necesare pentru următoarele capitole"
+
+    - [Subprograme](../cppintro/functions.md)
+    - [Introducere în STL](../cppintro/stl.md)
 
 ## Algoritmi de sortare în $\mathcal{O}(n \log n)$
 
 După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta
-un șir mai repede de $\mathcal{O}(n^2)$? Răspunsul este unul afirmativ, existând foarte
-mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $\mathcal{O}(n \log
-n)$.
+un șir mai repede de $\mathcal{O}(n^2)$? Răspunsul este unul afirmativ, existând
+foarte mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în
+$\mathcal{O}(n \log n)$.
 
 Deși în practică în cadrul concursurilor, de regulă ajungem să ne folosim de
 funcția `std::sort`, proprietățile celorlalți algoritmi pot fi utile pentru
