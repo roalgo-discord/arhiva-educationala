@@ -1,8 +1,6 @@
 ---
 id: graphs
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - lee
     - stl
@@ -336,7 +334,7 @@ depth-first search), una din parcurgerile optime pentru această problemă.
 
 !!! note "Observație"
 
-    Complexitatea parcurgerii în adâncime (DFS) este $O(\lvert V \rvert + \lvert
+    Complexitatea parcurgerii în adâncime (DFS) este $\mathcal{O}(\lvert V \rvert + \lvert
     E \lvert)$, unde $\lvert V \rvert$ reprezintă numărul de noduri sau vârfuri
     și $\lvert E \rvert$ reprezintă numărul de muchii.
 
@@ -414,7 +412,7 @@ graful nostru.
 
 !!! note "Observație"
 
-    Complexitatea parcurgerii în lățime (BFS) este $O(\lvert V \rvert + \lvert E
+    Complexitatea parcurgerii în lățime (BFS) este $\mathcal{O}(\lvert V \rvert + \lvert E
     \lvert)$, unde $\lvert V \rvert$ reprezintă numărul de noduri sau vârfuri și
     $\lvert E \rvert$ reprezintă numărul de muchii.
 

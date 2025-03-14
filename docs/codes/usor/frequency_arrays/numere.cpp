@@ -28,7 +28,7 @@ int main() {
             ultimul = numar;
         }
     }
-    
+
     fout << primul << " " << ultimul;
     return 0;
 }

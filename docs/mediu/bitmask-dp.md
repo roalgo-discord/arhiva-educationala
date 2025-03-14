@@ -1,7 +1,6 @@
 ---
 id: bitmask-dp
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - bitwise-ops
@@ -70,7 +69,7 @@ cu masca $msk$. Pentru a face tranziția de la $msk$ la o altă stare, va trebui
 să parcurgem lista de participanți, verificând cu ajutorul operațiilor pe biți
 dacă au mai fost luați sau nu.
 
-Soluția va avea complexitate $O(2^n \cdot n)$, fiind suficient de bună pentru
+Soluția va avea complexitate $\mathcal{O}(2^n \cdot n)$, fiind suficient de bună pentru
 problema dată.
 
 !!! note "Observație"
@@ -86,16 +85,15 @@ problema dată.
 using namespace std;
 
 int main() {
-    
     ifstream cin("teamwork.in");
     ofstream cout("teamwork.out");
-    
+
     int n;
     cin >> n;
-    
-    vector<vector<int>> a(n, vector<int> (n));
-    vector<int> dp(1<<n);
-    
+
+    vector<vector<int>> a(n, vector<int>(n));
+    vector<int> dp(1 << n);
+
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             cin >> a[i][j];
@@ -103,10 +101,11 @@ int main() {
     }
     for (int msk = 0; msk < (1 << n) - 1; ++msk) {
         // cati biti are i
-        int nb = __builtin_popcount(msk); 
+        int nb = __builtin_popcount(msk);
         for (int j = 0; j < n; ++j) {
             if (!(msk & (1 << j))) {
-                dp[msk ^ (1 << j)] = max(dp[msk ^ (1 << j)], dp[msk] + a[nb][j]);
+                dp[msk ^ (1 << j)] =
+                    max(dp[msk ^ (1 << j)], dp[msk] + a[nb][j]);
             }
         }
     }
@@ -131,7 +130,7 @@ gradul de umplere al călătoriei curente. La fiecare pas, fie vom reuși să
 adăugăm călătorul curent în excursia curentă, fie vom începe un alt drum cu
 liftul.
 
-Complexitatea va fi la fel ca la problema precedentă, $O(2^n \cdot n)$, fiind
+Complexitatea va fi la fel ca la problema precedentă, $\mathcal{O}(2^n \cdot n)$, fiind
 suficient de bună pentru cerințele problemei.
 
 ```cpp
@@ -139,39 +138,39 @@ suficient de bună pentru cerințele problemei.
 #include <vector>
 
 using namespace std;
- 
+
 int main() {
-    
     int n, w;
     cin >> n >> w;
-        
+
     vector<int> v(n);
     for (int i = 0; i < n; ++i) {
         cin >> v[i];
     }
-    
-    vector<pair<int, int>> dp(1<<n);
+
+    vector<pair<int, int>> dp(1 << n);
     dp[0].first = 1;
-    
-    for (int msk = 1; msk < (1<<n); ++msk) {
-        dp[msk].first = n+1;
+
+    for (int msk = 1; msk < (1 << n); ++msk) {
+        dp[msk].first = n + 1;
     }
-    
-    for (int msk = 0; msk < (1<<n); ++msk) {
+
+    for (int msk = 0; msk < (1 << n); ++msk) {
         for (int j = 0; j < n; ++j) {
-            if (msk & (1<<j)) {
+            if (msk & (1 << j)) {
                 continue;
             }
             if (dp[msk].second + v[j] <= w) {
-                dp[msk + (1<<j)] = min(dp[msk + (1<<j)], {dp[msk].first, dp[msk].second + v[j]});
-            }
-            else {
-                dp[msk + (1<<j)] = min(dp[msk + (1<<j)], {dp[msk].first + 1, v[j]});
+                dp[msk + (1 << j)] = min(
+                    dp[msk + (1 << j)], {dp[msk].first, dp[msk].second + v[j]});
+            } else {
+                dp[msk + (1 << j)] =
+                    min(dp[msk + (1 << j)], {dp[msk].first + 1, v[j]});
             }
         }
     }
-    
-    cout << dp[(1<<n) - 1].first;
+
+    cout << dp[(1 << n) - 1].first;
     return 0;
 }
 ```
@@ -193,59 +192,58 @@ Deoarece limita de timp este una strânsă, sunt necesare câteva optimizări
 prezentate în cod pentru a evita parcurgerea stărilor inutile.
 
 ```cpp
+#include <cassert>
 #include <iostream>
 #include <vector>
-#include <cassert>
 
 using namespace std;
- 
+
 const int mod = 1000000007;
 
 int main() {
-    
     int n, m;
     cin >> n >> m;
-        
+
     vector<vector<int>> graph(n);
-    
+
     for (int i = 0; i < m; ++i) {
         int a, b;
         cin >> a >> b;
         --a, --b;
         graph[a].push_back(b);
     }
-    
-    vector<vector<int>> dp((1<<n), vector<int> (n));
+
+    vector<vector<int>> dp((1 << n), vector<int>(n));
     dp[1][0] = 1;
-    
-    for (int msk = 0; msk < (1<<n); msk++) {
+
+    for (int msk = 0; msk < (1 << n); msk++) {
         // daca masca nu contine 1, nu are sens sa continuam
-        if (!(msk & 1)) { 
+        if (!(msk & 1)) {
             continue;
         }
         // daca masca contine n, nu e valida (procesam n la final)
-        if (msk & (1<<(n-1))) {
+        if (msk & (1 << (n - 1))) {
             continue;
         }
         for (int node = 0; node < n; node++) {
             // nodul trebuie sa fi fost procesat deja
-            if (!(msk & (1<<node))) {
+            if (!(msk & (1 << node))) {
                 continue;
             }
             for (int nxt : graph[node]) {
                 // nu vom procesa un nod deja vizitat
-                if (msk & (1<<nxt)) {
+                if (msk & (1 << nxt)) {
                     continue;
                 }
-                dp[msk ^ (1<<nxt)][nxt] += dp[msk][node];
-                if (dp[msk ^ (1<<nxt)][nxt] >= mod) {
-                    dp[msk ^ (1<<nxt)][nxt] -= mod;
+                dp[msk ^ (1 << nxt)][nxt] += dp[msk][node];
+                if (dp[msk ^ (1 << nxt)][nxt] >= mod) {
+                    dp[msk ^ (1 << nxt)][nxt] -= mod;
                 }
             }
         }
     }
-    
-    cout << dp[(1<<n) - 1][n-1] << '\n';
+
+    cout << dp[(1 << n) - 1][n - 1] << '\n';
     return 0;
 }
 ```

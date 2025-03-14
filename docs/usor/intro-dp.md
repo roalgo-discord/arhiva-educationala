@@ -1,9 +1,6 @@
 ---
 id: intro-dp
-author:
-    - Teodor-Ștefan Manolea
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [anomori, stefdasca, stalecu]
 prerequisites:
     - greedy
     - functions
@@ -151,7 +148,7 @@ $$
 
 unde $|x| = \operatorname{abs}(x)$ este valoarea absolută. Cazul de bază constă
 în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar complexitatea
-acestei soluții este $O(n)$.
+acestei soluții este $\mathcal{O}(n)$.
 
 Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 
@@ -184,7 +181,7 @@ dp_i = \min (dp_{i-x} + |v_i - v_{i-x}|),\,\forall x \leq k
 $$
 
 Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar
-complexitatea acestei soluții este $O(n \cdot k)$.
+complexitatea acestei soluții este $\mathcal{O}(n \cdot k)$.
 
 === "Recursiv"
 
@@ -414,6 +411,7 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
   Sequences](https://atcoder.jp/contests/abc312/tasks/abc312_d)
 - [AtCoder I hate Non Integer
   Number](https://atcoder.jp/contests/abc262/tasks/abc262_d)
+- [Not Escaping Codeforces](https://codeforces.com/contest/1627/problem/E)
 - [Problemele cu DP de pe Kilonova](https://kilonova.ro/tags/275)
 - [Problemele intre rating 500 si 1400 de
   aici](https://atcoder-tags.herokuapp.com/tag_search/Dynamic-Programming)
@@ -426,4 +424,6 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
 - [Programare dinamica - CPPI
   Sync](https://cppi.sync.ro/materia/probleme_diverse_dinamica_3.html)
 - [Introduction to DP - USACO Guide](https://usaco.guide/gold/intro-dp?lang=cpp)
+- [Dynamic Programming Prologue - Codeforces](https://codeforces.com/blog/entry/102542)
+- [Simple DP Optimizations - Codeforces](https://codeforces.com/blog/entry/104798)
 - [DP Tutorial and Problem List](https://codeforces.com/blog/entry/67679)

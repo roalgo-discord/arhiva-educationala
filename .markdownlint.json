@@ -19,5 +19,6 @@
             "center"
         ]
     },
+    "list-marker-space": false,
     "code-block-style": false
 }

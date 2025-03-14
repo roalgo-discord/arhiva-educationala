@@ -1,20 +1,16 @@
 ---
+id: OJI-2016-IX-pic
+title: Soluția problemei pic (OJI 2016, clasa a IX-a)
+problem_id: 865
+authors: [stefdasca]
+prerequisites:
+   - simulating-solution
+   - binary-search
 tags:
     - OJI
     - clasa IX
 ---
 
-# Soluția problemei pic (OJI 2016, clasa a IX-a)
-
-!!! example "Cunoștințe necesare"
-    - [Simularea soluției](../../../../usor/simulating-solution.md)
-    - [Căutarea binară](../../../../usor/binary-search.md)
-
-
-**Autor soluție**: Ștefan-Cosmin Dăscălescu
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/865).
 
 Pentru a rezolva prima cerință, tot ce trebuie să facem este să parcurgem
 fiecare linie și să calculăm suma capacităților.
@@ -29,9 +25,10 @@ avea tot mai mult progres cu umplerea paharelor, ceea ce impune folosirea unei
 alte metode de a gândi turnarea apei în pahare.
 
 !!! note "Observație"
+
     Acum, ne putem gândi invers: Oare dacă turnăm toată apa la început?
 
-Dacă turnăm toată apa la început, putem verifica în $O(n^2)$ dacă această
+Dacă turnăm toată apa la început, putem verifica în $\mathcal{O}(n^2)$ dacă această
 cantitate de apă este îndeajuns pentru a realiza obiectivul propus. Astfel,
 ne putem gândi acum mai departe la o idee pe baza unei căutări binare pe
 răspuns, deoarece acum putem simula eficient dacă putem obține un răspuns,
@@ -45,7 +42,7 @@ unui pahar, înseamnă că vom avea nevoie de aproximativ $2^{49} \cdot 25$
 picături pentru a ajunge la răspunsul final. Astfel, putem pune un capăt dreapta
 egal cu $2^{60}$ fără probleme, lucru făcut în soluția de mai jos. 
 
-Complexitatea va fi $O(60 \cdot n^2)$.
+Complexitatea va fi $\mathcal{O}(60 \cdot n^2)$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

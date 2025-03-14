@@ -1,7 +1,9 @@
 ---
 id: OJI-2019-XI-XII-conexidad
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei conexidad (OJI 2019, clasele XI-XII)
+problem_id: 20
+authors:
+    - stefdasca
 prerequisites:
     - graphs
     - sorting
@@ -12,10 +14,6 @@ tags:
     - sortare
 ---
 
-# Soluția problemei conexidad (OJI 2019, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/20/).
 
 Pentru a rezolva această problemă, ne putem gândi mai întâi să aflăm componentele
 conexe, împreună cu dimensiunile lor.

@@ -1,7 +1,6 @@
 ---
 id: segment-trees
-author:
-    - Alexandru Toma
+authors: [alextm0]
 prerequisites:
     - functions
     - sequences
@@ -23,15 +22,15 @@ acesta suferă **modificări în timp real**?
     simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau
     [RMQ](./rmq.md) (Range Minimum Query). Totuși, în scenariile unde
     vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile
-    de query au o complexitate de $O(1)$ atât pentru sume parțiale, cât și
+    de query au o complexitate de $\mathcal{O}(1)$ atât pentru sume parțiale, cât și
     pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de
-    valori, ceea ce duce la o complexitate de $O(n)$ pentru sume parțiale și
-    $O(n \log n)$ pentru RMQ.
+    valori, ceea ce duce la o complexitate de $\mathcal{O}(n)$ pentru sume parțiale și
+    $\mathcal{O}(n \log n)$ pentru RMQ.
 
 **Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint
 în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest
 tip de probleme, permițând efectuarea rapidă de interogări și actualizări în
-$O(\log n)$ pentru ambele operații.
+$\mathcal{O}(\log n)$ pentru ambele operații.
 
 În acest articol, vom explora conceptele de bază ale arborilor de intervale,
 modul de construire și utilizare a acestora, și vom analiza câteva aplicații
@@ -122,10 +121,10 @@ bottom-up, pornind de la frunzele arborelui (care corespund elementelor
 vectorului inițial) și mergând spre rădăcină. La fiecare nivel al arborelui,
 valorile nodurilor se determină pe baza fiilor săi.
 
-Această operație se efectuează în $O(n)$, unde $n$ este numărul de elemente din
+Această operație se efectuează în $\mathcal{O}(n)$, unde $n$ este numărul de elemente din
 vectorul inițial. De reținut că există și o altă variantă de a construi arborele
 prin a actualiza fiecare poziție cu valoarea din vector, însă duce la o
-complexitate de $O(n \log n)$.
+complexitate de $\mathcal{O}(n \log n)$.
 
 ![](../images/segment-trees/build.svg)
 
@@ -148,60 +147,64 @@ iterativă:
 === "Construcție recursivă"
 
     ```cpp
-    void build(int node, int st, int dr) {
-        if (st == dr) {
-            aint[node] = A[st];
-            return;
-        }
-        int mid = (st + dr) / 2;
-
-        build(2 * node, st, mid);   // Construim subarborele stâng
-        build(2 * node + 1, mid + 1, dr);  // Construim subarborele drept
-
-        // Actualizăm rezultatul nodului în funcție de rezultatele fiilor
-        aint[node] = aint[2 * node] + aint[2 * node + 1];
+void build(int node, int st, int dr) {
+    if (st == dr) {
+        aint[node] = A[st];
+        return;
     }
-    ```
+    int mid = (st + dr) / 2;
 
-=== "Construcție iterativă"
+    build(2 * node, st, mid);          // Construim subarborele stâng
+    build(2 * node + 1, mid + 1, dr);  // Construim subarborele drept
 
-    ```cpp
-    void build(int arr[]) { 
-        // Inserăm nodurile frunzelor în arbore
-        for (int i = 0; i < n; i++)  
-            tree[n + i] = arr[i]; 
+    // Actualizăm rezultatul nodului în funcție de rezultatele fiilor
+    aint[node] = aint[2 * node] + aint[2 * node + 1];
+}
+```
 
-        // Construim arborele prin calcularea părinților
-        for (int i = n - 1; i > 0; --i)  
-            tree[i] = tree[i << 1] + tree[i << 1 | 1];   
+    == =
+    "Construcție iterativă"
+
+    ```cpp void build(int arr[]) {
+    // Inserăm nodurile frunzelor în arbore
+    for (int i = 0; i < n; i++) {
+        tree[n + i] = arr[i];
     }
-    ```
 
-### Operația de update
+    // Construim arborele prin calcularea părinților
+    for (int i = n - 1; i > 0; --i) {
+        tree[i] = tree[i << 1] + tree[i << 1 | 1];
+    }
+}
+```
 
-Pentru a efectua un update, ne vom deplasa în arbore până la frunza care
-reprezintă elementul modificat. Odată ce am ajuns la frunză, înlocuim valoarea
-veche cu cea nouă. Pe măsură ce revenim din recursivitate, actualizăm fiecare
-nod din drum, recalculând valorile pe baza celor doi fii, pentru a ne asigura că
-arborele rămâne corect.
+    ## #Operația de update
 
-Această operație se efectuează în $O(\log n)$, unde $n$ este numărul de elemente
-din vectorul inițial. Complexitatea este determinată de înălțimea arborelui,
-deoarece actualizarea trebuie propagată de la frunză până la rădăcină.
+        Pentru a efectua un update,
+    ne vom deplasa în arbore până la frunza care reprezintă elementul
+        modificat.Odată ce am ajuns la frunză,
+    înlocuim valoarea veche cu cea nouă.Pe măsură ce revenim din recursivitate,
+    actualizăm fiecare nod din drum, recalculând valorile pe baza celor doi fii,
+    pentru a ne asigura că arborele rămâne corect.
 
-Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
-arborelui de intervale după ce actualizăm valoarea elementului de pe poziția 5
-din 2 în 1.
+    Această operație se efectuează în $\mathcal{O}(\log n)$,
+    unde $n$ este numărul de elemente din vectorul inițial.Complexitatea este
+    determinată de înălțimea arborelui,
+    deoarece actualizarea trebuie propagată de la frunză până la rădăcină.
 
-![](../images/segment-trees/update.svg)
+    Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
+    arborelui de intervale după ce actualizăm valoarea elementului de pe poziția
+    5 din 2 în 1.
 
-În diagramele de mai sus, putem observa cum se modifică structura arborelui de
-intervale după ce modificăm valoarea de pe poziția 5 din 2 în 7. Nodurile
-afectate de această modificare sunt evidențiate, iar valorile lor sunt
-actualizate pentru a reflecta noua configurație.
+    ![](../ images / segment - trees / update.svg)
 
-Iată un exemplu de implementare a acestei operații în C++:
+        În diagramele de mai sus,
+    putem observa cum se modifică structura arborelui de intervale după ce
+    modificăm valoarea de pe poziția 5 din 2 în
+    7. Nodurile afectate de această modificare sunt evidențiate,
+    iar valorile lor sunt actualizate pentru a reflecta noua configurație.
 
+    Iată un exemplu de implementare a acestei operații în C++:
 ```cpp
 void update(int pos, int val, int node, int st, int dr) {
   if (st == dr) {
@@ -251,16 +254,18 @@ Iată un exemplu de implementare a operației de query în C++:
 
 ```cpp
 int query(int x, int y, int node, int st, int dr) {
-  if(dr < x || y < st) // Daca intervalul se afla complet in afara
-    return 0;
-  if(x <= st && dr <= y) // Daca intervalul este complet inclus
-    return aint[node];
+    if (dr < x || y < st) {  // Daca intervalul se afla complet in afara
+        return 0;
+    }
+    if (x <= st && dr <= y) {  // Daca intervalul este complet inclus
+        return aint[node];
+    }
 
-  int mid = (st + dr) / 2;
-  int Q_st = query(x, y, node * 2, st, mid); // (1)
-  int Q_dr = query(x, y, node * 2 + 1, mid + 1, dr); //(2)
-  
-  return Q_st + Q_dr;
+    int mid = (st + dr) / 2;
+    int Q_st = query(x, y, node * 2, st, mid);          // (1)
+    int Q_dr = query(x, y, node * 2 + 1, mid + 1, dr);  //(2)
+
+    return Q_st + Q_dr;
 }
 ```
 
@@ -307,10 +312,10 @@ informații pentru fiecare nod:
 
 ```cpp
 struct Node {
-  int suma;     // Suma subsecventei
-  int prefmax;  // Prefixul de suma maxima
-  int suffmax;  // Sufixul de suma maxima
-  int smax;     // Subsecventa de suma maxima
+    int suma;     // Suma subsecventei
+    int prefmax;  // Prefixul de suma maxima
+    int suffmax;  // Sufixul de suma maxima
+    int smax;     // Subsecventa de suma maxima
 };
 ```
 
@@ -336,18 +341,18 @@ Analog pentru sufixul de sumă maximă, doar că luăm maximul dintre sufixul g�
 
 ```cpp
 struct Node {
-  int suma;     // Suma subsecventei
-  int prefmax;  // Prefixul de suma maxima
-  int suffmax;  // Sufixul de suma maxima
-  int smax;     // Subsecventa de suma maxima
+    int suma;     // Suma subsecventei
+    int prefmax;  // Prefixul de suma maxima
+    int suffmax;  // Sufixul de suma maxima
+    int smax;     // Subsecventa de suma maxima
 };
 
 Node merge(Node L, Node R) {
-  Node T;
-  T.suma = L.suma + R.suma;
-  T.prefmax = max(L.prefmax, L.suma + R.prefmax);
-  T.suffmax = max(R.suffmax, R.suma + L.suffmax);
-  T.smax = max( max(L.smax, R.smax), L.suffmax + R.prefmax );
+    Node T;
+    T.suma = L.suma + R.suma;
+    T.prefmax = max(L.prefmax, L.suma + R.prefmax);
+    T.suffmax = max(R.suffmax, R.suma + L.suffmax);
+    T.smax = max(max(L.smax, R.smax), L.suffmax + R.prefmax);
 }
 ```
 
@@ -358,9 +363,9 @@ Node merge(Node L, Node R) {
 Iată o posibila implementare a acestei probleme in C++:
 
 ```cpp
-#include <iostream>  
-#include <fstream>  
-#include <algorithm>  
+#include <algorithm>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 ifstream fin("maxq.in");
@@ -369,72 +374,77 @@ ofstream fout("maxq.out");
 const int MAXN = 2e5 + 1;
 
 struct Node {
-  long long suma;    // Suma subsecventei
-  long long prefmax; // Prefixul de suma maxima
-  long long sufmax;  // Sufixul de suma maxima
-  long long smax;    // Subsecventa de suma maxima
+    long long suma;     // Suma subsecventei
+    long long prefmax;  // Prefixul de suma maxima
+    long long sufmax;   // Sufixul de suma maxima
+    long long smax;     // Subsecventa de suma maxima
 } aint[MAXN * 4];
 
 int n;
 
 Node combine(Node L, Node R) {
-  Node T;
-  T.suma = L.suma + R.suma;
-  T.prefmax = max(L.prefmax, L.suma + R.prefmax);
-  T.sufmax = max(R.sufmax, R.suma + L.sufmax);
-  T.smax = max( max(L.smax, R.smax), L.sufmax + R.prefmax );
-  return T;
+    Node T;
+    T.suma = L.suma + R.suma;
+    T.prefmax = max(L.prefmax, L.suma + R.prefmax);
+    T.sufmax = max(R.sufmax, R.suma + L.sufmax);
+    T.smax = max(max(L.smax, R.smax), L.sufmax + R.prefmax);
+    return T;
 }
 
 void update(int pos, int val, int node = 1, int st = 1, int dr = n) {
-  if(st == dr) {
-    if(val > 0)
-      aint[node] = {val, val, val, val};
-    else
-      aint[node] = {val, 0, 0, 0};
-    return;
-  }
+    if (st == dr) {
+        if (val > 0) {
+            aint[node] = {val, val, val, val};
+        } else {
+            aint[node] = {val, 0, 0, 0};
+        }
+        return;
+    }
 
-  int mid = (st + dr) / 2;
-  if(pos <= mid)
-    update(pos, val, node * 2, st, mid);
-  else
-    update(pos, val, node * 2 + 1, mid + 1, dr);
-  aint[node] = combine(aint[node * 2], aint[node * 2 + 1]);
+    int mid = (st + dr) / 2;
+    if (pos <= mid) {
+        update(pos, val, node * 2, st, mid);
+    } else {
+        update(pos, val, node * 2 + 1, mid + 1, dr);
+    }
+    aint[node] = combine(aint[node * 2], aint[node * 2 + 1]);
 }
 
 Node query(int x, int y, int node = 1, int st = 1, int dr = n) {
-  if(y < st || dr < x)
-    return {0, 0, 0, 0};
-  if(x <= st && dr <= y)
-    return aint[node];
+    if (y < st || dr < x) {
+        return {0, 0, 0, 0};
+    }
+    if (x <= st && dr <= y) {
+        return aint[node];
+    }
 
-  int mid = (st + dr) / 2;
-  Node Q1 = query(x, y, node * 2, st, mid);
-  Node Q2 = query(x, y, node * 2 + 1, mid + 1, dr);
-  return combine(Q1, Q2);
+    int mid = (st + dr) / 2;
+    Node Q1 = query(x, y, node * 2, st, mid);
+    Node Q2 = query(x, y, node * 2 + 1, mid + 1, dr);
+    return combine(Q1, Q2);
 }
 
 int main() {
-  int q;
-  fin >> n;
-  for(int i = 1; i <= n; i++) {
-    int x;
-    fin >> x;
-    update(i, x);
-  }
+    int q;
+    fin >> n;
+    for (int i = 1; i <= n; i++) {
+        int x;
+        fin >> x;
+        update(i, x);
+    }
 
-  fin >> q;
-  while(q--) {
-    int op, x, y;
-    fin >> op >> x >> y;
-    if(op == 0)
-      update(x + 1, y);
-    else
-      fout << query(x + 1, y + 1).smax << '\n';
-  }
+    fin >> q;
+    while (q--) {
+        int op, x, y;
+        fin >> op >> x >> y;
+        if (op == 0) {
+            update(x + 1, y);
+        } else {
+            fout << query(x + 1, y + 1).smax << '\n';
+        }
+    }
 
-  return 0;
+    return 0;
 }
 ```
 

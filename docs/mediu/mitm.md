@@ -1,7 +1,6 @@
 ---
 id: mitm
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - stl
     - bitwise-ops
@@ -36,7 +35,7 @@ Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar
 apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții
 generate.
 
-Astfel, complexitatea algoritmului va deveni acum $O(2^{\frac{n}{2}})$.
+Astfel, complexitatea algoritmului va deveni acum $\mathcal{O}(2^{\frac{n}{2}})$.
 
 ### [Problema Meet in the Middle](https://cses.fi/problemset/task/1628/)
 
@@ -46,12 +45,12 @@ apoi pentru fiecare sumă din cea de-a doua jumătate, vom afla câte sume sunt
 egale cu complementul ei $k - sum$.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
- 
+
 using namespace std;
- 
+
 int bs(int sum, vector<int> &sums) {
     int L = 0;
     int R = sums.size() - 1;
@@ -61,57 +60,55 @@ int bs(int sum, vector<int> &sums) {
         if (sums[mid] <= sum) {
             ans = mid + 1;
             L = mid + 1;
-        }
-        else {
+        } else {
             R = mid - 1;
         }
     }
     return ans;
 }
- 
+
 int main() {
- 
     int n, k;
     cin >> n >> k;
-    
+
     vector<int> v(n);
     for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
-    
+
     long long ans = 0;
     vector<int> sums;
-    
-    int firsthalf = n/2+n%2;
+
+    int firsthalf = n / 2 + n % 2;
     int secondhalf = n - firsthalf;
-    for (int i = 0; i < (1<<firsthalf); i++) {
+    for (int i = 0; i < (1 << firsthalf); i++) {
         long long sum = 0;
         for (int j = 0; j < firsthalf; j++) {
-            if (i & (1<<j)) {
+            if (i & (1 << j)) {
                 sum += v[j];
             }
         }
-        
+
         if (sum <= k) {
             sums.push_back(sum);
         }
     }
-    
+
     sort(sums.begin(), sums.end());
-    
-    for (int i = 0; i < (1<<secondhalf); i++) {
+
+    for (int i = 0; i < (1 << secondhalf); i++) {
         long long sum = 0;
         for (int j = firsthalf; j < n; j++) {
-            if (i & (1<<(j - firsthalf))) {
+            if (i & (1 << (j - firsthalf))) {
                 sum += v[j];
             }
         }
-        
+
         if (sum <= k) {
             ans += bs(k - sum, sums) - bs(k - sum - 1, sums);
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -127,46 +124,44 @@ problemă, așa cum facem și aici.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, x;
     cin >> n >> x;
-    
-    vector<int> v(n+1);
+
+    vector<int> v(n + 1);
     for (int i = 1; i <= n; ++i) {
         cin >> v[i];
     }
-        
+
     map<int, int> mp;
     for (int i = 2; i <= n; ++i) {
-        for (int j = i+1; j <= n; ++j) {
+        for (int j = i + 1; j <= n; ++j) {
             mp[v[i] + v[j]]++;
         }
     }
-    
+
     for (int i = 2; i <= n; ++i) {
-        for (int j = i+1; j <= n; ++j) {
+        for (int j = i + 1; j <= n; ++j) {
             if (mp[v[i] + v[j]] >= 2) {
                 mp[v[i] + v[j]]--;
-            }
-            else {
+            } else {
                 mp.erase(v[i] + v[j]);
             }
         }
-        for (int j = i-1; j >= 1; --j) {
+        for (int j = i - 1; j >= 1; --j) {
             if (mp.find(x - v[i] - v[j]) != mp.end()) {
                 int rem = x - v[i] - v[j];
                 cout << j << " " << i << " ";
-                for (int q = i+1; q <= n; ++q) {
-                    for (int p = q+1; p <= n; ++p) {
+                for (int q = i + 1; q <= n; ++q) {
+                    for (int p = q + 1; p <= n; ++p) {
                         if (v[p] + v[q] == rem) {
                             cout << q << " " << p << '\n';
                             return 0;

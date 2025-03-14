@@ -1,7 +1,6 @@
 ---
 id: ad-hoc
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - probleme
     - meta
@@ -58,8 +57,7 @@ de $n$ numere, toate submulțimile mulțimii ${1, 2, ..., n}$ și asa mai depart
 using namespace std;
 
 int main() {
-    int n
-    cin >> n;
+    int n cin >> n;
 
     vector<int> v;
 
@@ -69,21 +67,21 @@ int main() {
 
     // generarea permutarilor multimii 1, 2, .., n
 
-    do{
-       // procesam permutarea
-    } while(next_permutation(v.begin(), v.end()));
+    do {
+        // procesam permutarea
+    } while (next_permutation(v.begin(), v.end()));
 
     // generarea submultimilor multimii 1, 2, .., n
     // avem 2^n submultimi, fiecare dintre ele putand fi reprezentata folosind
     // o masca pe biti
 
-    for (int i = 0; i < (1<<n); i++) {
+    for (int i = 0; i < (1 << n); i++) {
         vector<int> subset;
         for (int j = 0; j < n; j++) {
-            if (i & (1<<j)) {
+            if (i & (1 << j)) {
                 subset.push_back(j);
                 // procesam acel numar ca parte a submultimii gasite
-            }       
+            }
         }
     }
     return 0;
@@ -198,7 +196,7 @@ Mai întâi, trebuie să ne gândim la informațiile pe care le putem afla mai u
 cu privire la valorile din vectorul $b$. De exemplu, $b[1] \ \% \ 2$ = $(a[1] +
 a[2] + \dots + a[n]) \ \% \ 2$. Totuși, $b[n] \ \% \ 2$ = $a[n] \ \% \ 2$.
 
-De asemenea, numărul total de valori pe care trebuie să le verificăm este $O(n
+De asemenea, numărul total de valori pe care trebuie să le verificăm este $\mathcal{O}(n
 \log n)$, o observație ce este destul de clară pentru oricine a implementat cel
 puțin o dată ciurul lui Eratostene.
 
@@ -237,7 +235,7 @@ false ipoteze este exact $k$, conform enunțului.
 În primul rând, este clar că fiecare jucător va vrea să ia elementul cu valoarea
 maximă la fiecare pas. Acest lucru ne duce la o soluție relativ ușor de găsit
 care implică un set (la fiecare pas luăm valoarea maximă și eventual adăugăm
-valoarea nouă în set). Complexitatea este $O(n * k * \log n)$, ceea ce obține
+valoarea nouă în set). Complexitatea este $\mathcal{O}(n * k * \log n)$, ceea ce obține
 50 de puncte. Cum putem îmbunătăți această soluție?
 
 ## Observații suplimentare
@@ -255,7 +253,7 @@ inițială, avem două cazuri în ceea ce privește noua valoare adăugată.
 - Altfel, acea valoare va fi adăugată în vectorul de frecvență, iar calculul va
   continua ca de obicei.
 
-Astfel, complexitatea soluției va deveni $O(n \cdot k)$.
+Astfel, complexitatea soluției va deveni $\mathcal{O}(n \cdot k)$.
 
 ## Alte sfaturi practice
 

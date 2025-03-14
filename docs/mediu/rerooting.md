@@ -1,7 +1,6 @@
 ---
 id: rerooting
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - tree-1
     - intro-dp
@@ -87,13 +86,13 @@ să observăm cu atenție ce se întâmplă atunci când ajungem de la un nod la
 #include <vector>
 
 using namespace std;
- 
+
 int n;
 vector<vector<int> > tree;
 vector<int> maxdist, ans;
- 
-void dfs (int parent, int node) {
-    for (int i = 0; i < (int) tree[node].size(); i++) {
+
+void dfs(int parent, int node) {
+    for (int i = 0; i < (int)tree[node].size(); i++) {
         int nxt = tree[node][i];
         if (nxt == parent) {
             continue;
@@ -102,12 +101,12 @@ void dfs (int parent, int node) {
         maxdist[node] = max(maxdist[node], maxdist[nxt] + 1);
     }
 }
- 
-void dfs2 (int parent, int node, int distUp) {   
+
+void dfs2(int parent, int node, int distUp) {
     ans[node] = max(maxdist[node], distUp);
-    int max1 = 0, max2 = 0; 
+    int max1 = 0, max2 = 0;
     // cele mai mari doua distante fata de subarborii nodului curent
-    for (int i = 0; i < (int) tree[node].size(); i++) {
+    for (int i = 0; i < (int)tree[node].size(); i++) {
         int nxt = tree[node][i];
         if (nxt == parent) {
             continue;
@@ -116,48 +115,46 @@ void dfs2 (int parent, int node, int distUp) {
         if (maxdist[nxt] + 1 > max1) {
             max2 = max1;
             max1 = maxdist[nxt] + 1;
-        }
-        else {
+        } else {
             if (maxdist[nxt] + 1 > max2) {
                 max2 = maxdist[nxt] + 1;
             }
         }
     }
-    
-    for (int i = 0; i < (int) tree[node].size(); i++) {
+
+    for (int i = 0; i < (int)tree[node].size(); i++) {
         int nxt = tree[node][i];
         if (nxt == parent) {
             continue;
-        } 
-        // daca nodul curent este cel care ne-a dat distanta maxima
-        if(maxdist[nxt] + 1 == max1) {
-            dfs2(node, nxt, max(distUp, max2) + 1);
         }
-        else {
+        // daca nodul curent este cel care ne-a dat distanta maxima
+        if (maxdist[nxt] + 1 == max1) {
+            dfs2(node, nxt, max(distUp, max2) + 1);
+        } else {
             dfs2(node, nxt, max(distUp, max1) + 1);
         }
     }
 }
- 
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     cin >> n;
-    tree.resize(n+1);
-    maxdist.resize(n+1);
-    ans.resize(n+1);
-    
+    tree.resize(n + 1);
+    maxdist.resize(n + 1);
+    ans.resize(n + 1);
+
     for (int i = 1; i < n; i++) {
         int a, b;
         cin >> a >> b;
         tree[a].push_back(b);
         tree[b].push_back(a);
     }
-    
+
     dfs(0, 1);
     dfs2(0, 1, 0);
-    
+
     for (int i = 1; i <= n; i++) {
         cout << ans[i] << " ";
     }
@@ -243,12 +240,14 @@ void dfs1(int nod, int tt) {
     for (auto &c : nodes[nod].adj) {
         if (c != tt) {
             dfs1(c, nod);
-            nodes[nod].down = (1LL * nodes[nod].down * (nodes[c].down + 1)) % mod;
+            nodes[nod].down =
+                (1LL * nodes[nod].down * (nodes[c].down + 1)) % mod;
         }
     }
 
     // scoatem parintele
-    vector<int>::iterator it = find(nodes[nod].adj.begin(), nodes[nod].adj.end(), tt);
+    vector<int>::iterator it =
+        find(nodes[nod].adj.begin(), nodes[nod].adj.end(), tt);
     if (it != nodes[nod].adj.end()) {
         nodes[nod].adj.erase(it);
     }
@@ -264,12 +263,16 @@ void dfs2(int nod, int tt) {
 
     nodes[nod].l[0] = nodes[nod].up;
     for (int i = 1; i < sz; i++) {
-        nodes[nod].l[i] = (1LL * nodes[nod].l[i - 1] * (nodes[nodes[nod].adj[i - 1]].down + 1)) % mod;
+        nodes[nod].l[i] = (1LL * nodes[nod].l[i - 1]
+                           * (nodes[nodes[nod].adj[i - 1]].down + 1))
+                        % mod;
     }
 
     nodes[nod].r[sz - 1] = 1;
     for (int i = sz - 2; i >= 0; i--) {
-        nodes[nod].r[i] = (1LL * nodes[nod].r[i + 1] * (nodes[nodes[nod].adj[i + 1]].down + 1)) % mod;
+        nodes[nod].r[i] = (1LL * nodes[nod].r[i + 1]
+                           * (nodes[nodes[nod].adj[i + 1]].down + 1))
+                        % mod;
     }
 
     for (int i = 0; i < sz; i++) {
@@ -279,10 +282,9 @@ void dfs2(int nod, int tt) {
     }
 }
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     cin >> n >> mod;
     for (int i = 1; i < n; i++) {
         int x, y;

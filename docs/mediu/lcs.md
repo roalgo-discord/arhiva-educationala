@@ -1,7 +1,6 @@
 ---
 id: lcs
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - strings
@@ -55,37 +54,36 @@ $$dp[i][j] = max(dp[i-1][j], dp[i][j-1], dp[i-1][j-1] + x)$$
 
 unde $x = 1$ dacă $a_i = b_j$ și $x = 0$ în caz contrar.
 
-Această abordare va avea complexitatea $O(|a| \cdot |b|)$, unde $|a|$ și $|b|$
+Această abordare va avea complexitatea $\mathcal{O}(|a| \cdot |b|)$, unde $|a|$ și $|b|$
 sunt lungimile celor două șiruri de caractere. Aici puteți găsi o implementare,
 care rezolvă problema [similara de pe
 atcoder](https://atcoder.jp/contests/dp/tasks/dp_f)
 
 ```cpp
-#include <iostream>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 int n, m, dp[3025][3025], fw[3025][3025];
 
 char c[3025], c2[3025];
 
-void solve (int n, int m) {
+void solve(int n, int m) {
     if (n == 0 || m == 0) {
         return;
     }
     if (fw[n][m] == 1) {
-        solve(n-1, m);
+        solve(n - 1, m);
     }
     if (fw[n][m] == 2) {
-        solve(n, m-1);
+        solve(n, m - 1);
     }
     if (fw[n][m] == 3) {
-        solve(n-1, m-1);
-        cout << c[n-1];
+        solve(n - 1, m - 1);
+        cout << c[n - 1];
     }
 }
 int main() {
- 
     cin >> c;
     cin >> c2;
     n = strlen(c);
@@ -93,21 +91,21 @@ int main() {
 
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
-            dp[i][j] = max(dp[i-1][j], max(dp[i][j-1], dp[i-1][j-1] + (c[i-1] == c2[j-1])));
-            if (dp[i-1][j] == dp[i][j]) {
+            dp[i][j] = max(
+                dp[i - 1][j],
+                max(dp[i][j - 1], dp[i - 1][j - 1] + (c[i - 1] == c2[j - 1])));
+            if (dp[i - 1][j] == dp[i][j]) {
                 fw[i][j] = 1;
-            }
-            else {
-                if (dp[i][j-1] == dp[i][j]) {
+            } else {
+                if (dp[i][j - 1] == dp[i][j]) {
                     fw[i][j] = 2;
-                }
-                else {
+                } else {
                     fw[i][j] = 3;
                 }
             }
         }
     }
-    
+
     solve(n, m);
     return 0;
 }
@@ -124,36 +122,37 @@ CSES](https://cses.fi/problemset/task/1639/)
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
- 
+
 const int mod = 1000000007;
- 
+
 int main() {
     string a, b;
     cin >> a >> b;
-    
+
     int n = a.size();
     int m = b.size();
-    
-    vector<vector<int> > dp(n+1, vector<int> (m+1, (1<<20)));
+
+    vector<vector<int> > dp(n + 1, vector<int>(m + 1, (1 << 20)));
     dp[0][0] = 0;
-    
+
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= m; j++) {
             if (i != 0) {
-                dp[i][j] = min(dp[i][j], dp[i-1][j] + 1);
+                dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);
             }
             if (j != 0) {
-                dp[i][j] = min(dp[i][j], dp[i][j-1] + 1);
+                dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);
             }
             if (i != 0 && j != 0) {
-                dp[i][j] = min(dp[i][j], dp[i-1][j-1] + (a[i-1] != b[j-1]));
+                dp[i][j] =
+                    min(dp[i][j], dp[i - 1][j - 1] + (a[i - 1] != b[j - 1]));
             }
         }
     }
-    
+
     cout << dp[n][m] << '\n';
     return 0;
 }
@@ -175,8 +174,8 @@ curentă în ordine descrescătoare, scopul nostru fiind acela de a ține un vec
 dp cu proprietatea că $dp[i]$ este cea mai mică poziție din șirul $b$ astfel
 încât am putut ajunge să avem un subșir comun maximal de lungime $i$.
 
-Complexitatea algoritmului va fi $O((n + m) \log n)$, unde $m$ este numărul de
-perechi de caractere egale. Deși cel mai prost caz este $O(n^2 \log n)$, în
+Complexitatea algoritmului va fi $\mathcal{O}((n + m) \log n)$, unde $m$ este numărul de
+perechi de caractere egale. Deși cel mai prost caz este $\mathcal{O}(n^2 \log n)$, în
 practică, algoritmul va fi mult mai eficient. Aici puteți găsi o implementare a
 acestui algoritm, inspirata din [acest
 cod](https://github.com/sgtlaugh/algovault/blob/master/code_library/hunt_szymanski.cpp).
@@ -188,7 +187,7 @@ aflarea celui mai lung subșir crescător pe perechi de poziții.
 int lcs(const std::string &A, const std::string &B) {
     std::vector<std::vector<int>> adj(256);
     int n = A.size(), m = B.size();
-    
+
     for (int i = 0; i < m; ++i) {
         adj[B[i]].push_back(i);
     }

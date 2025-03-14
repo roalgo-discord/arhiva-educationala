@@ -1,7 +1,6 @@
 ---
 id: hld
-author:
-    - Raul Ardelean
+authors: [raul]
 prerequisites:
     - lowest-common-ancestor
     - segment-trees
@@ -40,9 +39,9 @@ lanț. Așadar, pentru fiecare nod $x$, vom alege să continuăm crearea lanțul
 fiul care are cele mai multe noduri în subarborele său.
 
 De ce nu am ales fiul care are cel mai lung lanț creat până la el? Când avem
-$\sqrt N$ lanțuri elementare, atunci vom avea o complexitate de $O(\sqrt N)$
+$\sqrt N$ lanțuri elementare, atunci vom avea o complexitate de $\mathcal{O}(\sqrt N)$
 pentru parcurgerea de la un nod $x$ până la rădăcină. În concluzie, vom avea o
-complexitate de **$O(\sqrt N \cdot \log N)$** pentru fiecare interogare sau
+complexitate de **$\mathcal{O}(\sqrt N \cdot \log N)$** pentru fiecare interogare sau
 update.
 
 ![](../images/hld/pathssqrtn.png)
@@ -57,8 +56,8 @@ decomposition**.
 
 ![](../images/hld/pathslogn.png)
 
-Complexitatea finală pe fiecare interogare va fi $O(( \log N ) ^ 2)$, iar pentru
-update-ul unui singur nod în $O(\log N)$.
+Complexitatea finală pe fiecare interogare va fi $\mathcal{O}(( \log N ) ^ 2)$, iar pentru
+update-ul unui singur nod în $\mathcal{O}(\log N)$.
 
 ## Implementarea în C++
 
@@ -67,30 +66,31 @@ Există și alte tehnici de precalculare a lanțurilor, dar aceasta este cea mai
 ```cpp
 /// nodurile arborelui sunt inițializați de la 1
 
-const int MAX=2e5+5; /// limita de noduri din arbore
+const int MAX = 2e5 + 5;  /// limita de noduri din arbore
 
-vector<int> G[MAX]; /// G[i] - nodurile în care putem intra din nodul i
-bitset<MAX> viz; /// viz[i] - verificăm dacă am intrat în nodul i
-int niv[MAX]; /// niv[i] - nivelul la care se află nodul i în arbore
-int w[MAX]; /// w[i] - dimensiunea subarborelui cu root i
-int nrL; /// numărul de lanțuri
-int L[MAX]; /// L[i] - în ce lanț se află nodul i
-int Lfather[MAX]; /// Lfather[L[i]] - primul nod al lanțului în care se află i
-int Lniv[MAX]; /// Lniv[L[i]] - nivelul primului nod al lanțului în care se află i
-vector<int> Lant[MAX]; /// Lant[i] - toate nodurile din lanțul i de la frunză până la nodul root al lanțului
+vector<int> G[MAX];  /// G[i] - nodurile în care putem intra din nodul i
+bitset<MAX> viz;     /// viz[i] - verificăm dacă am intrat în nodul i
+int niv[MAX];        /// niv[i] - nivelul la care se află nodul i în arbore
+int w[MAX];          /// w[i] - dimensiunea subarborelui cu root i
+int nrL;             /// numărul de lanțuri
+int L[MAX];          /// L[i] - în ce lanț se află nodul i
+int Lfather[MAX];  /// Lfather[L[i]] - primul nod al lanțului în care se află i
+int Lniv[MAX];  /// Lniv[L[i]] - nivelul primului nod al lanțului în care se
+                /// află i
+vector<int> Lant[MAX];  /// Lant[i] - toate nodurile din lanțul i de la frunză
+                        /// până la nodul root al lanțului
 
 void dfs(int node) {
     int leaf = 1, maxl = -1;
 
     viz[node] = 1;
     w[node] = 1;
-    
 
     for (auto x : G[node]) {
         if (viz[x]) {
             continue;
         }
-            
+
         leaf = 0;
         niv[x] = niv[node] + 1;
 
@@ -101,15 +101,14 @@ void dfs(int node) {
         /// actualizăm fiul care are cea mai mare dimensiune al subarborelui
         if (maxl == -1) {
             maxl = x;
-        }
-        else if (w[maxl] < w[x]) {
+        } else if (w[maxl] < w[x]) {
             maxl = x;
         }
     }
 
     /// daca node este o frunză
     if (leaf) {
-        L[node] = ++nrL; /// se crează un nou lanț
+        L[node] = ++nrL;  /// se crează un nou lanț
         Lant[L[node]].push_back(node);
     }
     /// altfel o să legăm pe node de maxl
@@ -117,12 +116,13 @@ void dfs(int node) {
         L[node] = L[maxl];
         Lant[L[node]].push_back(node);
 
-        /// aici vom fixa nodul de start pentru fii care au rămas, aceștia fiind primi în lanțul creat păna la ei
+        /// aici vom fixa nodul de start pentru fii care au rămas, aceștia fiind
+        /// primi în lanțul creat păna la ei
         for (auto x : G[node]) {
             if (x == maxl or niv[x] < niv[node]) {
                 continue;
             }
-                
+
             Lfather[L[x]] = node;
             Lniv[L[x]] = niv[node];
         }
@@ -157,11 +157,11 @@ chiar cea de la
 O implementare de 100 de puncte poate fi citită mai jos:
 
 ```cpp
-#include <fstream>
-#include <climits>
 #include <algorithm>
-#include <vector>
 #include <bitset>
+#include <climits>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 const string fn("heavypath");
@@ -174,7 +174,8 @@ ofstream out(fn + ".out");
 
 const int MAX = 1e5;
 
-int n, q, val[MAX + 5], niv[MAX + 5], w[MAX + 5], nrL, L[MAX + 5], Lfather[MAX + 5], Lniv[MAX + 5], Ldecal[MAX + 5];
+int n, q, val[MAX + 5], niv[MAX + 5], w[MAX + 5], nrL, L[MAX + 5],
+    Lfather[MAX + 5], Lniv[MAX + 5], Ldecal[MAX + 5];
 int Tree[4 * MAX + 5];
 vector<int> g[MAX + 5], Lant[MAX + 5];
 bitset<MAX + 5> viz;
@@ -184,12 +185,12 @@ void dfs(int node) {
 
     viz[node] = 1;
     w[node] = 1;
-    
+
     for (auto x : g[node]) {
         if (viz[x]) {
             continue;
         }
-            
+
         leaf = 0;
         niv[x] = niv[node] + 1;
 
@@ -199,8 +200,7 @@ void dfs(int node) {
 
         if (maxl == -1) {
             maxl = x;
-        }
-        else if (w[maxl] < w[x]) {
+        } else if (w[maxl] < w[x]) {
             maxl = x;
         }
     }
@@ -209,8 +209,7 @@ void dfs(int node) {
         nrL++;
         L[node] = nrL;
         Lant[L[node]].push_back(node);
-    }
-    else {
+    } else {
         L[node] = L[maxl];
         Lant[L[node]].push_back(node);
 
@@ -218,7 +217,7 @@ void dfs(int node) {
             if (x == maxl or niv[x] < niv[node]) {
                 continue;
             }
-                
+
             Lfather[L[x]] = node;
             Lniv[L[x]] = niv[node];
         }
@@ -228,32 +227,31 @@ void dfs(int node) {
 void build(int node, int l, int r, int decal, int pozl) {
     if (l == r) {
         Tree[node + decal] = val[Lant[pozl][l - 1]];
-    }
-    else {
+    } else {
         int m = (l + r) / 2;
 
         build(2 * node, l, m, decal, pozl);
         build(2 * node + 1, m + 1, r, decal, pozl);
 
-        Tree[node + decal] = max(Tree[2 * node + decal], Tree[2 * node + 1 + decal]);
+        Tree[node + decal] =
+            max(Tree[2 * node + decal], Tree[2 * node + 1 + decal]);
     }
 }
 
 void update(int node, int l, int r, int target, int val, int decal) {
     if (l == r) {
         Tree[node + decal] = val;
-    }
-    else {
+    } else {
         int m = (l + r) / 2;
 
         if (target <= m) {
             update(2 * node, l, m, target, val, decal);
-        }
-        else {
+        } else {
             update(2 * node + 1, m + 1, r, target, val, decal);
         }
 
-        Tree[node + decal] = max(Tree[2 * node + decal], Tree[2 * node + 1 + decal]);
+        Tree[node + decal] =
+            max(Tree[2 * node + decal], Tree[2 * node + 1 + decal]);
     }
 }
 
@@ -261,14 +259,15 @@ int query(int node, int l, int r, int a, int b, int decal) {
     if (r < a or b < l) {
         return INT_MIN;
     }
-        
+
     if (a <= l and r <= b) {
         return Tree[node + decal];
     }
 
     int m = (l + r) / 2;
 
-    return max(query(2 * node, l, m, a, b, decal), query(2 * node + 1, m + 1, r, a, b, decal));
+    return max(query(2 * node, l, m, a, b, decal),
+               query(2 * node + 1, m + 1, r, a, b, decal));
 }
 
 void make_paths() {
@@ -282,7 +281,7 @@ void make_paths() {
         if (i > 1) {
             Ldecal[i] = Ldecal[i - 1] + Lant[i - 1].size() * 4;
         }
-            
+
         build(1, 1, Lant[i].size(), Ldecal[i], i);
     }
 }
@@ -294,8 +293,7 @@ void solve() {
 
     if (t == 0) {
         update(1, 1, Lant[L[x]].size(), niv[x] - Lniv[L[x]], y, Ldecal[L[x]]);
-    }
-    else {
+    } else {
         int ans = INT_MIN;
 
         while (1) {
@@ -303,16 +301,19 @@ void solve() {
                 if (niv[x] > niv[y]) {
                     swap(x, y);
                 }
-                    
-                ans = max(ans, query(1, 1, Lant[L[x]].size(), niv[x] - Lniv[L[x]], niv[y] - Lniv[L[x]], Ldecal[L[x]]));
-                
+
+                ans =
+                    max(ans, query(1, 1, Lant[L[x]].size(), niv[x] - Lniv[L[x]],
+                                   niv[y] - Lniv[L[x]], Ldecal[L[x]]));
+
                 break;
             }
             if (Lniv[L[x]] < Lniv[L[y]]) {
                 swap(x, y);
             }
-    
-            ans = max(ans, query(1, 1, Lant[L[x]].size(), 1, niv[x] - Lniv[L[x]], Ldecal[L[x]]));
+
+            ans = max(ans, query(1, 1, Lant[L[x]].size(), 1,
+                                 niv[x] - Lniv[L[x]], Ldecal[L[x]]));
             x = Lfather[L[x]];
         }
 
@@ -326,7 +327,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         cin >> val[i];
     }
-        
+
     for (int i = 1, x, y; i < n; i++) {
         cin >> x >> y;
 
@@ -349,32 +350,32 @@ Această problemă necesită cunoștințe de la
 [string hashing](../mediu/hashing.md), respectiv
 [Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.md).
 
-În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $O(1)$
+În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $\mathcal{O}(1)$
 valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va
 trebui să facem update pe fiecare lanț când schimbăm litera de la un nod.
 Astfel, complexitatea pentru update și query pe un lanț va rămâne tot
-$O(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un
-lanț care leagă două noduri, aceasta va intra în complexitate $O((\log N)^2)$,
+$\mathcal{O}(\log(N))$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un
+lanț care leagă două noduri, aceasta va intra în complexitate $\mathcal{O}((\log N)^2)$,
 deoarece putem parcurge maxim $\log N$ lanțuri în tot arborele.
 
 În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor 2 noduri,
 astfel încât acesta să fie la o distanță cât mai mare, iar cele 2 stringuri
-formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $O(\log
+formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $\mathcal{O}(\log
 N)$ al $K$ strămoș pentru nodul $x$, iar de căutarea binară pentru a afla
 valoarea $K$ în timp logaritmic. Astfel rezultă o complexitate finală de
-$O((\log N)^3)$ pentru fiecare query și $O(\log N)$ pentru update.
+$\mathcal{O}((\log N)^3)$ pentru fiecare query și $\mathcal{O}(\log N)$ pentru update.
 
 O implementare de 100 de puncte poate fi citită mai jos:
 
 ```cpp
 /// Autor: Ardelean Raul, CNVL - Baia Mare
-/// Cuvinte cheie: Binary Lifting, Hashing, Heavy Path Decomposition, Heavy Light Decomposition, Binary Search
-/// Complexitate: O(Q * log(n) ^ 3)
-#include <iostream>
-#include <cmath>
+/// Cuvinte cheie: Binary Lifting, Hashing, Heavy Path Decomposition, Heavy
+/// Light Decomposition, Binary Search Complexitate: O(Q * log(n) ^ 3)
 #include <algorithm>
-#include <vector>
 #include <bitset>
+#include <cmath>
+#include <iostream>
+#include <vector>
 #define ll long long
 using namespace std;
 
@@ -397,7 +398,7 @@ public:
         for (int i = 1; i <= l; i++) {
             up[node][i] = up[up[node][i - 1]][i - 1];
         }
-            
+
         for (auto x : G[node]) {
             if (x != father) {
                 dfs(x, node);
@@ -413,7 +414,7 @@ public:
                 node = up[node][i];
             }
         }
-            
+
         return node;
     }
 
@@ -445,12 +446,12 @@ public:
 
         viz[node] = 1;
         w[node] = 1;
-        
+
         for (auto x : G[node]) {
             if (viz[x]) {
                 continue;
             }
-                
+
             leaf = 0;
             niv[x] = niv[node] + 1;
 
@@ -460,8 +461,7 @@ public:
 
             if (maxl == -1) {
                 maxl = x;
-            }
-            else if (w[maxl] < w[x]) {
+            } else if (w[maxl] < w[x]) {
                 maxl = x;
             }
         }
@@ -469,8 +469,7 @@ public:
         if (leaf) {
             L[node] = ++nrL;
             Lant[L[node]].push_back(node);
-        }
-        else {
+        } else {
             L[node] = L[maxl];
             Lant[L[node]].push_back(node);
 
@@ -478,7 +477,7 @@ public:
                 if (x == maxl or niv[x] < niv[node]) {
                     continue;
                 }
-                    
+
                 Lfather[L[x]] = node;
                 Lniv[L[x]] = niv[node];
             }
@@ -489,11 +488,11 @@ public:
         if (size <= 0) {
             return a;
         }
-            
+
         if (min(a, b) == 0) {
             return max(a, b);
         }
-            
+
         return 1LL * (1LL * a * fact[size] % mod + 1LL * b) % mod;
     }
 
@@ -501,33 +500,34 @@ public:
         if (l == r) {
             Tree[node + decal] = (s[Lant[root][l - 1]] - 'a' + 1);
             sz[node + decal] = 1;
-        }
-        else {
+        } else {
             int m = (l + r) / 2;
 
             build(2 * node, l, m, decal, root);
             build(2 * node + 1, m + 1, r, decal, root);
 
             sz[node + decal] = sz[2 * node + decal] + sz[2 * node + 1 + decal];
-            Tree[node + decal] = upd(Tree[2 * node + decal], Tree[2 * node + 1 + decal], sz[2 * node + 1 + decal]);
+            Tree[node + decal] =
+                upd(Tree[2 * node + decal], Tree[2 * node + 1 + decal],
+                    sz[2 * node + 1 + decal]);
         }
     }
 
     void update(int node, int l, int r, int target, int val, int decal) {
         if (l == r) {
             Tree[node + decal] = val;
-        }
-        else {
+        } else {
             int m = (l + r) / 2;
 
             if (target <= m) {
                 update(2 * node, l, m, target, val, decal);
-            }
-            else {
+            } else {
                 update(2 * node + 1, m + 1, r, target, val, decal);
             }
-                
-            Tree[node + decal] = upd(Tree[2 * node + decal], Tree[2 * node + 1 + decal], sz[2 * node + 1 + decal]);
+
+            Tree[node + decal] =
+                upd(Tree[2 * node + decal], Tree[2 * node + 1 + decal],
+                    sz[2 * node + 1 + decal]);
         }
     }
 
@@ -535,11 +535,11 @@ public:
         if (r < a or b < l) {
             return 0;
         }
-            
+
         if (a <= l and r <= b) {
             return Tree[node + decal];
         }
-            
+
         int m = (l + r) / 2;
 
         int left = query(2 * node, l, m, a, b, decal);
@@ -551,13 +551,14 @@ public:
     void make_paths() {
         fact[0] = 1;
 
-        for (int i = 1; i <= MAX; i++)
+        for (int i = 1; i <= MAX; i++) {
             fact[i] = 1LL * fact[i - 1] * base % mod;
-        
+        }
+
         niv[1] = 1;
-        
+
         dfs(1);
-        
+
         for (int i = 1; i <= nrL; i++) {
             reverse(Lant[i].begin(), Lant[i].end());
 
@@ -577,10 +578,12 @@ public:
                 if (niv[x] > niv[y]) {
                     swap(x, y);
                 }
-                    
+
                 int len = niv[y] - Lniv[L[x]] - niv[x] + Lniv[L[x]] + 1;
 
-                hash = upd(query(1, 1, Lant[L[x]].size(), niv[x] - Lniv[L[x]], niv[y] - Lniv[L[x]], Ldecal[L[x]]), hash, tlen);
+                hash = upd(query(1, 1, Lant[L[x]].size(), niv[x] - Lniv[L[x]],
+                                 niv[y] - Lniv[L[x]], Ldecal[L[x]]),
+                           hash, tlen);
                 tlen += len;
 
                 break;
@@ -589,10 +592,12 @@ public:
             if (Lniv[L[x]] < Lniv[L[y]]) {
                 swap(x, y);
             }
-                
+
             int len = niv[x] - Lniv[L[x]];
 
-            hash = upd(query(1, 1, Lant[L[x]].size(), 1, niv[x] - Lniv[L[x]], Ldecal[L[x]]), hash, tlen);
+            hash = upd(query(1, 1, Lant[L[x]].size(), 1, niv[x] - Lniv[L[x]],
+                             Ldecal[L[x]]),
+                       hash, tlen);
             tlen += len;
 
             x = Lfather[L[x]];
@@ -626,7 +631,7 @@ void solve() {
     cin >> q;
 
     while (q--) {
-        int t, a, b; 
+        int t, a, b;
 
         cin >> t;
 
@@ -643,21 +648,21 @@ void solve() {
 
                 if (tree.find(ancestor_a, a) == tree.find(ancestor_b, b)) {
                     target = med + 1, l = med + 1;
-                }
-                else {
+                } else {
                     r = med - 1;
                 }
             }
 
             cout << target << '\n';
-        }
-        else {
+        } else {
             char ch;
 
             cin >> a >> ch;
 
             s[a] = ch;
-            tree.update(1, 1, tree.Lant[tree.L[a]].size(), tree.niv[a] - tree.Lniv[tree.L[a]], ch - 'a' + 1, tree.Ldecal[tree.L[a]]);
+            tree.update(1, 1, tree.Lant[tree.L[a]].size(),
+                        tree.niv[a] - tree.Lniv[tree.L[a]], ch - 'a' + 1,
+                        tree.Ldecal[tree.L[a]]);
         }
     }
 }
@@ -715,3 +720,4 @@ arbore.
 - [Template HLD - Stefdasca](https://github.com/stefdasca/CompetitiveProgramming/blob/master/Algorithms/heavy-light.cpp)
 - [Easiest HLD with subtree queries - Codeforces adamant's blog](https://codeforces.com/blog/entry/53170)
 - [Heavy path decomposition - Centrul InfO(1)](https://sites.google.com/site/centrulinfo1/materiale-video/algoritmi-video/heavy-path-decomposition?authuser=0)
+- [Heavy Light Decomposition - robert1003](https://robert1003.github.io/2020/09/04/heavy-light-decomposition.html)

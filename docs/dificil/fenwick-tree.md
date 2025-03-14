@@ -1,8 +1,6 @@
 ---
 id: fenwick-tree
-author: 
-  - Ștefan-Cosmin Dăscălescu
-  - Luca Valentin Mureșan
+authors: [stefdasca, luca]
 prerequisites:
     - functions
     - bitwise-ops
@@ -72,7 +70,7 @@ poate vedea pe desen:
 
 ![Un exemplu de update pentru poziția 3](../images/fenwick/fenwick-update.png)
 
-Complexitatea operației de update este $O(\log n)$, unde $n$ este dimensiunea
+Complexitatea operației de update este $\mathcal{O}(\log n)$, unde $n$ este dimensiunea
 arborelui indexat binar.
 
 ### Cum funcționează operația de query?
@@ -106,7 +104,7 @@ poate vedea pe desen:
 
 ![Un exemplu de query pentru poziția 13](../images/fenwick/fenwick-query.png)
 
-Complexitatea operației de query este $O(\log n)$, unde $n$ este dimensiunea
+Complexitatea operației de query este $\mathcal{O}(\log n)$, unde $n$ este dimensiunea
 arborelui indexat binar.
 
 ## Implementarea în C++
@@ -154,25 +152,23 @@ datele](../mediu/data-normalization.md),
 iar mai apoi să folosim AIB pentru a rezolva problema.
 
 ```cpp
-#include <fstream>
 #include <algorithm>
+#include <fstream>
 #include <vector>
 
 using namespace std;
 
 vector<int> fenwick, vals, sorted, pos;
 
-bool cmp (int a, int b) {
-    return vals[a] < vals[b];
-}
+bool cmp(int a, int b) { return vals[a] < vals[b]; }
 
-void add (int n, int node, int val) {
+void add(int n, int node, int val) {
     for (; node <= n; node += (node & (-node))) {
         fenwick[node] += val;
     }
 }
 
-int compute (int node) {
+int compute(int node) {
     int ans = 0;
     for (; node; node -= (node & (-node))) {
         ans += fenwick[node];
@@ -181,39 +177,38 @@ int compute (int node) {
 }
 
 int main() {
-    
     ifstream cin("inv.in");
     ofstream cout("inv.out");
-    
+
     int n;
     cin >> n;
-    
-    fenwick.resize(n+1); 
-    vals.resize(n+1); 
-    sorted.resize(n+1);
-    pos.resize(n+1);
-    
+
+    fenwick.resize(n + 1);
+    vals.resize(n + 1);
+    sorted.resize(n + 1);
+    pos.resize(n + 1);
+
     for (int i = 1; i <= n; i++) {
         cin >> vals[i];
         sorted[i] = i;
     }
-    
+
     sort(sorted.begin() + 1, sorted.begin() + n + 1, cmp);
     int cnt = 0;
     for (int i = 1; i <= n; i++) {
-        if (i == 1 || vals[sorted[i]] > vals[sorted[i-1]]) {
+        if (i == 1 || vals[sorted[i]] > vals[sorted[i - 1]]) {
             cnt++;
         }
         pos[sorted[i]] = cnt;
     }
-    
+
     long long ans = 0;
     for (int i = 1; i <= n; i++) {
         ans += i - compute(pos[i]) - 1;
         add(n, pos[i], 1);
     }
-    
-    cout << ans%9917 << '\n';
+
+    cout << ans % 9917 << '\n';
     return 0;
 }
 ```
@@ -228,10 +223,10 @@ date, iar încă o dată, arborii indexați binari se dovedesc a fi soluția
 potrivită pentru această problemă, datorită vitezei de implementare și a
 ușurinței de folosire. Pentru a afla suma celor mai mici $p$ valori din șir, vom
 căuta binar răspunsul, folosind o metodă similară cu cea descrisă mai sus. Deși
-căutarea binară naivă în $O(\log^2 n)$ ia punctajul maxim, se recomandă căutarea
-binară în $O(\log n)$.
+căutarea binară naivă în $\mathcal{O}(\log^2 n)$ ia punctajul maxim, se recomandă căutarea
+binară în $\mathcal{O}(\log n)$.
 
-Pentru a căuta binar în AIB în $O(\log n)$, vom folosi o tehnică similară cu
+Pentru a căuta binar în AIB în $\mathcal{O}(\log n)$, vom folosi o tehnică similară cu
 [căutarea binară pe
 biți](../usor/binary-search.md#cautarea-binara-a-lui-mihai-patrascu), verificând
 dacă adăugarea a $2^k$ poziții în AIB ne-ar duce peste valoarea cerută sau nu.
@@ -248,14 +243,14 @@ long long sum[max_val + 2];
 
 void upd(int pos) {
     int init = pos;
-    for(; pos <= max_val; pos += (pos & (-pos))) {
+    for (; pos <= max_val; pos += (pos & (-pos))) {
         fen[pos]++;
         sum[pos] += init;
     }
 }
 
 long long solve(int k) {
-    int stp = (1<<19);
+    int stp = (1 << 19);
     int poz = 0;
     long long sol = 0;
     while (stp > 0) {
@@ -268,18 +263,16 @@ long long solve(int k) {
 }
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    cin >> q; 
+
+    cin >> q;
     for (; q; --q) {
         int type, k;
         cin >> type >> k;
         if (type == 1) {
             upd(k);
-        }
-        else {
+        } else {
             cout << solve(k) << '\n';
         }
     }
@@ -312,3 +305,4 @@ int main() {
   Codeforces](https://codeforces.com/blog/entry/57292)
 - [Binary Indexed Trees - USACO
   Guide](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)
+- [A simple introduction to Fenwick Trees - robert1003](https://robert1003.github.io/2020/01/27/fenwick-tree.html)

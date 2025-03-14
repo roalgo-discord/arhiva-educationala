@@ -1,7 +1,6 @@
 ---
 id: bac-admitere
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - schoolwork
 tags:

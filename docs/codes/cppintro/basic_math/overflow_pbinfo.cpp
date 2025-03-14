@@ -7,7 +7,7 @@ int main() {
 
     int n;
     cin >> n;
-    
+
     for (int i = 0; i < n; i++) {
         unsigned long long nr1, nr2;
         cin >> nr1 >> nr2;
@@ -19,6 +19,6 @@ int main() {
             cout << nr1 * nr2 << '\n';
         }
     }
-    
+
     return 0;
 }

@@ -1,7 +1,6 @@
 ---
 id: algorithms
-author:
-    - Ștefan-Iulian Alecu
+authors: [stalecu]
 prerequisites:
     - sorting
     - stl
@@ -10,7 +9,7 @@ tags:
     - algoritmi
     - stl
 ---
-
+<!-- 
 Până în acest punct, am învățat câțiva algoritmi, de la
 [sortare](../usor/sorting.md), [sume parțiale](../usor/partial-sums.md) și
 [căutarea binară](../usor/binary-search.md) la
@@ -50,4 +49,4 @@ Iteratorii ne permit să traversăm un set de elemente conținute în orice este
 un container (deci nu neapărat din STL, poate fi definit și de noi!) într-o
 manieră uniformă. Fie că e vorba de un `vector`, `array` sau `set`, cu
 iteratorii este irelevant cum anume traversezi acea colecție de elemente, deci
-poți avea algoritmi generici.
+poți avea algoritmi generici. -->

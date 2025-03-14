@@ -1,7 +1,6 @@
 ---
 id: sieve
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - divisibility
     - frequency-arrays
@@ -57,8 +56,8 @@ Un exemplu de vizualizare pentru numerele de la 1 la 16
 
 Algoritmul se dovedește a fi o optimizare față de metoda standard de aflare
 pentru toate numerele de la 1 la $n$ a primalității, complexitatea devenind
-$O(n \log \log n)$ pentru aflarea primalității pentru toate numerele, respectiv
-$O(n \log n)$ pentru majoritatea celorlalte tipuri de prelucrări. De asemenea,
+$\mathcal{O}(n \log \log n)$ pentru aflarea primalității pentru toate numerele, respectiv
+$\mathcal{O}(n \log n)$ pentru majoritatea celorlalte tipuri de prelucrări. De asemenea,
 și implementarea se dovedește a fi una foarte scurtă, ciurul putând fi scris în
 câteva rânduri.
 
@@ -163,7 +162,7 @@ ușoară.
 
 ```cpp
 #include <iostream>
-#include <vector> 
+#include <vector>
 
 using namespace std;
 
@@ -174,7 +173,7 @@ vector<vector<int> > divisors, prime_divisors;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     divisors.resize(NMAX + 1);
     prime_divisors.resize(NMAX + 1);
 
@@ -182,8 +181,8 @@ int main() {
         for (int j = i; j <= NMAX; j += i) {
             divisors[j].push_back(i);
         }
-    } 
-        
+    }
+
     prime[1] = 1;
     for (int i = 2; i <= NMAX; i++) {
         if (prime[i] == 0) {
@@ -195,9 +194,9 @@ int main() {
             }
         }
     }
-        
+
     cin >> q;
-    
+
     for (int i = 1; i <= q; i++) {
         int type, value;
         cin >> type >> value;
@@ -205,13 +204,13 @@ int main() {
             cout << (prime[value] == 0 ? "Prime" : "Composite") << '\n';
         }
         if (type == 2) {
-            for (int j = 0; j < (int) prime_divisors[value].size(); j++) {
+            for (int j = 0; j < (int)prime_divisors[value].size(); j++) {
                 cout << prime_divisors[value][j] << " ";
             }
             cout << '\n';
         }
-        if(type == 3) {
-            for (int j = 0; j < (int) divisors[value].size(); j++) {
+        if (type == 3) {
+            for (int j = 0; j < (int)divisors[value].size(); j++) {
                 cout << divisors[value][j] << " ";
             }
             cout << '\n';
@@ -271,8 +270,7 @@ int main() {
     if (c == 1) {
         f >> nr >> k;
         g << prime[k][nr] << '\n';
-    }
-    else {
+    } else {
         long long sol = 0;
         for (int i = 1; i <= n; ++i) {
             f >> nr >> k;
@@ -282,7 +280,6 @@ int main() {
     }
     return 0;
 }
-
 ```
 
 ## Problema [primprim - OJI 2023](https://kilonova.ro/problems/514) de pe Kilonova
@@ -314,97 +311,100 @@ query, voi parcurge vectorul de frecvență pentru a afla suma celor mai mici $p
 diferențe.
 
 ```cpp
-#include <fstream> 
 #include <cmath>
-   
-using namespace std; 
+#include <fstream>
 
+using namespace std;
 
-ifstream fin("primprim.in"); 
-ofstream fout("primprim.out"); 
-   
+ifstream fin("primprim.in");
+ofstream fout("primprim.out");
+
 int vals[1000002], primes[200002], cnt, ans[1100002];
 bool pr[1100002];
 
 int fr[202];
 
-int main() {  
-    int c; 
-    fin >> c; 
-      
-    int n, a = 1100000, i, j; 
-    fin >> n; 
-      
+int main() {
+    int c;
+    fin >> c;
+
+    int n, a = 1100000, i, j;
+    fin >> n;
+
     for (i = 1; i <= n; i++) {
-        fin >> vals[i]; 
+        fin >> vals[i];
     }
-      
-    // precalculam raspunsul optim pentru fiecare numar de la 1 la a folosind ciurul lui Eratostene 
-      
-    for (i = 2; i <= a; i++) { 
-        if (pr[i] == 0)  { 
-            primes[cnt++] = i;
-            for (j = i+i; j <= a; j += i) {
-                pr[j] = 1; 
-            }
-        } 
-    } 
-      
-    int poz = -1; 
-      
-    // parcurg valorile de la 1 la a pentru a afla raspunsul optim dupa ce am aflat numerele prime 
-    ans[1] = 1; 
-    for (i = 2; i <= a; i++) { 
+
+    // precalculam raspunsul optim pentru fiecare numar de la 1 la a folosind
+    // ciurul lui Eratostene
+
+    for (i = 2; i <= a; i++) {
         if (pr[i] == 0) {
-            poz++; 
+            primes[cnt++] = i;
+            for (j = i + i; j <= a; j += i) {
+                pr[j] = 1;
+            }
         }
-        ans[i] = abs(i - primes[poz]); 
-        if (poz + 1 < cnt) {
-            ans[i] = min(ans[i], abs(i - primes[poz+1])); 
-        }
-    } 
-      
-    // voi folosi vector de frecventa pentru a tine aceste diferente, care de altfel sunt destul de mici 
-      
-    for (i = 1; i <= n; i++) {
-        fr[ans[vals[i]]]++; 
     }
-      
-    if (c == 1) { 
-        int total = 0;           
-        for (i = 1; i <= n; i++) {
-            total += ans[vals[i]]; 
+
+    int poz = -1;
+
+    // parcurg valorile de la 1 la a pentru a afla raspunsul optim dupa ce am
+    // aflat numerele prime
+    ans[1] = 1;
+    for (i = 2; i <= a; i++) {
+        if (pr[i] == 0) {
+            poz++;
         }
-        fout << total; 
-        return 0; 
-    } 
-      
-    int q; 
-    fin >> q; 
-      
-    for (i = 1; i <= q; i++) { 
-        int a, b, p; 
-        fin >> a >> b >> p; 
-          
-        fr[ans[vals[a]]]--; 
-        vals[a] = b; 
-        fr[ans[vals[a]]]++; 
-          
-        int dif = 0; 
-        int sol = 0; 
-          
-        // la fiecare pas parcurg vectorul de frecventa pana cand dau de p diferente 
-          
-        while (p) { 
-            sol += min(p, fr[dif]) * dif; 
-            p -= min(p, fr[dif]); 
-            dif++; 
-        } 
-          
-        fout << sol << '\n'; 
-    }  
-    return 0; 
-} 
+        ans[i] = abs(i - primes[poz]);
+        if (poz + 1 < cnt) {
+            ans[i] = min(ans[i], abs(i - primes[poz + 1]));
+        }
+    }
+
+    // voi folosi vector de frecventa pentru a tine aceste diferente, care de
+    // altfel sunt destul de mici
+
+    for (i = 1; i <= n; i++) {
+        fr[ans[vals[i]]]++;
+    }
+
+    if (c == 1) {
+        int total = 0;
+        for (i = 1; i <= n; i++) {
+            total += ans[vals[i]];
+        }
+        fout << total;
+        return 0;
+    }
+
+    int q;
+    fin >> q;
+
+    for (i = 1; i <= q; i++) {
+        int a, b, p;
+        fin >> a >> b >> p;
+
+        fr[ans[vals[a]]]--;
+        vals[a] = b;
+        fr[ans[vals[a]]]++;
+
+        int dif = 0;
+        int sol = 0;
+
+        // la fiecare pas parcurg vectorul de frecventa pana cand dau de p
+        // diferente
+
+        while (p) {
+            sol += min(p, fr[dif]) * dif;
+            p -= min(p, fr[dif]);
+            dif++;
+        }
+
+        fout << sol << '\n';
+    }
+    return 0;
+}
 ```
 
 ## Concluzie

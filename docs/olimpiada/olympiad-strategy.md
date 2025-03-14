@@ -1,7 +1,6 @@
 ---
 id: olympiad-strategy
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - olympiad-prep
 tags:

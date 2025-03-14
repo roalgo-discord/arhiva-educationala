@@ -9,15 +9,15 @@ vector<bool> visited;
 void dfs(int node) {
     visited[node] = true;
 
-	for (int next : adj[node]) {
-		if (!visited[next]) {
-			dfs(next);
-		}
-	}
+    for (int next : adj[node]) {
+        if (!visited[next]) {
+            dfs(next);
+        }
+    }
 }
 
 int main() {
-	int n, m;
+    int n, m;
     cin >> n >> m;
 
     adj.resize(n + 1);

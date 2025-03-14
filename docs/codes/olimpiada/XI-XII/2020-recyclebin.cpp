@@ -1,5 +1,4 @@
 #include <fstream>
-using namespace std;
 
 int n, v[1002], dp[1002][1002];
 bool viz[1002][1002];
@@ -22,8 +21,7 @@ int main() {
             if (!viz[i + 1][j]) {
                 viz[i + 1][j] = 1;
                 dp[i + 1][j] = dp[i][j] + v[i + 1];
-            } 
-            else {
+            } else {
                 if (dp[i][j] + v[i + 1] > dp[i + 1][j]) {
                     dp[i + 1][j] = dp[i][j] + v[i + 1];
                 }
@@ -35,15 +33,14 @@ int main() {
                 if (!viz[i + (1 << pw)][j + (1 << pw)]) {
                     viz[i + (1 << pw)][j + (1 << pw)] = 1;
                     dp[i + (1 << pw)][j + (1 << pw)] = dp[i][j];
-                } 
-                else {
+                } else {
                     if (dp[i][j] > dp[i + (1 << pw)][j + (1 << pw)]) {
                         dp[i + (1 << pw)][j + (1 << pw)] = dp[i][j];
                     }
                 }
             }
         }
-	}
+    }
     g << ans << '\n';
     return 0;
 }

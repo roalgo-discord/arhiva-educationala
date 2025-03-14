@@ -1,7 +1,6 @@
 ---
 id: shortest-path
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 title: Algoritmi pentru drumuri minime
@@ -100,7 +99,7 @@ Modul de funcționare al algoritmului este unul foarte simplu:
 
 ### Implementare suboptimă
 
-Acest algoritm, în forma sa neoptimizată are complexitatea $O(n^2)$ și are drept
+Acest algoritm, în forma sa neoptimizată are complexitatea $\mathcal{O}(n^2)$ și are drept
 unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate
 fi folosit drept o soluție reală este atunci când avem un graf complet, în care
 numărul de muchii se apropie de $n^2$, mai jos putând fi citită o implementare
@@ -109,13 +108,14 @@ care aplică pașii de mai sus pe un graf neorientat.
 ```cpp
 #include <iostream>
 using namespace std;
-int main () {
+int main() {
     int n, m;
     cin >> n >> m;
 
-    int adj[n+1][n+1]; // pentru acest exemplu, vom folosi matricea de adiacenta
-    int cost[n+1]; // costul minim de la nodul start la x;
-    int viz[n+1]; // daca nodul a fost procesat deja
+    int adj[n + 1]
+           [n + 1];   // pentru acest exemplu, vom folosi matricea de adiacenta
+    int cost[n + 1];  // costul minim de la nodul start la x;
+    int viz[n + 1];   // daca nodul a fost procesat deja
     for (int i = 1; i <= n; i++) {
         cost[i] = 1000000000;
         viz[i] = 0;
@@ -137,13 +137,13 @@ int main () {
         int mini = 1000000000;
         int nod = 0;
         // aflam nodul cu cost minim dintre cele nevizitate
-        for (int j = 1; j <= n; j++) { 
+        for (int j = 1; j <= n; j++) {
             if (viz[j] == 0 && cost[j] < mini) {
                 mini = cost[j];
                 nod = j;
             }
         }
-        
+
         // aflam noile distante
         viz[nod] = 1;
         for (int j = 1; j <= n; j++) {
@@ -162,7 +162,7 @@ int main () {
 
 ### Implementare optimă
 
-Pentru a putea implementa algoritmul în complexitatea sa optimă, $O((n+m) \log
+Pentru a putea implementa algoritmul în complexitatea sa optimă, $\mathcal{O}((n+m) \log
 n)$, va trebui să facem câteva observații critice.
 
 În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate
@@ -174,96 +174,99 @@ apropiat de numărul de noduri, putem ține vecinii folosind liste.
 Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu
 cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de
 date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui
-pas este redus la $O(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
+pas este redus la $\mathcal{O}(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
 
 După aplicarea acestor optimizări, ideile fiind aceleași, cu excepția folosirii
 unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 
 using namespace std;
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<pair<int, int> > > graph(n+1); 
+
+    vector<vector<pair<int, int> > > graph(n + 1);
     for (int i = 1; i <= m; i++) {
         int a, b, c;
         cin >> a >> b >> c;
         graph[a].push_back({b, c});
         graph[b].push_back({a, c});
     }
-    
-    vector<long long> cost(n+1, (1LL<<60));
-    vector<int> vis(n+1);
+
+    vector<long long> cost(n + 1, (1LL << 60));
+    vector<int> vis(n + 1);
     cost[1] = 0;
-    // priority queue tine perechile in ordine descrescatoare, de aceea se impune folosirea semnului - pentru a ne folosi de aceasta proprietate fara a folosi alti comparatori
+    // priority queue tine perechile in ordine descrescatoare, de aceea se
+    // impune folosirea semnului - pentru a ne folosi de aceasta proprietate
+    // fara a folosi alti comparatori
     priority_queue<pair<long long, int> > s;
     s.push({0, 1});
-    
-    while(!s.empty()) {
+
+    while (!s.empty()) {
         pair<long long, int> smallest = s.top();
         s.pop();
-        
-        // daca am trecut deja prin acel nod, nu mai are sens sa parcurgem iar vecinii lui
+
+        // daca am trecut deja prin acel nod, nu mai are sens sa parcurgem iar
+        // vecinii lui
         if (vis[smallest.second] == 1) {
             continue;
         }
         vis[smallest.second] = 1;
-        
-        for (int i = 0; i < (int) graph[smallest.second].size(); i++) {
+
+        for (int i = 0; i < (int)graph[smallest.second].size(); i++) {
             int nxt = graph[smallest.second][i].first;
             int val = graph[smallest.second][i].second;
-            
+
             if (-smallest.first + val < cost[nxt]) {
                 cost[nxt] = -smallest.first + val;
                 s.push({-cost[nxt], nxt});
             }
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         cout << cost[i] << " ";
-    }  
+    }
     return 0;
-}   
+}
 ```
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <set>
+#include <vector>
 using namespace std;
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<pair<int, int> > > graph(n+1); 
+
+    vector<vector<pair<int, int> > > graph(n + 1);
     for (int i = 1; i <= m; i++) {
         int a, b, c;
         cin >> a >> b >> c;
         graph[a].push_back({b, c});
         graph[b].push_back({a, c});
     }
-    
-    vector<long long> cost(n+1, (1LL<<60));
+
+    vector<long long> cost(n + 1, (1LL << 60));
     cost[1] = 0;
     set<pair<long long, int> > s;
     s.insert({0, 1});
-    
-    while(!s.empty()) {
+
+    while (!s.empty()) {
         pair<long long, int> smallest = *s.begin();
         s.erase(smallest);
-        
-        for (int i = 0; i < (int) graph[smallest.second].size(); i++) {
+
+        for (int i = 0; i < (int)graph[smallest.second].size(); i++) {
             int nxt = graph[smallest.second][i].first;
             int val = graph[smallest.second][i].second;
-            
+
             if (smallest.first + val < cost[nxt]) {
                 if (s.find({cost[nxt], nxt}) != s.end()) {
                     s.erase({cost[nxt], nxt});
@@ -273,10 +276,10 @@ int main() {
             }
         }
     }
-    
+
     for (int i = 1; i <= n; i++) {
         cout << cost[i] << " ";
-    }  
+    }
     return 0;
 ```
 
@@ -297,49 +300,47 @@ $n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseam
 că sigur am modificat costul minim de două ori din același vecin.
 
 Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel
-mai prost este $O(n \cdot m)$. Implementarea, una foarte similară cu cea a
+mai prost este $\mathcal{O}(n \cdot m)$. Implementarea, una foarte similară cu cea a
 parcurgerii BFS, se poate găsi mai jos.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
 
 int main() {
-    
     ifstream cin("bellmanford.in");
     ofstream cout("bellmanford.out");
-    
-    
+
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<pair<int, int> > > graph(n+1);
+
+    vector<vector<pair<int, int> > > graph(n + 1);
     for (int i = 1; i <= m; i++) {
         int a, b, c;
         cin >> a >> b >> c;
-        
+
         graph[a].push_back({b, c});
     }
-    
-    vector<long long> costs(n+1, (1LL<<60));
-    vector<int> cnt(n+1);
-    
+
+    vector<long long> costs(n + 1, (1LL << 60));
+    vector<int> cnt(n + 1);
+
     costs[1] = 0;
-    queue<int> q; 
+    queue<int> q;
     q.push(1);
-    while(!q.empty()) {
+    while (!q.empty()) {
         int node = q.front();
         q.pop();
-        
-        for (int i = 0; i < (int) graph[node].size(); i++) {
+
+        for (int i = 0; i < (int)graph[node].size(); i++) {
             int nxt = graph[node][i].first;
             int c = graph[node][i].second;
             if (costs[node] + c < costs[nxt]) {
                 costs[nxt] = costs[node] + c;
                 q.push(nxt);
-                
+
                 cnt[nxt]++;
                 if (cnt[nxt] > n) {
                     cout << "Ciclu negativ!" << '\n';
@@ -348,7 +349,7 @@ int main() {
             }
         }
     }
-    
+
     for (int i = 2; i <= n; i++) {
         cout << costs[i] << " ";
     }
@@ -362,7 +363,7 @@ int main() {
     probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
     algoritm este folosit cu succes în multe probleme de informatică, ca o
     alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost
-    complexitatea este similară cu cea de la Bellman-Ford, $O(n \cdot m)$.
+    complexitatea este similară cu cea de la Bellman-Ford, $\mathcal{O}(n \cdot m)$.
 
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
 
@@ -379,14 +380,14 @@ Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar
 pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) <
 dist(i, j)$, astfel relaxând drumul dintre cele două noduri.
 
-Complexitatea totală a algoritmului va fi $O(n^3)$, fiind unul dintre algoritmii
+Complexitatea totală a algoritmului va fi $\mathcal{O}(n^3)$, fiind unul dintre algoritmii
 folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale.
 Mai jos găsiți implementarea în limbajul C++.
 
 ```cpp
 #include <iostream>
 using namespace std;
-int n, a[102][102]; // costul minim de la i la j
+int n, a[102][102];  // costul minim de la i la j
 int main() {
     cin >> n;
     for (int i = 1; i <= n; ++i) {
@@ -397,7 +398,8 @@ int main() {
     for (int k = 1; k <= n; k++) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
-                if (a[i][k] && a[k][j] && (a[i][j] > a[i][k] + a[k][j] || !a[i][j]) && i != j) {
+                if (a[i][k] && a[k][j]
+                    && (a[i][j] > a[i][k] + a[k][j] || !a[i][j]) && i != j) {
                     a[i][j] = a[i][k] + a[k][j];
                 }
             }
@@ -465,15 +467,19 @@ algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia 100 pe
 problema dată.
 
 ```cpp
-#include <fstream>
 #include <deque>
+#include <fstream>
 #include <vector>
 
 using namespace std;
 
 int main() {
-
-    vector<pair<int, int> > dir = { {-1, 0}, {0, 1}, {1, 0}, {0, -1} };
+    vector<pair<int, int>> dir = {
+        {-1, 0 },
+        {0,  1 },
+        {1,  0 },
+        {0,  -1}
+    };
 
     ifstream cin("padure.in");
     ofstream cout("padure.out");
@@ -497,7 +503,7 @@ int main() {
     while (!Q.empty()) {
         pair<int, int> nd = Q.front();
         Q.pop_front();
-        
+
         int x = nd.first;
         int y = nd.second;
 
@@ -505,17 +511,18 @@ int main() {
             auto nx = x + dir[0].first, ny = y + dir[0].second;
 
             if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
-                if (mat[nx][ny] != mat[x][y] && (dist[x][y] + 1 < dist[nx][ny] || !dist[nx][ny])) {
+                if (mat[nx][ny] != mat[x][y]
+                    && (dist[x][y] + 1 < dist[nx][ny] || !dist[nx][ny])) {
                     dist[nx][ny] = dist[x][y] + 1;
                     Q.push_back({nx, ny});
-                } else if (mat[nx][ny] == mat[x][y] && (dist[x][y] < dist[nx][ny] || !dist[nx][ny])) {
+                } else if (mat[nx][ny] == mat[x][y]
+                           && (dist[x][y] < dist[nx][ny] || !dist[nx][ny])) {
                     dist[nx][ny] = dist[x][y];
                     Q.push_front({nx, ny});
                 }
             }
         }
     }
-
 
     cout << dist[xb][yb] - 1 << '\n';
     return 0;
@@ -551,74 +558,74 @@ algoritmul lui Dial, folosind 4 cozi (costurile sunt $1, 2, 3$).
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <queue>
- 
+#include <vector>
+
 using namespace std;
- 
+
 struct info {
     int L, C, x;
 };
- 
+
 vector<int> ox = {0, 1, 0, -1};
 vector<int> oy = {1, 0, -1, 0};
- 
+
 int main() {
-    
     // limita de timp stransa, fast io e necesar
-    
-    ios_base::sync_with_stdio(false); 
+
+    ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, m, k;
     cin >> n >> m >> k;
- 
+
     int xa, ya, xb, yb;
     cin >> xa >> ya >> xb >> yb;
-    
-    vector<vector<int>> grid(n+1);
-    
+
+    vector<vector<int>> grid(n + 1);
+
     for (int i = 1; i <= n; i++) {
-        grid[i].resize(m+1);
+        grid[i].resize(m + 1);
         string s;
         cin >> s;
-        
+
         for (int j = 0; j < m; j++) {
             if (s[j] == 's') {
-                grid[i][j+1] = 1;
+                grid[i][j + 1] = 1;
             }
             if (s[j] == 'p') {
-                grid[i][j+1] = 2;
+                grid[i][j + 1] = 2;
             }
             if (s[j] == 'a') {
-                grid[i][j+1] = 3;
+                grid[i][j + 1] = 3;
             }
         }
     }
-    
-    vector<vector<vector<int>>> dp(n+1, vector<vector<int>> (m+1, vector<int> (k+1, (1<<25)))); 
-    
+
+    vector<vector<vector<int>>> dp(
+        n + 1, vector<vector<int>>(m + 1, vector<int>(k + 1, (1 << 25))));
+
     queue<info> q[4];
-    
+
     q[grid[xa][ya]].push({xa, ya, 0});
     dp[xa][ya][0] = grid[xa][ya];
-    
+
     if (grid[xa][ya] == 2) {
         q[grid[xa][ya] - 1].push({xa, ya, 1});
         dp[xa][ya][1] = grid[xa][ya] - 1;
     }
-    
+
     int timp = 0;
     int lastempty = 0;
-    
+
     while (lastempty <= 10) {
         lastempty++;
         // timp%4 = timp&3, pentru puteri ale lui 2
-        while (!q[(timp&3)].empty()) {
+        while (!q[(timp & 3)].empty()) {
             lastempty = 0;
-            info nod = q[(timp&3)].front();
-            q[(timp&3)].pop();
-            
+            info nod = q[(timp & 3)].front();
+            q[(timp & 3)].pop();
+
             for (int dir = 0; dir <= 3; dir++) {
                 int nxtL = nod.L + ox[dir];
                 int nxtC = nod.C + oy[dir];
@@ -626,14 +633,14 @@ int main() {
                     int nwt = grid[nxtL][nxtC] + dp[nod.L][nod.C][nod.x];
                     if (nwt < dp[nxtL][nxtC][nod.x]) {
                         dp[nxtL][nxtC][nod.x] = nwt;
-                        q[(nwt&3)].push({nxtL, nxtC, nod.x});
+                        q[(nwt & 3)].push({nxtL, nxtC, nod.x});
                     }
-                    
+
                     if (grid[nxtL][nxtC] == 2 && nod.x < k) {
                         nwt--;
-                        if (nwt < dp[nxtL][nxtC][nod.x+1]) {
-                            dp[nxtL][nxtC][nod.x+1] = nwt;
-                            q[(nwt&3)].push({nxtL, nxtC, nod.x+1});
+                        if (nwt < dp[nxtL][nxtC][nod.x + 1]) {
+                            dp[nxtL][nxtC][nod.x + 1] = nwt;
+                            q[(nwt & 3)].push({nxtL, nxtC, nod.x + 1});
                         }
                     }
                 }
@@ -641,7 +648,7 @@ int main() {
         }
         timp++;
     }
-    
+
     int ans = 1e9;
     for (int j = 0; j <= k; j++) {
         ans = min(ans, dp[xb][yb][j]);

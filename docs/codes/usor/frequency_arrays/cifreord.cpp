@@ -9,7 +9,7 @@ int main() {
     fin >> n;
 
     int frecventa[10] = {0};
-    
+
     for (int i = 1; i <= n; i++) {
         int cifra;
         fin >> cifra;
@@ -24,7 +24,7 @@ int main() {
             fout << cifra << " ";
 
             numere_afisate++;
-            
+
             if (numere_afisate == 20) {
                 fout << '\n';
                 numere_afisate = 0;

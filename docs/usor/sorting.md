@@ -1,7 +1,6 @@
 ---
 id: sorting
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
     - arrays
@@ -24,9 +23,10 @@ dificultății lor de înțelegere, precum și în ordine crescătoare a perform
 menționând în cazul fiecăruia din algoritmi cunoștințele necesare pentru a-i
 putea înțelege și folosi cu succes.
 
-## Algoritmi de sortare în $O(n^2)$
+<div id="algoritmi-de-sortare-in-on2"></div>
+## Algoritmi de sortare în $\mathcal{O}(n^2)$
 
-Voi începe prin a explica algoritmii de sortare în $O(n^2)$ deoarece aceștia
+Voi începe prin a explica algoritmii de sortare în $\mathcal{O}(n^2)$ deoarece aceștia
 sunt de o dificultate similară, singura cunoștință necesară pentru ei fiind
 lucrul cu tablouri unidimensionale. Performanțele celor trei algoritmi pe care
 îi voi menționa sunt de asemenea foarte similare, dar fiecare din acești
@@ -107,15 +107,16 @@ for (int i = 2; i <= n; i++) {
 ```
 
 !!! example "Cunoștințe necesare pentru următoarele capitole"
+
     - [Subprograme](../cppintro/functions.md)
     - [Introducere în STL](../cppintro/stl.md)
 
-## Algoritmi de sortare în $O(n \log n)$
+## Algoritmi de sortare în $\mathcal{O}(n \log n)$
 
 După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta
-un șir mai repede de $O(n^2)$? Răspunsul este unul afirmativ, existând foarte
-mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $O(n \log
-n)$.
+un șir mai repede de $\mathcal{O}(n^2)$? Răspunsul este unul afirmativ, existând
+foarte mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în
+$\mathcal{O}(n \log n)$.
 
 Deși în practică în cadrul concursurilor, de regulă ajungem să ne folosim de
 funcția `std::sort`, proprietățile celorlalți algoritmi pot fi utile pentru
@@ -158,31 +159,31 @@ sort(vx.begin() + 1, vx.end());
 
 QuickSort sau Sortarea rapidă este o metodă eficientă de sortare a unui tablou,
 descoperită de programatorul britanic Tony Hoare. Pentru un set de $n$ valori
-oarecare algoritmul efectuează $O(n \log n)$ comparații, dar în cazul cel mai
-nefavorabil se efectuează $O(n^2)$ comparații. De regulă, acest algoritm este
+oarecare algoritmul efectuează $\mathcal{O}(n \log n)$ comparații, dar în cazul cel mai
+nefavorabil se efectuează $\mathcal{O}(n^2)$ comparații. De regulă, acest algoritm este
 mai rapid decât merge sort sau heap sort atâta timp cât pivotul este ales
-favorabil, cazul cel mai nefavorabil va efectua mereu $O(n \log n)$ comparații.
+favorabil, cazul cel mai nefavorabil va efectua mereu $\mathcal{O}(n \log n)$ comparații.
 
 Algoritmul este de tip divide et impera; el sortează o secvență a tabloului
 (inițial întreg tabloul), astfel:
 
-- se alege un element special al listei, numit pivot;
-- se ordonează elementele listei, astfel încât toate elementele din stânga
-  pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta
-  pivotului să fie mai mari sau egale cu acesta;
-- se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta
-  lui.
+-   se alege un element special al listei, numit pivot;
+-   se ordonează elementele listei, astfel încât toate elementele din stânga
+    pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta
+    pivotului să fie mai mari sau egale cu acesta;
+-   se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta
+    lui.
 
 !!! note "Observație"
 
     Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea
     pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit
     duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz
-    să aibă o complexitate de $O(n^2)$.
+    să aibă o complexitate de $\mathcal{O}(n^2)$.
 
 ```cpp
-vector<int> quicksort (vector<int> v) {
-    if(v.size() == 0) {
+vector<int> quicksort(vector<int> v) {
+    if (v.size() == 0) {
         return v;
     }
     ll pivot = 1LL * rand() * rand();
@@ -192,12 +193,10 @@ vector<int> quicksort (vector<int> v) {
     for (int i = 0; i < v.size(); ++i) {
         if (v[i] < v[pivot]) {
             smaller.push_back(v[i]);
-        }
-        else {
+        } else {
             if (v[i] == v[pivot]) {
                 ++same_value;
-            }
-            else {
+            } else {
                 greater.push_back(v[i]);
             }
         }
@@ -225,12 +224,12 @@ vector<int> quicksort (vector<int> v) {
 
 MergeSort este o metodă eficientă de sortare a unui tablou, inventată de
 programatorul John von Neumann. Pentru un set de $n$ valori oarecare algoritmul
-efectuează $O(n \log n)$ comparații, algoritmul fiind același indiferent de
+efectuează $\mathcal{O}(n \log n)$ comparații, algoritmul fiind același indiferent de
 modul în care sunt așezate valorile. Algoritmul funcționează în felul următor.
 
-- Avem lista curentă, o împărțim în două jumătăți egale.
-- Rulăm algoritmul pe fiecare din cele două jumătăți.
-- Se interclasează cele două șiruri rezultate.
+-   Avem lista curentă, o împărțim în două jumătăți egale.
+-   Rulăm algoritmul pe fiecare din cele două jumătăți.
+-   Se interclasează cele două șiruri rezultate.
 
 Acest algoritm folosește principiul Divide et Impera, principiu despre care
 puteți studia mai multe în acest articol.
@@ -241,15 +240,15 @@ puteți studia mai multe în acest articol.
     de inversiuni al unui șir.
 
 ```cpp
-void mergesort (vector<int> &v, int L, int R) {
+void mergesort(vector<int> &v, int L, int R) {
     if (L == R) {
         return;
     }
-    
+
     int mid = (L + R) / 2;
     mergesort(v, L, mid);
-    mergesort(v, mid+1, R);
-    
+    mergesort(v, mid + 1, R);
+
     vector<int> sorted;
     int Lx = L;
     int Rx = mid + 1;
@@ -257,13 +256,12 @@ void mergesort (vector<int> &v, int L, int R) {
         if (v[Lx] <= v[Rx]) {
             sorted.push_back(v[Lx]);
             Lx++;
-        }
-        else {
+        } else {
             sorted.push_back(v[Rx]);
             Rx++;
         }
     }
-    
+
     while (Lx <= mid) {
         sorted.push_back(v[Lx]);
         Lx++;
@@ -289,11 +287,10 @@ pe poziția minimă găsită.
 
 Funcția `heapSort` este apelată din main folosind metoda heapSort, functia
 heapify fiind o funcție auxiliară care are drept scop plasarea valorii curente
-astfel încât să se păstreze structura de heap.  
+astfel încât să se păstreze structura de heap.
 
 ```cpp
-void heapify(vector<int> &v, int n, int pos)
-{
+void heapify(vector<int> &v, int n, int pos) {
     int largest = pos, l = 2 * pos + 1, r = 2 * pos + 2;
     if (l < n && v[l] > v[largest]) {
         largest = l;
@@ -301,18 +298,17 @@ void heapify(vector<int> &v, int n, int pos)
     if (r < n && v[r] > v[largest]) {
         largest = r;
     }
-    if(largest != pos) {
+    if (largest != pos) {
         swap(v[pos], v[largest]);
         heapify(v, n, largest);
     }
 }
 
-void heapSort(vector<int> &v, int n)
-{
-    for (int i = n/2 - 1; i >= 0; i--) {
+void heapSort(vector<int> &v, int n) {
+    for (int i = n / 2 - 1; i >= 0; i--) {
         heapify(v, n, i);
     }
-    for (int i = n - 1; i>=0; i--) {
+    for (int i = n - 1; i >= 0; i--) {
         swap(v[0], v[i]);
         heapify(v, i, 0);
     }
@@ -339,9 +335,7 @@ struct Foo {
 
 Foo v[N + 1];
 
-bool cmp(const Foo x, const Foo y) {
-    return (x.a + x.b) < (y.a + y.b);
-}
+bool cmp(const Foo x, const Foo y) { return (x.a + x.b) < (y.a + y.b); }
 
 sort(v + 1, v + N + 1, cmp);
 
@@ -349,9 +343,7 @@ sort(v + 1, v + N + 1, cmp);
 vector<Foo> foos(N + 1);
 
 sort(foos.begin(), foos.end(),
-     [](const Foo x, const Foo y) {
-        return (x.a + x.b) < (y.a + y.b);
-     });
+     [](const Foo x, const Foo y) { return (x.a + x.b) < (y.a + y.b); });
 ```
 
 ## Sortarea folosind structuri din STL
@@ -371,7 +363,7 @@ for (int i = 0; i < n; i++) {
     s.insert(v[i]);
 }
 
-vector <int> sorted;
+vector<int> sorted;
 for (auto x : s) {
     sorted.push_back(x);
 }
@@ -384,7 +376,7 @@ for (auto x : s) {
 Counting sort este un algoritm de sortare folosit atunci când avem un număr mic
 de elemente distincte, care pot fi ținute într-un vector de frecvență. Acest
 algoritm se poate folosi și dacă intervalul în care sunt așezate valorile este
-unul mic, complexitatea fiind în ambele cazuri $O(n + k)$, unde $n$ este numărul
+unul mic, complexitatea fiind în ambele cazuri $\mathcal{O}(n + k)$, unde $n$ este numărul
 de valori din șir, iar $k$ este diferența dintre cea mai mare și cea mai mică
 valoare din șir.
 
@@ -398,8 +390,8 @@ valoare din șir.
 int n;
 cin >> n;
 
-vector <int> v(n);
-vector <int> frq(MAXVAL);
+vector<int> v(n);
+vector<int> frq(MAXVAL);
 for (int i = 0; i < n; i++) {
     cin >> v[i];
     frq[v[i]]++;
@@ -425,21 +417,22 @@ prelucrarea cifrelor și numerelor în diferite moduri.
 ```cpp
 void radix_sort(vector<int> v, int pwr) {
     if (pwr == 0) {
-        for(int i = 0; i < v.size(); ++i)
+        for (int i = 0; i < v.size(); ++i) {
             v2[poz++] = v[i];
+        }
         return;
     }
     vector<int> a[10];
     for (int i = 0; i < v.size(); ++i) {
         int val = v[i] % pwr;
         if (pwr != 1) {
-            val /= (pwr/10);
+            val /= (pwr / 10);
         }
         a[val].push_back(v[i]);
     }
     for (int i = 0; i < 10; ++i) {
         if (!a[i].empty()) {
-            radix_sort(a[i], pwr/10);
+            radix_sort(a[i], pwr / 10);
         }
     }
 }
@@ -459,41 +452,41 @@ binară, diverse probleme ce implică structuri de date și așa mai departe.
 
 ### Probleme de la olimpiade
 
-- [perechi kilonova](https://kilonova.ro/problems/1946)
-- [Probleme cu sortari de pe
-  pbinfo](https://www.pbinfo.ro/probleme/categorii/3/tablouri-unidimensionale-vectori-sortarea-vectorilor)
-- [sir OJI 2005](https://kilonova.ro/problems/740)
-- [USACO Bronze Acowdemia
-  I](https://usaco.org/index.php?page=viewproblem2&cpid=1131)
-- [Pergament OJI 2023](https://kilonova.ro/problems/643)
-- [pseudocmp OJI 2022](https://kilonova.ro/problems/945)
-- [yinyang OJI 2019](https://kilonova.ro/problems/650)
-- [JOI 2018 Stove](https://oj.uz/problem/view/JOI18_stove)
-- [JOI 2018 Art Exhibition](https://oj.uz/problem/view/JOI18_art)
-- [InfoPro insertsort](https://kilonova.ro/problems/1025)
-- [probleme cu sortare de pe Kilonova](https://kilonova.ro/tags/349)
-- [High Card Low Card USACO
-  Gold](https://usaco.org/index.php?page=viewproblem2&cpid=573)
+-   [perechi kilonova](https://kilonova.ro/problems/1946)
+-   [Probleme cu sortari de pe
+    pbinfo](https://www.pbinfo.ro/probleme/categorii/3/tablouri-unidimensionale-vectori-sortarea-vectorilor)
+-   [sir OJI 2005](https://kilonova.ro/problems/740)
+-   [USACO Bronze Acowdemia
+    I](https://usaco.org/index.php?page=viewproblem2&cpid=1131)
+-   [Pergament OJI 2023](https://kilonova.ro/problems/643)
+-   [pseudocmp OJI 2022](https://kilonova.ro/problems/945)
+-   [yinyang OJI 2019](https://kilonova.ro/problems/650)
+-   [JOI 2018 Stove](https://oj.uz/problem/view/JOI18_stove)
+-   [JOI 2018 Art Exhibition](https://oj.uz/problem/view/JOI18_art)
+-   [InfoPro insertsort](https://kilonova.ro/problems/1025)
+-   [probleme cu sortare de pe Kilonova](https://kilonova.ro/tags/349)
+-   [High Card Low Card USACO
+    Gold](https://usaco.org/index.php?page=viewproblem2&cpid=573)
 
 ### Probleme de pe alte siteuri
 
-- [Distinct Numbers](https://cses.fi/problemset/task/1621)
-- [Movie Festival](https://cses.fi/problemset/task/1629)
-- [Towers](https://cses.fi/problemset/task/1073)
-- [Kayaking](https://codeforces.com/contest/863/problem/B)
-- [Movie Festival II](https://cses.fi/problemset/task/1632)
-- [Tasks and Deadlines](https://cses.fi/problemset/task/1630)
-- [Permutator](https://codeforces.com/gym/104520/problem/H)
-- [Playing in a Casino](https://codeforces.com/contest/1808/problem/B)
-- [The Party and Sweets](https://codeforces.com/problemset/problem/1158/A)
-- [USB vs. PS/2](https://codeforces.com/contest/762/problem/B)
+-   [Distinct Numbers](https://cses.fi/problemset/task/1621)
+-   [Movie Festival](https://cses.fi/problemset/task/1629)
+-   [Towers](https://cses.fi/problemset/task/1073)
+-   [Kayaking](https://codeforces.com/contest/863/problem/B)
+-   [Movie Festival II](https://cses.fi/problemset/task/1632)
+-   [Tasks and Deadlines](https://cses.fi/problemset/task/1630)
+-   [Permutator](https://codeforces.com/gym/104520/problem/H)
+-   [Playing in a Casino](https://codeforces.com/contest/1808/problem/B)
+-   [The Party and Sweets](https://codeforces.com/problemset/problem/1158/A)
+-   [USB vs. PS/2](https://codeforces.com/contest/762/problem/B)
 
 ## Bibliografie și lectură suplimentară
 
-- [Introduction to Sorting - USACO
-  Guide](https://usaco.guide/bronze/intro-sorting?lang=cpp)
-- [Greedy Algorithms with
-  Sorting](https://usaco.guide/silver/greedy-sorting?lang=cpp)
-- [Sortarea prin
-  numărare](https://cppi.sync.ro/materia/sortarea_prin_numarare.html?hl=sortare)
-- [Tutorial Video RoAlgo](https://www.youtube.com/watch?v=4vAsp9xgies)
+-   [Introduction to Sorting - USACO
+    Guide](https://usaco.guide/bronze/intro-sorting?lang=cpp)
+-   [Greedy Algorithms with
+    Sorting](https://usaco.guide/silver/greedy-sorting?lang=cpp)
+-   [Sortarea prin
+    numărare](https://cppi.sync.ro/materia/sortarea_prin_numarare.html?hl=sortare)
+-   [Tutorial Video RoAlgo](https://www.youtube.com/watch?v=4vAsp9xgies)

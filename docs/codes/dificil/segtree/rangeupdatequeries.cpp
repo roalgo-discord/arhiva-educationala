@@ -15,7 +15,7 @@ public:
         segtree_.resize(1 + 4 * size);
         lazy_.resize(1 + 4 * size);
     }
-    
+
     void lazy(int node, int start, int end) {
         segtree_[node] += lazy_[node] * (end - start + 1);
 

@@ -1,7 +1,6 @@
 ---
 id: complexity
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:
@@ -18,39 +17,41 @@ de a măsura calitatea unui algoritm este dat de complexitatea pe care îl are. 
 cele ce urmează vom discuta acest concept și modul în care îl putem aplica în
 probleme.
 
-Înțelegem prin **complexitate** numărul de pași pe care îl face un algoritm în
-funcție de dimensiunea setului de date primite. Cunoașterea acestui concept este
-fundamentală pentru facilitarea rezolvării de probleme.
+Complexitatea unui algoritm reprezintă o măsură a eficienței acestuia în funcție
+de dimensiunea intrării. O bună înțelegere a complexității este esențială pentru
+a putea alege cel mai potrivit algoritm pentru o problemă dată.
 
-În practică, complexitățile sunt de două tipuri, cea de timp și cea de memorie,
-ambele având metodele lor specifice de calculare a eficienței.
+Imaginați-vă că trebuie să căutați un cuvânt într-un dicționar. Dacă îl căutați
+pagină cu pagină, procesul este lent. Dacă folosiți metoda căutării binare
+(deschizând cartea pe la mijloc și eliminând jumătate din pagini la fiecare
+pas), veți ajunge mult mai repede la rezultat.
 
 ## Complexitatea de timp
 
 Pentru a calcula complexitatea de timp a unui algoritm, trebuie să avem în
-vedere următoarele aspecte specifice:
+vedere că în practică, procesoarele moderne pot procesa aproximativ $3 \cdot
+10^8$ operații simple pe secundă, acest număr depinzând în funcție de contextul
+unde trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele
+și anumite evaluatoare de la concursurile oficiale sunt mai rapide decât
+altele).
 
-- În practică, procesoarele moderne pot procesa aproximativ $3 \cdot 10^8$
-  operații simple pe secundă, acest număr depinde în funcție de contextul unde
-  trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și
-  anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
+!!! note "Observație"
 
-  !!! note "Observație"
+    În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
+    estimare precisă, care este folosită de regulă și de propunătorii de
+    probleme atunci când se decid limitele de timp.
 
-      În concursuri, folosirea valorii de $10^8$ operații pe secundă este o
-      estimare precisă, care este folosită de regulă și de propunătorii de
-      probleme atunci când se decid limitele de timp.
-
-- Exemple de operații simple: operațiile aritmetice simple, incrementările,
-  operațiile pe biți etc.
-- Exemple de operații care nu sunt simple: aflarea radicalului, aflarea restului
-  împărțirii etc.
+Prin operație „simplă” înțelegem concret o operație care durează un timp
+constant, indiferent de mărimea intrării. Exemple de operații simple includ
+operațiile aritmetice simple, incrementările, operațiile pe biți etc., iar
+exemple care nu sunt simple includ aflarea radicalului, aflarea restului
+împărțirii etc.
 
 În general, constantele mici pot fi ignorate în calculul complexitatilor. De
-exemplu, $O(N)$ este echivalent cu $O(3 \cdot N)$ și $O(2 \cdot N)$. Mai jos
-puteți găsi exemple de cod, împreună cu complexitățile lor.
+exemplu, $\mathcal{O}(N)$ este echivalent cu $\mathcal{O}(c \cdot N)$ pentru un
+$c > 0$. Mai jos puteți găsi exemple de cod, împreună cu complexitățile lor.
 
-Acest cod are complexitatea $O(1)$, operațiile fiind constante.
+Acest cod are complexitatea $\mathcal{O}(1)$, operațiile fiind constante.
 
 ```cpp
 int a = 5;
@@ -59,65 +60,92 @@ int c = 4;
 int d = a + b + c + 153;
 ```
 
-Aceste coduri au complexitatea $O(n)$, numărul de operații fiind cel făcut în
-structura repetitivă.
+Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de operații fiind cel
+făcut în structura repetitivă.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
 ```cpp
 int i = 0;
+
 while (i < n) {
-    // cod in timp constant
+    // Cod în timp constant
     i++;
 }
 ```
 
-În ciuda constantelor care apar, codurile au din nou complexitatea $O(n)$.
-Aceste coduri au complexitatea $O(n)$, numărul de operații fiind cel făcut în
-structura repetitivă.
+În ciuda constantelor care apar, codurile au din nou complexitatea
+$\mathcal{O}(n)$. Aceste coduri au complexitatea $\mathcal{O}(n)$, numărul de
+operații fiind cel făcut în structura repetitivă.
 
 ```cpp
 for (int i = 1; i <= 5 * n + 17; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
 ```cpp
 for (int i = 1; i <= n + 758458; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
 
 Dacă avem de-a face cu mai multe structuri repetitive imbricate, complexitatea
-se va înmulți, complexitatea codului de mai jos este $O(n \cdot m)$.
+se va înmulți, complexitatea codului de mai jos este $\mathcal{O}(n \cdot m)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= m; j++) {
-        // cod in timp constant
+        // Cod în timp constant
     }
 }
 ```
 
 Dacă avem de-a face cu diverse repetitive imbricate în diferite blocuri de cod,
 complexitatea va deveni egală cu cea mai costisitoare structură de acest gen,
-complexitatea se va înmulți, complexitatea codului de mai jos este $O(n \cdot
-m)$, în ciuda bucății care are complexitate $O(n)$.
+complexitatea se va înmulți, complexitatea codului de mai jos este
+$\mathcal{O}(n \cdot m)$, în ciuda bucății care are complexitate
+$\mathcal{O}(n)$.
 
 ```cpp
 for (int i = 1; i <= n; i++) {
     for (int j = 1; j <= n; j++) {
-        // cod in timp constant
+        // Cod în timp constant
     }
 }
+
 for (int i = 1; i <= m; i++) {
-    // cod in timp constant
+    // Cod în timp constant
 }
 ```
+
+!!! warning "Atenție"
+
+    O greșeală care se face deseori este să presupunem că o complexitate
+    $\mathcal{O}(f(n))$ se menține pentru **valori mici**. Când calculăm
+    complexitățile, ignorăm constantele pentru că vrem să analizăm algoritmul
+    când $n$ devine din ce în ce mai mare. Ne interesează deci rata în care
+    crește timpul de execuție, dar asta nu ne zice nimic legat de timpul
+    concret. Pentru valori mici, nu avem voie să ignorăm constantele și alți
+    termeni, deoarece constantele contează enorm. Din acest punct de vedere,
+    putem vedea $\mathcal{O}$ ca fiind cazul **cel mai rău** al unui algoritm.
+    Notația nu ne zice nimic de cum rulează algoritmul în medie sau în cel mai
+    bun caz.
+    
+    De pildă, dacă avem un algoritm $\mathcal{O}(n)$ pentru care fiecare
+    operație durează 50ms (am putea reprezenta asta ca $\mathcal{O}(50n)$),
+    acesta va fi mai încet decât un algoritm $\mathcal{O}(5n^2)$, unde fiecare
+    operație durează 5ms pentru $n < 10$. Fiecare operație are un cost și există
+    foarte mulți factori care pot influența cum rulează un algoritm (performanța
+    procesorului, memoria disponibilă, cum accesează programul memoria, ce
+    operații au loc etc.). Un algoritm $\mathcal{O}(2n)$ va fi de 2 ori mai
+    rapid decât unul $\mathcal{O}(4n)$, deși ele cresc în același fel. Deci nu
+    vă bazați pe complexități dacă vreți să comparați concret doi algoritmi sau
+    două structuri de date; faceți teste.
 
 ### Exemple de complexități de timp
 
@@ -125,15 +153,15 @@ Aici prezentăm câteva exemple de complexități, care vor fi utile pe parcurs.
 este nevoie să știți algoritmii de aici încă, ei vor fi prezentați și învățați
 de-a lungul parcursului vostru în lumea algoritmicii.
 
-- Formule matematice care calculează un răspuns: $O(1)$
-- Căutarea binară: $O(\log n)$
-- Folosirea unor structuri de date precum set, map: $O(\log n)$ per operație
-- Aflarea divizorilor unui număr: $O(\sqrt{n})$
-- Citirea sau parcurgerea a $n$ valori: $O(n)$
-- Sortarea unui vector cu $n$ valori: de obicei $O(n \log n)$
-- Parcurgerea tuturor submulțimilor de lungime 2: $O(n^2)$.
-- Parcurgerea tuturor submulțimilor: $O(2^n)$
-- Parcurgerea tuturor permutărilor: $O(n!)$
+- Formule matematice care calculează un răspuns: $\mathcal{O}(1)$
+- Căutarea binară: $\mathcal{O}(\log n)$
+- Folosirea unor structuri de date precum set, map: $\mathcal{O}(\log n)$ per operație
+- Aflarea divizorilor unui număr: $\mathcal{O}(\sqrt{n})$
+- Citirea sau parcurgerea a $n$ valori: $\mathcal{O}(n)$
+- Sortarea unui vector cu $n$ valori: de obicei $\mathcal{O}(n \log n)$
+- Parcurgerea tuturor submulțimilor de lungime 2: $\mathcal{O}(n^2)$.
+- Parcurgerea tuturor submulțimilor: $\mathcal{O}(2^n)$
+- Parcurgerea tuturor permutărilor: $\mathcal{O}(n!)$
 
 ## Complexitatea de memorie
 
@@ -142,27 +170,27 @@ folosit.
 
 Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 
-- tipul **int**: 4 bytes, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147 \
-  483 \ 648$ si $2 \ 147 \ 483 \ 647$).
-- tipul **short**: 2 bytes, limite între $-2^{15}$ si $2^{15} - 1$ ($-32  \
+- tipul `#!cpp int`: 4 octeți, limite între $-2^{31}$ si $2^{31} - 1$ ($-2 \ 147
+  \ 483 \ 648$ si $2 \ 147 \ 483 \ 647$).
+- tipul `#!cpp short`: 2 octeți, limite între $-2^{15}$ si $2^{15} - 1$ ($-32 \
   768$ si $32 \ 767$).
-- tipul **char**: 1 byte, limite între $-128$ si 127.
-- tipul **bool**: 1 byte, accepta doar 0 sau 1.
-- tipul **long long**: 8 bytes, limite între $-2^{63}$ si $2^{63} - 1$ ($-9 \
-  223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$)
-  * numere de maxim 19 cifre.
+- tipul `#!cpp char`: 1 octet, limite între $-128$ si 127.
+- tipul `#!cpp bool`: 1 octet, accepta doar 0 sau 1.
+- tipul `#!cpp long long`: 8 octeți, limite între $-2^{63}$ si $2^{63} - 1$ ($-9
+  \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$ si $9 \ 223 \ 372 \ 036 \ 854 \ 775 \
+  807$) &mdash; numere de maxim 19 cifre.
 
 În privința tipurilor reale, putem enumera următoarele:
 
-- tipul **float**: 4 bytes, limite între aproximativ $-10^{38}$ și $10^{38}$.
-- tipul **double**: 8 bytes, limite între aproximativ $-10^{208}$ și
+- tipul `#!cpp float`: 4 octeți, limite între aproximativ $-10^{38}$ și $10^{38}$.
+- tipul `#!cpp double`: 8 octeți, limite între aproximativ $-10^{208}$ și
   $10^{208}$.
-- tipul **long double**: în funcție de standardul de compilare, cel puțin 8
-  bytes, limite mai mari decât cele de la **double**.
+- tipul `#!cpp long double`: în funcție de standardul de compilare, cel puțin 8
+  octeți, limite mai mari decât cele de la `#!cpp double`.
 
-De exemplu, dacă avem un vector de $10^6$ elemente de tipul **int** și altul de
-$10^5$ elemente de tipul **long long**, vom folosi $4 * 10^6 + 8 * 10^5 =
-4.8*10^6$ bytes = $4.8$ MB.
+De exemplu, dacă avem un vector de $10^6$ elemente de tipul `#!cpp int` și altul
+de $10^5$ elemente de tipul `#!cpp long long`, vom folosi $4 \cdot 10^6 + 8
+\cdot 10^5 = 4.8 \cdot 10^6$ octeți = 4.8 MB.
 
 Este foarte important în cazul complexităților de memorie să aveți în vedere
 faptul că în general la concursuri, se ia în considerare memoria așa cum e
@@ -182,15 +210,15 @@ particularitățile problemei.
 
 | $n$                   | Complexități posibile              |
 | --------------------- | ---------------------------------- |
-| $n \leq 10$           | $O(n!)$, $O(n^7)$, $O(n^6)$        |
-| $n \leq 20$           | $O(2^n \cdot n)$, $O(n^5)$         |
-| $n \leq 100$          | $O(n^4)$                           |
-| $n \leq 500$          | $O(n^3)$                           |
-| $n \leq 10 \ 000$     | $O(n^2)$                           |
-| $n \leq 10^5$         | $O(n \sqrt n)$                     |
-| $n \leq 5 \cdot 10^5$ | $O(n \log n)$                      |
-| $n \leq 10^7$         | $O(n)$                             |
-| $n \leq 10^{18}$      | $O(\log^2 n)$, $O(\log n)$, $O(1)$ |
+| $n \leq 10$           | $\mathcal{O}(n!)$, $\mathcal{O}(n^7)$, $\mathcal{O}(n^6)$        |
+| $n \leq 20$           | $\mathcal{O}(2^n \cdot n)$, $\mathcal{O}(n^5)$         |
+| $n \leq 100$          | $\mathcal{O}(n^4)$                           |
+| $n \leq 500$          | $\mathcal{O}(n^3)$                           |
+| $n \leq 10 \ 000$     | $\mathcal{O}(n^2)$                           |
+| $n \leq 10^5$         | $\mathcal{O}(n \sqrt n)$                     |
+| $n \leq 5 \cdot 10^5$ | $\mathcal{O}(n \log n)$                      |
+| $n \leq 10^7$         | $\mathcal{O}(n)$                             |
+| $n \leq 10^{18}$      | $\mathcal{O}(\log^2 n)$, $\mathcal{O}(\log n)$, $\mathcal{O}(1)$ |
 
 ## Concluzii
 

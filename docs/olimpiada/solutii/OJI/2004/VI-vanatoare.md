@@ -1,32 +1,29 @@
 ---
+id: OJI-2004-VI-vanatoare
+title: Soluția problemei vanatoare (OJI 2004, clasa a VI-a)
+problem_id: 728
+authors: []
+# prerequisites:
+#    - placeholder
 tags:
     - OJI
     - clasa VI
+draft: true
 ---
 
-# Soluția problemei vanatoare (OJI 2004, clasa a VI-a)
-
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
-
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
 #include <iostream>
 using namespace std;
- 
+
 int main() {
     int a, b;
     cin >> a >> b;
 
-    cout << a+b << '\n';
+    cout << a + b << '\n';
     return 0;
 }
 ```

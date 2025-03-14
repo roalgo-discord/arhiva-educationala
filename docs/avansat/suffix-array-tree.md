@@ -1,7 +1,6 @@
 ---
 id: suffix-array-tree
-author:
-    - Radu-Teodor Prosie
+authors: [moncalc]
 tags:
     - structuri de date
     - siruri de caractere
@@ -82,10 +81,10 @@ de lungime $2^{i-1}$ și le sortăm întai după bucata din dreapta apoi după b
 din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă
 în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea 3 a
 claselor de echivalență știim că nu vor depăși niciodată valoarea $N$ și putem
-folosi metode de sortare în $O(N)$ precum counting sort sau, ce recomand eu,
+folosi metode de sortare în $\mathcal{O}(N)$ precum counting sort sau, ce recomand eu,
 doar ținem un vector de vectori unde $V_i = $ vectorul indicilor sufixelor ale
 căror clasă de echivalență pe care o comparăm este $i$. Astfel, complexitatea de
-timp este $O(N \log_2{N})$ iar cea de spațiu este $O(N)$.
+timp este $\mathcal{O}(N \log_2{N})$ iar cea de spațiu este $\mathcal{O}(N)$.
 
 ## Câteva detalii de implementare
 
@@ -100,42 +99,46 @@ jumătățile să se intersecteze. Vă puteți testa implementarea
 implementarea mea :
 
 ```cpp
-void reorder(vector<int> r[], vector<int> &p){
-
-    for(int i = 0,cnt = 0; i < max((int)p.size(), 300); i++){
-            
-            for(auto &it : r[i])
-                p[cnt++] = it;
-            r[i].clear();
+void reorder(vector<int> r[], vector<int> &p) {
+    for (int i = 0, cnt = 0; i < max((int)p.size(), 300); i++) {
+        for (auto &it : r[i]) {
+            p[cnt++] = it;
+        }
+        r[i].clear();
     }
 }
 
-vector<int> suffix(string s){
+vector<int> suffix(string s) {
+    s += "$";
+    int n = s.size();
+    vector<int> c(n), p(n), nc(n), r[max(n, 300)];
 
-    s += "$"; int n = s.size(); vector<int> c(n), p(n), nc(n), r[max(n, 300)];
-    
-    for(int i = 0 ; i < n ; i++) 
+    for (int i = 0; i < n; i++) {
         r[s[i]].emplace_back(i);
-    reorder(r, p); c[p[0]] = 0;
-    
-    for(int i = 1; i < n ; i++) 
-        c[p[i]] = c[p[i-1]] + (int)(s[p[i]] != s[p[i-1]]);
-    
-    for(int len = 1; len < n ; len <<= 1){
+    }
+    reorder(r, p);
+    c[p[0]] = 0;
 
-        for(int i = 0; i < n ; i++)
+    for (int i = 1; i < n; i++) {
+        c[p[i]] = c[p[i - 1]] + (int)(s[p[i]] != s[p[i - 1]]);
+    }
+
+    for (int len = 1; len < n; len <<= 1) {
+        for (int i = 0; i < n; i++) {
             r[c[(p[i] + len) % n]].emplace_back(p[i]);
+        }
         reorder(r, p);
-        
-        for(int i = 0; i < n ; i++)
-            r[c[p[i]]].emplace_back(p[i]);
-        reorder(r, p); nc[p[0]] = 0;
-       
-        for(int i = 1; i < n ; i++){
 
-            pair<int,int> last = {c[p[i-1]], c[(p[i-1]+len)%n]};
-            pair<int,int> now = {c[p[i]], c[(p[i]+len)%n]};
-            nc[p[i]] = nc[p[i-1]] + (int)(last != now);
+        for (int i = 0; i < n; i++) {
+            r[c[p[i]]].emplace_back(p[i]);
+        }
+        reorder(r, p);
+        nc[p[0]] = 0;
+
+        for (int i = 1; i < n; i++) {
+            pair<int, int> last = {c[p[i - 1]], c[(p[i - 1] + len) % n]};
+            pair<int, int> now = {c[p[i]], c[(p[i] + len) % n]};
+            nc[p[i]] = nc[p[i - 1]] + (int)(last != now);
         }
 
         c.swap(nc);
@@ -144,7 +147,6 @@ vector<int> suffix(string s){
     p.erase(p.begin());
     return p;
 }
-
 ```
 
 ## Aplicații elementare ale șirului de sufixe
@@ -162,12 +164,12 @@ poziție rotația minim lexicografică.
 Fie $M$ minimul lungimilor subsecvențelor și $l = \lfloor \log_2{M} \rfloor$. Ca
 la $RMQ$, putem compara cele două subsecvențe comparând perechile
 corespunzătoare bucăților în care le împarțim folosind clasele de la pasul $l$.
-$O(1)$ pe query.
+$\mathcal{O}(1)$ pe query.
 
 ### Cel mai lung prefix comun dintre două subsecvențe
 
 Cautăm binar pe lungimea răspunsului și ne folosim de aplicația 2 pentru a
-verifica dacă subsecvențele corespunzătoare sunt egale. $O(\log_2{N})$ pe query.
+verifica dacă subsecvențele corespunzătoare sunt egale. $\mathcal{O}(\log_2{N})$ pe query.
 
 ## Șirul LCP
 
@@ -177,7 +179,7 @@ definit astfel : $LCP_0 = 0$ sau doar rămâne nedefinit iar pentru restul avem
 $LCP_i = $ cel mai lung prefix comun al sufixelor de pe pozițiile $i$ și $i - 1$
 în șirul de sufixe. Acest șir are mai multe metode de construire : cea mai
 simplă este folosirea repetată a aplicației 3 de mai sus. Cu toate acestea,
-dorim să prezentăm și o altă metodă de construire în $O(N)$ care nu necesită
+dorim să prezentăm și o altă metodă de construire în $\mathcal{O}(N)$ care nu necesită
 menținerea tabloului de clase de la fiecare pas, algoritmul lui Kasai.
 
 ### Algoritmul lui Kasai
@@ -208,30 +210,36 @@ Dacă notăm cu $k$ sufixul cu care îl comparăm pe $i + 1$, atunci ordinea de
 apariție în șirul de sufixe este $j + 1 \leq k < i + 1$. Folosind observația 2
 obținem că $lcp(k, i + 1) \geq l - 1$.
 
-Complexitatea de spațiu este evident $O(N)$. Complexitatea de timp necesită mai
+Complexitatea de spațiu este evident $\mathcal{O}(N)$. Complexitatea de timp necesită mai
 multă atenție: se observă că decrementăm variabila fun de maxim $N$ ori iar
 valoarea maximă până la care o putem incrementa este $N$, așadar complexitatea
-de timp este $O(N)$.
+de timp este $\mathcal{O}(N)$.
 
 Mai jos aveți un model de implementare:
 
 ```cpp
-vector<int> lcp(string &s, vector<int> &p){
+vector<int> lcp(string &s, vector<int> &p) {
+    vector<int> r(s.size()), l(s.size(), 0);
+    int n = p.size();
+    for (int i = 0; i < n; i++) {
+        r[p[i]] = i;  /// r[i] = pozitia sufixului i in sirul de sufixe
+    }
 
-    vector<int> r(s.size()), l(s.size(), 0); int n = p.size();
-    for(int i = 0 ; i < n ; i++) 
-        r[p[i]] = i; ///r[i] = pozitia sufixului i in sirul de sufixe
-    
     int fun = 0, j;
-    for(int i = 0 ; i < n ; i++){
-            
-        if(!r[i]) continue;
-        
+    for (int i = 0; i < n; i++) {
+        if (!r[i]) {
+            continue;
+        }
+
         j = p[r[i] - 1];
-        while(i + fun < n && j + fun < n && s[i+fun] == s[j+fun])
+        while (i + fun < n && j + fun < n && s[i + fun] == s[j + fun]) {
             fun++;
-        l[r[i]] = fun; if(fun) fun--;
-    }                   
+        }
+        l[r[i]] = fun;
+        if (fun) {
+            fun--;
+        }
+    }
 
     return l;
 }
@@ -255,7 +263,7 @@ observă că toate sufixele în care $P$ este prefix vor forma o subsecvență �
 șirul de sufixe. Pentru a numara de câte ori apare $P$ este de ajuns să căutam
 ternar primul sufix în care apare $P$ ca prefix iar apoi să căutam binar cât de
 mult de putem extinde la dreapta astfel încât lcp-ul dintre $P$ și ultimul sufix
-din subsecvență să fie $|P|$. Complexitate: $O(|P| \log {N})$ pe query.
+din subsecvență să fie $|P|$. Complexitate: $\mathcal{O}(|P| \log {N})$ pe query.
 
 !!! warning "Soluția optimă"
 

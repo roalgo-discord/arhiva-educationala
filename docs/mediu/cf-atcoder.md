@@ -1,7 +1,6 @@
 ---
 id: cf-atcoder
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
     - meta
     - practice

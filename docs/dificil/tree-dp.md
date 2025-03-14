@@ -1,7 +1,6 @@
 ---
 id: tree-dp
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - tree-1
     - intro-dp
@@ -70,10 +69,11 @@ Mai jos puteți găsi codul sursă la această problemă.
 ```cpp
 #include <iostream>
 #include <vector>
- 
+
 using namespace std;
- 
-void dfs (int parent, int node, vector<vector<int>> &tree, vector<vector<int>> &dp) {
+
+void dfs(int parent, int node, vector<vector<int>> &tree,
+         vector<vector<int>> &dp) {
     int sum_mx = 0;
     for (auto x : tree[node]) {
         if (x != parent) {
@@ -81,7 +81,7 @@ void dfs (int parent, int node, vector<vector<int>> &tree, vector<vector<int>> &
             sum_mx += max(dp[1][x], dp[0][x]);
         }
     }
-    
+
     dp[0][node] = sum_mx;
     for (auto x : tree[node]) {
         if (x != parent) {
@@ -93,24 +93,23 @@ void dfs (int parent, int node, vector<vector<int>> &tree, vector<vector<int>> &
 }
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n;
     cin >> n;
-    
+
     vector<vector<int>> tree(n);
-    for (int i = 0; i < n-1; i++) {
+    for (int i = 0; i < n - 1; i++) {
         int a, b;
         cin >> a >> b;
         a--, b--;
         tree[a].push_back(b);
         tree[b].push_back(a);
     }
-    
-    vector<vector<int>> dp(2, vector<int> (n));
-    
+
+    vector<vector<int>> dp(2, vector<int>(n));
+
     dfs(-1, 0, tree, dp);
     cout << max(dp[1][0], dp[0][0]) << '\n';
     return 0;
@@ -154,33 +153,38 @@ void dfs(int parent, int node) {
     int who = 0;
     for (int i = 0; i < v[node].size(); ++i) {
         int nxt = v[node][i].first;
-        if (nxt == parent)
+        if (nxt == parent) {
             continue;
+        }
         int cost = v[node][i].second;
         dfs(node, nxt);
-        if (dp[nxt] - cost > dp[node])
+        if (dp[nxt] - cost > dp[node]) {
             dp[node] = dp[nxt] - cost, who = nxt;
+        }
     }
     dp[node] += amount[node];
     maxanswer = max(maxanswer, dp[node]);
     for (int i = 0; i < v[node].size(); ++i) {
         int nxt = v[node][i].first;
-        if (nxt == parent || nxt == who)
+        if (nxt == parent || nxt == who) {
             continue;
+        }
         int cost = v[node][i].second;
-        if (cost < dp[node] || cost < dp[nxt])
+        if (cost < dp[node] || cost < dp[nxt]) {
             maxanswer = max(maxanswer, dp[node] - cost + dp[nxt]);
+        }
     }
 }
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     cin >> n;
-    
-    for (int i = 1; i <= n; ++i)
+
+    for (int i = 1; i <= n; ++i) {
         cin >> amount[i], maxanswer = max(maxanswer, amount[i]);
-        
+    }
+
     for (int i = 1; i < n; ++i) {
         long long a, b, c;
         cin >> a >> b >> c;
@@ -246,13 +250,11 @@ void dfs(int dad, int node) {
         if (dp[1][nxt] - 1 == dp[2][nxt]) {
             max3 += dp[1][nxt] - 1;
             ways3 = (ways3 * (ways[1][nxt] + ways[2][nxt])) % mod;
-        }
-        else {
+        } else {
             if (dp[1][nxt] - 1 > dp[2][nxt]) {
                 max3 += dp[1][nxt] - 1;
                 ways3 = (ways3 * (ways[1][nxt])) % mod;
-            }
-            else {
+            } else {
                 max3 += dp[2][nxt];
                 ways3 = (ways3 * ways[2][nxt]) % mod;
             }
@@ -262,13 +264,11 @@ void dfs(int dad, int node) {
         if (dp[1][nxt] == dp[2][nxt]) {
             max2 += dp[1][nxt];
             ways2 = (ways2 * (ways[1][nxt] + ways[2][nxt])) % mod;
-        }
-        else {
+        } else {
             if (dp[1][nxt] > dp[2][nxt]) {
                 max2 += dp[1][nxt];
                 ways2 = (ways2 * (ways[1][nxt])) % mod;
-            }
-            else {
+            } else {
                 max2 += dp[2][nxt];
                 ways2 = (ways2 * ways[2][nxt]) % mod;
             }
@@ -355,10 +355,11 @@ vector<bool> viz2[2][10002];
 int sts[10002];
 void dfs(int parent, int node, int cost) {
     sts[node] = 1;
-    for (int i = 0; i < (int) v[node].size(); ++i) {
+    for (int i = 0; i < (int)v[node].size(); ++i) {
         int vecin = v[node][i].first;
-        if (vecin == parent)
+        if (vecin == parent) {
             continue;
+        }
         dfs(node, vecin, v[node][i].second);
         sts[node] += sts[vecin];
     }
@@ -374,35 +375,44 @@ void dfs(int parent, int node, int cost) {
 
     viz2[0][node][1] = 1;
     sts[node] = 1;
-    for (int i = 0; i < (int) v[node].size(); ++i) {
+    for (int i = 0; i < (int)v[node].size(); ++i) {
         int vecin = v[node][i].first;
-        if (vecin == parent)
+        if (vecin == parent) {
             continue;
+        }
         int edcost = v[node][i].second;
-        for (int j = min(k, sts[node]); j >= 1; --j)
+        for (int j = min(k, sts[node]); j >= 1; --j) {
             for (int sz = 1; sz <= min(sts[vecin], k - j); ++sz) {
-                if (!viz2[1][node][j + sz] || dp2[0][node][j] + dp[1][vecin][sz] + edcost < dp2[1][node][j + sz]) {
-                    dp2[1][node][j + sz] = dp2[0][node][j] + dp[1][vecin][sz] + edcost;
+                if (!viz2[1][node][j + sz]
+                    || dp2[0][node][j] + dp[1][vecin][sz] + edcost
+                           < dp2[1][node][j + sz]) {
+                    dp2[1][node][j + sz] =
+                        dp2[0][node][j] + dp[1][vecin][sz] + edcost;
                     viz2[1][node][j + sz] = 1;
                     xtr2[1][node][j + sz] = xtr[vecin][sz];
-                } 
-                else {
-                    if (dp2[0][node][j] + dp[1][vecin][sz] + edcost == dp2[1][node][j + sz]) {
-                        xtr2[1][node][j + sz] = min(xtr2[1][node][j + sz], xtr[vecin][sz]);
+                } else {
+                    if (dp2[0][node][j] + dp[1][vecin][sz] + edcost
+                        == dp2[1][node][j + sz]) {
+                        xtr2[1][node][j + sz] =
+                            min(xtr2[1][node][j + sz], xtr[vecin][sz]);
                     }
                 }
                 for (int trb = 0; trb <= 1; ++trb) {
-                    if (!viz2[trb][node][j + sz] ||
-                        dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost < dp2[trb][node][j + sz]) {
-                        dp2[trb][node][j + sz] = dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost;
+                    if (!viz2[trb][node][j + sz]
+                        || dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost
+                               < dp2[trb][node][j + sz]) {
+                        dp2[trb][node][j + sz] =
+                            dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost;
                         viz2[trb][node][j + sz] = 1;
                         xtr2[trb][node][j + sz] = xtr2[trb][node][j];
-                    } 
-                    else if (dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost == dp2[trb][node][j + sz]) {
-                        xtr2[trb][node][j + sz] = min(xtr2[trb][node][j + sz], xtr2[trb][node][j]);
+                    } else if (dp2[trb][node][j] + dp[0][vecin][sz] + 2 * edcost
+                               == dp2[trb][node][j + sz]) {
+                        xtr2[trb][node][j + sz] =
+                            min(xtr2[trb][node][j + sz], xtr2[trb][node][j]);
                     }
                 }
             }
+        }
         sts[node] += sts[vecin];
     }
     for (int i = 2; i <= min(k, sts[node]); ++i) {
@@ -410,13 +420,14 @@ void dfs(int parent, int node, int cost) {
         xtr[node][i] = xtr2[1][node][i];
         dp[0][node][i] = dp2[0][node][i];
     }
-    for (int i = 1; i <= min(k, sts[node]); ++i)
+    for (int i = 1; i <= min(k, sts[node]); ++i) {
         xtr[node][i] += cost;
+    }
 }
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     cin >> n >> k >> x;
     for (int i = 1; i < n; ++i) {
         int a, b, c;
@@ -452,7 +463,7 @@ cu rădăcina în nodul $i$, iar în acel nod avem valoarea $j$.
 Pentru a calcula această dinamică, putem avea mai întâi niște
 tranziții încete care calculează pentru fiecare variantă de a avea
 o valoare pe un nod, numărul de moduri de a avea o valoare pe un fiu,
-dar această abordare ar avea complexitatea $O(n \cdot m^2)$, ceea
+dar această abordare ar avea complexitatea $\mathcal{O}(n \cdot m^2)$, ceea
 ce este prea încet.
 
 O observație importantă pe care o facem este aceea că ne va interesa
@@ -462,7 +473,7 @@ pas, vom ține cont de numărul de factori primi și de suma parțială
 a răspunsurilor pentru numerele care sunt multiplu ale acelui divizor.
 
 Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea
-unui [PINEX](../mediu/pinex.md), deci $O(n \cdot m \cdot DMAX)$,
+unui [PINEX](../mediu/pinex.md), deci $\mathcal{O}(n \cdot m \cdot DMAX)$,
 unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform
 precalculării anterioare, iar acest număr $DMAX$ este egal cu 31 deoarece
 orice număr de la 1 la $m$ are cel mult 5 factori primi distincți.
@@ -471,10 +482,10 @@ Pentru mai multe detalii de implementare, recomandăm consultarea sursei de mai
 jos.
 
 ```cpp
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -504,7 +515,11 @@ void dfs(int node, int parent) {
                 if (divisor == 1) {
                     continue;
                 }
-                count = (count + ((pfcnt[divisor] & 1 ? -1 : 1) * eradp[neighbor][divisor]) + MOD) % MOD;
+                count = (count
+                         + ((pfcnt[divisor] & 1 ? -1 : 1)
+                            * eradp[neighbor][divisor])
+                         + MOD)
+                      % MOD;
             }
             dp[node][amt] = (dp[node][amt] * count) % MOD;
         }
@@ -518,17 +533,16 @@ void dfs(int node, int parent) {
 }
 
 int main() {
-    
     ifstream cin("treegcd.in");
     ofstream cout("treegcd.out");
-    
+
     cin >> n >> m;
 
     for (int i = 0; i < n - 1; ++i) {
         int x, y;
         cin >> x >> y;
-        --x; 
-        --y; 
+        --x;
+        --y;
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
@@ -600,12 +614,12 @@ vector<vector<int>> tree;
 int n;
 
 void dfs(int parent, int node) {
-
     vector<long long> sums;
     for (int i = 0; i < (int)tree[node].size(); i++) {
         int nxt = tree[node][i];
-        if (nxt == parent)
+        if (nxt == parent) {
             continue;
+        }
         dfs(node, nxt);
         sums.push_back(dp[0][nxt]);
     }
@@ -619,33 +633,38 @@ void dfs(int parent, int node) {
     if (sums.size() >= 2) {
         long long sm = 0;
         for (int i = 0; i < (int)sums.size(); i++) {
-            if (sums[i] < 0 && i >= 2)
+            if (sums[i] < 0 && i >= 2) {
                 break;
+            }
             sm += sums[i];
         }
         dp[0][node] = max(dp[0][node], v[node] + sm);
     }
 
-    if (sums.size() >= 1)
+    if (sums.size() >= 1) {
         dp[0][node] = max(dp[0][node], sums[0]);
+    }
 
     // not keep the parent
 
-    if (sums.size() >= 1)
+    if (sums.size() >= 1) {
         dp[1][node] = v[node] + sums[0];
+    }
 
     if (sums.size() > 2) {
         long long sm = 0;
         for (int i = 0; i < (int)sums.size(); i++) {
-            if (sums[i] < 0 && i >= 3)
+            if (sums[i] < 0 && i >= 3) {
                 break;
+            }
             sm += sums[i];
         }
         dp[1][node] = max(dp[1][node], v[node] + sm);
     }
 
-    if (sums.size() >= 2)
+    if (sums.size() >= 2) {
         dp[1][node] = max(dp[1][node], sums[0] + sums[1]);
+    }
 }
 
 int main() {
@@ -705,9 +724,11 @@ are concepte mai simple, dar care se leagă de cunoștințele prezentate aici.
 - [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2&cpid=766)
 - [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2&cpid=1019)
 - [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
+- [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
 - [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
 - [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
 - [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
+- [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
 - [ONI 2018 tricolor](https://kilonova.ro/problems/151)
 - [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
 - [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)

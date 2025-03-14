@@ -1,7 +1,6 @@
 ---
 id: deque
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - queue
     - stack
@@ -36,9 +35,9 @@ facilități în plus.
 
     Complexitatea menționată mai sus este cel puțin pentru implementarea din STL
     (std::deque) una amortizată, cu alte cuvinte, $n$ operații făcute pe un
-    deque vor fi $O(n)$, dar asta nu garantează faptul că fiecare operație va
-    lua $O(1)$. Din acest motiv, vom spune că complexitatea unui deque este
-    $O(1)$ amortizat.
+    deque vor fi $\mathcal{O}(n)$, dar asta nu garantează faptul că fiecare operație va
+    lua $\mathcal{O}(1)$. Din acest motiv, vom spune că complexitatea unui deque este
+    $\mathcal{O}(1)$ amortizat.
 
 ### Sintaxă
 
@@ -51,16 +50,16 @@ const int QMAX = 100001;
 int coada[100001];
 
 int pop() {
-  ultim = (ultim - 1 + QMAX) % QMAX;
-  return coada[ultim];
+    ultim = (ultim - 1 + QMAX) % QMAX;
+    return coada[ultim];
 }
 void pushFront(int e) {
-  prim = (prim - 1 + QMAX) % QMAX;
-  coada[prim] = e;
+    prim = (prim - 1 + QMAX) % QMAX;
+    coada[prim] = e;
 }
 void pushBack(int e) {
-  ultim = (ultim + 1 - QMAX) % QMAX;
-  coada[ultim] = e;
+    ultim = (ultim + 1 - QMAX) % QMAX;
+    coada[ultim] = e;
 }
 ```
 
@@ -84,17 +83,17 @@ Mai jos puteți găsi exemple de aplicare a funcțiilor în deque.
 
 ```cpp
 deque<int> d;
-d.push_back(1); // 1
-d.push_back(3); // 1 3
-d.push_front(2); // 2 1 3
-d.push_back(4); // 2 1 3 4
-d.push_front(5); // 5 2 1 3 4
-d.pop_back(); // 5 2 1 3
-d.pop_back(); // 5 2 1
-d.pop_front(); // 2 1
-cout << d.front() << '\n'; // 2
-cout << d.back() << '\n'; // 1
-cout << d.size() << '\n'; // 2
+d.push_back(1);             // 1
+d.push_back(3);             // 1 3
+d.push_front(2);            // 2 1 3
+d.push_back(4);             // 2 1 3 4
+d.push_front(5);            // 5 2 1 3 4
+d.pop_back();               // 5 2 1 3
+d.pop_back();               // 5 2 1
+d.pop_front();              // 2 1
+cout << d.front() << '\n';  // 2
+cout << d.back() << '\n';   // 1
+cout << d.size() << '\n';   // 2
 if (!d.empty()) {
     cout << "Are valori";
 }
@@ -120,15 +119,15 @@ principiile de funcționare ale stivei.
 În această problemă, se cere aflarea valorii minime pentru toate subsecvențele
 de lungime $k$. O soluție ce merită menționată, dar care nu este optimă, este
 folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în
-$O(n \log n)$.
+$\mathcal{O}(n \log n)$.
 
 Pentru soluția optimă, vom proceda în mod similar cum am proceda dacă am vrea să
 aflăm cea mai apropiată valoare mai mică de la stânga, singura modificare fiind
 faptul că dacă valoarea minimă este prea departe de poziția curentă, o scoatem.
 
 ```cpp
-#include <fstream>
 #include <deque>
+#include <fstream>
 
 using namespace std;
 
@@ -143,7 +142,7 @@ int main() {
         fin >> v[i];
     }
     deque<int> d;
-    
+
     long long ans = 0;
     for (int i = 1; i <= n; ++i) {
         if (!d.empty() && i - d.front() == k) {
@@ -157,7 +156,7 @@ int main() {
             ans += v[d.front()];
         }
     }
-    
+
     fout << ans << '\n';
     return 0;
 }
@@ -181,20 +180,20 @@ vom scoate.
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
- 
-long long v[200002], sp[200002]; 
+
+long long v[200002], sp[200002];
 int main() {
     int n, a, b;
     cin >> n >> a >> b;
-    
+
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
-        sp[i] = sp[i-1] + v[i];
+        sp[i] = sp[i - 1] + v[i];
     }
-    
-    deque<int> d;    
-    long long ans = -(1LL<<60);
-    
+
+    deque<int> d;
+    long long ans = -(1LL << 60);
+
     for (int i = a; i <= n; i++) {
         while (!d.empty() && sp[i - a] <= sp[d.back()]) {
             d.pop_back();
@@ -202,12 +201,12 @@ int main() {
         while (!d.empty() && i - d.front() > b) {
             d.pop_front();
         }
-        d.push_back(i-a);
+        d.push_back(i - a);
         if (sp[i] - sp[d.front()] >= ans) {
             ans = sp[i] - sp[d.front()];
         }
     }
-    
+
     cout << ans;
 ```
 
@@ -228,7 +227,8 @@ for (linTop = 1; linTop <= n; linTop++) {
         cols[0] = 0;
         for (col = 1; col <= m; col++) {
             cols[col] = cols[col - 1];
-            cols[col] += sp[linBot][col] - sp[linBot][col - 1] - sp[linTop - 1][col] + sp[linTop - 1][col - 1];
+            cols[col] += sp[linBot][col] - sp[linBot][col - 1]
+                       - sp[linTop - 1][col] + sp[linTop - 1][col - 1];
         }
 
         /* sliding window */
@@ -243,7 +243,8 @@ for (linTop = 1; linTop <= n; linTop++) {
             sum = cols[col] - cols[d.front()];
 
             bool isGreater = sum > maxSum;
-            bool lexicSort = sum == maxSum && (linTop <= maxLin || d.front() + 1 <= maxCol);
+            bool lexicSort =
+                sum == maxSum && (linTop <= maxLin || d.front() + 1 <= maxCol);
             if (isGreater || lexicSort) {
                 maxSum = sum;
 
@@ -276,32 +277,32 @@ diferența minimă pentru o secvență din cele (cel mult) $K+1$ care o acoperă
 atunci ea poate fi scoasă.
 
 ```cpp
+#include <deque>
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include <deque>
 
 using namespace std;
 
 int main() {
     ifstream cin("secv.in");
     ofstream cout("secv.out");
-    
+
     int c;
     cin >> c;
-    
+
     int n, k, s;
     cin >> n >> k >> s;
-    
+
     if (c == 1) {
-        vector <long long> st;
+        vector<long long> st;
         st.push_back(0);
         int sz = 0;
         int cnt = 0;
         for (int i = 1; i <= n; i++) {
             int val;
             cin >> val;
-            
+
             st.push_back(st.back() + val);
             sz++;
             if (sz > k) {
@@ -314,41 +315,40 @@ int main() {
                 }
             }
         }
-        
+
         cout << cnt << '\n';
-    }
-    else {
-        vector <int> vals(n+1);
-        vector <int> sp(n+1);
-        vector <int> threshold(n+1);
+    } else {
+        vector<int> vals(n + 1);
+        vector<int> sp(n + 1);
+        vector<int> threshold(n + 1);
         for (int i = 1; i <= n; i++) {
             cin >> vals[i];
-            sp[i] = sp[i-1] + vals[i];
+            sp[i] = sp[i - 1] + vals[i];
         }
-        
-        for (int i = k+1; i <= n; i++) {
+
+        for (int i = k + 1; i <= n; i++) {
             threshold[i - k] = sp[i] - sp[i - (k + 1)] - s;
         }
-        
+
         int ans = 0;
-        
-        deque <int> s;
+
+        deque<int> s;
         for (int i = 1; i <= n; i++) {
-            if (i <= n-k) {
+            if (i <= n - k) {
                 while (!s.empty() && threshold[i] > threshold[s.back()]) {
                     s.pop_back();
                 }
                 s.push_back(i);
             }
-            if (!s.empty() && s.front() == i - (k+1)) {
+            if (!s.empty() && s.front() == i - (k + 1)) {
                 s.pop_front();
             }
-            
+
             if (vals[i] < threshold[s.front()]) {
                 ans++;
             }
         }
-        
+
         cout << ans << '\n';
     }
     return 0;

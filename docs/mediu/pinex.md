@@ -1,8 +1,6 @@
 ---
 id: pinex
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Traian Mihai Danciu
+authors: [stefdasca, traian]
 prerequisites:
     - divisibility
     - bitwise-ops
@@ -64,30 +62,29 @@ binare. Mai jos puteți găsi implementarea în limbajul C++.
 ```cpp
 #include <fstream>
 using namespace std;
- 
+
 int main() {
     ifstream cin("moobuzz.in");
     ofstream cout("moobuzz.out");
-    
+
     int n;
     cin >> n;
-    
+
     long long L = 1;
     long long R = 2000000000;
     long long ans = 0;
-    
+
     while (L <= R) {
         long long mid = (L + R) / 2;
-        long long cnt = mid/3 + mid/5 - mid/15;
+        long long cnt = mid / 3 + mid / 5 - mid / 15;
         if (mid - cnt >= n) {
             ans = mid;
             R = mid - 1;
-        }
-        else {
+        } else {
             L = mid + 1;
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -145,8 +142,8 @@ care trebuie avut grijă este obținerea produselor submulțimilor, pentru a evi
 overflow-urile.
 
 ```cpp
-# include <iostream>
-# include <vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -160,25 +157,23 @@ int main() {
     }
 
     long long sum = 0;
-    for (int msk = 1; msk < (1<<k); ++msk) {
+    for (int msk = 1; msk < (1 << k); ++msk) {
         long long prod = 1;
         int cnt = 0;
-        for(int i = 0; i < k; ++i) {
-            if(msk & (1<<i)) {
-                if(n / prod < v[i]) { // evitam overflowul
-                    prod = n+1;
-                }
-                else {
+        for (int i = 0; i < k; ++i) {
+            if (msk & (1 << i)) {
+                if (n / prod < v[i]) {  // evitam overflowul
+                    prod = n + 1;
+                } else {
                     prod = prod * v[i];
                 }
                 ++cnt;
             }
         }
         if (cnt % 2 == 1) {
-            sum += n/prod;
-        }
-        else {
-            sum -= n/prod;
+            sum += n / prod;
+        } else {
+            sum -= n / prod;
         }
     }
 
@@ -207,13 +202,12 @@ deja aflate la pașii anteriori, când am verificat valori mai mari ale celui ma
 mare divizor comun. Mai jos se poate vedea o asemenea implementare.
 
 ```cpp
-# include <iostream>
-# include <vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
+int main() {
     vector<long long> fr(1000001), cnt(1000001);
 
     int n;
@@ -225,16 +219,16 @@ int main()
         fr[val]++;
     }
 
-    long long ans = 1LL * n * (n-1) / 2;
+    long long ans = 1LL * n * (n - 1) / 2;
     for (int i = 1000000; i >= 2; --i) {
         long long val = 0;
         // aflam cate valori sunt multipli de i
         for (int j = i; j <= 1000000; j += i) {
             val += fr[j];
         }
-        cnt[i] = val * (val-1) / 2;
+        cnt[i] = val * (val - 1) / 2;
         // scadem perechile deja calculate
-        for (int j = i+i; j <= 1000000; j += i) {
+        for (int j = i + i; j <= 1000000; j += i) {
             cnt[i] -= cnt[j];
         }
         ans -= cnt[i];
@@ -290,9 +284,9 @@ i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu 1 în $C _i
 Sursa de 100 de puncte:
 
 ```cpp
-# include <fstream>
-# include <string>
-# include <algorithm>
+#include <algorithm>
+#include <fstream>
+#include <string>
 
 std::ifstream fin("pmo.in");
 std::ofstream fout("pmo.out");
@@ -325,7 +319,7 @@ const int MAXEXPS = 64;
 char ciur[MAXP];
 int prime[MAXP], exps[MAXEXPS], sumexp, nfact;
 long long comb[MAXEXPS][MAXEXPS];
-__int128 ways[MAXEXPS]; // ways[i] = nrmod de a scrie x ca prod de i nr
+__int128 ways[MAXEXPS];  // ways[i] = nrmod de a scrie x ca prod de i nr
 
 void precomputeSieve() {
     int i, j;
@@ -385,9 +379,7 @@ void decomposeInPrimes(int val) {
     }
 }
 
-long long starsAndBars(int n, int k) {
-    return comb[n + k - 1][k - 1];
-}
+long long starsAndBars(int n, int k) { return comb[n + k - 1][k - 1]; }
 
 void computeWays() {
     int i, j;
@@ -408,8 +400,7 @@ void calcAnswer() {
             prod = comb[i][j] * ways[i - j];
             if (j % 2 == 0) {
                 answer += prod;
-            }
-            else {
+            } else {
                 answer -= prod;
             }
         }

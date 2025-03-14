@@ -32,8 +32,8 @@ int main() {
         }
     }
 
-     if (dp[S] == INF) {
-        cout << -1;  
+    if (dp[S] == INF) {
+        cout << -1;
     } else {
         cout << dp[S];
     }

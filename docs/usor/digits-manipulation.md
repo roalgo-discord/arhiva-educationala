@@ -1,7 +1,6 @@
 ---
 id: digits-manipulation
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:
@@ -60,25 +59,25 @@ funcționează pentru numerele de cel mult trei cifre.
 #include <iostream>
 using namespace std;
 
-int main () {
-    int n; // numar natural cel mult egal cu 999
+int main() {
+    int n;  // numar natural cel mult egal cu 999
     cin >> n;
 
-    // cifrele luate una dupa alta, fara impartiri 
+    // cifrele luate una dupa alta, fara impartiri
 
-    int ultima = n%10;
-    int penultima = (n/10)%10;
-    int antepenultima = (n/100)%10;
+    int ultima = n % 10;
+    int penultima = (n / 10) % 10;
+    int antepenultima = (n / 100) % 10;
 
     cout << antepenultima << " " << penultima << " " << ultima << '\n';
 
-    // cifrele luate una dupa alta, cu impartiri 
+    // cifrele luate una dupa alta, cu impartiri
 
-    ultima = n%10; 
+    ultima = n % 10;
     n = n / 10;
-    penultima = n%10;
+    penultima = n % 10;
     n = n / 10;
-    antepenultima = n%10;
+    antepenultima = n % 10;
     n = n / 10;
 
     cout << antepenultima << " " << penultima << " " << ultima << '\n';
@@ -113,8 +112,8 @@ așa:
 #include <iostream>
 using namespace std;
 
-int main () {
-    int n; 
+int main() {
+    int n;
     cin >> n;
 
     if (n == 0) {
@@ -122,7 +121,7 @@ int main () {
     }
 
     while (n > 0) {
-        int c = n%10;
+        int c = n % 10;
         n = n / 10;
     }
     return 0;
@@ -142,8 +141,8 @@ Pentru a afla suma cifrelor unui număr, vom folosi algoritmul prezentat anterio
 #include <iostream>
 using namespace std;
 
-int main () {
-    int n; 
+int main() {
+    int n;
     cin >> n;
 
     int s = 0;
@@ -151,7 +150,7 @@ int main () {
         s = s + n % 10;
         n = n / 10;
     }
-    
+
     cout << s;
     return 0;
 }
@@ -196,48 +195,46 @@ simularea răspunsului.
     ```cpp
     #include <iostream>
     using namespace std;
-    
+
     int main() {
         int n;
         cin >> n;
-        
+
         // cat timp n > 9, aflam suma cifrelor si modificam n
         while (n > 9) {
             int n2 = n;
             n = 0;
             while (n2) {
-                n += n2%10;
+                n += n2 % 10;
                 n2 /= 10;
             }
         }
-        
+
         cout << n << '\n';
         return 0;
     }
     ```
 
-=== "Formula simplificată"
+    == = "Formula simplificată"
 
     ```cpp
     #include <iostream>
     using namespace std;
-    
+
     int main() {
         int n;
         cin >> n;
-        
+
         if (n == 0) {
             cout << 0 << '\n';
-        }
-        else {
+        } else {
             if (n % 9 == 0) {
                 cout << 9 << '\n';
-            }
-            else {
-                cout << n%9 << '\n';
+            } else {
+                cout << n % 9 << '\n';
             }
         }
-        
+
         return 0;
     }
     ```
@@ -260,7 +257,6 @@ simularea răspunsului.
 
 Pentru a afla oglinditul unui număr, vom folosi algoritmul prezentat anterior,
 împreună cu ținerea unei variabile care să ne țină numărul inversat.
-
 ```cpp
 #include <iostream>
 using namespace std;
@@ -290,8 +286,8 @@ pentru a număra aparițiile primei cifre.
 #include <iostream>
 using namespace std;
 
-int main () {
-    int n; 
+int main() {
+    int n;
     cin >> n;
 
     int n2 = n;
@@ -299,14 +295,14 @@ int main () {
         n2 /= 10;
     }
 
-    int aparitii = 1; // prima cifra, evitam tratarea separata a cazului n = 0
+    int aparitii = 1;  // prima cifra, evitam tratarea separata a cazului n = 0
     while (n >= 10) {
         if (n % 10 == n2) {
             aparitii++;
         }
         n = n / 10;
     }
-    
+
     cout << aparitii;
     return 0;
 }

@@ -1,7 +1,6 @@
 ---
 id: output-only
-author: 
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - random-algorithms
     - interactive

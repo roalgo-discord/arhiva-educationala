@@ -15,7 +15,10 @@ std::vector<std::pair<int, int> > v[10002];
 void djk() {
     std::set<std::pair<std::pair<int, int>, std::pair<int, int> > > s;
     viz[1][0][0] = 1;
-    s.insert({{0, 1}, {0, 0}});
+    s.insert({
+        {0, 1},
+        {0, 0}
+    });
     while (!s.empty()) {
         std::pair<std::pair<int, int>, std::pair<int, int> > state = *s.begin();
         s.erase(state);
@@ -26,19 +29,22 @@ void djk() {
         if (lft) {
             for (int i = 0; i < (int)v[node].size(); ++i) {
                 int nxt = v[node][i].fi;
-                std::pair<std::pair<int, int>, std::pair<int, int> > newstate = {{cost, nxt}, {used, lft - 1}};
+                std::pair<std::pair<int, int>, std::pair<int, int> > newstate =
+                    {
+                        {cost, nxt    },
+                        {used, lft - 1}
+                };
                 if (!viz[nxt][used][lft - 1]) {
                     viz[nxt][used][lft - 1] = 1;
                     dp[nxt][used][lft - 1] = cost;
                     s.insert(newstate);
-                } 
-                else if (cost < dp[nxt][used][lft - 1]) {
+                } else if (cost < dp[nxt][used][lft - 1]) {
                     newstate.fi.fi = dp[nxt][used][lft - 1];
                     s.erase(newstate);
-                    
+
                     dp[nxt][used][lft - 1] = cost;
                     newstate.fi.fi = dp[nxt][used][lft - 1];
-                    
+
                     s.insert(newstate);
                 }
             }
@@ -46,19 +52,22 @@ void djk() {
         if (l && used + 1 <= k) {
             for (int i = 0; i < (int)v[node].size(); ++i) {
                 int nxt = v[node][i].fi;
-                std::pair<std::pair<int, int>, std::pair<int, int> > newstate = {{cost + p, nxt}, {used + 1, l - 1}};
+                std::pair<std::pair<int, int>, std::pair<int, int> > newstate =
+                    {
+                        {cost + p, nxt  },
+                        {used + 1, l - 1}
+                };
                 if (!viz[nxt][used + 1][l - 1]) {
                     viz[nxt][used + 1][l - 1] = 1;
                     dp[nxt][used + 1][l - 1] = cost + p;
                     s.insert(newstate);
-                } 
-                else if (cost + p < dp[nxt][used + 1][l - 1]) {
+                } else if (cost + p < dp[nxt][used + 1][l - 1]) {
                     newstate.fi.fi = dp[nxt][used + 1][l - 1];
                     s.erase(newstate);
-                    
+
                     dp[nxt][used + 1][l - 1] = cost + p;
                     newstate.fi.fi = dp[nxt][used + 1][l - 1];
-                    
+
                     s.insert(newstate);
                 }
             }
@@ -66,19 +75,21 @@ void djk() {
         for (int i = 0; i < (int)v[node].size(); ++i) {
             int nxt = v[node][i].fi;
             int adcost = v[node][i].se;
-            std::pair<std::pair<int, int>, std::pair<int, int> > newstate = {{cost + adcost, nxt}, {used, 0}};
+            std::pair<std::pair<int, int>, std::pair<int, int> > newstate = {
+                {cost + adcost, nxt},
+                {used,          0  }
+            };
             if (!viz[nxt][used][0]) {
                 viz[nxt][used][0] = 1;
                 dp[nxt][used][0] = cost + adcost;
                 s.insert(newstate);
-            } 
-            else if (cost + adcost < dp[nxt][used][0]) {
+            } else if (cost + adcost < dp[nxt][used][0]) {
                 newstate.fi.fi = dp[nxt][used][0];
                 s.erase(newstate);
-                
+
                 dp[nxt][used][0] = cost + adcost;
                 newstate.fi.fi = dp[nxt][used][0];
-                
+
                 s.insert(newstate);
             }
         }

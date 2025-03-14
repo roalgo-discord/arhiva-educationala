@@ -1,7 +1,6 @@
 ---
 id: rmq
-author:
-    - Traian Mihai Danciu
+authors: [traian]
 prerequisites:
     - matrices
     - partial-sums
@@ -16,7 +15,7 @@ tags:
 ## Introducere
 
 **Sparse Table** este o structură de date care ne ajută, în principal, să
-răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $O(\log
+răspundem la întrebări pe un interval, fiecare răspuns fiind calculat în $\mathcal{O}(\log
 n)$ (mai puțin atunci când folosim RMQ, despre care o să discutăm mai târziu în
 acest articol).
 
@@ -61,25 +60,25 @@ int v[MAXN], n, q;
 struct SparseTable {
     long long spt[LOGN][MAXN];
     int maxbit;
-    
+
     void init(int n) {
         int i, j;
         for (i = 0; i < n; i++) {
             spt[0][i] = v[i];
         }
-        maxbit = 31 - __builtin_clz(n); // i-ul maxim
+        maxbit = 31 - __builtin_clz(n);  // i-ul maxim
         for (i = 1; i <= maxbit; i++) {
             for (j = 0; j + (1 << i) - 1 < n; j++) {
                 spt[i][j] = spt[i - 1][j] + spt[i - 1][j + (1 << (i - 1))];
             }
         }
     }
-    
+
     long long query(int st, int dr) {
         int len = dr - st + 1, i;
         long long sum = 0;
         for (i = maxbit; i >= 0; i--) {
-            if (len & (1 << i)) { // daca are bitul i
+            if (len & (1 << i)) {  // daca are bitul i
                 sum += spt[i][st];
                 st += 1 << i;
             }
@@ -120,7 +119,7 @@ care trebuie să răspundem cu minimul pe un interval. Vom folosi un sparse tabl
 Ideea principală la RMQ este să împărțim intervalul $[st, dr]$ în două
 intervale: $[st, st + 2^{lg}), (dr - 2^{lg}, dr]$ (unde $lg$ reprezintă cel mai
 mare număr astfel încât $2^{lg} \leq dr - st + 1$). Aceste intervale au lungimea
-$2^{lg}$, deci le putem afla răspunsurile în $O(1)$ (deoarece le avem deja
+$2^{lg}$, deci le putem afla răspunsurile în $\mathcal{O}(1)$ (deoarece le avem deja
 precalculate).
 
 !!! note "Observație"
@@ -140,19 +139,17 @@ Sursa de accepted (la problema
 
 ```cpp
 #include <iostream>
- 
+
 const int MAXN = 200'000;
 const int LOGN = 18;
- 
+
 int v[MAXN], n, q;
- 
-int min(int a, int b) {
-    return a < b ? a : b;
-}
- 
+
+int min(int a, int b) { return a < b ? a : b; }
+
 struct SparseTable {
     int spt[LOGN][MAXN], lg2[MAXN + 1];
- 
+
     void init(int n) {
         int i, j;
         for (i = 2; i <= n; i++) {
@@ -167,13 +164,13 @@ struct SparseTable {
             }
         }
     }
- 
+
     int query(int st, int dr) {
         int lg = lg2[dr - st + 1];
         return min(spt[lg][st], spt[lg][dr - (1 << lg) + 1]);
     }
 } rmq;
- 
+
 void readArray() {
     int i;
     std::cin >> n >> q;
@@ -181,7 +178,7 @@ void readArray() {
         std::cin >> v[i];
     }
 }
- 
+
 void answerQueries() {
     int i, st, dr;
     for (i = 0; i < q; i++) {
@@ -189,7 +186,7 @@ void answerQueries() {
         std::cout << rmq.query(st - 1, dr - 1) << "\n";
     }
 }
- 
+
 int main() {
     readArray();
     rmq.init(n);
@@ -252,28 +249,20 @@ latură cel puțin $k$.
 Sursa de Accepted:
 
 ```cpp
-# include <iostream>
+#include <iostream>
 
 const int MAXN = 1'000;
 const int LOGN = 11;
 
 int mat[MAXN + 1][MAXN + 1], maxp[MAXN + 1][MAXN + 1], n, m;
 
-int min(int a, int b) {
-    return a < b ? a : b;
-}
+int min(int a, int b) { return a < b ? a : b; }
 
-int min(int a, int b, int c) {
-    return min(min(a, b), c);
-}
+int min(int a, int b, int c) { return min(min(a, b), c); }
 
-int max(int a, int b) {
-    return a > b ? a : b;
-}
+int max(int a, int b) { return a > b ? a : b; }
 
-int max(int a, int b, int c, int d) {
-    return max(max(a, b), max(c, d));
-}
+int max(int a, int b, int c, int d) { return max(max(a, b), max(c, d)); }
 
 struct SparseTable2D {
     int spt[LOGN][LOGN][MAXN + 1][MAXN + 1], lg2[MAXN + 1];
@@ -291,14 +280,16 @@ struct SparseTable2D {
         for (i = 1; i <= lg2[n]; i++) {
             for (l = 1; l <= n; l++) {
                 for (c = 1; c <= m; c++) {
-                    spt[i][0][l][c] = max(spt[i - 1][0][l][c], spt[i - 1][0][l + (1 << (i - 1))][c]);
+                    spt[i][0][l][c] = max(spt[i - 1][0][l][c],
+                                          spt[i - 1][0][l + (1 << (i - 1))][c]);
                 }
             }
         }
         for (j = 1; j <= lg2[m]; j++) {
             for (l = 1; l <= n; l++) {
                 for (c = 1; c <= m; c++) {
-                    spt[0][j][l][c] = max(spt[0][j - 1][l][c], spt[0][j - 1][l][c + (1 << (j - 1))]);
+                    spt[0][j][l][c] = max(spt[0][j - 1][l][c],
+                                          spt[0][j - 1][l][c + (1 << (j - 1))]);
                 }
             }
         }
@@ -306,8 +297,12 @@ struct SparseTable2D {
             for (j = 1; j <= lg2[m]; j++) {
                 for (l = 1; l + (1 << i) - 1 <= n; l++) {
                     for (c = 1; c + (1 << j) - 1 <= m; c++) {
-                        spt[i][j][l][c] = max(spt[i - 1][j - 1][l][c], spt[i - 1][j - 1][l][c + (1 << (j - 1))],
-                                spt[i - 1][j - 1][l + (1 << (i - 1))][c], spt[i - 1][j - 1][l + (1 << (i - 1))][c + (1 << (j - 1))]);
+                        spt[i][j][l][c] =
+                            max(spt[i - 1][j - 1][l][c],
+                                spt[i - 1][j - 1][l][c + (1 << (j - 1))],
+                                spt[i - 1][j - 1][l + (1 << (i - 1))][c],
+                                spt[i - 1][j - 1][l + (1 << (i - 1))]
+                                   [c + (1 << (j - 1))]);
                     }
                 }
             }
@@ -316,7 +311,9 @@ struct SparseTable2D {
 
     int query(int l1, int c1, int l2, int c2) {
         int lgl = lg2[l2 - l1 + 1], lgc = lg2[c2 - c1 + 1];
-        return max(spt[lgl][lgc][l1][c1], spt[lgl][lgc][l1][c2 - (1 << lgc) + 1], spt[lgl][lgc][l2 - (1 << lgl) + 1][c1],
+        return max(spt[lgl][lgc][l1][c1],
+                   spt[lgl][lgc][l1][c2 - (1 << lgc) + 1],
+                   spt[lgl][lgc][l2 - (1 << lgl) + 1][c1],
                    spt[lgl][lgc][l2 - (1 << lgl) + 1][c2 - (1 << lgc) + 1]);
     }
 } rmq2d;
@@ -342,9 +339,9 @@ void computeMaxp() {
         for (c = 1; c <= m; c++) {
             if (mat[l][c] == 0) {
                 maxp[l][c] = 0;
-            }
-            else {
-                maxp[l][c] = 1 + min(maxp[l - 1][c], maxp[l][c - 1], maxp[l - 1][c - 1]);
+            } else {
+                maxp[l][c] =
+                    1 + min(maxp[l - 1][c], maxp[l][c - 1], maxp[l - 1][c - 1]);
             }
         }
     }
@@ -355,14 +352,14 @@ void answerQueries() {
     std::cin >> q;
     while (q--) {
         std::cin >> l1 >> c1 >> l2 >> c2;
-        st = 0; // intervalul este [) (inchis-deschis)
-        dr = min(l2 - l1 + 1, c2 - c1 + 1) + 1; // patratul maxim care este inclus
+        st = 0;  // intervalul este [) (inchis-deschis)
+        dr = min(l2 - l1 + 1, c2 - c1 + 1)
+           + 1;  // patratul maxim care este inclus
         while (dr - st > 1) {
             mij = (st + dr) / 2;
             if (rmq2d.query(l1 + mij - 1, c1 + mij - 1, l2, c2) >= mij) {
                 st = mij;
-            }
-            else {
+            } else {
                 dr = mij;
             }
         }
@@ -403,7 +400,7 @@ Sursa de accepted (la problema [Glad You Came de pe
 codeforces](https://codeforces.com/gym/102114/problem/G))
 
 ```cpp
-# include <iostream>
+#include <iostream>
 
 const int MAXN = 100'000;
 const int MAXVAL = 1 << 30;
@@ -412,9 +409,7 @@ const int MAXLOG = 17;
 int n;
 unsigned int x, y, z;
 
-int max(int a, int b) {
-    return a > b ? a : b;
-}
+int max(int a, int b) { return a > b ? a : b; }
 
 struct SparseTable {
     int spt[MAXLOG][MAXN], lg2[MAXN + 1];
@@ -509,13 +504,13 @@ comparăm aceste două structuri de date.
 
 ### Comparație în funcție de timp
 
-RMQ este precalculat, la început, în $O(n \log n)$, iar AINT în $O(n)$. Însă,
-RMQ are complexitate $O(1)$ per query, În timp ce AINT are $O(\log n)$ per
+RMQ este precalculat, la început, în $\mathcal{O}(n \log n)$, iar AINT în $\mathcal{O}(n)$. Însă,
+RMQ are complexitate $\mathcal{O}(1)$ per query, În timp ce AINT are $\mathcal{O}(\log n)$ per
 query.
 
 ### Comparație în funcție de memorie
 
-RMQ folosește $O(n \log n)$ memorie, iar AINT folosește $O(n)$ memorie.
+RMQ folosește $\mathcal{O}(n \log n)$ memorie, iar AINT folosește $\mathcal{O}(n)$ memorie.
 
 ### Alte precizări
 
@@ -552,8 +547,9 @@ intervalul $[st - 1, dr]$. Vom folosi RMQ pentru a afla acest minim.
 Sursa de 100 de puncte:
 
 ```cpp
-# include <fstream>
-# include <ctype.h>
+#include <ctype.h>
+
+#include <fstream>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -564,9 +560,7 @@ std::ofstream fout("excursie.out");
 char v[MAXN + 1];
 int n, prefL[MAXN + 1], suffR[MAXN + 2];
 
-int min(int a, int b) {
-    return a < b ? a : b;
-}
+int min(int a, int b) { return a < b ? a : b; }
 
 struct SparseTable {
     int spt[LOGN][MAXN + 1], lg2[MAXN + 2];
@@ -595,7 +589,8 @@ struct SparseTable {
 void readString() {
     int i, ch;
     fin >> n;
-    while (!isalpha(ch = fin.get()));
+    while (!isalpha(ch = fin.get()))
+        ;
     for (i = 1; i <= n; i++) {
         v[i] = (ch == 'R');
         ch = fin.get();
@@ -665,8 +660,8 @@ fel ca la adăugare.
 Sursa de accepted la G1:
 
 ```cpp
-# include <iostream>
-# include <map>
+#include <iostream>
+#include <map>
 
 const int MAXN = 200'000;
 
@@ -778,8 +773,8 @@ nxt_{i-1, j}}$$
 Sursa de accepted:
 
 ```cpp
-# include <iostream>
-# include <map>
+#include <iostream>
+#include <map>
 
 const int MAXN = 200'000;
 const int LOGN = 18;
@@ -848,7 +843,7 @@ void buildTable() {
     sp = 1;
     nxt[0][n] = n;
     sum[0][n] = 0;
-    rez[n] = INFINIT; // infinit
+    rez[n] = INFINIT;  // infinit
     for (i = n - 1; i >= 0; i--) {
         while (rez[i] > rez[stiva[sp - 1]]) {
             sp--;
@@ -954,5 +949,5 @@ avea multe avantaje, dar și dezavantaje față de AINT.
 - Recomandat - [Binary Lifting -
   Codeforces](https://codeforces.com/blog/entry/100826)
 - [Binary Lifting - USACO](https://usaco.guide/plat/binary-jump?lang=cpp)
-- [Avansat - RMQ cu $O(N)$ timp de construcție și $O(1)$ timp pe
+- [Avansat - RMQ cu $\mathcal{O}(N)$ timp de construcție și $\mathcal{O}(1)$ timp pe
   query](https://codeforces.com/blog/entry/78931)

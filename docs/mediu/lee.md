@@ -1,8 +1,6 @@
 ---
 id: lee
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Teodor Ștefan Manolea
+authors: [stefdasca, anomori]
 prerequisites:
     - arrays
     - matrices
@@ -144,11 +142,11 @@ procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se
 numește mat, iar tabloul are $n$ linii și $m$ coloane.
 
 ```cpp
-for (int i = 0; i <= m+1; i++) {
-    mat[0][i] = mat[n+1][i] = -1; // bordarea liniilor 0 si n+1
+for (int i = 0; i <= m + 1; i++) {
+    mat[0][i] = mat[n + 1][i] = -1;  // bordarea liniilor 0 si n+1
 }
-for (int i = 0; i <= n+1; i++) {
-    mat[i][0] = mat[i][m+1] = -1; // bordarea coloanelor 0 si m+1
+for (int i = 0; i <= n + 1; i++) {
+    mat[i][0] = mat[i][m + 1] = -1;  // bordarea coloanelor 0 si m+1
 }
 ```
 
@@ -195,56 +193,56 @@ Mai jos, puteți găsi o implementare recursivă, în stilul algoritmului flood
 fill, care rezolvă problema Counting Rooms, prezentată mai sus.
 
 ```cpp
-#include <iostream>
 #include <fstream>
-#include <vector>
+#include <iostream>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
 vector<int> ox = {-1, 0, 1, 0};
 vector<int> oy = {0, 1, 0, -1};
 
-void fill (int n, int m, int X, int Y, vector<vector<char> > &grid, vector<vector<int> > &visited) {
+void fill(int n, int m, int X, int Y, vector<vector<char> > &grid,
+          vector<vector<int> > &visited) {
     visited[X][Y] = 1;
     for (int i = 0; i < 4; i++) {
         int nxt_x = X + ox[i];
         int nxt_y = Y + oy[i];
-        
-        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m && visited[nxt_x][nxt_y] == 0 && grid[nxt_x][nxt_y] == '.') {
+
+        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m
+            && visited[nxt_x][nxt_y] == 0 && grid[nxt_x][nxt_y] == '.') {
             fill(n, m, nxt_x, nxt_y, grid, visited);
         }
     }
 }
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<char> > grid(n+1, vector<char> (m+1));
-    vector<vector<int> > visited(n+1, vector<int> (m+1));
-    
+
+    vector<vector<char> > grid(n + 1, vector<char>(m + 1));
+    vector<vector<int> > visited(n + 1, vector<int>(m + 1));
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> grid[i][j];
         }
     }
-    
+
     int ans = 0;
 
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             if (grid[i][j] == '.' && visited[i][j] == 0) {
-                
                 fill(n, m, i, j, grid, visited);
                 ans++;
             }
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -279,30 +277,29 @@ lui Lee, care rezolvă problema Counting Rooms, prezentată mai sus.
     atunci când prezentăm DFS și BFS la grafuri.
 
 ```cpp
-#include <iostream>
 #include <fstream>
-#include <vector>
+#include <iostream>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, m;
     cin >> n >> m;
-    
-    vector<vector<char> > grid(n+1, vector<char> (m+1));
-    vector<vector<int> > visited(n+1, vector<int> (m+1));
-    
+
+    vector<vector<char> > grid(n + 1, vector<char>(m + 1));
+    vector<vector<int> > visited(n + 1, vector<int>(m + 1));
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             cin >> grid[i][j];
         }
     }
-    
+
     int ans = 0;
     vector<int> ox = {-1, 0, 1, 0};
     vector<int> oy = {0, 1, 0, -1};
@@ -310,22 +307,23 @@ int main() {
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             if (grid[i][j] == '.' && visited[i][j] == 0) {
-                
-                queue <pair<int, int> > q;
-                
+                queue<pair<int, int> > q;
+
                 q.push({i, j});
                 visited[i][j] = 1;
                 ans++;
-                
+
                 while (!q.empty()) {
                     pair<int, int> node = q.front();
                     q.pop();
-                    
+
                     for (int i = 0; i < 4; i++) {
                         int nxt_x = node.first + ox[i];
                         int nxt_y = node.second + oy[i];
-                        
-                        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m && visited[nxt_x][nxt_y] == 0 && grid[nxt_x][nxt_y] == '.') {
+
+                        if (nxt_x >= 1 && nxt_x <= n && nxt_y >= 1 && nxt_y <= m
+                            && visited[nxt_x][nxt_y] == 0
+                            && grid[nxt_x][nxt_y] == '.') {
                             visited[nxt_x][nxt_y] = 1;
                             q.push({nxt_x, nxt_y});
                         }
@@ -334,7 +332,7 @@ int main() {
             }
         }
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -360,28 +358,26 @@ bool isValid(int x, int y, int n, int m, vector<vector<int> > &mat) {
 }
 
 int main() {
-    
     ifstream cin("alee.in");
     ofstream cout("alee.out");
 
     int x, y, n, m, final_x, final_y;
     cin >> n >> m;
-    
-    
-    vector<vector<int> > mat(n+1, vector<int> (n+1));
+
+    vector<vector<int> > mat(n + 1, vector<int>(n + 1));
     for (short i = 0; i < m; i++) {
         cin >> x >> y;
         mat[x][y] = -1;
     }
-    
+
     cin >> final_x >> final_y;
     mat[final_x][final_y] = 1;
-    
+
     queue<pair<int, int> > q;
-    
+
     q.push({final_x, final_y});
     cin >> final_x >> final_y;
-    
+
     while (!q.empty()) {
         pair<int, int> temp = q.front();
         q.pop();
@@ -394,7 +390,6 @@ int main() {
                 q.push({new_x, new_y});
             }
         }
-
     }
 
     cout << mat[final_x][final_y] << '\n';
@@ -410,88 +405,88 @@ verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul
 pentru care avem nevoie de două parcurgeri, în loc de una.
 
 ```cpp
-#include <bits/stdc++.h>  
-using namespace std;  
-     
-int n, m, q;  
-    
-bool ok[1000002];  
-int mx[1000002];  
-    
-char mat[1002][1002];  
-int dist[2][1002][1002];  
-     
-bool viz[1002][1002];  
-    
-int ox[] = {-1, 0, 1, 0};  
-int oy[] = {0, 1, 0, -1};  
-    
-bool check (int x, int y) {  
-    return ((x >= 1) && (x <= n) && (y >= 1) && (y <= m) && (viz[x][y] == 0));  
-}  
-void lee (int drum, int x, int y) {  
-    memset(viz, 0, sizeof(viz));  
-    deque<pair<int, int> > d;  
-    d.push_back({x, y});  
-    viz[x][y] = 1;  
-    for (int i = 1; i <= n; ++i) { 
-        for (int j = 1; j <= m; ++j) {  
-            dist[drum][i][j] = -1;  
+#include <bits/stdc++.h>
+using namespace std;
+
+int n, m, q;
+
+bool ok[1000002];
+int mx[1000002];
+
+char mat[1002][1002];
+int dist[2][1002][1002];
+
+bool viz[1002][1002];
+
+int ox[] = {-1, 0, 1, 0};
+int oy[] = {0, 1, 0, -1};
+
+bool check(int x, int y) {
+    return ((x >= 1) && (x <= n) && (y >= 1) && (y <= m) && (viz[x][y] == 0));
+}
+void lee(int drum, int x, int y) {
+    memset(viz, 0, sizeof(viz));
+    deque<pair<int, int> > d;
+    d.push_back({x, y});
+    viz[x][y] = 1;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            dist[drum][i][j] = -1;
         }
     }
-    dist[drum][x][y] = 1;  
-    while (!d.empty()) {  
-        pair<int, int> nod = d[0];  
-        d.pop_front();  
-        for (int i = 0; i <= 3; ++i) {  
-            int nxt_x = ox[i] + nod.first;  
-            int nxt_y = oy[i] + nod.second;  
-            if (check(nxt_x, nxt_y) && dist[drum][nxt_x][nxt_y] == -1) {  
-                dist[drum][nxt_x][nxt_y] = dist[drum][nod.first][nod.second] + 1;  
-                if (mat[nxt_x][nxt_y] == '0') {  
-                    viz[nxt_x][nxt_y] = 1;  
-                    d.push_back({nxt_x, nxt_y});  
-                }  
-            }  
-        }  
-    }  
-}  
-    
-char ans[1002][1002];  
-
-int main() {  
-    ifstream cin("labirint.in");  
-    ofstream cout("labirint.out");  
-        
-    cin >> n >> m;  
-    for (int i = 1; i <= n; ++i) {  
-        cin >> (mat[i] + 1);  
-    }  
-        
-    lee(0, 1, 1);  
-    lee(1, n, m);  
-        
-    for (int i = 1; i <= n; ++i) {
-        for (int j = 1; j <= m; ++j) { 
-            if (mat[i][j] == '1' && dist[0][i][j] != -1 && dist[1][i][j] != -1) {  
-                if (dist[0][i][j] + dist[1][i][j] - 1 < dist[1][1][1]) {
-                    ans[i][j] = '1';  
+    dist[drum][x][y] = 1;
+    while (!d.empty()) {
+        pair<int, int> nod = d[0];
+        d.pop_front();
+        for (int i = 0; i <= 3; ++i) {
+            int nxt_x = ox[i] + nod.first;
+            int nxt_y = oy[i] + nod.second;
+            if (check(nxt_x, nxt_y) && dist[drum][nxt_x][nxt_y] == -1) {
+                dist[drum][nxt_x][nxt_y] =
+                    dist[drum][nod.first][nod.second] + 1;
+                if (mat[nxt_x][nxt_y] == '0') {
+                    viz[nxt_x][nxt_y] = 1;
+                    d.push_back({nxt_x, nxt_y});
                 }
-                else {
-                    ans[i][j] = '0';  
-                }
-            }  
-            else {
-                ans[i][j] = '0';  
             }
         }
     }
-        
-    for (int i = 1; i <= n; ++i) { 
+}
+
+char ans[1002][1002];
+
+int main() {
+    ifstream cin("labirint.in");
+    ofstream cout("labirint.out");
+
+    cin >> n >> m;
+    for (int i = 1; i <= n; ++i) {
+        cin >> (mat[i] + 1);
+    }
+
+    lee(0, 1, 1);
+    lee(1, n, m);
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            if (mat[i][j] == '1' && dist[0][i][j] != -1
+                && dist[1][i][j] != -1) {
+                if (dist[0][i][j] + dist[1][i][j] - 1 < dist[1][1][1]) {
+                    ans[i][j] = '1';
+                } else {
+                    ans[i][j] = '0';
+                }
+            } else {
+                ans[i][j] = '0';
+            }
+        }
+    }
+
+    for (int i = 1; i <= n; ++i) {
         cout << (ans[i] + 1) << '\n';
-    }  
-    return 0;  
-}  
+    }
+    return 0;
+}
 ```
 
 ## Lee cu mai multe origini
@@ -526,21 +521,22 @@ Mai jos găsiți implementarea autorului pentru această problemă.
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int ox[] = {0, 1, 0, -1};
 int oy[] = {1, 0, -1, 0};
- 
+
 int main() {
     int n, m;
     cin >> n >> m;
-    
-    char grid[n+1][m+1];
+
+    char grid[n + 1][m + 1];
     for (int i = 1; i <= n; i++) {
         cin >> (grid[i] + 1);
     }
-    
-    vector<vector<int> > distM(n+1, vector<int> (m+1, (1<<20))), distA(n+1, vector<int> (m+1, (1<<20)));
-    
+
+    vector<vector<int> > distM(n + 1, vector<int>(m + 1, (1 << 20))),
+        distA(n + 1, vector<int>(m + 1, (1 << 20)));
+
     queue<pair<int, int> > qM, qA;
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
@@ -554,15 +550,16 @@ int main() {
             }
         }
     }
-    
-    while(!qM.empty()) {
+
+    while (!qM.empty()) {
         pair<int, int> node = qM.front();
         qM.pop();
-        
+
         for (int i = 0; i < 4; i++) {
             int nxtX = node.first + ox[i];
             int nxtY = node.second + oy[i];
-            if (nxtX >= 1 && nxtX <= n && nxtY >= 1 && nxtY <= m && grid[nxtX][nxtY] != '#') {
+            if (nxtX >= 1 && nxtX <= n && nxtY >= 1 && nxtY <= m
+                && grid[nxtX][nxtY] != '#') {
                 if (distM[nxtX][nxtY] > distM[node.first][node.second] + 1) {
                     distM[nxtX][nxtY] = distM[node.first][node.second] + 1;
                     qM.push({nxtX, nxtY});
@@ -570,47 +567,49 @@ int main() {
             }
         }
     }
-    
-    while(!qA.empty()) {
+
+    while (!qA.empty()) {
         pair<int, int> node = qA.front();
         qA.pop();
-        
+
         for (int i = 0; i < 4; i++) {
             int nxtX = node.first + ox[i];
             int nxtY = node.second + oy[i];
-            if (nxtX >= 1 && nxtX <= n && nxtY >= 1 && nxtY <= m && grid[nxtX][nxtY] != '#') {
-                if (distA[nxtX][nxtY] > distA[node.first][node.second] + 1 && distA[node.first][node.second] + 1 < distM[nxtX][nxtY]) {
+            if (nxtX >= 1 && nxtX <= n && nxtY >= 1 && nxtY <= m
+                && grid[nxtX][nxtY] != '#') {
+                if (distA[nxtX][nxtY] > distA[node.first][node.second] + 1
+                    && distA[node.first][node.second] + 1 < distM[nxtX][nxtY]) {
                     distA[nxtX][nxtY] = distA[node.first][node.second] + 1;
                     qA.push({nxtX, nxtY});
                 }
             }
         }
     }
-    
-    
+
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
-            if (distA[i][j] != (1<<20) && (i == 1 || i == n || j == 1 || j == m)) { 
+            if (distA[i][j] != (1 << 20)
+                && (i == 1 || i == n || j == 1 || j == m)) {
                 int x = i;
                 int y = j;
                 string s;
                 while (distA[x][y] != 0) {
-                    if (distA[x-1][y] == distA[x][y] - 1) {
+                    if (distA[x - 1][y] == distA[x][y] - 1) {
                         s += 'D';
                         x--;
                         continue;
                     }
-                    if (distA[x][y-1] == distA[x][y] - 1) {
+                    if (distA[x][y - 1] == distA[x][y] - 1) {
                         s += 'R';
                         y--;
                         continue;
                     }
-                    if (distA[x+1][y] == distA[x][y] - 1) {
+                    if (distA[x + 1][y] == distA[x][y] - 1) {
                         s += 'U';
                         x++;
                         continue;
                     }
-                    if (distA[x][y+1] == distA[x][y] - 1) {
+                    if (distA[x][y + 1] == distA[x][y] - 1) {
                         s += 'L';
                         y++;
                         continue;
@@ -624,7 +623,7 @@ int main() {
             }
         }
     }
-    
+
     cout << "NO\n";
     return 0;
 }
@@ -662,49 +661,58 @@ int ox[] = {-1, 0, 1, 0};
 int oy[] = {0, 1, 0, -1};
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int x, y, z, n, t;
     cin >> n >> x >> y >> z >> t;
-    
-    vector<vector<int> > val(n+1, vector<int> (n+2, 0)), dp(n+1, vector<int> (n+1, (1<<25)));
-    
+
+    vector<vector<int> > val(n + 1, vector<int>(n + 2, 0)),
+        dp(n + 1, vector<int>(n + 1, (1 << 25)));
+
     for (int i = 1; i <= n; ++i) {
         cin >> val[1][i];
     }
-    
+
     for (int i = 2; i <= n; ++i) {
         for (int j = 1; j <= n; ++j) {
-            val[i][j] = 1 + (val[i-1][j-1] * x + val[i-1][j] * y + val[i-1][j+1] * z) % t;
+            val[i][j] = 1
+                      + (val[i - 1][j - 1] * x + val[i - 1][j] * y
+                         + val[i - 1][j + 1] * z)
+                            % t;
         }
     }
-    
+
     dp[1][1] = val[1][1];
-    
-    set<pair<int, pair<int, int> > >s;
-    s.insert({dp[1][1], {1, 1}});
-    
+
+    set<pair<int, pair<int, int> > > s;
+    s.insert({
+        dp[1][1], {1, 1}
+    });
+
     while (!s.empty()) {
         pair<int, pair<int, int> > x = *s.begin();
         s.erase(x);
-        
+
         pair<int, int> nod = x.second;
-        
+
         for (int i = 0; i <= 3; ++i) {
             int new_x = ox[i] + nod.first;
             int new_y = oy[i] + nod.second;
-            if (new_x == 0 || new_y == 0 || new_x == n+1 || new_y == n+1) {
+            if (new_x == 0 || new_y == 0 || new_x == n + 1 || new_y == n + 1) {
                 continue;
             }
-            if (dp[nod.first][nod.second] + val[new_x][new_y] < dp[new_x][new_y]) {
-                dp[new_x][new_y] = dp[nod.first][nod.second] + val[new_x][new_y];
-                s.insert({dp[new_x][new_y], {new_x, new_y}});
+            if (dp[nod.first][nod.second] + val[new_x][new_y]
+                < dp[new_x][new_y]) {
+                dp[new_x][new_y] =
+                    dp[nod.first][nod.second] + val[new_x][new_y];
+                s.insert({
+                    dp[new_x][new_y], {new_x, new_y}
+                });
             }
         }
     }
-       
+
     cout << dp[n][n] << '\n';
     return 0;
 }
@@ -726,49 +734,58 @@ int ox[] = {-1, 0, 1, 0};
 int oy[] = {0, 1, 0, -1};
 
 int main() {
-    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int x, y, z, n, t;
     cin >> n >> x >> y >> z >> t;
-    
-    vector<vector<int> > val(n+1, vector<int> (n+2, 0)), dp(n+1, vector<int> (n+1, (1<<25)));
-    
+
+    vector<vector<int> > val(n + 1, vector<int>(n + 2, 0)),
+        dp(n + 1, vector<int>(n + 1, (1 << 25)));
+
     for (int i = 1; i <= n; ++i) {
         cin >> val[1][i];
     }
-    
+
     for (int i = 2; i <= n; ++i) {
         for (int j = 1; j <= n; ++j) {
-            val[i][j] = 1 + (val[i-1][j-1] * x + val[i-1][j] * y + val[i-1][j+1] * z) % t;
+            val[i][j] = 1
+                      + (val[i - 1][j - 1] * x + val[i - 1][j] * y
+                         + val[i - 1][j + 1] * z)
+                            % t;
         }
     }
-    
+
     dp[1][1] = val[1][1];
-    
-    priority_queue<pair<int, pair<int, int> > >pq;
-    pq.push({-dp[1][1], {1, 1}});
-    
+
+    priority_queue<pair<int, pair<int, int> > > pq;
+    pq.push({
+        -dp[1][1], {1, 1}
+    });
+
     while (!pq.empty()) {
         pair<int, pair<int, int> > x = pq.top();
         pq.pop();
-        
+
         pair<int, int> nod = x.second;
-        
+
         for (int i = 0; i <= 3; ++i) {
             int new_x = ox[i] + nod.first;
             int new_y = oy[i] + nod.second;
-            if (new_x == 0 || new_y == 0 || new_x == n+1 || new_y == n+1) {
+            if (new_x == 0 || new_y == 0 || new_x == n + 1 || new_y == n + 1) {
                 continue;
             }
-            if (dp[nod.first][nod.second] + val[new_x][new_y] < dp[new_x][new_y]) {
-                dp[new_x][new_y] = dp[nod.first][nod.second] + val[new_x][new_y];
-                pq.push({-dp[new_x][new_y], {new_x, new_y}});
+            if (dp[nod.first][nod.second] + val[new_x][new_y]
+                < dp[new_x][new_y]) {
+                dp[new_x][new_y] =
+                    dp[nod.first][nod.second] + val[new_x][new_y];
+                pq.push({
+                    -dp[new_x][new_y], {new_x, new_y}
+                });
             }
         }
     }
-       
+
     cout << dp[n][n] << '\n';
     return 0;
 }

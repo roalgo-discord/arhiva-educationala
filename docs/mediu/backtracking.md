@@ -1,7 +1,6 @@
 ---
 id: backtracking
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - functions
     - simulating-solution
@@ -49,7 +48,7 @@ apoi vom avea două cazuri distincte:
     a unui alt șir, care să ne ofere informația despre existența unei anumite
     valori în permutare.
 
-Deoarece sunt $n!$ permutări, complexitatea soluției va fi $O(n! \cdot n)$.
+Deoarece sunt $n!$ permutări, complexitatea soluției va fi $\mathcal{O}(n! \cdot n)$.
 
 ```cpp
 #include <fstream>
@@ -60,20 +59,20 @@ ofstream cout("permutari.out");
 
 int n, v[11], vis[11];
 
-void backtrack (int pos) {
-    if (pos == n+1) { // afisam permutarea
+void backtrack(int pos) {
+    if (pos == n + 1) {  // afisam permutarea
         for (int i = 1; i <= n; i++) {
             cout << v[i] << " ";
         }
         cout << '\n';
-    }
-    else {
+    } else {
         for (int nxt = 1; nxt <= n; nxt++) {
-            if (vis[nxt] == 0) { // verificam daca nxt a aparut deja
-                vis[nxt] = 1; // il marcam vizitat
+            if (vis[nxt] == 0) {  // verificam daca nxt a aparut deja
+                vis[nxt] = 1;     // il marcam vizitat
                 v[pos] = nxt;
-                backtrack(pos + 1); // apelam urmatorul pas
-                vis[nxt] = 0; // resetam contorul pentru a putea folosi nxt in viitor
+                backtrack(pos + 1);  // apelam urmatorul pas
+                vis[nxt] =
+                    0;  // resetam contorul pentru a putea folosi nxt in viitor
             }
         }
     }
@@ -107,16 +106,16 @@ numărăm variantele corecte.
     observațiile specifice acestei probleme.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
- 
+
 using namespace std;
- 
+
 int main() {
-    vector<vector<char>> grid(8, vector<char> (8));
+    vector<vector<char>> grid(8, vector<char>(8));
     vector<int> perm(8);
-    
+
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; j++) {
             cin >> grid[i][j];
@@ -126,20 +125,21 @@ int main() {
     int ans = 0;
     do {
         bool ok = 1;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++) {
             if (grid[i][perm[i]] == '*') {
                 ok = 0;
             }
+        }
         for (int i = 0; i < 8; ++i) {
-            for (int j = i+1; j < 8; ++j) {
-                if (abs(i-j) == abs(perm[i] - perm[j])) {
+            for (int j = i + 1; j < 8; ++j) {
+                if (abs(i - j) == abs(perm[i] - perm[j])) {
                     ok = 0;
                 }
             }
         }
         ans += ok;
-    } while(next_permutation(perm.begin(), perm.begin() + 8));
-    
+    } while (next_permutation(perm.begin(), perm.begin() + 8));
+
     cout << ans << '\n';
     return 0;
 }

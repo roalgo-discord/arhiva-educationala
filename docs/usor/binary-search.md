@@ -1,8 +1,6 @@
 ---
 id: binary-search
-author:
-    - Andrei-Cristian Ivan
-    - Ștefan-Cosmin Dăscălescu
+authors: [ivan, stefdasca]
 prerequisites:
     - arrays
     - sorting
@@ -19,7 +17,7 @@ primim mai multe întrebări, de forma: Există valoarea $X$ în șir?
 
 În mod evident, o soluție foarte trivială este să parcurgem manual șirul pentru
 fiecare întrebare, și să vedem dacă elementul cerut apare sau nu în șir, astfel
-obținând complexitate totală de $O(N \cdot Q)$. Singura noastră problemă este că
+obținând complexitate totală de $\mathcal{O}(N \cdot Q)$. Singura noastră problemă este că
 noi o să avem $N$ și $Q$ undeva în jur de $10^6$, ceea ce va face ca această
 abordare să pice clar în timp, deci va trebui găsită o soluție mult mai
 eficientă. Aici intervine algoritmul de _căutare binară_.
@@ -40,9 +38,9 @@ ci doar jumătatea relevantă (cea în care considerăm noi că există o șans�
 găsim valoarea noastră), și algoritmul se va repeta până când lungimea devine
 1 și putem determina răspunsul. Dat fiind faptul că noi la fiecare pas
 împărțim la 2 lungimea șirului, acest lucru ne va da complexitate logaritmică
-la determinarea răspunsului, deci vom avea complexitate $O(Q \log N)$ (dacă
-șirul nostru nu este sortat din input, se mai adaugă și un $O(N \log N)$ la
-complexitate), cu memorie $O(N)$.
+la determinarea răspunsului, deci vom avea complexitate $\mathcal{O}(Q \log N)$ (dacă
+șirul nostru nu este sortat din input, se mai adaugă și un $\mathcal{O}(N \log N)$ la
+complexitate), cu memorie $\mathcal{O}(N)$.
 
 Pentru o înțelegere mai clară a algoritmului, să presupunem următorul exemplu:
 se dă un șir sortat crescător unde apar toate numerele de la 1 la 100, și se
@@ -111,7 +109,7 @@ int cb_corect(int n) {
             r = mij - 1;
         }
     }
-        
+
     return ans;
 }
 ```
@@ -156,7 +154,7 @@ Pătrașcu](http://people.csail.mit.edu/mip/), sau căutarea pe biți.
 În mare parte, aceste căutări binare ne vor da aceeași complexitate peste tot,
 în schimb, când vrem să implementăm algoritmul de Lowest Common Ancestor (LCA)
 cu Binary Lifting, căutarea binară pe biți reduce algoritmul de la
-$O(\log^2{H})$ la $O(\log{H})$, unde $H$ reprezintă adâncimea maximă a
+$\mathcal{O}(\log^2{H})$ la $\mathcal{O}(\log{H})$, unde $H$ reprezintă adâncimea maximă a
 arborelui.
 
 ## Căutarea binară pe răspuns
@@ -192,7 +190,7 @@ int cb_raspuns() {
             l = mij + 1;
         }
     }
-        
+
     return ans;
 }
 ```
@@ -214,49 +212,48 @@ soluția nu este complicată.
 #include <iostream>
 #include <vector>
 
-using namespace std; 
- 
+using namespace std;
+
 int n, k;
 vector<int> v;
- 
+
 // aici calculam f(x)
- 
+
 long long f(long long x) {
     long long cnt = 0;
-    
+
     for (int i = 0; i < n; i++) {
         cnt += x / v[i];
-        if(cnt >= k) { // pentru a evita overflow-ul
+        if (cnt >= k) {  // pentru a evita overflow-ul
             return cnt;
         }
     }
     return cnt;
 }
- 
+
 int main() {
     cin >> n >> k;
     v.resize(n);
-    
+
     for (int i = 0; i < n; i++) {
         cin >> v[i];
     }
-    
+
     long long L = 0;
     long long R = 1e18;
     long long ans = R;
-    
+
     while (L <= R) {
         long long mid = (L + R) / 2;
-        
+
         if (f(mid) >= k) {
             ans = mid;
             R = mid - 1;
-        }
-        else {
+        } else {
             L = mid + 1;
         }
     }
-    
+
     cout << ans;
     return 0;
 }
@@ -288,11 +285,10 @@ double cb_double() {
         if (f(mij)) {
             ans = mij;
             r = mij;
-        }
-        else {
+        } else {
             l = mij;
         }
-    }   
+    }
     return ans;
 }
 ```
@@ -311,35 +307,33 @@ fără rost. Fixând un număr de 100 de iterații, se ajunge la răspuns foarte
 simplu și eficient.
 
 ```cpp
-#include <iostream>
-#include <iomanip> // pentru afisarea cu precizie fixa
 #include <cmath>
+#include <iomanip>  // pentru afisarea cu precizie fixa
+#include <iostream>
 
 using namespace std;
 
-const double eps = 1e-6; // pentru compararea raspunsului
- 
+const double eps = 1e-6;  // pentru compararea raspunsului
+
 int main() {
-    
     double val;
     cin >> val;
-    
+
     double L = 0;
     double R = 200000;
     double ans;
-    
+
     for (int iter = 1; iter <= 100; iter++) {
         double mid = (L + R) * 0.5000;
         double expr = mid * mid + sqrt(mid);
         if (expr - val >= eps) {
             ans = mid;
             R = mid;
-        }
-        else {
+        } else {
             L = mid;
         }
     }
-    
+
     cout << fixed << setprecision(10) << ans << '\n';
     return 0;
 }
@@ -365,8 +359,8 @@ Funcțiile de sistem care se bazează pe căutarea binară sunt următoarele:
 
 ```cpp
 #include <algorithm>
-#include <vector>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -381,7 +375,7 @@ int main() {
     // aceste functii afla pozitiile din vector corespunzatoare acestor operatii
     auto it = (std::lower_bound(vec.begin(), vec.end(), 5) - vec.begin());
     cout << it << " ";
-    
+
     it = (std::upper_bound(vec.begin(), vec.end(), 5) - vec.begin());
     cout << it << " ";
     return 0;

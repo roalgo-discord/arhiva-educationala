@@ -12,7 +12,7 @@ void solve(const int suma, const int nr_monede, const vector<int>& monezi) {
     if (suma == 0) {
         return;
     }
-    
+
     for (const auto moneda : monezi) {
         if (suma >= moneda) {
             if (dp[suma - moneda] == 0) {

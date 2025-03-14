@@ -1,8 +1,6 @@
 ---
 id: bignum
-author:
-    - Susan
-    - Ștefan-Cosmin Dăscălescu
+authors: [susan, stefdasca]
 prerequisites:
     - basic-math
     - arrays
@@ -95,7 +93,7 @@ unităților). Pentru afișare, procedăm invers, începând de la cea mai
 semnificativă cifră.
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 // Lungimea maximă a numărului
@@ -193,7 +191,7 @@ numărului este salvată în prima poziție a vectorului pentru a facilita acces
 Iată cum arată implementarea:
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 // Lungimea maximă a numărului
@@ -241,8 +239,8 @@ $v[0]$.
 #### Crearea vectorului si inserarea/ștergerea cifrelor la inceput
 
 ```cpp
-# include <iostream>
-# include <vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -312,8 +310,8 @@ for (int i = 1; i <= b[0]; i++) {
     a[i] += b[i];
 }
 
-// `a` trebuie să aibă numărul potrivit de cifre pentru a putea încăpea adunarea,
-// așadar alegem maximul dintre lungimile celor două numere.
+// `a` trebuie să aibă numărul potrivit de cifre pentru a putea încăpea
+// adunarea, așadar alegem maximul dintre lungimile celor două numere.
 a[0] = max(a[0], b[0]);
 
 // Gestionarea transportului
@@ -429,7 +427,7 @@ for (; val; val /= 10) {
 ### Înmulțirea a două numere mari
 
 Înmulțirea a două numere mari va necesita lucrul cu toate cifrele numărului,
-complexitatea algoritmului devenind $O(n_A \cdot n_B)$, unde $n_A$ reprezintă
+complexitatea algoritmului devenind $\mathcal{O}(n_A \cdot n_B)$, unde $n_A$ reprezintă
 numărul de cifre al lui $A$, iar $n_B$, numărul de cifre al lui $B$. Din nou,
 implementarea va fi asemănătoare cu cea învățată în clasele mici la școală.
 
@@ -449,10 +447,8 @@ for (int i = 1; i <= a[0]; i++) {
 a[0] += b[0] - 1;
 
 for (int i = 1; i <= a[0]; i++) {
-
     // Avem un transport
     if (ans[i] >= 10) {
-
         // Dacă este ultima cifră...
         if (i == a[0]) {
             // ...creștem dimensiunea și o adăugăm.

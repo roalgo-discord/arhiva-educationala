@@ -1,32 +1,29 @@
 ---
+id: OJI-2020-VII-foto
+title: Soluția problemei foto (OJI 2020, clasa a VII-a)
+problem_id: 923
+authors: [stefdasca]
+prerequisites:
+    - partial-sums
+    - matrices
 tags:
     - OJI
     - clasa VII
+    - sume partiale
 ---
 
-# Soluția problemei foto (OJI 2020, clasa a VII-a)
+Această problemă are foarte multe soluții posibile, aici voi descrie doar una dintre
+ele.
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+Pentru a rezolva cerința 1, vom număra câte celule sunt egale cu 0, acest lucru
+fiind îndeajuns.
 
-!!! example "Cunoștințe necesare"
-    - [Placeholder](https://edu.roalgo.ro/)
-
-**Autor soluție**: 
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/1/). 
+La cerința 2, noi vrem să aflăm numărul maxim de fulgere situate consecutiv, iar
+pentru a ține numărătoarea cât mai ușor, ne putem folosi de sume parțiale pentru
+fiecare poziție, având grijă la respectarea condițiilor din enunț.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
-using namespace std;
- 
-int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a+b << '\n';
-    return 0;
-}
+--8<-- "olimpiada/VII/2020-foto.cpp"
 ```

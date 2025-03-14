@@ -1,35 +1,84 @@
-{% if "material/tags" in config.plugins and tags %}
-{% include "partials/tags.html" %}
-{% endif %}
+{% set diff_pills = {
+  0: "cppintro",
+  1: "usor",
+  2: "mediu",
+  3: "dificil",
+  4: "avansat",
+  5: "olimpiada"
+} %}
 
-{# {% include "partials/actions.html" %} #}
+{% set difficulty_labels = {
+  0: "Intro",
+  1: "Ușor",
+  2: "Mediu",
+  3: "Dificil",
+  4: "Avansat",
+  5: "Olimpiadă"
+} %}
+
+{% macro render_difficulty_pill(difficulty) %}
+  <span class="pill diff-{{diff_pills[difficulty]}}">
+    {{ difficulty_labels[difficulty] }}
+  </span>
+{% endmacro %}
+
+{% macro get_author_name(author_id) %}
+  {% if config.extra.authors[author_id] %}
+    {{ config.extra.authors[author_id].name }}
+  {% else %}
+    {{ author_id }}
+  {% endif %}
+{% endmacro %}
+
+{% if "material/tags" in config.plugins and tags %}
+  {% include "partials/tags.html" %}
+{% endif %}
 
 {% if "\x3ch1" not in page.content %}
-<h1>{{ page.title | d(config.site_name, true) }}</h1>
+  <h1>
+    <span>{{ page.meta.title | default(page.title | default(config.site_name)) }}</span>
+  </h1>
 {% endif %}
 
-{% if page.meta.author %}
-<p>
-    {% if page.meta.author | length == 1 %}
-    <b>Autor</b>: {{ page.meta.author[0] }}
+{% if page.meta.authors %}
+  <p>
+    {% set author_list = [] %}
+
+    {% for author_id in page.meta.authors %}
+      {% set author_list = author_list.append(get_author_name(author_id)) %}
+    {% endfor %}
+
+    {% if author_list | length == 1 %}
+    <b>Autor{% if difficulty == 5 and 'solutii' in page.url %} soluție{% endif %}</b>:
     {% else %}
-    <b>Autori</b>: {{ page.meta.author | join(', ') }}
+    <b>Autori{% if difficulty == 5 and 'solutii' in page.url %} soluție{% endif %}</b>:
     {% endif %}
-</p>
+    {{ author_list | join(', ') }}
+  </p>
 {% endif %}
 
-{% if page.meta.prerequisites %}
-<div class="admonition example">
+{% if page.meta.prerequisites and prerequisites_data %}
+  <div class="admonition example">
     <p class="admonition-title">Cunoștințe necesare</p>
-    <ul>
-        {% set prerequisites = nav.pages | selectattr("meta.id", "in", page.meta.prerequisites) %}
-        {% for p in prerequisites %}
-        <li><a href="{{ p.url | url }}">{{ p.title }}</a></li>
-        {% endfor %}
+    <ul class="prereq-list">
+      {% for prerequisite in prerequisites_data %}
+      <li>
+          <a href="{{ prerequisite.path | url }}">{{ prerequisite.title }}</a>
+          {% set diff = prerequisite.difficulty %}
+          {% if diff in range(0, 6) %}
+            {{ render_difficulty_pill(diff) }}
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
-</div>
+  </div>
 {% endif %}
 
+{% if page.meta.problem_id %}
+  <div class="admonition note">
+    <p class="admonition-title">Link problemă</p>
+    <p>Această problemă poate fi accesată <a href="https://kilonova.ro/problems/{{page.meta.problem_id}}/">aici</a>.</p>
+  </div>
+{% endif %}
 
-<!-- Page content -->
 {{ page.content }}

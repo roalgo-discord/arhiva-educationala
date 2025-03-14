@@ -1,8 +1,6 @@
 ---
 id: frequency-arrays
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - arrays
 tags:
@@ -140,16 +138,16 @@ mari?
 
 În privința `#!cpp std::map`, acesta poate fi folosit în acest context exact ca
 vectorii de frecvență, având posibilitatea să stocăm dinamic frecvența valorilor
-care apar, fără a avea nevoie de $O(valmax)$ memorie. Totuși, această metodă
-vine cu un cost, și anume faptul că complexitatea operațiilor este $O(\log n)$,
-spre deosebire de $O(1)$ pentru metoda clasică.  
+care apar, fără a avea nevoie de $\mathcal{O}(valmax)$ memorie. Totuși, această metodă
+vine cu un cost, și anume faptul că complexitatea operațiilor este $\mathcal{O}(\log n)$,
+spre deosebire de $\mathcal{O}(1)$ pentru metoda clasică.  
 
 În privința `#!cpp std::set`, acesta poate fi folosit în acest context exact ca
 vectorii caracteristici (pentru frecvențe mai mari ca 1, `#!cpp std::map` este o
 metodă strict superioară), având posibilitatea să stocăm dinamic valorile care
-apar, fără a avea nevoie de $O(valmax)$ memorie. La fel ca la structura de date
+apar, fără a avea nevoie de $\mathcal{O}(valmax)$ memorie. La fel ca la structura de date
 precedentă, această metodă vine cu un cost, și anume faptul că complexitatea
-operațiilor este $O(\log n)$, spre deosebire de $O(1)$ pentru metoda clasică.  
+operațiilor este $\mathcal{O}(\log n)$, spre deosebire de $\mathcal{O}(1)$ pentru metoda clasică.  
 
 ### Problema [map de pe pbinfo](https://www.pbinfo.ro/probleme/2217/map)
 

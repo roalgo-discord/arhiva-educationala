@@ -1,14 +1,15 @@
-#include "testlib.h"
+#include <cassert>
 #include <iostream>
 #include <string>
-#include <cassert>
 #include <vector>
 
+#include "testlib.h"
+
 using namespace std;
- 
+
 int n, len;
 string s;
-int main (int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     registerTestlibCmd(argc, argv);
     n = inf.readInt();
     len = ouf.readInt();

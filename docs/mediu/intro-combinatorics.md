@@ -1,8 +1,6 @@
 ---
 id: intro-combinatorics
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - pow-log
     - modular-inverse
@@ -157,17 +155,17 @@ masca pe care o verificăm. Pentru mai multe detalii, puteți vedea codul de mai
 jos.
 
 ```cpp
-const int totalSubsets = 1 << n; // 2^n
+const int totalSubsets = 1 << n;  // 2^n
 
 for (int mask = 0; mask < totalSubsets; ++mask) {
     vector<int> subset;
 
     for (int idx = 0; idx < n; ++idx) {
-        if (mask & (1 << idx)) { // (1)
+        if (mask & (1 << idx)) {  // (1)
             subset.push_back(idx);
         }
     }
-        
+
     process(subset);
 }
 ```
@@ -219,8 +217,15 @@ C_{n-1}^{k-1} +C_{n-1}^{k} \end{align*} $$
 
 - Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca
   fiind
-  $$ C_n^k = \prod_{i=1}^{k}\frac{n-i+1}{i} =\frac{(n-k+1)\cdot (n-(k - 1)
-  + 1)\cdots(n-1)\cdot n}{1\cdot 2\cdot 3\cdots\cdot k} $$
+
+    $$
+      \begin{align*}
+      C_n^k &= \prod_{i=1}^{k}\frac{n-i+1}{i}\\
+      &=
+      \frac{n \cdot (n - 1) \cdots (n-(k - 1) + 1) \cdots (n-k+1)}{1\cdot 2\cdot 3\cdots\cdot k}
+      \end{align*}
+    $$
+
 - $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei
   specifice.
 - $\sum_{i=0}^{n} C_n^i = 2^n$
@@ -244,14 +249,14 @@ for (int n = 1; n <= N; n++) {
         if (n == k) {
             C[n][k] = 1;
         } else {
-            C[n][k] = C[n-1][k] + C[n-1][k-1];
+            C[n][k] = C[n - 1][k] + C[n - 1][k - 1];
         }
     }
 }
 ```
 
-Există o metodă mai eficientă de a calcula $C_n^k$ în timp $O(k)$ și spațiu
-$O(1)$:
+Există o metodă mai eficientă de a calcula $C_n^k$ în timp $\mathcal{O}(k)$ și spațiu
+$\mathcal{O}(1)$:
 
 ```cpp
 const long long C(int n, int k) {
@@ -277,7 +282,7 @@ familiari cu ridicarea la putere în timp logaritmic, vă rugăm să citiți
 articolul pe această temă.
 
 ```cpp
-# include <iostream>
+#include <iostream>
 using namespace std;
 
 const int MOD = 998244353;
@@ -319,7 +324,7 @@ void precalc() {
         fact[i] = (fact[i - 1] * i) % MOD;
     }
 
-    inv[N] = modpow(fact[N], MOD - 2); // (1)
+    inv[N] = modpow(fact[N], MOD - 2);  // (1)
     for (int i = N - 1; i >= 0; --i) {
         inv[i] = (inv[i + 1] * (i + 1)) % MOD;
     }
@@ -366,12 +371,10 @@ această recurență, avem o formulă relativ simplă.
 - $p(i, 0) = 0$, pentru $i\geq 1$
 - $p(0, 0) = 1$.
 
-<!-- se bagă cineva să scrie despre numerele pentagonale? -- totuși cred ca e peste nivelul intended al articolului, dar mă gândesc că le putem impărți după -->
-
 Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă
 folosind această abordare. Din fericire, există o metodă și mai rapidă, care
 folosește [numere pentagonale](https://codeforces.com/blog/entry/104312),
-abordare ce ne duce la o soluție în $O(n\sqrt n)$, pentru mai multe detalii
+abordare ce ne duce la o soluție în $\mathcal{O}(n\sqrt n)$, pentru mai multe detalii
 puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau
 rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
 
@@ -448,7 +451,7 @@ Așa se calculează numărul Catalan:
         return res;
     }
 
-    const unsigned long long catalan(int n) {
+    const unsigned long long catalan(unsigned int n) {
         return C(2 * n, n) / (n + 1);
     }
     ```
@@ -456,16 +459,16 @@ Așa se calculează numărul Catalan:
 === "Calcul cu DP"
 
     ```cpp
-    unsigned long long catalan(unsigned int n)
-    {
+    const unsigned long long catalan(unsigned int n) {
         unsigned long long C[n + 1];
 
         C[0] = C[1] = 1;
 
         for (int i = 2; i <= n; i++) {
             C[i] = 0;
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < i; j++) {
                 C[i] += C[j] * C[i - j - 1];
+            }
         }
 
         return C[n];
@@ -475,7 +478,7 @@ Așa se calculează numărul Catalan:
 === "Calcul direct"
 
     ```cpp
-    const unsigned long long catalan(int n) {
+    const unsigned long long catalan(unsigned int n) {
         unsigned long long res = 1;
 
         for (int i = 1; i <= n; ++i) {
@@ -619,15 +622,16 @@ rezultate importante atât în matematică, cât și în informatică.
 
 ### Alte probleme
 
-- [Bracket Sequences I](https://cses.fi/problemset/task/2064)
-- [Bracket Sequences II](https://cses.fi/problemset/task/2187)
-- [Distributing Apples](https://cses.fi/problemset/task/1716)
-- [Arena](https://codeforces.com/problemset/problem/1606/E)
-- [Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
-- [Almost Identity
+- [CSES Bracket Sequences I](https://cses.fi/problemset/task/2064)
+- [CSES Bracket Sequences II](https://cses.fi/problemset/task/2187)
+- [CSES Distributing Apples](https://cses.fi/problemset/task/1716)
+- [Codeforces Arena](https://codeforces.com/problemset/problem/1606/E)
+- [Codeforces Close Tuples (hard version)](https://codeforces.com/contest/1462/problem/E2)
+- [Codeforces Almost Identity
   Permutations](https://codeforces.com/problemset/problem/888/D)
-- [Med and Mex](https://codeforces.com/gym/104520/problem/K)
-- [Different Subsets For All
+- [Codeforces Card Game](https://codeforces.com/contest/2025/problem/E)
+- [Codeforces Med and Mex](https://codeforces.com/gym/104520/problem/K)
+- [Codeforces Different Subsets For All
   Tuples](https://codeforces.com/contest/660/problem/E)
 - [Probleme de combinatorică de pe
   Codeforces](https://codeforces.com/problemset?tags=combinatorics)
@@ -650,6 +654,7 @@ rezultate importante atât în matematică, cât și în informatică.
 - [Elemente de combinatorică, curs predat la lotul de juniori din
   2018](https://www.scribd.com/document/634592386/Elemente-de-combinatorica-2018)
 - [Derangement - wikipedia](https://en.wikipedia.org/wiki/Derangement)
+- [A tutorial of reflection principle in combinatorics](https://codeforces.com/blog/entry/135139)
 - [Problem Solving Guide to Modular Combinatorics and Exponentiation -
   Codeforces](https://codeforces.com/blog/entry/78873)
 - [Binomial coefficient -

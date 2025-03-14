@@ -1,7 +1,6 @@
 ---
 id: simulating-solution
-author:
-    - Traian Mihai Danciu
+authors: [traian]
 prerequisites:
     - loops
     - arrays
@@ -28,7 +27,7 @@ O simulare arată astfel:
 gata = 1;
 while (!gata) {
     <folosim starea ca sa facem ceva>
-    <avansam la urmatorul pas, trece un tact>
+    <avansam la urmatorul pas, trece un tact> 
     if (<conditie de oprire>) {
         gata = 1;
     }
@@ -63,7 +62,7 @@ ele:
 
         int i, j, n, m;
         cin >> n >> m >> q >> x >> y;
-        x--; // noi indexam de la 0
+        x--;  // noi indexam de la 0
         y--;
         for (i = 0; i < n; i++) {
             for (j = 0; j < m; j++) {
@@ -74,20 +73,17 @@ ele:
         long long sum;
         dir = cin.get();
         while (!isalpha(dir)) {
-            dir = cin.get(); // gasim prima litera (prima directie)
+            dir = cin.get();  // gasim prima litera (prima directie)
         }
         sum = 0;
         for (i = 0; i < q; i++) {
             if (dir == 'N') {
                 x--;
-            }
-            else if (dir == 'E') {
+            } else if (dir == 'E') {
                 y++;
-            }
-            else if (dir == 'S') {
+            } else if (dir == 'S') {
                 x++;
-            }
-            else { // 'V'
+            } else {  // 'V'
                 y--;
             }
 
@@ -101,7 +97,7 @@ ele:
     }
     ```
 
-=== "Cu funcții"
+    == = "Cu funcții"
 
     ```cpp
     #include <iostream>
@@ -112,7 +108,7 @@ ele:
     void readMatrix() {
         int i, j, n, m;
         cin >> n >> m >> q >> x >> y;
-        x--; // noi indexam de la 0
+        x--;  // noi indexam de la 0
         y--;
         for (i = 0; i < n; i++) {
             for (j = 0; j < m; j++) {
@@ -126,20 +122,17 @@ ele:
         long long sum;
         dir = cin.get();
         while (!isalpha(dir)) {
-            dir = cin.get(); // gasim prima litera (prima directie)
+            dir = cin.get();  // gasim prima litera (prima directie)
         }
         sum = 0;
         for (i = 0; i < q; i++) {
             if (dir == 'N') {
                 x--;
-            }
-            else if (dir == 'E') {
+            } else if (dir == 'E') {
                 y++;
-            }
-            else if (dir == 'S') {
+            } else if (dir == 'S') {
                 x++;
-            }
-            else { // 'V'
+            } else {  // 'V'
                 y--;
             }
 
@@ -187,7 +180,6 @@ Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclu
 Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
 
 Sursa de 100 de puncte:
-
 ```cpp
 #include <fstream>
 using namespace std;
@@ -310,10 +302,9 @@ ofstream fout("asort.out");
 int r, n;
 
 int pozToNumber(int poz) {
-    if (((poz % 2 == 0) ^ (r % 2 == 0)) == 0) { // ambele sau niciuna
+    if (((poz % 2 == 0) ^ (r % 2 == 0)) == 0) {  // ambele sau niciuna
         return (r + poz - 1) % n + 1;
-    }
-    else {
+    } else {
         return (n + poz - r - 1) % n + 1;
     }
 }
@@ -321,8 +312,7 @@ int pozToNumber(int poz) {
 int numberToPoz(int nr) {
     if (nr % 2 == 0) {
         return (n + nr - r - 1) % n + 1;
-    }
-    else {
+    } else {
         return (nr + r - 1) % n + 1;
     }
 }
@@ -330,15 +320,14 @@ int numberToPoz(int nr) {
 void calcAnswer() {
     int cer, t, k, poz, val, pred, succ;
     fin >> cer >> n >> r >> k >> t;
-    r %= n; // la n operatii se revine la sirul initial 
-    
+    r %= n;  // la n operatii se revine la sirul initial
+
     if (cer == 1) {
         fout << pozToNumber(k) << "\n";
-    }
-    else {
+    } else {
         poz = numberToPoz(t);
-        pred = pozToNumber(poz == 1 ? n : poz - 1); // predecesorul
-        succ = pozToNumber(poz == n ? 1 : poz + 1); // succesorul
+        pred = pozToNumber(poz == 1 ? n : poz - 1);  // predecesorul
+        succ = pozToNumber(poz == n ? 1 : poz + 1);  // succesorul
         fout << pred << " " << succ << "\n";
     }
 }
@@ -376,10 +365,11 @@ ofstream fout("robinson.out");
 
 const int MAXM = 100;
 const int VISITED = -1;
-const int N_DIR = 4; // cate directii sunt
+const int N_DIR = 4;  // cate directii sunt
 
 int n, m, l, c, mat[MAXM + 2][MAXM + 2];
-int dx[N_DIR] = {-1, 0, 1, 0}, dy[N_DIR] = {0, 1, 0, -1}; // vectori de directie
+int dx[N_DIR] = {-1, 0, 1, 0},
+    dy[N_DIR] = {0, 1, 0, -1};  // vectori de directie
 
 void calcMatrix() {
     int i, j;
@@ -409,10 +399,10 @@ void simulateProcess() {
         fout << l << " " << c << "\n";
         dir = mat[l][c] % N_DIR;
         mat[l][c] = VISITED;
-        
-        l += dx[dir]; // avansam catre urmatoarea pozitie
+
+        l += dx[dir];  // avansam catre urmatoarea pozitie
         c += dy[dir];
-        if (mat[l][c] == VISITED) { // conditia de oprire
+        if (mat[l][c] == VISITED) {  // conditia de oprire
             gata = 1;
         }
     }
@@ -420,7 +410,7 @@ void simulateProcess() {
 
 int main() {
     calcMatrix();
-    borderMatrix(); // bordarea matricei
+    borderMatrix();  // bordarea matricei
     simulateProcess();
     return 0;
 }
@@ -452,7 +442,7 @@ int dcol[N_DIR] = {0, 1, 1, 1, 0, -1, -1, -1};
 void visitPositions() {
     int k, l, c, dir;
     fin >> n >> k;
-    
+
     l = c = 0;
     fr[0][0] = 1;
     for (; k > 0; k--) {
@@ -473,8 +463,7 @@ void calcAnswer() {
                 if (fr[i][j] > maxim) {
                     maxim = fr[i][j];
                     cnt = 1;
-                }
-                else if (fr[i][j] == maxim) {
+                } else if (fr[i][j] == maxim) {
                     cnt++;
                 }
             }
@@ -482,7 +471,6 @@ void calcAnswer() {
     }
     fout << sum << " " << cnt << "\n";
 }
-
 
 int main() {
     visitPositions();

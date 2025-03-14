@@ -1,19 +1,17 @@
 ---
+id: OJI-2018-V-forus
+title: Soluția problemei forus (OJI 2018, clasa a V-a)
+problem_id: 399
+authors:
+    - traian
+prerequisites:
+   - digits-manipulation
+   - divisibility
 tags:
     - OJI
     - clasa V
 ---
 
-# Soluția problemei forus (OJI 2018, clasa a V-a)
-
-!!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
-    - [Divizibilitate](../../../../usor/divisibility.md)
-
-**Autor soluție**: Traian Mihai Danciu
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/399/). 
 
 ## Cerința 1
 
@@ -21,9 +19,16 @@ Trebuie de fapt să aflăm câte numere nu conțin cifra 0.
 
 ## Cerința 2
 
-Observăm că atunci când facem o tăietură, noi vom lua un prefix și un sufix al numărului și le vom alipi (mai întâi sufixul și apoi prefixul). Putem să luăm cifrele numărului de la final la început, să începem cu prefixul egal cu numărul, iar, pe măsură ce avansăm, să mai tăiem câte o cifră din prefix și să o adăugăm în sufix.
+Observăm că atunci când facem o tăietură, noi vom lua un prefix și un sufix al
+numărului și le vom alipi (mai întâi sufixul și apoi prefixul). Putem să luăm
+cifrele numărului de la final la început, să începem cu prefixul egal cu
+numărul, iar, pe măsură ce avansăm, să mai tăiem câte o cifră din prefix și să o
+adăugăm în sufix.
 
-Numărul de divizori va fi calculat la fel cum este prezentat în articolul de divizibilitate menționat mai sus, iar alipirea se va face înmulțind sufixul cu 10 la puterea numărului de cifre din prefix (pe care îl vom calcula la fel cum facem cu prefixul).
+Numărul de divizori va fi calculat la fel cum este prezentat în articolul de
+divizibilitate menționat mai sus, iar alipirea se va face înmulțind sufixul cu
+10 la puterea numărului de cifre din prefix (pe care îl vom calcula la fel cum
+facem cu prefixul).
 
 Pentru mai multe detalii vedeți implementarea.
 

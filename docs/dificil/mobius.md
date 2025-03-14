@@ -1,7 +1,6 @@
 ---
 id: mobius
-author:
-    - Matei Ionescu
+authors: [ioma]
 prerequisites:
     - pinex
     - euler-totient
@@ -32,7 +31,7 @@ Pentru simplitate vom defini următoarele aspecte:
 Cât și următoarele proprietăți celebre:
 
 - $\sum_{k = 1}^{N} \frac{1}{k} \approx \log{N}$.
-- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are $O(\sqrt N)$
+- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are $\mathcal{O}(\sqrt N)$
   valori distincte.
 
 Pentru $\forall p \in \mathbb{N}$, $p$ număr prim, și $\forall k \in
@@ -65,12 +64,12 @@ Acest algoritm este poate cel mai popular printre elevii de liceu și gimnaziu
 pentru a afla numerele prime într-un interval.
 
 ```cpp
-vector<int> ciur(N+1);
+vector<int> ciur(N + 1);
 ciur[0] = ciur[1] = 1;
 for (int i = 2; i <= N; i++) {
-    if (ciur[i] == 0) { //numarul i este prim
+    if (ciur[i] == 0) {  // numarul i este prim
         for (int j = 2 * i; j <= N; j += i) {
-            ciur[j] = 1; //j se scrie ca i * p
+            ciur[j] = 1;  // j se scrie ca i * p
         }
     }
 }
@@ -79,28 +78,29 @@ for (int i = 2; i <= N; i++) {
 La finalul programului, $k$ va fi număr prim doar dacă $\operatorname{ciur}(k) =
 0$.
 
-Complexitatea de timp este $O(\sum_{k=1}^N \frac{N}{k}) = O(N \log{N})$.
+Complexitatea de timp este $\mathcal{O}(\sum_{k=1}^N \frac{N}{k}) = O(N \log{N})$.
 
 ### Ciur liniar
 
 Observăm că fiecare număr compus $X$ este parcurs de către cel de-al doilea for
 de mai multe ori. Dacă am putea să iterăm prin fiecare număr compus exact o
-singură dată am ajunge la complexitatea de $O(N)$. Reținem într-un vector
+singură dată am ajunge la complexitatea de $\mathcal{O}(N)$. Reținem într-un vector
 auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele prime până
 când un număr prim divide $i$.
 
 ```cpp
-
 vector<int> prime;
-vector<int> is_composite(N+1);
+vector<int> is_composite(N + 1);
 
 for (int i = 2; i <= n; i++) {
-    if (!is_composite[i]) 
+    if (!is_composite[i]) {
         prime.push_back(i);
+    }
     for (int j = 0; j < prime.size() && i * prime[j] <= n; j++) {
         is_composite[i * prime[j]] = 1;
-        if (i % prime[j]) 
+        if (i % prime[j]) {
             break;
+        }
     }
 }
 ```
@@ -114,7 +114,7 @@ for (int i = 2; i <= n; i++) {
     p$, însă $p$ este cel mai mic număr prim care divide $q$, deci nu există un
     astfel $k$. Deci odată luată în considerare perechea $(i, p)$,\, $i \cdot p$
     va fi calculat doar o singură dată, transformând complexitatea finală în
-    $O(N)$.
+    $\mathcal{O}(N)$.
 
 ### Precalcularea indicatorului lui Euler folosind Ciurul Liniar
 
@@ -139,8 +139,7 @@ for (int i = 2; i <= N; i++) {
         compus[i * prime[j]] = 1;
         if (i % prime[j]) {
             phi[i * prime[j]] = phi[i] * phi[prime[j]];
-        }
-        else {
+        } else {
             phi[i * prime[j]] = prime[j] * phi[i];
         }
     }
@@ -156,7 +155,7 @@ mai mic factor din descompunerea în factori primi a lui $n$. Pentru oricare $i$
 f(\frac{i}{p^{\operatorname{sml}(i)}}) \cdot f(p^{\operatorname{sml}(i) + 1})$.
 
 ```cpp
-vector<int> prime, phi(N+1), compus(N+1), sml(N+1);
+vector<int> prime, phi(N + 1), compus(N + 1), sml(N + 1);
 phi[1] = 1;
 for (int i = 2; i <= N; i++) {
     if (!compus[i]) {
@@ -169,10 +168,11 @@ for (int i = 2; i <= N; i++) {
         if (i % prime[j]) {
             phi[i * prime[j]] = phi[i] * phi[prime[j]];
             sml[i * prime[j]] = 1;
-        }
-        else {
-            phi[i * prime[j]] = (phi[i] / (pow(prime[j], sml[i]) - pow(prime[j], sml[i] - 1)));
-            phi[i * prime[j]] *= (pow(prime[j], sml[i] + 1) - pow(prime[j], sml[i]));
+        } else {
+            phi[i * prime[j]] =
+                (phi[i] / (pow(prime[j], sml[i]) - pow(prime[j], sml[i] - 1)));
+            phi[i * prime[j]] *=
+                (pow(prime[j], sml[i] + 1) - pow(prime[j], sml[i]));
             sml[i * prime[j]] = sml[i] + 1;
         }
     }
@@ -212,14 +212,12 @@ for (int i = 2; i < N; i++) {
         if (i % prime[j]) {
             mobius[i * prime[j]] = mobius[i] * mobius[prime[j]];
             sml[i * prime[j]] = 1;
-        }
-        else {
+        } else {
             int cltr = (sml[i] == 0) - (sml[i] == 1);
             int pl = (sml[i] + 1 == 0) - (sml[i] + 1 == 1);
             if (cltr == 0) {
                 mobius[i] = 0;
-            }
-            else {
+            } else {
                 mobius[i * prime[j]] = (mobius[i] / cltr) * pl;
             }
             sml[i * prime[j]] = sml[i] + 1;
@@ -230,18 +228,18 @@ for (int i = 2; i < N; i++) {
 
 ### Implementare mai populară
 
-Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $O(N \log{N})$
-pentru precalculare, de ce ar intra $O(N)$?
+Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $\mathcal{O}(N \log{N})$
+pentru precalculare, de ce ar intra $\mathcal{O}(N)$?
 
 ```cpp
 vector<int> phi(N), mobius(N);
 phi[1] = mobius[1] = 1;
 
 for (int i = 2; i < N; i++) {
-    phi[i] = i-1;
+    phi[i] = i - 1;
 }
 for (int i = 1; i < N; i++) {
-    for (int j = 2 * i; j < N; j+=i) {
+    for (int j = 2 * i; j < N; j += i) {
         mobius[j] -= mobius[i];
         if (i > 1) {
             phi[j] -= phi[i];
@@ -293,7 +291,7 @@ $$ \sum_{i=1}^{n} [d\mid i] = \sum_{j=1}^{n} [d\mid j] = \left\lfloor
 \frac{n}{d} \right\rfloor $$
 
 deci relația finală devine $\sum_{d=1}^{n} \mu(d) \cdot (\frac{n}{d})^2$, care
-poate fi calculată în $O(n)$.
+poate fi calculată în $\mathcal{O}(n)$.
 
 **Exercițiu 2:** Calculează câte perechi $(a,b)$ exisă, astfel încât $1 \leq a,b
 \leq n$ și $\operatorname{cmmdc}(a, b)$ = $P$.
@@ -362,7 +360,7 @@ Revenim la problema noastră inițială: $$ f(k) = \frac{p(k)}{k} = k \cdot \sum
 = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot
 (\frac{N}{kd} + 1)}{2} \right)^2 $$
 
-Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $O(N
+Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $\mathcal{O}(N
 \log N)$.
 
 ## Probleme propuse spre rezolvare
@@ -391,7 +389,7 @@ $$ \begin{align*} f(K) &= \sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M
 \left(\frac{N}{Kd}\right)^M. \end{align*} $$
 
 Rezultatul problemei este dat de $\sum_{i=1}^{N} f(i) \cdot i$. Complexitatea de
-timp pentru a calcula $f(K)$ este $O(\frac{N}{K}\log{M}), astfel complexitatea
+timp pentru a calcula $f(K)$ este $\mathcal{O}(\frac{N}{K}\log{M}), astfel complexitatea
 finală este
 
 $$ \begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N +
@@ -417,7 +415,7 @@ $$ \begin{align*} \sum_{i=1}^{N} O(\left\lfloor \frac{N}{i} \right\rfloor +
 N \log{M}) \\ &= O(N \log{N} + N \log{M}) \\ &= O(N\left(\log{N} +
 \log{M}\right)) \\ &= O(N\log{(MN)}) \end{align*} $$
 
-Putem precalcula puterile lui $M$, obținem astfel $O(N \log{N})$. Ambele iau
+Putem precalcula puterile lui $M$, obținem astfel $\mathcal{O}(N \log{N})$. Ambele iau
 100 puncte.
 
 ### Problema [cntgcd](https://kilonova.ro/problems/372)
@@ -445,7 +443,7 @@ perechile care au cmmdc-ul 2, 3 etc.
 $$ f(n) = \frac{n^2 - n}{2} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
 \right\rfloor\right) $$
 
-Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $O(\sqrt{N})$
+Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $\mathcal{O}(\sqrt{N})$
 elemente diferite, putem doar să calculăm câte numere $d_1$ există, astfel încât
 $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
 \rfloor) \cdot nr$.
@@ -457,16 +455,16 @@ $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
     \frac{n}{\lfloor \frac{n}{d} \rfloor} \right\rfloor$.
 
 ```cpp
-long long f (long long n) {
-    //cout << n << '\n';
+long long f(long long n) {
+    // cout << n << '\n';
     if (n <= 1000000) {
-        return sum_phi[n]; //phi(1) + phi(2) + ... + phi(n)
+        return sum_phi[n];  // phi(1) + phi(2) + ... + phi(n)
     }
     if (dp[n]) {
         return dp[n];
-        //am calculat deja rezultatul pt n
+        // am calculat deja rezultatul pt n
     }
-    long long ans = 1LL * (1LL * n * (n + 1)) / 2; 
+    long long ans = 1LL * (1LL * n * (n + 1)) / 2;
     for (int i = 2, dr; i <= n; i = dr + 1) {
         dr = (n / (n / i));
         if (dr > n) {
@@ -480,7 +478,7 @@ long long f (long long n) {
 ```
 
 Complexitatea algoritmului de mai sus este foarte interesantă, ea fiind
-$O(N^\frac{2}{3})$.
+$\mathcal{O}(N^\frac{2}{3})$.
 
 ### Problema [tupleco](https://kilonova.ro/problems/1820)
 
@@ -508,18 +506,18 @@ Rezultatul nostru devine:
 $$ \sum_{d=1}^{N} \mu(d) \cdot {\left\lfloor \frac{N}{d} \right\rfloor - K + 1
 \choose K} $$
 
-Soluția rulează în $O(N)$ cu $O(N)$ sau $O(N \cdot \log N)$ precalcularea.
+Soluția rulează în $\mathcal{O}(N)$ cu $\mathcal{O}(N)$ sau $\mathcal{O}(N \cdot \log N)$ precalcularea.
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e7 + 1, mod = 3000017;
 int n, k;
-ifstream fin ("tupleco.in");
-ofstream fout ("tupleco.out");
+ifstream fin("tupleco.in");
+ofstream fout("tupleco.out");
 #define cin fin
 #define cout fout
-long long C (int n, int k, vector<long long> &f, vector<long long> &invf) {
+long long C(int n, int k, vector<long long> &f, vector<long long> &invf) {
     return (1ULL * f[n] * (1ULL * invf[k] * invf[n - k] % mod) % mod) % mod;
 }
 int main() {
@@ -549,11 +547,9 @@ int main() {
         long long plt = C(lt + k - 1, k, f, invf);
         if (mobius[d] == -1) {
             ans = (1ULL * ans + mod - plt) % mod;
+        } else if (mobius[d] == 1) {
+            ans = (1ULL * ans + plt) % mod;
         }
-        else 
-            if (mobius[d] == 1) {
-                ans = (1ULL * ans + plt) % mod;
-            }
     }
     cout << ans;
 }
@@ -572,7 +568,7 @@ $$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
     este mult mai mic decât $N$, astfel putem să calculăm combinările mult mai
     rapid:
 
-- $n \leq M$, deci putem precalcula combinările în $O(M)$. <!-- ce naiba e cu
+- $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$. <!-- ce naiba e cu
   formatarea asta? -->
 - $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
   \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$
@@ -581,28 +577,18 @@ $$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 3e6 + 17, N = 1e6 + 2;
-ifstream fin ("tupleco.in");
-ofstream fout ("tupleco.out");
+ifstream fin("tupleco.in");
+ofstream fout("tupleco.out");
 #define cin fin
 #define cout fout
 struct Mint {
     int val;
-    Mint (int x = 0) {
-        val = x % mod;
-    }
-    Mint (long long x) {
-        val = x % mod;
-    }
-    Mint operator+(Mint oth) {
-        return val + oth.val;
-    }
-    Mint operator*(Mint oth) {
-        return 1LL * val * oth.val;
-    }
-    Mint operator-(Mint oth) {
-        return val - oth.val + mod;
-    }
-    Mint fp (Mint a, long long n){
+    Mint(int x = 0) { val = x % mod; }
+    Mint(long long x) { val = x % mod; }
+    Mint operator+(Mint oth) { return val + oth.val; }
+    Mint operator*(Mint oth) { return 1LL * val * oth.val; }
+    Mint operator-(Mint oth) { return val - oth.val + mod; }
+    Mint fp(Mint a, long long n) {
         Mint p = 1;
         while (n) {
             if (n & 1) {
@@ -623,9 +609,10 @@ struct Mint {
     }
 };
 vector<Mint> f(mod), invf(mod), inv(mod);
-Mint C (int n, int k) {
-    if (n < 0 || k < 0 || n < k)
+Mint C(int n, int k) {
+    if (n < 0 || k < 0 || n < k) {
         return 0;
+    }
     if (n >= mod) {
         return C(n / mod, k / mod) * C(n % mod, k % mod);
     }

@@ -1,7 +1,6 @@
 ---
 id: stl-sorting-searching
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - greedy
     - sorting
@@ -29,7 +28,7 @@ acestor biblioteci ce compun STL.
 ## Problema [Subarray Sums II - CSES](https://cses.fi/problemset/task/1661)
 
 Pentru a rezolva această problemă, putem pleca de la una din soluțiile care are
-complexitatea $O(n^2)$. Această soluție calculează sumele parțiale ale șirului
+complexitatea $\mathcal{O}(n^2)$. Această soluție calculează sumele parțiale ale șirului
 și fixează capetele din stânga și dreapta, folosindu-se de sumele parțiale
 calculate anterior pentru a număra secvențele cu suma $s$.
 
@@ -41,15 +40,14 @@ Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sum
 (inițializăm la început suma 0 cu frecvența 1, corespunzătoare unui șir
 gol), iar pentru fiecare $i$, vom actualiza datele din map și vom aduna la
 răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni
-$O(n \log n)$.
+$\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>
 #include <map>
 using namespace std;
- 
+
 int main() {
-    
     map<long long, int> mp;
     long long n, s;
     cin >> n >> s;
@@ -58,7 +56,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int nr;
         cin >> nr;
-        
+
         sum += nr;
         ans += mp[sum - s];
         mp[sum]++;
@@ -111,10 +109,11 @@ int main() {
         cin >> a[i];
         sm += a[i];
         if (mp.find(sm) != mp.end()) {
-            if (sm == 0 && mp[0] == -1)
+            if (sm == 0 && mp[0] == -1) {
                 mx = max(mx, 1);
-            else
+            } else {
                 mx = max(mx, mp[sm] + 1);
+            }
         }
         mp[sm] = i;
         ans = ans + i - mx;
@@ -141,9 +140,9 @@ permite inserarea și ștergerea valorilor în timp logaritmic. Mai jos găsiți
 soluție care obține punctajul maxim.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <set>
-#include <algorithm>
 using namespace std;
 ifstream in("ramen.in");
 ofstream out("ramen.out");
@@ -155,8 +154,9 @@ struct aa {
 };
 aa v[100002];
 bool cmp(aa a, aa b) {
-    if (a.care == b.care)
+    if (a.care == b.care) {
         return a.timp < b.timp;
+    }
     return a.care < b.care;
 }
 int main() {
@@ -172,8 +172,9 @@ int main() {
         ans[v[i].pi] = *it + v[i].care;
         s.erase(it);
     }
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
         out << ans[i] << '\n';
+    }
     return 0;
 }
 ```
@@ -192,6 +193,8 @@ abordări care să se muleze și pe restricțiile problemelor în sine.
 - [CSES Apartments](https://cses.fi/problemset/task/1084/)
 - [OJI 2023 parcare](https://kilonova.ro/problems/500)
 - [USACO Silver Convention II](https://usaco.org/index.php?page=viewproblem2&cpid=859)
+- [Codeforces Voting (easy)](https://codeforces.com/contest/1251/problem/E1)
+- [Codeforces Good Subarrays](https://codeforces.com/problemset/problem/1398/C)
 - [Codeforces William and Robot](https://codeforces.com/gym/104002/problem/E)
 - [OJI 2024 parking](https://kilonova.ro/problems/24)
 - [USACO Gold Snow Boots](http://www.usaco.org/index.php?page=viewproblem2&cpid=813)

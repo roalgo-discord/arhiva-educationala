@@ -1,7 +1,6 @@
 ---
 id: sliding-window
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - two-pointers
     - sequences
@@ -38,7 +37,7 @@ aplica și în cazul unor secvențe de lungime variabilă.
 
 O soluție brută a acestei probleme constă în a calcula pe rând toate sumele
 corespunzătoare intervalelor de lungime egală cu lungimea intervalului dat, dar
-această soluție va rula în $O(n^2)$.
+această soluție va rula în $\mathcal{O}(n^2)$.
 
 Pentru a optimiza soluția brută, vom începe prin a calcula în mod brut suma
 pentru intervalul $[st, dr]$, iar mai apoi ne vom folosi de faptul că numărul de
@@ -47,7 +46,7 @@ valori diferite dintre intervalele $[st, dr]$ și $[st+1, dr+1]$ este exact 2
 valoarea de pe poziția $dr+1$ va fi considerată).
 
 În acest mod, soluția va fi optimizată, atingându-se complexitatea dorită, și
-anume $O(n)$. Mai jos puteți găsi implementarea folosind această metodă.
+anume $\mathcal{O}(n)$. Mai jos puteți găsi implementarea folosind această metodă.
 
 ```cpp
 #include <iostream>
@@ -56,30 +55,30 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1);
+
+    vector<int> v(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     int st, dr;
     cin >> st >> dr;
-    
+
     // aflam suma initiala
     long long sm = 0;
     for (int i = st; i <= dr; i++) {
         sm += v[i];
     }
-    
+
     // ajustam suma initiala folosind cele doua valori care ies/intra
     long long ans = 0;
     while (dr <= n) {
         ans += sm;
         sm -= v[st];
-        sm += v[dr+1];
+        sm += v[dr + 1];
         st++, dr++;
     }
-    
+
     cout << ans << '\n';
     return 0;
 }
@@ -94,7 +93,7 @@ de lungime $m$.
 În cazul acestei probleme, vom putea folosi o structură de date de tip map
 pentru a stoca frecvențele numerelor din cele două șiruri, implementarea
 folosind acest principiu pentru a ține cu ușurință răspunsul căutat,
-complexitatea devenind $O(n \log n)$.
+complexitatea devenind $\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>
@@ -102,22 +101,21 @@ complexitatea devenind $O(n \log n)$.
 #include <vector>
 
 using namespace std;
- 
+
 int main() {
- 
     // linii pentru citirea rapida, necesare pentru codeforces
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t;
     cin >> t;
-    
+
     while (t--) {
         int n, m, k;
         cin >> n >> m >> k;
         map<int, int> mpa, mpb;
-        
-        vector<long long> v(n+1), v2(m+1);
+
+        vector<long long> v(n + 1), v2(m + 1);
         for (int i = 1; i <= n; i++) {
             cin >> v[i];
         }
@@ -131,9 +129,9 @@ int main() {
             mpb[v[i]]++;
             cnt += min(mpa[v[i]], mpb[v[i]]);
             if (i > m) {
-                cnt -= min(mpa[v[i-m]], mpb[v[i-m]]);
-                mpb[v[i-m]]--;
-                cnt += min(mpa[v[i-m]], mpb[v[i-m]]);
+                cnt -= min(mpa[v[i - m]], mpb[v[i - m]]);
+                mpb[v[i - m]]--;
+                cnt += min(mpa[v[i - m]], mpb[v[i - m]]);
             }
             if (i >= m && cnt >= k) {
                 total++;
@@ -159,30 +157,28 @@ std::set.
 
 ```cpp
 #include <iostream>
-#include <vector>
 #include <set>
+#include <vector>
 
 using namespace std;
- 
-int main() {
 
+int main() {
     int n, k;
     cin >> n >> k;
-    
-    vector<int> v(n+1);
+
+    vector<int> v(n + 1);
     multiset<int> smaller, larger;
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     for (int i = 1; i <= n; i++) {
         smaller.insert(v[i]);
         if (i > k) {
-            if (smaller.find(v[i-k]) != smaller.end()) {
-                smaller.erase(smaller.lower_bound(v[i-k]));
-            }
-            else {
-                larger.erase(larger.lower_bound(v[i-k]));
+            if (smaller.find(v[i - k]) != smaller.end()) {
+                smaller.erase(smaller.lower_bound(v[i - k]));
+            } else {
+                larger.erase(larger.lower_bound(v[i - k]));
             }
         }
         if (i >= k) {

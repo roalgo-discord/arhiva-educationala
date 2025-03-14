@@ -1,7 +1,6 @@
 ---
 id: modular-inverse
-author:
-    - Andrei Iuoraș
+authors: [iuoras]
 prerequisites:
     - functions
     - pow-log

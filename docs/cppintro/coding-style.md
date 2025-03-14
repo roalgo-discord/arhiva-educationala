@@ -1,7 +1,6 @@
 ---
 id: coding-style
-author: 
-  - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 tags:
   - C++
   - introducere

@@ -1,9 +1,6 @@
 ---
 id: stl
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Ștefan-Iulian Alecu
-  - Alex Vasiluță
+authors: [stefdasca, stalecu, cnc]
 tags:
   - C++
   - implementare
@@ -147,7 +144,7 @@ vectorului.
 
 Această structură de date este echivalentul `std::vector` pentru șirurile de
 caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere
-din C, funcția de aflare a lungimii este $O(1)$, în loc de $O(n)$.
+din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$.
 
 Se recomandă citirea în prealabil a [articolului următor despre șiruri de
 caractere](./strings.md).
@@ -433,8 +430,8 @@ nume`.
 biblioteca `<unordered_set>`. Sintaxa acestuia va fi `unordered_set <tip> nume`.
 
 Complexitatea operațiilor descrise la map, respectiv set pentru cele două
-structuri este în medie $O(1)$ amortizat, dar în cel mai rău caz, complexitatea
-finală este $O(n)$ per operație, unde $n$ este dimensiunea structurii de date în
+structuri este în medie $\mathcal{O}(1)$ amortizat, dar în cel mai rău caz, complexitatea
+finală este $\mathcal{O}(n)$ per operație, unde $n$ este dimensiunea structurii de date în
 cauză. Totuși, așa cum este explicat și în articolul despre hashing, această
 problemă poate fi rezolvată folosind un hash custom, dar constanta devine în
 multe cazuri suficient de slabă încât să nu mai fie optimă folosirea
@@ -467,7 +464,7 @@ O coadă de priorități este o coadă pe care o folosim pentru a păstra datele
 într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe
 o structură de date de tip heap, permițând operații de push, pop și top, în mod
 similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat.
-Complexitatea operațiilor este $O(\log n)$. Chiar dacă această structură de date
+Complexitatea operațiilor este $\mathcal{O}(\log n)$. Chiar dacă această structură de date
 este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul
 că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea
 heap-ului.
@@ -508,7 +505,7 @@ răspundem la întrebări de tipul:
 Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe,
 precum arborii de intervale dinamici sau eventual folosind normalizări dificil
 de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de
-rapidă, complexitatea operațiilor fiind $O(\log n)$, la fel ca la set și map.
+rapidă, complexitatea operațiilor fiind $\mathcal{O}(\log n)$, la fel ca la set și map.
 
 !!! note "Atenție la constante"
 

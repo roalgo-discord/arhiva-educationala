@@ -1,8 +1,6 @@
 ---
 id: queue
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Teodor Ștefan Manolea
+authors: [stefdasca, anomori]
 prerequisites:
     - debugging
 title: Coada
@@ -72,16 +70,15 @@ using namespace std;
 int main() {
     int n, q[1000001], L = 0, R = 0;
     cin >> n;
-    
+
     while (n--) {
         char c[6];
         cin >> c;
-        
+
         // afisam prima valoare a cozii
         if (c[0] == 'f') {
             cout << q[L] << '\n';
-        }
-        else {
+        } else {
             // adaugam o noua valoare si crestem R
             if (c[1] == 'u') {
                 int val;
@@ -113,16 +110,15 @@ using namespace std;
 int main() {
     int n, q[1001], L = 0, R = 0, maxi = 1001;
     cin >> n;
-    
+
     while (n--) {
         char c[6];
         cin >> c;
-        
+
         // afisam prima valoare a cozii
         if (c[0] == 'f') {
             cout << q[L] << '\n';
-        }
-        else {
+        } else {
             // adaugam o noua valoare si crestem R
             if (c[1] == 'u') {
                 int val;
@@ -169,18 +165,17 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    
+
     queue<int> q;
-    
+
     while (n--) {
         char c[6];
         cin >> c;
-        
+
         // afisam prima valoare a cozii
         if (c[0] == 'f') {
             cout << q.front() << '\n';
-        }
-        else {
+        } else {
             // adaugam o noua valoare si crestem R
             if (c[1] == 'u') {
                 int val;

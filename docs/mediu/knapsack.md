@@ -1,7 +1,6 @@
 ---
 id: knapsack
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
 tags:
@@ -91,20 +90,20 @@ using namespace std;
 int main() {
     int n, w;
     cin >> n >> w;
-    
-    vector<vector<long long> > dp(n+1, vector<long long> (w+1, 0));
-    
+
+    vector<vector<long long> > dp(n + 1, vector<long long>(w + 1, 0));
+
     for (int i = 1; i <= n; i++) {
         int wi, vi;
         cin >> wi >> vi;
         for (int j = 0; j <= w; j++) {
-            dp[i][j] = dp[i-1][j];
-            if (wi <= j && dp[i-1][j-wi] + vi > dp[i][j]) {
-                dp[i][j] = dp[i-1][j-wi] + vi;
+            dp[i][j] = dp[i - 1][j];
+            if (wi <= j && dp[i - 1][j - wi] + vi > dp[i][j]) {
+                dp[i][j] = dp[i - 1][j - wi] + vi;
             }
         }
     }
-    
+
     long long ans = 0;
     for (int i = 1; i <= n; i++) {
         for (int j = 0; j <= w; j++) {
@@ -130,22 +129,22 @@ using namespace std;
 int main() {
     int n, w;
     cin >> n >> w;
-    
-    vector<vector<long long> > dp(2, vector<long long> (w+1, 0));
-    
+
+    vector<vector<long long> > dp(2, vector<long long>(w + 1, 0));
+
     bool x = 1;
     for (int i = 1; i <= n; i++) {
         int wi, vi;
         cin >> wi >> vi;
         for (int j = 0; j <= w; j++) {
-            dp[x][j] = dp[x^1][j];
-            if (wi <= j && dp[x^1][j-wi] + vi > dp[x][j]) {
-                dp[x][j] = dp[x^1][j-wi] + vi;
+            dp[x][j] = dp[x ^ 1][j];
+            if (wi <= j && dp[x ^ 1][j - wi] + vi > dp[x][j]) {
+                dp[x][j] = dp[x ^ 1][j - wi] + vi;
             }
         }
         x ^= 1;
     }
-    
+
     long long ans = 0;
     for (int i = 0; i <= 1; i++) {
         for (int j = 0; j <= w; j++) {
@@ -171,9 +170,9 @@ using namespace std;
 int main() {
     int n, w;
     cin >> n >> w;
-    
-    vector<long long> dp(w+1, 0);
-    
+
+    vector<long long> dp(w + 1, 0);
+
     bool x = 1;
     for (int i = 1; i <= n; i++) {
         int wi, vi;
@@ -182,7 +181,7 @@ int main() {
             dp[j] = max(dp[j], dp[j - wi] + vi);
         }
     }
-    
+
     long long ans = 0;
     for (int j = 0; j <= w; j++) {
         ans = max(ans, dp[j]);
@@ -192,8 +191,8 @@ int main() {
 }
 ```
 
-După cum se poate observa, această implementare a fost adusă de la $O(n \cdot
-w)$ memorie la $O(w)$ memorie, codul devenind de asemenea mai scurt.
+După cum se poate observa, această implementare a fost adusă de la $\mathcal{O}(n \cdot
+w)$ memorie la $\mathcal{O}(w)$ memorie, codul devenind de asemenea mai scurt.
 
 ### Rucsacul în care putem repeta obiecte de un număr nelimitat de ori
 
@@ -210,9 +209,9 @@ using namespace std;
 int main() {
     int n, w;
     cin >> n >> w;
-    
-    vector<long long> dp(w+1, 0);
-    
+
+    vector<long long> dp(w + 1, 0);
+
     bool x = 1;
     for (int i = 1; i <= n; i++) {
         int wi, vi;
@@ -221,7 +220,7 @@ int main() {
             dp[j] = max(dp[j], dp[j - wi] + vi);
         }
     }
-    
+
     long long ans = 0;
     for (int j = 0; j <= w; j++) {
         ans = max(ans, dp[j]);
@@ -283,20 +282,20 @@ int ruk[1000001], frq[102];
 int main() {
     int n;
     cin >> n;
-    
+
     ruk[0] = 1;
-    
+
     for (int i = 1; i <= n; i++) {
         int x;
         cin >> x;
-        
+
         for (int p = 1; p <= x; p++) {
             int q;
             cin >> q;
             frq[q]++;
         }
     }
-    
+
     int sm = 0;
     for (int i = 1; i <= 100; i++) {
         int val = 1;
@@ -315,7 +314,7 @@ int main() {
             }
         }
     }
-    
+
     int cnt = 0;
     for (int i = 0; i <= 1000000; i++) {
         cnt += ruk[i];
@@ -337,25 +336,25 @@ cum am procedat în această soluție pentru problema [Money
 Sums](https://cses.fi/problemset/task/1745/).
 
 ```cpp
-#include <iostream>
 #include <bitset>
+#include <iostream>
 using namespace std;
- 
+
 int main() {
-    
     int n;
     cin >> n;
-    
+
     bitset<100001> dp;
-    
+
     dp[0] = 1;
     for (int i = 1; i <= n; i++) {
         int x;
         cin >> x;
-        
-        dp |= (dp << x); // aplicam operatiile pe biti pentru a creste eficienta bitsetului
+
+        dp |= (dp << x);  // aplicam operatiile pe biti pentru a creste
+                          // eficienta bitsetului
     }
-    
+
     int cnt = 0;
     for (int i = 1; i <= 100000; i++) {
         cnt += dp[i];
@@ -366,7 +365,7 @@ int main() {
             cout << i << " ";
         }
     }
-    
+
     return 0;
 }
 ```
@@ -383,7 +382,7 @@ negative, când ajungem să spunem că nu avem un răspuns când de fapt îl ave
 Vom presupune că suma maximă este $N$ și valoarea adăugată/scoasă este $W$.
 
 ```cpp
-for (int i = N; i >= W; i--) { 
+for (int i = N; i >= W; i--) {
     dp[i] += dp[i - W];
     if (dp[i] >= P) {
         dp[i] -= P;

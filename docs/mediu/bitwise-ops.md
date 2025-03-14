@@ -1,7 +1,6 @@
 ---
 id: bitwise-ops
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - data-types
     - basic-math
@@ -76,13 +75,13 @@ care le obținem vor crea numărul în baza $k$, în ordine inversă.
 Mai jos puteți găsi o scurtă implementare în limbajul C++.
 
 ```cpp
-int n, k; // transformam n in baza k
+int n, k;  // transformam n in baza k
 cin >> n >> k;
-int nrcif = 0, v[32]; // cifrele in baza k
+int nrcif = 0, v[32];  // cifrele in baza k
 
 // obtinem cifrele, una cate una
 while (n > 0) {
-    int c = n%k;
+    int c = n % k;
     nrcif++;
     v[nrcif] = c;
     n /= k;
@@ -118,13 +117,14 @@ numărul pasului la care suntem.
 Mai jos puteți găsi o scurtă implementare în limbajul C++.
 
 ```cpp
-int n, k; // transformam n in baza 10, vom presupune ca se da numarul n drept un numar zecimal dar cu cifre mai mici decat k
+int n, k;  // transformam n in baza 10, vom presupune ca se da numarul n drept
+           // un numar zecimal dar cu cifre mai mici decat k
 cin >> n >> k;
-int nrcif = 0, v[32]; // cifrele in baza k
+int nrcif = 0, v[32];  // cifrele in baza k
 
 // obtinem cifrele, una cate una
 while (n > 0) {
-    int c = n%10;
+    int c = n % 10;
     nrcif++;
     v[nrcif] = c;
     n /= k;
@@ -132,10 +132,10 @@ while (n > 0) {
 
 // pentru a le afisa, le vom afisa invers
 int putere = 1;
-int zecimal = 0; // numarul convertit in baza 10
+int zecimal = 0;  // numarul convertit in baza 10
 for (int i = 1; i <= nrcif; i++) {
-    zecimal += putere * v[i]; // adunam cifra inmultita cu puterea lui k
-    putere *= k; // la fiecare pas, crestem exponentul cu 1, inmultind cu k
+    zecimal += putere * v[i];  // adunam cifra inmultita cu puterea lui k
+    putere *= k;  // la fiecare pas, crestem exponentul cu 1, inmultind cu k
 }
 cout << zecimal << '\n';
 ```

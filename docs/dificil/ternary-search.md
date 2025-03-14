@@ -1,7 +1,6 @@
 ---
 id: ternary-search
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - binary-search
 tags:
@@ -58,7 +57,7 @@ de precizie, putem trata intervalul rămas folosind brute force pentru a ajunge
 la răspunsul dorit. Alternativ, putem apela algoritmul de un număr finit de ori,
 similar cu modul în care am rula căutarea binară pe numere reale.
 
-Complexitatea algoritmului este $O(\log n)$ unde $n$ este dimensiunea
+Complexitatea algoritmului este $\mathcal{O}(\log n)$ unde $n$ este dimensiunea
 intervalului de căutare. Se poate remarca faptul că spre deosebire de căutarea
 binară, constanta este una mai mare deoarece în medie reducem intervalul de
 căutare cu $\frac{1}{3}$ la un pas.

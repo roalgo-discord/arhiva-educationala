@@ -1,7 +1,6 @@
 ---
 id: lis
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - intro-dp
     - binary-search
@@ -44,7 +43,7 @@ diverse complexități de timp. În cele ce urmează, le vom prezenta, una câte
 O soluție foarte cunoscută a acestei probleme constă în folosirea unei dinamici,
 în care $dp[i]$ va ține lungimea subșirului crescător maximal care conține
 poziția $i$. Tranzițiile vor fi foarte simple, fiecare poziție este comparată cu
-fiecare, complexitatea soluției ajungând la $O(n^2).
+fiecare, complexitatea soluției ajungând la $\mathcal{O}(n^2).
 
 $$ dp[i] = \max_{\substack{j < i\\v[j] < v[i]}} \left(dp[j] + 1\right) $$
 
@@ -59,20 +58,19 @@ de pe pbinfo.
 #include <fstream>
 #include <vector>
 using namespace std;
- 
+
 int main() {
-    
     ifstream cin("sclm.in");
     ofstream cout("sclm.out");
-    
+
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), dp(n+1), fw(n+1);
+
+    vector<int> v(n + 1), dp(n + 1), fw(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
- 
+
     int maxi = 0;
     int pos = 0;
     for (int i = 1; i <= n; i++) {
@@ -88,7 +86,7 @@ int main() {
             pos = i;
         }
     }
-     
+
     // vom reconstitui raspunsul din aproape in aproape
     cout << maxi << '\n';
     vector<int> ans;
@@ -103,7 +101,7 @@ int main() {
 }
 ```
 
-## Soluție în $O(n \log n)$ cu căutare binară
+## Soluție în $\mathcal{O}(n \log n)$ cu căutare binară
 
 Pentru a rezolva această problemă în timp optim, trebuie să observăm că foarte
 mulți candidați pe care îi ținem la soluția anterioară nu își au rostul, fiind
@@ -120,52 +118,51 @@ Subsequence](https://cses.fi/problemset/task/1145/) de pe CSES.
 #include <iostream>
 #include <vector>
 using namespace std;
- 
+
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), dp(n+1);
+
+    vector<int> v(n + 1), dp(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
-    
+
     vector<int> candidates;
     int maxi = 0;
     for (int i = 1; i <= n; i++) {
         if (i == 1 || v[i] > v[candidates.back()]) {
             candidates.push_back(i);
             dp[i] = candidates.size();
-        }
-        else {
+        } else {
             int L = 0;
-            int R = (int) candidates.size() - 1;
+            int R = (int)candidates.size() - 1;
             int ans = -1;
             while (L <= R) {
                 int mid = (L + R) / 2;
                 if (v[candidates[mid]] >= v[i]) {
                     ans = mid;
                     R = mid - 1;
-                }
-                else {
+                } else {
                     L = mid + 1;
                 }
             }
-            // ans ne da si pozitia in cazul in care avem nevoie de reconstruirea solutiei
+            // ans ne da si pozitia in cazul in care avem nevoie de
+            // reconstruirea solutiei
             dp[i] = ans + 1;
             candidates[ans] = i;
         }
         maxi = max(maxi, dp[i]);
     }
-    
+
     cout << maxi << '\n';
     return 0;
 }
 ```
 
-## Soluție în $O(n \log n)$ cu structuri de date
+## Soluție în $\mathcal{O}(n \log n)$ cu structuri de date
 
-Pentru soluțiile în $O(n \log n)$ care folosesc structuri de date, mai întâi vom
+Pentru soluțiile în $\mathcal{O}(n \log n)$ care folosesc structuri de date, mai întâi vom
 vrea să avem o copie a vectorului inițial, pe care să o sortăm. Recomandăm mai
 întâi familiarizarea cu arborii de intervale sau arborii indexați binar pentru a
 continua, precum și normalizarea dacă nu ați mai folosit această tehnică
@@ -184,51 +181,51 @@ cele două structuri de date, soluțiile fiind pentru aceeași problemă de pe C
 ### Soluție cu arbori de intervale
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
- 
-void add (int node, int L, int R, int poz, int val, vector<int> &segtree) {
+
+void add(int node, int L, int R, int poz, int val, vector<int> &segtree) {
     if (L == R) {
         segtree[node] = max(segtree[node], val);
         return;
     }
-    
+
     int mid = (L + R) / 2;
     if (poz <= mid) {
         add(node * 2, L, mid, poz, val, segtree);
-    }
-    else {
-        add(node * 2 + 1, mid+1, R, poz, val, segtree);
+    } else {
+        add(node * 2 + 1, mid + 1, R, poz, val, segtree);
     }
     segtree[node] = max(segtree[node * 2], segtree[node * 2 + 1]);
 }
- 
+
 int query(int node, int L, int R, int qL, int qR, vector<int> &segtree) {
     if (qL <= L && R <= qR) {
         return segtree[node];
     }
-    
+
     if (qR < L || qL > R) {
         return 0;
     }
-    
+
     int mid = (L + R) / 2;
-    return max(query(node * 2, L, mid, qL, qR, segtree), query(node * 2 + 1, mid+1, R, qL, qR, segtree));
+    return max(query(node * 2, L, mid, qL, qR, segtree),
+               query(node * 2 + 1, mid + 1, R, qL, qR, segtree));
 }
- 
+
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), sorted(n+1), segtree(4*n+1);
+
+    vector<int> v(n + 1), sorted(n + 1), segtree(4 * n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
         sorted[i] = v[i];
     }
     sort(sorted.begin() + 1, sorted.begin() + n + 1);
-    
+
     int maxi = 0;
     for (int i = 1; i <= n; i++) {
         int L = 1;
@@ -239,17 +236,16 @@ int main() {
             if (sorted[mid] < v[i]) {
                 ans = mid;
                 L = mid + 1;
-            }
-            else {
+            } else {
                 R = mid - 1;
             }
         }
-        
+
         int query_ans = query(1, 1, n, 1, ans, segtree) + 1;
         maxi = max(maxi, query_ans);
         add(1, 1, n, ans + 1, query_ans, segtree);
     }
-    
+
     cout << maxi << '\n';
     return 0;
 }
@@ -258,36 +254,36 @@ int main() {
 ### Soluție cu arbori indexați binar
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
- 
-void add (int node, int n, int val, vector<int> &fen) {
+
+void add(int node, int n, int val, vector<int> &fen) {
     for (; node <= n; node += (node & (-node))) {
         fen[node] = max(fen[node], val);
     }
 }
- 
-int compute (int node, vector<int> &fen) {
+
+int compute(int node, vector<int> &fen) {
     int ans = 0;
     for (; node; node -= (node & (-node))) {
         ans = max(ans, fen[node]);
     }
     return ans;
 }
- 
+
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), sorted(n+1), fen(n+1);
+
+    vector<int> v(n + 1), sorted(n + 1), fen(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
         sorted[i] = v[i];
     }
     sort(sorted.begin() + 1, sorted.begin() + n + 1);
-    
+
     int maxi = 0;
     for (int i = 1; i <= n; i++) {
         int L = 1;
@@ -298,17 +294,16 @@ int main() {
             if (sorted[mid] < v[i]) {
                 ans = mid;
                 L = mid + 1;
-            }
-            else {
+            } else {
                 R = mid - 1;
             }
         }
-        
+
         int query_ans = compute(ans, fen) + 1;
         maxi = max(maxi, query_ans);
         add(ans + 1, n, query_ans, fen);
     }
-    
+
     cout << maxi << '\n';
     return 0;
 }

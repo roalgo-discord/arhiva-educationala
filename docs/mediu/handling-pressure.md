@@ -1,7 +1,6 @@
 ---
 id: handling-pressure
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - olympiad-prep
     - contest-improvement

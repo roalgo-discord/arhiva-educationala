@@ -1,8 +1,6 @@
 ---
 id: arrays
-author:
-  - Ștefan-Cosmin Dăscălescu
-  - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
   - loops
 tags:
@@ -214,7 +212,7 @@ sau dreapta.
 
 În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui
 algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în
-complexitate $O(n^2)$, $O(n \log n)$ și multe alte clase de complexități.
+complexitate $\mathcal{O}(n^2)$, $\mathcal{O}(n \log n)$ și multe alte clase de complexități.
 
 Pentru mai multe detalii, recomandăm citirea articolului pe acest subiect, pe
 care îl puteți găsi [aici](../usor/sorting.md).

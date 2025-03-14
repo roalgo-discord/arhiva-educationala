@@ -1,7 +1,6 @@
 ---
 id: trie
-author:
-    - Matei Ionescu
+authors: [ioma]
 prerequisites:
     - functions
     - stl
@@ -25,8 +24,8 @@ memorate, dar de cele mai multe ori, un Trie este folosit pentru reținerea
 Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvintele
 să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că
 înălțimea arborelui este lungimea maximă a unui cuvânt. Complexitatea de timp
-este $O(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai
-rău caz, este $O({ L \cdot k})$.
+este $\mathcal{O}(L)$, unde $L$ este lungimea maximă, iar memoria consumată, în cel mai
+rău caz, este $\mathcal{O}({ L \cdot k})$.
 
 <figure markdown="span">
 ![](../images/trie/trie.png)
@@ -236,7 +235,7 @@ int main() {
         ans = max(ans, res);
         insert(xp[i]);
     }
-    
+
     cout << ans;
 }
 ```
@@ -253,9 +252,7 @@ struct Trie {
     Trie *_next[2];
     int _pos;
 
-    explicit Trie(const int value)
-        : _pos{value}
-        , _next{nullptr, nullptr} {}
+    explicit Trie(const int value) : _pos{value}, _next{nullptr, nullptr} {}
 
     Trie() : Trie{-1} {}
 
@@ -265,14 +262,14 @@ struct Trie {
     }
 } *root;
 
-
 void add(const int val, const int idx) {
     Trie *node = root;
 
     for (int i = 29; i >= 0; i--) {
         bool has = (val >> i) & 1;
-        if (node->_next[has] == nullptr)
+        if (node->_next[has] == nullptr) {
             node->_next[has] = new Trie(idx);
+        }
         node = node->_next[has];
     }
 }
@@ -282,12 +279,13 @@ int query(const int val) {
 
     for (int i = 29; i >= 0; i--) {
         bool has = (val >> i) & 1;
-        if (node->_next[!has])
+        if (node->_next[!has]) {
             node = node->_next[!has];
-        else if (node->_next[has])
+        } else if (node->_next[has]) {
             node = node->_next[has];
-        else
+        } else {
             break;
+        }
     }
     return node->_pos;
 }
@@ -354,12 +352,12 @@ vectorul $b$ elementele vor fi distincte.
 
 În al treilea rând, observăm că vectorul $b$ este generat în funcție de ce
 valoare are $k$. Deci o primă idee ar fi să fixăm mai întâi unde vom pune 0-ul
-în vectorul $b$ și să-l construim în $O(n)$, complexitatea temporală fiind
-$O(n^2)$. Dar putem să ne folosim de a doua observație, și anume că mereu
+în vectorul $b$ și să-l construim în $\mathcal{O}(n)$, complexitatea temporală fiind
+$\mathcal{O}(n^2)$. Dar putem să ne folosim de a doua observație, și anume că mereu
 vectorul $b$ va avea elementele distincte. Deci ne este suficient să știm care
 va fi valoarea maximă din $b$ dacă 0-ul se află pe poziția $k$. Pentru a face
 asta putem să folosim 2 trie-uri, unul pentru sufix, altul pentru prefix,
-complexitatea finală devenind $O(n \log n)$.
+complexitatea finală devenind $\mathcal{O}(n \log n)$.
 
 ```cpp
 #include <iostream>
@@ -372,8 +370,7 @@ int n;
 vector<int> v(N), ans(N);
 vector<int> xr1(N), xr2(N);
 
-vector<vector<int>> trie1(1, vector<int>(2, -1)),
-                    trie2(1, vector<int>(2, -1));
+vector<vector<int>> trie1(1, vector<int>(2, -1)), trie2(1, vector<int>(2, -1));
 
 vector<int> maxim1(N), maxim2(N);
 
@@ -387,7 +384,6 @@ void insert(vector<vector<int>> &trie, int nr) {
         }
         root = trie[root][bit];
     }
-
 }
 
 int get_max(vector<vector<int>> &trie, int nr) {
@@ -430,7 +426,6 @@ int main() {
         maxim2[i] = get_max(trie2, xr1[i]);
         insert(trie2, xr1[i]);
     }
-
 
     for (int i = 1; i <= n; i++) {
         if (max(maxim1[i], maxim2[i - 1]) == n - 1) {
@@ -538,42 +533,26 @@ scădea din dp-ul nostru $dp_{i-1} \cdot K^{x_i - len(cuv)}$ și să oprim
 parcurgerea. Dacă suntem la un nod $node$, acesta are lungimea egală cu $x_i$,
 atunci scădem din dp $dp_{i-1}$ și oprim parcurgerea.
 
-Cu alte cuvinte, o soluție în $O(M^2 + M \cdot S)$ este posibilă, unde $S =
+Cu alte cuvinte, o soluție în $\mathcal{O}(M^2 + M \cdot S)$ este posibilă, unde $S =
 \sum_{i=1}^{N} len(i)$. Putem optimiza soluția, observând că de fiecare dată
-putem face tranzițiile în $O(1)$. Soluția finală devine $O(M + S)$ sau $O(M
+putem face tranzițiile în $\mathcal{O}(1)$. Soluția finală devine $\mathcal{O}(M + S)$ sau $\mathcal{O}(M
 \cdot \log + S)$.
 
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7, N = 3e5 + 1;
-struct Mint
-{
+struct Mint {
     int val;
-    Mint(int x = 0)
-    {
-        val = x % mod;
-    }
-    Mint(long long x)
-    {
-        val = x % mod;
-    }
-    Mint operator+(Mint oth)
-    {
-        return val + oth.val;
-    }
-    Mint operator*(Mint oth)
-    {
-        return 1LL * val * oth.val;
-    }
-    Mint operator-(Mint oth)
-    {
-        return val - oth.val + mod;
-    }
-    Mint fp(Mint a, long long n){
+    Mint(int x = 0) { val = x % mod; }
+    Mint(long long x) { val = x % mod; }
+    Mint operator+(Mint oth) { return val + oth.val; }
+    Mint operator*(Mint oth) { return 1LL * val * oth.val; }
+    Mint operator-(Mint oth) { return val - oth.val + mod; }
+    Mint fp(Mint a, long long n) {
         Mint p = 1;
-        while(n){
-            if(n & 1){
+        while (n) {
+            if (n & 1) {
                 p = p * a;
             }
             a = a * a;
@@ -581,11 +560,11 @@ struct Mint
         }
         return p;
     }
-    Mint operator/(Mint oth){
+    Mint operator/(Mint oth) {
         Mint invers = fp(oth, mod - 2);
         return 1LL * val * invers.val;
     }
-    friend ostream& operator << (ostream& os, const Mint& lol){
+    friend ostream& operator<<(ostream& os, const Mint& lol) {
         os << lol.val;
         return os;
     }
@@ -594,88 +573,90 @@ struct Mint
 int n, m, k;
 vector<Mint> dp(N);
 vector<int> x(N), depth(N), cnt1(N);
-vector<vector<int>> trie(1, vector<int>(26,-1));
+vector<vector<int>> trie(1, vector<int>(26, -1));
 vector<bool> cnt(1);
 Mint spm = 0;
-Mint fp(Mint a, int n){
- Mint p = 1;
- while(n){
-  if(n & 1) p = a * p;
-  a = a * a;
-  n /= 2;
- }
- return p;
+Mint fp(Mint a, int n) {
+    Mint p = 1;
+    while (n) {
+        if (n & 1) {
+            p = a * p;
+        }
+        a = a * a;
+        n /= 2;
+    }
+    return p;
 }
 
-void insert(string a){
+void insert(string a) {
     int root = 0;
-    for(int i = 0; i < a.size(); i++){
-        if(trie[root][a[i]-'a'] == -1){
-            trie[root][a[i]-'a'] = trie.size();
+    for (int i = 0; i < a.size(); i++) {
+        if (trie[root][a[i] - 'a'] == -1) {
+            trie[root][a[i] - 'a'] = trie.size();
             trie.push_back(vector<int>(26, -1));
             cnt.push_back(0);
         }
-        root = trie[root][a[i]-'a'];
+        root = trie[root][a[i] - 'a'];
     }
-    cnt[root]=1;
+    cnt[root] = 1;
 }
-void dfs(int node, int lenx, int len){
-    if(lenx == len){
+void dfs(int node, int lenx, int len) {
+    if (lenx == len) {
         return;
     }
-    if(cnt[node]){
+    if (cnt[node]) {
         spm = spm + fp(k, lenx - len);
         return;
     }
-    for(int i = 0; i < 26; i++){
-        if(trie[node][i] != -1){
+    for (int i = 0; i < 26; i++) {
+        if (trie[node][i] != -1) {
             dfs(trie[node][i], lenx, len + 1);
         }
     }
 }
-void dfs1(int node, int len){
+void dfs1(int node, int len) {
     depth[len]++;
-    if(cnt[node]){
+    if (cnt[node]) {
         cnt1[len]++;
         return;
     }
-    for(int i = 0; i < 26; i++){
-        if(trie[node][i] != -1){
-            dfs1(trie[node][i], len+1);
+    for (int i = 0; i < 26; i++) {
+        if (trie[node][i] != -1) {
+            dfs1(trie[node][i], len + 1);
         }
     }
 }
-int main(){
- cin.tie(0)->sync_with_stdio(0);
- cin >> n >> m >> k;
- for(int i = 1; i <= n; i++){
-  string a;
-  cin >> a;
-  insert(a);
- }
- for(int i = 1; i <= m; i++){
-  cin >> x[i];
- }
- sort(x.begin() + 1, x.begin() + 1 + m);
- dp[1] = fp(k, x[1]);
- Mint sm = 0;
- dfs(0, x[1], 0);
+int main() {
+    cin.tie(0)->sync_with_stdio(0);
+    cin >> n >> m >> k;
+    for (int i = 1; i <= n; i++) {
+        string a;
+        cin >> a;
+        insert(a);
+    }
+    for (int i = 1; i <= m; i++) {
+        cin >> x[i];
+    }
+    sort(x.begin() + 1, x.begin() + 1 + m);
+    dp[1] = fp(k, x[1]);
+    Mint sm = 0;
+    dfs(0, x[1], 0);
     dfs1(0, 0);
     dp[1] = dp[1] - depth[x[1]];
     dp[1] = dp[1] - spm;
- for(int i = 2; i <= m; i++){
-  dp[i] = dp[i - 1] * fp(k, x[i]);
-  sm = sm * fp(k, x[i]-x[i-1]);
-  sm = sm + fp(k, x[i]-x[i-1]);
-  dp[i] = dp[i] - dp[i-1]*sm;
-        spm = spm * fp(k, x[i]-x[i-1]);
-        for(int j = x[i-1]; j < x[i]; j++){
+    for (int i = 2; i <= m; i++) {
+        dp[i] = dp[i - 1] * fp(k, x[i]);
+        sm = sm * fp(k, x[i] - x[i - 1]);
+        sm = sm + fp(k, x[i] - x[i - 1]);
+        dp[i] = dp[i] - dp[i - 1] * sm;
+        spm = spm * fp(k, x[i] - x[i - 1]);
+        for (int j = x[i - 1]; j < x[i]; j++) {
             spm = spm + fp(k, x[i] - j) * cnt1[j];
         }
-        dp[i] = dp[i] - dp[i-1]*depth[x[i]];
-        dp[i] = dp[i] - dp[i-1]*spm;
- }
- cout << dp[m];
+        dp[i] = dp[i] - dp[i - 1] * depth[x[i]];
+        dp[i] = dp[i] - dp[i - 1] * spm;
+    }
+    cout << dp[m];
 }
 ```
 
@@ -724,8 +705,8 @@ for (int i = 1; i <= 26; i++) {
 ```
 
 Problema constă în faptul că secvența de cod de mai sus rulează pentru fiecare
-nod din trie, ceea ce ar rezulta într-o complexitate de $O(N \cdot K^2)$. Doar
-că, în practică soluția are complexitatea de $O(N \cdot K)$. În momentul în care
+nod din trie, ceea ce ar rezulta într-o complexitate de $\mathcal{O}(N \cdot K^2)$. Doar
+că, în practică soluția are complexitatea de $\mathcal{O}(N \cdot K)$. În momentul în care
 facem rucsac pe un arbore, este foarte important să fim atenți la memoria și la
 timpul consumate. Observăm faptul că cele două bucle merg până la
 $\min(sz[nod], k)$, lucru ce îmbunătățește timpul de execuție considerabil.

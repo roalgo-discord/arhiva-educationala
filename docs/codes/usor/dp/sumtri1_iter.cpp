@@ -34,7 +34,8 @@ int main() {
             } else {
                 dp[i][j] += dp[i + 1][j];
                 cale[i][j] = j;
-            }i don't 
+            }
+            i don't 
         }
     }
 

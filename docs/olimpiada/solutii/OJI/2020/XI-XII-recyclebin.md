@@ -1,7 +1,9 @@
 ---
 id: OJI-2020-XI-XII-recyclebin
-author:
-    - Ștefan-Cosmin Dăscălescu
+title: Soluția problemei RecycleBin (OJI 2020, clasele XI-XII)
+problem_id: 19
+authors:
+    - stefdasca
 prerequisites:
     - bitmask-dp
     - sequences
@@ -11,10 +13,6 @@ tags:
     - secvente
     - programare dinamica
 ---
-# Soluția problemei recyclebin (OJI 2020, clasele XI-XII)
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/19/).
 
 Această problemă poate fi reformulată în felul următor: Se dă un șir de lungime
 $n$ și se scot secvențe de lungimi puteri ale lui 2, cu condiția ca lungimile
@@ -44,7 +42,7 @@ Acest mod de abordare al dinamicii este inspirat din algoritmul lui Kadane pentr
 subsecvența de sumă maximă a unui șir, condițiile fiind identice cu cele
 folosite pentru acest algoritm.
 
-Astfel, complexitatea algoritmului va deveni $O(n^2)$, deoarece suma maximă
+Astfel, complexitatea algoritmului va deveni $\mathcal{O}(n^2)$, deoarece suma maximă
 a unor măști folosite este $n$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.

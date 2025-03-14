@@ -1,16 +1,11 @@
-void cb2 (int n)
-{
+void cb2(int n) {
     int l = 1, r = n, ans = -1;
-    while (l < r)
-    {
+    while (l < r) {
         int mij = l + (r - l) / 2;
-        if (conditie)
-        {
+        if (conditie) {
             ans = mij;
             l = mij + 1;
-        }
-        else
-        {
+        } else {
             r = mij - 1;
         }
     }

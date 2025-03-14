@@ -1,7 +1,6 @@
 ---
 id: pow-log
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - basic-math
     - divisibility
@@ -43,8 +42,8 @@ aritmetic, deoarece operatorul $\%$ este foarte încet. Mai jos puteți găsi un
 exemplu.
 
 ```cpp
-int sum = a+b;
-if (sum >= mod) { // mult mai rapid decat %
+int sum = a + b;
+if (sum >= mod) {  // mult mai rapid decat %
     sum -= mod;
 }
 ```
@@ -64,8 +63,8 @@ mod ne va ajuta să avem rezultate non-negative. Implementarea va fi una
 asemănătoare cu cea de la adunare.
 
 ```cpp
-int sum = a-b;
-if (sum < 0) { // mult mai rapid decat %
+int sum = a - b;
+if (sum < 0) {  // mult mai rapid decat %
     sum += mod;
 }
 ```
@@ -97,7 +96,7 @@ pentru mai multe detalii.
 ## Ridicarea la putere în timp logaritmic
 
 Pentru a calcula expresia $a^n$, o primă variantă este aceea de a lucra folosind
-brute-force, complexitatea fiind $O(n)$.
+brute-force, complexitatea fiind $\mathcal{O}(n)$.
 
 ```cpp
 long long prod = 1;
@@ -125,7 +124,7 @@ $a^b$ este egal cu una din următoarele două expresii:
 Pentru $n = 0$, răspunsul este evident 1.
 
 Astfel, prin împărțirile treptate la 2 ale exponentului, reducem complexitatea
-la $O(\log n)$, unde $n$ este exponentul.
+la $\mathcal{O}(\log n)$, unde $n$ este exponentul.
 
 Acest algoritm se poate implementa atât recursiv, cât și iterativ, acestea fiind
 funcțiile folosite pentru problema [Exponentiation de pe

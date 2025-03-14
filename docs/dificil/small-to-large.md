@@ -1,7 +1,6 @@
 ---
 id: small-to-large
-author:
-    - Radu Mocănașu
+authors: [radu]
 prerequisites:
     - tree-1
     - intro-dp
@@ -83,8 +82,8 @@ int main() {
 ```
 
 Totuși, complexitatea reuniunii multimii unui nod cu cele ale fiilor sai poate
-lua pana la $O(n\log(n))$, iar noi avem $n$ noduri, deci ar ieși timp
-$O(n^2\log(n))$, ceea ce este foarte lent și nu se va încadra în restricțiile
+lua pana la $\mathcal{O}(n\log(n))$, iar noi avem $n$ noduri, deci ar ieși timp
+$\mathcal{O}(n^2\log(n))$, ceea ce este foarte lent și nu se va încadra în restricțiile
 acestei probleme.
 
 Însă, aici intervine următoarea informație:
@@ -93,7 +92,7 @@ acestei probleme.
 
     Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în
     timp constant. Așadar, dacă avem 2 seturi, $s_1$ și $s_2$,
-    `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $O(1)$.
+    `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $\mathcal{O}(1)$.
 
 Așadar, în cazul în care mărimea setului unui fiu este mai mare decât cea a
 setului nodului, le putem interschimba între ele. De aici vine și numele
@@ -108,7 +107,7 @@ avem un element $x$ într-un set de mărime $s$, în cel mai rău caz, acesta va
 reunit cu un set tot de mărime $s$. Astfel, următorul set în care se va afla
 elementul va avea cel puțin $2s$ elemente, sau altfel spus, orice element va fi
 inserat în maxim $\log(n)$ seturi pe parcursul algoritmului. Așadar, vom avea
-complexitate $O(n\log^2(n))$, deoarece și inserările iau $O(\log(n))$.
+complexitate $\mathcal{O}(n\log^2(n))$, deoarece și inserările iau $\mathcal{O}(\log(n))$.
 
 #### Demonstrație lungă
 
@@ -119,7 +118,7 @@ aceasta va fi reunită, în cel mai rău caz, cu o altă mulțime de dimensiune 
 deci următoarea mulțime în care se vor afla elementele din $M$ va avea
 dimensiunea de cel puțin $2 * s$. Așadar, orice element va fi inserat în maxim
 $\log(n)$ seturi pe parcursul algoritmului, iar complexitatea finală va fi
-$O(n\log^2(n))$, deoarece inserările iau în total $O(n\log(n))$.
+$\mathcal{O}(n\log^2(n))$, deoarece inserările iau în total $\mathcal{O}(n\log(n))$.
 
 Pentru structurile de tip set (care nu conțin mai multe elemente egale),
 intervine însă o problemă. Anume, dacă reunim o astfel de mulțime de dimensiune
@@ -136,7 +135,7 @@ care se repetau). Această metodă, nu ține însă cont de mărimea reală a
 mulțimilor, deci putem avea cazuri unde mulțimea cu dimensiunea mai mare este
 reunită la cea de dimensiune mai mică. Așadar, pentru două structuri de tip set,
 putem să le interschimbăm după dimensiunea lor reală, fără ca acest lucru să
-afecteze complexitatea finală, care rămâne tot maxim $O(n\log^2(n))$.
+afecteze complexitatea finală, care rămâne tot maxim $\mathcal{O}(n\log^2(n))$.
 
 Cu această schimbare, codul va arăta așa:
 
@@ -199,9 +198,9 @@ Această structură de date oferă aceleași funcții ca structura `set` din STL
 însă mai oferă încă 2 funcții care ne pot fi de ajutor în anumite probleme:
 
 1. `find_by_order(x)`, care returnează un iterator către a x-a cheie ca ordine,
-   în timp $O(\log(n))$.
+   în timp $\mathcal{O}(\log(n))$.
 2. `order_of_key(x)`, care returnează numărul de elemente **strict** mai mici ca
-   x, tot în timp $O(\log(n))$.
+   x, tot în timp $\mathcal{O}(\log(n))$.
 
 Pentru a putea folosi această structură, va trebui să adăugăm la programul
 nostru următoarele linii:
@@ -225,7 +224,7 @@ trebuie luate în considerare când este folosită:
 
 1. Chiar dacă operațiile au complexitate logaritmică, constanta este foarte
    mare.
-2. Dacă vrem să interschimbăm 2 astfel de structuri în timp $O(1)$, va trebui să
+2. Dacă vrem să interschimbăm 2 astfel de structuri în timp $\mathcal{O}(1)$, va trebui să
    folosim metoda .swap(), cum apare în codul de mai jos. Dacă am folosi funcția
    `std::swap()`, aceasta ar avea complexitate liniară.
 

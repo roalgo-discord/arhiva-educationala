@@ -1,7 +1,6 @@
 ---
 id: loops
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - basic-math
     - conditions-if

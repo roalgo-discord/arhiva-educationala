@@ -1,7 +1,6 @@
 ---
 id: two-pointers
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - sequences
     - binary-search
@@ -71,7 +70,7 @@ int n, v[200002], x;
 int st, dr, sum, ans;
 
 int main() {
-    ios_base::sync_with_stdio(false);  
+    ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
     cin >> n >> x;
@@ -154,7 +153,7 @@ int main() {
 
     cout << "IMPOSSIBLE";
     return 0;
-} 
+}
 ```
 
 ## Problema 3 - [Nane](https://www.infoarena.ro/problema/nane)
@@ -207,7 +206,9 @@ int main() {
     ofstream cout("nane.out");
 
     cin >> n >> k;
-    for (int i = 1; i <= n; ++i) cin >> v[i];
+    for (int i = 1; i <= n; ++i) {
+        cin >> v[i];
+    }
     int st = 1;
     int dr = 1;
     while (st <= n) {
@@ -312,7 +313,7 @@ int main() {
             }
         }
     }
-   
+
     cout << (ans == n + 1 ? -1 : ans);
     return 0;
 }

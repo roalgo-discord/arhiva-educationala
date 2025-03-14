@@ -1,8 +1,6 @@
 ---
 id: generarea-sirurilor
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - loops
 tags:
@@ -240,7 +238,7 @@ de simplu, care se bazează pe un for sau un while.
 
 !!! note "Algoritm mai rapid"
 
-    Există un algoritm mai rapid, care rulează în $O(\log n)$ care se bazează pe
+    Există un algoritm mai rapid, care rulează în $\mathcal{O}(\log n)$ care se bazează pe
     cunoștințe mai avansate de algebră liniară și lucru cu matrici. Pentru mai
     multe detalii, puteți citi [aici](../dificil/pow-mat.md).
 

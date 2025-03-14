@@ -1,7 +1,6 @@
 ---
 id: dsu
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - graphs
 tags:
@@ -49,9 +48,9 @@ fiecare nod fiind reprezentantul lui însuși.
 ```cpp
 vector<int> rad(n + 1), card(n + 1);
 
-for(int i = 1; i <= n; ++i) {
- rad[i] = i;
- card[i] = 1;
+for (int i = 1; i <= n; ++i) {
+    rad[i] = i;
+    card[i] = 1;
 }
 ```
 
@@ -72,11 +71,11 @@ numai.
 
 ```cpp
 void Union(int a, int b) {
-    if (card[a] < card[b]) { // (1)
+    if (card[a] < card[b]) {  // (1)
         swap(a, b);
     }
-    rad[b] = a;              // (2)
-    card[a] += card[b];      // (3)
+    rad[b] = a;          // (2)
+    card[a] += card[b];  // (3)
 }
 ```
 
@@ -88,7 +87,7 @@ void Union(int a, int b) {
 
 La această operație, vrem să găsim pentru un nod, poziția nodului reprezentativ
 în structura noastră de date. În mod normal, această operație poate face cel
-mult $O(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși,
+mult $\mathcal{O}(n)$ pași, în cazul în care arborele rezultat ar fi un lanț. Totuși,
 putem să ne folosim de parcurgerile pe care le facem pentru a reține rezultatele
 pentru toate nodurile de pe parcursul acelui drum, astfel încât la o parcurgere
 ulterioară, numărul de pași să se reducă spre un număr constant, structura
@@ -99,7 +98,7 @@ int Find(int x) {
     if (rad[x] == x) {  // (1)
         return x;
     }
-    rad[x] = Find(rad[x]);  // (2) 
+    rad[x] = Find(rad[x]);  // (2)
     return rad[x];
 }
 ```
@@ -110,13 +109,13 @@ int Find(int x) {
 
 ### Prime concluzii
 
-Operația union are complexitatea $O(1)$, iar operația de find are complexitatea
-$O(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor
+Operația union are complexitatea $\mathcal{O}(1)$, iar operația de find are complexitatea
+$\mathcal{O}(n)$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor
 și unirea după dimensiunea mulțimilor), numărul total de operații făcute este
-$O(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare
+$\mathcal{O}(n \log^* n)$, unde $\log^* x$ reprezintă inversul funcției Ackermann, valoare
 care se poate aproxima ca fiind o constantă.  
 De asemenea, nefolosirea optimizării de compresie a drumurilor ar duce la
-complexitatea $O(n \log n)$, rezultat foarte important în contextul altor
+complexitatea $\mathcal{O}(n \log n)$, rezultat foarte important în contextul altor
 optimizări, cum ar fi [tehnica
 small-to-large](https://usaco.guide/plat/merging?lang=cpp) sau în general în
 demonstrarea diverselor rezultate ce țin de sume armonice.
@@ -311,13 +310,13 @@ Soluția de 100 de puncte este următoarea:
 
 using namespace std;
 
-template<typename T, size_t N>
+template <typename T, size_t N>
 using Array = T[N];
 
 int n, maxim;
 
-Array<int, 251*251> rad, card, rasp;
-Array<pair<int, int>, 251*251> elim;
+Array<int, 251 * 251> rad, card, rasp;
+Array<pair<int, int>, 251 * 251> elim;
 Array<Array<int, 251>, 251> nr;
 Array<Array<bool, 251>, 251> viz;
 
@@ -348,13 +347,14 @@ int main() {
 
     fin >> n;
 
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= n; j++) {
             int idx = (i - 1) * n + j;
             nr[i][j] = idx;
             card[idx] = 1;
             rad[idx] = idx;
         }
+    }
 
     for (int i = 1; i <= n * n; ++i) {
         fin >> elim[i].first >> elim[i].second;
@@ -371,8 +371,8 @@ int main() {
             int newX = x + dx[j];
             int newY = y + dy[j];
 
-            if (newX >= 1 && newX <= n && newY >= 1 && newY <= n &&
-                viz[newX][newY]) {
+            if (newX >= 1 && newX <= n && newY >= 1 && newY <= n
+                && viz[newX][newY]) {
                 int b1 = nr[x][y];
                 int b2 = nr[newX][newY];
                 if (nr[newX][newY] != 0 && Find(b1) != Find(b2)) {
@@ -395,7 +395,6 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ## Problema [Secvmax](https://www.infoarena.ro/problema/secvmax)
@@ -414,8 +413,8 @@ iar la fiecare pas răspunsul e cardinalul maxim al unei mulțimi, care e
 crescător pe măsură ce creștem valorile adăugate.  
 
 ```cpp
-#include <fstream>
 #include <algorithm>
+#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -441,7 +440,8 @@ int maxLength = 0;
 
 int Find(int node) {
     int root;
-    for (root = parent[node]; root != parent[root]; root = parent[root]);
+    for (root = parent[node]; root != parent[root]; root = parent[root])
+        ;
     int x = node;
     while (x != root) {
         swap(root, parent[x]);
@@ -508,7 +508,6 @@ int main() {
             if (idx < n - 1 && sequence[idx + 1] < sequence[idx]) {
                 Union(Find(idx + 1), Find(idx));
             }
-
         }
         result[queries[i].index] = maxLength;
     }
@@ -556,7 +555,7 @@ Iar atunci când avem update cu $x, y$, mergem la fiecare secvență până la $
 secvența în care este $x$.
 
 Iar la query, verificăm dacă intervalul în care este $x$ este egal cu cel în
-care este $y$. Complexitate: $O(N + Q \ log \ N)$ timp, $O(n)$ memorie.
+care este $y$. Complexitate: $\mathcal{O}(N + Q \ log \ N)$ timp, $\mathcal{O}(n)$ memorie.
 
 ```cpp
 #include <iostream>

@@ -1,7 +1,6 @@
 ---
 id: data-normalization
-author:
-    - Ștefan-Cosmin Dăscălescu
+authors: [stefdasca]
 prerequisites:
     - arrays
     - sorting
@@ -61,23 +60,23 @@ poziția pe care s-ar afla în șirul normalizat.
     opțiune viabilă.
 
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
-    
-    vector<int> v(n+1), sorted(n+1);
+
+    vector<int> v(n + 1), sorted(n + 1);
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
         sorted[i] = v[i];
     }
 
     sort(sorted.begin() + 1, sorted.begin() + n + 1);
-    
+
     int maxi = 0;
     for (int i = 1; i <= n; i++) {
         int L = 1;
@@ -88,8 +87,7 @@ int main() {
             if (sorted[mid] < v[i]) {
                 ans = mid;
                 L = mid + 1;
-            }
-            else {
+            } else {
                 R = mid - 1;
             }
         }
@@ -109,12 +107,12 @@ Ne putem gândi pur și simplu la o traversare a șirului în timp liniar,
 presupunând că păstrăm valorile originale folosind perechi.
 
 ```cpp
-int cnt = 0; // numarul de valori distincte
+int cnt = 0;  // numarul de valori distincte
 for (int i = 1; i <= n; i++) {
-  if (sorted[i].first > sorted[i - 1].first) {
-    cnt++;
-  }
-  v[sorted[i].second] = cnt;
+    if (sorted[i].first > sorted[i - 1].first) {
+        cnt++;
+    }
+    v[sorted[i].second] = cnt;
 }
 ```
 
@@ -126,7 +124,7 @@ multă memorie pentru valorile din intervale.
 
 O primă soluție brută constă în verificarea fiecărui punct posibil de la 1 la
 $10^9$, iar pentru fiecare punct, verificăm dacă este inclus în fiecare dintre
-cele $n$ intervale date. Complexitatea ar fi $O(n \cdot maxval)$, ceea ce este
+cele $n$ intervale date. Complexitatea ar fi $\mathcal{O}(n \cdot maxval)$, ceea ce este
 mult prea încet pentru o soluție optimă.
 
 !!! note "Observație"
@@ -135,16 +133,16 @@ mult prea încet pentru o soluție optimă.
     punct sunt acelea unde începe și se termină un interval, deci numărul de
     puncte relevante scade la $2 \cdot n$.
 
-Soluția menționată mai sus ar fi optimizată la $O(n^2)$, ceea ce nu este
+Soluția menționată mai sus ar fi optimizată la $\mathcal{O}(n^2)$, ceea ce nu este
 îndeajuns pentru rezolvarea problemei date.
 
 O altă abordare constă în folosirea unei abordări pe stilul [Șmenului lui
 Mars](../usor/partial-sums.md#smenul-lui-mars), iar pentru fiecare interval,
-putem adăuga 1 în zona $[st, dr]$, iar complexitatea ar deveni $O(maxval)$.
+putem adăuga 1 în zona $[st, dr]$, iar complexitatea ar deveni $\mathcal{O}(maxval)$.
 
 Folosind observația de mai sus, putem reduce numărul de puncte la $2 \cdot n$,
 iar după ce sortăm punctele relevante, soluția explicată mai sus poate fi
-optimizată la $O(n \log n)$, unele din abordările care merg pot fi fie folosirea
+optimizată la $\mathcal{O}(n \log n)$, unele din abordările care merg pot fi fie folosirea
 șmenului lui Mars pe vectorul cu punctele normalizate, fie sortarea punctelor
 relevante și considerarea lor drept evenimente, mai apoi parcurgându-le în
 ordine crescătoare.
@@ -154,15 +152,15 @@ Deoarece toate punctele sunt distincte, nu este necesar să considerăm într-o
 manieră particulară intrările și ieșirile.
 
 ```cpp
-#include <iostream>
 #include <algorithm>
- 
+#include <iostream>
+
 using namespace std;
- 
+
 int n;
- 
-pair<int, int> p[400002]; 
- 
+
+pair<int, int> p[400002];
+
 int main() {
     cin >> n;
     for (int i = 1; i <= n; ++i) {
@@ -170,20 +168,20 @@ int main() {
         cin >> a >> b;
         // 1 - intrare in restaurant, -1 - iesire din restaurant
         // transformam fiecare moment intr-o pereche
-        p[i*2-1] = {a, 1};
-        p[i*2] = {b, -1};
+        p[i * 2 - 1] = {a, 1};
+        p[i * 2] = {b, -1};
     }
-    
-    sort(p + 1, p + n * 2 + 1); 
-     
+
+    sort(p + 1, p + n * 2 + 1);
+
     int counter = 0, max_counter = 0;
-    for (int i = 1; i <= n*2; ++i) {
-        counter += p[i].second; 
+    for (int i = 1; i <= n * 2; ++i) {
+        counter += p[i].second;
         if (counter > max_counter) {
             max_counter = counter;
         }
     }
-    
+
     cout << max_counter << '\n';
     return 0;
 }

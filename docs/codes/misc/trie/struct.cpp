@@ -5,7 +5,9 @@ struct Trie {
     Trie() : cnt{0}, fii{nullptr} {}
 
     ~Trie() {
-        for (auto &fiu: fii) delete fiu;
+        for (auto &fiu : fii) {
+            delete fiu;
+        }
     }
 };
 

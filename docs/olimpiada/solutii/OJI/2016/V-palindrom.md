@@ -1,37 +1,50 @@
 ---
+id: OJI-2016-V-palindrom
+title: Soluția problemei palindrom (OJI 2016, clasa a V-a)
+problem_id: 867
+authors:
+    - traian
+prerequisites:
+   - digits-manipulation
 tags:
     - OJI
     - clasa V
     - cifre
 ---
 
-# Soluția problemei palindrom (OJI 2016, clasa a V-a)
-
-!!! example "Cunoștințe necesare"
-    - [Prelucrarea cifrelor](../../../../usor/digits-manipulation.md)
-
-**Autor soluție**: Traian Mihai Danciu
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/867/). 
 
 ## Cerința 1
 
-Calculăm oglinditul fiecărui număr și verificăm numărul și oglinditul lui sunt egale. De notat este faptul că oglinditul poate fi peste limita tipului `int`, așa că va trebui să folosim `long long`.
+Calculăm oglinditul fiecărui număr și verificăm numărul și oglinditul lui sunt
+egale. De notat este faptul că oglinditul poate fi peste limita tipului `int`,
+așa că va trebui să folosim `long long`.
 
 ## Cerința 2
 
-Calculăm oglinditul fiecărui număr și vedem câte cifre sunt diferite între număr și oglindit. Dacă numărul este aproape palindrom, ar trebui să fie exact două diferențe.
+Calculăm oglinditul fiecărui număr și vedem câte cifre sunt diferite între număr
+și oglindit. Dacă numărul este aproape palindrom, ar trebui să fie exact două
+diferențe.
 
-Cifra din mijloc nu ar putea să fie diferită, așa că vor exista exact două poziții cu cifre diferite. De exemplu, pentru numărul $12 \ 341$, oglinditul este $14 \ 321$, iar diferențele sunt la a doua și la a patra cifră.
+Cifra din mijloc nu ar putea să fie diferită, așa că vor exista exact două
+poziții cu cifre diferite. De exemplu, pentru numărul $12 \ 341$, oglinditul
+este $14 \ 321$, iar diferențele sunt la a doua și la a patra cifră.
 
 ## Cerința 3
 
-Fiecare număr palindrom poate fi descris ca o concatenare a unui număr, a unei cifre și a răsturnatului acelui număr (cu eventuale 0-uri adăugate la început). De exemplu, numărul $12 \ 321$ este concatenarea lui $12$ cu $3$ și cu $21$, răsturnatul lui $12$, iar numărul $1 \ 221$ este concatenarea lui $12$ cu $21$ (din nou, răsturnatul lui $12$).
+Fiecare număr palindrom poate fi descris ca o concatenare a unui număr, a unei
+cifre și a răsturnatului acelui număr (cu eventuale 0-uri adăugate la început).
+De exemplu, numărul $12 \ 321$ este concatenarea lui $12$ cu $3$ și cu $21$,
+răsturnatul lui $12$, iar numărul $1 \ 221$ este concatenarea lui $12$ cu $21$
+(din nou, răsturnatul lui $12$).
 
-Pentru fiecare număr, vom nota cu $d$ numărul de cifre ale lui. Fie $d = 2 \cdot k + r$, cu $r < 2$. Să calculăm numărul format din primele $k+r$ cifre și să îl notăm cu $j$. Atunci numărul format din primele $k+r$ cifre al palindromului asociat va fi egal cu $j$ sau cu $j+1$. Astfel, putem să testăm doar două numere. Pentru mai multe detalii despre vedeți implementarea.
+Pentru fiecare număr, vom nota cu $d$ numărul de cifre ale lui. Fie $d = 2 \cdot
+k + r$, cu $r < 2$. Să calculăm numărul format din primele $k+r$ cifre și să îl
+notăm cu $j$. Atunci numărul format din primele $k+r$ cifre al palindromului
+asociat va fi egal cu $j$ sau cu $j+1$. Astfel, putem să testăm doar două
+numere. Pentru mai multe detalii despre vedeți implementarea.
 
-Un caz particular pe care această soluție greșește este un număr de forma $X = 999 \dots 9$. Putem verifica în special acest caz, răspunsul fiind $X + 2$.
+Un caz particular pe care această soluție greșește este un număr de forma $X =
+999 \dots 9$. Putem verifica în special acest caz, răspunsul fiind $X + 2$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

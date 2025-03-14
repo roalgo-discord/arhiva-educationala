@@ -1,3 +1,1 @@
-int aduna(int a, int b) {
-    return a + b;
-}
+int aduna(int a, int b) { return a + b; }

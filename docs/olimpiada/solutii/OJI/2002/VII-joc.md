@@ -1,18 +1,15 @@
 ---
+id: OJI-2002-VII-joc
+title: Soluția problemei joc (OJI 2002, clasa a VII-a)
+problem_id: 706
+authors: [stefdasca]
+prerequisites:
+   - simulating-solution
 tags:
     - OJI
     - clasa VII
 ---
 
-# Soluția problemei Joc (OJI 2002, clasa a VII-a)
-
-!!! example "Cunoștințe necesare"
-    - [Simularea soluției](../../../../usor/simulating-solution.md)
-
-**Autor**: Ștefan-Cosmin Dăscălescu
-
-!!! note "Link problemă"
-    Această problemă poate fi accesată [aici](https://kilonova.ro/problems/706/).
 
 Tot ce trebuie să facem în această problemă este să simulăm mutările făcute de
 către cei doi jucători. Vom verifica pe rând momentele când suma depășește suma
@@ -37,15 +34,17 @@ int main() {
         long long x;
         cin >> x;
         if (x > sm + 1) {
-            if (ans == -1)
+            if (ans == -1) {
                 ans = sm;
-        } 
-        else
+            }
+        } else {
             sm += x;
+        }
     }
 
-    if (ans == -1)
+    if (ans == -1) {
         ans = sm;
+    }
 
     cout << sm;
     return 0;

@@ -1,8 +1,6 @@
 ---
 id: divisibility
-author:
-    - Ștefan-Cosmin Dăscălescu
-    - Ștefan-Iulian Alecu
+authors: [stefdasca, stalecu]
 prerequisites:
     - basic-math
     - loops
@@ -85,7 +83,7 @@ scădere cu o singură împărțire, algoritmul devenind mult mai eficient.
 
 Mai jos puteți găsi implementarea în C++ a cmmdc-ului și a cmmmc-ului, program
 ce află cmmdc și cmmmc pentru $t$ perechi de numere. Complexitatea algoritmului
-este $O(\log n)$ pentru fiecare test.
+este $\mathcal{O}(\log n)$ pentru fiecare test.
 
 Pentru calcularea CMMMC-ului, trebuie avut grijă să împărțim mai întâi la
 $cmmdc(a, b)$ și apoi să înmulțim cu $b$, pentru a evita un potențial overflow.
@@ -141,7 +139,7 @@ algoritm, va trebui să folosim o altă observație importantă.
     aceste probleme.
 
 Astfel, vom putea afla orice informație legată de divizorii unui număr în
-$O(\sqrt{n})$, fie că e vorba de numărul de divizori, divizorii primi,
+$\mathcal{O}(\sqrt{n})$, fie că e vorba de numărul de divizori, divizorii primi,
 descompunerea în factori primi și așa mai departe.
 
 Totuși, putem verifica cu ușurință pentru un număr $n$ dacă $d$ este divizor al
