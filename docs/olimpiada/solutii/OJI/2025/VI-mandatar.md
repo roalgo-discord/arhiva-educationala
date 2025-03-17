@@ -1,14 +1,15 @@
 ---
-id: OJI-2024-VI-perechi
-title: Soluția problemei Perechi (OJI 2024, clasa a VI-a)
-problem_id: 2515
-authors: [boca]
-prerequisites:
-    - digits-manipulation
-    - frequency-arrays
+id: OJI-2025-VI-mandatar
+title: Soluția problemei mandatar (OJI 2025, clasa a VI-a)
+# problem_id: 2515
+# authors: [boca]
+# prerequisites:
+#     - digits-manipulation
+#     - frequency-arrays
 tags:
     - OJI
     - clasa VI
+draft: true
 ---
 
 Cerința 1: Pentru 27 de puncte, se citesc numerele din fișierul de intrare

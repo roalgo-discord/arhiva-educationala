@@ -1,14 +1,15 @@
 ---
-id: OJI-2024-VII-ron
-title: Soluția problemei Ron (OJI 2024, clasa a VII-a)
-problem_id: 2513
-authors: [balasa]
-prerequisites:
-    - sieve
-    - binary-search
+id: OJI-2025-VII-teren
+title: Soluția problemei teren (OJI 2025, clasa a VII-a)
+# problem_id: 2513
+# authors: [balasa]
+# prerequisites:
+#     - sieve
+#     - binary-search
 tags:
     - OJI
     - clasa VII
+draft: true
 ---
 
 Observație inițială: O creangă de lungime $lg$ așezată pe riglă cu capătul din

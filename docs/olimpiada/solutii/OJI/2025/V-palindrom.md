@@ -1,13 +1,15 @@
 ---
-id: OJI-2024-V-microbist
-title: Soluția problemei Microbist (OJI 2024, clasa a V-a)
-problem_id: 2517
-authors: [rotar]
-prerequisites:
-    - maxime-minime
+id: OJI-2025-V-palindrom
+title: Soluția problemei palindrom (OJI 2025, clasa a V-a)
+# problem_id: 2501
+# authors: []
+# prerequisites:
+#     - sieve
+#     - binary-search
 tags:
     - OJI
     - clasa V
+draft: true
 ---
 
 Cerința 1: Pentru a afla scorul final, vom parcurge șirul de goluri și vom

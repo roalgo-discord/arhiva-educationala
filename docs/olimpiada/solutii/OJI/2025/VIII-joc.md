@@ -1,14 +1,15 @@
 ---
-id: OJI-2024-VIII-mun
-title: Soluția problemei Mun (OJI 2024, clasa a VIII-a)
-problem_id: 2510
-authors: [miron]
-prerequisites:
-    - strings
-    - stl
+id: OJI-2025-VIII-joc
+title: Soluția problemei joc (OJI 2025, clasa a VIII-a)
+problem_id: #2510
+authors: []
+# prerequisites:
+#     - strings
+#     - stl
 tags:
     - OJI
     - clasa VIII
+draft: true
 ---
 
 Cerința 1: Soluția în complexitate $\mathcal{O}(N \log N)$ obține punctaj maxim,

@@ -1,14 +1,15 @@
 ---
-id: OJI-2024-VIII-robotron
-title: Soluția problemei Robotron (OJI 2024, clasa a VIII-a)
-problem_id: 2511
-authors: [coman]
-prerequisites:
-    - simulating-solution
-    - stl
+id: OJI-2025-VIII-reducere
+title: Soluția problemei reducere (OJI 2025, clasa a VIII-a)
+# problem_id: 2511
+# authors: [coman]
+# prerequisites:
+#     - simulating-solution
+#     - stl
 tags:
     - OJI
     - clasa VIII
+draft: true
 ---
 
 Cerința 1: Pentru determinarea valorilor $M$ și $H$, vom folosi un vector de

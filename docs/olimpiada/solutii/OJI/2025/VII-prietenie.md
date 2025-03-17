@@ -1,15 +1,16 @@
 ---
-id: OJI-2024-VII-parking
-title: Soluția problemei Parking (OJI 2024, clasa a VII-a)
-problem_id: 2512
-authors: [ungureanu]
-prerequisites:
-    - simulating-solution
-    - queue
-    - stl
+id: OJI-2025-VII-prietenie
+title: Soluția problemei prietenie (OJI 2025, clasa a VII-a)
+# problem_id: 2512
+# authors: [ungureanu]
+# prerequisites:
+#     - simulating-solution
+#     - queue
+#     - stl
 tags:
     - OJI
     - clasa VII
+draft: true
 ---
 
 Vom reprezenta o mașină ca o structură (struct) cu 4 câmpuri: linia și coloana

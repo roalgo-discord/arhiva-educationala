@@ -1,13 +1,14 @@
 ---
-id: OJI-2024-V-bomboane
-title: Soluția problemei Bomboane (OJI 2024, clasa a V-a)
-problem_id: 2516
-authors: [ariciu]
-prerequisites:
-    - divisibility
+id: OJI-2025-V-semafoare
+title: Soluția problemei semafoare (OJI 2025, clasa a V-a)
+# problem_id: 2516
+# authors: [ariciu]
+# prerequisites:
+#     - divisibility
 tags:
     - OJI
     - clasa V
+draft: true
 ---
 
 Mai jos, notațiile $N$, $X$, $Y$ au semnificația din enunț.

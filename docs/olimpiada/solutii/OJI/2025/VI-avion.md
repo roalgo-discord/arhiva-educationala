@@ -1,14 +1,15 @@
 ---
-id: OJI-2024-VI-avid
-title: Soluția problemei Avid (OJI 2024, clasa a VI-a)
-problem_id: 2514
-authors: [buzatu]
-prerequisites:
-    - divizibility
-    - sieve
+id: OJI-2025-VI-avion
+title: Soluția problemei avion (OJI 2025, clasa a VI-a)
+# problem_id: 2514
+# authors: [buzatu]
+# prerequisites:
+#     - divizibility
+#     - sieve
 tags:
     - OJI
     - clasa VI
+draft: true
 ---
 
 
