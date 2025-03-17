@@ -215,7 +215,7 @@ simularea răspunsului.
     }
     ```
 
-    == = "Formula simplificată"
+=== "Formula simplificată"
 
     ```cpp
     #include <iostream>
@@ -257,6 +257,7 @@ simularea răspunsului.
 
 Pentru a afla oglinditul unui număr, vom folosi algoritmul prezentat anterior,
 împreună cu ținerea unei variabile care să ne țină numărul inversat.
+
 ```cpp
 #include <iostream>
 using namespace std;

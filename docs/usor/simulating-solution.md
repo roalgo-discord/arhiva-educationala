@@ -97,7 +97,7 @@ ele:
     }
     ```
 
-    == = "Cu funcții"
+=== "Cu funcții"
 
     ```cpp
     #include <iostream>
@@ -180,6 +180,7 @@ Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclu
 Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
 
 Sursa de 100 de puncte:
+
 ```cpp
 #include <fstream>
 using namespace std;
