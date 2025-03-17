@@ -855,17 +855,17 @@ nav:
                                         - Acoperire: olimpiada/solutii/OJI/2024/XI-XII-acoperire.md
                             - OJI 2025:
                                   - Clasa a V-a:
-                                        - ?: olimpiada/solutii/OJI/2025/V-1.md
-                                        - ?: olimpiada/solutii/OJI/2025/V-2.md
+                                        - palindrom: olimpiada/solutii/OJI/2025/V-palindrom.md
+                                        - semafoare: olimpiada/solutii/OJI/2025/V-semafoare.md
                                   - Clasa a VI-a:
-                                        - ?: olimpiada/solutii/OJI/2025/VI-1.md
-                                        - ?: olimpiada/solutii/OJI/2025/VI-2.md
+                                        - avion: olimpiada/solutii/OJI/2025/VI-avion.md
+                                        - mandatar: olimpiada/solutii/OJI/2025/VI-mandatar.md
                                   - Clasa a VII-a:
-                                        - ?: olimpiada/solutii/OJI/2025/VII-1.md
-                                        - ?: olimpiada/solutii/OJI/2025/VII-2.md
+                                        - prietenie: olimpiada/solutii/OJI/2025/VII-prietenie.md
+                                        - teren: olimpiada/solutii/OJI/2025/VII-teren.md
                                   - Clasa a VIII-a:
-                                        - ?: olimpiada/solutii/OJI/2025/VIII-1.md
-                                        - ?: olimpiada/solutii/OJI/2025/VIII-2.md
+                                        - joc: olimpiada/solutii/OJI/2025/VIII-joc.md
+                                        - reducere: olimpiada/solutii/OJI/2025/VIII-reducere.md
                                   - Clasa a IX-a:
                                         - Natatie: olimpiada/solutii/OJI/2025/IX-natatie.md
                                         - Summat: olimpiada/solutii/OJI/2025/IX-summat.md
