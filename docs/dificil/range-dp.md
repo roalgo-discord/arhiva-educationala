@@ -62,78 +62,78 @@ orizontale, fie verticale, atâta timp cât păstrăm laturile drept numere înt
 Cu alte cuvinte, vom putea fixa punctul în care vom face tăietura și de acolo,
 vom folosi rezultatele calculate anterior, sau în cazul soluției recursive, le
 vom calcula la rândul lor până când toate valorile au fost calculate.
-Complexitatea acestei soluții va fi $\mathcal{O}(n^3)$, unde $n$ este maximul dintre $a$
-și $b$.
+Complexitatea acestei soluții va fi $\mathcal{O}(n^3)$, unde $n$ este maximul
+dintre $a$ și $b$.
 
 Mai jos puteți găsi implementările iterative și recursive ale acestei probleme.
 
 === "Recursiv"
 
     ```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-
-vector<vector<int> > dp;
-
-int solve(int n, int m) {
-    if (n == m) {
-        return 0;
-    }
-    if (dp[n][m] != (1 << 20)) {
-        return dp[n][m];
-    }
-    for (int side = 1; side < n; side++) {
-        dp[n][m] = min(dp[n][m], solve(side, m) + solve(n - side, m) + 1);
-    }
-    for (int side = 1; side < m; side++) {
-        dp[n][m] = min(dp[n][m], solve(n, side) + solve(n, m - side) + 1);
-    }
-    return dp[n][m];
-}
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-
-    dp.resize(n + 1, vector<int>(m + 1, (1 << 20)));
-
-    cout << solve(n, m) << '\n';
-    return 0;
-}
-```
-
-    == = "Iterativ"
-
-    ```cpp
-#include <iostream>
-#include <vector>
+    #include <iostream>
+    #include <vector>
     using namespace std;
 
-int main() {
-    int n, m;
-    cin >> n >> m;
+    vector<vector<int> > dp;
 
-    vector<vector<int> > dp(n + 1, vector<int>(m + 1, (1 << 20)));
-
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            if (i == j) {
-                dp[i][j] = 0;
-                continue;
-            }
-            for (int side = 1; side < i; side++) {
-                dp[i][j] = min(dp[i][j], dp[side][j] + dp[i - side][j] + 1);
-            }
-            for (int side = 1; side < j; side++) {
-                dp[i][j] = min(dp[i][j], dp[i][side] + dp[i][j - side] + 1);
-            }
+    int solve(int n, int m) {
+        if (n == m) {
+            return 0;
         }
+        if (dp[n][m] != (1 << 20)) {
+            return dp[n][m];
+        }
+        for (int side = 1; side < n; side++) {
+            dp[n][m] = min(dp[n][m], solve(side, m) + solve(n - side, m) + 1);
+        }
+        for (int side = 1; side < m; side++) {
+            dp[n][m] = min(dp[n][m], solve(n, side) + solve(n, m - side) + 1);
+        }
+        return dp[n][m];
     }
 
-    cout << dp[n][m] << '\n';
-    return 0;
-}
+    int main() {
+        int n, m;
+        cin >> n >> m;
+
+        dp.resize(n + 1, vector<int>(m + 1, (1 << 20)));
+
+        cout << solve(n, m) << '\n';
+        return 0;
+    }
+    ```
+
+=== "Iterativ"
+
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    int main() {
+        int n, m;
+        cin >> n >> m;
+
+        vector<vector<int> > dp(n + 1, vector<int>(m + 1, (1 << 20)));
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                if (i == j) {
+                    dp[i][j] = 0;
+                    continue;
+                }
+                for (int side = 1; side < i; side++) {
+                    dp[i][j] = min(dp[i][j], dp[side][j] + dp[i - side][j] + 1);
+                }
+                for (int side = 1; side < j; side++) {
+                    dp[i][j] = min(dp[i][j], dp[i][side] + dp[i][j - side] + 1);
+                }
+            }
+        }
+
+        cout << dp[n][m] << '\n';
+        return 0;
+    }
     ```
 
 ## Un exemplu mai dificil - [Greedy Pie Eaters](https://usaco.org/index.php?page=viewproblem2&cpid=972)
@@ -152,6 +152,7 @@ folosind o altă dinamică pe două dimensiuni, unde $dp[i][j]$ reprezintă
 răspunsul optim pentru intervalul $[i, j]$. Această dinamică va putea fi
 implementată recursiv, fixând pozițiile în care asignăm o vacă sau fixând
 intervalele pe care le vom împărți, acestea fiind calculate independent.
+
 ```cpp
 #include <fstream>
 #include <vector>
@@ -222,7 +223,7 @@ fiind preluat din secvențele de lungime mai mică, așa cum se poate vedea în
 codul de mai jos.
 
 !!! note "Observație"
-    
+
     Există totuși o soluție greedy corectă pentru această problemă, fiind una
     destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în
     acest paper, pe care îl puteți găsi
