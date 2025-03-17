@@ -195,7 +195,7 @@ Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
 arborelui de intervale după ce actualizăm valoarea elementului de pe poziția 5
 din 2 în 1.
 
-![](../ images / segment - trees / update.svg)
+![](../images/segment-trees/update.svg)
 
 În diagramele de mai sus, putem observa cum se modifică structura arborelui de
 intervale după ce modificăm valoarea de pe poziția 5 din 2 în 7. Nodurile
@@ -206,19 +206,19 @@ Iată un exemplu de implementare a acestei operații în C++:
 
 ```cpp
 void update(int pos, int val, int node, int st, int dr) {
-  if (st == dr) {
-    aint[node] = val; // Daca am ajuns la pozitia pos, schimbam valoarea
-    return;
-  }
+    if (st == dr) {
+        aint[node] = val; // Daca am ajuns la pozitia pos, schimbam valoarea
+        return;
+    }
 
-  int mid = (st + dr) / 2;
-  if (pos <= mid)  // (1)
-    update(pos, val, node * 2, st, mid);
-  else
-    update(pos, val, node * 2 + 1, mid + 1, dr);
+    int mid = (st + dr) / 2;
+    if (pos <= mid)  // (1)
+        update(pos, val, node * 2, st, mid);
+    else
+        update(pos, val, node * 2 + 1, mid + 1, dr);
 
-  // La intoarcerea din apelul recursiv, actualizam nodul
-  aint[node] = aint[node * 2] + aint[node * 2 + 1];
+    // La intoarcerea din apelul recursiv, actualizam nodul
+    aint[node] = aint[node * 2] + aint[node * 2 + 1];
 }
 ```
 
