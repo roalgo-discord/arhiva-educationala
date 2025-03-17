@@ -1,8 +1,8 @@
 ---
 id: OJI-2025-VIII-joc
 title: Soluția problemei joc (OJI 2025, clasa a VIII-a)
-problem_id: #2510
-authors: []
+# problem_id: 2510
+# authors: []
 # prerequisites:
 #     - strings
 #     - stl
