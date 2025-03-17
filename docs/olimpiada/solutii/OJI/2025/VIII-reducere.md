@@ -2,122 +2,68 @@
 id: OJI-2025-VIII-reducere
 title: Soluția problemei reducere (OJI 2025, clasa a VIII-a)
 # problem_id: 2511
-# authors: [coman]
-# prerequisites:
-#     - simulating-solution
-#     - stl
+authors: [cerchez]
+prerequisites:
+    - divisibility
 tags:
     - OJI
     - clasa VIII
 draft: true
 ---
 
-Cerința 1: Pentru determinarea valorilor $M$ și $H$, vom folosi un vector de
-frecvență. Pentru fiecare ecuson, determinăm echipa din care face parte, luând
-ultimele două cifre din acesta. $M$ va fi egal cu numărul de poziții din
-vectorul de frecvența pentru care valoarea este diferită de 0, iar $H$ va fi
-poziția din vector pentru care frecvența are valoarea maximă.
+## Cerința 1
 
-Cerința 2: Pentru fiecare echipă, precalculăm sume parțiale. Pentru o anumită
-echipa $i$, avem $s[j]$ – suma elementelor aflate pe pozițiile $1, 2, \dots, j$.
-În această problema, $s[j]$ reprezintă poziția pe care se va afla pionul după ce
-va mută al $j$-lea jucător. La calcularea sumelor, trebuie să ținem cont de
-faptul că ordinea jucătorilor se permuta circular. Jucătorul care inițial este
-al $j$-lea în echipa, va fi în runda $k$ pe poziția $(j + (k − 1) \ mod \ cnt) \
-mod \ cnt$, unde $cnt$ este numărul total de membrii din echipa. Pentru fiecare
-echipă, simulăm parcurgerea. Având sumele parțiale calculate, putem determina de
-câte ori mută toată echipa până când jocul ar fi câștigat de echipa respectivă.
-Pentru ultima secvență de mutări, vom caută secvențial care este jucătorul care
-va aduce victoria echipei sale. Dintre toate aceste simulări, reținem care este
-echipa care va face cele mai puține mutări, și jucătorul care aduce victoria
-echipei sale în acest caz. În cazul în care există mai multe echipe care au
-număr egal de mutări minime pentru a trece de căsuța de start, se va selecta
-prima dintre ele, deoarece echipele mută în ordinea codului planetei lor.
+Pentru a determina valoarea de reducere, trebuie să determinăm cel mai mare
+divizor comun al valorilor din secvență. Pentru a determina cmmdc pentru două
+valori utilizăm algoritmul lui Euclid. Pentru a determina cmmdc pentru o
+secvență de $n$ valori utilizăm asociativitatea operației cmmdc, deci determinăm
+la fiecare pas cmmdc dintre cmmdc-ul curent și următoarea valoare din secvență:
 
-Menționăm că există implementări în care simulăm fiecare mutare. Pentru toate
-echipele, determinăm jucătorul care mută pionul. Vom menține pentru fiecare
-echipă poziția pionului pe tablă, și aceasta se va actualiza după fiecare
-mutare. Repetăm această simulare, până când un jucător trece de căsuța de start,
-moment în care se termină jocul. Acest algoritm ar trebui să obțină, în funcție
-de implementare, aproximativ 60 de puncte.
+$$
+(a_1, a_2, ..., a_n) = (a_1, (a_2, ..., (a_{n - 1}, a_{n})))
+$$
 
-Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
+unde $(a, b)$ reprezintă cmmdc-ul lui $a$ și $b$.
+
+## Cerința 2
+
+Descompunem în factori primi fiecare valoare din secvență şi determinăm pe
+parcurs descom punerea în factori primi a celui mai mic multiplu comun al
+acestor valori (toți factorii primi care apar în descompunerile valorilor din
+secvență la puterea cea mai mare). Factorii primi comuni la puterea cea mai mică
+constituie cmmdc (deci îi păstrăm în valoarea de reducere). Numărul minim de
+operații care trebuie să fie aplicate pentru a obține valoarea de reducere este
+egal cu suma exponenților factorilor primi din descompunerea în factori primi a
+cmmmc/cmmdc.
+
+Pentru subtask-ul 2, restricțiile permit utilizarea unui vector $nr$ de $10^6$
+elemente, unde $nr_i$ este puterea factorului prim $i$ în descompunerea factori
+primi a cmmmc/cmmdc. Pentru a obține punctele pe acest subtask nu este necesar
+să optimizăm descompunerea în factori primi utilizând pregenerarea numerelor
+prime cu ciurul lui Eratostene, dar, pentru subtask-ul 3, este necesar să
+descompunem în factori primi căutând divizorii, doar printre numerele prime până
+la radicalul numărului.
+
+Pentru subtask-ul 3 restricțiile nu permit declararea vectorului $nr$. Ca urmare
+vom reține o descompunere în factori primi ca o listă de factori primi şi
+puterile acestora, listă în care factorii primi apar în ordine crescătoare.
+
+Pentru fiecare număr din secvență:
+
+-   descompunem numărul în factori primi;
+-   printr-un algoritm similar cu algoritmul de interclasare, actualizăm
+    descompunerea în factori primi a cmmmc (în cmmmc trebuie să apară toți
+    factorii primi la puterea cea mai mare).
+
+La final simplificăm cmmmc cu cmmdc, parcurgând descompunerile în factori primi
+ale acestora şi, pentru factorii primi comuni, scăzând din puterea factorului
+prim din cmmmc puterea factorului prim respectiv din cmmdc.
+
+Suma puterilor factorilor primi ai cmmmc după simplificarea cu cmmdc va fi
+numărul minim de operații de reducere necesare.
+
+## Rezolvare
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
 
-int main() {
-    ifstream cin("robotron.in");
-    ofstream cout("robotron.out");
-
-    int c, n, l, k;
-    cin >> c >> n >> l >> k;
-
-    vector<vector<pair<int, int>>> v(100);
-    for (int i = 0; i < n; i++) {
-        int e, p;
-        cin >> e >> p;
-        v[e % 100].push_back({e / 100, p});
-    }
-
-    if (c == 1) {
-        int mx = 0;
-        int cnt = 0;
-        for (int i = 0; i <= 99; i++) {
-            if (v[i].size() > 0) {
-                cnt++;
-                if (v[i].size() > v[mx].size()) {
-                    mx = i;
-                }
-            }
-        }
-        cout << cnt << " " << mx << '\n';
-        return 0;
-    }
-    if (c == 2) {
-        k--;
-        int winner = -1;
-        int rounds = (1 << 30);
-        int code = -1;
-        for (int i = 0; i <= 99; i++) {
-            if (!v[i].size()) {
-                continue;
-            }
-            vector<pair<int, int>> pv;
-            for (int j = k % v[i].size(); j < v[i].size(); j++) {
-                pv.push_back(v[i][j]);
-            }
-            for (int j = 0; j < k % v[i].size(); j++) {
-                pv.push_back(v[i][j]);
-            }
-            long long sum = 0;
-            for (auto x : pv) {
-                sum += x.second;
-            }
-            int temp_rounds = pv.size() * (l / sum);
-            int rem = l % sum;
-            int whoo = 0;
-            if (rem != 0) {
-                for (auto x : pv) {
-                    rem -= x.second;
-                    temp_rounds++;
-                    whoo = x.first;
-                    if (rem <= 0) {
-                        break;
-                    }
-                }
-            } else {
-                whoo = pv.back().first;
-            }
-            if (temp_rounds < rounds) {
-                rounds = temp_rounds;
-                winner = i;
-                code = whoo;
-            }
-        }
-        cout << winner << " " << code << '\n';
-    }
-    return 0;
-}
 ```
