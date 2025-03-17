@@ -2,98 +2,91 @@
 id: OJI-2025-V-palindrom
 title: Soluția problemei palindrom (OJI 2025, clasa a V-a)
 # problem_id: 2501
-# authors: []
-# prerequisites:
-#     - sieve
-#     - binary-search
+authors: [spatarel]
+prerequisites:
+    - digits-manipulation
 tags:
     - OJI
     - clasa V
 draft: true
 ---
 
-Cerința 1: Pentru a afla scorul final, vom parcurge șirul de goluri și vom
-număra câte goluri a marcat fiecare echipă. Pentru aceasta putem folosi două
-variabile contor pe care să le actualizăm în momentul citirii în funcție de
-echipa care marchează.
+## Cerința 1
 
-Cerința 2: Pentru a determina câte scoruri au fost egale, vom ține evidența
-numărului de goluri marcate de fiecare echipă, la fel ca mai sus, și vom
-incrementa un contor de fiecare dată când scorurile devin egale.
+În continuare vom descrie rezolvarea pentru un singur număr. Pentru rezolvarea
+problemei se aplică algoritmul de mai jos în mod repetat, de $N$ ori.
 
-Cerința 3: Putem determina secvențe de elemente egale aflate pe poziții
-consecutive. O astfel de secvență este revenire în forță dacă atunci când ea
-începe, echipa pe care o reprezintă este condusă și atunci când se termină
-echipa pe care o reprezintă conduce cu un gol.
+Pentru rezolvarea primei cerințe vom elimina simultan prima și ultima cifră a
+numărului cât timp acestea coincid și numărul are cel puțin două cifre. La
+final, dacă numărul rămas este 0 sau are o cifră, atunci putem afirma că numărul
+inițial era palindrom.
 
-Detectarea și calcularea revenirii în forță pentru cerința 3:
+## Cerința 2
 
-După primul gol, se actualizează scorul echipei corespunzătoare și se determină
-echipa care este condusă. Pentru următoarele goluri marcate vom ține cont de
-următoarele aspecte:
+Pentru rezolvarea celei de-a doua cerințe, observăm că operația de inserare a
+unei cifre în numărul dat și verificarea ulterioară a proprietă ții de palindrom
+este echivalentă cu operația de ștergere a unei cifre din numărul dat și
+verificarea proprietă ții de palindrom a numărului astfel obținut.
 
-- dacă golul curent este diferit de cel anterior (marchează altă echipă) atunci
-  testăm dacă putem începe o nouă revenire în forță și în caz afirmativ stabilim
-  contorul de revenire la unu.
-- dacă golul curent este marcat de aceeași echipă ca și golul anterior atunci
-  creștem contorul pentru revenirea în forță și dacă s-a schimbat echipa
-  câștigătoare.
+În plus, observăm că în orice număr palindrom putem insera o cifră (în mijlocul
+său) astfel încât numărul nou obținut să fie tot palindrom.
+
+Deci, orice număr care respectă prima cerință o respectă și pe a doua.
+
+Pentru a determina eficient care cifră ar trebui ștearsă, vom efectua următorul algoritm:
+
+1. vom elimina simultan prima și ultima cifră a numărului cât timp acestea
+   coincid și numărul are cel puțin două cifre;
+2. dacă numărul rămas este 0 sau are o cifră, atunci putem spune că răspunsul la
+   cerință este afirmativ;
+3. altfel vom investiga două cazuri:
+    - dacă eliminăm prima cifră;
+    - dacă eliminăm ultima cifră;
+4. în ambele cazuri, după eliminarea cifrei corespunzătoare, vom repeta pașii
+   (1) și (2);
+5. dacă la final numărul rămas are mai mult de o cifră, atunci răspunsul la
+   cerință este negativ;
+
+## Cerința 3
+
+Pentru rezolvarea celei de-a treia cerințe, observăm că operația de inserare a
+două cifre în numărul dat și verificarea ulterioară a proprietății de
+palindromicitate este echivalentă cu operația de ștergere a două cifre din
+numărul dat și verificarea proprietății de palindromicitate a numărului astfel
+obținut. În plus, observăm că în orice număr palindrom putem insera o cifră (în
+mijlocul său) astfel încât numărul nou obținut să fie tot palindrom.
+
+Deci, orice număr care respectă a doua cerință o respectă și pe a treia. Pentru
+a determina eficient care cifre ar trebui șterse, vom efectua următorul
+algoritm:
+
+- pentru ștergerea primei cifre, vom efectua pașii (1), (2) și (3);
+- pentru ștergerea celei de-a doua cifre, vom efectua din nou pașii (1), (2) și
+  (3);
+- pentru determinarea răspunsului, vom efectua iarăși pașii (1), (2) și (5).
+
+Observați că, efectuând de două ori pasul (3), vom ajunge să investigăm 4 scenarii:
+
+1. la prima nepotrivire eliminăm prima cifră iar la a doua nepotrivire eliminăm
+   din nou prima cifră;
+2. la prima nepotrivire eliminăm prima cifră iar la a doua nepotrivire eliminăm
+   a doua cifră;
+3. la prima nepotrivire eliminăm a doua cifră iar la a seconda nepotrivire
+   eliminăm prima cifră;
+4. la prima nepotrivire eliminăm a doua cifră iar la a doua nepotrivire eliminăm
+   din nou a doua cifră.
+
+Pentru a evita cazul particular în care nu avem voie să adăugăm cifra 0 la
+începutul numărului inițial, atunci când eliminăm ultima cifră trebuie să
+verificăm și să ignorăm cazul în care numărul rămas pe care lucrăm este
+numărul original și ultima sa cifră este 0.
+
+Complexitatea timp: $\mathcal{O}(N \cdot X)$
+
+## Rezolvare
 
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
-#include <fstream>
-using namespace std;
 
-int main() {
-    ifstream cin("microbist.in");
-    ofstream cout("microbist.out");
-
-    int c, n, ga = 0, gb = 0, eq = 1, strk = 0, maxstrk = 0, curr = 0;
-    cin >> c >> n;
-
-    for (int i = 1; i <= n; i++) {
-        int nr;
-        cin >> nr;
-        if (nr == 1) {
-            ga++;
-        } else {
-            gb++;
-        }
-        if (ga == gb) {
-            eq++;
-        }
-        if (i == 1) {
-            strk = 1;
-        } else if (nr == curr) {
-            strk++;
-        } else {
-            strk = 1;
-        }
-        curr = nr;
-        if (curr == 1) {
-            if (ga > gb && ga - strk < gb && ga - gb == 1) {
-                maxstrk = max(maxstrk, strk);
-            }
-        } else {
-            if (gb > ga && gb - strk < ga && gb - ga == 1) {
-                maxstrk = max(maxstrk, strk);
-            }
-        }
-    }
-    if (c == 1) {
-        cout << ga << " " << gb << '\n';
-        return 0;
-    }
-
-    if (c == 2) {
-        cout << eq << '\n';
-        return 0;
-    }
-
-    if (c == 3) {
-        cout << maxstrk << '\n';
-    }
-    return 0;
-}
 ```

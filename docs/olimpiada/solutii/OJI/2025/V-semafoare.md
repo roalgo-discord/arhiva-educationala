@@ -1,105 +1,87 @@
 ---
 id: OJI-2025-V-semafoare
 title: Soluția problemei semafoare (OJI 2025, clasa a V-a)
-# problem_id: 2516
-# authors: [ariciu]
-# prerequisites:
-#     - divisibility
+# problem_id: 2501
+authors: [iordaiche]
+prerequisites:
+    - conditions-if
+    - basic-math
+    - simulating-solution
 tags:
     - OJI
     - clasa V
 draft: true
 ---
 
-Mai jos, notațiile $N$, $X$, $Y$ au semnificația din enunț.
+## Cerința 1
 
-Cerința 1: Valoarea cerută se obține ca rezultat al expresiei $\frac{N}{X}$.
+Pentru cazurile în care $T_1 = 0$ și $T_2 = 0$, se poate calcula, cu o formulă
+simplă, după câte secunde se face verde la unul dintre cele două semafoare:
 
-Cerința 2: Numărul de copii și numărul de bomboane trebuie să fie divizori ai
-lui $N$ și totodată produsul lor trebuie să fie egal cu $N$. Divizorii cu
-această proprietate se obțin căutând un divizor $d$, iar perechea lui va fi
-atunci $\frac{N}{d}$. Este suficient să găsim pe d ca fiind cel mai mic divizor
-propriu al lui $N$ și soluția va fi $\frac{N}{d}$.
+- Calculăm pentru fiecare semafor totalul secundelor care trebuie să treacă până
+  când se aprinde galben după roșu, iar apoi verde după galben.
+- Afișăm timpul minim astfel calculat.
 
-Cerința 3: Datele de intrare ne permit să căutăm soluție considerând pe rând
-cazurile: nu lăsăm în cutie bomboane, lăsăm o singură bomboană, lăsăm două
-bomboane, etc. La prima astfel de valoare pentru care putem determina o
-distribuire, ne oprim. Odată fixat numărul $b$ de bomboane lăsate în cutie
-(parcurgând valorile de la 0 la 100 cu o instrucțiune repetitivă), rămâne ca
-toate celelalte bomboane $n = N − b$ să fie distribuite. Avem și în acest caz de
-determinat o pereche de divizori ai lui $n$ al căror produs este chiar $n$.
-Aceste perechi sunt deci de forma $(d, \frac{n}{d})$.
+**Algoritm**:
 
-Este suficient să căutăm astfel de perechi cât timp $d \leq \frac{n}{d}$. Pentru
-fiecare pereche determinată $(d, \frac{n}{d})$ analizăm dacă putem avea $d$ =
-numărul de copii și $\frac{n}{d}$ numărul de bomboane și se respectă condițiile
-$d \geq X$ și $\frac{n}{d} \geq Y$ sau respectiv $d =$ numărul de bomboane și
-$\frac{n}{d}$ numărul de copii și se respectă condițiile $d \geq Y$ și
-$\frac{n}{d} \geq X$.
+- calculăm totalul de secunde necesare fiecărui semafor
+- afișăm timpul minim calculat, care este $\min(R_1 + G_1, R_2 + G_2)$.
 
-Cerința 3 poate fi abordată și în modul descris în continuare. Notăm cu $x$
-numărul de copii căutat, cu $y$ numărul de bomboane căutat și cu $dif$ numărul
-de bomboane care vor rămâne în cutie. O soluție simplă este aceea de a parcurge
-cu $x$ toate valorile $1, $2, \dots, N$ și la fiecare pas calculăm $y = N/x$,
-$dif = N − x \cdot y$ și păstrăm tripletul $(dif, x, y)$ cu diferența $dif$
-minimă, iar la aceeași diferență minimă $x$ să fie maxim.
+Pentru cazurile în care $T_1 + T_2 > 0$ (cel puţin unul dintre cele două
+semafoare nu pornește la momentul curent), observăm că fiecare semafor
+funcţionează pe baza unui ciclu temporar ce se repetă continuu. O soluţie
+posibilă constă în parcurgerea următorilor pași:
 
-Când păstrăm un triplet avem grijă să fie respectate și condițiile $x \geq X$ și
-$y \geq Y$. Din ideea anterioară se obține o soluție mai rapidă analizând, pe
-rând, două cazuri:
+- calculăm durata ciclului pentru fiecare semafor: $c_1 = R_1 + G_1 + V_1 + G_1$
+  și $c_2 = R_2 + G_2 + V_2 + G_2$
 
-- Cazul $x \leq y$ când parcurgem valorile $x = 1, 2, \dots$, cât timp $x \leq
-  \frac{N}{x}$
-- Cazul $x \geq y$ când parcurgem valorile $y = 1, 2, \dots$, cât timp $y \leq
-  \frac{N}{y}$.
+- calculăm poziția în ciclul fiecărui semafor: $T_1 = T_1 \mod c_1$ și $T_2 =
+  T_2 \mod c_2$
+  
+- determinăm timpul până se aprinde verde la primul semafor (îl vom denota cu $tv_1$):
+
+    $$
+    tv_1 = \begin{dcases}
+     R_1 + G_1 - T_1 & \text{dacă}~T_1 < R_1 + G_1\\
+     0               & \text{dacă}~T_1 < R_1 + G_1 + V_1\\
+     c_1 - T_1 + R_1 + G_1 & \text{în caz contrar}
+    \end{dcases}
+    $$
+
+- determinăm timpul $tv_2$ până când se aprinde verde la cel de-al doilea
+  semafor (similar)
+- afișăm $\min(tv_1, tv_2)$
+
+## Cerința 2
+
+O soluţie posibilă constă în parcurgerea următorilor paşi:
+
+- Calculăm durata totală a ciclului pentru fiecare semafor, similar cu cerinţa
+  anterioară.
+- Identificăm pentru fiecare semafor culoarea aprinsă la momentul curent. De
+  exemplu, la momentul curent $t_1$, culoarea primului semafor se poate
+  determina astfel:
+
+    ```text
+    dacă t1 < R1
+        atunci culoare1 = 0 (Roșu)
+    altfel
+        dacă t1 < R1 + G1
+            atunci culoare1 = 1 (Galben)
+        altfel
+            dacă t1 < R1 + G1 + V1
+                atunci culoare1 = 2 (Verde)
+            altfel
+                culoare1 = 1 (Galben)
+    ```
+
+- Simulăm scurgerea timpului, din secundă în secundă, până când la ambele
+  semafoare se va observa aceeași culoare.
+
+## Rezolvare
 
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
-#include <fstream>
-using namespace std;
 
-int main() {
-    ifstream cin("bomboane.in");
-    ofstream cout("bomboane.out");
-
-    int c, n, x, y;
-    cin >> c >> n >> x >> y;
-
-    if (c == 1) {
-        cout << n / x << '\n';
-        return 0;
-    }
-
-    if (c == 2) {
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                cout << n / i << '\n';
-                return 0;
-            }
-        }
-    }
-
-    if (c == 3) {
-        for (int cnt = n; cnt >= n - 100; cnt--) {
-            for (int i = 1; i * i <= cnt; i++) {
-                if (cnt % i == 0) {
-                    if (cnt / i >= x && i >= y) {
-                        cout << n - cnt << " " << cnt / i << " " << i << '\n';
-                        return 0;
-                    }
-                }
-            }
-            for (int i = 1; i * i <= cnt; i++) {
-                if (cnt % i == 0) {
-                    if (i >= x && cnt / i >= y) {
-                        cout << n - cnt << " " << i << " " << cnt / i << '\n';
-                        return 0;
-                    }
-                }
-            }
-        }
-    }
-    return 0;
-}
 ```
