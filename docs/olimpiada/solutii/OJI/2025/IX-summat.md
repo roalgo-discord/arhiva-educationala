@@ -1,5 +1,5 @@
 ---
-id: OJI-2025-IX-natatie
+id: OJI-2025-IX-summat
 title: Soluția problemei Summat (OJI 2025, clasa a IX-a)
 problem_id: # 2501
 authors: []
