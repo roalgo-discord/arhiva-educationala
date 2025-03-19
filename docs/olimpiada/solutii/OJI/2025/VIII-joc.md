@@ -1,7 +1,7 @@
 ---
 id: OJI-2025-VIII-joc
 title: Soluția problemei joc (OJI 2025, clasa a VIII-a)
-# problem_id: 2510
+problem_id: 3641
 authors: [dumitruilie]
 prerequisites:
     - frequency-arrays
@@ -9,7 +9,6 @@ prerequisites:
 tags:
     - OJI
     - clasa VIII
-draft: true
 ---
 
 ## Cerința 1
@@ -69,6 +68,74 @@ punctaje parțiale.
 
 ## Rezolvare
 
-```cpp
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
+```cpp
+// Ilie Dumitru
+#include <cstdio>
+
+const int NMAX = 100005, NMAX2 = 1024;
+
+int N;
+int decor[NMAX], scor[NMAX];
+int cnt[NMAX];
+
+int cerinta_1() {
+    int i, j, maxAp, rez = 0;
+
+    for (i = 0; i < N; ++i) {
+        for (j = i, maxAp = decor[i]; j < N; ++j) {
+            if (++cnt[decor[j]] > cnt[maxAp]) {
+                maxAp = decor[j];
+            }
+            if (!(i < j && cnt[maxAp] > (j - i + 1) / 2)) {
+                ++rez;
+            }
+        }
+        for (j = N - 1; j >= i; --j) {
+            --cnt[decor[j]];
+        }
+    }
+
+    return rez;
+}
+
+int cerinta_2() {
+    int i, j, maxAp, total = 0;
+
+    for (i = j = 0, ++cnt[maxAp = decor[0]]; j < N;) {
+        total += scor[j];
+        if (j > i && cnt[maxAp] > (j - i + 1) / 2) {
+            --cnt[decor[i++]];
+        } else {
+            ++j;
+            if (j < N) {
+                if (++cnt[decor[j]] > cnt[maxAp]) {
+                    maxAp = decor[j];
+                }
+            }
+        }
+    }
+
+    return total;
+}
+
+int main() {
+    FILE *f = fopen("joc.in", "r"), *g = fopen("joc.out", "w");
+    int i, C;
+
+    fscanf(f, "%d%d", &C, &N);
+    for (i = 0; i < N; ++i) {
+        fscanf(f, "%d", decor + i);
+    }
+    for (i = 0; i < N; ++i) {
+        fscanf(f, "%d", scor + i);
+    }
+
+    fprintf(g, "%d\n", C == 1 ? cerinta_1() : cerinta_2());
+
+    fclose(f);
+    fclose(g);
+    return 0;
+}
 ```

@@ -1,7 +1,7 @@
 ---
 id: OJI-2025-IX-natatie
 title: Soluția problemei Natație (OJI 2025, clasa a IX-a)
-# problem_id: 2501
+problem_id: 3629
 authors: [ignat]
 prerequisites:
     - simulating-solution
@@ -9,7 +9,6 @@ prerequisites:
 tags:
     - OJI
     - clasa IX
-draft: true
 ---
 
 !!! note "Observație"
@@ -108,6 +107,78 @@ $\mathcal{O} (N \cdot \log d_M)$.
 
 ## Rezolvare
 
-```cpp
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
+```cpp
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#define lol long long
+#define N 3001
+using namespace std;
+ifstream f("natatie.in");
+ofstream g("natatie.out");
+int m, n, i;
+long double rez;
+int v[N], r[N], ind[N], d[N];
+long long K, sol;
+
+bool cmp(int st, int dr) {
+    if (r[st] == r[dr]) {
+        return v[st] < v[dr];
+    }
+    return r[st] < r[dr];
+}
+
+void solve(lol st, lol dr) {
+    if (st < dr) {
+        lol mij = (st + dr) / 2;
+        int nr = 0, h, j, b = 1;
+        long double t, t1;
+
+        for (h = 1; h <= n; h++) {
+            j = ind[h];
+            if (b <= m) {
+                t = (mij * 1.0) / 1000000000;
+                t1 = (2.0 * d[b]) / v[j];
+                if (t1 <= t) {
+                    nr++;
+                    b++;
+                }
+            } else {
+                h = n + 1;
+            }
+        }
+        if (b == m + 1) {
+            if (mij <= rez) {
+                rez = mij;
+            }
+            solve(st, mij);
+        } else {
+            solve(mij + 1, dr);
+        }
+    }
+}
+
+int main() {
+    K = 1000000000000000;
+    f >> n >> m;
+    for (i = 1; i <= n; i++) {
+        f >> v[i];
+        ind[i] = i;
+    }
+    for (i = 1; i <= n; i++) {
+        f >> r[i];
+    }
+    for (i = 1; i <= m; i++) {
+        f >> d[i];
+    }
+    sort(ind + 1, ind + n + 1, cmp);
+    rez = K;
+    solve(0, K);
+    rez = (rez * 1.0) / 1000000000;
+    g << setprecision(9) << rez << "\n";
+
+    return 0;
+}
 ```

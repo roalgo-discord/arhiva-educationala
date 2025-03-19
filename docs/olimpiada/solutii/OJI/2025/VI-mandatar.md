@@ -1,7 +1,7 @@
 ---
 id: OJI-2025-VI-mandatar
 title: Soluția problemei mandatar (OJI 2025, clasa a VI-a)
-# problem_id: 2515
+problem_id: 3638
 authors: [nodea]
 prerequisites:
     - sieve
@@ -9,7 +9,6 @@ prerequisites:
 tags:
     - OJI
     - clasa VI
-draft: true
 ---
 
 ## Cerința 1 - 50p
@@ -74,8 +73,107 @@ for (int x = 2; x <= 7; x++) {
 }
 ```
 
-## Soluție
+## Rezolvare
+
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
+//////Pit_Rada Ionel-Vasile
+#include <fstream>
+using namespace std;
+ifstream fin("mandatar.in");
+ofstream fout("mandatar.out");
+int Ce, N, A, B[100002], P[5002], nP;
+int pmax = 0, bmax, nrmax = 0, lg, nr, x, y, z, lgmax;
 
+int main() {
+    /// depozitez numerele prime <=3200 in vectorul P[]
+    /// sunt suficiente pentru a verifica primalitatea oricarui numar <= 10^7
+    P[1] = 2;
+    P[2] = 3;
+    P[3] = 5;
+    P[4] = 7;
+    nP = 4;
+    for (int i = 11; i <= 3200; i += 2) {
+        int ok = 1;
+        /// verific daca i este prim folosind numere prime din P[]
+        for (int j = 1; j <= nP && P[j] * P[j] <= i; j++) {
+            if (i % P[j] == 0) {
+                ok = 0;
+                break;
+            }
+        }
+        if (ok == 1) {
+            P[++nP] = i;
+        }
+    }
+    fin >> Ce >> N;
+    for (int i = 1; i <= N; i++) {
+        fin >> A;
+        /// descompunere in factori primi
+        x = A;
+        y = 1;
+        z = 0;
+        for (int j = 1; P[j] * P[j] <= x; j++) {
+            if (x % P[j] == 0) {
+                z++;
+                y *= P[j];
+                while (x % P[j] == 0) {
+                    x /= P[j];
+                }
+            }
+        }
+        if (x > 1) {
+            z++;
+            y *= x;
+        }
+        B[i] = y;
+        if (z == 1) {
+            if (A > pmax) {
+                pmax = A;
+            }
+        }
+        if (z > nrmax) {
+            nrmax = z;
+            bmax = y;
+        } else {
+            if (z == nrmax && y > bmax) {
+                bmax = y;
+            }
+        }
+    }
+    lgmax = 0;
+    /// pentru fiecare 2<=y<=7 calculez cea mai buna lungime a unei secvente
+    /// mandatare
+    for (int y = 7; y >= 2; y--) {
+        if (y != 4) {
+            lg = 0;
+            nr = 0;
+            for (int i = 1; i <= N; i++) {
+                if (B[i] % y == 0) {
+                    lg++;
+                    if (B[i] == y) {
+                        nr = 1;
+                    }
+                    if (nr == 1 && lg > lgmax) {
+                        lgmax = lg;
+                    }
+                } else {
+                    lg = 0;
+                    nr = 0;
+                }
+            }
+        }
+    }
+    if (Ce == 1) {
+        fout << pmax;
+    }
+    if (Ce == 2) {
+        fout << bmax;
+    }
+    if (Ce == 3) {
+        fout << lgmax;
+    }
+    return 0;
+}
 ```

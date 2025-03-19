@@ -1,14 +1,13 @@
 ---
 id: OJI-2025-VI-avion
 title: Soluția problemei avion (OJI 2025, clasa a VI-a)
-# problem_id: 2514
+problem_id: 3637
 authors: [marinel]
 prerequisites:
     - basic-math
 tags:
     - OJI
     - clasa VI
-draft: true
 ---
 
 ## Cerința 1 - 50p
@@ -31,8 +30,52 @@ locul este 1 sau 6. Aceste valori se adaugă și ele la suma totală. Având în
 vedere că fiecare dintre cei $n$ pasageri parcurge 3 metri de la intrarea în
 avion până la culoarul central, la suma totală se mai adaugă $3 \cdot n$ metri.
 
-## Soluție
+## Rezolvare
+
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
+/// Pracsiu Dan
+#include <bits/stdc++.h>
+using namespace std;
 
+ifstream fin("avion.in");
+ofstream fout("avion.out");
+
+int a[2001];
+
+int main() {
+    int total, task, NR, n, i, x, y;
+    fin >> task >> NR >> n;
+    if (task == 1) {
+        for (i = 1; i <= n; i++) {
+            fin >> x >> y;
+            if (x <= NR / 2) {
+                a[i] = 1;
+            } else {
+                a[i] = 2;
+            }
+        }
+        for (i = 1; i <= n; i++) {
+            fout << a[i] << "\n";
+        }
+    } else {
+        total = 0;
+        for (i = 1; i <= n; i++) {
+            fin >> x >> y;
+            if (x <= NR / 2) {
+                total += (3 + x);
+            } else {
+                total += (3 + (NR - x + 1));
+            }
+            if (y <= 3) {
+                total += (4 - y);
+            } else {
+                total += (y - 3);
+            }
+        }
+        fout << total << "\n";
+    }
+    return 0;
+}
 ```

@@ -1,14 +1,13 @@
 ---
 id: OJI-2025-V-palindrom
 title: Soluția problemei palindrom (OJI 2025, clasa a V-a)
-# problem_id: 2501
+problem_id: 3635
 authors: [spatarel]
 prerequisites:
     - digits-manipulation
 tags:
     - OJI
     - clasa V
-draft: true
 ---
 
 ## Cerința 1
@@ -88,5 +87,108 @@ Complexitatea timp: $\mathcal{O}(N \cdot X)$
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
+#include <fstream>
 
+int main() {
+    std::ifstream fisier_in("palindrom.in");
+    std::ofstream fisier_out("palindrom.out");
+    int C, N;
+    fisier_in >> C >> N;
+    int raspuns = 0;
+    for (int i = 0; i < N; i++) {
+        int nr;
+        fisier_in >> nr;
+        bool este_bun = false;
+        int nr_original = nr;
+        // Calculez puterea lui 10 care are la fel de multe cifre ca și numărul
+        // citit. Mă va ajuta să aflu care este prima cifră a numărului și
+        // eventual să o elimin.
+        int pow10 = 1;
+        while (nr / pow10 > 9) {
+            pow10 *= 10;
+        }
+        // Cât timp numărul are cel puțin două cifre iar
+        // prima și ultima cifră a numărului coincid, le elimin.
+        while (pow10 > 1 && nr / pow10 == nr % 10) {
+            nr %= pow10;
+            nr /= 10;
+            pow10 /= 100;
+        }
+        if (pow10 <= 1) {
+            // Dacă numărul rămas este 0 sau are o singură cifră, atunci
+            // indiferent de cerința pe care trebuie să o rezolv, răspunsul este
+            // afirmativ.
+            este_bun = true;
+        } else if (C >= 2) {
+            // Dacă cerința este 2 sau 3, trebuie să investighez două scenarii:
+            // (dacă op1 == 1) din numărul rămas voi elimina prima cifră;
+            // (dacă op1 == 2) din numărul rămas voi elimina ultima cifră.
+            for (int op1 = 1; op1 <= 2; op1++) {
+                // Voi lucra pe o copie a numărului.
+                int copie1_nr = nr;
+                if (op1 == 1) {
+                    copie1_nr %= pow10;
+                } else {
+                    // Dacă încerc să elimin ultima cifră din numărul original
+                    // și aceasta este 0, atunci înseamnă că ceea ce fac este
+                    // echivalent cu a insera o cifră de 0 în fața numărului
+                    // original, ceea ce nu este permis.
+                    if (copie1_nr == nr_original && copie1_nr % 10 == 0) {
+                        continue;
+                    }
+                    copie1_nr /= 10;
+                }
+                int copie1_pow10 = pow10 / 10;
+                // Cât timp numărul are cel puțin două cifre iar
+                // prima și ultima cifră a numărului coincid, le elimin.
+                while (copie1_pow10 > 1
+                       && copie1_nr / copie1_pow10 == copie1_nr % 10) {
+                    copie1_nr %= copie1_pow10;
+                    copie1_nr /= 10;
+                    copie1_pow10 /= 100;
+                }
+                if (copie1_pow10 <= 1) {
+                    // Dacă numărul rămas este 0 sau are o singură cifră, atunci
+                    // indiferent de cerința pe care trebuie să o rezolv,
+                    // răspunsul este afirmativ.
+                    este_bun = true;
+                } else if (C == 3) {
+                    // Dacă cerința este 3, trebuie să investighez două
+                    // scenarii: (dacă op2 == 1) din numărul rămas voi elimina
+                    // prima cifră; (dacă op2 == 2) din numărul rămas voi
+                    // elimina ultima cifră.
+                    for (int op2 = 1; op2 <= 2; op2++) {
+                        // Voi lucra pe o a doua copie a numărului.
+                        int copie2_nr = copie1_nr;
+                        if (op2 == 1) {
+                            copie2_nr %= copie1_pow10;
+                        } else {
+                            copie2_nr /= 10;
+                        }
+                        int copie2_pow10 = copie1_pow10 / 10;
+                        // Cât timp numărul are cel puțin două cifre iar
+                        // prima și ultima cifră a numărului coincid, le elimin.
+                        while (copie2_pow10 > 1
+                               && copie2_nr / copie2_pow10 == copie2_nr % 10) {
+                            copie2_nr %= copie2_pow10;
+                            copie2_nr /= 10;
+                            copie2_pow10 /= 100;
+                        }
+                        // Trebuie să rezolv cerința 2 și verific dacă am rămas
+                        // cu un număr de o singură cifră sau cu 0.
+                        if (copie2_pow10 <= 1) {
+                            este_bun = true;
+                        }
+                    }
+                }
+            }
+        }
+        if (este_bun) {
+            raspuns++;
+            // fisier_out << nr_original;
+        }
+    }
+    fisier_out << raspuns;
+    return 0;
+}
 ```

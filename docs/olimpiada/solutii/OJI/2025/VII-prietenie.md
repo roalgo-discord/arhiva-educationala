@@ -1,14 +1,13 @@
 ---
 id: OJI-2025-VII-prietenie
 title: Soluția problemei prietenie (OJI 2025, clasa a VII-a)
-# problem_id: 2512
+problem_id: 3639
 authors: [marcu]
 prerequisites:
     - frequency-arrays
 tags:
     - OJI
     - clasa VII
-draft: true
 ---
 
 ## Cerința 1
@@ -49,7 +48,87 @@ $(a_i - b_j)^2 \geq Y$ , adică $|a_i - b_j| \geq \sqrt{Y}$, adică $b_j - a_i
 sau $b_j \leq a_i - \sqrt{Y}$, cu ajutorul șirului $F_i$ . Complexitatea finală
 este $\mathcal{O}(n)$.
 
-## Soluție
+## Rezolvare
+
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
+/* Mihai Marcu, Student TU Delft*/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+ifstream f("prietenie.in");
+ofstream g("prietenie.out");
+
+int n, c;
+int p, q;
+int a[200005];
+int b[200005];
+
+long long sumA;
+long long rez1;
+
+int rez[200005];
+int frecvB[300005];
+int sumpartFrecv[300005];
+
+int main() {
+    f >> c;
+    f >> n;
+    f >> p >> q;
+    for (int i = 1; i <= n; ++i) {
+        f >> a[i];
+    }
+    for (int i = 1; i <= n; ++i) {
+        f >> b[i];
+    }
+
+    if (c == 1) {
+        for (int i = 1; i <= n; ++i) {
+            rez1 += 1LL * n * a[i] * a[i];
+            rez1 += 1LL * n * b[i] * b[i];
+            sumA += a[i];
+        }
+        for (int i = 1; i <= n; ++i) {
+            rez1 -= 1LL * 2 * sumA * b[i];
+        }
+        g << rez1;
+    } else {
+        for (int i = 1; i <= n; ++i) {
+            frecvB[b[i]]++;
+        }
+
+        sumpartFrecv[0] = frecvB[0];
+        for (int i = 1; i <= 300000; ++i) {
+            sumpartFrecv[i] = sumpartFrecv[i - 1] + frecvB[i];
+        }
+
+        int stQ, drQ, stP, drP;
+
+        for (int i = 1; i <= n; ++i) {
+            stQ = -1;
+            drQ = -1;
+            stP = -1;
+            drP = -1;
+
+            stP = a[i] - min(a[i], (int)sqrt(p));
+            stQ = a[i] - min(a[i] + 1, (int)sqrt(q - 1) + 1);
+            drP = (int)sqrt(p) + a[i];
+            drQ = (int)sqrt(q - 1) + 1 + a[i];
+            int x = 0;
+            if (stQ >= 0) {
+                x += sumpartFrecv[stQ];
+            }
+            if (stP >= 0) {
+                x += (sumpartFrecv[a[i] - 1] - sumpartFrecv[stP - 1]);
+            }
+
+            x += (sumpartFrecv[drP] - sumpartFrecv[a[i] - 1]);
+            x += sumpartFrecv[30000] - sumpartFrecv[drQ - 1];
+            g << x << " ";
+        }
+    }
+    return 0;
+}
 ```

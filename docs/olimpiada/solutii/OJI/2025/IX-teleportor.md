@@ -1,7 +1,7 @@
 ---
 id: OJI-2025-IX-teleportor
 title: Soluția problemei Teleportor (OJI 2025, clasa a IX-a)
-# problem_id: 2501
+problem_id: 3631
 authors: [bpopa]
 prerequisites:
     - matrices
@@ -9,7 +9,6 @@ prerequisites:
 tags:
     - OJI
     - clasa IX
-draft: true
 ---
 
 Observăm că dacă avem două camere vecine pe linie sau coloană numerotate cu $x$
@@ -52,14 +51,95 @@ astfel se obține o soluție de complexitate $\mathcal{O} (N^2 + Q)$.
 Pe parcursul celor Q transformări vom menține un vector de frecvență $F_x$ =
 câte perechi de celule vecine există pe care se află valoarea $x$ respectiv $x+
 1$. Valoarea lui $P$ este dată de numărul de valori nenule din $F$ .
-Actualizarea unei celule presupune scăderea (dacă este cazul) unor valori $F_x$
-, apoi creșterea (dacă este cazul) unor valori $F_x$ . De fiecare dată când un
+Actualizarea unei celule presupune scăderea (dacă este cazul) unor valori $F_x$,
+apoi creșterea (dacă este cazul) unor valori $F_x$. De fiecare dată când un
 $F_x$ devine 0, vom scădea $P$ cu 1, de fiecare dată când $F_x$ devine nenul vom
 crește $P$ cu 1. Complexitatea acestei soluții este $\mathcal{O} (N^2 + Q)$ și
 obține 100 de puncte.
 
 ## Rezolvare
 
-```cpp
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
+```cpp
+#include <fstream>
+
+using namespace std;
+ifstream f("teleportor.in");
+ofstream g("teleportor.out");
+int n, k, i, j, c, nr, q, h, u;
+int a[1002][1002], v[1000003];
+int dx[4] = {-1, 0, 1, 0}, dy[4] = {0, -1, 0, 1};
+
+int main() {
+    f >> n >> k;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            f >> a[i][j];
+        }
+    }
+    for (i = 0; i <= n + 1; i++) {
+        a[0][i] = -1;
+        a[n + 1][i] = -1;
+        a[i][0] = -1;
+        a[i][n + 1] = -1;
+    }
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            for (h = 0; h < 4; h++) {
+                if (a[i][j] == a[i + dx[h]][j + dy[h]] + 1) {
+                    v[a[i][j]]++;
+                }
+            }
+        }
+    }
+
+    for (i = 2; i <= k; i++) {
+        if (v[i]) {
+            nr++;
+        }
+    }
+    g << k - nr - 1 << "\n";
+
+    f >> q;
+    for (u = 1; u <= q; u++) {
+        f >> i >> j >> c;
+        for (h = 0; h < 4; h++) {
+            if (a[i][j] == a[i + dx[h]][j + dy[h]] + 1) {
+                v[a[i][j]]--;
+                if (v[a[i][j]] == 0) {
+                    nr--;
+                }
+            }
+        }
+        for (h = 0; h < 4; h++) {
+            if (a[i][j] + 1 == a[i + dx[h]][j + dy[h]]) {
+                v[a[i + dx[h]][j + dy[h]]]--;
+                if (v[a[i + dx[h]][j + dy[h]]] == 0) {
+                    nr--;
+                }
+            }
+        }
+        a[i][j] = c;
+        for (h = 0; h < 4; h++) {
+            if (a[i][j] == a[i + dx[h]][j + dy[h]] + 1) {
+                v[a[i][j]]++;
+                if (v[a[i][j]] == 1) {
+                    nr++;
+                }
+            }
+        }
+        for (h = 0; h < 4; h++) {
+            if (a[i][j] + 1 == a[i + dx[h]][j + dy[h]]) {
+                v[a[i + dx[h]][j + dy[h]]]++;
+                if (v[a[i + dx[h]][j + dy[h]]] == 1) {
+                    nr++;
+                }
+            }
+        }
+
+        g << k - nr - 1 << "\n";
+    }
+    return 0;
+}
 ```

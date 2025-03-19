@@ -1,14 +1,13 @@
 ---
 id: OJI-2025-IX-summat
 title: Soluția problemei Summat (OJI 2025, clasa a IX-a)
-# problem_id: 2501
+problem_id: 3630
 authors: [bunget]
 prerequisites:
     - partial-sums
 tags:
     - OJI
     - clasa IX
-draft: true
 ---
 
 Rezolvarea problemei Summat presupune folosirea unor tehnici de programare
@@ -86,6 +85,56 @@ aceleași valori ca mai sus.
 
 ## Rezolvare
 
-```cpp
+Mai jos puteți găsi o soluție care ia punctajul maxim.
 
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+using i64 = long long;
+
+int main() {
+#ifndef LOCAL
+    freopen("summat.in", "r", stdin);
+    freopen("summat.out", "w", stdout);
+#endif
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int N, M, Q;
+    cin >> N >> M >> Q;
+    while (Q--) {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        x1--, y1--, x2--, y2--;
+        i64 s = 0;
+        i64 ans = 0;
+        int t = 1;
+        while (s <= 1ll * N * M) {
+            int last_i = s / M;
+            int last_j = s % M;
+            s += (1ll << (t - 1));
+            int i = (s - 1) / M;
+            int j = (s - 1) % M;
+
+            if (i == last_i && x1 <= i && i <= x2) {
+                ans += 1ll * max(0, min(y2, j) - max(last_j - 1, y1 - 1)) * t;
+            } else {
+                if (x1 <= last_i && last_i <= x2) {
+                    ans += 1ll * max(y2 - max(last_j - 1, y1 - 1), 0) * t;
+                }
+                if (x1 <= i && i <= x2) {
+                    ans += 1ll * max(min(j, y2) - y1 + 1, 0) * t;
+                }
+                ans += 1ll * max(min(i - 1, x2) - max(x1 - 1, last_i), 0)
+                     * (y2 - y1 + 1) * t;
+            }
+            t++;
+        }
+
+        cout << ans << "\n";
+    }
+    return 0;
+}
 ```
