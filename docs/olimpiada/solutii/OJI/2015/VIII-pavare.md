@@ -8,10 +8,12 @@ authors: []
 tags:
     - OJI
     - clasa VIII
-draft: true
 ---
+Articolul va fi disponibil curând în arhivă.
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20(regional%20olympiad)/2015/08/pavare.pdf).
+
+## Rezolvare
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
