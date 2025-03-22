@@ -1734,7 +1734,9 @@ nav:
                                         - Arbore: olimpiada/solutii/ONI/2024/XI-XII-arbore.md
                                         - Detonator: olimpiada/solutii/ONI/2024/XI-XII-detonator.md
                                         - Zid: olimpiada/solutii/ONI/2024/XI-XII-zid.md
-
+                - RoAlgo Contests:
+                      - RoAlgo Weekly Contests:    
+                            - RoAlgo Weekly Contest 0: olimpiada/solutii/roalgo/roalgo-weekly/weekly-0.md
 not_in_nav: |
     licenta.md
     codes/cppintro/strings/ascii.md
