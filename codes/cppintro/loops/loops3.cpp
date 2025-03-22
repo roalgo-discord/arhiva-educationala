@@ -1,0 +1,3 @@
+do {
+    // instructiuni
+} while (conditie);
