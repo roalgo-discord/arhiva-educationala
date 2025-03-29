@@ -1,6 +1,6 @@
 ---
-id: roalgo-weekly-0
-title: Descrierea soluțiilor RoAlgo Weekly Contest 0
+id: roalgo-weekly-1
+title: Descrierea soluțiilor RoAlgo Weekly Contest 1
 authors: [stefdasca]
 prerequisites:
     - basic-math
