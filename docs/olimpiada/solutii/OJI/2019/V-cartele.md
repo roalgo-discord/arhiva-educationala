@@ -33,6 +33,8 @@ spune dacă la ultimul eveniment am avut un număr impar de băieți și pentru 
 timp a fost acest număr de băieți impar. Când numărul de băieți devine par,
 timpul se resetează la 0 și variabila cealaltă va fi setată la fals.
 
+## Cod sursă
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp

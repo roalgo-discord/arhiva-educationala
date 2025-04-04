@@ -46,6 +46,8 @@ numere. Pentru mai multe detalii despre vedeți implementarea.
 Un caz particular pe care această soluție greșește este un număr de forma $X =
 999 \dots 9$. Putem verifica în special acest caz, răspunsul fiind $X + 2$.
 
+## Cod sursă
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp

@@ -37,6 +37,8 @@ numere, unul din fiecare astfel de pereche, cum am zis și mai sus). De notat
 este faptul că numerele $1$ și $N$ sunt adiacente și trebuie să le luăm și pe
 ele în considerare.
 
+## Cod sursă
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
@@ -46,27 +48,6 @@ using namespace std;
 
 ifstream fin("colier.in");
 ofstream fout("colier.out");
-
-int tip(int n) {
-    int maxcif = 0, pozmax = 0, mincif = 10, pozmin = 0, poz = 0;
-    while (n > 0) {
-        poz++;
-        if (n % 10 > maxcif) {
-            maxcif = n % 10;
-            pozmax = poz;
-        }
-        if (n % 10 < mincif) {
-            mincif = n % 10;
-            pozmin = poz;
-        }
-        n /= 10;
-    }
-    if (pozmin > pozmax) {
-        return 1;
-    } else {
-        return 2;
-    }
-}
 
 int main() {
     int c, n;

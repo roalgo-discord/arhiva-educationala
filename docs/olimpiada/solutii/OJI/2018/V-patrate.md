@@ -20,6 +20,8 @@ Primul element din pătratul $M$ este $(2 \cdot M - 1) ^ 2$, iar ultimul este $(
 Căutăm primul număr $T$ pentru care $(2 \cdot T - 1) ^ 2 \leq N \leq (2 \cdot
 T + 1) ^ 2 - 1$ (adică $N$ să fie în intervalul de numere de pe pătratul $T$).
 
+## Cod sursă
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp

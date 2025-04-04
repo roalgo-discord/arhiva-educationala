@@ -36,12 +36,14 @@ cifră pe cel mai scurt drum posibil, plecând de la cifra 0.
 Drumul cel mai scurt posibil de la cifra $a$ la cifra $b$ este:
 
 - Dacă $a < b$, cel mai scurt dintre:
-  - În stânga cu $a-b$ poziții
-  - În dreapta cu $10+b-a$ poziții
+    - În stânga cu $a-b$ poziții
+    - În dreapta cu $10+b-a$ poziții
 - Dacă $a < b$, cel mai scurt dintre:
-  - În dreapta cu $b-a$ poziții
-  - În stânga cu $10+a-b$ poziții
+    - În dreapta cu $b-a$ poziții
+    - În stânga cu $10+a-b$ poziții
 - Dacă $a = b$, nu trebuie să facem nimic
+
+## Cod sursă
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
