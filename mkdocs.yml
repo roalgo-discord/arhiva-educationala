@@ -1,4 +1,3 @@
----
 site_name: Arhiva Educațională RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
@@ -62,7 +61,7 @@ extra:
       generator: false
       analytics:
             provider: google
-            propriety: G-5VXP6YEDL8
+            property: G-5VXP6YEDL8
       consent:
             title: Consimțământ pentru cookie-uri
             description: >-
