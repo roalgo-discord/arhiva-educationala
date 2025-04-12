@@ -1748,6 +1748,7 @@ nav:
                                       - RoAlgo Weekly Contest 0: olimpiada/solutii/roalgo/roalgo-weekly/weekly-0.md
                                       - RoAlgo Weekly Contest 1: olimpiada/solutii/roalgo/roalgo-weekly/weekly-1.md
                                       - RoAlgo Weekly Contest 2: olimpiada/solutii/roalgo/roalgo-weekly/weekly-2.md
+                                      - RoAlgo Weekly Contest 3: olimpiada/solutii/roalgo/roalgo-weekly/weekly-3.md
 not_in_nav: |
       licenta.md
       codes/cppintro/strings/ascii.md
