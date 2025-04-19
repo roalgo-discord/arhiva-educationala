@@ -43,6 +43,8 @@ trebuie să aflăm numărul format din primele $P$ cifre, putem să începem cu 
 număr format din $P-1$ cifre este mereu mai mic decât un număr format din $P$
 cifre).
 
+## Cod sursă
+
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp

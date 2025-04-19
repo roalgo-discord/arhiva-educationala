@@ -30,7 +30,9 @@ divizibilitate menționat mai sus, iar alipirea se va face înmulțind sufixul c
 10 la puterea numărului de cifre din prefix (pe care îl vom calcula la fel cum
 facem cu prefixul).
 
-Pentru mai multe detalii vedeți implementarea.
+Pentru mai multe detalii vedeți codul sursă.
+
+## Cod sursă
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
