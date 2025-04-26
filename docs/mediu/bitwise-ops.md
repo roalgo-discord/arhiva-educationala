@@ -317,6 +317,7 @@ prezentate acolo se aplică în totalitate și din perspectiva articolului curen
 - [Bit Showdown RoAlgo Contest #9](https://kilonova.ro/problems/2249)
 - [patratele OJI 2022](https://kilonova.ro/problems/944)
 - [Matmare RoAlgo PreOJI 2024](https://kilonova.ro/problems/2418)
+- [The Brand New Function](https://codeforces.com/contest/244/problem/C)
 - [Searching for Soulmates
   USACO](https://usaco.org/index.php?page=viewproblem2&cpid=1182)
 - [Powered Addition](https://codeforces.com/contest/1338/problem/A)
@@ -324,6 +325,7 @@ prezentate acolo se aplică în totalitate și din perspectiva articolului curen
 - [castel OJI 2018](https://kilonova.ro/problems/900)
 - [Sheikh (Easy version)](https://codeforces.com/problemset/problem/1732/C1)
 - [Three Days Ago](https://atcoder.jp/contests/abc295/tasks/abc295_d)
+- [2+ Doors](https://codeforces.com/contest/1715/problem/D)
 - [Preparing Olympiad](https://codeforces.com/problemset/problem/550/B)
 - [Petr and a Combination
   Lock](https://codeforces.com/problemset/problem/1097/B)
