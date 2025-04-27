@@ -160,7 +160,7 @@ mai avansate.
 ### Noțiuni de algebră
 
 - [Principiul lui Dirichlet (principiul cutiei)](./dirichlet.md)
-- [Baze de numerație](../mediu/number-bases.md)
+- [Baze de numerație](../usor/bases.md)
 - [Indicatorul lui Euler](../mediu/euler-totient.md)
 - [Aritmetică modulară. Ridicare la putere în timp
   logaritmic](../mediu/pow-log.md)

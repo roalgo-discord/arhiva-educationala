@@ -188,7 +188,6 @@ nav:
               - Algebră:
                       - Indicatorul lui Euler: mediu/euler-totient.md
                       - Aritmetică modulară. Ridicare la putere în timp logaritmic: mediu/pow-log.md
-                      - Baze de numerație: mediu/number-bases.md
                       - Principiul includerii și excluderii (pinex): mediu/pinex.md
                       - Invers modular: mediu/modular-inverse.md
               - Sortare și căutare:

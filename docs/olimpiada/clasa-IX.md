@@ -41,7 +41,7 @@ conținuturi în arhiva noastră.
 -   Generarea șirurilor pe baza unor reguli
 -   Șirul lui Fibonacci și alte șiruri recurente
 
-## Sisteme de numerație și reguli de conversie - [link articol](../mediu/number-bases.md)
+## Sisteme de numerație și reguli de conversie - [link articol](../usor/bases.md)
 
 ## Reprezentarea numerelor naturale și întregi în memoria calculatorului. Operații pe biți - [link articol](../mediu/bitwise-ops.md)
 

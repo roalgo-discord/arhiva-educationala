@@ -23,7 +23,7 @@ corespunzător](./clasa-V.md).
 
 ## Tipuri simple de date (întregi, reale, char) - [link articol](../cppintro/data-types.md)
 
-## Sisteme de numerație și reguli de conversie - [link articol](../mediu/number-bases.md)
+## Sisteme de numerație și reguli de conversie - [link articol](../usor/bases.md)
 
 ## Aritmetica modulară (adunări, scăderi, înmulțiri) - [link articol](../mediu/pow-log.md#fundamente-ale-calcului-modular)
 
