@@ -147,6 +147,8 @@ nav:
               - Șiruri de caractere: cppintro/strings.md
               - Liste înlănțuite: cppintro/linked-lists.md
               - Citire rapidă. Parsarea datelor: cppintro/fast-io.md
+      - Bacalaureat:
+              - Introducere: bacalaureat/intro.md
       - Ușor:
               - Informații utile:
                       - De unde începi?: usor/how-to-start.md
@@ -1750,6 +1752,8 @@ nav:
                                       - RoAlgo Weekly Contest 3: olimpiada/solutii/roalgo/roalgo-weekly/weekly-3.md
                                       - RoAlgo Weekly Contest 4: olimpiada/solutii/roalgo/roalgo-weekly/weekly-4.md
                                       - RoAlgo Weekly Contest 5: olimpiada/solutii/roalgo/roalgo-weekly/weekly-5.md
+      - AI:
+              - Introducere: ai/intro.md
 not_in_nav: |
       licenta.md
       codes/cppintro/strings/ascii.md
