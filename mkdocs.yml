@@ -149,6 +149,7 @@ nav:
               - Citire rapidă. Parsarea datelor: cppintro/fast-io.md
       - Bacalaureat:
               - Introducere: bacalaureat/intro.md
+              - Roadmap: bacalaureat/roadmap.md
       - Ușor:
               - Informații utile:
                       - De unde începi?: usor/how-to-start.md
