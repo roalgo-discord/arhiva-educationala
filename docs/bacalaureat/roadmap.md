@@ -1,5 +1,6 @@
 ---
-id: roadmap
+id: roadmap-bac
+title: Roadmap pentru Examenul de Bacalaureat
 authors: [toni]
 tags:
     - bacalaureat
