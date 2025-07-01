@@ -18,6 +18,7 @@ care poate fi accesată în [articolul
 corespunzător](./clasa-X.md).
 
 !!! note "Observație"
+
     Următoarele capitole sunt atât pentru etapa județeană, cât și pentru etapa națională.
 
 ## Metoda programării dinamice
@@ -75,8 +76,8 @@ corespunzător](./clasa-X.md).
 
 - Definiție, proprietăți - [link articol](../mediu/tree-1.md)
 - Arbori parțiali - [link articol](../mediu/apcm.md)
-- Arbori parţiali de cost minim (algoritmul lui Kruskal și algoritmul lui 
-Prim - [link articol](../mediu/apcm.md)
+- Arbori parţiali de cost minim (algoritmul lui Kruskal și algoritmul lui Prim -
+  [link articol](../mediu/apcm.md)
 
 ## Structuri de date arborescente  - [link articol](../cppintro/stl.md)
 
@@ -95,7 +96,8 @@ Prim - [link articol](../mediu/apcm.md)
   articol](../mediu/dsu.md)
 
 !!! note "Observație"
-    Următoarele capitole sunt doar pentru etapa națională
+
+    Următoarele capitole sunt doar pentru etapa națională.
 
 ## Algoritmi pe grafuri
 

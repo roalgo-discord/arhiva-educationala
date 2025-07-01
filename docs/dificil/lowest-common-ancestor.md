@@ -159,7 +159,7 @@ int solve(int a, int b) {
     }
 
     for (int i = 18; i >= 0; --i) {
-        if (dp[i][a] != dp[i][b]) {
+        if (anc[i][a] != anc[i][b]) {
             a = anc[i][a], b = anc[i][b];
         }
     }

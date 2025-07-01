@@ -215,7 +215,7 @@ simularea răspunsului.
     }
     ```
 
-    == = "Formula simplificată"
+=== "Formula simplificată"
 
     ```cpp
     #include <iostream>
@@ -257,6 +257,7 @@ simularea răspunsului.
 
 Pentru a afla oglinditul unui număr, vom folosi algoritmul prezentat anterior,
 împreună cu ținerea unei variabile care să ne țină numărul inversat.
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -318,6 +319,7 @@ int main() {
 - [OMI Iasi 2020 codjoc](https://www.pbinfo.ro/probleme/3384/codjoc)
 - [alternant1 pbinfo](https://www.pbinfo.ro/probleme/3926/alternant1)
 - [Alte probleme cu aflarea cifrelor unui număr de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&tag=5&start=0)
+- [Sequence With Digits](https://codeforces.com/contest/1355/problem/A)
 - [OJI 2019 aur](https://kilonova.ro/problems/906)
 
 ## Resurse suplimentare

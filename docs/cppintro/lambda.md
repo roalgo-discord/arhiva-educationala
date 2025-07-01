@@ -89,7 +89,7 @@ de a defini captura, fiecare cu scop specific.
 
 - `[&]` face referință la toate valorile, similar cu `[&x]`:
 
-  ```cpp
+    ```cpp
     int main() {
         int x = 15;
         auto add = [&](int cnt) -> void { x += cnt; };

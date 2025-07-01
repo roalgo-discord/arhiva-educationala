@@ -4,6 +4,7 @@ tags:
     - sfaturi
     - olimpiada
 ---
+
 ## Introducere
 
 Aici găsiți programa clasei a opta pentru Olimpiada de Informatică, conform
@@ -17,20 +18,22 @@ care poate fi accesată în [articolul
 corespunzător](./clasa-VII.md).
 
 !!! note "Observație"
+
     Următoarele capitole sunt atât pentru etapa județeană, cât și pentru etapa națională.
 
 ## Șiruri de caractere. Funcții specifice - [link articol](../cppintro/strings.md)
 
 ## Generarea elementelor combinatoriale prin algoritmi de tip succesor - [link articol](../mediu/backtracking.md)
 
-- Submulțimi  
-- Produs cartezian
-- Permutări
-- Combinări
-- Aranjamente
-- Utilizarea funcțiilor din biblioteca STL pentru permutări
+-   Submulțimi
+-   Produs cartezian
+-   Permutări
+-   Combinări
+-   Aranjamente
+-   Utilizarea funcțiilor din biblioteca STL pentru permutări
 
 !!! note "Observație"
+
     Următoarele capitole sunt doar pentru etapa națională
 
 ## Coada. Aplicații specifice - [link articol](../mediu/queue.md)
@@ -39,7 +42,7 @@ corespunzător](./clasa-VII.md).
 
 ## Elemente de geometrie - [link articol](../mediu/basic-geometry.md)
 
-- sistemul de coordonate cartezian în plan
-- puncte în planul cartezian
-- distanța dintre două puncte
-- arii
+-   sistemul de coordonate cartezian în plan
+-   puncte în planul cartezian
+-   distanța dintre două puncte
+-   arii

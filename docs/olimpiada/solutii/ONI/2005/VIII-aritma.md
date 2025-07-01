@@ -8,10 +8,13 @@ authors: []
 tags:
     - ONI
     - clasa VIII
-draft: true
 ---
 
-Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+Articolul va fi disponibil curând în arhivă.
+
+Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/ONI%20(national%20olympiad)/2005/07/2005_Informatic%C4%83_Etapa%20nationala_Solutii_Clasa%20a%20VIII-a_0.pdf).
+
+## Rezolvare
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -15,7 +15,7 @@ Te-ai pregătit pentru olimpiadă, rezolvând problemele din anii anteriori de l
 OJI, ONI și alte concursuri, ai fost activ pe serverul nostru și ți-ai făcut
 prieteni noi, dar vine concursul și întrebarea care se pune este una simplă:
 
-**Cum abordez concursul astfel încât să iau cât mai multe puncte posibile?**
+> Cum abordez concursul astfel încât să iau cât mai multe puncte posibile?
 
 Această întrebare este una complicată și depinde mult de obiectivele tale,
 precum și de nivelul tău de cunoștințe, deoarece chiar dacă toată lumea vrea să

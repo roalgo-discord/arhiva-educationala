@@ -17,8 +17,8 @@ tags:
 În teoria numerelor, o funcție aritmetică este o funcție $f(n) : \mathbb{N} \to
 \mathbb{C}$. O funcție aritmetică exprimă proprietăți aritmetice pentru $n$.
 
-Pentru $m, n$ numere prime între ele (adică $cmmdc(m, n) = 1$), avem două feluri
-de funcții aritmetice:
+Pentru $m, n$ numere prime între ele (adică $\operatorname{cmmdc}(m, n) = 1$),
+avem două feluri de funcții aritmetice:
 
 - funcții _aditive_, unde $f(mn) = f(n) + f(m)$;
 - funcții _multiplicative_, unde $f(mn)$ = $f(m)f(n)$.
@@ -31,8 +31,8 @@ Pentru simplitate vom defini următoarele aspecte:
 Cât și următoarele proprietăți celebre:
 
 - $\sum_{k = 1}^{N} \frac{1}{k} \approx \log{N}$.
-- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are $\mathcal{O}(\sqrt N)$
-  valori distincte.
+- Șirul $ a_i = \lfloor \frac{N}{i} \rfloor $, cu $\leq N$, are
+  $\mathcal{O}(\sqrt N)$ valori distincte.
 
 Pentru $\forall p \in \mathbb{N}$, $p$ număr prim, și $\forall k \in
 \mathbb{N}$, definim următoarele funcții multiplicative:
@@ -78,15 +78,16 @@ for (int i = 2; i <= N; i++) {
 La finalul programului, $k$ va fi număr prim doar dacă $\operatorname{ciur}(k) =
 0$.
 
-Complexitatea de timp este $\mathcal{O}(\sum_{k=1}^N \frac{N}{k}) = O(N \log{N})$.
+Complexitatea de timp este $\mathcal{O}(\sum_{k=1}^N \frac{N}{k}) =
+\mathcal{O}(N \log{N})$.
 
 ### Ciur liniar
 
 Observăm că fiecare număr compus $X$ este parcurs de către cel de-al doilea for
 de mai multe ori. Dacă am putea să iterăm prin fiecare număr compus exact o
-singură dată am ajunge la complexitatea de $\mathcal{O}(N)$. Reținem într-un vector
-auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele prime până
-când un număr prim divide $i$.
+singură dată am ajunge la complexitatea de $\mathcal{O}(N)$. Reținem într-un
+vector auxiliar numerele prime, și pentru un $i$ fixat vom parcurge numerele
+prime până când un număr prim divide $i$.
 
 ```cpp
 vector<int> prime;
@@ -182,7 +183,7 @@ for (int i = 2; i <= N; i++) {
 !!! note "Atenție"
 
     Funcția pow din cod este o funcție scrisă de mână. Nu recomandăm folosirea
-    funcției pow din cmath, din cauza erorilor de precizie.
+    funcției `#!cpp pow` din `#!cpp <cmath>`, din cauza erorilor de precizie.
 
 Gândim similar pentru funcția Möbius:
 
@@ -228,8 +229,8 @@ for (int i = 2; i < N; i++) {
 
 ### Implementare mai populară
 
-Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $\mathcal{O}(N \log{N})$
-pentru precalculare, de ce ar intra $\mathcal{O}(N)$?
+Rareori avem nevoie de ciur liniar, și dacă nu intră în timp $\mathcal{O}(N
+\log{N})$ pentru precalculare, de ce ar intra $\mathcal{O}(N)$?
 
 ```cpp
 vector<int> phi(N), mobius(N);
@@ -268,8 +269,9 @@ utilă în rezolvarea multor probleme de informatică.
 **Exercițiu 1:** Calculează câte perechi $(a,b)$ ($1 \leq a,b \leq n$) există
 cu proprietatea că $\operatorname{cmmdc}(a,b) = 1$.
 
-Rezolvare: Noi trebuie să calculăm $\sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i, j) =
-1]$. Ne putem folosi de proprietatea de mai sus și să scriem relația astfel:
+Rezolvare: Noi trebuie să calculăm $\sum_{i=1}^{n} \sum_{j=1}^{n}
+[\operatorname{cmmdc}(i, j) = 1]$. Ne putem folosi de proprietatea de mai sus și
+să scriem relația astfel:
 
 $$ \sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{d \mid \operatorname{cmmdc}(i,j)} \mu(d)
 $$
@@ -299,7 +301,9 @@ poate fi calculată în $\mathcal{O}(n)$.
 Rezolvare:
 
 $$
-    \sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i,j) = P] = \sum_{i=1}^{\frac{n}{P}} \sum_{j=1}^{\frac{n}{P}} [\operatorname{cmmdc}(i,j) = 1]
+    \sum_{i=1}^{n} \sum_{j=1}^{n} [\operatorname{cmmdc}(i,j) = P] =
+    \sum_{i=1}^{\frac{n}{P}} \sum_{j=1}^{\frac{n}{P}}
+    [\operatorname{cmmdc}(i,j) = 1]
 $$
 
 Observăm că e identic cu exercițiul precedent, rezultatul fiind
@@ -308,8 +312,8 @@ $\sum_{d=1}^{\frac{n}{P}} \mu(d) \cdot \left(\frac{n}{dP}\right)^2$.\\
 **Exercițiul 3:** Calculează $\sum_{1 \leq i,j \leq N} lcm(i,j)$, unde $lcm(i,j)
 = $ cel mai mic multiplu comun al numerelor $i$ și $j$.
 
-Rezolvare: Știm totuși că $lcm(i,j) = \dfrac{i\cdot j}{\operatorname{cmmdc}(i,j)}$, astfel
-problema ne cere să calculăm suma:
+Rezolvare: Știm totuși că $lcm(i,j) = \dfrac{i\cdot
+j}{\operatorname{cmmdc}(i,j)}$, astfel problema ne cere să calculăm suma:
 
 $$
     \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{\operatorname{cmmdc}(i,j)}
@@ -318,11 +322,13 @@ $$
 Pentru a ne ușura calculul, putem defini:
 
 $$
-    f(k) = \sum_{1 \leq i, j \leq N} \dfrac{i \cdot j}{\operatorname{cmmdc}(i,j)} \cdot [\operatorname{cmmdc}(i,j) = k]
+    f(k) = \sum_{1 \leq i, j \leq N} \dfrac{i \cdot
+    j}{\operatorname{cmmdc}(i,j)} \cdot [\operatorname{cmmdc}(i,j) = k]
 $$
 
-Observăm deci că dacă știm suma produselor $i \cdot j$, cu $\operatorname{cmmdc}(i,j) = k$, fie
-această sumă $p(k)$, atunci rezultatul devine:
+Observăm deci că dacă știm suma produselor $i \cdot j$, cu
+$\operatorname{cmmdc}(i,j) = k$, fie această sumă $p(k)$, atunci rezultatul
+devine:
 
 $$
     f(k) = \dfrac{p(k)}{k}
@@ -332,11 +338,14 @@ Pentru a calcula $p(k)$ ne putem folosi de funcția mobius astfel:
 
 $$
 \begin{align*}
-p(k)
-&= \sum_{1 \leq i,j \leq N} i \cdot j \cdot [\operatorname{cmmdc}(i,j) = k] \\
-&= \sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot [\operatorname{cmmdc}(a,b) = 1] \\
-&= \sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot \sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot [d \mid a] \cdot [d \mid b] \\
-&= k^2 \cdot \sum_{d=1}^{\frac{N}{k}} \mu(d) \cdot \left(\sum_{a = 1}^{\frac{N}{k}} a \cdot [d \mid a] \right) \cdot \left(\sum_{b=1}^{\frac{N}{k}} b \cdot [d \mid b] \right)
+p(k) &= \sum_{1 \leq i,j \leq N} i \cdot j \cdot
+[\operatorname{cmmdc}(i,j) = k] \\ &= \sum_{a = 1}^{\frac{N}{k}} \sum_{b =
+1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot [\operatorname{cmmdc}(a,b) = 1] \\ &=
+\sum_{a = 1}^{\frac{N}{k}} \sum_{b = 1}^{\frac{N}{k}} a \cdot b \cdot k^2 \cdot
+\sum_{d = 1}^{\frac{N}{k}} \mu(d) \cdot [d \mid a] \cdot [d \mid b] \\ &= k^2
+\cdot \sum_{d=1}^{\frac{N}{k}} \mu(d) \cdot \left(\sum_{a = 1}^{\frac{N}{k}} a
+\cdot [d \mid a] \right) \cdot \left(\sum_{b=1}^{\frac{N}{k}} b \cdot
+[d \mid b] \right)
 \end{align*}
 $$
 
@@ -360,8 +369,8 @@ Revenim la problema noastră inițială: $$ f(k) = \frac{p(k)}{k} = k \cdot \sum
 = 1}^{\frac{N}{k}} \mu(d) \cdot \left( d \cdot \dfrac{\frac{N}{kd} \cdot
 (\frac{N}{kd} + 1)}{2} \right)^2 $$
 
-Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în $\mathcal{O}(N
-\log N)$.
+Iar răspunsul final este $\sum_{k=1}^{N} f(k)$, care este calculabil în
+$\mathcal{O}(N \log N)$.
 
 ## Probleme propuse spre rezolvare
 
@@ -389,8 +398,8 @@ $$ \begin{align*} f(K) &= \sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M
 \left(\frac{N}{Kd}\right)^M. \end{align*} $$
 
 Rezultatul problemei este dat de $\sum_{i=1}^{N} f(i) \cdot i$. Complexitatea de
-timp pentru a calcula $f(K)$ este $\mathcal{O}(\frac{N}{K}\log{M}), astfel complexitatea
-finală este
+timp pentru a calcula $f(K)$ este $\mathcal{O}(\frac{N}{K}\log{M})$, astfel
+complexitatea finală este
 
 $$ \begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N +
 \frac{N}{2} + \frac{N}{3} + \cdots + \frac{N}{N}\right) \log{M} \\ &= O\left(N
@@ -400,8 +409,8 @@ $$ \begin{align*} \sum_{i=1}^{N} O\left(\frac{N}{i} \log{M}\right) &= O\left(N +
 Altă soluție este următoarea:
 
 Vom pune pe cele $M$ poziții doar multiplii de $K$, astfel se formează
-$M^{\lfloor\frac{N}{K} \rfloor}$ șiruri posibile, dintre care scădem $f(K \cdot
-Q), Q \geq 1$.
+$\left\lfloor\frac{N}{K} \right\rfloor^M$ șiruri posibile, dintre care scădem
+$f(K \cdot Q), Q \geq 1$.
 
 $$ \begin{align*} f(K) &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{K
 \mid i} f(i) \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} - \sum_{i=1}^{N}
@@ -410,19 +419,23 @@ f(i) \cdot [K \mid i] \\ &= M^{\left\lfloor \frac{N}{K} \right\rfloor} -
 
 Complexitatea devine:
 
-$$ \begin{align*} \sum_{i=1}^{N} O(\left\lfloor \frac{N}{i} \right\rfloor +
-\log{M}) &= O(N \left(1 + \frac{1}{2} + \frac{1}{3} + \dots \frac{1}{N}\right) +
-N \log{M}) \\ &= O(N \log{N} + N \log{M}) \\ &= O(N\left(\log{N} +
-\log{M}\right)) \\ &= O(N\log{(MN)}) \end{align*} $$
+$$
+\begin{align*}
+\sum_{i=1}^{N} \mathcal{O}(\left\lfloor \frac{N}{i} \right\rfloor + \log{M}) &=
+\mathcal{O}(N \left(1 + \frac{1}{2} + \frac{1}{3} + \dots \frac{1}{N}\right) + N
+\log{M}) \\ &= \mathcal{O}(N \log{N} + N \log{M}) \\ &=
+\mathcal{O}(N\left(\log{N} + \log{M}\right)) \\ &= \mathcal{O}(N\log{(MN)})
+\end{align*}
+$$
 
-Putem precalcula puterile lui $M$, obținem astfel $\mathcal{O}(N \log{N})$. Ambele iau
-100 puncte.
+Putem precalcula puterile lui $M$, obținem astfel $\mathcal{O}(N \log{N})$.
+Ambele iau 100 puncte.
 
 ### Problema [cntgcd](https://kilonova.ro/problems/372)
 
 Se dau două numere naturale $N$ și $D$. Calculați câte perechi de numere $A$ și
-$B$ mai mici ca $N$ există, astfel încât $cmmdc(A,B) = D$. Perechea $(A,B)$ este
-la fel ca perechea $(B, A)$.
+$B$ mai mici ca $N$ există, astfel încât $\operatorname{cmmdc}(A,B) = D$.
+Perechea $(A,B)$ este la fel ca perechea $(B, A)$.
 
 Putem să luăm rezultatul de la primul exercițiu, pentru că probleme sunt
 echivalente. Singura restricție este faptul că perechea $(A,B) = (B,A)$, dar
@@ -443,10 +456,10 @@ perechile care au cmmdc-ul 2, 3 etc.
 $$ f(n) = \frac{n^2 - n}{2} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
 \right\rfloor\right) $$
 
-Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are $\mathcal{O}(\sqrt{N})$
-elemente diferite, putem doar să calculăm câte numere $d_1$ există, astfel încât
-$\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la rezultat $f(\lfloor \frac{n}{d}
-\rfloor) \cdot nr$.
+Datorită faptului că șirul $a_i = \lfloor \frac{N}{i} \rfloor$ are
+$\mathcal{O}(\sqrt{N})$ elemente diferite, putem doar să calculăm câte numere
+$d_1$ există, astfel încât $\frac{n}{d} = \frac{n}{d_1}$ și să adunăm la
+rezultat $f(\lfloor \frac{n}{d} \rfloor) \cdot nr$.
 
 !!! note "Observație"
 
@@ -555,7 +568,7 @@ int main() {
 }
 ```
 
-#### _Ok, dar putem mai bine?_
+#### Ok, dar putem mai bine?
 
 Ne folosim de ideea prezentată la problema anterioară.
 
@@ -568,10 +581,9 @@ $$ f(n) = {n-k+1 \choose k} - \sum_{d=2}^{n} f\left(\left\lfloor \frac{n}{d}
     este mult mai mic decât $N$, astfel putem să calculăm combinările mult mai
     rapid:
 
-- $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$. <!-- ce naiba e cu
-  formatarea asta? -->
-- $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
-  \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$
+    - $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$.
+    - $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
+    \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$
 
 ```cpp
 #include <bits/stdc++.h>

@@ -20,12 +20,12 @@ acesta suferă **modificări în timp real**?
 
     Dacă vectorul este static (nu suferă modificări), putem utiliza tehnici
     simple precum vectori de [sume parțiale](../usor/partial-sums.md) sau
-    [RMQ](./rmq.md) (Range Minimum Query). Totuși, în scenariile unde
-    vectorul se modifică frecvent, aceste tehnici devin ineficiente. Operațiile
-    de query au o complexitate de $\mathcal{O}(1)$ atât pentru sume parțiale, cât și
+    [RMQ](./rmq.md) (Range Minimum Query). Totuși, în scenariile unde vectorul
+    se modifică frecvent, aceste tehnici devin ineficiente. Operațiile de query
+    au o complexitate de $\mathcal{O}(1)$ atât pentru sume parțiale, cât și
     pentru RMQ. Însă, pentru actualizări, trebuie reconstruit tot tabelul de
-    valori, ceea ce duce la o complexitate de $\mathcal{O}(n)$ pentru sume parțiale și
-    $\mathcal{O}(n \log n)$ pentru RMQ.
+    valori, ceea ce duce la o complexitate de $\mathcal{O}(n)$ pentru sume
+    parțiale și $\mathcal{O}(n \log n)$ pentru RMQ.
 
 **Arborii de intervale** (cunoscuți și sub denumirea de segment trees sau aint
 în jargonul românesc) reprezintă o soluție elegantă și eficientă pentru acest
@@ -147,79 +147,78 @@ iterativă:
 === "Construcție recursivă"
 
     ```cpp
-void build(int node, int st, int dr) {
-    if (st == dr) {
-        aint[node] = A[st];
-        return;
+    void build(int node, int st, int dr) {
+        if (st == dr) {
+            aint[node] = A[st];
+            return;
+        }
+        int mid = (st + dr) / 2;
+
+        build(2 * node, st, mid);          // Construim subarborele stâng
+        build(2 * node + 1, mid + 1, dr);  // Construim subarborele drept
+
+        // Actualizăm rezultatul nodului în funcție de rezultatele fiilor
+        aint[node] = aint[2 * node] + aint[2 * node + 1];
     }
-    int mid = (st + dr) / 2;
+    ```
 
-    build(2 * node, st, mid);          // Construim subarborele stâng
-    build(2 * node + 1, mid + 1, dr);  // Construim subarborele drept
+=== "Construcție iterativă"
 
-    // Actualizăm rezultatul nodului în funcție de rezultatele fiilor
-    aint[node] = aint[2 * node] + aint[2 * node + 1];
-}
-```
+    ```cpp 
+    void build(int arr[]) {
+        // Inserăm nodurile frunzelor în arbore
+        for (int i = 0; i < n; i++) {
+            tree[n + i] = arr[i];
+        }
 
-    == =
-    "Construcție iterativă"
-
-    ```cpp void build(int arr[]) {
-    // Inserăm nodurile frunzelor în arbore
-    for (int i = 0; i < n; i++) {
-        tree[n + i] = arr[i];
+        // Construim arborele prin calcularea părinților
+        for (int i = n - 1; i > 0; --i) {
+            tree[i] = tree[i << 1] + tree[i << 1 | 1];
+        }
     }
+    ```
 
-    // Construim arborele prin calcularea părinților
-    for (int i = n - 1; i > 0; --i) {
-        tree[i] = tree[i << 1] + tree[i << 1 | 1];
-    }
-}
-```
+### Operația de update
 
-    ## #Operația de update
+Pentru a efectua un update, ne vom deplasa în arbore până la frunza care
+reprezintă elementul modificat.Odată ce am ajuns la frunză, înlocuim valoarea
+veche cu cea nouă.Pe măsură ce revenim din recursivitate, actualizăm fiecare nod
+din drum, recalculând valorile pe baza celor doi fii, pentru a ne asigura că
+arborele rămâne corect.
 
-        Pentru a efectua un update,
-    ne vom deplasa în arbore până la frunza care reprezintă elementul
-        modificat.Odată ce am ajuns la frunză,
-    înlocuim valoarea veche cu cea nouă.Pe măsură ce revenim din recursivitate,
-    actualizăm fiecare nod din drum, recalculând valorile pe baza celor doi fii,
-    pentru a ne asigura că arborele rămâne corect.
+Această operație se efectuează în $\mathcal{O}(\log n)$, unde $n$ este numărul
+de elemente din vectorul inițial.Complexitatea este determinată de înălțimea
+arborelui, deoarece actualizarea trebuie propagată de la frunză până la
+rădăcină.
 
-    Această operație se efectuează în $\mathcal{O}(\log n)$,
-    unde $n$ este numărul de elemente din vectorul inițial.Complexitatea este
-    determinată de înălțimea arborelui,
-    deoarece actualizarea trebuie propagată de la frunză până la rădăcină.
+Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
+arborelui de intervale după ce actualizăm valoarea elementului de pe poziția 5
+din 2 în 1.
 
-    Mai jos este prezentată o diagramă care ilustrează cum se modifică structura
-    arborelui de intervale după ce actualizăm valoarea elementului de pe poziția
-    5 din 2 în 1.
+![](../images/segment-trees/update.svg)
 
-    ![](../ images / segment - trees / update.svg)
+În diagramele de mai sus, putem observa cum se modifică structura arborelui de
+intervale după ce modificăm valoarea de pe poziția 5 din 2 în 7. Nodurile
+afectate de această modificare sunt evidențiate, iar valorile lor sunt
+actualizate pentru a reflecta noua configurație.
 
-        În diagramele de mai sus,
-    putem observa cum se modifică structura arborelui de intervale după ce
-    modificăm valoarea de pe poziția 5 din 2 în
-    7. Nodurile afectate de această modificare sunt evidențiate,
-    iar valorile lor sunt actualizate pentru a reflecta noua configurație.
+Iată un exemplu de implementare a acestei operații în C++:
 
-    Iată un exemplu de implementare a acestei operații în C++:
 ```cpp
 void update(int pos, int val, int node, int st, int dr) {
-  if (st == dr) {
-    aint[node] = val; // Daca am ajuns la pozitia pos, schimbam valoarea
-    return;
-  }
+    if (st == dr) {
+        aint[node] = val; // Daca am ajuns la pozitia pos, schimbam valoarea
+        return;
+    }
 
-  int mid = (st + dr) / 2;
-  if (pos <= mid)  // (1)
-    update(pos, val, node * 2, st, mid);
-  else
-    update(pos, val, node * 2 + 1, mid + 1, dr);
+    int mid = (st + dr) / 2;
+    if (pos <= mid)  // (1)
+        update(pos, val, node * 2, st, mid);
+    else
+        update(pos, val, node * 2 + 1, mid + 1, dr);
 
-  // La intoarcerea din apelul recursiv, actualizam nodul
-  aint[node] = aint[node * 2] + aint[node * 2 + 1];
+    // La intoarcerea din apelul recursiv, actualizam nodul
+    aint[node] = aint[node * 2] + aint[node * 2 + 1];
 }
 ```
 
@@ -280,7 +279,7 @@ int query(int x, int y, int node, int st, int dr) {
     **implementezi** structura de date și **să rezolvi singur** câteva probleme
     de bază. Încearcă să implementezi arborele de intervale pentru a calcula
     suma și maximul pe un interval dat. În modul acesta vei vedea unde ai
-    neclarități. După ce te-ai convins că ai înțeles tot ce s-a discutat până
+    neclarități. După ce te-ai convains că ai înțeles tot ce s-a discutat până
     acum, te invit să discutăm câteva probleme mai interesante. **Un alt mic
     sfat ar fi să încerci problema înainte de a urmări rezolvarea completă.**
 

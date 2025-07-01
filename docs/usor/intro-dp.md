@@ -307,7 +307,7 @@ iterativă a problemei.
 === "Recursiv"
 
     ```cpp
-    --8<-- "usor/dp/vacation_iter.cpp"
+    --8<-- "usor/dp/vacation_rec.cpp"
     ```
 
 === "Iterativ"
@@ -318,15 +318,15 @@ iterativă a problemei.
 
 === "Iterativ optimizat"
 
-    !!! info "Explicație"
-        
-        Deoarece avem nevoie doar de ultimele două linii, nu vom ține toată
-        matricea, mutând mereu valorile calculate pe prima linie pentru a păstra
-        corectitudinea recurenței.
-
     ```cpp
     --8<-- "usor/dp/vacation_iter_optim.cpp"
     ```
+
+    !!! info "Explicație"
+    
+        Deoarece avem nevoie doar de ultimele două linii, nu vom ține toată
+        matricea, mutând mereu valorile calculate pe prima linie pentru a păstra
+        corectitudinea recurenței.
 
 <!-- Fifth problem -->
 

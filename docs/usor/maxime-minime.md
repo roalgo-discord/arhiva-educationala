@@ -74,105 +74,83 @@ Mai jos implementăm ambele variante.
 === "Varianta 1"
 
     ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int a, b, c;
-    cin >> a >> b >> c;
-
-    // maxim
-
-    if (a >= b && a >= c) {  // a este mai mare sau egal ca b si c
-        cout << a << '\n';
-    } else {
-        if (b >= a && b >= c) {  // b este mai mare sau egal ca a si c
-            cout << b << '\n';
-        } else {  // c este mai mare sau egal ca a si b
-            cout << c << '\n';
-        }
-    }
-
-    // minim
-
-    if (a <= b && a <= c) {  // a este mai mic sau egal ca b si c
-        cout << a << '\n';
-    } else {
-        if (b <= a && b <= c) {  // b este mai mic sau egal ca a si c
-            cout << b << '\n';
-        } else {  // c este mai mic sau egal ca a si b
-            cout << c << '\n';
-        }
-    }
-    return 0;
-}
-```
-
-    == = "Varianta 2"
-
-    ```cpp
-#include <iostream>
+    #include <iostream>
     using namespace std;
 
-int main() {
-    int a, b, c;
-    cin >> a >> b >> c;
+    int main() {
+        int a, b, c;
+        cin >> a >> b >> c;
 
-    int maxim = a;
-    if (b >= maxim) {
-        maxim = b;
+        // maxim
+
+        if (a >= b && a >= c) {  // a este mai mare sau egal ca b si c
+            cout << a << '\n';
+        } else {
+            if (b >= a && b >= c) {  // b este mai mare sau egal ca a si c
+                cout << b << '\n';
+            } else {  // c este mai mare sau egal ca a si b
+                cout << c << '\n';
+            }
+        }
+        return 0;
     }
-    if (c >= maxim) {
-        maxim = c;
+    ```
+
+=== "Varianta 2"
+
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        int a, b, c;
+        cin >> a >> b >> c;
+
+        int maxim = a;
+        if (b >= maxim) {
+            maxim = b;
+        }
+        if (c >= maxim) {
+            maxim = c;
+        }
+
+        cout << maxim << '\n';
+
+        int minim = a;
+        if (b <= minim) {
+            minim = b;
+        }
+        if (c <= minim) {
+            minim = c;
+        }
+
+        cout << minim << '\n';
+        return 0;
     }
+    ```
 
-    cout << maxim << '\n';
+    Deși ambele variante sunt corecte, se poate observa că varianta 2 este mai
+    simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe
+    care o vom folosi atunci când vrem să generalizăm aflarea maximului sau
+    minimului unui șir de valori.
 
-    int minim = a;
-    if (b <= minim) {
-        minim = b;
-    }
-    if (c <= minim) {
-        minim = c;
-    }
+## Maximul și minimul dintre $n$ numere
 
-    cout << minim << '\n';
-    return 0;
-}
-```
+Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea
+pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat, vom
+verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum
+(sau mai mică decât minimul, după caz).
 
-    Deși ambele variante sunt corecte,
-    se poate observa că varianta 2 este mai simplă și mai ușor de utilizat în
-        practică,
-    aceasta fiind și varianta pe care o vom folosi atunci când vrem să
-        generalizăm aflarea maximului sau minimului unui șir de valori.
+Pentru a afla acest răspuns, putem fie să plecăm cu răspunsul egal cu prima
+valoare din șir, fie să inițializăm răspunsul cu o valoare care să ne asigure că
+indiferent ce valori avem, răspunsul va fi una din valorile din șir.
 
-    ##Maximul și minimul dintre $n$ numere
+Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul
+cu o valoare foarte mică($ -10^9$ sau chiar mai mică), iar în caz contrar, cu o
+valoare foarte mare($10^9$ sau chiar mai mare). În general, se preferă varianta
+în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru
+scopurile noastre, soluție implementată mai jos pentru maxim.
 
-        Pentru a afla valoarea
-        maximă(sau minimă) a unui șir de $n$ numere,
-    vom putea pleca de la cazul de bază cu 2 numere,
-    iar pentru fiecare număr nou adăugat,
-    vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până
-    acum(sau mai mică decât minimul, după caz)
-        .
-
-    Pentru a afla acest răspuns,
-    putem fie să plecăm cu răspunsul egal cu prima valoare din șir,
-    fie să inițializăm răspunsul cu o valoare care să ne asigure că
-    indiferent ce valori avem,
-    răspunsul va fi una din valorile din șir.
-
-    Astfel,
-    dacă vrem să aflăm valoarea maximă din șir,
-    vrem să inițializăm maximul cu o valoare foarte
-    mică($ - 10 ^ 9 $ sau chiar mai mică),
-    iar în caz contrar,
-    cu o valoare foarte mare($10 ^ 9 $ sau chiar mai mare).În general,
-    se preferă varianta în care inițializăm
-        răspunsul cu o valoare suficient de mare
-        / mică pentru scopurile noastre,
-    soluție implementată mai jos pentru maxim.
 ```cpp
 #include <iostream>
 using namespace std;
