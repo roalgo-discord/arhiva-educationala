@@ -13,7 +13,7 @@ Mai jos găsiți resurse pe care le puteți citi până atunci.
 ## Introducere
 
 ## Problema exemplu
-s
+
 ## Concluzii
 
 ## Probleme suplimentare
