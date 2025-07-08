@@ -24,8 +24,10 @@ explicat în acest articol, putem rezolva majoritatea problemelor pe care le
 poate rezolva arborele de sufixe. Problemele care nu pot fi rezolvate doar cu
 șirul de sufixe sunt adesea extrem de dificile și nu se dau în concursuri.
 
-!!!info "Definiție" Șirul de sufixe al unui șir este format din indicii
-sufixelor sortate în ordine lexicografică.
+!!!info "Definiție" 
+
+      Șirul de sufixe al unui șir este format din indicii
+      sufixelor sortate în ordine lexicografică.
 
 Spre exemplu, considerăm șirul de sufixe al stringului $banana$:
 

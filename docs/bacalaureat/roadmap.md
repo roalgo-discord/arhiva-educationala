@@ -129,7 +129,8 @@ ascendent, ascendent direct/părinte, fraţi, nod terminal, frunză)
   - metode de reprezentare în memorie (matrice de adiacenţă, liste ”de 
 descendenţi”, vector ”de taţi”)
 
-!!! note "NOTĂ": 
+!!! note "NOTĂ"
+
     Programele de examen sunt realizate în conformitate cu prevederile 
     programelor şcolare în vigoare. Subiectele pentru examenul de bacalaureat 2011 se 
     elaborează în baza prevederilor prezentelor programe şi nu vizează conţinutul unui 
