@@ -1754,7 +1754,13 @@ nav:
                                       - RoAlgo Weekly Contest 4: olimpiada/solutii/roalgo/roalgo-weekly/weekly-4.md
                                       - RoAlgo Weekly Contest 5: olimpiada/solutii/roalgo/roalgo-weekly/weekly-5.md
       - AI:
-              - Introducere: ai/intro.md
+              - Introducere: 
+                        - Cuvant inainte: ai/intro.md
+                        - Limbajul Python: ai/python.md
+                        - Elemente de Matematica: ai/mate-1.md
+                        - Lucrul cu date tabulare: ai/pandas.md
+                        - Vizualizarea datelor: ai/matplotlib.md
+
 not_in_nav: |
       licenta.md
       codes/cppintro/strings/ascii.md
