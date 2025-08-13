@@ -6,6 +6,49 @@ prerequisites:
 tags:
 ---
 
-_Coming soon_
+Inteligența Artificială este un domeniu ce combină informatica cu matematica. Vom lucra cu seturi de date, ce descriu situații reale. Scopul este să înțelegem datele, să le prelucrăm și în final să facem ceva folositor cu ele: prezicerea unor variabile, clasificare, gruparea elementelor, etc.
 
-Daca vreti sa ne ajutati cu această secțiune, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+## Terminologie
+
+**Data Science** (Știința Datelor) este domeniul „umbrelă” care îmbină informatica, statistica și cunoștințele de domeniu pentru a extrage informații și valoare din date. În Data Science intră atât analiza exploratorie a datelor (curățare, vizualizare, interpretare), cât și construirea de modele predictive sau descriptive. Machine Learning este o ramură a Data Science, folosită atunci când vrem ca algoritmii să învețe automat din date, fără a fi programați explicit pentru fiecare caz.
+În practică, un Data Scientist poate combina metode statistice clasice cu algoritmi de ML, vizualizări interactive și instrumente de procesare a volumelor mari de date (Big Data).
+
+**Machine Learning** (Învățare Automată) este o subdisciplină a Data Science care se ocupă cu dezvoltarea de algoritmi capabili să învețe tipare din date și să facă predicții sau clasificări.
+Primele idei de ML au apărut în anii '50–'60, odată cu perceptronul (Frank Rosenblatt, 1958), un model simplu de rețea neuronală. În anii '80–'90, metode precum arborii de decizie, rețelele neuronale cu propagare înapoi (backpropagation) și mașinile cu vectori-suport (SVM) au devenit populare. Totuși, lipsa puterii de calcul și a seturilor mari de date a limitat performanța modelelor complexe.
+Deep Learning este o ramură a ML care a explodat abia după 2010, odată cu creșterea puterii de calcul (în special GPU-uri) și apariția dataset-urilor masive.
+
+**Deep Learning** este o subramură a Machine Learning-ului care folosește rețele neuronale artificiale cu multe straturi („deep” = adânc). Deși conceptele de bază au fost formulate încă din anii '80, adevărata revoluție a venit în 2012, când modelul AlexNet (Krizhevsky, Sutskever, Hinton) a câștigat competiția ImageNet cu un avans uriaș față de metodele clasice. AlexNet a fost antrenat pe GPU-uri NVIDIA, ceea ce a permis procesarea rapidă a milioanelor de imagini din dataset.
+Înainte de AlexNet, primul Convolutional Neural Network (CNN) notabil a fost LeNet-5 (Yann LeCun, 1998), folosit pentru recunoașterea cifrelor scrise de mână (MNIST). Totuși, la acea vreme, hardware-ul și datele disponibile nu permiteau scalarea acestor modele la probleme complexe.
+După 2012, DL a devenit dominant în domenii precum Computer Vision (recunoaștere de obiecte, detecție, segmentare), Natural Language Processing (traducere automată, chatbots, modele de limbaj precum GPT) și chiar în jocuri (AlphaGo).
+
+## Olimpiadă
+
+În cadrul olimpiadei, fiecare problemă oferă un set de date și o cerință. La final elevul trebuie să trimită un alt set de date cu răspunsurile cerute. Evaluarea se face prin utilizarea unor metrici, de exemplu acuratețea, pentru a obține un scor nenormalizat, urmând să se aplice formule descrise în regulament pentru a aduce scorul în intervalul [0, 100].
+
+Olimpiada are 3 etape: locală, județeană și națională. Similar cu olimpiada de informatică, elevii se califică de la o etapă la următoarea, urmând ca la națională să se dea medalii și premii. În urma etapei naționale se va selecta un lot lărgit, care va participa într-o tabără de lot. În urma câtorva examene de acolo, se vor selecta 8 elevi pentru International Olympiad in AI (IOAI) și 4 elevi pentru International AI Olympiad (IAIO).
+
+IOAI este o olimpiadă axată pe partea de deep-learning, majoritatea problemelor fiind de CV sau NLP, dar putând fi date și probleme clasice de ML.
+
+IAIO este o olimpiadă axată doar pe ML. Există o probă practică unde se rezolvă prin cod probleme de ML, și o probă teoretică unde se rezolvă pe hârtie un subiect axat pe teoria ML, unde poate să fie și multă matematică.
+
+## Tipuri de învățare
+
+**Supervised learning (Învățare supervizată)**  
+Modelul învață din exemple „etichetate”: fiecare intrare are asociată o etichetă (rezultatul dorit). Scopul este să învețe o funcție care să mapeze intrările la etichete, astfel încât să prezică corect etichetele pentru date noi.  
+Exemple de probleme:
+
+- Clasificare – spam vs. non-spam (eticheta este „spam” sau „non-spam”).
+- Regresie – predicția prețului unei locuințe (eticheta este prețul real).  
+  Algoritmi frecvenți: regresia liniară/logistică, SVM, arbori de decizie, rețele neuronale.
+
+**Unsupervised learning (Învățare nesupervizată)**  
+Nu există etichete; modelul caută structuri ascunse în date.  
+Exemple de probleme:
+
+- Clustering – gruparea clienților în segmente omogene (K-means, DBSCAN).
+- Reducerea dimensionalității – comprimarea datelor păstrând informația esențială (PCA, t-SNE).
+
+**Self-supervised learning (Învățare auto-supervizată)**  
+O formă hibridă: folosește date neetichetate, dar creează etichete artificiale din însăși datele. De exemplu, în învățarea de reprezentări lingvistice, modelul poate învăța să prezică cuvântul următor dintr-un text (BERT, GPT). În Computer Vision, o imagine poate fi parțial mascată, iar modelul învață să reconstruiască porțiunile lipsă. După această „pre-antrenare”, modelul poate fi ajustat (fine-tuned) pe o sarcină supervizată cu puține date etichetate.
+
+Există multe metode de self-supervised learning, cele enumerate fiind doar câteva exemple. Domeniile în care algoritmii învață tipare fără să aibă toate datele etichetate reprezintă un domeniu promițător în viitor, căci permite utilizarea unui volum mult mai mare de date, deoarece etichetarea reprezintă un efort costisitor.
