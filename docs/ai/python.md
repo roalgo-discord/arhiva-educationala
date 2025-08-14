@@ -6,6 +6,493 @@ prerequisites:
 tags:
 ---
 
-_Coming soon!_
+Python oferă un ecosistem bogat și flexibil pentru dezvoltarea aplicațiilor de machine learning și deep learning. De la sintaxa sa concisă și expresivă, la bibliotecile puternice precum NumPy, Pandas, Matplotlib și Scikit-learn, Python a devenit limbajul de ideal pentru cercetătorii și practicienii în domeniul inteligenței artificiale.
 
-Daca vreti sa ne ajutati cu această secțiune, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
+O misconcepție comună este că Python este un limbaj lent, fiind interpretat. Acest lucru este fals, deoarece în practică majoritatea funcțiilor apelate în Python din librării, sunt scrise în C sau C++, fiind extrem de bine optimizate pentru viteză. Python oferă o sintaxă simplă și elegantă, ideală pentru a te focusa pe logica în sine, în timp ce dezvoltatorii de librării au optimizat codul din spate în C++.
+
+## Variabile
+
+În Python, spre deosebire de C++, variabilele nu necesită o declarație explicită a tipului. Limbajul utilizează dynamic typing, ceea ce înseamnă că tipul unei variabile este determinat la momentul atribuirii. Această flexibilitate face codul mai concis, dar necesită o atenție sporită la gestionarea tipurilor. Python dispune de tipuri de date fundamentale precum int, float, string și boolean, care funcționează similar cu cele din C++, dar cu o sintaxă mult simplificată.
+
+```python
+# Declararea variabilelor în Python
+x = 10               # int
+y = 3.14             # float
+nume = "Python"      # string
+activ = True         # boolean
+
+# Conversii de tip
+x_str = str(x)       # Convertește int la string
+y_int = int(y)       # Convertește float la int (trunchiere)
+```
+
+## Type Hints
+
+Deși Python este un limbaj dinamic, începând cu versiunea 3.5, a fost introdus conceptul de "type hints" pentru a adăuga informații de tip în cod. Acestea nu sunt obligatorii și nu afectează execuția programului, dar oferă beneficii semnificative în dezvoltarea aplicațiilor complexe. Type hints îmbunătățesc lizibilitatea codului și permit instrumentelor statice de analiză să detecteze erori potențiale înainte de execuție.
+
+```python
+# Utilizarea type hints în Python
+from typing import List, Dict, Tuple, Optional
+
+def procesare_date(nume: str, varsta: int, scoruri: List[float]) -> Dict[str, float]:
+    """Funcție care demonstrează utilizarea type hints."""
+    media = sum(scoruri) / len(scoruri)
+    return {"nume": nume, "media": media}
+
+# Funcție cu tip opțional
+def gaseste_element(lista: List[int], valoare: int) -> Optional[int]:
+    """Returnează indexul elementului sau None dacă nu există."""
+    try:
+        return lista.index(valoare)
+    except ValueError:
+        return None
+```
+
+## Liste
+
+Listele în Python sunt structuri de date dinamice și mutabile, similare cu vectorii din C++, dar cu o flexibilitate mult mai mare. Acestea pot conține elemente de tipuri diferite și pot redimensiona automat. Operațiile comune precum adăugarea, eliminarea sau accesarea elementelor sunt implementate cu o sintaxă intuitivă. În contextul machine learning, listele sunt adesea utilizate pentru stocarea seturilor de date sau a rezultatelor intermediare.
+
+```python
+# Crearea și manipularea listelor
+numere = [1, 2, 3, 4, 5]  # Listă de numere întregi
+mixt = [1, "doi", 3.0, True]  # Listă cu tipuri mixte
+
+# Adăugarea elementelor
+numere.append(6)  # Adaugă la sfârșit
+numere.insert(0, 0)  # Adaugă la indexul specificat
+
+# Eliminarea elementelor
+numere.remove(3)  # Elimină prima apariție a valorii
+ultim = numere.pop()  # Elimină și returnează ultimul element
+
+# Operații utile pe liste
+numere.sort()  # Sortează lista în place
+numere_inversate = numere[::-1]  # Creează o listă inversată
+```
+
+## Tuple
+
+Tuplele în Python sunt structuri de date imutabile, similare cu listele, dar care nu pot fi modificate după creare. Această caracteristică le face ideale pentru stocarea datelor care nu trebuie să se schimbe, cum ar fi coordonatele sau constantele. În machine learning, tuple-urile sunt adesea utilizate pentru a returna valori multiple din funcții sau pentru a defini structuri de date fixe.
+
+```python
+# Crearea și utilizarea tuple-urilor
+punct = (3, 4)  # Tuple cu două elemente
+culori = ("roșu", "verde", "albastru")  # Tuple cu trei elemente
+
+# Accesarea elementelor
+x = punct[0]  # Primul element
+y = punct[1]  # Al doilea element
+
+# Tuple unpacking - util pentru funcții care returnează valori multiple
+def statistici(lista):
+    return min(lista), max(lista), sum(lista)/len(lista)
+
+minim, maxim, media = statistici([1, 2, 3, 4, 5])
+```
+
+## Conditionale
+
+Structurile de control condițional în Python sunt similare cu cele din C++, dar cu o sintaxă mai curată, fără paranteze și cu indentare obligatorie. Blocurile de cod sunt delimitate prin indentare, nu prin acolade, ceea ce impune un stil de codare mai consistent.
+
+```python
+# Structuri condiționale în Python
+varsta = 25
+
+if varsta < 18:
+    print("Minor")
+elif varsta < 65:
+    print("Adult")
+else:
+    print("Senior")
+
+# Condiții compuse
+temperatura = 22
+umiditate = 65
+
+if temperatura > 25 and umiditate > 70:
+    print("Condiții de disconfort termic")
+elif temperatura > 25 or umiditate > 70:
+    print("Condiții moderate")
+else:
+    print("Condiții confortabile")
+```
+
+## For & while
+
+Buclele în Python, atât `for` cât și `while`, oferă o sintaxă mai concisă decât echivalentele lor din C++. Bucla `for` în Python iterează direct peste elementele unei colecții, fără a necesita un index explicit. Bucla `while` funcționează similar cu cea din C++, executând codul atâta timp cât condiția este adevărată.
+
+```python
+# Bucla for în Python
+fructe = ["mar", "banana", "portocala"]
+for fruct in fructe:
+    print(fruct)
+
+# Utilizarea range pentru iterații numerice
+for i in range(5):  # 0, 1, 2, 3, 4
+    print(i)
+
+# Bucla while în Python
+numar = 0
+while numar < 5:
+    print(numar)
+    numar += 1
+
+# Utilizarea break și continue
+for i in range(10):
+    if i == 3:
+        continue  # Sare peste iterația curentă
+    if i == 7:
+        break  # Ieșire din buclă
+    print(i)
+```
+
+## Funcții
+
+Funcțiile în Python sunt definite folosind cuvântul cheie `def` și pot returna valori prin instrucțiunea `return`. Spre deosebire de C++, funcțiile Python pot returna mai multe valori sub formă de tuple. Parametrii pot avea valori implicite, iar funcțiile pot accepta un număr variabil de argumente.
+
+```python
+# Definirea funcțiilor în Python
+def salut(nume="Lume"):
+    """Funcție care salută o persoană."""
+    return f"Salut, {nume}!"
+
+# Funcție cu parametri multipli
+def calcul_medie(*numere):
+    """Calculează media numerelor primite ca argumente."""
+    if not numere:
+        return 0
+    return sum(numere) / len(numere)
+
+# Funcție cu parametri numiți
+def creare_dictionar(**kwargs):
+    """Creează un dicționar din argumentele numite."""
+    return kwargs
+
+# Exemple de utilizare
+print(salut())  # Salut, Lume!
+print(salut("Maria"))  # Salut, Maria!
+print(calcul_medie(1, 2, 3, 4, 5))  # 3.0
+print(creare_dictionar(nume="Ion", varsta=30, oras="București"))
+```
+
+Funcțiile lambda în Python sunt funcții anonime, definite folosind cuvântul cheie `lambda`. Acestea pot avea oricâte argumente, dar pot conține o singură expresie. Lambda functions sunt utile pentru operații simple, adesea utilizate în combinație cu funcții precum `map`, `filter` sau `sort`. În machine learning, funcțiile lambda sunt frecvent utilizate pentru transformări rapide de date sau pentru definirea funcțiilor de activare simple.
+
+```python
+# Lambda pentru adunare
+adunare = lambda x, y: x + y
+print(adunare(3, 4))  # 7
+
+# Lambda cu funcții predefinite
+numere = [1, 2, 3, 4, 5]
+patrate = list(map(lambda x: x**2, numere))
+print(patrate)  # [1, 4, 9, 16, 25]
+
+# Lambda pentru filtrare
+numere_pare = list(filter(lambda x: x % 2 == 0, numere))
+print(numere_pare)  # [2, 4]
+
+# Lambda pentru sortare
+puncte = [(1, 5), (3, 2), (2, 8)]
+puncte_sortate = sorted(puncte, key=lambda p: p[1])
+print(puncte_sortate)  # [(3, 2), (1, 5), (2, 8)]
+```
+
+## Clase
+
+Clasele în Python permit definirea structurilor de date personalizate și a comportamentului asociat acestora. Spre deosebire de C++, Python nu are modificatori de acces precum public, private sau protected; în schimb, utilizează convenții de numire (de exemplu, prefixul `_` pentru membri protejați și `__` pentru membri privați).
+
+```python
+# Definirea claselor în Python
+class Persoana:
+    # Constructor
+    def __init__(self, nume, varsta):
+        self.nume = nume  # Atribut public
+        self._varsta = varsta  # Atribut protejat (convenție)
+        self.__adresa = None  # Atribut privat (convenție)
+
+    # Metodă publică
+    def salut(self):
+        return f"Bună, numele meu este {self.nume}."
+
+    # Metodă protejată (convenție)
+    def _calculeaza_an_nastere(self):
+        from datetime import datetime
+        an_curent = datetime.now().year
+        return an_curent - self._varsta
+
+    # Metodă publică care utilizează metoda protejată
+    def get_an_nastere(self):
+        return self._calculeaza_an_nastere()
+
+    # Setter pentru atributul privat
+    def set_adresa(self, adresa):
+        self.__adresa = adresa
+
+    # Getter pentru atributul privat
+    def get_adresa(self):
+        return self.__adresa
+
+# Utilizarea clasei
+persoana1 = Persoana("Ana", 28)
+print(persoana1.salut())  # Bună, numele meu este Ana.
+print(persoana1.get_an_nastere())  # 1997 (presupunând că anul curent este 2025)
+persoana1.set_adresa("Str. Exemplu nr. 1")
+print(persoana1.get_adresa())  # Str. Exemplu nr. 1
+```
+
+## Principii OOP
+
+Python suportă pe deplin conceptele programării orientate pe obiecte, inclusiv moștenirea, polimorfismul și încapsularea. Moștenirea permite definirea claselor care moștesc atributele și metodele altor clase, facilitând reutilizarea codului. Polimorfismul permite utilizarea unui singur interfață pentru diferite tipuri de obiecte.
+
+```python
+# Moștenire și polimorfism în Python
+class Animal:
+    def __init__(self, nume):
+        self.nume = nume
+
+    def vorbeste(self):
+        raise NotImplementedError("Subclasele trebuie să implementeze această metodă")
+
+class Caine(Animal):
+    def vorbeste(self):
+        return f"{self.nume} latră: Ham!"
+
+class Pisica(Animal):
+    def vorbeste(self):
+        return f"{self.nume} miaună: Miau!"
+
+# Polimorfism
+def face_zgomot(animal):
+    print(animal.vorbeste())
+
+# Utilizare
+rex = Caine("Rex")
+mitzi = Pisica("Mitzi")
+
+face_zgomot(rex)  # Rex latră: Ham!
+face_zgomot(mitzi)  # Mitzi miaună: Miau!
+
+# Moștenire multiplă
+class AnimalDeCompanie:
+    def __init__(self, stapan):
+        self.stapan = stapan
+
+    def prezinta_stapan(self):
+        return f"Stăpânul meu este {self.stapan}."
+
+class CaineDeCompanie(Caine, AnimalDeCompanie):
+    def __init__(self, nume, stapan):
+        Caine.__init__(self, nume)
+        AnimalDeCompanie.__init__(self, stapan)
+
+# Utilizare moștenire multiplă
+buddy = CaineDeCompanie("Buddy", "Ion")
+print(buddy.vorbeste())  # Buddy latră: Ham!
+print(buddy.prezinta_stapan())  # Stăpânul meu este Ion.
+```
+
+## Features avansate
+
+### List Comprehensions
+
+List comprehensions reprezintă o modalitate concisă și eficientă de a crea liste în Python. Acestea permit transformarea și filtrarea colecțiilor într-o singură linie de cod, fiind adesea mai rapide decât echivalentele lor care utilizează bucle for.
+
+```python
+# List comprehensions de bază
+numere = [1, 2, 3, 4, 5]
+patrate = [x**2 for x in numere]
+print(patrate)  # [1, 4, 9, 16, 25]
+
+# List comprehensions cu condiții
+numere_pare = [x for x in numere if x % 2 == 0]
+print(numere_pare)  # [2, 4]
+
+# List comprehensions cu if-else
+etichete = ["par" if x % 2 == 0 else "impar" for x in numere]
+print(etichete)  # ['impar', 'par', 'impar', 'par', 'impar']
+
+# List comprehensions imbricate
+matrice = [[i*j for j in range(1, 4)] for i in range(1, 4)]
+print(matrice)  # [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
+
+# Utilizare în ML: normalizarea datelor
+date_brute = [12, 35, 67, 89, 120, 150]
+min_val = min(date_brute)
+max_val = max(date_brute)
+date_normalizate = [(x - min_val) / (max_val - min_val) for x in date_brute]
+print(date_normalizate)  # [0.0, 0.1724137931034483, 0.39655172413793105, 0.6379310344827587, 0.8620689655172413, 1.0]
+```
+
+### Dictionary Comprehension
+
+Similar cu list comprehensions, dictionary comprehension permite crearea concisă a dicționarelor. Acestea sunt utile pentru transformarea datelor structurate, crearea de mapări și indexări rapide. În contextul machine learning, dicționarele sunt adesea utilizate pentru stocarea hiperparametrilor, a metadatelor seturilor de date sau a rezultatelor intermediare ale modelelor.
+
+```python
+# Dictionary comprehension de bază
+numere = [1, 2, 3, 4, 5]
+patrate_dict = {x: x**2 for x in numere}
+print(patrate_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Dictionary comprehension cu condiții
+numere_pare_dict = {x: x**2 for x in numere if x % 2 == 0}
+print(numere_pare_dict)  # {2: 4, 4: 16}
+
+# Utilizare în ML: maparea etichetelor la indici
+etichete = ["câine", "pisică", "pasăre", "câine", "pisică"]
+etichete_unice = list(set(etichete))
+eticheta_la_index = {eticheta: idx for idx, eticheta in enumerate(etichete_unice)}
+print(eticheta_la_index)  # {'câine': 0, 'pisică': 1, 'pasăre': 2}
+
+# Utilizare în ML: stocarea hiperparametrilor
+hiperparametri = {
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "num_epochs": 100,
+    "hidden_units": [128, 64, 32]
+}
+hiperparametri_log = {f"param_{k}": str(v) for k, v in hiperparametri.items()}
+print(hiperparametri_log)  # {'param_learning_rate': '0.001', 'param_batch_size': '32', 'param_num_epochs': '100', 'param_hidden_units': '[128, 64, 32]'}
+```
+
+### Decoratori
+
+Decoratorii în Python sunt funcții care modifică comportamentul altor funcții sau metode, fără a le schimba codul sursă. Aceștia permit adăugarea de funcționalități precum logging, memorizare, validare sau măsurarea performanței.
+
+```python
+# Decorator simplu pentru măsurarea timpului de execuție
+import time
+
+def masoara_timp(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        rezultat = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} a durat {end_time - start_time:.4f} secunde")
+        return rezultat
+    return wrapper
+
+# Utilizare decorator
+@masoara_timp
+def antreneaza_model(epoci):
+    """Simulează antrenarea unui model."""
+    print(f"Antrenare model pentru {epoci} epoci...")
+    time.sleep(1)  # Simulare procesare
+    return "Model antrenat"
+
+# Decorator pentru validarea parametrilor
+def valideaza_parametri(func):
+    def wrapper(x, y):
+        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+            raise ValueError("Parametrii trebuie să fie numere")
+        return func(x, y)
+    return wrapper
+
+@valideaza_parametri
+def impartire(x, y):
+    return x / y
+
+# Utilizare
+print(antreneaza_model(10))
+print(impartire(10, 2))  # 5.0
+# impartire("10", "2")  # Aruncă ValueError
+```
+
+### Generatoare
+
+Generatoarele în Python sunt funcții care returnează un obiect iterator, generând valori pe măsură ce sunt necesare, în loc să le calculeze toate dinainte. Acestea utilizează cuvântul cheie `yield` pentru a produce valori și permit procesarea eficientă a seturilor mari de date fără a consuma multă memorie.
+
+```python
+# Generator simplu
+def numere_pana_la(n):
+    """Generează numere de la 0 la n-1."""
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+
+# Utilizare generator
+for numar in numere_pana_la(5):
+    print(numar)  # 0, 1, 2, 3, 4
+
+# Generator expresie
+patrate = (x**2 for x in range(10))
+print(list(patrate))  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+### Biblioteca Standard
+
+Biblioteca standard Python oferă numeroase funcții și module utile pentru machine learning, fără a necesita instalarea de biblioteci externe. Module precum `collections`, `itertools`, `functools` și `operator` oferă instrumente puternice pentru manipularea datelor și optimizarea codului. Aceste funcții sunt adesea mai eficiente decât implementările manuale și pot simplifica semnificativ codul pentru prelucrarea datelor.
+
+```python
+# 1. collections: Counter pentru numărarea frecvenței etichetelor
+from collections import Counter
+etichete = ["câine", "pisică", "câine", "pasăre", "pisică", "câine"]
+frecventa = Counter(etichete)
+print(frecventa)  # Counter({'câine': 3, 'pisică': 2, 'pasăre': 1})
+
+# 2. itertools: combinări de caracteristici
+from itertools import combinations
+caracteristici = ["vârstă", "venit", "educație", "ocupatie"]
+perechi_caracteristici = list(combinations(caracteristici, 2))
+print(perechi_caracteristici[:3])  # Primele 3 perechi
+
+# 3. functools: reduce pentru agregări
+from functools import reduce
+numere = [1, 2, 3, 4, 5]
+produs = reduce(lambda x, y: x * y, numere)
+print(produs)  # 120
+
+# 4. operator: funcții pentru operații comune
+import operator
+dict_persoane = {"Ana": 25, "Bogdan": 30, "Cristina": 22}
+persoana_max = max(dict_persoane.items(), key=operator.itemgetter(1))
+print(persoana_max)  # ('Bogdan', 30)
+```
+
+## NumPy
+
+Deși NumPy nu face parte din biblioteca standard, este esențial pentru machine learning în Python. NumPy oferă suport pentru array-uri multidimensionale eficiente, funcții matematice optimizate și instrumente pentru algebra liniară. Array-urile NumPy sunt mai eficiente din punct de vedere al memoriei și mai rapide decât listele Python, fiind fundamentul pentru majoritatea bibliotecilor de machine learning precum scikit-learn, TensorFlow și PyTorch.
+
+NumPy, ca majoritatea librăriilor Python, este scris în C. Astfel, funcțiile pot fi scrise cu control maxim asupra memoriei și performanței, urmând ca utilizatorul doar să le apeleze din codul Python. Pentru a înțelege cum este posibil acest lucru, consultați [documentația](https://docs.python.org/3/extending/extending.html).
+
+```python
+import numpy as np
+
+# Crearea array-urilor NumPy
+vector = np.array([1, 2, 3, 4, 5])
+matrice = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Operații matematice vectorizate
+vector_dublat = vector * 2
+print(vector_dublat)  # [2 4 6 8 10]
+
+# Indexare avansată
+print(matrice[0, :])  # [1 2 3] - prima linie
+print(matrice[:, 1])  # [2 5 8] - a doua coloană
+
+# Operații pe matrice
+matrice_transpusa = matrice.T
+print(matrice_transpusa)
+
+# Funcții statistice
+print(np.mean(vector))  # 3.0
+print(np.std(vector))   # 1.4142135623730951
+
+# Utilizare în ML: normalizarea datelor cu NumPy
+date_brute = np.array([12, 35, 67, 89, 120, 150])
+min_val = np.min(date_brute)
+max_val = np.max(date_brute)
+date_normalizate = (date_brute - min_val) / (max_val - min_val)
+print(date_normalizate)  # [0.         0.17241379 0.39655172 0.63793103 0.86206897 1.        ]
+
+# Utilizare în ML: generarea de date sintetice
+np.random.seed(42)  # Pentru reproducibilitate
+X = np.random.rand(100, 5)  # 100 de eșantioane, 5 caracteristici
+y = np.random.randint(0, 2, 100)  # 100 de etichete binare
+
+# Calculul matricei de corelație
+matrice_corelatie = np.corrcoef(X, rowvar=False)
+print(matrice_corelatie)
+```
+
+Acesta nu este un ghid complet, si va incurajam sa consultati si alte resurse sau cursuri!
