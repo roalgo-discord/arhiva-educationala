@@ -412,46 +412,23 @@ Teorema lui Bayes:
 
 $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
 
-PDF-ul distributiei normale de $\mu$ si
-
-$\sigma^2$:
+PDF-ul distributiei normale de $\mu$ si $\sigma^2$:
 
 $$f_{\text{normal}}(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
-### **Statistică:**
+### Statistică  
+| Denumire          | Formula                                                                                                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Media aritmetică  | $\bar{X}=\displaystyle\frac{1}{n}\sum_{i=1}^{n}X_{i}$                                                                                                                                |
+| Valoarea expected | $\mathbb{E}[X]=\sum xP(X=x)=\bar{X}$                                                                                                                                                 |
+| Covarianță        | $\mathrm{Cov}(X,Y)=\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]$                                                                                     |
+| Varianță          | $\mathrm{Var}(X)=\mathrm{Cov}(X,X)=\mathbb{E}[(X-\bar{X})^2]$                                                                                                                        |
+| Deviație standard | $\sigma=\sqrt{\mathrm{Var}(X)}$                                                                                                                                                      |
+| Corelația Pearson | $\rho_{X,Y}=\displaystyle\frac{\mathrm{Cov}(X,Y)}{\sigma_{X}\sigma_{Y}}=\frac{\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]}{\sqrt{\mathbb{E}[(X-\bar{X})^2]}\sqrt{\mathbb{E}[(Y-\bar{Y})^2]}}$ |
 
-Media aritmetica:
-
-$$\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i$$
-
-Valoarea expected:
-
-$$\mathbb{E}[X] = \sum xP(X=x) = \bar{X}$$
-
-Covarianta:
-
-$$\mathrm{Cov}(X, Y) = \mathbb{E}[(X - \bar{X})(Y-\bar{Y})] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$$
-
-Varianta:
-
-$$\mathrm{Var}(X) = \mathrm{Cov}(X, X) = \mathrm{E}[(X-\bar{X})^2]$$
-
-Deviata standard:
-
-$$\sigma = \sqrt{\mathrm{Var}(X)}$$
-
-Corelatia pearson:
-
-$$\rho_{X, Y} = \frac{\mathrm{Cov}(X, Y)}{\sigma_X \sigma_Y} = \frac{\mathbb{E}[(X - \bar{X})(Y-\bar{Y})]}{\sqrt{\mathbb{E}[(X-\bar{X})^2]}\sqrt{\mathbb{E}[(Y-\bar{Y})^2]}}$$
-
-### **Algebră liniară:**
-
-$$Av = \lambda v$$
-
-Conditia pentru a afla valorile proprii:
-
-$$\det({A - \lambda I}) = 0$$
-
-Conditia pentru a afla vectorii proprii:
-
-$$(A - \lambda I)v = 0$$
+### Algebră liniară  
+| Denumire                  | Formula               |
+| ------------------------- | --------------------- |
+| Valori și vectori proprii | $Av=\lambda v$        |
+| Condiție valori proprii   | $\det(A-\lambda I)=0$ |
+| Condiție vectori proprii  | $(A-\lambda I)v=0$    |
