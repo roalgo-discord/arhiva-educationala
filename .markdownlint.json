@@ -1,24 +1,19 @@
 {
-    "default": true,
-    "heading-style": {
-        "style": "atx"
-    },
-    "ul-style": {
-        "style": "dash"
-    },
-    "ul-indent": {
-        "indent": 2
-    },
-    "no-trailing-punctuation": true,
-    "first-line-heading": false,
-    "no-inline-html": {
-        "allowed_elements": [
-            "img",
-            "div",
-            "figure",
-            "center"
-        ]
-    },
-    "list-marker-space": false,
-    "code-block-style": false
+  "default": true,
+  "heading-style": {
+    "style": "atx"
+  },
+  "ul-style": {
+    "style": "dash"
+  },
+  "ul-indent": {
+    "indent": 2
+  },
+  "no-trailing-punctuation": true,
+  "first-line-heading": false,
+  "no-inline-html": {
+    "allowed_elements": ["img", "div", "figure", "center"]
+  },
+  "list-marker-space": false,
+  "code-block-style": false
 }
