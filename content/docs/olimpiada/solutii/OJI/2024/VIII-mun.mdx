@@ -11,13 +11,13 @@ tags:
   - clasa VIII
 ---
 
-Cerința 1: Soluția în complexitate $$\mathcal{O}(N \log N)$$ obține punctaj maxim, adică 40 de puncte. Se determină pentru fiecare cod, codul ordonat crescător; se ordonează delegații crescător după codul ordonat, dacă doi delegați de pe poziții consecutive au codul ordonat diferit, se incrementează numărul de țări. Deoarece valoarea lui $$N$$ nu este foarte mare, există și alte abordări mai puțin eficiente care în funcție de implementare pot obține punctajul maxim. În cazul testelor cu $$N \leq 1000$$ și codurile formate dintr-un singur caracter, o soluție care utilizează vector de apariții pentru caractere, corect implementată, va obține 30 de puncte.
+Cerința 1: Soluția în complexitate $\mathcal{O}(N \log N)$ obține punctaj maxim, adică 40 de puncte. Se determină pentru fiecare cod, codul ordonat crescător; se ordonează delegații crescător după codul ordonat, dacă doi delegați de pe poziții consecutive au codul ordonat diferit, se incrementează numărul de țări. Deoarece valoarea lui $N$ nu este foarte mare, există și alte abordări mai puțin eficiente care în funcție de implementare pot obține punctajul maxim. În cazul testelor cu $N \leq 1000$ și codurile formate dintr-un singur caracter, o soluție care utilizează vector de apariții pentru caractere, corect implementată, va obține 30 de puncte.
 
-Cerința 2: Soluția în complexitate $$\mathcal{O}(N)$$ obține punctaj maxim, adică 30 de puncte. Se determină în $$mx_{freq}$$, frecvența elementului majoritar (țara gazdă) utilizând un algoritm liniar, pe vectorul ordonat obținut la cerința 1, se calculează lungimea maximă a unei secvențe care are codurile ordonate crescător egale (sunt mai multe abordări, se poate utiliza și algoritmul clasic de determinare a elementului majoritar). Valoarea afișată pentru $$S$$ este $$N − 2
-\cdot (N − mx_{freq})$$. Valoarea afișată pentru $$V$$ va fi $$2 \cdot (N −
-mx_{freq})$$
+Cerința 2: Soluția în complexitate $\mathcal{O}(N)$ obține punctaj maxim, adică 30 de puncte. Se determină în $mx_{freq}$, frecvența elementului majoritar (țara gazdă) utilizând un algoritm liniar, pe vectorul ordonat obținut la cerința 1, se calculează lungimea maximă a unei secvențe care are codurile ordonate crescător egale (sunt mai multe abordări, se poate utiliza și algoritmul clasic de determinare a elementului majoritar). Valoarea afișată pentru $S$ este $N − 2
+\cdot (N − mx_{freq})$. Valoarea afișată pentru $V$ va fi $2 \cdot (N −
+mx_{freq})$
 
-Cerința 3. Soluția în complexitate $$\mathcal{O}(N \log N)$$ obține punctaj maxim, adică 30 de puncte. Se vor construi doi vectori de coduri: codurile delegaților care fac parte din țara gazdă $$(hosts[])$$ și codurile celorlalți delegați $$(rest[])$$; se vor ordona lexicografic, se va afișa un cod dintr-o mulțime și unul din cealaltă mulțime conform ordinii lexicografice, având grijă să nu se depășească numărul de persoane de la masa rotundă. O soluție care determină ordinea lexicografică în complexitate $$\mathcal{O}(N^2)$$ poate obține în funcție de implementare 70 - 80 de puncte.
+Cerința 3. Soluția în complexitate $\mathcal{O}(N \log N)$ obține punctaj maxim, adică 30 de puncte. Se vor construi doi vectori de coduri: codurile delegaților care fac parte din țara gazdă $(hosts[])$ și codurile celorlalți delegați $(rest[])$; se vor ordona lexicografic, se va afișa un cod dintr-o mulțime și unul din cealaltă mulțime conform ordinii lexicografice, având grijă să nu se depășească numărul de persoane de la masa rotundă. O soluție care determină ordinea lexicografică în complexitate $\mathcal{O}(N^2)$ poate obține în funcție de implementare 70 - 80 de puncte.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

@@ -19,27 +19,27 @@ Un șir de caractere este un tablou care stochează caractere. În limbajul C++,
 
 ## Tipul `char` și tabelul ASCII
 
-Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.md), limbajul C++ dispune de tipul de date `char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `char` sunt în intervalul [-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului [32, 127].
+Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.mdx), limbajul C++ dispune de tipul de date `char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `char` sunt în intervalul \[-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului \[32, 127].
 
 !!! note "Codificarea caracterelor"
 
-    Standardul care atribuie valori caracterelor se numește ASCII (American
-    Standard Code for Information Interchange). Caracterele din intervalul
-    [0, 31] nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
+Standardul care atribuie valori caracterelor se numește ASCII (American
+Standard Code for Information Interchange). Caracterele din intervalul
+\[0, 31] nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
 
 Printre cele mai importante coduri ASCII sunt:
 
-- **32** (spațiu)
-- **48-57**: cifrele 0-9
-- **65-90**: literele mari ale alfabetului englez (A-Z)
-- **97-122**: literele mici ale alfabetului englez (a-z)
+* **32** (spațiu)
+* **48-57**: cifrele 0-9
+* **65-90**: literele mari ale alfabetului englez (A-Z)
+* **97-122**: literele mici ale alfabetului englez (a-z)
 
 ### Transformări între litere și cifre
 
 Putem simplifica lucrul cu caractere folosind valorile ASCII, fără a gestiona direct codurile. De exemplu:
 
-- **Cifre**: Scădeți '0' din caracter.
-- **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
+* **Cifre**: Scădeți '0' din caracter.
+* **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
 
 ```cpp
 --8<-- "cppintro/strings/strings01.cpp"
@@ -47,15 +47,44 @@ Putem simplifica lucrul cu caractere folosind valorile ASCII, fără a gestiona 
 
 Lista completă a codurilor pentru caractere se găsește [aici](https://www.sciencebuddies.org/science-fair-projects/references/ascii-table). Pentru conveniență, o voi reproduce aici:
 
-<!-- markdownlint-disable MD038 -->
-
---8<-- "cppintro/strings/ascii.md"
+| Dec | Caracter | Dec | Caracter | Dec | Caracter | Dec | Caracter |
+| --- | -------- | --- | -------- | --- | -------- | --- | -------- |
+| 0   | NUL      | 32  | \`\`     | 64  | @        | 96  | \`       |
+| 1   | SOH      | 33  | !        | 65  | A        | 97  | a        |
+| 2   | STX      | 34  | "        | 66  | B        | 98  | b        |
+| 3   | ETX      | 35  | #        | 67  | C        | 99  | c        |
+| 4   | EOT      | 36  | \$       | 68  | D        | 100 | d        |
+| 5   | ENQ      | 37  | %        | 69  | E        | 101 | e        |
+| 6   | ACK      | 38  | &        | 70  | F        | 102 | f        |
+| 7   | BEL      | 39  | '        | 71  | G        | 103 | g        |
+| 8   | BS       | 40  | (        | 72  | H        | 104 | h        |
+| 9   | TAB      | 41  | )        | 73  | I        | 105 | i        |
+| 10  | LF       | 42  | \*       | 74  | J        | 106 | j        |
+| 11  | VT       | 43  | +        | 75  | K        | 107 | k        |
+| 12  | FF       | 44  | ,        | 76  | L        | 108 | l        |
+| 13  | CR       | 45  | -        | 77  | M        | 109 | m        |
+| 14  | SO       | 46  | .        | 78  | N        | 110 | n        |
+| 15  | SI       | 47  | /        | 79  | O        | 111 | o        |
+| 16  | DLE      | 48  | 0        | 80  | P        | 112 | p        |
+| 17  | DC1      | 49  | 1        | 81  | Q        | 113 | q        |
+| 18  | DC2      | 50  | 2        | 82  | R        | 114 | r        |
+| 19  | DC3      | 51  | 3        | 83  | S        | 115 | s        |
+| 20  | DC4      | 52  | 4        | 84  | T        | 116 | t        |
+| 21  | NAK      | 53  | 5        | 85  | U        | 117 | u        |
+| 22  | SYN      | 54  | 6        | 86  | V        | 118 | v        |
+| 23  | ETB      | 55  | 7        | 87  | W        | 119 | w        |
+| 24  | CAN      | 56  | 8        | 88  | X        | 120 | x        |
+| 25  | EM       | 57  | 9        | 89  | Y        | 121 | y        |
+| 26  | SUB      | 58  | :        | 90  | Z        | 122 | z        |
+| 27  | ESC      | 59  | ;        | 91  | \[       | 123 | \{       |
+| 28  | FS       | 60  | \<       | 92  | \\       | 124 | \|       |
+| 29  | GS       | 61  | =        | 93  | ]        | 125 | }        |
+| 30  | RS       | 62  | >        | 94  | ^        | 126 | \~       |
+| 31  | US       | 63  | ?        | 95  | \_       | 127 | DEL      |
 
 ## Funcții pe tipul `char`
 
 Biblioteca standard `<cctype>` din C++ oferă un set de funcții predefinite utile pentru verificarea proprietăților caracterelor individuale. Aceste funcții simplifică validarea și manipularea stringurilor, fiind ideale pentru lucrul cu date de tip text.
-
-<!-- markdownlint-disable-file MD024 -->
 
 ### Funcția `isdigit`
 
@@ -67,7 +96,7 @@ Verifică dacă un caracter anume este una din cele zece cifre zecimale: (012345
 
 #### Parametri
 
-- `ch` - caracterul de clasificat
+* `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -87,12 +116,12 @@ int alpha(int ch);
 
 Verifică dacă un caracter anume este alfabetic. Următoarele caractere sunt considerate alfabetice:
 
-- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
-- literele mici abcdefghijklmnopqrstuvwxyz
+* literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+* literele mici abcdefghijklmnopqrstuvwxyz
 
 #### Parametri
 
-- `ch` - caracterul de clasificat
+* `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -112,15 +141,15 @@ int isalnum(int ch);
 
 Verifică dacă un caracter anume este alfanumeric. Următoarele caractere sunt considerate alfanumerice:
 
-- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
-- literele mici abcdefghijklmnopqrstuvwxyz
-- cifrele 0123456789
+* literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+* literele mici abcdefghijklmnopqrstuvwxyz
+* cifrele 0123456789
 
 !!! note "Observație" `isalnum(ch)` este echivalent cu `isdigit(ch) && isalpha(ch)`.
 
 #### Parametri
 
-- `ch` - caracterul de clasificat
+* `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -143,7 +172,7 @@ Verifică dacă un caracter anume este clasificat ca fiind unul mic, respectiv m
 
 #### Parametri
 
-- `ch` - caracterul de clasificat
+* `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -168,7 +197,7 @@ Convertește un caracter dat într-o literă mare, respectiv mică, respectiv ma
 
 #### Parametri
 
-- `ch` - caracterul de convertit
+* `ch` - caracterul de convertit
 
 #### Valoare returnată
 
@@ -208,7 +237,7 @@ Funcția `cin.getline` are ca parametri șirul în care se va stoca rezultatul c
 
 Citirea fără o funcție specifică se poate face cu cin, dar se va citi până la primul spațiu.
 
-Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $$x$$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
+Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
 
 ```cpp
 --8<-- "cppintro/strings/strings04.cpp"
@@ -226,57 +255,57 @@ Funcția strlen ia drept parametru un șir de caractere și returnează lungimea
 
 Funcția `strcpy` copiază un șir de caractere în alt șir, numit destinație. Asemănător, funcția `strncpy` copiază doar primele n caractere dintr-un șir. Aceste funcții nu adaugă caracterul `\0` la finalul șirului.
 
-=== "strcpy"
+\=== "strcpy"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strcpy"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strcpy"
+```
 
-=== "strncpy"
+\=== "strncpy"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strncpy"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strncpy"
+```
 
 ### Funcțiile strcat și strncat
 
 Funcția `strcat` concatenează un șir 'destinatie' cu o copie a unui șir 'sursa'. Concatenarea a două șiruri înseamnă alipirea acestora. Funcția `strncat` funcționează asemănător, numai că alipește doar primele n caractere ale șirului sursă. Iată un exemplu:
 
-=== "strcat"
+\=== "strcat"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strcat"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strcat"
+```
 
-=== "strncat"
+\=== "strncat"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strncat"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strncat"
+```
 
 ### Funcția strchr și strrchr
 
 Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, respectiv ultima apariție a unui caracter într-un șir. Mai exact se va afișa șirul de începând cu prima, respectiv ultima apariție a caracterului.
 
-=== "strchr"
+\=== "strchr"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strchr"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strchr"
+```
 
-=== "strrchr"
+\=== "strrchr"
 
-    ```cpp
-    --8<-- "cppintro/strings/strings05.cpp:strrchr"
-    ```
+```cpp
+--8<-- "cppintro/strings/strings05.cpp:strrchr"
+```
 
 ### Funcția strcmp
 
 Funcția `strcmp` este folosită pentru a compara două șiruri de caractere. Aceasta poate returna 3 valori:
 
-- `0` - dacă șirurile sunt exact la fel;
-- `-1` sau o valoare mai mică decât 0 - dacă primul șir este înaintea celuilalt, alfabetic vorbind;
-- `1` sau o valoare mai mare decât 0 - dacă primul șir este după celălalt, alfabetic vorbind.
+* `0` - dacă șirurile sunt exact la fel;
+* `-1` sau o valoare mai mică decât 0 - dacă primul șir este înaintea celuilalt, alfabetic vorbind;
+* `1` sau o valoare mai mare decât 0 - dacă primul șir este după celălalt, alfabetic vorbind.
 
 ```cpp
 --8<-- "cppintro/strings/strings05.cpp:strcmp"
@@ -300,7 +329,7 @@ Funcția `strtok` împarte `str[]` conform delimitatorilor dați și returnează
 
 ## Tipul de date std::string
 
-Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $$\mathcal{O}(1)$$, în loc de $$\mathcal{O}(n)$$. Tipul string este unul din tipurile prezente în [STL](./stl.md), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
+Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$. Tipul string este unul din tipurile prezente în [STL](./stl.mdx), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
 Pentru a putea folosi această structură de date, va trebui să includem biblioteca `<string>`. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
 
@@ -328,7 +357,7 @@ Deși în cazul numerelor naturale, aceste operații sunt echivalente, în cazul
 --8<-- "cppintro/strings/strings06.cpp:loops"
 ```
 
-Putem folosi și funcții specifice care caută prima sau ultima apariție a unui anumit caracter în șir, precum find sau find_last_of, care au complexitate liniară. Tipul returnat este size_t, dar acesta poate fi folosit și ca int.
+Putem folosi și funcții specifice care caută prima sau ultima apariție a unui anumit caracter în șir, precum find sau find\_last\_of, care au complexitate liniară. Tipul returnat este size\_t, dar acesta poate fi folosit și ca int.
 
 ```cpp
 --8<-- "cppintro/strings/strings07.cpp"
@@ -342,16 +371,16 @@ Cunoașterea funcțiilor specifice este esențială deoarece foarte multe între
 
 ## Probleme suplimentare
 
-- [Prelucrări elementare pe șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/11/Siruri-de-caractere-prelucrari-elementare-pe-siruri-de-caractere)
-- [Funcții predefinite cu șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/23/Siruri-de-caractere-functii-predefinite-cu-siruri-de-caractere)
-- [Probleme diverse - pbinfo](https://www.pbinfo.ro/probleme/categorii/84/Siruri-de-caractere-probleme-diverse)
-- [Probleme cu stringuri de pe kilonova](https://kilonova.ro/tags/303)
+* [Prelucrări elementare pe șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/11/Siruri-de-caractere-prelucrari-elementare-pe-siruri-de-caractere)
+* [Funcții predefinite cu șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/23/Siruri-de-caractere-functii-predefinite-cu-siruri-de-caractere)
+* [Probleme diverse - pbinfo](https://www.pbinfo.ro/probleme/categorii/84/Siruri-de-caractere-probleme-diverse)
+* [Probleme cu stringuri de pe kilonova](https://kilonova.ro/tags/303)
 
 ## Resurse suplimentare
 
-- [Clasificarea caracterelor - geeksforgeeks](https://www.geeksforgeeks.org/character-classification-c-cctype/)
-- [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
-- [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
-- [Șiruri de caractere C++ - pbinfo](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)
-- [Stringuri - Infogym](https://events.info.uaic.ro/infogim/2017/lectii/78/783_stringuri.pdf)
-- [Siruri de caractere în C++ - infoscience 3x](http://infoscience.3x.ro/c++/siruridecaractere.htm)
+* [Clasificarea caracterelor - geeksforgeeks](https://www.geeksforgeeks.org/character-classification-c-cctype/)
+* [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
+* [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
+* [Șiruri de caractere C++ - pbinfo](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)
+* [Stringuri - Infogym](https://events.info.uaic.ro/infogim/2017/lectii/78/783_stringuri.pdf)
+* [Siruri de caractere în C++ - infoscience 3x](http://infoscience.3x.ro/c++/siruridecaractere.htm)

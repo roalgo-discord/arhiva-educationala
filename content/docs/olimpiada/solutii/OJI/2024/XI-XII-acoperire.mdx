@@ -11,27 +11,27 @@ tags:
   - clasa XI-XII
 ---
 
-Subtask 1 (10 puncte). Pentru $$N = 1$$, doar trebuie afișat intervalul de la capătul stânga la mijlocul intervalului.
+Subtask 1 (10 puncte). Pentru $N = 1$, doar trebuie afișat intervalul de la capătul stânga la mijlocul intervalului.
 
-Subtask 2 (10 puncte). Când sunt două intervale disjuncte, pentru $$K = 2$$ doar se face $$[start,mijloc]$$ pentru fiecare, iar pentru $$K = 1$$ sunt două cazuri, ca la subtaskul 3.
+Subtask 2 (10 puncte). Când sunt două intervale disjuncte, pentru $K = 2$ doar se face $[start,mijloc]$ pentru fiecare, iar pentru $K = 1$ sunt două cazuri, ca la subtaskul 3.
 
-Subtask 3 (20 puncte). Când $$K = 1$$ soluția tot timpul este ori $$[primulMijloc, ultimulMijloc]$$, ori se termină în ultimul mijloc și trebuie văzut pentru fiecare interval în parte unde poate începe cel mai târziu.
+Subtask 3 (20 puncte). Când $K = 1$ soluția tot timpul este ori $[primulMijloc, ultimulMijloc]$, ori se termină în ultimul mijloc și trebuie văzut pentru fiecare interval în parte unde poate începe cel mai târziu.
 
 Subtask 4 (20 puncte). Când toate intervalele nu se intersectează, ele pot fi sortate oricum, căci bănuim că unii concurenți instinctiv le sortează după unul din capete și apoi încearcă un greedy. Problemele de genul de obicei implică o ordonare și parcurgere a evenimentelor, doar aici trebuia văzut că evenimentele interesante sunt mijloacele.
 
-Observația de bază a problemei este că dacă un segment nou acoperă un segment inițial, atunci trebuie să acopere mijlocul segmentului inițial. Dacă intervalul de acoperiri are lungimea minim jumătate din intervalul initial, este și garantat suficient. Echivalent ar fi să spunem că orice interval de lungime minim $$L/2$$ acoperă un interval inițial de lungime $$L$$ dacă și numai dacă conține mijlocul intervalului inițial.
+Observația de bază a problemei este că dacă un segment nou acoperă un segment inițial, atunci trebuie să acopere mijlocul segmentului inițial. Dacă intervalul de acoperiri are lungimea minim jumătate din intervalul initial, este și garantat suficient. Echivalent ar fi să spunem că orice interval de lungime minim $L/2$ acoperă un interval inițial de lungime $L$ dacă și numai dacă conține mijlocul intervalului inițial.
 
-Ca să ajungem la concluzia de mai sus, considerăm un interval oarecare $$[A, B]$$. Dacă ne gândim care este segmentul minim cel mai din stânga care îl acoperă, care ar fi intervalul $$[A, (A+B)/2]$$, și cel mai din dreapta, adică $$[(A+ B)/2, B]$$, vedem că doar elementul din mijloc este intersecția lor.
+Ca să ajungem la concluzia de mai sus, considerăm un interval oarecare $[A, B]$. Dacă ne gândim care este segmentul minim cel mai din stânga care îl acoperă, care ar fi intervalul $[A, (A+B)/2]$, și cel mai din dreapta, adică $[(A+ B)/2, B]$, vedem că doar elementul din mijloc este intersecția lor.
 
 De aici, putem vedea că un interval de acoperire dintr-o soluție validă poate fi translatat fără a-i afecta corectitudinea până când unul din capete coincide cu unul din mijloacele intervalelor acoperite inițial. Facem asta pentru a putea genera toate intervalele de acoperire pornind de la puncte definite de segmentele inițiale.
 
-Pentru soluția finală căutăm binar lungimea minimă a celui mai lung interval, folosind întrebări de forma: ”Dacă toate intervalele de acoperire au lungima $$L$$, am putea acoperi cu cel mult $$K$$ intervale mulțimea celor initiale?”
+Pentru soluția finală căutăm binar lungimea minimă a celui mai lung interval, folosind întrebări de forma: ”Dacă toate intervalele de acoperire au lungima $L$, am putea acoperi cu cel mult $K$ intervale mulțimea celor initiale?”
 
-Întrebarea nouă este mai simplă, și o răspundem printr-o parcurgere a intervalelor inițiale, ordonate după mijloacele lor: Începem un interval de lungime $$L$$ în primul mijloc și considerăm acoperite toate segmentele cu mijlocul conținut în acesta. Când întâlnim un segment nou care nu este acoperit de ultimul interval adăugat, înseamnă că trebuie să începem un nou interval în mijlocul intervalului inițial. Complexitatea pentru pasul acesta este $$\mathcal{O}(N)$$ odată ce intervalele sunt sortate la început după mijloc.
+Întrebarea nouă este mai simplă, și o răspundem printr-o parcurgere a intervalelor inițiale, ordonate după mijloacele lor: Începem un interval de lungime $L$ în primul mijloc și considerăm acoperite toate segmentele cu mijlocul conținut în acesta. Când întâlnim un segment nou care nu este acoperit de ultimul interval adăugat, înseamnă că trebuie să începem un nou interval în mijlocul intervalului inițial. Complexitatea pentru pasul acesta este $\mathcal{O}(N)$ odată ce intervalele sunt sortate la început după mijloc.
 
 Pentru soluția minimă lexicografic tot ce trebuie făcut e să vedem că dacă intervalele trebuie să înceapă cât mai din stânga, este echivalent cu a vrea ca intervalele să se termine cât mai în stânga, și deci doar facem algoritmul în sens invers după mijloace (pornim ultimul interval în ultimul mijloc, etc.).
 
-Pentru a nu fi erori de precizie, se dublează în implementare capetele intervalelor, astfel încât mijloacele să fie întregi. La afișare se poate face cu: `cout « setprecision(2) « (x / 2.0)` (fără fixed) sau tratând explicit numere pare sau impare, cu caz particular pentru afișarea lui $$-1$$.
+Pentru a nu fi erori de precizie, se dublează în implementare capetele intervalelor, astfel încât mijloacele să fie întregi. La afișare se poate face cu: `cout « setprecision(2) « (x / 2.0)` (fără fixed) sau tratând explicit numere pare sau impare, cu caz particular pentru afișarea lui $-1$.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 

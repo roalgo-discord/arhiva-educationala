@@ -18,9 +18,9 @@ Vom prezenta cazurile cele mai simple, urmate de implementări mai generalizate 
 
 !!! note "Detalii de implementare"
 
-    În general, pentru a afla valoarea minimă în loc de cea maximă, vom vrea să
-    schimbăm semnul (`<` în loc de `>`). Acest lucru va fi adevărat și în cazul
-    în care permitem egalități, care fac implementările mai ușoare.
+În general, pentru a afla valoarea minimă în loc de cea maximă, vom vrea să
+schimbăm semnul (`<` în loc de `>`). Acest lucru va fi adevărat și în cazul
+în care permitem egalități, care fac implementările mai ușoare.
 
 ## Maximul și minimul dintre două numere
 
@@ -61,76 +61,76 @@ Cea de-a doua variantă constă în aflarea maximului sau minimului dintre prime
 
 Mai jos implementăm ambele variante.
 
-=== "Varianta 1"
+\=== "Varianta 1"
 
-    ```cpp
-    #include <iostream>
-    using namespace std;
+```cpp
+#include <iostream>
+using namespace std;
 
-    int main() {
-        int a, b, c;
-        cin >> a >> b >> c;
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
 
-        // maxim
+    // maxim
 
-        if (a >= b && a >= c) {  // a este mai mare sau egal ca b si c
-            cout << a << '\n';
-        } else {
-            if (b >= a && b >= c) {  // b este mai mare sau egal ca a si c
-                cout << b << '\n';
-            } else {  // c este mai mare sau egal ca a si b
-                cout << c << '\n';
-            }
+    if (a >= b && a >= c) {  // a este mai mare sau egal ca b si c
+        cout << a << '\n';
+    } else {
+        if (b >= a && b >= c) {  // b este mai mare sau egal ca a si c
+            cout << b << '\n';
+        } else {  // c este mai mare sau egal ca a si b
+            cout << c << '\n';
         }
-        return 0;
     }
-    ```
+    return 0;
+}
+```
 
-=== "Varianta 2"
+\=== "Varianta 2"
 
-    ```cpp
-    #include <iostream>
-    using namespace std;
+```cpp
+#include <iostream>
+using namespace std;
 
-    int main() {
-        int a, b, c;
-        cin >> a >> b >> c;
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
 
-        int maxim = a;
-        if (b >= maxim) {
-            maxim = b;
-        }
-        if (c >= maxim) {
-            maxim = c;
-        }
-
-        cout << maxim << '\n';
-
-        int minim = a;
-        if (b <= minim) {
-            minim = b;
-        }
-        if (c <= minim) {
-            minim = c;
-        }
-
-        cout << minim << '\n';
-        return 0;
+    int maxim = a;
+    if (b >= maxim) {
+        maxim = b;
     }
-    ```
+    if (c >= maxim) {
+        maxim = c;
+    }
 
-    Deși ambele variante sunt corecte, se poate observa că varianta 2 este mai
-    simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe
-    care o vom folosi atunci când vrem să generalizăm aflarea maximului sau
-    minimului unui șir de valori.
+    cout << maxim << '\n';
 
-## Maximul și minimul dintre $$n$$ numere
+    int minim = a;
+    if (b <= minim) {
+        minim = b;
+    }
+    if (c <= minim) {
+        minim = c;
+    }
 
-Pentru a afla valoarea maximă (sau minimă) a unui șir de $$n$$ numere, vom putea pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat, vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum (sau mai mică decât minimul, după caz).
+    cout << minim << '\n';
+    return 0;
+}
+```
+
+Deși ambele variante sunt corecte, se poate observa că varianta 2 este mai
+simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe
+care o vom folosi atunci când vrem să generalizăm aflarea maximului sau
+minimului unui șir de valori.
+
+## Maximul și minimul dintre $n$ numere
+
+Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat, vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum (sau mai mică decât minimul, după caz).
 
 Pentru a afla acest răspuns, putem fie să plecăm cu răspunsul egal cu prima valoare din șir, fie să inițializăm răspunsul cu o valoare care să ne asigure că indiferent ce valori avem, răspunsul va fi una din valorile din șir.
 
-Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul cu o valoare foarte mică($$ -10^9$$ sau chiar mai mică), iar în caz contrar, cu o valoare foarte mare($$10^9$$ sau chiar mai mare). În general, se preferă varianta în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru scopurile noastre, soluție implementată mai jos pentru maxim.
+Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul cu o valoare foarte mică($ -10^9$ sau chiar mai mică), iar în caz contrar, cu o valoare foarte mare($10^9$ sau chiar mai mare). În general, se preferă varianta în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru scopurile noastre, soluție implementată mai jos pentru maxim.
 
 ```cpp
 #include <iostream>
@@ -160,8 +160,8 @@ int main() {
 
 Pentru aflarea celor mai mari/mici două valori, vom putea proceda similar ca la algoritmul precedent, singura diferență fiind faptul că efortul de implementare va crește deoarece pentru fiecare valoare nou adăugată, există două cazuri:
 
-- Fie este cea mai mare/mică valoare, iar atunci, cel de-al doilea maxim/minim devine maximul/minimul precedent, iar noua valoare este cea maximă/minimă.
-- Fie nu este maxim/minim, dar este mai mare/mică decât cel de-al doilea maxim/minim, iar atunci, schimbăm valoarea celui de-al doilea maxim/minim.
+* Fie este cea mai mare/mică valoare, iar atunci, cel de-al doilea maxim/minim devine maximul/minimul precedent, iar noua valoare este cea maximă/minimă.
+* Fie nu este maxim/minim, dar este mai mare/mică decât cel de-al doilea maxim/minim, iar atunci, schimbăm valoarea celui de-al doilea maxim/minim.
 
 Mai jos, veți găsi o implementare care află cele mai mici două valori dintr-un șir.
 
@@ -194,11 +194,11 @@ int main() {
 }
 ```
 
-## Aflarea celor mai mari/mici $$k$$ valori
+## Aflarea celor mai mari/mici $k$ valori
 
-Pentru a extinde problema la $$k$$ valori, va fi necesară cunoașterea [vectorilor](../cppintro/arrays.md), ceea ce face această aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar vom ține cele mai mari/mici $$k$$ valori într-un vector și vom efectua modificările în mod corespunzător.
+Pentru a extinde problema la $k$ valori, va fi necesară cunoașterea [vectorilor](../cppintro/arrays.mdx), ceea ce face această aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar vom ține cele mai mari/mici $k$ valori într-un vector și vom efectua modificările în mod corespunzător.
 
-Mai jos, veți găsi o implementare care află cele mai mici $$k$$ valori dintr-un șir.
+Mai jos, veți găsi o implementare care află cele mai mici $k$ valori dintr-un șir.
 
 ```cpp
 #include <iostream>
@@ -242,14 +242,14 @@ Cunoașterea tipurilor de implementări care se folosesc de conceptul de maxim �
 
 ## Probleme suplimentare
 
-- [summaxmin pbinfo](https://www.pbinfo.ro/probleme/347/summaxmin)
-- [maxandap pbinfo](https://www.pbinfo.ro/probleme/346/maxandap)
-- [rafaelo pbinfo](https://www.pbinfo.ro/probleme/561/rafaelo)
-- [existaprime pbinfo](https://www.pbinfo.ro/probleme/506/existaprime)
-- [memory002 pbinfo](https://www.pbinfo.ro/probleme/1446/memory002)
-- [Probleme cu maxime si minime de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/4/algoritmi-elementari-maxime-si-minime)
+* [summaxmin pbinfo](https://www.pbinfo.ro/probleme/347/summaxmin)
+* [maxandap pbinfo](https://www.pbinfo.ro/probleme/346/maxandap)
+* [rafaelo pbinfo](https://www.pbinfo.ro/probleme/561/rafaelo)
+* [existaprime pbinfo](https://www.pbinfo.ro/probleme/506/existaprime)
+* [memory002 pbinfo](https://www.pbinfo.ro/probleme/1446/memory002)
+* [Probleme cu maxime si minime de pe pbinfo](https://www.pbinfo.ro/probleme/categorii/4/algoritmi-elementari-maxime-si-minime)
 
 ## Resurse suplimentare
 
-- [Maxime si minime - pbinfo](https://www.pbinfo.ro/articole/76/maxime-si-minime)
-- [Maxime si minime - CPPI Sync](https://cppi.sync.ro/materia/citirea_mai_multor_numere_operarea_cu_cel_curent_i_cu_cel_anterior_maxime_minime_verificari_secvente_etc.html)
+* [Maxime si minime - pbinfo](https://www.pbinfo.ro/articole/76/maxime-si-minime)
+* [Maxime si minime - CPPI Sync](https://cppi.sync.ro/materia/citirea_mai_multor_numere_operarea_cu_cel_curent_i_cu_cel_anterior_maxime_minime_verificari_secvente_etc.html)

@@ -14,7 +14,7 @@ tags:
 
 În ceea ce privește studiul programării dinamice, un tip de probleme frecvent întâlnit reprezintă dinamica pe arbori. Deși abordarea lor nu este foarte diferită față de alte probleme care implică diverse recurențe, există câteva sfaturi specifice care vă pot ajuta, împreună cu proprietăți specifice acestui tip de probleme.
 
-De obicei, atunci când abordăm aceste probleme, vrem să ne gândim la modul în care un nod și copiii lui interacționează, de regulă starea pentru un nod $$i$$ (vom denumi generic această stare $$dp[i]$$, chiar dacă în multe situații vom avea și alte dimensiuni) are rezultatul definit în funcție de rezultatele fiilor săi. Modul în care găsim aceste relații, precum și diverse optimizări vor fi prezentate pe parcursul acestui articol, prin diverse exemple.
+De obicei, atunci când abordăm aceste probleme, vrem să ne gândim la modul în care un nod și copiii lui interacționează, de regulă starea pentru un nod $i$ (vom denumi generic această stare $dp[i]$, chiar dacă în multe situații vom avea și alte dimensiuni) are rezultatul definit în funcție de rezultatele fiilor săi. Modul în care găsim aceste relații, precum și diverse optimizări vor fi prezentate pe parcursul acestui articol, prin diverse exemple.
 
 Aceste probleme apar foarte des la olimpiadele și concursurile de informatică românești, dinamicile pe arbore fiind un tip de problemă preferat de propunător, dat fiind faptul că se regăsește aproape în fiecare an măcar la una din etapele competiției, deci se impune cunoașterea celor mai importante abordări. De asemenea, concursuri precum USACO Gold și Platinum au un număr ridicat de asemenea probleme, de multe ori laolaltă cu diferite structuri de date.
 
@@ -24,13 +24,13 @@ Pentru a rezolva această problemă, ne putem gândi la un caz foarte simplu, ș
 
 Astfel, putem deduce două tipuri de cazuri pe care le putem considera în dinamica noastră, ceea ce motivează prezența unei dinamici cu două dimensiuni. În mod formal, vom avea următoarele definiții:
 
-- $$dp[0][i]$$ va reprezenta răspunsul maxim dacă nu am folosit nodul $$i$$ în vreo muchie.
-- $$dp[1][i]$$ va reprezenta răspunsul maxim dacă am folosit nodul $$i$$ în vreo muchie.
+* $dp[0][i]$ va reprezenta răspunsul maxim dacă nu am folosit nodul $i$ în vreo muchie.
+* $dp[1][i]$ va reprezenta răspunsul maxim dacă am folosit nodul $i$ în vreo muchie.
 
-Pentru a defini $$dp[0][i]$$, este simplu să ne gândim la faptul că vom vrea să preluăm răspunsurile maxime de la fii, deci putem scrie $$dp[0][i]$$ ca fiind $$\sum \max(dp[0][x], dp[1][x])$$ pentru toți fiii $$x$$ ai nodului $$i$$.
+Pentru a defini $dp[0][i]$, este simplu să ne gândim la faptul că vom vrea să preluăm răspunsurile maxime de la fii, deci putem scrie $dp[0][i]$ ca fiind $\sum \max(dp[0][x], dp[1][x])$ pentru toți fiii $x$ ai nodului $i$.
 
-În mod similar, pentru a defini $$dp[1][i]$$, vom vrea să cuplăm nodul $$i$$ cu unul din fiii săi, iar mai apoi să preluăm toate maximele de la celelalte noduri. Astfel, $$dp[1][i]$$ va fi egal cu $$\max (1 + dp[0][x]+ \sum \max(dp[0][x_0],
-dp[1][x_0]))$$, unde $$x$$ este fiul ales, iar $$x_0$$ reprezintă oricare din ceilalți fii ai nodului $$i$$.
+În mod similar, pentru a defini $dp[1][i]$, vom vrea să cuplăm nodul $i$ cu unul din fiii săi, iar mai apoi să preluăm toate maximele de la celelalte noduri. Astfel, $dp[1][i]$ va fi egal cu $\max (1 + dp[0][x]+ \sum \max(dp[0][x_0],
+dp[1][x_0]))$, unde $x$ este fiul ales, iar $x_0$ reprezintă oricare din ceilalți fii ai nodului $i$.
 
 Implementarea acestei soluții se poate face folosind o parcurgere de tip DFS, complexitatea fiind una liniară. Chiar dacă această problemă este una introductivă, are foarte multe aspecte care sunt folosite în dinamicile pe arbore, în special legate de combinarea subproblemelor și folosirea unei game largi de cazuri pentru a ajunge la soluția dorită.
 
@@ -90,7 +90,7 @@ int main() {
 
 Pentru a calcula cantitatea maximă de combustibil pe care o putem avea la finalul unui drum, vom vrea să ținem minte cantitatea maximă pe un lanț care pleacă dintr-un nod anume spre unul din fiii săi, iar eventual să unim două lanțuri pentru a putea considera cazul când rădăcina curentă reprezintă punctul de intersecție a două asemenea drumuri.
 
-Calcularea cantității maxime pentru un lanț este relativ facilă, deoarece putem păstra o recurență de tip $$dp[i]$$ pentru fiecare posibil nod, dar unirea a două lanțuri este mai dificilă deoarece trebuie să avem grijă să evităm situațiile în care suma distanțelor este mai mare decât cantitatea pe care o putem colecta din orașe.
+Calcularea cantității maxime pentru un lanț este relativ facilă, deoarece putem păstra o recurență de tip $dp[i]$ pentru fiecare posibil nod, dar unirea a două lanțuri este mai dificilă deoarece trebuie să avem grijă să evităm situațiile în care suma distanțelor este mai mare decât cantitatea pe care o putem colecta din orașe.
 
 Tratarea acestor cazuri se poate face într-un loop separat care pleacă de la lanțul cel mai avantajos pe care l-am calculat, urmat de adăugarea celui de-al doilea lanț, de preferat unul cât mai bun din punct de vedere al benzinii rămase.
 
@@ -267,13 +267,13 @@ int main() {
 
 !!! note "Observație importantă"
 
-    [Acest blog](https://codeforces.com/blog/entry/100910) va detalia o tehnică
-    folosită pentru această problemă care ne ajută să optimizăm complexitatea cu
-    un factor de $$n$$.
+[Acest blog](https://codeforces.com/blog/entry/100910) va detalia o tehnică
+folosită pentru această problemă care ne ajută să optimizăm complexitatea cu
+un factor de $n$.
 
 Există foarte multe dinamici pe arbore care au o soluție care după un număr de observații, se reduc la un rucsac sau o idee similară. De regulă, vom vrea să ordonăm nodurile după numărul de noduri din subarbore pentru a reduce numărul de operații efectuat atunci când actualizăm răspunsurile din dinamica noastră.
 
-Acest lucru se va observa și în cazul problemei noastre, unde vom avea o dinamică de tip $$dp[0/1][i][j]$$, care reprezintă cel mai mic cost al unui traseu ce începe în nodul $$i$$, vizitează nodul $$j$$ și se întoarce sau nu la nodul $$i$$ (1 - se întoarce, 0 - nu se întoarce).
+Acest lucru se va observa și în cazul problemei noastre, unde vom avea o dinamică de tip $dp[0/1][i][j]$, care reprezintă cel mai mic cost al unui traseu ce începe în nodul $i$, vizitează nodul $j$ și se întoarce sau nu la nodul $i$ (1 - se întoarce, 0 - nu se întoarce).
 
 Pentru a calcula această dinamică, vom avea pentru fiecare nod un rucsac care trece prin variantele de a continua un anume drum, în funcție de ordinea pe care o vom prefera. De notat că trebuie să fim atenți la implementare, deoarece există destul de multe detalii care trebuie avute în considerare.
 
@@ -383,19 +383,19 @@ int main() {
 
 ## Problema [TreeGCD ONI 2019](https://kilonova.ro/problems/11)
 
-Pentru a rezolva această problemă, ne vom folosi de faptul că valoarea lui $$M$$ este foarte mică, ceea ce ne duce cu gândul la o dinamică care să implice fiecare valoare posibilă a CMMDC-ului în parte.
+Pentru a rezolva această problemă, ne vom folosi de faptul că valoarea lui $M$ este foarte mică, ceea ce ne duce cu gândul la o dinamică care să implice fiecare valoare posibilă a CMMDC-ului în parte.
 
-Mai întâi, vom precalcula pentru fiecare număr $$i$$ de la 1 la $$m$$ toate numerele cu proprietatea că cmmdc-ul dintre ele și $$i$$ este diferit de 1 și care nu au niciun factor prim în descompunerea lor mai mult de o dată.
+Mai întâi, vom precalcula pentru fiecare număr $i$ de la 1 la $m$ toate numerele cu proprietatea că cmmdc-ul dintre ele și $i$ este diferit de 1 și care nu au niciun factor prim în descompunerea lor mai mult de o dată.
 
 Acest lucru ne va ajuta să prevenim numărarea de mai multe ori a acelorlași răspunsuri, lucru specific problemelor ce folosesc principiul includerii și al excluderii.
 
-Apoi, vom rula un DFS din rădăcină în care vom avea o dinamică de tipul $$dp[i][j]$$ ce reprezintă numărul de moduri de a avea un arbore cu rădăcina în nodul $$i$$, iar în acel nod avem valoarea $$j$$.
+Apoi, vom rula un DFS din rădăcină în care vom avea o dinamică de tipul $dp[i][j]$ ce reprezintă numărul de moduri de a avea un arbore cu rădăcina în nodul $i$, iar în acel nod avem valoarea $j$.
 
-Pentru a calcula această dinamică, putem avea mai întâi niște tranziții încete care calculează pentru fiecare variantă de a avea o valoare pe un nod, numărul de moduri de a avea o valoare pe un fiu, dar această abordare ar avea complexitatea $$\mathcal{O}(n \cdot m^2)$$, ceea ce este prea încet.
+Pentru a calcula această dinamică, putem avea mai întâi niște tranziții încete care calculează pentru fiecare variantă de a avea o valoare pe un nod, numărul de moduri de a avea o valoare pe un fiu, dar această abordare ar avea complexitatea $\mathcal{O}(n \cdot m^2)$, ceea ce este prea încet.
 
 O observație importantă pe care o facem este aceea că ne va interesa să știm răspunsurile pentru divizorii fiecărei valori pe care o putem avea în acel nod, iar atunci când vom înmulți răspunsurile la un anume pas, vom ține cont de numărul de factori primi și de suma parțială a răspunsurilor pentru numerele care sunt multiplu ale acelui divizor.
 
-Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea unui [PINEX](../mediu/pinex.md), deci $$\mathcal{O}(n \cdot m \cdot DMAX)$$, unde $$DMAX$$ este numărul maxim de divizori pe care îi are un număr conform precalculării anterioare, iar acest număr $$DMAX$$ este egal cu 31 deoarece orice număr de la 1 la $$m$$ are cel mult 5 factori primi distincți.
+Astfel, vom ajunge să avem o complexitate echivalentă cu aplicarea unui [PINEX](../mediu/pinex.mdx), deci $\mathcal{O}(n \cdot m \cdot DMAX)$, unde $DMAX$ este numărul maxim de divizori pe care îi are un număr conform precalculării anterioare, iar acest număr $DMAX$ este egal cu 31 deoarece orice număr de la 1 la $m$ are cel mult 5 factori primi distincți.
 
 Pentru mai multe detalii de implementare, recomandăm consultarea sursei de mai jos.
 
@@ -504,8 +504,8 @@ int main() {
 
 Pentru această problemă, vom avea o dinamică pe două dimensiuni care va ține cont de următoarele cazuri:
 
-- $$dp[0][node]$$: cea mai mare sumă a unui subarbore cu rădăcina în $$node$$, presupunând că vom păstra legătura dintre acest nod și părintele său.
-- $$dp[1][node]$$: cea mai mare sumă a unui subarbore cu rădăcina în $$node$$, fără a păstra legătura dintre $$node$$ și părintele său.
+* $dp[0][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, presupunând că vom păstra legătura dintre acest nod și părintele său.
+* $dp[1][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, fără a păstra legătura dintre $node$ și părintele său.
 
 În funcție de aceste cazuri, vom vrea să păstrăm un set de noduri, împreună cu sumele lor care să fie cât mai mari, ceea ce duce cu gândul la o abordare în care sortăm sumele în ordine descrescătoare, luând mereu termenii pozitivi, iar dacă este necesar, să completăm cu un număr de termeni până ajungem la doi, respectiv trei copii luați.
 
@@ -618,29 +618,29 @@ Recomandăm lucratul a cât mai multe probleme, atât din această listă cât �
 
 ## Probleme suplimentare
 
-- [AtCoder Independent Set](https://atcoder.jp/contests/dp/tasks/dp_p)
-- [OJI 2019 Tairos](https://kilonova.ro/problems/22)
-- [OJI 2008 Iepuri](https://kilonova.ro/problems/45)
-- [Nastia Plays with a Tree Codeforces](https://codeforces.com/contest/1521/problem/D)
-- [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
-- [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2&cpid=766)
-- [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2&cpid=1019)
-- [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
-- [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
-- [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
-- [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
-- [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
-- [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
-- [ONI 2018 tricolor](https://kilonova.ro/problems/151)
-- [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
-- [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)
-- [CSES Creating Offices](https://cses.fi/problemset/task/1752)
-- [Miss Punyverse Codeforces](https://codeforces.com/contest/1280/problem/D)
-- [IOI 2007 Training](https://oj.uz/problem/view/IOI07_training)
-- [Probleme cu DP pe arbore de pe Kilonova](https://kilonova.ro/problems?tags=275%2C284)
-- [Probleme cu DP pe arbore de pe Codeforces](https://codeforces.com/problemset?tags=dp,trees)
+* [AtCoder Independent Set](https://atcoder.jp/contests/dp/tasks/dp_p)
+* [OJI 2019 Tairos](https://kilonova.ro/problems/22)
+* [OJI 2008 Iepuri](https://kilonova.ro/problems/45)
+* [Nastia Plays with a Tree Codeforces](https://codeforces.com/contest/1521/problem/D)
+* [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
+* [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2\&cpid=766)
+* [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1019)
+* [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
+* [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
+* [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
+* [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
+* [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
+* [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
+* [ONI 2018 tricolor](https://kilonova.ro/problems/151)
+* [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
+* [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)
+* [CSES Creating Offices](https://cses.fi/problemset/task/1752)
+* [Miss Punyverse Codeforces](https://codeforces.com/contest/1280/problem/D)
+* [IOI 2007 Training](https://oj.uz/problem/view/IOI07_training)
+* [Probleme cu DP pe arbore de pe Kilonova](https://kilonova.ro/problems?tags=275%2C284)
+* [Probleme cu DP pe arbore de pe Codeforces](https://codeforces.com/problemset?tags=dp,trees)
 
 ## Resurse suplimentare
 
-- [DP on Trees - USACO Guide](https://usaco.guide/gold/dp-trees)
-- [DP on Trees tutorial - Codeforces](https://codeforces.com/blog/entry/20935)
+* [DP on Trees - USACO Guide](https://usaco.guide/gold/dp-trees)
+* [DP on Trees tutorial - Codeforces](https://codeforces.com/blog/entry/20935)

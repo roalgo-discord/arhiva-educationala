@@ -19,13 +19,13 @@ Cu alte cuvinte, putem spune că programele scrise sunt programe de C care au ci
 
 În această secțiune, ne vom concentra pe structurile de date care pot fi reprezentate în sintaxa din C sub formă de tablouri. Fie că e vorba de vectori, cozi, stive sau tipuri de date mai complexe, toate acestea vor fi menționate în cele ce urmează.
 
-Deși acest articol poate fi parcurs fără cunoștințe anterioare, se recomandă parcurgerea [articolului anterior despre vectori](./arrays.md).
+Deși acest articol poate fi parcurs fără cunoștințe anterioare, se recomandă parcurgerea [articolului anterior despre vectori](./arrays.mdx).
 
 ### Structura std::vector
 
 Aceasta este cea mai simplă structură de date din STL, fiind un tablou cu lungime dinamică, care este indexat de la 0. Pentru a putea folosi această structură de date, va trebui să includem biblioteca `<vector>`.
 
-Sintaxa unui vector va fi de tipul `vector<tip> nume;`, unde tip poate fi orice tip de date cunoscut, inclusiv cele pe care le veți studia în acest articol. Cel mai frecvent, veți folosi un vector drept un înlocuitor pentru tablourile de tip _array_ cu care sunteți obișnuiți din codurile scrise anterior.
+Sintaxa unui vector va fi de tipul `vector<tip> nume;`, unde tip poate fi orice tip de date cunoscut, inclusiv cele pe care le veți studia în acest articol. Cel mai frecvent, veți folosi un vector drept un înlocuitor pentru tablourile de tip *array* cu care sunteți obișnuiți din codurile scrise anterior.
 
 Mai jos, puteți vedea diverse exemple de folosire a acestei structuri de date în limbajul C++.
 
@@ -37,10 +37,10 @@ Mai jos, puteți vedea diverse exemple de folosire a acestei structuri de date �
 
 !!! note "Observație"
 
-    Pentru a compara doi vectori, va trebui să aibă aceeași dimensiune și tip de
-    date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile
-    egale pe aceeași poziție. În mod similar, atribuirea se va face curățând
-    eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
+Pentru a compara doi vectori, va trebui să aibă aceeași dimensiune și tip de
+date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile
+egale pe aceeași poziție. În mod similar, atribuirea se va face curățând
+eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
 
 ```cpp
 --8<-- "cppintro/stl/stl01.cpp"
@@ -58,9 +58,9 @@ Pe lângă declarări, atribuiri și comparări, putem și să ajustăm vectorii
 
 !!! note "Iteratori"
 
-    Valori precum `v.begin()`, `v.end()` se numesc iteratori, aceștia vor fi
-    prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și
-    de sfârșit din vector.
+Valori precum `v.begin()`, `v.end()` se numesc iteratori, aceștia vor fi
+prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și
+de sfârșit din vector.
 
 ```cpp
 --8<-- "cppintro/stl/stl03.cpp"
@@ -74,12 +74,12 @@ Pentru a afișa diverse valori din vector, vom putea proceda la fel ca în cazul
 
 !!! warning "Tipuri unsigned"
 
-    Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a
-    face cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul
-    expresiei va fi si el unsigned, rezultatul dând underflow. Pentru a evita
-    asta, putem fie să rescriem expresiile pentru a conține adunări, fie prin a
-    folosi indicatorul (int) pentru a schimba tipul de date la int, care este un
-    tip de date signed.
+Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a
+face cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul
+expresiei va fi si el unsigned, rezultatul dând underflow. Pentru a evita
+asta, putem fie să rescriem expresiile pentru a conține adunări, fie prin a
+folosi indicatorul (int) pentru a schimba tipul de date la int, care este un
+tip de date signed.
 
 ```cpp
 --8<-- "cppintro/stl/stl04.cpp"
@@ -97,9 +97,9 @@ Sintaxa unui array va fi de tipul `array<tip, dimensiune> nume;`. De regulă, nu
 
 ### Structura std::string
 
-Această structură de date este echivalentul `std::vector` pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $$\mathcal{O}(1)$$, în loc de $$\mathcal{O}(n)$$.
+Această structură de date este echivalentul `std::vector` pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$.
 
-Se recomandă citirea în prealabil a [articolului următor despre șiruri de caractere](./strings.md).
+Se recomandă citirea în prealabil a [articolului următor despre șiruri de caractere](./strings.mdx).
 
 De asemenea, toate proprietățile vectorului se aplică și pentru `std::string`. Pentru a putea folosi această structură de date, va trebui să includem biblioteca `<string>`. Se remarcă faptul că există anumite diferențe față de cum folosim șirurile de caractere din C.
 
@@ -141,12 +141,12 @@ Această structură de date reprezintă o generalizare a structurii `std::pair` 
 
 Chiar dacă putem ține valori multiple folosind pair-uri imbricate, tuplurile vor face acest lucru mult mai ușor.
 
-- `tuple<tip1, tip2, ..., tipN> t`: Creăm un tuplu cu $$N$$ valori, a $$i$$-a valoare având $$tip_i$$.
-- `make_tuple(a, b, c, ..., d)`: Returnează un tuplu cu valorile scrise în paranteză
-- `tie(a, b, c, ..., d) = t`: Setăm $$a, b, c, \dots, d$$ la valorile din tuplul $$t$$ în ordinea dată.
-- `get<i>(t)`: Returnează cea de-a $$i$$-a valoare din tuplul $$t$$. Putem folosi această sintaxă și pentru a schimba valoarea din $$t$$.
+* `tuple<tip1, tip2, ..., tipN> t`: Creăm un tuplu cu $N$ valori, a $i$-a valoare având $tip_i$.
+* `make_tuple(a, b, c, ..., d)`: Returnează un tuplu cu valorile scrise în paranteză
+* `tie(a, b, c, ..., d) = t`: Setăm $a, b, c, \dots, d$ la valorile din tuplul $t$ în ordinea dată.
+* `get<i>(t)`: Returnează cea de-a $i$-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
 
-Această operație merge doar dacă $$i$$ este o constantă, nu putem schimba valorile dacă $$i$$ nu este o constantă.
+Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă.
 
 ```cpp
 --8<-- "cppintro/stl/stl10.cpp"
@@ -164,42 +164,42 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 
 ### Glosar iteratori
 
-- range reprezintă un interval de elemente de tip `[start, end)`.
-- iterator de început: iterator care marchează începutul unui range.
-- iterator past-the-end: iterator care marchează finalul unui range. Deși uneori poate fi accesat, în cele mai multe cazuri accesarea lui duce la erori (de exemplu, rezultatul pentru `.end()`).
+* range reprezintă un interval de elemente de tip `[start, end)`.
+* iterator de început: iterator care marchează începutul unui range.
+* iterator past-the-end: iterator care marchează finalul unui range. Deși uneori poate fi accesat, în cele mai multe cazuri accesarea lui duce la erori (de exemplu, rezultatul pentru `.end()`).
 
 ### Cum obțin un iterator?
 
-- `.begin()` - iterator la primul element din structură;
-- `.end()` - iterator past-the-end pentru structură;
-- `.rbegin()` - iterator invers la ultimul element din structură;
-- `.rend()` - iterator invers past-the-beginning pentru structură.
+* `.begin()` - iterator la primul element din structură;
+* `.end()` - iterator past-the-end pentru structură;
+* `.rbegin()` - iterator invers la ultimul element din structură;
+* `.rend()` - iterator invers past-the-beginning pentru structură.
 
 ### Ce pot face cu un iterator?
 
-- Să parcurgi structura
-  - Fiecare iterator permite să îl incrementezi (`++it`) să se ducă mai departe.
-  - Putem folosi și `it++`, dar de obicei este mai lent.
-- Să îl pui drept parametru la o funcție
-  - Multe funcții din `<algorithm>` care merg pe range-uri cer un iterator de început și un iterator "past-the-end".
-    - De exemplu, funcția `sort()` cere doi iteratori: unul care marchează începutul și elementul de după sfârșit (cum ar fi `begin()` și `end()`).
-  - Structurile `std::vector` și `std::deque` oferă și funcțiile `.erase()` și `.insert()`
-    - Funcția `.insert()` adaugă un element înaintea elementului iteratorului.
-    - Funcția `.erase()` poate primi un singur argument, elementul care să fie șters, sau două argumente, range-ul pe care să îl șteargă.
-- Foarte multe funcții returnează iteratori, exemple fiind funcțiile `lower_bound()` și `upper_bound()` din diverse structuri de date precum `std::set`, `std::map`.
+* Să parcurgi structura
+  * Fiecare iterator permite să îl incrementezi (`++it`) să se ducă mai departe.
+  * Putem folosi și `it++`, dar de obicei este mai lent.
+* Să îl pui drept parametru la o funcție
+  * Multe funcții din `<algorithm>` care merg pe range-uri cer un iterator de început și un iterator "past-the-end".
+    * De exemplu, funcția `sort()` cere doi iteratori: unul care marchează începutul și elementul de după sfârșit (cum ar fi `begin()` și `end()`).
+  * Structurile `std::vector` și `std::deque` oferă și funcțiile `.erase()` și `.insert()`
+    * Funcția `.insert()` adaugă un element înaintea elementului iteratorului.
+    * Funcția `.erase()` poate primi un singur argument, elementul care să fie șters, sau două argumente, range-ul pe care să îl șteargă.
+* Foarte multe funcții returnează iteratori, exemple fiind funcțiile `lower_bound()` și `upper_bound()` din diverse structuri de date precum `std::set`, `std::map`.
 
 ## Structuri de date liniare
 
 !!! note "Observație"
 
-    Toate aceste structuri de date au în spatele implementării lor din STL o
-    structură de tip deque.
+Toate aceste structuri de date au în spatele implementării lor din STL o
+structură de tip deque.
 
 ### Structura std::queue
 
 În general, folosim această structură de date pentru a simula funcționalitățile unei cozi. Pentru a folosi std::queue, avem nevoie de biblioteca `<queue>`.
 
-Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](../mediu/queue.md), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](../mediu/queue.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
 --8<-- "cppintro/stl/stl12.cpp"
@@ -209,7 +209,7 @@ Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](..
 
 În general, folosim această structură de date pentru a simula funcționalitățile unei stive. Pentru a folosi std::stack, avem nevoie de biblioteca `<stack>`.
 
-Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](../mediu/stack.md), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](../mediu/stack.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
 --8<-- "cppintro/stl/stl13.cpp"
@@ -219,14 +219,14 @@ Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](.
 
 În general, folosim această structură de date pentru a simula funcționalitățile unui deque. Pentru a folosi std::deque, avem nevoie de biblioteca `<deque>`.
 
-Deși pentru mai multe detalii, puteți accesa [articolul nostru despre deques](../mediu/deque.md), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
+Deși pentru mai multe detalii, puteți accesa [articolul nostru despre deques](../mediu/deque.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 !!! note "Accesarea pozițiilor oarecare"
 
-    Spre deosebire de `stack` și `queue`, `deque` permite accesarea pozițiilor
-    oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque`
-    este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
-    mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
+Spre deosebire de `stack` și `queue`, `deque` permite accesarea pozițiilor
+oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque`
+este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
+mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
 
 ```cpp
 --8<-- "cppintro/stl/stl14.cpp"
@@ -242,13 +242,13 @@ Un map este o structură de date arborescentă care ne permite să păstrăm pen
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
-- Atribuirea: `mp[x] = y;` face valoarea cheii $$x$$ să devină $$y$$. În mod particular, dacă încercăm să lucrăm cu o cheie $$x_1$$ neinițializată, ea va fi inițializată cu 0, așa cum se va putea vedea în codul de mai jos.
-- Găsirea unui element: `mp.find(x) != mp.end()` verifică dacă $$x$$ există în map, fără a crea un element nou în map.
-- Ștergerea: `mp.erase(x)` șterge instanța cheii $$x$$ din map. Dacă $$x$$ nu se află în map, nu se întâmplă nimic.
-- Curățarea: `mp.clear()` șterge toate cheile din map.
-- Lower_bound: `mp.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $$x$$ sau `mp.end()` dacă nu avem o asemenea valoare.
-- Upper_bound: `mp.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $$x$$ sau `mp.end()` dacă nu avem o asemenea valoare.
-- Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
+* Atribuirea: `mp[x] = y;` face valoarea cheii $x$ să devină $y$. În mod particular, dacă încercăm să lucrăm cu o cheie $x_1$ neinițializată, ea va fi inițializată cu 0, așa cum se va putea vedea în codul de mai jos.
+* Găsirea unui element: `mp.find(x) != mp.end()` verifică dacă $x$ există în map, fără a crea un element nou în map.
+* Ștergerea: `mp.erase(x)` șterge instanța cheii $x$ din map. Dacă $x$ nu se află în map, nu se întâmplă nimic.
+* Curățarea: `mp.clear()` șterge toate cheile din map.
+* Lower\_bound: `mp.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau `mp.end()` dacă nu avem o asemenea valoare.
+* Upper\_bound: `mp.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau `mp.end()` dacă nu avem o asemenea valoare.
+* Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
 
 Cea mai simplă utilizare a unui map va fi drept un vector de frecvență dinamic, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a map-ului.
 
@@ -262,13 +262,13 @@ Un set este o structură de date arborescentă care ne permite să păstrăm o l
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
-- Inserarea: `s.insert(x)` adaugă $$x$$ în setul $$s$$. În mod particular, dacă încercăm să inserăm o valoare care deja este în set, nu se va întâmpla nimic.
-- Găsirea unui element: La fel ca la map, `s.find(x) != s.end()` verifică dacă $$x$$ există în set, fără a crea un element nou în set.
-- Ștergerea: `s.erase(x)` șterge $$x$$ din set. Dacă $$x$$ nu se află în set, nu se întâmplă nimic.
-- Curățarea: `s.clear()` șterge toate cheile din set.
-- Lower_bound: `s.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $$x$$ sau `s.end()` dacă nu avem o asemenea valoare.
-- Upper_bound: `s.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $$x$$ sau `s.end()` dacă nu avem o asemenea valoare.
-- Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
+* Inserarea: `s.insert(x)` adaugă $x$ în setul $s$. În mod particular, dacă încercăm să inserăm o valoare care deja este în set, nu se va întâmpla nimic.
+* Găsirea unui element: La fel ca la map, `s.find(x) != s.end()` verifică dacă $x$ există în set, fără a crea un element nou în set.
+* Ștergerea: `s.erase(x)` șterge $x$ din set. Dacă $x$ nu se află în set, nu se întâmplă nimic.
+* Curățarea: `s.clear()` șterge toate cheile din set.
+* Lower\_bound: `s.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau `s.end()` dacă nu avem o asemenea valoare.
+* Upper\_bound: `s.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau `s.end()` dacă nu avem o asemenea valoare.
+* Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
 
 Cea mai simplă utilizare a unui set va fi drept o mulțime dinamică, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a setului. Totuși, nu vom putea păstra informații mai avansate, precum poziția relativă, acestea fiind discutate ulterior în articol, când vorbim despre policy based data structures.
 
@@ -276,15 +276,15 @@ Cea mai simplă utilizare a unui set va fi drept o mulțime dinamică, deoarece 
 --8<-- "cppintro/stl/stl16.cpp"
 ```
 
-### std::unordered_map și std::unordered_set
+### std::unordered\_map și std::unordered\_set
 
-Atât `std::set` cât și `std::map` au versiuni unordered ale acestora, care acționează în mod similar cu structuri de tip hashmap, codificând valorile sub diverse forme pentru a evita coliziuni de diverse moduri. Totuși, aici nu vom discuta teoria din spatele hashurilor, ci doar containerele în sine [articolul nostru despre hashing](../mediu/hashing.md#hash-tables-si-unordered-map). Deși funcțiile pe care cele două structuri de date le au sunt identice cu cele ale echivalentelor lor sortate, uneori pot deveni foarte utile în concursuri.
+Atât `std::set` cât și `std::map` au versiuni unordered ale acestora, care acționează în mod similar cu structuri de tip hashmap, codificând valorile sub diverse forme pentru a evita coliziuni de diverse moduri. Totuși, aici nu vom discuta teoria din spatele hashurilor, ci doar containerele în sine [articolul nostru despre hashing](../mediu/hashing.mdx#hash-tables-si-unordered-map). Deși funcțiile pe care cele două structuri de date le au sunt identice cu cele ale echivalentelor lor sortate, uneori pot deveni foarte utile în concursuri.
 
 `std::unordered_map` este versiunea nesortată a map-ului, fiind inclus în biblioteca `<unordered_map>`. Sintaxa acestuia va fi `unordered_map <tip1, tip2> nume`.
 
 `std::unordered_set` este versiunea nesortată a set-ului, fiind inclus în biblioteca `<unordered_set>`. Sintaxa acestuia va fi `unordered_set <tip> nume`.
 
-Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $$\mathcal{O}(1)$$ amortizat, dar în cel mai rău caz, complexitatea finală este $$\mathcal{O}(n)$$ per operație, unde $$n$$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
+Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $\mathcal{O}(1)$ amortizat, dar în cel mai rău caz, complexitatea finală este $\mathcal{O}(n)$ per operație, unde $n$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
 
 ### std::multimap și std::multiset
 
@@ -292,19 +292,19 @@ De asemenea, `std::set` și `std::map` au și versiuni care ne permit să ținem
 
 !!! warning "Erase și multiseturile"
 
-    Dacă folosim erase în același mod cum am explicat la set, toate valorile egale
-    cu $$x$$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
+Dacă folosim erase în același mod cum am explicat la set, toate valorile egale
+cu $x$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
 
-- `ms.erase(x)` - șterge toate aparițiile lui $$x$$ din multiset.
-- `ms.erase(ms.find(x))` - șterge o singură apariție a lui $$x$$ din multiset.
+* `ms.erase(x)` - șterge toate aparițiile lui $x$ din multiset.
+* `ms.erase(ms.find(x))` - șterge o singură apariție a lui $x$ din multiset.
 
 La fel ca la set și map, complexitatea operațiilor este logaritimică, cu o singură excepție, aceasta fiind funcția count, care numără valorile egale cu x. Totuși, complexitatea lui count este liniară, fapt pentru care nu se recomandă folosirea acestei funcții.
 
-### Structura std::priority_queue
+### Structura std::priority\_queue
 
-O coadă de priorități este o coadă pe care o folosim pentru a păstra datele într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe o structură de date de tip heap, permițând operații de push, pop și top, în mod similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat. Complexitatea operațiilor este $$\mathcal{O}(\log n)$$. Chiar dacă această structură de date este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea heap-ului.
+O coadă de priorități este o coadă pe care o folosim pentru a păstra datele într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe o structură de date de tip heap, permițând operații de push, pop și top, în mod similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat. Complexitatea operațiilor este $\mathcal{O}(\log n)$. Chiar dacă această structură de date este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea heap-ului.
 
-În general, vom vrea să folosim o coadă de priorități atunci când vrem să aflăm mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce face această structură de date principala metodă de a implementa diverși algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui Dijkstra](../mediu/shortest-path.md#algoritmul-lui-dijkstra) pe grafuri cu costuri.
+În general, vom vrea să folosim o coadă de priorități atunci când vrem să aflăm mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce face această structură de date principala metodă de a implementa diverși algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui Dijkstra](../mediu/shortest-path.mdx#algoritmul-lui-dijkstra) pe grafuri cu costuri.
 
 Pentru a folosi această structură de date, biblioteca `<queue>` este necesară. Sintaxa unei cozi de priorități este `priority_queue<tip> nume`. Mai jos găsiți un exemplu de implementare a acestei structuri de date.
 
@@ -314,9 +314,9 @@ Pentru a folosi această structură de date, biblioteca `<queue>` este necesară
 
 !!! note "Accesarea valorilor în ordine crescătoare"
 
-    Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le
-    adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
-    adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
+Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le
+adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
+adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
 ```cpp
 --8<-- "cppintro/stl/stl18.cpp"
@@ -326,20 +326,20 @@ Pentru a folosi această structură de date, biblioteca `<queue>` este necesară
 
 Structurile de date menționate anterior, deși puternice, nu ne permit să răspundem la întrebări de tipul:
 
-- Care este a $$k$$-a valoare în ordine crescătoare prezentă în set/map?
-- Câte valori sunt mai mici decât $$x$$ în set/map?
+* Care este a $k$-a valoare în ordine crescătoare prezentă în set/map?
+* Câte valori sunt mai mici decât $x$ în set/map?
 
-Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $$\mathcal{O}(\log n)$$, la fel ca la set și map.
+Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $\mathcal{O}(\log n)$, la fel ca la set și map.
 
 !!! note "Atenție la constante"
 
-    Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai
-    înceată decât alte metode care ar fi mai greu de implementat.
+Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai
+înceată decât alte metode care ar fi mai greu de implementat.
 
 Această structură de date ne va permite să folosim facilitățile setului, împreună cu două funcții noi:
 
-- `find_by_order(k)` - Al $$k$$-lea cel mai mare element, începând de la 0.
-- `order_of_key(x)` - Numărul de valori strict mai mici decât $$x$$.
+* `find_by_order(k)` - Al $k$-lea cel mai mare element, începând de la 0.
+* `order_of_key(x)` - Numărul de valori strict mai mici decât $x$.
 
 Pentru a putea folosi această structură de date, trebuie să declarăm următoarele biblioteci, namespace-uri și typedefs:
 
@@ -349,16 +349,16 @@ Pentru a putea folosi această structură de date, trebuie să declarăm următo
 
 !!! note "Alte tipuri de date"
 
-    Pentru a folosi policy based data structures și cu alte tipuri de date,
-    trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
+Pentru a folosi policy based data structures și cu alte tipuri de date,
+trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
 
-    ```cpp
-    --8<-- "cppintro/stl/stl20.cpp"
-    ```
+```cpp
+--8<-- "cppintro/stl/stl20.cpp"
+```
 
-    ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
-    atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai
-    complexe.
+ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
+atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai
+complexe.
 
 Mai jos găsiți un exemplu de folosire a acestei structuri de date, așa cum a fost folosită în problema [AIB de pe pbinfo](https://www.pbinfo.ro/probleme/2725/aib).
 
@@ -376,10 +376,10 @@ Totuși, trebuie să aveți în vedere faptul că este de preferat înțelegerea
 
 ## Resurse suplimentare
 
-- [STL - Alex Vasiluta](https://vasiluta.ro/curs_stl)
-- [STL - infoarena](https://www.infoarena.ro/stl)
-- [Introduction to Data Structures - USACO Guide](https://usaco.guide/bronze/intro-ds?lang=cpp)
-- [Introduction to Sets & Maps - USACO Guide](https://usaco.guide/bronze/intro-sets?lang=cpp)
-- [More Operations on Sorted Sets - USACO Guide](https://usaco.guide/silver/intro-sorted-sets)
-- [STL - pbinfo](https://www.pbinfo.ro/articole/23702/standard-template-library-stl)
-- [Policy Based Data Structures - Codeforces](https://codeforces.com/blog/entry/11080)
+* [STL - Alex Vasiluta](https://vasiluta.ro/curs_stl)
+* [STL - infoarena](https://www.infoarena.ro/stl)
+* [Introduction to Data Structures - USACO Guide](https://usaco.guide/bronze/intro-ds?lang=cpp)
+* [Introduction to Sets & Maps - USACO Guide](https://usaco.guide/bronze/intro-sets?lang=cpp)
+* [More Operations on Sorted Sets - USACO Guide](https://usaco.guide/silver/intro-sorted-sets)
+* [STL - pbinfo](https://www.pbinfo.ro/articole/23702/standard-template-library-stl)
+* [Policy Based Data Structures - Codeforces](https://codeforces.com/blog/entry/11080)

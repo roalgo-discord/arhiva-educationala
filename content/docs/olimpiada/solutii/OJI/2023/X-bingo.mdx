@@ -16,50 +16,50 @@ Problema ne cere să aflăm numărul minim de interschimbări de elemente adiace
 
 ## Subtask 1
 
-În acest subtask, fiecare șir primit are $$5$$ caractere, dar cum se garantează faptul că fiecare element din mulțimea $$\{ b, i, n, g, o \}$$ apare cel puțin o dată, rezultă că toate șirurile date sunt, de fapt, anagrame ale șirului țintă bingo, deci trebuie doar să rearanjăm literele date. Considerând șirul bingo permutarea identică de lungime 5, iar șirul S permutarea asociată lui $$(b \rightarrow 1, i \rightarrow 2, \dots)$$, rezultatul este numărul de inversiuni din această permutare.
+În acest subtask, fiecare șir primit are $5$ caractere, dar cum se garantează faptul că fiecare element din mulțimea $\{ b, i, n, g, o \}$ apare cel puțin o dată, rezultă că toate șirurile date sunt, de fapt, anagrame ale șirului țintă bingo, deci trebuie doar să rearanjăm literele date. Considerând șirul bingo permutarea identică de lungime 5, iar șirul S permutarea asociată lui $(b \rightarrow 1, i \rightarrow 2, \dots)$, rezultatul este numărul de inversiuni din această permutare.
 
-Exemplu: $$biong \rightarrow (1, 2, 3, 4, 5) \rightarrow 2$$ inversiuni $$\rightarrow 2$$ interschimbări necesare.
+Exemplu: $biong \rightarrow (1, 2, 3, 4, 5) \rightarrow 2$ inversiuni $\rightarrow 2$ interschimbări necesare.
 
 ## Subtask 2
 
-Șirurile conțin tot o singură anagramă a șirului $$bingo$$, dar de data aceasta pozițiile caracterelor ce o formează nu mai sunt consecutive. Am rezolvat mai sus cazul în care pozițiile sunt consecutive, deci ar fi folositor să reducem și acest caz la problema anterioară. Pentru orice șir, există cel puțin o soluție optimă în care, mai întâi, caracterele ce duc la soluția optimă sunt aduse pe poziții consecutive (fără a se schimba ordinea relativă a lor), după care se rezolvă anagrama obținută ca la subtask-ul $$1$$.
+Șirurile conțin tot o singură anagramă a șirului $bingo$, dar de data aceasta pozițiile caracterelor ce o formează nu mai sunt consecutive. Am rezolvat mai sus cazul în care pozițiile sunt consecutive, deci ar fi folositor să reducem și acest caz la problema anterioară. Pentru orice șir, există cel puțin o soluție optimă în care, mai întâi, caracterele ce duc la soluția optimă sunt aduse pe poziții consecutive (fără a se schimba ordinea relativă a lor), după care se rezolvă anagrama obținută ca la subtask-ul $1$.
 
-De asemenea, se poate demonstra că este optim să aducem caracterele lângă cel din mijloc, iar pe acesta să nu îl mutăm. Considerând că pozițiile celor $$5$$ caractere formează un vector (sortat strict crescător), interschimbările dintre elemente pot fi simulate cu adăugarea sau scăderea unui $$1$$ la un element din șir atâta timp cât NU se interschimbă între ele două caractere dintre cele $$5$$ selectate. Ne-am dori ca vectorul să fie format din numere consecutive, însă este mai ușor să vedem cum facem vectorul să fie format doar din elemente egale.
+De asemenea, se poate demonstra că este optim să aducem caracterele lângă cel din mijloc, iar pe acesta să nu îl mutăm. Considerând că pozițiile celor $5$ caractere formează un vector (sortat strict crescător), interschimbările dintre elemente pot fi simulate cu adăugarea sau scăderea unui $1$ la un element din șir atâta timp cât NU se interschimbă între ele două caractere dintre cele $5$ selectate. Ne-am dori ca vectorul să fie format din numere consecutive, însă este mai ușor să vedem cum facem vectorul să fie format doar din elemente egale.
 
-Așadar, adăugăm un $$2$$ la primul element, un $$1$$ la al doilea, scădem un $$1$$ din penultimul și scădem un $$2$$ din ultimul. Astfel, ținem cont de faptul că nu trebuie să aducem toate elementele pe poziția din mijloc (ci fiecare pe pozițiile adiacente corespunzătoare), iar șirul rămâne sortat crescător.
+Așadar, adăugăm un $2$ la primul element, un $1$ la al doilea, scădem un $1$ din penultimul și scădem un $2$ din ultimul. Astfel, ținem cont de faptul că nu trebuie să aducem toate elementele pe poziția din mijloc (ci fiecare pe pozițiile adiacente corespunzătoare), iar șirul rămâne sortat crescător.
 
-Acum, numărul minim de interschimbări necesare pentru a aduce cele $$5$$ caractere pe poziții consecutive este egal cu numărul minim de incrementări/ decrementări necesare pentru a face toate elementele egale. Știm că este optim să le facem egale cu valoarea mediană, iar șirul nostru fiind sortat, aceasta este cea din mijloc.
+Acum, numărul minim de interschimbări necesare pentru a aduce cele $5$ caractere pe poziții consecutive este egal cu numărul minim de incrementări/ decrementări necesare pentru a face toate elementele egale. Știm că este optim să le facem egale cu valoarea mediană, iar șirul nostru fiind sortat, aceasta este cea din mijloc.
 
-Exemplu: $$hhnhbingog \rightarrow \{3, 5, 6, 8, 9 \} \rightarrow \{5, 6, 6, 7, 7 \} \rightarrow 3$$ incrementări/decrementări necesare pentru a aduce toate elementele la aceeași valoare $$(6) \rightarrow 3$$ interschimbări necesare pentru a ajunge la $$hhhnbiogh \rightarrow$$ continuăm cu rezolvarea anagramei ca la subtask-ul 1.
+Exemplu: $hhnhbingog \rightarrow \{3, 5, 6, 8, 9 \} \rightarrow \{5, 6, 6, 7, 7 \} \rightarrow 3$ incrementări/decrementări necesare pentru a aduce toate elementele la aceeași valoare $(6) \rightarrow 3$ interschimbări necesare pentru a ajunge la $hhhnbiogh \rightarrow$ continuăm cu rezolvarea anagramei ca la subtask-ul 1.
 
 ## Subtask 3
 
-Întrucât singurele caractere ce ne interesează, de fapt, sunt cele din mulțimea $$\{b, i, n, g, o\}$$, acest subtask ne permite să verificăm pentru fiecare variantă de a alege caracterele cu care să formăm subsecvența bingo, câte interschimbări sunt necesare. Pentru un $$5$$-tuplu (format din pozițiile celor $$5$$ caractere) fixat, aplicăm raționamentul de la subtask-ul $$2$$. Complexitatea unei astfel de abordări este de ordinul $$O(N^5)$$, unde $$N$$ este lungimea șirului de caractere.
+Întrucât singurele caractere ce ne interesează, de fapt, sunt cele din mulțimea $\{b, i, n, g, o\}$, acest subtask ne permite să verificăm pentru fiecare variantă de a alege caracterele cu care să formăm subsecvența bingo, câte interschimbări sunt necesare. Pentru un $5$-tuplu (format din pozițiile celor $5$ caractere) fixat, aplicăm raționamentul de la subtask-ul $2$. Complexitatea unei astfel de abordări este de ordinul $O(N^5)$, unde $N$ este lungimea șirului de caractere.
 
-Exemplu: $$xboting \rightarrow \{2, 3, 4, 6, 7\} \rightarrow subtask
-\ 2 \rightarrow \{2, 3, 5, 6, 7\} \rightarrow subtask \ 2$$.
+Exemplu: $xboting \rightarrow \{2, 3, 4, 6, 7\} \rightarrow subtask
+\ 2 \rightarrow \{2, 3, 5, 6, 7\} \rightarrow subtask \ 2$.
 
 ## Soluția completă
 
-Pentru fiecare permutare (dintre cele $$120 = 5!$$) a lui $$bingo$$, încercăm să aplicăm raționamentul de la subtask-ul $$3$$ într-un mod mai eficient.
+Pentru fiecare permutare (dintre cele $120 = 5!$) a lui $bingo$, încercăm să aplicăm raționamentul de la subtask-ul $3$ într-un mod mai eficient.
 
-Pentru o permutare fixată, ne interesează doar $$5$$-tuplurile care păstrează ordinea relativă a caracterelor dată de permutare. Dintre acestea, majoritatea nu pot duce la soluția optimă, fiind depășite de $$5$$-tuplurile ale căror termeni au pozițiile mai apropiate între ele.
+Pentru o permutare fixată, ne interesează doar $5$-tuplurile care păstrează ordinea relativă a caracterelor dată de permutare. Dintre acestea, majoritatea nu pot duce la soluția optimă, fiind depășite de $5$-tuplurile ale căror termeni au pozițiile mai apropiate între ele.
 
-Pentru o permutare fixată, este de ajuns să considerăm doar aparițiile caracterului din mijloc (poziția $$2$$, indexând de la $$0$$) și să calculăm pozițiile primului caracter valid din stânga (cel cu indicele $$1$$ din permutare), respectiv primul valid din dreapta (indicele $$3$$). Folosim același raționament pentru caracterele cu indicii $$0$$ și $$4$$.
+Pentru o permutare fixată, este de ajuns să considerăm doar aparițiile caracterului din mijloc (poziția $2$, indexând de la $0$) și să calculăm pozițiile primului caracter valid din stânga (cel cu indicele $1$ din permutare), respectiv primul valid din dreapta (indicele $3$). Folosim același raționament pentru caracterele cu indicii $0$ și $4$.
 
 Observație: Considerăm aparițiile caracterului din mijloc, deoarece ulterior lângă acela trebuie aduse și celelalte, deci de la început și celelalte trebuie alese cât mai aproape de acesta.
 
-Exemplu: Dacă anagrama fixată este $$nibog$$, pentru fiecare apariție a lui b din șir, căutăm primul $$i$$ din stânga lui $$b$$, respectiv primul $$o$$ din dreapta. Analog, căutăm primul $$g$$ din dreapta lui $$o$$ și primul $$n$$ din stânga lui $$i$$. Pentru indicii găsiți, aplicăm rezolvarea de la subtask-ul $$2$$. Putem precalcula aceste poziții succesor/predecesor ale caracterelor $$b, i, n, g, o$$ pentru fiecare poziție din șir sau le putem căuta binar la fiecare pas. Pentru găsirea rezultatului pentru un șir de lungime $$N$$, complexitatea este $$O(N \cdot \log N)$$ sau $$O(N)$$. Trebuie menționat că avem un factor constant aproximativ egal cu $$120-130$$.
+Exemplu: Dacă anagrama fixată este $nibog$, pentru fiecare apariție a lui b din șir, căutăm primul $i$ din stânga lui $b$, respectiv primul $o$ din dreapta. Analog, căutăm primul $g$ din dreapta lui $o$ și primul $n$ din stânga lui $i$. Pentru indicii găsiți, aplicăm rezolvarea de la subtask-ul $2$. Putem precalcula aceste poziții succesor/predecesor ale caracterelor $b, i, n, g, o$ pentru fiecare poziție din șir sau le putem căuta binar la fiecare pas. Pentru găsirea rezultatului pentru un șir de lungime $N$, complexitatea este $O(N \cdot \log N)$ sau $O(N)$. Trebuie menționat că avem un factor constant aproximativ egal cu $120-130$.
 
 ## Soluție alternativă (Vlad-Mihai Bogdan, Universitatea din București)
 
-Pentru fiecare poziție $$i$$, vom încerca să formăm șirul bingo pe pozițiile $$i, i + 1, \dots, i + 4$$. Pentru fiecare literă $$l$$, care ar urma să fie pe poziția i + k în șirul cu subsecvența bingo pe pozițiile $$i, i + 1, \dots, i + 4$$, avem cel mult trei opțiuni:
+Pentru fiecare poziție $i$, vom încerca să formăm șirul bingo pe pozițiile $i, i + 1, \dots, i + 4$. Pentru fiecare literă $l$, care ar urma să fie pe poziția i + k în șirul cu subsecvența bingo pe pozițiile $i, i + 1, \dots, i + 4$, avem cel mult trei opțiuni:
 
-- Să luăm litera $$l$$ din stânga poziției $$i + k$$, dacă este posibil;
-- Să luăm litera $$l$$ din dreapta poziției $$i + k$$, dacă este posibil;
-- Să luăm litera $$l$$ chiar de pe poziția $$i + k$$, dacă este posibil.
+* Să luăm litera $l$ din stânga poziției $i + k$, dacă este posibil;
+* Să luăm litera $l$ din dreapta poziției $i + k$, dacă este posibil;
+* Să luăm litera $l$ chiar de pe poziția $i + k$, dacă este posibil.
 
-Astfel, pentru fiecare poziție $$i$$, avem cel mult $$3^5$$ configurații posibile de alegeri pentru cele $$5$$ litere. Vom calcula numărul de swap-uri necesare pentru a aduce literele pe pozițiile $$i, i + 1, \dots, i + 4$$ în ordinea pozițiilor lor din șirul inițial (spre exemplu, dacă decidem să luăm litera n de pe o poziție de dinaintea poziției literei i, ordinea în care vom aduce literele este $$n$$, iar mai apoi $$i$$). La final, trebuie să adăugăm la răspuns numărul de swap-uri necesare pentru a transforma anagrama rezultată în șirul bingo. După precalcularea numărului de swap-uri necesare pentru fiecare anagramă a cuvântului bingo, complexitatea devine $$O(N)$$, dar cu o constantă aproximativ egală cu $$243$$.
+Astfel, pentru fiecare poziție $i$, avem cel mult $3^5$ configurații posibile de alegeri pentru cele $5$ litere. Vom calcula numărul de swap-uri necesare pentru a aduce literele pe pozițiile $i, i + 1, \dots, i + 4$ în ordinea pozițiilor lor din șirul inițial (spre exemplu, dacă decidem să luăm litera n de pe o poziție de dinaintea poziției literei i, ordinea în care vom aduce literele este $n$, iar mai apoi $i$). La final, trebuie să adăugăm la răspuns numărul de swap-uri necesare pentru a transforma anagrama rezultată în șirul bingo. După precalcularea numărului de swap-uri necesare pentru fiecare anagramă a cuvântului bingo, complexitatea devine $O(N)$, dar cu o constantă aproximativ egală cu $243$.
 
 ## Rezolvare
 

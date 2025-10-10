@@ -18,14 +18,14 @@ tags:
 
 ## Introducere
 
-Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $$A$$ la punctul $$B$$, unde punctele $$A$$ și $$B$$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte.
+Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte.
 
 !!! info "Resursă foarte utilă"
 
-    Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași,
-    atât pentru valoarea istorică, cât și pentru claritatea explicațiilor
-    grafice, soft educațional pe care îl găsiți
-    [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
+Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași,
+atât pentru valoarea istorică, cât și pentru claritatea explicațiilor
+grafice, soft educațional pe care îl găsiți
+[aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
 
 Pe parcurs, veți observa că indiferent de modul în care veți rezolva aceste clase de probleme, multe dintre principiile pe care le folosiți vor rămâne aceleași, în special atunci când vine vorba de implementarea acestor tipuri de parcurgeri.
 
@@ -39,9 +39,9 @@ Până să ajungem să discutăm implementarea algoritmilor în sine, vom prezen
 
 ### Cunoștințe necesare
 
-În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](./queue.md).
+În ceea ce privește metodele iterative, folosite la algoritmul lui Lee, cunoașterea cozii este obligatorie, detalii despre modul de implementare, precum și variațiile acestei structuri de date pot fi găsite [aici](./queue.mdx).
 
-În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](./stack.md), iar informații despre implementarea funcțiilor recursive se găsesc [aici](../cppintro/functions.md).
+În ceea ce privește metodele recursive, folosite la flood fill, cunoașterea stivei și a recursivității este obligatorie, detalii despre modul de folosire al stivei pot fi găsite [aici](./stack.mdx), iar informații despre implementarea funcțiilor recursive se găsesc [aici](../cppintro/functions.mdx).
 
 O altă noțiune care se recomandă a fi cunoscută în prealabil este tipul de date pair sau o alternativă a acestuia (tuple sau dacă preferați implementările în stilul C, tipul de date struct, care permite și alte modificări după caz).
 
@@ -87,7 +87,7 @@ vector<int> ox = {-1, -1, -1, 0, 0, 1, 1, 1};
 vector<int> oy = {-1, 0, 1, -1, 1, -1, 0, 1};
 ```
 
-Indiferent de modul în care îi declarați, dacă sunteți la un punct $$(x, y)$$ și vreți să verificați toți vecinii, tot ce trebuie să faceți este să parcurgeți vectorii de direcție și să identificați valorile vecinilor.
+Indiferent de modul în care îi declarați, dacă sunteți la un punct $(x, y)$ și vreți să verificați toți vecinii, tot ce trebuie să faceți este să parcurgeți vectorii de direcție și să identificați valorile vecinilor.
 
 ```cpp
 for (int i = 0; i < neighbors; i++) {
@@ -101,7 +101,7 @@ for (int i = 0; i < neighbors; i++) {
 
 Pentru a ne asigura că de-a lungul parcurgerilor, noi nu vom ieși din matrice, avem două variante la fel de bune și populare.
 
-O primă variantă constă în a adăuga ziduri imaginare pe marginile matricii, procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se numește mat, iar tabloul are $$n$$ linii și $$m$$ coloane.
+O primă variantă constă în a adăuga ziduri imaginare pe marginile matricii, procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se numește mat, iar tabloul are $n$ linii și $m$ coloane.
 
 ```cpp
 for (int i = 0; i <= m + 1; i++) {
@@ -200,21 +200,21 @@ Pentru a implementa algoritmul lui Lee, va trebui să plecăm pe rând din fieca
 
 !!! note "Observație"
 
-    Se poate observa că acest algoritm este un caz particular al parcurgerii BFS
-    de pe grafuri, ambele fiind iterative și operând în același mod, folosind o
-    coadă.
+Se poate observa că acest algoritm este un caz particular al parcurgerii BFS
+de pe grafuri, ambele fiind iterative și operând în același mod, folosind o
+coadă.
 
 Mai jos, puteți găsi o implementare bazată pe o coadă, în stilul algoritmului lui Lee, care rezolvă problema Counting Rooms, prezentată mai sus.
 
 !!! note "Observație importantă"
 
-    Deși în majoritatea cazurilor putem folosi fie metoda fill, fie metoda
-    iterativă, atunci când avem nevoie să aflăm distanța dintre două sau mai
-    multe puncte, singura metodă optimă este cea iterativă, bazată pe coadă,
-    deoarece în cazul fill, depindem de modul în care ajungem să apelăm vecinii
-    recursiv, ceea ce reprezintă o strategie care va duce la soluții ineficiente
-    din punct de vedere al timpului și memoriei. Acest argument va fi reluat și
-    atunci când prezentăm DFS și BFS la grafuri.
+Deși în majoritatea cazurilor putem folosi fie metoda fill, fie metoda
+iterativă, atunci când avem nevoie să aflăm distanța dintre două sau mai
+multe puncte, singura metodă optimă este cea iterativă, bazată pe coadă,
+deoarece în cazul fill, depindem de modul în care ajungem să apelăm vecinii
+recursiv, ceea ce reprezintă o strategie care va duce la soluții ineficiente
+din punct de vedere al timpului și memoriei. Acest argument va fi reluat și
+atunci când prezentăm DFS și BFS la grafuri.
 
 ```cpp
 #include <fstream>
@@ -336,8 +336,7 @@ int main() {
 
 ### Problema [Labirint OJI 2021](https://kilonova.ro/problems/938)
 
-Pentru a rezolva această problemă, putem începe o parcurgere din punctele $$(1,
-1)$$ și $$(n, m)$$, iar pentru a verifica dacă apar îmbunătățiri, trebuie doar să verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul pentru care avem nevoie de două parcurgeri, în loc de una.
+Pentru a rezolva această problemă, putem începe o parcurgere din punctele $(1, 1)$ și $(n, m)$, iar pentru a verifica dacă apar îmbunătățiri, trebuie doar să verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul pentru care avem nevoie de două parcurgeri, în loc de una.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -551,11 +550,11 @@ int main() {
 
 ## Algoritmul 0-1 BFS
 
-Deși acest algoritm este folosit în principal pentru problemele de drumuri minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum se precizează în [articolul nostru despre drumuri minime](./shortest-path.md#0-1-bfs).
+Deși acest algoritm este folosit în principal pentru problemele de drumuri minime pe grafuri, există exemple care implică și probleme pe matrici, așa cum se precizează în [articolul nostru despre drumuri minime](./shortest-path.mdx#0-1-bfs).
 
 ## Lee cu structuri de date
 
-În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat adiacent din matrice poate avea costuri diferite de 0 și 1, în acest caz se impune folosirea unor structuri de date pentru a calcula aceste costuri minime, implementarea devenind foarte similară cu cea pe care o veți vedea atunci când veți învăța [algoritmul lui Dijkstra](./shortest-path.md#algoritmul-lui-dijkstra), acesta fiind varianta sa pe matrice.
+În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat adiacent din matrice poate avea costuri diferite de 0 și 1, în acest caz se impune folosirea unor structuri de date pentru a calcula aceste costuri minime, implementarea devenind foarte similară cu cea pe care o veți vedea atunci când veți învăța [algoritmul lui Dijkstra](./shortest-path.mdx#algoritmul-lui-dijkstra), acesta fiind varianta sa pe matrice.
 
 La fel ca și la Dijkstra, cele mai populare structuri de date sunt setul și coada de priorități, mai jos găsind implementări folosind ambele structuri de date ce rezolvă problema [lee2 de pe pbinfo](https://www.pbinfo.ro/probleme/3368/lee2).
 
@@ -630,9 +629,9 @@ int main() {
 
 !!! note "Observație"
 
-    Nodurile se introduc în priority queue cu minus în față deoarece vrem să
-    ținem elementele în ordine crescătoare, iar implementarea standard a
-    priority queue le ține în ordine descrescătoare.
+Nodurile se introduc în priority queue cu minus în față deoarece vrem să
+ținem elementele în ordine crescătoare, iar implementarea standard a
+priority queue le ține în ordine descrescătoare.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -709,45 +708,45 @@ Pe lângă aplicațiile din problemele de algoritmică, aceștia se regăsesc ș
 
 ## Probleme suplimentare
 
-- [OJI 2004 rj](https://kilonova.ro/problems/734)
-- [OJI 2007 alee](https://kilonova.ro/problems/768)
-- [infoarena muzeu](https://infoarena.ro/problema/muzeu)
-- [infoarena barbar](https://infoarena.ro/problema/barbar)
-- [RoAlgo Contest #1 - Expansion](https://kilonova.ro/problems/664/)
-- [USACO Silver Icy Perimeter](https://usaco.org/current/current/index.php?page=viewproblem2&cpid=895)
-- [USACO Silver Cross Country Skiing](http://www.usaco.org/index.php?page=viewproblem2&cpid=380)
-- [OJI 2021 labirint](https://kilonova.ro/problems/938)
-- [OJI 2009 insule](https://kilonova.ro/problems/398)
-- [infoarena delfin](https://www.infoarena.ro/problema/delfin)
-- [infoarena vila](https://infoarena.ro/problema/vila)
-- [infoarena marceland](https://www.infoarena.ro/problema/marceland)
-- [Codeforces Fox and Two Dots](https://codeforces.com/contest/510/problem/B)
-- [USACO Silver Where's Bessie](http://www.usaco.org/index.php?page=viewproblem2&cpid=740)
-- [Codeforces Solve the Maze](https://codeforces.com/contest/1365/problem/D)
-- [OJI 2018 castel](https://kilonova.ro/problems/900)
-- [ONI 2014 traseu](https://kilonova.ro/problems/1429)
-- [Codeforces Igor in the Museum](https://codeforces.com/contest/598/problem/D)
-- [ONI 2012 gheizere](https://kilonova.ro/problems/1396)
-- [Codeforces Olya and Energy Drinks](https://codeforces.com/problemset/problem/877/D)
-- [USACO Silver Comfortable Cows](http://www.usaco.org/index.php?page=viewproblem2&cpid=1110)
-- [USACO Silver Snow Boots](https://usaco.org/index.php?page=viewproblem2&cpid=811)
-- [Lot Juniori 2021 Fete si baieti](https://kilonova.ro/problems/1700)
-- [OJI 2016 miting](https://kilonova.ro/problems/875)
-- [Probleme cu coada si lee de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista&disciplina=0&clasa=10&tag=85&subtag=87&dificultate=2&folosesc_consola=-1&eticheta=&start=0)
-- [Problemele cu flood fill de pe kilonova](https://kilonova.ro/tags/356)
+* [OJI 2004 rj](https://kilonova.ro/problems/734)
+* [OJI 2007 alee](https://kilonova.ro/problems/768)
+* [infoarena muzeu](https://infoarena.ro/problema/muzeu)
+* [infoarena barbar](https://infoarena.ro/problema/barbar)
+* [RoAlgo Contest #1 - Expansion](https://kilonova.ro/problems/664/)
+* [USACO Silver Icy Perimeter](https://usaco.org/current/current/index.php?page=viewproblem2\&cpid=895)
+* [USACO Silver Cross Country Skiing](http://www.usaco.org/index.php?page=viewproblem2\&cpid=380)
+* [OJI 2021 labirint](https://kilonova.ro/problems/938)
+* [OJI 2009 insule](https://kilonova.ro/problems/398)
+* [infoarena delfin](https://www.infoarena.ro/problema/delfin)
+* [infoarena vila](https://infoarena.ro/problema/vila)
+* [infoarena marceland](https://www.infoarena.ro/problema/marceland)
+* [Codeforces Fox and Two Dots](https://codeforces.com/contest/510/problem/B)
+* [USACO Silver Where's Bessie](http://www.usaco.org/index.php?page=viewproblem2\&cpid=740)
+* [Codeforces Solve the Maze](https://codeforces.com/contest/1365/problem/D)
+* [OJI 2018 castel](https://kilonova.ro/problems/900)
+* [ONI 2014 traseu](https://kilonova.ro/problems/1429)
+* [Codeforces Igor in the Museum](https://codeforces.com/contest/598/problem/D)
+* [ONI 2012 gheizere](https://kilonova.ro/problems/1396)
+* [Codeforces Olya and Energy Drinks](https://codeforces.com/problemset/problem/877/D)
+* [USACO Silver Comfortable Cows](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1110)
+* [USACO Silver Snow Boots](https://usaco.org/index.php?page=viewproblem2\&cpid=811)
+* [Lot Juniori 2021 Fete si baieti](https://kilonova.ro/problems/1700)
+* [OJI 2016 miting](https://kilonova.ro/problems/875)
+* [Probleme cu coada si lee de pe pbinfo](https://www.pbinfo.ro/?pagina=probleme-lista\&disciplina=0\&clasa=10\&tag=85\&subtag=87\&dificultate=2\&folosesc_consola=-1\&eticheta=\&start=0)
+* [Problemele cu flood fill de pe kilonova](https://kilonova.ro/tags/356)
 
 ## Lectură suplimentară
 
-- [Flood fill - USACO Guide](https://usaco.guide/silver/flood-fill?lang=cpp)
-- [BFS Fill - Algoritmul lui Lee - Algopedia](<https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_14_-_12_dec_2019#BFS_Fill_(algoritmul_lui_Lee)>)
-- [Algoritmul lui Lee - infogenius](https://infogenius.ro/algoritmul-lui-lee/)
-- [Algoritmul lui Lee - infoarena](https://infoarena.ro/algoritmul-lee)
-- [Algoritmul lui Lee - pbinfo](https://www.pbinfo.ro/articole/18589/algoritmul-lui-lee)
-- [Cozi (include si alte probleme) - CPPI Sync](https://cppi.sync.ro/materia/cozi.html)
-- [Probleme diverse - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_paralela_cu_lee.html)
-- [Flood fill - wikipedia](https://en.wikipedia.org/wiki/Flood_fill)
-- [Algoritmi de umplere - generalitati - Pbinfo](https://www.pbinfo.ro/articole/18892/algoritmi-de-umplere-generalitati)
-- [Algoritmi de umplere - fill recursiv - Pbinfo](https://www.pbinfo.ro/articole/18893/fill-recursiv)
-- [Algoritmi de umplere - fill cu coada - Pbinfo](https://www.pbinfo.ro/articole/18894/fill-cu-coada)
-- [An Efficient (and quite common) Way to Navigate Grid Problems - Codeforces](https://codeforces.com/blog/entry/78827)
-- [0-1 BFS - Codeforces](https://codeforces.com/blog/entry/22276)
+* [Flood fill - USACO Guide](https://usaco.guide/silver/flood-fill?lang=cpp)
+* [BFS Fill - Algoritmul lui Lee - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_14_-_12_dec_2019#BFS_Fill_\(algoritmul_lui_Lee\))
+* [Algoritmul lui Lee - infogenius](https://infogenius.ro/algoritmul-lui-lee/)
+* [Algoritmul lui Lee - infoarena](https://infoarena.ro/algoritmul-lee)
+* [Algoritmul lui Lee - pbinfo](https://www.pbinfo.ro/articole/18589/algoritmul-lui-lee)
+* [Cozi (include si alte probleme) - CPPI Sync](https://cppi.sync.ro/materia/cozi.html)
+* [Probleme diverse - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_paralela_cu_lee.html)
+* [Flood fill - wikipedia](https://en.wikipedia.org/wiki/Flood_fill)
+* [Algoritmi de umplere - generalitati - Pbinfo](https://www.pbinfo.ro/articole/18892/algoritmi-de-umplere-generalitati)
+* [Algoritmi de umplere - fill recursiv - Pbinfo](https://www.pbinfo.ro/articole/18893/fill-recursiv)
+* [Algoritmi de umplere - fill cu coada - Pbinfo](https://www.pbinfo.ro/articole/18894/fill-cu-coada)
+* [An Efficient (and quite common) Way to Navigate Grid Problems - Codeforces](https://codeforces.com/blog/entry/78827)
+* [0-1 BFS - Codeforces](https://codeforces.com/blog/entry/22276)

@@ -24,14 +24,14 @@ Ea funcționează pe principiul “primul venit, primul servit” (First In, Fir
 
 Cu o coadă se pot face următoarele operații **în timp constant**:
 
-- adăugarea unui nou element în spatele cozii. Operația se numește **push**;
-- eliminarea elementului din vârful cozii. Operația se numește **pop**;
-- accesarea valorii din vârful cozii. Operația se numește **front**;
+* adăugarea unui nou element în spatele cozii. Operația se numește **push**;
+* eliminarea elementului din vârful cozii. Operația se numește **pop**;
+* accesarea valorii din vârful cozii. Operația se numește **front**;
 
 Ca o consecință a acestor operații principale, putem face și următoarele lucruri:
 
-- inițializarea cozii – crearea unei cozi vide;
-- verificarea faptului că o coadă este sau nu vidă;
+* inițializarea cozii – crearea unei cozi vide;
+* verificarea faptului că o coadă este sau nu vidă;
 
 ## Modul de folosire și implementare al cozii
 
@@ -43,7 +43,7 @@ Pentru a folosi o coadă, avem nevoie de o metodă de a o implementa. Două dint
 
 O primă metodă de a implementa o coadă, fără folosirea vreunei instrucțiuni avansate este cea care folosește tablouri, ținând pozițiile în care se află primul și ultimul element din coadă.
 
-Aici se poate observa faptul că folosim un tablou de dimensiune fixă, iar atunci când adăugăm și scoatem valori din coadă, ajustăm valorile lui $$L$$ și $$R$$.
+Aici se poate observa faptul că folosim un tablou de dimensiune fixă, iar atunci când adăugăm și scoatem valori din coadă, ajustăm valorile lui $L$ și $R$.
 
 ```cpp
 #include <iostream>
@@ -79,7 +79,7 @@ int main() {
 
 ### Coada circulară
 
-O îmbunătățire pe care o putem face la această implementare constă în a refolosi memoria dacă știm dimensiunea maximă pe care o poate avea coada la un moment dat. Astfel, în loc să stocăm cantitatea maximă de valori care intră in coadă, stocăm doar dimensiunea maximă a datelor, iar pentru a ajusta valorile lui $$L$$ și $$R$$, le vom ajusta circular, astfel limitând memoria folosită.
+O îmbunătățire pe care o putem face la această implementare constă în a refolosi memoria dacă știm dimensiunea maximă pe care o poate avea coada la un moment dat. Astfel, în loc să stocăm cantitatea maximă de valori care intră in coadă, stocăm doar dimensiunea maximă a datelor, iar pentru a ajusta valorile lui $L$ și $R$, le vom ajusta circular, astfel limitând memoria folosită.
 
 ```cpp
 #include <iostream>
@@ -164,20 +164,20 @@ int main() {
 
 ## Aplicații ale cozii
 
-Coada se regăsește ca o aplicație pentru tot ce înseamnă păstrarea datelor într-o ordine cronologică, fie că e vorba de evenimente, stări, poziții sau alte informații similare. Datorită versatilității sale, putem să o folosim în combinație cu stiva, problemele ce constau în implementarea cozii cu [stive](./stack.md) și invers sunt foarte cunoscute și deschid ușa către idei foarte importante, așa cum se poate observa și în problemele de pe Leetcode menționate mai jos.
+Coada se regăsește ca o aplicație pentru tot ce înseamnă păstrarea datelor într-o ordine cronologică, fie că e vorba de evenimente, stări, poziții sau alte informații similare. Datorită versatilității sale, putem să o folosim în combinație cu stiva, problemele ce constau în implementarea cozii cu [stive](./stack.mdx) și invers sunt foarte cunoscute și deschid ușa către idei foarte importante, așa cum se poate observa și în problemele de pe Leetcode menționate mai jos.
 
-Dintre cei mai importanți algoritmi ce au la bază o coadă, vom menționa parcurgerea în lățime (BFS), împreună cu varianta ei pe matrice, algoritmul lui Lee și in general, Flood Fill. Pentru mai multe detalii, puteți explora [acest articol](./lee.md).
+Dintre cei mai importanți algoritmi ce au la bază o coadă, vom menționa parcurgerea în lățime (BFS), împreună cu varianta ei pe matrice, algoritmul lui Lee și in general, Flood Fill. Pentru mai multe detalii, puteți explora [acest articol](./lee.mdx).
 
-Nu în ultimul rând, coada este o structură de date ce apare în diverse probleme de simulare a unui proces sau în anumite tipuri de probleme ce folosesc tehnici de tipul Sliding Window, deque-ul fiind o structură de date specializată pe asemenea algoritmi, așa cum este prezentată și [aici](./deque.md).
+Nu în ultimul rând, coada este o structură de date ce apare în diverse probleme de simulare a unui proces sau în anumite tipuri de probleme ce folosesc tehnici de tipul Sliding Window, deque-ul fiind o structură de date specializată pe asemenea algoritmi, așa cum este prezentată și [aici](./deque.mdx).
 
 ## Probleme cu coadă
 
-- [Coada1 pbinfo](https://www.pbinfo.ro/probleme/1598/coada1)
-- [Implement Queue using Stacks - Leetcode](https://leetcode.com/problems/implement-queue-using-stacks/description/)
-- [Implement Stack using Queues - Leetcode](https://leetcode.com/problems/implement-stack-using-queues/description/)
+* [Coada1 pbinfo](https://www.pbinfo.ro/probleme/1598/coada1)
+* [Implement Queue using Stacks - Leetcode](https://leetcode.com/problems/implement-queue-using-stacks/description/)
+* [Implement Stack using Queues - Leetcode](https://leetcode.com/problems/implement-stack-using-queues/description/)
 
 ## Lectură suplimentară
 
-- [Tipul coada - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_14_-_12_dec_2019#Tipul_coad%C4%83)
-- [Coada - pbinfo](https://www.pbinfo.ro/articole/19579/coada)
-- [Queue - wikipedia](<https://en.wikipedia.org/wiki/Queue_(abstract_data_type)>)
+* [Tipul coada - algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VII-a_lec%C8%9Bia_14_-_12_dec_2019#Tipul_coad%C4%83)
+* [Coada - pbinfo](https://www.pbinfo.ro/articole/19579/coada)
+* [Queue - wikipedia](https://en.wikipedia.org/wiki/Queue_\(abstract_data_type\))

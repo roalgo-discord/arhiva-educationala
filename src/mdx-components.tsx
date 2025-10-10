@@ -1,21 +1,27 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 
-const components = defaultMdxComponents satisfies MDXComponents;
+import { Callout } from './components/callout';
+import * as TabComponents from './components/tabs';
+import Image from 'next/image';
+
+const components = {
+  ...defaultMdxComponents,
+  ...TabComponents,
+  Callout,
+  Image,
+} satisfies MDXComponents;
 
 declare global {
   type MDXProvidedComponents = typeof components;
 }
 
-export function useMDXComponents(): MDXProvidedComponents {
-  return components;
-}
 
 export function getMDXComponents(
   overrides?: MDXComponents,
 ): MDXComponents {
   return {
-    ...useMDXComponents(),
+    ...components,
     ...overrides,
   };
 }

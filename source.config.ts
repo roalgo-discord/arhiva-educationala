@@ -20,7 +20,6 @@ const unsupportedNodeTypes = new Set([
   "mdxjsEsm",
   "mdxjsFlowExpression",
   "mdxjsTextExpression",
-  "mdxJsxFlowElement",
   "mdxJsxTextElement",
 ]);
 

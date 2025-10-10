@@ -9,15 +9,11 @@ hide:
 
 Procesul de instalare este unul foarte simplu:
 
-1.  Descarcă installerul de Sublime Text 4:
+1. Descarcă installerul de Sublime Text 4:
 
-    [Link direct :material-download:](https://www.sublimetext.com/download_thanks?target=win-x64){ .md-button .md-button--primary }
+   [Link direct :material-download:](https://www.sublimetext.com/download_thanks?target=win-x64)
 
-2.  După ce s-a descărcat, rulează installerul (care ar trebui să fie numit `sublime_text_build_{versiune}_x64_setup.exe`) și urmărește pașii de pe ecran.
-
-Alternativ, poți descărca varianta portabilă de aici. Ea este utilă de pildă la școală, unde nu ai drepturi de administrator pentru a putea instala Sublime Text 4 în mod normal.
-
-[Descarcă arhiva .zip :material-download:](https://download.sublimetext.com/sublime_text_build_4180_x64.zip){ .md-button .md-button--primary }
+2. După ce s-a descărcat, rulează installerul (care ar trebui să fie numit `sublime_text_build_{versiune}_x64_setup.exe`) și urmărește pașii de pe ecran.
 
 ## Configurare și utilizare
 
@@ -30,13 +26,13 @@ Command Palette ne va fi de folos în majoritatea timpului nostru pe ST4, deci e
 3. **BracketHighlighter**, care are scopul de a evidenția perechile de paranteze (`()`, `[]`, `<>`, `{}`);
 4. **Terminus**, care oferă un terminal real în ST4;
 5. **A File Icon**, care oferă icoane mai bune. Este ceva mai mult estetic;
-6. **SublimeLinter**, care oferă suport pentru _linting_. Ce înseamnă asta, mai pe larg, este că pachetul acesta îți permite să vezi erorile și avertizările de la compilator și îți verifică sintaxa. Pentru C++, mai trebuie să instalăm și **SublimeLinter-contrib-clang**, **SublimeLinter-contrib-clang-tidy** și **SublimeLinter-contrib-cppcheck**;
+6. **SublimeLinter**, care oferă suport pentru *linting*. Ce înseamnă asta, mai pe larg, este că pachetul acesta îți permite să vezi erorile și avertizările de la compilator și îți verifică sintaxa. Pentru C++, mai trebuie să instalăm și **SublimeLinter-contrib-clang**, **SublimeLinter-contrib-clang-tidy** și **SublimeLinter-contrib-cppcheck**;
 7. **CMakeBuilder**, pentru a putea compila și rula codul mai ușor;
 8. **CppFastOlympicCoding**, care este făcut pentru a optimiza ST4 pentru concursuri și olimpiade. Este opțional, însă îl recomand pe viitor.
 
 Acum că avem toate aceste pachete, să le configurăm.
 
-Pentru `clangd`, `clang-tidy`, `cmake` și `clang-format`, dacă ai instalat compilatorul MinGW cum am indicat în [articolul trecut](../../compilers/windows/mingw64.md) și _nu_ ai exclus LLVM, nu trebuie să faci nimic pentru a instala aceste programe. Pentru `cppcheck`, alege installerul [de pe această pagină](http://cppcheck.net/) și urmărește instrucțiunile de pe ecran.
+Pentru `clangd`, `clang-tidy`, `cmake` și `clang-format`, dacă ai instalat compilatorul MinGW cum am indicat în [articolul trecut](../../compilers/windows/mingw64.mdx) și *nu* ai exclus LLVM, nu trebuie să faci nimic pentru a instala aceste programe. Pentru `cppcheck`, alege installerul [de pe această pagină](http://cppcheck.net/) și urmărește instrucțiunile de pe ecran.
 
 Pentru a configura `clangd`, mergem la Preferences > Package Settings > LSP > Servers > LSP-clangd (sau Preferences: LSP-clangd settings din Command Palette). Se va deschide o nouă fereastră împărțită în două. Pe partea stângă se află toate configurările pe care le avem la dispoziție, iar pe partea dreaptă se află configurarea utilizatorului, adică setările pe care vrem să le aplicăm. Eu folosesc aceste setări:
 
@@ -196,7 +192,7 @@ Deschide Preferences: Settings din Command Palette. Aici se află preferințele 
    "theme": "Adaptive.sublime-theme",
    ```
 
-   Pentru editor, aici este o decizie personală și au avut loc bătălii seculare (bine, nu la fel de mari ca la Vim vs Emacs), așa că vom instala pachetul Colorsublime, pentru a vedea în timp real cum va arăta interfața. Acesta are și un site (<https://colorsublime.github.io>) unde poți vedea aceste teme în timp real. După ce ai instalat pachetul, rulează Colorsublime: Install Theme din Command Palette și derulează prin zecile de teme pe care le ai la dispoziție.
+   Pentru editor, aici este o decizie personală și au avut loc bătălii seculare (bine, nu la fel de mari ca la Vim vs Emacs), așa că vom instala pachetul Colorsublime, pentru a vedea în timp real cum va arăta interfața. Acesta are și un site ([https://colorsublime.github.io](https://colorsublime.github.io)) unde poți vedea aceste teme în timp real. După ce ai instalat pachetul, rulează Colorsublime: Install Theme din Command Palette și derulează prin zecile de teme pe care le ai la dispoziție.
 
 7. Următoarele setări au de-a face cu spațiile albe:
 
@@ -229,8 +225,8 @@ Deschide Preferences: Settings din Command Palette. Aici se află preferințele 
 }
 ```
 
-<!-- TODO: add shortcuts -->
+{/* TODO: add shortcuts */}
 
 Asta este tot cu configurarea. Poți acum să mergi către următorul articol:
 
-[Mergi la introducere](./../../intro.md){ .md-button .md-button--primary }
+[Mergi la introducere](./../../intro.mdx)

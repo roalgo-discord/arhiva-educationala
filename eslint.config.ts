@@ -3,7 +3,6 @@ import { fileURLToPath } from "node:url";
 import { FlatCompat } from "@eslint/eslintrc";
 import type { Linter } from "eslint";
 import * as mdx from "eslint-plugin-mdx";
-import { getMDXComponents } from "./src/mdx-components";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,7 +15,14 @@ const remarkConfigPath = fileURLToPath(
   new URL("./.remarkrc.mjs", import.meta.url)
 );
 
-const mdxComponentGlobals = mdx.getGlobals(getMDXComponents());
+const { default: defaultMdxComponents } = await import("fumadocs-ui/mdx");
+const mdxComponentGlobals = mdx.getGlobals([
+  ...Object.keys(defaultMdxComponents ?? {}),
+  "Callout",
+  "Tabs",
+  "Tab",
+  "Image",
+]);
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
@@ -58,6 +64,6 @@ const eslintConfig = [
       "react/jsx-no-undef": ["error", { allowGlobals: true }],
     },
   },
-] satisfies Linter.FlatConfig[];
+] satisfies Linter.Config[];
 
 export default eslintConfig;

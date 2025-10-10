@@ -11,11 +11,11 @@ Pentru a instala Notepad++:
 
 1. Mergem pe site-ul oficial la secțiunea de Downloads:
 
-   [Deschide pagina :material-open-in-new:](https://notepad-plus-plus.org/downloads/){.md-button .md-button--primary }
+   [Deschide pagina :material-open-in-new:](https://notepad-plus-plus.org/downloads/)
 
    Alegem ultima versiune (la momentul scrierii, Notepad++ 8.6.9). Aici este link direct către installerul de 64 de biți, pentru conveniența ta:
 
-   [Descarcă Notepad++ 8.6.9 :material-download:](https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.9/npp.8.6.9.Installer.x64.exe){ .md-button .md-button--primary }
+   [Descarcă Notepad++ 8.6.9 :material-download:](https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.9/npp.8.6.9.Installer.x64.exe)
 
 2. Rulează installerul. Procesul de instalare este simplu și setările implicite sunt de ajuns pentru toată lumea, deci poți da Next în continuare până când se termină procesul.
 
@@ -23,7 +23,7 @@ Pentru a instala Notepad++:
 
 Acum vremea să-l configurăm, pentru că nu ne este prea utilizabil în acest moment.
 
-1. Fontul implicit, Courier New... nu este prea bun. Pentru a schimba fontul, mergem la Setări și apoi la Configurator de stiluri. De acolo, putem modifica orice legat de tema curentă. Notepad++ are mai multe teme din care poți alege, așa că poți experimenta cu asta. Selectează tema Default (stylers.xml), și la stil font alege fontul Cascadia Mono sau Consolas (sau alt font monospațiat, dacă ai alte preferințe). Poți crește mărimea fontului (eu țin la 12, consider că 10 este o mărime prea mică). După ce ai făcut aceste lucruri, bifează Activare globală font și Activare globală mărime font. Fă același setări pentru tema DarkModeDefault (sau ce altă temă dorești să ai).
+1. Fontul implicit, Courier New\... nu este prea bun. Pentru a schimba fontul, mergem la Setări și apoi la Configurator de stiluri. De acolo, putem modifica orice legat de tema curentă. Notepad++ are mai multe teme din care poți alege, așa că poți experimenta cu asta. Selectează tema Default (stylers.xml), și la stil font alege fontul Cascadia Mono sau Consolas (sau alt font monospațiat, dacă ai alte preferințe). Poți crește mărimea fontului (eu țin la 12, consider că 10 este o mărime prea mică). După ce ai făcut aceste lucruri, bifează Activare globală font și Activare globală mărime font. Fă același setări pentru tema DarkModeDefault (sau ce altă temă dorești să ai).
 2. Acum vom vedea setările din Setări > Preferințe. Un prim lucru pe care îl putem face este să avem niște icoane mai moderne. Selectează din Generale opțiunea UI fluent umplut: mic (deși poți experimenta cu icoanele).
 3. Ca să nu fim orbiți, mergi la Modul întunecat și alege fie Modul întunecat, fie Urmarea ferestrelor, care ajustează modul în funcție de setările globale din Windows. Poți să personalizezi și culoarea temei, dar "Negru" arată cel mai bine, după părerea mea.
 4. Implicit, Notepad++ indentează folosind tab-uri. Pentru a schimba acest comportament, mergem la Limbaje și alegem Indentează folosind: Caracter(e) spațiu. Recomand indentare cu 4 spații (setarea implicită), însă alte valori comune includ 2, 3 și 8 (nu recomand ultima opțiune). Atâta timp cât este o valoare peste 1, este în regulă.
@@ -31,21 +31,19 @@ Acum vremea să-l configurăm, pentru că nu ne este prea utilizabil în acest m
 
 După toate aceste schimbări, editorul ar trebui să arate astfel:
 
-<figure markdown="span">
-![Fereastra de Notepad++ cu temă întunecată și un fișier C++](./notepadpp/npp-1.png){ loading=lazy }
-</figure>
+<img alt="Fereastra de Notepad++ cu temă întunecată și un fișier C++" src="./notepadpp/npp-1.png" width="1010" height="693" />
 
-În acest moment, Notepad++ este doar un editor simplu și nu este potrivit programării în C++, deci mai trebuie să facem configurări. Trebuie să instalăm niște _module_ înainte. Pentru asta, mergem la Module > Administrare module. De acolo, selectăm următoarele module:
+În acest moment, Notepad++ este doar un editor simplu și nu este potrivit programării în C++, deci mai trebuie să facem configurări. Trebuie să instalăm niște *module* înainte. Pentru asta, mergem la Module > Administrare module. De acolo, selectăm următoarele module:
 
-- AutoSave, pentru a salva automat fișierele;
-- BracketsCheck, pentru a verifica dacă am balansat acoladele sau parantezele (riscul ar trebui să fie minimizat de autocompletarea parantezelor, dar nu se știe);
-- CodeAlignment, în caz că vrei să aliniezi codul după semnele de egal (opțional, dar drăguț de avut);
-- Comment Toggler și CommentWrap pentru comentarii, face lucrul cu acestea mai ușor;
-- ComparePlus, folosit pentru a compara două fișiere (mai puternic decât să tot schimbi între tab-uri pentru a vedea diferența dintre două fișiere);
-- Discord Rich Presence, dacă simți nevoia să te lauzi pe Discord că ai Notepad++ (nu știu de ce ai face asta);
-- MenuIcons, dacă vrei să ai icoane și în meniuri (opțional, dar recomandat);
-- **Cel mai important modul**, NppExec, care ne permite să executăm script-uri fără să părăsim Notepad++. Cu asta vom compila și executa C++;
-- Pentru cei care doresc, există NppOpenAI, ca să-l conectezi la ChatGPT.
+* AutoSave, pentru a salva automat fișierele;
+* BracketsCheck, pentru a verifica dacă am balansat acoladele sau parantezele (riscul ar trebui să fie minimizat de autocompletarea parantezelor, dar nu se știe);
+* CodeAlignment, în caz că vrei să aliniezi codul după semnele de egal (opțional, dar drăguț de avut);
+* Comment Toggler și CommentWrap pentru comentarii, face lucrul cu acestea mai ușor;
+* ComparePlus, folosit pentru a compara două fișiere (mai puternic decât să tot schimbi între tab-uri pentru a vedea diferența dintre două fișiere);
+* Discord Rich Presence, dacă simți nevoia să te lauzi pe Discord că ai Notepad++ (nu știu de ce ai face asta);
+* MenuIcons, dacă vrei să ai icoane și în meniuri (opțional, dar recomandat);
+* **Cel mai important modul**, NppExec, care ne permite să executăm script-uri fără să părăsim Notepad++. Cu asta vom compila și executa C++;
+* Pentru cei care doresc, există NppOpenAI, ca să-l conectezi la ChatGPT.
 
 După ce ai selectat acele module, apasă butonul de Instalare (dacă totuși ieși accidental, selecția va rămâne). Notepad++ se va închide pentru a-și putea instala modulele. Acum pentru a configura fiecare modul. Fiecare setare se află în Module, sub numele fiecărui modul.
 
@@ -70,4 +68,4 @@ Ai tot ce trebuie pentru a putea compila C++. Nu este o experiență la fel de b
 
 Asta este tot cu configurarea. Poți acum să mergi către următorul articol:
 
-[Mergi la introducere](./../../intro.md){ .md-button .md-button--primary }
+[Mergi la introducere](./../../intro.mdx)

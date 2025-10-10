@@ -18,7 +18,7 @@ Inteligența Artificială este un domeniu ce combină informatica cu matematica.
 
 ## Olimpiadă
 
-În cadrul olimpiadei, fiecare problemă oferă un set de date și o cerință. La final elevul trebuie să trimită un alt set de date cu răspunsurile cerute. Evaluarea se face prin utilizarea unor metrici, de exemplu acuratețea, pentru a obține un scor nenormalizat, urmând să se aplice formule descrise în regulament pentru a aduce scorul în intervalul [0, 100].
+În cadrul olimpiadei, fiecare problemă oferă un set de date și o cerință. La final elevul trebuie să trimită un alt set de date cu răspunsurile cerute. Evaluarea se face prin utilizarea unor metrici, de exemplu acuratețea, pentru a obține un scor nenormalizat, urmând să se aplice formule descrise în regulament pentru a aduce scorul în intervalul \[0, 100].
 
 Olimpiada are 3 etape: locală, județeană și națională. Similar cu olimpiada de informatică, elevii se califică de la o etapă la următoarea, urmând ca la națională să se dea medalii și premii. În urma etapei naționale se va selecta un lot lărgit, care va participa într-o tabără de lot. În urma câtorva examene de acolo, se vor selecta 8 elevi pentru International Olympiad in AI (IOAI) și 4 elevi pentru International AI Olympiad (IAIO).
 
@@ -28,22 +28,22 @@ IAIO este o olimpiadă axată doar pe ML. Există o probă practică unde se rez
 
 ## Tipuri de învățare
 
-**Supervised learning (Învățare supervizată)**  
-Modelul învață din exemple „etichetate”: fiecare intrare are asociată o etichetă (rezultatul dorit). Scopul este să învețe o funcție care să mapeze intrările la etichete, astfel încât să prezică corect etichetele pentru date noi.  
+**Supervised learning (Învățare supervizată)**\
+Modelul învață din exemple „etichetate”: fiecare intrare are asociată o etichetă (rezultatul dorit). Scopul este să învețe o funcție care să mapeze intrările la etichete, astfel încât să prezică corect etichetele pentru date noi.\
 Exemple de probleme:
 
-- Clasificare – spam vs. non-spam (eticheta este „spam” sau „non-spam”).
-- Regresie – predicția prețului unei locuințe (eticheta este prețul real).  
+* Clasificare – spam vs. non-spam (eticheta este „spam” sau „non-spam”).
+* Regresie – predicția prețului unei locuințe (eticheta este prețul real).\
   Algoritmi frecvenți: regresia liniară/logistică, SVM, arbori de decizie, rețele neuronale.
 
-**Unsupervised learning (Învățare nesupervizată)**  
-Nu există etichete; modelul caută structuri ascunse în date.  
+**Unsupervised learning (Învățare nesupervizată)**\
+Nu există etichete; modelul caută structuri ascunse în date.\
 Exemple de probleme:
 
-- Clustering – gruparea clienților în segmente omogene (K-means, DBSCAN).
-- Reducerea dimensionalității – comprimarea datelor păstrând informația esențială (PCA, t-SNE).
+* Clustering – gruparea clienților în segmente omogene (K-means, DBSCAN).
+* Reducerea dimensionalității – comprimarea datelor păstrând informația esențială (PCA, t-SNE).
 
-**Self-supervised learning (Învățare auto-supervizată)**  
+**Self-supervised learning (Învățare auto-supervizată)**\
 O formă hibridă: folosește date neetichetate, dar creează etichete artificiale din însăși datele. De exemplu, în învățarea de reprezentări lingvistice, modelul poate învăța să prezică cuvântul următor dintr-un text (BERT, GPT). În Computer Vision, o imagine poate fi parțial mascată, iar modelul învață să reconstruiască porțiunile lipsă. După această „pre-antrenare”, modelul poate fi ajustat (fine-tuned) pe o sarcină supervizată cu puține date etichetate.
 
 Există multe metode de self-supervised learning, cele enumerate fiind doar câteva exemple. Domeniile în care algoritmii învață tipare fără să aibă toate datele etichetate reprezintă un domeniu promițător în viitor, căci permite utilizarea unui volum mult mai mare de date, deoarece etichetarea reprezintă un efort costisitor.

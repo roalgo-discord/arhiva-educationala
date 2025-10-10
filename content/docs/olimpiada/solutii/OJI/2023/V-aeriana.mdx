@@ -11,12 +11,12 @@ tags:
   - clasa V
 ---
 
-Pentru cerința $$1$$, se calculează toate duratele zborurilor, iar pe urmă trebuie afișat maximul dintre acestea. Pentru calculul duratei unui zbor, atât momentul decolării, cât și momentul aterizării „se convertesc în minute”, adică se află, pentru fiecare moment, „distanța în minute” dintre momentul $$00:00$$ al primei zile și momentul respectiv, presupunând că ambele momente sunt în ziua 1, cu formula $$total_{minute} = H \cdot 60 + M$$.
+Pentru cerința $1$, se calculează toate duratele zborurilor, iar pe urmă trebuie afișat maximul dintre acestea. Pentru calculul duratei unui zbor, atât momentul decolării, cât și momentul aterizării „se convertesc în minute”, adică se află, pentru fiecare moment, „distanța în minute” dintre momentul $00:00$ al primei zile și momentul respectiv, presupunând că ambele momente sunt în ziua 1, cu formula $total_{minute} = H \cdot 60 + M$.
 
-În cazul în care decolarea și aterizarea au loc în aceeași zi, durata zborului (în minute) este dată de diferența dintre $$total_{{minute}_2}$$ și $$total_{{minute}_1}$$. În cazul în care decolarea și aterizarea au loc în zile diferite, diferența anterioară ar fi negativă. În acest caz, se adună „încă o zi”, adică $$24 \cdot 60$$ minute la $$total_{{minute}_2}$$, deoarece inițial am presupus că momentul aterizării este în ziua 1.
+În cazul în care decolarea și aterizarea au loc în aceeași zi, durata zborului (în minute) este dată de diferența dintre $total_{{minute}_2}$ și $total_{{minute}_1}$. În cazul în care decolarea și aterizarea au loc în zile diferite, diferența anterioară ar fi negativă. În acest caz, se adună „încă o zi”, adică $24 \cdot 60$ minute la $total_{{minute}_2}$, deoarece inițial am presupus că momentul aterizării este în ziua 1.
 
-Pentru cerința 2, se verifică pentru fiecare zbor dacă este „zbor special”. În primul rând, primul cod (notat în enunț $$A_1$$) trebuie să fie un număr prim (deci obligatoriu mai mare sau egal cu 2). Pentru a căuta mai rapid dacă are alt divizor în afară de 1 și el însuși, ne folosim de faptul că pentru orice divizor $$d$$ al lui $$A_1$$, automat $$A_1 / d$$ ar fi divizor al lui $$A_1$$. Astfel căutăm divizori posibili $$d$$ ai lui $$A_1$$ pornind cu $$d = 2$$ și mergând cât timp $$d
-\leq A_1 / d$$. Dacă primul cod este prim, se calculează suma cifrelor acestuia și se verifică dacă al doilea cod e divizibil cu suma calculată. În cazul în care un zbor este „special”, se interschimbă $$h_1$$ cu $$h_2$$ și $$m_1$$ cu $$m_2$$.
+Pentru cerința 2, se verifică pentru fiecare zbor dacă este „zbor special”. În primul rând, primul cod (notat în enunț $A_1$) trebuie să fie un număr prim (deci obligatoriu mai mare sau egal cu 2). Pentru a căuta mai rapid dacă are alt divizor în afară de 1 și el însuși, ne folosim de faptul că pentru orice divizor $d$ al lui $A_1$, automat $A_1 / d$ ar fi divizor al lui $A_1$. Astfel căutăm divizori posibili $d$ ai lui $A_1$ pornind cu $d = 2$ și mergând cât timp $d
+\leq A_1 / d$. Dacă primul cod este prim, se calculează suma cifrelor acestuia și se verifică dacă al doilea cod e divizibil cu suma calculată. În cazul în care un zbor este „special”, se interschimbă $h_1$ cu $h_2$ și $m_1$ cu $m_2$.
 
 Se calculează duratele zborurilor și maximul dintre acestea, precum în cazul cerinței 1.
 

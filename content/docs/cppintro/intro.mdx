@@ -8,14 +8,11 @@ tags:
   - introducere
 ---
 
-
-
-
 !!! note "Observație"
 
-    Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai
-    întâi [acest articol](./index.md) pentru a putea începe să scrii cod corect
-    și eficient.
+Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai
+întâi [acest articol](./index.mdx) pentru a putea începe să scrii cod corect
+și eficient.
 
 În continuare, vom explora câteva aspecte introductive ale limbajului de programare C++ (sintaxa, compilarea, structura de bază a unui program), însoțite de un exemplu simplu de program.
 
@@ -31,21 +28,21 @@ O altă metodă de a clasifica limbajele de programare este în funcție de modu
 
 Limbajele de programare pot fi, de asemenea, clasificate în funcție de modul principal în care sunt folosite:
 
-- **Limbaje imperative**: Definirea unui algoritm pas cu pas, în care fiecare comandă execută o acțiune specifică (ex: C, Pascal).
-- **Limbaje funcționale**: Se concentrează pe aplicarea unor funcții asupra datelor, evitând modificarea lor directă (ex: Haskell, Lisp).
-- **Limbaje logice**: Bazate pe reguli și logica propozițională, unde sistemul decide ordinea de execuție (ex: Prolog).
-- **Limbaje orientate pe obiecte**: Permite structurarea codului în clase ce conțin date și funcții pentru a opera pe aceste date (ex: Java, Python).
+* **Limbaje imperative**: Definirea unui algoritm pas cu pas, în care fiecare comandă execută o acțiune specifică (ex: C, Pascal).
+* **Limbaje funcționale**: Se concentrează pe aplicarea unor funcții asupra datelor, evitând modificarea lor directă (ex: Haskell, Lisp).
+* **Limbaje logice**: Bazate pe reguli și logica propozițională, unde sistemul decide ordinea de execuție (ex: Prolog).
+* **Limbaje orientate pe obiecte**: Permite structurarea codului în clase ce conțin date și funcții pentru a opera pe aceste date (ex: Java, Python).
 
 Unele limbaje combină aceste paradigme, devenind limbaje multiparadigmă. De exemplu, C++ combină paradigma imperativă cu programarea orientată pe obiecte, iar Python este un limbaj orientat pe obiecte, dar permite și programarea imperativă și funcțională.
 
 !!! note "Observație"
 
-    Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau
-    veți ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți
-    avea de-a face cu foarte multe limbaje de programare, iar deși arhiva
-    noastră se concentrează pe limbajul C++ datorită avantajelor sale în ceea ce
-    privește algoritmica, nu există vreun limbaj de programare care să fie în
-    totalitate inutil.
+Pe parcursul studiului informaticii, fie că veți studia doar la liceu sau
+veți ajunge să aveți o carieră, mai lungă sau mai scurtă în domeniu, veți
+avea de-a face cu foarte multe limbaje de programare, iar deși arhiva
+noastră se concentrează pe limbajul C++ datorită avantajelor sale în ceea ce
+privește algoritmica, nu există vreun limbaj de programare care să fie în
+totalitate inutil.
 
 ## Limbajul de programare C++
 
@@ -59,16 +56,16 @@ Limbajul C++ a fost creat de Bjarne Stroustrup în 1979 ca o extindere a limbaju
 
 !!! note "Observație"
 
-    Scopul acestui articol este acela de a vă ajuta să fiți capabili să înțelegeți
-    și să reproduceți programe similare folosind cunoștințele pe care le veți
-    acumula mai jos.
+Scopul acestui articol este acela de a vă ajuta să fiți capabili să înțelegeți
+și să reproduceți programe similare folosind cunoștințele pe care le veți
+acumula mai jos.
 
 !!! note "Comentarii"
 
-    Pentru a explica diverse părți din cod, vom folosi de-a lungul arhivei
-    comentariile, acestea fiind o instrucțiune din limbajul C++. Pentru a pune un
-    comentariu pe un singur rând, vom folosi `//`, iar pentru a comenta mai
-    multe rânduri, vom folosi perechea `/* */`.
+Pentru a explica diverse părți din cod, vom folosi de-a lungul arhivei
+comentariile, acestea fiind o instrucțiune din limbajul C++. Pentru a pune un
+comentariu pe un singur rând, vom folosi `//`, iar pentru a comenta mai
+multe rânduri, vom folosi perechea `/* */`.
 
 ```cpp
 --8<-- "cppintro/intro/intro.cpp"
@@ -90,10 +87,10 @@ Atunci când programul este corect, compilatorul va genera un fișier obiect (.o
 
 !!! note "Observație"
 
-    Pentru a vedea modificările la răspunsurile generate, trebuie să compilați
-    și să rulați din nou executabilul, în caz contrar datele vor fi afișate
-    conform cu versiunea anterioară a programului. Pare a fi o observație
-    banală, însă este o greșeală comună să uiți să recompilezi codul sursă.
+Pentru a vedea modificările la răspunsurile generate, trebuie să compilați
+și să rulați din nou executabilul, în caz contrar datele vor fi afișate
+conform cu versiunea anterioară a programului. Pare a fi o observație
+banală, însă este o greșeală comună să uiți să recompilezi codul sursă.
 
 ### Inițializarea programului
 
@@ -101,18 +98,18 @@ Primul element pe care îl întâlnim este linia `#include <iostream>`, care imp
 
 !!! note "Observație"
 
-    Există și biblioteca `<bits/stdc++.h>`, care include toate bibliotecile
-    necesare în programul tău. Deși această abordare este recomandată doar la
-    competiții de algoritmică (de exemplu, olimpiade), există dezavantaje precum
-    un timp mai mare de compilare.
+Există și biblioteca `<bits/stdc++.h>`, care include toate bibliotecile
+necesare în programul tău. Deși această abordare este recomandată doar la
+competiții de algoritmică (de exemplu, olimpiade), există dezavantaje precum
+un timp mai mare de compilare.
 
 Următoarea linie, `using namespace std;` ne permite să folosim direct toate elementele din spațiul de nume standard (standard namespace). **Un namespace** (spațiu de nume) este un mecanism de organizare a codului, care face posibilă gruparea funcțiilor, variabilelor, claselor și altor identificatori sub un nume comun. Aceasta ajută la evitarea conflictelor între nume, mai ales atunci când se folosesc biblioteci multiple care ar putea să definească aceleași identificatori.
 
 !!! note "Observație"
 
-    Aproape toate programele scrise în limbajul C++ vor avea aceste două linii,
-    eventual împreună cu alte biblioteci și namespace-uri, detalii pe care le vom
-    lăsa ulterior pe măsură ce vă veți obișnui mai bine cu limbajul în sine.
+Aproape toate programele scrise în limbajul C++ vor avea aceste două linii,
+eventual împreună cu alte biblioteci și namespace-uri, detalii pe care le vom
+lăsa ulterior pe măsură ce vă veți obișnui mai bine cu limbajul în sine.
 
 ### Funcția `main()`
 
@@ -128,10 +125,10 @@ Pe parcursul studiilor, prin scrierea mai multor programe, vei deveni mai famili
 
 ## Resurse suplimentare
 
-- [Sectiunile Elemente de bază ale limbajului C++ si Structuri de control de pe pbinfo](https://www.pbinfo.ro/articole/5547/informatica-clasa-a-ix-a)
-- [Linkurile de pe w3schools](https://www.w3schools.com/cpp/cpp_getstarted.asp)
-- [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
+* [Sectiunile Elemente de bază ale limbajului C++ si Structuri de control de pe pbinfo](https://www.pbinfo.ro/articole/5547/informatica-clasa-a-ix-a)
+* [Linkurile de pe w3schools](https://www.w3schools.com/cpp/cpp_getstarted.asp)
+* [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
 
 ## Probleme suplimentare
 
-- [Probleme usoare si medii din capitolul Operatori și expresii](https://www.pbinfo.ro/probleme/categorii/6/elemente-de-baza-ale-limbajului-operatori-si-expresii)
+* [Probleme usoare si medii din capitolul Operatori și expresii](https://www.pbinfo.ro/probleme/categorii/6/elemente-de-baza-ale-limbajului-operatori-si-expresii)
