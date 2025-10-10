@@ -34,7 +34,7 @@ Apoi, poți trimite problema unui coordonator (de preferat, cu un enunț scurt, 
 
 ## Crearea unui enunț clar
 
-Să presupunem că problema a fost selectată de unul sau mai mulți coordonatori și trebuie să fie pregătită. Primul pas în pregătirea problemei constă în crearea unui enunț cât mai clar (de preferat în format $\LaTeX$), care să conțină toate detaliile necesare pentru toți cititorii, precum restricții, precizări, eventuale punctaje parțiale și exemple clare și cuprinzătoare în limita preferinței propunătorilor. De asemenea, este indicat ca exemplele să vină cu explicații care să ușureze înțelegerea lor.
+Să presupunem că problema a fost selectată de unul sau mai mulți coordonatori și trebuie să fie pregătită. Primul pas în pregătirea problemei constă în crearea unui enunț cât mai clar (de preferat în format $$\LaTeX$$), care să conțină toate detaliile necesare pentru toți cititorii, precum restricții, precizări, eventuale punctaje parțiale și exemple clare și cuprinzătoare în limita preferinței propunătorilor. De asemenea, este indicat ca exemplele să vină cu explicații care să ușureze înțelegerea lor.
 
 Un enunț ideal este destul de scurt, la obiect și cu o poveste minimă, dar care să nu fie intruziv sau artificial adăugată. Povestea poate fi sărită dacă nu se dorește acest lucru, dar de multe ori, un anumit personaj din probleme poate deveni celebru în acest fel (de exemplu, foarte multe probleme au un Gigel în cerința lor).
 
@@ -42,11 +42,11 @@ Un enunț ideal este destul de scurt, la obiect și cu o poveste minimă, dar ca
 
 Următorul pas constă în crearea unui set de date de intrare cât mai cuprinzătoare, care să testeze sursele concurenților cât mai bine. Acest lucru se face creând cât mai multe teste care să respecte cât mai multe tipuri de restricții și de particularități.
 
-În primul rând, trebuie să aveți teste cu dimensiunile datelor cât mai diverse, începând de la cele mai mici seturi posibile (teste cu valori ale lui $N$ foarte mici și alte valori mici), până la teste cu valori maxime pentru datele de intrare.
+În primul rând, trebuie să aveți teste cu dimensiunile datelor cât mai diverse, începând de la cele mai mici seturi posibile (teste cu valori ale lui $$N$$ foarte mici și alte valori mici), până la teste cu valori maxime pentru datele de intrare.
 
 De asemenea, în funcție de tipul de probleme de care vorbim, ne putem gândi la cazuri particulare pe care trebuie să le includem neapărat în testele de evaluare, printre altele voi enumera următoarele:
 
-- teste cu $N = 1$ și $N = 2$ (cu alte cuvinte, teste cu $N$ minim).
+- teste cu $$N = 1$$ și $$N = 2$$ (cu alte cuvinte, teste cu $$N$$ minim).
 - teste cu valori foarte mici (vă pot ajuta să detectați eventualele greșeli în soluția voastră în procesul de pregătire).
 - după caz, teste care să aibă o structură particulară (multe valori distincte, puține valori distincte, seturi cu multe valori egale etc.)
 - dacă vorbim de probleme de grafuri, teste cu grafuri complete, arbori, lanțuri, grafuri de tip stea (un nod din care se crează mai multe lanțuri), grafuri aciclice etc.
@@ -55,7 +55,7 @@ De asemenea, în funcție de tipul de probleme de care vorbim, ne putem gândi l
 - în cazul problemelor cu structuri de date, vrem să avem queryuri cât mai variate, care să aibă lungimi mari, lungimi mici, lungimi variate, care să acopere cât mai multe tipuri de restricții.
 - dacă avem de-a face cu corner cases, acestea trebuie incluse în întregime.
 
-Nu în ultimul rând, dacă aveți posibilitatea și tipul problemei vă permite acest lucru, nu ezitați să faceți problema una de tip multi-test (cu un parametru $t$ la începutul datelor de intrare pentru a putea include un număr mare de teste, în special cu date mici, în cadrul unui singur fișier test).
+Nu în ultimul rând, dacă aveți posibilitatea și tipul problemei vă permite acest lucru, nu ezitați să faceți problema una de tip multi-test (cu un parametru $$t$$ la începutul datelor de intrare pentru a putea include un număr mare de teste, în special cu date mici, în cadrul unui singur fișier test).
 
 ## Generatorul de teste
 
@@ -67,9 +67,9 @@ Pentru a genera teste, recomandăm folosirea toolurilor din Polygon, fiind cel m
 
 Pe lângă platformă în sine, există și biblioteca testlib.h care reprezintă resursa folosită cel mai frecvent de cei care lucrează în Polygon pentru crearea problemelor, bibliotecă care ușurează foarte mult procesul de generat date de intrare și generat teste, folosind interfața Polygon.
 
-Pentru a apela un generator numit gen, trebuie să folosim instrucțiuni de tipul $gen \ par_1 \ par_2 \dots \ par_k$ > $.
+Pentru a apela un generator numit gen, trebuie să folosim instrucțiuni de tipul $$gen \ par_1 \ par_2 \dots \ par_k$$ > $$.
 
-Pentru codul de mai jos unde se generează un șir de lungime $n$, putem să dăm ca parametri în secțiunea tests următoarele date.
+Pentru codul de mai jos unde se generează un șir de lungime $$n$$, putem să dăm ca parametri în secțiunea tests următoarele date.
 
 ```cpp
 --8<-- "dificil/problemsetting/generator.cpp"
@@ -86,9 +86,9 @@ Checkerele puse la dispoziție de ei sunt următoarele:
 - lcmp.cpp - verifică liniile, ignoră spațiile goale
 - ncmp.cpp - unul sau mai multe numere de tip long long, ignoră spațiile goale
 - nyesno.cpp - zero sau mai multe YES/NO, nu ține cont de litere mari sau mici
-- rcmp4.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-4}$.
-- rcmp6.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-6}$.
-- rcmp9.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-9}$.
+- rcmp4.cpp - unul sau mai multe numere reale, eroarea maximă $$10^{-4}$$.
+- rcmp6.cpp - unul sau mai multe numere reale, eroarea maximă $$10^{-6}$$.
+- rcmp9.cpp - unul sau mai multe numere reale, eroarea maximă $$10^{-9}$$.
 - wcmp.cpp - secvență de tokens
 - yesno.cpp - un singur YES/NO, nu ține cont de litere mari sau mici
 

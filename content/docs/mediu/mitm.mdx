@@ -22,15 +22,15 @@ Numele și principiile acestei tehnici sunt înrudite cu [atacul criptografic cu
 
     Deoarece spațiul de căutare se împarte în două, complexitatea exponențială
     va crește mult mai greu, meet in the middle devenind util pentru probleme la
-    care dimensiunea datelor de intrare este cel mult $40-45$.
+    care dimensiunea datelor de intrare este cel mult $$40-45$$.
 
 Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții generate.
 
-Astfel, complexitatea algoritmului va deveni acum $\mathcal{O}(2^{\frac{n}{2}})$.
+Astfel, complexitatea algoritmului va deveni acum $$\mathcal{O}(2^{\frac{n}{2}})$$.
 
 ### [Problema Meet in the Middle](https://cses.fi/problemset/task/1628/)
 
-Pentru a afla câte submulțimi au suma $k$, vom precalcula pentru prima jumătate din șir sumele tuturor submulțimilor, stocând sumele într-un vector sau map, iar apoi pentru fiecare sumă din cea de-a doua jumătate, vom afla câte sume sunt egale cu complementul ei $k - sum$.
+Pentru a afla câte submulțimi au suma $$k$$, vom precalcula pentru prima jumătate din șir sumele tuturor submulțimilor, stocând sumele într-un vector sau map, iar apoi pentru fiecare sumă din cea de-a doua jumătate, vom afla câte sume sunt egale cu complementul ei $$k - sum$$.
 
 ```cpp
 #include <algorithm>
@@ -104,7 +104,7 @@ int main() {
 
 ### [Problema Sum of Four Values](https://cses.fi/problemset/task/1642/)
 
-Un alt tip de probleme care se poate rezolva cu meet in the middle este acela în care trebuie să găsim o submulțime de dimensiunea $x$ cu o anumită proprietate, iar abordarea pentru aceste probleme constă în a crea submulțimi de dimensiunea $\frac{x}{2}$ iar mai apoi, le vom uni într-un mod similar cu cel de la prima problemă, așa cum facem și aici.
+Un alt tip de probleme care se poate rezolva cu meet in the middle este acela în care trebuie să găsim o submulțime de dimensiunea $$x$$ cu o anumită proprietate, iar abordarea pentru aceste probleme constă în a crea submulțimi de dimensiunea $$\frac{x}{2}$$ iar mai apoi, le vom uni într-un mod similar cu cel de la prima problemă, așa cum facem și aici.
 
 ```cpp
 #include <iostream>

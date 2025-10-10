@@ -17,16 +17,16 @@ Așa cum ați văzut și în [articolul anterior](./segment-trees.md) pe aceast�
 
 Să presupunem că avem de rezolvat următoarea problemă:
 
-Se da un șir de $n$ valori și $q$ queryuri în care fie schimbăm o valoare din șir, fie trebuie să aflăm prima poziție care are o valoare mai mare sau egală cu un $x$ dat.
+Se da un șir de $$n$$ valori și $$q$$ queryuri în care fie schimbăm o valoare din șir, fie trebuie să aflăm prima poziție care are o valoare mai mare sau egală cu un $$x$$ dat.
 
-O soluție care este foarte simplu de implementat ar fi să folosim o căutare binară pe rezultat, iar la un pas al căutării binare, să folosim un arbore de intervale care să ne răspundă rapid la un query de tipul care este valoarea maximă în intervalul $[1, mid]$.
+O soluție care este foarte simplu de implementat ar fi să folosim o căutare binară pe rezultat, iar la un pas al căutării binare, să folosim un arbore de intervale care să ne răspundă rapid la un query de tipul care este valoarea maximă în intervalul $$[1, mid]$$.
 
-Deși această soluție rulează în $\mathcal{O}(q \log^2 n)$, poate fi prea înceată în anumite situații. De aceea, se impune găsirea unor optimizări care să ne permită să nu mai avem nevoie de o altă căutare binară.
+Deși această soluție rulează în $$\mathcal{O}(q \log^2 n)$$, poate fi prea înceată în anumite situații. De aceea, se impune găsirea unor optimizări care să ne permită să nu mai avem nevoie de o altă căutare binară.
 
-Dacă ne gândim la un interval de tipul $[a, b]$, noi vom putea efectua următoarea operație fără probleme, până când ajungem la un interval de lungime $1$:
+Dacă ne gândim la un interval de tipul $$[a, b]$$, noi vom putea efectua următoarea operație fără probleme, până când ajungem la un interval de lungime $$1$$:
 
-- aflăm primul interval inclus în intervalul $[a, b]$.
-- dacă acest interval are un maxim mai mare sau egal ca $x$, atunci căutăm în acest subinterval
+- aflăm primul interval inclus în intervalul $$[a, b]$$.
+- dacă acest interval are un maxim mai mare sau egal ca $$x$$, atunci căutăm în acest subinterval
 - altfel, vom căuta în subintervalele de la dreapta.
 
 Astfel, am demonstrat că putem folosi o strategie de tip divide et impera pentru a aborda această problemă, așa cum se poate vedea în segmentul de cod de mai jos:
@@ -37,7 +37,7 @@ Astfel, am demonstrat că putem folosi o strategie de tip divide et impera pentr
 
 ### Problemă exemplu: [Hotel Queries - CSES](https://cses.fi/problemset/task/1143)
 
-Pentru a rezolva această problemă, va trebui să folosim această tehnică pentru a afla prima poziție din șir cu o valoare mai mare decât valoarea dată, iar dacă o găsim, vom scădea $x$ din valoarea acelui număr pentru a simula procesul prin care oamenii se cazează la hotel.
+Pentru a rezolva această problemă, va trebui să folosim această tehnică pentru a afla prima poziție din șir cu o valoare mai mare decât valoarea dată, iar dacă o găsim, vom scădea $$x$$ din valoarea acelui număr pentru a simula procesul prin care oamenii se cazează la hotel.
 
 Mai jos puteți vedea codul sursă pentru problema dată.
 

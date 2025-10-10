@@ -15,11 +15,11 @@ toc_depth: 3
 
 ## Introducere
 
-Un șir de caractere este un tablou care stochează caractere. În limbajul C++, putem stoca aceste șiruri în două moduri: fie folosind un tablou static, similar limbajului C, fie folosind tipul de date `#!cpp std::string`. În acest articol, vom analiza ambele opțiuni, incluzând avantajele și dezavantajele lor.
+Un șir de caractere este un tablou care stochează caractere. În limbajul C++, putem stoca aceste șiruri în două moduri: fie folosind un tablou static, similar limbajului C, fie folosind tipul de date `std::string`. În acest articol, vom analiza ambele opțiuni, incluzând avantajele și dezavantajele lor.
 
-## Tipul `#!cpp char` și tabelul ASCII
+## Tipul `char` și tabelul ASCII
 
-Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.md), limbajul C++ dispune de tipul de date `#!cpp char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `#!cpp char` sunt în intervalul [-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului [32, 127].
+Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.md), limbajul C++ dispune de tipul de date `char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `char` sunt în intervalul [-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului [32, 127].
 
 !!! note "Codificarea caracterelor"
 
@@ -51,13 +51,13 @@ Lista completă a codurilor pentru caractere se găsește [aici](https://www.sci
 
 --8<-- "cppintro/strings/ascii.md"
 
-## Funcții pe tipul `#!cpp char`
+## Funcții pe tipul `char`
 
-Biblioteca standard `#!cpp <cctype>` din C++ oferă un set de funcții predefinite utile pentru verificarea proprietăților caracterelor individuale. Aceste funcții simplifică validarea și manipularea stringurilor, fiind ideale pentru lucrul cu date de tip text.
+Biblioteca standard `<cctype>` din C++ oferă un set de funcții predefinite utile pentru verificarea proprietăților caracterelor individuale. Aceste funcții simplifică validarea și manipularea stringurilor, fiind ideale pentru lucrul cu date de tip text.
 
 <!-- markdownlint-disable-file MD024 -->
 
-### Funcția `#!cpp isdigit`
+### Funcția `isdigit`
 
 ```cpp
 int isdigit(int ch);
@@ -67,7 +67,7 @@ Verifică dacă un caracter anume este una din cele zece cifre zecimale: (012345
 
 #### Parametri
 
-- `#!cpp ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -79,7 +79,7 @@ O valoare diferită de zero în cazul în care caracterul este un caracter numer
 --8<-- "cppintro/strings/strings02.cpp:isdigit"
 ```
 
-### Funcția `#!cpp isalpha`
+### Funcția `isalpha`
 
 ```cpp
 int alpha(int ch);
@@ -92,7 +92,7 @@ Verifică dacă un caracter anume este alfabetic. Următoarele caractere sunt co
 
 #### Parametri
 
-- `#!cpp ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -104,7 +104,7 @@ O valoare diferită de zero în cazul în care caracterul este alfabetic, zero �
 --8<-- "cppintro/strings/strings02.cpp:isalpha"
 ```
 
-### Funcția `#!cpp isalnum`
+### Funcția `isalnum`
 
 ```cpp
 int isalnum(int ch);
@@ -116,11 +116,11 @@ Verifică dacă un caracter anume este alfanumeric. Următoarele caractere sunt 
 - literele mici abcdefghijklmnopqrstuvwxyz
 - cifrele 0123456789
 
-!!! note "Observație" `#!cpp isalnum(ch)` este echivalent cu `#!cpp isdigit(ch) && isalpha(ch)`.
+!!! note "Observație" `isalnum(ch)` este echivalent cu `isdigit(ch) && isalpha(ch)`.
 
 #### Parametri
 
-- `#!cpp ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -132,7 +132,7 @@ O valoare diferită de zero în cazul în care caracterul este alfanumeric, zero
 --8<-- "cppintro/strings/strings02.cpp:isalnum"
 ```
 
-### Funcțiile `#!cpp islower` și `#!cpp isupper`
+### Funcțiile `islower` și `isupper`
 
 ```cpp
 int islower(int ch);
@@ -143,7 +143,7 @@ Verifică dacă un caracter anume este clasificat ca fiind unul mic, respectiv m
 
 #### Parametri
 
-- `#!cpp ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -157,7 +157,7 @@ O valoare diferită de zero în cazul în care caracterul este mic, respectiv ma
 --8<-- "cppintro/strings/strings02.cpp:isupper"
 ```
 
-### Funcțiile `#!cpp tolower` și `#!cpp toupper`
+### Funcțiile `tolower` și `toupper`
 
 ```cpp
 int toupper(int ch);
@@ -168,7 +168,7 @@ Convertește un caracter dat într-o literă mare, respectiv mică, respectiv ma
 
 #### Parametri
 
-- `#!cpp ch` - caracterul de convertit
+- `ch` - caracterul de convertit
 
 #### Valoare returnată
 
@@ -182,9 +182,9 @@ Caracterul convertit sau `ch` dacă nu se poate efectua conversia.
 --8<-- "cppintro/strings/strings02.cpp:toupper"
 ```
 
-## Șiruri de caractere și biblioteca `#!cpp <cstring>`
+## Șiruri de caractere și biblioteca `<cstring>`
 
-Biblioteca `#!cpp <cstring>` oferă o suită de funcții utile pentru lucrul cu șiruri de caractere în stilul C. Aceasta poate fi utilizată pentru manipularea șirurilor de caractere (vectori de tip `#!cpp char`) prin funcții standardizate.
+Biblioteca `<cstring>` oferă o suită de funcții utile pentru lucrul cu șiruri de caractere în stilul C. Aceasta poate fi utilizată pentru manipularea șirurilor de caractere (vectori de tip `char`) prin funcții standardizate.
 
 ### Inițializarea șirurilor de caractere
 
@@ -204,11 +204,11 @@ De asemenea, se va putea observa faptul că putem citi o întreagă linie folosi
 
 Să presupunem că șirul de caractere este `roalgo este cel mai bun server de informatica`. În funcție de cum citim acest șir, vom avea rezultate diferite.
 
-Funcția `#!cpp cin.getline` are ca parametri șirul în care se va stoca rezultatul citirii și numărul maxim de caractere permis, citind șirul până la întâlnirea caracterului de newline, un exemplu ar fi `#!cpp cin.getline(s, x)`, unde s este șirul dat și x este lungimea lui.
+Funcția `cin.getline` are ca parametri șirul în care se va stoca rezultatul citirii și numărul maxim de caractere permis, citind șirul până la întâlnirea caracterului de newline, un exemplu ar fi `cin.getline(s, x)`, unde s este șirul dat și x este lungimea lui.
 
 Citirea fără o funcție specifică se poate face cu cin, dar se va citi până la primul spațiu.
 
-Există și funcția `#!cpp cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `#!cpp cin.getline()` devine mai utilă.
+Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $$x$$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
 
 ```cpp
 --8<-- "cppintro/strings/strings04.cpp"
@@ -300,7 +300,7 @@ Funcția `strtok` împarte `str[]` conform delimitatorilor dați și returnează
 
 ## Tipul de date std::string
 
-Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$. Tipul string este unul din tipurile prezente în [STL](./stl.md), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
+Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $$\mathcal{O}(1)$$, în loc de $$\mathcal{O}(n)$$. Tipul string este unul din tipurile prezente în [STL](./stl.md), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
 Pentru a putea folosi această structură de date, va trebui să includem biblioteca `<string>`. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
 

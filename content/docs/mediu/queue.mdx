@@ -43,7 +43,7 @@ Pentru a folosi o coadă, avem nevoie de o metodă de a o implementa. Două dint
 
 O primă metodă de a implementa o coadă, fără folosirea vreunei instrucțiuni avansate este cea care folosește tablouri, ținând pozițiile în care se află primul și ultimul element din coadă.
 
-Aici se poate observa faptul că folosim un tablou de dimensiune fixă, iar atunci când adăugăm și scoatem valori din coadă, ajustăm valorile lui $L$ și $R$.
+Aici se poate observa faptul că folosim un tablou de dimensiune fixă, iar atunci când adăugăm și scoatem valori din coadă, ajustăm valorile lui $$L$$ și $$R$$.
 
 ```cpp
 #include <iostream>
@@ -79,7 +79,7 @@ int main() {
 
 ### Coada circulară
 
-O îmbunătățire pe care o putem face la această implementare constă în a refolosi memoria dacă știm dimensiunea maximă pe care o poate avea coada la un moment dat. Astfel, în loc să stocăm cantitatea maximă de valori care intră in coadă, stocăm doar dimensiunea maximă a datelor, iar pentru a ajusta valorile lui $L$ și $R$, le vom ajusta circular, astfel limitând memoria folosită.
+O îmbunătățire pe care o putem face la această implementare constă în a refolosi memoria dacă știm dimensiunea maximă pe care o poate avea coada la un moment dat. Astfel, în loc să stocăm cantitatea maximă de valori care intră in coadă, stocăm doar dimensiunea maximă a datelor, iar pentru a ajusta valorile lui $$L$$ și $$R$$, le vom ajusta circular, astfel limitând memoria folosită.
 
 ```cpp
 #include <iostream>

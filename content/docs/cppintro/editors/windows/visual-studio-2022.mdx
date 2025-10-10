@@ -70,7 +70,7 @@ Pentru a crea un proiect C++, facem următorii pași:
         acum, pentru că nu este prea drăguț să umpli printr-o mare de proiecte
         care încep cu ConsoleApplication.
 
-    Apoi avem locația acestuia. Calea implicită este `$USER\source\repos`, dar poți să-l pui undeva separat (recomand acest lucru). După locație avem numele soluției. O soluție este un container pentru unul sau mai multe proiecte. Poți selecta și dacă vrei să fie soluția și proiectul în același director (caz în care numele proiectului este același cu cel al soluției).
+    Apoi avem locația acestuia. Calea implicită este `$$USER\source\repos`, dar poți să-l pui undeva separat (recomand acest lucru). După locație avem numele soluției. O soluție este un container pentru unul sau mai multe proiecte. Poți selecta și dacă vrei să fie soluția și proiectul în același director (caz în care numele proiectului este același cu cel al soluției).
 
     !!! warning "Atenție"
 
@@ -144,47 +144,47 @@ Acum, timpul pentru niște chestii pe care le poți face ca să îmbunătățeș
         exit
     }
 
-   $userPath = $env:USERPROFILE
-    $appdataLocal = "$userPath\AppData\Local" $appdataRoaming = "$userPath\AppData\Roaming" $programData = "C:\ProgramData"
-    $programFiles = "C:\Program Files"
-    $programFilesX86 = "$programFiles (x86)"
+   $$userPath = $$env:USERPROFILE
+    $$appdataLocal = "$$userPath\AppData\Local" $$appdataRoaming = "$$userPath\AppData\Roaming" $$programData = "C:\ProgramData"
+    $$programFiles = "C:\Program Files"
+    $$programFilesX86 = "$$programFiles (x86)"
 
-   $pathExclusions = @(
+   $$pathExclusions = @(
         'C:\Windows\Microsoft.NET',
         'C:\Windows\assembly',
-        "$userPath\.dotnet", "$userPath\.librarymanager",
-        "$appdataLocal\Microsoft\VisualStudio", "$appdataLocal\Microsoft\VisualStudio Services",
-        "$appdataLocal\GitCredentialManager", "$appdataLocal\GitHubVisualStudio",
-        "$appdataLocal\Microsoft\dotnet", "$appdataLocal\Microsoft\VSApplicationInsights",
-        "$appdataLocal\Microsoft\VSCommon", "$appdataLocal\Temp\VSFeedbackIntelliCodeLogs",
-        "$appdataRoaming\Microsoft\VisualStudio", "$appdataRoaming\NuGet",
-        "$appdataRoaming\Visual Studio Setup", "$appdataRoaming\vstelemetry",
-        "$programData\Microsoft\VisualStudio", "$programData\Microsoft\NetFramework",
-        "$programData\Microsoft Visual Studio", "$programFiles\Microsoft Visual Studio",
-        "$programFiles\dotnet", "$programFiles\Microsoft SDKs",
-        "$programFiles\Microsoft SQL Server", "$programFiles\IIS",
-        "$programFiles\IIS Express", "$programFilesX86\Microsoft Visual Studio",
-        "$programFilesX86\dotnet", "$programFilesX86\Microsoft SDKs",
-        "$programFilesX86\Microsoft SQL Server", "$programFilesX86\IIS",
-        "$programFilesX86\IIS Express" )
+        "$$userPath\.dotnet", "$$userPath\.librarymanager",
+        "$$appdataLocal\Microsoft\VisualStudio", "$$appdataLocal\Microsoft\VisualStudio Services",
+        "$$appdataLocal\GitCredentialManager", "$$appdataLocal\GitHubVisualStudio",
+        "$$appdataLocal\Microsoft\dotnet", "$$appdataLocal\Microsoft\VSApplicationInsights",
+        "$$appdataLocal\Microsoft\VSCommon", "$$appdataLocal\Temp\VSFeedbackIntelliCodeLogs",
+        "$$appdataRoaming\Microsoft\VisualStudio", "$$appdataRoaming\NuGet",
+        "$$appdataRoaming\Visual Studio Setup", "$$appdataRoaming\vstelemetry",
+        "$$programData\Microsoft\VisualStudio", "$$programData\Microsoft\NetFramework",
+        "$$programData\Microsoft Visual Studio", "$$programFiles\Microsoft Visual Studio",
+        "$$programFiles\dotnet", "$$programFiles\Microsoft SDKs",
+        "$$programFiles\Microsoft SQL Server", "$$programFiles\IIS",
+        "$$programFiles\IIS Express", "$$programFilesX86\Microsoft Visual Studio",
+        "$$programFilesX86\dotnet", "$$programFilesX86\Microsoft SDKs",
+        "$$programFilesX86\Microsoft SQL Server", "$$programFilesX86\IIS",
+        "$$programFilesX86\IIS Express" )
 
-   $processExclusions = @( 'ServiceHub.SettingsHost.exe', 'ServiceHub.IdentityHost.exe', 'ServiceHub.VSDetouredHost.exe', 'ServiceHub.Host.CLR.x86.exe', 'Microsoft.ServiceHub.Controller.exe', 'PerfWatson2.exe', 'sqlwriter.exe' )
+   $$processExclusions = @( 'ServiceHub.SettingsHost.exe', 'ServiceHub.IdentityHost.exe', 'ServiceHub.VSDetouredHost.exe', 'ServiceHub.Host.CLR.x86.exe', 'Microsoft.ServiceHub.Controller.exe', 'PerfWatson2.exe', 'sqlwriter.exe' )
 
-   Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele si procesele comune ale Visual Studio 2022." Write-Host "" $projectsFolder = Read-Host "Care este calea catre folderul proiectelor tale? (exemplu: $userPath\source\repos)"
+   Write-Host "Acest script va crea excluderi pentru Windows Defender pentru folderele si procesele comune ale Visual Studio 2022." Write-Host "" $$projectsFolder = Read-Host "Care este calea catre folderul proiectelor tale? (exemplu: $$userPath\source\repos)"
 
-   if (-not (Test-Path $projectsFolder)) { Write-Host "Calea specificata pentru folderul proiectelor nu exista. Iesire din script." -ForegroundColor Red exit }
+   if (-not (Test-Path $$projectsFolder)) { Write-Host "Calea specificata pentru folderul proiectelor nu exista. Iesire din script." -ForegroundColor Red exit }
 
-   Write-Host "" Write-Host "Adaugare excludere cale: $projectsFolder" Add-MpPreference -ExclusionPath $projectsFolder
+   Write-Host "" Write-Host "Adaugare excludere cale: $$projectsFolder" Add-MpPreference -ExclusionPath $$projectsFolder
 
-   foreach ($exclusion in $pathExclusions) { Write-Host "Adaugare excludere cale: $exclusion" try { Add-MpPreference -ExclusionPath $exclusion } catch { Write-Host "Nu s-a reusit adaugarea excluderii pentru calea: $exclusion - $\_" -ForegroundColor Yellow } }
+   foreach ($$exclusion in $$pathExclusions) { Write-Host "Adaugare excludere cale: $$exclusion" try { Add-MpPreference -ExclusionPath $$exclusion } catch { Write-Host "Nu s-a reusit adaugarea excluderii pentru calea: $$exclusion - $$\_" -ForegroundColor Yellow } }
 
-   foreach ($exclusion in $processExclusions) { Write-Host "Adaugare excludere proces: $exclusion" try { Add-MpPreference -ExclusionProcess $exclusion } catch { Write-Host "Nu s-a reusit adaugarea excluderii pentru procesul: $exclusion - $\_" -ForegroundColor Yellow } }
+   foreach ($$exclusion in $$processExclusions) { Write-Host "Adaugare excludere proces: $$exclusion" try { Add-MpPreference -ExclusionProcess $$exclusion } catch { Write-Host "Nu s-a reusit adaugarea excluderii pentru procesul: $$exclusion - $$\_" -ForegroundColor Yellow } }
 
-   Write-Host "" Write-Host "Excluderile tale:" $prefs = Get-MpPreference
+   Write-Host "" Write-Host "Excluderile tale:" $$prefs = Get-MpPreference
 
-   Write-Host "Caile excluse:" $prefs.ExclusionPath Write-Host ""
+   Write-Host "Caile excluse:" $$prefs.ExclusionPath Write-Host ""
 
-   Write-Host "Procesele excluse:" $prefs.ExclusionProcess
+   Write-Host "Procesele excluse:" $$prefs.ExclusionProcess
 
    ```
    </details>

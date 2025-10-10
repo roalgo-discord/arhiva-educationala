@@ -18,7 +18,7 @@ tags:
 
 ## Introducere
 
-Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $A$ la punctul $B$, unde punctele $A$ și $B$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte.
+Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $$A$$ la punctul $$B$$, unde punctele $$A$$ și $$B$$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte.
 
 !!! info "Resursă foarte utilă"
 
@@ -87,7 +87,7 @@ vector<int> ox = {-1, -1, -1, 0, 0, 1, 1, 1};
 vector<int> oy = {-1, 0, 1, -1, 1, -1, 0, 1};
 ```
 
-Indiferent de modul în care îi declarați, dacă sunteți la un punct $(x, y)$ și vreți să verificați toți vecinii, tot ce trebuie să faceți este să parcurgeți vectorii de direcție și să identificați valorile vecinilor.
+Indiferent de modul în care îi declarați, dacă sunteți la un punct $$(x, y)$$ și vreți să verificați toți vecinii, tot ce trebuie să faceți este să parcurgeți vectorii de direcție și să identificați valorile vecinilor.
 
 ```cpp
 for (int i = 0; i < neighbors; i++) {
@@ -101,7 +101,7 @@ for (int i = 0; i < neighbors; i++) {
 
 Pentru a ne asigura că de-a lungul parcurgerilor, noi nu vom ieși din matrice, avem două variante la fel de bune și populare.
 
-O primă variantă constă în a adăuga ziduri imaginare pe marginile matricii, procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se numește mat, iar tabloul are $n$ linii și $m$ coloane.
+O primă variantă constă în a adăuga ziduri imaginare pe marginile matricii, procedeu cunoscut și sub denumirea de bordare. Vom presupune că matricea se numește mat, iar tabloul are $$n$$ linii și $$m$$ coloane.
 
 ```cpp
 for (int i = 0; i <= m + 1; i++) {
@@ -336,8 +336,8 @@ int main() {
 
 ### Problema [Labirint OJI 2021](https://kilonova.ro/problems/938)
 
-Pentru a rezolva această problemă, putem începe o parcurgere din punctele $(1,
-1)$ și $(n, m)$, iar pentru a verifica dacă apar îmbunătățiri, trebuie doar să verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul pentru care avem nevoie de două parcurgeri, în loc de una.
+Pentru a rezolva această problemă, putem începe o parcurgere din punctele $$(1,
+1)$$ și $$(n, m)$$, iar pentru a verifica dacă apar îmbunătățiri, trebuie doar să verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul pentru care avem nevoie de două parcurgeri, în loc de una.
 
 ```cpp
 #include <bits/stdc++.h>

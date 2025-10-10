@@ -16,9 +16,9 @@ tags:
 Din fericire, de-a lungul timpului s-au inventat foarte mulți algoritmi de sortare pe care îi putem folosi pentru a rezolva problema pusă mai sus. Pentru a face înțelegerea lor ușoară, voi explica algoritmii în ordine crescătoare a dificultății lor de înțelegere, precum și în ordine crescătoare a performanței, menționând în cazul fiecăruia din algoritmi cunoștințele necesare pentru a-i putea înțelege și folosi cu succes.
 
 <div id="algoritmi-de-sortare-in-on2"></div>
-## Algoritmi de sortare în $\mathcal{O}(n^2)$
+## Algoritmi de sortare în $$\mathcal{O}(n^2)$$
 
-Voi începe prin a explica algoritmii de sortare în $\mathcal{O}(n^2)$ deoarece aceștia sunt de o dificultate similară, singura cunoștință necesară pentru ei fiind lucrul cu tablouri unidimensionale. Performanțele celor trei algoritmi pe care îi voi menționa sunt de asemenea foarte similare, dar fiecare din acești algoritmi are punctele lui tari și slabe. Pentru fiecare secțiune am atașat un exemplu de ordonare crescătoare a valorilor folosind acest algoritm.
+Voi începe prin a explica algoritmii de sortare în $$\mathcal{O}(n^2)$$ deoarece aceștia sunt de o dificultate similară, singura cunoștință necesară pentru ei fiind lucrul cu tablouri unidimensionale. Performanțele celor trei algoritmi pe care îi voi menționa sunt de asemenea foarte similare, dar fiecare din acești algoritmi are punctele lui tari și slabe. Pentru fiecare secțiune am atașat un exemplu de ordonare crescătoare a valorilor folosind acest algoritm.
 
 ### Selection sort
 
@@ -68,7 +68,7 @@ while (ok == true) {
 
 ### Insertion sort
 
-Sortarea prin inserție sau insertion sort este un algoritm elementar de sortare care pune pe rând fiecare valoare între pozițiile 2 și $n$ pe poziția potrivită în ordinea sortată a valorilor până la acea poziție inclusiv.
+Sortarea prin inserție sau insertion sort este un algoritm elementar de sortare care pune pe rând fiecare valoare între pozițiile 2 și $$n$$ pe poziția potrivită în ordinea sortată a valorilor până la acea poziție inclusiv.
 
 ```cpp
 int v[1001], n;
@@ -89,9 +89,9 @@ for (int i = 2; i <= n; i++) {
     - [Subprograme](../cppintro/functions.md)
     - [Introducere în STL](../cppintro/stl.md)
 
-## Algoritmi de sortare în $\mathcal{O}(n \log n)$
+## Algoritmi de sortare în $$\mathcal{O}(n \log n)$$
 
-După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta un șir mai repede de $\mathcal{O}(n^2)$? Răspunsul este unul afirmativ, existând foarte mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $\mathcal{O}(n \log n)$.
+După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta un șir mai repede de $$\mathcal{O}(n^2)$$? Răspunsul este unul afirmativ, existând foarte mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $$\mathcal{O}(n \log n)$$.
 
 Deși în practică în cadrul concursurilor, de regulă ajungem să ne folosim de funcția `std::sort`, proprietățile celorlalți algoritmi pot fi utile pentru înțelegerea anumitor concepte prezentate pe parcurs, iar pentru cititorii care se pregătesc pentru interviurile de angajare sau pentru admiterea la universitățile de top din străinatate, pot apărea întrebări care să conțină elemente ale înțelegerii algoritmilor de sortare explicați mai jos.
 
@@ -99,7 +99,7 @@ Deși în practică în cadrul concursurilor, de regulă ajungem să ne folosim 
 
 Se poate spune că de departe cea mai folosită metodă de a ordona un șir în timpul unei competiții este prin folosirea funcției oferite de limbajul C++ pentru a sorta un șir, această funcție având la spate algoritmul IntroSort, o combinație între QuickSort, HeapSort și Insertion Sort care preia cele mai bune caracteristici ale celor trei algoritmi menționați. Aplicarea ei se va dovedi a fi banală, fiind nevoie de o singură linie de cod. Se găsește în biblioteca `algorithm`.
 
-Pentru a scrie funcția, trebuie să știm adresa de început (de regulă, poziția 0 sau 1 din șir) și adresa de final, cea de final fiind incrementată cu 1 deoarece intervalul pe care îl vom folosi pentru funcția descrisă este închis la stânga și deschis la dreapta. După cum se va observa mai jos, vom putea adăuga funcții de comparare pentru a folosi `#!cpp std::sort` la valoarea sa adevărată. Mai jos am atașat două exemple de aplicare a funcției, pe vector indexat de la 0, respectiv 1.
+Pentru a scrie funcția, trebuie să știm adresa de început (de regulă, poziția 0 sau 1 din șir) și adresa de final, cea de final fiind incrementată cu 1 deoarece intervalul pe care îl vom folosi pentru funcția descrisă este închis la stânga și deschis la dreapta. După cum se va observa mai jos, vom putea adăuga funcții de comparare pentru a folosi `std::sort` la valoarea sa adevărată. Mai jos am atașat două exemple de aplicare a funcției, pe vector indexat de la 0, respectiv 1.
 
 ```cpp
 int v[1001], n;
@@ -115,7 +115,7 @@ sort(vx.begin() + 1, vx.end());
 
 ### Quick Sort
 
-QuickSort sau Sortarea rapidă este o metodă eficientă de sortare a unui tablou, descoperită de programatorul britanic Tony Hoare. Pentru un set de $n$ valori oarecare algoritmul efectuează $\mathcal{O}(n \log n)$ comparații, dar în cazul cel mai nefavorabil se efectuează $\mathcal{O}(n^2)$ comparații. De regulă, acest algoritm este mai rapid decât merge sort sau heap sort atâta timp cât pivotul este ales favorabil, cazul cel mai nefavorabil va efectua mereu $\mathcal{O}(n \log n)$ comparații.
+QuickSort sau Sortarea rapidă este o metodă eficientă de sortare a unui tablou, descoperită de programatorul britanic Tony Hoare. Pentru un set de $$n$$ valori oarecare algoritmul efectuează $$\mathcal{O}(n \log n)$$ comparații, dar în cazul cel mai nefavorabil se efectuează $$\mathcal{O}(n^2)$$ comparații. De regulă, acest algoritm este mai rapid decât merge sort sau heap sort atâta timp cât pivotul este ales favorabil, cazul cel mai nefavorabil va efectua mereu $$\mathcal{O}(n \log n)$$ comparații.
 
 Algoritmul este de tip divide et impera; el sortează o secvență a tabloului (inițial întreg tabloul), astfel:
 
@@ -128,7 +128,7 @@ Algoritmul este de tip divide et impera; el sortează o secvență a tabloului (
     Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea
     pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit
     duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz
-    să aibă o complexitate de $\mathcal{O}(n^2)$.
+    să aibă o complexitate de $$\mathcal{O}(n^2)$$.
 
 ```cpp
 vector<int> quicksort(vector<int> v) {
@@ -171,7 +171,7 @@ vector<int> quicksort(vector<int> v) {
 
 ### Merge Sort
 
-MergeSort este o metodă eficientă de sortare a unui tablou, inventată de programatorul John von Neumann. Pentru un set de $n$ valori oarecare algoritmul efectuează $\mathcal{O}(n \log n)$ comparații, algoritmul fiind același indiferent de modul în care sunt așezate valorile. Algoritmul funcționează în felul următor.
+MergeSort este o metodă eficientă de sortare a unui tablou, inventată de programatorul John von Neumann. Pentru un set de $$n$$ valori oarecare algoritmul efectuează $$\mathcal{O}(n \log n)$$ comparații, algoritmul fiind același indiferent de modul în care sunt așezate valorile. Algoritmul funcționează în felul următor.
 
 - Avem lista curentă, o împărțim în două jumătăți egale.
 - Rulăm algoritmul pe fiecare din cele două jumătăți.
@@ -255,7 +255,7 @@ void heapSort(vector<int> &v, int n) {
 
 ## Sortare cu comparator special
 
-Uneori, criteriul după care sortăm un șir poate fi mai dificil de configurat de către `#!cpp std::sort`, așa că de multe ori suntem nevoiți să implementăm logica proprie de comparator. De cele mai multe ori, acesta va fi implementat drept o funcție bool, care ia ca parametru două valori ale șirului ce vrem să îl ordonăm și le verificăm folosind criteriul dorit. În secvența de mai jos, avem o structură str și vom sorta datele de intrare din structură folosind drept criteriu de comparare suma valorilor din pereche. Se poate observa faptul că funcția de comparare este apelată de, în acest caz, `#!cpp std::sort`.
+Uneori, criteriul după care sortăm un șir poate fi mai dificil de configurat de către `std::sort`, așa că de multe ori suntem nevoiți să implementăm logica proprie de comparator. De cele mai multe ori, acesta va fi implementat drept o funcție bool, care ia ca parametru două valori ale șirului ce vrem să îl ordonăm și le verificăm folosind criteriul dorit. În secvența de mai jos, avem o structură str și vom sorta datele de intrare din structură folosind drept criteriu de comparare suma valorilor din pereche. Se poate observa faptul că funcția de comparare este apelată de, în acest caz, `std::sort`.
 
 ```cpp
 constexpr int N = 100;
@@ -299,12 +299,12 @@ for (auto x : s) {
 
 ### Counting Sort
 
-Counting sort este un algoritm de sortare folosit atunci când avem un număr mic de elemente distincte, care pot fi ținute într-un vector de frecvență. Acest algoritm se poate folosi și dacă intervalul în care sunt așezate valorile este unul mic, complexitatea fiind în ambele cazuri $\mathcal{O}(n + k)$, unde $n$ este numărul de valori din șir, iar $k$ este diferența dintre cea mai mare și cea mai mică valoare din șir.
+Counting sort este un algoritm de sortare folosit atunci când avem un număr mic de elemente distincte, care pot fi ținute într-un vector de frecvență. Acest algoritm se poate folosi și dacă intervalul în care sunt așezate valorile este unul mic, complexitatea fiind în ambele cazuri $$\mathcal{O}(n + k)$$, unde $$n$$ este numărul de valori din șir, iar $$k$$ este diferența dintre cea mai mare și cea mai mică valoare din șir.
 
 !!! note "Observație"
 
     Este de remarcat că acest algoritm poate fi implementat și folosind
-    `std::map`, complexitatea de timp fiind mai mare cu $\log n$ din cauza
+    `std::map`, complexitatea de timp fiind mai mare cu $$\log n$$ din cauza
     operațiilor specifice acestei structuri de date.
 
 ```cpp

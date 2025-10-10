@@ -31,7 +31,7 @@ Dacă dorim să dăm un nume unei lambda, atunci putem adăuga în față `auto 
 
 Captura permite copierea sau modificarea unor valori. Există mai multe variante de a defini captura, fiecare cu scop specific.
 
-- `[x]` copiază valoarea ca `#!cpp const`:
+- `[x]` copiază valoarea ca `const`:
 
   ```cpp
   int main() {
@@ -103,7 +103,7 @@ Captura permite copierea sau modificarea unor valori. Există mai multe variante
 
 #### `mutable`
 
-Există o situație în care nici o variantă de captură nu acoperă ce dorim, și anume atunci când vrem să modificăm valoarea fără a o afecta pe cea inițială. În această situație există `#!cpp mutable`.
+Există o situație în care nici o variantă de captură nu acoperă ce dorim, și anume atunci când vrem să modificăm valoarea fără a o afecta pe cea inițială. În această situație există `mutable`.
 
 ```cpp
 int main() {
@@ -124,7 +124,7 @@ int main() {
 
 ### Tipul de retur
 
-O funcție lambda trebuie să definească tipul de retur, similar cu o funcție normală. Acesta este definit prin a adăuga `#!cpp -> tip` după parametri.
+O funcție lambda trebuie să definească tipul de retur, similar cu o funcție normală. Acesta este definit prin a adăuga `-> tip` după parametri.
 
 ```cpp
 int main() {

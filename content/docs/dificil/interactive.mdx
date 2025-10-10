@@ -34,7 +34,7 @@ Există trei tipuri de probleme interactive:
 - Probleme în care doar știm numărul maxim de întrebări ce pot fi folosite (de exemplu, [IOI 2013 Cave](https://oj.uz/problem/view/IOI13_cave)).
 - Probleme care au o limită ascunsă a numărului de întrebări (de exemplu, [IOI 2015 Scales](https://oj.uz/problem/view/IOI15_scales)).
 
-Deoarece putem deduce în principiu complexitatea cerută de problemă, de cele mai multe ori nu are sens să încercăm să obținem o complexitate mai bună decât cea de care avem nevoie (dacă numărul de întrebări este $n^2$, nu are deloc sens să obținem $\log n$ query-uri).
+Deoarece putem deduce în principiu complexitatea cerută de problemă, de cele mai multe ori nu are sens să încercăm să obținem o complexitate mai bună decât cea de care avem nevoie (dacă numărul de întrebări este $$n^2$$, nu are deloc sens să obținem $$\log n$$ query-uri).
 
 ## Problema exemplu - [Guess the Number](https://codeforces.com/problemset/gymProblem/101021/1)
 
@@ -51,7 +51,7 @@ Pentru a rezolva problema dată, trebuie să simulăm căutarea binară folosind
 !!! note "Observație" În cele ce urmează, voi folosi exemple din [acest material](https://mamnoonsiam.github.io/files/notes/interactive-problems/inprogress-0.pdf), luând de acolo cele mai esențiale sfaturi și problemele la care se regăsesc. O mare parte dintre soluțiile problemelor menționate sunt explicate în detaliu în acel document.
 
 - Există foarte multe probleme interactive care se bazează pe căutări binare sau ternare, exemplele cele mai simple fiind bazate pe aceste tehnici, dar se pot regăsi și exemple mai complicate care țin de diverse optimizări sau de tehnici conexe precum divide et impera, continuitatea funcțiilor (căutarea ternară poate fi folosită pentru aceste probleme).
-- Nu ratați relațiile ușor de dedus - De exemplu, pentru problema [Chocolate Bunny](https://codeforces.com/problemset/problem/1407/C), o soluție ușor de dedus este aceea de a afla mai întâi maximul, iar mai apoi să aflăm valorile pe rând în $3 \cdot (n-1)$ query-uri. Totuși, dat fiind că determinăm pe rând valorile, putem reduce numărul de întrebări la $2 \cdot (n-1)$ query-uri, ceea ce e îndeajuns de bine.
+- Nu ratați relațiile ușor de dedus - De exemplu, pentru problema [Chocolate Bunny](https://codeforces.com/problemset/problem/1407/C), o soluție ușor de dedus este aceea de a afla mai întâi maximul, iar mai apoi să aflăm valorile pe rând în $$3 \cdot (n-1)$$ query-uri. Totuși, dat fiind că determinăm pe rând valorile, putem reduce numărul de întrebări la $$2 \cdot (n-1)$$ query-uri, ceea ce e îndeajuns de bine.
 - Încercați să găsiți diferite valori extreme - Putem împerechea diferite tipuri de obiecte folosind stive, cum se poate face la această [problemă](https://atcoder.jp/contests/arc070/tasks/arc070_d) dată la un AtCoder Regular Contest. O altă problemă în care putem împerechea diferite tipuri de obiecte este [IOI 2015 Towns](https://oj.uz/problem/view/IOI15_towns).
 - Câteodată, găsirea unui singur obiect e importantă, deoarece în unele probleme interactive, putem elimina pe rând obiecte până ce ajungem la răspuns.
 - Rezolvarea cazurilor particulare poate ajuta la o soluție generală

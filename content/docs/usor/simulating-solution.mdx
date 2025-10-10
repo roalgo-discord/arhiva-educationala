@@ -1,265 +1,21 @@
----
-id: simulating-solution
-authors: [traian]
-prerequisites:
-  - loops
-  - arrays
-  - matrices
-tags:
-  - C++
-  - implementare
-  - optimizare
-  - simulare
----
+/* ma doare sa vad asta... */}
 
-## Introducere
+De exemplu, pentru $$N=8$$, aplicând de $$N$$ ori regula $$A$$ se obțin șirurile: ![](../images/simulation/asort-imagine.png)
 
-Unele probleme nu ne cer doar rezultatul final, ci și unele rezultate pe care le obținem pe parcurs. O simulare necesită 3 lucruri:
-
-1. O stare care poate fi descrisă în mod unic, prin niște variabile
-2. O măsură de timp, un tact (care, de obicei, este definit de problemă)
-3. O buclă cu o condiție de oprire
-
-O simulare arată astfel:
-
-```cpp
-gata = 1;
-while (!gata) {
-    <folosim starea ca sa facem ceva>
-    <avansam la urmatorul pas, trece un tact>
-    if (<conditie de oprire>) {
-        gata = 1;
-    }
-}
-```
-
-!!! note "Observație"
-
-    Multe probleme de clasa a V-a și de clasa a VI-a (matrice) necesita
-    simularea soluției.
-
-## Problema exemplu - [simulare](https://kilonova.ro/problems/3237)
-
-În această problemă, cum cere și titlul, trebuie doar să simulăm procesul descris. De fiecare dată când citim o direcție, avansăm în acel mod, creștem suma cu valoarea de la poziția obținută și o afișăm.
-
-Mai jos găsiți sursa de 100 de puncte, implementată atât cu funcții, cât și fără ele:
-
-=== "Fără funcții"
-
-    ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int mat[1000][1000], q, x, y;
-
-    int main() {
-        ios_base::sync_with_stdio(0);
-        cin.tie(0);
-
-        int i, j, n, m;
-        cin >> n >> m >> q >> x >> y;
-        x--;  // noi indexam de la 0
-        y--;
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < m; j++) {
-                cin >> mat[i][j];
-            }
-        }
-        int dir;
-        long long sum;
-        dir = cin.get();
-        while (!isalpha(dir)) {
-            dir = cin.get();  // gasim prima litera (prima directie)
-        }
-        sum = 0;
-        for (i = 0; i < q; i++) {
-            if (dir == 'N') {
-                x--;
-            } else if (dir == 'E') {
-                y++;
-            } else if (dir == 'S') {
-                x++;
-            } else {  // 'V'
-                y--;
-            }
-
-            sum += mat[x][y];
-            cout << sum << " ";
-
-            dir = cin.get();
-        }
-        cout << "\n";
-        return 0;
-    }
-    ```
-
-=== "Cu funcții"
-
-    ```cpp
-    #include <iostream>
-    using namespace std;
-
-    int mat[1000][1000], q, x, y;
-
-    void readMatrix() {
-        int i, j, n, m;
-        cin >> n >> m >> q >> x >> y;
-        x--;  // noi indexam de la 0
-        y--;
-        for (i = 0; i < n; i++) {
-            for (j = 0; j < m; j++) {
-                cin >> mat[i][j];
-            }
-        }
-    }
-
-    void simulateRoad() {
-        int i, dir;
-        long long sum;
-        dir = cin.get();
-        while (!isalpha(dir)) {
-            dir = cin.get();  // gasim prima litera (prima directie)
-        }
-        sum = 0;
-        for (i = 0; i < q; i++) {
-            if (dir == 'N') {
-                x--;
-            } else if (dir == 'E') {
-                y++;
-            } else if (dir == 'S') {
-                x++;
-            } else {  // 'V'
-                y--;
-            }
-
-            sum += mat[x][y];
-            cout << sum << " ";
-
-            dir = cin.get();
-        }
-        cout << "\n";
-    }
-
-    int main() {
-        ios_base::sync_with_stdio(0);
-        cin.tie(0);
-
-        readMatrix();
-        simulateRoad();
-        return 0;
-    }
-    ```
-
-## Optimizarea unei simulări
-
-La unele probleme, chiar dacă nu ne este cerut rezultatul pe parcursul simulării, nu se poate găsi o altă soluție decât simularea. Majoritatea problemelor de acest fel, în care simularea nu intră în timp, este necesară optimizarea simulării.
-
-### Optimizarea prin găsirea unei perioade
-
-Uneori, stările unei simulări se repetă periodic. La anumite probleme, o optimizare cerută este alfarea acelei perioade și folosirea ei pentru aflarea tuturor elementelor
-
-#### Problemă exemplu: [galbeni - OJI 2013 VI](https://kilonova.ro/problems/402)
-
-Fie $getNext(n) =$ numărul care urmează după $n$.
-
-Cum toate numerele sunt de la 1 la 999, rezultă, din [principiul cutiei](https://ro.wikipedia.org/wiki/Principiul_lui_Dirichlet), că, după maxim 1000 de numere, vom găsi două egale. Secvența dintre ele se va repeta la nesfârșit.
-
-Notăm cu $start$ poziția de la care începe ciclul și cu $len$ lungimea ciclului. Al $n$-lea număr poate fi aflat în funcție de $start$ și $len$.
-
-Sursa de 100 de puncte:
-
-```cpp
-#include <fstream>
-using namespace std;
-
-ifstream fin("galbeni.in");
-ofstream fout("galbeni.out");
-
-int n, start_cycle, cycle_length, p10, poz[1000], v[1000];
-
-int getNext(int s) {
-    int i, p, new_s, cifra;
-
-    p = 1;
-    new_s = s;
-    while (s > 0) {
-        cifra = s % 10;
-        if (cifra > 0) {
-            new_s *= cifra;
-        }
-        s /= 10;
-    }
-
-    new_s = ((new_s * 8) / 9) % (p10 * 10);
-    while (new_s < p10) { // cat timp are mai putin de k cifre
-        new_s = new_s * 10 + 9;
-    }
-
-    return new_s;
-}
-
-void findCycle() {
-    int s, k, cnt, i;
-    fin >> s >> k >> n;
-
-    p10 = 1; // p10 va reprezenta cel mai mic numar de k cifre
-    for (k--; k > 0; k--) {
-        p10 *= 10;
-    }
-
-    poz[s] = cnt = 1;
-    v[1] = s;
-    while (poz[s = getNext(s)] == 0) { // cautam prima care se repeta
-        poz[s] = ++cnt;
-        v[cnt] = s;
-    }
-
-    start_cycle = poz[s];
-    cycle_length = cnt - poz[s] + 1;
-}
-
-void calcAnswer() {
-    if (n < start_cycle) {
-        fout << v[n] << "\n";
-    } else {
-        n -= start_cycle;
-        fout << v[start_cycle + n % cycle_length] << "\n";
-    }
-}
-
-int main() {
-    findCycle();
-    calcAnswer();
-    return 0;
-}
-```
-
-### Optimizarea prin găsirea unei formule care generează stările următoare
-
-Anumite probleme se generează într-un mod care poate fi stabilit de o formulă.
-
-#### Problemă exemplu: [asort - Baraj 2016 Juniori](https://kilonova.ro/problems/1084)
-
-Soluția problemei se poate deduce studiind transformarea șirului până când acesta devine “A sortat”.
-
-{ /* ma doare sa vad asta... */}
-
-De exemplu, pentru $N=8$, aplicând de $N$ ori regula $A$ se obțin șirurile: ![](../images/simulation/asort-imagine.png)
-
-Observăm că prin aplicarea de un număr impar de ori a regulii, șirul rezultat are pe pozițiile impare numerele pare. Numere pare au apariție periodică în șirurile rezultate în ordinea $2, 4, 6, 8, 2, 4, 6, ...$ Analog, numerele impare apar pe poziții impare în ordinea $1, 3, 5, 7, 1, 3, 5, ...$ Dacă se aplică regula de un număr par de ori, pe pozițiile pare apar numerele pare.
+Observăm că prin aplicarea de un număr impar de ori a regulii, șirul rezultat are pe pozițiile impare numerele pare. Numere pare au apariție periodică în șirurile rezultate în ordinea $$2, 4, 6, 8, 2, 4, 6, ...$$ Analog, numerele impare apar pe poziții impare în ordinea $$1, 3, 5, 7, 1, 3, 5, ...$$ Dacă se aplică regula de un număr par de ori, pe pozițiile pare apar numerele pare.
 
 Studiind exemplul, observăm că:
 
-1. Dacă numărul de aplicări ale regulii date $R$ este impar, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(R+K) \% N$ sau $N$ dacă acest rest este 0. Dacă poziția $K$ este pară, atunci numarul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este 0.
+1. Dacă numărul de aplicări ale regulii date $$R$$ este impar, atunci dacă poziția $$K$$ este impară atunci numărul căutat este egal cu $$(R+K) \% N$$ sau $$N$$ dacă acest rest este 0. Dacă poziția $$K$$ este pară, atunci numarul căutat este egal cu $$(N+K-R) \% N$$ sau $$N$$ dacă acest rest este 0.
 
-2. Dacă numărul de aplicări ale regulii $A$ date $R$ este par, atunci dacă poziția $K$ este impară atunci numărul căutat este egal cu $(N+K-R) \% N$ sau $N$ dacă acest rest este 0. Dacă poziția $K$ este pară, atunci numărul căutat este egal cu $(K+R) \% N$ sau $N$ dacă acest rest este 0.
+2. Dacă numărul de aplicări ale regulii $$A$$ date $$R$$ este par, atunci dacă poziția $$K$$ este impară atunci numărul căutat este egal cu $$(N+K-R) \% N$$ sau $$N$$ dacă acest rest este 0. Dacă poziția $$K$$ este pară, atunci numărul căutat este egal cu $$(K+R) \% N$$ sau $$N$$ dacă acest rest este 0.
 
-3. Dacă numărul $T$ este par atunci poziția acestui număr în șirul “$A$ sortat” este $poz = (N+T-R) \% N$. Altfel, $poz = (T+R) \% N$. În ambele situații, dacă $poz=0$ atunci $poz=N$. Cunoscând poziția lui $T$ în șirul “$A$ sortat”, determinăm numerele situate pe poziția $poz-1$ (sau $N$) pentru predecesor, respectiv $poz+1$ (sau 1) pentru succesor folosindu-ne de rezultatele menționate mai sus.
+3. Dacă numărul $$T$$ este par atunci poziția acestui număr în șirul “$$A$$ sortat” este $$poz = (N+T-R) \% N$$. Altfel, $$poz = (T+R) \% N$$. În ambele situații, dacă $$poz=0$$ atunci $$poz=N$$. Cunoscând poziția lui $$T$$ în șirul “$$A$$ sortat”, determinăm numerele situate pe poziția $$poz-1$$ (sau $$N$$) pentru predecesor, respectiv $$poz+1$$ (sau 1) pentru succesor folosindu-ne de rezultatele menționate mai sus.
 
-Detaliu de implementare: vom folosi faptul că $(x \% n) == 0 ? n : x \% n$ este echivalent cu $(x - 1) \% n + 1$, pentru $x > 0$. Demonstrație:
+Detaliu de implementare: vom folosi faptul că $$(x \% n) == 0 ? n : x \% n$$ este echivalent cu $$(x - 1) \% n + 1$$, pentru $$x > 0$$. Demonstrație:
 
-1. $x \% n = 0$, atunci $(x - 1) \% n + 1 = n - 1 + 1 = n$.
-2. $x \% n > 0$, atunci $(x - 1) \% n + 1 = x \% n - 1 + 1 = x \% n$
+1. $$x \% n = 0$$, atunci $$(x - 1) \% n + 1 = n - 1 + 1 = n$$.
+2. $$x \% n > 0$$, atunci $$(x - 1) \% n + 1 = x \% n - 1 + 1 = x \% n$$
 
 Sursa de 100 de puncte:
 
@@ -313,9 +69,9 @@ int main() {
 
 ### Problema [robinson - ONI 2005 VI](https://kilonova.ro/problems/1221)
 
-Mai intai, vom construi matricea in modul descris. Dupa aceea, va trebuie sa simulam drumul din problema. Pentru a afla usor urmatoarea pozitie, vom folosi [vectori de directie](../mediu/lee.md#vectorii-de-directie). După ce aflăm directța în care mergem, vom marca poziția ca vizitată (adică setăm valoarea din matrice la $VISITED$, o constantă care va fi egală cu $-1$ sau cu orice valoare care nu poate apărea in matrice).
+Mai intai, vom construi matricea in modul descris. Dupa aceea, va trebuie sa simulam drumul din problema. Pentru a afla usor urmatoarea pozitie, vom folosi [vectori de directie](../mediu/lee.md#vectorii-de-directie). După ce aflăm directța în care mergem, vom marca poziția ca vizitată (adică setăm valoarea din matrice la $$VISITED$$, o constantă care va fi egală cu $$-1$$ sau cu orice valoare care nu poate apărea in matrice).
 
-De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom [borda matricea](../mediu/lee.md#evitarea-accesarii-unor-patrate-din-afara-matricii) cu valoarea $VISITED$.
+De asemenea, pentru a determina ușor dacă am ieșit sau nu din matrice, vom [borda matricea](../mediu/lee.md#evitarea-accesarii-unor-patrate-din-afara-matricii) cu valoarea $$VISITED$$.
 
 Sursa de 100 de puncte:
 
@@ -381,7 +137,7 @@ int main() {
 
 ### Problema [furnica - OJI 2007 VI](https://kilonova.ro/problems/763)
 
-În această problemă este destul de direct ce trebuie să facem. Vom simula procesul descris, ținând o matrice $fr_{i, j}$ care va reprezenta de câte ori am trecut printr-o anumită poziție $(i, j)$. De asemenea, și în această problemă vom folosi vectori de direcție pentru a afla ușor următoarea poziție.
+În această problemă este destul de direct ce trebuie să facem. Vom simula procesul descris, ținând o matrice $$fr_{i, j}$$ care va reprezenta de câte ori am trecut printr-o anumită poziție $$(i, j)$$. De asemenea, și în această problemă vom folosi vectori de direcție pentru a afla ușor următoarea poziție.
 
 ```cpp
 #include <fstream>

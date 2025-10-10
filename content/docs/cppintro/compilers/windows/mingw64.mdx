@@ -9,9 +9,9 @@ hide:
 
 Pentru a instala MinGW-w64, avem următorii pași:
 
-1. Deschide pagina <https://winlibs.com/>. Această pagină oferă binare executabile pre-compilate pentru GCC și optimizate pentru a crea executabile native pe Windows.
+1. Deschide pagina https://winlibs.com/. Această pagină oferă binare executabile pre-compilate pentru GCC și optimizate pentru a crea executabile native pe Windows.
 
-   [Deschide pagina :material-open-in-new:](https://winlibs.com/){ .md-button .md-button--primary }
+   [Deschide pagina :material-open-in-new:](https://winlibs.com)
 
 2. Dă scroll până când o să vezi versiunile de GCC. Alegem varianta cu UCRT (Universal C Runtime) pentru că este făcută de la zero pentru Windows 10 și 11 și este gândită să aibă suport mai bun pentru standardul de C și C++.
 
@@ -19,13 +19,13 @@ Pentru a instala MinGW-w64, avem următorii pași:
 
 4. Selectează din prima opțiune (cea care scrie POSIX threads) fie Win64 (dacă ai un sistem pe 64 de biți, care este cam orice calculator lansat în ultimul deceniu și jumătate), fie Win32, în formatul tău de preferință (7-Zip are nevoie de programul cu același nume, dar are executabile mai mici, în timp ce Zip poate fi deschis din Explorer). La data scrierii, asta este arhiva potrivită:
 
-   [Descarcă GCC 14.2.0 :material-download:](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r1.zip){ .md-button .md-button--primary }
+   [Descarcă GCC 14.2.0 :material-download:](https://github.com/brechtsanders/winlibs_mingw/releases/download/14.2.0posix-18.1.8-12.0.0-ucrt-r1/winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-18.1.8-mingw-w64ucrt-12.0.0-r1.zip)
 
     <figure markdown="span">
     ![Imagine care arată prima opțiune de la Release versions, UCRT runtime](./mingw64.png){ loading=lazy }
     </figure>
 
-5. După ce s-a terminat de descărcat arhiva, deschide-o și extrage directorul `mingw64` într-un loc ușor accesibil (de preferință în `C:\`). Ține minte această locație! O să mă refer la această locație în text ca `$MINGW` (de pildă, dacă ai dezarhivat în `C:\`, atunci `$MINGW = C:\mingw64`). O să ia ceva timp să se dezarhiveze tot, deoarece are peste 1GB. Indiferent unde s-a dezarhivat, conținutul directorului `$MINGW` ar trebui să arate astfel:
+5. După ce s-a terminat de descărcat arhiva, deschide-o și extrage directorul `mingw64` într-un loc ușor accesibil (de preferință în `C:\`). Ține minte această locație! O să mă refer la această locație în text ca `$$MINGW` (de pildă, dacă ai dezarhivat în `C:\`, atunci `$$MINGW = C:\mingw64`). O să ia ceva timp să se dezarhiveze tot, deoarece are peste 1GB. Indiferent unde s-a dezarhivat, conținutul directorului `$$MINGW` ar trebui să arate astfel:
 
    <figure markdown="span">
 
@@ -45,7 +45,7 @@ Pentru a instala MinGW-w64, avem următorii pași:
       ![Tab-ul Complex, care conține butonul Variabile de mediu](./tab-complex.png){ loading=lazy }
       </figure>
    3. Apasă dublu clic pe variabila `Path` de la secțiunea cu variabile de utilizator (partea de sus). ![Listă de variabile de mediu](./path-1.png){ loading=lazy; width="49%" } ![Listă de căi la variabila de sistem Path](./path-2.png){ loading=lazy width="49%" }
-   4. Apasă pe "Navigare..." (atenție, fără să ai vreo cale selectată deja, apasă oriunde într-un spațiu gol din listă) și caută calea `$MINGW\bin` (unde `$MINGW` e locul unde ai instalat MinGW). În cazul meu, calea va fi `C:\mingw64\bin`. Dacă totul a decurs cum trebuie, ar trebui să fie o cale în plus în listă:
+   4. Apasă pe "Navigare..." (atenție, fără să ai vreo cale selectată deja, apasă oriunde într-un spațiu gol din listă) și caută calea `$$MINGW\bin` (unde `$$MINGW` e locul unde ai instalat MinGW). În cazul meu, calea va fi `C:\mingw64\bin`. Dacă totul a decurs cum trebuie, ar trebui să fie o cale în plus în listă:
       <figure markdown="span">
       ![Listă de căi la variabila de sistem Path, cu calea noastră în plus](./path-3.png){ loading=lazy }
       </figure>

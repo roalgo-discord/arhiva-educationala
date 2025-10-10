@@ -26,12 +26,12 @@ Totuși, unele tipuri de date mai complexe, cum ar fi [vectorii](../cppintro/arr
 
 Orice variabilă este caracterizată de:
 
-1. **Adresa memoriei**: Este locația din memorie unde este stocată variabila. Nu lucrăm cu ea în timpul programelor, dar aceasta poate fi utilă în diagnosticarea problemelor de memorie. Adresa este exprimată în hexazecimal (de exemplu, `#!cpp 0x7ffe3278f424`).
+1. **Adresa memoriei**: Este locația din memorie unde este stocată variabila. Nu lucrăm cu ea în timpul programelor, dar aceasta poate fi utilă în diagnosticarea problemelor de memorie. Adresa este exprimată în hexazecimal (de exemplu, `0x7ffe3278f424`).
 
 2. **Identificatorul (numele)**: Reprezintă legătura între variabilă și valoarea sa din memorie. Un identificator trebuie să respecte următoarele reguli:
    - Poate conține litere ale alfabetului englez (a-z, A-Z), cifre (0-9) și caracterul underscore (bară jos, `_`).
    - Trebuie să înceapă cu o literă sau `_`, dar niciodată cu o cifră.
-   - Nu poate fi un cuvânt rezervat al limbajului (ex.: `#!cpp int`, `#!cpp return`, `#!cpp while` etc.).
+   - Nu poate fi un cuvânt rezervat al limbajului (ex.: `int`, `return`, `while` etc.).
    - Identificatorul este case-sensitive, astfel încât `Varsta`, `varsta` și `VARSTA` sunt trei identificatori diferiți.
 
 3. **Tipul de date**: Determină ce tip de valori poate să stocheze variabila și limitele acestor valori (ex.: numere întregi, numere în virgulă mobilă, caractere etc.).
@@ -48,7 +48,7 @@ Orice variabilă este caracterizată de:
 
 unde:
 
-- `tip_de_date` specifică tipul valorii pe care o poate stoca variabila (ex.: `#!cpp int`, `#!cpp float`, `#!cpp double`, `#!cpp char`).
+- `tip_de_date` specifică tipul valorii pe care o poate stoca variabila (ex.: `int`, `float`, `double`, `char`).
 - `identificator1, identificator2, ...` reprezintă numele variabilelor.
 
 !!! example
@@ -60,7 +60,7 @@ unde:
 !!! note "Observații"
 
     - Dimensiunea memoriei ocupate de o variabilă depinde de
-      tipul de date (ex.: `#!cpp int` ocupă 4 bytes în majoritatea sistemelor).
+      tipul de date (ex.: `int` ocupă 4 bytes în majoritatea sistemelor).
 
     - Dacă o variabilă consumă mai multă memorie decât este disponibilă, veți primi
       verdictul _limită de memorie depășită_ sau, în limba engleză, _memory limit
@@ -68,58 +68,58 @@ unde:
 
 ## Tipuri de date ce păstrează numere întregi
 
-Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Unele dintre aceste tipuri pot avea aplicații suplimentare; de exemplu, tipul `#!cpp char` poate fi folosit și pentru a opera cu caractere, fiecare valoare având drept corespondent un caracter din codul ASCII (mai multe detalii vor fi oferite în secțiunea dedicată șirurilor de caractere).
+Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Unele dintre aceste tipuri pot avea aplicații suplimentare; de exemplu, tipul `char` poate fi folosit și pentru a opera cu caractere, fiecare valoare având drept corespondent un caracter din codul ASCII (mai multe detalii vor fi oferite în secțiunea dedicată șirurilor de caractere).
 
 În ordinea popularității lor, tipurile de date întregi sunt următoarele:
 
-1. `#!cpp int`
+1. `int`
    - Cel mai frecvent folosit tip de date pentru a stoca numere întregi.
    - Stochează valori între -2<sup>31</sup> și 2<sup>31</sup> - 1 (echivalent cu -2,147,483,648 și 2,147,483,647).
    - Ocupă 32 de biți (4 bytes) în memorie.
 
-2. `#!cpp long long`
+2. `long long`
    - Un tip de date folosit pentru numerele întregi mai mari.
    - Având limite între -2<sup>63</sup> și 2<sup>63</sup> - 1 (-9,223,372,036,854,775,808 și 9,223,372,036,854,775,807).
    - Numere de maxim 19 cifre, stocate pe 64 de biți (8 bytes).
 
-3. `#!cpp char`
+3. `char`
    - Tipul de date folosit pentru lucrul cu caractere.
    - Având limite între -128 și 127.
    - Ocupă 1 byte.
 
-4. `#!cpp bool`
+4. `bool`
    - Folosit pentru a păstra doar valori binare.
-   - Valori posibile: 1 sau 0 (corespunzător stărilor de `#!cpp true` (adevărat) și `#!cpp false` (fals)).
+   - Valori posibile: 1 sau 0 (corespunzător stărilor de `true` (adevărat) și `false` (fals)).
 
-5. `#!cpp short`
+5. `short`
    - Un tip de date pentru numere întregi mai mici.
    - Având limite între -2<sup>15</sup> și 2<sup>15</sup> - 1 (-32,768 și 32,767).
    - Ocupă 16 biți (2 bytes).
 
 !!! note "Observație"
 
-    Printre altele, există și tipul de date `#!cpp __int128`, care ne permite să
+    Printre altele, există și tipul de date `__int128`, care ne permite să
     păstrăm numere pe 128 de biți, despre care vom vorbi ulterior în articol,
     deoarece cunoașterea lui nu este necesară decât pentru aplicații mai
     avansate de la olimpiadă.
 
-### Tipurile de date `#!cpp unsigned`
+### Tipurile de date `unsigned`
 
-Uneori, putem fi în situația în care să avem nevoie de numere un pic mai mari decât limitele acestor tipuri de date, fără a avea memoria să folosim tipul de date superior. Aici devin utile tipurile `#!cpp unsigned`.
+Uneori, putem fi în situația în care să avem nevoie de numere un pic mai mari decât limitele acestor tipuri de date, fără a avea memoria să folosim tipul de date superior. Aici devin utile tipurile `unsigned`.
 
-Pentru toate aceste tipuri, cu excepția tipului `#!cpp bool`, există și varianta `#!cpp unsigned`, care ne dă posibilitatea să păstrăm numere de două ori mai mari cu aceeași memorie, prețul fiind faptul că nu mai avem cum să păstrăm valori negative.
+Pentru toate aceste tipuri, cu excepția tipului `bool`, există și varianta `unsigned`, care ne dă posibilitatea să păstrăm numere de două ori mai mari cu aceeași memorie, prețul fiind faptul că nu mai avem cum să păstrăm valori negative.
 
-De exemplu, tipul de date `#!cpp unsigned int` poate păstra în memorie valori între 0 și 2<sup>32</sup> - 1, intervalul fiind [0, 4.294.967.295].
+De exemplu, tipul de date `unsigned int` poate păstra în memorie valori între 0 și 2<sup>32</sup> - 1, intervalul fiind [0, 4.294.967.295].
 
-De cele mai multe ori, tipurile de date pe care le folosim sunt `#!cpp unsigned int`, respectiv `#!cpp unsigned long long`.
+De cele mai multe ori, tipurile de date pe care le folosim sunt `unsigned int`, respectiv `unsigned long long`.
 
-### Tipul de date `#!cpp void`
+### Tipul de date `void`
 
 Pe lângă tipurile de date menționate anterior, există și tipul de date void, care deși nu are valori și operații, este necesar pentru a indica faptul că o metodă, o funcție sau un program nu returnează nimic, așa cum veți vedea ulterior când studiați [funcțiile](./functions.md).
 
 ### Sfaturi practice și evitarea overflow-ului
 
-De regulă, atâta timp cât ne permite memoria, folosirea tipului `#!cpp int` este mai mult decât suficientă, asigurând echilibrul perfect între un consum optim de timp și memorie pentru operații, respectiv stocarea unor valori suficient de mari pentru calculele noastre.
+De regulă, atâta timp cât ne permite memoria, folosirea tipului `int` este mai mult decât suficientă, asigurând echilibrul perfect între un consum optim de timp și memorie pentru operații, respectiv stocarea unor valori suficient de mari pentru calculele noastre.
 
 !!! info "Overflow"
 
@@ -134,13 +134,13 @@ De regulă, atâta timp cât ne permite memoria, folosirea tipului `#!cpp int` e
     decât valorile minime permise, dar această situație se întâlnește mult mai
     rar în practică.
 
-Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmulțim două valori care deși ambele se încadrează în `#!cpp int`, suma (sau produsul lor) depășește valoarea maximă a tipului de date `#!cpp int`.
+Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmulțim două valori care deși ambele se încadrează în `int`, suma (sau produsul lor) depășește valoarea maximă a tipului de date `int`.
 
 ```cpp
 --8<-- "cppintro/data_types/datatypes3.cpp"
 ```
 
-Cele mai populare două soluții pentru evitarea overflow-ului sunt fie folosirea tipului de date long long pentru păstrarea termenilor din operații, fie folosirea operatorului `#!cpp 1LL`, fie folosirea `#!cpp (long long)` pentru convertirea datelor.
+Cele mai populare două soluții pentru evitarea overflow-ului sunt fie folosirea tipului de date long long pentru păstrarea termenilor din operații, fie folosirea operatorului `1LL`, fie folosirea `(long long)` pentru convertirea datelor.
 
 !!! note "Numere mai mari"
 
@@ -156,11 +156,11 @@ Tipurile de date reale sunt folosite pentru a stoca valori reale. Acestea sunt f
 
 Tipurile de date reale sunt următoarele:
 
-- tipul `#!cpp float` - limite între aproximativ -10<sup>38</sup> și 10<sup>38</sup>.
-- tipul `#!cpp double` - limite între aproximativ -10<sup>208</sup> și 10<sup>208</sup>, precizie crescută.
-- tipul `#!cpp long double` - limite mai mari decât cele de la `#!cpp double`, precizie variabilă.
+- tipul `float` - limite între aproximativ -10<sup>38</sup> și 10<sup>38</sup>.
+- tipul `double` - limite între aproximativ -10<sup>208</sup> și 10<sup>208</sup>, precizie crescută.
+- tipul `long double` - limite mai mari decât cele de la `double`, precizie variabilă.
 
-În general, atunci când operăm cu numerele reale, vrem să avem grijă la erorile de precizie care ar putea apărea. Cel mai bun mod de a face acest lucru, în special când lucrăm cu valori foarte mari în modul, este acela de a include o valoare reală foarte mică, $eps$, care să servească drept etalon în ceea ce privește verificarea egalității.
+În general, atunci când operăm cu numerele reale, vrem să avem grijă la erorile de precizie care ar putea apărea. Cel mai bun mod de a face acest lucru, în special când lucrăm cu valori foarte mari în modul, este acela de a include o valoare reală foarte mică, $$eps$$, care să servească drept etalon în ceea ce privește verificarea egalității.
 
 !!! note "Observație"
 
@@ -174,11 +174,11 @@ Astfel, pentru a verifica egalitatea dintre două numere reale mai mari, putem i
 --8<-- "cppintro/data_types/datatypes4.cpp"
 ```
 
-### Tipul `#!cpp __int128`
+### Tipul `__int128`
 
-Pe lângă aceste tipuri, există și tipul de date `#!cpp __int128` care ne permite să stocăm valori pe 128 de biți, având limite între -2<sup>127</sup> si 2<sup>127</sup> - 1 (numere de aproximativ 37 de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](./compilers/windows/mingw64.md).
+Pe lângă aceste tipuri, există și tipul de date `__int128` care ne permite să stocăm valori pe 128 de biți, având limite între -2<sup>127</sup> si 2<sup>127</sup> - 1 (numere de aproximativ 37 de cifre). Acest tip poate fi folosit doar pe [compilatorul GCC](./compilers/windows/mingw64.md).
 
-Noi nu putem să citim și să afișăm direct `#!cpp __int128`, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim `#!cpp std::cin >> x` chiar dacă $x$ este `#!cpp __int128`.
+Noi nu putem să citim și să afișăm direct `__int128`, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim `std::cin >> x` chiar dacă $$x$$ este `__int128`.
 
 ```cpp
 --8<-- "cppintro/data_types/datatypes5.cpp"

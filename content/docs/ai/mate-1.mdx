@@ -16,7 +16,7 @@ De asemenea, nu este necesar sa fie stiuta toata teoria matematica pentru a lucr
 
 ## Probabilități
 
-**Calculul probabilităților discrete** constituie fundamentul teoretic pentru înțelegerea incertitudinii în machine learning. Spațiul eșantionului $\Omega$ reprezintă mulțimea tuturor rezultatelor posibile ale unui experiment aleatoriu, iar un eveniment $A$ este o submulțime a acestui spațiu. Probabilitatea unui eveniment $A$ este definită ca:
+**Calculul probabilităților discrete** constituie fundamentul teoretic pentru înțelegerea incertitudinii în machine learning. Spațiul eșantionului $$\Omega$$ reprezintă mulțimea tuturor rezultatelor posibile ale unui experiment aleatoriu, iar un eveniment $$A$$ este o submulțime a acestui spațiu. Probabilitatea unui eveniment $$A$$ este definită ca:
 
 $$
 P(A) = \frac{|A|}{|\Omega|} =
@@ -27,11 +27,11 @@ Exemplu: fie un zar, care este probabilitatea sa obtinem 3?
 
 $$P(X = 3) = \frac{1}{6}$$
 
-**Probabilitățile condiționate** exprimă probabilitatea unui eveniment $A$ știind că s-a produs evenimentul $B$. Această noțiune este crucială pentru algoritmii de clasificare și inferența bayesiană. Probabilitatea condiționată se calculează prin raportul dintre probabilitatea intersecției și probabilitatea condiției.
+**Probabilitățile condiționate** exprimă probabilitatea unui eveniment $$A$$ știind că s-a produs evenimentul $$B$$. Această noțiune este crucială pentru algoritmii de clasificare și inferența bayesiană. Probabilitatea condiționată se calculează prin raportul dintre probabilitatea intersecției și probabilitatea condiției.
 
 $$P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad P(B) > 0$$
 
-**Evenimentele independente** sunt caracterizate prin proprietatea că apariția unuia nu influențează probabilitatea celuilalt. Două evenimente $A$ și $B$ sunt independente dacă și numai dacă probabilitatea intersecției lor este egală cu produsul probabilităților individuale.
+**Evenimentele independente** sunt caracterizate prin proprietatea că apariția unuia nu influențează probabilitatea celuilalt. Două evenimente $$A$$ și $$B$$ sunt independente dacă și numai dacă probabilitatea intersecției lor este egală cu produsul probabilităților individuale.
 
 $$P(A \cap B) = P(A) \cdot P(B)$$
 
@@ -39,21 +39,21 @@ $$P(A \cap B) = P(A) \cdot P(B)$$
 
 $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
 
-**Variabilele aleatorii** sunt funcții care asociază fiecărui rezultat din spațiul eșantionului o valoare numerică. O variabilă aleatorie discretă $X$ poate lua doar un număr finit sau numărabil de valori, în timp ce o variabilă aleatorie continuă poate lua orice valoare dintr-un interval real.
+**Variabilele aleatorii** sunt funcții care asociază fiecărui rezultat din spațiul eșantionului o valoare numerică. O variabilă aleatorie discretă $$X$$ poate lua doar un număr finit sau numărabil de valori, în timp ce o variabilă aleatorie continuă poate lua orice valoare dintr-un interval real.
 
-**Distribuțiile de probabilitate** descriu modul în care probabilitatea este repartizată asupra valorilor posibile ale unei variabile aleatorii. Pentru variabilele discrete, funcția de masă de probabilitate (PMF) $p(x) = P(X = x)$ specifică probabilitatea fiecărei valori, iar pentru variabilele continue, funcția de densitate de probabilitate (PDF) $f(x)$ satisface proprietatea că probabilitatea unui interval este integrala densității pe acel interval.
+**Distribuțiile de probabilitate** descriu modul în care probabilitatea este repartizată asupra valorilor posibile ale unei variabile aleatorii. Pentru variabilele discrete, funcția de masă de probabilitate (PMF) $$p(x) = P(X = x)$$ specifică probabilitatea fiecărei valori, iar pentru variabilele continue, funcția de densitate de probabilitate (PDF) $$f(x)$$ satisface proprietatea că probabilitatea unui interval este integrala densității pe acel interval.
 
 $$P(a \leq X \leq b) = \int_a^b f(x) dx$$
 
-**Funcția de distribuție cumulativă** (CDF) $F(x) = P(X \leq x)$ oferă probabilitatea ca variabila aleatorie să ia o valoare mai mică sau egală cu $x$. Pentru variabilele continue, CDF-ul este legat de PDF prin relația de integrare.
+**Funcția de distribuție cumulativă** (CDF) $$F(x) = P(X \leq x)$$ oferă probabilitatea ca variabila aleatorie să ia o valoare mai mică sau egală cu $$x$$. Pentru variabilele continue, CDF-ul este legat de PDF prin relația de integrare.
 
 $$F(x) = \int_{-\infty}^x f(t) dt$$
 
-**Distribuția uniformă** atribuie probabilități egale tuturor valorilor dintr-un interval specificat. Pentru distribuția uniformă continuă pe intervalul $[a,b]$, densitatea de probabilitate este constantă și egală cu inversul lungimii intervalului.
+**Distribuția uniformă** atribuie probabilități egale tuturor valorilor dintr-un interval specificat. Pentru distribuția uniformă continuă pe intervalul $$[a,b]$$, densitatea de probabilitate este constantă și egală cu inversul lungimii intervalului.
 
 $$f(x) = \frac{1}{b-a}, \quad x \in [a,b]$$
 
-**Distribuția binomială** modelează numărul de succese în $n$ încercări independente, fiecare cu probabilitatea de succes $p$. Această distribuție este fundamentală pentru problemele de clasificare binară și testarea ipotezelor statistice.
+**Distribuția binomială** modelează numărul de succese în $$n$$ încercări independente, fiecare cu probabilitatea de succes $$p$$. Această distribuție este fundamentală pentru problemele de clasificare binară și testarea ipotezelor statistice.
 
 $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
@@ -61,7 +61,7 @@ Notam
 
 $$X \sim \mathrm{Bin}(n, p)$$
 
-**Distribuția Poisson** aproximează distribuția binomială când numărul de încercări este mare și probabilitatea de succes este mică, astfel încât produsul $np = \lambda$ rămâne constant. Aceasta modelează evenimente rare care apar independent în timp sau spațiu.
+**Distribuția Poisson** aproximează distribuția binomială când numărul de încercări este mare și probabilitatea de succes este mică, astfel încât produsul $$np = \lambda$$ rămâne constant. Aceasta modelează evenimente rare care apar independent în timp sau spațiu.
 
 $$P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$$
 
@@ -69,7 +69,7 @@ Notam
 
 $$X \sim \mathrm{Poi}(\lambda)$$
 
-**Distribuția normală** (gaussiană) este cea mai importantă distribuție continuă în statistică și machine learning, caracterizată prin parametrii de medie $\mu$ și deviația standard $\sigma^2$. Forma sa în clopot și proprietățile analitice o fac ideală pentru multe aplicații practice.
+**Distribuția normală** (gaussiană) este cea mai importantă distribuție continuă în statistică și machine learning, caracterizată prin parametrii de medie $$\mu$$ și deviația standard $$\sigma^2$$. Forma sa în clopot și proprietățile analitice o fac ideală pentru multe aplicații practice.
 
 $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
@@ -79,7 +79,7 @@ $$X \sim \mathcal{N}(\mu, \sigma^2)$$
 
 ## Statistică
 
-**Media aritmetică** reprezintă măsura centrală de tendință cea mai utilizată, calculată ca suma valorilor împărțită la numărul de observații. Pentru un eșantion $x_1, x_2, \ldots, x_n$, media oferă o estimare a valorii tipice din setul de date.
+**Media aritmetică** reprezintă măsura centrală de tendință cea mai utilizată, calculată ca suma valorilor împărțită la numărul de observații. Pentru un eșantion $$x_1, x_2, \ldots, x_n$$, media oferă o estimare a valorii tipice din setul de date.
 
 $$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i$$
 
@@ -91,7 +91,7 @@ $$\sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2}$$
 
 $$\sigma = \sqrt{\mathrm{Var}(X)}$$
 
-**Variația** cuantifică gradul de răspândire a valorilor în jurul mediei prin calcularea mediei pătratelor abaterilor de la medie. Pentru un eșantion, variația eșantionului utilizează $n-1$ la numitor pentru a obține o estimare nebiasată.
+**Variația** cuantifică gradul de răspândire a valorilor în jurul mediei prin calcularea mediei pătratelor abaterilor de la medie. Pentru un eșantion, variația eșantionului utilizează $$n-1$$ la numitor pentru a obține o estimare nebiasată.
 
 $$\mathrm{Var}(X) = \sigma^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2$$
 
@@ -101,7 +101,7 @@ $$\mathrm{Var}(X) = \mathrm{Cov}(X, X) = \mathrm{E}[(X-\bar{X})^2]$$
 
 $$E[X] = \sum_{i} x_i P(X = x_i)$$
 
-Exemplu: avem un zar, toate numerele au probabilitate egala de a pica $\frac{1}{6}$, care este valoarea expected cand aruncam zarul?
+Exemplu: avem un zar, toate numerele au probabilitate egala de a pica $$\frac{1}{6}$$, care este valoarea expected cand aruncam zarul?
 
 $$E[X] = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3,6$$
 
@@ -109,7 +109,7 @@ $$E[X] = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3,6$$
 
 $$\text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]$$
 
-**Matricea de covarianță** extinde conceptul de covarianță la vectori aleatorii multidimensionali, unde elementul $(i,j)$ reprezintă covarianța dintre componentele $i$ și $j$. Această matrice este simetrică și pozitiv semi-definită, fiind fundamentală în analiza componentelor principale și algoritmii de clustering.
+**Matricea de covarianță** extinde conceptul de covarianță la vectori aleatorii multidimensionali, unde elementul $$(i,j)$$ reprezintă covarianța dintre componentele $$i$$ și $$j$$. Această matrice este simetrică și pozitiv semi-definită, fiind fundamentală în analiza componentelor principale și algoritmii de clustering.
 
 $$\Sigma_{ij} = \text{Cov}(X_i, X_j)$$
 
@@ -119,10 +119,10 @@ Algebra liniară este studiul vectorilor, spațiilor vectoriale (care sunt setur
 
 **Scalari, Vectori, Matrici, Tensori**
 
-- **Scalar**: O singură valoare numerică. Ex: $5$, $-3.14$.
+- **Scalar**: O singură valoare numerică. Ex: $$5$$, $$-3.14$$.
 - **Vector**: O listă ordonată de scalari. Poate fi văzut ca un punct într-un spațiu multidimensional sau ca o direcție și o magnitudine. Un vector coloană este standard: $$ \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} $$
-    Un vector rând este transpusa unui vector coloană: $\mathbf{v}^T = \begin{bmatrix} v_1 & v_2 & \cdots & v_n \end{bmatrix}$.
-- **Matrice**: Un tabel dreptunghiular de scalari aranjați în rânduri și coloane. O matrice $A$ de dimensiune $m \times n$ are $m$ rânduri și $n$ coloane.
+    Un vector rând este transpusa unui vector coloană: $$\mathbf{v}^T = \begin{bmatrix} v_1 & v_2 & \cdots & v_n \end{bmatrix}$$.
+- **Matrice**: Un tabel dreptunghiular de scalari aranjați în rânduri și coloane. O matrice $$A$$ de dimensiune $$m \times n$$ are $$m$$ rânduri și $$n$$ coloane.
   $$
   A = \begin{bmatrix}
   A_{11} & A_{12} & \cdots & A_{1n} \\
@@ -137,34 +137,34 @@ Algebra liniară este studiul vectorilor, spațiilor vectoriale (care sunt setur
 
 - **Adunarea/Scăderea**: Se efectuează element cu element, necesită dimensiuni identice. $$ \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 4 \\ 6 \end{bmatrix} $$
 - **Înmulțirea cu un Scalar**: Fiecare element al vectorului/matricei este înmulțit cu scalarul. $$ 2 \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix} $$
-- **Produsul Scalar (Dot Product)**: Pentru doi vectori $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$: $$ \mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum\_{i=1}^n u_i v_i $$
-    Rezultatul este un scalar. Măsoară similaritatea sau proiecția unui vector pe altul. Dacă $\mathbf{u} \cdot \mathbf{v} = 0$, vectorii sunt ortogonali.
+- **Produsul Scalar (Dot Product)**: Pentru doi vectori $$\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$$: $$ \mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum\_{i=1}^n u_i v_i $$
+    Rezultatul este un scalar. Măsoară similaritatea sau proiecția unui vector pe altul. Dacă $$\mathbf{u} \cdot \mathbf{v} = 0$$, vectorii sunt ortogonali.
 - **Norma Vectorului (Vector Norm)**: Măsoară "lungimea" sau "magnitudinea" unui vector.
-  - **Norma Euclideană (L2 norm)**: $\|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^n v_i^2} = \sqrt{\mathbf{v}^T \mathbf{v}}$.
-  - **Norma L1**: $\|\mathbf{v}\|_1 = \sum_{i=1}^n |v_i|$.
-  - **Norma L-infinit**: $\|\mathbf{v}\|_\infty = \max_i |v_i|$.
-- **Înmulțirea Matricilor**: Produsul $C = AB$ al unei matrice $A$ de dimensiune $m \times k$ cu o matrice $B$ de dimensiune $k \times n$ este o matrice $C$ de dimensiune $m \times n$, unde elementul $C_{ij}$ este produsul scalar al rândului $i$ din $A$ cu coloana $j$ din $B$: $$ C*{ij} = \sum*{p=1}^k A*{ip} B*{pj} $$
-    *Notă*: Înmulțirea matricilor nu este comutativă ($AB \ne BA$ în general).
-- **Matricea Identitate (Identity Matrix)**: Notată $I$, este o matrice pătratică cu 1 pe diagonală și 0 în rest. Are proprietatea că $AI = IA = A$.
-- **Transpusa unei Matrici (Matrix Transpose)**: Notată $A^T$, este obținută prin interschimbarea rândurilor cu coloanele. Dacă $A$ este de $m \times n$, atunci $A^T$ este de $n \times m$. $$ (A^T)_{ij} = A_{ji} $$
-    Proprietăți: $(A^T)^T = A$, $(AB)^T = B^T A^T$.
-- **Inversa unei Matrici (Matrix Inverse)**: Pentru o matrice pătratică $A$, inversa sa $A^{-1}$ (dacă există) este matricea care satisface $AA^{-1} = A^{-1}A = I$. O matrice care are inversă este numită **inversabilă** sau **nesingulară**.
+  - **Norma Euclideană (L2 norm)**: $$\|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^n v_i^2} = \sqrt{\mathbf{v}^T \mathbf{v}}$$.
+  - **Norma L1**: $$\|\mathbf{v}\|_1 = \sum_{i=1}^n |v_i|$$.
+  - **Norma L-infinit**: $$\|\mathbf{v}\|_\infty = \max_i |v_i|$$.
+- **Înmulțirea Matricilor**: Produsul $$C = AB$$ al unei matrice $$A$$ de dimensiune $$m \times k$$ cu o matrice $$B$$ de dimensiune $$k \times n$$ este o matrice $$C$$ de dimensiune $$m \times n$$, unde elementul $$C_{ij}$$ este produsul scalar al rândului $$i$$ din $$A$$ cu coloana $$j$$ din $$B$$: $$ C*{ij} = \sum*{p=1}^k A*{ip} B*{pj} $$
+    *Notă*: Înmulțirea matricilor nu este comutativă ($$AB \ne BA$$ în general).
+- **Matricea Identitate (Identity Matrix)**: Notată $$I$$, este o matrice pătratică cu 1 pe diagonală și 0 în rest. Are proprietatea că $$AI = IA = A$$.
+- **Transpusa unei Matrici (Matrix Transpose)**: Notată $$A^T$$, este obținută prin interschimbarea rândurilor cu coloanele. Dacă $$A$$ este de $$m \times n$$, atunci $$A^T$$ este de $$n \times m$$. $$ (A^T)_{ij} = A_{ji} $$
+    Proprietăți: $$(A^T)^T = A$$, $$(AB)^T = B^T A^T$$.
+- **Inversa unei Matrici (Matrix Inverse)**: Pentru o matrice pătratică $$A$$, inversa sa $$A^{-1}$$ (dacă există) este matricea care satisface $$AA^{-1} = A^{-1}A = I$$. O matrice care are inversă este numită **inversabilă** sau **nesingulară**.
 
 ### Valori proprii (eigenvalues) și vectori proprii (eigenvectors)
 
-Pentru o matrice pătratică $A$, un vector nenul $\mathbf{v}$ este un **vector propriu** (eigenvector) al lui $A$ dacă, atunci când este înmulțit cu $A$, rezultatul este un scalar înmulțit cu $\mathbf{v}$. Scalarul $\lambda$ este **valoarea proprie** (eigenvalue) corespondentă. Formal, această relație este exprimată ca: $$ A \mathbf{v} = \lambda \mathbf{v} $$ Unde:
+Pentru o matrice pătratică $$A$$, un vector nenul $$\mathbf{v}$$ este un **vector propriu** (eigenvector) al lui $$A$$ dacă, atunci când este înmulțit cu $$A$$, rezultatul este un scalar înmulțit cu $$\mathbf{v}$$. Scalarul $$\lambda$$ este **valoarea proprie** (eigenvalue) corespondentă. Formal, această relație este exprimată ca: $$ A \mathbf{v} = \lambda \mathbf{v} $$ Unde:
 
-- $A$ este o matrice pătratică de dimensiune $n \times n$.
-- $\mathbf{v}$ este un vector propriu nenul de dimensiune $n \times 1$.
-- $\lambda$ este o valoare proprie scalară.
+- $$A$$ este o matrice pătratică de dimensiune $$n \times n$$.
+- $$\mathbf{v}$$ este un vector propriu nenul de dimensiune $$n \times 1$$.
+- $$\lambda$$ este o valoare proprie scalară.
 
-**Interpretare Geometrică**: Aplicarea transformării liniare reprezentate de $A$ asupra unui vector propriu $\mathbf{v}$ are ca efect doar scalarea (întinderea sau comprimarea) vectorului $\mathbf{v}$, fără a-i schimba direcția (sau, în cazul $\lambda < 0$, schimbându-i doar sensul).
+**Interpretare Geometrică**: Aplicarea transformării liniare reprezentate de $$A$$ asupra unui vector propriu $$\mathbf{v}$$ are ca efect doar scalarea (întinderea sau comprimarea) vectorului $$\mathbf{v}$$, fără a-i schimba direcția (sau, în cazul $$\lambda < 0$$, schimbându-i doar sensul).
 
-**Calculul Valorilor și Vectorilor Proprii**: Ecuația $A \mathbf{v} = \lambda \mathbf{v}$ poate fi rescrisă ca: $$ A \mathbf{v} - \lambda \mathbf{v} = \mathbf{0} $$
+**Calculul Valorilor și Vectorilor Proprii**: Ecuația $$A \mathbf{v} = \lambda \mathbf{v}$$ poate fi rescrisă ca: $$ A \mathbf{v} - \lambda \mathbf{v} = \mathbf{0} $$
 $$ (A - \lambda I) \mathbf{v} = \mathbf{0} $$
-Pentru ca această ecuație să aibă o soluție nenulă pentru $\mathbf{v}$, matricea $(A - \lambda I)$ trebuie să fie singulară (adică să nu aibă inversă). Acest lucru se întâmplă dacă și numai dacă determinantul ei este zero:
+Pentru ca această ecuație să aibă o soluție nenulă pentru $$\mathbf{v}$$, matricea $$(A - \lambda I)$$ trebuie să fie singulară (adică să nu aibă inversă). Acest lucru se întâmplă dacă și numai dacă determinantul ei este zero:
 $$ \det(A - \lambda I) = 0 $$
-Aceasta este ecuația caracteristică a matricei $A$. Soluțiile acestei ecuații pentru $\lambda$ sunt valorile proprii. Odată ce o valoare proprie $\lambda$ este găsită, se substituie în $(A - \lambda I) \mathbf{v} = \mathbf{0}$ pentru a găsi vectorul propriu corespondent $\mathbf{v}$.
+Aceasta este ecuația caracteristică a matricei $$A$$. Soluțiile acestei ecuații pentru $$\lambda$$ sunt valorile proprii. Odată ce o valoare proprie $$\lambda$$ este găsită, se substituie în $$(A - \lambda I) \mathbf{v} = \mathbf{0}$$ pentru a găsi vectorul propriu corespondent $$\mathbf{v}$$.
 
 **Aplicații în Machine Learning**:
 
@@ -172,7 +172,7 @@ Aceasta este ecuația caracteristică a matricei $A$. Soluțiile acestei ecuați
 - **Analiza Spectrală**: Utilizată în procesarea imaginilor, analiza rețelelor și în unele algoritmi de clustering.
 - **Descompunerea Valorilor Singulare (SVD)**: Deși legată de valori proprii, SVD generalizează conceptul și la matricile non-pătratice și este extrem de importantă în reducerea dimensionalității și în sisteme de recomandare.
 
-**Matrici Simetrice**: Pentru o matrice simetrică ($A = A^T$), toate valorile proprii sunt reale, iar vectorii proprii corespunzători unor valori proprii distincte sunt ortogonali. Acest lucru este crucial în PCA, deoarece matricea de covarianță este simetrică.
+**Matrici Simetrice**: Pentru o matrice simetrică ($$A = A^T$$), toate valorile proprii sunt reale, iar vectorii proprii corespunzători unor valori proprii distincte sunt ortogonali. Acest lucru este crucial în PCA, deoarece matricea de covarianță este simetrică.
 
 ## Analiza matematica
 
@@ -184,7 +184,7 @@ $$f'(x) = \frac{\text{d} f}{\text{d} x}$$
 
 In problemele de optimizare este intalnit conceptul de **derivata partiala**. Acestea sunt folosite cand lucram cu o functie de mai multe variabile si dorim sa derivam in functie doar de una. Un exemplu:
 
-Fie $f : \mathbb{R}^2 \to \mathbb{R}$, $f(x, y) = x^2 + 5y$. Exista doua derivate partiale de ordin 1:
+Fie $$f : \mathbb{R}^2 \to \mathbb{R}$$, $$f(x, y) = x^2 + 5y$$. Exista doua derivate partiale de ordin 1:
 
 $$\frac{\partial f}{\partial x} = 2x, \quad \frac{\partial f}{\partial y} = 5$$
 
@@ -192,7 +192,7 @@ Derivam normal relatiile ce contin variabile dupa care derivam, si tratam restul
 
 $$\frac{\partial^2 f}{\partial x^2} = 2$$
 
-Pentru derivatele de ordin superior, putem deriva de fiecare data dupa alta variabila. De exemplu, avem $g : \mathbb{R}^2 \to \mathbb{R}$, $g(x, y) = x^2 y$. Avem:
+Pentru derivatele de ordin superior, putem deriva de fiecare data dupa alta variabila. De exemplu, avem $$g : \mathbb{R}^2 \to \mathbb{R}$$, $$g(x, y) = x^2 y$$. Avem:
 
 $$\frac{\partial g}{\partial x} = 2x y, \quad \frac{\partial g}{\partial y} = x^2$$
 
@@ -202,13 +202,13 @@ $$ \frac{\partial^2 g}{\partial x \partial y} = \frac{\partial}{\partial x} \lef
 
 $$ \frac{\partial^2 g}{\partial y \partial x} = \frac{\partial}{\partial y} \left( \frac{\partial g}{\partial x} \right) = \frac{\partial}{\partial y} (2xy) = 2x $$
 
-Observatie: in notatia utilizata, $\frac{\partial}{\partial x}$ reprezinta un operator ce primeste o functie si returneaza o alta functie.
+Observatie: in notatia utilizata, $$\frac{\partial}{\partial x}$$ reprezinta un operator ce primeste o functie si returneaza o alta functie.
 
 **Gradientul unei functii**
 
-În machine learning, lucrăm adesea cu funcții care au un număr mare de variabile. Pentru a înțelege cum o funcție se modifică în funcție de toate variabilele sale, introducem conceptul de **gradient**. Gradientul unei funcții scalare $f(\mathbf{x})$ unde $\mathbf{x} = [x_1, x_2, \ldots, x_n]^T$ este un vector de variabile, ce conține toate derivatele parțiale de ordin întâi ale funcției. Este notat cu $\nabla f$ sau $\operatorname{grad}(f)$.
+În machine learning, lucrăm adesea cu funcții care au un număr mare de variabile. Pentru a înțelege cum o funcție se modifică în funcție de toate variabilele sale, introducem conceptul de **gradient**. Gradientul unei funcții scalare $$f(\mathbf{x})$$ unde $$\mathbf{x} = [x_1, x_2, \ldots, x_n]^T$$ este un vector de variabile, ce conține toate derivatele parțiale de ordin întâi ale funcției. Este notat cu $$\nabla f$$ sau $$\operatorname{grad}(f)$$.
 
-Pentru o funcție $f: \mathbb{R}^n \to \mathbb{R}$, gradientul este definit ca:
+Pentru o funcție $$f: \mathbb{R}^n \to \mathbb{R}$$, gradientul este definit ca:
 
 $$
 \nabla f(\mathbf{x}) = \begin{bmatrix}
@@ -219,9 +219,9 @@ $$
 \end{bmatrix}
 $$
 
-Gradientul "arată" în direcția celei mai rapide creșteri a funcției într-un punct dat. Magnitudinea gradientului, adică $\|\nabla f\|$, reprezintă rata de creștere a funcției în acea direcție. În contextul optimizării, algoritmul de _gradient descent_ utilizează această proprietate, deplasându-se în direcția opusă gradientului pentru **a găsi minimul unei funcții**.
+Gradientul "arată" în direcția celei mai rapide creșteri a funcției într-un punct dat. Magnitudinea gradientului, adică $$\|\nabla f\|$$, reprezintă rata de creștere a funcției în acea direcție. În contextul optimizării, algoritmul de _gradient descent_ utilizează această proprietate, deplasându-se în direcția opusă gradientului pentru **a găsi minimul unei funcții**.
 
-Exemplu: Fie $f(x, y) = x^2 + y^2$. Gradientul este:
+Exemplu: Fie $$f(x, y) = x^2 + y^2$$. Gradientul este:
 
 $$
 \nabla f(x, y) = \begin{bmatrix}
@@ -233,13 +233,13 @@ $$
 \end{bmatrix}
 $$
 
-La punctul $(1, 1)$, gradientul este $\nabla f(1, 1) = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$. Acest vector indică direcția în care funcția crește cel mai rapid de la $(1, 1)$.
+La punctul $$(1, 1)$$, gradientul este $$\nabla f(1, 1) = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$$. Acest vector indică direcția în care funcția crește cel mai rapid de la $$(1, 1)$$.
 
 **Matricea Jacobiană**
 
-Pe lângă funcțiile scalare, în machine learning întâlnim și funcții vectoriale, adică funcții care mapează un vector la un alt vector. Pentru o funcție vectorială $\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$, unde $\mathbf{f}(\mathbf{x}) = [f_1(\mathbf{x}), f_2(\mathbf{x}), \ldots, f_m(\mathbf{x})]^T$ și fiecare $f_i$ este o funcție scalară de $\mathbf{x}$, derivata este reprezentată de matricea Jacobiană.
+Pe lângă funcțiile scalare, în machine learning întâlnim și funcții vectoriale, adică funcții care mapează un vector la un alt vector. Pentru o funcție vectorială $$\mathbf{f}: \mathbb{R}^n \to \mathbb{R}^m$$, unde $$\mathbf{f}(\mathbf{x}) = [f_1(\mathbf{x}), f_2(\mathbf{x}), \ldots, f_m(\mathbf{x})]^T$$ și fiecare $$f_i$$ este o funcție scalară de $$\mathbf{x}$$, derivata este reprezentată de matricea Jacobiană.
 
-Matricea Jacobiană $J$ este o matrice de dimensiune $m \times n$ ale cărei elemente sunt derivatele parțiale de ordin întâi ale componentelor funcției vectoriale:
+Matricea Jacobiană $$J$$ este o matrice de dimensiune $$m \times n$$ ale cărei elemente sunt derivatele parțiale de ordin întâi ale componentelor funcției vectoriale:
 
 $$
 J = \frac{\partial \mathbf{f}}{\partial \mathbf{x}} =
@@ -251,9 +251,9 @@ J = \frac{\partial \mathbf{f}}{\partial \mathbf{x}} =
 \end{bmatrix}
 $$
 
-Fiecare rând al matricei Jacobiane este gradientul unei componente scalare $f_i$ a funcției vectoriale $\mathbf{f}$. Dacă $m=1$, adică $\mathbf{f}$ este o funcție scalară, atunci Jacobianul este vectorul rând al gradientului (transpus).
+Fiecare rând al matricei Jacobiane este gradientul unei componente scalare $$f_i$$ a funcției vectoriale $$\mathbf{f}$$. Dacă $$m=1$$, adică $$\mathbf{f}$$ este o funcție scalară, atunci Jacobianul este vectorul rând al gradientului (transpus).
 
-Exemplu: Fie $\mathbf{f}: \mathbb{R}^2 \to \mathbb{R}^2$ definită prin $\mathbf{f}(x, y) = \begin{bmatrix} x^2 + y \\ 3x + y^2 \end{bmatrix}$. Componentele funcției sunt $f_1(x, y) = x^2 + y$ și $f_2(x, y) = 3x + y^2$. Matricea Jacobiană este:
+Exemplu: Fie $$\mathbf{f}: \mathbb{R}^2 \to \mathbb{R}^2$$ definită prin $$\mathbf{f}(x, y) = \begin{bmatrix} x^2 + y \\ 3x + y^2 \end{bmatrix}$$. Componentele funcției sunt $$f_1(x, y) = x^2 + y$$ și $$f_2(x, y) = 3x + y^2$$. Matricea Jacobiană este:
 
 $$
 J =
@@ -269,9 +269,9 @@ $$
 
 **Matricea Hessiană**
 
-Matricea Hessiană este o matrice pătratică de derivate parțiale de ordinul al doilea ale unei funcții scalare $f: \mathbb{R}^n \to \mathbb{R}$. Este notată cu $H$ sau $\nabla^2 f$.
+Matricea Hessiană este o matrice pătratică de derivate parțiale de ordinul al doilea ale unei funcții scalare $$f: \mathbb{R}^n \to \mathbb{R}$$. Este notată cu $$H$$ sau $$\nabla^2 f$$.
 
-Elementul $H_{ij}$ al matricei Hesse este definit ca:
+Elementul $$H_{ij}$$ al matricei Hesse este definit ca:
 
 $$
 H_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}
@@ -289,11 +289,11 @@ H =
 \end{bmatrix}
 $$
 
-O proprietate importantă a matricei Hesse (dacă derivatele parțiale mixte sunt continue) este că este simetrică, adică $\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$.
+O proprietate importantă a matricei Hesse (dacă derivatele parțiale mixte sunt continue) este că este simetrică, adică $$\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}$$.
 
 Matricea Hessiană oferă informații despre curbura funcției și este utilizată pentru a determina dacă un punct critic este un minim local, un maxim local sau un punct șa. În optimizare, al doilea ordin de derivare este fundamental pentru metode mai avansate decât gradient descent, cum ar fi metoda lui Newton.
 
-Exemplu: Fie $f(x, y) = x^3 + xy^2 - 2y$. Mai întâi calculăm derivatele parțiale de ordin întâi (gradientul):
+Exemplu: Fie $$f(x, y) = x^3 + xy^2 - 2y$$. Mai întâi calculăm derivatele parțiale de ordin întâi (gradientul):
 
 $$
 \frac{\partial f}{\partial x} = 3x^2 + y^2 \\
@@ -325,7 +325,7 @@ $$
 
 **Derivata unei funcții scalare în raport cu un vector:**
 
-Acesta este exact gradientul discutat anterior. Dacă $f: \mathbb{R}^n \to \mathbb{R}$, atunci derivata lui $f$ în raport cu vectorul $\mathbf{x}$ este:
+Acesta este exact gradientul discutat anterior. Dacă $$f: \mathbb{R}^n \to \mathbb{R}$$, atunci derivata lui $$f$$ în raport cu vectorul $$\mathbf{x}$$ este:
 
 $$
 \frac{\partial f}{\partial \mathbf{x}} = \nabla f = \begin{bmatrix}
@@ -336,25 +336,25 @@ $$
 \end{bmatrix}
 $$
 
-Exemplu: Fie $f(\mathbf{x}) = \mathbf{x}^T \mathbf{x}$, unde $\mathbf{x} \in \mathbb{R}^n$. Desfășurată, $f(\mathbf{x}) = x_1^2 + x_2^2 + \ldots + x_n^2$. Atunci:
+Exemplu: Fie $$f(\mathbf{x}) = \mathbf{x}^T \mathbf{x}$$, unde $$\mathbf{x} \in \mathbb{R}^n$$. Desfășurată, $$f(\mathbf{x}) = x_1^2 + x_2^2 + \ldots + x_n^2$$. Atunci:
 
 $$
 \frac{\partial f}{\partial x_i} = 2x_i
 $$
 
-Deci, $\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} 2x_1 \\ 2x_2 \\ \vdots \\ 2x_n \end{bmatrix} = 2\mathbf{x}$.
+Deci, $$\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} 2x_1 \\ 2x_2 \\ \vdots \\ 2x_n \end{bmatrix} = 2\mathbf{x}$$.
 
-Exemplu: Derivata unei forme liniare. Fie $f(\mathbf{x}) = \mathbf{a}^T \mathbf{x}$, unde $\mathbf{a}, \mathbf{x} \in \mathbb{R}^n$. Desfășurată, $f(\mathbf{x}) = a_1 x_1 + a_2 x_2 + \ldots + a_n x_n$. Atunci:
+Exemplu: Derivata unei forme liniare. Fie $$f(\mathbf{x}) = \mathbf{a}^T \mathbf{x}$$, unde $$\mathbf{a}, \mathbf{x} \in \mathbb{R}^n$$. Desfășurată, $$f(\mathbf{x}) = a_1 x_1 + a_2 x_2 + \ldots + a_n x_n$$. Atunci:
 
 $$
 \frac{\partial f}{\partial x_i} = a_i
 $$
 
-Deci, $\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix} = \mathbf{a}$.
+Deci, $$\frac{\partial f}{\partial \mathbf{x}} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix} = \mathbf{a}$$.
 
 **Derivata unei funcții scalare în raport cu o matrice:**
 
-Fie $f: \mathbb{R}^{m \times n} \to \mathbb{R}$ o funcție scalară care primește o matrice $X \in \mathbb{R}^{m \times n}$. Derivata lui $f$ în raport cu $X$ este o matrice de aceeași dimensiune ca $X$, ale cărei elemente sunt derivatele parțiale ale lui $f$ în raport cu fiecare element al lui $X$.
+Fie $$f: \mathbb{R}^{m \times n} \to \mathbb{R}$$ o funcție scalară care primește o matrice $$X \in \mathbb{R}^{m \times n}$$. Derivata lui $$f$$ în raport cu $$X$$ este o matrice de aceeași dimensiune ca $$X$$, ale cărei elemente sunt derivatele parțiale ale lui $$f$$ în raport cu fiecare element al lui $$X$$.
 
 $$
 \frac{\partial f}{\partial X} =
@@ -366,19 +366,19 @@ $$
 \end{bmatrix}
 $$
 
-Exemplu: Fie $f(X) = \operatorname{tr}(AX)$, unde $A \in \mathbb{R}^{m \times m}$ și $X \in \mathbb{R}^{m \times m}$. Știm că $\operatorname{tr}(AX) = \sum_{i=1}^m (AX)_{ii} = \sum_{i=1}^m \sum_{k=1}^m A_{ik} X_{ki}$. Pentru a găsi $\frac{\partial f}{\partial X_{jk}}$, analizăm termenii care conțin $X_{jk}$: Singurul termen din sumă care conține $X_{jk}$ este când $i=j$ și $k$ în suma interioară este elementul $X_{jk}$, adică $A_{jj}X_{jj}$ nu, asta e greșit. Corect: când $k=j$ și $i=j$ e o chestie, dar de fapt $k$ este indexul interior și $i$ indexul exterior. Termenul cu $X_{jk}$ apare doar când elementul din $A$ este $A_{ij}$ și $X_{jk}$ contribuie la $(AX)_{ik}$ doar dacă $k=j$.
+Exemplu: Fie $$f(X) = \operatorname{tr}(AX)$$, unde $$A \in \mathbb{R}^{m \times m}$$ și $$X \in \mathbb{R}^{m \times m}$$. Știm că $$\operatorname{tr}(AX) = \sum_{i=1}^m (AX)_{ii} = \sum_{i=1}^m \sum_{k=1}^m A_{ik} X_{ki}$$. Pentru a găsi $$\frac{\partial f}{\partial X_{jk}}$$, analizăm termenii care conțin $$X_{jk}$$: Singurul termen din sumă care conține $$X_{jk}$$ este când $$i=j$$ și $$k$$ în suma interioară este elementul $$X_{jk}$$, adică $$A_{jj}X_{jj}$$ nu, asta e greșit. Corect: când $$k=j$$ și $$i=j$$ e o chestie, dar de fapt $$k$$ este indexul interior și $$i$$ indexul exterior. Termenul cu $$X_{jk}$$ apare doar când elementul din $$A$$ este $$A_{ij}$$ și $$X_{jk}$$ contribuie la $$(AX)_{ik}$$ doar dacă $$k=j$$.
 
 $$
 \operatorname{tr}(AX) = \sum_{i=1}^m \sum_{k=1}^m A_{ik} X_{ki}
 $$
 
-Elementul $X_{jk}$ apare în termenul $A_{kj} X_{jk}$ pentru $i=j$ și $k$ pentru al doilea index.
+Elementul $$X_{jk}$$ apare în termenul $$A_{kj} X_{jk}$$ pentru $$i=j$$ și $$k$$ pentru al doilea index.
 
 $$
 \frac{\partial}{\partial X_{jk}} \left( \sum_{i=1}^m \sum_{l=1}^m A_{il} X_{li} \right) = A_{kj}
 $$
 
-Deci, $\frac{\partial f}{\partial X} = A^T$.
+Deci, $$\frac{\partial f}{\partial X} = A^T$$.
 
 ## Cheat Sheet - Formule Esențiale
 
@@ -390,7 +390,7 @@ Teorema lui Bayes:
 
 $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
 
-PDF-ul distributiei normale de $\mu$ si $\sigma^2$:
+PDF-ul distributiei normale de $$\mu$$ si $$\sigma^2$$:
 
 $$f_{\text{normal}}(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
@@ -398,17 +398,17 @@ $$f_{\text{normal}}(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigm
 
 | Denumire          | Formula                                                                                                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Media aritmetică  | $\bar{X}=\displaystyle\frac{1}{n}\sum_{i=1}^{n}X_{i}$                                                                                                                                |
-| Valoarea expected | $\mathbb{E}[X]=\sum xP(X=x)=\bar{X}$                                                                                                                                                 |
-| Covarianță        | $\mathrm{Cov}(X,Y)=\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]$                                                                                     |
-| Varianță          | $\mathrm{Var}(X)=\mathrm{Cov}(X,X)=\mathbb{E}[(X-\bar{X})^2]$                                                                                                                        |
-| Deviație standard | $\sigma=\sqrt{\mathrm{Var}(X)}$                                                                                                                                                      |
-| Corelația Pearson | $\rho_{X,Y}=\displaystyle\frac{\mathrm{Cov}(X,Y)}{\sigma_{X}\sigma_{Y}}=\frac{\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]}{\sqrt{\mathbb{E}[(X-\bar{X})^2]}\sqrt{\mathbb{E}[(Y-\bar{Y})^2]}}$ |
+| Media aritmetică  | $$\bar{X}=\displaystyle\frac{1}{n}\sum_{i=1}^{n}X_{i}$$                                                                                                                                |
+| Valoarea expected | $$\mathbb{E}[X]=\sum xP(X=x)=\bar{X}$$                                                                                                                                                 |
+| Covarianță        | $$\mathrm{Cov}(X,Y)=\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]$$                                                                                     |
+| Varianță          | $$\mathrm{Var}(X)=\mathrm{Cov}(X,X)=\mathbb{E}[(X-\bar{X})^2]$$                                                                                                                        |
+| Deviație standard | $$\sigma=\sqrt{\mathrm{Var}(X)}$$                                                                                                                                                      |
+| Corelația Pearson | $$\rho_{X,Y}=\displaystyle\frac{\mathrm{Cov}(X,Y)}{\sigma_{X}\sigma_{Y}}=\frac{\mathbb{E}[(X-\bar{X})(Y-\bar{Y})]}{\sqrt{\mathbb{E}[(X-\bar{X})^2]}\sqrt{\mathbb{E}[(Y-\bar{Y})^2]}}$$ |
 
 ### Algebră liniară
 
 | Denumire                  | Formula               |
 | ------------------------- | --------------------- |
-| Valori și vectori proprii | $Av=\lambda v$        |
-| Condiție valori proprii   | $\det(A-\lambda I)=0$ |
-| Condiție vectori proprii  | $(A-\lambda I)v=0$    |
+| Valori și vectori proprii | $$Av=\lambda v$$        |
+| Condiție valori proprii   | $$\det(A-\lambda I)=0$$ |
+| Condiție vectori proprii  | $$(A-\lambda I)v=0$$    |

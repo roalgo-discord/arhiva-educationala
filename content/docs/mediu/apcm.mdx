@@ -19,7 +19,7 @@ tags:
 
     Arborele parțial de cost minim (APCM) un graf parțial conex cu proprietatea
     că suma costurilor muchiilor este minimă și graful este un arbore (deci, are
-    $n-1$ muchii).
+    $$n-1$$ muchii).
 
 !!! note "Observație"
 
@@ -29,9 +29,9 @@ tags:
 
 !!! example "Exemplu"
 
-    De exemplu, dacă avem următorul graf: $n = 5$, $m = 6$ și următoarele muchii
-    de tip $(a, b, cost)$: $(1, 2, 3)$, $ (2, 3, 5)$, $ (2, 4, 2)$, $ (3, 4,
-    8)$, $ (5, 1, 7)$, $ (5, 4, 4)$, arborele parțial de cost minim va avea
+    De exemplu, dacă avem următorul graf: $$n = 5$$, $$m = 6$$ și următoarele muchii
+    de tip $$(a, b, cost)$$: $$(1, 2, 3)$$, $$ (2, 3, 5)$$, $$ (2, 4, 2)$$, $$ (3, 4,
+    8)$$, $$ (5, 1, 7)$$, $$ (5, 4, 4)$$, arborele parțial de cost minim va avea
     costul 14, alegându-se primele trei muchii și ultima.
 
 Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algoritmi sunt algoritmul lui Kruskal și algoritmul lui Prim. Există și alți algoritmi mai puțin cunoscuți, precum algoritmul lui Boruvka. Acest articol va acoperi cei trei algoritmi menționați.
@@ -54,7 +54,7 @@ Pentru a afla APM-ul, există mai mulți algoritmi, dar cei mai folosiți algori
     Dacă sunt mai multe muchii cu cost egal, nu are importanță care este aleasă,
     rezultatul fiind identic.
 
-Un lucru care se poate remarca este faptul că acest algoritm este centrat în jurul muchiilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul nostru (sortarea lor, urmată de verificarea individuală). Deoarece sortarea muchiilor este de departe cea mai costisitoare parte a algoritmului, complexitatea finală a algoritmului va fi $\mathcal{O}(m \log m)$.
+Un lucru care se poate remarca este faptul că acest algoritm este centrat în jurul muchiilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul nostru (sortarea lor, urmată de verificarea individuală). Deoarece sortarea muchiilor este de departe cea mai costisitoare parte a algoritmului, complexitatea finală a algoritmului va fi $$\mathcal{O}(m \log m)$$.
 
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Kruskal.
 
@@ -160,7 +160,7 @@ int main() {
     Dacă sunt mai multe noduri cu cost egal, nu are importanță care este aleasĂ,
     rezultatul fiind identic.
 
-Un lucru care se poate remarca este faptul că acest algoritm este centrat în jurul nodurilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul nostru (procesarea lor, urmată de verificarea muchiilor adiacente fiecărui nod). Deoarece algoritmul este similar în stil cu algoritmul lui Dijkstra, complexitatea finală va fi aceeași cu cea de la Dijkstra, $\mathcal{O}((n+m) \log n)$
+Un lucru care se poate remarca este faptul că acest algoritm este centrat în jurul nodurilor, operațiile făcute cu acestea fiind esențiale pentru algoritmul nostru (procesarea lor, urmată de verificarea muchiilor adiacente fiecărui nod). Deoarece algoritmul este similar în stil cu algoritmul lui Dijkstra, complexitatea finală va fi aceeași cu cea de la Dijkstra, $$\mathcal{O}((n+m) \log n)$$
 
 Aici puteți găsi o implementare în limbajul C++ a algoritmului lui Prim.
 
@@ -237,9 +237,9 @@ int main() {
 !!! note "Observație"
 
     La fiecare iterare prin graf, numărul de componente conexe se înjumătățește.
-    La început sunt $n - 1$ componente conexe, deci se vor face $\mathcal{O}(\log n)$
-    iterații. Astfel, complexitatea algoritmului este $\mathcal{O}(m \log n)$, unde $m$
-    este numărul de muchii, iar $n$ este numărul de noduri.
+    La început sunt $$n - 1$$ componente conexe, deci se vor face $$\mathcal{O}(\log n)$$
+    iterații. Astfel, complexitatea algoritmului este $$\mathcal{O}(m \log n)$$, unde $$m$$
+    este numărul de muchii, iar $$n$$ este numărul de noduri.
 
 !!! note "Observație"
 
@@ -391,8 +391,8 @@ int main() {
 
 Algoritmul lui Boruvka poate fi folosit și atunci când avem prea multe muchii ca să le putem procesa pe toate, dar putem afla pentru fiecare nod cea mai bună muchie folositoare. Un exemplu de astfel de problemă este problema [CF 888G](https://codeforces.com/problemset/problem/888/G).
 
-Când vorbim despre algoritmii lui Kruskal, respectiv al lui Prim, niciunul dintre ei nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $M
-\approx N$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $\mathcal{O}(n^2)$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
+Când vorbim despre algoritmii lui Kruskal, respectiv al lui Prim, niciunul dintre ei nu este mai bun mereu decât celălalt. Pe de o parte, Kruskal se dovedește a fi mult mai bun atunci când este vorba de grafuri rare, cu $$M
+\approx N$$, deoarece constanta de la sortare este mult mai bună decât cea de la seturi. Totuși, dacă graful este foarte dens, algoritmul lui Prim este superior, iar în cazul unor grafuri complete, de multe ori este mai bine să implementăm varianta sa în $$\mathcal{O}(n^2)$$, similară cu cea prezentată la Dijkstra, pentru a rezolva probleme precum [cablaj](https://www.infoarena.ro/problema/cablaj).
 
 În condiții de concurs, dacă toți algoritmii vor intra în limita de timp, Kruskal este mult mai ușor de scris și mai practic, dar cunoașterea algoritmului lui Prim este foarte utilă, mai ales dat fiind factorul de similaritate cu Dijkstra. De asemenea, algoritmul lui Boruvka este și el foarte important.
 

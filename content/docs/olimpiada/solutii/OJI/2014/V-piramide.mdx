@@ -13,25 +13,25 @@ tags:
 
 ## Cerința 1
 
-Observăm că a $i$-a piramidă are $i+1$ nivele, adică are $1 + 2 + .. + (i + 1) = \frac{(i + 1) \cdot (i + 2)}{2}$ elemente.
+Observăm că a $$i$$-a piramidă are $$i+1$$ nivele, adică are $$1 + 2 + .. + (i + 1) = \frac{(i + 1) \cdot (i + 2)}{2}$$ elemente.
 
-Prima priamidă are de la $1$ la $\frac{2 \cdot 3}{2}$, a doua de la $\frac{2 \cdot 3}{2} + 1$ la $\frac{3 \cdot 4}{2}$, și așa mai departe.
+Prima priamidă are de la $$1$$ la $$\frac{2 \cdot 3}{2}$$, a doua de la $$\frac{2 \cdot 3}{2} + 1$$ la $$\frac{3 \cdot 4}{2}$$, și așa mai departe.
 
-Putem să căutăm piramida brut, mereu adunând câte $\frac{i \cdot (i + 1)}{2}$ la numărul de cartonașe. Totuși, trebuie să verificăm dacă nu cumva am trecut peste limita de $n$ cartonașe.
+Putem să căutăm piramida brut, mereu adunând câte $$\frac{i \cdot (i + 1)}{2}$$ la numărul de cartonașe. Totuși, trebuie să verificăm dacă nu cumva am trecut peste limita de $$n$$ cartonașe.
 
 ## Cerința 2
 
-Procedăm similar cu ce am făcut la cerința $1$. Am putea să căutăm pe ce piramidă s-ar afla cartonașul $n$ și să scădem eventual $1$ din acest număr, dacă nu va fi completă.
+Procedăm similar cu ce am făcut la cerința $$1$$. Am putea să căutăm pe ce piramidă s-ar afla cartonașul $$n$$ și să scădem eventual $$1$$ din acest număr, dacă nu va fi completă.
 
 ## Cerința 3
 
-Vom menține numărul total de cartonașe folosite în algoritmul de la cerința $2$ și vom scădea $n$ din acest număr.
+Vom menține numărul total de cartonașe folosite în algoritmul de la cerința $$2$$ și vom scădea $$n$$ din acest număr.
 
 ## Cerința 4
 
-Din moment ce $1 \leq c_1 \lt c_2 \lt ... \lt c_k \leq n$, înseamnă că indicele piramidelor din care fac parte cartonașele albe vor fi crescătoare.
+Din moment ce $$1 \leq c_1 \lt c_2 \lt ... \lt c_k \leq n$$, înseamnă că indicele piramidelor din care fac parte cartonașele albe vor fi crescătoare.
 
-Dacă la elementul anterior am procesat până la piramida $i$, atunci putem începe procesarea direct de la $i$, din nou, deoarece elementele sunt strict crescătoare.
+Dacă la elementul anterior am procesat până la piramida $$i$$, atunci putem începe procesarea direct de la $$i$$, din nou, deoarece elementele sunt strict crescătoare.
 
 La final, trebuie doar să vedem numărul maxim de indici de piramide egali. Din moment ce acești indici sunt crescători, atunci putem să vedem numărul maxim de astfel de indici egali pe poziții consecutive. Pentru mai multe detalii vedeți codul sursă.
 

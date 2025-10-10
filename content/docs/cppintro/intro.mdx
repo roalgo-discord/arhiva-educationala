@@ -8,6 +8,9 @@ tags:
   - introducere
 ---
 
+
+
+
 !!! note "Observație"
 
     Dacă nu ți-ai instalat un compilator sau un editor, te invităm să accesezi mai
@@ -64,8 +67,8 @@ Limbajul C++ a fost creat de Bjarne Stroustrup în 1979 ca o extindere a limbaju
 
     Pentru a explica diverse părți din cod, vom folosi de-a lungul arhivei
     comentariile, acestea fiind o instrucțiune din limbajul C++. Pentru a pune un
-    comentariu pe un singur rând, vom folosi `#!cpp //`, iar pentru a comenta mai
-    multe rânduri, vom folosi perechea `#!cpp /* */`.
+    comentariu pe un singur rând, vom folosi `//`, iar pentru a comenta mai
+    multe rânduri, vom folosi perechea `/* */`.
 
 ```cpp
 --8<-- "cppintro/intro/intro.cpp"
@@ -75,7 +78,7 @@ Limbajul C++ a fost creat de Bjarne Stroustrup în 1979 ca o extindere a limbaju
 
 După cum observi, majoritatea liniilor de cod din acest program se încheie cu un semn de punctuație „;” (punct și virgulă). Acesta semnalează finalul instrucțiunii respective. Excepție fac liniile în care declarăm biblioteci, funcții, structuri alternative și repetitive.
 
-De asemenea, folosim acolade pentru a grupa blocuri de cod. Acestea ajută la îmbunătățirea lizibilității programului și sunt necesare pentru a marca instrucțiunile subordonate structurilor alternative (de ex., `#!cpp if`) și repetitive (de ex., `#!cpp while`).
+De asemenea, folosim acolade pentru a grupa blocuri de cod. Acestea ajută la îmbunătățirea lizibilității programului și sunt necesare pentru a marca instrucțiunile subordonate structurilor alternative (de ex., `if`) și repetitive (de ex., `while`).
 
 Un alt element foarte important care, deși nu e obligatoriu, este foarte util și face scrierea codurilor mult mai ușoară, reprezintă spațierea instrucțiunilor. Chiar dacă vom intra ulterior în detaliu în ceea ce privește coding style-ul, acesta este un element de bază pentru a scrie coduri cât mai de calitate, obicei care dacă îl deprindeți de la început, vă va fi mult mai ușor să îl adaptați oricărui limbaj de programare pe care îl veți folosi.
 
@@ -94,16 +97,16 @@ Atunci când programul este corect, compilatorul va genera un fișier obiect (.o
 
 ### Inițializarea programului
 
-Primul element pe care îl întâlnim este linia `#!cpp #include <iostream>`, care importă o bibliotecă. Aceste biblioteci sunt colecții de funcții și clase ce ne permit să reutilizăm cod deja scris, fără a-l regenera. Un echivalent în viața de zi reprezintă utilizarea unei cărți de rețete pentru prepararea unui fel de mâncare, astfel noi putem folosi acele metode fără a fi nevoie să le reinventăm.
+Primul element pe care îl întâlnim este linia `#include <iostream>`, care importă o bibliotecă. Aceste biblioteci sunt colecții de funcții și clase ce ne permit să reutilizăm cod deja scris, fără a-l regenera. Un echivalent în viața de zi reprezintă utilizarea unei cărți de rețete pentru prepararea unui fel de mâncare, astfel noi putem folosi acele metode fără a fi nevoie să le reinventăm.
 
 !!! note "Observație"
 
-    Există și biblioteca `#!cpp <bits/stdc++.h>`, care include toate bibliotecile
+    Există și biblioteca `<bits/stdc++.h>`, care include toate bibliotecile
     necesare în programul tău. Deși această abordare este recomandată doar la
     competiții de algoritmică (de exemplu, olimpiade), există dezavantaje precum
     un timp mai mare de compilare.
 
-Următoarea linie, `#!cpp using namespace std;` ne permite să folosim direct toate elementele din spațiul de nume standard (standard namespace). **Un namespace** (spațiu de nume) este un mecanism de organizare a codului, care face posibilă gruparea funcțiilor, variabilelor, claselor și altor identificatori sub un nume comun. Aceasta ajută la evitarea conflictelor între nume, mai ales atunci când se folosesc biblioteci multiple care ar putea să definească aceleași identificatori.
+Următoarea linie, `using namespace std;` ne permite să folosim direct toate elementele din spațiul de nume standard (standard namespace). **Un namespace** (spațiu de nume) este un mecanism de organizare a codului, care face posibilă gruparea funcțiilor, variabilelor, claselor și altor identificatori sub un nume comun. Aceasta ajută la evitarea conflictelor între nume, mai ales atunci când se folosesc biblioteci multiple care ar putea să definească aceleași identificatori.
 
 !!! note "Observație"
 
@@ -111,9 +114,9 @@ Următoarea linie, `#!cpp using namespace std;` ne permite să folosim direct to
     eventual împreună cu alte biblioteci și namespace-uri, detalii pe care le vom
     lăsa ulterior pe măsură ce vă veți obișnui mai bine cu limbajul în sine.
 
-### Funcția `#!cpp main()`
+### Funcția `main()`
 
-Funcția `#!cpp int main()` este esențială în orice program C++, fiind prima funcție apelată de compilator.
+Funcția `int main()` este esențială în orice program C++, fiind prima funcție apelată de compilator.
 
 Ea este cea în care vom scrie toate instrucțiunile, inclusiv așa cum veți vedea într-un articol ulterior, cele care vor fi folosite pentru a apela funcții auxiliare.
 

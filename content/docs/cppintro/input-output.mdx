@@ -20,9 +20,9 @@ Aceste metode pot fi utilizate împreună într-un mod hibrid, fiind foarte frec
 
 ## Intrarea și ieșirea standard
 
-Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură", respectiv a afișa "pe ecran"), vom avea nevoie de biblioteca `#!cpp <iostream>`.
+Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură", respectiv a afișa "pe ecran"), vom avea nevoie de biblioteca `<iostream>`.
 
-Citirea datelor se face folosind `#!cpp std::cin` și operatorul `#!cpp >>`, iar afișarea datelor se face folosind `#!cpp std::cout` și operatorul `#!cpp <<`, câteva exemple fiind regăsite mai jos.
+Citirea datelor se face folosind `std::cin` și operatorul `>>`, iar afișarea datelor se face folosind `std::cout` și operatorul `<<`, câteva exemple fiind regăsite mai jos.
 
 !!! note "Observație"
 
@@ -36,27 +36,27 @@ După ce compilați programul și nu apar erori, va trebui să rulați executabi
 --8<-- "cppintro/io/io1.cpp"
 ```
 
-Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
+Dacă $$n = 9$$, $$a = 11$$ și $$b = 14$$, programul va afișa următoarele date:
 
 ```text
 911 14
 9
 ```
 
-!!! note "`#!cpp endl` vs `#!cpp '\n'`"
+!!! note "`endl` vs `'\n'`"
 
     Ați observat probabil că pentru a introduce o linie nouă, am folosit atât
-    `#!cpp '\n'` cât și `#!cpp endl`. Deși par a fi echivalente, există
-    diferențe semnificative. Instrucțiunea `#!cpp endl` nu doar că introduce o
+    `'\n'` cât și `endl`. Deși par a fi echivalente, există
+    diferențe semnificative. Instrucțiunea `endl` nu doar că introduce o
     linie nouă, dar și curăță buffer-ul (unde sunt stocate temporar datele
-    afișate), ceea ce o face mai lentă decât `#!cpp '\n'`. Acest lucru devine
+    afișate), ceea ce o face mai lentă decât `'\n'`. Acest lucru devine
     important atunci când lucrăm cu un volum mare de date.
 
 ## Citirea și afișarea folosind fișiere
 
-Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `#!cpp <fstream>`.
+Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `<fstream>`.
 
-Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul `#!cpp ifstream` declară un flux de citire din fișier, `#!cpp ofstream` declară unul de scriere în fișier.
+Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul `ifstream` declară un flux de citire din fișier, `ofstream` declară unul de scriere în fișier.
 
 ```cpp
 --8<-- "cppintro/io/io2.cpp"
@@ -64,11 +64,11 @@ Mai întâi, trebuie să specificăm programului de unde să preia datele și de
 
 !!! note "Numele fișierelor"
 
-    Deși aici am folosit `#!cpp fin` și `#!cpp fout` pentru a putea menționa
+    Deși aici am folosit `fin` și `fout` pentru a putea menționa
     aceste fluxuri (stream-uri) de date, putem folosi orice nume vrem atâta timp
     cât nu avem și alte variabile numite astfel. În mod particular, putem numi
-    acestea chiar și `#!cpp cin`, respectiv `#!cpp cout` atâta timp cât nu avem
-    inclusă biblioteca `#!cpp <iostream>`.
+    acestea chiar și `cin`, respectiv `cout` atâta timp cât nu avem
+    inclusă biblioteca `<iostream>`.
 
 Programul de mai sus va fi identic, singura diferență fiind adăugarea facilităților care ne permit să citim datele din fișiere.
 
@@ -79,26 +79,26 @@ Programul de mai sus va fi identic, singura diferență fiind adăugarea facilit
 !!! note "Citirea unui număr necunoscut de valori"
 
     Dacă avem de citit un număr necunoscut de valori, trebuie să folosim
-    structura repetitivă `#!cpp while`, așa cum veți observa în [articolul
+    structura repetitivă `while`, așa cum veți observa în [articolul
     nostru](./loops.md#structura-while) pe această
     temă.
 
 ## Afișarea specializată
 
-În unele probleme, suntem nevoiți să afișăm datele respectând un oarecare format (de exemplu, să se afișeze cu exact $x$ zecimale). Pentru a opera acest lucru, este necesară cunoașterea bibliotecii `#!cpp <iomanip>`.
+În unele probleme, suntem nevoiți să afișăm datele respectând un oarecare format (de exemplu, să se afișeze cu exact $$x$$ zecimale). Pentru a opera acest lucru, este necesară cunoașterea bibliotecii `<iomanip>`.
 
 Această bibliotecă poate fi folosită și pentru a prelucra datele într-o manieră mai prietenoasă cu cititorii, folosind funcțiile de lungime, aliniere sau umplere:
 
-- lungimea: `#!cpp setw(int n)`, numărul de caractere folosit pentru afișarea datelor;
-- alinierea: `#!cpp left`, `#!cpp right`, `#!cpp internal`;
-- caracterul de umplere: `#!cpp setfill(char f)`, caracterele care să fie folosite pentru a umple un element afișat;
-- baza de numerație (`#!cpp dec`, `#!cpp oct`, `#!cpp hex`) în care sunt scrise valorile de tip întreg. În cele mai multe cazuri, nu vom avea nevoie să afișăm altfel decât în formatul zecimal.
+- lungimea: `setw(int n)`, numărul de caractere folosit pentru afișarea datelor;
+- alinierea: `left`, `right`, `internal`;
+- caracterul de umplere: `setfill(char f)`, caracterele care să fie folosite pentru a umple un element afișat;
+- baza de numerație (`dec`, `oct`, `hex`) în care sunt scrise valorile de tip întreg. În cele mai multe cazuri, nu vom avea nevoie să afișăm altfel decât în formatul zecimal.
 
 Ne vom concentra în cele ce urmează pe funcția `setprecision`, fiind de departe cea mai relevantă funcție dintre cele pe care le folosim în algoritmică.
 
-Sintaxa ei este `#!cpp setprecision(int n)`, unde $n$ este numărul de cifre folosite pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul total de cifre sau numărul de cifre de după punctul zecimal.
+Sintaxa ei este `setprecision(int n)`, unde $$n$$ este numărul de cifre folosite pentru afișarea valorilor reale; în funcție de context, poate reprezenta numărul total de cifre sau numărul de cifre de după punctul zecimal.
 
-De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $\pi$, putem face asta folosind următoarele instrucțiuni:
+De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $$\pi$$, putem face asta folosind următoarele instrucțiuni:
 
 ```cpp
 --8<-- "cppintro/io/io4.cpp"
@@ -106,8 +106,8 @@ De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $\pi$, putem face
 
 !!! note "Observație"
 
-    Fără manipulatorul `#!cpp fixed`, `#!cpp setprecision` controlează numărul
-    total de cifre. După aplicarea lui `#!cpp fixed`, controlează doar numărul
+    Fără manipulatorul `fixed`, `setprecision` controlează numărul
+    total de cifre. După aplicarea lui `fixed`, controlează doar numărul
     de zecimale afişate.
 
 ## Concluzii
