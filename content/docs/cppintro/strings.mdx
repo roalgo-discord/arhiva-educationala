@@ -29,17 +29,17 @@ Standard Code for Information Interchange). Caracterele din intervalul
 
 Printre cele mai importante coduri ASCII sunt:
 
-* **32** (spațiu)
-* **48-57**: cifrele 0-9
-* **65-90**: literele mari ale alfabetului englez (A-Z)
-* **97-122**: literele mici ale alfabetului englez (a-z)
+- **32** (spațiu)
+- **48-57**: cifrele 0-9
+- **65-90**: literele mari ale alfabetului englez (A-Z)
+- **97-122**: literele mici ale alfabetului englez (a-z)
 
 ### Transformări între litere și cifre
 
 Putem simplifica lucrul cu caractere folosind valorile ASCII, fără a gestiona direct codurile. De exemplu:
 
-* **Cifre**: Scădeți '0' din caracter.
-* **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
+- **Cifre**: Scădeți '0' din caracter.
+- **Litere**: Adăugați sau scădeți 32 pentru a transforma între litere mari și mici.
 
 ```cpp
 --8<-- "cppintro/strings/strings01.cpp"
@@ -96,7 +96,7 @@ Verifică dacă un caracter anume este una din cele zece cifre zecimale: (012345
 
 #### Parametri
 
-* `ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -116,12 +116,12 @@ int alpha(int ch);
 
 Verifică dacă un caracter anume este alfabetic. Următoarele caractere sunt considerate alfabetice:
 
-* literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
-* literele mici abcdefghijklmnopqrstuvwxyz
+- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- literele mici abcdefghijklmnopqrstuvwxyz
 
 #### Parametri
 
-* `ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -141,15 +141,15 @@ int isalnum(int ch);
 
 Verifică dacă un caracter anume este alfanumeric. Următoarele caractere sunt considerate alfanumerice:
 
-* literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
-* literele mici abcdefghijklmnopqrstuvwxyz
-* cifrele 0123456789
+- literele mari ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- literele mici abcdefghijklmnopqrstuvwxyz
+- cifrele 0123456789
 
 !!! note "Observație" `isalnum(ch)` este echivalent cu `isdigit(ch) && isalpha(ch)`.
 
 #### Parametri
 
-* `ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -172,7 +172,7 @@ Verifică dacă un caracter anume este clasificat ca fiind unul mic, respectiv m
 
 #### Parametri
 
-* `ch` - caracterul de clasificat
+- `ch` - caracterul de clasificat
 
 #### Valoare returnată
 
@@ -197,7 +197,7 @@ Convertește un caracter dat într-o literă mare, respectiv mică, respectiv ma
 
 #### Parametri
 
-* `ch` - caracterul de convertit
+- `ch` - caracterul de convertit
 
 #### Valoare returnată
 
@@ -303,9 +303,9 @@ Funcțiile `strchr` și `strrchr` returnează un pointer la prima apariție, res
 
 Funcția `strcmp` este folosită pentru a compara două șiruri de caractere. Aceasta poate returna 3 valori:
 
-* `0` - dacă șirurile sunt exact la fel;
-* `-1` sau o valoare mai mică decât 0 - dacă primul șir este înaintea celuilalt, alfabetic vorbind;
-* `1` sau o valoare mai mare decât 0 - dacă primul șir este după celălalt, alfabetic vorbind.
+- `0` - dacă șirurile sunt exact la fel;
+- `-1` sau o valoare mai mică decât 0 - dacă primul șir este înaintea celuilalt, alfabetic vorbind;
+- `1` sau o valoare mai mare decât 0 - dacă primul șir este după celălalt, alfabetic vorbind.
 
 ```cpp
 --8<-- "cppintro/strings/strings05.cpp:strcmp"
@@ -371,16 +371,16 @@ Cunoașterea funcțiilor specifice este esențială deoarece foarte multe între
 
 ## Probleme suplimentare
 
-* [Prelucrări elementare pe șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/11/Siruri-de-caractere-prelucrari-elementare-pe-siruri-de-caractere)
-* [Funcții predefinite cu șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/23/Siruri-de-caractere-functii-predefinite-cu-siruri-de-caractere)
-* [Probleme diverse - pbinfo](https://www.pbinfo.ro/probleme/categorii/84/Siruri-de-caractere-probleme-diverse)
-* [Probleme cu stringuri de pe kilonova](https://kilonova.ro/tags/303)
+- [Prelucrări elementare pe șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/11/Siruri-de-caractere-prelucrari-elementare-pe-siruri-de-caractere)
+- [Funcții predefinite cu șiruri de caractere - pbinfo](https://www.pbinfo.ro/probleme/categorii/23/Siruri-de-caractere-functii-predefinite-cu-siruri-de-caractere)
+- [Probleme diverse - pbinfo](https://www.pbinfo.ro/probleme/categorii/84/Siruri-de-caractere-probleme-diverse)
+- [Probleme cu stringuri de pe kilonova](https://kilonova.ro/tags/303)
 
 ## Resurse suplimentare
 
-* [Clasificarea caracterelor - geeksforgeeks](https://www.geeksforgeeks.org/character-classification-c-cctype/)
-* [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
-* [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
-* [Șiruri de caractere C++ - pbinfo](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)
-* [Stringuri - Infogym](https://events.info.uaic.ro/infogim/2017/lectii/78/783_stringuri.pdf)
-* [Siruri de caractere în C++ - infoscience 3x](http://infoscience.3x.ro/c++/siruridecaractere.htm)
+- [Clasificarea caracterelor - geeksforgeeks](https://www.geeksforgeeks.org/character-classification-c-cctype/)
+- [Operații specifice datelor de tip char - CPPI Sync](https://cppi.sync.ro/materia/operatii_specifice_datelor_de_tip_char.html)
+- [Șiruri de caractere, citire, parcurgeri - CPPI Sync](https://cppi.sync.ro/materia/siruri_de_caractere_citire_parcurgeri.html)
+- [Șiruri de caractere C++ - pbinfo](https://www.pbinfo.ro/articole/19/siruri-de-caractere-in-cpp)
+- [Stringuri - Infogym](https://events.info.uaic.ro/infogim/2017/lectii/78/783_stringuri.pdf)
+- [Siruri de caractere în C++ - infoscience 3x](http://infoscience.3x.ro/c++/siruridecaractere.htm)

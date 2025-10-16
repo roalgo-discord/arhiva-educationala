@@ -21,10 +21,10 @@ Ca o remarcă, ne vom concentra mai ales pe probleme care nu pot fi rezolvate fo
 
 În general, pentru a rezolva aceste tipuri de probleme, ne vom concentra pe câteva tehnici care se regăsesc în mare parte dintre aceste probleme. Dintre cele mai frecvente variații, întâlnim următoarele în mod frecvent în acest tip de probleme:
 
-* Adăugarea pe rând a valorilor $1, 2, 3, \dots, n$ în permutare pe diverse poziții.
-* Adăugarea pe rând a valorilor $n, n-1, n-2, \dots, 1$ în permutare pe diverse poziții.
-* Construirea secvențială a permutării folosindu-ne de ordinea relativă.
-* Aflarea numărului de soluții greșite și scăderea lor din cele corecte.
+- Adăugarea pe rând a valorilor $1, 2, 3, \dots, n$ în permutare pe diverse poziții.
+- Adăugarea pe rând a valorilor $n, n-1, n-2, \dots, 1$ în permutare pe diverse poziții.
+- Construirea secvențială a permutării folosindu-ne de ordinea relativă.
+- Aflarea numărului de soluții greșite și scăderea lor din cele corecte.
 
 În cele ce urmează, vom prezenta diverse exemple de probleme și modul de a aplica aceste principii. Uneori, vom avea nevoie de calcularea altor recurențe, iar cunoașterea formulelor de la [combinatorică](../mediu/intro-combinatorics.mdx) este obligatorie.
 
@@ -141,8 +141,8 @@ Un prim pas ar fi să ne gândim la păstrarea numărului de valori mai mari, re
 
 Pentru a trece de la această stare la următoarele, vom avea două cazuri în funcție de semnul de la poziția curentă.
 
-* Dacă semnul este $<$, atunci vom pute actualiza toate valorile de forma $dp[i][x][bg + sm - x - 1]$, cu $x < sm$ (fiecare valoare nou adăugată este mai mică decât valoarea curentă în ordinea relativă, deci poate fi mai mare decât un număr mai mic de valori).
-* Pe de altă parte, dacă semnul este $>$, atunci vom pute actualiza toate valorile de forma $dp[i][sm + bg - x - 1][x]$, cu $x < bg$ (fiecare valoare nou adăugată este mai mare decât valoarea curentă în ordinea relativă, deci poate fi mai mică decât un număr mai mare de valori).
+- Dacă semnul este $<$, atunci vom pute actualiza toate valorile de forma $dp[i][x][bg + sm - x - 1]$, cu $x < sm$ (fiecare valoare nou adăugată este mai mică decât valoarea curentă în ordinea relativă, deci poate fi mai mare decât un număr mai mic de valori).
+- Pe de altă parte, dacă semnul este $>$, atunci vom pute actualiza toate valorile de forma $dp[i][sm + bg - x - 1][x]$, cu $x < bg$ (fiecare valoare nou adăugată este mai mare decât valoarea curentă în ordinea relativă, deci poate fi mai mică decât un număr mai mare de valori).
 
 Din păcate, complexitatea acestei abordări este $\mathcal{O}(n^4)$, putând fi redusă la $\mathcal{O}(n^3)$ folosind sume parțiale.
 
@@ -357,15 +357,15 @@ Aceste tipuri de probleme combină două capitole, programarea dinamică și com
 
 ## Probleme suplimentare
 
-* [infoarena perm3](https://infoarena.ro/problema/perm3)
-* [ONI 2008 pviz](https://kilonova.ro/problems/164)
-* [ONI 2010 kmax](https://kilonova.ro/problems/180/)
-* [Codeforces Greg and Caves](https://codeforces.com/contest/295/problem/D)
-* [Codeforces Positions in Permutations](https://codeforces.com/problemset/problem/285/E)
-* [Lot 2002 doipatru](https://infoarena.ro/problema/doipatru)
-* [infoarena perm4](https://infoarena.ro/problema/perm4)
+- [infoarena perm3](https://infoarena.ro/problema/perm3)
+- [ONI 2008 pviz](https://kilonova.ro/problems/164)
+- [ONI 2010 kmax](https://kilonova.ro/problems/180/)
+- [Codeforces Greg and Caves](https://codeforces.com/contest/295/problem/D)
+- [Codeforces Positions in Permutations](https://codeforces.com/problemset/problem/285/E)
+- [Lot 2002 doipatru](https://infoarena.ro/problema/doipatru)
+- [infoarena perm4](https://infoarena.ro/problema/perm4)
 
 ## Resurse suplimentare
 
-* $$[Tutorial] Non-trivial DP Tricks and Techniques - Codeforces](https://codeforces.com/blog/entry/47764)
+- $$[Tutorial] Non-trivial DP Tricks and Techniques - Codeforces](https://codeforces.com/blog/entry/47764)
   $$

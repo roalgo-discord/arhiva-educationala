@@ -31,8 +31,8 @@ Vom simula efectiv jocul. Pentru a afla dacă o subsecvență este sau nu riscan
 
 Pentru a optimiza determinarea elementului majoritar din soluția precedentă, vom folosi un vector de frecvență, similar soluției 2 de la cerința 1. Să presupunem că ajungem pe subsecvența $[s - v, s]$ și știm dacă aceasta conține sau nu element majoritar, care este acesta și numărul său de apariții. Avem două cazuri:
 
-* Secvența este riscantă. În acest caz știm că există element majoritar (fie acesta $E$). Jucătorul va micșora vizibilitatea, astfel excluzând elementul de pe poziția $s - v$. Datorită faptului că elementul $E$ avea $1 + (v + 1) / 2$ apariții în subsecvența $[s - v, s]$, acesta rămâne elementul cu număr maxim de apariții și în subsecvența $[s - v + 1, s]$, deci ar fi posibil ca acesta să rămână element majoritar sau să nu mai existe element majoritar.
-* Secvența nu este riscantă. În acest caz știm că nu există element majoritar. Când adăugăm un element în subsecvență avem două cazuri posibile. Fie acesta are acum numărul necesar de apariții, caz în care actualizăm $E$, fie acesta nu are suficiente apariții, caz în care nu avem element majoritar.
+- Secvența este riscantă. În acest caz știm că există element majoritar (fie acesta $E$). Jucătorul va micșora vizibilitatea, astfel excluzând elementul de pe poziția $s - v$. Datorită faptului că elementul $E$ avea $1 + (v + 1) / 2$ apariții în subsecvența $[s - v, s]$, acesta rămâne elementul cu număr maxim de apariții și în subsecvența $[s - v + 1, s]$, deci ar fi posibil ca acesta să rămână element majoritar sau să nu mai existe element majoritar.
+- Secvența nu este riscantă. În acest caz știm că nu există element majoritar. Când adăugăm un element în subsecvență avem două cazuri posibile. Fie acesta are acum numărul necesar de apariții, caz în care actualizăm $E$, fie acesta nu are suficiente apariții, caz în care nu avem element majoritar.
 
 Complexitatea acestei soluții este $\mathcal{O}(N)$ timp și $\mathcal{O}(N)$ memorie. Există și alte soluții, atât pentru punctaj integral, cât şi pentru punctaje parțiale.
 

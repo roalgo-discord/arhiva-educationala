@@ -24,8 +24,8 @@ Pentru a rezolva această problemă, ne putem gândi la un caz foarte simplu, ș
 
 Astfel, putem deduce două tipuri de cazuri pe care le putem considera în dinamica noastră, ceea ce motivează prezența unei dinamici cu două dimensiuni. În mod formal, vom avea următoarele definiții:
 
-* $dp[0][i]$ va reprezenta răspunsul maxim dacă nu am folosit nodul $i$ în vreo muchie.
-* $dp[1][i]$ va reprezenta răspunsul maxim dacă am folosit nodul $i$ în vreo muchie.
+- $dp[0][i]$ va reprezenta răspunsul maxim dacă nu am folosit nodul $i$ în vreo muchie.
+- $dp[1][i]$ va reprezenta răspunsul maxim dacă am folosit nodul $i$ în vreo muchie.
 
 Pentru a defini $dp[0][i]$, este simplu să ne gândim la faptul că vom vrea să preluăm răspunsurile maxime de la fii, deci putem scrie $dp[0][i]$ ca fiind $\sum \max(dp[0][x], dp[1][x])$ pentru toți fiii $x$ ai nodului $i$.
 
@@ -504,8 +504,8 @@ int main() {
 
 Pentru această problemă, vom avea o dinamică pe două dimensiuni care va ține cont de următoarele cazuri:
 
-* $dp[0][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, presupunând că vom păstra legătura dintre acest nod și părintele său.
-* $dp[1][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, fără a păstra legătura dintre $node$ și părintele său.
+- $dp[0][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, presupunând că vom păstra legătura dintre acest nod și părintele său.
+- $dp[1][node]$: cea mai mare sumă a unui subarbore cu rădăcina în $node$, fără a păstra legătura dintre $node$ și părintele său.
 
 În funcție de aceste cazuri, vom vrea să păstrăm un set de noduri, împreună cu sumele lor care să fie cât mai mari, ceea ce duce cu gândul la o abordare în care sortăm sumele în ordine descrescătoare, luând mereu termenii pozitivi, iar dacă este necesar, să completăm cu un număr de termeni până ajungem la doi, respectiv trei copii luați.
 
@@ -618,29 +618,29 @@ Recomandăm lucratul a cât mai multe probleme, atât din această listă cât �
 
 ## Probleme suplimentare
 
-* [AtCoder Independent Set](https://atcoder.jp/contests/dp/tasks/dp_p)
-* [OJI 2019 Tairos](https://kilonova.ro/problems/22)
-* [OJI 2008 Iepuri](https://kilonova.ro/problems/45)
-* [Nastia Plays with a Tree Codeforces](https://codeforces.com/contest/1521/problem/D)
-* [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
-* [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2\&cpid=766)
-* [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1019)
-* [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
-* [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
-* [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
-* [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
-* [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
-* [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
-* [ONI 2018 tricolor](https://kilonova.ro/problems/151)
-* [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
-* [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)
-* [CSES Creating Offices](https://cses.fi/problemset/task/1752)
-* [Miss Punyverse Codeforces](https://codeforces.com/contest/1280/problem/D)
-* [IOI 2007 Training](https://oj.uz/problem/view/IOI07_training)
-* [Probleme cu DP pe arbore de pe Kilonova](https://kilonova.ro/problems?tags=275%2C284)
-* [Probleme cu DP pe arbore de pe Codeforces](https://codeforces.com/problemset?tags=dp,trees)
+- [AtCoder Independent Set](https://atcoder.jp/contests/dp/tasks/dp_p)
+- [OJI 2019 Tairos](https://kilonova.ro/problems/22)
+- [OJI 2008 Iepuri](https://kilonova.ro/problems/45)
+- [Nastia Plays with a Tree Codeforces](https://codeforces.com/contest/1521/problem/D)
+- [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
+- [USACO Gold Barn Painting](https://usaco.org/index.php?page=viewproblem2\&cpid=766)
+- [USACO Gold Delegation](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1019)
+- [RMI 2023 AAtree](https://kilonova.ro/problems/1834)
+- [ONI 2017 Baraj Seniori Cli](https://kilonova.ro/problems/274)
+- [Moisil 2024 Arborele frumos](https://kilonova.ro/problems/2568/)
+- [Permutree Codeforces](https://codeforces.com/problemset/problem/1856/E2)
+- [JOI 2020 Power](https://oj.uz/problem/view/JOI20_power)
+- [IZhO 2017 Hard route](https://oj.uz/problem/view/IZhO17_road)
+- [ONI 2018 tricolor](https://kilonova.ro/problems/151)
+- [ONI 2021 Baraj Seniori Arbsumpow](https://kilonova.ro/problems/67/)
+- [ONI 2019 Baraj Seniori Anarhie](https://kilonova.ro/problems/409/)
+- [CSES Creating Offices](https://cses.fi/problemset/task/1752)
+- [Miss Punyverse Codeforces](https://codeforces.com/contest/1280/problem/D)
+- [IOI 2007 Training](https://oj.uz/problem/view/IOI07_training)
+- [Probleme cu DP pe arbore de pe Kilonova](https://kilonova.ro/problems?tags=275%2C284)
+- [Probleme cu DP pe arbore de pe Codeforces](https://codeforces.com/problemset?tags=dp,trees)
 
 ## Resurse suplimentare
 
-* [DP on Trees - USACO Guide](https://usaco.guide/gold/dp-trees)
-* [DP on Trees tutorial - Codeforces](https://codeforces.com/blog/entry/20935)
+- [DP on Trees - USACO Guide](https://usaco.guide/gold/dp-trees)
+- [DP on Trees tutorial - Codeforces](https://codeforces.com/blog/entry/20935)

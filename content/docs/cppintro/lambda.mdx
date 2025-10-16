@@ -31,7 +31,7 @@ Dacă dorim să dăm un nume unei lambda, atunci putem adăuga în față `auto 
 
 Captura permite copierea sau modificarea unor valori. Există mai multe variante de a defini captura, fiecare cu scop specific.
 
-* `[x]` copiază valoarea ca `const`:
+- `[x]` copiază valoarea ca `const`:
 
   ```cpp
   int main() {
@@ -54,7 +54,7 @@ Captura permite copierea sau modificarea unor valori. Există mai multe variante
   }
   ```
 
-* `[&x]` face referință la valoarea inițială, permițând să fie modificată :
+- `[&x]` face referință la valoarea inițială, permițând să fie modificată :
 
   ```cpp
   int main() {
@@ -65,7 +65,7 @@ Captura permite copierea sau modificarea unor valori. Există mai multe variante
   }
   ```
 
-* `[=]` copiază toate valorile, similar cu `[x]`:
+- `[=]` copiază toate valorile, similar cu `[x]`:
 
   ```cpp
   int main() {
@@ -75,7 +75,7 @@ Captura permite copierea sau modificarea unor valori. Există mai multe variante
   }
   ```
 
-* `[&]` face referință la toate valorile, similar cu `[&x]`:
+- `[&]` face referință la toate valorile, similar cu `[&x]`:
 
   ```cpp
   int main() {
@@ -172,5 +172,6 @@ int main() {
 
 ## Resurse suplimentare
 
-* [Lambda expressions (cppreference.com)](https://en.cppreference.com/w/cpp/language/lambda)
+- [Lambda expressions (cppreference.com)](https://en.cppreference.com/w/cpp/language/lambda)
+
 * [On lambdas, C++ and otherwise: the what, the why, and the how](https://nor-blog.codeberg.page/posts/2023-12-02-lambdas-cpp-and-otherwise/)

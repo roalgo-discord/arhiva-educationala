@@ -11,4 +11,6 @@
     enable = true;
     bun.enable = true;
   };
+
+  devcontainer.enable = true;
 }

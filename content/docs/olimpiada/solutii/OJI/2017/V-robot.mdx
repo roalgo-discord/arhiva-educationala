@@ -21,8 +21,8 @@ Trebuie doar să numărăm câte caractere A sunt.
 
 Putem să simulăm programul, menținând o variabilă $cf$ care să ne spună la ce cifră suntem.
 
-* Când mergem la dreapta cu $P$ poziții, $cf = cf + p$, iar dacă $cf \geq 10$ (de la 9 mergem la 0), $cf = cf - 10$
-* Când mergem la stânga cu $P$ poziții, $cf = cf - p$, iar dacă $cf < 0$ (de la 0 mergem la 9), $cf = cf + 10$
+- Când mergem la dreapta cu $P$ poziții, $cf = cf + p$, iar dacă $cf \geq 10$ (de la 9 mergem la 0), $cf = cf - 10$
+- Când mergem la stânga cu $P$ poziții, $cf = cf - p$, iar dacă $cf < 0$ (de la 0 mergem la 9), $cf = cf + 10$
 
 ## Cerința 3
 
@@ -30,13 +30,13 @@ Vom citi cifrele caracter cu caracter. Noi trebuie să mergem de la cifră la ci
 
 Drumul cel mai scurt posibil de la cifra $a$ la cifra $b$ este:
 
-* Dacă $a < b$, cel mai scurt dintre:
-  * În stânga cu $a-b$ poziții
-  * În dreapta cu $10+b-a$ poziții
-* Dacă $a < b$, cel mai scurt dintre:
-  * În dreapta cu $b-a$ poziții
-  * În stânga cu $10+a-b$ poziții
-* Dacă $a = b$, nu trebuie să facem nimic
+- Dacă $a < b$, cel mai scurt dintre:
+  - În stânga cu $a-b$ poziții
+  - În dreapta cu $10+b-a$ poziții
+- Dacă $a < b$, cel mai scurt dintre:
+  - În dreapta cu $b-a$ poziții
+  - În stânga cu $10+a-b$ poziții
+- Dacă $a = b$, nu trebuie să facem nimic
 
 ## Cod sursă
 

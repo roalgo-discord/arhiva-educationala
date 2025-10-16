@@ -79,8 +79,8 @@ La o primă citire este evident faptul că putem găsi repede o dinamică de tip
 
 Această problemă duce foarte repede cu gândul la o dinamică prin care putem număra câte șiruri distincte există cu proprietatea că toate restricțiile date până la un punct sunt respectate. Deoarece avem două tipuri de culori în practică (albastru și alb, roșu este dedus din pozițiile colorate în albastru), ne putem gândi mai întâi să păstrăm două dinamici, după cum urmează:
 
-* dp\[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem albastru
-* dp2\[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem alb
+- dp\[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem albastru
+- dp2\[i] = nr de moduri de a umple primele $i$ poziții dacă pe poziția $i$ avem alb
 
 Soluția în $\mathcal{O}(n^2)$ este relativ simplă, pentru alb putem avea o tranziție de la $i-1$ la $i$, iar pentru albastru, putem fixa un interval și verificăm dacă îl putem plasa conform restricțiilor date, adăugând $dp[x-1]$ dacă am putut plasa un interval între $x$ și $i$.
 
@@ -100,23 +100,23 @@ Aceste probleme reprezintă o intersecție a două arii care sunt frecvent înt�
 
 ## Probleme suplimentare
 
-* [IIOT 2024 Planning Excursions](https://kilonova.ro/problems/2287)
-* [ONI 2010 Stalpi](https://kilonova.ro/problems/184)
-* [RCPC 2023 Yet Another Colored Tree Problem](https://kilonova.ro/problems/1888)
-* [Lot 2024 Juniori Pokemoni](https://kilonova.ro/problems/2808)
-* [Codeforces WI-FI](https://codeforces.com/problemset/problem/1216/F)
-* [Codeforces Pathwalks](https://codeforces.com/contest/960/problem/F)
-* [ONI 2015 Baraj Seniori s2c](https://kilonova.ro/problems/288/)
-* [ONI 2005 Baraj Seniori Evantai](https://kilonova.ro/problems/1869)
-* [Codeforces Yunlin's Subarray Queries (hard)](https://codeforces.com/problemset/problem/2009/G2)
-* [Codeforces Culture Code](https://codeforces.com/contest/1197/problem/E)
-* [JOI 2022 Railway Trip 2](https://oj.uz/problem/view/JOI22_ho_t4)
-* [Lot 2008 Seniori turnuri](https://kilonova.ro/problems/2317)
-* [Probleme cu dinamici si structuri de date de pe Codeforces](https://codeforces.com/problemset/page/1?tags=dp%2Cdata+structures)
-* [Probleme cu dinamica si deque de pe kilonova](https://kilonova.ro/problems?tags=275%2C409)
-* [Alte probleme similare de pe kilonova](https://kilonova.ro/problems?tags=275%2C282)
+- [IIOT 2024 Planning Excursions](https://kilonova.ro/problems/2287)
+- [ONI 2010 Stalpi](https://kilonova.ro/problems/184)
+- [RCPC 2023 Yet Another Colored Tree Problem](https://kilonova.ro/problems/1888)
+- [Lot 2024 Juniori Pokemoni](https://kilonova.ro/problems/2808)
+- [Codeforces WI-FI](https://codeforces.com/problemset/problem/1216/F)
+- [Codeforces Pathwalks](https://codeforces.com/contest/960/problem/F)
+- [ONI 2015 Baraj Seniori s2c](https://kilonova.ro/problems/288/)
+- [ONI 2005 Baraj Seniori Evantai](https://kilonova.ro/problems/1869)
+- [Codeforces Yunlin's Subarray Queries (hard)](https://codeforces.com/problemset/problem/2009/G2)
+- [Codeforces Culture Code](https://codeforces.com/contest/1197/problem/E)
+- [JOI 2022 Railway Trip 2](https://oj.uz/problem/view/JOI22_ho_t4)
+- [Lot 2008 Seniori turnuri](https://kilonova.ro/problems/2317)
+- [Probleme cu dinamici si structuri de date de pe Codeforces](https://codeforces.com/problemset/page/1?tags=dp%2Cdata+structures)
+- [Probleme cu dinamica si deque de pe kilonova](https://kilonova.ro/problems?tags=275%2C409)
+- [Alte probleme similare de pe kilonova](https://kilonova.ro/problems?tags=275%2C282)
 
 ## Resurse suplimentare
 
-* [Data Structures in Dynamic Programming Week - Codeforces](https://codeforces.com/blog/entry/98926)
-* [Monotone Queue optimization - robert1003](https://robert1003.github.io/2020/02/16/dp-opt-monotone-queue.html)
+- [Data Structures in Dynamic Programming Week - Codeforces](https://codeforces.com/blog/entry/98926)
+- [Monotone Queue optimization - robert1003](https://robert1003.github.io/2020/02/16/dp-opt-monotone-queue.html)

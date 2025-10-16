@@ -49,16 +49,16 @@ Complexitate: $\mathcal{O}(X)$.
 
 În acest caz, cele 3 condiții pot fi reformulate astfel:
 
-* Dacă $X = 1$, atunci există cel puțin o valoare de 1 în șir, altfel tot șirul este complet 0.
-* Dacă $Y = 1$, atunci există un număr impar de 1 în șir, altfel există un număr par de 1.
-* Dacă $M_i = 1$, atunci $A_i$ = 1, altfel $A_i$ poate fi 0 sau 1.
+- Dacă $X = 1$, atunci există cel puțin o valoare de 1 în șir, altfel tot șirul este complet 0.
+- Dacă $Y = 1$, atunci există un număr impar de 1 în șir, altfel există un număr par de 1.
+- Dacă $M_i = 1$, atunci $A_i$ = 1, altfel $A_i$ poate fi 0 sau 1.
 
 Dacă $X = 0$, atunci problema se reduce la Subtaskul 4. Altfel, în funcție de valoarea lui $Y$ și câte valori de 1 există în șirul $M$, se determină paritatea numărului de valori care pot fi alese. Mai exact, dacă se notează cu $F$ numărul de valori de 1 din șirul $M$ și cu $R$ răspunsul, există următoarele cazuri:
 
-* $F$ impar și $Y = 0$: $R = C_1^{N-F} + C_3^{N-F} + \dots = 2^{N - F - 1}$
-* $F$ impar și $Y = 1$: $R = C_0^{N-F} + C_2^{N-F} + \dots = 2^{N - F - 1}$
-* $F$ par și $Y = 0$: $R = C_0^{N-F} + C_2^{N-F} + \dots = 2^{N - F - 1}$
-* $F$ par și $Y = 1$: $R = C_1^{N-F} + C_3^{N-F} + \dots = 2^{N - F - 1}$
+- $F$ impar și $Y = 0$: $R = C_1^{N-F} + C_3^{N-F} + \dots = 2^{N - F - 1}$
+- $F$ impar și $Y = 1$: $R = C_0^{N-F} + C_2^{N-F} + \dots = 2^{N - F - 1}$
+- $F$ par și $Y = 0$: $R = C_0^{N-F} + C_2^{N-F} + \dots = 2^{N - F - 1}$
+- $F$ par și $Y = 1$: $R = C_1^{N-F} + C_3^{N-F} + \dots = 2^{N - F - 1}$
 
 Dacă $X = 1$, $F = 0$ și $Y = 0$, atunci la formulă se scade 1 deoarece se înnumără și șirul plin de 0.
 
@@ -68,9 +68,9 @@ Complexitate: $\mathcal{O}(N)$
 
 Din cauza naturii operațiilor pe biți, problema poate fi rezolvată bit cu bit, fiind împărțită astfel în 30 de subprobleme de tipul subtaskului 7. Mai exact, pentru bitul $b$, subproblema este următoarea:
 
-* $X_b = 1$, dacă $X$ conține bitul $b$, altfel $X_b = 0$.
-* $Y_b = 1$, dacă $Y$ conține bitul $b$, altfel $Y_b = 0$.
-* $M_i = 1$, dacă $M_i$ conține bitul $b$, altfel $M_b = 0$.
+- $X_b = 1$, dacă $X$ conține bitul $b$, altfel $X_b = 0$.
+- $Y_b = 1$, dacă $Y$ conține bitul $b$, altfel $Y_b = 0$.
+- $M_i = 1$, dacă $M_i$ conține bitul $b$, altfel $M_b = 0$.
 
 Se rezolvă toate subproblemele, iar răspunsul final va fi produsul tuturor răspunsurilor subproblemelor.
 

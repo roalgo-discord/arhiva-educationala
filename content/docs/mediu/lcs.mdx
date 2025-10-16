@@ -34,8 +34,8 @@ Astfel, vom avea $dp[i][j]$ drept lungimea maximă a unui subșir comun care poa
 
 Pentru a calcula această recurență, avem două cazuri principale:
 
-* Fie adăugăm un caracter din unul din cele două șiruri, preluând răspunsurile din $(i-1, j)$ și $(i, j-1)$
-* Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $(i-1,
+- Fie adăugăm un caracter din unul din cele două șiruri, preluând răspunsurile din $(i-1, j)$ și $(i, j-1)$
+- Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $(i-1,
   j-1)$ și adăugând 1 dacă caracterele sunt egale.
 
 Cu alte cuvinte,
@@ -178,14 +178,14 @@ int lcs(const std::string &A, const std::string &B) {
 
 ## Probleme suplimentare
 
-* [cmlsc infoarena](https://www.infoarena.ro/problema/cmlsc)
-* [EJOI 2020 Exam](https://oj.uz/problem/view/eJOI20_exam)
-* [Palindromic Doubles](https://codeforces.com/contest/1488/problem/E)
+- [cmlsc infoarena](https://www.infoarena.ro/problema/cmlsc)
+- [EJOI 2020 Exam](https://oj.uz/problem/view/eJOI20_exam)
+- [Palindromic Doubles](https://codeforces.com/contest/1488/problem/E)
 
 ## Lectură suplimentară
 
-* [Probleme clasice de programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_clasice_0.html)
-* [Programare dinamica - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_IX-a_lec%C8%9Bia_24_-_09_mai_2020#Sub%C8%99ir_comun_maximal_\(Cel_mai_lung_sub%C8%99ir_comun\))
-* [Longest Common Subsequence - USACO Guide](https://usaco.guide/gold/paths-grids#solution---longest-common-subsequence)
-* [Hunt-Szymanski Algorithm Explained (LCS but optimized for special cases) - Codeforces](https://codeforces.com/blog/entry/91581)
-* [Paper despre Hunt-Szymanski](https://imada.sdu.dk/u/rolf/Edu/DM823/E16/HuntSzymanski.pdf)
+- [Probleme clasice de programare dinamica - CPPI Sync](https://cppi.sync.ro/materia/probleme_clasice_0.html)
+- [Programare dinamica - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_IX-a_lec%C8%9Bia_24_-_09_mai_2020#Sub%C8%99ir_comun_maximal_\(Cel_mai_lung_sub%C8%99ir_comun\))
+- [Longest Common Subsequence - USACO Guide](https://usaco.guide/gold/paths-grids#solution---longest-common-subsequence)
+- [Hunt-Szymanski Algorithm Explained (LCS but optimized for special cases) - Codeforces](https://codeforces.com/blog/entry/91581)
+- [Paper despre Hunt-Szymanski](https://imada.sdu.dk/u/rolf/Edu/DM823/E16/HuntSzymanski.pdf)

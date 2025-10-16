@@ -44,12 +44,12 @@ Pentru a transforma un număr din baza 10 în baza $k$, vom împărți repetat n
 De exemplu, dacă vrem să convertim numărul 46 în baza 2, vom obține
 următoarele câturi și resturi.
 
-* $n = 46$, $\frac{46}{2} = 23$, restul 0.
-* $n = 23$, $\frac{23}{2} = 11$, restul 1.
-* $n = 11$, $\frac{11}{2} = 5$, restul 1.
-* $n = 5$, $\frac{5}{2} = 2$, restul 1.
-* $n = 2$, $\frac{2}{2} = 1$, restul 0.
-* $n = 1$, $\frac{1}{2} = 0$, restul 1.
+- $n = 46$, $\frac{46}{2} = 23$, restul 0.
+- $n = 23$, $\frac{23}{2} = 11$, restul 1.
+- $n = 11$, $\frac{11}{2} = 5$, restul 1.
+- $n = 5$, $\frac{5}{2} = 2$, restul 1.
+- $n = 2$, $\frac{2}{2} = 1$, restul 0.
+- $n = 1$, $\frac{1}{2} = 0$, restul 1.
 
 Dacă luăm resturile împărțirilor la 2 în ordine inversă, obținem 101110,
 număr care se poate verifica că ne va returna $n = 46$ daca îl convertim în
@@ -87,11 +87,11 @@ k^i$, unde $cif$ este cifra curentă, $k$ este baza de la care plecăm și $i$ e
 De exemplu, dacă vrem să convertim numărul 10110 în baza 10, vom avea
 următoarele cifre:
 
-* poziția 0: cifra este 0, se adună 0 la numărul în baza 10.
-* poziția 1: cifra este 1, se adună $2^1$ la numărul în baza 10.
-* poziția 2: cifra este 1, se adună $2^2$ la numărul în baza 10.
-* poziția 3: cifra este 0, se adună 0 la numărul în baza 10.
-* poziția 4: cifra este 1, se adună $2^4$ la numărul în baza 10.
+- poziția 0: cifra este 0, se adună 0 la numărul în baza 10.
+- poziția 1: cifra este 1, se adună $2^1$ la numărul în baza 10.
+- poziția 2: cifra este 1, se adună $2^2$ la numărul în baza 10.
+- poziția 3: cifra este 0, se adună 0 la numărul în baza 10.
+- poziția 4: cifra este 1, se adună $2^4$ la numărul în baza 10.
 
 Adunate, aceste puteri ne vor da 22, acesta fiind numărul in baza 10.
 
@@ -222,20 +222,20 @@ evaluând expresia pentru toate modurile în care putem asigna valori biților.
 
 !!! info "Mici verificări cu impact major"
 
-* Pentru a verifica dacă $n$ este o putere a lui 2, este îndeajuns să
+- Pentru a verifica dacă $n$ este o putere a lui 2, este îndeajuns să
   verificăm valoarea expresiei $n \ \& \ (n-1)$. Dacă aceasta este 0,
   înseamnă că $n$ și $n-1$ nu au biți în comun, iar singurul caz în care
   acest lucru se poate întâmpla este dacă $n$ este putere a lui 2
   (reprezentarea binară a lui $n$ ar fi $100 \dots 0$, iar cea a lui $n-1$
   ar fi $011 \dots 1$.)
 
-* Pentru a verifica dacă pentru o valoare $n$, bitul de pe poziția $x$ este
+- Pentru a verifica dacă pentru o valoare $n$, bitul de pe poziția $x$ este
   setat, este îndeajuns să aflăm dacă rezultatul expresiei $(n \ \& \
   (1<<x)) \neq 0$. Deoarece $2^x$ este o putere a lui 2, singurul mod în
   care expresia ar fi nenulă este când bitul de pe poziția $x$ este setat în
   $n$.
 
-* Pentru a afla valoarea celui mai nesemnificativ bit, este îndeajuns să
+- Pentru a afla valoarea celui mai nesemnificativ bit, este îndeajuns să
   folosim operația $x \ \& \ (-x)$, motivul pentru care această operație
   funcționează este acela că în cazul lui $-x$, biții vor fi inversați, cu
   excepția ultimului bit, care va rămâne la fel, datorită modului în care
@@ -256,33 +256,33 @@ enumerarea submulțimilor.
 
 ## Probleme suplimentare
 
-* [morse ONI 2006](https://kilonova.ro/problems/1242)
-* [intervale RoAlgo Contest #3](https://kilonova.ro/problems/692)
-* [Bit Showdown RoAlgo Contest #9](https://kilonova.ro/problems/2249)
-* [patratele OJI 2022](https://kilonova.ro/problems/944)
-* [Matmare RoAlgo PreOJI 2024](https://kilonova.ro/problems/2418)
-* [The Brand New Function](https://codeforces.com/contest/244/problem/C)
-* [Searching for Soulmates USACO](https://usaco.org/index.php?page=viewproblem2\&cpid=1182)
-* [Powered Addition](https://codeforces.com/contest/1338/problem/A)
-* [Data Structures Fan](https://codeforces.com/contest/1872/problem/E)
-* [castel OJI 2018](https://kilonova.ro/problems/900)
-* [Sheikh (Easy version)](https://codeforces.com/problemset/problem/1732/C1)
-* [Three Days Ago](https://atcoder.jp/contests/abc295/tasks/abc295_d)
-* [2+ Doors](https://codeforces.com/contest/1715/problem/D)
-* [Preparing Olympiad](https://codeforces.com/problemset/problem/550/B)
-* [Petr and a Combination Lock](https://codeforces.com/problemset/problem/1097/B)
-* [CSES Xor Pyramid](https://www.cses.fi/problemset/task/2419)
-* [Probleme cu operații pe biți de pe kilonova](https://kilonova.ro/tags/439)
-* [Probleme cu operații pe biți de pe codeforces](https://codeforces.com/problemset?tags=bitmasks)
+- [morse ONI 2006](https://kilonova.ro/problems/1242)
+- [intervale RoAlgo Contest #3](https://kilonova.ro/problems/692)
+- [Bit Showdown RoAlgo Contest #9](https://kilonova.ro/problems/2249)
+- [patratele OJI 2022](https://kilonova.ro/problems/944)
+- [Matmare RoAlgo PreOJI 2024](https://kilonova.ro/problems/2418)
+- [The Brand New Function](https://codeforces.com/contest/244/problem/C)
+- [Searching for Soulmates USACO](https://usaco.org/index.php?page=viewproblem2\&cpid=1182)
+- [Powered Addition](https://codeforces.com/contest/1338/problem/A)
+- [Data Structures Fan](https://codeforces.com/contest/1872/problem/E)
+- [castel OJI 2018](https://kilonova.ro/problems/900)
+- [Sheikh (Easy version)](https://codeforces.com/problemset/problem/1732/C1)
+- [Three Days Ago](https://atcoder.jp/contests/abc295/tasks/abc295_d)
+- [2+ Doors](https://codeforces.com/contest/1715/problem/D)
+- [Preparing Olympiad](https://codeforces.com/problemset/problem/550/B)
+- [Petr and a Combination Lock](https://codeforces.com/problemset/problem/1097/B)
+- [CSES Xor Pyramid](https://www.cses.fi/problemset/task/2419)
+- [Probleme cu operații pe biți de pe kilonova](https://kilonova.ro/tags/439)
+- [Probleme cu operații pe biți de pe codeforces](https://codeforces.com/problemset?tags=bitmasks)
 
 ## Lectură suplimentară
 
-* [Articol de pe USACO Guide](https://usaco.guide/silver/intro-bitwise?lang=cpp)
-* [Bitwise operations for beginners](https://codeforces.com/blog/entry/73490)
-* [Bitwise operations for beginners, part 2](https://codeforces.com/blog/entry/73558)
-* [Operații pe biți - Infoarena](https://infoarena.ro/operatii-pe-biti)
-* [Operații pe biți - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_biti.html)
-* [Operații pe biți - Dan Pracsiu](https://www.dponline.ro/articol.php?idarticol=81)
-* [Bit Manipulation - cp-algorithms](https://cp-algorithms.com/algebra/bit-manipulation.html)
-* [Curs lot juniori 2015](https://www.infobits.ro/docs/operatii_pe_biti_junior_2015.pdf)
-* [Easy explanation about Bitwise operations \[Tutorial\]](https://codeforces.com/blog/entry/104705)
+- [Articol de pe USACO Guide](https://usaco.guide/silver/intro-bitwise?lang=cpp)
+- [Bitwise operations for beginners](https://codeforces.com/blog/entry/73490)
+- [Bitwise operations for beginners, part 2](https://codeforces.com/blog/entry/73558)
+- [Operații pe biți - Infoarena](https://infoarena.ro/operatii-pe-biti)
+- [Operații pe biți - CPPI Sync](https://cppi.sync.ro/materia/operatii_cu_biti.html)
+- [Operații pe biți - Dan Pracsiu](https://www.dponline.ro/articol.php?idarticol=81)
+- [Bit Manipulation - cp-algorithms](https://cp-algorithms.com/algebra/bit-manipulation.html)
+- [Curs lot juniori 2015](https://www.infobits.ro/docs/operatii_pe_biti_junior_2015.pdf)
+- [Easy explanation about Bitwise operations \[Tutorial\]](https://codeforces.com/blog/entry/104705)

@@ -20,8 +20,8 @@ De-a lungul acestui articol, vom discuta diferite moduri de a parcurge matricile
 
 În C++, matricele pot fi declarate în două moduri:
 
-* Forma clasică, specifică limbajului C.
-* Variante moderne bazate pe biblioteci din STL (abordată într-un [articol separat](./stl.mdx)).
+- Forma clasică, specifică limbajului C.
+- Variante moderne bazate pe biblioteci din STL (abordată într-un [articol separat](./stl.mdx)).
 
 În acest articol, ne concentrăm pe **matricile statice**, adică matrici care au dimensiuni fixe și nu pot fi extinse.
 
@@ -48,8 +48,8 @@ Următoarea matrice are 5 rânduri și 8 coloane și este indexată de la 0. Pen
 
 În terminologia uzuală:
 
-* Liniile sunt numerotate de sus în jos.
-* Coloanele sunt numerotate de la stânga la dreapta.
+- Liniile sunt numerotate de sus în jos.
+- Coloanele sunt numerotate de la stânga la dreapta.
 
 Spre deosebire de sistemul de coordonate cartezian (xOy) din geometrie, axa
 liniilor corespunde „verticalei”, iar axa coloanelor „orizontalului”. Dacă în
@@ -118,8 +118,8 @@ O matrice unde numărul de rânduri și numărul de coloane coincid se numește
 
 Într-o matrice pătratică avem *diagonale*. Distingem două diagonale:
 
-* **Diagonala principală** este diagonala care începe din colțul stânga-sus și se termină în colțul dreapta-jos.
-* **Diagonala secundară** este diagonala care începe din colțul dreapta-sus și se termină în cel stânga-jos.
+- **Diagonala principală** este diagonala care începe din colțul stânga-sus și se termină în colțul dreapta-jos.
+- **Diagonala secundară** este diagonala care începe din colțul dreapta-sus și se termină în cel stânga-jos.
 
 Următoarea poză arată diagonala principală a matricei de mai sus:
 
@@ -189,18 +189,18 @@ Este ușor să țineți minte următoarea regulă: deasupra e mai mic, sub e mai
 
 Intersecția acestor regiuni formează patru regiuni: de nord, sud, vest și est. Elementele din aceste regiuni sunt determinate de aceste condiții:
 
-* **Nord**:
-  * **Deasupra** diagonalei principale și **deasupra** diagonalei secundare.
-  * **Formula**: `r < c && r + c < dim - 1`.
-* **Sud**:
-  * **Sub** diagonala principală și **sub** diagonala secundară.
-  * **Formula**: `r > c && r + c > dim - 1`.
-* **Vest**:
-  * **Sub** diagonala principală și **deasupra** diagonalei secundare.
-  * **Formula**: `r > c && r + c < dim - 1`.
-* **Est**:
-  * **Deasupra** diagonalei principale și **sub** diagonala secundară.
-  * **Formula**: `r < c && r + c > dim - 1`.
+- **Nord**:
+  - **Deasupra** diagonalei principale și **deasupra** diagonalei secundare.
+  - **Formula**: `r < c && r + c < dim - 1`.
+- **Sud**:
+  - **Sub** diagonala principală și **sub** diagonala secundară.
+  - **Formula**: `r > c && r + c > dim - 1`.
+- **Vest**:
+  - **Sub** diagonala principală și **deasupra** diagonalei secundare.
+  - **Formula**: `r > c && r + c < dim - 1`.
+- **Est**:
+  - **Deasupra** diagonalei principale și **sub** diagonala secundară.
+  - **Formula**: `r < c && r + c > dim - 1`.
 
 ### Generări de matrice
 
@@ -292,13 +292,13 @@ O variantă alternativă este aceea de a observa modul în care se execută miș
 
 Vom lua drept exemplu n = 4.
 
-* 4 pași la dreapta
-* 3 pași în jos
-* 3 pași la stânga
-* 2 pași în sus
-* 2 pași la dreapta
-* 1 pas în jos
-* 1 pas la stânga
+- 4 pași la dreapta
+- 3 pași în jos
+- 3 pași la stânga
+- 2 pași în sus
+- 2 pași la dreapta
+- 1 pas în jos
+- 1 pas la stânga
 
 Se poate observa faptul că după ce facem primul pas și avem n mutări, lungimile mutărilor se repetă câte două, astfel putem folosi [vectorii de direcție](../mediu/lee.mdx#vectorii-de-directie) pentru a implementa aceste mutări foarte ușor, fără mari probleme.
 
@@ -361,27 +361,27 @@ Lucrul cu matrici și tablouri multidimensionale este un pas înainte pentru apr
 
 ## Probleme suplimentare
 
-* [cntlinii pbinfo](https://www.pbinfo.ro/probleme/776/cntlinii)
-* [ordlin pbinfo](https://www.pbinfo.ro/probleme/771/ordlin)
-* [lincol pbinfo](https://www.pbinfo.ro/probleme/669/lincol)
-* [chenar pbinfo](https://www.pbinfo.ro/probleme/210/chenar)
-* [zone1 pbinfo](https://www.pbinfo.ro/probleme/781/zone1)
-* [serpuire pbinfo](https://www.pbinfo.ro/probleme/794/serpuire)
-* [spirala1 pbinfo](https://www.pbinfo.ro/probleme/1008/spirala1)
-* [spirala2 pbinfo](https://www.pbinfo.ro/probleme/1584/spirala2)
-* [eroziune pbinfo](https://www.pbinfo.ro/probleme/594/eroziune)
-* [memory001 pbinfo](https://www.pbinfo.ro/probleme/1444/memory001)
-* [OJI 2007 cartele](https://kilonova.ro/problems/759)
-* [infoarena mostenire2](https://infoarena.ro/problema/mostenire2)
-* [infoarena marmote](https://www.infoarena.ro/problema/marmote)
-* [Problemele recomandate în cele 4 articole de aici](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
-* [Probleme de la parcurgerea matricelor oarecare - pbinfo](https://www.pbinfo.ro/probleme/categorii/47/tablouri-bidimensionale-matrice-parcurgerea-matricelor-oarecare)
-* [Probleme de la parcurgerea matricelor pătratice - pbinfo](https://www.pbinfo.ro/probleme/categorii/80/tablouri-bidimensionale-matrice-parcurgerea-matricelor-patratice)
-* [Probleme diverse cu matrici - pbinfo](https://www.pbinfo.ro/probleme/categorii/58/tablouri-bidimensionale-matrice-probleme-diverse)
+- [cntlinii pbinfo](https://www.pbinfo.ro/probleme/776/cntlinii)
+- [ordlin pbinfo](https://www.pbinfo.ro/probleme/771/ordlin)
+- [lincol pbinfo](https://www.pbinfo.ro/probleme/669/lincol)
+- [chenar pbinfo](https://www.pbinfo.ro/probleme/210/chenar)
+- [zone1 pbinfo](https://www.pbinfo.ro/probleme/781/zone1)
+- [serpuire pbinfo](https://www.pbinfo.ro/probleme/794/serpuire)
+- [spirala1 pbinfo](https://www.pbinfo.ro/probleme/1008/spirala1)
+- [spirala2 pbinfo](https://www.pbinfo.ro/probleme/1584/spirala2)
+- [eroziune pbinfo](https://www.pbinfo.ro/probleme/594/eroziune)
+- [memory001 pbinfo](https://www.pbinfo.ro/probleme/1444/memory001)
+- [OJI 2007 cartele](https://kilonova.ro/problems/759)
+- [infoarena mostenire2](https://infoarena.ro/problema/mostenire2)
+- [infoarena marmote](https://www.infoarena.ro/problema/marmote)
+- [Problemele recomandate în cele 4 articole de aici](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+- [Probleme de la parcurgerea matricelor oarecare - pbinfo](https://www.pbinfo.ro/probleme/categorii/47/tablouri-bidimensionale-matrice-parcurgerea-matricelor-oarecare)
+- [Probleme de la parcurgerea matricelor pătratice - pbinfo](https://www.pbinfo.ro/probleme/categorii/80/tablouri-bidimensionale-matrice-parcurgerea-matricelor-patratice)
+- [Probleme diverse cu matrici - pbinfo](https://www.pbinfo.ro/probleme/categorii/58/tablouri-bidimensionale-matrice-probleme-diverse)
 
 ## Resurse suplimentare
 
-* [Tablouri bidimensionale - pbinfo](https://www.pbinfo.ro/articole/5620/tablouri-bidimensionale)
-* [Articolele din secțiunea tablouri bidimensionale (matrice) - CPPI Sync](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
-* [Matrici - InfoGym](https://events.info.uaic.ro/infogim/2021/lectii/6/12%20matrici.pdf)
-* [Tablouri pătratice - pbinfo](https://www.pbinfo.ro/articole/5626/tablouri-patratice)
+- [Tablouri bidimensionale - pbinfo](https://www.pbinfo.ro/articole/5620/tablouri-bidimensionale)
+- [Articolele din secțiunea tablouri bidimensionale (matrice) - CPPI Sync](https://cppi.sync.ro/materia/tablouri_bidimensionale_matrice.html)
+- [Matrici - InfoGym](https://events.info.uaic.ro/infogim/2021/lectii/6/12%20matrici.pdf)
+- [Tablouri pătratice - pbinfo](https://www.pbinfo.ro/articole/5626/tablouri-patratice)

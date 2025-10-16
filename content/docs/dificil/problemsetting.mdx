@@ -22,9 +22,9 @@ Deși aceasta este cea mai grea parte a propunerii unei probleme, este și cea m
 
 Câteva dintre cele mai frecvent întâlnite surse de inspirație pentru crearea unor probleme noi de algoritmică sunt:
 
-* imaginarea unui anumit proces (real sau imaginar) și adaptarea lui la un model informatic. Cu alte cuvinte, se poate întâmpla să vedeți ceva interesant în viața reală sau într-un joc video și pe baza acestei secvențe de evenimente, să creați o poveste care să vă ducă la o idee de problemă. Aceasta este una dintre cele mai naturale moduri în care o problemă ajunge să fie creată, iar multe dintre problemele foarte bune și apreciate de concurenți sunt create așa.
-* rezolvarea unor probleme anterioare și dezvoltarea unor versiuni mai grele sau diferite față de cele originale, care uneori au chiar soluții complet diferite. În multe situații, deoarece rezolvați multe probleme de algoritmică, ajungeți să vă gândiți la multe idei și inevitabil, vă gândiți și la alte abordări care chiar dacă nu sunt strict legate de problema pe care încercați să o rezolvați, vă pot duce la idei alternative care în unele situații, pot deveni chiar o problemă complet diferită. Această abordare este folosită foarte des de cei care sunt experimentați și găsesc foarte ușor variații noi la problemele deja existente.
-* crearea unei probleme pe baza unei povești sau idei întipărite în minte (de exemplu, gândirea la o problemă de dinamică care are legătură cu un anume joc). Deși această metodă ne ajută să creăm probleme care pot deveni bune, în multe situații problemele create prin această metodă nu sunt la fel de valoroase ca cele create prin primele două metode, dar cu rafinare și eventual mici (sau mai mari) ajustări, se pot obține idei frumoase.
+- imaginarea unui anumit proces (real sau imaginar) și adaptarea lui la un model informatic. Cu alte cuvinte, se poate întâmpla să vedeți ceva interesant în viața reală sau într-un joc video și pe baza acestei secvențe de evenimente, să creați o poveste care să vă ducă la o idee de problemă. Aceasta este una dintre cele mai naturale moduri în care o problemă ajunge să fie creată, iar multe dintre problemele foarte bune și apreciate de concurenți sunt create așa.
+- rezolvarea unor probleme anterioare și dezvoltarea unor versiuni mai grele sau diferite față de cele originale, care uneori au chiar soluții complet diferite. În multe situații, deoarece rezolvați multe probleme de algoritmică, ajungeți să vă gândiți la multe idei și inevitabil, vă gândiți și la alte abordări care chiar dacă nu sunt strict legate de problema pe care încercați să o rezolvați, vă pot duce la idei alternative care în unele situații, pot deveni chiar o problemă complet diferită. Această abordare este folosită foarte des de cei care sunt experimentați și găsesc foarte ușor variații noi la problemele deja existente.
+- crearea unei probleme pe baza unei povești sau idei întipărite în minte (de exemplu, gândirea la o problemă de dinamică care are legătură cu un anume joc). Deși această metodă ne ajută să creăm probleme care pot deveni bune, în multe situații problemele create prin această metodă nu sunt la fel de valoroase ca cele create prin primele două metode, dar cu rafinare și eventual mici (sau mai mari) ajustări, se pot obține idei frumoase.
 
 Chiar dacă în aceste paragrafe am menționat noțiunea de problemă originală și cea de problemă interesantă, concursurile au nevoie de multe ori și de probleme care să testeze într-o anumită măsură cunoștințe precum cea de implementare sau cele de casework, iar de aceea poate veți vedea mai ales în cadrul problemelor mai ușoare, idei care deși par standard sau repetitive pentru concurenții experimentați, sunt foarte utile pentru audiența țintă a problemelor respective. Acest lucru se întâmplă la rundele de Codeforces cu probleme ușoare sau la competiții precum IIOT, unde comisia trebuie să creeze un set de probleme cu o gamă de dificultate foarte largă.
 
@@ -46,14 +46,14 @@ Următorul pas constă în crearea unui set de date de intrare cât mai cuprinz�
 
 De asemenea, în funcție de tipul de probleme de care vorbim, ne putem gândi la cazuri particulare pe care trebuie să le includem neapărat în testele de evaluare, printre altele voi enumera următoarele:
 
-* teste cu $N = 1$ și $N = 2$ (cu alte cuvinte, teste cu $N$ minim).
-* teste cu valori foarte mici (vă pot ajuta să detectați eventualele greșeli în soluția voastră în procesul de pregătire).
-* după caz, teste care să aibă o structură particulară (multe valori distincte, puține valori distincte, seturi cu multe valori egale etc.)
-* dacă vorbim de probleme de grafuri, teste cu grafuri complete, arbori, lanțuri, grafuri de tip stea (un nod din care se crează mai multe lanțuri), grafuri aciclice etc.
-* dacă vorbim de probleme de arbori, teste care să includă arbori binari, arbori lanț, arbori stea, arbori cu o înălțime mare etc.
-* dacă vorbim de probleme cu divizori și/sau teoria numerelor, vrem să avem numere prime, numere cu mulți divizori, numere cu mulți factori primi etc.
-* în cazul problemelor cu structuri de date, vrem să avem queryuri cât mai variate, care să aibă lungimi mari, lungimi mici, lungimi variate, care să acopere cât mai multe tipuri de restricții.
-* dacă avem de-a face cu corner cases, acestea trebuie incluse în întregime.
+- teste cu $N = 1$ și $N = 2$ (cu alte cuvinte, teste cu $N$ minim).
+- teste cu valori foarte mici (vă pot ajuta să detectați eventualele greșeli în soluția voastră în procesul de pregătire).
+- după caz, teste care să aibă o structură particulară (multe valori distincte, puține valori distincte, seturi cu multe valori egale etc.)
+- dacă vorbim de probleme de grafuri, teste cu grafuri complete, arbori, lanțuri, grafuri de tip stea (un nod din care se crează mai multe lanțuri), grafuri aciclice etc.
+- dacă vorbim de probleme de arbori, teste care să includă arbori binari, arbori lanț, arbori stea, arbori cu o înălțime mare etc.
+- dacă vorbim de probleme cu divizori și/sau teoria numerelor, vrem să avem numere prime, numere cu mulți divizori, numere cu mulți factori primi etc.
+- în cazul problemelor cu structuri de date, vrem să avem queryuri cât mai variate, care să aibă lungimi mari, lungimi mici, lungimi variate, care să acopere cât mai multe tipuri de restricții.
+- dacă avem de-a face cu corner cases, acestea trebuie incluse în întregime.
 
 Nu în ultimul rând, dacă aveți posibilitatea și tipul problemei vă permite acest lucru, nu ezitați să faceți problema una de tip multi-test (cu un parametru $t$ la începutul datelor de intrare pentru a putea include un număr mare de teste, în special cu date mici, în cadrul unui singur fișier test).
 
@@ -81,16 +81,16 @@ Polygon pune la dispoziție o gamă largă de checkere utlizatorilor, acestea av
 
 Checkerele puse la dispoziție de ei sunt următoarele:
 
-* fcmp.cpp - verifică liniile, nu ignoră spațiile goale
-* hcmp.cpp - potrivit pentru numere mari
-* lcmp.cpp - verifică liniile, ignoră spațiile goale
-* ncmp.cpp - unul sau mai multe numere de tip long long, ignoră spațiile goale
-* nyesno.cpp - zero sau mai multe YES/NO, nu ține cont de litere mari sau mici
-* rcmp4.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-4}$.
-* rcmp6.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-6}$.
-* rcmp9.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-9}$.
-* wcmp.cpp - secvență de tokens
-* yesno.cpp - un singur YES/NO, nu ține cont de litere mari sau mici
+- fcmp.cpp - verifică liniile, nu ignoră spațiile goale
+- hcmp.cpp - potrivit pentru numere mari
+- lcmp.cpp - verifică liniile, ignoră spațiile goale
+- ncmp.cpp - unul sau mai multe numere de tip long long, ignoră spațiile goale
+- nyesno.cpp - zero sau mai multe YES/NO, nu ține cont de litere mari sau mici
+- rcmp4.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-4}$.
+- rcmp6.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-6}$.
+- rcmp9.cpp - unul sau mai multe numere reale, eroarea maximă $10^{-9}$.
+- wcmp.cpp - secvență de tokens
+- yesno.cpp - un singur YES/NO, nu ține cont de litere mari sau mici
 
 Cele mai des folosite checkere sunt lcmp, nyesno și rcmp9. Celelalte checkere sunt și ele utile după caz.
 
@@ -116,9 +116,9 @@ Crearea unei probleme este un proces care deși pare complicat, este unul foarte
 
 ## Resurse suplimentare
 
-* [Problem guide - kilonova](https://kilonova.ro/posts/problem-guide)
-* [Polygon Guide - Stefan Dascalescu](https://kilonova.ro/posts/polygon-guide-415-bot7ke)
-* [Polygon.Codeforces Tutorial - A Guide to Problem Preparation \[Part 1\]](https://quangloc99.github.io/posts/polygon-codeforces-tutorial/)
-* [Sectiunea testlib - codeforces](https://codeforces.com/testlib)
-* [On problemsetting - codeforces](https://codeforces.com/blog/entry/70178)
-* [Problemsetting - oiwiki](https://oi-wiki.org/contest/problemsetting/)
+- [Problem guide - kilonova](https://kilonova.ro/posts/problem-guide)
+- [Polygon Guide - Stefan Dascalescu](https://kilonova.ro/posts/polygon-guide-415-bot7ke)
+- [Polygon.Codeforces Tutorial - A Guide to Problem Preparation \[Part 1\]](https://quangloc99.github.io/posts/polygon-codeforces-tutorial/)
+- [Sectiunea testlib - codeforces](https://codeforces.com/testlib)
+- [On problemsetting - codeforces](https://codeforces.com/blog/entry/70178)
+- [Problemsetting - oiwiki](https://oi-wiki.org/contest/problemsetting/)

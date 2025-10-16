@@ -3,6 +3,12 @@ import { fileURLToPath } from "node:url";
 import { FlatCompat } from "@eslint/eslintrc";
 import type { Linter } from "eslint";
 import * as mdx from "eslint-plugin-mdx";
+import reactPlugin from "eslint-plugin-react";
+import { defineConfig } from "eslint/config";
+// @ts-ignore
+import nextVitals from "eslint-config-next/core-web-vitals";
+// @ts-ignore
+import nextTs from "eslint-config-next/typescript";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -24,8 +30,9 @@ const mdxComponentGlobals = mdx.getGlobals([
   "Image",
 ]);
 
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   {
     ignores: [
       "node_modules/**",
@@ -39,17 +46,16 @@ const eslintConfig = [
   {
     ...mdx.flat,
     files: ["**/*.mdx"],
+    plugins: {
+      react: reactPlugin,
+    },
     languageOptions: {
       ...mdx.flat.languageOptions,
       parserOptions: {
-        ...mdx.flat.languageOptions?.parserOptions,
         ignoreRemarkConfig: false,
         remarkConfigPath,
       },
-      globals: {
-        ...mdx.flat.languageOptions?.globals,
-        ...mdxComponentGlobals,
-      },
+      globals: mdxComponentGlobals,
     },
     settings: {
       ...mdx.flat.settings,
@@ -64,6 +70,6 @@ const eslintConfig = [
       "react/jsx-no-undef": ["error", { allowGlobals: true }],
     },
   },
-] satisfies Linter.Config[];
+]);
 
 export default eslintConfig;

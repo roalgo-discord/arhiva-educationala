@@ -53,7 +53,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
 
    Antetul unei funcții este format din următoarele componente:
 
-   * **Tipul de returnare (tip)**. Reprezintă tipul valorii întoarse de funcție. Poate fi orice tip de date cunoscut în limbajul C++, inclusiv containere din STL.
+   - **Tipul de returnare (tip)**. Reprezintă tipul valorii întoarse de funcție. Poate fi orice tip de date cunoscut în limbajul C++, inclusiv containere din STL.
 
      Dacă funcția nu întoarce nicio valoare, se utilizează tipul `void`, care semnifică un tip gol.
 
@@ -64,9 +64,9 @@ O funcție este formată din două părți principale: antetul (declararea func�
      compilare. În unele cazuri, comportamentul programului devine
      imprevizibil (undefined behavior).
 
-   * **Numele funcției**. Este ales de utilizator și trebuie să respecte regulile de numire ale identificatorilor (de exemplu, să nu înceapă cu cifre, să nu conțină caractere speciale, etc.).
+   - **Numele funcției**. Este ales de utilizator și trebuie să respecte regulile de numire ale identificatorilor (de exemplu, să nu înceapă cu cifre, să nu conțină caractere speciale, etc.).
 
-   * **Parametrii funcției**. Sunt variabilele pe care funcția le primește la apel. Fiecare parametru are un tip de date și un nume.
+   - **Parametrii funcției**. Sunt variabilele pe care funcția le primește la apel. Fiecare parametru are un tip de date și un nume.
 
      !!! note "Observație"
 
@@ -81,7 +81,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
 
    O funcție poate întoarce o valoare folosind instrucțiunea `return`. Aceasta finalizează execuția funcției și trimite o valoare către codul care a apelat funcția (dacă funcția are un tip de returnare diferit de `void`).
 
-   * **Pentru funcții cu tip non-`void`**:
+   - **Pentru funcții cu tip non-`void`**:
 
      Instrucțiunea `return` trebuie să fie urmată de o expresie sau o valoare compatibilă cu tipul declarat al funcției. Absența unei valori returnate va genera, de obicei, un warning la compilare și poate duce la un comportament imprevizibil (*undefined behavior*).
 
@@ -100,7 +100,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
      --8<-- "cppintro/functions/functions3.cpp"
      ```
 
-   * **Pentru funcții de tip `void`**:
+   - **Pentru funcții de tip `void`**:
 
      Funcțiile declarate cu tipul `void` nu întorc nicio valoare, iar utilizarea instrucțiunii return este opțională. În acest caz, `  return;` poate fi folosit doar pentru a încheia executarea funcției mai devreme.
 
@@ -231,11 +231,11 @@ Aici puteți vedea cum aflăm în mod recursiv valoarea lui $n!$ folosind o func
 
 Se poate observa faptul că ne folosim de definiția lui $n!$, iar pentru a afla $n!$, avem nevoie de $(n-1)!$ și așa mai departe. Dacă vrem să calculăm valoarea lui $5!$, aceasta se obține în felul următor (pentru brevitate, `factorial(n)` este $n!$):
 
-* $5! = 4! \cdot 5$
-* $4! = 3! \cdot 4$
-* $3! = 2! \cdot 3$
-* $2! = 1! \cdot 2$
-* $1! = 1$, caz de bază
+- $5! = 4! \cdot 5$
+- $4! = 3! \cdot 4$
+- $3! = 2! \cdot 3$
+- $2! = 1! \cdot 2$
+- $1! = 1$, caz de bază
 
 Pentru a calcula $n!$, trebuie să aflăm toate factorialele până la $1!$, iar mai apoi folosim aceste rezultate invers pentru a primi răspunsul în valoarea cerută.
 
@@ -253,15 +253,15 @@ Pentru a evalua aceste funcții, recomandăm citirea codului cu atenție și not
 --8<-- "cppintro/functions/functions13.cpp"
 ```
 
-* $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
-* $f(12)$ - $12 \% 3 = 0$, deci intrăm în if, **afișăm 3** și apelăm $f(4)$.
-* $f(4)$ - $4 \% 3 = 1$, deci intrăm în else și apelăm $f(1)$.
-* $f(1)$ - $1 \% 3 = 1$, deci intrăm în else și apelăm $f(0)$.
-* $f(0)$ - deoarece $x = 0$, nu se face niciun apel suplimentar, iar funcția se întoarce.
-* $f(1)$ - după apelul lui $f(0)$, **afișăm $1 \% 3 = 1$**.
-* $f(4)$ - după apelul lui $f(1)$, **afișăm $4 \% 3 = 1$**.
-* $f(12)$ - după apelul lui $f(4)$, secvența se termină.
-* $f(38)$ - după apelul lui $f(12)$, **afișăm $38 \% 3 = 2$**.
+- $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
+- $f(12)$ - $12 \% 3 = 0$, deci intrăm în if, **afișăm 3** și apelăm $f(4)$.
+- $f(4)$ - $4 \% 3 = 1$, deci intrăm în else și apelăm $f(1)$.
+- $f(1)$ - $1 \% 3 = 1$, deci intrăm în else și apelăm $f(0)$.
+- $f(0)$ - deoarece $x = 0$, nu se face niciun apel suplimentar, iar funcția se întoarce.
+- $f(1)$ - după apelul lui $f(0)$, **afișăm $1 \% 3 = 1$**.
+- $f(4)$ - după apelul lui $f(1)$, **afișăm $4 \% 3 = 1$**.
+- $f(12)$ - după apelul lui $f(4)$, secvența se termină.
+- $f(38)$ - după apelul lui $f(12)$, **afișăm $38 \% 3 = 2$**.
 
 Astfel, secvența finală afișată va fi 3112.
 
@@ -271,18 +271,18 @@ Astfel, secvența finală afișată va fi 3112.
 --8<-- "cppintro/functions/functions14.cpp"
 ```
 
-* $g(2, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(1, g(2, 0))$.
-* $g(2, 0)$: $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(1, 1)$.
-* $g(1, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 0))$.
-* $g(1, 0)$: $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(0, 1)$.
-* $g(0, 1)$: $x = 0$ $\rightarrow$ se va returna $1 + 1 = 2$, deci $g(1, 0) =
+- $g(2, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(1, g(2, 0))$.
+- $g(2, 0)$: $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(1, 1)$.
+- $g(1, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 0))$.
+- $g(1, 0)$: $x > 0$, $y = 0$ $\rightarrow$ se va returna $g(0, 1)$.
+- $g(0, 1)$: $x = 0$ $\rightarrow$ se va returna $1 + 1 = 2$, deci $g(1, 0) =
   2$, deci $g(0, g(1, 0)) = g(0, 2)$ .
-* $g(0, 2)$: $x = 0$ $\rightarrow$ se va returna $2 + 1 = 3$, deci $g(1, 1) =
+- $g(0, 2)$: $x = 0$ $\rightarrow$ se va returna $2 + 1 = 3$, deci $g(1, 1) =
   g(2, 0) = 3$.
-* Astfel, $g(1, g(2, 0)) = g(1, 3)$.
-* $g(1, 3)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 2))$.
-* $g(1, 2)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 1))$.
-* Deja știm că $g(1, 1) = 3$, deci $g(0, 3) = g(1, 2) = 4$. Astfel, $g(0, 4) =
+- Astfel, $g(1, g(2, 0)) = g(1, 3)$.
+- $g(1, 3)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 2))$.
+- $g(1, 2)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(0, g(1, 1))$.
+- Deja știm că $g(1, 1) = 3$, deci $g(0, 3) = g(1, 2) = 4$. Astfel, $g(0, 4) =
   g(1, 3) = 5$.
 
 Cu alte cuvinte, valoarea lui $g(2, 1) = 5$.
@@ -355,24 +355,24 @@ Funcțiile scrise de utilizator sunt unul din cele mai importante unelte pe care
 
 ## Probleme suplimentare
 
-* [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
-* [oglindit2 pbinfo](https://www.pbinfo.ro/probleme/24/oglindit2)
-* [celmaimicnr pbinfo](https://www.pbinfo.ro/probleme/26/celmaimicnr)
-* [zerof pbinfo](https://www.pbinfo.ro/probleme/1826/zerof)
-* [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
-* [factorialrec pbinfo](https://www.pbinfo.ro/probleme/820/factorialrec)
-* [cmmdcrec pbinfo](https://www.pbinfo.ro/probleme/821/cmmdcrec)
-* [Manna - Pnueli pbinfo](https://www.pbinfo.ro/probleme/828/manna-pnueli)
-* [cât mai multe probleme din acest capitol pentru subprograme iterative](https://www.pbinfo.ro/probleme/categorii/13/subprograme)
-* [cât mai multe probleme din acest capitol pentru subprograme recursive](https://www.pbinfo.ro/probleme/categorii/81/recursivitate)
+- [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
+- [oglindit2 pbinfo](https://www.pbinfo.ro/probleme/24/oglindit2)
+- [celmaimicnr pbinfo](https://www.pbinfo.ro/probleme/26/celmaimicnr)
+- [zerof pbinfo](https://www.pbinfo.ro/probleme/1826/zerof)
+- [sumciff pbinfo](https://www.pbinfo.ro/probleme/897/sumciff)
+- [factorialrec pbinfo](https://www.pbinfo.ro/probleme/820/factorialrec)
+- [cmmdcrec pbinfo](https://www.pbinfo.ro/probleme/821/cmmdcrec)
+- [Manna - Pnueli pbinfo](https://www.pbinfo.ro/probleme/828/manna-pnueli)
+- [cât mai multe probleme din acest capitol pentru subprograme iterative](https://www.pbinfo.ro/probleme/categorii/13/subprograme)
+- [cât mai multe probleme din acest capitol pentru subprograme recursive](https://www.pbinfo.ro/probleme/categorii/81/recursivitate)
 
 ## Resurse suplimentare
 
-* [Subprograme - pbinfo](https://www.pbinfo.ro/articole/3656/subprograme)
-* [Recursivitate - pbinfo](https://www.pbinfo.ro/articole/3873/recursivitate)
-* [Subprograme - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_simple.html)
-* [Recursivitate - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_de_fixare_a_metodei.html)
-* [Recursivitate cu mai multe autoapeluri - CPPI Sync](https://cppi.sync.ro/materia/recursivitate_cu_mai_multe_autoapeluri.html)
-* [Material subprograme - CNI Tudor Vianu](http://www.lbi.ro/~carmen/vineri/Subprograme%20iterative\(pdf\)/Subprograme%20Cpp.pdf)
-* [Functii in C/C++ - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_37_-_29_mai_2019#Func%C8%9Bii_%C3%AEn_limbajul_C)
-* [Functions - w3schools](https://www.w3schools.com/cpp/cpp_functions.asp#:~:text=A%20function%20is%20a%20block,and%20use%20it%20many%20times.)
+- [Subprograme - pbinfo](https://www.pbinfo.ro/articole/3656/subprograme)
+- [Recursivitate - pbinfo](https://www.pbinfo.ro/articole/3873/recursivitate)
+- [Subprograme - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_simple.html)
+- [Recursivitate - CPPI Sync](https://cppi.sync.ro/materia/probleme_diverse_de_fixare_a_metodei.html)
+- [Recursivitate cu mai multe autoapeluri - CPPI Sync](https://cppi.sync.ro/materia/recursivitate_cu_mai_multe_autoapeluri.html)
+- [Material subprograme - CNI Tudor Vianu](http://www.lbi.ro/~carmen/vineri/Subprograme%20iterative\(pdf\)/Subprograme%20Cpp.pdf)
+- [Functii in C/C++ - Algopedia](https://www.algopedia.ro/wiki/index.php/Clasa_a_VI-a_lec%C8%9Bia_37_-_29_mai_2019#Func%C8%9Bii_%C3%AEn_limbajul_C)
+- [Functions - w3schools](https://www.w3schools.com/cpp/cpp_functions.asp#:~:text=A%20function%20is%20a%20block,and%20use%20it%20many%20times.)

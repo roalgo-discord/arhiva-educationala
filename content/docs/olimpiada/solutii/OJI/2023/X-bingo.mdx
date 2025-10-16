@@ -55,9 +55,9 @@ Exemplu: Dacă anagrama fixată este $nibog$, pentru fiecare apariție a lui b d
 
 Pentru fiecare poziție $i$, vom încerca să formăm șirul bingo pe pozițiile $i, i + 1, \dots, i + 4$. Pentru fiecare literă $l$, care ar urma să fie pe poziția i + k în șirul cu subsecvența bingo pe pozițiile $i, i + 1, \dots, i + 4$, avem cel mult trei opțiuni:
 
-* Să luăm litera $l$ din stânga poziției $i + k$, dacă este posibil;
-* Să luăm litera $l$ din dreapta poziției $i + k$, dacă este posibil;
-* Să luăm litera $l$ chiar de pe poziția $i + k$, dacă este posibil.
+- Să luăm litera $l$ din stânga poziției $i + k$, dacă este posibil;
+- Să luăm litera $l$ din dreapta poziției $i + k$, dacă este posibil;
+- Să luăm litera $l$ chiar de pe poziția $i + k$, dacă este posibil.
 
 Astfel, pentru fiecare poziție $i$, avem cel mult $3^5$ configurații posibile de alegeri pentru cele $5$ litere. Vom calcula numărul de swap-uri necesare pentru a aduce literele pe pozițiile $i, i + 1, \dots, i + 4$ în ordinea pozițiilor lor din șirul inițial (spre exemplu, dacă decidem să luăm litera n de pe o poziție de dinaintea poziției literei i, ordinea în care vom aduce literele este $n$, iar mai apoi $i$). La final, trebuie să adăugăm la răspuns numărul de swap-uri necesare pentru a transforma anagrama rezultată în șirul bingo. După precalcularea numărului de swap-uri necesare pentru fiecare anagramă a cuvântului bingo, complexitatea devine $O(N)$, dar cu o constantă aproximativ egală cu $243$.
 

@@ -77,7 +77,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [markUnsupportedNodes, remarkMath],
+    remarkPlugins: [remarkMath],
     rehypePlugins: (v) => [rehypeKatex, ...v],
   },
 });

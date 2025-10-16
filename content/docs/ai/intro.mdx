@@ -32,16 +32,16 @@ IAIO este o olimpiadă axată doar pe ML. Există o probă practică unde se rez
 Modelul învață din exemple „etichetate”: fiecare intrare are asociată o etichetă (rezultatul dorit). Scopul este să învețe o funcție care să mapeze intrările la etichete, astfel încât să prezică corect etichetele pentru date noi.\
 Exemple de probleme:
 
-* Clasificare – spam vs. non-spam (eticheta este „spam” sau „non-spam”).
-* Regresie – predicția prețului unei locuințe (eticheta este prețul real).\
+- Clasificare – spam vs. non-spam (eticheta este „spam” sau „non-spam”).
+- Regresie – predicția prețului unei locuințe (eticheta este prețul real).\
   Algoritmi frecvenți: regresia liniară/logistică, SVM, arbori de decizie, rețele neuronale.
 
 **Unsupervised learning (Învățare nesupervizată)**\
 Nu există etichete; modelul caută structuri ascunse în date.\
 Exemple de probleme:
 
-* Clustering – gruparea clienților în segmente omogene (K-means, DBSCAN).
-* Reducerea dimensionalității – comprimarea datelor păstrând informația esențială (PCA, t-SNE).
+- Clustering – gruparea clienților în segmente omogene (K-means, DBSCAN).
+- Reducerea dimensionalității – comprimarea datelor păstrând informația esențială (PCA, t-SNE).
 
 **Self-supervised learning (Învățare auto-supervizată)**\
 O formă hibridă: folosește date neetichetate, dar creează etichete artificiale din însăși datele. De exemplu, în învățarea de reprezentări lingvistice, modelul poate învăța să prezică cuvântul următor dintr-un text (BERT, GPT). În Computer Vision, o imagine poate fi parțial mascată, iar modelul învață să reconstruiască porțiunile lipsă. După această „pre-antrenare”, modelul poate fi ajustat (fine-tuned) pe o sarcină supervizată cu puține date etichetate.

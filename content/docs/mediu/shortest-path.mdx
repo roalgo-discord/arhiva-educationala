@@ -18,9 +18,9 @@ De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
 Acest traseu poate fi parcurs în două moduri principale, fiecare cu
 avantajele și dezavantajele lui.
 
-* Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h,
+- Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h,
   traseu dificil
-* Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu
+- Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu
   ceva mai ușor
 
 Chiar dacă cele două drumuri au o distanță identică, diferența este dată de
@@ -70,9 +70,9 @@ de pe ciclu este negativă.
 
 Modul de funcționare al algoritmului este unul foarte simplu:
 
-* Pentru fiecare nod, vom ține un cost total până la el, la început acesta va fi inițializat pentru toate nodurile cu valori mari, cu excepția nodului (sau nodurilor) start, care vor avea costul inițial 0.
-* Cât timp nu am vizitat toate nodurile, alegem nodul cu costul total dintre cele nealese. Dacă există mai multe asemenea noduri, oricare poate fi ales.
-* Pentru nodul ales, vom vizita toate nodurile nevizitate, vecine cu el și verificăm pentru fiecare dintre ele dacă costul total pentru acel nod devine mai mic.
+- Pentru fiecare nod, vom ține un cost total până la el, la început acesta va fi inițializat pentru toate nodurile cu valori mari, cu excepția nodului (sau nodurilor) start, care vor avea costul inițial 0.
+- Cât timp nu am vizitat toate nodurile, alegem nodul cu costul total dintre cele nealese. Dacă există mai multe asemenea noduri, oricare poate fi ales.
+- Pentru nodul ales, vom vizita toate nodurile nevizitate, vecine cu el și verificăm pentru fiecare dintre ele dacă costul total pentru acel nod devine mai mic.
 
 ### Implementare suboptimă
 
@@ -381,8 +381,8 @@ Un prim exemplu constă în grafurile (sau construcțiile care pot fi reprezenta
 
 În loc să avem o singură coadă în care adăugăm valori de fiecare dată când drumul devine unul mai optim decât drumul minim, vom avea două cozi (sau un deque) în care vom alterna cozile în care adăugăm nodurile, după cum urmează:
 
-* Dacă costul muchiei este 0, vom adăuga în coada curentă (sau în vârful deque-ului, dacă folosim un deque)
-* Dacă costul muchiei este 1, vom adăuga în coada următoare (sau la coada deque-ului, dacă folosim această structură de date)
+- Dacă costul muchiei este 0, vom adăuga în coada curentă (sau în vârful deque-ului, dacă folosim un deque)
+- Dacă costul muchiei este 1, vom adăuga în coada următoare (sau la coada deque-ului, dacă folosim această structură de date)
 
 !!! note "Observație"
 
@@ -579,36 +579,36 @@ Fiecare algoritm are avantajele și dezavantajele lui, cunoașterea tuturor fiin
 
 ## Probleme suplimentare
 
-* [Simple Shortest Path](https://kilonova.ro/problems/2037/)
-* [Shortest Routes I](https://cses.fi/problemset/task/1671/)
-* [Shortest Routes II](https://cses.fi/problemset/task/1672/)
-* [catun infoarena](https://www.infoarena.ro/problema/catun)
-* [High Score](https://cses.fi/problemset/task/1673)
-* [Flight Discount](https://cses.fi/problemset/task/1195)
-* [OJI 2004 Lanterna](https://kilonova.ro/problems/54)
-* [FIICode John and Tractor](https://codeforces.com/gym/104328/problem/C)
-* [OJI 2017 Rover](https://kilonova.ro/problems/888)
-* [Baltic Olympiad 2011 Switch](https://cses.fi/100/list/)
-* [Lot 2018 Juniori Road](https://kilonova.ro/problems/1624/)
-* [USACO Gold Fine Dining](https://usaco.org/index.php?page=viewproblem2\&cpid=861)
-* [ONI 2023 Biom](https://kilonova.ro/problems/532/)
-* [Cycle Finding](https://cses.fi/problemset/task/1197)
-* [Investigation](https://cses.fi/problemset/task/1202)
-* [Probleme cu drumul minim de pe Kilonova](https://kilonova.ro/tags/296)
-* [Probleme cu Dijkstra de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=72)
-* [Probleme cu Bellman-Ford de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=342)
-* [rfinv infoarena](https://www.infoarena.ro/problema/rfinv)
-* [Probleme cu Floyd-Warshall de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=92)
+- [Simple Shortest Path](https://kilonova.ro/problems/2037/)
+- [Shortest Routes I](https://cses.fi/problemset/task/1671/)
+- [Shortest Routes II](https://cses.fi/problemset/task/1672/)
+- [catun infoarena](https://www.infoarena.ro/problema/catun)
+- [High Score](https://cses.fi/problemset/task/1673)
+- [Flight Discount](https://cses.fi/problemset/task/1195)
+- [OJI 2004 Lanterna](https://kilonova.ro/problems/54)
+- [FIICode John and Tractor](https://codeforces.com/gym/104328/problem/C)
+- [OJI 2017 Rover](https://kilonova.ro/problems/888)
+- [Baltic Olympiad 2011 Switch](https://cses.fi/100/list/)
+- [Lot 2018 Juniori Road](https://kilonova.ro/problems/1624/)
+- [USACO Gold Fine Dining](https://usaco.org/index.php?page=viewproblem2\&cpid=861)
+- [ONI 2023 Biom](https://kilonova.ro/problems/532/)
+- [Cycle Finding](https://cses.fi/problemset/task/1197)
+- [Investigation](https://cses.fi/problemset/task/1202)
+- [Probleme cu drumul minim de pe Kilonova](https://kilonova.ro/tags/296)
+- [Probleme cu Dijkstra de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=72)
+- [Probleme cu Bellman-Ford de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=342)
+- [rfinv infoarena](https://www.infoarena.ro/problema/rfinv)
+- [Probleme cu Floyd-Warshall de pe Infoarena](https://infoarena.ro/cauta-probleme?tag_id\[]=92)
 
 ## Lectură suplimentară
 
-* [Shortest Paths with Non-Negative Edge Weights - USACO Guide](https://usaco.guide/gold/shortest-paths?lang=cpp)
-* [Shortest Paths with Negative Edge Weights - USACO Guide](https://usaco.guide/adv/sp-neg?lang=cpp)
-* [Dijkstra - CP-algorithms](https://cp-algorithms.com/graph/dijkstra.html)
-* [Aflarea drumului minim - CPPI](https://cppi.sync.ro/materia/aflarea_drumului_minim__arborele_drumurilor_minime.html)
-* [1-K BFS - Codeforces](https://codeforces.com/blog/entry/88408)
-* [0-1 BFS - CP-algorithms](https://cp-algorithms.com/graph/01_bfs.html)
-* [Roy Floyd - CPPI](https://cppi.sync.ro/materia/roy_floyd.html)
-* [Dijkstra - CPPI](https://cppi.sync.ro/materia/dijkstra.html)
-* [Rethink the Dijkstra algorithm -- Let's go deeper](https://codeforces.com/blog/entry/107810)
-* [Bellman-Ford - CPPI](https://cppi.sync.ro/materia/Bellman-Ford.html)
+- [Shortest Paths with Non-Negative Edge Weights - USACO Guide](https://usaco.guide/gold/shortest-paths?lang=cpp)
+- [Shortest Paths with Negative Edge Weights - USACO Guide](https://usaco.guide/adv/sp-neg?lang=cpp)
+- [Dijkstra - CP-algorithms](https://cp-algorithms.com/graph/dijkstra.html)
+- [Aflarea drumului minim - CPPI](https://cppi.sync.ro/materia/aflarea_drumului_minim__arborele_drumurilor_minime.html)
+- [1-K BFS - Codeforces](https://codeforces.com/blog/entry/88408)
+- [0-1 BFS - CP-algorithms](https://cp-algorithms.com/graph/01_bfs.html)
+- [Roy Floyd - CPPI](https://cppi.sync.ro/materia/roy_floyd.html)
+- [Dijkstra - CPPI](https://cppi.sync.ro/materia/dijkstra.html)
+- [Rethink the Dijkstra algorithm -- Let's go deeper](https://codeforces.com/blog/entry/107810)
+- [Bellman-Ford - CPPI](https://cppi.sync.ro/materia/Bellman-Ford.html)

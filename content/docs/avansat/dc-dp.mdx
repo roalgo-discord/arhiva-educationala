@@ -33,8 +33,8 @@ De multe ori, demonstrația poate fi dificil de găsit, dar dacă funcția de co
 
 Astfel, vom putea aplica ideea din spatele divide et impera. Pentru un interval $(L, R)$, știm punctele posibile care pot fi optime $(opt_L, opt_R)$. Astfel, vom încerca să calculăm dinamica pentru valoarea din mijloc, iar în funcție de valoarea optimă găsită (o notăm $opt$), vom împărți intervalele recursiv în două, după cum urmează:
 
-* $(L, mid-1)$, respectiv $(opt_L, opt)$
-* $(mid+1, R)$, respectiv $(opt, opt_R)$.
+- $(L, mid-1)$, respectiv $(opt_L, opt)$
+- $(mid+1, R)$, respectiv $(opt, opt_R)$.
 
 Vom continua acest lucru până când ajungem la intervale unitare, caz în care ne vom opri.
 
@@ -70,15 +70,15 @@ Conform definiției avem $sp(x, y) \geq 0$ și $C(x, y) \geq 0$.
 
 În primul rând, vom analiza ce intervale contribuie la costurile din inegalitatea de mai sus. Distingem trei tipuri de intervale:
 
-* interval roșu: inclus în $[a, c]$ sau $[b, d]$, dar nu în $[b, c]$.
-* interval albastru: inclus în $[b, c]$.
-* interval verde: inclus în $[a, d]$, dar nu în $[a, c]$ sau $[b, d]$.
+- interval roșu: inclus în $[a, c]$ sau $[b, d]$, dar nu în $[b, c]$.
+- interval albastru: inclus în $[b, c]$.
+- interval verde: inclus în $[a, d]$, dar nu în $[a, c]$ sau $[b, d]$.
 
 Vom scrie membrul stâng și membrul drept al inegalității în funcție de cele trei tipuri de intervale:
 
-* $C(a, c) + C(b, d) = \sum sp(interval_{roșu}) + 2 \sum sp(interval_{albastru})$
-* $C(a, d) + C(b, c) = \sum sp(interval_{roșu}) + 2 \sum sp(interval_{albastru}) + \sum sp(interval_{verde})$
-* $C(a, c) + C(b, d) \leq C(a, d) + C(b, c) \Leftrightarrow 0 \leq \sum sp(interval_{verde})$
+- $C(a, c) + C(b, d) = \sum sp(interval_{roșu}) + 2 \sum sp(interval_{albastru})$
+- $C(a, d) + C(b, c) = \sum sp(interval_{roșu}) + 2 \sum sp(interval_{albastru}) + \sum sp(interval_{verde})$
+- $C(a, c) + C(b, d) \leq C(a, d) + C(b, c) \Leftrightarrow 0 \leq \sum sp(interval_{verde})$
 
 ceea ce este adevărat din definiția funcției $sp(x, y)$.
 
@@ -98,25 +98,25 @@ Recomandăm și abordarea problemelor de mai jos, precum și a articolelor supli
 
 ## Probleme suplimentare
 
-* [Infoarena cubeon](https://www.infoarena.ro/problema/cubeon)
-* [ONI 2006 Petrom](https://kilonova.ro/problems/89/)
-* [Codeforces Ciel and Gondolas](https://codeforces.com/contest/321/problem/E)
-* [Atcoder Yakiniku Restaurants](https://atcoder.jp/contests/arc067/tasks/arc067_d)
-* [Codeforces Yet Another Minimization Problem](https://codeforces.com/contest/868/problem/F)
-* [USACO Platinum Circular Barn](https://usaco.org/index.php?page=viewproblem2\&cpid=626)
-* [USACO Platinum Mowing Mischief](https://usaco.org/index.php?page=viewproblem2\&cpid=926)
-* [COI 2015 Nafta](https://oj.uz/problem/view/COI15_nafta)
-* [Codeforces Trucks and Cities](https://codeforces.com/contest/1101/problem/F)
-* [JOI 2013 Bubblesort](https://atcoder.jp/contests/joi2013ho/tasks/joi2013ho5)
-* [IOI 2014 Holiday](https://oj.uz/problem/view/IOI14_holiday)
-* [Codeforces Partition Game](https://codeforces.com/contest/1527/problem/E)
+- [Infoarena cubeon](https://www.infoarena.ro/problema/cubeon)
+- [ONI 2006 Petrom](https://kilonova.ro/problems/89/)
+- [Codeforces Ciel and Gondolas](https://codeforces.com/contest/321/problem/E)
+- [Atcoder Yakiniku Restaurants](https://atcoder.jp/contests/arc067/tasks/arc067_d)
+- [Codeforces Yet Another Minimization Problem](https://codeforces.com/contest/868/problem/F)
+- [USACO Platinum Circular Barn](https://usaco.org/index.php?page=viewproblem2\&cpid=626)
+- [USACO Platinum Mowing Mischief](https://usaco.org/index.php?page=viewproblem2\&cpid=926)
+- [COI 2015 Nafta](https://oj.uz/problem/view/COI15_nafta)
+- [Codeforces Trucks and Cities](https://codeforces.com/contest/1101/problem/F)
+- [JOI 2013 Bubblesort](https://atcoder.jp/contests/joi2013ho/tasks/joi2013ho5)
+- [IOI 2014 Holiday](https://oj.uz/problem/view/IOI14_holiday)
+- [Codeforces Partition Game](https://codeforces.com/contest/1527/problem/E)
 
 ## Resurse suplimentare
 
-* [Divide and Conquer DP - USACO Guide](https://usaco.guide/plat/DC-DP?lang=cpp)
-* [Dynamic Programming Optimizations - Codeforces](https://codeforces.com/blog/entry/8219)
-* [Quadrangle Inequality Properties - codeforces](https://codeforces.com/blog/entry/86306)
-* [DP Optimizations - HKOI](https://assets.hkoi.org/training2023/dp-iii.pdf)
-* [Divide and Conquer DP - cp-algorithms](https://cp-algorithms.com/dynamic_programming/divide-and-conquer-dp.html)
-* [Divide and Conquer DP - Jeffrey Xiao](https://jeffreyxiao.me/blog/divide-and-conquer-optimization)
-* [DP optimization - Divide and Conquer Optimization - Robert1003](https://robert1003.github.io/2020/02/25/dp-opt-divide-and-conquer.html)
+- [Divide and Conquer DP - USACO Guide](https://usaco.guide/plat/DC-DP?lang=cpp)
+- [Dynamic Programming Optimizations - Codeforces](https://codeforces.com/blog/entry/8219)
+- [Quadrangle Inequality Properties - codeforces](https://codeforces.com/blog/entry/86306)
+- [DP Optimizations - HKOI](https://assets.hkoi.org/training2023/dp-iii.pdf)
+- [Divide and Conquer DP - cp-algorithms](https://cp-algorithms.com/dynamic_programming/divide-and-conquer-dp.html)
+- [Divide and Conquer DP - Jeffrey Xiao](https://jeffreyxiao.me/blog/divide-and-conquer-optimization)
+- [DP optimization - Divide and Conquer Optimization - Robert1003](https://robert1003.github.io/2020/02/25/dp-opt-divide-and-conquer.html)

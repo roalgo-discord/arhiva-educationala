@@ -19,29 +19,29 @@ tags:
 
 Pentru $m, n$ numere prime între ele (adică $\operatorname{cmmdc}(m, n) = 1$), avem două feluri de funcții aritmetice:
 
-* funcții *aditive*, unde $f(mn) = f(n) + f(m)$;
-* funcții *multiplicative*, unde $f(mn)$ = $f(m)f(n)$.
+- funcții *aditive*, unde $f(mn) = f(n) + f(m)$;
+- funcții *multiplicative*, unde $f(mn)$ = $f(m)f(n)$.
 
 Pentru simplitate vom defini următoarele aspecte:
 
-* $[p] = 1$ dacă $p$ este o propoziție adevărată sau 0 în caz contrar.
-* $\lfloor n \rfloor$ = partea întreagă a lui $n$.
+- $[p] = 1$ dacă $p$ este o propoziție adevărată sau 0 în caz contrar.
+- $\lfloor n \rfloor$ = partea întreagă a lui $n$.
 
 Cât și următoarele proprietăți celebre:
 
-* $\sum_{k = 1}^{N} \frac{1}{k} \approx \log{N}$.
-* Șirul $a_i = \lfloor \frac{N}{i} \rfloor$, cu $\leq N$, are $\mathcal{O}(\sqrt N)$ valori distincte.
+- $\sum_{k = 1}^{N} \frac{1}{k} \approx \log{N}$.
+- Șirul $a_i = \lfloor \frac{N}{i} \rfloor$, cu $\leq N$, are $\mathcal{O}(\sqrt N)$ valori distincte.
 
 Pentru $\forall p \in \mathbb{N}$, $p$ număr prim, și $\forall k \in
 \mathbb{N}$, definim următoarele funcții multiplicative:
 
-* funcția identică $I(p^k) = p^k$;
-* funcția putere $P_a(p^k) = p^{ka}$, unde $a$ este constantă (nu confundăm cu funcția exponențială $f_a(p^k) = a^{p^k}$);
-* funcția unitate $U(p^k) = [p^k = 1]$;
-* funcția divizorilor $\sigma (p^k)$ = numărul de divizori ai lui $p^k$;
-* indicatorul lui Euler $\varphi(p^k) = p^{k} - p^{k-1}$, câte numere $x$, cu $1
+- funcția identică $I(p^k) = p^k$;
+- funcția putere $P_a(p^k) = p^{ka}$, unde $a$ este constantă (nu confundăm cu funcția exponențială $f_a(p^k) = a^{p^k}$);
+- funcția unitate $U(p^k) = [p^k = 1]$;
+- funcția divizorilor $\sigma (p^k)$ = numărul de divizori ai lui $p^k$;
+- indicatorul lui Euler $\varphi(p^k) = p^{k} - p^{k-1}$, câte numere $x$, cu $1
   \leq x \leq p^k$ și $\operatorname{cmmdc}(x, p^k) = 1$ există
-* funcția Möbius $\mu(p^k) = [k = 0] - [k = 1]$.
+- funcția Möbius $\mu(p^k) = [k = 0] - [k = 1]$.
 
 !!! note "Definiție"
 
@@ -110,9 +110,9 @@ $\mathcal{O}(N)$.
 
 Pentru a calcula $\varphi(n)$ trebuie să luam în considerare 3 cazuri:
 
-* $n$ este prim, deci $\varphi(n) = n-1$
-* $n = i \cdot p$ și $p \nmid i$, deci $\varphi(n) = \varphi(i) \varphi(p)$. (prin $a \nmid b$ înțelegem: "a nu divide pe b").
-* $n = i \cdot p$ și $p \mid i$. Acest caz este uneori greu de tratat, dar din fericire știm sigur că $\varphi(ip) = p\varphi(i)\ \forall i, p$.
+- $n$ este prim, deci $\varphi(n) = n-1$
+- $n = i \cdot p$ și $p \nmid i$, deci $\varphi(n) = \varphi(i) \varphi(p)$. (prin $a \nmid b$ înțelegem: "a nu divide pe b").
+- $n = i \cdot p$ și $p \mid i$. Acest caz este uneori greu de tratat, dar din fericire știm sigur că $\varphi(ip) = p\varphi(i)\ \forall i, p$.
 
 ```cpp
 vector<int> prime;
@@ -171,9 +171,9 @@ funcției `pow` din `<cmath>`, din cauza erorilor de precizie.
 
 Gândim similar pentru funcția Möbius:
 
-* $n$ prim $\Rightarrow \mu(n) = -1$
-* $n = i \cdot p$, $p \nmid i$, deci $\mu(n) = \mu(i) \cdot \mu(p)$
-* $n = i \cdot p$, $p \mid i$, deci $\mu(n) =
+- $n$ prim $\Rightarrow \mu(n) = -1$
+- $n = i \cdot p$, $p \nmid i$, deci $\mu(n) = \mu(i) \cdot \mu(p)$
+- $n = i \cdot p$, $p \mid i$, deci $\mu(n) =
   \frac{\mu(i)}{[sml(i)=0]-[sml(i)=1]} \cdot ([sml(i)+1=0]-[sml(i)+1=1])$.
 
 !!! note "Observație"
@@ -464,8 +464,8 @@ Complexitatea algoritmului de mai sus este foarte interesantă, ea fiind $\mathc
 
 Se dau două numere $K$ și $N$. Să se afle $T$, numărul de tupluri formate din $K$ elemente $(X_1, X_2, X_3, \dots , X_K)$ cu proprietatea că:
 
-* $1 \leq X_1 \leq X_2 \leq \dots \leq X_K \leq N$.
-* $\operatorname{cmmdc}(X_1, X_2, \dots, X_K) = 1$.
+- $1 \leq X_1 \leq X_2 \leq \dots \leq X_K \leq N$.
+- $\operatorname{cmmdc}(X_1, X_2, \dots, X_K) = 1$.
 
 #### Soluție de $75 \rightarrow 80$ (sau chiar 100) de puncte
 
@@ -546,8 +546,8 @@ Deducem cu puternicele noastre simțuri că modulul ($M$) în problema asta
 este mult mai mic decât $N$, astfel putem să calculăm combinările mult mai
 rapid:
 
-* $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$.
-* $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
+- $n \leq M$, deci putem precalcula combinările în $\mathcal{O}(M)$.
+- $n > M$, deci ${n \choose k} \%\ M = {\lfloor \frac{n}{mod} \rfloor \choose
       \lfloor \frac{k}{mod} \rfloor} \cdot {n \bmod M \choose k \bmod M}\ \%\ M$
 
 ```cpp
@@ -627,16 +627,16 @@ int main() {
 
 ## Probleme suplimentare
 
-* [ONI 2021 Baraj Seniori Pastile](https://kilonova.ro/problems/69)
-* [Lot 2023 Juniori countall](https://kilonova.ro/problems/640)
-* [RoAlgo Contest #8 Gya-chan and the gcd operation](https://kilonova.ro/problems/2017)
-* [USACO Gold Cowpability](https://usaco.org/index.php?page=viewproblem2\&cpid=862)
-* [Listă de probleme cu Mobius](https://vjudge.net/contest/151569)
-* [Sum of gcd of Tuples (Hard)](https://atcoder.jp/contests/abc162/tasks/abc162_e)
+- [ONI 2021 Baraj Seniori Pastile](https://kilonova.ro/problems/69)
+- [Lot 2023 Juniori countall](https://kilonova.ro/problems/640)
+- [RoAlgo Contest #8 Gya-chan and the gcd operation](https://kilonova.ro/problems/2017)
+- [USACO Gold Cowpability](https://usaco.org/index.php?page=viewproblem2\&cpid=862)
+- [Listă de probleme cu Mobius](https://vjudge.net/contest/151569)
+- [Sum of gcd of Tuples (Hard)](https://atcoder.jp/contests/abc162/tasks/abc162_e)
 
 ### Bibliografie și lectură suplimentară
 
-* [Math note — Möbius inversion](https://codeforces.com/blog/entry/53925)
-* [Möbius Function](https://usaco.guide/plat/PIE?lang=cpp#mobius-function)
-* [Prefix Sums of Multiplicative Functions](https://usaco.guide/adv/multiplicative?lang=cpp)
-* [Möbius inversion formula](https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula)
+- [Math note — Möbius inversion](https://codeforces.com/blog/entry/53925)
+- [Möbius Function](https://usaco.guide/plat/PIE?lang=cpp#mobius-function)
+- [Prefix Sums of Multiplicative Functions](https://usaco.guide/adv/multiplicative?lang=cpp)
+- [Möbius inversion formula](https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula)

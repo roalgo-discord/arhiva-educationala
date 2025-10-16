@@ -25,8 +25,8 @@ Trebuie să existe un nod $i$ astfel încât drumurile $s \rightarrow i$, $i \ri
 
 Toate constrângerile de mai sus pot fi rezolvate cu algoritmul Roy-Floyd, cu două mențiuni:
 
-* $d[i][j]$ va fi folosit pentru ciclul de lungime minimă care începe și se termină în $i$, $\forall i \in {1, \dots, n}$.
-* Pentru reconstruirea oricărui drum, trebuie să reținem o matrice suplimentară $p$. Dacă am ameliorat lungimea drumului $i \rightarrow j$ cu ajutorul nodului $z$, atunci actualizăm $p[i][j] \leftarrow z$. Când vrem să reconstruim drumul $i \rightarrow j$ de lungime minimă, construim recursiv și unim drumurile $i \rightarrow p[i][j]$ și $p[i][j] \rightarrow j$.
+- $d[i][j]$ va fi folosit pentru ciclul de lungime minimă care începe și se termină în $i$, $\forall i \in {1, \dots, n}$.
+- Pentru reconstruirea oricărui drum, trebuie să reținem o matrice suplimentară $p$. Dacă am ameliorat lungimea drumului $i \rightarrow j$ cu ajutorul nodului $z$, atunci actualizăm $p[i][j] \leftarrow z$. Când vrem să reconstruim drumul $i \rightarrow j$ de lungime minimă, construim recursiv și unim drumurile $i \rightarrow p[i][j]$ și $p[i][j] \rightarrow j$.
 
 Trebuie să reconstruim 4 drumuri, fiecare în $O(n^2)$. Complexitatea totală a algoritmului este $O(n^3)$.
 

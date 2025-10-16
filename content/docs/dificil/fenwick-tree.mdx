@@ -32,16 +32,16 @@ avea de-a face cu 0, care nu are un bit nesemnificativ egal cu 1.
 
 Să presupunem că avem un AIB cu 16 noduri și vrem să actualizăm valoarea de la poziția 3. Pentru a putea face asta, vom rula următorul algoritm, cât timp valoarea curentă nu e mai mare decât numărul de noduri:
 
-* actualizăm valoarea curentă
-* aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
-* adunăm $2^{lsb}$ la valoarea curentă
+- actualizăm valoarea curentă
+- aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
+- adunăm $2^{lsb}$ la valoarea curentă
 
 De exemplu, pentru nodul 3 vom trece prin următoarele poziții, după cum se poate vedea pe desen:
 
-* 3 - poziția celui mai nesemnificativ bit este 0, adunăm $2^0 = 1$ la poziție
-* 4 - poziția celui mai nesemnificativ bit este 2, adunăm $2^2 = 4$ la poziție
-* 8 - poziția celui mai nesemnificativ bit este 3, adunăm $2^3 = 8$ la poziție
-* 16 - poziția celui mai nesemnificativ bit este 3, adunăm $2^4 = 16$ la poziție, algoritmul ia sfârșit.
+- 3 - poziția celui mai nesemnificativ bit este 0, adunăm $2^0 = 1$ la poziție
+- 4 - poziția celui mai nesemnificativ bit este 2, adunăm $2^2 = 4$ la poziție
+- 8 - poziția celui mai nesemnificativ bit este 3, adunăm $2^3 = 8$ la poziție
+- 16 - poziția celui mai nesemnificativ bit este 3, adunăm $2^4 = 16$ la poziție, algoritmul ia sfârșit.
 
   {/* TODO: trebuie sa refac desenul de aici */}
 
@@ -55,15 +55,15 @@ Complexitatea operației de update este $\mathcal{O}(\log n)$, unde $n$ este dim
 
 Mai jos prezint algoritmul general și un exemplu de aplicare al acestuia, pentru valoarea 13.
 
-* adunăm la rezultat valoarea curentă
-* aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
-* scădem $2^{lsb}$ din valoarea curentă.
+- adunăm la rezultat valoarea curentă
+- aflăm poziția celui mai nesemnificativ bit, să o notăm $lsb$
+- scădem $2^{lsb}$ din valoarea curentă.
 
 De exemplu, pentru nodul 13 vom trece prin următoarele poziții, după cum se poate vedea pe desen:
 
-* 13 - poziția celui mai nesemnificativ bit este 0, scădem $2^0 = 1$ din poziție
-* 12 - poziția celui mai nesemnificativ bit este 2, scădem $2^2 = 4$ din poziție
-* 8 - poziția celui mai nesemnificativ bit este 3, scădem $2^3 = 8$ din poziție, am ajuns la 0, deci calculul ia sfârșit.
+- 13 - poziția celui mai nesemnificativ bit este 0, scădem $2^0 = 1$ din poziție
+- 12 - poziția celui mai nesemnificativ bit este 2, scădem $2^2 = 4$ din poziție
+- 8 - poziția celui mai nesemnificativ bit este 3, scădem $2^3 = 8$ din poziție, am ajuns la 0, deci calculul ia sfârșit.
 
 <Image alt="Un exemplu de query pentru poziția 13" src="../images/fenwick/fenwick-query.png" width="1543" height="536" />
 
@@ -221,19 +221,19 @@ int main() {
 
 ## Probleme suplimentare
 
-* [infoarena aib](https://www.infoarena.ro/problema/aib)
-* [Kilonova Fenwick Tree](https://kilonova.ro/problems/2100)
-* [IIOT Goal Statistics](https://kilonova.ro/problems/960)
-* [Inversions - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/3/practice/contest/274545/problem/A)
-* [Inversions 2 - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/3/practice/contest/274545/problem/B)
-* [K-th one - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B)
-* [Segment Tree for the Sum - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A)
-* [infoarena inv](https://infoarena.ro/problema/inv)
+- [infoarena aib](https://www.infoarena.ro/problema/aib)
+- [Kilonova Fenwick Tree](https://kilonova.ro/problems/2100)
+- [IIOT Goal Statistics](https://kilonova.ro/problems/960)
+- [Inversions - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/3/practice/contest/274545/problem/A)
+- [Inversions 2 - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/3/practice/contest/274545/problem/B)
+- [K-th one - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B)
+- [Segment Tree for the Sum - Codeforces Edu](https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A)
+- [infoarena inv](https://infoarena.ro/problema/inv)
 
 ## Resurse suplimentare
 
-* [Fenwick Tree - CP Algorithms](https://cp-algorithms.com/data_structures/fenwick.html)
-* [Binary Indexed Trees - Stefan Dascalescu](https://www.youtube.com/watch?v=DzYBTHTOFDA)
-* [Understanding Fenwick Trees - Codeforces](https://codeforces.com/blog/entry/57292)
-* [Binary Indexed Trees - USACO Guide](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)
-* [A simple introduction to Fenwick Trees - robert1003](https://robert1003.github.io/2020/01/27/fenwick-tree.html)
+- [Fenwick Tree - CP Algorithms](https://cp-algorithms.com/data_structures/fenwick.html)
+- [Binary Indexed Trees - Stefan Dascalescu](https://www.youtube.com/watch?v=DzYBTHTOFDA)
+- [Understanding Fenwick Trees - Codeforces](https://codeforces.com/blog/entry/57292)
+- [Binary Indexed Trees - USACO Guide](https://usaco.guide/gold/PURS?lang=cpp#binary-indexed-tree)
+- [A simple introduction to Fenwick Trees - robert1003](https://robert1003.github.io/2020/01/27/fenwick-tree.html)

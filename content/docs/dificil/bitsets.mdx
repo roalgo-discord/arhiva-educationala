@@ -16,9 +16,9 @@ In **C++**, clasa **bitset** constituie o succesiune de biți, putând fi asocia
 
 ### Sintaxă
 
-* `std::bitset` se regăsește in librăriile`<bitset>` sau `<bits/stdc++.h>`.
-* Linia `bitset<N> b;` declară un bitset cu exact $N$ biți, $N$ este constantă, i.e. se specifică explicit valoarea acesteia la declarare.
-* De asemenenea putem declara un **bitset** care să conțină biții unui număr: `bitset<10> b(13)`.
+- `std::bitset` se regăsește in librăriile`<bitset>` sau `<bits/stdc++.h>`.
+- Linia `bitset<N> b;` declară un bitset cu exact $N$ biți, $N$ este constantă, i.e. se specifică explicit valoarea acesteia la declarare.
+- De asemenenea putem declara un **bitset** care să conțină biții unui număr: `bitset<10> b(13)`.
 
 ```cpp
 bitset<10> b;
@@ -39,14 +39,14 @@ int main() {
 
 ### Operatori permiși
 
-* `operator==` și `operator!=` compară conținutul cu alt `bitset`.
-* `operator[]` accesează valoarea unui bit la o poziție anume.
-* `operator&=` operator binar **ȘI**.
-* `operator|=` operator binar **SAU**.
-* `operator^=` operator binar **XOR**.
-* `operator~` operator binar **NOT**.
-* `operator<<=` shift pe biți la stanga.
-* `operator>>=` shift pe biți la dreapta.
+- `operator==` și `operator!=` compară conținutul cu alt `bitset`.
+- `operator[]` accesează valoarea unui bit la o poziție anume.
+- `operator&=` operator binar **ȘI**.
+- `operator|=` operator binar **SAU**.
+- `operator^=` operator binar **XOR**.
+- `operator~` operator binar **NOT**.
+- `operator<<=` shift pe biți la stanga.
+- `operator>>=` shift pe biți la dreapta.
 
 ```cpp
 bitset<10> b;
@@ -80,14 +80,14 @@ permanent.
 
 {/* me when dau functii de gcc ca fiind litera de lege... bravo sefule */}
 
-* `_Find_first()` returnează prima poziție a unui bit setat (cea cu index minim).
-* `_Find_next(int pos)` returnează următorul bit setat după poz, iar în cazul în care nu există va returna lungimea **bitsetului**
-* `.count()` returnează numărul de biți setați.
-* `.reset()` resetează toți biții la 0.
-* `.flip(int pos)`: $b[pos]$ devine $b[pos]$ **xor** 1, i.e. schimbă bitul $pos$ din 0 în 1 și invers.
-* `.to_string()` va converti **bitsetul** într-un **string**.
-* `.to_ulong()` va converti **bitsetul** într-un `unsigned long`.
-* `.to_ullong()` va converti **bitsetul** într-un `unsigned long long`.
+- `_Find_first()` returnează prima poziție a unui bit setat (cea cu index minim).
+- `_Find_next(int pos)` returnează următorul bit setat după poz, iar în cazul în care nu există va returna lungimea **bitsetului**
+- `.count()` returnează numărul de biți setați.
+- `.reset()` resetează toți biții la 0.
+- `.flip(int pos)`: $b[pos]$ devine $b[pos]$ **xor** 1, i.e. schimbă bitul $pos$ din 0 în 1 și invers.
+- `.to_string()` va converti **bitsetul** într-un **string**.
+- `.to_ulong()` va converti **bitsetul** într-un `unsigned long`.
+- `.to_ullong()` va converti **bitsetul** într-un `unsigned long long`.
 
 ```cpp
 bitset<10> b;
@@ -368,8 +368,8 @@ a_{lca(u,v)} < a_v$. Aici, $lca(u,v)$ reprezintă cel mai jos strămoș comun al
 Ne vom folosi de un raționament tipic programării dinamice și vom calcula pentru fiecare nod rezultatul dacă am considera arborele ca fiind subarborele nodului respectiv, iar permutarea va conține doar nodurile din subarborele actual. Adică daca $sz_u$ = numărul de noduri din subarborele lui $u$, $a$ va fi egal cu $(1,2,\dots, sz_u)$. Când facem tranziție de la $u$ la părintele lui, o sa avem , astfel, pentru fiecare fiu împarte câte o permutare care va fi indepdentă de restul permutărilor. Cu alte cuvinte, dacă notăm cu $f_i$ al $i$-lea fiu al unui nod $v$, atunci permutarile vor fi $a_1, a_2, \dots, a_k$. Din aceste permutări noi vom dori să construim permutarea necesară nodului $v$ adk $a_v = (1, 2,
 \dots, sz_v)$. Ca să facem asta trebuie să ținem cont de :
 
-* Permutările deja existente (i.e. permutările fiilor);
-* Ce valoare va primi nodul $v$.
+- Permutările deja existente (i.e. permutările fiilor);
+- Ce valoare va primi nodul $v$.
 
 Pentru a forma $a_v$ din permutările deja existente, putem efectiv incrementa un număr de permutări cu constante diferite astfel încât $(1) \ \ a_1 \cup a_2 \cup
 \dots \cup a_k = a_v / \{ x \}$, unde $x$ va fi valoarea nodului $v$. Putem incrementa o permutare pentru că până la urmă nu contează valorile propriu-zise, ci doar cum sunt ordonate.
@@ -429,8 +429,8 @@ Dacă faceți doar atât, s-ar putea să vă luați **TLE** pe testul 5. Așadar
 
 Avem (cred) 2 metode:
 
-* Îl scriem noi de mână;
-* (Mai nou) Îl putem folosi pe acela introdus în librăria `<tr2/dynamic_bitset>`.
+- Îl scriem noi de mână;
+- (Mai nou) Îl putem folosi pe acela introdus în librăria `<tr2/dynamic_bitset>`.
 
 Un **bitset** dinamic scris de mână arată în felul următor:
 
@@ -552,25 +552,25 @@ Este de apreciat cu cât poate îmbunătății execuția unui algoritm un **bits
 
 ## Probleme suplimentare
 
-* [atcoder - Triangle](https://atcoder.jp/contests/abc258/tasks/abc258_g)
-* [cses - Reachable Nodes](https://cses.fi/problemset/task/2138)
-* [atcoder - Balancing Network (T=1)](https://atcoder.jp/contests/agc041/tasks/agc041_e)
-* [Tzaph & Number Line](https://tlx.toki.id/contests/troc-15-div-1/problems/E)
-* [Baltic OI 2019 - Nautil](https://oj.uz/problem/view/BOI19_nautilus)
-* [Baltic OI 2010 - Candies](https://cses.fi/106/list/)
-* [COCI 2015 - Uzastopni](https://oj.uz/problem/view/COCI15_uzastopni)
-* [Platinum - Equilateral Triangles](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1021)
-* [IZhO 2017 - Bootfall](https://oj.uz/problem/view/IZhO17_bootfall)
-* [Baltic OI 2015 - Tug of War](https://oj.uz/problem/view/BOI15_tug)
-* [codeforces - Rectangular Polyline](https://codeforces.com/contest/1444/problem/D)
-* [Lot Seniori 2022 - erinaceida](https://kilonova.ro/problems/210)
-* [Lot Seniori 2014 - Switch5](https://kilonova.ro/problems/1980)
-* [Lot Seniori 2024 - Matrice Palindrom](https://kilonova.ro/problems/2798) (puteți 60 puncte cu bitset, eu nu știu să fac mai bine de atât)
-* [holmesc](https://open.kattis.com/problems/holmes)
+- [atcoder - Triangle](https://atcoder.jp/contests/abc258/tasks/abc258_g)
+- [cses - Reachable Nodes](https://cses.fi/problemset/task/2138)
+- [atcoder - Balancing Network (T=1)](https://atcoder.jp/contests/agc041/tasks/agc041_e)
+- [Tzaph & Number Line](https://tlx.toki.id/contests/troc-15-div-1/problems/E)
+- [Baltic OI 2019 - Nautil](https://oj.uz/problem/view/BOI19_nautilus)
+- [Baltic OI 2010 - Candies](https://cses.fi/106/list/)
+- [COCI 2015 - Uzastopni](https://oj.uz/problem/view/COCI15_uzastopni)
+- [Platinum - Equilateral Triangles](http://www.usaco.org/index.php?page=viewproblem2\&cpid=1021)
+- [IZhO 2017 - Bootfall](https://oj.uz/problem/view/IZhO17_bootfall)
+- [Baltic OI 2015 - Tug of War](https://oj.uz/problem/view/BOI15_tug)
+- [codeforces - Rectangular Polyline](https://codeforces.com/contest/1444/problem/D)
+- [Lot Seniori 2022 - erinaceida](https://kilonova.ro/problems/210)
+- [Lot Seniori 2014 - Switch5](https://kilonova.ro/problems/1980)
+- [Lot Seniori 2024 - Matrice Palindrom](https://kilonova.ro/problems/2798) (puteți 60 puncte cu bitset, eu nu știu să fac mai bine de atât)
+- [holmesc](https://open.kattis.com/problems/holmes)
 
 ## Resurse suplimentare
 
-* [How to get actual 64 bit bitsets on Codeforces](https://codeforces.com/blog/entry/77480)
-* [Bitset - USACO Guide](https://usaco.guide/plat/bitsets)
-* [Bitwise operations 2 — popcount & bitsets - Codeforces](https://codeforces.com/blog/entry/73558)
-* [Dynamic Bitsets in GCC](https://codeforces.com/blog/entry/129454)
+- [How to get actual 64 bit bitsets on Codeforces](https://codeforces.com/blog/entry/77480)
+- [Bitset - USACO Guide](https://usaco.guide/plat/bitsets)
+- [Bitwise operations 2 — popcount & bitsets - Codeforces](https://codeforces.com/blog/entry/73558)
+- [Dynamic Bitsets in GCC](https://codeforces.com/blog/entry/129454)

@@ -8,9 +8,9 @@ tags:
 
 Acest material nu isi propune sa fie un ghid complet in urmatoarele domenii alte matematicii. Conceptele sunt prezentate pe scurt. Pentru aprofundare se recomanda:
 
-* cursurile [CS109](https://www.youtube.com/playlist?list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg) si [CS229](https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy) de la Stanford
-* cartea ["Math for Machine Learning"](https://mml-book.github.io/)
-* articolul ["The Matrix Calculus You Need For Deep Learning"](https://arxiv.org/pdf/1802.01528)
+- cursurile [CS109](https://www.youtube.com/playlist?list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg) si [CS229](https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy) de la Stanford
+- cartea ["Math for Machine Learning"](https://mml-book.github.io/)
+- articolul ["The Matrix Calculus You Need For Deep Learning"](https://arxiv.org/pdf/1802.01528)
 
 De asemenea, nu este necesar sa fie stiuta toata teoria matematica pentru a lucra la nivel de baza (judeteana, nationala). Cei pasionati, dornici sa inteleaga cum functioneaza algoritmii utilizati, pot invata matematica din spate.
 
@@ -119,10 +119,10 @@ Algebra liniară este studiul vectorilor, spațiilor vectoriale (care sunt setur
 
 **Scalari, Vectori, Matrici, Tensori**
 
-* **Scalar**: O singură valoare numerică. Ex: $5$, $-3.14$.
-* **Vector**: O listă ordonată de scalari. Poate fi văzut ca un punct într-un spațiu multidimensional sau ca o direcție și o magnitudine. Un vector coloană este standard: $\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}$
+- **Scalar**: O singură valoare numerică. Ex: $5$, $-3.14$.
+- **Vector**: O listă ordonată de scalari. Poate fi văzut ca un punct într-un spațiu multidimensional sau ca o direcție și o magnitudine. Un vector coloană este standard: $\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}$
   Un vector rând este transpusa unui vector coloană: $\mathbf{v}^T = \begin{bmatrix} v_1 & v_2 & \cdots & v_n \end{bmatrix}$.
-* **Matrice**: Un tabel dreptunghiular de scalari aranjați în rânduri și coloane. O matrice $A$ de dimensiune $m \times n$ are $m$ rânduri și $n$ coloane.
+- **Matrice**: Un tabel dreptunghiular de scalari aranjați în rânduri și coloane. O matrice $A$ de dimensiune $m \times n$ are $m$ rânduri și $n$ coloane.
   $$
   A = \begin{bmatrix}
   A_{11} & A_{12} & \cdots & A_{1n} \\
@@ -131,32 +131,32 @@ Algebra liniară este studiul vectorilor, spațiilor vectoriale (care sunt setur
   A_{m1} & A_{m2} & \cdots & A_{mn}
   \end{bmatrix}
   $$
-* **Tensor**: O generalizare a scalărilor, vectorilor și matricilor la un număr arbitrar de dimensiuni (axe sau moduri). Un scalar este un tensor de ordin 0, un vector este un tensor de ordin 1, o matrice este un tensor de ordin 2. Tensorii sunt esențiali în deep learning pentru reprezentarea datelor (imagini, secvențe) și a parametrilor modelului.
+- **Tensor**: O generalizare a scalărilor, vectorilor și matricilor la un număr arbitrar de dimensiuni (axe sau moduri). Un scalar este un tensor de ordin 0, un vector este un tensor de ordin 1, o matrice este un tensor de ordin 2. Tensorii sunt esențiali în deep learning pentru reprezentarea datelor (imagini, secvențe) și a parametrilor modelului.
 
 **Operații cu Vectori și Matrici**
 
-* **Adunarea/Scăderea**: Se efectuează element cu element, necesită dimensiuni identice. $\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 4 \\ 6 \end{bmatrix}$
-* **Înmulțirea cu un Scalar**: Fiecare element al vectorului/matricei este înmulțit cu scalarul. $2 \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}$
-* **Produsul Scalar (Dot Product)**: Pentru doi vectori $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$: $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum\_{i=1}^n u_i v_i$
+- **Adunarea/Scăderea**: Se efectuează element cu element, necesită dimensiuni identice. $\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 4 \\ 6 \end{bmatrix}$
+- **Înmulțirea cu un Scalar**: Fiecare element al vectorului/matricei este înmulțit cu scalarul. $2 \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 2 & 4 \\ 6 & 8 \end{bmatrix}$
+- **Produsul Scalar (Dot Product)**: Pentru doi vectori $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$: $\mathbf{u} \cdot \mathbf{v} = \mathbf{u}^T \mathbf{v} = \sum\_{i=1}^n u_i v_i$
   Rezultatul este un scalar. Măsoară similaritatea sau proiecția unui vector pe altul. Dacă $\mathbf{u} \cdot \mathbf{v} = 0$, vectorii sunt ortogonali.
-* **Norma Vectorului (Vector Norm)**: Măsoară "lungimea" sau "magnitudinea" unui vector.
-  * **Norma Euclideană (L2 norm)**: $\|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^n v_i^2} = \sqrt{\mathbf{v}^T \mathbf{v}}$.
-  * **Norma L1**: $\|\mathbf{v}\|_1 = \sum_{i=1}^n |v_i|$.
-  * **Norma L-infinit**: $\|\mathbf{v}\|_\infty = \max_i |v_i|$.
-* **Înmulțirea Matricilor**: Produsul $C = AB$ al unei matrice $A$ de dimensiune $m \times k$ cu o matrice $B$ de dimensiune $k \times n$ este o matrice $C$ de dimensiune $m \times n$, unde elementul $C_{ij}$ este produsul scalar al rândului $i$ din $A$ cu coloana $j$ din $B$: $C*{ij} = \sum*{p=1}^k A*{ip} B*{pj}$
+- **Norma Vectorului (Vector Norm)**: Măsoară "lungimea" sau "magnitudinea" unui vector.
+  - **Norma Euclideană (L2 norm)**: $\|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^n v_i^2} = \sqrt{\mathbf{v}^T \mathbf{v}}$.
+  - **Norma L1**: $\|\mathbf{v}\|_1 = \sum_{i=1}^n |v_i|$.
+  - **Norma L-infinit**: $\|\mathbf{v}\|_\infty = \max_i |v_i|$.
+- **Înmulțirea Matricilor**: Produsul $C = AB$ al unei matrice $A$ de dimensiune $m \times k$ cu o matrice $B$ de dimensiune $k \times n$ este o matrice $C$ de dimensiune $m \times n$, unde elementul $C_{ij}$ este produsul scalar al rândului $i$ din $A$ cu coloana $j$ din $B$: $C*{ij} = \sum*{p=1}^k A*{ip} B*{pj}$
   *Notă*: Înmulțirea matricilor nu este comutativă ($AB \ne BA$ în general).
-* **Matricea Identitate (Identity Matrix)**: Notată $I$, este o matrice pătratică cu 1 pe diagonală și 0 în rest. Are proprietatea că $AI = IA = A$.
-* **Transpusa unei Matrici (Matrix Transpose)**: Notată $A^T$, este obținută prin interschimbarea rândurilor cu coloanele. Dacă $A$ este de $m \times n$, atunci $A^T$ este de $n \times m$. $(A^T)_{ij} = A_{ji}$
+- **Matricea Identitate (Identity Matrix)**: Notată $I$, este o matrice pătratică cu 1 pe diagonală și 0 în rest. Are proprietatea că $AI = IA = A$.
+- **Transpusa unei Matrici (Matrix Transpose)**: Notată $A^T$, este obținută prin interschimbarea rândurilor cu coloanele. Dacă $A$ este de $m \times n$, atunci $A^T$ este de $n \times m$. $(A^T)_{ij} = A_{ji}$
   Proprietăți: $(A^T)^T = A$, $(AB)^T = B^T A^T$.
-* **Inversa unei Matrici (Matrix Inverse)**: Pentru o matrice pătratică $A$, inversa sa $A^{-1}$ (dacă există) este matricea care satisface $AA^{-1} = A^{-1}A = I$. O matrice care are inversă este numită **inversabilă** sau **nesingulară**.
+- **Inversa unei Matrici (Matrix Inverse)**: Pentru o matrice pătratică $A$, inversa sa $A^{-1}$ (dacă există) este matricea care satisface $AA^{-1} = A^{-1}A = I$. O matrice care are inversă este numită **inversabilă** sau **nesingulară**.
 
 ### Valori proprii (eigenvalues) și vectori proprii (eigenvectors)
 
 Pentru o matrice pătratică $A$, un vector nenul $\mathbf{v}$ este un **vector propriu** (eigenvector) al lui $A$ dacă, atunci când este înmulțit cu $A$, rezultatul este un scalar înmulțit cu $\mathbf{v}$. Scalarul $\lambda$ este **valoarea proprie** (eigenvalue) corespondentă. Formal, această relație este exprimată ca: $A \mathbf{v} = \lambda \mathbf{v}$ Unde:
 
-* $A$ este o matrice pătratică de dimensiune $n \times n$.
-* $\mathbf{v}$ este un vector propriu nenul de dimensiune $n \times 1$.
-* $\lambda$ este o valoare proprie scalară.
+- $A$ este o matrice pătratică de dimensiune $n \times n$.
+- $\mathbf{v}$ este un vector propriu nenul de dimensiune $n \times 1$.
+- $\lambda$ este o valoare proprie scalară.
 
 **Interpretare Geometrică**: Aplicarea transformării liniare reprezentate de $A$ asupra unui vector propriu $\mathbf{v}$ are ca efect doar scalarea (întinderea sau comprimarea) vectorului $\mathbf{v}$, fără a-i schimba direcția (sau, în cazul $\lambda < 0$, schimbându-i doar sensul).
 
@@ -168,9 +168,9 @@ Aceasta este ecuația caracteristică a matricei $A$. Soluțiile acestei ecuați
 
 **Aplicații în Machine Learning**:
 
-* **Analiza Componentelor Principale (PCA)**: Folosește vectorii proprii ai matricei de covarianță a datelor pentru a găsi direcțiile de varianță maximă (componentele principale). Valorile proprii indică magnitudinea varianței de-a lungul acelor direcții.
-* **Analiza Spectrală**: Utilizată în procesarea imaginilor, analiza rețelelor și în unele algoritmi de clustering.
-* **Descompunerea Valorilor Singulare (SVD)**: Deși legată de valori proprii, SVD generalizează conceptul și la matricile non-pătratice și este extrem de importantă în reducerea dimensionalității și în sisteme de recomandare.
+- **Analiza Componentelor Principale (PCA)**: Folosește vectorii proprii ai matricei de covarianță a datelor pentru a găsi direcțiile de varianță maximă (componentele principale). Valorile proprii indică magnitudinea varianței de-a lungul acelor direcții.
+- **Analiza Spectrală**: Utilizată în procesarea imaginilor, analiza rețelelor și în unele algoritmi de clustering.
+- **Descompunerea Valorilor Singulare (SVD)**: Deși legată de valori proprii, SVD generalizează conceptul și la matricile non-pătratice și este extrem de importantă în reducerea dimensionalității și în sisteme de recomandare.
 
 **Matrici Simetrice**: Pentru o matrice simetrică ($A = A^T$), toate valorile proprii sunt reale, iar vectorii proprii corespunzători unor valori proprii distincte sunt ortogonali. Acest lucru este crucial în PCA, deoarece matricea de covarianță este simetrică.
 

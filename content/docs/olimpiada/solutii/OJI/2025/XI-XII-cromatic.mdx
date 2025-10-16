@@ -31,13 +31,13 @@ Acest șir este cromatic și în lista șirurilor cromatice este primul în ordi
 
 Observăm că în lista ordonată lexicografic a tuturor șirurilor cromatice elementele respectă următoarele proprietăți:
 
-* (Grupa 1) $a_1, a_2, a_3, \dots, a_n$
-* (Grupa 2) $a_2$ urmat de $(a_3, a_4, \dots, a_n)$ și $(a_1)$ interclasate în toate modurile posibile
-* (Grupa 3) $a_3$ urmat de $(a_4, a_5, \dots, a_n)$ și $(a_2, a_1)$ interclasate în toate modurile posibile
-* $\dots$
-* (Grupa $k$) $a_k$ urmat de $(a_{k+1}, a_{k+2}, \dots, a_n)$ și $(a_{k-1}, a_{k-2}, \dots, a_1)$ interclasate în toate modurile posibile
-* $\dots$
-* (Grupa $n$) $a_n, a_{n-1}, \dots, a_1$
+- (Grupa 1) $a_1, a_2, a_3, \dots, a_n$
+- (Grupa 2) $a_2$ urmat de $(a_3, a_4, \dots, a_n)$ și $(a_1)$ interclasate în toate modurile posibile
+- (Grupa 3) $a_3$ urmat de $(a_4, a_5, \dots, a_n)$ și $(a_2, a_1)$ interclasate în toate modurile posibile
+- $\dots$
+- (Grupa $k$) $a_k$ urmat de $(a_{k+1}, a_{k+2}, \dots, a_n)$ și $(a_{k-1}, a_{k-2}, \dots, a_1)$ interclasate în toate modurile posibile
+- $\dots$
+- (Grupa $n$) $a_n, a_{n-1}, \dots, a_1$
 
 Observăm că în fiecare grupă $k$ $(1 \leq k \leq n)$, numărul șirurilor cromatice distincte este egal cu $C_{n-1}^{k-1}$.
 
@@ -60,17 +60,17 @@ Cazul $c = 2$. În subtaskul 3 este vorba despre o poziție $p$ dintre primele $
 
 Următoarele subtaskuri tratează cazuri generale:
 
-* Subtaskul 5, având cazul $n \leq 20$, se poate rezolva cu un algoritm backtracking cu complexitate $O(2^{n-1})$.
-* Subtaskul 6 se rezolvă în complexitate $O(n)$ cu ajutorul sumelor de combinări.
+- Subtaskul 5, având cazul $n \leq 20$, se poate rezolva cu un algoritm backtracking cu complexitate $O(2^{n-1})$.
+- Subtaskul 6 se rezolvă în complexitate $O(n)$ cu ajutorul sumelor de combinări.
 
 ## Subtaskurile 7, 8, 9, 10
 
 Cazul $c = 3$. Similar cu subtaskurile 3, 4, 5 și 6, observăm că:
 
-* Subtaskul 7, fiind caz particular, se rezolvă în complexitate $O(n)$.
-* Subtaskul 8, fiind caz particular, se rezolvă în complexitate $O(n)$.
-* Subtaskul 9 se poate rezolva cu un algoritm backtracking cu complexitate $O(2^{n-1})$.
-* Subtaskul 10 se rezolvă în complexitate $O(n)$ cu ajutorul sumelor de combinări.
+- Subtaskul 7, fiind caz particular, se rezolvă în complexitate $O(n)$.
+- Subtaskul 8, fiind caz particular, se rezolvă în complexitate $O(n)$.
+- Subtaskul 9 se poate rezolva cu un algoritm backtracking cu complexitate $O(2^{n-1})$.
+- Subtaskul 10 se rezolvă în complexitate $O(n)$ cu ajutorul sumelor de combinări.
 
 ## Rezolvare
 

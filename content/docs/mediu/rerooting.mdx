@@ -40,10 +40,10 @@ Pentru a face asta, vom avea nevoie să ținem ca un parametru suplimentar în c
 
 Calcularea acestor distanțe pentru celelalte noduri se va face din aproape în aproape, ținând cont de următoarele observații:
 
-* Pentru un nod, doar cele mai îndepărtați doi subarbori sunt relevanți, deoarece în cazul celorlalți subarbori, putem oricând să folosim ca etalon unul din primii doi subarbori.
-* Pe măsură ce ne apropiem de frunze, distanța pe care o avem deja anterior calculată va crește, singurul mod în care poate crește mai mult este dacă pentru un fiu $x$, avem un alt fiu $y$ cu proprietatea că $maxdist[y] + 1 >
+- Pentru un nod, doar cele mai îndepărtați doi subarbori sunt relevanți, deoarece în cazul celorlalți subarbori, putem oricând să folosim ca etalon unul din primii doi subarbori.
+- Pe măsură ce ne apropiem de frunze, distanța pe care o avem deja anterior calculată va crește, singurul mod în care poate crește mai mult este dacă pentru un fiu $x$, avem un alt fiu $y$ cu proprietatea că $maxdist[y] + 1 >
   distUp$, motivul fiind acela că atunci când am coborî spre frunze, frunza din subarborele lui $y$ ar fi mai îndepărtată.
-* Dacă vrem să ajungem la fiul care ne-a dat $maxdist[nod]$, va trebui să folosim a doua distanță pentru a calcula noua valoare a lui $distUp$, pentru a evita situația în care numărăm aceleași muchii de mai multe ori.
+- Dacă vrem să ajungem la fiul care ne-a dat $maxdist[nod]$, va trebui să folosim a doua distanță pentru a calcula noua valoare a lui $distUp$, pentru a evita situația în care numărăm aceleași muchii de mai multe ori.
 
 Aceste observații sunt puse laolaltă în codul de mai jos, se poate observa faptul că deși conceptul pare unul mai complicat, tot ce trebuie să facem este să observăm cu atenție ce se întâmplă atunci când ajungem de la un nod la altul.
 
@@ -257,23 +257,23 @@ Tehnica rerooting este o tehnică folositoare în anumite tipuri de probleme cu 
 
 ## Probleme suplimentare
 
-* [infoarena razboiul lumilor](https://www.infoarena.ro/problema/razboi)
-* [Codeforces Jovial Jaunt](https://codeforces.com/gym/105012/problem/J)
-* [ONI 2003 asmin](https://kilonova.ro/problems/119)
-* [Codeforces Tree with Maximum Cost](https://codeforces.com/contest/1092/problem/F)
-* [infoarena treesearch](https://www.infoarena.ro/problema/treesearch)
-* [USACO Gold Directory Traversal](http://www.usaco.org/index.php?page=viewproblem2\&cpid=814)
-* [Codeforces Two Paths](https://codeforces.com/contest/1000/problem/G)
-* [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
-* [AtCoder Expensive Expense](https://atcoder.jp/contests/abc222/tasks/abc222_f)
-* [BOI 2017 City Attractions](https://www.acmicpc.net/problem/14875)
-* [Codeforces Road Improvement](https://codeforces.com/contest/543/problem/D)
-* [APIO 2010 Patrol](https://dmoj.ca/problem/apio10p2)
+- [infoarena razboiul lumilor](https://www.infoarena.ro/problema/razboi)
+- [Codeforces Jovial Jaunt](https://codeforces.com/gym/105012/problem/J)
+- [ONI 2003 asmin](https://kilonova.ro/problems/119)
+- [Codeforces Tree with Maximum Cost](https://codeforces.com/contest/1092/problem/F)
+- [infoarena treesearch](https://www.infoarena.ro/problema/treesearch)
+- [USACO Gold Directory Traversal](http://www.usaco.org/index.php?page=viewproblem2\&cpid=814)
+- [Codeforces Two Paths](https://codeforces.com/contest/1000/problem/G)
+- [ONI 2015 arbvalmax](https://kilonova.ro/problems/203/)
+- [AtCoder Expensive Expense](https://atcoder.jp/contests/abc222/tasks/abc222_f)
+- [BOI 2017 City Attractions](https://www.acmicpc.net/problem/14875)
+- [Codeforces Road Improvement](https://codeforces.com/contest/543/problem/D)
+- [APIO 2010 Patrol](https://dmoj.ca/problem/apio10p2)
 
 ## Lectură suplimentară
 
-* [Rerooting DP - USACO Guide](https://usaco.guide/gold/all-roots?lang=cpp)
-* [The Ultimate Reroot Template - Codeforces](https://codeforces.com/blog/entry/124286)
-* [Rerooting Technique - YouKn0wWho Academy](https://youkn0wwho.academy/topic-list/rerooting_technique)
-* [Online Query Based Rerooting Technique](https://codeforces.com/blog/entry/76150)
-* [Rerooting DP - Codeforces/Youtube](https://codeforces.com/blog/entry/96651)
+- [Rerooting DP - USACO Guide](https://usaco.guide/gold/all-roots?lang=cpp)
+- [The Ultimate Reroot Template - Codeforces](https://codeforces.com/blog/entry/124286)
+- [Rerooting Technique - YouKn0wWho Academy](https://youkn0wwho.academy/topic-list/rerooting_technique)
+- [Online Query Based Rerooting Technique](https://codeforces.com/blog/entry/76150)
+- [Rerooting DP - Codeforces/Youtube](https://codeforces.com/blog/entry/96651)

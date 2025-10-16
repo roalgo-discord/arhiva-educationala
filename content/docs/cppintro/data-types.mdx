@@ -29,16 +29,16 @@ Orice variabilă este caracterizată de:
 1. **Adresa memoriei**: Este locația din memorie unde este stocată variabila. Nu lucrăm cu ea în timpul programelor, dar aceasta poate fi utilă în diagnosticarea problemelor de memorie. Adresa este exprimată în hexazecimal (de exemplu, `0x7ffe3278f424`).
 
 2. **Identificatorul (numele)**: Reprezintă legătura între variabilă și valoarea sa din memorie. Un identificator trebuie să respecte următoarele reguli:
-   * Poate conține litere ale alfabetului englez (a-z, A-Z), cifre (0-9) și caracterul underscore (bară jos, `_`).
-   * Trebuie să înceapă cu o literă sau `_`, dar niciodată cu o cifră.
-   * Nu poate fi un cuvânt rezervat al limbajului (ex.: `int`, `return`, `while` etc.).
-   * Identificatorul este case-sensitive, astfel încât `Varsta`, `varsta` și `VARSTA` sunt trei identificatori diferiți.
+   - Poate conține litere ale alfabetului englez (a-z, A-Z), cifre (0-9) și caracterul underscore (bară jos, `_`).
+   - Trebuie să înceapă cu o literă sau `_`, dar niciodată cu o cifră.
+   - Nu poate fi un cuvânt rezervat al limbajului (ex.: `int`, `return`, `while` etc.).
+   - Identificatorul este case-sensitive, astfel încât `Varsta`, `varsta` și `VARSTA` sunt trei identificatori diferiți.
 
 3. **Tipul de date**: Determină ce tip de valori poate să stocheze variabila și limitele acestor valori (ex.: numere întregi, numere în virgulă mobilă, caractere etc.).
 
 4. **Domeniul de vizibilitate (scope)**: Definește partea programului în care variabila este accesibilă. Variabilele pot fi:
-   * **Globale**: disponibile în întregul program, sau
-   * **Locale**: disponibile doar în cadrul funcției sau blocului în care sunt definite.
+   - **Globale**: disponibile în întregul program, sau
+   - **Locale**: disponibile doar în cadrul funcției sau blocului în care sunt definite.
 
 În C/C++, este necesar să specificăm tipul variabilei la momentul declarației. Sintaxa generală este:
 
@@ -48,8 +48,8 @@ Orice variabilă este caracterizată de:
 
 unde:
 
-* `tip_de_date` specifică tipul valorii pe care o poate stoca variabila (ex.: `int`, `float`, `double`, `char`).
-* `identificator1, identificator2, ...` reprezintă numele variabilelor.
+- `tip_de_date` specifică tipul valorii pe care o poate stoca variabila (ex.: `int`, `float`, `double`, `char`).
+- `identificator1, identificator2, ...` reprezintă numele variabilelor.
 
 !!! example
 
@@ -59,10 +59,10 @@ unde:
 
 !!! note "Observații"
 
-* Dimensiunea memoriei ocupate de o variabilă depinde de
+- Dimensiunea memoriei ocupate de o variabilă depinde de
   tipul de date (ex.: `int` ocupă 4 bytes în majoritatea sistemelor).
 
-* Dacă o variabilă consumă mai multă memorie decât este disponibilă, veți primi
+- Dacă o variabilă consumă mai multă memorie decât este disponibilă, veți primi
   verdictul *limită de memorie depășită* sau, în limba engleză, *memory limit
   exceeded*.
 
@@ -73,28 +73,28 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Unele di
 În ordinea popularității lor, tipurile de date întregi sunt următoarele:
 
 1. `int`
-   * Cel mai frecvent folosit tip de date pentru a stoca numere întregi.
-   * Stochează valori între -2<sup>31</sup> și 2<sup>31</sup> - 1 (echivalent cu -2,147,483,648 și 2,147,483,647).
-   * Ocupă 32 de biți (4 bytes) în memorie.
+   - Cel mai frecvent folosit tip de date pentru a stoca numere întregi.
+   - Stochează valori între -2<sup>31</sup> și 2<sup>31</sup> - 1 (echivalent cu -2,147,483,648 și 2,147,483,647).
+   - Ocupă 32 de biți (4 bytes) în memorie.
 
 2. `long long`
-   * Un tip de date folosit pentru numerele întregi mai mari.
-   * Având limite între -2<sup>63</sup> și 2<sup>63</sup> - 1 (-9,223,372,036,854,775,808 și 9,223,372,036,854,775,807).
-   * Numere de maxim 19 cifre, stocate pe 64 de biți (8 bytes).
+   - Un tip de date folosit pentru numerele întregi mai mari.
+   - Având limite între -2<sup>63</sup> și 2<sup>63</sup> - 1 (-9,223,372,036,854,775,808 și 9,223,372,036,854,775,807).
+   - Numere de maxim 19 cifre, stocate pe 64 de biți (8 bytes).
 
 3. `char`
-   * Tipul de date folosit pentru lucrul cu caractere.
-   * Având limite între -128 și 127.
-   * Ocupă 1 byte.
+   - Tipul de date folosit pentru lucrul cu caractere.
+   - Având limite între -128 și 127.
+   - Ocupă 1 byte.
 
 4. `bool`
-   * Folosit pentru a păstra doar valori binare.
-   * Valori posibile: 1 sau 0 (corespunzător stărilor de `true` (adevărat) și `false` (fals)).
+   - Folosit pentru a păstra doar valori binare.
+   - Valori posibile: 1 sau 0 (corespunzător stărilor de `true` (adevărat) și `false` (fals)).
 
 5. `short`
-   * Un tip de date pentru numere întregi mai mici.
-   * Având limite între -2<sup>15</sup> și 2<sup>15</sup> - 1 (-32,768 și 32,767).
-   * Ocupă 16 biți (2 bytes).
+   - Un tip de date pentru numere întregi mai mici.
+   - Având limite între -2<sup>15</sup> și 2<sup>15</sup> - 1 (-32,768 și 32,767).
+   - Ocupă 16 biți (2 bytes).
 
 !!! note "Observație"
 
@@ -156,9 +156,9 @@ Tipurile de date reale sunt folosite pentru a stoca valori reale. Acestea sunt f
 
 Tipurile de date reale sunt următoarele:
 
-* tipul `float` - limite între aproximativ -10<sup>38</sup> și 10<sup>38</sup>.
-* tipul `double` - limite între aproximativ -10<sup>208</sup> și 10<sup>208</sup>, precizie crescută.
-* tipul `long double` - limite mai mari decât cele de la `double`, precizie variabilă.
+- tipul `float` - limite între aproximativ -10<sup>38</sup> și 10<sup>38</sup>.
+- tipul `double` - limite între aproximativ -10<sup>208</sup> și 10<sup>208</sup>, precizie crescută.
+- tipul `long double` - limite mai mari decât cele de la `double`, precizie variabilă.
 
 În general, atunci când operăm cu numerele reale, vrem să avem grijă la erorile de precizie care ar putea apărea. Cel mai bun mod de a face acest lucru, în special când lucrăm cu valori foarte mari în modul, este acela de a include o valoare reală foarte mică, $eps$, care să servească drept etalon în ceea ce privește verificarea egalității.
 
@@ -190,5 +190,5 @@ Tipurile de date simple sunt cele cu care operăm în aproape toate programele p
 
 ## Resurse suplimentare
 
-* [Data types - USACO Guide](https://usaco.guide/general/data-types?lang=cpp)
-* [Tipuri de date - pbinfo](https://www.pbinfo.ro/articole/58/tipuri-de-date-c-cpp)
+- [Data types - USACO Guide](https://usaco.guide/general/data-types?lang=cpp)
+- [Tipuri de date - pbinfo](https://www.pbinfo.ro/articole/58/tipuri-de-date-c-cpp)

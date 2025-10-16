@@ -87,8 +87,8 @@ Acest pas este unul ce depinde de la problemă la problemă, dar de obicei e imp
 
 Acest ultim pas este de departe cel mai dificil deoarece de multe ori se poate întâmpla una din cele două situații:
 
-* soluția să pară corectă dar să apară greșeli de idee și/sau submisii care obtin 0 sau un scor foarte mic.
-* soluția să fie corectă dar să fie foarte greu de găsit cel putin o intuiție dacă nu o demonstrație completă a acesteia.
+- soluția să pară corectă dar să apară greșeli de idee și/sau submisii care obtin 0 sau un scor foarte mic.
+- soluția să fie corectă dar să fie foarte greu de găsit cel putin o intuiție dacă nu o demonstrație completă a acesteia.
 
 Indiferent de caz, este important să ne asigurăm că soluția obținută nu obține un răspuns greșit pe un caz evident, dar și să încercăm pe cât posibil să trimitem soluția când algoritmul și implementarea au sens.
 
@@ -106,10 +106,10 @@ probleme în timpul concursului.
 
 Putem începe prin a găsi diverse răspunsuri pentru valori mici ale lui $n$.
 
-* $n = 2$ - \[$2, 1$]
-* $n = 3$ - \[$3, 1, 2$]
-* $n = 4$ - \[$2, 1, 4, 3$]
-* $n = 5$ - \[$3, 1, 2, 5, 4$]
+- $n = 2$ - \[$2, 1$]
+- $n = 3$ - \[$3, 1, 2$]
+- $n = 4$ - \[$2, 1, 4, 3$]
+- $n = 5$ - \[$3, 1, 2, 5, 4$]
 
 Se poate observa că în cazul acestei probleme, este îndeajuns să găsim câteva soluții pentru valori mici ale lui $n$ pentru a observa un pattern pentru valorile pare și impare ale lui $n$. Astfel, pentru $n > 3$, putem pleca de la soluția pentru $n - 2$ la care adăugăm perechea \[$n, n-1$]. Această soluție este una optimă deoarece fiecare element va fi situat la o distanță de 1 de poziția lui, cu excepția lui 3 când $n$ e impar, care va fi situat la distanța 2.
 
@@ -165,17 +165,17 @@ Deocamdată nu am folosit încă faptul că valorile din input nu sunt foarte ma
 
 Să analizăm ce se întâmplă la un pas al jocului. După ce știm valoarea maximă inițială, avem două cazuri în ceea ce privește noua valoare adăugată.
 
-* Fie e mai mare decât maximul curent, iar atunci jucătorul aflat la mutare va lua acea valoare.
-* Altfel, acea valoare va fi adăugată în vectorul de frecvență, iar calculul va continua ca de obicei.
+- Fie e mai mare decât maximul curent, iar atunci jucătorul aflat la mutare va lua acea valoare.
+- Altfel, acea valoare va fi adăugată în vectorul de frecvență, iar calculul va continua ca de obicei.
 
 Astfel, complexitatea soluției va deveni $\mathcal{O}(n \cdot k)$.
 
 ## Alte sfaturi practice
 
-* Folosiți tot felul de idei și analizați de ce sunt incorecte
-* Aveți grijă la cazurile limită și cazurile mici.
-* Verificați de două ori soluțiile la cazurile pe care le rezolvați manual sau cu programul brute force
-* Nu vă gândiți prea mult la diferite abordări foarte sofisticate, deoarece de multe ori aceste probleme au soluții mai simple decât par.
+- Folosiți tot felul de idei și analizați de ce sunt incorecte
+- Aveți grijă la cazurile limită și cazurile mici.
+- Verificați de două ori soluțiile la cazurile pe care le rezolvați manual sau cu programul brute force
+- Nu vă gândiți prea mult la diferite abordări foarte sofisticate, deoarece de multe ori aceste probleme au soluții mai simple decât par.
 
 ## Concluzii
 
@@ -183,39 +183,39 @@ Astfel, complexitatea soluției va deveni $\mathcal{O}(n \cdot k)$.
 
 ## Probleme suplimentare
 
-* [OJI 2019 traseu](https://kilonova.ro/problems/915)
-* [infoarena palind](https://www.infoarena.ro/problema/palind)
-* [COCI 2018 karte](https://oj.uz/problem/view/COCI18_karte)
-* [ONI 2008 aranjare](https://kilonova.ro/problems/1303)
-* [CF 1815A](https://codeforces.com/contest/1815/problem/A)
-* [CF 1797C](https://codeforces.com/contest/1797/problem/C)
-* [CF 1815B](https://codeforces.com/contest/1815/problem/B)
-* [Baraj juniori 2016 asort](https://kilonova.ro/problems/1084)
-* [IOI 2010 quality](https://oj.uz/problem/view/IOI10_quality)
-* [COCI 2013 organizator](https://dmoj.ca/problem/coci13c1p5)
-* [CF 1332B](https://codeforces.com/problemset/problem/1332/B)
-* [ABC134 D](https://atcoder.jp/contests/abc134/tasks/abc134_d)
-* [CF 1804B](https://codeforces.com/contest/1804/problem/B)
-* [ARC158 A](https://atcoder.jp/contests/arc158/tasks/arc158_a)
-* [ARC153 B](https://atcoder.jp/contests/arc153/tasks/arc153_b)
-* [ARC145 B](https://atcoder.jp/contests/arc145/tasks/arc145_b)
-* [CF 1407C](https://codeforces.com/problemset/problem/1407/C)
-* [CF 1776F](https://codeforces.com/contest/1776/problem/F)
-* [ARC118 C](https://atcoder.jp/contests/arc118/tasks/arc118_c)
-* [CF 1776G](https://codeforces.com/contest/1776/problem/G)
-* [ARC159 C](https://atcoder.jp/contests/arc159/tasks/arc159_c)
-* [CF 1736D](https://codeforces.com/contest/1736/problem/D)
-* [Probleme ad-hoc de pe kilonova](https://kilonova.ro/tags/297)
+- [OJI 2019 traseu](https://kilonova.ro/problems/915)
+- [infoarena palind](https://www.infoarena.ro/problema/palind)
+- [COCI 2018 karte](https://oj.uz/problem/view/COCI18_karte)
+- [ONI 2008 aranjare](https://kilonova.ro/problems/1303)
+- [CF 1815A](https://codeforces.com/contest/1815/problem/A)
+- [CF 1797C](https://codeforces.com/contest/1797/problem/C)
+- [CF 1815B](https://codeforces.com/contest/1815/problem/B)
+- [Baraj juniori 2016 asort](https://kilonova.ro/problems/1084)
+- [IOI 2010 quality](https://oj.uz/problem/view/IOI10_quality)
+- [COCI 2013 organizator](https://dmoj.ca/problem/coci13c1p5)
+- [CF 1332B](https://codeforces.com/problemset/problem/1332/B)
+- [ABC134 D](https://atcoder.jp/contests/abc134/tasks/abc134_d)
+- [CF 1804B](https://codeforces.com/contest/1804/problem/B)
+- [ARC158 A](https://atcoder.jp/contests/arc158/tasks/arc158_a)
+- [ARC153 B](https://atcoder.jp/contests/arc153/tasks/arc153_b)
+- [ARC145 B](https://atcoder.jp/contests/arc145/tasks/arc145_b)
+- [CF 1407C](https://codeforces.com/problemset/problem/1407/C)
+- [CF 1776F](https://codeforces.com/contest/1776/problem/F)
+- [ARC118 C](https://atcoder.jp/contests/arc118/tasks/arc118_c)
+- [CF 1776G](https://codeforces.com/contest/1776/problem/G)
+- [ARC159 C](https://atcoder.jp/contests/arc159/tasks/arc159_c)
+- [CF 1736D](https://codeforces.com/contest/1736/problem/D)
+- [Probleme ad-hoc de pe kilonova](https://kilonova.ro/tags/297)
 
 ## Resurse suplimentare
 
-* [Problemele ad-hoc - USACO Guide](https://usaco.guide/bronze/ad-hoc)
-* [Abordarea problemelor ad-hoc (2021) - SEPI](https://sepi.ro/assets/upload-file/articole/Articolul%20educational%202020-2021.pdf)
-* [Abordarea problemelor ad-hoc (2023) - SEPI](https://sepi.ro/assets/upload-file/articole/curs%20ad-hoc.pdf)
-* [Probleme constructive si interactive - HKOI](https://assets.hkoi.org/training2022/cast.pdf)
-* [How to get started with solving Ad-Hoc tasks on codeforces - Codeforces](https://codeforces.com/blog/entry/85172)
-* [Tips on Constructive Algorithms - Codeforces](https://codeforces.com/blog/entry/80317)
-* [Good ad-hoc problems - Codeforces](https://codeforces.com/blog/entry/61672)
-* [How to prove your solutions in Competitive Programming - Codeforces](https://codeforces.com/blog/entry/111849)
-* [How to come up with solutions? - Codeforces](https://codeforces.com/blog/entry/20548)
-* [On "is this greedy or DP", forcing and rubber bands - Codeforces](https://codeforces.com/blog/entry/106346)
+- [Problemele ad-hoc - USACO Guide](https://usaco.guide/bronze/ad-hoc)
+- [Abordarea problemelor ad-hoc (2021) - SEPI](https://sepi.ro/assets/upload-file/articole/Articolul%20educational%202020-2021.pdf)
+- [Abordarea problemelor ad-hoc (2023) - SEPI](https://sepi.ro/assets/upload-file/articole/curs%20ad-hoc.pdf)
+- [Probleme constructive si interactive - HKOI](https://assets.hkoi.org/training2022/cast.pdf)
+- [How to get started with solving Ad-Hoc tasks on codeforces - Codeforces](https://codeforces.com/blog/entry/85172)
+- [Tips on Constructive Algorithms - Codeforces](https://codeforces.com/blog/entry/80317)
+- [Good ad-hoc problems - Codeforces](https://codeforces.com/blog/entry/61672)
+- [How to prove your solutions in Competitive Programming - Codeforces](https://codeforces.com/blog/entry/111849)
+- [How to come up with solutions? - Codeforces](https://codeforces.com/blog/entry/20548)
+- [On "is this greedy or DP", forcing and rubber bands - Codeforces](https://codeforces.com/blog/entry/106346)

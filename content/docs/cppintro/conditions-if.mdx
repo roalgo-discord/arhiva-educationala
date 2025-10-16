@@ -47,12 +47,12 @@ Pentru a compara două valori sau expresii, putem folosi operatorii obișnuiți 
 
 Astfel, operatorii de comparație sunt următorii:
 
-* `==` - verifică prima expresie are o valoare mai egală cu cea de-a doua expresie.
-* `<=` - verifică dacă prima expresie are o valoare mai mică sau egală decât cea de-a doua expresie.
-* `>=` - verifică dacă prima expresie are o valoare mai mare sau egală decât cea de-a doua expresie.
-* `>` - verifică dacă prima expresie are o valoare strict mai mare decât cea de-a doua expresie.
-* `<` - verifică dacă prima expresie are o valoare strict mai mică decât cea de-a doua expresie.
-* `!=` - verifică dacă cele două expresii au o valoare diferită.
+- `==` - verifică prima expresie are o valoare mai egală cu cea de-a doua expresie.
+- `<=` - verifică dacă prima expresie are o valoare mai mică sau egală decât cea de-a doua expresie.
+- `>=` - verifică dacă prima expresie are o valoare mai mare sau egală decât cea de-a doua expresie.
+- `>` - verifică dacă prima expresie are o valoare strict mai mare decât cea de-a doua expresie.
+- `<` - verifică dacă prima expresie are o valoare strict mai mică decât cea de-a doua expresie.
+- `!=` - verifică dacă cele două expresii au o valoare diferită.
 
 !!! note "Observație"
 
@@ -64,7 +64,7 @@ apoi verifică dacă $n$ este diferit de 0.
 
 De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind operatorii logici. Operatorii logici sunt de trei feluri, după cum urmează:
 
-* **Negația** - notată cu `!` sau `not`, inversează valoarea de adevăr a unei expresii.
+- **Negația** - notată cu `!` sau `not`, inversează valoarea de adevăr a unei expresii.
 
   | `x` | `not x` |
   | :-: | :-----: |
@@ -75,7 +75,7 @@ De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind o
   --8<-- "cppintro/if/if3.cpp"
   ```
 
-* **Conjuncția** - notată cu `&&` sau `and`, reprezintă „și” logic. Pentru ca o expresie compusă să fie adevărată, **toți membrii ei trebuie să fie adevărați.**
+- **Conjuncția** - notată cu `&&` sau `and`, reprezintă „și” logic. Pentru ca o expresie compusă să fie adevărată, **toți membrii ei trebuie să fie adevărați.**
 
   | `x` | `y` | `x and y` |
   | :-: | :-: | :-------: |
@@ -88,7 +88,7 @@ De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind o
   --8<-- "cppintro/if/if4.cpp"
   ```
 
-* **Disjuncția** - notată cu `||` sau `or`, reprezintă „sau” logic. Pentru ca o expresie compusă să fie adevărată, este suficient ca **cel puțin un membru să fie adevărat**.
+- **Disjuncția** - notată cu `||` sau `or`, reprezintă „sau” logic. Pentru ca o expresie compusă să fie adevărată, este suficient ca **cel puțin un membru să fie adevărat**.
 
   | `x` | `y` | `x or y` |
   | :-: | :-: | :------: |
@@ -121,9 +121,9 @@ Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema [cumparat
 
 Este important să ținem cont de ordinea de evaluare a operatorilor logici atunci când folosim combinații de `&&`, `||`, `!`. În general, operatorii logici urmează următoarea ordine de prioritate:
 
-* `!` (negația) - are prioritate mai mare
-* `&&` (conjuncția) - are prioritate mai mică decât `!`, dar mai mare decât `||`
-* `||` (disjuncția) - are prioritatea cea mai mică
+- `!` (negația) - are prioritate mai mare
+- `&&` (conjuncția) - are prioritate mai mică decât `!`, dar mai mare decât `||`
+- `||` (disjuncția) - are prioritatea cea mai mică
 
 De exemplu:
 
@@ -141,18 +141,18 @@ De exemplu:
 
 Ca să fie prioritățile mai ușor de ținut minte, putem face analogie cu algebra normală:
 
-* **Negația** (`!`) este la fel ca negația numerelor.
-* **Conjuncția** (`&&`) este la fel ca înmulțirea.
-* **Disjuncția** (`||`) este la fel ca adunarea (cu excepția că `1 + 1 == 1`).
+- **Negația** (`!`) este la fel ca negația numerelor.
+- **Conjuncția** (`&&`) este la fel ca înmulțirea.
+- **Disjuncția** (`||`) este la fel ca adunarea (cu excepția că `1 + 1 == 1`).
 
 !!! note "Observație"
 
 Dacă luăm `true` ca 1 și `false` ca 0, atunci putem defini toate
 operațiile pur algebric astfel:
 
-* `!x == 1 - x`
-* `x || y == x + y - x * y == x + y * (1 - x) == max(x, y)`
-* `x && y == x * y == min(x, y)`
+- `!x == 1 - x`
+- `x || y == x + y - x * y == x + y * (1 - x) == max(x, y)`
+- `x && y == x * y == min(x, y)`
 
 Cu această analogie putem merge mai departe la a descoperi niște proprietăți importante.
 
@@ -160,18 +160,18 @@ Cu această analogie putem merge mai departe la a descoperi niște proprietăți
 
 O proprietate imediat utilă pe care o putem vedea este că disjuncția și conjuncția sunt asociative:
 
-* `x && (y && z) == (x && y) && z == x && y && z`
-* `x || (y || z) == (x || y) || z == x || y || z`
+- `x && (y && z) == (x && y) && z == x && y && z`
+- `x || (y || z) == (x || y) || z == x || y || z`
 
 Asta este util pentru că ne permite să nu mai scriem paranteze dacă avem un șir de conjuncții și disjuncții. În plus, ele sunt comutative (adică nu contează ordinea):
 
-* `x && y == y && x`
-* `x || y == y || x`
+- `x && y == y && x`
+- `x || y == y || x`
 
 Momentan, ele se comportă la fel ca adunarea și înmulțirea. La fel ca acestea, are loc și distributivitatea:
 
-* `x && (y || z) == (x && y) || (x && z)`.
-* `x || (y && z) == (x || y) && (x || z)`.
+- `x && (y || z) == (x && y) || (x && z)`.
+- `x || (y && z) == (x || y) && (x || z)`.
 
 Ne putem aduce aminte de ea dacă luăm expresia echivalentă $x \cdot (y + z) = x
 \cdot y + x \cdot z$. Dacă o privim în sens invers, ne permite să „dăm în factori” expresii logice. Aceeași relație are loc și dacă inversăm conjuncția cu disjuncția, chiar dacă nu merge în algebra normală ($x + yz \neq (x + y)(x +
@@ -187,14 +187,14 @@ z)$). Următoarele exemple sunt echivalente:
 
 În plus, avem și identități:
 
-* `x || false == x`
-* `x && true == x`
+- `x || false == x`
+- `x && true == x`
 
 Asta o putem lua ca pe $x + 0 = x$ și $x \cdot 1 = x$. Asta ne permite să simplificăm expresiile logice dacă știm de dinainte că o parte este redundantă. De exemplu, `x && (1 == 1)` este echivalentă cu `x` oricare ar fi x.
 
 De la matematică, știm și că $x \cdot 0 = 0$, care este adevărat și aici:
 
-* `x && false == false`.
+- `x && false == false`.
 
 C++ folosește **scurtcircuitarea** pentru a evalua expresiile logice în mod eficient. Din moment ce știm că `x && false == false` (și că `false && x == false`), dacă avem `x && y` și `x` este evaluat la fals, atunci nu mai este nevoie să evaluăm și `y`. Aici este un exemplu:
 
@@ -214,48 +214,48 @@ Scurtcircuitarea se aplică și pentru disjuncție (`||`). Dacă prima parte a `
 
 Mai avem următoarele relații, care arată idempotența celor două operații:
 
-* `x && x == x`
-* `x || x == x`
+- `x && x == x`
+- `x || x == x`
 
 Acest lucru este evident, deoarece `false || false == false && false == false` și `true || true == true && true == true`. Ce înseamnă concret este că dacă avem două expresii identice prin `||` sau `&&`, putem păstra doar una din ele, deci nu mai facem calcule redundante.
 
 Următoarele relații se numesc legea absorbției:
 
-* `x || (x && y) == x`
-* `x && (x || y) == x`
+- `x || (x && y) == x`
+- `x && (x || y) == x`
 
 Pe scurt, dacă `x` e adevărat, e irelevant că și `x && y` e adevărat. De asemenea, dacă pe noi ne interesează proprietatea `x`, nu contează ca `x || y` e adevărat, pentru că noi vrem doar `x`. De pildă, dacă noi vrem să căutăm toate numerele pare, nu ne interesează ca unele din ele sunt și multipli de 10. Dacă avem `(x <= 10) && (x <= 10 || x % 2 == 0)`, atunci ori avem numere mai mici decât 10, ori numere pari mai mici decât 10, dar acestea tot sunt mai mici decât 10, deci doar prima condiție contează. Analog, pentru `(x > 5) || (x > 5 && x < 10)`, știm că `x > 5` este fie adevărat în ambele expresii, fie în niciuna din ele.
 
 Și negația are niște proprietăți utile. În primul rând, avem:
 
-* `!(!x) == x`
+- `!(!x) == x`
 
 Logic vorbind, are sens: dacă un lucru e adevărat, înseamnă că opusul său este fals. E ușor de văzut: `!(!false) == !true == false` și `!(!true) == !false == true`.
 
 Negația poate fi definită exclusiv prin următoarele două legi importante:
 
-* `x && !x == false`
-* `x || !x == true`
+- `x && !x == false`
+- `x || !x == true`
 
 Ce ne spune prima regulă e că este imposibil să satisfaci și să nu satisfaci o proprietate în același timp. „A fi și a nu fi” este imposibil. În schimb, întrebarea lui Shakespeare „a fi sau a nu fi” este întotdeauna adevărată.
 
 În final, avem **legile lui DeMorgan**, foarte folositoare:
 
-* `!(x || y) == !x && !y`
-* `!(x && y) == !x || !y`
+- `!(x || y) == !x && !y`
+- `!(x && y) == !x || !y`
 
 Prima lege zice că singurul mod prin care `x || y` poate fi fals este dacă `x` și `y` sunt false. Dacă nu îmi place ciocolata sau vanilia, este clar că este același lucru cu a zice că nu îmi place ciocolata și nu îmi place vanilia. Dacă am două condiții și nu ambele se îndeplinesc, înseamnă că una dintre condiții nu se îndeplinește. Pentru un exemplu mai matematic la a doua lege, dacă $x \not\in [2, 3]$ ($x$ nu este între 2 și 3), atunci este adevărat fie că $x < 2$, fie că $x > 3$. Dacă am rescrie-o în termeni de C++, ar fi: `!(x >= 2 && x <= 3) == !(x >= 2) || !(x <= 3) == (x < 2) || (x > 3)`.
 
 Cea mai simplă metodă să ții minte legile de mai sus este:
 
-* schimbă `&&` în `||` și viceversa
-* neagă fiecare termen
-* neagă toată expresia
+- schimbă `&&` în `||` și viceversa
+- neagă fiecare termen
+- neagă toată expresia
 
 Altfel spus:
 
-* `!(!x || !y) == x && y`
-* `!(!x && !y) == x || y`
+- `!(!x || !y) == x && y`
+- `!(!x && !y) == x || y`
 
 Următoarele două exemple sunt echivalente, iar această rescriere poate fi utilă în anumite circumstanțe pentru a face codul mai curat (de obicei când a doua ramură este scurtă sau dacă negația este altfel întortochiată):
 
@@ -265,12 +265,12 @@ Următoarele două exemple sunt echivalente, iar această rescriere poate fi uti
 
 Există și niște echivalențe cu negația care sunt utile în manipularea expresiilor relaționale:
 
-* `!(x == y) == (x != y)`
-* `!(x != y) == (x == y)`
-* `!(x < y) == (x >= y)`
-* `!(x <= y) == (x > y)`
-* `!(x > y) == (x <= y)`
-* `!(x >= y) == (x < y)`
+- `!(x == y) == (x != y)`
+- `!(x != y) == (x == y)`
+- `!(x < y) == (x >= y)`
+- `!(x <= y) == (x > y)`
+- `!(x > y) == (x <= y)`
+- `!(x >= y) == (x < y)`
 
 Combinat cu legile lui DeMorgan și celelalte legi de mai sus, putem simplifica cu succes orice condiție, obținând ceva mai scurt de scris și mai eficient.
 
@@ -280,9 +280,9 @@ Odată cu învățarea structurii alternative, putem acum să incorporăm struct
 
 ## Resurse suplimentare
 
-* [Articolul despre structuri alternative de pe pbinfo](https://www.pbinfo.ro/articole/70/structuri-alternative)
-* [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
+- [Articolul despre structuri alternative de pe pbinfo](https://www.pbinfo.ro/articole/70/structuri-alternative)
+- [Learning to code - USACO Guide](https://usaco.guide/general/resources-learning-to-code?lang=cpp)
 
 ## Probleme suplimentare
 
-* [Probleme usoare si medii din capitolul Structura de decizie](https://www.pbinfo.ro/probleme/categorii/12/elemente-de-baza-ale-limbajului-structura-de-decizie)
+- [Probleme usoare si medii din capitolul Structura de decizie](https://www.pbinfo.ro/probleme/categorii/12/elemente-de-baza-ale-limbajului-structura-de-decizie)

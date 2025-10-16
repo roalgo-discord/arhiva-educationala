@@ -28,9 +28,9 @@ Vom presupune în cele ce urmează că indexarea valorilor se face de la 0.
 
 De regulă, vom vrea să ținem memorate informații pentru fiecare grupă, iar atunci când actualizăm o valoare, operația va fi efectuată în timp constant, deoarece schimbăm informațiile dintr-o singură grupă. În ceea ce privește interogările, complexitatea acestora este $\mathcal{O}(\sqrt n)$ deoarece dacă avem un interval de forma $[L, R]$, noi vom calcula răspunsul folosind trei pași, aceștia fiind următorii:
 
-* Intervalul $[L, x]$, unde $x$ este capătul dreapta al grupării în care se află $L$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
-* Intervalul $[x+1, y]$, unde $y$ este capătul din dreapta al ultimei grupe care se află în întregime în intervalul din query. Pentru aceste grupe, se procesează răspunsul total corespunzător acestui interval și se consideră în contextul răspunsului final.
-* Intervalul $[y+1, R]$, unde $y+1$ este capătul stânga al grupării în care se află $R$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
+- Intervalul $[L, x]$, unde $x$ este capătul dreapta al grupării în care se află $L$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
+- Intervalul $[x+1, y]$, unde $y$ este capătul din dreapta al ultimei grupe care se află în întregime în intervalul din query. Pentru aceste grupe, se procesează răspunsul total corespunzător acestui interval și se consideră în contextul răspunsului final.
+- Intervalul $[y+1, R]$, unde $y+1$ este capătul stânga al grupării în care se află $R$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
 
 !!! note "Observație"
 
@@ -42,12 +42,12 @@ brut răspunsul cerut, considerând pe rând fiecare valoare din interval.
 De exemplu, dacă dimensiunea unei grupări este 5, iar intervalul $[L, R]$
 este $[7, 21]$, răspunsul se va afla în modul următor:
 
-* Intervalul $[7, 9]$: Fiind o grupare care nu se află în întregime în
+- Intervalul $[7, 9]$: Fiind o grupare care nu se află în întregime în
   interogarea dată, vom procesa valorile într-o manieră brută.
-* Intervalele $[10, 14]$ și $[15, 19]$: Deoarece aceste intervale se află în
+- Intervalele $[10, 14]$ și $[15, 19]$: Deoarece aceste intervale se află în
   întregime în interogarea dată, le vom procesa folosind precalcularea făcută
   anterior pentru grupările întregi.
-* Intervalul $[20, 21]$: Fiind o grupare care nu se află în întregime în
+- Intervalul $[20, 21]$: Fiind o grupare care nu se află în întregime în
   interogarea dată, vom procesa valorile într-o manieră brută.
 
 ## Când folosim aceste tehnici?
@@ -191,11 +191,11 @@ Pentru a calcula query-uri mai complicate, de multe ori ne putem gândi la a gru
 
 Această metodă se numește Algoritmul lui Mo și prin folosirea ei pentru a reordona query-urile, ne asigurăm că numărul de operații pe care îl facem în medie la fiecare query este de $\mathcal{O}(\sqrt n)$, lucru ce se poate motiva prin însumarea a două elemente de complexitate:
 
-* Dacă avem două (sau mai multe) query-uri din același bucket, capătul din stânga se va mișca cu cel mult $\sqrt n$, iar numărul total de pași pe care îi facem la dreapta este de $n$. Deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt
+- Dacă avem două (sau mai multe) query-uri din același bucket, capătul din stânga se va mișca cu cel mult $\sqrt n$, iar numărul total de pași pe care îi facem la dreapta este de $n$. Deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt
   n)$, atunci contribuția la complexitate de la aceste query-uri este $\mathcal{O}(n \sqrt
   n)$.
 
-* Dacă avem două query-uri din bucket-uri diferite, putem avea în cel mai rău caz $n$ pași, dar deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt n)$, atunci contribuția la complexitate de la aceste query-uri este $\mathcal{O}(n \sqrt n)$.
+- Dacă avem două query-uri din bucket-uri diferite, putem avea în cel mai rău caz $n$ pași, dar deoarece numărul de bucket-uri este $\mathcal{O}(\sqrt n)$, atunci contribuția la complexitate de la aceste query-uri este $\mathcal{O}(n \sqrt n)$.
 
 În total, complexitatea se reduce la $\mathcal{O}(n \sqrt n)$, presupunând că operațiile auxiliare pe care le efectuăm se realizează în timp constant.
 
@@ -561,35 +561,35 @@ Problemele și resursele pe care le veți găsi în cele ce urmează acoperă to
 
 ## Probleme suplimentare
 
-* [infoarena mayonaka](https://infoarena.ro/problema/mayonaka)
-* [InfoOltenia 2020 Toorcmmdc](https://kilonova.ro/problems/374)
-* [Junior Challenge 2020 Aparate](https://infoarena.ro/problema/aparate)
-* [infoarena qxy](https://www.infoarena.ro/problema/qxy)
-* [ONI 2022 subsir](https://kilonova.ro/problems/1600)
-* [infoarena suma6](https://infoarena.ro/problema/suma6)
-* [infoarena numerex](https://www.infoarena.ro/problema/numerex)
-* [ONI 2015 ksecv](https://kilonova.ro/problems/204/)
-* [ONI 2018 Mexitate](https://kilonova.ro/problems/1521/)
-* [Lot Juniori 2019 dss](https://kilonova.ro/problems/1683/)
-* [USACO Platinum Minimizing Haybales](https://usaco.org/index.php?page=viewproblem2\&cpid=1188)
-* [IIOT 2024 XYQueries](https://kilonova.ro/problems/2427/)
-* [ONI 2022 Baraj Seniori Piezisa](https://kilonova.ro/problems/142/)
-* [infoarena arbore](https://www.infoarena.ro/problema/arbore)
-* [Codeforces Sum of Progression](https://codeforces.com/contest/1921/problem/F)
-* [Codeforces Array Queries](https://codeforces.com/contest/797/problem/E)
-* [Codeforces Sakurako's Test](https://codeforces.com/contest/2008/problem/H)
-* [Codeforces Robot Queries](https://codeforces.com/contest/1902/problem/D)
-* [Codeforces Space Harbour](https://codeforces.com/contest/1924/problem/B)
-* [Codeforces Ann and Books](https://codeforces.com/contest/877/problem/F)
-* [Codeforces XOR and Favorite Number](https://codeforces.com/contest/617/problem/E)
+- [infoarena mayonaka](https://infoarena.ro/problema/mayonaka)
+- [InfoOltenia 2020 Toorcmmdc](https://kilonova.ro/problems/374)
+- [Junior Challenge 2020 Aparate](https://infoarena.ro/problema/aparate)
+- [infoarena qxy](https://www.infoarena.ro/problema/qxy)
+- [ONI 2022 subsir](https://kilonova.ro/problems/1600)
+- [infoarena suma6](https://infoarena.ro/problema/suma6)
+- [infoarena numerex](https://www.infoarena.ro/problema/numerex)
+- [ONI 2015 ksecv](https://kilonova.ro/problems/204/)
+- [ONI 2018 Mexitate](https://kilonova.ro/problems/1521/)
+- [Lot Juniori 2019 dss](https://kilonova.ro/problems/1683/)
+- [USACO Platinum Minimizing Haybales](https://usaco.org/index.php?page=viewproblem2\&cpid=1188)
+- [IIOT 2024 XYQueries](https://kilonova.ro/problems/2427/)
+- [ONI 2022 Baraj Seniori Piezisa](https://kilonova.ro/problems/142/)
+- [infoarena arbore](https://www.infoarena.ro/problema/arbore)
+- [Codeforces Sum of Progression](https://codeforces.com/contest/1921/problem/F)
+- [Codeforces Array Queries](https://codeforces.com/contest/797/problem/E)
+- [Codeforces Sakurako's Test](https://codeforces.com/contest/2008/problem/H)
+- [Codeforces Robot Queries](https://codeforces.com/contest/1902/problem/D)
+- [Codeforces Space Harbour](https://codeforces.com/contest/1924/problem/B)
+- [Codeforces Ann and Books](https://codeforces.com/contest/877/problem/F)
+- [Codeforces XOR and Favorite Number](https://codeforces.com/contest/617/problem/E)
 
 ## Lectură suplimentară
 
-* [cp-algorithms: Sqrt Decomposition](https://cp-algorithms.com/data_structures/sqrt_decomposition.html)
-* [SEPI Infobits F1 - paginile 99-137](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
-* [USACO Guide Sqrt Decomposition](https://usaco.guide/plat/sqrt?lang=cpp)
-* [Infoarena - The Square Root Trick](https://www.infoarena.ro/blog/square-root-trick)
-* [Infoarena - Multe "smenuri" de programare in C/C++... si nu numai!](https://www.infoarena.ro/multe-smenuri-de-programare-in-cc-si-nu-numai)
-* [Codeforces - Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
-* [Codeforces - An alternative sorting order for Mo's algorithm](https://codeforces.com/blog/entry/61203)
-* [Codeforces - Mo's Algorithm on Trees](https://codeforces.com/blog/entry/43230)
+- [cp-algorithms: Sqrt Decomposition](https://cp-algorithms.com/data_structures/sqrt_decomposition.html)
+- [SEPI Infobits F1 - paginile 99-137](https://sepi.ro/assets/upload-file/infobits-f1.pdf)
+- [USACO Guide Sqrt Decomposition](https://usaco.guide/plat/sqrt?lang=cpp)
+- [Infoarena - The Square Root Trick](https://www.infoarena.ro/blog/square-root-trick)
+- [Infoarena - Multe "smenuri" de programare in C/C++... si nu numai!](https://www.infoarena.ro/multe-smenuri-de-programare-in-cc-si-nu-numai)
+- [Codeforces - Square root decomposition and applications](https://codeforces.com/blog/entry/83248)
+- [Codeforces - An alternative sorting order for Mo's algorithm](https://codeforces.com/blog/entry/61203)
+- [Codeforces - Mo's Algorithm on Trees](https://codeforces.com/blog/entry/43230)
