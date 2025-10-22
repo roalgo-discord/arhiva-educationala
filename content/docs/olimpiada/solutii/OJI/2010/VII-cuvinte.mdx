@@ -51,7 +51,8 @@ int main() {
         cnt = 0;
         string original = words[i - 1];
         do {
-            words[i - 1] = words[i - 1].substr(1, words[i - 1].size()) + words[i - 1][0];
+            words[i - 1] =
+                words[i - 1].substr(1, words[i - 1].size()) + words[i - 1][0];
             ++cnt;
         } while (cnt < words[i - 1].size() - 1 && words[i - 1] != words[i]);
 
@@ -60,7 +61,9 @@ int main() {
 
             words.erase(words.begin() + i);
             ordine.erase(ordine.begin() + i);
-            if (firstRemovePnt == -1) firstRemovePnt = i;
+            if (firstRemovePnt == -1) {
+                firstRemovePnt = i;
+            }
             i--;
         } else {
             words[i - 1] = original;

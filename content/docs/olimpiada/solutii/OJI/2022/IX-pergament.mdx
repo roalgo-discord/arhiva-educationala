@@ -20,14 +20,13 @@ Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-
     ifstream cin("pergament.in");
     ofstream cout("pergament.out");
 
@@ -40,8 +39,12 @@ int main() {
     for (int i = 1; i <= Q; i++) {
         int coloana, rand, distanta;
         cin >> coloana >> rand >> distanta;
-        q.push_back({rand, {coloana, 1}});
-        q.push_back({rand + distanta, {coloana, -1}});
+        q.push_back({
+            rand, {coloana, 1}
+        });
+        q.push_back({
+            rand + distanta, {coloana, -1}
+        });
     }
     sort(q.begin(), q.end());
 

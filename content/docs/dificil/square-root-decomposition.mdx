@@ -145,7 +145,7 @@ Această problemă, împreună cu variații ale ei este explicată în detaliu �
 Pentru a rezolva această problemă, trebuie să ne folosim de faptul că știm o valoare minimă a acestei diferențe, aceasta fiind raportul dintre diferența dintre maxim și minim, respectiv numărul de perechi de valori adiacente. Folosind această regulă, tot ce mai avem de făcut este să grupăm valori în functie de zona unde se află ele în șir (putem împărți valorile în $n$ grupe astfel), iar mai apoi vom calcula diferențele între cea mai mare valoare din grupa precedentă și cea mai mică valoare din grupa următoare.
 
 ```cpp
-long long maxDifference(const vector<int>& v) {
+long long maxDifference(const vector<int> &v) {
     int min_val = *min_element(v.begin(), v.end());
     int max_val = *max_element(v.begin(), v.end());
     double dif = max_val - min_val;

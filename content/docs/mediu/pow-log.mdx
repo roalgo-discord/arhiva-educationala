@@ -112,11 +112,11 @@ long long pw(long long a, long long n) {
         return 1;
     }
     if (n % 2 == 1) {
-        return (a * pw(a, n-1)) % mod;
+        return (a * pw(a, n - 1)) % mod;
     }
     // n par
-    long long x = pw(a, n/2);
-    return (x*x) % mod;
+    long long x = pw(a, n / 2);
+    return (x * x) % mod;
 }
 ```
 
@@ -126,11 +126,11 @@ long long pw(long long a, long long n) {
 long long pw(long long a, long long n) {
     long long ans = 1;
     while (n > 0) {
-        if (n % 2 == 1) { // alternativ, n&1
+        if (n % 2 == 1) {  // alternativ, n&1
             ans = (ans * a) % mod;
         }
         a = (a * a) % mod;
-        n = n / 2; // alternativ, n >>= 1
+        n = n / 2;  // alternativ, n >>= 1
     }
     return ans;
 }

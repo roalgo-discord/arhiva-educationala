@@ -30,8 +30,8 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 using namespace std;
 
 int main() {
-    ifstream cin ("joc.in");
-    ofstream cout ("joc.out");
+    ifstream cin("joc.in");
+    ofstream cout("joc.out");
 
     int n;
     long long x;
@@ -42,11 +42,9 @@ int main() {
         cin >> op;
         if (op == 1) {
             x = x * 2;
-        }
-        else if (op == 2) {
+        } else if (op == 2) {
             x = x * 4 + 1;
-        }
-        else if (op == 3) {
+        } else if (op == 3) {
             x = x / 2;
         }
     }
@@ -129,8 +127,7 @@ int main() {
             if (a % d == 0) {
                 if (d * d == a) {
                     divi += 1;
-                }
-                else {
+                } else {
                     divi += 2;
                 }
             }
@@ -166,16 +163,19 @@ int main() {
     f >> x >> k;
     a = 1;
     b = 1;
-    if (x > 9) k = k / 2;
+    if (x > 9) {
+        k = k / 2;
+    }
     do {
         c = a + b;
         a = b;
         b = c;
     } while (c != k);
-    if (x <= 9)
+    if (x <= 9) {
         t = a;
-    else
+    } else {
         t = 2 * a;
+    }
     for (i = 1; i <= t; i++) {
         f >> s;
         g << s;
@@ -183,6 +183,6 @@ int main() {
             g << '\n';
         }
     }
- return 0;
+    return 0;
 }
 ```

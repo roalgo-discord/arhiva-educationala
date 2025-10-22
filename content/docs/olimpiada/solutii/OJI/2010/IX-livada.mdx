@@ -46,12 +46,13 @@ int main() {
             f >> a[j];
             min1 = min(min1, a[j]);
             if (a[j] != a[j - 1]) {
-                if (l > lmax)
+                if (l > lmax) {
                     lmax = l;
+                }
                 l = 1;
-            }
-            else
+            } else {
                 ++l;
+            }
         }
         lmax = max(lmax, l);
         for (int j = 1; j <= m; ++j) {
@@ -61,8 +62,9 @@ int main() {
                 break;
             }
         }
-        for (int j = 1; j <= m; ++j)
+        for (int j = 1; j <= m; ++j) {
             fr[a[j] - min1] = 0;
+        }
     }
     g << nr << '\n' << lmax << '\n';
     return 0;

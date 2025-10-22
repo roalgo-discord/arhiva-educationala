@@ -5,6 +5,8 @@ import remarkPresetLinkRecommended from "remark-preset-lint-recommended"
 import remarkPresetLintMarkdownStyleGuide from "remark-preset-lint-markdown-style-guide"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkMdx from "remark-mdx"
+import remarkLintCppClangFormat from "./src/remark-lint-cpp-clang-format.mjs"
+import remarkCppClangFormat from "./src/remark-cpp-clang-format.mjs"
 
 const { remarkPlugins } = getDefaultMDXOptions({
   _withoutBundler: true,
@@ -12,7 +14,12 @@ const { remarkPlugins } = getDefaultMDXOptions({
 });
 
 const remarkConfig = {
-  plugins: [remarkInclude, ...remarkPlugins],
+  plugins: [
+    remarkInclude,
+    remarkLintCppClangFormat,
+    remarkCppClangFormat,
+    ...remarkPlugins,
+  ],
   settings: {
     bullet: "-",
   }

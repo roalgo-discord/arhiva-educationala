@@ -28,8 +28,9 @@ ofstream g("submit.out");
 int n, pct[101], bonus, m, p, i, j, complet, crt, maxim;
 int main() {
     f >> n;
-    for (i = 1; i <= n; i++)
+    for (i = 1; i <= n; i++) {
         f >> pct[i];
+    }
     f >> bonus;
     f >> m;
     maxim = 0;
@@ -38,16 +39,19 @@ int main() {
         crt = 0;
         for (i = 1; i <= n; i++) {
             f >> p;
-            if (p == 0)
+            if (p == 0) {
                 complet = 0;
-            else
+            } else {
                 crt += pct[i];
+            }
         }
-        if (complet)
+        if (complet) {
             crt += bonus;
+        }
         crt -= 2 * (j - 1);
-        if (crt > maxim)
+        if (crt > maxim) {
             maxim = crt;
+        }
     }
     g << maxim;
     return 0;

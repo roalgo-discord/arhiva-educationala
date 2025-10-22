@@ -38,21 +38,22 @@ Să ne uităm la implementarea acestei idei.
 
 constexpr int NMAX = 200005;
 int rez[NMAX];
-std::vector<std::vector <int>> G(NMAX);
-//tinem minte cate un set pentru fiecare nod
-std::vector<std::set <int>> s(NMAX);
+std::vector<std::vector<int>> G(NMAX);
+// tinem minte cate un set pentru fiecare nod
+std::vector<std::set<int>> s(NMAX);
 
 void dfs(int nod, int t) {
     for (auto x : G[nod]) {
         if (x != t) {
             dfs(x, nod);
-            //parcurgem setul fiecarui fiu si adaugam elementele in setul nodului
-            for (auto x2 : s[x]){
+            // parcurgem setul fiecarui fiu si adaugam elementele in setul
+            // nodului
+            for (auto x2 : s[x]) {
                 s[nod].insert(x2);
             }
         }
     }
-    //obtinem rezultatul folosind metoda .size()
+    // obtinem rezultatul folosind metoda .size()
     rez[nod] = s[nod].size();
 }
 
@@ -61,7 +62,7 @@ int main() {
     std::cin >> n;
     for (i = 1; i <= n; i++) {
         std::cin >> c;
-        //valoarea nodului o putem adauga direct in setul acestuia
+        // valoarea nodului o putem adauga direct in setul acestuia
         s[i].insert(c);
     }
     for (i = 1; i < n; i++) {
@@ -113,25 +114,27 @@ Cu această schimbare, codul va arăta așa:
 
 constexpr int NMAX = 200005;
 int rez[NMAX];
-std::vector<std::vector <int>> G(NMAX);
-//tinem minte cate un set pentru fiecare nod
-std::vector<std::set <int>> s(NMAX);
+std::vector<std::vector<int>> G(NMAX);
+// tinem minte cate un set pentru fiecare nod
+std::vector<std::set<int>> s(NMAX);
 
 void dfs(int nod, int t) {
     for (auto x : G[nod]) {
         if (x != t) {
             dfs(x, nod);
-            //daca numarul de elemente din setul fiului este mai mare decat cel din setul nodului, le interschimbam
-            if(s[x].size() > s[nod].size()){
+            // daca numarul de elemente din setul fiului este mai mare decat cel
+            // din setul nodului, le interschimbam
+            if (s[x].size() > s[nod].size()) {
                 s[nod].swap(s[x]);
             }
-            //parcurgem setul fiecarui fiu si adaugam elementele in setul nodului
-            for (auto x2 : s[x]){
+            // parcurgem setul fiecarui fiu si adaugam elementele in setul
+            // nodului
+            for (auto x2 : s[x]) {
                 s[nod].insert(x2);
             }
         }
     }
-    //obtinem rezultatul folosind metoda .size()
+    // obtinem rezultatul folosind metoda .size()
     rez[nod] = s[nod].size();
 }
 
@@ -140,7 +143,7 @@ int main() {
     std::cin >> n;
     for (i = 1; i <= n; i++) {
         std::cin >> c;
-        //valoarea nodului o putem adauga direct in setul acestuia
+        // valoarea nodului o putem adauga direct in setul acestuia
         s[i].insert(c);
     }
     for (i = 1; i < n; i++) {
@@ -172,7 +175,8 @@ Pentru a putea folosi această structură, va trebui să adăugăm la programul 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
-using ordered_set = tree<int, null_type, std::less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>;
+using ordered_set = tree<int, null_type, std::less_equal<int>, rb_tree_tag,
+                         tree_order_statistics_node_update>;
 ```
 
 În interiorul parantezelor ascuțite de după `tree`, primul câmp reprezintă tipul de date, în acest caz `int`, al patrulea reprezintă tipul de arbore folosit, în acest caz, `rb_tree`, care garantează complexitatea logaritmică a operațiilor de inserare și ștergere. Al treilea câmp reprezintă tipul de comparator folosit, unde `std::less_equal` permite existența a mai multor elemente egale (ca un `multiset`), iar `std::less` nu (ca un `set`).
@@ -189,15 +193,15 @@ Această problemă se poate rezolva folosind o structură de tip `__gnu_pbds` ca
 O implementare a ideii de mai sus ar fi următoarea:
 
 ```c++
-#include <iostream>
-#include <vector>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
+#include <iostream>
+#include <vector>
 using namespace __gnu_pbds;
 
-//avem elemente de tip int, care se repeta
-using ordered_set = tree<int, null_type, std::less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>;
+// avem elemente de tip int, care se repeta
+using ordered_set = tree<int, null_type, std::less_equal<int>, rb_tree_tag,
+                         tree_order_statistics_node_update>;
 
 constexpr int NMAX = 100005;
 std::vector<std::vector<int>> G(NMAX);
@@ -208,15 +212,15 @@ int rez[NMAX];
 void dfs(int nod) {
     for (auto x : G[nod]) {
         dfs(x);
-        //la fel ca la set, operatia de swap ia tot O(1)
-        if (s[x].size() > s[nod].size()){
+        // la fel ca la set, operatia de swap ia tot O(1)
+        if (s[x].size() > s[nod].size()) {
             s[x].swap(s[nod]);
         }
-        for (auto x2 : s[x]){
+        for (auto x2 : s[x]) {
             s[nod].insert(x2);
         }
     }
-    //numarul de elemente din set mai mici sau egale cu v[nod]
+    // numarul de elemente din set mai mici sau egale cu v[nod]
     rez[nod] = s[nod].order_of_key(v[nod] + 1);
 }
 
@@ -234,7 +238,7 @@ int main() {
         s[i].insert(v[i]);
     }
     dfs(1);
-    for (i = 1; i <= n; i++){
+    for (i = 1; i <= n; i++) {
         std::cout << rez[i] << " ";
     }
     return 0;

@@ -30,7 +30,7 @@ Pentru a optimiza această dinamică, vom putea folosi fie o structură de date 
 Mai jos puteți găsi o soluție care obține accepted.
 
 ```cpp
---8<-- "dificil/data-structures-dp/projects.cpp"
+--8 < --"dificil/data-structures-dp/projects.cpp"
 ```
 
 ## Problema [Subsequences - Codeforces](https://codeforces.com/contest/597/problem/C)
@@ -44,7 +44,7 @@ Pentru a calcula această dinamică, vom vrea să știm pentru o pereche $(i, j)
 Această recurență se poate din nou calcula relativ ușor folosind arbori de intervale sau arbori indexați binar, mai jos puteți găsi o soluție care rezolvă problema.
 
 ```cpp
---8<-- "dificil/data-structures-dp/subsequences.cpp"
+--8 < --"dificil/data-structures-dp/subsequences.cpp"
 ```
 
 ## Problema [Tulip Bouquet - IIOT](https://kilonova.ro/problems/2086)
@@ -60,7 +60,7 @@ Când unim două intervale, vom ține valorile maxime din fiecare din ele și ap
 Mai jos puteți găsi soluția de 100 de puncte, unde sunt mai multe detalii incluse.
 
 ```cpp
---8<-- "dificil/data-structures-dp/bouquets.cpp"
+--8 < --"dificil/data-structures-dp/bouquets.cpp"
 ```
 
 ## Problema [Pictures with Kittens - Codeforces](https://codeforces.com/problemset/problem/1077/F2)
@@ -70,7 +70,7 @@ Mai jos puteți găsi soluția de 100 de puncte, unde sunt mai multe detalii inc
 La o primă citire este evident faptul că putem găsi repede o dinamică de tipul $dp[i][j]$ ca fiind suma maximă dacă pentru primele $i$ poziții, am folosit $j$ astfel de valori. Această recurență poate fi descrisă ca fiind maximul ultimelor $k$ poziții de pe coloana precedentă, $j-1$, lucru ce poate fi optimizat în modul cel mai eficient folosind o structură de date de tip deque, așa cum se poate vedea și în soluția prezentată mai jos.
 
 ```cpp
---8<-- "dificil/data-structures-dp/kittens.cpp"
+--8 < --"dificil/data-structures-dp/kittens.cpp"
 ```
 
 ## Problema [Interstellar Intervals USACO Gold](https://usaco.org/index.php?page=viewproblem2\&cpid=1450)
@@ -91,7 +91,7 @@ După calcularea acestor valori, putem ține o structură de date (în soluția 
 În cele din urmă, complexitatea devine $\mathcal{O}(n \log n)$. Puteți citi soluția de mai jos pentru mai multe detalii, precum și să vizionați videoul de mai sus.
 
 ```cpp
---8<-- "dificil/data-structures-dp/interstellar.cpp"
+--8 < --"dificil/data-structures-dp/interstellar.cpp"
 ```
 
 ## Concluzii

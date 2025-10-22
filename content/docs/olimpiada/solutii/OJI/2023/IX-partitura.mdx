@@ -63,11 +63,13 @@ int main() {
     }
     for (i = 18; i > 0; i--) {
         sort(v[i].begin(), v[i].end());
-        for (j = 0; j + 1 < v[i].size(); j += 2)
+        for (j = 0; j + 1 < v[i].size(); j += 2) {
             v[i - 1].push_back(v[i][j] + v[i][j + 1]);
+        }
     }
-    for (i = 0; i < v[0].size(); i++)
+    for (i = 0; i < v[0].size(); i++) {
         ans += 1ll * v[0][i] * v[0][i];
+    }
     cout << ans << '\n';
     return 0;
 }

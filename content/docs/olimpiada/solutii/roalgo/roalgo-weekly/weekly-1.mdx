@@ -29,13 +29,14 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int A, B;
     cin >> A >> B;
-    if(A >= 1 && A <= 9 && B >= 1 && B <= 9)
+    if (A >= 1 && A <= 9 && B >= 1 && B <= 9) {
         cout << A * B;
-    else
+    } else {
         cout << -1;
+    }
     return 0;
 }
 ```
@@ -57,25 +58,25 @@ using namespace std;
 
 const int NMAX = 101;
 
-int n, k, v[101]; /// v este sirul care contine robotii cu abilitatea maxima
-int ap[101]; /// v[0] = lungimea sirului v ap[i] = 1 <=> robotul are abilitate maxima
+int n, k, v[101];  /// v este sirul care contine robotii cu abilitatea maxima
+int ap[101];  /// v[0] = lungimea sirului v ap[i] = 1 <=> robotul are abilitate
+              /// maxima
 
 int main() {
     cin >> n >> k;
-    for(int i = 1, maxi = 0, x; i <= n; ++i) {
+    for (int i = 1, maxi = 0, x; i <= n; ++i) {
         cin >> x;
-        if(x > maxi) {
+        if (x > maxi) {
             v[0] = 1, v[1] = i;
             maxi = x;
-        }
-        else if(x == maxi) {
+        } else if (x == maxi) {
             v[++v[0]] = i;
         }
     }
-    for(int i = 1; i <= v[0]; ++i) {
+    for (int i = 1; i <= v[0]; ++i) {
         ap[v[i]] = 1;
     }
-    for(int i = 1, x; i <= k; ++i) {
+    for (int i = 1, x; i <= k; ++i) {
         cin >> x;
         if (ap[x]) {
             cout << "Da";
@@ -139,22 +140,22 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     long long n, OK = 1;
     cin >> n;
 
-    while(n > 9){
-        if(n % 2 == n / 10 % 2) {
+    while (n > 9) {
+        if (n % 2 == n / 10 % 2) {
             OK = 0;
         }
         n = n / 10;
     }
 
-    if(OK == 1)
+    if (OK == 1) {
         cout << "da";
-    else
+    } else {
         cout << "nu";
+    }
 
     return 0;
 }

@@ -69,7 +69,7 @@ using namespace std;
 
 vector<long long> fib;
 
-int closestfibleft (long long x) {
+int closestfibleft(long long x) {
     int L = 0;
     int R = fib.size() - 1;
     int ans = 0;
@@ -78,8 +78,7 @@ int closestfibleft (long long x) {
         if (fib[mid] <= x) {
             ans = mid;
             L = mid + 1;
-        }
-        else {
+        } else {
             R = mid - 1;
         }
     }
@@ -87,7 +86,7 @@ int closestfibleft (long long x) {
     return ans;
 }
 
-int closestfibright (long long x) {
+int closestfibright(long long x) {
     int L = 0;
     int R = fib.size() - 1;
     int ans = 0;
@@ -95,8 +94,7 @@ int closestfibright (long long x) {
         int mid = (L + R) / 2;
         if (fib[mid] < x) {
             L = mid + 1;
-        }
-        else {
+        } else {
             ans = mid;
             R = mid - 1;
         }
@@ -105,7 +103,6 @@ int closestfibright (long long x) {
     return ans;
 }
 int main() {
-
     ifstream cin("fibosnek.in");
     ofstream cout("fibosnek.out");
 
@@ -116,16 +113,16 @@ int main() {
     fib.push_back(1);
     fib.push_back(2);
 
-    while(1) {
+    while (1) {
         int sz = fib.size();
-        long long x = fib[sz-1] + fib[sz - 2];
+        long long x = fib[sz - 1] + fib[sz - 2];
         fib.push_back(x);
-        if (x >= (1LL<<36)) {
+        if (x >= (1LL << 36)) {
             break;
         }
     }
 
-    char grid[n+1][m+1];
+    char grid[n + 1][m + 1];
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
             long long val;
@@ -135,8 +132,7 @@ int main() {
             int posR = closestfibright(val);
             if (fib[posL] == val) {
                 grid[i][j] = posL;
-            }
-            else {
+            } else {
                 if (abs(val - fib[posR]) < abs(val - fib[posL])) {
                     posL = posR;
                 }
@@ -156,9 +152,8 @@ int main() {
         }
 
         cout << ans << '\n';
-    }
-    else {
-        deque <pair<int, long long> > seqs;
+    } else {
+        deque<pair<int, long long> > seqs;
         int streak = 0;
         long long sum = 0;
 
@@ -170,28 +165,25 @@ int main() {
                     if (streak >= 0) {
                         streak++;
                         sum += fib[grid[i][j]];
-                    }
-                    else {
-                        seqs.push_back ({streak, sum});
+                    } else {
+                        seqs.push_back({streak, sum});
                         streak = 1;
                         sum = fib[grid[i][j]];
                     }
-                }
-                else {
+                } else {
                     grid[i][j] *= -1;
                     if (streak < 0) {
                         streak--;
                         sum += fib[grid[i][j]];
-                    }
-                    else {
-                        seqs.push_back ({streak, sum});
+                    } else {
+                        seqs.push_back({streak, sum});
                         streak = -1;
                         sum = fib[grid[i][j]];
                     }
                 }
 
                 if (seqs.size() >= 4) {
-                    int N = (int) seqs.size();
+                    int N = (int)seqs.size();
 
                     for (int i = 0; i < N; i++) {
                         if (seqs[i].first > maxlen) {
@@ -202,9 +194,15 @@ int main() {
 
                     for (int i = 0; i < N; i++) {
                         if (seqs[i].first < 0) {
-                            if (abs(seqs[i].first) + (i > 0) * seqs[i-1].first + (i + 1 < N) * seqs[i+1].first > maxlen) {
-                                maxlen = abs(seqs[i].first) + (i > 0) * seqs[i-1].first + (i + 1 < N) * seqs[i+1].first;
-                                sm = seqs[i].second + (i > 0) * seqs[i-1].second + (i + 1 < N) * seqs[i+1].second;
+                            if (abs(seqs[i].first) + (i > 0) * seqs[i - 1].first
+                                    + (i + 1 < N) * seqs[i + 1].first
+                                > maxlen) {
+                                maxlen = abs(seqs[i].first)
+                                       + (i > 0) * seqs[i - 1].first
+                                       + (i + 1 < N) * seqs[i + 1].first;
+                                sm = seqs[i].second
+                                   + (i > 0) * seqs[i - 1].second
+                                   + (i + 1 < N) * seqs[i + 1].second;
                             }
                         }
                     }
@@ -215,8 +213,7 @@ int main() {
         }
         seqs.push_back({streak, sum});
 
-
-        int N = (int) seqs.size();
+        int N = (int)seqs.size();
 
         for (int i = 0; i < N; i++) {
             if (seqs[i].first > maxlen) {
@@ -227,9 +224,13 @@ int main() {
 
         for (int i = 0; i < N; i++) {
             if (seqs[i].first < 0) {
-                if (abs(seqs[i].first) + (i > 0) * seqs[i-1].first + (i + 1 < N) * seqs[i+1].first > maxlen) {
-                    maxlen = abs(seqs[i].first) + (i > 0) * seqs[i-1].first + (i + 1 < N) * seqs[i+1].first;
-                    sm = seqs[i].second + (i > 0) * seqs[i-1].second + (i + 1 < N) * seqs[i+1].second;
+                if (abs(seqs[i].first) + (i > 0) * seqs[i - 1].first
+                        + (i + 1 < N) * seqs[i + 1].first
+                    > maxlen) {
+                    maxlen = abs(seqs[i].first) + (i > 0) * seqs[i - 1].first
+                           + (i + 1 < N) * seqs[i + 1].first;
+                    sm = seqs[i].second + (i > 0) * seqs[i - 1].second
+                       + (i + 1 < N) * seqs[i + 1].second;
                 }
             }
         }

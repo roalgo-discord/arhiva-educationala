@@ -119,7 +119,7 @@ De pildă, să luăm numărul 110010010111110011 și să-l convertim în baza 16
 Această problemă ne cere să aflăm cea mai mare cifră a reprezentării lui n în baza b. Știm că aceasta este dată de restul la împărțirea lui $n$ cu $b$, așadar este de ajuns să ținem minte acest rest și să-l comparăm cu restul precedent pentru a vedea dacă este mai mare.
 
 ```cpp
---8<-- "usor/bases/bazab.cpp"
+--8 < --"usor/bases/bazab.cpp"
 ```
 
 ## Problema 2 - [baze](https://www.pbinfo.ro/probleme/945/baze) (pbinfo)
@@ -128,7 +128,7 @@ Aici trebuie să transformăm un număr din baza $b$ în baza $c$ (unde $2 \leq 
 \leq 10$). Dacă ne imaginăm procesul, știm cum să convertim din baza $b$ în baza 10, și din baza 10 în baza $c$, deci dacă aplicăm aceste proceduri secvențial, rezolvăm problema. Știm că baza 2 va avea cea mai lungă reprezentare, deci putem estima numărul cifrelor ca fiind $\log_2(2^32) = 32$ (din moment ce are cel mult 10 cifre, putem presupune că poate fi stocat într-un `unsigned int`).
 
 ```cpp
---8<-- "usor/bases/baze.cpp"
+--8 < --"usor/bases/baze.cpp"
 ```
 
 ## Problema 3 - [CifBin](https://www.pbinfo.ro/probleme/429/cifbin) (pbinfo)
@@ -136,7 +136,7 @@ Aici trebuie să transformăm un număr din baza $b$ în baza $c$ (unde $2 \leq 
 Aici situația este simplă: fie avem 0, fie avem 1, deci este ușor să numărăm numărul de cifre 0 și numărul de cifre 1 bazat pe paritatea numărului. Dacă un număr este impar, va avea 1 ca ultima cifră. Dacă ne aducem aminte de reprezentarea unui număr, un număr impar va avea un $2^0$, adică un 1 pe prima poziție, în timp ce un număr par va avea 0. Există moduri alternative prin care s-ar putea rescrie soluția folosind [operațiile pe biți](../mediu/bitwise-ops.mdx), dar asta este un subiect mai avansat.
 
 ```cpp
---8<-- "usor/bases/cifbin.cpp"
+--8 < --"usor/bases/cifbin.cpp"
 ```
 
 ## Problema 4 - [transfb](https://www.pbinfo.ro/probleme/428/transfb) (pbinfo)
@@ -144,7 +144,7 @@ Aici situația este simplă: fie avem 0, fie avem 1, deci este ușor să număr�
 Aici ni se dă cifrele în baza $b$ și trebuie să transformăm acest număr în baza 10. Această problemă este o aplicație trivială a algoritmului de conversie discutat înainte. De notat că, din moment ce avem cifrele de la stânga la dreapta și nu invers, trebuie să precalculăm cea mai mare putere a bazei ($b^n$) înainte de a putea continua.
 
 ```cpp
---8<-- "usor/bases/transfb.cpp"
+--8 < --"usor/bases/transfb.cpp"
 ```
 
 ## Problema 5 - [pretios](https://www.pbinfo.ro/probleme/1479/pretios) (pbinfo)
@@ -157,7 +157,7 @@ Astfel, trebuie doar să verificăm dacă numărul de biți al unui număr este 
 1]$ au o lungime primă, deci asta va contribui la numărul de numere prețioase. Aici este soluția:
 
 ```cpp
---8<-- "usor/bases/pretios.cpp"
+--8 < --"usor/bases/pretios.cpp"
 ```
 
 ## Probleme suplimentare

@@ -33,7 +33,7 @@ intuitivă și simplă.
 După ce compilați programul și nu apar erori, va trebui să rulați executabilul și să introduceți datele de intrare conform descrierii problemei. Dacă totul este corect, veți obține rezultatul așteptat.
 
 ```cpp
---8<-- "cppintro/io/io1.cpp"
+--8 < --"cppintro/io/io1.cpp"
 ```
 
 Dacă $n = 9$, $a = 11$ și $b = 14$, programul va afișa următoarele date:
@@ -59,7 +59,7 @@ Pentru a citi și afișa din fișiere, vom avea nevoie de biblioteca `<fstream>`
 Mai întâi, trebuie să specificăm programului de unde să preia datele și de unde să le afișeze. Tipul `ifstream` declară un flux de citire din fișier, `ofstream` declară unul de scriere în fișier.
 
 ```cpp
---8<-- "cppintro/io/io2.cpp"
+--8 < --"cppintro/io/io2.cpp"
 ```
 
 !!! note "Numele fișierelor"
@@ -73,7 +73,7 @@ inclusă biblioteca `<iostream>`.
 Programul de mai sus va fi identic, singura diferență fiind adăugarea facilităților care ne permit să citim datele din fișiere.
 
 ```cpp
---8<-- "cppintro/io/io3.cpp"
+--8 < --"cppintro/io/io3.cpp"
 ```
 
 !!! note "Citirea unui număr necunoscut de valori"
@@ -101,7 +101,7 @@ Sintaxa ei este `setprecision(int n)`, unde $n$ este numărul de cifre folosite 
 De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $\pi$, putem face asta folosind următoarele instrucțiuni:
 
 ```cpp
---8<-- "cppintro/io/io4.cpp"
+--8 < --"cppintro/io/io4.cpp"
 ```
 
 !!! note "Observație"

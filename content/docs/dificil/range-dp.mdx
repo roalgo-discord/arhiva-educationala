@@ -130,8 +130,8 @@ ofstream cout("pieaters.out");
 vector<vector<int>> mx, dp;
 vector<vector<vector<int>>> bstcut;
 
-int solve (int st, int dr) {
-    if(st > dr) {
+int solve(int st, int dr) {
+    if (st > dr) {
         return 0;
     }
     if (dp[st][dr] != -1) {
@@ -139,20 +139,20 @@ int solve (int st, int dr) {
     }
     dp[st][dr] = 0;
     for (int i = st; i < dr; ++i) {
-        dp[st][dr] = max(dp[st][dr], solve(st, i) + solve(i+1, dr));
+        dp[st][dr] = max(dp[st][dr], solve(st, i) + solve(i + 1, dr));
     }
     for (int cut = st; cut <= dr; ++cut) {
-        dp[st][dr] = max(dp[st][dr], bstcut[st][dr][cut] + solve(st, cut-1) + solve(cut+1, dr));
+        dp[st][dr] = max(dp[st][dr], bstcut[st][dr][cut] + solve(st, cut - 1)
+                                         + solve(cut + 1, dr));
     }
     return dp[st][dr];
 }
 int main() {
-
     int n, m;
     cin >> n >> m;
-    mx.resize(n+2, vector<int> (n+2));
-    dp.resize(n+2, vector<int> (n+2, -1));
-    bstcut.resize(n+2, vector<vector<int> > (n+2, vector<int> (n+2, 0)));
+    mx.resize(n + 2, vector<int>(n + 2));
+    dp.resize(n + 2, vector<int>(n + 2, -1));
+    bstcut.resize(n + 2, vector<vector<int>>(n + 2, vector<int>(n + 2, 0)));
 
     for (int i = 1; i <= m; ++i) {
         int am, l, r;
@@ -162,8 +162,10 @@ int main() {
     for (int len = 1; len <= n; ++len) {
         for (int j = 1; j + len - 1 <= n; ++j) {
             for (int x = j; x <= j + len - 1; ++x) {
-                bstcut[j][j + len - 1][x] = max(bstcut[j][j + len - 2][x], mx[j][j + len - 1]);
-                bstcut[j][j + len - 1][x] = max(bstcut[j][j + len - 1][x], bstcut[j + 1][j + len - 1][x]);
+                bstcut[j][j + len - 1][x] =
+                    max(bstcut[j][j + len - 2][x], mx[j][j + len - 1]);
+                bstcut[j][j + len - 1][x] = max(bstcut[j][j + len - 1][x],
+                                                bstcut[j + 1][j + len - 1][x]);
             }
         }
     }

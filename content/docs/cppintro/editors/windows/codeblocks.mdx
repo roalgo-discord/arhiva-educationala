@@ -96,8 +96,7 @@ Pentru a vedea dacă totul merge, apasă pe `main.cpp` din bara laterală. Ar tr
 
 using namespace std;
 
-int main()
-{
+int main() {
     cout << "Hello world!" << endl;
     return 0;
 }
@@ -212,8 +211,7 @@ Ce urmează aici este strict părere personală, însă consider că oferă un s
 La tab-ul Style, alegem 1TBS (One True Brace Style). Acest stil arată astfel:
 
 ```cpp
-int Foo(bool isBar)
-{
+int Foo(bool isBar) {
     if (isFoo) {
         bar();
         return 1;
@@ -226,9 +224,10 @@ int Foo(bool isBar)
 Ca să nu zic prea multe (deoarece se intersectează cu lecția viitoare), motivul pentru care aleg 1TBS este să evităm următoarea situație:
 
 ```cpp
-if (isFoo)
-  bar();
-  return 1;
+if (isFoo) {
+    bar();
+}
+return 1;
 ```
 
 Acel `return 1;` nu este asociat cu linia de dinaintea ei sau cu `if`, deci este un dezastru care o să se întâmple la un moment dat. Prin adăugarea acoladelor, suntem expliciți, și este mai ușor de extins codul.
@@ -238,19 +237,18 @@ Pentru consistență la acolade cu stilul nostru (1TBS), selectăm toate opțiun
 La Indentation, nu avem de schimbat multe. Setăm Indentation size la 4 (nu recomand un număr sub 4, în mod special 2, și nici 8). Activăm doar Indent C++ comments beginning in column one. Este util pentru a alinia comentariile care se află în prima coloană.
 
 ```cpp
-void Foo()
-{
-// comentariu
-    if (isFoo)
+void Foo() {
+    // comentariu
+    if (isFoo) {
         bar();
+    }
 }
 ```
 
 devine
 
 ```cpp
-void Foo()
-{
+void Foo() {
     // comentariu
     if (isFoo) {
         bar();
@@ -263,19 +261,21 @@ La Formatting schimbăm următoarele setări:
 1. Selectăm "Break one-line headers". Un "header" în acest context este orice instrucțiune (`if`, `while`, `else` etc.). Cu această opțiune, și cele pe care le-am setat mai înainte, transformăm:
 
    ```cpp
-   void Foo(bool isFoo)
-   {
-       if (isFoo1) bar1();
+   void Foo(bool isFoo) {
+       if (isFoo1) {
+           bar1();
+       }
 
-       if (isFoo2) { bar2(); }
+       if (isFoo2) {
+           bar2();
+       }
    }
    ```
 
    în
 
    ```cpp
-   void Foo(bool isFoo)
-   {
+   void Foo(bool isFoo) {
        if (isFoo1) {
            bar1();
        }
@@ -297,7 +297,7 @@ La Formatting schimbăm următoarele setări:
    și trebuia în schimb:
 
    ```cpp
-   Stack< int, List<int> > stack1;
+   Stack<int, List<int> > stack1;
    ```
 
    Acum toate compilatoarele au evoluat, deci este sigur să activezi opțiunea asta. De asemenea, activează "Enable line breaking". Acest lucru garantează faptul că o linie va fi împărțită dacă trece de o lungime anume. Eu setez valoarea la 80 de obicei, însă 120 este acceptabil dacă ai mai mult spațiu orizontal.
@@ -337,8 +337,8 @@ La Padding selectăm:
 4. Remove extra space padding around parentheses. Combinat cu ultima setare, avem un singur spațiu. Ele transformă:
 
    ```cpp
-   if ( isFoo( ( a+2 ), b ) ) {
-       bar ( a, b );
+   if (isFoo((a + 2), b)) {
+       bar(a, b);
    }
    ```
 
@@ -357,23 +357,33 @@ La Padding selectăm:
 Acum că am făcut aceste setări, acest exemplu:
 
 ```cpp
-#include <iostream>
 #include <cmath>
-int main(){
+#include <iostream>
+int main() {
     int v[10];
-    for(int i=0;i<10;++i) v[i]=i*sin(i);
-     for(int i=0;i<10;++i) std::cout<<v[i]<<" "; std::cout<<"\n";
-    bool sortat; do{
-        sortat=true;
-      for(int i=0;i<9;++i){
-      if(v[i]>v[i+1]){
-        int aux=v[i];
-        v[i]=v[i+1];
-        v[i+1]=aux;
-        sortat=false;
-      }}
-    } while(!sortat);
-    for(int i=0;i<10;++i) std::cout<<v[i]<<" ";  std::cout<<"\n";
+    for (int i = 0; i < 10; ++i) {
+        v[i] = i * sin(i);
+    }
+    for (int i = 0; i < 10; ++i) {
+        std::cout << v[i] << " ";
+    }
+    std::cout << "\n";
+    bool sortat;
+    do {
+        sortat = true;
+        for (int i = 0; i < 9; ++i) {
+            if (v[i] > v[i + 1]) {
+                int aux = v[i];
+                v[i] = v[i + 1];
+                v[i + 1] = aux;
+                sortat = false;
+            }
+        }
+    } while (!sortat);
+    for (int i = 0; i < 10; ++i) {
+        std::cout << v[i] << " ";
+    }
+    std::cout << "\n";
     return 0;
 }
 ```
@@ -381,10 +391,9 @@ int main(){
 se va transforma în:
 
 ```cpp
-#include <iostream>
 #include <cmath>
-int main()
-{
+#include <iostream>
+int main() {
     int v[10];
 
     for (int i = 0; i < 10; ++i) {

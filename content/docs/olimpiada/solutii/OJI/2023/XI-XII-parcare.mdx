@@ -72,22 +72,24 @@ int main() {
             mul.erase(it);
             mul.insert({p, poz});
             v[poz] = s;
-        }
-        else
+        } else {
             g << "-1\n";
+        }
     }
     while (!mul.empty()) {
         it = mul.begin();
         timp = (*it).first;
         poz = (*it).second;
-        if (timp <= t)
+        if (timp <= t) {
             v[poz] = -1;
-        else
+        } else {
             break;
+        }
         mul.erase(it);
     }
-    for (i = 1; i <= n; i++)
+    for (i = 1; i <= n; i++) {
         g << v[i] << " ";
+    }
 
     return 0;
 }

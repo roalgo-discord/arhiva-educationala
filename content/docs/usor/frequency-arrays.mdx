@@ -54,7 +54,7 @@ O soluție posibilă pentru această problemă este să sortăm valorile folosin
 Totuși, numărul de valori este prea mare și această abordare ar depăși limita de timp alocată. În schimb, ne putem folosi de faptul că lucrăm doar cu cifre zecimale și le putem afișa pe acestea corespunzător cu frecvența lor. Trebuie să avem grijă și să afișăm o linie nouă de fiecare dată când afișăm 20 de numere, conform cerinței din enunț.
 
 ```cpp
---8<-- "usor/frequency_arrays/cifreord.cpp"
+--8 < --"usor/frequency_arrays/cifreord.cpp"
 ```
 
 ## Problema [numere1 de pe pbinfo](https://www.pbinfo.ro/probleme/525/numere1)
@@ -62,7 +62,7 @@ Totuși, numărul de valori este prea mare și această abordare ar depăși lim
 Pentru a rezolva această problemă, cea mai importantă informație pe care o primim din enunț este aceea că valorile care ne interesează sunt strict cele care au trei cifre (cu alte cuvinte, cele între 100 și 999). Astfel, se impune crearea unui vector de frecvență care să poată memora aceste valori și după ce citim valorile din șir, se pot afla cu ușurință cele mai mari două valori de trei cifre care nu se află în șir.
 
 ```cpp
---8<-- "usor/frequency_arrays/numere1.cpp"
+--8 < --"usor/frequency_arrays/numere1.cpp"
 ```
 
 ## Problema [nrlipsa2 de pe pbinfo](https://www.pbinfo.ro/probleme/1744/nrlipsa2)
@@ -72,7 +72,7 @@ Pentru a citi acel număr necunoscut de valori, va trebui să ne bazăm pe o str
 Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un offset) care să ne asigure că lucrăm cu valori non-negative (astfel, intervalul devine $[0, 200]$). Ulterior, atunci când afișăm valoarea care nu apare, vom scădea 100 din răspuns pentru a întoarce rezultatul la cel real.
 
 ```cpp
---8<-- "usor/frequency_arrays/nrlipsa2.cpp"
+--8 < --"usor/frequency_arrays/nrlipsa2.cpp"
 ```
 
 ## Problema [mincifre de pe pbinfo](https://www.pbinfo.ro/probleme/1546/mincifre)
@@ -80,7 +80,7 @@ Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un
 Pentru a rezolva această problemă, putem ține cifrele într-un vector de frecvență și să le afișăm crescător, singura diferență fiind faptul că deoarece nu vrem să avem numere care încep cu 0, vom afișa cea mai mică cifră nenulă la început.
 
 ```cpp
---8<-- "usor/frequency_arrays/mincifre.cpp"
+--8 < --"usor/frequency_arrays/mincifre.cpp"
 
 ```
 
@@ -97,7 +97,7 @@ trebuie să folosim vreun tablou bidimensional pentru a rezolva această
 problemă.
 
 ```cpp
---8<-- "usor/frequency_arrays/numere.cpp"
+--8 < --"usor/frequency_arrays/numere.cpp"
 ```
 
 ## Vectori de frecvență dinamici - map și set
@@ -113,7 +113,7 @@ După cum ați observat, vectorii de frecvență au cel mai important rol atunci
 ### Problema [map de pe pbinfo](https://www.pbinfo.ro/probleme/2217/map)
 
 ```cpp
---8<-- "usor/frequency_arrays/map.cpp"
+--8 < --"usor/frequency_arrays/map.cpp"
 ```
 
 ## Concluzii

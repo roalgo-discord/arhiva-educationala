@@ -66,7 +66,7 @@ void bfs(int src) {
         int nod = q.front();
         q.pop();
 
-        for (auto& i : v[nod]) {
+        for (auto &i : v[nod]) {
             if (src == i && !dist1[src]) {
                 dist1[src] = dist[src][nod] + 1;
                 parent[src][src] = nod;
@@ -80,13 +80,12 @@ void bfs(int src) {
 }
 
 void inapoi(int nod, int start, bool rep) {
-    if (nod == start && rep == false)
+    if (nod == start && rep == false) {
         g << start << " ";
-    else
-        if (nod != start) {
-            inapoi(parent[start][nod], start, rep);
-            g << nod << " ";
-        }
+    } else if (nod != start) {
+        inapoi(parent[start][nod], start, rep);
+        g << nod << " ";
+    }
 }
 
 int main() {
@@ -119,19 +118,19 @@ int main() {
         int aux = dist[s][i] + dist1[i] + dist[i][a];
         int aux1 = dist[s][i] + dist1[i] + dist[i][b];
 
-        if (max(aux, aux1) < ans && dist1[i] && dist[s][i] != INF && dist[i][a] != INF && dist[i][b] != INF) {
+        if (max(aux, aux1) < ans && dist1[i] && dist[s][i] != INF
+            && dist[i][a] != INF && dist[i][b] != INF) {
             ans = max(aux, aux1), ind = i;
-        }
-        else if (max(aux, aux1) == ans && dist1[i] && dist[s][i] != INF && dist[i][a] != INF && dist[i][b] != INF &&
-                   dist[s][i] + dist1[i] < dist[s][ind] + dist1[ind]) {
+        } else if (max(aux, aux1) == ans && dist1[i] && dist[s][i] != INF
+                   && dist[i][a] != INF && dist[i][b] != INF
+                   && dist[s][i] + dist1[i] < dist[s][ind] + dist1[ind]) {
             ind = i;
         }
     }
 
     if (cer == 1) {
         g << ans;
-    }
-    else {
+    } else {
         g << dist[s][ind] + dist1[ind] << '\n';
         inapoi(ind, s, 0);
         inapoi(parent[ind][ind], ind, 1);

@@ -43,7 +43,7 @@ Orice variabilă este caracterizată de:
 În C/C++, este necesar să specificăm tipul variabilei la momentul declarației. Sintaxa generală este:
 
 ```cpp
---8<-- "cppintro/data_types/datatypes1.cpp"
+--8 < --"cppintro/data_types/datatypes1.cpp"
 ```
 
 unde:
@@ -54,7 +54,7 @@ unde:
 !!! example
 
 ```cpp
---8<-- "cppintro/data_types/datatypes2.cpp"
+--8 < --"cppintro/data_types/datatypes2.cpp"
 ```
 
 !!! note "Observații"
@@ -137,7 +137,7 @@ rar în practică.
 Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmulțim două valori care deși ambele se încadrează în `int`, suma (sau produsul lor) depășește valoarea maximă a tipului de date `int`.
 
 ```cpp
---8<-- "cppintro/data_types/datatypes3.cpp"
+--8 < --"cppintro/data_types/datatypes3.cpp"
 ```
 
 Cele mai populare două soluții pentru evitarea overflow-ului sunt fie folosirea tipului de date long long pentru păstrarea termenilor din operații, fie folosirea operatorului `1LL`, fie folosirea `(long long)` pentru convertirea datelor.
@@ -171,7 +171,7 @@ a verifica egalitatea dintre numere, putem verifica folosind metoda uzuală.
 Astfel, pentru a verifica egalitatea dintre două numere reale mai mari, putem incorpora `eps` astfel:
 
 ```cpp
---8<-- "cppintro/data_types/datatypes4.cpp"
+--8 < --"cppintro/data_types/datatypes4.cpp"
 ```
 
 ### Tipul `__int128`
@@ -181,7 +181,7 @@ Pe lângă aceste tipuri, există și tipul de date `__int128` care ne permite s
 Noi nu putem să citim și să afișăm direct `__int128`, deci va trebui să ne implementăm noi citirea și afișarea. Pentru simplitate, dacă implementăm cum este mai jos, vom putea să folosim `std::cin >> x` chiar dacă $x$ este `__int128`.
 
 ```cpp
---8<-- "cppintro/data_types/datatypes5.cpp"
+--8 < --"cppintro/data_types/datatypes5.cpp"
 ```
 
 ## Concluzii

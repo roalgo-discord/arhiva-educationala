@@ -92,12 +92,10 @@ Captura permite copierea sau modificarea unor valori. Există mai multe variante
   int main() {
       int x = 10, y = 15;
       // x poate fi modificat, y e constant
-      auto add = [&x, y]() {
-          x += y;
-      };
+      auto add = [&x, y]() { x += y; };
 
       add();
-      std::cout << x; // 25
+      std::cout << x;  // 25
   }
   ```
 

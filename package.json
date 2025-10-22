@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build --webpack",
     "dev": "next dev --turbo",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
@@ -11,7 +11,10 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "lint": "eslint"
+    "lint": "eslint && lint:mdx",
+    "lint:mdx": "remark \"content/**/*.mdx\" --quiet --frail",
+    "format:mdx": "remark \"content/**/*.mdx\" --output",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.11.0",
@@ -28,6 +31,14 @@
     "remark-math": "^6.0.0",
     "tailwind-merge": "^3.3.1"
   },
+  "lint-staged": {
+    "content/**/*.mdx": [
+      "remark --output"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@opennextjs/aws": "^3.8.5",
@@ -39,6 +50,7 @@
     "eslint": "^9.38.0",
     "eslint-config-next": "^16.0.0",
     "eslint-plugin-mdx": "^3.6.2",
+    "lint-staged": "^16.2.6",
     "postcss": "^8.5.6",
     "remark-cli": "^12.0.1",
     "remark-frontmatter": "^5.0.0",
@@ -48,6 +60,7 @@
     "remark-preset-lint-recommended": "^7.0.1",
     "tailwindcss": "^4.1.15",
     "typescript": "^5.9.3",
+    "unist-util-visit": "^5.0.0",
     "wrangler": "^4.44.0"
   }
 }

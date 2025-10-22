@@ -34,8 +34,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         if (i % 2 == 1) {
             cout << 'a';
-        }
-        else {
+        } else {
             cout << 'b';
         }
     }
@@ -89,7 +88,7 @@ int main() {
     int n, k;
     cin >> n >> k;
 
-    int v[n+1];
+    int v[n + 1];
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
@@ -123,7 +122,7 @@ int main() {
     int n;
     cin >> n;
 
-    int v[n+1][n+1];
+    int v[n + 1][n + 1];
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             cin >> v[i][j];
@@ -134,7 +133,7 @@ int main() {
     int sm2 = 0;
     for (int i = 1; i <= n; i++) {
         sm += v[i][i];
-        sm2 += v[i][n-i+1];
+        sm2 += v[i][n - i + 1];
     }
     if (sm != sm2) {
         cout << "NU E MAGICA";

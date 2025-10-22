@@ -491,7 +491,7 @@ struct Mint {
         Mint invers = fp(oth, mod - 2);
         return 1LL * val * invers.val;
     }
-    friend ostream& operator<<(ostream& os, const Mint& lol) {
+    friend ostream &operator<<(ostream &os, const Mint &lol) {
         os << lol.val;
         return os;
     }

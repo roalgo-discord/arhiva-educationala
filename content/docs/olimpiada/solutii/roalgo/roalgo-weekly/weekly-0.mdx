@@ -26,18 +26,18 @@ Pentru a rezolva această problemă, trebuie să simulăm operațiile din enunț
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 int main() {
     char S[101];
     cin >> S;
 
-    for(int i = 0; i < strlen(S); i = i + 2) {
+    for (int i = 0; i < strlen(S); i = i + 2) {
         char auxiliar = S[i];
-        S[i] = S[i+1];
-        S[i+1] = auxiliar;
+        S[i] = S[i + 1];
+        S[i + 1] = auxiliar;
     }
 
     cout << S;
@@ -57,19 +57,18 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 #include <iostream>
 using namespace std;
 
-int main(){
-
+int main() {
     int n, m, a[101];
     cin >> n >> m;
-    for (int i = 1; i <= n; i++){
+    for (int i = 1; i <= n; i++) {
         cin >> a[i];
     }
 
-    for (int q = 1; q <= m; q++){
+    for (int q = 1; q <= m; q++) {
         int l, r;
         cin >> l >> r;
         int sum = 0;
-        for (int i = l; i <= r; i++){
+        for (int i = l; i <= r; i++) {
             sum += a[i];
         }
         cout << sum << '\n';
@@ -95,19 +94,19 @@ int main() {
     int n, v[101];
     cin >> n;
 
-    for (int i = 1; i <= n; i++){
-         cin >> v[i];
+    for (int i = 1; i <= n; i++) {
+        cin >> v[i];
     }
 
     int bestK = 2, bestCount = 0;
-    for (int k = 2; k <= 1000; k++){
+    for (int k = 2; k <= 1000; k++) {
         int cnt = 0;
         for (int i = 1; i <= n; i++) {
             if (v[i] % k == 0) {
                 cnt++;
             }
         }
-        if(cnt > bestCount){
+        if (cnt > bestCount) {
             bestCount = cnt;
             bestK = k;
         }
@@ -134,26 +133,29 @@ int main() {
 
     cin >> n;
 
-    for(i = 1; i <= n; i++)
+    for (i = 1; i <= n; i++) {
         cin >> V[i];
+    }
 
-    for(i = 1; i <= n; i++) {
-        if(St[V[i]] == 0)
+    for (i = 1; i <= n; i++) {
+        if (St[V[i]] == 0) {
             St[V[i]] = i;
+        }
         Dr[V[i]] = i;
     }
 
-    for(i = 0; i <= 9; i++)
-        if(Dr[i] != 0 && St[i] != 0)
-            if(Dr[i] - St[i] + 1 > maxim) {
+    for (i = 0; i <= 9; i++) {
+        if (Dr[i] != 0 && St[i] != 0) {
+            if (Dr[i] - St[i] + 1 > maxim) {
                 maxim = Dr[i] - St[i] + 1;
                 st = St[i];
                 dr = Dr[i];
-            }
-            else if(Dr[i] - St[i] + 1 >= maxim && St[i] < st) {
+            } else if (Dr[i] - St[i] + 1 >= maxim && St[i] < st) {
                 st = St[i];
                 dr = Dr[i];
             }
+        }
+    }
 
     cout << st << " " << dr;
 

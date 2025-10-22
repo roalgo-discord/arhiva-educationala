@@ -44,7 +44,7 @@ Pe lângă avantajele evidente pe care cunoașterea funcțiilor le oferă, acest
 În general, o funcție are următorul șablon:
 
 ```cpp
---8<-- "cppintro/functions/functions1.cpp"
+--8 < --"cppintro/functions/functions1.cpp"
 ```
 
 O funcție este formată din două părți principale: antetul (declararea funcției) și corpul (implementarea funcției).
@@ -86,7 +86,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
      Instrucțiunea `return` trebuie să fie urmată de o expresie sau o valoare compatibilă cu tipul declarat al funcției. Absența unei valori returnate va genera, de obicei, un warning la compilare și poate duce la un comportament imprevizibil (*undefined behavior*).
 
      ```cpp
-     --8<-- "cppintro/functions/functions2.cpp"
+     --8 < --"cppintro/functions/functions2.cpp"
      ```
 
      !!! warning "Atenție"
@@ -97,7 +97,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
      nu e posibil:
 
      ```cpp
-     --8<-- "cppintro/functions/functions3.cpp"
+     --8 < --"cppintro/functions/functions3.cpp"
      ```
 
    - **Pentru funcții de tip `void`**:
@@ -105,7 +105,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
      Funcțiile declarate cu tipul `void` nu întorc nicio valoare, iar utilizarea instrucțiunii return este opțională. În acest caz, `  return;` poate fi folosit doar pentru a încheia executarea funcției mai devreme.
 
      ```cpp
-     --8<-- "cppintro/functions/functions4.cpp"
+     --8 < --"cppintro/functions/functions4.cpp"
      ```
 
 ## Utilizarea funcțiilor
@@ -115,7 +115,7 @@ O funcție este formată din două părți principale: antetul (declararea func�
 \=== "Cod corect (definirea înainte de folosire)"
 
 ```cpp
---8<-- "cppintro/functions/functions5.cpp"
+--8 < --"cppintro/functions/functions5.cpp"
 ```
 
 În acest exemplu, funcția `sum_div` este definită deasupra funcției
@@ -125,7 +125,7 @@ declarații suplimentare.
 \=== "Cod greșit (lipsa definiției înainte de apel)"
 
 ```cpp
---8<-- "cppintro/functions/functions6.cpp"
+--8 < --"cppintro/functions/functions6.cpp"
 ```
 
 În acest caz, funcția `sum_div` este definită după funcția
@@ -136,7 +136,7 @@ compilatorul generează o eroare, deoarece nu poate identifica funcția
 Dacă dorim să definim funcțiile după funcția `main`, putem folosi o declarație prealabilă (**prototip**) care să indice existența funcției și semnătura acesteia.
 
 ```cpp
---8<-- "cppintro/functions/functions7.cpp"
+--8 < --"cppintro/functions/functions7.cpp"
 ```
 
 ## Clasificarea funcțiilor după valorile pe care le întorc
@@ -150,7 +150,7 @@ Acestea sunt cele mai frecvent întâlnite funcții. Ele preiau una sau mai mult
 De exemplu, următoarea funcție primește un număr întreg ca parametru și returnează suma divizorilor săi:
 
 ```cpp
---8<-- "cppintro/functions/functions8.cpp"
+--8 < --"cppintro/functions/functions8.cpp"
 ```
 
 !!! note "Observație"
@@ -184,7 +184,7 @@ neinițializate.
 Mai jos este exemplificată o funcție care calculează suma cifrelor unui număr, actualizând direct variabila care va stoca rezultatul:
 
 ```cpp
---8<-- "cppintro/functions/functions9.cpp"
+--8 < --"cppintro/functions/functions9.cpp"
 ```
 
 ### Funcții care folosesc variabile auxiliare
@@ -192,7 +192,7 @@ Mai jos este exemplificată o funcție care calculează suma cifrelor unui numă
 Acest tip de funcție se bazează pe utilizarea unor variabile globale pentru stocarea rezultatelor. Aceste funcții modifică variabile declarate în afara funcției și pot fi utile în situații complexe, cum ar fi rezolvarea problemelor care implică mai multe funcții interdependente. Totuși, utilizarea variabilelor globale poate duce la dificultăți în menținerea codului, fiind recomandată doar în cazuri bine justificate.
 
 ```cpp
---8<-- "cppintro/functions/functions10.cpp"
+--8 < --"cppintro/functions/functions10.cpp"
 ```
 
 În acest caz, variabila globală `suma` este actualizată direct în funcție, permițând păstrarea rezultatului și accesarea sa oriunde în program.
@@ -204,7 +204,7 @@ O funcție iterativă execută un set de instrucțiuni în mod repetitiv, folosi
 Exemplul următor prezintă o implementare iterativă pentru calcularea sumei cifrelor unui număr $n$:
 
 ```cpp
---8<-- "cppintro/functions/functions11.cpp"
+--8 < --"cppintro/functions/functions11.cpp"
 ```
 
 În general, funcțiile iterative tind să fie mai rapide decât cele recursive și sunt de preferat atunci când putem implementa un program folosind ambele metode.
@@ -226,7 +226,7 @@ Astfel, pentru fiecare apel al unei funcții se adaugă pe stivă o zonă de mem
 Aici puteți vedea cum aflăm în mod recursiv valoarea lui $n!$ folosind o funcție recursivă.
 
 ```cpp
---8<-- "cppintro/functions/functions12.cpp"
+--8 < --"cppintro/functions/functions12.cpp"
 ```
 
 Se poate observa faptul că ne folosim de definiția lui $n!$, iar pentru a afla $n!$, avem nevoie de $(n-1)!$ și așa mai departe. Dacă vrem să calculăm valoarea lui $5!$, aceasta se obține în felul următor (pentru brevitate, `factorial(n)` este $n!$):
@@ -250,7 +250,7 @@ Pentru a evalua aceste funcții, recomandăm citirea codului cu atenție și not
 ### Exercițiu bacalaureat - Care este valoarea lui $f(38)$?
 
 ```cpp
---8<-- "cppintro/functions/functions13.cpp"
+--8 < --"cppintro/functions/functions13.cpp"
 ```
 
 - $f(38)$ - $38 \% 3 = 2$, deci intrăm în else și apelăm $f(12)$.
@@ -268,7 +268,7 @@ Astfel, secvența finală afișată va fi 3112.
 ### Exercițiu admitere - Care este valoarea lui $g(2, 1)$?
 
 ```cpp
---8<-- "cppintro/functions/functions14.cpp"
+--8 < --"cppintro/functions/functions14.cpp"
 ```
 
 - $g(2, 1)$: $x > 0$, $y > 0$ $\rightarrow$ se va returna $g(1, g(2, 0))$.
@@ -299,7 +299,7 @@ specific acestor examene.
 Pentru a rezolva această problemă, se aplică recursivitatea, iar algoritmul folosește faptul că numărul $n$ este format din numărul $\frac{n}{10}$ (fără ultima cifră) și ultima cifră $n~\%~10$. Acest principiu face implementarea recursivă mult mai simplă.
 
 ```cpp
---8<-- "cppintro/functions/functions15.cpp"
+--8 < --"cppintro/functions/functions15.cpp"
 ```
 
 ## Alte tipuri de funcții
@@ -311,17 +311,17 @@ Uneori, atunci când scriem funcții, avem parametri care primesc aceeași valoa
 În C++, pentru a specifica un parametru implicit, acesta trebuie definit după parametrii obișnuiți (sau „obligatorii”, dacă menținem analogia). De exemplu:
 
 ```cpp
---8<-- "cppintro/functions/functions16.cpp"
+--8 < --"cppintro/functions/functions16.cpp"
 ```
 
 ```cpp
---8<-- "cppintro/functions/functions17.cpp"
+--8 < --"cppintro/functions/functions17.cpp"
 ```
 
 Motivul este următorul: dacă am avea următoarea funcție:
 
 ```cpp
---8<-- "cppintro/functions/functions18.cpp"
+--8 < --"cppintro/functions/functions18.cpp"
 ```
 
 atunci în momentul în care apelăm `fun(10, 2)`, este ambiguu ce valoare ia `y`, `x` și `k`. În C++ nu putem scrie `fun(y=10, x=2)` ca în Python, și nici nu avem o metodă să omitem parametrii impliciți (adică nu putem scrie `fun(??, 10, 2)`).
@@ -333,7 +333,7 @@ Pentru a explica această noțiune, am folosit o funcție care preia suma cifrel
 Se remarcă faptul că atunci când apelăm această funcție din main, menționarea valorii parametrului $s$ nu este necesară.
 
 ```cpp
---8<-- "cppintro/functions/functions19.cpp"
+--8 < --"cppintro/functions/functions19.cpp"
 ```
 
 ### (Opțional) Funcțiile lambda

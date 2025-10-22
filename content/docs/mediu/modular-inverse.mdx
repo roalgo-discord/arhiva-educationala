@@ -63,7 +63,7 @@ Se observa că $x_1 = y_2$ și $y_1 = x_2 - c \cdot y_2$, iar $c = \lfloor
 \frac{A}{M} \rfloor$. Astfel, putem folosi recursiv algoritmul lui Euclid, adăugându-i parametrii $x_1$ și $y_1$:
 
 ```cpp
-void euclidExtins(const int a, const int b, int& x1, int& y1);
+void euclidExtins(const int a, const int b, int &x1, int &y1);
 ```
 
 În cazul în care parametrul $b$ din funcție este egal cu 0, atunci $a$ va fi egal cu 1 și astfel vom seta $x_1 = 1$, iar $y_1$ poate lua orice valoare, de exemplu tot 1.
@@ -76,7 +76,7 @@ pozitivă atunci facem operația $x_1 = x_1 + M$.
 Mai jos se poate observa o implementare în C++ a algoritmului lui Euclid, respectiv a funcției de calculare a inversului modular al lui $A$ pentru modulul $M$:
 
 ```cpp
-void euclidExtins(const int a, const int b, int& x1, int& y1) {
+void euclidExtins(const int a, const int b, int &x1, int &y1) {
     if (b == 0) {
         x1 = 1;
         y1 = 1;

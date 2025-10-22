@@ -216,7 +216,7 @@ Când am făcut citirea cu string-uri, am folosit `numarMare.size()` pentru a af
 
 using namespace std;
 
-void afisareNumar(const vector<int>& cifre) {
+void afisareNumar(const vector<int> &cifre) {
     // Pornim de la cifre.size() - 1, deoarece vectorul e indexat de la zero.
     for (int i = cifre.size() - 1; i >= 0; --i) {
         cout << cifre[i];
@@ -224,13 +224,13 @@ void afisareNumar(const vector<int>& cifre) {
     cout << "\n";
 }
 
-void inserareCifra(vector<int>& cifre, int cifra) {
+void inserareCifra(vector<int> &cifre, int cifra) {
     // Inserarea unei cifre noi are loc în față, deoarece folosim reprezentarea
     // inversă.
     cifre.push_back(cifra);
 }
 
-void stergereCifra(vector<int>& cifre) {
+void stergereCifra(vector<int> &cifre) {
     // Analog, prima cifră se șterge din spate.
     cifre.pop_back();
 }
@@ -330,7 +330,7 @@ Dacă cele două numere au un număr diferit de cifre, putem trage concluzia în
 // -1 dacă a < b
 // 0 dacă a == b
 // 1 dacă a > b
-int comparaCifre(const vector<int>& a, const vector<int>& b) {
+int comparaCifre(const vector<int> &a, const vector<int> &b) {
     // a are mai multe cifre
     if (a[0] > b[0]) {
         return 1;

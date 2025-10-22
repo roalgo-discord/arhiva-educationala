@@ -45,24 +45,30 @@ int main() {
         cin >> nr;
         int grupa = -1;
         if (nr == 0) {
-            if (x == 0) ans1++;
+            if (x == 0) {
+                ans1++;
+            }
             ans2++;
         }
         while (nr) {
-            if (nr % 10 == x) ans1++;
-            if (grupa == -1)
+            if (nr % 10 == x) {
+                ans1++;
+            }
+            if (grupa == -1) {
                 ans2++, grupa = nr % 10;
-            else if ((nr % 10) != 0 && (nr % 10) * 10 + grupa <= 12)
+            } else if ((nr % 10) != 0 && (nr % 10) * 10 + grupa <= 12) {
                 grupa = -1;
-            else
+            } else {
                 ans2++, grupa = nr % 10;
+            }
             nr /= 10;
         }
     }
-    if (c == 1)
+    if (c == 1) {
         cout << ans1 << '\n';
-    else
+    } else {
         cout << ans2 - n << '\n';
+    }
     return 0;
 }
 ```

@@ -127,101 +127,104 @@ const int mod = 1e9 + 7;
 int n, m, p, q, r;
 
 void minSelf(int &x, int y) {
-  if (y < x) {
-    x = y;
-  }
+    if (y < x) {
+        x = y;
+    }
 }
 
 void addSelf(int &x, int y) {
-  x += y;
-  if (x >= mod) {
-    x -= mod;
-  }
+    x += y;
+    if (x >= mod) {
+        x -= mod;
+    }
 }
 
 void solveFirstTask() {
-  vector<vector<int>> dp(n + 1, vector<int>(m + 1, mod));
+    vector<vector<int>> dp(n + 1, vector<int>(m + 1, mod));
 
-  dp[1][1] = 0;
+    dp[1][1] = 0;
 
-  for (int i = 1; i <= n; ++i) {
-    for (int j = 1; j <= m; ++j) {
-      minSelf(dp[i][j + min(p, m - j)], dp[i][j] + 1);
-      minSelf(dp[i + min(q, n - i)][j], dp[i][j] + 1);
-      minSelf(dp[i + min({r, n - i, m - j})][j + min({r, n - i, m - j})], dp[i][j] + 1);
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            minSelf(dp[i][j + min(p, m - j)], dp[i][j] + 1);
+            minSelf(dp[i + min(q, n - i)][j], dp[i][j] + 1);
+            minSelf(dp[i + min({r, n - i, m - j})][j + min({r, n - i, m - j})],
+                    dp[i][j] + 1);
 
-      if (i + 1 <= n && j + 2 <= m) {
-        minSelf(dp[i + 1][j + 2], dp[i][j] + 1);
-      }
+            if (i + 1 <= n && j + 2 <= m) {
+                minSelf(dp[i + 1][j + 2], dp[i][j] + 1);
+            }
 
-      if (i + 2 <= n && j + 1 <= m) {
-        minSelf(dp[i + 2][j + 1], dp[i][j] + 1);
-      }
+            if (i + 2 <= n && j + 1 <= m) {
+                minSelf(dp[i + 2][j + 1], dp[i][j] + 1);
+            }
+        }
     }
-  }
 
-  fout << dp[n][m] << '\n';
+    fout << dp[n][m] << '\n';
 }
 
 void solveSecondTask() {
-  vector<vector<int>> dp(n + 1, vector<int>(m + 1));
-  vector<int> lin(m + 2);
-  vector<vector<int>> col(n + 2, vector<int>(m + 1));
-  vector<vector<int>> diag(n + 2, vector<int>(m + 2));
+    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+    vector<int> lin(m + 2);
+    vector<vector<int>> col(n + 2, vector<int>(m + 1));
+    vector<vector<int>> diag(n + 2, vector<int>(m + 2));
 
-  dp[1][1] = 1;
+    dp[1][1] = 1;
 
-  for (int i = 1; i <= n; ++i) {
-    for (int j = 1; j <= m; ++j) {
-      lin[j] = 0;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            lin[j] = 0;
+        }
+
+        for (int j = 1; j <= m; ++j) {
+            addSelf(lin[j], lin[j - 1]);
+            addSelf(col[i][j], col[i - 1][j]);
+            addSelf(diag[i][j], diag[i - 1][j - 1]);
+
+            addSelf(dp[i][j], lin[j]);
+            addSelf(dp[i][j], col[i][j]);
+            addSelf(dp[i][j], diag[i][j]);
+
+            if (p && j + 1 <= m) {
+                addSelf(lin[j + 1], dp[i][j]);
+                addSelf(lin[j + min(p, m - j) + 1], mod - dp[i][j]);
+            }
+
+            if (q && i + 1 <= n) {
+                addSelf(col[i + 1][j], dp[i][j]);
+                addSelf(col[i + min(q, n - i) + 1][j], mod - dp[i][j]);
+            }
+
+            if (r && i + 1 <= n && j + 1 <= m) {
+                addSelf(diag[i + 1][j + 1], dp[i][j]);
+                addSelf(diag[i + min({r, n - i, m - j}) + 1]
+                            [j + min({r, n - i, m - j}) + 1],
+                        mod - dp[i][j]);
+            }
+
+            if (i + 1 <= n && j + 2 <= m) {
+                addSelf(dp[i + 1][j + 2], dp[i][j]);
+            }
+
+            if (i + 2 <= n && j + 1 <= m) {
+                addSelf(dp[i + 2][j + 1], dp[i][j]);
+            }
+        }
     }
 
-    for (int j = 1; j <= m; ++j) {
-      addSelf(lin[j], lin[j - 1]);
-      addSelf(col[i][j], col[i - 1][j]);
-      addSelf(diag[i][j], diag[i - 1][j - 1]);
-
-      addSelf(dp[i][j], lin[j]);
-      addSelf(dp[i][j], col[i][j]);
-      addSelf(dp[i][j], diag[i][j]);
-
-      if (p && j + 1 <= m) {
-        addSelf(lin[j + 1], dp[i][j]);
-        addSelf(lin[j + min(p, m - j) + 1], mod - dp[i][j]);
-      }
-
-      if (q && i + 1 <= n) {
-        addSelf(col[i + 1][j], dp[i][j]);
-        addSelf(col[i + min(q, n - i) + 1][j], mod - dp[i][j]);
-      }
-
-      if (r && i + 1 <= n && j + 1 <= m) {
-        addSelf(diag[i + 1][j + 1], dp[i][j]);
-        addSelf(diag[i + min({r, n - i, m - j}) + 1][j + min({r, n - i, m - j}) + 1], mod - dp[i][j]);
-      }
-
-      if (i + 1 <= n && j + 2 <= m) {
-        addSelf(dp[i + 1][j + 2], dp[i][j]);
-      }
-
-      if (i + 2 <= n && j + 1 <= m) {
-        addSelf(dp[i + 2][j + 1], dp[i][j]);
-      }
-    }
-  }
-
-  fout << dp[n][m] << '\n';
+    fout << dp[n][m] << '\n';
 }
 
 int main() {
-  int task;
-  fin >> task >> n >> m >> p >> q >> r;
+    int task;
+    fin >> task >> n >> m >> p >> q >> r;
 
-  if (task == 1) {
-    solveFirstTask();
-  } else {
-    solveSecondTask();
-  }
-  return 0;
+    if (task == 1) {
+        solveFirstTask();
+    } else {
+        solveSecondTask();
+    }
+    return 0;
 }
 ```

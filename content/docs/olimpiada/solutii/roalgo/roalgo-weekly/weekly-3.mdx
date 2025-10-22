@@ -30,29 +30,25 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 using namespace std;
 
 int main() {
-
     int n, a, b, c;
     cin >> n >> a >> b >> c;
 
     while (true) {
         if (n >= a) {
             n -= a;
-        }
-        else {
+        } else {
             cout << 'F';
             return 0;
         }
         if (n >= b) {
             n -= b;
-        }
-        else {
+        } else {
             cout << 'M';
             return 0;
         }
         if (n >= c) {
             n -= c;
-        }
-        else {
+        } else {
             cout << 'T';
             return 0;
         }
@@ -70,12 +66,11 @@ Pentru a rezolva această problemă, trebuie să verificăm dacă șirul este o 
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 int main() {
-
     char c[101];
     cin >> c;
 
@@ -94,8 +89,7 @@ int main() {
     }
     if (i == n) {
         cout << "Da";
-    }
-    else {
+    } else {
         cout << "Nu";
     }
     return 0;
@@ -116,7 +110,7 @@ int imog(int a, int b) {
     int oga = 0;
     int ogb = 0;
     while (a > 0) {
-        int x = a%10;
+        int x = a % 10;
         if (x % 2 == 1) {
             oga += p10 * x;
             p10 *= 10;
@@ -124,7 +118,7 @@ int imog(int a, int b) {
         a /= 10;
     }
     while (b > 0) {
-        int x = b%10;
+        int x = b % 10;
         if (x % 2 == 1) {
             ogb = ogb * 10 + x;
         }
@@ -150,7 +144,6 @@ Mai jos puteți găsi o soluție care ia punctajul maxim.
 using namespace std;
 
 int main() {
-
     int n;
     cin >> n;
 
@@ -172,7 +165,7 @@ int main() {
                 x /= 10;
                 cntcif--;
             }
-            sum += x%10;
+            sum += x % 10;
         }
         n--;
     }

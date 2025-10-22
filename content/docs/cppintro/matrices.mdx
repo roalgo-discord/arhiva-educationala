@@ -33,7 +33,7 @@ Pentru declararea unei matrice statice, aveți nevoie de:
 2. Dimensiunile matricei.
 
 ```cpp
---8<-- "cppintro/matrices/matrices01.cpp"
+--8 < --"cppintro/matrices/matrices01.cpp"
 ```
 
 Aceasta definește o matrice cu 101 linii și 101 coloane, fiecare element fiind de tip `int`. Indicii sunt numerotați de la 0 la 100.
@@ -65,7 +65,7 @@ adăugați 1 la dimensiunile declarate și folosiți direct numărul ca atare,
 exact ca în cazul vectorilor uzuali.
 
 ```cpp
---8<-- "cppintro/matrices/matrices02.cpp"
+--8 < --"cppintro/matrices/matrices02.cpp"
 ```
 
 În acel caz, matricea va fi stocată astfel:
@@ -77,7 +77,7 @@ exact ca în cazul vectorilor uzuali.
 Valorile matricei pot fi accesate și modificate similar cu variabilele obișnuite, utilizând indicii.
 
 ```cpp
---8<-- "cppintro/matrices/matrices03.cpp"
+--8 < --"cppintro/matrices/matrices03.cpp"
 ```
 
 Pentru a parcurge elementele, de regulă se folosesc structuri repetitive imbricate.
@@ -94,7 +94,7 @@ Cea mai comună convenție este `i` pentru rând și `j` pentru coloană. Am ale
 Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor pare din ea. Soluția poate fi implementată astfel:
 
 ```cpp
---8<-- "cppintro/matrices/matrices05.cpp"
+--8 < --"cppintro/matrices/matrices05.cpp"
 ```
 
 !!! note "Notă"
@@ -128,13 +128,13 @@ Următoarea poză arată diagonala principală a matricei de mai sus:
 Elementele care aparțin acestei diagonale se află la (0, 0), (1, 1), (2, 2), (3, 3), (4, 4). De aici, putem deriva faptul că elementele diagonalei principale sunt cele pentru care rândul coincide cu coloana. Asta ne permite să scriem următorul cod care parcurge diagonala principală:
 
 ```cpp
---8<-- "cppintro/matrices/matrices06.cpp"
+--8 < --"cppintro/matrices/matrices06.cpp"
 ```
 
 Din moment ce rândul coincide cu coloana, putem scăpa de al doilea `for`, pentru a obține acest cod:
 
 ```cpp
---8<-- "cppintro/matrices/matrices07.cpp"
+--8 < --"cppintro/matrices/matrices07.cpp"
 ```
 
 Același lucru se aplică pentru indexarea de la 1, doar că va fi `for (int i = 1; i <= dim; ++i)`.
@@ -146,19 +146,19 @@ Pentru matricea noastră, așa va arăta diagonala secundară:
 Elementele care aparțin acestei diagonale se află la (0, 4), (1, 3), (2, 2), (3, 1), (4, 0). Remarcăm că dacă adunăm rândul și coloana, obținem 4, care este cu unu mai mic decât dimensiunea matricei. Asta ne permite să scriem următorul cod care parcurge diagonala secundară:
 
 ```cpp
---8<-- "cppintro/matrices/matrices08.cpp"
+--8 < --"cppintro/matrices/matrices08.cpp"
 ```
 
 La fel ca în cazul diagonalei principale, putem folosi un singur `for`. Din condiția de mai sus putem scoate `c`. Mai exact, putem muta `r` în partea cealaltă pentru a obține `c == dim - r + 1`. Acum putem scrie codul:
 
 ```cpp
---8<-- "cppintro/matrices/matrices09.cpp"
+--8 < --"cppintro/matrices/matrices09.cpp"
 ```
 
 Dacă matricea este indexată de la 1, atunci atât `r`, cât și `c` vor avea un 1 în plus, așadar condiția devine `r - 1 + c - 1 == dim - 1` sau `r + c == dim + 1`, sau `c == dim - r + 1`. Pentru indexare de la 1, așa va arăta codul:
 
 ```cpp
---8<-- "cppintro/matrices/matrices10.cpp"
+--8 < --"cppintro/matrices/matrices10.cpp"
 ```
 
 Cu indexarea la 0, scădem 1, iar cu indexare de la 1, adăugăm 1.
@@ -227,7 +227,7 @@ Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
 Pentru a rezolva acest exercițiu, putem observa faptul că toată matricea este umplută cu 2, cu excepția regiunii de sud unde avem 4. La problemele de bacalaureat de obicei indexarea este de la 1, așa că vom urma și noi această regulă.
 
 ```cpp
---8<-- "cppintro/matrices/matrices11.cpp"
+--8 < --"cppintro/matrices/matrices11.cpp"
 ```
 
 ### Problemă exemplu - [genmat25 de pe pbinfo](https://www.pbinfo.ro/probleme/2822/genmat25)
@@ -235,7 +235,7 @@ Pentru a rezolva acest exercițiu, putem observa faptul că toată matricea este
 Pentru a rezolva această problemă, trebuie să urmăm cu atenție instrucțiunile din enunț, în ordinea în care sunt date. Ulterior, vom afișa matricea rezultată.
 
 ```cpp
---8<-- "cppintro/matrices/matrices12.cpp"
+--8 < --"cppintro/matrices/matrices12.cpp"
 ```
 
 ### Problemă exemplu - [genmat23 de pe pbinfo](https://www.pbinfo.ro/probleme/1585/genmat23)
@@ -243,7 +243,7 @@ Pentru a rezolva această problemă, trebuie să urmăm cu atenție instrucțiun
 Pentru a rezolva această problemă, vom vrea să aflăm pentru fiecare poziție distanța față de marginea matricii și apoi vom colora pătratele cu 0 sau 1 după caz.
 
 ```cpp
---8<-- "cppintro/matrices/matrices13.cpp"
+--8 < --"cppintro/matrices/matrices13.cpp"
 ```
 
 #### Problemă exemplu - [zona1 de pe pbinfo](https://www.pbinfo.ro/probleme/782/zona1)
@@ -251,7 +251,7 @@ Pentru a rezolva această problemă, vom vrea să aflăm pentru fiecare poziție
 Această problemă se concentrează pe zona de sud a matricii. După ce parcurgem elementele matricii, le vom adăuga într-un vector de frecvență pentru a obține răspunsul cerut.
 
 ```cpp
---8<-- "cppintro/matrices/matrices14.cpp"
+--8 < --"cppintro/matrices/matrices14.cpp"
 ```
 
 #### Problemă exemplu - [diagonal de pe nerdarena](https://www.nerdarena.ro/problema/diagonal)
@@ -259,7 +259,7 @@ Această problemă se concentrează pe zona de sud a matricii. După ce parcurge
 Aici, vrem să ne folosim de structura matricii pentru a procesa diagonalele, de jos în sus și de la stânga la dreapta. Mai întâi, mergem prin punctele de pe prima coloană și apoi cele de pe prima linie, iar pentru diagonala secundară, punctele de pe prima linie și apoi cele de pe ultima coloană. Indiferent de parcurgere, vom merge în jos ulterior.
 
 ```cpp
---8<-- "cppintro/matrices/matrices15.cpp"
+--8 < --"cppintro/matrices/matrices15.cpp"
 ```
 
 ## Alte parcurgeri și modificări în matrice
@@ -283,7 +283,7 @@ Cu alte cuvinte, acoperim fiecare zonă colorată diferit în imaginea de mai jo
 Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema [spirala de pe pbinfo](https://www.pbinfo.ro/probleme/211/spirala) care folosește această tehnică.
 
 ```cpp
---8<-- "cppintro/matrices/matrices16.cpp"
+--8 < --"cppintro/matrices/matrices16.cpp"
 ```
 
 #### Varianta 2 - folosind vectori de direcție
@@ -305,7 +305,7 @@ Se poate observa faptul că după ce facem primul pas și avem n mutări, lungim
 Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema [spirala de pe pbinfo](https://www.pbinfo.ro/probleme/211/spirala) care folosește această tehnică.
 
 ```cpp
---8<-- "cppintro/matrices/matrices17.cpp"
+--8 < --"cppintro/matrices/matrices17.cpp"
 ```
 
 ### Transpunerea elementelor în matrice
@@ -330,7 +330,7 @@ coloană ș.a.m.d.
 Aici se poate găsi soluția problemei [rotire de pe pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim matricea la stânga cu 90°.
 
 ```cpp
---8<-- "cppintro/matrices/matrices18.cpp"
+--8 < --"cppintro/matrices/matrices18.cpp"
 ```
 
 ### Bordarea unei matrici
@@ -338,7 +338,7 @@ Aici se poate găsi soluția problemei [rotire de pe pbinfo](https://www.pbinfo.
 Pentru a borda o matrice, putem să marcăm cu o valoare care să ne marcheze faptul că nu vrem să trecem prin acele poziții (de exemplu, -1).
 
 ```cpp
---8<-- "cppintro/matrices/matrices19.cpp"
+--8 < --"cppintro/matrices/matrices19.cpp"
 ```
 
 ### Căutarea unor elemente și secvențe în matrici

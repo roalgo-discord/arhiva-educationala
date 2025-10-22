@@ -35,7 +35,7 @@ constexpr int MAXN = 7500;
 vector<vector<int>> graph(MAXN + 1);
 vector<int> ans;
 
-void bfs(int startNode, vector<int>& dist) {
+void bfs(int startNode, vector<int> &dist) {
     queue<int> q;
     q.push(startNode);
     dist[startNode] = 0;
@@ -103,7 +103,7 @@ int main() {
     }
 
     fout << ans.size() << '\n';
-    for (const auto& node : ans) {
+    for (const auto &node : ans) {
         fout << node << ' ';
     }
 

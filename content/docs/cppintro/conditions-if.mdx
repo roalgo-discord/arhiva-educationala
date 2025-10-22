@@ -28,7 +28,7 @@ Pe lângă `if..else`, există și instrucțiunea `switch..case`, care funcțion
 Mai jos, găsiți un exemplu pentru aplicarea acestei instrucțiuni.
 
 ```cpp
---8<-- "cppintro/if/if1.cpp"
+--8 < --"cppintro/if/if1.cpp"
 ```
 
 Blocul `else` este opțional.
@@ -38,7 +38,7 @@ Dacă condiția nu este deja o valoare logică, cum este cea returnată de opera
 Acoladele nu sunt obligatorii, dar dacă nu le folosim putem scrie o singură instrucțiune. Ne putem folosi de acest lucru pentru a scrie compact lanțuri de condiții:
 
 ```cpp
---8<-- "cppintro/if/if2.cpp"
+--8 < --"cppintro/if/if2.cpp"
 ```
 
 ## Operatori de comparație
@@ -72,7 +72,7 @@ De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind o
   |  1  |    0    |
 
   ```cpp
-  --8<-- "cppintro/if/if3.cpp"
+  --8 < --"cppintro/if/if3.cpp"
   ```
 
 - **Conjuncția** - notată cu `&&` sau `and`, reprezintă „și” logic. Pentru ca o expresie compusă să fie adevărată, **toți membrii ei trebuie să fie adevărați.**
@@ -85,7 +85,7 @@ De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind o
   |  1  |  1  |     1     |
 
   ```cpp
-  --8<-- "cppintro/if/if4.cpp"
+  --8 < --"cppintro/if/if4.cpp"
   ```
 
 - **Disjuncția** - notată cu `||` sau `or`, reprezintă „sau” logic. Pentru ca o expresie compusă să fie adevărată, este suficient ca **cel puțin un membru să fie adevărat**.
@@ -98,7 +98,7 @@ De cele mai multe ori, veți vedea că expresiile logice apar grupate folosind o
   |  1  |  1  |     1    |
 
   ```cpp
-  --8<-- "cppintro/if/if5.cpp"
+  --8 < --"cppintro/if/if5.cpp"
   ```
 
 ## Exemplu
@@ -108,13 +108,13 @@ Mai jos puteți găsi un asemenea exemplu, în care rezolvăm problema [cumparat
 \=== "if-else"
 
 ```cpp
---8<-- "cppintro/if/if6.cpp"
+--8 < --"cppintro/if/if6.cpp"
 ```
 
 \=== "switch-case"
 
 ```cpp
---8<-- "cppintro/if/if7.cpp"
+--8 < --"cppintro/if/if7.cpp"
 ```
 
 ## Prioritatea operatorilor
@@ -128,7 +128,7 @@ Este important să ținem cont de ordinea de evaluare a operatorilor logici atun
 De exemplu:
 
 ```cpp
---8<-- "cppintro/if/if8.cpp"
+--8 < --"cppintro/if/if8.cpp"
 ```
 
 1. `x && y` este evaluat mai întâi: `1 && 0 == false`.
@@ -136,7 +136,7 @@ De exemplu:
 3. `true || z` se evaluează, iar `true || 2` dă `true`. Rezultatul va fi 1.
 
 ```cpp
---8<-- "cppintro/if/if9.cpp"
+--8 < --"cppintro/if/if9.cpp"
 ```
 
 Ca să fie prioritățile mai ușor de ținut minte, putem face analogie cu algebra normală:
@@ -178,11 +178,11 @@ Ne putem aduce aminte de ea dacă luăm expresia echivalentă $x \cdot (y + z) =
 z)$). Următoarele exemple sunt echivalente:
 
 ```cpp
---8<-- "cppintro/if/if10.cpp"
+--8 < --"cppintro/if/if10.cpp"
 ```
 
 ```cpp
---8<-- "cppintro/if/if11.cpp"
+--8 < --"cppintro/if/if11.cpp"
 ```
 
 În plus, avem și identități:
@@ -199,7 +199,7 @@ De la matematică, știm și că $x \cdot 0 = 0$, care este adevărat și aici:
 C++ folosește **scurtcircuitarea** pentru a evalua expresiile logice în mod eficient. Din moment ce știm că `x && false == false` (și că `false && x == false`), dacă avem `x && y` și `x` este evaluat la fals, atunci nu mai este nevoie să evaluăm și `y`. Aici este un exemplu:
 
 ```cpp
---8<-- "cppintro/if/if12.cpp"
+--8 < --"cppintro/if/if12.cpp"
 ```
 
 Dacă `b` este 0, atunci toată expresia devine falsă fără a evalua `a / b != 0`, unde ar putea avea loc o împărțire la zero dacă nu ar fi scurtcircuitată condiția.
@@ -260,7 +260,7 @@ Altfel spus:
 Următoarele două exemple sunt echivalente, iar această rescriere poate fi utilă în anumite circumstanțe pentru a face codul mai curat (de obicei când a doua ramură este scurtă sau dacă negația este altfel întortochiată):
 
 ```cpp
---8<-- "cppintro/if/if13.cpp"
+--8 < --"cppintro/if/if13.cpp"
 ```
 
 Există și niște echivalențe cu negația care sunt utile în manipularea expresiilor relaționale:

@@ -43,13 +43,13 @@ egale pe aceeași poziție. În mod similar, atribuirea se va face curățând
 eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
 
 ```cpp
---8<-- "cppintro/stl/stl01.cpp"
+--8 < --"cppintro/stl/stl01.cpp"
 ```
 
 Pentru a declara tablouri bidimensionale, sau chiar tablouri multidimensionale, putem folosi aceeași logică, deoarece acestea sunt vectori de vectori. Aceste tipuri de structuri vor fi folosite și ulterior, în ceea ce privește implementările unor modele matematice sau a unor structuri de date mai complexe despre care veți învăța după ce prindeți mai multă experiență.
 
 ```cpp
---8<-- "cppintro/stl/stl02.cpp"
+--8 < --"cppintro/stl/stl02.cpp"
 ```
 
 #### Inserări, ștergeri și alte ajustări
@@ -63,7 +63,7 @@ prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și
 de sfârșit din vector.
 
 ```cpp
---8<-- "cppintro/stl/stl03.cpp"
+--8 < --"cppintro/stl/stl03.cpp"
 ```
 
 #### Afișări în vector
@@ -82,7 +82,7 @@ folosi indicatorul (int) pentru a schimba tipul de date la int, care este un
 tip de date signed.
 
 ```cpp
---8<-- "cppintro/stl/stl04.cpp"
+--8 < --"cppintro/stl/stl04.cpp"
 ```
 
 ### Structura std::array
@@ -92,7 +92,7 @@ Această structură de date este folosită mai rar, dar poate fi utilă în cazu
 Sintaxa unui array va fi de tipul `array<tip, dimensiune> nume;`. De regulă, nu există diferențe semnificative de performanță între `std::vector` și `std::array`, deci în aproape toate cazurile, putem folosi `std::vector` fără probleme, funcțiile pe care `std::array` le are sunt incluse în funcțiile vectorului.
 
 ```cpp
---8<-- "cppintro/stl/stl05.cpp"
+--8 < --"cppintro/stl/stl05.cpp"
 ```
 
 ### Structura std::string
@@ -106,19 +106,19 @@ De asemenea, toate proprietățile vectorului se aplică și pentru `std::string
 Sintaxa unui string va fi de tipul `string nume;`
 
 ```cpp
---8<-- "cppintro/stl/stl06.cpp"
+--8 < --"cppintro/stl/stl06.cpp"
 ```
 
 În mod particular, pe lângă funcțiile vectorului, vom putea concatena două șiruri de caractere cu ușurință, folosind operatorul +. Totuși, trebuie să fim atenți cum folosim acest operator, pentru a evita efectuarea prea înceată a operațiilor.
 
 ```cpp
---8<-- "cppintro/stl/stl07.cpp"
+--8 < --"cppintro/stl/stl07.cpp"
 ```
 
 Deși în cazul numerelor naturale, aceste operații sunt echivalente, în cazul stringurilor, `+=` și `+` sunt complet diferite. Prima dintre ele concatenează șirul primit la șirul existent, cea de-a doua copiază cele două șiruri, le unește și apoi atribuie rezultatul șirului. Această diferență devine mai dramatică în situații precum cea de mai jos.
 
 ```cpp
---8<-- "cppintro/stl/stl08.cpp"
+--8 < --"cppintro/stl/stl08.cpp"
 ```
 
 ### Structura std::pair
@@ -132,7 +132,7 @@ Sintaxa este `pair<tip1, tip2> nume;`, unde tip1 și tip2 sunt tipuri de date, c
 De exemplu, dacă avem `pair<pair<int, int>, pair<int, int>> p = {{2, 4}, {1, 3}};`, cele patru elemente vor putea fi declarate și accesate după cum urmează:
 
 ```cpp
---8<-- "cppintro/stl/stl09.cpp"
+--8 < --"cppintro/stl/stl09.cpp"
 ```
 
 ### Structura std::tuple
@@ -149,13 +149,13 @@ Chiar dacă putem ține valori multiple folosind pair-uri imbricate, tuplurile v
 Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă.
 
 ```cpp
---8<-- "cppintro/stl/stl10.cpp"
+--8 < --"cppintro/stl/stl10.cpp"
 ```
 
 Mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
---8<-- "cppintro/stl/stl11.cpp"
+--8 < --"cppintro/stl/stl11.cpp"
 ```
 
 ## Iteratori
@@ -202,7 +202,7 @@ structură de tip deque.
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](../mediu/queue.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
---8<-- "cppintro/stl/stl12.cpp"
+--8 < --"cppintro/stl/stl12.cpp"
 ```
 
 ### Structura std::stack
@@ -212,7 +212,7 @@ Deși pentru mai multe detalii, puteți accesa [articolul nostru despre cozi](..
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](../mediu/stack.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
 ```cpp
---8<-- "cppintro/stl/stl13.cpp"
+--8 < --"cppintro/stl/stl13.cpp"
 ```
 
 ### Structura std::deque
@@ -229,7 +229,7 @@ este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
 mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
 
 ```cpp
---8<-- "cppintro/stl/stl14.cpp"
+--8 < --"cppintro/stl/stl14.cpp"
 ```
 
 ## Structuri de date arborescente
@@ -253,7 +253,7 @@ Dintre cele mai importante funcții, vom enumera următoarele:
 Cea mai simplă utilizare a unui map va fi drept un vector de frecvență dinamic, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a map-ului.
 
 ```cpp
---8<-- "cppintro/stl/stl15.cpp"
+--8 < --"cppintro/stl/stl15.cpp"
 ```
 
 ### Structura std::set
@@ -273,7 +273,7 @@ Dintre cele mai importante funcții, vom enumera următoarele:
 Cea mai simplă utilizare a unui set va fi drept o mulțime dinamică, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a setului. Totuși, nu vom putea păstra informații mai avansate, precum poziția relativă, acestea fiind discutate ulterior în articol, când vorbim despre policy based data structures.
 
 ```cpp
---8<-- "cppintro/stl/stl16.cpp"
+--8 < --"cppintro/stl/stl16.cpp"
 ```
 
 ### std::unordered\_map și std::unordered\_set
@@ -309,7 +309,7 @@ O coadă de priorități este o coadă pe care o folosim pentru a păstra datele
 Pentru a folosi această structură de date, biblioteca `<queue>` este necesară. Sintaxa unei cozi de priorități este `priority_queue<tip> nume`. Mai jos găsiți un exemplu de implementare a acestei structuri de date.
 
 ```cpp
---8<-- "cppintro/stl/stl17.cpp"
+--8 < --"cppintro/stl/stl17.cpp"
 ```
 
 !!! note "Accesarea valorilor în ordine crescătoare"
@@ -319,7 +319,7 @@ adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
 adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
 ```cpp
---8<-- "cppintro/stl/stl18.cpp"
+--8 < --"cppintro/stl/stl18.cpp"
 ```
 
 ### Policy based data structures
@@ -344,7 +344,7 @@ Această structură de date ne va permite să folosim facilitățile setului, î
 Pentru a putea folosi această structură de date, trebuie să declarăm următoarele biblioteci, namespace-uri și typedefs:
 
 ```cpp
---8<-- "cppintro/stl/stl19.cpp"
+--8 < --"cppintro/stl/stl19.cpp"
 ```
 
 !!! note "Alte tipuri de date"
@@ -353,7 +353,7 @@ Pentru a folosi policy based data structures și cu alte tipuri de date,
 trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
 
 ```cpp
---8<-- "cppintro/stl/stl20.cpp"
+--8 < --"cppintro/stl/stl20.cpp"
 ```
 
 ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
@@ -363,7 +363,7 @@ complexe.
 Mai jos găsiți un exemplu de folosire a acestei structuri de date, așa cum a fost folosită în problema [AIB de pe pbinfo](https://www.pbinfo.ro/probleme/2725/aib).
 
 ```cpp
---8<-- "cppintro/stl/stl21.cpp"
+--8 < --"cppintro/stl/stl21.cpp"
 ```
 
 Pe lângă o mare parte din problemele cu structuri de date, această structură de date poate fi aplicată și pentru a rezolva problema [Greetings de pe Codeforces](https://codeforces.com/contest/1915/problem/F).

@@ -116,13 +116,13 @@ Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 \=== "Recursiv"
 
 ```cpp
---8<-- "usor/dp/frog1_rec.cpp"
+--8 < --"usor/dp/frog1_rec.cpp"
 ```
 
 \=== "Iterativ"
 
 ```cpp
---8<-- "usor/dp/frog1_iter.cpp"
+--8 < --"usor/dp/frog1_iter.cpp"
 ```
 
 {/* Second Problem */}
@@ -142,13 +142,13 @@ Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar c
 \=== "Recursiv"
 
 ```cpp
---8<-- "usor/dp/frog2_rec.cpp"
+--8 < --"usor/dp/frog2_rec.cpp"
 ```
 
 \=== "Iterativ"
 
 ```cpp
---8<-- "usor/dp/frog2_iter.cpp"
+--8 < --"usor/dp/frog2_iter.cpp"
 ```
 
 {/* Third Problem */}
@@ -197,7 +197,7 @@ suma de bani care a rămas de plătit, numărul de monede pe care l-am
 utilizat până acum și vectorul de denominații accesibile.
 
 ```cpp
---8<-- "usor/dp/moneda_rec.cpp"
+--8 < --"usor/dp/moneda_rec.cpp"
 ```
 
 \=== "Iterativ" !!! note "Explicație"
@@ -210,7 +210,7 @@ dp\[sumă de bani totală] = numărul de bacnote necesare pentru a ajunge la
 această sumă de bani.
 
 ```cpp
---8<-- "usor/dp/moneda_iter.cpp"
+--8 < --"usor/dp/moneda_iter.cpp"
 ```
 
 {/* Fourth Problem */}
@@ -242,19 +242,19 @@ optimizare pe care o vom prezenta în detaliu mai jos.
 \=== "Recursiv"
 
 ```cpp
---8<-- "usor/dp/vacation_rec.cpp"
+--8 < --"usor/dp/vacation_rec.cpp"
 ```
 
 \=== "Iterativ"
 
 ```cpp
---8<-- "usor/dp/vacation_iter.cpp"
+--8 < --"usor/dp/vacation_iter.cpp"
 ```
 
 \=== "Iterativ optimizat"
 
 ```cpp
---8<-- "usor/dp/vacation_iter_optim.cpp"
+--8 < --"usor/dp/vacation_iter_optim.cpp"
 ```
 
 !!! info "Explicație"
@@ -281,7 +281,7 @@ Pentru a calcula numărul de soluții modulo $x$, vom folosi operatorul $\%$
 convenabil, reușind astfel să optimizăm soluția.
 
 ```cpp
---8<-- "usor/dp/array_description.cpp"
+--8 < --"usor/dp/array_description.cpp"
 ```
 
 {/* Sixth problem */}
@@ -297,7 +297,7 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
 ### Soluție
 
 ```cpp
---8<-- "usor/dp/grid1.cpp"
+--8 < --"usor/dp/grid1.cpp"
 ```
 
 {/* Seventh problem */}
@@ -307,13 +307,13 @@ Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
 \=== "Recursiv"
 
 ```cpp
---8<-- "usor/dp/sumtri1_rec.cpp"
+--8 < --"usor/dp/sumtri1_rec.cpp"
 ```
 
 \=== "Iterativ"
 
 ```cpp
---8<-- "usor/dp/sumtri1_iter.cpp"
+--8 < --"usor/dp/sumtri1_iter.cpp"
 ```
 
 {/* Extra stuff */}

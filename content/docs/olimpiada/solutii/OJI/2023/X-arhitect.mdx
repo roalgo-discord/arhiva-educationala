@@ -62,24 +62,28 @@ int main() {
     for (int i = 1; i <= n; i++) {
         int x1, y1, x2, y2;
         fin >> x1 >> y1 >> x2 >> y2;
-        if (x1 > x2)
+        if (x1 > x2) {
             swap(x1, x2), swap(y1, y2);
+        }
         int x = x2 - x1, y = y2 - y1;
-        if (y < 0)
+        if (y < 0) {
             swap(x, y), x = -x;
-        else if (x == 0)
+        } else if (x == 0) {
             swap(x, y);
-        if (x == 0)
+        }
+        if (x == 0) {
             y = 1;
-        else {
+        } else {
             int d = cmmdc(x, y);
             x /= d, y /= d;
         }
         M[{y, x}]++;
     }
-    for (auto x : M)
-        if (x.second > fmax)
+    for (auto x : M) {
+        if (x.second > fmax) {
             fmax = x.second;
+        }
+    }
     fout << fmax;
     return 0;
 }

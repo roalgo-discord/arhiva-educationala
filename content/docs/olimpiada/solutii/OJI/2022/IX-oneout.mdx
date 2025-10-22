@@ -21,8 +21,8 @@ Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -34,16 +34,16 @@ int main() {
     cin >> c;
     cin >> n;
 
-    vector <int> v(n+1);
+    vector<int> v(n + 1);
 
     for (int i = 1; i <= n; i++) {
         cin >> v[i];
     }
 
-    vector <int> squarefree(1000001, 1);
+    vector<int> squarefree(1000001, 1);
 
     for (int i = 2; i <= 1000; i++) {
-        for (int j = i*i; j <= 1000000; j += i*i) {
+        for (int j = i * i; j <= 1000000; j += i * i) {
             squarefree[j] = 0;
         }
     }
@@ -55,20 +55,18 @@ int main() {
             ans += squarefree[v[i]];
         }
         cout << ans << '\n';
-    }
-    else {
-        vector <int> streakL(n+1), streakR(n+1);
+    } else {
+        vector<int> streakL(n + 1), streakR(n + 1);
         for (int i = 1; i <= n; i++) {
             if (squarefree[v[i]]) {
-                streakL[i] = streakL[i-1] + 1;
+                streakL[i] = streakL[i - 1] + 1;
             }
         }
         for (int i = n; i >= 1; i--) {
             if (squarefree[v[i]]) {
                 if (i != n) {
-                    streakR[i] = streakR[i+1] + 1;
-                }
-                else {
+                    streakR[i] = streakR[i + 1] + 1;
+                } else {
                     streakR[i] = 1;
                 }
             }
@@ -76,13 +74,12 @@ int main() {
         ans = -1;
         int cnt = 0;
         for (int i = 2; i < n; i++) {
-            if (squarefree[v[i]] == 0 && streakL[i-1] && streakR[i+1]) {
-                if (streakL[i-1] + streakR[i+1] > ans) {
-                    ans = streakL[i-1] + streakR[i+1];
+            if (squarefree[v[i]] == 0 && streakL[i - 1] && streakR[i + 1]) {
+                if (streakL[i - 1] + streakR[i + 1] > ans) {
+                    ans = streakL[i - 1] + streakR[i + 1];
                     cnt = 1;
-                }
-                else {
-                    if (streakL[i-1] + streakR[i+1] == ans) {
+                } else {
+                    if (streakL[i - 1] + streakR[i + 1] == ans) {
                         cnt++;
                     }
                 }
@@ -91,13 +88,13 @@ int main() {
 
         if (ans == -1) {
             cout << -1 << '\n';
-        }
-        else {
+        } else {
             cout << ans << " " << cnt << '\n';
             for (int i = 2; i < n; i++) {
-                if (squarefree[v[i]] == 0 && streakL[i-1] && streakR[i+1]) {
-                    if (streakL[i-1] + streakR[i+1] == ans) {
-                        cout << i - streakL[i-1] << " " << i + streakR[i+1] << '\n';
+                if (squarefree[v[i]] == 0 && streakL[i - 1] && streakR[i + 1]) {
+                    if (streakL[i - 1] + streakR[i + 1] == ans) {
+                        cout << i - streakL[i - 1] << " " << i + streakR[i + 1]
+                             << '\n';
                     }
                 }
             }

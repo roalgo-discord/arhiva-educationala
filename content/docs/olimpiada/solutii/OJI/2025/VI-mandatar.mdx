@@ -34,7 +34,9 @@ Pentru determinarea lungimii maxime a unei secvențe mandatorii din șirul $B$ s
 
 ```cpp
 for (int x = 2; x <= 7; x++) {
-    if (x == 4) continue;
+    if (x == 4) {
+        continue;
+    }
 
     int k = 0;
     bool ok = false;
