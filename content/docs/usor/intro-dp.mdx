@@ -29,14 +29,14 @@ acest tip regăsindu-se și în foarte multe concursuri mai dificile.
 
 Pentru a explica părțile componente ale oricărei soluții care se bazează pe metoda programării dinamice, vom explica un exemplu foarte simplu, folosindu-ne de șirul lui Fibonacci.
 
-Vom defini șirul lui Fibonacci ca fiind $F_0 = 1$, $F_1 = 1$ și $F_i = F_{i-1} +
-F_{i-2}$.
+Vom defini șirul lui Fibonacci ca fiind $$F\_0 = 1$$, $$F\_1 = 1$$ și $$F\_i = F\_{i-1} +
+F\_{i-2}$$.
 
-După cum se poate observa, avem $F_i$ care reprezintă cel de-al $i$-lea număr Fibonacci, acesta fiind starea pe care o vom calcula, stări pe care le vom găsi în toate problemele ce necesită programare dinamică. Stările vor avea una sau mai multe dimensiuni.
+După cum se poate observa, avem $$F\_i$$ care reprezintă cel de-al $$i$$-lea număr Fibonacci, acesta fiind starea pe care o vom calcula, stări pe care le vom găsi în toate problemele ce necesită programare dinamică. Stările vor avea una sau mai multe dimensiuni.
 
-$F_i = F_{i-1} + F_{i-2}$ reprezintă relația de recurență dintre $F_i$ și valorile precedente. Pasul de la $F_{i-1}$ sau $F_{i-2}$ la $F_{i}$ reprezintă tranzițiile de la o stare la alta.
+$$F\_i = F\_{i-1} + F\_{i-2}$$ reprezintă relația de recurență dintre $$F\_i$$ și valorile precedente. Pasul de la $$F\_{i-1}$$ sau $$F\_{i-2}$$ la $$F\_{i}$$ reprezintă tranzițiile de la o stare la alta.
 
-În cele din urmă, $F_0 = 1$, $F_1 = 1$ reprezintă cazurile de bază, cazuri care nu pot fi definite folosind relația de recurență menționată mai sus.
+În cele din urmă, $$F\_0 = 1$$, $$F\_1 = 1$$ reprezintă cazurile de bază, cazuri care nu pot fi definite folosind relația de recurență menționată mai sus.
 
 În concluzie, pentru a putea avea o soluție care folosește programarea dinamică, trebuie să ne asigurăm că avem următoarele părți:
 
@@ -101,15 +101,15 @@ Această problemă ne cere să aflăm costul minim de care are nevoie o broască
 
 Deoarece restricțiile sunt foarte mari, aplicarea unei soluții care verifică toate variantele posibile folosind Backtracking este imposibilă, iar diverse abordări de tip Greedy, precum saltul spre cea mai apropiată piatră sau spre piatra cu o diferență de înălțime minimă sunt greșite.
 
-Astfel, se impune folosirea unei soluții care folosește metoda programării dinamice, unde putem stoca $dp[i]$ care va reprezenta suma minimă a diferențelor salturilor necesare pentru a ajunge la poziția $i$, motivul pentru care vrem să facem asta este acela că este important să avem un răspuns optim stocat pentru fiecare poziție în parte.
+Astfel, se impune folosirea unei soluții care folosește metoda programării dinamice, unde putem stoca $$dp\[i]$$ care va reprezenta suma minimă a diferențelor salturilor necesare pentru a ajunge la poziția $$i$$, motivul pentru care vrem să facem asta este acela că este important să avem un răspuns optim stocat pentru fiecare poziție în parte.
 
-Pentru a calcula $dp[i]$, ne vom folosi de informațiile din enunț, și anume faptul că avem voie să sărim pe o poziție aflată la cel mult două unități de poziția curentă, astfel $dp[i]$ va fi egal cu următoarea formulă:
+Pentru a calcula $$dp\[i]$$, ne vom folosi de informațiile din enunț, și anume faptul că avem voie să sărim pe o poziție aflată la cel mult două unități de poziția curentă, astfel $$dp\[i]$$ va fi egal cu următoarea formulă:
 
 $$
     {dp}_{i} = \min(dp_{i-1} + |v_i - v_{i-1}|, dp_{i-2} + |v_i - v_{i-2}|)
 $$
 
-unde $|x| = \operatorname{abs}(x)$ este valoarea absolută. Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar complexitatea acestei soluții este $\mathcal{O}(n)$.
+unde $$|x| = \operatorname{abs}(x)$$ este valoarea absolută. Cazul de bază constă în faptul că $$dp\_1 = 0$$ și $$dp\_2 = |v\_1 - v\_2|$$, iar complexitatea acestei soluții este $$\mathcal{O}(n)$$.
 
 Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 
@@ -129,15 +129,15 @@ Mai jos puteți găsi abordarea recursivă și cea iterativă a problemei.
 
 ### Problema [Frog 2](https://atcoder.jp/contests/dp/tasks/dp_b)
 
-La fel ca la problema precedentă, trebuie să aflăm costul minim de care are nevoie o broască pentru a ajunge de pe prima piatră pe ultima, dacă se poate deplasa cu cel mult $k$ pași la un moment dat.
+La fel ca la problema precedentă, trebuie să aflăm costul minim de care are nevoie o broască pentru a ajunge de pe prima piatră pe ultima, dacă se poate deplasa cu cel mult $$k$$ pași la un moment dat.
 
-Spre deosebire de problema precedentă, pentru a calcula $dp[i]$, ne vom folosi de informațiile din enunț, recurența de la Frog 1 va fi extinsă pentru a acoperi $k$ poziții.
+Spre deosebire de problema precedentă, pentru a calcula $$dp\[i]$$, ne vom folosi de informațiile din enunț, recurența de la Frog 1 va fi extinsă pentru a acoperi $$k$$ poziții.
 
 $$
 dp_i = \min (dp_{i-x} + |v_i - v_{i-x}|),\,\forall x \leq k
 $$
 
-Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar complexitatea acestei soluții este $\mathcal{O}(n \cdot k)$.
+Cazul de bază constă în faptul că $$dp\_1 = 0$$ și $$dp\_2 = |v\_1 - v\_2|$$, iar complexitatea acestei soluții este $$\mathcal{O}(n \cdot k)$$.
 
 \=== "Recursiv"
 
@@ -158,22 +158,22 @@ Cazul de bază constă în faptul că $dp_1 = 0$ și $dp_2 = |v_1 - v_2|$, iar c
 !!! info "Cerință"
 
 Astăzi, la ora domnului **profesor Tetris**, ți s-a pus următoarea
-întrebare: „Dacă eu îți dau $N$ tipuri de monede, având acces la o
-infinitate de monede $C$ de acele tipuri, află modalitatea optimă de a
-obține suma $S$”. Pe momentul orei tu nu ai știut cum să răspunzi, Însă
+întrebare: „Dacă eu îți dau $$N$$ tipuri de monede, având acces la o
+infinitate de monede $$C$$ de acele tipuri, află modalitatea optimă de a
+obține suma $$S$$”. Pe momentul orei tu nu ai știut cum să răspunzi, Însă
 acum, mai determinat ca niciodată, vrei să rezolvi această problem, având în
 față un document educational de 5 stele Micheline. Rezolvă problema!
 
-Vom defini modalitatea optimă de a obține suma $S$ ca fiind modalitatea prin
+Vom defini modalitatea optimă de a obține suma $$S$$ ca fiind modalitatea prin
 care utilizezi cât mai puține monede per total!
 
 **Restricții:**
 
-- $1 \leq N \leq 500$
-- $1 \leq S \leq 100000$
-- $1 \leq C_i \leq 2500$
+- $$1 \leq N \leq 500$$
+- $$1 \leq S \leq 100000$$
+- $$1 \leq C\_i \leq 2500$$
 
-La început, când ați citit această problemă, probabil v-ați gândit la o rezolvare Greedy (care mai încolo o să vedeți că este Greedy Euristic), prin care ați fi sortat descrescător șirul de monede și ați fi încercat să utilizați denominația cea mai mare, care este mai mică ca S, cât timp puteați. După ați fi continuat cu următoarea denominație cea mai mare care respectă condiția aceasta pentru suma rămasă ș.a.m.d. Ca să vă dovedesc că nu funcționează această modalitate, încercați să rezolvați această problemă, utilizând modalitatea anterior prezentată, având aceste date de intrare ($N$ numărul de monede, apoi $S$ suma și apoi cele $N$ monede):
+La început, când ați citit această problemă, probabil v-ați gândit la o rezolvare Greedy (care mai încolo o să vedeți că este Greedy Euristic), prin care ați fi sortat descrescător șirul de monede și ați fi încercat să utilizați denominația cea mai mare, care este mai mică ca S, cât timp puteați. După ați fi continuat cu următoarea denominație cea mai mare care respectă condiția aceasta pentru suma rămasă ș.a.m.d. Ca să vă dovedesc că nu funcționează această modalitate, încercați să rezolvați această problemă, utilizând modalitatea anterior prezentată, având aceste date de intrare ($$N$$ numărul de monede, apoi $$S$$ suma și apoi cele $$N$$ monede):
 
 ```
 3
@@ -203,7 +203,7 @@ utilizat până acum și vectorul de denominații accesibile.
 \=== "Iterativ" !!! note "Explicație"
 
 Pentru a găsi soluția optimă, noi vom trece prin fiecare sumă de bani
-care este mai mică decât $S$, încercând, dacă putem, să continuăm să
+care este mai mică decât $$S$$, încercând, dacă putem, să continuăm să
 adăugăm bacnote astfel încât să ajungem la suma de bani dorită. Pentru
 acest lucru vom ține un vector dp de forma următoare:
 dp\[sumă de bani totală] = numărul de bacnote necesare pentru a ajunge la
@@ -217,15 +217,15 @@ această sumă de bani.
 
 ### Problema [Vacation](https://atcoder.jp/contests/dp/tasks/dp_c)
 
-Pentru această problemă, trebuie să aflăm satisfacția maximă pe care o poate obține Taro în $n$ zile, dacă nu are voie să repete o activitate de două ori la rând.
+Pentru această problemă, trebuie să aflăm satisfacția maximă pe care o poate obține Taro în $$n$$ zile, dacă nu are voie să repete o activitate de două ori la rând.
 
 Din nou, se poate demonstra cu ușurință că o soluție de tip Greedy nu va merge, deoarece ne putem bloca alegeri mai bune ulterior cu alegerile curente.
 
 Totodată, mai apare un element nou în rezolvarea acestor probleme, și anume faptul că vom avea nevoie de o nouă dimensiune pentru a păstra informații cu privire la ultima activitate efectuată de el, pentru a evita o situație în care alegem de două ori aceeași activitate.
 
-Astfel, vom defini $dp_{i,j}$ ca fiind suma maximă a satisfacției dacă am parcurs primele $i$ zile, iar ultima activitate a fost de tipul $j$, $j$ fiind 0, 1 sau 2, în funcție de activitatea aleasă.
+Astfel, vom defini $$dp\_{i,j}$$ ca fiind suma maximă a satisfacției dacă am parcurs primele $$i$$ zile, iar ultima activitate a fost de tipul $$j$$, $$j$$ fiind 0, 1 sau 2, în funcție de activitatea aleasă.
 
-Pentru a calcula $dp_{i,j}$, va trebui să ne raportăm la sumele din ziua precedentă, corespunzătoare celorlalte două activități deoarece nu avem voie să alegem aceeași activitate iar.
+Pentru a calcula $$dp\_{i,j}$$, va trebui să ne raportăm la sumele din ziua precedentă, corespunzătoare celorlalte două activități deoarece nu avem voie să alegem aceeași activitate iar.
 
 $$
 dp_{i,j} = \max(dp_{i-1,x} + v_j),\,\forall x \neq j
@@ -269,13 +269,13 @@ corectitudinea recurenței.
 
 Pentru această problemă, trebuie să aflăm numărul de șiruri pe care le putem construi astfel încât să respecte condițiile din enunț cu privire la valorile deja setate și la diferența dintre ele.
 
-Astfel, vom defini $dp_{i,j}$ ca fiind numărul de moduri de a crea un șir cu $i$ numere, dacă valoarea de pe poziția $i$ este $j$.
+Astfel, vom defini $$dp\_{i,j}$$ ca fiind numărul de moduri de a crea un șir cu $$i$$ numere, dacă valoarea de pe poziția $$i$$ este $$j$$.
 
-Pentru a afla $dp_{i,j}$, va trebui să ne raportăm la valorile de pe poziția precedentă, aflate la o distanță de cel mult 1, cu condiția să putem pune $j$ pe poziția $i$.
+Pentru a afla $$dp\_{i,j}$$, va trebui să ne raportăm la valorile de pe poziția precedentă, aflate la o distanță de cel mult 1, cu condiția să putem pune $$j$$ pe poziția $$i$$.
 
 !!! note "Observatie"
 
-Pentru a calcula numărul de soluții modulo $x$, vom folosi operatorul $\%$
+Pentru a calcula numărul de soluții modulo $$x$$, vom folosi operatorul $$%$$
 (mod). Dar deoarece aici avem nevoie doar de operații de adunare, putem pur
 și simplu să efectuăm operațiile de adunare și să folosim scăderi în mod
 convenabil, reușind astfel să optimizăm soluția.
@@ -290,9 +290,9 @@ convenabil, reușind astfel să optimizăm soluția.
 
 Pentru această problemă, trebuie să aflăm numărul de moduri de a parcurge matricea din colțul stânga-sus în colțul dreapta-jos prin mișcări în jos și la dreapta, fără să parcurgem pătrate acoperite de ziduri.
 
-Deoarece avem de-a face cu o matrice, putem ține $dp_{i,j}$ ca fiind numărul de moduri de a parcurge matricea dacă am ajuns la pătratul $(i, j)$. Deoarece putem ajunge la $(i, j)$ din pătratele de sus și stânga, acestea vor fi cele două rezultate care contribuie la răspunsul dat.
+Deoarece avem de-a face cu o matrice, putem ține $$dp\_{i,j}$$ ca fiind numărul de moduri de a parcurge matricea dacă am ajuns la pătratul $$(i, j)$$. Deoarece putem ajunge la $$(i, j)$$ din pătratele de sus și stânga, acestea vor fi cele două rezultate care contribuie la răspunsul dat.
 
-Astfel, $dp_{i,j} = dp_{i-1,j} + dp_{i,j-1}$.
+Astfel, $$dp\_{i,j} = dp\_{i-1,j} + dp\_{i,j-1}$$.
 
 ### Soluție
 

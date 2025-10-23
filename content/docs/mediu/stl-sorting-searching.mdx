@@ -19,11 +19,11 @@ De multe ori, avem de-a face cu probleme unde găsim o soluție care folosește 
 
 ## Problema [Subarray Sums II - CSES](https://cses.fi/problemset/task/1661)
 
-Pentru a rezolva această problemă, putem pleca de la una din soluțiile care are complexitatea $\mathcal{O}(n^2)$. Această soluție calculează sumele parțiale ale șirului și fixează capetele din stânga și dreapta, folosindu-se de sumele parțiale calculate anterior pentru a număra secvențele cu suma $s$.
+Pentru a rezolva această problemă, putem pleca de la una din soluțiile care are complexitatea $$\mathcal{O}(n^2)$$. Această soluție calculează sumele parțiale ale șirului și fixează capetele din stânga și dreapta, folosindu-se de sumele parțiale calculate anterior pentru a număra secvențele cu suma $$s$$.
 
-O îmbunătățire pe care o putem face constă în faptul că dacă fixăm una din sumele din expresia anterioară (să zicem că fixăm $sum[r]$), trebuie să aflăm câte poziții $l$ există astfel încât $sum[r] - sum[l] = s$.
+O îmbunătățire pe care o putem face constă în faptul că dacă fixăm una din sumele din expresia anterioară (să zicem că fixăm $$sum\[r]$$), trebuie să aflăm câte poziții $$l$$ există astfel încât $$sum\[r] - sum\[l] = s$$.
 
-Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sume (inițializăm la început suma 0 cu frecvența 1, corespunzătoare unui șir gol), iar pentru fiecare $i$, vom actualiza datele din map și vom aduna la răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni $\mathcal{O}(n \log n)$.
+Acest lucru se poate face stocând cu ajutorul unui map frecvența fiecărei sume (inițializăm la început suma 0 cu frecvența 1, corespunzătoare unui șir gol), iar pentru fiecare $$i$$, vom actualiza datele din map și vom aduna la răspuns frecvența sumei căutate. Astfel, complexitatea algoritmului va deveni $$\mathcal{O}(n \log n)$$.
 
 ```cpp
 #include <iostream>
@@ -58,7 +58,7 @@ Această problemă are soluția video descrisă
 
 Pentru a rezolva această problemă, trebuie să găsim o proprietate a sumelor parțiale care să ne ajute să prevenim numărarea unor subsecvențe care au subsecvențe cu suma 0.
 
-O idee pe care am putea-o folosi este aceea de a afla pentru poziția curentă, cel mai mare capăt stâng astfel încât suma elementelor dintre acele două poziții să fie egală cu 0. Următorul pas ar fi să observăm faptul că capătul maxim din stânga pentru care există o poziție $j > i$ astfel încât suma de la poziția $i+1$ la $j$ să fie 0 este limita superioară de la care putem adăuga subsecvențele la răspuns.
+O idee pe care am putea-o folosi este aceea de a afla pentru poziția curentă, cel mai mare capăt stâng astfel încât suma elementelor dintre acele două poziții să fie egală cu 0. Următorul pas ar fi să observăm faptul că capătul maxim din stânga pentru care există o poziție $$j > i$$ astfel încât suma de la poziția $$i+1$$ la $$j$$ să fie 0 este limita superioară de la care putem adăuga subsecvențele la răspuns.
 
 De aici, ne mai rămâne un singur pas, și anume folosirea unei structuri de tip std::map pentru a ține evidența celor mai recente poziții unde se găsește o anumită sumă parțială.
 
@@ -99,7 +99,7 @@ int main() {
 
 ## Problema [ramen - OJI 2018](https://kilonova.ro/problems/24)
 
-Pentru a rezolva această problemă, plecăm de la următoarea presupunere, care se poate demonstra foarte ușor: Dacă o porție de mâncare ajunge la persoana aflată la poziția $x$, iar această persoană are o comandă deja, respectiva persoană va lua porția, chiar dacă nu este porția pe care a comandat-o.
+Pentru a rezolva această problemă, plecăm de la următoarea presupunere, care se poate demonstra foarte ușor: Dacă o porție de mâncare ajunge la persoana aflată la poziția $$x$$, iar această persoană are o comandă deja, respectiva persoană va lua porția, chiar dacă nu este porția pe care a comandat-o.
 
 Pe baza acestui fapt, putem să sortăm comenzile în ordine crescătoare a poziției persoanei care face acea comandă și la fiecare pas, persoana respectivă va obține prima comandă care trece în dreptul ei, după ce a făcut comanda, indiferent de timpul necesar pentru pregătirea ei.
 

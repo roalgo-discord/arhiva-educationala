@@ -11,7 +11,7 @@ tags:
   - implementare
 ---
 
-Fie $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$ un număr în baza 10, format din $n$ cifre. Aici, $a_i$ pentru $0 \leq i < n$ sunt cifrele numărului, cu fiecare $a_i$ satisfăcând $0 \leq a_i \leq 9$, și $a_{n-1} \neq 0$. Valoarea numărului este dată de:
+Fie $$\overline{a_{n-1} a_{n-2} \ldots a_1 a_0}$$ un număr în baza 10, format din $$n$$ cifre. Aici, $$a_i$$ pentru $$0 \leq i < n$$ sunt cifrele numărului, cu fiecare $$a_i$$ satisfăcând $$0 \leq a_i \leq 9$$, și $$a_{n-1} \neq 0$$. Valoarea numărului este dată de:
 
 $$
 \overline{a_{n-1} a_{n-2} \cdots a_1 a_0} = \sum_{k=0}^{n-1} a_k \cdot 10^k
@@ -24,7 +24,7 @@ $$
 \cdot 10^{n-2} + \ldots + a_1 \cdot 10^1 + a_0 \cdot 10^0
 $$
 
-Similar, fie $(\overline{a_{n-1} a_{n-2} \ldots a_1 a_0})_b$ un număr în baza $b$, format din $n$ cifre, unde $a_i$ îndeplinește aceleași condiții ca mai sus. Valoarea numărului este dată de:
+Similar, fie $$(\overline{a_{n-1} a_{n-2} \ldots a_1 a_0})_b$$ un număr în baza $$b$$, format din $$n$$ cifre, unde $$a_i$$ îndeplinește aceleași condiții ca mai sus. Valoarea numărului este dată de:
 
 $$
 \overline{a_{n-1} a_{n-2} \ldots a_1 a_0}_b = \sum_{k=0}^{n-1} a_k \cdot b^k
@@ -37,7 +37,7 @@ $$
 \cdot b^{n-2} + \ldots + a_1 \cdot b^1 + a_0 \cdot b^0
 $$
 
-Numerele mari sunt esențiale pentru calcule ce depășesc limita de $2^{63} - 1$. Acestea se bazează pe reprezentarea cifrică a numerelor. De exemplu, să reprezentăm numărul 82534 folosind definiția numerelor în baza 10:
+Numerele mari sunt esențiale pentru calcule ce depășesc limita de $$2^{63} - 1$$. Acestea se bazează pe reprezentarea cifrică a numerelor. De exemplu, să reprezentăm numărul 82534 folosind definiția numerelor în baza 10:
 
 $$
 \begin{align*} 82534 &= 80000 + 2000 + 500 + 30 + 4\\ &= 8 \cdot 10000 + 2
@@ -51,7 +51,7 @@ Reprezentarea pe cifre a numerelor ne duce cu gândul la reprezentarea numărulu
 
 !!! example "Exemplu"
 
-De exemplu, numărul 82534 poate fi stocat într-un vector $v$ astfel:
+De exemplu, numărul 82534 poate fi stocat într-un vector $$v$$ astfel:
 
 $$
     \begin{array}{r|cccccccc}
@@ -63,12 +63,12 @@ $$
 
 ### Reprezentarea inversă
 
-Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $
-în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune $n$ este definită astfel:
+Fie un număr natural $$N$$ cu cifrele $$\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $$
+în baza 10. Reprezentarea inversă a lui $$N$$ într-un vector $$v$$ de dimensiune $$n$$ este definită astfel:
 
-$v[i] = a\_{n-i},\,\forall\ 0 \leq i < n$
+$$v[i] = a\_{n-i},\,\forall\ 0 \leq i < n$$
 
-unde $n$ este numărul de cifre ale numărului natural $N$, iar $v[0]$ reprezintă cifra unităților, $v[1]$ cifra zecilor ș.a.m.d.
+unde $$n$$ este numărul de cifre ale numărului natural $$N$$, iar $$v[0]$$ reprezintă cifra unităților, $$v[1]$$ cifra zecilor ș.a.m.d.
 
 !!! note "Observație"
 
@@ -78,7 +78,7 @@ efectuăm operațiile dacă păstrăm numărul în memorie în ordine inversă f
 de cum l-am scrie în mod obișnuit. Practic, adăugarea unor valori la
 pozițiile mai nesemnificative este o operație mult mai des întâlnită decât
 adăugarea la începutul numărului, iar când e nevoie, putem crește lungimea
-numărului plasând noua cifră pe poziția $n$, $v[n]$ ținând această valoare.
+numărului plasând noua cifră pe poziția $$n$$, $$v[n]$$ ținând această valoare.
 
 ### Citirea și afișarea unui număr mare
 
@@ -116,12 +116,12 @@ int main() {
 
 ### Optimizarea prin stocarea lungimii **v\[0]**
 
-O îmbunătățire semnificativă a acestei metode este reprezentată de utilizarea primei poziții a vectorului, $v[0]$, pentru a stoca lungimea numărului. Aceasta face mai ușoară manipularea lungimii și permite modificări mai ușoare ale numărului, cum ar fi adăugarea sau eliminarea cifrelor.
+O îmbunătățire semnificativă a acestei metode este reprezentată de utilizarea primei poziții a vectorului, $$v[0]$$, pentru a stoca lungimea numărului. Aceasta face mai ușoară manipularea lungimii și permite modificări mai ușoare ale numărului, cum ar fi adăugarea sau eliminarea cifrelor.
 
 ### Reprezentarea inversă
 
-Fie un număr natural $N$ cu cifrele $\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $
-în baza 10. Reprezentarea inversă a lui $N$ într-un vector $v$ de dimensiune $n$
+Fie un număr natural $$N$$ cu cifrele $$\overline{a_{n-1} a_{n-2} \ldots a_1 a_0} $$
+în baza 10. Reprezentarea inversă a lui $$N$$ într-un vector $$v$$ de dimensiune $$n$$
 este definită astfel:
 
 $$
@@ -131,7 +131,7 @@ v[i + 1] = a_{n-i},\forall\ 0 \leq i < n
 \end{gather*}
 $$
 
-unde $v[0]$ reprezintă cifra unităților, $v[1]$ cifra zecilor ș.a.m.d., și $n$ este numărul de cifre ale numărului natural $N$.
+unde $$v[0]$$ reprezintă cifra unităților, $$v[1]$$ cifra zecilor ș.a.m.d., și $$n$$ este numărul de cifre ale numărului natural $$N$$.
 
 !!! example "Exemplu"
 
@@ -145,7 +145,7 @@ v[i] & \boldsymbol{5} & 4 & 3 & 5 & 2 & 8 \\
 \end{array}
 $$
 
-Aici, $v[0]=5$ indică numărul de cifre din $N$, iar cifrele sunt stocate în ordine inversă începând de la $v[1]$.
+Aici, $$v[0]=5$$ indică numărul de cifre din $$N$$, iar cifrele sunt stocate în ordine inversă începând de la $$v[1]$$.
 
 ### Procesarea eficientă a numerelor mari în C++
 
@@ -206,7 +206,7 @@ Această abordare simplifică semnificativ citirea numerelor mari
 
 ### Utilizarea `vector<int>` din STL pentru stocare
 
-Când am făcut citirea cu string-uri, am folosit `numarMare.size()` pentru a afla lungimea string-ului. Putem folosi aceeași metodă pentru a afla și lungimea numărului fara să o stocăm in $v[0]$, dar pentru a putea realiza asta, trebuie să folosim `vector<int>`, astfel nemaifiind nevoie să stocăm dimensiunea în $v[0]$.
+Când am făcut citirea cu string-uri, am folosit `numarMare.size()` pentru a afla lungimea string-ului. Putem folosi aceeași metodă pentru a afla și lungimea numărului fara să o stocăm in $$v[0]$$, dar pentru a putea realiza asta, trebuie să folosim `vector<int>`, astfel nemaifiind nevoie să stocăm dimensiunea în $$v[0]$$.
 
 #### Crearea vectorului si inserarea/ștergerea cifrelor la inceput
 
@@ -356,7 +356,7 @@ int comparaCifre(const vector<int> &a, const vector<int> &b) {
 
 ### Înmulțirea unui număr mare cu un număr mic
 
-Acest subcaz al înmulțirii poate fi implementat mult mai ușor, implementarea preluând multe elemente din cele ale adunării a două numere mari. Vom presupune că vom înmulți numărul mare cu $x$.
+Acest subcaz al înmulțirii poate fi implementat mult mai ușor, implementarea preluând multe elemente din cele ale adunării a două numere mari. Vom presupune că vom înmulți numărul mare cu $$x$$.
 
 ```cpp
 long long val = 0;
@@ -381,7 +381,7 @@ for (; val; val /= 10) {
 
 ### Înmulțirea a două numere mari
 
-Înmulțirea a două numere mari va necesita lucrul cu toate cifrele numărului, complexitatea algoritmului devenind $\mathcal{O}(n_A \cdot n_B)$, unde $n_A$ reprezintă numărul de cifre al lui $A$, iar $n_B$, numărul de cifre al lui $B$. Din nou, implementarea va fi asemănătoare cu cea învățată în clasele mici la școală.
+Înmulțirea a două numere mari va necesita lucrul cu toate cifrele numărului, complexitatea algoritmului devenind $$\mathcal{O}(n_A \cdot n_B)$$, unde $$n_A$$ reprezintă numărul de cifre al lui $$A$$, iar $$n_B$$, numărul de cifre al lui $$B$$. Din nou, implementarea va fi asemănătoare cu cea învățată în clasele mici la școală.
 
 ```cpp
 // Numărul nostru este cel puțin la fel de mare ca suma cifrelor lor + 1.
@@ -424,7 +424,7 @@ for (int i = 1; i < (int)ans.size(); i++) {
 
 ### Împărțirea unui număr mare la un număr mic
 
-La fel ca la înmulțire, vom lucra cifră cu cifră și vom avea grijă să luăm transportul cifră cu cifră. Vom presupune că vom împărți numărul mare la $x$.
+La fel ca la înmulțire, vom lucra cifră cu cifră și vom avea grijă să luăm transportul cifră cu cifră. Vom presupune că vom împărți numărul mare la $$x$$.
 
 ```cpp
 long long val = 0;
@@ -448,7 +448,7 @@ while (a[a[0]] == 0) {
 
 ### Afișarea unui număr mare
 
-Atunci când lucrăm cu o bază mai mare ca 10, afișarea numărului poate deveni un pic mai complicată, fiind nevoie de atenție suplimentară pentru a face lucrurile să funcționeze. Aici am pus o implementare mai generalizată, unde $b$ este baza pe care o folosim (implicit e 10, dar poate fi ajustată).
+Atunci când lucrăm cu o bază mai mare ca 10, afișarea numărului poate deveni un pic mai complicată, fiind nevoie de atenție suplimentară pentru a face lucrurile să funcționeze. Aici am pus o implementare mai generalizată, unde $$b$$ este baza pe care o folosim (implicit e 10, dar poate fi ajustată).
 
 ```cpp
 bool ok = false;
@@ -479,7 +479,7 @@ for (int i = a[0]; i >= 1; i--) {
 
 ## Optimizări ce se pot face la implementare
 
-Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca 10, de regulă putere a lui 10. Se recomandă folosirea unei baze între $10^6$ și $10^8$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de 10 sau mai multe cifre.
+Prima și cea mai evidentă optimizare constă în lucrul cu o bază mai mare ca 10, de regulă putere a lui 10. Se recomandă folosirea unei baze între $$10^6$$ și $$10^8$$, pentru a evita overflow-urile ce ar putea apărea de la stocarea individuală a fiecărei poziții drept un număr de 10 sau mai multe cifre.
 
 Această optimizare poate fi utilă mai ales în situația în care foarte multe calcule sunt necesare sau limita de timp este strânsă. Un astfel de exemplu reprezintă problemele de programare dinamică în care trebuie afișat numărul complet de soluții (totuși, în prezent, o mare parte din acele probleme cer răspunsul modulo un număr prim).
 

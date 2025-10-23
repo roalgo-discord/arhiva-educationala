@@ -12,21 +12,21 @@ tags:
 
 ## Cerința 1
 
-Pentru a determina valoarea de reducere, trebuie să determinăm cel mai mare divizor comun al valorilor din secvență. Pentru a determina cmmdc pentru două valori utilizăm algoritmul lui Euclid. Pentru a determina cmmdc pentru o secvență de $n$ valori utilizăm asociativitatea operației cmmdc, deci determinăm la fiecare pas cmmdc dintre cmmdc-ul curent și următoarea valoare din secvență:
+Pentru a determina valoarea de reducere, trebuie să determinăm cel mai mare divizor comun al valorilor din secvență. Pentru a determina cmmdc pentru două valori utilizăm algoritmul lui Euclid. Pentru a determina cmmdc pentru o secvență de $$n$$ valori utilizăm asociativitatea operației cmmdc, deci determinăm la fiecare pas cmmdc dintre cmmdc-ul curent și următoarea valoare din secvență:
 
 $$
 (a_1, a_2, ..., a_n) = (a_1, (a_2, ..., (a_{n - 1}, a_{n})))
 $$
 
-unde $(a, b)$ reprezintă cmmdc-ul lui $a$ și $b$.
+unde $$(a, b)$$ reprezintă cmmdc-ul lui $$a$$ și $$b$$.
 
 ## Cerința 2
 
 Descompunem în factori primi fiecare valoare din secvență şi determinăm pe parcurs descom punerea în factori primi a celui mai mic multiplu comun al acestor valori (toți factorii primi care apar în descompunerile valorilor din secvență la puterea cea mai mare). Factorii primi comuni la puterea cea mai mică constituie cmmdc (deci îi păstrăm în valoarea de reducere). Numărul minim de operații care trebuie să fie aplicate pentru a obține valoarea de reducere este egal cu suma exponenților factorilor primi din descompunerea în factori primi a cmmmc/cmmdc.
 
-Pentru subtask-ul 2, restricțiile permit utilizarea unui vector $nr$ de $10^6$ elemente, unde $nr_i$ este puterea factorului prim $i$ în descompunerea factori primi a cmmmc/cmmdc. Pentru a obține punctele pe acest subtask nu este necesar să optimizăm descompunerea în factori primi utilizând pregenerarea numerelor prime cu ciurul lui Eratostene, dar, pentru subtask-ul 3, este necesar să descompunem în factori primi căutând divizorii, doar printre numerele prime până la radicalul numărului.
+Pentru subtask-ul 2, restricțiile permit utilizarea unui vector $$nr$$ de $$10^6$$ elemente, unde $$nr\_i$$ este puterea factorului prim $$i$$ în descompunerea factori primi a cmmmc/cmmdc. Pentru a obține punctele pe acest subtask nu este necesar să optimizăm descompunerea în factori primi utilizând pregenerarea numerelor prime cu ciurul lui Eratostene, dar, pentru subtask-ul 3, este necesar să descompunem în factori primi căutând divizorii, doar printre numerele prime până la radicalul numărului.
 
-Pentru subtask-ul 3 restricțiile nu permit declararea vectorului $nr$. Ca urmare vom reține o descompunere în factori primi ca o listă de factori primi şi puterile acestora, listă în care factorii primi apar în ordine crescătoare.
+Pentru subtask-ul 3 restricțiile nu permit declararea vectorului $$nr$$. Ca urmare vom reține o descompunere în factori primi ca o listă de factori primi şi puterile acestora, listă în care factorii primi apar în ordine crescătoare.
 
 Pentru fiecare număr din secvență:
 

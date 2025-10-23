@@ -97,7 +97,7 @@ Sintaxa unui array va fi de tipul `array<tip, dimensiune> nume;`. De regulă, nu
 
 ### Structura std::string
 
-Această structură de date este echivalentul `std::vector` pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$.
+Această structură de date este echivalentul `std::vector` pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $$\mathcal{O}(1)$$, în loc de $$\mathcal{O}(n)$$.
 
 Se recomandă citirea în prealabil a [articolului următor despre șiruri de caractere](./strings.mdx).
 
@@ -141,12 +141,12 @@ Această structură de date reprezintă o generalizare a structurii `std::pair` 
 
 Chiar dacă putem ține valori multiple folosind pair-uri imbricate, tuplurile vor face acest lucru mult mai ușor.
 
-- `tuple<tip1, tip2, ..., tipN> t`: Creăm un tuplu cu $N$ valori, a $i$-a valoare având $tip_i$.
+- `tuple<tip1, tip2, ..., tipN> t`: Creăm un tuplu cu $$N$$ valori, a $$i$$-a valoare având $$tip\_i$$.
 - `make_tuple(a, b, c, ..., d)`: Returnează un tuplu cu valorile scrise în paranteză
-- `tie(a, b, c, ..., d) = t`: Setăm $a, b, c, \dots, d$ la valorile din tuplul $t$ în ordinea dată.
-- `get<i>(t)`: Returnează cea de-a $i$-a valoare din tuplul $t$. Putem folosi această sintaxă și pentru a schimba valoarea din $t$.
+- `tie(a, b, c, ..., d) = t`: Setăm $$a, b, c, \dots, d$$ la valorile din tuplul $$t$$ în ordinea dată.
+- `get<i>(t)`: Returnează cea de-a $$i$$-a valoare din tuplul $$t$$. Putem folosi această sintaxă și pentru a schimba valoarea din $$t$$.
 
-Această operație merge doar dacă $i$ este o constantă, nu putem schimba valorile dacă $i$ nu este o constantă.
+Această operație merge doar dacă $$i$$ este o constantă, nu putem schimba valorile dacă $$i$$ nu este o constantă.
 
 ```cpp
 --8 < --"cppintro/stl/stl10.cpp"
@@ -242,12 +242,12 @@ Un map este o structură de date arborescentă care ne permite să păstrăm pen
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
-- Atribuirea: `mp[x] = y;` face valoarea cheii $x$ să devină $y$. În mod particular, dacă încercăm să lucrăm cu o cheie $x_1$ neinițializată, ea va fi inițializată cu 0, așa cum se va putea vedea în codul de mai jos.
-- Găsirea unui element: `mp.find(x) != mp.end()` verifică dacă $x$ există în map, fără a crea un element nou în map.
-- Ștergerea: `mp.erase(x)` șterge instanța cheii $x$ din map. Dacă $x$ nu se află în map, nu se întâmplă nimic.
+- Atribuirea: `mp[x] = y;` face valoarea cheii $$x$$ să devină $$y$$. În mod particular, dacă încercăm să lucrăm cu o cheie $$x\_1$$ neinițializată, ea va fi inițializată cu 0, așa cum se va putea vedea în codul de mai jos.
+- Găsirea unui element: `mp.find(x) != mp.end()` verifică dacă $$x$$ există în map, fără a crea un element nou în map.
+- Ștergerea: `mp.erase(x)` șterge instanța cheii $$x$$ din map. Dacă $$x$$ nu se află în map, nu se întâmplă nimic.
 - Curățarea: `mp.clear()` șterge toate cheile din map.
-- Lower\_bound: `mp.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau `mp.end()` dacă nu avem o asemenea valoare.
-- Upper\_bound: `mp.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau `mp.end()` dacă nu avem o asemenea valoare.
+- Lower\_bound: `mp.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $$x$$ sau `mp.end()` dacă nu avem o asemenea valoare.
+- Upper\_bound: `mp.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $$x$$ sau `mp.end()` dacă nu avem o asemenea valoare.
 - Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
 
 Cea mai simplă utilizare a unui map va fi drept un vector de frecvență dinamic, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a map-ului.
@@ -262,12 +262,12 @@ Un set este o structură de date arborescentă care ne permite să păstrăm o l
 
 Dintre cele mai importante funcții, vom enumera următoarele:
 
-- Inserarea: `s.insert(x)` adaugă $x$ în setul $s$. În mod particular, dacă încercăm să inserăm o valoare care deja este în set, nu se va întâmpla nimic.
-- Găsirea unui element: La fel ca la map, `s.find(x) != s.end()` verifică dacă $x$ există în set, fără a crea un element nou în set.
-- Ștergerea: `s.erase(x)` șterge $x$ din set. Dacă $x$ nu se află în set, nu se întâmplă nimic.
+- Inserarea: `s.insert(x)` adaugă $$x$$ în setul $$s$$. În mod particular, dacă încercăm să inserăm o valoare care deja este în set, nu se va întâmpla nimic.
+- Găsirea unui element: La fel ca la map, `s.find(x) != s.end()` verifică dacă $$x$$ există în set, fără a crea un element nou în set.
+- Ștergerea: `s.erase(x)` șterge $$x$$ din set. Dacă $$x$$ nu se află în set, nu se întâmplă nimic.
 - Curățarea: `s.clear()` șterge toate cheile din set.
-- Lower\_bound: `s.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $x$ sau `s.end()` dacă nu avem o asemenea valoare.
-- Upper\_bound: `s.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $x$ sau `s.end()` dacă nu avem o asemenea valoare.
+- Lower\_bound: `s.lower_bound(x)` returnează un iterator care ține cea mai mică valoare mai mare sau egală cu valoarea $$x$$ sau `s.end()` dacă nu avem o asemenea valoare.
+- Upper\_bound: `s.upper_bound(x)` returnează un iterator care ține cea mai mică valoare strict mai mare decât valoarea $$x$$ sau `s.end()` dacă nu avem o asemenea valoare.
 - Afișarea valorilor se poate face în două moduri, fie cu iteratori specifici, fie cu tipul auto.
 
 Cea mai simplă utilizare a unui set va fi drept o mulțime dinamică, deoarece vom putea stoca valori oricât de mari într-o complexitate logaritmică per operație. Mai jos găsiți exemple de utilizare a setului. Totuși, nu vom putea păstra informații mai avansate, precum poziția relativă, acestea fiind discutate ulterior în articol, când vorbim despre policy based data structures.
@@ -284,7 +284,7 @@ Atât `std::set` cât și `std::map` au versiuni unordered ale acestora, care ac
 
 `std::unordered_set` este versiunea nesortată a set-ului, fiind inclus în biblioteca `<unordered_set>`. Sintaxa acestuia va fi `unordered_set <tip> nume`.
 
-Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $\mathcal{O}(1)$ amortizat, dar în cel mai rău caz, complexitatea finală este $\mathcal{O}(n)$ per operație, unde $n$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
+Complexitatea operațiilor descrise la map, respectiv set pentru cele două structuri este în medie $$\mathcal{O}(1)$$ amortizat, dar în cel mai rău caz, complexitatea finală este $$\mathcal{O}(n)$$ per operație, unde $$n$$ este dimensiunea structurii de date în cauză. Totuși, așa cum este explicat și în articolul despre hashing, această problemă poate fi rezolvată folosind un hash custom, dar constanta devine în multe cazuri suficient de slabă încât să nu mai fie optimă folosirea structurilor de tip unordered.
 
 ### std::multimap și std::multiset
 
@@ -293,16 +293,16 @@ De asemenea, `std::set` și `std::map` au și versiuni care ne permit să ținem
 !!! warning "Erase și multiseturile"
 
 Dacă folosim erase în același mod cum am explicat la set, toate valorile egale
-cu $x$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
+cu $$x$$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
 
-- `ms.erase(x)` - șterge toate aparițiile lui $x$ din multiset.
-- `ms.erase(ms.find(x))` - șterge o singură apariție a lui $x$ din multiset.
+- `ms.erase(x)` - șterge toate aparițiile lui $$x$$ din multiset.
+- `ms.erase(ms.find(x))` - șterge o singură apariție a lui $$x$$ din multiset.
 
 La fel ca la set și map, complexitatea operațiilor este logaritimică, cu o singură excepție, aceasta fiind funcția count, care numără valorile egale cu x. Totuși, complexitatea lui count este liniară, fapt pentru care nu se recomandă folosirea acestei funcții.
 
 ### Structura std::priority\_queue
 
-O coadă de priorități este o coadă pe care o folosim pentru a păstra datele într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe o structură de date de tip heap, permițând operații de push, pop și top, în mod similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat. Complexitatea operațiilor este $\mathcal{O}(\log n)$. Chiar dacă această structură de date este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea heap-ului.
+O coadă de priorități este o coadă pe care o folosim pentru a păstra datele într-o ordine dată (by default, descrescătoare). Implementarea ei este bazată pe o structură de date de tip heap, permițând operații de push, pop și top, în mod similar cu cele de la coadă, cu diferența că valorile sunt ținute ordonat. Complexitatea operațiilor este $$\mathcal{O}(\log n)$$. Chiar dacă această structură de date este un pic mai rapidă decât set și map, un mare dezavantaj este dat de faptul că doar elementul din vârf poate fi accesat, în mod similar cu funcționalitatea heap-ului.
 
 În general, vom vrea să folosim o coadă de priorități atunci când vrem să aflăm mai rapid cel mai mare sau cel mai mic element, constanta fiind bună, fapt ce face această structură de date principala metodă de a implementa diverși algoritmi de tip greedy mai complicați, cel mai cunoscut fiind [algoritmul lui Dijkstra](../mediu/shortest-path.mdx#algoritmul-lui-dijkstra) pe grafuri cu costuri.
 
@@ -326,10 +326,10 @@ adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
 Structurile de date menționate anterior, deși puternice, nu ne permit să răspundem la întrebări de tipul:
 
-- Care este a $k$-a valoare în ordine crescătoare prezentă în set/map?
-- Câte valori sunt mai mici decât $x$ în set/map?
+- Care este a $$k$$-a valoare în ordine crescătoare prezentă în set/map?
+- Câte valori sunt mai mici decât $$x$$ în set/map?
 
-Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $\mathcal{O}(\log n)$, la fel ca la set și map.
+Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $$\mathcal{O}(\log n)$$, la fel ca la set și map.
 
 !!! note "Atenție la constante"
 
@@ -338,8 +338,8 @@ Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai
 
 Această structură de date ne va permite să folosim facilitățile setului, împreună cu două funcții noi:
 
-- `find_by_order(k)` - Al $k$-lea cel mai mare element, începând de la 0.
-- `order_of_key(x)` - Numărul de valori strict mai mici decât $x$.
+- `find_by_order(k)` - Al $$k$$-lea cel mai mare element, începând de la 0.
+- `order_of_key(x)` - Numărul de valori strict mai mici decât $$x$$.
 
 Pentru a putea folosi această structură de date, trebuie să declarăm următoarele biblioteci, namespace-uri și typedefs:
 

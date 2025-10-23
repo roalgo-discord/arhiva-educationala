@@ -9,7 +9,7 @@ tags:
   - cifre
 ---
 
-În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice atunci când vine vorba de a număra câte numere au o anumită proprietate într-un interval, sau care este al $k$-lea număr cu o proprietate anume, această tehnică fiind găsită și sub numele de dinamică pe cifre sau digit dp.
+În acest articol vom prezenta modul în care aplicăm tehnica programării dinamice atunci când vine vorba de a număra câte numere au o anumită proprietate într-un interval, sau care este al $$k$$-lea număr cu o proprietate anume, această tehnică fiind găsită și sub numele de dinamică pe cifre sau digit dp.
 
 Deși în cazul unora dintre problemele pe care le vom prezenta există soluții folosind diverse formule matematice sau combinatoriale, ne vom concentra pe modul general de implementare a acestor probleme, mod care va fi similar în cazul majorității acestor probleme.
 
@@ -17,16 +17,16 @@ Deși în cazul unora dintre problemele pe care le vom prezenta există soluții
 
 ## [Counting Numbers - CSES](https://cses.fi/problemset/task/2220)
 
-Pentru a afla câte numere din intervalul $[a, b]$ respectă proprietatea că oricare două cifre adiacente sunt diferite, vom introduce mai întâi o proprietate foarte importantă:
+Pentru a afla câte numere din intervalul $$\[a, b]$$ respectă proprietatea că oricare două cifre adiacente sunt diferite, vom introduce mai întâi o proprietate foarte importantă:
 
 !!! note "Observație"
 
 În majoritatea problemelor cu digit dp, pentru a afla răspunsul în
-intervalul $[a, b]$, vom scădea din răspunsul pentru intervalul $[1, b]$,
-răspunsul pentru intervalul $[1, a-1]$, într-o manieră similară cu cea de la
+intervalul $$\[a, b]$$, vom scădea din răspunsul pentru intervalul $$\[1, b]$$,
+răspunsul pentru intervalul $$\[1, a-1]$$, într-o manieră similară cu cea de la
 sumele parțiale.
 
-În cazul acestei probleme, vom defini $dp[i][j]$ drept numărul de numere cu $i$ cifre care au ultima cifră $j$. În mod evident, din $dp[i][j]$ vom avea tranzițiile spre $dp[i+1][x]$, cu proprietatea că $j \neq x$.
+În cazul acestei probleme, vom defini $$dp\[i]\[j]$$ drept numărul de numere cu $$i$$ cifre care au ultima cifră $$j$$. În mod evident, din $$dp\[i]\[j]$$ vom avea tranzițiile spre $$dp\[i+1]\[x]$$, cu proprietatea că $$j \neq x$$.
 
 Pentru a implementa această soluție, avem două variante principale pentru a o implementa:
 
@@ -34,8 +34,8 @@ Pentru a implementa această soluție, avem două variante principale pentru a o
 
 Așa cum este sugerat și în titlu, vom afla cifrele numărului, iar mai apoi vom avea de făcut doi pași:
 
-- Mai întâi, vom inițializa stările pentru prima cifră și vom extinde calculele pentru numerele cu cel mult $x-1$ cifre, unde $x$ este numărul de cifre al numărului dat.
-- Apoi, vom fixa cifra care va reprezenta departajarea dintre numere și vom calcula pentru fiecare interval generat separat. De exemplu, dacă $n = 90124$, aceste intervale ar fi $[10000, 89999]$, $[90000, 90099]$, $[90100, 90119]$, $[90120, 90123]$, $[90124, 90124]$. Cu alte cuvinte, fiecare cifră nenulă va crea un nou interval, iar la final, vom calcula răspunsul și pentru numărul dat.
+- Mai întâi, vom inițializa stările pentru prima cifră și vom extinde calculele pentru numerele cu cel mult $$x-1$$ cifre, unde $$x$$ este numărul de cifre al numărului dat.
+- Apoi, vom fixa cifra care va reprezenta departajarea dintre numere și vom calcula pentru fiecare interval generat separat. De exemplu, dacă $$n = 90124$$, aceste intervale ar fi $$\[10000, 89999]$$, $$\[90000, 90099]$$, $$\[90100, 90119]$$, $$\[90120, 90123]$$, $$\[90124, 90124]$$. Cu alte cuvinte, fiecare cifră nenulă va crea un nou interval, iar la final, vom calcula răspunsul și pentru numărul dat.
 
 Aici puteți găsi implementarea, care acoperă ambele părți ale algoritmului descris.
 
@@ -159,7 +159,7 @@ int main() {
 
 Vom introduce o a treia dimensiune, care va ține pentru prefixul de până acum informații cu privire la diferența față de numărul de până acum (mai mare, egal sau mai mic). Se poate observa că implementarea va fi mult mai simplă, așa cum veți putea vedea mai jos.
 
-Acum, dinamica noastră va fi de forma $dp[i][j][x]$, unde $x$ va fi egal cu 0, 1 sau 2 în funcție de prefixul de până acum și prefixul lui $n$. La final, vom aduna stările corespunzătoare numerelor cu mai puține cifre și cele cu același număr de cifre, dar cu prefix mai mic sau egal.
+Acum, dinamica noastră va fi de forma $$dp\[i]\[j]\[x]$$, unde $$x$$ va fi egal cu 0, 1 sau 2 în funcție de prefixul de până acum și prefixul lui $$n$$. La final, vom aduna stările corespunzătoare numerelor cu mai puține cifre și cele cu același număr de cifre, dar cu prefix mai mic sau egal.
 
 ```cpp
 #include <algorithm>
@@ -241,9 +241,9 @@ int main() {
 }
 ```
 
-## Probleme de tipul al $k$-lea număr cu o proprietate dată
+## Probleme de tipul al $$k$$-lea număr cu o proprietate dată
 
-Pentru a rezolva acest tip de probleme, de cele mai multe ori vom căuta binar răspunsul, calculând la fiecare pas numărul de asemenea numere din intervalul $[1, x]$ cu proprietatea din enunț. Un astfel de exemplu îl putem regăsi în problema [Bug Lot Juniori 2024](https://kilonova.ro/problems/2800), problemă care după unele simplificări ajunge la o căutare binară pe stilul celei menționate, [aici](https://kilonova.ro/pastes/jj5QOb1vZnBU) puteți găsi o sursă pe această idee.
+Pentru a rezolva acest tip de probleme, de cele mai multe ori vom căuta binar răspunsul, calculând la fiecare pas numărul de asemenea numere din intervalul $$\[1, x]$$ cu proprietatea din enunț. Un astfel de exemplu îl putem regăsi în problema [Bug Lot Juniori 2024](https://kilonova.ro/problems/2800), problemă care după unele simplificări ajunge la o căutare binară pe stilul celei menționate, [aici](https://kilonova.ro/pastes/jj5QOb1vZnBU) puteți găsi o sursă pe această idee.
 
 ## Probleme suplimentare
 

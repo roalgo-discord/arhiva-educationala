@@ -11,24 +11,24 @@ tags:
   - clasa IX
 ---
 
-Se vor reține într-un tablou unidimensional $fr$ numărul de obiecte întâlnite pentru fiecare tip de obiect (etichetă). Acesta se poate construi în timpul citirii datelor de intrare. Când citim numărul $xxyy$ ce codifică o celulă dintr-un cufăr, incrementăm numărul de obiecte întâlnite cu eticheta $yy$ cu $xx$, adică $fr[xx] = fr[xx] + yy$.
+Se vor reține într-un tablou unidimensional $$fr$$ numărul de obiecte întâlnite pentru fiecare tip de obiect (etichetă). Acesta se poate construi în timpul citirii datelor de intrare. Când citim numărul $$xxyy$$ ce codifică o celulă dintr-un cufăr, incrementăm numărul de obiecte întâlnite cu eticheta $$yy$$ cu $$xx$$, adică $$fr\[xx] = fr\[xx] + yy$$.
 
-Tabloul va avea lungime maxim 100, întrucât etichetele iau valori în intervalul $[10, 99]$.
+Tabloul va avea lungime maxim 100, întrucât etichetele iau valori în intervalul $$\[10, 99]$$.
 
 ## Cerința 1
 
-Se afișează în ordinea crescătoare a etichetelor din intervalul $[10,99
-]$ toate perechile $(x, fr[x])$ pentru care $fr[x] > 0$.
+Se afișează în ordinea crescătoare a etichetelor din intervalul $$\[10,99
+]$$ toate perechile $$(x, fr\[x])$$ pentru care $$fr\[x] > 0$$.
 
 ## Cerința 2
 
-Se parcurge tabloul $fr$ în ordinea crescătoare a etichetelor, de la $10$, până la $99$ inclusiv. Pentru fiecare etichetă $x$ se verifică primalitatea acesteia: dacă x este număr prim, se setează dimensiunea maximă a unui grup $g = 16$, altfel se setează $g = 64$.
+Se parcurge tabloul $$fr$$ în ordinea crescătoare a etichetelor, de la $$10$$, până la $$99$$ inclusiv. Pentru fiecare etichetă $$x$$ se verifică primalitatea acesteia: dacă x este număr prim, se setează dimensiunea maximă a unui grup $$g = 16$$, altfel se setează $$g = 64$$.
 
-Cât timp încă există obiecte cu eticheta curentă $(fr[x] > 0)$, se adaugă pe următoarea celulă liberă din cele $n$ cufere un nou grup de obiecte cu eticheta $x$ de dimensiune $min(g, fr[x])$ și se scade $fr[x]$ cu $g$ (sau se setează cu $0$ în cazul în care $fr[x] < g$). Dacă mai rămân celule libere în cufere, se completează cu 0.
+Cât timp încă există obiecte cu eticheta curentă $$(fr\[x] > 0)$$, se adaugă pe următoarea celulă liberă din cele $$n$$ cufere un nou grup de obiecte cu eticheta $$x$$ de dimensiune $$min(g, fr\[x])$$ și se scade $$fr\[x]$$ cu $$g$$ (sau se setează cu $$0$$ în cazul în care $$fr\[x] \< g$$). Dacă mai rămân celule libere în cufere, se completează cu 0.
 
-Verificarea primalității unui număr poate fi precalculată într-un tablou unidimensional $prim[i] = 1$ dacă $i$ este prim și $0$ altfel, și poate fi calculată în diverse modalități.
+Verificarea primalității unui număr poate fi precalculată într-un tablou unidimensional $$prim\[i] = 1$$ dacă $$i$$ este prim și $$0$$ altfel, și poate fi calculată în diverse modalități.
 
-Complexitatea temporală este: $O(N)$. Complexitatea spațială este: $O(1)$, întrucât dimensiunea tablourilor $fr$ și $prim$ este constantă.
+Complexitatea temporală este: $$O(N)$$. Complexitatea spațială este: $$O(1)$$, întrucât dimensiunea tablourilor $$fr$$ și $$prim$$ este constantă.
 
 ## Rezolvare
 

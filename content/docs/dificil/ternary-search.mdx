@@ -19,21 +19,21 @@ Căutarea ternară este un exemplu de algoritm de tipul divide et impera, alătu
 
 ## Funcția în sine
 
-Pentru a putea aplica căutarea ternară, trebuie ca funcția să fie (des)crescătoare (de regulă, strict) până la un punct $x$ unde găsim cea mai mică poziție care ne dă valoarea maximă/minimă a funcției, urmând că funcția să fie mai apoi constantă până la un punct $y$, iar apoi funcția va avea monotonia opusă față de cea până la punctul $x$.
+Pentru a putea aplica căutarea ternară, trebuie ca funcția să fie (des)crescătoare (de regulă, strict) până la un punct $$x$$ unde găsim cea mai mică poziție care ne dă valoarea maximă/minimă a funcției, urmând că funcția să fie mai apoi constantă până la un punct $$y$$, iar apoi funcția va avea monotonia opusă față de cea până la punctul $$x$$.
 
-Cu alte cuvinte, funcția crește până la punctul $x$, apoi e constantă în intervalul $[x, y]$, iar apoi scade de la punctul $y$. Similar, putem spune și pentru cazul opus al unei funcții unimodale.
+Cu alte cuvinte, funcția crește până la punctul $$x$$, apoi e constantă în intervalul $$[x, y]$$, iar apoi scade de la punctul $$y$$. Similar, putem spune și pentru cazul opus al unei funcții unimodale.
 
 ## Algoritmul standard
 
-Să presupunem că avem o funcție $f$ care este definită pe intervalul $[a, b]$. Asemănător căutării binare, vom începe prin a căuta acel punct extrem pe întreg intervalul. La fiecare pas, vom lua punctele $m_1$ și $m_2$, care vor fi situate la $\frac{1}{3}$ respectiv $\frac{2}{3}$ de capătul din stânga al intervalului, iar în funcție de valorile $f(m_1)$ și $f(m_2)$, avem următoarele cazuri, acestea fiind similare și pentru o funcție mai întâi descrescătoare.
+Să presupunem că avem o funcție $$f$$ care este definită pe intervalul $$[a, b]$$. Asemănător căutării binare, vom începe prin a căuta acel punct extrem pe întreg intervalul. La fiecare pas, vom lua punctele $$m_1$$ și $$m_2$$, care vor fi situate la $$\frac{1}{3}$$ respectiv $$\frac{2}{3}$$ de capătul din stânga al intervalului, iar în funcție de valorile $$f(m_1)$$ și $$f(m_2)$$, avem următoarele cazuri, acestea fiind similare și pentru o funcție mai întâi descrescătoare.
 
-- Dacă $f(m_1) < f(m_2)$, maximul nu poate fi în intervalul $[a, m_1]$ deoarece $f(m_2)$ este mai mare decât $f(m_1)$.
-- Dacă $f(m_1) > f(m_2)$, maximul nu poate fi în intervalul $[m_2, b]$ deoarece $f(m_1)$ este mai mare decât $f(m_2)$.
-- Dacă $f(m_1) = f(m_2)$, maximul nu poate fi decât în intervalul $[m_1, m_2]$ deoarece $f(m_1)$ și $f(m_2)$ sunt de părți opuse ale punctului sau punctelor maxime.
+- Dacă $$f(m_1) < f(m_2)$$, maximul nu poate fi în intervalul $$[a, m_1]$$ deoarece $$f(m_2)$$ este mai mare decât $$f(m_1)$$.
+- Dacă $$f(m_1) > f(m_2)$$, maximul nu poate fi în intervalul $$[m_2, b]$$ deoarece $$f(m_1)$$ este mai mare decât $$f(m_2)$$.
+- Dacă $$f(m_1) = f(m_2)$$, maximul nu poate fi decât în intervalul $$[m_1, m_2]$$ deoarece $$f(m_1)$$ și $$f(m_2)$$ sunt de părți opuse ale punctului sau punctelor maxime.
 
 După ce am redus căutarea la o lungime suficient de mică pentru a preveni erori de precizie, putem trata intervalul rămas folosind brute force pentru a ajunge la răspunsul dorit. Alternativ, putem apela algoritmul de un număr finit de ori, similar cu modul în care am rula căutarea binară pe numere reale.
 
-Complexitatea algoritmului este $\mathcal{O}(\log n)$ unde $n$ este dimensiunea intervalului de căutare. Se poate remarca faptul că spre deosebire de căutarea binară, constanta este una mai mare deoarece în medie reducem intervalul de căutare cu $\frac{1}{3}$ la un pas.
+Complexitatea algoritmului este $$\mathcal{O}(\log n)$$ unde $$n$$ este dimensiunea intervalului de căutare. Se poate remarca faptul că spre deosebire de căutarea binară, constanta este una mai mare deoarece în medie reducem intervalul de căutare cu $$\frac{1}{3}$$ la un pas.
 
 ```cpp
 // f(i) este o funcție oarecare
@@ -74,8 +74,8 @@ long long ternara(int epsilon) {
 
 ## Golden Section Search
 
-Pe lângă căutarea ternară, putem folosi pentru a optimiza procesul de căutare și căutarea Golden Section, care spre deosebire de căutarea ternară, împarte intervalul astfel încât cele două valori de mijloc să fie puse la distanta $r =
-\frac{3 - \sqrt{5}}{2}$, distantă care este egală cu $\frac{1}{\phi}$, unde $\phi$ este numărul de aur, egal cu aproximativ $1.618$.
+Pe lângă căutarea ternară, putem folosi pentru a optimiza procesul de căutare și căutarea Golden Section, care spre deosebire de căutarea ternară, împarte intervalul astfel încât cele două valori de mijloc să fie puse la distanta $$r =
+\frac{3 - \sqrt{5}}{2}$$, distantă care este egală cu $$\frac{1}{\phi}$$, unde $$\phi$$ este numărul de aur, egal cu aproximativ $$1.618$$.
 
 ```cpp
 #include <cmath>
@@ -119,11 +119,11 @@ int main() {
 
 ## Problema exemplu - [Devu and his Brother](https://codeforces.com/contest/439/problem/D)
 
-În această problemă avem doi vectori $a$ și $b$ și putem crește/scădea o valoare dintr-unul din cei doi vectori cu costul 1. Vrem să aflăm costul minim pentru ca minimul din vectorul $a$ să fie cel puțin egal cu maximul din vectorul $b$.
+În această problemă avem doi vectori $$a$$ și $$b$$ și putem crește/scădea o valoare dintr-unul din cei doi vectori cu costul 1. Vrem să aflăm costul minim pentru ca minimul din vectorul $$a$$ să fie cel puțin egal cu maximul din vectorul $$b$$.
 
-Se poate observa că e clar că vrem să creștem valorile din $a$ și să scădem valorile din $b$. De asemenea, se poate observa că pe măsură ce vrem să aducem răspunsul la o oarecare "mediană", costul va fi tot mai mic. Aceste lucruri ne duc spre o abordare bazată pe o căutare ternară a răspunsului.
+Se poate observa că e clar că vrem să creștem valorile din $$a$$ și să scădem valorile din $$b$$. De asemenea, se poate observa că pe măsură ce vrem să aducem răspunsul la o oarecare "mediană", costul va fi tot mai mic. Aceste lucruri ne duc spre o abordare bazată pe o căutare ternară a răspunsului.
 
-Astfel, vom căuta ternar răspunsul în intervalul $[1, 10^9]$ răspunsul aplicând algoritmul descris mai sus, implementarea fiind cea de mai sus.
+Astfel, vom căuta ternar răspunsul în intervalul $$[1, 10^9]$$ răspunsul aplicând algoritmul descris mai sus, implementarea fiind cea de mai sus.
 
 ## Probleme suplimentare
 

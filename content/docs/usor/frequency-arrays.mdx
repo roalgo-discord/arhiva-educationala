@@ -23,9 +23,9 @@ fiecare element într-un șir de numere.
 
 !!! example "Exemplu"
 
-De exemplu, dacă șirul nostru conține valorile $8, 1, 4, 1, 6, 3, 5, 2, 2,
-    4$, vectorul de frecvență va avea următoarea formă: $0, 2, 2, 1, 1, 1, 1, 0,
-    1$, cu semnificația că 0 nu apare deloc, 1 apare de două ori, 2 apare
+De exemplu, dacă șirul nostru conține valorile $$8, 1, 4, 1, 6, 3, 5, 2, 2,
+4$$, vectorul de frecvență va avea următoarea formă: $$0, 2, 2, 1, 1, 1, 1, 0,
+1$$, cu semnificația că 0 nu apare deloc, 1 apare de două ori, 2 apare
 de două ori, iar celelalte valori, cu excepția lui 7, apar o singură dată.
 
 Această structură de date se folosește atunci când numerele (sau în general, datele cu care lucrăm) pot lua puține valori distincte sau se află într-un interval mic.
@@ -36,7 +36,7 @@ Această structură de date se folosește atunci când numerele (sau în general
 informațiilor legat de valorile pe care le folosim devine mult mai facilă
 din punct de vedere al memoriei sau timpului comparat cu stocarea lor în
 vectorul deja existent. În probleme, acest lucru se remarcă mai ales dacă
-valorile nu sunt foarte mari (până în $10^6$) sau dacă diferența dintre cel
+valorile nu sunt foarte mari (până în $$10^6$$) sau dacă diferența dintre cel
 mai mare și cel mai mic element este mică.
 
 Pe parcursul acestui articol, voi prezenta câteva probleme, pentru a explica diferitele variații ale acestei metode precum și alte moduri în care putem păstra acest vector în memorie.
@@ -67,9 +67,9 @@ Pentru a rezolva această problemă, cea mai importantă informație pe care o p
 
 ## Problema [nrlipsa2 de pe pbinfo](https://www.pbinfo.ro/probleme/1744/nrlipsa2)
 
-Pentru a citi acel număr necunoscut de valori, va trebui să ne bazăm pe o structură repetitivă de tip while. Apoi, pentru a lucra cu valorile din intervalul $[-100, 100]$, trebuie să adaptăm lucrurile la realitatea limbajului C++, și anume la faptul că nu putem păstra indici negativi în vector.
+Pentru a citi acel număr necunoscut de valori, va trebui să ne bazăm pe o structură repetitivă de tip while. Apoi, pentru a lucra cu valorile din intervalul $$\[-100, 100]$$, trebuie să adaptăm lucrurile la realitatea limbajului C++, și anume la faptul că nu putem păstra indici negativi în vector.
 
-Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un offset) care să ne asigure că lucrăm cu valori non-negative (astfel, intervalul devine $[0, 200]$). Ulterior, atunci când afișăm valoarea care nu apare, vom scădea 100 din răspuns pentru a întoarce rezultatul la cel real.
+Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un offset) care să ne asigure că lucrăm cu valori non-negative (astfel, intervalul devine $$\[0, 200]$$). Ulterior, atunci când afișăm valoarea care nu apare, vom scădea 100 din răspuns pentru a întoarce rezultatul la cel real.
 
 ```cpp
 --8 < --"usor/frequency_arrays/nrlipsa2.cpp"
@@ -86,13 +86,13 @@ Pentru a rezolva această problemă, putem ține cifrele într-un vector de frec
 
 ## Problema [numere OJI 2005](https://kilonova.ro/problems/735)
 
-Pentru a rezolva această problemă, trebuie să citim cele $n^2$ valori și să ținem într-un vector de frecvență valorile pe care le-am obținut.
+Pentru a rezolva această problemă, trebuie să citim cele $$n^2$$ valori și să ținem într-un vector de frecvență valorile pe care le-am obținut.
 
 Ulterior, problema se reduce la a afla cel mai mic și cel mai mare număr care nu apare în șir.
 
 !!! note "Observație"
 
-Deși datele de intrare sunt date drept o matrice de dimensiune $n$, nu
+Deși datele de intrare sunt date drept o matrice de dimensiune $$n$$, nu
 trebuie să folosim vreun tablou bidimensional pentru a rezolva această
 problemă.
 
@@ -106,9 +106,9 @@ După cum ați observat, vectorii de frecvență au cel mai important rol atunci
 
 În acest caz, se impune folosirea unor structuri de date mai avansate, cum ar fi `std::map` și `std::set`.
 
-În privința `std::map`, acesta poate fi folosit în acest context exact ca vectorii de frecvență, având posibilitatea să stocăm dinamic frecvența valorilor care apar, fără a avea nevoie de $\mathcal{O}(valmax)$ memorie. Totuși, această metodă vine cu un cost, și anume faptul că complexitatea operațiilor este $\mathcal{O}(\log n)$, spre deosebire de $\mathcal{O}(1)$ pentru metoda clasică.
+În privința `std::map`, acesta poate fi folosit în acest context exact ca vectorii de frecvență, având posibilitatea să stocăm dinamic frecvența valorilor care apar, fără a avea nevoie de $$\mathcal{O}(valmax)$$ memorie. Totuși, această metodă vine cu un cost, și anume faptul că complexitatea operațiilor este $$\mathcal{O}(\log n)$$, spre deosebire de $$\mathcal{O}(1)$$ pentru metoda clasică.
 
-În privința `std::set`, acesta poate fi folosit în acest context exact ca vectorii caracteristici (pentru frecvențe mai mari ca 1, `std::map` este o metodă strict superioară), având posibilitatea să stocăm dinamic valorile care apar, fără a avea nevoie de $\mathcal{O}(valmax)$ memorie. La fel ca la structura de date precedentă, această metodă vine cu un cost, și anume faptul că complexitatea operațiilor este $\mathcal{O}(\log n)$, spre deosebire de $\mathcal{O}(1)$ pentru metoda clasică.
+În privința `std::set`, acesta poate fi folosit în acest context exact ca vectorii caracteristici (pentru frecvențe mai mari ca 1, `std::map` este o metodă strict superioară), având posibilitatea să stocăm dinamic valorile care apar, fără a avea nevoie de $$\mathcal{O}(valmax)$$ memorie. La fel ca la structura de date precedentă, această metodă vine cu un cost, și anume faptul că complexitatea operațiilor este $$\mathcal{O}(\log n)$$, spre deosebire de $$\mathcal{O}(1)$$ pentru metoda clasică.
 
 ### Problema [map de pe pbinfo](https://www.pbinfo.ro/probleme/2217/map)
 

@@ -53,7 +53,7 @@ Lista completă a codurilor pentru caractere se găsește [aici](https://www.sci
 | 1   | SOH      | 33  | !        | 65  | A        | 97  | a        |
 | 2   | STX      | 34  | "        | 66  | B        | 98  | b        |
 | 3   | ETX      | 35  | #        | 67  | C        | 99  | c        |
-| 4   | EOT      | 36  | \$       | 68  | D        | 100 | d        |
+| 4   | EOT      | 36  | \$$      | 68  | D        | 100 | d        |
 | 5   | ENQ      | 37  | %        | 69  | E        | 101 | e        |
 | 6   | ACK      | 38  | &        | 70  | F        | 102 | f        |
 | 7   | BEL      | 39  | '        | 71  | G        | 103 | g        |
@@ -239,7 +239,7 @@ Funcția `cin.getline` are ca parametri șirul în care se va stoca rezultatul c
 
 Citirea fără o funcție specifică se poate face cu cin, dar se va citi până la primul spațiu.
 
-Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $x$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
+Există și funcția `cin.get()`, care poate fi folosit fie pentru un singur caracter, fie pentru a citi $$x$$ caractere, dar de obicei vom avea nevoie să citim o linie completă, deci funcția `cin.getline()` devine mai utilă.
 
 ```cpp
 --8 < --"cppintro/strings/strings04.cpp"
@@ -331,7 +331,7 @@ Funcția `strtok` împarte `str[]` conform delimitatorilor dați și returnează
 
 ## Tipul de date std::string
 
-Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $\mathcal{O}(1)$, în loc de $\mathcal{O}(n)$. Tipul string este unul din tipurile prezente în [STL](./stl.mdx), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
+Această structură de date este echivalentul std::vector pentru șirurile de caractere, remarcându-se prin faptul că spre deosebire de șirurile de caractere din C, funcția de aflare a lungimii este $$\mathcal{O}(1)$$, în loc de $$\mathcal{O}(n)$$. Tipul string este unul din tipurile prezente în [STL](./stl.mdx), foarte multe funcții fiind similare cu cele pe care le putem folosi cu vectori.
 
 Pentru a putea folosi această structură de date, va trebui să includem biblioteca `<string>`. Se remarcă faptul că există diferențe semnificative față de cum folosim șirurile de caractere din C.
 

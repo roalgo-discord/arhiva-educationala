@@ -71,7 +71,7 @@ De multe ori în diverse aplicații, putem avea nevoie de operația de inserare 
 
 ### Inserarea în tablou
 
-Dacă avem un tablou cu $n$ valori și vrem să inserăm o valoare nouă la poziția $k$, unde $1 \leq k \leq n+1$, vom vrea mai întâi să mutăm valorile între pozițiile $n$ și $k$ cu o poziție la dreapta, iar mai apoi vom atribui noua valoare pe poziția $k$.
+Dacă avem un tablou cu $$n$$ valori și vrem să inserăm o valoare nouă la poziția $$k$$, unde $$1 \leq k \leq n+1$$, vom vrea mai întâi să mutăm valorile între pozițiile $$n$$ și $$k$$ cu o poziție la dreapta, iar mai apoi vom atribui noua valoare pe poziția $$k$$.
 
 ```cpp
 for (int i = n; i >= k; i--) {
@@ -98,12 +98,12 @@ n++;  // (1)
   n++;
   ```
 
-  Se poate observa cu ușurință că valoarea de pe poziția $k$ va ajunge peste tot dacă implementăm așa, ceea ce este greșit.
+  Se poate observa cu ușurință că valoarea de pe poziția $$k$$ va ajunge peste tot dacă implementăm așa, ceea ce este greșit.
 </Callout>
 
 ### Ștergerea din tablou
 
-Dacă avem un tablou cu $n$ valori și vrem să ștergem valoarea de la poziția $k$, unde $1 \leq k \leq n$, vom vrea să mutăm pe rând valorile de la pozițiile $k+1$, $k+2$, ..., $n$ cu o poziție mai în spate. Spre deosebire de cazul inserării, vom vrea să mutăm valorile în ordine crescătoare a poziției inițiale.
+Dacă avem un tablou cu $$n$$ valori și vrem să ștergem valoarea de la poziția $$k$$, unde $$1 \leq k \leq n$$, vom vrea să mutăm pe rând valorile de la pozițiile $$k+1$$, $$k+2$$, ..., $$n$$ cu o poziție mai în spate. Spre deosebire de cazul inserării, vom vrea să mutăm valorile în ordine crescătoare a poziției inițiale.
 
 ```cpp
 for (int i = k; i < n; i++) {
@@ -129,7 +129,7 @@ n--;  // (1)
 
 ### Inversarea unui tablou
 
-Pentru a putea inversa un tablou, trebuie să știm numărul de elemente pe care îl are. Scopul nostru este să avem pe poziția $i$ valoarea ce se afla anterior pe poziția $n - i + 1$, implementarea nefiind prea dificilă. Pentru a păstra scopul educativ, am implementat interschimbarea elementelor folosind "regula celor trei pahare".
+Pentru a putea inversa un tablou, trebuie să știm numărul de elemente pe care îl are. Scopul nostru este să avem pe poziția $$i$$ valoarea ce se afla anterior pe poziția $$n - i + 1$$, implementarea nefiind prea dificilă. Pentru a păstra scopul educativ, am implementat interschimbarea elementelor folosind "regula celor trei pahare".
 
 ```cpp
 for (int i = 1; i <= n / 2; i++) {
@@ -145,10 +145,10 @@ for (int i = 1; i <= n / 2; i++) {
 
 ## Interclasarea tablourilor
 
-Pentru a putea interclasa două tablouri (de regulă, crescătoare) $A$ și $B$, având $n$, respectiv $m$ elemente, vom vrea mereu să introducem valoarea mai mică în tabloul unde ținem rezultatul, $C$, acesta având lungimea $n + m$. De asemenea, vom vrea să avem grijă ca după ce prelucrăm complet unul din cele două tablouri, să continuăm inserările cu cel de-al doilea tablou, unul din ele ar rămâne mereu cu valori.
+Pentru a putea interclasa două tablouri (de regulă, crescătoare) $$A$$ și $$B$$, având $$n$$, respectiv $$m$$ elemente, vom vrea mereu să introducem valoarea mai mică în tabloul unde ținem rezultatul, $$C$$, acesta având lungimea $$n + m$$. De asemenea, vom vrea să avem grijă ca după ce prelucrăm complet unul din cele două tablouri, să continuăm inserările cu cel de-al doilea tablou, unul din ele ar rămâne mereu cu valori.
 
 <Callout type="obs">
-  Folosind acest algoritm de interclasare, putem obține un tablou crescător în $\mathcal{O}(n + m)$, unde $n$ și $m$ sunt lungimile celor două șiruri.
+  Folosind acest algoritm de interclasare, putem obține un tablou crescător în $$\mathcal{O}(n + m)$$, unde $$n$$ și $$m$$ sunt lungimile celor două șiruri.
 </Callout>
 
 <Callout type="obs">
@@ -198,7 +198,7 @@ Pentru a putea interclasa două tablouri (de regulă, crescătoare) $A$ și $B$,
   reveni la configurația inițială.
 </Callout>
 
-Pentru a putea roti un tablou (mutarea valorilor din el cu un număr $k$ de poziții la stânga sau la dreapta), va trebui mai întâi să păstrăm în memorie valoarea de pe primele/ultimele $k$ poziții, să mutăm secvențial celelalte valori și în cele din urmă să mutăm valorile păstrate pe ultimele/primele $k$ poziții în șirul nou rezultat.
+Pentru a putea roti un tablou (mutarea valorilor din el cu un număr $$k$$ de poziții la stânga sau la dreapta), va trebui mai întâi să păstrăm în memorie valoarea de pe primele/ultimele $$k$$ poziții, să mutăm secvențial celelalte valori și în cele din urmă să mutăm valorile păstrate pe ultimele/primele $$k$$ poziții în șirul nou rezultat.
 
 Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi o structură de date ce permite rotația unui tablou cu o singură poziție la stânga sau dreapta.
 
@@ -252,7 +252,7 @@ Deși algoritmul prezentat este unul liniar, mai târziu puteți descoperi o str
 
 ## Sortarea tablourilor
 
-În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în complexitate $\mathcal{O}(n^2)$, $\mathcal{O}(n \log n)$ și multe alte clase de complexități.
+În multe probleme, suntem nevoiți să ordonăm valorile din șir conform unui algoritm. În funcție de performanța de care avem nevoie, putem avea algoritmi în complexitate $$\mathcal{O}(n^2)$$, $$\mathcal{O}(n \log n)$$ și multe alte clase de complexități.
 
 Pentru mai multe detalii, recomandăm citirea articolului pe acest subiect, pe care îl puteți găsi [aici](../usor/sorting.mdx).
 

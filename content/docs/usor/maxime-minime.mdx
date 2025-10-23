@@ -124,13 +124,13 @@ simplă și mai ușor de utilizat în practică, aceasta fiind și varianta pe
 care o vom folosi atunci când vrem să generalizăm aflarea maximului sau
 minimului unui șir de valori.
 
-## Maximul și minimul dintre $n$ numere
+## Maximul și minimul dintre $$n$$ numere
 
-Pentru a afla valoarea maximă (sau minimă) a unui șir de $n$ numere, vom putea pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat, vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum (sau mai mică decât minimul, după caz).
+Pentru a afla valoarea maximă (sau minimă) a unui șir de $$n$$ numere, vom putea pleca de la cazul de bază cu 2 numere, iar pentru fiecare număr nou adăugat, vom verifica dacă valoarea nou adăugată este mai mare decât maximul de până acum (sau mai mică decât minimul, după caz).
 
 Pentru a afla acest răspuns, putem fie să plecăm cu răspunsul egal cu prima valoare din șir, fie să inițializăm răspunsul cu o valoare care să ne asigure că indiferent ce valori avem, răspunsul va fi una din valorile din șir.
 
-Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul cu o valoare foarte mică($ -10^9$ sau chiar mai mică), iar în caz contrar, cu o valoare foarte mare($10^9$ sau chiar mai mare). În general, se preferă varianta în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru scopurile noastre, soluție implementată mai jos pentru maxim.
+Astfel, dacă vrem să aflăm valoarea maximă din șir, vrem să inițializăm maximul cu o valoare foarte mică($$ -10^9$$ sau chiar mai mică), iar în caz contrar, cu o valoare foarte mare($$10^9$$ sau chiar mai mare). În general, se preferă varianta în care inițializăm răspunsul cu o valoare suficient de mare/mică pentru scopurile noastre, soluție implementată mai jos pentru maxim.
 
 ```cpp
 #include <iostream>
@@ -193,11 +193,11 @@ int main() {
 }
 ```
 
-## Aflarea celor mai mari/mici $k$ valori
+## Aflarea celor mai mari/mici $$k$$ valori
 
-Pentru a extinde problema la $k$ valori, va fi necesară cunoașterea [vectorilor](../cppintro/arrays.mdx), ceea ce face această aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar vom ține cele mai mari/mici $k$ valori într-un vector și vom efectua modificările în mod corespunzător.
+Pentru a extinde problema la $$k$$ valori, va fi necesară cunoașterea [vectorilor](../cppintro/arrays.mdx), ceea ce face această aplicație mai dificilă. Astfel, vom proceda la fel ca la cazul precedent, dar vom ține cele mai mari/mici $$k$$ valori într-un vector și vom efectua modificările în mod corespunzător.
 
-Mai jos, veți găsi o implementare care află cele mai mici $k$ valori dintr-un șir.
+Mai jos, veți găsi o implementare care află cele mai mici $$k$$ valori dintr-un șir.
 
 ```cpp
 #include <iostream>

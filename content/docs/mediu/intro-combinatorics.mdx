@@ -26,27 +26,27 @@ Pe lângă capitolele menționate anterior, vrem să începem prin a explica anu
 
 ### Regula sumei și a produsului
 
-Presupunem pentru următoarele două reguli că avem două mulțimi $A$ și $B$ disjuncte (adică $A\cap B =\emptyset$), având cardinalul $|A| = n$ și $|B| = m$.
+Presupunem pentru următoarele două reguli că avem două mulțimi $$A$$ și $$B$$ disjuncte (adică $$A\cap B =\emptyset$$), având cardinalul $$|A| = n$$ și $$|B| = m$$.
 
 !!! info "Regula sumei"
 
-Numărul de moduri de a alege o valoare din $A$ sau $B$ este $n+m$.
+Numărul de moduri de a alege o valoare din $$A$$ sau $$B$$ este $$n+m$$.
 
 !!! info "Regula produsului"
 
-Numărul de moduri de a alege o pereche de valori, una din $A$ și una din $B$
-este $n\cdot m$.
+Numărul de moduri de a alege o pereche de valori, una din $$A$$ și una din $$B$$
+este $$n\cdot m$$.
 
 !!! example "Exemplu"
 
-Câte numere de forma $\overline{aba}$ cu $a \neq 0$ i $a \neq b$ există?
+Câte numere de forma $$\overline{aba}$$ cu $$a \neq 0$$ i $$a \neq b$$ există?
 
-Valorile posibile pentru $a$ sunt ${1, 2, 3, \dots, 9}$, iar valorile
-posibile ale lui $b$ sunt ${0, 1, 2, 3, \dots, 9}$.
+Valorile posibile pentru $$a$$ sunt $${1, 2, 3, \dots, 9}$$, iar valorile
+posibile ale lui $$b$$ sunt $${0, 1, 2, 3, \dots, 9}$$.
 
-Avem 9 variante de a alege o valoare pentru $a$, iar pentru $b$ avem tot
-9 variante (10, din care excludem cea egala cu $a$), astfel numărul
-total de variante este $9 \cdot 9 = 81$.
+Avem 9 variante de a alege o valoare pentru $$a$$, iar pentru $$b$$ avem tot
+9 variante (10, din care excludem cea egala cu $$a$$), astfel numărul
+total de variante este $$9 \cdot 9 = 81$$.
 
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule independente care contribuie la răspunsul final.
 
@@ -55,36 +55,36 @@ Aceste relații vor fi foarte importante mai ales când avem de-a face cu formul
 !!! info "Permutare"
 
 O permutare a unei mulțimi reprezintă o aranjare a elementelor dintr-o
-mulțime $M$ finită într-o ordine diferită. Dacă cardinalul mulțimii $|M| =
-    n$, numărul de permutări ale unei mulțimi de $n$ valori este $n!$.
+mulțime $$M$$ finită într-o ordine diferită. Dacă cardinalul mulțimii $$|M| =
+    n$$, numărul de permutări ale unei mulțimi de $$n$$ valori este $$n!$$.
 
-De exemplu, pentru $n = 3$, cele 6 permutări ale mulțimii $\{1, 2, 3\}$
-sunt următoarele: $\{1, 2, 3\}$, $\{1, 3, 2\}$, $\{2, 1, 3\}$, $\{2, 3,
-    1\}$, $\{3, 1, 2\}$, $\{3, 2, 1\}$
+De exemplu, pentru $$n = 3$$, cele 6 permutări ale mulțimii $$\{1, 2, 3\}$$
+sunt următoarele: $$\{1, 2, 3\}$$, $$\{1, 3, 2\}$$, $$\{2, 1, 3\}$$, $$\{2, 3,
+    1\}$$, $$\{3, 1, 2\}$$, $$\{3, 2, 1\}$$
 
 În probleme, există diverse cazuri particulare ale permutărilor care devin foarte utile în rezolvarea unor probleme de combinatorică.
 
 !!! info "Deranjamente"
 
-Un deranjament este o permutare fără puncte fixe, adică $\forall i$,
-$p_i\neq i$.
+Un deranjament este o permutare fără puncte fixe, adică $$\forall i$$,
+$$p_i\neq i$$.
 
-Numărul de deranjamente cu $n$ elemente este egal cu $D_n = (n-1)\cdot
-    (D_{n-1} + D_{n-2})$, unde $D_0 = 1$ și $D_1 = 0$. Acest concept a fost util
+Numărul de deranjamente cu $$n$$ elemente este egal cu $$D_n = (n-1)\cdot
+    (D_{n-1} + D_{n-2})$$, unde $$D_0 = 1$$ și $$D_1 = 0$$. Acest concept a fost util
 printre altele la rezolvarea problemei
 [Poseidon](https://kilonova.ro/problems/2506), dată la OJI 2024, clasa a
 X-a.
 
 !!! info "Permutări cu repetiții"
 
-Definim o permutare cu repetiții ca fiind o secvență de $n$ numere, care are
-proprietatea că fiecare valoare este în intervalul $[1, n]$ și valorile se
+Definim o permutare cu repetiții ca fiind o secvență de $$n$$ numere, care are
+proprietatea că fiecare valoare este în intervalul $$[1, n]$$ și valorile se
 pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au
-$n$ elemente este
+$$n$$ elemente este
 
-$\frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}$
+$$\frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}$$
 
-unde $F_i$ reprezintă frecvența la care apare $i$ în permutare. Acest
+unde $$F_i$$ reprezintă frecvența la care apare $$i$$ în permutare. Acest
 concept se regăsește într-un număr de probleme date în special la loturile
 de juniori.
 
@@ -106,11 +106,11 @@ do {
 
 ### Submulțimi
 
-O submulțime a unui număr constă în alegerea unui număr de elemente dintr-o mulțime $M$. Numărul de submulțimi ale lui $M$ este egal cu $2^{|M|}$, deoarece pentru fiecare element al mulțimii, putem alege dacă să îl includem în submulțimea pe care vrem să o creăm sau nu.
+O submulțime a unui număr constă în alegerea unui număr de elemente dintr-o mulțime $$M$$. Numărul de submulțimi ale lui $$M$$ este egal cu $$2^{|M|}$$, deoarece pentru fiecare element al mulțimii, putem alege dacă să îl includem în submulțimea pe care vrem să o creăm sau nu.
 
-Dacă mulțimea $M$ este egală cu $\{0, 1, 1\}$, cele 8 submulțimi ale ei sunt următoarele: $\emptyset$, $\{0\}$, $\{0, 1\}$, $\{0, 1, 2\}$, $\{0, 2\}$, $\{1\}$, $\{1, 2\}$, $\{2\}$.
+Dacă mulțimea $$M$$ este egală cu $$\{0, 1, 1\}$$, cele 8 submulțimi ale ei sunt următoarele: $$\emptyset$$, $$\{0\}$$, $$\{0, 1\}$$, $$\{0, 1, 2\}$$, $$\{0, 2\}$$, $$\{1\}$$, $$\{1, 2\}$$, $$\{2\}$$.
 
-Pentru a putea itera prin toate submulțimile unei mulțimi date, ne putem folosi de faptul că fiind $2^n$ asemenea submulțimi, putem identifica fiecare submulțime folosind una din reprezentările binare ale numerelor de la 0 la $2^n - 1$, tehnică numită colocvial bitmasks sau măști pe biți. Pentru a vedea dacă trebuie să folosim unul din numere sau nu, trebuie doar verificat pentru o submulțime dată dacă bitul corespunzător acelei poziții este setat sau nu în masca pe care o verificăm. Pentru mai multe detalii, puteți vedea codul de mai jos.
+Pentru a putea itera prin toate submulțimile unei mulțimi date, ne putem folosi de faptul că fiind $$2^n$$ asemenea submulțimi, putem identifica fiecare submulțime folosind una din reprezentările binare ale numerelor de la 0 la $$2^n - 1$$, tehnică numită colocvial bitmasks sau măști pe biți. Pentru a vedea dacă trebuie să folosim unul din numere sau nu, trebuie doar verificat pentru o submulțime dată dacă bitul corespunzător acelei poziții este setat sau nu în masca pe care o verificăm. Pentru mai multe detalii, puteți vedea codul de mai jos.
 
 ```cpp
 const int totalSubsets = 1 << n;  // 2^n
@@ -128,29 +128,29 @@ for (int mask = 0; mask < totalSubsets; ++mask) {
 }
 ```
 
-1. Dacă bitul din mască la poziția $idx$ este setat, înseamnă că elementul de la indice este prezent și deci adăugăm indicele în submulțime.
+1. Dacă bitul din mască la poziția $$idx$$ este setat, înseamnă că elementul de la indice este prezent și deci adăugăm indicele în submulțime.
 
 ### Aranjamente
 
-Un aranjament de $n$ elemente luate câte $k$ reprezintă o submulțime ordonată a lui $A$ de $k$ elemente. De exemplu, aranjamente de 4 luate câte 3 ale mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1,3, 4\}$, $\{2, 1, 3\}$, $\{2, 1, 4\}$, $\{2, 3, 4\}$, $\{3, 1, 2\}$, $\{3, 1,4\}$, $\{3, 2, 4\}$, $\{4, 1, 2\}$, $\{4, 1, 3\}$, $\{4, 2, 3\}$
+Un aranjament de $$n$$ elemente luate câte $$k$$ reprezintă o submulțime ordonată a lui $$A$$ de $$k$$ elemente. De exemplu, aranjamente de 4 luate câte 3 ale mulțimii $$\{1, 2, 3, 4\}$$ sunt următoarele: $$\{1, 2, 3\}$$, $$\{1, 2, 4\}$$, $$\{1,3, 4\}$$, $$\{2, 1, 3\}$$, $$\{2, 1, 4\}$$, $$\{2, 3, 4\}$$, $$\{3, 1, 2\}$$, $$\{3, 1,4\}$$, $$\{3, 2, 4\}$$, $$\{4, 1, 2\}$$, $$\{4, 1, 3\}$$, $$\{4, 2, 3\}$$
 
-Similar permutărilor, aranjamentele pot fi considerate funcții injective definite pe mulțimea $\{1, 2, 3,\dots, k\}$ cu valori în $\{1, 2, 3,\dots, n\}$
+Similar permutărilor, aranjamentele pot fi considerate funcții injective definite pe mulțimea $$\{1, 2, 3,\dots, k\}$$ cu valori în $$\{1, 2, 3,\dots, n\}$$
 
-Numărul aranjamentelor de $n$ luate câte $k (k\leq n)$ se notează cu $A_n^k$ și este egal cu $\frac{n!}{(n-k)!}$
+Numărul aranjamentelor de $$n$$ luate câte $$k (k\leq n)$$ se notează cu $$A_n^k$$ și este egal cu $$\frac{n!}{(n-k)!}$$
 
-O altă formulă care poate fi utilă în special în cazul precalculărilor este $A_n^k = (n - k + 1)\cdot A_n^{k-1}$
+O altă formulă care poate fi utilă în special în cazul precalculărilor este $$A_n^k = (n - k + 1)\cdot A_n^{k-1}$$
 
 ### Combinări
 
-O combinare de $n$ elemente luate câte $k$ reprezintă o submulțime neordonată a lui $A$ de $k$ elemente. De exemplu, combinările de 4 luate câte 3 ale mulțimii $\{1, 2, 3, 4\}$ sunt următoarele: $\{1, 2, 3\}$, $\{1, 2, 4\}$, $\{1,3, 4\}$, $\{2, 3, 4\}$
+O combinare de $$n$$ elemente luate câte $$k$$ reprezintă o submulțime neordonată a lui $$A$$ de $$k$$ elemente. De exemplu, combinările de 4 luate câte 3 ale mulțimii $$\{1, 2, 3, 4\}$$ sunt următoarele: $$\{1, 2, 3\}$$, $$\{1, 2, 4\}$$, $$\{1,3, 4\}$$, $$\{2, 3, 4\}$$
 
 Se poate observa că spre deosebire de aranjamente, dacă două mulțimi au aceleași elemente dar într-o ordine diferită, se numără o singură dată.
 
-Formula pentru combinări de $n$ luate câte $k$, care se notează cu $C_n^k$ (alternativ, veți mai putea găsi notații precum ${}_{n}C_{k}$, $C(n, k)$ sau $\binom{n}{k}$ este $C_n^k = \frac{n!}{k!\cdot (n-k)!}$ unde $C_0^0 = C_n^n= 1$.
+Formula pentru combinări de $$n$$ luate câte $$k$$, care se notează cu $$C_n^k$$ (alternativ, veți mai putea găsi notații precum $${}_{n}C_{k}$$, $$C(n, k)$$ sau $$\binom{n}{k}$$ este $$C_n^k = \frac{n!}{k!\cdot (n-k)!}$$ unde $$C_0^0 = C_n^n= 1$$.
 
-Există numeroase moduri și proprietăți de a lega valoarea lui $C_n^k$ de alte valori combinatoriale, cele mai importante fiind următoarele:
+Există numeroase moduri și proprietăți de a lega valoarea lui $$C_n^k$$ de alte valori combinatoriale, cele mai importante fiind următoarele:
 
-- $C_{n}^{k} =C_{n-1}^{k} +C_{n-1}^{k-1}$, deoarece:
+- $$C_{n}^{k} =C_{n-1}^{k} +C_{n-1}^{k-1}$$, deoarece:
 
 $$
 \begin{align*} C_n^k &= \frac{n!}{k! (n-k)!}\\ &= \frac{n(n - 1)!}{k!
@@ -159,7 +159,7 @@ $$
 C_{n-1}^{k-1} +C_{n-1}^{k} \end{align*}
 $$
 
-- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $C_n^k$ ca fiind
+- Dacă simplificăm fracțiile din formula de mai sus, putem scrie $$C_n^k$$ ca fiind
 
   $$
     \begin{align*}
@@ -169,11 +169,11 @@ $$
     \end{align*}
   $$
 
-- $C_{n}^{k} = C_{n}^{n-k}$, fapt ce se poate observa din aplicarea formulei specifice.
+- $$C_{n}^{k} = C_{n}^{n-k}$$, fapt ce se poate observa din aplicarea formulei specifice.
 
-- $\sum_{i=0}^{n} C_n^i = 2^n$
+- $$\sum_{i=0}^{n} C_n^i = 2^n$$
 
-De multe ori, pentru a calcula combinările, vom folosi [triunghiul lui Pascal](https://en.wikipedia.org/wiki/Pascal%27s_triangle) drept precalculare, fapt ce îl putem realiza cu ajutorul formulei de mai sus care leagă $C_{n}^{k}$ de $C_{n-1}^{k}$ și $C_{n-1}^{k-1}$.
+De multe ori, pentru a calcula combinările, vom folosi [triunghiul lui Pascal](https://en.wikipedia.org/wiki/Pascal%27s_triangle) drept precalculare, fapt ce îl putem realiza cu ajutorul formulei de mai sus care leagă $$C_{n}^{k}$$ de $$C_{n-1}^{k}$$ și $$C_{n-1}^{k-1}$$.
 
 ```cpp
 const int N = 1000;
@@ -195,7 +195,7 @@ for (int n = 1; n <= N; n++) {
 }
 ```
 
-Există o metodă mai eficientă de a calcula $C_n^k$ în timp $\mathcal{O}(k)$ și spațiu $\mathcal{O}(1)$:
+Există o metodă mai eficientă de a calcula $$C_n^k$$ în timp $$\mathcal{O}(k)$$ și spațiu $$\mathcal{O}(1)$$:
 
 ```cpp
 const long long C(int n, int k) {
@@ -276,58 +276,58 @@ int main() {
 }
 ```
 
-1. Calculăm inversul modular $x^{-1} \mod p$ ($p$ este `MOD` în cod). În cazul în care $p$ este prim, conform micii teoreme a lui Fermat, $x^{-1} = x^{p -2}$.
+1. Calculăm inversul modular $$x^{-1} \mod p$$ ($$p$$ este `MOD` în cod). În cazul în care $$p$$ este prim, conform micii teoreme a lui Fermat, $$x^{-1} = x^{p -2}$$.
 
 ### Partiții
 
-Numim partiție a unui număr $n$ o secvență de numere naturale nenule $P$ cu proprietatea că $\sum_{i = 1}^k P_i = n$, unde $k$ este numărul de numere din partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție de proprietatea pe care dorim să o aplicăm într-o problemă.
+Numim partiție a unui număr $$n$$ o secvență de numere naturale nenule $$P$$ cu proprietatea că $$\sum_{i = 1}^k P_i = n$$, unde $$k$$ este numărul de numere din partiție. Partițiile unui număr pot fi ordonate sau neordonate, în funcție de proprietatea pe care dorim să o aplicăm într-o problemă.
 
-Pentru a afla numărul de partiții ordonate ale unui număr $n$, putem să ne gândim la numărul de moduri de a împărți $n$ stele folosind diferite bare (anticipăm într-o oarecare măsură discuția pe care o vom avea la Stars and Bars), iar dat fiind că avem $n-1$ poziții unde putem face o împărțire, iar pentru fiecare poziție avem posibilitatea de a pune o limită sau nu, cu alte cuvinte avem $2^{n-1}$ partiții ordonate ale unui număr $n$.
+Pentru a afla numărul de partiții ordonate ale unui număr $$n$$, putem să ne gândim la numărul de moduri de a împărți $$n$$ stele folosind diferite bare (anticipăm într-o oarecare măsură discuția pe care o vom avea la Stars and Bars), iar dat fiind că avem $$n-1$$ poziții unde putem face o împărțire, iar pentru fiecare poziție avem posibilitatea de a pune o limită sau nu, cu alte cuvinte avem $$2^{n-1}$$ partiții ordonate ale unui număr $$n$$.
 
-În privința partițiilor neordonate, deoarece trebuie să păstrăm proprietatea că numerele din partiție sunt crescătoare, trebuie să avem grijă la calculul numărului de partiții de acest tip, iar o primă soluție la această problemă constă în folosirea unei recurențe de tipul $p(i, j)$ = numărul de partiții neordonate ale lui $i$, unde lungimea acesteia este $j$. Pentru a putea calcula această recurență, avem o formulă relativ simplă.
+În privința partițiilor neordonate, deoarece trebuie să păstrăm proprietatea că numerele din partiție sunt crescătoare, trebuie să avem grijă la calculul numărului de partiții de acest tip, iar o primă soluție la această problemă constă în folosirea unei recurențe de tipul $$p(i, j)$$ = numărul de partiții neordonate ale lui $$i$$, unde lungimea acesteia este $$j$$. Pentru a putea calcula această recurență, avem o formulă relativ simplă.
 
-- $p(i, j) = p(i-1, j-1) + p(i-j, j)$, dacă $i\geq 1$ și $j\geq 1$ (cu alte cuvinte, fie adăugăm un 1 la începutul partiției, fie incrementăm toate elementele din partiție).
-- $p(i, 0) = 0$, pentru $i\geq 1$
-- $p(0, 0) = 1$.
+- $$p(i, j) = p(i-1, j-1) + p(i-j, j)$$, dacă $$i\geq 1$$ și $$j\geq 1$$ (cu alte cuvinte, fie adăugăm un 1 la începutul partiției, fie incrementăm toate elementele din partiție).
+- $$p(i, 0) = 0$$, pentru $$i\geq 1$$
+- $$p(0, 0) = 1$$.
 
-Complexitatea acestei recurențe este $n^2$, optimizarea ei fiind imposibilă folosind această abordare. Din fericire, există o metodă și mai rapidă, care folosește [numere pentagonale](https://codeforces.com/blog/entry/104312), abordare ce ne duce la o soluție în $\mathcal{O}(n\sqrt n)$, pentru mai multe detalii puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
+Complexitatea acestei recurențe este $$n^2$$, optimizarea ei fiind imposibilă folosind această abordare. Din fericire, există o metodă și mai rapidă, care folosește [numere pentagonale](https://codeforces.com/blog/entry/104312), abordare ce ne duce la o soluție în $$\mathcal{O}(n\sqrt n)$$, pentru mai multe detalii puteți accesa [acest articol](https://infogenius.ro/partitii-numar-natural/) sau rezolva problema [crescător2](https://infoarena.ro/problema/crescator2).
 
 ## Trucuri pentru rezolvarea problemelor de combinatorică
 
 ### Stars and Bars
 
-Tehnica stars and bars este o tehnică folosită pentru a determina diverse sume combinatoriale care se reduc la aflarea numărului de soluții ale ecuației $x_1 +
-x_2 + ... + x_k = n$, unde $x_i$ este fie număr natural pozitiv, fie număr întreg non-negativ, regăsindu-se două cazuri.
+Tehnica stars and bars este o tehnică folosită pentru a determina diverse sume combinatoriale care se reduc la aflarea numărului de soluții ale ecuației $$x_1 +
+x_2 + ... + x_k = n$$, unde $$x_i$$ este fie număr natural pozitiv, fie număr întreg non-negativ, regăsindu-se două cazuri.
 
-Numărul de moduri de a împărți $n$ obiecte în $k$ grupe, fiecare grupă având cel puțin un element este egal cu $C_{n-1}^{k-1}$, deoarece avem $n-1$ locuri unde putem pune barierele și trebuie să punem $k-1$ bariere pentru a obține $k$ grupe.
+Numărul de moduri de a împărți $$n$$ obiecte în $$k$$ grupe, fiecare grupă având cel puțin un element este egal cu $$C_{n-1}^{k-1}$$, deoarece avem $$n-1$$ locuri unde putem pune barierele și trebuie să punem $$k-1$$ bariere pentru a obține $$k$$ grupe.
 
-Numărul de moduri de a împărți $n$ obiecte în $k$ grupe, dacă fiecare grupă poate fi și goală cu $C_{n+k-1}^{k-1}$, deoarece avem $n+k-1$ locuri unde putem pune barierele și trebuie să punem $k-1$ bariere pentru a obține $k$ grupe.
+Numărul de moduri de a împărți $$n$$ obiecte în $$k$$ grupe, dacă fiecare grupă poate fi și goală cu $$C_{n+k-1}^{k-1}$$, deoarece avem $$n+k-1$$ locuri unde putem pune barierele și trebuie să punem $$k-1$$ bariere pentru a obține $$k$$ grupe.
 
 Această tehnică se găsește în diferite aplicații, de obicei atunci când vrem să grupăm diferite valori sau diferite șiruri, în problemele de numărare.
 
 ### Hockey Stick Identity
 
-Pentru două numere $n$ și $r$, $\sum_{i=r}^{n} C_i^r = C_{n+1}^{r+1}$. Pentru a demonstra această relație, se pot folosi argumente inductive, algebrice sau metode ce se folosesc de funcții generatoare. Pentru mai multe detalii, puteți citi [acest blog](https://codeforces.com/blog/entry/104172).
+Pentru două numere $$n$$ și $$r$$, $$\sum_{i=r}^{n} C_i^r = C_{n+1}^{r+1}$$. Pentru a demonstra această relație, se pot folosi argumente inductive, algebrice sau metode ce se folosesc de funcții generatoare. Pentru mai multe detalii, puteți citi [acest blog](https://codeforces.com/blog/entry/104172).
 
 ### Numerele Catalan
 
 În combinatorică, numerele Catalan sunt o serie de numere care apar în diverse probleme, devenind foarte cunoscute și folosite în aplicații ce se găsesc de multe ori la olimpiadele de informatică pentru juniori.
 
-Șirul numerelor Catalan este $1, 1, 2, 5, 14, 42, \dots$ și formula pentru aflarea celui de-al $i$-lea număr Catalan este:
+Șirul numerelor Catalan este $$1, 1, 2, 5, 14, 42, \dots$$ și formula pentru aflarea celui de-al $$i$$-lea număr Catalan este:
 
 $$
 C_n = \frac{1}{n+1}\cdot C_{2n}^{n} =\frac{(2n)!}{(n+1)! n!} = \prod_{k =
 2}^{n} \frac{n + k}{k}
 $$
 
-Computațional vorbind, se folosește deseori forma recursivă, cu $C_0 = 1$ și
-$C_n = \sum_{i = 1}^n C_{i - 1}C_{n - i} = \frac{2(2n - 1)}{n + 1} C_{n - 1} $
+Computațional vorbind, se folosește deseori forma recursivă, cu $$C_0 = 1$$ și
+$$C_n = \sum_{i = 1}^n C_{i - 1}C_{n - i} = \frac{2(2n - 1)}{n + 1} C_{n - 1} $$
 
 Printre altele, numerele Catalan apar în aplicații precum:
 
-- Numărul de arbori binari cu $n$ noduri.
-- Numărul de parantezări corecte de lungime $2n$.
-- Numărul de drumuri de la $(0, 0)$ la $(n, n)$ care merg în sus și la dreapta fără să treacă de partea cealaltă a diagonalei principale.
+- Numărul de arbori binari cu $$n$$ noduri.
+- Numărul de parantezări corecte de lungime $$2n$$.
+- Numărul de drumuri de la $$(0, 0)$$ la $$(n, n)$$ care merg în sus și la dreapta fără să treacă de partea cealaltă a diagonalei principale.
 - Și multe altele, pe care le puteți găsi [aici](https://en.wikipedia.org/wiki/Catalan_number)
 
 Așa se calculează numărul Catalan:
@@ -394,9 +394,9 @@ const unsigned long long catalan(unsigned int n) {
 
 La fel ca și numerele Catalan, numerele Stirling și Bell apar în anumite aplicații ale problemelor de combinatorică. Numerele Stirling de primă speță sunt folositoare în special când vine vorba de numărarea ciclurilor în permutări, iar numerele Stirling de cea de-a doua speță, precum și numerele Bell se regăsesc în probleme legate de numărarea unor partiții.
 
-**Numerele lui Stirling de speța I** numără câte permutări de ordin $n$ cu $k$ cicluri există, și se notează cu $(n, k)$. De exemplu, permutarea $1, 4, 2, 3, 6, 5$ are 2 cicluri (1, $2, 4, 3$ și $5, 6$). Cazurile particulare sunt $s(0, 0) = 1, s(n, 0) = 0$ și $s(0, k) = 0$, iar formula recurentă este $s(n, k) = s(n-1, k-1) + (n-1)\cdot s(n-1, k)$, recurență ce se poate explica recurgând la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la permutare, deoarece fie putem forma un ciclu nou, fie îl introducem într-un ciclu deja existent.
+**Numerele lui Stirling de speța I** numără câte permutări de ordin $$n$$ cu $$k$$ cicluri există, și se notează cu $$(n, k)$$. De exemplu, permutarea $$1, 4, 2, 3, 6, 5$$ are 2 cicluri (1, $$2, 4, 3$$ și $$5, 6$$). Cazurile particulare sunt $$s(0, 0) = 1, s(n, 0) = 0$$ și $$s(0, k) = 0$$, iar formula recurentă este $$s(n, k) = s(n-1, k-1) + (n-1)\cdot s(n-1, k)$$, recurență ce se poate explica recurgând la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la permutare, deoarece fie putem forma un ciclu nou, fie îl introducem într-un ciclu deja existent.
 
-**Numerele lui Stirling de speța II** reprezintă numărul de partiții ale unei mulțimi cu $n$ elemente în $k$ submulțimi, și se notează cu $S(n, k)$. Cazurile particulare sunt $S(0, 0) = 1, S(n, 0) = 0$ și $S(0, k) = 0$, iar formula recurentă este $S(n, k) = s(n-1, k-1) + k\cdot s(n-1, k)$, recurență ce se poate explica recurgând la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la partițiile existente, deoarece fie putem forma o nouă partiție, fie o introducem într-o partiție deja existentă.
+**Numerele lui Stirling de speța II** reprezintă numărul de partiții ale unei mulțimi cu $$n$$ elemente în $$k$$ submulțimi, și se notează cu $$S(n, k)$$. Cazurile particulare sunt $$S(0, 0) = 1, S(n, 0) = 0$$ și $$S(0, k) = 0$$, iar formula recurentă este $$S(n, k) = s(n-1, k-1) + k\cdot s(n-1, k)$$, recurență ce se poate explica recurgând la cazurile pe care le întâmpinăm atunci când adăugăm o nouă valoare la partițiile existente, deoarece fie putem forma o nouă partiție, fie o introducem într-o partiție deja existentă.
 
 \=== "Stirling de speța I"
 
@@ -434,7 +434,7 @@ void stirling(const int N) {
 }
 ```
 
-**Numerele Bell** se referă la numărul de modalități prin care putem partiționa o mulțime cu $n$ elemente, și se notează cu $B_n$, fiind o generalizare a numerelor Stirling de speța II, numărând toate partițiile posibile pentru o mulțime. $B_n$ poate fi calculat ușor plecând de la numerele Stirling de speța a doua, $B_n = S(n, 0) + S(n, 1) +\dots + S(n, n)$ sau folosind direct numerele Bell anterioare, $B_n =\sum_{i=0}^{n-1} C_{n-1}^i\cdot B_i$.
+**Numerele Bell** se referă la numărul de modalități prin care putem partiționa o mulțime cu $$n$$ elemente, și se notează cu $$B_n$$, fiind o generalizare a numerelor Stirling de speța II, numărând toate partițiile posibile pentru o mulțime. $$B_n$$ poate fi calculat ușor plecând de la numerele Stirling de speța a doua, $$B_n = S(n, 0) + S(n, 1) +\dots + S(n, n)$$ sau folosind direct numerele Bell anterioare, $$B_n =\sum_{i=0}^{n-1} C_{n-1}^i\cdot B_i$$.
 
 ## Cum putem rezolva probleme de combinatorică?
 

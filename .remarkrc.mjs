@@ -10,7 +10,7 @@ import remarkCppClangFormat from "./src/remark-cpp-clang-format.mjs"
 
 const { remarkPlugins } = getDefaultMDXOptions({
   _withoutBundler: true,
-  remarkPlugins: [remarkMath, remarkPresetLinkRecommended, remarkPresetLintConsistent, remarkFrontmatter, remarkMdx],
+  remarkPlugins: [[remarkMath, { singleDollarTextMath: false }], remarkPresetLinkRecommended, remarkPresetLintConsistent, remarkFrontmatter, remarkMdx],
 });
 
 const remarkConfig = {

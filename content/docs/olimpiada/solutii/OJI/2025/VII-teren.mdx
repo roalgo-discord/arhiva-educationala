@@ -13,33 +13,33 @@ tags:
 
 ## Cerința 1
 
-Se citesc coordonatele de început ale însămânțării $L_1$, $C_1$ și coordonatele de sfârșit $L_2$, $C_2$. Dacă $L_1 = L_2$ la numărul de semințe aruncate se adună $1 + |C_1-C_2|$, altfel se adună $1 + |L_1-L_2|$.
+Se citesc coordonatele de început ale însămânțării $$L\_1$$, $$C\_1$$ și coordonatele de sfârșit $$L\_2$$, $$C\_2$$. Dacă $$L\_1 = L\_2$$ la numărul de semințe aruncate se adună $$1 + |C\_1-C\_2|$$, altfel se adună $$1 + |L\_1-L\_2|$$.
 
 ## Precalculări pentru cerința 2 și 3
 
-Atât pentru cerința 2 cât și pentru cerința 3 se folosesc 5 matrici: matricea $o$ pentru parcurgerile orizontale, $v$ pentru cele verticale, $dp$ pentru cele paralele cu diagonala principală, $ds$ pentru parcurgerile paralele cu diagonala secundară. Pentru fiecare zbor/parcurgere se aplică [difference array](../../../../usor/partial-sums.mdx/#smenul-lui-mars). Deoarece parcurgerea este liniară difference array se aplică exact ca la vectori: Pentru parcurgerile orizontale (unde $L_1 = L_2$):
+Atât pentru cerința 2 cât și pentru cerința 3 se folosesc 5 matrici: matricea $$o$$ pentru parcurgerile orizontale, $$v$$ pentru cele verticale, $$dp$$ pentru cele paralele cu diagonala principală, $$ds$$ pentru parcurgerile paralele cu diagonala secundară. Pentru fiecare zbor/parcurgere se aplică [difference array](../../../../usor/partial-sums.mdx/#smenul-lui-mars). Deoarece parcurgerea este liniară difference array se aplică exact ca la vectori: Pentru parcurgerile orizontale (unde $$L\_1 = L\_2$$):
 
 ```cpp
 o[L1][min(C1, C2)]++;
 o[L1][max(C1, C2) + 1]--;
 ```
 
-Pentru parcurgerile verticale (unde $C_1 = C_2$):
+Pentru parcurgerile verticale (unde $$C\_1 = C\_2$$):
 
 ```cpp
 v[min(L1, L2)][C1]++;
 v[max(L1, L2) + 1][C1]--;
 ```
 
-Pentru parcurgerile paralele cu diagonala secundară (unde $L_1 + C_1 = L_2 +
-C_2$): se interschimbă capetele a.î. $L_1 < L_2$ și apoi:
+Pentru parcurgerile paralele cu diagonala secundară (unde $$L\_1 + C\_1 = L\_2 +
+C\_2$$): se interschimbă capetele a.î. $$L\_1 \< L\_2$$ și apoi:
 
 ```cpp
 ds[L1][C1]++;
 ds[L2 + 1][C2 - 1]--;
 ```
 
-Pentru parcurgerile paralele cu diagonala principală: se interschimbă capetele a.î. $L_1 < L_2$ și apoi:
+Pentru parcurgerile paralele cu diagonala principală: se interschimbă capetele a.î. $$L\_1 \< L\_2$$ și apoi:
 
 ```cpp
 dp[L1][C1]++;

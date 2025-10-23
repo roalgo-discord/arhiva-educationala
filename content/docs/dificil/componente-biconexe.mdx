@@ -23,8 +23,8 @@ Ca și cunoștințe necesare pentru înțelegerea componentelor biconexe, se rec
 !!! info "Definiție"
 
 Într-un graf neorientat, componentele biconexe sunt submulțimi maximale de
-noduri cu proprietatea că pentru oricare pereche de noduri $(a, b)$ care
-aparțin unei astfel de componente, se poate ajunge de la $a$ la $b$ chiar și
+noduri cu proprietatea că pentru oricare pereche de noduri $$(a, b)$$ care
+aparțin unei astfel de componente, se poate ajunge de la $$a$$ la $$b$$ chiar și
 dacă scoatem un nod din graful rezultat.
 
 !!! note "Observație"
@@ -36,9 +36,9 @@ explicate.
 
 !!! example "Exemplu"
 
-De exemplu, dacă avem următorul graf: $n = 8$, $m = 9$ și următoarele muchii
-de tip $(a, b)$: $(1, 2)$,$ (2, 3)$,$ (3, 4)$,$ (4, 1)$,$ (1, 5)$,$ (5,     6)$,$ (6, 7)$,$ (7, 5)$,$ (7, 8)$, componentele biconexe sunt $\{1, 2, 3,
-    4\}$, $\{7, 8\}$, $\{5, 6, 7\}$ și $\{1, 5\}$. Mai jos găsiți un desen
+De exemplu, dacă avem următorul graf: $$n = 8$$, $$m = 9$$ și următoarele muchii
+de tip $$(a, b)$$: $$(1, 2)$$,$$ (2, 3)$$,$$ (3, 4)$$,$$ (4, 1)$$,$$ (1, 5)$$,$$ (5,     6)$$,$$ (6, 7)$$,$$ (7, 5)$$,$$ (7, 8)$$, componentele biconexe sunt $$\{1, 2, 3,
+4}$$, $$\{7, 8}$$, $$\{5, 6, 7}$$ și $$\{1, 5}$$. Mai jos găsiți un desen
 reprezentativ.
 
 <img alt="" src="../images/bcc/bcc.png" width="241" height="120" />
@@ -84,7 +84,7 @@ devenind subiectul nostru de discuție ulterior în articol.
 
 ### Muchii critice
 
-Muchiile critice (numite în engleză bridges) reprezintă muchiile care dacă le scoatem din graf, acesta nu va mai fi conex. Un astfel de exemplu în desenul de mai sus este muchia $(2, 4)$.
+Muchiile critice (numite în engleză bridges) reprezintă muchiile care dacă le scoatem din graf, acesta nu va mai fi conex. Un astfel de exemplu în desenul de mai sus este muchia $$(2, 4)$$.
 
 !!! note "Observație"
 
@@ -101,9 +101,9 @@ Pentru a afla componentele biconexe, precum și celelalte valori relevante (much
 
 În primul rând, vom avea nevoie să știm pentru fiecare nod, nivelul la care se află conform arborelui DFS, lucru ce se poate afla foarte ușor.
 
-În al doilea rând, și poate cel mai important aspect al acestui algoritm, reprezintă recurența prin care aflăm pentru fiecare nod care este cel mai mic nivel pe care îl putem accesa folosind nodurile din subarborele său, împreună cu **muchiile de întoarcere** ale nodurilor din acesta, recurență care va fi numită $low$.
+În al doilea rând, și poate cel mai important aspect al acestui algoritm, reprezintă recurența prin care aflăm pentru fiecare nod care este cel mai mic nivel pe care îl putem accesa folosind nodurile din subarborele său, împreună cu **muchiile de întoarcere** ale nodurilor din acesta, recurență care va fi numită $$low$$.
 
-Pentru a calcula valoarea lui $low$ pentru fiecare nod, ne vom folosi de valorile lui $low$ calculate pentru fiecare fiu al nodului curent, împreună cu nivelele la care se află nodurile din muchiile de întoarcere corespunzătoare nodului curent. Cu alte cuvinte, această recurență este foarte similară cu alte recurențe cu care sunteți obișnuiți de la dinamicile pe arbore, scopul acesteia reprezintă aflarea nivelului la care se află cel mai apropiat nod de rădăcină pe care îl putem accesa.
+Pentru a calcula valoarea lui $$low$$ pentru fiecare nod, ne vom folosi de valorile lui $$low$$ calculate pentru fiecare fiu al nodului curent, împreună cu nivelele la care se află nodurile din muchiile de întoarcere corespunzătoare nodului curent. Cu alte cuvinte, această recurență este foarte similară cu alte recurențe cu care sunteți obișnuiți de la dinamicile pe arbore, scopul acesteia reprezintă aflarea nivelului la care se află cel mai apropiat nod de rădăcină pe care îl putem accesa.
 
 Un alt aspect de implementare foarte important reprezintă memorarea nodurilor într-o stivă, în ordinea în care au fost accesate, scopul fiind acela de a identifica componentele biconexe, deoarece de fiecare dată când dăm de un punct de articulație, putem separa nodurile ce fac parte din componenta biconexă curentă de restul grafului, în ordinea inversă celei în care au fost adăugate în stivă.
 
@@ -114,9 +114,9 @@ Pentru a implementa acest algoritm, tot ce trebuie să facem este să aplicăm p
 Pentru a afla punctele de articulație, avem două cazuri care trebuie avute în vedere:
 
 - Fie nodul este rădăcina și are cel puțin doi copii
-- Fie nodul nu este rădăcina, iar unul din copii are valoarea lui $low$ mai mare sau egală decât cea a nivelului nodului curent.
+- Fie nodul nu este rădăcina, iar unul din copii are valoarea lui $$low$$ mai mare sau egală decât cea a nivelului nodului curent.
 
-Pentru a afla muchiile critice, trebuie să găsim legăturile de tip $(a, b)$ astfel încât $low[b] = niv[a]$.
+Pentru a afla muchiile critice, trebuie să găsim legăturile de tip $$(a, b)$$ astfel încât $$low\[b] = niv\[a]$$.
 
 Implementarea de mai jos este bazată pe problema [Strongly Connected Edges](https://cses.fi/problemset/task/2177), unde ne bazăm pe diferențele dintre nivelurile nodurilor pentru a fixa direcțiile muchiilor.
 

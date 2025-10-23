@@ -16,7 +16,7 @@ Atunci când scrieți programe pentru a rezolva diverse probleme de algoritmică
 
 ### Variabile neinițializate
 
-Uneori, poți avea nevoie de variabile locale, fie că e vorba într-o funcție sau chiar în funcția main. Inițializare acestor variabile este obligatorie, iar nerespectarea acestei reguli poate duce la erori ce de multe ori nu sunt depistate de mediul vostru de lucru. De exemplu, $s$ ar trebui să fie egal cu 385 la final, dar deoarece această variabilă nu este inițializată, răspunsul va fi diferit.
+Uneori, poți avea nevoie de variabile locale, fie că e vorba într-o funcție sau chiar în funcția main. Inițializare acestor variabile este obligatorie, iar nerespectarea acestei reguli poate duce la erori ce de multe ori nu sunt depistate de mediul vostru de lucru. De exemplu, $$s$$ ar trebui să fie egal cu 385 la final, dar deoarece această variabilă nu este inițializată, răspunsul va fi diferit.
 
 !!! note "Observație"
 
@@ -41,8 +41,8 @@ cout << s << '\n';
 Situația în care o variabilă care poate avea o valoare mai mare decât
 limitele tipului de date care îi este asignat se numește overflow.
 
-Un astfel de exemplu este atunci când o valoare poate fi egală cu $n^2$ iar $n
-\leq 10^5$. Deoarece operațiile efectuate cu două variabile cu același tip de date ne returnează o variabilă cu același tip de date, produsele sau ridicările la putere sunt vulnerabile la overflow-uri, precum și sumele ce implică mulți termeni mai mari.
+Un astfel de exemplu este atunci când o valoare poate fi egală cu $$n^2$$ iar $$n
+\leq 10^5$$. Deoarece operațiile efectuate cu două variabile cu același tip de date ne returnează o variabilă cu același tip de date, produsele sau ridicările la putere sunt vulnerabile la overflow-uri, precum și sumele ce implică mulți termeni mai mari.
 
 ```cpp
 int n = 100000;
@@ -66,9 +66,9 @@ if (x = 3) {  // x devine 3, dupa se verifica daca este nenul
 
 ### Erori off by one
 
-În multe calcule, se poate întâmpla să aveți valori greșite sau semne puse prost (de exemplu, $>=$ în loc de $>$) iar aceste lucruri să cauzeze programul să se ruleze într-un mod complet diferit.
+În multe calcule, se poate întâmpla să aveți valori greșite sau semne puse prost (de exemplu, $$>=$$ în loc de $$>$$) iar aceste lucruri să cauzeze programul să se ruleze într-un mod complet diferit.
 
-O altă eroare care intră în aceeași categorie constă în folosirea greșită a variabilelor atunci când se apelează la structuri repetitive imbricate. Un exemplu foarte des întâlnit de bug care apare aici este folosirea variabilelor $i$ și $j$ la foruri, incrementările fiind scrise eronat, un exemplu de cod eronat este dat mai jos.
+O altă eroare care intră în aceeași categorie constă în folosirea greșită a variabilelor atunci când se apelează la structuri repetitive imbricate. Un exemplu foarte des întâlnit de bug care apare aici este folosirea variabilelor $$i$$ și $$j$$ la foruri, incrementările fiind scrise eronat, un exemplu de cod eronat este dat mai jos.
 
 Acest cod va rula la infinit, practic fiind un caz de loop care va rula fără oprire.
 
@@ -144,7 +144,7 @@ Alte lucruri importante pe care le puteți face sunt verificarea cu atenție a r
 
 Câteva dintre cele mai dese erori care se fac și pot fi reparate repede sunt următoarele:
 
-- Cazurile particulare (corner cases): În multe probleme, cazuri precum $N = 1$, valori cu proprietăți specifice sau anumite tipuri de inputuri pot pune probleme dacă acele cazuri nu sunt tratate cum trebuie.
+- Cazurile particulare (corner cases): În multe probleme, cazuri precum $$N = 1$$, valori cu proprietăți specifice sau anumite tipuri de inputuri pot pune probleme dacă acele cazuri nu sunt tratate cum trebuie.
 - Enunț citit greșit: Da, de foarte multe ori se poate întâmpla să citiți enunțul greșit și să rezolvați o problemă complet diferită.
 - Extinderea unor idei poate fi calea spre succes: Dacă aveți o idee promițătoare dar sunteți blocați la un pas al rezolvării, particularizarea ideii pentru anumite tipuri de date poate fi foarte utilă.
 - Algoritm/metodă neoptimă: În acest caz, optimizările sunt necesare sau în unele cazuri, chiar schimbarea completă a algoritmului folosit pentru rezolvarea problemei.
@@ -181,7 +181,7 @@ Multe editoare de cod (printre care și Code::Blocks) oferă acces la un debugge
 
 O metodă foarte importantă și utilă în special atunci când bug-urile sunt greu de găsit constă în crearea unui program (sau mai multe) care să poată genera teste de evaluare care să folosească la evaluarea sursei scrise de tine. Aceste teste, odată create, pot fi rulate pentru a depista erori. În general, vrei să ai un program corect, dar încet și un program rapid, dar greșit, care va fi corectat (sau demonstrat că este eronat indiferent de situație). Unele metode implică și folosirea unui program separat pentru generarea datelor de intrare.
 
-În ceea ce privește generatorul de teste, vrem să putem genera foarte multe teste mici (valori ale lui $n$ suficient de mici care să poată permite unei soluții brute să se miște repede), cu scopul de a detecta un test de evaluare pentru care cele două programe să dea un răspuns diferit.
+În ceea ce privește generatorul de teste, vrem să putem genera foarte multe teste mici (valori ale lui $$n$$ suficient de mici care să poată permite unei soluții brute să se miște repede), cu scopul de a detecta un test de evaluare pentru care cele două programe să dea un răspuns diferit.
 
 ### Stress testing cu un singur program
 

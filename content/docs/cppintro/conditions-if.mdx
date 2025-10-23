@@ -57,8 +57,8 @@ Astfel, operatorii de comparație sunt următorii:
 !!! note "Observație"
 
 Pentru a verifica egalitatea, este nevoie de două semne `=`; o instrucțiune
-de tipul `if (n = 5)` atribuie mai întâi valoarea 5 lui $n$, iar mai
-apoi verifică dacă $n$ este diferit de 0.
+de tipul `if (n = 5)` atribuie mai întâi valoarea 5 lui $$n$$, iar mai
+apoi verifică dacă $$n$$ este diferit de 0.
 
 ## Operatori logici
 
@@ -173,9 +173,9 @@ Momentan, ele se comportă la fel ca adunarea și înmulțirea. La fel ca aceste
 - `x && (y || z) == (x && y) || (x && z)`.
 - `x || (y && z) == (x || y) && (x || z)`.
 
-Ne putem aduce aminte de ea dacă luăm expresia echivalentă $x \cdot (y + z) = x
-\cdot y + x \cdot z$. Dacă o privim în sens invers, ne permite să „dăm în factori” expresii logice. Aceeași relație are loc și dacă inversăm conjuncția cu disjuncția, chiar dacă nu merge în algebra normală ($x + yz \neq (x + y)(x +
-z)$). Următoarele exemple sunt echivalente:
+Ne putem aduce aminte de ea dacă luăm expresia echivalentă $$x \cdot (y + z) = x
+\cdot y + x \cdot z$$. Dacă o privim în sens invers, ne permite să „dăm în factori” expresii logice. Aceeași relație are loc și dacă inversăm conjuncția cu disjuncția, chiar dacă nu merge în algebra normală ($$x + yz \neq (x + y)(x +
+z)$$). Următoarele exemple sunt echivalente:
 
 ```cpp
 --8 < --"cppintro/if/if10.cpp"
@@ -190,9 +190,9 @@ z)$). Următoarele exemple sunt echivalente:
 - `x || false == x`
 - `x && true == x`
 
-Asta o putem lua ca pe $x + 0 = x$ și $x \cdot 1 = x$. Asta ne permite să simplificăm expresiile logice dacă știm de dinainte că o parte este redundantă. De exemplu, `x && (1 == 1)` este echivalentă cu `x` oricare ar fi x.
+Asta o putem lua ca pe $$x + 0 = x$$ și $$x \cdot 1 = x$$. Asta ne permite să simplificăm expresiile logice dacă știm de dinainte că o parte este redundantă. De exemplu, `x && (1 == 1)` este echivalentă cu `x` oricare ar fi x.
 
-De la matematică, știm și că $x \cdot 0 = 0$, care este adevărat și aici:
+De la matematică, știm și că $$x \cdot 0 = 0$$, care este adevărat și aici:
 
 - `x && false == false`.
 
@@ -244,7 +244,7 @@ Ce ne spune prima regulă e că este imposibil să satisfaci și să nu satisfac
 - `!(x || y) == !x && !y`
 - `!(x && y) == !x || !y`
 
-Prima lege zice că singurul mod prin care `x || y` poate fi fals este dacă `x` și `y` sunt false. Dacă nu îmi place ciocolata sau vanilia, este clar că este același lucru cu a zice că nu îmi place ciocolata și nu îmi place vanilia. Dacă am două condiții și nu ambele se îndeplinesc, înseamnă că una dintre condiții nu se îndeplinește. Pentru un exemplu mai matematic la a doua lege, dacă $x \not\in [2, 3]$ ($x$ nu este între 2 și 3), atunci este adevărat fie că $x < 2$, fie că $x > 3$. Dacă am rescrie-o în termeni de C++, ar fi: `!(x >= 2 && x <= 3) == !(x >= 2) || !(x <= 3) == (x < 2) || (x > 3)`.
+Prima lege zice că singurul mod prin care `x || y` poate fi fals este dacă `x` și `y` sunt false. Dacă nu îmi place ciocolata sau vanilia, este clar că este același lucru cu a zice că nu îmi place ciocolata și nu îmi place vanilia. Dacă am două condiții și nu ambele se îndeplinesc, înseamnă că una dintre condiții nu se îndeplinește. Pentru un exemplu mai matematic la a doua lege, dacă $$x \not\in \[2, 3]$$ ($$x$$ nu este între 2 și 3), atunci este adevărat fie că $$x \< 2$$, fie că $$x > 3$$. Dacă am rescrie-o în termeni de C++, ar fi: `!(x >= 2 && x <= 3) == !(x >= 2) || !(x <= 3) == (x < 2) || (x > 3)`.
 
 Cea mai simplă metodă să ții minte legile de mai sus este:
 

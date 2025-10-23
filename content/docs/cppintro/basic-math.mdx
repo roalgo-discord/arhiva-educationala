@@ -94,7 +94,7 @@ cout << 594943 * (long long)204232 << '\n';  // ok
 cout << 594943 * 204232LL << '\n';           // echivalent
 ```
 
-O altă soluție pentru evitarea overflow-urilor în cazul în care trebuie să verificăm dacă produsele depășesc o anumită valoare este să verificăm rezultatul împărțirii unui deîmpărțit la un împărțitor. Cu alte cuvinte, în loc să verificăm dacă $a \cdot b \geq c$, vom verifica dacă $\frac{c}{a} \geq b$. Un exemplu de problemă este problema [Overflow](https://www.pbinfo.ro/probleme/555/overflow) de pe pbinfo, soluția o găsiți în codul de mai jos.
+O altă soluție pentru evitarea overflow-urilor în cazul în care trebuie să verificăm dacă produsele depășesc o anumită valoare este să verificăm rezultatul împărțirii unui deîmpărțit la un împărțitor. Cu alte cuvinte, în loc să verificăm dacă $$a \cdot b \geq c$$, vom verifica dacă $$\frac{c}{a} \geq b$$. Un exemplu de problemă este problema [Overflow](https://www.pbinfo.ro/probleme/555/overflow) de pe pbinfo, soluția o găsiți în codul de mai jos.
 
 ```cpp
 #include <iostream>
@@ -149,7 +149,7 @@ Deși la prima vedere acest operator pare foarte simplu de utilizat, flexibilita
 
   Dacă ați răspuns `6 14 -4 4`, felicitări!
 
-  Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul rând, deoarece operatorul de decrementare este postfixat, instrucțiunea `a--` va produce efect abia după afișare, $a$ devenind 5 ulterior. Apoi, deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va produce efect înainte de afișare, $b$ devenind 9, deci suma devine 14. Similar, $a$ și $b$ devin 4 și 8, deci diferența este 4.
+  Totuși, merită menționat de ce avem fiecare asemenea răspuns. În primul rând, deoarece operatorul de decrementare este postfixat, instrucțiunea `a--` va produce efect abia după afișare, $$a$$ devenind 5 ulterior. Apoi, deoarece operatorul de incrementare este prefixat, instrucțiunea `b++` va produce efect înainte de afișare, $$b$$ devenind 9, deci suma devine 14. Similar, $$a$$ și $$b$$ devin 4 și 8, deci diferența este 4.
 </Callout>
 
 ### Operații aritmetice pe numere reale
@@ -169,11 +169,11 @@ cout << x << '\n';  // 24
 
 ### Ridicarea la putere
 
-Pentru a afla rezultatul expresiei $a^b$, avem două moduri principale de a calcula acest lucru.
+Pentru a afla rezultatul expresiei $$a^b$$, avem două moduri principale de a calcula acest lucru.
 
-În primul rând, putem folosi instrucțiunea `pow` din biblioteca `<cmath>`, sintaxa fiind `pow(baza, exponent)`, dar problema este aceea că deși aceasta este o soluție viabilă pentru numere reale, uneori putem ajunge în situația în care dacă calculăm un rezultat foarte mare (de exemplu, $9^{14}$), în funcție de precizia operației de ridicare la putere, să avem rezultate de forma $x.999999999$ care rotunjite în jos, să ne dea $x-1$.
+În primul rând, putem folosi instrucțiunea `pow` din biblioteca `<cmath>`, sintaxa fiind `pow(baza, exponent)`, dar problema este aceea că deși aceasta este o soluție viabilă pentru numere reale, uneori putem ajunge în situația în care dacă calculăm un rezultat foarte mare (de exemplu, $$9^{14}$$), în funcție de precizia operației de ridicare la putere, să avem rezultate de forma $$x.999999999$$ care rotunjite în jos, să ne dea $$x-1$$.
 
-O metodă mai simplă constă în a ridica la putere folosind o structură repetitivă care calculează $a^b$ în $b$ pași, așa cum se poate vedea mai jos.
+O metodă mai simplă constă în a ridica la putere folosind o structură repetitivă care calculează $$a^b$$ în $$b$$ pași, așa cum se poate vedea mai jos.
 
 ```cpp
 int ans = 0;
@@ -195,56 +195,56 @@ De multe ori, mai ales în problemele mai simple de algoritmică, cunoașterea u
 
 De-a lungul acestei arhive, dar și dacă studiați matematica sau alte discipline la școală, precum fizică sau chimie, veți întâlni diverse notații matematice, pe care le vom folosi în acest articol. Printre altele, vom enumera următoarele:
 
-- Notația pentru sumă: $\sum$ este folosi pentru a nota diverse sume între mai multe numere legate între ele printr-o formulă. De exemplu, $\sum_{i=1}^n x$ reprezintă suma numerelor de la 1 la $n$.
-- Notația pentru produs: $\Pi$ este folosi pentru a nota diverse produse între mai multe numere legate între ele printr-o formulă. De exemplu, $\Pi_{i=1}^n
-  x$ reprezintă produsul numerelor de la 1 la $n$.
-- Notația pentru logaritm: $\log n$ este folosit pentru a nota logaritmul unui număr $n$, o valoare folosită frecvent în calculul complexităților. Fără a intra prea mult în teoria specifică a logaritmilor (se studiază în clasa a X-a la mate-info), putem să-i definim într-un mod aproximativ drept numărul de pași necesari pentru a ajunge la un număr subunitar dacă împărțim pe $n$ la 2. De exemplu, $\log 1000 \approx 10$, $\log 1000000 \approx 20$ etc.
+- Notația pentru sumă: $$\sum$$ este folosi pentru a nota diverse sume între mai multe numere legate între ele printr-o formulă. De exemplu, $$\sum_{i=1}^n x$$ reprezintă suma numerelor de la 1 la $$n$$.
+- Notația pentru produs: $$\Pi$$ este folosi pentru a nota diverse produse între mai multe numere legate între ele printr-o formulă. De exemplu, $$\Pi_{i=1}^n
+  x$$ reprezintă produsul numerelor de la 1 la $$n$$.
+- Notația pentru logaritm: $$\log n$$ este folosit pentru a nota logaritmul unui număr $$n$$, o valoare folosită frecvent în calculul complexităților. Fără a intra prea mult în teoria specifică a logaritmilor (se studiază în clasa a X-a la mate-info), putem să-i definim într-un mod aproximativ drept numărul de pași necesari pentru a ajunge la un număr subunitar dacă împărțim pe $$n$$ la 2. De exemplu, $$\log 1000 \approx 10$$, $$\log 1000000 \approx 20$$ etc.
 
-De asemenea, în funcție de algoritmii studiați, veți mai găsi alte notații ce folosesc litere din alfabetul grecesc precum $\pi$, $\psi$, $\phi$ etc.
+De asemenea, în funcție de algoritmii studiați, veți mai găsi alte notații ce folosesc litere din alfabetul grecesc precum $$\pi$$, $$\psi$$, $$\phi$$ etc.
 
 ### Formule pentru sume remarcabile
 
 Așa cum știți probabil de la matematică, avem diverse formule pentru unele sume de numere naturale. Cele mai multe dintre ele se pot demonstra fie prin calcul direct, fie prin inducție matematică.
 
-- $1 + 2 + 3 + \dots + n = \frac{n \cdot (n+1)}{2}$ (suma lui Gauss)
-- $1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n \cdot (n+1) \cdot (2 \cdot n+1)}{6}$ (suma pătratelor perfecte)
-- $1^3 + 2^3 + 3^3 + \dots + n^3 = (\frac{n \cdot (n+1)}{2})^2$ (suma cuburilor perfecte)
-- $1 + 3 + 5 + \dots + (2n - 1) = n^2$
-- $(a + b)^2 = a^2 + 2ab + b^2$
-- $(a - b)^2 = a^2 - 2ab + b^2$
-- $a^2 - b^2 = (a-b)(a+b)$
+- $$1 + 2 + 3 + \dots + n = \frac{n \cdot (n+1)}{2}$$ (suma lui Gauss)
+- $$1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n \cdot (n+1) \cdot (2 \cdot n+1)}{6}$$ (suma pătratelor perfecte)
+- $$1^3 + 2^3 + 3^3 + \dots + n^3 = (\frac{n \cdot (n+1)}{2})^2$$ (suma cuburilor perfecte)
+- $$1 + 3 + 5 + \dots + (2n - 1) = n^2$$
+- $$(a + b)^2 = a^2 + 2ab + b^2$$
+- $$(a - b)^2 = a^2 - 2ab + b^2$$
+- $$a^2 - b^2 = (a-b)(a+b)$$
 
 ### Rezolvarea unor tipuri de ecuații
 
 Pentru ecuația de gradul 1 și 2, avem tehnici binecunoscute pentru aflarea soluțiilor, după cum urmează.
 
-- Pentru o ecuație de forma $ax + b = 0$, soluția ecuației este $\frac{-b}{a}$.
-- Pentru o ecuație de forma $ax^2 + bx + c = 0$, avem 0, 1 sau 2 soluții reale, care pot fi aflate prin formulele $\frac{-b + \sqrt(\Delta)}{2a}$ și $\frac{-b - \sqrt(\Delta)}{2a}$, unde $\Delta = b^2 - 4ac$. Dacă $\Delta < 0$, nu există soluții reale.
+- Pentru o ecuație de forma $$ax + b = 0$$, soluția ecuației este $$\frac{-b}{a}$$.
+- Pentru o ecuație de forma $$ax^2 + bx + c = 0$$, avem 0, 1 sau 2 soluții reale, care pot fi aflate prin formulele $$\frac{-b + \sqrt(\Delta)}{2a}$$ și $$\frac{-b - \sqrt(\Delta)}{2a}$$, unde $$\Delta = b^2 - 4ac$$. Dacă $$\Delta < 0$$, nu există soluții reale.
 
 ### Rearanjarea unor sume și produse
 
 În unele situații, suntem nevoiți să rearanjăm diverși termeni ai unor egalități pentru a simplifica calculele. De obicei, când vrem să facem asta, scopul este acela de a aduce termenii ce se pot păstra în același mod împreună.
 
-Dacă vrem să aflăm câte perechi de forma $(i, j)$ există cu proprietatea că $x_i - x_j = y_i + y_j$, este mai simplu să aflăm câte perechi există cu proprietatea că $x_i - y_i = y_j - x_j = -(x_j - y_j)$, lucru ce se poate afla mult mai ușor folosind vectori de frecvență.
+Dacă vrem să aflăm câte perechi de forma $$(i, j)$$ există cu proprietatea că $$x_i - x_j = y_i + y_j$$, este mai simplu să aflăm câte perechi există cu proprietatea că $$x_i - y_i = y_j - x_j = -(x_j - y_j)$$, lucru ce se poate afla mult mai ușor folosind vectori de frecvență.
 
 ### Lucrul cu intervale
 
-Dacă avem două intervale de numere naturale $[x_1, y_1]$ și $[x_2, y_2]$ putem discuta despre următoarele două intervale:
+Dacă avem două intervale de numere naturale $$[x_1, y_1]$$ și $$[x_2, y_2]$$ putem discuta despre următoarele două intervale:
 
-- Pentru intervalele de mai sus, intersecția lor este $[max(x_1, x_2), min(y_1,
-  y_2)]$, cu condiția că $max(x_1, x_2) \leq min(y_1, y_2)$.
-- Pentru intervalele de mai sus, reuniunea lor este $[min(x_1, x_2), max(y_1,
-  y_2)]$, cu condiția că intersecția lor este nevidă. Dacă intersecția este vidă, reuniunea intervalelor este dată de cele două intervale luate separat.
+- Pentru intervalele de mai sus, intersecția lor este $$[max(x_1, x_2), min(y_1,
+  y_2)]$$, cu condiția că $$max(x_1, x_2) \leq min(y_1, y_2)$$.
+- Pentru intervalele de mai sus, reuniunea lor este $$[min(x_1, x_2), max(y_1,
+  y_2)]$$, cu condiția că intersecția lor este nevidă. Dacă intersecția este vidă, reuniunea intervalelor este dată de cele două intervale luate separat.
 
 ## Divizibilitatea numerelor naturale
 
 Deși acest capitol este abordat în detaliu [aici](../usor/divisibility.mdx), aici vom sublinia doar aspectele de bază.
 
-Operatorul pe care îl folosim pentru a verifica dacă două numere se împart unul la altul este $\%$ și acesta ne află restul împărțirii deîmpărțitului la împărțitor.
+Operatorul pe care îl folosim pentru a verifica dacă două numere se împart unul la altul este $$\%$$ și acesta ne află restul împărțirii deîmpărțitului la împărțitor.
 
-În mod particular, dacă $a \% b = 0$, atunci $a$ se împarte exact la $b$.
+În mod particular, dacă $$a \% b = 0$$, atunci $$a$$ se împarte exact la $$b$$.
 
-O altă particularitate a numerelor prime este aceea că numărul aproximativ de numere prime între 1 și $n$ este $\frac{n}{\log n}$, iar în mod similar, $\sum_{i=1}^n \frac{n}{i} \approx n \log n$.
+O altă particularitate a numerelor prime este aceea că numărul aproximativ de numere prime între 1 și $$n$$ este $$\frac{n}{\log n}$$, iar în mod similar, $$\sum_{i=1}^n \frac{n}{i} \approx n \log n$$.
 
 ## Concluzii
 

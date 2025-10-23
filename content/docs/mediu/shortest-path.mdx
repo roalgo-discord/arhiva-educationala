@@ -38,8 +38,8 @@ De regulă, atunci când vorbim de drumuri minime, vorbim de muchii care au asoc
 
 !!! info "Definiție"
 
-Un drum minim între două noduri $a$ și $b$ este un lanț simplu cu capetele
-în $a$ și $b$ cu proprietatea că costul total al muchiilor de pe lanț este
+Un drum minim între două noduri $$a$$ și $$b$$ este un lanț simplu cu capetele
+în $$a$$ și $$b$$ cu proprietatea că costul total al muchiilor de pe lanț este
 minim.
 
 !!! note "Observație"
@@ -76,7 +76,7 @@ Modul de funcționare al algoritmului este unul foarte simplu:
 
 ### Implementare suboptimă
 
-Acest algoritm, în forma sa neoptimizată are complexitatea $\mathcal{O}(n^2)$ și are drept unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate fi folosit drept o soluție reală este atunci când avem un graf complet, în care numărul de muchii se apropie de $n^2$, mai jos putând fi citită o implementare care aplică pașii de mai sus pe un graf neorientat.
+Acest algoritm, în forma sa neoptimizată are complexitatea $$\mathcal{O}(n^2)$$ și are drept unic scop obișnuirea cu conceptul algoritmului, singura situație în care poate fi folosit drept o soluție reală este atunci când avem un graf complet, în care numărul de muchii se apropie de $$n^2$$, mai jos putând fi citită o implementare care aplică pașii de mai sus pe un graf neorientat.
 
 ```cpp
 #include <iostream>
@@ -135,14 +135,14 @@ int main() {
 
 ### Implementare optimă
 
-Pentru a putea implementa algoritmul în complexitatea sa optimă, $\mathcal{O}((n+m) \log
-n)$, va trebui să facem câteva observații critice.
+Pentru a putea implementa algoritmul în complexitatea sa optimă, $$\mathcal{O}((n+m) \log
+n)$$, va trebui să facem câteva observații critice.
 
 În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate sunt cele cu cost minim.
 
 În al doilea rând, fiind vorba de regulă de grafuri cu un număr de muchii apropiat de numărul de noduri, putem ține vecinii folosind liste.
 
-Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui pas este redus la $\mathcal{O}(\log n)$, ceea ce ne dă îmbunătățirea de care avem nevoie.
+Nu în ultimul rând, cea mai importantă optimizare constă în găsirea nodului cu cost minim la fiecare pas, acest lucru se poate realiza folosind o structură de date arborescentă, de tip set sau heap (priority queue). Complexitatea acestui pas este redus la $$\mathcal{O}(\log n)$$, ceea ce ne dă îmbunătățirea de care avem nevoie.
 
 După aplicarea acestor optimizări, ideile fiind aceleași, cu excepția folosirii unei cozi de priorități sau a unui set, mai jos fiind prezente ambele variante.
 
@@ -256,9 +256,9 @@ Folosind aceste implementări, putem afla drumurile minime între două noduri f
 
 Algoritmul Bellman-Ford este un algoritm de aflare a drumului minim între două noduri folosit mai ales pentru detectarea ciclurilor negative.
 
-În mod similar cu algoritmul lui Dijkstra, vom ține pentru fiecare nod costul total până la el, dar ca o noutate, vom ține și numărul de modificări ale costului minim. Dacă numărul de modificări ale costului minim este cel puțin $n$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseamnă că sigur am modificat costul minim de două ori din același vecin.
+În mod similar cu algoritmul lui Dijkstra, vom ține pentru fiecare nod costul total până la el, dar ca o noutate, vom ține și numărul de modificări ale costului minim. Dacă numărul de modificări ale costului minim este cel puțin $$n$$, atunci putem spune că avem un ciclu de cost negativ, deoarece asta înseamnă că sigur am modificat costul minim de două ori din același vecin.
 
-Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel mai prost este $\mathcal{O}(n \cdot m)$. Implementarea, una foarte similară cu cea a parcurgerii BFS, se poate găsi mai jos.
+Deși în practică algoritmul se comportă rezonabil, complexitatea pe cazul cel mai prost este $$\mathcal{O}(n \cdot m)$$. Implementarea, una foarte similară cu cea a parcurgerii BFS, se poate găsi mai jos.
 
 ```cpp
 #include <iostream>
@@ -320,7 +320,7 @@ Există o variație a acestui algoritm, foarte des folosită în cazul unor
 probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
 algoritm este folosit cu succes în multe probleme de informatică, ca o
 alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost
-complexitatea este similară cu cea de la Bellman-Ford, $\mathcal{O}(n \cdot m)$.
+complexitatea este similară cu cea de la Bellman-Ford, $$\mathcal{O}(n \cdot m)$$.
 
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
 
@@ -328,10 +328,10 @@ Algoritmul Floyd-Warshall (Roy-Floyd) este un algoritm de aflare a drumului mini
 
 Modul în care funcționează acest algoritm este acela că pentru fiecare pereche de noduri, vom ține în memorie distanța dintre acea pereche de noduri, iar la fiecare pas, vom fixa un nod pe care îl vom folosi drept un nod intermediar, cu scopul de a micșora distanțele dintre noduri în acest fel.
 
-Cu alte cuvinte, vom fixa o valoare $k$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $(i, j)$, vom verifica dacă $dist(i, k) + dist(k, j) <
-dist(i, j)$, astfel relaxând drumul dintre cele două noduri.
+Cu alte cuvinte, vom fixa o valoare $$k$$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $$(i, j)$$, vom verifica dacă $$dist(i, k) + dist(k, j) \<
+dist(i, j)$$, astfel relaxând drumul dintre cele două noduri.
 
-Complexitatea totală a algoritmului va fi $\mathcal{O}(n^3)$, fiind unul dintre algoritmii folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale. Mai jos găsiți implementarea în limbajul C++.
+Complexitatea totală a algoritmului va fi $$\mathcal{O}(n^3)$$, fiind unul dintre algoritmii folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale. Mai jos găsiți implementarea în limbajul C++.
 
 ```cpp
 #include <iostream>
@@ -367,7 +367,7 @@ int main() {
 !!! note "Observație"
 
 Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să
-începem cu nodul pe care îl vom folosi drept cel intermediar $(k, i, j)$,
+începem cu nodul pe care îl vom folosi drept cel intermediar $$(k, i, j)$$,
 celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest
 mod.
 
@@ -461,15 +461,15 @@ int main() {
 
 ### 1-K BFS (Algoritmul lui Dial)
 
-Această abordare poate fi extinsă și dacă avem $k$ costuri distincte, folosind o strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a folosi $k$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim exact ca la 0-1 BFS.
+Această abordare poate fi extinsă și dacă avem $$k$$ costuri distincte, folosind o strategie similară. Deoarece nu vom mai putea folosi un deque, vom recurge la a folosi $$k$$ cozi, urmând ca mai apoi să simulăm algoritmul nostru de drum minim exact ca la 0-1 BFS.
 
-Vom începe prin a adăuga punctul inițial în coada 0, iar pe parcurs, dacă luăm punctul din coada $x$ și costul muchiei este $y$, atunci noul nod va fi adăugat în coada $(x+y) \ \% \ k$, urmând a fi procesat împreună cu celelalte puncte. Acest lucru se poate generaliza și dacă avem $k$ costuri oarecare, putând astfel adăuga costurile în cozi în funcție de ultimul cost adăugat, exact cum procedăm la problema [Biom de la ONI 2023](https://kilonova.ro/problems/532/).
+Vom începe prin a adăuga punctul inițial în coada 0, iar pe parcurs, dacă luăm punctul din coada $$x$$ și costul muchiei este $$y$$, atunci noul nod va fi adăugat în coada $$(x+y) \ % \ k$$, urmând a fi procesat împreună cu celelalte puncte. Acest lucru se poate generaliza și dacă avem $$k$$ costuri oarecare, putând astfel adăuga costurile în cozi în funcție de ultimul cost adăugat, exact cum procedăm la problema [Biom de la ONI 2023](https://kilonova.ro/problems/532/).
 
 La fel ca și la algoritmul precedent, vom parcurge cozile alternativ, păstrând ordinea costurilor intactă, pentru a permite algoritmului nostru să rămână liniar raportat la numărul de noduri.
 
 Pentru a înțelege mai bine modul de folosire a acestei variante generalizate, voi explica soluția problemei [John and Tractor](https://codeforces.com/gym/104328/problem/C), dată la finala FIICode 2023.
 
-Aici vom avea trei costuri distincte, unul dintre ele putând fi ajustat de operația descrisă în enunț. Ne vom concentra pe partea în care vom rula algoritmul lui Dial, folosind 4 cozi (costurile sunt $1, 2, 3$).
+Aici vom avea trei costuri distincte, unul dintre ele putând fi ajustat de operația descrisă în enunț. Ne vom concentra pe partea în care vom rula algoritmul lui Dial, folosind 4 cozi (costurile sunt $$1, 2, 3$$).
 
 ```cpp
 #include <iostream>

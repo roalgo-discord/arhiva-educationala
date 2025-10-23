@@ -13,104 +13,104 @@ tags:
 
 ## Subtask 1 (26 puncte)
 
-Avem de calculat numărul minim de sărituri pentru o matrice cu o linie. Dacă $N - 1$ este divizibil cu $P$, rezultatul este $(N - 1) / P$, altfel este $⌈(N - 1) / P⌉ + 1$, unde $⌈x⌉$ reprezintă partea întreagă a lui $x$.
+Avem de calculat numărul minim de sărituri pentru o matrice cu o linie. Dacă $$N - 1$$ este divizibil cu $$P$$, rezultatul este $$(N - 1) / P$$, altfel este $$⌈(N - 1) / P⌉ + 1$$, unde $$⌈x⌉$$ reprezintă partea întreagă a lui $$x$$.
 
-Complexitate: $O(1)$.
+Complexitate: $$O(1)$$.
 
 ## Subtask 2 (15 puncte)
 
 Avem de calculat numărul minim de sărituri pentru o matrice cu două linii. Pentru aceasta, se va determina minimul dintre numărul de sărituri obținut în fiecare din următoarele situații:
 
-- Se efectuează o săritură a calului, dacă este posibil, ajungând în pătrățelul $(2, 3)$, după care se aplică formula de la subtask 1;
-- Se efectuează o săritură pe diagonală, dacă este posibil, pentru $N = 2$;
-- Se efectuează o săritură pe verticală, apoi pe orizontală, dacă este posibil, pentru $N = 2$.
+- Se efectuează o săritură a calului, dacă este posibil, ajungând în pătrățelul $$(2, 3)$$, după care se aplică formula de la subtask 1;
+- Se efectuează o săritură pe diagonală, dacă este posibil, pentru $$N = 2$$;
+- Se efectuează o săritură pe verticală, apoi pe orizontală, dacă este posibil, pentru $$N = 2$$.
 
-Complexitate: $O(1)$.
+Complexitate: $$O(1)$$.
 
 ## Subtask 3 (7 puncte)
 
 Avem de calculat numărul minim de sărituri pentru o matrice cu trei linii. Pentru aceasta, se va determina minimul dintre numărul de sărituri obținut în fiecare din următoarele situații:
 
-- Se efectuează două sărituri ale calului, dacă este posibil, ajungând în pătrățelul $(3, 5)$, după care se aplică formula de la subtask 1;
+- Se efectuează două sărituri ale calului, dacă este posibil, ajungând în pătrățelul $$(3, 5)$$, după care se aplică formula de la subtask 1;
 - Se efectuează una sau două sărituri pe diagonală, dacă este posibil, pentru a ajunge pe linia a treia, apoi se aplică formula de la subtask 1;
 - Se efectuează una sau două sărituri pe verticală, dacă este posibil, pentru a ajunge pe linia a treia, apoi se aplică formula de la subtask 1;
 - Se efectuează o săritură a calului combinată cu o săritură pe verticală sau diagonală pentru a ajunge pe linia a treia, apoi se aplică formula de la subtask 1.
 
-Complexitate: $O(1)$
+Complexitate: $$O(1)$$
 
 ## Subtask 4 (7 puncte)
 
-Se folosește programarea dinamică. Vom nota cu $d[i][j]$ numărul minim de sărituri necesare pentru a ajunge în pătrățelul $(i, j)$. Astfel, se inițializează $d[1][1] = 0$ și $d[i][j] = m + n$ pentru orice indici $i,
-j$. Se parcurge matricea $d$ și pentru fiecare poziție $(i, j)$ se fac actualizările:
+Se folosește programarea dinamică. Vom nota cu $$d\[i]\[j]$$ numărul minim de sărituri necesare pentru a ajunge în pătrățelul $$(i, j)$$. Astfel, se inițializează $$d\[1]\[1] = 0$$ și $$d\[i]\[j] = m + n$$ pentru orice indici $$i,
+j$$. Se parcurge matricea $$d$$ și pentru fiecare poziție $$(i, j)$$ se fac actualizările:
 
-- $d[i][j + k] = min(d[i][j + k], d[i][j] + 1)$, pentru fiecare $1 \leq k \leq P$ cu $j + k \leq N$;
-- $d[i + k][j] = min(d[i + k][j], d[i][j] + 1)$, pentru fiecare $1 \leq k \leq Q$ cu $i + k \leq M$;
-- $d[i + k][j + k] = min(d[i + k][j + k], d[i][j] + 1)$, pentru fiecare $1 \leq k \leq R$ cu $i + k \leq M$, $j + k \leq N$;
-- $d[i + 1][j + 2] = min(d[i + 1][j + 2], d[i][j] + 1)$ și $d[i + 2][j + 1] = min(d[i + 2][j + 1], d[i][j] + 1)$, când indicii nu depășesc dimensiunile matricei.
+- $$d\[i]\[j + k] = min(d\[i]\[j + k], d\[i]\[j] + 1)$$, pentru fiecare $$1 \leq k \leq P$$ cu $$j + k \leq N$$;
+- $$d\[i + k]\[j] = min(d\[i + k]\[j], d\[i]\[j] + 1)$$, pentru fiecare $$1 \leq k \leq Q$$ cu $$i + k \leq M$$;
+- $$d\[i + k]\[j + k] = min(d\[i + k]\[j + k], d\[i]\[j] + 1)$$, pentru fiecare $$1 \leq k \leq R$$ cu $$i + k \leq M$$, $$j + k \leq N$$;
+- $$d\[i + 1]\[j + 2] = min(d\[i + 1]\[j + 2], d\[i]\[j] + 1)$$ și $$d\[i + 2]\[j + 1] = min(d\[i + 2]\[j + 1], d\[i]\[j] + 1)$$, când indicii nu depășesc dimensiunile matricei.
 
-Complexitate: $O(M \cdot N \cdot (M + N + min(M, N)))$.
+Complexitate: $$O(M \cdot N \cdot (M + N + min(M, N)))$$.
 
 ## Subtask 5 (8 puncte)
 
-Se folosește programarea dinamică. Vom nota cu $d[i][j]$ numărul minim de sărituri necesare pentru a ajunge în pătrățelul $(i, j)$. Astfel, se inițializează $d[1][1] = 0$ și $d[i][j] = m + n$ pentru orice indici $i,
-j$. Se parcurge matricea $d$ și pentru fiecare poziție $(i, j)$ se fac actualizările:
+Se folosește programarea dinamică. Vom nota cu $$d\[i]\[j]$$ numărul minim de sărituri necesare pentru a ajunge în pătrățelul $$(i, j)$$. Astfel, se inițializează $$d\[1]\[1] = 0$$ și $$d\[i]\[j] = m + n$$ pentru orice indici $$i,
+j$$. Se parcurge matricea $$d$$ și pentru fiecare poziție $$(i, j)$$ se fac actualizările:
 
-- $d[i][j + k] = min(d[i][j + k], d[i][j] + 1)$, pentru $k = min(P, N - j)$;
-- $d[i + k][j] = min(d[i + k][j], d[i][j] + 1)$, pentru $k = min(Q, M - i)$;
-- $d[i + k][j + k] = min(d[i + k][j + k], d[i][j] + 1)$, pentru $k = min(R, M - i, N - j)$;
-- $d[i + 1][j + 2] = min(d[i + 1][j + 2], d[i][j] + 1)$ și $d[i + 2][j + 1] =
-  min(d[i + 2][j + 1], d[i][j] + 1)$, când indicii nu depășesc dimensiunile matricei.
+- $$d\[i]\[j + k] = min(d\[i]\[j + k], d\[i]\[j] + 1)$$, pentru $$k = min(P, N - j)$$;
+- $$d\[i + k]\[j] = min(d\[i + k]\[j], d\[i]\[j] + 1)$$, pentru $$k = min(Q, M - i)$$;
+- $$d\[i + k]\[j + k] = min(d\[i + k]\[j + k], d\[i]\[j] + 1)$$, pentru $$k = min(R, M - i, N - j)$$;
+- $$d\[i + 1]\[j + 2] = min(d\[i + 1]\[j + 2], d\[i]\[j] + 1)$$ și $$d\[i + 2]\[j + 1] =
+  min(d\[i + 2]\[j + 1], d\[i]\[j] + 1)$$, când indicii nu depășesc dimensiunile matricei.
 
-Complexitate: $O(M \cdot N)$.
+Complexitate: $$O(M \cdot N)$$.
 
 ## Soluție alternativă
 
-Se folosește programarea dinamică. Astfel, se inițializează $d[1][1] = 1$ și $d[i][j] = m + n$ pentru orice indici $i, j$ în rest. Se parcurge matricea $d$ și pentru fiecare poziție $(i, j)$ diferită de poziția $(1, 1)$, se actualizează $d[i][j] = min(a, b, c, e, f)$, unde:
+Se folosește programarea dinamică. Astfel, se inițializează $$d\[1]\[1] = 1$$ și $$d\[i]\[j] = m + n$$ pentru orice indici $$i, j$$ în rest. Se parcurge matricea $$d$$ și pentru fiecare poziție $$(i, j)$$ diferită de poziția $$(1, 1)$$, se actualizează $$d\[i]\[j] = min(a, b, c, e, f)$$, unde:
 
-- $a = min(d[i][j - k] | 1 \leq k \leq P, 1 \leq j - k)$;
-- $b = min(d[i - k][j] | 1 \leq k \leq Q, 1 \leq i - k)$;
-- $c = min(d[i - k][j - k] | 1 \leq k \leq R, 1 \leq i - k, 1 \leq j - k)$;
-- $e = d[i - 1][j - 2]$;
-- $f = d[i - 2][j - 1]$.
+- $$a = min(d\[i]\[j - k] | 1 \leq k \leq P, 1 \leq j - k)$$;
+- $$b = min(d\[i - k]\[j] | 1 \leq k \leq Q, 1 \leq i - k)$$;
+- $$c = min(d\[i - k]\[j - k] | 1 \leq k \leq R, 1 \leq i - k, 1 \leq j - k)$$;
+- $$e = d\[i - 1]\[j - 2]$$;
+- $$f = d\[i - 2]\[j - 1]$$.
 
-Pentru a calcula $a$, $b$, $c$ în $O(1)$, se folosește deque pe fiecare linie, coloană și diagonală.
+Pentru a calcula $$a$$, $$b$$, $$c$$ în $$O(1)$$, se folosește deque pe fiecare linie, coloană și diagonală.
 
-Complexitate: $O(M \cdot N)$.
+Complexitate: $$O(M \cdot N)$$.
 
 O soluție asemănătoare, dar care nu trece toate testele, este ca în locul structurii deque să folosim set.
 
-Complexitate: $O(M \cdot N \cdot \log(max(M, N)))$.
+Complexitate: $$O(M \cdot N \cdot \log(max(M, N)))$$.
 
 ## Subtask 6 (11 puncte)
 
-Se folosește metoda backtracking pentru a genera toate drumurile de la pătrățelul de coordonate $(1, 1)$ la pătrățelul $(M, N)$.
+Se folosește metoda backtracking pentru a genera toate drumurile de la pătrățelul de coordonate $$(1, 1)$$ la pătrățelul $$(M, N)$$.
 
-Complexitate: $O(2^(M + N + min(M, N)))$.
+Complexitate: $$O(2^(M + N + min(M, N)))$$.
 
 ## Subtask 7 (12 puncte)
 
-Se folosește programarea dinamică. Vom nota cu $d[i][j]$ numărul de moduri în care se poate ajunge în pătrățelul $(i, j)$. Se inițializează $d[1][1] =
-1$, se parcurge matricea $d$ și pentru fiecare poziție $(i, j)$ se fac actualizările:
+Se folosește programarea dinamică. Vom nota cu $$d\[i]\[j]$$ numărul de moduri în care se poate ajunge în pătrățelul $$(i, j)$$. Se inițializează $$d\[1]\[1] =
+1$$, se parcurge matricea $$d$$ și pentru fiecare poziție $$(i, j)$$ se fac actualizările:
 
-- $d[i][j + k] += d[i][j]$, pentru fiecare $1 \leq k \leq P$ cu $j + k \leq N$;
-- $d[i + k][j] += d[i][j]$, pentru fiecare $1 \leq k \leq Q$ cu $i + k \leq M$;
-- $d[i + k][j + k] += d[i][j]$, pentru fiecare $1 \leq k \leq R$ cu $i + k \leq M$, $j + k \leq N$;
-- $d[i + 1][j + 2] += d[i][j]$ și $d[i + 2][j + 1] += d[i][j]$, când indicii nu depășesc dimensiunile matricei.
+- $$d\[i]\[j + k] += d\[i]\[j]$$, pentru fiecare $$1 \leq k \leq P$$ cu $$j + k \leq N$$;
+- $$d\[i + k]\[j] += d\[i]\[j]$$, pentru fiecare $$1 \leq k \leq Q$$ cu $$i + k \leq M$$;
+- $$d\[i + k]\[j + k] += d\[i]\[j]$$, pentru fiecare $$1 \leq k \leq R$$ cu $$i + k \leq M$$, $$j + k \leq N$$;
+- $$d\[i + 1]\[j + 2] += d\[i]\[j]$$ și $$d\[i + 2]\[j + 1] += d\[i]\[j]$$, când indicii nu depășesc dimensiunile matricei.
 
-Complexitate: $O(M \cdot N \cdot (M + N + min(M, N)))$.
+Complexitate: $$O(M \cdot N \cdot (M + N + min(M, N)))$$.
 
 ## Subtask 8 (14 puncte)
 
-Se folosește programarea dinamică. Vom nota cu $d[i][j]$ numărul de moduri în care se poate ajunge în pătrățelul $(i, j)$. Se inițializează $d[1][1] = 1$, se parcurge matricea $d$ și pentru fiecare poziție $(i, j)$ se fac actualizările:
+Se folosește programarea dinamică. Vom nota cu $$d\[i]\[j]$$ numărul de moduri în care se poate ajunge în pătrățelul $$(i, j)$$. Se inițializează $$d\[1]\[1] = 1$$, se parcurge matricea $$d$$ și pentru fiecare poziție $$(i, j)$$ se fac actualizările:
 
-- $d[i][j] += ∑d[i][j - k]$, pentru fiecare $1 \leq k \leq P$ cu $1 \leq j - k$;
-- $d[i][j] += ∑d[i - k][j]$, pentru fiecare $1 \leq k \leq Q$ cu $1 \leq i - k$;
-- $d[i][j] += ∑d[i - k][j - k]$, pentru fiecare $1 \leq k \leq R$ cu $1 \leq i - k$, $1 \leq j - k$;
-- $d[i][j] += d[i - 2][j - 1]$ și $d[i][j] += d[i - 1][j - 2]$, când indicii nu depășesc dimensiunile matricei.
+- $$d\[i]\[j] += ∑d\[i]\[j - k]$$, pentru fiecare $$1 \leq k \leq P$$ cu $$1 \leq j - k$$;
+- $$d\[i]\[j] += ∑d\[i - k]\[j]$$, pentru fiecare $$1 \leq k \leq Q$$ cu $$1 \leq i - k$$;
+- $$d\[i]\[j] += ∑d\[i - k]\[j - k]$$, pentru fiecare $$1 \leq k \leq R$$ cu $$1 \leq i - k$$, $$1 \leq j - k$$;
+- $$d\[i]\[j] += d\[i - 2]\[j - 1]$$ și $$d\[i]\[j] += d\[i - 1]\[j - 2]$$, când indicii nu depășesc dimensiunile matricei.
 
-Pentru aceasta, se vor calcula dinamic sumele parțiale ale elementelor matricei $d$, pentru fiecare linie, coloană și diagonală.
+Pentru aceasta, se vor calcula dinamic sumele parțiale ale elementelor matricei $$d$$, pentru fiecare linie, coloană și diagonală.
 
-Complexitate: $O(M \cdot N)$.
+Complexitate: $$O(M \cdot N)$$.
 
 ## Rezolvare
 

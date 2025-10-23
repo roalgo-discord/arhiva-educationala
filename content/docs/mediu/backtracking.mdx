@@ -16,8 +16,8 @@ tags:
 
 Tehnica backtracking este o tehnică folosită în problemele în care trebuie să generăm toate soluțiile posibile și eventual să verificăm pentru fiecare dintre ele dacă respectă una sau mai multe condiții.
 
-Această tehnică ne va garanta mereu obținerea unei soluții optime, dar din păcate, rezolvările care folosesc această tehnică tind să fie foarte lente, această metodă fiind o strategie viabilă doar atunci când **datele de intrare și restricțiile sunt foarte mici** (de regulă, $n \leq 10$ pentru permutări, $n
-\leq 20$ pentru submulțimi și doar în cazuri foarte rare și cu multe optimizări, $n$ poate fi cel mult $30-40$).
+Această tehnică ne va garanta mereu obținerea unei soluții optime, dar din păcate, rezolvările care folosesc această tehnică tind să fie foarte lente, această metodă fiind o strategie viabilă doar atunci când **datele de intrare și restricțiile sunt foarte mici** (de regulă, $$n \leq 10$$ pentru permutări, $$n
+\leq 20$$ pentru submulțimi și doar în cazuri foarte rare și cu multe optimizări, $$n$$ poate fi cel mult $$30-40$$).
 
 În general, vom folosi recursivitatea pentru a ne genera soluțiile, iar pentru a le genera, vom pleca de la o soluție vidă, căreia îi vom adăuga la un anumit pas toate variantele posibile de a continua, evident ținând cont de restricțiile problemei. Mai jos vom prezenta niște exemple.
 
@@ -26,7 +26,7 @@ Această tehnică ne va garanta mereu obținerea unei soluții optime, dar din p
 Pentru a rezolva această problemă, vom avea o funcție recursivă care va avea drept parametru poziția la care suntem în permutarea pe care o generăm, iar mai apoi vom avea două cazuri distincte:
 
 1. Suntem la finalul permutării: în acest caz, vom afișa permutarea generată.
-2. Nu suntem la finalul permutării: în acest caz, vom încerca să adăugăm fiecare valoare de la 1 la $n$ pe următoarea poziție a permutării. Pentru a putea face asta, va trebui să parcurgem șirul de numere obținut până acum pentru a evita plasarea aceleiași valori de două ori (o permutare nu are dubluri).
+2. Nu suntem la finalul permutării: în acest caz, vom încerca să adăugăm fiecare valoare de la 1 la $$n$$ pe următoarea poziție a permutării. Pentru a putea face asta, va trebui să parcurgem șirul de numere obținut până acum pentru a evita plasarea aceleiași valori de două ori (o permutare nu are dubluri).
 
 !!! note "Observație"
 
@@ -34,7 +34,7 @@ Procesul descris la punctul 2 poate fi optimizat prin păstrarea în memorie
 a unui alt șir, care să ne ofere informația despre existența unei anumite
 valori în permutare.
 
-Deoarece sunt $n!$ permutări, complexitatea soluției va fi $\mathcal{O}(n! \cdot n)$.
+Deoarece sunt $$n!$$ permutări, complexitatea soluției va fi $$\mathcal{O}(n! \cdot n)$$.
 
 ```cpp
 #include <fstream>

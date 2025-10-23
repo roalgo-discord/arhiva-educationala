@@ -13,30 +13,30 @@ tags:
 
 ## Subtask 1 (30 puncte)
 
-Tot graful este un ciclu. Primul drum are lungimea $n$. Următorul drum are lungimea $(n + A - S) \mod n$, analog pentru ultimul drum.
+Tot graful este un ciclu. Primul drum are lungimea $$n$$. Următorul drum are lungimea $$(n + A - S) \mod n$$, analog pentru ultimul drum.
 
-Complexitate: $O(n)$.
+Complexitate: $$O(n)$$.
 
 ## Subtask 2 (50 puncte)
 
 Observația principală a problemei implică recunoașterea formei drumului optim:
 
-Trebuie să existe un nod $i$ astfel încât drumurile $s \rightarrow i$, $i \rightarrow a$ și $i \rightarrow b$ au lungime minimă și ne putem folosi de cel mai scurt ciclu care începe și se termină în $i$.
+Trebuie să existe un nod $$i$$ astfel încât drumurile $$s \rightarrow i$$, $$i \rightarrow a$$ și $$i \rightarrow b$$ au lungime minimă și ne putem folosi de cel mai scurt ciclu care începe și se termină în $$i$$.
 
 Toate constrângerile de mai sus pot fi rezolvate cu algoritmul Roy-Floyd, cu două mențiuni:
 
-- $d[i][j]$ va fi folosit pentru ciclul de lungime minimă care începe și se termină în $i$, $\forall i \in {1, \dots, n}$.
-- Pentru reconstruirea oricărui drum, trebuie să reținem o matrice suplimentară $p$. Dacă am ameliorat lungimea drumului $i \rightarrow j$ cu ajutorul nodului $z$, atunci actualizăm $p[i][j] \leftarrow z$. Când vrem să reconstruim drumul $i \rightarrow j$ de lungime minimă, construim recursiv și unim drumurile $i \rightarrow p[i][j]$ și $p[i][j] \rightarrow j$.
+- $$d[i][j]$$ va fi folosit pentru ciclul de lungime minimă care începe și se termină în $$i$$, $$\forall i \in {1, \dots, n}$$.
+- Pentru reconstruirea oricărui drum, trebuie să reținem o matrice suplimentară $$p$$. Dacă am ameliorat lungimea drumului $$i \rightarrow j$$ cu ajutorul nodului $$z$$, atunci actualizăm $$p[i][j] \leftarrow z$$. Când vrem să reconstruim drumul $$i \rightarrow j$$ de lungime minimă, construim recursiv și unim drumurile $$i \rightarrow p[i][j]$$ și $$p[i][j] \rightarrow j$$.
 
-Trebuie să reconstruim 4 drumuri, fiecare în $O(n^2)$. Complexitatea totală a algoritmului este $O(n^3)$.
+Trebuie să reconstruim 4 drumuri, fiecare în $$O(n^2)$$. Complexitatea totală a algoritmului este $$O(n^3)$$.
 
 ## Subtask 3 (20 puncte)
 
-Căutăm ciclul optim $(i \rightarrow i)$ astfel: oricum ar arăta ciclul, există un arbore BFS al grafului astfel încât ciclul să fie reprezentat de un lanț în jos din rădăcină, închis de un back edge înapoi în rădăcină.
+Căutăm ciclul optim $$(i \rightarrow i)$$ astfel: oricum ar arăta ciclul, există un arbore BFS al grafului astfel încât ciclul să fie reprezentat de un lanț în jos din rădăcină, închis de un back edge înapoi în rădăcină.
 
-Constrângerile ne permit să construim fiecare arbore BFS din graf (adică să facem $n$ BFS-uri, unul pentru fiecare rădăcină posibilă), care vor lua $O(n(n + m)) \in O(n^2)$, deoarece $m \leq 4n$.
+Constrângerile ne permit să construim fiecare arbore BFS din graf (adică să facem $$n$$ BFS-uri, unul pentru fiecare rădăcină posibilă), care vor lua $$O(n(n + m)) \in O(n^2)$$, deoarece $$m \leq 4n$$.
 
-Putem reconstrui orice drum în $O(n)$, deci soluția are complexitatea $O(n^2)$ pentru acest subtask. Pentru celelalte subtaskuri, soluția are complexitatea $O(n^3)$, încadrându-se în limita de timp.
+Putem reconstrui orice drum în $$O(n)$$, deci soluția are complexitatea $$O(n^2)$$ pentru acest subtask. Pentru celelalte subtaskuri, soluția are complexitatea $$O(n^3)$$, încadrându-se în limita de timp.
 
 ## Rezolvare
 

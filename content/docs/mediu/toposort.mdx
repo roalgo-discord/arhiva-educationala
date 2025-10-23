@@ -16,9 +16,9 @@ tags:
 !!! info "Definitie"
 
 Într-un graf orientat și aciclic, definim sortarea topologică ca fiind o
-ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $P$
-lista pozițiilor nodurilor, iar $A$ și $B$ sunt două noduri, cu muchie de la
-$A$ la $B$, $P_A < P_B $
+ordine a nodurilor (nu neapărat unică), astfel încât, dacă notăm cu $$P$$
+lista pozițiilor nodurilor, iar $$A$$ și $$B$$ sunt două noduri, cu muchie de la
+$$A$$ la $$B$$, $$P\_A \< P\_B $$
 
 ### Spre exemplu
 
@@ -43,17 +43,17 @@ C((4)) */} A
 D */} C
 ```
 
-Acest graf conține un ciclu (de fapt chiar este unul), mai exact $1, 2, 3, 4$ . Astfel, putem alege 2 noduri, $A$ și $B$, astfel încât ele aparțin aceluiași ciclu (se poate ajunge de la $A$ la $B$ și viceversa). Dar asta implică faptul că în sortarea topologică, $A$ se află în fața lui $B$, dar și că $B$ se află înaintea lui $A$, ceea ce duce la o contradicție. Așadar, într-un graf ce conține un ciclu, nu există nicio sortare topologică.
+Acest graf conține un ciclu (de fapt chiar este unul), mai exact $$1, 2, 3, 4$$ . Astfel, putem alege 2 noduri, $$A$$ și $$B$$, astfel încât ele aparțin aceluiași ciclu (se poate ajunge de la $$A$$ la $$B$$ și viceversa). Dar asta implică faptul că în sortarea topologică, $$A$$ se află în fața lui $$B$$, dar și că $$B$$ se află înaintea lui $$A$$, ceea ce duce la o contradicție. Așadar, într-un graf ce conține un ciclu, nu există nicio sortare topologică.
 
 ## Algoritmul
 
 Întâi, vom presupune că graful este aciclic.
 
-Numim vecin al unui nod $U$, un nod $V$, astfel încât există muchie de la $U$ la $V$. Însă, știm că pentru orice două noduri $U$ și $V$, pentru care există muchie de la $U$ la $V$, $U$ se află înaintea lui $V$ în ordinea topologică.
+Numim vecin al unui nod $$U$$, un nod $$V$$, astfel încât există muchie de la $$U$$ la $$V$$. Însă, știm că pentru orice două noduri $$U$$ și $$V$$, pentru care există muchie de la $$U$$ la $$V$$, $$U$$ se află înaintea lui $$V$$ în ordinea topologică.
 
 Așadar, în sortarea topologică, orice nod se află înaintea vecinilor săi.
 
-În același timp, într-o parcurgere `DFS`, vom intra în vecinii unui nod după ce intrăm în acesta. Putem defini timpul de ieșire al unui nod ca fiind momentul la care ne întoarcem din recursivitate înapoi la el (pentru simplitate, timpii pot fi numerotați de la 1 la $n$, unde $n$ este numărul de noduri). Astfel, timpul de ieșire al unui nod va fi tot timpul mai mare decât cel al vecinilor săi, deci pentru a afla ordinea topologică, trebuie doar să sortăm nodurile descrescător după timpii de ieșire.
+În același timp, într-o parcurgere `DFS`, vom intra în vecinii unui nod după ce intrăm în acesta. Putem defini timpul de ieșire al unui nod ca fiind momentul la care ne întoarcem din recursivitate înapoi la el (pentru simplitate, timpii pot fi numerotați de la 1 la $$n$$, unde $$n$$ este numărul de noduri). Astfel, timpul de ieșire al unui nod va fi tot timpul mai mare decât cel al vecinilor săi, deci pentru a afla ordinea topologică, trebuie doar să sortăm nodurile descrescător după timpii de ieșire.
 
 Pentru a face acest lucru mai simplu, putem doar să adăugăm nodurile într-o listă goală, pe care o vom inversa la sfârșit. Să ne uităm la următoarea secvență de cod:
 
@@ -193,15 +193,15 @@ Acest cod este corect și va returna o sortare topologică validă (nu neapărat
 
 ### Complexitatea algoritmului
 
-Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $\mathcal{O}(n + m)$, unde $n$ este numărul de noduri, iar $m$ numărul de muchii. Memoria va fi tot $\mathcal{O}(n + m)$.
+Datorită faptului că folosim o singură parcurgere `DFS`, algoritmul va avea complexitate liniară $$\mathcal{O}(n + m)$$, unde $$n$$ este numărul de noduri, iar $$m$$ numărul de muchii. Memoria va fi tot $$\mathcal{O}(n + m)$$.
 
 ## Exemplu de Problema: [CSES - Course Schedule](https://cses.fi/problemset/task/1679)
 
 ### Cerință
 
-Se dau $n$ cursuri, numerotate de la 1 la $n$ și $m$ condiții ce trebuie îndeplinite, de forma a doi indici, $i$ și $j$, cu proprietatea ca acel curs cu numărul $i$ trebuie terminat înaintea cursului cu numărul $j$.
+Se dau $$n$$ cursuri, numerotate de la 1 la $$n$$ și $$m$$ condiții ce trebuie îndeplinite, de forma a doi indici, $$i$$ și $$j$$, cu proprietatea ca acel curs cu numărul $$i$$ trebuie terminat înaintea cursului cu numărul $$j$$.
 
-$1 \leqslant i < j \leqslant n$
+$$1 \leqslant i \< j \leqslant n$$
 
 Se cere să se afișeze o ordine în care să fie făcute aceste cursuri, astfel încât toate condițiile să fie îndeplinite. Dacă nu există nicio soluție, se va afișa "IMPOSSIBLE".
 

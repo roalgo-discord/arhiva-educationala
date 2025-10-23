@@ -18,14 +18,14 @@ Vom începe prin a relua definiția discutată la articolul anterior [despre gra
 
 !!! info "Ciclu"
 
-O secvență de muchii $(v_1, v_2, ..., v_k, v_1)$ formează un **ciclu** dacă
-$(v_i, v_{i + 1}) \in E$ pentru orice $1 \leq i < k$ și $(v_k, v_1) \in E$.
-Un ciclu este **simplu** dacă $v_i \neq v_j$ pentru orice $1 \leq i < j <
-    k$.
+O secvență de muchii $$(v\_1, v\_2, ..., v\_k, v\_1)$$ formează un **ciclu** dacă
+$$(v\_i, v\_{i + 1}) \in E$$ pentru orice $$1 \leq i \< k$$ și $$(v\_k, v\_1) \in E$$.
+Un ciclu este **simplu** dacă $$v\_i \neq v\_j$$ pentru orice $$1 \leq i \< j \<
+k$$.
 
 Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă,
-pleacă de la un nod $v_1$ și parcurgând în ordine acele muchii, se ajunge
-tot la nodul $v_1$. Un ciclu simplu este un ciclu în care nu se repetă
+pleacă de la un nod $$v\_1$$ și parcurgând în ordine acele muchii, se ajunge
+tot la nodul $$v\_1$$. Un ciclu simplu este un ciclu în care nu se repetă
 noduri.
 
 În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate. Modul de implementare a acestor algoritmi va fi exclusiv folosind structuri și metode din [STL](../cppintro/stl.mdx), scopul acestor aplicații fiind în special aplicațiile care apar la olimpiadele și concursurile de informatică.
@@ -331,7 +331,7 @@ Ulterior, în alte probleme precum cele în care avem nevoie de dinamici pe mă�
 
 !!! info "Grafuri funcționale"
 
-Un graf funcțional este un graf orientat cu $n$ noduri și $n$ muchii, cu
+Un graf funcțional este un graf orientat cu $$n$$ noduri și $$n$$ muchii, cu
 proprietatea că fiecare nod are o singură muchie care pleacă din el.
 
 Cu alte cuvinte, aceste grafuri sunt o reuniune de cicluri, împreună cu niște lanțuri atașate de ele.
@@ -408,7 +408,7 @@ int main() {
 
 Pentru a rezolva această problemă, va trebui să reducem șirul dat la un graf funcțional, graf pentru care știm că unele noduri vor fi noduri de unde doar se va da lapte, iar alte noduri sunt noduri care doar vor primi lapte. Nodurile din prima categorie vor da treptat laptele celor din cea de-a doua categorie.
 
-Astfel, vom afla ciclurile începând din fiecare nod care va da lapte, iar pe parcurs, vom însuma cantitățile de lapte și vom verifica dacă avem nevoie de mai mult de $m$ secunde pentru a finaliza procesul.
+Astfel, vom afla ciclurile începând din fiecare nod care va da lapte, iar pe parcurs, vom însuma cantitățile de lapte și vom verifica dacă avem nevoie de mai mult de $$m$$ secunde pentru a finaliza procesul.
 
 Cu alte cuvinte, vom rezolva problema independent pentru fiecare ciclu din graf.
 
@@ -475,8 +475,8 @@ int main() {
 
 ### Problema [Cyclic Operations - Codeforces](https://codeforces.com/contest/1867/problem/D)
 
-Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $k =
-1$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $k$.
+Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $$k =
+1$$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $$k$$.
 
 Acest lucru poate fi ușor demonstrat folosind periodicitatea operației date în enunț. Pentru mai multe detalii, recomandăm citirea soluției oficiale.
 

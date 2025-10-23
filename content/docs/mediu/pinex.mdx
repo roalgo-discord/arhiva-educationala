@@ -23,22 +23,22 @@ Cu alte cuvinte, dacă avem două sau mai multe condiții care se intersectează
 
 ## Aplicarea PINEX pentru două mulțimi
 
-Dacă avem două mulțimi $A$ și $B$, pentru a afla numărul de valori care se regăsesc în cel puțin una dintre mulțimi putem să scădem din suma cardinalelor lui $A$ și $B$, cardinalul intersecției celor două mulțimi. Mai formal, vom avea următoarea formulă:
+Dacă avem două mulțimi $$A$$ și $$B$$, pentru a afla numărul de valori care se regăsesc în cel puțin una dintre mulțimi putem să scădem din suma cardinalelor lui $$A$$ și $$B$$, cardinalul intersecției celor două mulțimi. Mai formal, vom avea următoarea formulă:
 
-$|A \cup B| = |A| + |B| - |A \cap B|$
+$$|A \cup B| = |A| + |B| - |A \cap B|$$
 
-Se poate observa că versiuni rudimentare ale acestei tehnici au fost folosite și în cazul calculării unor răspunsuri pe baza sumelor parțiale (suma valorilor de la poziția $L$ la $R$ este suma primelor $R$ valori din care scădem suma primelor $L-1$ valori) sau în cazul unor alte probleme celebre.
+Se poate observa că versiuni rudimentare ale acestei tehnici au fost folosite și în cazul calculării unor răspunsuri pe baza sumelor parțiale (suma valorilor de la poziția $$L$$ la $$R$$ este suma primelor $$R$$ valori din care scădem suma primelor $$L-1$$ valori) sau în cazul unor alte probleme celebre.
 
 ### Problema [MooBuzz - USACO Silver](https://usaco.org/index.php?page=viewproblem2\&cpid=966)
 
-Această problemă este o adaptare a celebrei probleme FizzBuzz, cerându-se aflarea celui de-al $n$-lea număr scris pe tablă. Pentru a face acest lucru, vom putea căuta binar răspunsul, știind că la fiecare pas, putem afla câte numere au fost scrise pe tablă care sunt mai mici sau egale cu $k$.
+Această problemă este o adaptare a celebrei probleme FizzBuzz, cerându-se aflarea celui de-al $$n$$-lea număr scris pe tablă. Pentru a face acest lucru, vom putea căuta binar răspunsul, știind că la fiecare pas, putem afla câte numere au fost scrise pe tablă care sunt mai mici sau egale cu $$k$$.
 
 Pentru aflarea acestui răspuns, vom avea două mulțimi:
 
-- $A = \{x | x \ \% \ 3 = 0, x \leq k \}$
-- $B = \{x | x \ \% \ 5 = 0, x \leq k \}$
+- $$A = \{x | x \ % \ 3 = 0, x \leq k }$$
+- $$B = \{x | x \ % \ 5 = 0, x \leq k }$$
 
-Este evident că vom scădea din $|A| + |B|$ valoarea $|A \cap B|$, care reprezintă mulțimea numerelor care se împart la 15, soluția devenind una în timp constant, singurul factor de timp prezent fiind cel corespunzător căutării binare. Mai jos puteți găsi implementarea în limbajul C++.
+Este evident că vom scădea din $$|A| + |B|$$ valoarea $$|A \cap B|$$, care reprezintă mulțimea numerelor care se împart la 15, soluția devenind una în timp constant, singurul factor de timp prezent fiind cel corespunzător căutării binare. Mai jos puteți găsi implementarea în limbajul C++.
 
 ```cpp
 #include <fstream>
@@ -91,7 +91,7 @@ $$
 |A \cap B \cap C|
 $$
 
-În mod general, dacă avem $k$ mulțimi, răspunsul va deveni următorul, unde $A_i$ reprezintă cea de-a $i$-a mulțime:
+În mod general, dacă avem $$k$$ mulțimi, răspunsul va deveni următorul, unde $$A\_i$$ reprezintă cea de-a $$i$$-a mulțime:
 
 $$
 \left| \bigcup_{i=1}^n A_i \right| = \sum_{i=1}^n|A_i| - \sum_{1\leq i<j\leq
@@ -116,7 +116,7 @@ care se scad se inversează.
 
 ### Problema [Prime Multiples](https://cses.fi/problemset/task/2185)
 
-Pentru a afla câte valori se împart la măcar unul din cele $n$ numere prime date, vom afla pentru fiecare submulțime de numere câte numere se împart la produsul numerelor din submulțime, adunând sau scăzând din răspuns după caz. Pentru a face asta ușor, vom reprezenta fiecare submulțime folosind o mască pe biți, tehnică explicată [în acest articol](./bitwise-ops.mdx). Singurul lucru la care trebuie avut grijă este obținerea produselor submulțimilor, pentru a evita overflow-urile.
+Pentru a afla câte valori se împart la măcar unul din cele $$n$$ numere prime date, vom afla pentru fiecare submulțime de numere câte numere se împart la produsul numerelor din submulțime, adunând sau scăzând din răspuns după caz. Pentru a face asta ușor, vom reprezenta fiecare submulțime folosind o mască pe biți, tehnică explicată [în acest articol](./bitwise-ops.mdx). Singurul lucru la care trebuie avut grijă este obținerea produselor submulțimilor, pentru a evita overflow-urile.
 
 ```cpp
 #include <iostream>
@@ -165,7 +165,7 @@ Pe lângă aplicarea [funcției Möbius](../dificil/mobius.mdx) în problemele d
 
 ### Problema [Counting Coprime Pairs](https://cses.fi/problemset/task/2417/)
 
-Pentru a afla numărul de perechi de numere prime între ele, vom afla pentru fiecare valoare posibilă a celui mai mare divizor comun câte asemenea perechi există. Pentru a face acest lucru, vom itera în ordine descrescătoare și vom afla mai întâi numărul de numere multiple cu $i$ din șirul dat, iar mai apoi vom scădea din numărul de perechi posibile care se pot genera, numărul de perechi deja aflate la pașii anteriori, când am verificat valori mai mari ale celui mai mare divizor comun. Mai jos se poate vedea o asemenea implementare.
+Pentru a afla numărul de perechi de numere prime între ele, vom afla pentru fiecare valoare posibilă a celui mai mare divizor comun câte asemenea perechi există. Pentru a face acest lucru, vom itera în ordine descrescătoare și vom afla mai întâi numărul de numere multiple cu $$i$$ din șirul dat, iar mai apoi vom scădea din numărul de perechi posibile care se pot genera, numărul de perechi deja aflate la pașii anteriori, când am verificat valori mai mari ale celui mai mare divizor comun. Mai jos se poate vedea o asemenea implementare.
 
 ```cpp
 #include <iostream>
@@ -207,26 +207,26 @@ int main() {
 
 ## Problemă rezolvată - [Lot 2024 Juniori pmo](https://kilonova.ro/problems/2807)
 
-Mai întâi, vom fixa numărul de factori din produs. Fie acesta $i$. Putem observa că $i$ este mai mic sau egal cu suma exponenților din descompunerea în factori primi a lui $x$ (să notăm această sumă cu $S$). Noi nu putem să ne asigurăm ca fiecare număr va fi mai mare ca 1 decât dacă ne asigurăm că fiecare număr are toate numerele prime din descompunerea lui $x$ în descompunerea lui.
+Mai întâi, vom fixa numărul de factori din produs. Fie acesta $$i$$. Putem observa că $$i$$ este mai mic sau egal cu suma exponenților din descompunerea în factori primi a lui $$x$$ (să notăm această sumă cu $$S$$). Noi nu putem să ne asigurăm ca fiecare număr va fi mai mare ca 1 decât dacă ne asigurăm că fiecare număr are toate numerele prime din descompunerea lui $$x$$ în descompunerea lui.
 
-Noi vrem ca exact 0 din cele $i$ elemente să fie egale cu 1. Pentru a calcula acest număr, putem aplica PINEX în funcție de câte elemente am fixat să fie egale cu 1.
+Noi vrem ca exact 0 din cele $$i$$ elemente să fie egale cu 1. Pentru a calcula acest număr, putem aplica PINEX în funcție de câte elemente am fixat să fie egale cu 1.
 
-Fie $f(n, i)$ numărul de moduri de a împărți numărul $n$ în produs de $i$ elemente, care pot fi și egale cu 1.
+Fie $$f(n, i)$$ numărul de moduri de a împărți numărul $$n$$ în produs de $$i$$ elemente, care pot fi și egale cu 1.
 
-Răspunsul va fi $\sum _{i=1} ^S \sum _{j=0} ^i \ (-1)^j \cdot C _i ^j \cdot f(x,
-i-j)$, deoarece putem alege cele $j$ elemente care vor fi egale cu 1 în $C _i
-^j$ moduri.
+Răspunsul va fi $$\sum \_{i=1} ^S \sum \_{j=0} ^i \ (-1)^j \cdot C \_i ^j \cdot f(x,
+i-j)$$, deoarece putem alege cele $$j$$ elemente care vor fi egale cu 1 în $$C \_i
+^j$$ moduri.
 
 !!! note "Observație"
 
-Să calculam $f(n, i)$. Fie $k$ numărul de factori primi ai lui $n$ și fie
-$exp_k$ exponentul al celui de-al $k$-lea factor prim în $n$. Pentru a afla
+Să calculam $$f(n, i)$$. Fie $$k$$ numărul de factori primi ai lui $$n$$ și fie
+$$exp\_k$$ exponentul al celui de-al $$k$$-lea factor prim în $$n$$. Pentru a afla
 numărul, putem să ne legăm de fiecare factor prim. Noi trebuie sa vedem câți
-vectori (tablouri unidimensionale) de lungime $i$ cu elemente posibil nule
-au suma elementelor egală cu $exp_K$. Această formulă este studiată în
+vectori (tablouri unidimensionale) de lungime $$i$$ cu elemente posibil nule
+au suma elementelor egală cu $$exp\_K$$. Această formulă este studiată în
 articolul de [Stars and
 Bars](./intro-combinatorics.mdx?h=stars#stars-and-bars).
-Așa că, numărul căutat va fi $\prod _{j=1} ^k C _{exp_k+i-1} ^{i-1}$.
+Așa că, numărul căutat va fi $$\prod \_{j=1} ^k C \_{exp_k+i-1} ^{i-1}$$.
 
 !!! note "Observație"
 

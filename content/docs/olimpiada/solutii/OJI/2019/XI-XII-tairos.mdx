@@ -22,14 +22,14 @@ Ulterior, nevoia de a număra nodurile aflate la o anumită distanță face natu
 
 Astfel, ne putem gândi la o serie de stări de tipul următor:
 
-- $dst[i]$ - numărul de noduri aflate la nivelul $i$ în arborele inițial.
-- $leaves[i]$ - numărul de frunze aflate la nivelul $i$ în arborele inițial.
-- $dp[i]$ - numărul de noduri aflate la nivelul $i$ în arborele infinit.
-- $cntleaves[i]$ - numărul de frunze aflate la nivelul $i$ în arborele infinit.
+- $$dst\[i]$$ - numărul de noduri aflate la nivelul $$i$$ în arborele inițial.
+- $$leaves\[i]$$ - numărul de frunze aflate la nivelul $$i$$ în arborele inițial.
+- $$dp\[i]$$ - numărul de noduri aflate la nivelul $$i$$ în arborele infinit.
+- $$cntleaves\[i]$$ - numărul de frunze aflate la nivelul $$i$$ în arborele infinit.
 
-Astfel, pentru a calcula $dp[i]$ și $cntleaves[i]$, ne putem duce înapoi pe urma nivelelor și să adunăm produsele dintre valorile de pe nivelurile precedente și numărul de frunze de la un anumit nivel.
+Astfel, pentru a calcula $$dp\[i]$$ și $$cntleaves\[i]$$, ne putem duce înapoi pe urma nivelelor și să adunăm produsele dintre valorile de pe nivelurile precedente și numărul de frunze de la un anumit nivel.
 
-Complexitatea finală a soluției va fi $\mathcal{O}(n \cdot d)$, iar ca un detaliu suplimentar, trebuie să fim atenți în ceea ce privește operațiile cu modulo, deoarece răspunsurile pot deveni foarte mari.
+Complexitatea finală a soluției va fi $$\mathcal{O}(n \cdot d)$$, iar ca un detaliu suplimentar, trebuie să fim atenți în ceea ce privește operațiile cu modulo, deoarece răspunsurile pot deveni foarte mari.
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
