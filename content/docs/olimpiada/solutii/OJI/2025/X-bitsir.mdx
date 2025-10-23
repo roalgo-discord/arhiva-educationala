@@ -12,13 +12,11 @@ tags:
 
 ## Subtask 1
 
-Când $$X = 0$$, șirul $$A_i$$ trebuie să fie plin de 0 ($$A_i = 0,\,\forall i \in {1,
-2, \dots , N }$$). Fiindcă $$Y = 0$$, iar $$M_i = 0,\,\forall i \in {1, 2, \dots ,
-N}$$, răspunsul va fi mereu 1.
+Când $$X = 0$$, șirul $$A_i$$ trebuie să fie plin de 0 ($$A_i = 0,\,\forall i \in {1, 2, \dots , N }$$). Fiindcă $$Y = 0$$, iar $$M_i = 0,\,\forall i \in {1, 2, \dots, N}$$, răspunsul va fi mereu 1.
 
 ## Subtask 2
 
-Când 𝑋 = 1, șirul $$A_i$$ trebuie să conțină cel puțin o valoare de 1, restul fiind egale cu 0. Din moment ce $$Y = 0$$, numărul de valori de 1 trebuie să fie par. Astfel, răspunsul va fi $$C_N^2 + C_N^4 + ... = 2^{N-1} - 1$$.
+Când $$X = 1$$, șirul $$A_i$$ trebuie să conțină cel puțin o valoare de 1, restul fiind egale cu 0. Din moment ce $$Y = 0$$, numărul de valori de 1 trebuie să fie par. Astfel, răspunsul va fi $$C_N^2 + C_N^4 + ... = 2^{N-1} - 1$$.
 
 ## Subtask 3
 
@@ -36,10 +34,9 @@ Complexitate: $$\mathcal{O}(X^4)$$ ca timp.
 
 ## Subtask 6
 
-!!! note "Observație"
-
-Operația de XOR ($$\oplus$$) are următoarea proprietate: $$a \oplus b = c
-    \Rightarrow a = b \oplus c$$.
+<Callout type="obs">
+  Operația de XOR ($$\oplus$$) are următoarea proprietate: $$a \oplus b = c \Rightarrow a = b \oplus c$$.
+</Callout>
 
 Se iterează prin toate valorile posibile ale lui $$A_1$$ ($$\{0, 1, \dots X\}$$), se află valoarea lui $$A_2 = Y \oplus A_1$$ și se verifică celelalte două condiții.
 

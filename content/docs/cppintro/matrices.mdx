@@ -44,29 +44,29 @@ Următoarea matrice are 5 rânduri și 8 coloane și este indexată de la 0. Pen
 
 <img alt="Accesarea elementului de pe al treilea rând și a cincea coloană" src="./images/matrices/matrix_2.svg" width="567" height="364" />
 
-!!! note "Reprezentarea matricii"
+<Callout type="info" title="Reprezentarea matricii">
+  În terminologia uzuală:
 
-În terminologia uzuală:
+  - Liniile sunt numerotate de sus în jos.
+  - Coloanele sunt numerotate de la stânga la dreapta.
 
-- Liniile sunt numerotate de sus în jos.
-- Coloanele sunt numerotate de la stânga la dreapta.
+  Spre deosebire de sistemul de coordonate cartezian (xOy) din geometrie, axa
+  liniilor corespunde „verticalei”, iar axa coloanelor „orizontalului”. Dacă în
+  matematică elementul poziționat x unități la dreapta și y unități în sus este
+  $$a\_{x,y}$$, în cazul C++ avem y unități în jos și x unități la dreapta și
+  notăm elementul cu `a[y][x]`. Ca un ghid, țineți minte indexarea din
+  C++ ca fiind `a[rand][coloana]`.
+</Callout>
 
-Spre deosebire de sistemul de coordonate cartezian (xOy) din geometrie, axa
-liniilor corespunde „verticalei”, iar axa coloanelor „orizontalului”. Dacă în
-matematică elementul poziționat x unități la dreapta și y unități în sus este
-$$a\_{x,y}$$, în cazul C++ avem y unități în jos și x unități la dreapta și
-notăm elementul cu `a[y][x]`. Ca un ghid, țineți minte indexarea din
-C++ ca fiind `a[rand][coloana]`.
+<Callout type="obs">
+  Dacă preferați să lucrați cu indici numerotați de la 1, pur și simplu
+  adăugați 1 la dimensiunile declarate și folosiți direct numărul ca atare,
+  exact ca în cazul vectorilor uzuali.
 
-!!! note "Observație"
-
-Dacă preferați să lucrați cu indici numerotați de la 1, pur și simplu
-adăugați 1 la dimensiunile declarate și folosiți direct numărul ca atare,
-exact ca în cazul vectorilor uzuali.
-
-```cpp
---8 < --"cppintro/matrices/matrices02.cpp"
-```
+  ```cpp
+  --8 < --"cppintro/matrices/matrices02.cpp"
+  ```
+</Callout>
 
 În acel caz, matricea va fi stocată astfel:
 
@@ -82,12 +82,13 @@ Valorile matricei pot fi accesate și modificate similar cu variabilele obișnui
 
 Pentru a parcurge elementele, de regulă se folosesc structuri repetitive imbricate.
 
-!!! example "Exemplu de parcurgere și afișare" `cpp     --8<-- "cppintro/matrices/matrices04.cpp"`
+```cpp
+--8 < --"cppintro/matrices/matrices04.cpp"
+```
 
-!!! note "Notă"
-
-Cea mai comună convenție este `i` pentru rând și `j` pentru coloană. Am ales
-`r` și `c` pentru că e mai simplu de reținut de la ce vin.
+<Callout type="note">
+  Cea mai comună convenție este `i` pentru rând și `j` pentru coloană. Am ales `r` și `c` pentru că e mai simplu de reținut de la ce vin.
+</Callout>
 
 ### Problemă exemplu - [sumapare2 de pe pbinfo](https://www.pbinfo.ro/probleme/767/sumapare2)
 
@@ -97,20 +98,15 @@ Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor
 --8 < --"cppintro/matrices/matrices05.cpp"
 ```
 
-!!! note "Notă"
-
-O altă convenție comună este `n` pentru numărul de rânduri și `m` pentru
-numărul de coloane. Dacă în matematică am avea o matrice de `m` coloane și
-`n` rânduri ca fiind de dimensiune m × n, în informatică va fi
-`mat[n][m]`. Pentru a fi expliciți, folosim `randuri` și `coloane` în
-acest articol.
+<Callout type="note">
+  O altă convenție comună este `n` pentru numărul de rânduri și `m` pentru numărul de coloane. Dacă în matematică am avea o matrice de `m` coloane și `n` rânduri ca fiind de dimensiune $$m \times n$$, în informatică va fi `mat[n][m]`. Pentru a fi expliciți, folosim `randuri` și `coloane` în acest articol.
+</Callout>
 
 ### Matrici pătratice
 
-!!! note "Definiție"
-
-O matrice unde numărul de rânduri și numărul de coloane coincid se numește
-**matrice pătratică**.
+<Callout type="def">
+  O matrice unde numărul de rânduri și numărul de coloane coincid se numește **matrice pătratică**.
+</Callout>
 
 În acest caz, folosim pentru ambele dimensiuni o singură variabilă. De obicei se folosește `n`, însă în acest articol vom folosi `dim` (de la *dimensiune*). Așa arată una:
 
@@ -163,10 +159,9 @@ Dacă matricea este indexată de la 1, atunci atât `r`, cât și `c` vor avea u
 
 Cu indexarea la 0, scădem 1, iar cu indexare de la 1, adăugăm 1.
 
-!!! note "Observație"
-
-Dacă dimensiunea este impară, atunci cele două diagonale au un element
-comun. În caz contrar, diagonalele nu vor avea elemente comune.
+<Callout type="obs">
+  Dacă dimensiunea este impară, atunci cele două diagonale au un element comun. În caz contrar, diagonalele nu vor avea elemente comune.
+</Callout>
 
 Firește, dacă avem o diagonală, putem vorbi și despre elementele de deasupra sau de sub ea.
 
@@ -210,19 +205,19 @@ O listă foarte bună cu probleme suplimentare de acest tip se găsește [aici](
 
 #### Exercițiu adaptat dintr-un model al examenului de bacalaureat
 
-!!! note "Enunț"
+<Callout type="note">
+  Să se genereze o matrice cu dimensiunea $$7 \times 7$$ cu următoarea formă:
 
-Să se genereze o matrice cu dimensiunea 7 × 7 cu următoarea formă:
-
-```text
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 2 2 2 2
-2 2 2 4 2 2 2
-2 2 4 4 4 2 2
-2 4 4 4 4 4 2
-```
+  ```text
+  2 2 2 2 2 2 2
+  2 2 2 2 2 2 2
+  2 2 2 2 2 2 2
+  2 2 2 2 2 2 2
+  2 2 2 4 2 2 2
+  2 2 4 4 4 2 2
+  2 4 4 4 4 4 2
+  ```
+</Callout>
 
 Pentru a rezolva acest exercițiu, putem observa faptul că toată matricea este umplută cu 2, cu excepția regiunii de sud unde avem 4. La problemele de bacalaureat de obicei indexarea este de la 1, așa că vom urma și noi această regulă.
 
@@ -316,16 +311,16 @@ De obicei, cele mai frecvente rotații sunt cele la stânga sau la dreapta, dar 
 
 Se poate observa faptul că după o rotire a matricii cu 90°, prima linie va deveni prima coloană scrisă invers, a doua coloană va deveni a doua coloană scrisă invers ș.a.m.d.
 
-!!! note "Rotații mai mari"
+<Callout type="note">
+  Dacă vrem să rotim matricea cu valori mai mari de 90°, putem simula rotirile
+  de 90° de mai multe ori, ajungând la același rezultat.
+</Callout>
 
-Dacă vrem să rotim matricea cu valori mai mari de 90°, putem simula rotirile
-de 90° de mai multe ori, ajungând la același rezultat.
-
-!!! note "Rotații la dreapta"
-
-Dacă vrem să rotim matricea la dreapta, vom folosi aceeași logică, unde
-prima linie va deveni ultima coloană, a doua linie va deveni penultima
-coloană ș.a.m.d.
+<Callout type="note">
+  Dacă vrem să rotim matricea la dreapta, vom folosi aceeași logică, unde
+  prima linie va deveni ultima coloană, a doua linie va deveni penultima
+  coloană ș.a.m.d.
+</Callout>
 
 Aici se poate găsi soluția problemei [rotire de pe pbinfo](https://www.pbinfo.ro/probleme/224/rotire), unde trebuie să rotim matricea la stânga cu 90°.
 
@@ -353,7 +348,7 @@ Un astfel de exemplu de problemă este [Submatrix SumMax](https://www.pbinfo.ro/
 
 În general, când vine vorba de tablouri cu mai multe dimensiuni, putem să le declarăm fie la fel cum declarăm matricile, fie folosind variantele din STL, care vor fi detaliate în articolul corespunzător.
 
-De exemplu, `int v[101][101][101];` reprezintă un "cub" de dimensiuni 101 × 101 × 101. La fel ca la celelalte tablouri, cu cât avem mai multe dimensiuni, cu atât cantitatea de memorie crește, iar în cele mai multe cazuri, nu vom avea nevoie de mai mult de 3–4 dimensiuni.
+De exemplu, `int v[101][101][101];` reprezintă un "cub" de dimensiuni $$101 \times 101 \times 101$$. La fel ca la celelalte tablouri, cu cât avem mai multe dimensiuni, cu atât cantitatea de memorie crește, iar în cele mai multe cazuri, nu vom avea nevoie de mai mult de 3-4 dimensiuni.
 
 ## Concluzii
 

@@ -21,11 +21,9 @@ Să începem cu următoarea problemă:
 
 Pentru a rezolva această problemă, ar fi necesar să știm pentru fiecare nod câte valori diferite se află în mulțimea nodurilor din subarborele său.
 
-!!! note "Observație"
-
-Pentru un nod, ar fi destul să ținem într-o structură de tip `set` valorile
-nodurilor din subarborele său (pe care îl vom nota cu $$s$$), iar răspunsul
-pentru el ar fi `s[nod].size()`.
+<Callout type="obs">
+  Pentru un nod, ar fi destul să ținem într-o structură de tip `set` valorile nodurilor din subarborele său (pe care îl vom nota cu $$s$$), iar răspunsul pentru el ar fi `s[nod].size()`.
+</Callout>
 
 Astfel, am putea să facem o parcurgere `DFS` a arborelui, unde mulțimii fiecărui nod îi vom adăuga valoarea sa și valorile din mulțimile fiilor săi. Apoi, putem salva rezultatul într-un vector separat, pe care îl putem numi `rez`.
 
@@ -83,13 +81,11 @@ Totuși, complexitatea reuniunii multimii unui nod cu cele ale fiilor sai poate 
 
 Însă, aici intervine următoarea informație:
 
-!!! note "Observație"
+<Callout type="obs">
+  Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în timp constant. Așadar, dacă avem 2 seturi, $$s\_1$$ și $$s\_2$$, `std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $$\mathcal{O}(1)$$.
 
-Pe structuri cum ar fi `set` sau `map`, operația de `swap` este efectuată în
-timp constant. Așadar, dacă avem 2 seturi, $$s\_1$$ și $$s\_2$$,
-`std::swap(s1, s2)`, sau alternativ `s1.swap(s2)`, va lua $$\mathcal{O}(1)$$.
-
-Așadar, în cazul în care mărimea setului unui fiu este mai mare decât cea a setului nodului, le putem interschimba între ele. De aici vine și numele tehnicii, deoarece noi ducem elementele de la mic la mare.
+  Așadar, în cazul în care mărimea setului unui fiu este mai mare decât cea a setului nodului, le putem interschimba între ele. De aici vine și numele tehnicii, deoarece noi ducem elementele de la mic la mare.
+</Callout>
 
 ### Demonstrație complexitate
 

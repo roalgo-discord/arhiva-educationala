@@ -43,11 +43,9 @@ for (int i = 1; i < n; i++) {
 
 Sortarea prin metoda bulelor sau bubble sort este un algoritm elementar de sortare care iterează prin valorile din vector cât timp nu sunt ordonate și la fiecare pas al iterației, dacă găsește două valori adiacente ordonate contrar ordinii cerute, schimbă între ele valorile și resetează contorul folosit pentru a decide dacă algoritmul va trebui continuat după sfârșitul iterației curente a structurii repetitive.
 
-!!! note "Observație"
-
-Numărul de interschimbări făcut de algoritmul bubble sort este egal cu
-numărul de inversiuni al vectorului dat, observație ce se va dovedi a fi
-foarte utilă pentru multe conținuturi mai avansate.
+<Callout type="obs">
+  Numărul de interschimbări făcut de algoritmul bubble sort este egal cu numărul de inversiuni al vectorului dat, observație ce se va dovedi a fi foarte utilă pentru multe conținuturi mai avansate.
+</Callout>
 
 ```cpp
 int v[1001], n;
@@ -85,11 +83,6 @@ for (int i = 2; i <= n; i++) {
 }
 ```
 
-!!! example "Cunoștințe necesare pentru următoarele capitole"
-
-- [Subprograme](../cppintro/functions.mdx)
-- [Introducere în STL](../cppintro/stl.mdx)
-
 ## Algoritmi de sortare în $$\mathcal{O}(n \log n)$$
 
 După studiul algoritmilor de mai sus, o întrebare naturală se pune: putem sorta un șir mai repede de $$\mathcal{O}(n^2)$$? Răspunsul este unul afirmativ, existând foarte mulți algoritmi de sortare mai rapizi, cei mai rapizi fiind cei în $$\mathcal{O}(n \log n)$$.
@@ -124,12 +117,9 @@ Algoritmul este de tip divide et impera; el sortează o secvență a tabloului (
 - se ordonează elementele listei, astfel încât toate elementele din stânga pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta pivotului să fie mai mari sau egale cu acesta;
 - se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta lui.
 
-!!! note "Observație"
-
-Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea
-pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit
-duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz
-să aibă o complexitate de $$\mathcal{O}(n^2)$$.
+<Callout type="obs">
+  Se recomandă alegerea pivotului într-un mod aleator, deoarece alegerea pivotului într-o poziție previzibilă (la început, la mijloc sau la sfârșit duce la cazuri nefavorabile) poate duce la soluții care în cel mai rău caz să aibă o complexitate de $$\mathcal{O}(n^2)$$.
+</Callout>
 
 ```cpp
 vector<int> quicksort(vector<int> v) {
@@ -180,10 +170,9 @@ MergeSort este o metodă eficientă de sortare a unui tablou, inventată de prog
 
 Acest algoritm folosește principiul Divide et Impera, principiu despre care puteți studia mai multe în acest articol.
 
-!!! note "Observație"
-
-Este de remarcat că acest algoritm poate fi folosit pentru a calcula numărul
-de inversiuni al unui șir.
+<Callout type="obs">
+  Este de remarcat că acest algoritm poate fi folosit pentru a calcula numărul de inversiuni al unui șir.
+</Callout>
 
 ```cpp
 void mergesort(vector<int> &v, int L, int R) {
@@ -302,11 +291,9 @@ for (auto x : s) {
 
 Counting sort este un algoritm de sortare folosit atunci când avem un număr mic de elemente distincte, care pot fi ținute într-un vector de frecvență. Acest algoritm se poate folosi și dacă intervalul în care sunt așezate valorile este unul mic, complexitatea fiind în ambele cazuri $$\mathcal{O}(n + k)$$, unde $$n$$ este numărul de valori din șir, iar $$k$$ este diferența dintre cea mai mare și cea mai mică valoare din șir.
 
-!!! note "Observație"
-
-Este de remarcat că acest algoritm poate fi implementat și folosind
-`std::map`, complexitatea de timp fiind mai mare cu $$\log n$$ din cauza
-operațiilor specifice acestei structuri de date.
+<Callout type="obs">
+  Este de remarcat că acest algoritm poate fi implementat și folosind `std::map`, complexitatea de timp fiind mai mare cu $$\log n$$ din cauza operațiilor specifice acestei structuri de date.
+</Callout>
 
 ```cpp
 int n;

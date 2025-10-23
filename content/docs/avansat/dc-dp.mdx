@@ -29,7 +29,9 @@ Mai întâi, vom defini pentru un $$(i, j)$$ oarecare $$\text{opt}(i,j)$$ ca fii
 
 De multe ori, demonstrația poate fi dificil de găsit, dar dacă funcția de cost respectă [quadrangle inequality](https://codeforces.com/blog/entry/86306), condiția se aplică.
 
-!!! note "Observație" De multe ori, dacă credeți că problema pe care o rezolvați are o asemenea optimizare în spate, puteți începe prin a scrie o soluție brută, iar dacă $$\text{opt}(i,j) \leq \text{opt}(i,j+1).$$ se aplică, sunt șanse mari să puteți folosi această optimizare cu destul de mult succes.
+<Callout type="tip">
+  De multe ori, dacă credeți că problema pe care o rezolvați are o asemenea optimizare în spate, puteți începe prin a scrie o soluție brută, iar dacă $$\text{opt}(i,j) \leq \text{opt}(i,j+1).$$ se aplică, sunt șanse mari să puteți folosi această optimizare cu destul de mult succes.
+</Callout>
 
 Astfel, vom putea aplica ideea din spatele divide et impera. Pentru un interval $$(L, R)$$, știm punctele posibile care pot fi optime $$(opt_L, opt_R)$$. Astfel, vom încerca să calculăm dinamica pentru valoarea din mijloc, iar în funcție de valoarea optimă găsită (o notăm $$opt$$), vom împărți intervalele recursiv în două, după cum urmează:
 
@@ -42,7 +44,9 @@ Deoarece fiecare valoare a $$\text{opt}(i, j)$$ apare de $$O(\log n)$$ ori, vom 
 
 ## Problema exemplu - [Subarray Squares CSES](https://cses.fi/problemset/task/2086/)
 
-!!! note "Observație" Această problemă are și o soluție video postată de Algorithms Conquered [aici](https://www.youtube.com/watch?v=Ec3fSWk9JOw).
+<Callout type="note">
+  Această problemă are și o soluție video postată de Algorithms Conquered [aici](https://www.youtube.com/watch?v=Ec3fSWk9JOw).
+</Callout>
 
 Pentru a rezolva această problemă, ne putem gândi mai întâi la o dinamică simplă dar care este prea înceată, în stilul celei descrise mai devreme în articol.
 
@@ -56,7 +60,9 @@ Recomandăm citirea implementării de mai jos, deoarece este una educațională 
 
 ## Problema [RoAlgo Contest #7 suxumetre](https://kilonova.ro/problems/1906)
 
-!!! note "Observație" Acest editorial a fost scris de [Matei Ionescu](https://rocphof.kilonova.ro/person/2375) și [Andrei Chertes](https://rocphof.kilonova.ro/person/102) ca parte a [RoAlgo Contest #7](https://kilonova.ro/contests/34)
+<Callout type="note">
+  Această problema a fost scrisă de [Matei Ionescu](https://rocphof.kilonova.ro/person/2375) și [Andrei Chertes](https://rocphof.kilonova.ro/person/102) ca parte a [RoAlgo Contest #7](https://kilonova.ro/contests/34)
+</Callout>
 
 Dinamicele de genul sunt foarte clasice, chiar au o optimizare foarte faină. Pentru un dp cum ar fi $$dp_{i, j} = min(dp_{i - 1, k} + C(k + 1, j)$$, notăm $$opt(i, j)$$ ca fiind "the optimum splitting point" și egal cu $$k$$-ul care minimizează $$dp_{i, j}$$.
 

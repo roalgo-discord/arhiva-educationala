@@ -6,20 +6,19 @@ tags:
   - siruri de caractere
 ---
 
-!!! info "Disclaimer"
-
-Cu scopul de a micșora mărimea finală a articolului și deoarece cititorii
-cărora le este adresat acest articol ar trebui să fie informaticieni
-capabili, unele detalii de implementare nu vor fi discutate aici.
+<Callout type="info" title="Disclaimer">
+  Cu scopul de a micșora mărimea finală a articolului și deoarece cititorii
+  cărora le este adresat acest articol ar trebui să fie informaticieni
+  capabili, unele detalii de implementare nu vor fi discutate aici.
+</Callout>
 
 ## Introducere
 
 Șirul de sufixe (în engleză *suffix array*) reprezintă o structură de date foarte versatilă ce se dovedește utilă în rezolvarea problemelor dificile pe șiruri de caractere, dar nu numai. Această structură de date este folosită ca un înlocuitor al arborelui de sufixe și are avantajul că folosește mai puțină memorie, este mai ușoară de înțeles și implementarea durează mult mai puțin comparativ cu acesta. În plus, împreună cu șirul $$LCP$$, care va fi de asemenea explicat în acest articol, putem rezolva majoritatea problemelor pe care le poate rezolva arborele de sufixe. Problemele care nu pot fi rezolvate doar cu șirul de sufixe sunt adesea extrem de dificile și nu se dau în concursuri.
 
-!!!info "Definiție"
-
-Șirul de sufixe al unui șir este format din indicii
-sufixelor sortate în ordine lexicografică.
+<Callout type="def">
+  Șirul de sufixe al unui șir este format din indicii sufixelor sortate în ordine lexicografică.
+</Callout>
 
 Spre exemplu, considerăm șirul de sufixe al stringului $$banana$$:
 
@@ -46,21 +45,19 @@ Algoritmul pe care îl vom folosi pentru construire are defapt scopul de a sorta
 |                  4                 | $$\text{na\$$bana}\$$\$$\$$\$$ |
 |                  2                 | $$\text{nana\$$ba}\$$\$$\$$\$$ |
 
-!!! info "Observație"
-
-Se observa că ordinea este identică dupa ce ștergem primul element din
-tablou. Rotația ce începe cu santinela va fi mereu prima și nu ne modifică
-rezultatul.
+<Callout type="obs">
+  Se observa că ordinea este identică dupa ce ștergem primul element din
+  tablou. Rotația ce începe cu santinela va fi mereu prima și nu ne modifică
+  rezultatul.
+</Callout>
 
 ## Construire
 
-Sortarea va fi realizată în $$\lceil{\log_2(N)}\rceil$$ pași, unde $$N$$ este mărimea șirului, la pasul $$i$$ având sortate rotațiile dupa prefixele lor de lungime $$2^i$$. Pentru a ne ușura munca introducem conceptul de clase de echivalență, fiecarui șir fiindu-i atribuit un număr natural, fie el $$C_i$$ pentru rotația ce începe din $$i$$, pe care le recalculăm la fiecare iterație a sortării. Aceste clase de echivalență au următoarele proprietăți : dacă un șir este mai mic lexicografic decât altul atunci are o clasă de echivalență mai mică iar dacă două șiruri sunt egale atunci au aceeași clasă de echivalență. În plus, numarul de clase de echivalență folosite trebuie să fie minim. Bazându-ne pe aceste proprietăți, la pasul $$i$$ putem sorta prefixele rotațiilor folosind o metodă similară cu radixsort : împărțim prefixul de lungime $$2^i$$ în două bucăți de lungime $$2^{i-1}$$ și le sortăm întai după bucata din dreapta apoi după bucata din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea 3 a claselor de echivalență știim că nu vor depăși niciodată valoarea $$N$$ și putem folosi metode de sortare în $$\mathcal{O}(N)$$ precum counting sort sau, ce recomand eu, doar ținem un vector de vectori unde $$V_i = $$ vectorul indicilor sufixelor ale
-căror clasă de echivalență pe care o comparăm este $$i$$. Astfel, complexitatea de timp este $$\mathcal{O}(N \log_2{N})$$ iar cea de spațiu este $$\mathcal{O}(N)$$.
+Sortarea va fi realizată în $$\lceil{\log_2(N)}\rceil$$ pași, unde $$N$$ este mărimea șirului, la pasul $$i$$ având sortate rotațiile dupa prefixele lor de lungime $$2^i$$. Pentru a ne ușura munca introducem conceptul de clase de echivalență, fiecarui șir fiindu-i atribuit un număr natural, fie el $$C_i$$ pentru rotația ce începe din $$i$$, pe care le recalculăm la fiecare iterație a sortării. Aceste clase de echivalență au următoarele proprietăți : dacă un șir este mai mic lexicografic decât altul atunci are o clasă de echivalență mai mică iar dacă două șiruri sunt egale atunci au aceeași clasă de echivalență. În plus, numarul de clase de echivalență folosite trebuie să fie minim. Bazându-ne pe aceste proprietăți, la pasul $$i$$ putem sorta prefixele rotațiilor folosind o metodă similară cu radixsort : împărțim prefixul de lungime $$2^i$$ în două bucăți de lungime $$2^{i-1}$$ și le sortăm întai după bucata din dreapta apoi după bucata din stânga. Mare atenție : aceste sortări trebuie să nu schimbe ordinea relativă în caz de egalitate, altfel se duce totul de râpă. Astfel, din proprietatea 3 a claselor de echivalență știim că nu vor depăși niciodată valoarea $$N$$ și putem folosi metode de sortare în $$\mathcal{O}(N)$$ precum counting sort sau, ce recomand eu, doar ținem un vector de vectori unde $$V_i = $$ vectorul indicilor sufixelor ale căror clasă de echivalență pe care o comparăm este $$i$$. Astfel, complexitatea de timp este $$\mathcal{O}(N \log_2{N})$$ iar cea de spațiu este $$\mathcal{O}(N)$$.
 
 ## Câteva detalii de implementare
 
-Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $$N$$. Spre exemplu, dacă $$N = 5$$, suntem la pasul 2 și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației 3 atunci acestea vor fi clasa rotației 3 în pasul 1 respectiv clasa lui $$3 + 2 ^ 1 \equiv 0
-\pmod{N}$$ în pasul 1. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $$\lceil{\log_2(N)}\rceil$$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți mai jos implementarea mea :
+Pentru a obține clasele jumătăților prefixelor este necesar să lucrăm cu indici modulo $$N$$. Spre exemplu, dacă $$N = 5$$, suntem la pasul 2 și ne dorim să obținem clasele pentru jumătățile corespunzătoare prefixului rotației 3 atunci acestea vor fi clasa rotației 3 în pasul 1 respectiv clasa lui $$3 + 2 ^ 1 \equiv 0 \pmod{N}$$ în pasul 1. Este lăsat ca demonstrație pentru cititor de ce algoritmul rămâne corect și după pasul $$\lceil{\log_2(N)}\rceil$$ în care este posibil ca jumătățile să se intersecteze. Vă puteți testa implementarea [aici](https://judge.yosupo.jp/problem/suffixarray) și aveți mai jos implementarea mea :
 
 ```cpp
 void reorder(vector<int> r[], vector<int> &p) {
@@ -185,39 +182,24 @@ vector<int> lcp(string &s, vector<int> &p) {
 
 ## Aplicații ce folosesc șirul LCP precum și șirul de sufixe
 
-!!! note "Legătura dintre subsecvențe, prefixe și sufixe"
-
-Reamintim că orice subsecvență este prefix al unui sufix.
+<Callout type="note">
+  Reamintim că orice subsecvență este prefix al unui sufix.
+</Callout>
 
 ### [Pattern Matching (CSES)](https://cses.fi/problemset/task/2103)
 
-!!! note "Cerință"
-
-Se dă un text $$T$$ si multiple șiruri $$P$$ pentru care se cer să aflăm de câte
-ori apar în $$T$$ ca subsecvență.
-
 În primul rând, orice subsecvența este un prefix al unui sufix. Astfel, se observă că toate sufixele în care $$P$$ este prefix vor forma o subsecvență în șirul de sufixe. Pentru a numara de câte ori apare $$P$$ este de ajuns să căutam ternar primul sufix în care apare $$P$$ ca prefix iar apoi să căutam binar cât de mult de putem extinde la dreapta astfel încât lcp-ul dintre $$P$$ și ultimul sufix din subsecvență să fie $$|P|$$. Complexitate: $$\mathcal{O}(|P| \log {N})$$ pe query.
 
-!!! warning "Soluția optimă"
-
-Este probabil să luați TLE pe această problemă deoarece soluția optimă este
-de complexitate liniară.
+<Callout type="warning">
+  Este probabil să luați TLE pe această problemă deoarece soluția optimă este
+  de complexitate liniară.
+</Callout>
 
 ### [Repeating Substring (CSES)](https://cses.fi/problemset/task/2106)
-
-!!! note "Cerință"
-
-Se dă un text și se cere să afișăm cel mai lung șir posibil care apare în
-text ca subsecvență de cel puțin două ori.
 
 Răspunsul se obține analizând șirul LCP. Ne uităm la fiecare sufix pe rând și ne întrebăm: "Care este lungimea maximă a unui șir care apare în acest sufix ca prefix și respectă proprietatea din enunț ?". Răspunsul este evident LCP-ul curent (poate fi și LCP-ul următor dar avem grijă de asta la urmatorul pas). Astfel, este de ajuns să găsim minimul din șirul LCP. Această idee se poate generaliza și pentru mai multe apariții, așa cum veți vedea la problemele suplimentare. Aveți soluția autorului [aici](https://cses.fi/problemset/result/9911439/).
 
 ### [Distinct substrings(CSES)](https://cses.fi/problemset/task/2105)
-
-!!! note "Cerință"
-
-Câte subsecvențe distincte are un șir? Subsecvențele se disting în funcție
-de caractere, nu de indici.
 
 Vom scădea din numărul total de subsecvențe numărul de subsecvențe greșite. Pentru a calcula acest număr iterăm prin șirul LCP: atunci când suntem la indicele $$i$$, prefixele acestui sufix care au apărut înainte sunt în număr de $$LCP_i$$. Astfel, rezultatul se obține scăzând toate elementele din șirul $$LCP$$. Soluția mea o găsiți [aici](https://cses.fi/paste/8201bc56d5efcfe197365b/).
 

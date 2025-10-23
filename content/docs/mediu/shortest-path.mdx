@@ -12,23 +12,23 @@ tags:
 
 Aflarea drumului minim între două sau mai multe locații este una dintre cele mai importante probleme pe care oamenii au fost nevoiți să le rezolve de-a lungul istoriei, începând din timpurile preistorice în care comunicarea era limitată și până în zilele noastre, când avem foarte multe facilități la dispoziție. În funcție de criteriul ales, ne putem gândi la distanța minimă, timpul minim de parcurgere al unui traseu sau alte criterii, precum dificultatea de parcurgere a drumului ales etc.
 
-!!! example "Exemplu"
+<Callout type="example">
+  De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
+  Acest traseu poate fi parcurs în două moduri principale, fiecare cu
+  avantajele și dezavantajele lui.
 
-De exemplu, să presupunem că vrei să parcurgi drumul Piatra Neamț - Brașov.
-Acest traseu poate fi parcurs în două moduri principale, fiecare cu
-avantajele și dezavantajele lui.
+  - Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h,
+    traseu dificil
+  - Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu
+    ceva mai ușor
 
-- Piatra Neamț - Miercurea Ciuc - Brașov: 238km, timp de parcurgere: 4h,
-  traseu dificil
-- Piatra Neamț - Bacău - Brașov: 239km, timp de parcurgere: 4h20m, traseu
-  ceva mai ușor
-
-Chiar dacă cele două drumuri au o distanță identică, diferența este dată de
-timpul de parcurgere și de dificultatea traseului în sine. Deși primul
-traseu necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea
-traseu este semnificativ mai ușor din punct de vedere al dificultății din
-punct de vedere rutier (după părerea autorului), fapt ce îi dă un cost mai
-mic, fiind preferat primului, în ciuda timpului și distanței mai mari.
+  Chiar dacă cele două drumuri au o distanță identică, diferența este dată de
+  timpul de parcurgere și de dificultatea traseului în sine. Deși primul
+  traseu necesită mai puțin timp pentru parcurgerea lui, cel de-al doilea
+  traseu este semnificativ mai ușor din punct de vedere al dificultății din
+  punct de vedere rutier (după părerea autorului), fapt ce îi dă un cost mai
+  mic, fiind preferat primului, în ciuda timpului și distanței mai mari.
+</Callout>
 
 În cele ce urmează, vom discuta despre algoritmii ce ne ajută să aflăm drumuri minime, modelând aceste probleme folosind grafurile orientate și neorientate, prezentând avantajele și dezavantajele fiecărui algoritm.
 
@@ -36,16 +36,13 @@ mic, fiind preferat primului, în ciuda timpului și distanței mai mari.
 
 De regulă, atunci când vorbim de drumuri minime, vorbim de muchii care au asociate costuri. Pentru a înțelege mai ușor noțiunea de cost pentru o muchie, ne vom raporta la exemplul folosit anterior.
 
-!!! info "Definiție"
+<Callout type="def">
+  Un drum minim între două noduri $$a$$ și $$b$$ este un lanț simplu cu capetele în $$a$$ și $$b$$ cu proprietatea că costul total al muchiilor de pe lanț este minim.
+</Callout>
 
-Un drum minim între două noduri $$a$$ și $$b$$ este un lanț simplu cu capetele
-în $$a$$ și $$b$$ cu proprietatea că costul total al muchiilor de pe lanț este
-minim.
-
-!!! note "Observație"
-
-Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii
-este egal cu 1.
+<Callout type="obs">
+  Dacă nu se specifică un asemenea cost, presupunem că costul fiecărei muchii este egal cu 1.
+</Callout>
 
 Pentru a păstra în memorie costul unei muchii, vom ține o variabilă în plus, astfel vom fi nevoiți să lucrăm cu structuri sau cu tipuri precum pair, după preferințe.
 
@@ -55,18 +52,13 @@ Fie că e vorba de aflarea drumului minim între două noduri, toate nodurile sa
 
 De departe cel mai cunoscut algoritm pentru aflarea drumului minim între două noduri, algoritmul lui Dijsktra este folosit atunci când avem de-a face cu costuri pozitive, condiția minimă necesară este aceea să nu avem cicluri negative.
 
-!!! note "Observație"
+<Callout type="obs">
+  Algoritmul este numit după [un informatician olandez](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra), iar o pronunție corectă a numelui lui este "daikstra" (pentru fanii fotbalului, gândiți-vă la Virgil Van Dijk), nu "diștra", "jikstra" sau alte variante total greșite, care sunt folosite foarte des.
+</Callout>
 
-Algoritmul este numit după [un informatician
-olandez](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra), iar o pronunție
-corectă a numelui lui este "daikstra" (pentru fanii fotbalului, gândiți-vă
-la Virgil Van Dijk), nu "diștra", "jikstra" sau alte variante total greșite,
-care sunt folosite foarte des.
-
-!!! info "Definiție"
-
-Un ciclu negativ este un ciclu cu proprietatea că suma costurilor muchiilor
-de pe ciclu este negativă.
+<Callout type="def">
+  Un ciclu negativ este un ciclu cu proprietatea că suma costurilor muchiilor de pe ciclu este negativă.
+</Callout>
 
 Modul de funcționare al algoritmului este unul foarte simplu:
 
@@ -135,8 +127,7 @@ int main() {
 
 ### Implementare optimă
 
-Pentru a putea implementa algoritmul în complexitatea sa optimă, $$\mathcal{O}((n+m) \log
-n)$$, va trebui să facem câteva observații critice.
+Pentru a putea implementa algoritmul în complexitatea sa optimă, $$\mathcal{O}((n+m) \log n)$$, va trebui să facem câteva observații critice.
 
 În primul rând, nu are niciun sens să tot verificăm dacă nodurile deja vizitate sunt cele cu cost minim.
 
@@ -314,13 +305,9 @@ int main() {
 }
 ```
 
-!!! note "Observație"
-
-Există o variație a acestui algoritm, foarte des folosită în cazul unor
-probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest
-algoritm este folosit cu succes în multe probleme de informatică, ca o
-alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost
-complexitatea este similară cu cea de la Bellman-Ford, $$\mathcal{O}(n \cdot m)$$.
+<Callout type="obs">
+  Există o variație a acestui algoritm, foarte des folosită în cazul unor probleme de drum minim, numită SPFA (Shortest Path Faster Algorithm). Acest algoritm este folosit cu succes în multe probleme de informatică, ca o alternativă la algoritmul lui Dijkstra. Totuși, în cazul cel mai prost complexitatea este similară cu cea de la Bellman-Ford, $$\mathcal{O}(n \cdot m)$$.
+</Callout>
 
 ## Algoritmul Floyd-Warshall (Roy-Floyd)
 
@@ -328,8 +315,7 @@ Algoritmul Floyd-Warshall (Roy-Floyd) este un algoritm de aflare a drumului mini
 
 Modul în care funcționează acest algoritm este acela că pentru fiecare pereche de noduri, vom ține în memorie distanța dintre acea pereche de noduri, iar la fiecare pas, vom fixa un nod pe care îl vom folosi drept un nod intermediar, cu scopul de a micșora distanțele dintre noduri în acest fel.
 
-Cu alte cuvinte, vom fixa o valoare $$k$$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $$(i, j)$$, vom verifica dacă $$dist(i, k) + dist(k, j) \<
-dist(i, j)$$, astfel relaxând drumul dintre cele două noduri.
+Cu alte cuvinte, vom fixa o valoare $$k$$ corespunzătoare nodului din mijloc, iar pentru fiecare pereche $$(i, j)$$, vom verifica dacă $$dist(i, k) + dist(k, j) < dist(i, j)$$, astfel relaxând drumul dintre cele două noduri.
 
 Complexitatea totală a algoritmului va fi $$\mathcal{O}(n^3)$$, fiind unul dintre algoritmii folosiți pentru a evalua performanța calculatoarelor, datorită simplității sale. Mai jos găsiți implementarea în limbajul C++.
 
@@ -364,12 +350,9 @@ int main() {
 }
 ```
 
-!!! note "Observație"
-
-Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să
-începem cu nodul pe care îl vom folosi drept cel intermediar $$(k, i, j)$$,
-celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest
-mod.
+<Callout type="obs">
+  Ordinea în care avem cele trei for-uri este esențială, fiind obligatoriu să începem cu nodul pe care îl vom folosi drept cel intermediar $$(k, i, j)$$, celelalte variante fiind greșite deoarece ratăm diverse drumuri în acest mod.
+</Callout>
 
 ## Algoritmul 0-1 BFS și variațiile sale
 
@@ -384,15 +367,11 @@ Un prim exemplu constă în grafurile (sau construcțiile care pot fi reprezenta
 - Dacă costul muchiei este 0, vom adăuga în coada curentă (sau în vârful deque-ului, dacă folosim un deque)
 - Dacă costul muchiei este 1, vom adăuga în coada următoare (sau la coada deque-ului, dacă folosim această structură de date)
 
-!!! note "Observație"
+<Callout type="obs">
+  Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura noastră de date de cel mult 2 ori, complexitatea devenind liniară, spre deosebire de o abordare standard folosind BFS, în care complexitatea pe cel mai rău caz poate fi polinomială (de cele mai multe ori, pătratică raportat la numărul de noduri)
 
-Folosind această metodă, vom ajunge să adăugăm fiecare nod în structura
-noastră de date de cel mult 2 ori, complexitatea devenind liniară, spre
-deosebire de o abordare standard folosind BFS, în care complexitatea pe cel
-mai rău caz poate fi polinomială (de cele mai multe ori, pătratică raportat
-la numărul de noduri)
-
-De asemenea, prin această strategie vom păstra o proprietate fundamentală a parcurgerii BFS când vine vorba de drumuri minime, și anume faptul că nodurile vor fi procesate în ordine crescătoare a costurilor față de origine. Această proprietate este una esențială și va fi păstrată indiferent de numărul de cozi pe care îl vom folosi, prin alternarea cozilor pe care le parcurgem la un moment dat, acestea fiind traversate secvențial.
+  De asemenea, prin această strategie vom păstra o proprietate fundamentală a parcurgerii BFS când vine vorba de drumuri minime, și anume faptul că nodurile vor fi procesate în ordine crescătoare a costurilor față de origine. Această proprietate este una esențială și va fi păstrată indiferent de numărul de cozi pe care îl vom folosi, prin alternarea cozilor pe care le parcurgem la un moment dat, acestea fiind traversate secvențial.
+</Callout>
 
 Un exemplu de problemă în care avem această abordare este problema [padure](https://www.infoarena.ro/problema/padure), în care vom implementa acest algoritm pe o matrice. Mai jos puteți găsi o implementare ce ia 100 pe problema dată.
 

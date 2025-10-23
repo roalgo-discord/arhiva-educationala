@@ -81,7 +81,9 @@ SortIncludes: CaseInsensitive
 TabWidth: 4
 ```
 
-!!! warning "Atenție" `clang-format` trebuie să fie cel puțin la versiunea 15. Poți vedea acest lucru cu `clang-format --version` într-un terminal. Dacă ai instalat compilatorul de pe Winlibs, el se află curent la versiunea 18, deci este totul în regulă.
+<Callout type="warning">
+  `clang-format` trebuie să fie cel puțin la versiunea 15. Poți vedea acest lucru cu `clang-format --version` într-un terminal. Dacă ai instalat compilatorul de pe Winlibs, el se află curent la versiunea 18, deci este totul în regulă.
+</Callout>
 
 Ca să funcționeze optim, avem nevoie să facem un proiect CMake. Din fericire, este un proces simplu. Avem nevoie doar de două fișiere într-un folder: `main.cpp` (unde vei scrie codul) și `CMakeLists.txt` (numele trebuie să fie exact acesta!).
 
@@ -109,7 +111,9 @@ set_target_properties($${PROJECT_NAME} PROPERTIES
 )
 ```
 
-!!! warning "Atenție" `PROJECT_NAME` nu poate să conțină spații. Înlocuiește-le cu bară jos (`_`) ca în exemplu sau `-`.
+<Callout type="warning">
+  `PROJECT_NAME` nu poate să conțină spații. Înlocuiește-le cu bară jos (`_`) ca în exemplu sau `-`.
+</Callout>
 
 Salvează-l în `CMakeLists.txt` (trebuie să fie exact acest nume!).
 

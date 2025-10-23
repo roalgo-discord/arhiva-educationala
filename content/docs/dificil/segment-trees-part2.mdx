@@ -61,11 +61,9 @@ Aici va trebui să creștem valorile dintr-un interval cu o valoare dată și s�
 
 Ulterior, când procesăm o interogare, vom parcurge în jos drumul de la rădăcină la nodul curent și vom procesa actualizările relevante, împărțind în două conținutul queryurilor, eventual unind conținutul queryului cu alte queryuri anterioare.
 
-!!! note "Observație"
-
-Va fi foarte important atunci când trecem într-un nod să procesăm imediat
-conținutul din lazy pentru a putea asigura păstrarea corectă a valorilor
-reale din fiecare nod.
+<Callout type="obs">
+  Va fi foarte important atunci când trecem într-un nod să procesăm imediat conținutul din lazy pentru a putea asigura păstrarea corectă a valorilor reale din fiecare nod.
+</Callout>
 
 Mai jos puteți vedea codul sursă, unde operațiile specifice metodei lazy propagation sunt explicate în detaliu. Se remarcă atenția la detalii atunci când transferăm conținutul unui query de la un nod la unul din fii, precum și faptul că realizăm actualizările imediat ce vizităm un nod.
 

@@ -11,19 +11,13 @@ tags:
 
 Așa cum am menționat în articolul despre [lucrul cu secvențe](../usor/sequences.mdx), acestea se regăsesc în foarte multe tipuri de probleme, iar deși acolo am discutat în special despre problemele de bază, aici vom prezenta o tehnică care va fi utilă pentru problemele în care trebuie să iterăm prin ferestre de lungime fixă.
 
-!!! info "Definiție"
+<Callout type="def">
+  Fereastra glisantă (în engleză *sliding window*) reprezintă o metodă de rezolvare a problemelor care implică folosirea informației acumulate pentru a face tranzițiile între subsecvențe de lungime $$k$$ cu ușurință, fără a fi nevoie de recalcularea răspunsului pentru toate secvențele de lungime $$k$$.
+</Callout>
 
-Fereastra glisantă (în engleză *sliding window*) reprezintă o metodă de
-rezolvare a problemelor care implică folosirea informației acumulate pentru
-a face tranzițiile între subsecvențe de lungime $$k$$ cu ușurință, fără a fi
-nevoie de recalcularea răspunsului pentru toate secvențele de lungime $$k$$.
-
-!!! note "Observație"
-
-Pe parcursul acestui articol, veți observa diferite structuri de date
-folosite pentru aplicarea conceptelor de aici. Toate acestea vor avea un
-element comun, folosirea unor precalculări pentru a facilita obținerea
-răspunsurilor.
+<Callout type="obs">
+  Pe parcursul acestui articol, veți observa diferite structuri de date folosite pentru aplicarea conceptelor de aici. Toate acestea vor avea un element comun, folosirea unor precalculări pentru a facilita obținerea răspunsurilor.
+</Callout>
 
 Vom continua prin a prezenta câteva probleme de acest fel, precum și prin a face legătura cu tehnici mai generale care folosesc principiile de aici, care se vor aplica și în cazul unor secvențe de lungime variabilă.
 

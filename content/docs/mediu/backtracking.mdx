@@ -28,11 +28,9 @@ Pentru a rezolva această problemă, vom avea o funcție recursivă care va avea
 1. Suntem la finalul permutării: în acest caz, vom afișa permutarea generată.
 2. Nu suntem la finalul permutării: în acest caz, vom încerca să adăugăm fiecare valoare de la 1 la $$n$$ pe următoarea poziție a permutării. Pentru a putea face asta, va trebui să parcurgem șirul de numere obținut până acum pentru a evita plasarea aceleiași valori de două ori (o permutare nu are dubluri).
 
-!!! note "Observație"
-
-Procesul descris la punctul 2 poate fi optimizat prin păstrarea în memorie
-a unui alt șir, care să ne ofere informația despre existența unei anumite
-valori în permutare.
+<Callout type="obs">
+  Procesul descris la punctul 2 poate fi optimizat prin păstrarea în memorie a unui alt șir, care să ne ofere informația despre existența unei anumite valori în permutare.
+</Callout>
 
 Deoarece sunt $$n!$$ permutări, complexitatea soluției va fi $$\mathcal{O}(n! \cdot n)$$.
 
@@ -77,13 +75,9 @@ Pentru a rezolva această problemă, trebuie să facem câteva observații pentr
 
 Nu în ultimul rând, trebuie să evităm stările care sunt blocate de ziduri și să numărăm variantele corecte.
 
-!!! note "Observație"
-
-Soluția de mai jos folosește funcția `next_permutation`, care ia ca
-parametri începutul și sfârșitul unei secvențe de valori și generează
-următoarea permutare în ordine lexicografică a șirului curent. De remarcat
-este faptul că se poate folosi și soluția de mai sus, împreună cu
-observațiile specifice acestei probleme.
+<Callout type="obs">
+  Soluția de mai jos folosește funcția `next_permutation`, care ia ca parametri începutul și sfârșitul unei secvențe de valori și generează următoarea permutare în ordine lexicografică a șirului curent. De remarcat este faptul că se poate folosi și soluția de mai sus, împreună cu observațiile specifice acestei probleme.
+</Callout>
 
 ```cpp
 #include <algorithm>

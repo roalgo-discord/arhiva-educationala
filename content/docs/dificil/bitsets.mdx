@@ -35,7 +35,9 @@ int main() {
 1000001001
 ```
 
-!!! note "Observații" - Elementele sunt indexate de la 0. - `cout << b;` va afișa toate elementele de la **dreapta la stanga**. - Este prezent `operator[]`.
+<Callout type="obs">
+  - Elementele sunt indexate de la 0. - `cout << b;` va afișa toate elementele de la **dreapta la stanga**. - Este prezent `operator[]`.
+</Callout>
 
 ### Operatori permiși
 
@@ -69,12 +71,9 @@ int main() {
 0000000000
 ```
 
-!!! note "Observație"
-
-Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente
-egale cu 1 să "iasă" din **bitset**, atunci valorile de 1 aferente se
-vor pierde
-permanent.
+<Callout type="obs">
+  Dacă shiftarea, într-o oarecare direcție, presupune pentru unele elemente egale cu 1 să "iasă" din **bitset**, atunci valorile de 1 aferente se vor pierde permanent.
+</Callout>
 
 ### Funcții permise
 
@@ -114,27 +113,23 @@ int main() {
 13
 ```
 
-!!! note "Observație"
-
-La fel cum putem declara `bitset<N> b(val)`, la fel de bine putem atribui `b     = val`, dar în ambele cazuri se vor copia doar primii $$N$$ biți.
+<Callout type="obs">
+  La fel cum putem declara `bitset<N> b(val)`, la fel de bine putem atribui `b     = val`, dar în ambele cazuri se vor copia doar primii $$N$$ biți.
+</Callout>
 
 ## `std::bitset` în programare competitivă
 
 Operațiile binare funcționează la fel ca atunci când le folosim pe alte tipuri de date cum ar fi `int`, dar datorită dimensiunilor mari pe care le poate suporta un **bitset**, acestea vin de cele mai multe ori cu o optimizare crucială ce constă în gruparea **biților** în grupe de câte 32 elemente, convertirea acestora în **int**, aplicarea operației și înlocuirea numărului în bitset. Cum pe un număr întreg o operație binară este constantă, putem deduce deci că complexitatea pentru o astfel de operație este $$O ( \frac{N}{w} )$$ , unde $$w$$ de regulă seminifică constanta cu care este împărțit numărul de elemente $$N$$.
 
-!!! note "Atenție"
-
-Notații de tipul $$O (\frac{N}{32})$$ sau $$O (\frac{N}{64})$$ nu sunt corecte,
-pentru că de cele mai multe ori [constantele sunt
-ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae),
-de aceea se folosește variabila $$w$$.
+<Callout type="warning">
+  Notații de tipul $$O (\frac{N}{32})$$ sau $$O (\frac{N}{64})$$ nu sunt corecte, pentru că de cele mai multe ori [constantele sunt ignorate](https://afnanmostafa.medium.com/constants-in-big-o-notation-72ce819684ae), de aceea se folosește variabila $$w$$.
+</Callout>
 
 ### Problema [somnoros](https://kilonova.ro/problems/677?list_id=461)
 
 Un prim exemplu este o problemă destul de clasică care ne cere să determinăm dacă într-un graf orientat aciclic avem drum de la un nod la altul.
 
-Considerăm următoare abordare: $$dp[u][v] = 1$$ dacă afirmația este adevarată. Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior 0 neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică `dp[f_j][x] |= dp[r_i][x]`, cu condiția că muchia dintre $$r_i$$ și $$f_j$$ să nu fie eliminată. Observăm că pentru 2 noduri $$u$$ și $$v$$, `dp[u][x] |= dp[v][x]` este echivalentul la `b1 |= b2`, unde $$b1$$ și $$b2$$ reprezintă 2 `std::bitset`-uri. Deci dacă în loc de `vector<vector<int>> dp(n + 1, vector<int>(n + 1))` am pune `vector<bitset<const int>> dp(n + 1)`, am putea face tranzițiile în $$O (
-\frac{N}{w} )$$, complexitatea finală fiind $$O ( \frac{N^2}{w} )$$.
+Considerăm următoare abordare: $$dp[u][v] = 1$$ dacă afirmația este adevarată. Pentru a calcula eficient dinamica am putea sorta topologic graful. Astfel dacă fixăm o rădăcină, i.e. un nod cu gradul interior 0 neeliminat până în prezent, atunci putem "propaga" dp-ul în fiecare fiu al său, adică `dp[f_j][x] |= dp[r_i][x]`, cu condiția că muchia dintre $$r_i$$ și $$f_j$$ să nu fie eliminată. Observăm că pentru 2 noduri $$u$$ și $$v$$, `dp[u][x] |= dp[v][x]` este echivalentul la `b1 |= b2`, unde $$b1$$ și $$b2$$ reprezintă 2 `std::bitset`-uri. Deci dacă în loc de `vector<vector<int>> dp(n + 1, vector<int>(n + 1))` am pune `vector<bitset<const int>> dp(n + 1)`, am putea face tranzițiile în $$O ( \frac{N}{w} )$$, complexitatea finală fiind $$O ( \frac{N^2}{w} )$$.
 
 ```cpp
 const int N = 5e4 + 1;
@@ -221,9 +216,7 @@ for (int i = 1; i <= 100; i++) {
 
 Cu operatorul `|=` păstrăm sumele deja calculate în **dp**, iar cu operatorul `<<` vom face tranzițiile, cu alte cuvinte dacă shiftăm fiecare bit cu $$i$$ poziții, toate sumele prezente în **dp** vor crește cu $$i$$, sintaxă echivalentă cu `dp[s + i] |= dp[s];`.
 
-Complexitatea devine $$O ( S \cdot maxsum \cdot \frac{1}{w} )$$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $$fr_i$$ în puteri de 2. Considerăm cel mai mic $$p$$ pentru care $$2^p \leq fr_i$$, astfel $$fr_i = \sum_{j =
-0}^{p-1} 2^j + fr_i - 2^p + 1$$. Folosind primele $$p-1$$ puteri de 2 putem să construim fiecare număr de la 1 la $$2^{p}-1$$, și cu ajutorul la $$fr_i - 2^p +
-1$$, vom putea reprezenta fiecare număr de la 1 la $$fr_i$$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile de a lua numărul $$i$$.
+Complexitatea devine $$O ( S \cdot maxsum \cdot \frac{1}{w} )$$, care este încă prea mare. Putem să o optimizăm "comprimând" fiecare $$fr_i$$ în puteri de 2. Considerăm cel mai mic $$p$$ pentru care $$2^p \leq fr_i$$, astfel $$fr_i = \sum_{j = 0}^{p-1} 2^j + fr_i - 2^p + 1$$. Folosind primele $$p-1$$ puteri de 2 putem să construim fiecare număr de la 1 la $$2^{p}-1$$, și cu ajutorul la $$fr_i - 2^p + 1$$, vom putea reprezenta fiecare număr de la 1 la $$fr_i$$, ceea ce implică faptul că și în dp-ul nostru vor fi prezentate toate combinațiile de a lua numărul $$i$$.
 
 ```cpp
 dp[0] = 1;

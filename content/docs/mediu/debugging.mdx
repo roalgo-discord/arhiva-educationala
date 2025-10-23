@@ -18,11 +18,11 @@ Atunci când scrieți programe pentru a rezolva diverse probleme de algoritmică
 
 Uneori, poți avea nevoie de variabile locale, fie că e vorba într-o funcție sau chiar în funcția main. Inițializare acestor variabile este obligatorie, iar nerespectarea acestei reguli poate duce la erori ce de multe ori nu sunt depistate de mediul vostru de lucru. De exemplu, $$s$$ ar trebui să fie egal cu 385 la final, dar deoarece această variabilă nu este inițializată, răspunsul va fi diferit.
 
-!!! note "Observație"
-
-În funcție de setările mediului vostru, outputul poate fi 385. Totuși,
-acesta este un undefined behavior, așa cum vom vorbi și mai târziu în acest
-articol.
+<Callout type="obs">
+  În funcție de setările mediului vostru, outputul poate fi 385. Totuși,
+  acesta este un undefined behavior, așa cum vom vorbi și mai târziu în acest
+  articol.
+</Callout>
 
 ```cpp
 int n = 10;
@@ -36,13 +36,12 @@ cout << s << '\n';
 
 ### Overflow-uri
 
-!!! info "Definiție"
+<Callout type="def">
+  Situația în care o variabilă care poate avea o valoare mai mare decât
+  limitele tipului de date care îi este asignat se numește overflow.
+</Callout>
 
-Situația în care o variabilă care poate avea o valoare mai mare decât
-limitele tipului de date care îi este asignat se numește overflow.
-
-Un astfel de exemplu este atunci când o valoare poate fi egală cu $$n^2$$ iar $$n
-\leq 10^5$$. Deoarece operațiile efectuate cu două variabile cu același tip de date ne returnează o variabilă cu același tip de date, produsele sau ridicările la putere sunt vulnerabile la overflow-uri, precum și sumele ce implică mulți termeni mai mari.
+Un astfel de exemplu este atunci când o valoare poate fi egală cu $$n^2$$ iar $$n \leq 10^5$$. Deoarece operațiile efectuate cu două variabile cu același tip de date ne returnează o variabilă cu același tip de date, produsele sau ridicările la putere sunt vulnerabile la overflow-uri, precum și sumele ce implică mulți termeni mai mari.
 
 ```cpp
 int n = 100000;
@@ -110,8 +109,6 @@ int main() {
 ```
 
 ### Undefined behavior
-
-!!! note "Undefined behavior"
 
 Atunci când accesăm memorie care nu există, dar programul nu se oprește din
 rulat, avem de-a face cu o situație ce se numește undefined behavior.

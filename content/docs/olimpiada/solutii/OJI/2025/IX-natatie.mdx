@@ -11,14 +11,14 @@ tags:
   - clasa IX
 ---
 
-!!! note "Observație"
-
-Pentru soluțiile ce folosesc sortări, complexitatea pentru fiecare subtask
-în parte depinde de sortarea folosită, însă orice sortare cu complexitate
-cel mult pătratică $$\mathcal{O} (N^2)$$ obține punctaj maxim pentru
-restricțiile date. Soluțiile prezentate nu iau în calcul și această
-complexitate, deși aceasta poate fi mai semnificativă decât complexitatea
-soluției propriu-zise în care se află timpul minim al cursei.
+<Callout type="obs">
+  Pentru soluțiile ce folosesc sortări, complexitatea pentru fiecare subtask
+  în parte depinde de sortarea folosită, însă orice sortare cu complexitate
+  cel mult pătratică $$\mathcal{O} (N^2)$$ obține punctaj maxim pentru
+  restricțiile date. Soluțiile prezentate nu iau în calcul și această
+  complexitate, deși aceasta poate fi mai semnificativă decât complexitatea
+  soluției propriu-zise în care se află timpul minim al cursei.
+</Callout>
 
 ## Subtask 1 (17p)
 
@@ -34,8 +34,7 @@ Din moment ce avem cel mult $$3 \cdot 10^3$$ rațe și trebuie să folosim de fi
 
 ## Subtask 4 (18p)
 
-O primă observație este faptul că răspunsul aparține mulțimii $$\{t \mid t = (2
-\cdot d_j )/v_i,\,1 ≤ i ≤ N,\,1 ≤ j ≤ M\}$$. Pe scurt, timpul cursei optime este cu siguranță unul dintre timpii unei perechi (rață, baliză). Putem calcula toți timpii posibili, îl luăm pe fiecare în parte, iar apoi verificăm dacă există vreo configurație prin care să alegem $$M$$ rațe și să obținem un timp cel mult egal cu cel ales. În continuare, trebuie să găsim o strategie prin care putem determina dacă $$M$$ dintre cele $$N$$ rațe pot fi alese încât să obținem un timp mai mic sau egal decât un timp fixat. În primă fază, toate rațele se sortează după rezistență, iar în caz de egalitate după viteză. Apoi, parcurgem în ordine toate rațele, încercând la fiecare pas să punem rața curentă pe cel mai mic culoar neocupat. Acest lucru este corect deoarece dacă o rață cu rezistența $$r$$ este folosită pe un culoar, rațele cu rezistențe mai mici nu mai pot fi folosite, deci este optim să o luăm pe cea cu rezistență minimă dacă se întoarce în timp util. Legat de viteză (la egalitate de rezistențe), este clar că dacă o rață cu viteza $$v$$ se întoarce înapoi în timp util, este optim să păstrăm rațele cu viteze mai mari pentru culoarele cu balize mai îndepărtate, deci sortarea și simularea cursei sunt corecte. Dacă găsim $$M$$ rațe care ne obțin un timp mai mic sau egal decât cel fixat, reținem acel timp, la final răspunsul fiind cel mai mic astfel de timp. Complexitate: $$\mathcal{O} (M \cdot N^2)$$.
+O primă observație este faptul că răspunsul aparține mulțimii $$\{t \mid t = (2 \cdot d_j )/v_i,\,1 ≤ i ≤ N,\,1 ≤ j ≤ M\}$$. Pe scurt, timpul cursei optime este cu siguranță unul dintre timpii unei perechi (rață, baliză). Putem calcula toți timpii posibili, îl luăm pe fiecare în parte, iar apoi verificăm dacă există vreo configurație prin care să alegem $$M$$ rațe și să obținem un timp cel mult egal cu cel ales. În continuare, trebuie să găsim o strategie prin care putem determina dacă $$M$$ dintre cele $$N$$ rațe pot fi alese încât să obținem un timp mai mic sau egal decât un timp fixat. În primă fază, toate rațele se sortează după rezistență, iar în caz de egalitate după viteză. Apoi, parcurgem în ordine toate rațele, încercând la fiecare pas să punem rața curentă pe cel mai mic culoar neocupat. Acest lucru este corect deoarece dacă o rață cu rezistența $$r$$ este folosită pe un culoar, rațele cu rezistențe mai mici nu mai pot fi folosite, deci este optim să o luăm pe cea cu rezistență minimă dacă se întoarce în timp util. Legat de viteză (la egalitate de rezistențe), este clar că dacă o rață cu viteza $$v$$ se întoarce înapoi în timp util, este optim să păstrăm rațele cu viteze mai mari pentru culoarele cu balize mai îndepărtate, deci sortarea și simularea cursei sunt corecte. Dacă găsim $$M$$ rațe care ne obțin un timp mai mic sau egal decât cel fixat, reținem acel timp, la final răspunsul fiind cel mai mic astfel de timp. Complexitate: $$\mathcal{O} (M \cdot N^2)$$.
 
 ## Subtask 5 (11p)
 

@@ -35,12 +35,9 @@ Mai jos, puteți vedea diverse exemple de folosire a acestei structuri de date �
 
 În general, **complexitatea operațiilor descrise aici este liniară** raportat la numărul de valori cu care se lucrează.
 
-!!! note "Observație"
-
-Pentru a compara doi vectori, va trebui să aibă aceeași dimensiune și tip de
-date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile
-egale pe aceeași poziție. În mod similar, atribuirea se va face curățând
-eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
+<Callout type="obs">
+  Pentru a compara doi vectori, va trebui să aibă aceeași dimensiune și tip de date, iar dacă acest lucru este adevărat, trebuie să aibă toate valorile egale pe aceeași poziție. În mod similar, atribuirea se va face curățând eventual pozițiile în plus existente și adăugând poziții noi dacă e nevoie.
+</Callout>
 
 ```cpp
 --8 < --"cppintro/stl/stl01.cpp"
@@ -56,11 +53,9 @@ Pentru a declara tablouri bidimensionale, sau chiar tablouri multidimensionale, 
 
 Pe lângă declarări, atribuiri și comparări, putem și să ajustăm vectorii, folosind foarte multe tipuri de operații care adaugă și scot valori sau chiar fac inserări în diverse poziții, fără a mai fi nevoie de implementarea manuală a operațiilor. Totuși, se remarcă faptul că operațiile de insert și erase vor fi liniare, exact cum sunt și pe tablourile statice.
 
-!!! note "Iteratori"
-
-Valori precum `v.begin()`, `v.end()` se numesc iteratori, aceștia vor fi
-prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și
-de sfârșit din vector.
+<Callout type="def" title="Iteratori">
+  Valori precum `v.begin()`, `v.end()` se numesc iteratori, aceștia vor fi prezentați ulterior. Aceștia reprezintă adresa de memorie de la început și de sfârșit din vector.
+</Callout>
 
 ```cpp
 --8 < --"cppintro/stl/stl03.cpp"
@@ -72,14 +67,9 @@ Pentru a afișa diverse valori din vector, vom putea proceda la fel ca în cazul
 
 În mod particular, se remarcă folosirea tipului de date **auto**, care este folosit pentru a evita o declarare specifică a unei variabile, fiind folosit în acest caz pentru a parcurge valorile din vectorul vals.
 
-!!! warning "Tipuri unsigned"
-
-Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a
-face cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul
-expresiei va fi si el unsigned, rezultatul dând underflow. Pentru a evita
-asta, putem fie să rescriem expresiile pentru a conține adunări, fie prin a
-folosi indicatorul (int) pentru a schimba tipul de date la int, care este un
-tip de date signed.
+<Callout type="warning" title="Tipuri unsigned">
+  Dacă vrem să avem un loop care va rula de `v.size() - 3` ori, vom avea de-a face cu un loop infinit în cazul în care `v.size() < 3`, deoarece rezultatul expresiei va fi si el unsigned, rezultatul dând underflow. Pentru a evita asta, putem fie să rescriem expresiile pentru a conține adunări, fie prin a folosi indicatorul (int) pentru a schimba tipul de date la int, care este un tip de date signed.
+</Callout>
 
 ```cpp
 --8 < --"cppintro/stl/stl04.cpp"
@@ -190,10 +180,9 @@ Iteratorii sunt structuri care pot fi utilizate să identifice și traverseze el
 
 ## Structuri de date liniare
 
-!!! note "Observație"
-
-Toate aceste structuri de date au în spatele implementării lor din STL o
-structură de tip deque.
+<Callout type="obs">
+  Toate aceste structuri de date au în spatele implementării lor din STL o structură de tip deque.
+</Callout>
 
 ### Structura std::queue
 
@@ -221,12 +210,12 @@ Deși pentru mai multe detalii, puteți accesa [articolul nostru despre stive](.
 
 Deși pentru mai multe detalii, puteți accesa [articolul nostru despre deques](../mediu/deque.mdx), mai jos puteți găsi un exemplu de folosire a acestor instrucțiuni.
 
-!!! note "Accesarea pozițiilor oarecare"
-
-Spre deosebire de `stack` și `queue`, `deque` permite accesarea pozițiilor
-oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque`
-este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
-mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
+<Callout type="note" title="Accesarea pozițiilor oarecare">
+  Spre deosebire de `stack` și `queue`, `deque` permite accesarea pozițiilor
+  oarecare, la fel ca la `vector`. În multe contexte, putem spune că `deque`
+  este un `vector` mai complex, cu toate că un dezavantaj ar fi viteza un pic
+  mai redusă a instrucțiunilor la `deque` spre deosebire de `vector`.
+</Callout>
 
 ```cpp
 --8 < --"cppintro/stl/stl14.cpp"
@@ -290,13 +279,13 @@ Complexitatea operațiilor descrise la map, respectiv set pentru cele două stru
 
 De asemenea, `std::set` și `std::map` au și versiuni care ne permit să ținem mai multe instanțe ale aceleiași valori, `std::multiset` fiind de departe cel mai utilizat în practică. Acestea au aceleași funcții specifice cu cele întâlnite la set și map, dar trebuie să fim atenți la un aspect foarte important, sintaxa fiind la fel (`multiset <tip> nume`).
 
-!!! warning "Erase și multiseturile"
+<Callout type="warning" title="Erase și multiseturile">
+  Dacă folosim erase în același mod cum am explicat la set, toate valorile egale
+  cu $$x$$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
 
-Dacă folosim erase în același mod cum am explicat la set, toate valorile egale
-cu $$x$$ se șterg, deci trebuie să folosim `ms.erase(ms.find(val))`.
-
-- `ms.erase(x)` - șterge toate aparițiile lui $$x$$ din multiset.
-- `ms.erase(ms.find(x))` - șterge o singură apariție a lui $$x$$ din multiset.
+  - `ms.erase(x)` - șterge toate aparițiile lui $$x$$ din multiset.
+  - `ms.erase(ms.find(x))` - șterge o singură apariție a lui $$x$$ din multiset.
+</Callout>
 
 La fel ca la set și map, complexitatea operațiilor este logaritimică, cu o singură excepție, aceasta fiind funcția count, care numără valorile egale cu x. Totuși, complexitatea lui count este liniară, fapt pentru care nu se recomandă folosirea acestei funcții.
 
@@ -312,15 +301,15 @@ Pentru a folosi această structură de date, biblioteca `<queue>` este necesară
 --8 < --"cppintro/stl/stl17.cpp"
 ```
 
-!!! note "Accesarea valorilor în ordine crescătoare"
+<Callout type="note" title="Accesarea valorilor în ordine crescătoare">
+  Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le
+  adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
+  adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
 
-Pentru a accesa valorile în ordine crescătoare, avem două opțiuni: Fie le
-adăugăm cu semn schimbat, fără a schimba sintaxa structurii de date, fie
-adăugăm un comparator custom. Mai jos aveți sintaxa cu comparator custom.
-
-```cpp
---8 < --"cppintro/stl/stl18.cpp"
-```
+  ```cpp
+  --8 < --"cppintro/stl/stl18.cpp"
+  ```
+</Callout>
 
 ### Policy based data structures
 
@@ -331,10 +320,10 @@ Structurile de date menționate anterior, deși puternice, nu ne permit să răs
 
 Deși aceste întrebări pot fi rezolvate folosind structuri de date complexe, precum arborii de intervale dinamici sau eventual folosind normalizări dificil de implementat, există o opțiune inbuilt destul de ușor de folosit și destul de rapidă, complexitatea operațiilor fiind $$\mathcal{O}(\log n)$$, la fel ca la set și map.
 
-!!! note "Atenție la constante"
-
-Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai
-înceată decât alte metode care ar fi mai greu de implementat.
+<Callout type="warning" title="Atenție la constante">
+  Totuși, se remarcă faptul că constanta este una foarte mare, fiind mult mai
+  înceată decât alte metode care ar fi mai greu de implementat.
+</Callout>
 
 Această structură de date ne va permite să folosim facilitățile setului, împreună cu două funcții noi:
 
@@ -347,18 +336,17 @@ Pentru a putea folosi această structură de date, trebuie să declarăm următo
 --8 < --"cppintro/stl/stl19.cpp"
 ```
 
-!!! note "Alte tipuri de date"
+<Callout type="tip" title="Alte tipuri de date">
+  Pentru a folosi policy based data structures și cu alte tipuri de date, trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
 
-Pentru a folosi policy based data structures și cu alte tipuri de date,
-trebuie înlocuite cele două int-uri cu tipul de date potrivit. De exemplu,
+  ```cpp
+  --8 < --"cppintro/stl/stl20.cpp"
+  ```
 
-```cpp
---8 < --"cppintro/stl/stl20.cpp"
-```
-
-ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
-atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai
-complexe.
+  ne permite să ținem pair-uri și să operăm în mod similar, fiind foarte util
+  atunci când vrem să lucrăm cu duplicate și eventual să stocăm valori mai
+  complexe.
+</Callout>
 
 Mai jos găsiți un exemplu de folosire a acestei structuri de date, așa cum a fost folosită în problema [AIB de pe pbinfo](https://www.pbinfo.ro/probleme/2725/aib).
 

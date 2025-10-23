@@ -16,14 +16,9 @@ tags:
 
 Această metodă de a analiza complexitatea unui algoritm pentru care timpul de execuție nu este evident se numește analiză amortizată și este foarte utilă în majoritatea algoritmilor mai complecși.
 
-!!! note "Cum funcționează analiza amortizată?"
-
-În analiza amortizată, facem media timpului necesar pentru a executa o secvență
-de operații, împărțind acest timp la numărul operațiilor executate. Prin analiza
-amortizată putem să arătăm că costul mediu al unei operații este mic, atunci
-când împărțim la numărul de operații, cu toate că o singură operație din
-secvență ar putea fi "scumpă". Acest cost mediu per operație se mai numește și
-costul amortizat.
+<Callout type="note" title="Cum funcționează analiza amortizată?">
+  În analiza amortizată, facem media timpului necesar pentru a executa o secvență de operații, împărțind acest timp la numărul operațiilor executate. Prin analiza amortizată putem să arătăm că costul mediu al unei operații este mic, atunci când împărțim la numărul de operații, cu toate că o singură operație din secvență ar putea fi "scumpă". Acest cost mediu per operație se mai numește și costul amortizat.
+</Callout>
 
 ## Exemple
 
@@ -33,8 +28,7 @@ Dacă vrem să păstrăm un contor binar de lungime $$n$$, pentru a aduna un 1 l
 
 Totuși, dacă analizăm mai în detaliu ce se întâmplă, observăm că deși biții de pe pozițiile mai nesemnificative își schimbă valoarea des, biții mai semnificativi își schimbă poziția mult mai rar. Cu alte cuvinte, un bit de pe poziția $$i$$ își schimbă valoarea odată la $$2^i$$ incrementări, iar operația de transport apare odată la $$2^{i+1}$$ incrementări.
 
-Astfel, dacă avem un număr de incrementări fix (să presupunem că acesta este $$x$$), numărul de schimbări care se face este $$\frac{x}{2^0} + \frac{x}{2^1} +
-\dots + \frac{x}{2^n}$$, unde $$n$$ este lungimea maximă a acestui număr. Cu alte cuvinte, această sumă este de fapt aproximativ egală cu $$2 \cdot x$$, iar complexitatea reală a acestei incrementări este $$\mathcal{O}(1)$$.
+Astfel, dacă avem un număr de incrementări fix (să presupunem că acesta este $$x$$), numărul de schimbări care se face este $$\frac{x}{2^0} + \frac{x}{2^1} + \dots + \frac{x}{2^n}$$, unde $$n$$ este lungimea maximă a acestui număr. Cu alte cuvinte, această sumă este de fapt aproximativ egală cu $$2 \cdot x$$, iar complexitatea reală a acestei incrementări este $$\mathcal{O}(1)$$.
 
 ### Ciurul lui Eratostene
 
@@ -55,8 +49,7 @@ La prima vedere, ne-am putea gândi că complexitatea acestui algoritm ar fi $$\
 
 Totuși, pasul din cel de-al doilea for este de $$i$$, deci trebuie să analizăm câți pași facem de fapt pentru un $$n$$ fixat.
 
-- $$\frac{n}{2} + \frac{n}{3} + \frac{n}{5} + \dots$$, sumă care converge la $$\mathcal{O}(n
-  \log \log n)$$, datorită proprietăților sumelor armonice. Se poate observa și când programul este rulat că viteza lui de execuție este foarte bună în practică.
+- $$\frac{n}{2} + \frac{n}{3} + \frac{n}{5} + \dots$$, sumă care converge la $$\mathcal{O}(n \log \log n)$$, datorită proprietăților sumelor armonice. Se poate observa și când programul este rulat că viteza lui de execuție este foarte bună în practică.
 
 ### Operațiile specifice stivei
 

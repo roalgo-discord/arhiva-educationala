@@ -20,12 +20,9 @@ tags:
 
 Să presupunem că avem de-a face cu un labirint cu diverse tipuri de obstacole și spații libere, iar obiectivul nostru este acela de a afla dacă putem ajunge de la punctul $$A$$ la punctul $$B$$, unde punctele $$A$$ și $$B$$ sunt date în input. În alte variații ale acestui tip de probleme, ni se poate cere și aflarea distanței minime între două sau mai multe puncte.
 
-!!! info "Resursă foarte utilă"
-
-Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași,
-atât pentru valoarea istorică, cât și pentru claritatea explicațiilor
-grafice, soft educațional pe care îl găsiți
-[aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
+<Callout type="tip">
+  Recomandăm softul făcut de cei de la Colegiul Național "Emil Racoviță" Iași, atât pentru valoarea istorică, cât și pentru claritatea explicațiilor grafice, soft educațional pe care îl găsiți [aici](http://ler.is.edu.ro/~ema/proiecte/soft/2022/algoritmul_lui_lee/index/index.html).
+</Callout>
 
 Pe parcurs, veți observa că indiferent de modul în care veți rezolva aceste clase de probleme, multe dintre principiile pe care le folosiți vor rămâne aceleași, în special atunci când vine vorba de implementarea acestor tipuri de parcurgeri.
 
@@ -134,7 +131,9 @@ Pentru a exemplifica aceste noțiuni și a prezenta algoritmii, precum și difer
 
 Pentru a implementa algoritmul flood fill, va trebui să plecăm pe rând din fiecare punct nevizitat, iar la un pas al acestui algoritm, vom verifica toți vecinii folosind vectorul de direcție creat anterior, iar atunci când dăm de un asemenea punct, vom apela funcția fill pentru a continua vizitarea punctelor. Trebuie avut grijă să marcăm punctele drept vizitate, pentru a evita ciclarea la infinit.
 
-!!! note "Observație" Se poate observa că acest algoritm este un caz particular al parcurgerii DFS de pe grafuri, ambele fiind recursive și operând în același mod.
+<Callout type="obs">
+  Se poate observa că acest algoritm este un caz particular al parcurgerii DFS de pe grafuri, ambele fiind recursive și operând în același mod.
+</Callout>
 
 Mai jos, puteți găsi o implementare recursivă, în stilul algoritmului flood fill, care rezolvă problema Counting Rooms, prezentată mai sus.
 
@@ -198,23 +197,21 @@ int main() {
 
 Pentru a implementa algoritmul lui Lee, va trebui să plecăm pe rând din fiecare punct nevizitat, iar la un pas al acestui algoritm, vom verifica toți vecinii folosind vectorul de direcție creat anterior, iar atunci când dăm de un asemenea punct, vom adăuga vecinul în coadă, la fiecare pas prelucrând primul punct care încă se află în coadă. Trebuie avut grijă să marcăm punctele drept vizitate, pentru a evita ciclarea la infinit.
 
-!!! note "Observație"
-
-Se poate observa că acest algoritm este un caz particular al parcurgerii BFS
-de pe grafuri, ambele fiind iterative și operând în același mod, folosind o
-coadă.
+<Callout type="obs">
+  Se poate observa că acest algoritm este un caz particular al parcurgerii BFS de pe grafuri, ambele fiind iterative și operând în același mod, folosind o coadă.
+</Callout>
 
 Mai jos, puteți găsi o implementare bazată pe o coadă, în stilul algoritmului lui Lee, care rezolvă problema Counting Rooms, prezentată mai sus.
 
-!!! note "Observație importantă"
-
-Deși în majoritatea cazurilor putem folosi fie metoda fill, fie metoda
-iterativă, atunci când avem nevoie să aflăm distanța dintre două sau mai
-multe puncte, singura metodă optimă este cea iterativă, bazată pe coadă,
-deoarece în cazul fill, depindem de modul în care ajungem să apelăm vecinii
-recursiv, ceea ce reprezintă o strategie care va duce la soluții ineficiente
-din punct de vedere al timpului și memoriei. Acest argument va fi reluat și
-atunci când prezentăm DFS și BFS la grafuri.
+<Callout type="obs">
+  Deși în majoritatea cazurilor putem folosi fie metoda fill, fie metoda
+  iterativă, atunci când avem nevoie să aflăm distanța dintre două sau mai
+  multe puncte, singura metodă optimă este cea iterativă, bazată pe coadă,
+  deoarece în cazul fill, depindem de modul în care ajungem să apelăm vecinii
+  recursiv, ceea ce reprezintă o strategie care va duce la soluții ineficiente
+  din punct de vedere al timpului și memoriei. Acest argument va fi reluat și
+  atunci când prezentăm DFS și BFS la grafuri.
+</Callout>
 
 ```cpp
 #include <fstream>
@@ -627,11 +624,9 @@ int main() {
 
 ### Implementare cu priority queue
 
-!!! note "Observație"
-
-Nodurile se introduc în priority queue cu minus în față deoarece vrem să
-ținem elementele în ordine crescătoare, iar implementarea standard a
-priority queue le ține în ordine descrescătoare.
+<Callout type="obs">
+  Nodurile se introduc în priority queue cu minus în față deoarece vrem să ținem elementele în ordine crescătoare, iar implementarea standard a priority queue le ține în ordine descrescătoare.
+</Callout>
 
 ```cpp
 #include <bits/stdc++.h>

@@ -17,11 +17,9 @@ Pentru a instala Code::Blocks:
 
    [Descarcă Code::Blocks 20.03 :material-open-in-new:](https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03-setup.exe/download)
 
-   !!! warning "Atenție"
-
-   Nu alege variantele cu MinGW. Acele installere vin cu o versiune
-   învechită de MinGW (vin cu GCC 8.1, mai precis). Pentru cea mai bună
-   experiență, avem nevoie de cel mai nou compilator.
+   <Callout type="warning">
+     Nu alege variantele cu MinGW. Acele installere vin cu o versiune învechită de MinGW (vin cu GCC 8.1, mai precis). Pentru cea mai bună experiență, avem nevoie de cel mai nou compilator.
+   </Callout>
 
    [Vezi instrucțiuni aici :material-open-in-new:](./../../compilers/windows/mingw64.mdx)
    pentru cum poți instala ultima versiune de GCC.
@@ -67,15 +65,15 @@ Apasă Next.
 
    <img alt="" src="./codeblocks/image-3.png" width="526" height="511" />
 
-   !!! tip "Sfat"
+   <Callout type="tip">
+     Fă numele proiectului sugestiv, chiar numele problemei la care lucrezi
+     acum, pentru că nu este prea drăguț să umpli printr-o mare de proiecte
+     care au nume similare cu "fsdjkfdkjdfsjhsdaf".
 
-   Fă numele proiectului sugestiv, chiar numele problemei la care lucrezi
-   acum, pentru că nu este prea drăguț să umpli printr-o mare de proiecte
-   care au nume similare cu "fsdjkfdkjdfsjhsdaf".
-
-   De asemenea, recomand să grupezi toate proiectele într-un folder special.
-   Este mult mai ușor să găsești un proiect dacă se află într-un singur loc.
-   Numele sugestive ajută și ele aici.
+     De asemenea, recomand să grupezi toate proiectele într-un folder special.
+     Este mult mai ușor să găsești un proiect dacă se află într-un singur loc.
+     Numele sugestive ajută și ele aici.
+   </Callout>
 
    În cazul meu, eu am completat astfel:
 
@@ -191,18 +189,18 @@ Totuși, există câteva scurtături pe care le vom seta noi:
 - În Settings > Editor > Keyboard shortcuts, mergem la Edit, apoi la Toggle comment și adăugăm scurtătura ++ctrl+slash++. Practic ne scutește din a ține minte ++ctrl+shift+c++ și ++ctrl+shift+x++;
 - Tot aici, mergem la Plugins > Source code formatter (AStyle) și punem scurtătura ++shift+alt+f5++ (sau ceva care îți este convenabil, dar care nu mai este folosit de altceva).
 
-!!! warning "Atenție"
+<Callout type="warning">
+  Dacă există două scurtături pe care vreau să le ții minte, în afară de
+  chestiile tipice pentru salvat, deschis fișiere etc., acestea sunt:
 
-Dacă există două scurtături pe care vreau să le ții minte, în afară de
-chestiile tipice pentru salvat, deschis fișiere etc., acestea sunt:
-
-- ++f9++ pentru a compila și rula codul;
-- ++shift+alt+f5++ (sau ce ți-ai setat) pentru a formata codul. Chiar insist
-  pe această scurtătură, și ar trebui să o rulezi la fiecare schimbare. În
-  majoritatea timpului tu vei ajunge să citești codul tău sau codul altora,
-  deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu
-  stă să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba.
-  Nu pot sublinia destul importanța acestui lucru.
+  - ++f9++ pentru a compila și rula codul;
+  - ++shift+alt+f5++ (sau ce ți-ai setat) pentru a formata codul. Chiar insist
+    pe această scurtătură, și ar trebui să o rulezi la fiecare schimbare. În
+    majoritatea timpului tu vei ajunge să citești codul tău sau codul altora,
+    deci este esențial să ai un stil consistent și ușor de citit. Nimeni nu
+    stă să ajusteze acolade, deci poți lăsa Code::Blocks să își facă treaba.
+    Nu pot sublinia destul importanța acestui lucru.
+</Callout>
 
 ## Formatare
 

@@ -14,12 +14,9 @@ tags:
 
 Atunci când scrieți un program în orice limbaj de programare, există situații în care sunteți nevoiți să executați anumite tipuri de operații de mai multe ori. Pentru a evita scrierea acestor secvențe de un număr mare de ori, se impune folosirea unor secvențe de cod pe care să le putem refolosi. Acestea vor fi ceea ce numim în limbajul C++ funcții sau subprograme.
 
-!!! info "Funcție"
-
-O funcție sau un subprogram reprezintă o secvență de cod care poate fi
-apelată de utilizator pentru a fi executată de mai multe ori, fără a fi
-nevoie să rescriem acel cod. Aceasta poate fi apelată fie din programul
-principal, fie dintr-o altă funcție.
+<Callout type="def">
+  O funcție sau un subprogram reprezintă o secvență de cod care poate fi apelată de utilizator pentru a fi executată de mai multe ori, fără a fi nevoie să rescriem acel cod. Aceasta poate fi apelată fie din programul principal, fie dintr-o altă funcție.
+</Callout>
 
 În limbajul C++, avem atât funcții de sistem (deja cunoscute de biblioteci) și funcții definite de utilizator.
 
@@ -57,21 +54,17 @@ O funcție este formată din două părți principale: antetul (declararea func�
 
      Dacă funcția nu întoarce nicio valoare, se utilizează tipul `void`, care semnifică un tip gol.
 
-     !!! warning "Atenție"
-
-     În cazul funcțiilor cu tipul de returnare diferit de `void`,
-     omisiunea unei valori returnate generează, de obicei, un warning la
-     compilare. În unele cazuri, comportamentul programului devine
-     imprevizibil (undefined behavior).
+   <Callout type="warning">
+     În cazul funcțiilor cu tipul de returnare diferit de `void`, omisiunea unei valori returnate generează, de obicei, un warning la compilare. În unele cazuri, comportamentul programului devine imprevizibil (undefined behavior).
+   </Callout>
 
    - **Numele funcției**. Este ales de utilizator și trebuie să respecte regulile de numire ale identificatorilor (de exemplu, să nu înceapă cu cifre, să nu conțină caractere speciale, etc.).
 
    - **Parametrii funcției**. Sunt variabilele pe care funcția le primește la apel. Fiecare parametru are un tip de date și un nume.
 
-     !!! note "Observație"
-
-     Parametrii funcției nu sunt obligatorii. Totuși, aceștia fac funcția
-     mai flexibilă și reutilizabilă în diverse contexte.
+     <Callout type="obs">
+       Parametrii funcției nu sunt obligatorii. Totuși, aceștia fac funcția mai flexibilă și reutilizabilă în diverse contexte.
+     </Callout>
 
 2. **Corpul funcției**.
 
@@ -89,16 +82,13 @@ O funcție este formată din două părți principale: antetul (declararea func�
      --8 < --"cppintro/functions/functions2.cpp"
      ```
 
-     !!! warning "Atenție"
+     <Callout type="warning">
+       Într-o funcție cu tip non-`void`, *toate* căile posibile de execuție trebuie să aibă o valoare returnată. Pe scurt, nu poți avea unele locuri de unde returnezi și altele de unde nu. Deci, așa cevanu e posibil:
 
-     Într-o funcție cu tip non-`void`, *toate* căile posibile de
-     execuție trebuie să aibă o valoare returnată. Pe scurt, nu poți avea
-     unele locuri de unde returnezi și altele de unde nu. Deci, așa ceva
-     nu e posibil:
-
-     ```cpp
-     --8 < --"cppintro/functions/functions3.cpp"
-     ```
+       ```cpp
+       --8 < --"cppintro/functions/functions3.cpp"
+       ```
+     </Callout>
 
    - **Pentru funcții de tip `void`**:
 
@@ -153,12 +143,9 @@ De exemplu, următoarea funcție primește un număr întreg ca parametru și re
 --8 < --"cppintro/functions/functions8.cpp"
 ```
 
-!!! note "Observație"
-
-Variabilele declarate într-o funcție sunt locale și nu influențează
-programul principal sau alte funcții (excepție făcând valorile returnate).
-Dacă o variabilă cu același nume este declarată în alt context, nu există
-interferențe.
+<Callout type="note">
+  Variabilele declarate într-o funcție sunt locale și nu influențează programul principal sau alte funcții (excepție făcând valorile returnate). Dacă o variabilă cu același nume este declarată în alt context, nu există interferențe.
+</Callout>
 
 ### Funcții care nu returnează nimic (funcții `void`)
 
@@ -174,12 +161,9 @@ Aceste funcții, de obicei de tip void, nu returnează valori direct prin utiliz
 
 Se folosește notația `&nume` pentru a indica faptul că funcția va opera asupra adresei de memorie a variabilei transmise, reflectând astfel orice modificare la nivel global în program.
 
-!!! note "Observație"
-
-Atunci când utilizăm parametri transmiși prin referință, este important ca
-variabilele să fie inițializate înainte de a fi trimise funcției. Altfel,
-există riscul apariției unor erori cauzate de utilizarea unor valori
-neinițializate.
+<Callout type="note">
+  Atunci când utilizăm parametri transmiși prin referință, este important ca variabilele să fie inițializate înainte de a fi trimise funcției. Altfel, există riscul apariției unor erori cauzate de utilizarea unor valori neinițializate.
+</Callout>
 
 Mai jos este exemplificată o funcție care calculează suma cifrelor unui număr, actualizând direct variabila care va stoca rezultatul:
 
@@ -211,15 +195,11 @@ Exemplul următor prezintă o implementare iterativă pentru calcularea sumei ci
 
 ## Funcții recursive
 
-!!! example "Cunoștințe necesare" - [Funcții recursive](./functions.mdx#functii-recursive)
-
 Spre deosebire de funcțiile iterative, cele recursive se pot auto-apela și acest lucru poate fi foarte folositor atunci când avem nevoie să aflăm răspunsul folosind o instanță mai simplă a funcției curente. Acest tip de funcție utilizează stiva de execuție a programului pentru a memora starea fiecărui apel, până la rezolvarea cazurilor de bază.
 
-!!! note "Cazurile de bază"
-
-Pe lângă instrucțiunile obișnuite oricărei funcții, o funcție recursivă are
-și unul sau mai multe **cazuri de bază**, care sunt obligatorii pentru a
-evita apelarea la infinit a aceleiași funcții.
+<Callout type="obs" title="Cazurile de bază">
+  Pe lângă instrucțiunile obișnuite oricărei funcții, o funcție recursivă are și unul sau mai multe **cazuri de bază**, care sunt obligatorii pentru a evita apelarea la infinit a aceleiași funcții.
+</Callout>
 
 Astfel, pentru fiecare apel al unei funcții se adaugă pe stivă o zonă de memorie în care se memorează variabilele locale și parametrii pentru apelul curent. Această zonă a stivei va exista până la finalul apelului, după care se va elibera. Dacă din apelul curent se face un alt apel, se adaugă pe stivă o nouă zonă de memorie, iar conținutul zonei anterioare este inaccesibil până la finalul acelui apel. Aceste operații se fac la fel și dacă al doilea apel este un auto-apel al unei funcții recursive.
 
@@ -287,12 +267,9 @@ Astfel, secvența finală afișată va fi 3112.
 
 Cu alte cuvinte, valoarea lui $$g(2, 1) = 5$$.
 
-!!! note "Calculul funcției"
-
-Se poate observa că pentru a calcula eficient și corect aceste valori,
-trebuie o grămadă de atenție și mult exercițiu în contextul examenelor de
-admitere și bacalaureat, lucru ce îl vom aborda în detaliu în capitolul
-specific acestor examene.
+<Callout type="note" title="Calculul funcției">
+  Se poate observa că pentru a calcula eficient și corect aceste valori, trebuie o grămadă de atenție și mult exercițiu în contextul examenelor de admitere și bacalaureat, lucru ce îl vom aborda în detaliu în capitolul specific acestor examene.
+</Callout>
 
 ### Problemă rezolvată - [cifminrec de pe pbinfo](https://www.pbinfo.ro/probleme/825/cifminrec)
 
@@ -338,12 +315,9 @@ Se remarcă faptul că atunci când apelăm această funcție din main, mențion
 
 ### (Opțional) Funcțiile lambda
 
-!!! note "Funcțiile lambda"
-
-Cunoașterea acestora este opțională în contextul examenelor de bacalaureat
-și admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari
-la olimpiadă. Totuși, acestea nu reprezintă un element care trebuie
-obligatoriu învățat.
+<Callout type="note">
+  Cunoașterea acestora este opțională în contextul examenelor de bacalaureat și admitere, dar se recomandă înțelegerea lor în contextul claselor mai mari la olimpiadă. Totuși, acestea nu reprezintă un element care trebuie obligatoriu învățat.
+</Callout>
 
 Versiunile mai recente ale limbajului C++ permit utilizatorilor folosirea unor funcții pe stilul celor din limbajele funcționale. Acestea se numesc funcții lambda.
 

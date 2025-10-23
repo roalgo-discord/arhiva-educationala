@@ -181,12 +181,9 @@ Deși această problemă nu se încadrează complet în definiția dată mai sus
 
 Din nou, o soluție greedy ușor de găsit nu este fezabilă, majoritatea greedy-urilor cunoscute având cazuri pe care soluția pică. Astfel, suntem limitați la a avea o abordare bazată pe metoda programării dinamice, unde $$dp\[i]\[j]$$ reprezintă răspunsul maxim dacă începem din subsecvența $$\[i, j]$$. La fiecare pas, avem de fixat una din cele două valori pe care o folosim, răspunsul fiind preluat din secvențele de lungime mai mică, așa cum se poate vedea în codul de mai jos.
 
-!!! note "Observație"
-
-Există totuși o soluție greedy corectă pentru această problemă, fiind una
-destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în
-acest paper, pe care îl puteți găsi
-[aici](https://www.mimuw.edu.pl/~idziaszek/termity/termity.pdf)
+<Callout type="obs">
+  Există totuși o soluție greedy corectă pentru această problemă, fiind una destul de dificilă, în ciuda codului scurt, detaliile fiind explicate în acest paper, pe care îl puteți găsi [aici](https://www.mimuw.edu.pl/~idziaszek/termity/termity.pdf).
+</Callout>
 
 ```cpp
 #include <iostream>

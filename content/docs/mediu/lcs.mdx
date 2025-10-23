@@ -13,20 +13,20 @@ Problema subșirului comun maximal este o altă problemă foarte importantă car
 
 ## Subșirul comun maximal
 
-!!! info "Definiție"
+<Callout type="def">
+  Definim subșirul comun maximal a două șiruri de caractere $$a$$ și $$b$$ ca
+  fiind un subșir $$s$$ care are proprietatea că pentru fiecare dintre șirurile
+  de caractere $$a$$ și $$b$$, $$s$$ este un subșir al acelui șir de caractere. De
+  exemplu, subșirul comun maximal al șirurilor `bcdaacd` si `acdbac` este
+  `cdac`.
+</Callout>
 
-Definim subșirul comun maximal a două șiruri de caractere $$a$$ și $$b$$ ca
-fiind un subșir $$s$$ care are proprietatea că pentru fiecare dintre șirurile
-de caractere $$a$$ și $$b$$, $$s$$ este un subșir al acelui șir de caractere. De
-exemplu, subșirul comun maximal al șirurilor `bcdaacd` si `acdbac` este
-`cdac`.
-
-!!! note "Observație"
-
-Pot exista mai multe subșiruri comune maximale, de obicei ne interesează
-lungimea subșirului comun maximal. Dacă vrem să reconstituim subșirul comun
-maximal, așa cum procedăm și la alte tipuri de dinamici, ne putem ține o
-altă stare în care păstrăm originea răspunsului optim.
+<Callout type="obs">
+  Pot exista mai multe subșiruri comune maximale, de obicei ne interesează
+  lungimea subșirului comun maximal. Dacă vrem să reconstituim subșirul comun
+  maximal, așa cum procedăm și la alte tipuri de dinamici, ne putem ține o
+  altă stare în care păstrăm originea răspunsului optim.
+</Callout>
 
 Pentru a calcula subșirul comun maximal, vom avea o dinamică pe două dimensiuni, folosind o abordare care va construi răspunsul din aproape în aproape, poziție cu poziție.
 
@@ -35,8 +35,7 @@ Astfel, vom avea $$dp\[i]\[j]$$ drept lungimea maximă a unui subșir comun care
 Pentru a calcula această recurență, avem două cazuri principale:
 
 - Fie adăugăm un caracter din unul din cele două șiruri, preluând răspunsurile din $$(i-1, j)$$ și $$(i, j-1)$$
-- Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $$(i-1,
-  j-1)$$ și adăugând 1 dacă caracterele sunt egale.
+- Fie adăugăm câte un caracter din ambele șiruri, preluând răspunsul din $$(i-1, j-1)$$ și adăugând 1 dacă caracterele sunt egale.
 
 Cu alte cuvinte,
 

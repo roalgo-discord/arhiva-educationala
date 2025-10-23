@@ -14,11 +14,9 @@ Atunci când vorbim de tipuri de probleme pentru care apelăm la soluții bazate
 
 Chiar dacă această subtehnică este folosită doar pentru dimensiuni ale datelor foarte mici (de regulă, valoarea maximă a lui $$N$$ într-o problemă de acest gen este 20), bitmask dp se dovedește a fi o unealtă foarte utilă în multe instanțe, chiar și atunci când trebuie să găsim soluții încete pentru a face pași spre a optimiza diverse abordări.
 
-!!! note "Observație"
-
-În jargonul algoritmic românesc, această tehnică este numită dinamică pe
-stări exponențiale, denotând numărul exponențial de stări (de regulă, $$2^N$$
-stări)
+<Callout type="obs">
+  În jargonul algoritmic românesc, această tehnică este numită dinamică pe stări exponențiale, denotând numărul exponențial de stări (de regulă, $$2^N$$ stări)
+</Callout>
 
 ## Introducere și aplicare
 
@@ -26,13 +24,13 @@ stări)
 
 Acum că acest concept vă este cunoscut, pentru a formaliza o stare într-o problemă de acest gen, trebuie să găsim o mulțime de valori cu un cardinal suficient de mic, care are proprietatea că submulțimile sale pot constitui stări într-o relație de recurență de acest fel.
 
-!!! note "Observație"
-
-Nu este obligatoriu ca starea pe care o folosim să fie legată strict de
-șirul de numere dat. De foarte multe ori, vom aplica această tehnică atunci
-când avem o particularitate care poate fi transpusă în submulțimi (un
-exemplu ar fi atunci când avem puține valori distincte sau un set de litere
-al alfabetului).
+<Callout type="obs">
+  Nu este obligatoriu ca starea pe care o folosim să fie legată strict de
+  șirul de numere dat. De foarte multe ori, vom aplica această tehnică atunci
+  când avem o particularitate care poate fi transpusă în submulțimi (un
+  exemplu ar fi atunci când avem puține valori distincte sau un set de litere
+  al alfabetului).
+</Callout>
 
 În cele mai multe cazuri, vorbim de dinamici de tipul $$dp\[msk]$$ sau $$dp\[msk]\[i]$$, unde ambele reprezintă răspunsul optim pentru submulțimea reprezentată cu masca $$msk$$ și eventual $$i$$ fiind ultima valoare aleasă. Evident, dacă problema o impune, putem folosi și alte dimensiuni pentru a reprezenta datele într-o manieră mai clară și fără potențiale erori.
 
@@ -46,12 +44,12 @@ Definim $$dp\[msk]$$ ca fiind suma maximă a scorurilor dacă am folosit submul�
 
 Soluția va avea complexitate $$\mathcal{O}(2^n \cdot n)$$, fiind suficient de bună pentru problema dată.
 
-!!! note "Observație"
-
-De-a lungul soluțiilor prezentate, se va observa preferința pentru indexarea
-de la 0 a pozițiilor, motivul fiind unul ce ține de eficiența de timp și
-memorie (dacă am fi indexat de la 1, am fi avut nevoie de două ori mai
-multe măști, deoarece măștile care conțineau poziția 0 deveneau inutile).
+<Callout type="obs">
+  De-a lungul soluțiilor prezentate, se va observa preferința pentru indexarea
+  de la 0 a pozițiilor, motivul fiind unul ce ține de eficiența de timp și
+  memorie (dacă am fi indexat de la 1, am fi avut nevoie de două ori mai
+  multe măști, deoarece măștile care conțineau poziția 0 deveneau inutile).
+</Callout>
 
 ```cpp
 #include <fstream>

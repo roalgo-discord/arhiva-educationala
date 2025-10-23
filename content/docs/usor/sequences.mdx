@@ -14,36 +14,31 @@ tags:
 
 ## Noțiuni introductive
 
-!!! info "Definiție"
+<Callout type="def">
+  O secvență reprezintă un șir de valori, de regulă dispuse consecutiv într-un
+  șir mai mare sau poate reprezenta chiar un șir de sine stătător.
+</Callout>
 
-O secvență reprezintă un șir de valori, de regulă dispuse consecutiv într-un
-șir mai mare sau poate reprezenta chiar un șir de sine stătător.
+<Callout type="example">
+  În vectorul 30, 32, 19, 8, 11, 6, putem spune următoarele lucruri:
 
-!!! example "Exemplu"
+  - $$19, 8, 11$$ este o secvență care începe de la poziția 3 și se termină la
+    poziția 5 a șirului inițial
+  - $$30, 19, 11$$ nu este o secvență a șirului de mai sus (în schimb, este un
+    subșir, noțiune pe care o vom discuta în articolele ulterioare)
+</Callout>
 
-În vectorul 30, 32, 19, 8, 11, 6, putem spune următoarele
-lucruri:
-
-- $$19, 8, 11$$ este o secvență care începe de la poziția 3 și se termină la
-  poziția 5 a șirului inițial
-- $$30, 19, 11$$ nu este o secvență a șirului de mai sus (în schimb, este un
-  subșir, noțiune pe care o vom discuta în articolele ulterioare)
-
-!!! note "Observație"
-
-În diverse contexte, secvențe precum $$19, 8, 11$$ sunt numite și subsecvențe,
-deoarece sunt obținute prin eliminarea de valori de la începutul și
-sfârșitul secvenței de mai sus.
+<Callout type="obs">
+  În diverse contexte, secvențe precum $$19, 8, 11$$ sunt numite și subsecvențe, deoarece sunt obținute prin eliminarea de valori de la începutul și sfârșitul secvenței de mai sus.
+</Callout>
 
 Pentru a prelucra aceste secvențe și subsecvențe, o primă soluție constă în păstrarea valorilor în memorie folosind vectori, iar mai apoi, în funcție de ce cere problema, să parcurgem toate variantele de a crea subsecvențe în șirul dat, sau eventual să verificăm diverse proprietăți, parcurgând valorile una câte una.
 
-!!! note "Observație"
+<Callout type="obs">
+  Numărul de subsecvențe ale unui șir cu lungimea $$n$$ este $$\frac{n \cdot (n+1)}{2}$$.
 
-Numărul de subsecvențe ale unui șir cu lungimea $$n$$ este $$\frac{n \cdot
-    (n+1)}{2}$$.
-
-Pentru a demonstra acest fapt, putem fixa poziția de început a unei subsecvențe (să zicem, $$i$$), iar pentru această poziție inițială, avem $$(n - i + 1)$$ variante pentru poziția finală - toate pozițiile $$j$$ astfel încât $$i \leq j \leq
-n$$. Astfel, avem $$n + (n-1) + \dots + 1 = \frac{n \cdot (n+1)}{2}$$.
+  Pentru a demonstra acest fapt, putem fixa poziția de început a unei subsecvențe (să zicem, $$i$$), iar pentru această poziție inițială, avem $$(n - i + 1)$$ variante pentru poziția finală - toate pozițiile $$j$$ astfel încât $$i \leq j \leq n$$. Astfel, avem $$n + (n-1) + \dots + 1 = \frac{n \cdot (n+1)}{2}$$.
+</Callout>
 
 În cele ce urmează, vom arăta diverse tehnici de rezolvare a unor probleme introductive care cuprind secvențe, iar mai apoi, vom prezenta și unul din algoritmii pentru subsecvența de sumă maximă.
 

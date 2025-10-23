@@ -16,40 +16,28 @@ tags:
 
 Vom începe prin a relua definiția discutată la articolul anterior [despre grafuri](../usor/graphs.mdx).
 
-!!! info "Ciclu"
+<Callout type="def">
+  O secvență de muchii $$(v\_1, v\_2, ..., v\_k, v\_1)$$ formează un **ciclu** dacă $$(v\_i, v\_{i + 1}) \in E$$ pentru orice $$1 \leq i \< k$$ și $$(v\_k, v\_1) \in E$$. Un ciclu este **simplu** dacă $$v\_i \neq v\_j$$ pentru orice $$1 \leq i \< j \< k$$.
+</Callout>
 
-O secvență de muchii $$(v\_1, v\_2, ..., v\_k, v\_1)$$ formează un **ciclu** dacă
-$$(v\_i, v\_{i + 1}) \in E$$ pentru orice $$1 \leq i \< k$$ și $$(v\_k, v\_1) \in E$$.
-Un ciclu este **simplu** dacă $$v\_i \neq v\_j$$ pentru orice $$1 \leq i \< j \<
-k$$.
-
-Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă,
-pleacă de la un nod $$v\_1$$ și parcurgând în ordine acele muchii, se ajunge
-tot la nodul $$v\_1$$. Un ciclu simplu este un ciclu în care nu se repetă
-noduri.
+Altfel spus, un **ciclu** reprezintă o secvență de muchii ce nu se repetă, pleacă de la un nod $$v\_1$$ și parcurgând în ordine acele muchii, se ajunge tot la nodul $$v\_1$$. Un ciclu simplu este un ciclu în care nu se repetă noduri.
 
 În cele ce urmează, vom prezenta câteva tehnici care pleacă de la cunoașterea ciclurilor în grafuri, precum și modurile în care acestea pot fi implementate. Modul de implementare a acestor algoritmi va fi exclusiv folosind structuri și metode din [STL](../cppintro/stl.mdx), scopul acestor aplicații fiind în special aplicațiile care apar la olimpiadele și concursurile de informatică.
 
 ## Cicluri euleriene
 
-!!! info "Ciclu eulerian"
-
-Un lanț eulerian este un lanț care conține toate muchiile exact o singură
-dată (dar nodurile se pot vizita iar). Un ciclu eulerian este un lanț
-eulerian care începe și se termină în același nod.
-
-!!! note "Gradele nodurilor"
+<Callout type="def" title="Lanț eulerian">
+  Un lanț eulerian este un lanț care conține toate muchiile exact o singură dată (dar nodurile se pot vizita iar). Un ciclu eulerian este un lanț eulerian care începe și se termină în același nod.
+</Callout>
 
 Mai întâi, o condiție necesară și suficientă este aceea că toate nodurile
 trebuie să poată fi vizitate, iar gradele nodurilor să fie pare.
 
 Acest lucru poate fi arătat ușor, presupunând că putem avea un ciclu eulerian care să conțină un nod cu grad impar. Dacă începem ciclul nostru acolo, nu îl vom putea termina acolo, deoarece după ce folosim o muchie să părăsim nodul, vom avea un număr par de muchii adiacente nodului curent. Jumătate dintre ele ar trebui să fie folosite pentru a intra acolo, cealaltă jumătate pentru a ieși, deci am fi nevoiți să ieșim de acolo cu ultima muchie, contradicție. Dacă nu începem acolo, vom fi la un moment dat blocați, deci avem iar contradicție.
 
-!!! info "Lanț eulerian când avem noduri cu grad impar"
-
-Totuși, putem construi un lanț eulerian dacă avem noduri cu grad impar,
-atâta timp cât avem exact două noduri cu grad impar și începem și terminăm
-în nodurile cu grad impar.
+<Callout type="info" title="Lanț eulerian când avem noduri cu grad impar">
+  Totuși, putem construi un lanț eulerian dacă avem noduri cu grad impar, atâta timp cât avem exact două noduri cu grad impar și începem și terminăm în nodurile cu grad impar.
+</Callout>
 
 Pentru a afla dacă graful dat admite un ciclu eulerian, vom putea folosi algoritmul lui Fleury.
 
@@ -133,30 +121,30 @@ int main() {
 }
 ```
 
-!!! note "Observație"
+<Callout type="obs">
+  Algoritmul lui Fleury se poate implementa și iterativ, folosind un principiu
+  similar cu cel descris mai sus, implementarea putând fi făcută cu o stivă
+  sau un deque.
 
-Algoritmul lui Fleury se poate implementa și iterativ, folosind un principiu
-similar cu cel descris mai sus, implementarea putând fi făcută cu o stivă
-sau un deque.
-
-```cpp
-deque<int> dq;
-dq.push_back(1);
-while (!dq.empty()) {
-    x = dq.back();
-    while (!v[x].empty() && vizitat[v[x].back().first]) {
-        v[x].pop_back();
-    }
-    if (v[x].empty()) {
-        dq.pop_back();
-        ans.push_back(x);
-    } else {
-        vizitat[v[x].back().first] = true;
-        dq.push_back(v[x].back().second);
-        v[x].pop_back();
-    }
-}
-```
+  ```cpp
+  deque<int> dq;
+  dq.push_back(1);
+  while (!dq.empty()) {
+      x = dq.back();
+      while (!v[x].empty() && vizitat[v[x].back().first]) {
+          v[x].pop_back();
+      }
+      if (v[x].empty()) {
+          dq.pop_back();
+          ans.push_back(x);
+      } else {
+          vizitat[v[x].back().first] = true;
+          dq.push_back(v[x].back().second);
+          v[x].pop_back();
+      }
+  }
+  ```
+</Callout>
 
 ### Problemă exemplu - [Domino](https://www.infoarena.ro/problema/domino)
 
@@ -166,10 +154,10 @@ Graful din enunț are doar 10 noduri și vom folosi proprietățile descrise mai
 
 Dacă avem mai mult de 2 noduri cu grad impar, atunci nu avem soluție. În mod similar, și dacă nu putem parcurge toate muchiile.
 
-!!! note "Observație"
-
-Se poate observa faptul că algoritmul dat este foarte similar cu cel descris
-pentru ciclul eulerian.
+<Callout type="obs">
+  Se poate observa faptul că algoritmul dat este foarte similar cu cel descris
+  pentru ciclul eulerian.
+</Callout>
 
 ```cpp
 #include <algorithm>
@@ -254,11 +242,11 @@ int main() {
 
 ## Cicluri hamiltoniene
 
-!!! info "Ciclu hamiltonian"
-
-Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură
-dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate
-nodurile exact o singură dată.
+<Callout type="def" title="Ciclu hamiltonian">
+  Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură
+  dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate
+  nodurile exact o singură dată.
+</Callout>
 
 În general, pentru a afla un ciclu hamiltonian, putem folosi metode de tip brute-force, precum backtracking.
 
@@ -329,21 +317,18 @@ Ulterior, în alte probleme precum cele în care avem nevoie de dinamici pe mă�
 
 ## Grafuri funcționale
 
-!!! info "Grafuri funcționale"
-
-Un graf funcțional este un graf orientat cu $$n$$ noduri și $$n$$ muchii, cu
-proprietatea că fiecare nod are o singură muchie care pleacă din el.
+<Callout type="def" title="Grafuri funcționale">
+  Un graf funcțional este un graf orientat cu $$n$$ noduri și $$n$$ muchii, cu
+  proprietatea că fiecare nod are o singură muchie care pleacă din el.
+</Callout>
 
 Cu alte cuvinte, aceste grafuri sunt o reuniune de cicluri, împreună cu niște lanțuri atașate de ele.
 
 Aceste grafuri, datorită formei lor speciale, au multe proprietăți interesante și fac prelucrarea lor mai ușoară. De multe ori, vom vrea să filtrăm nodurile care nu fac parte din cicluri, iar mai apoi, să lucrăm cu fiecare ciclu în mod independent. Vom folosi câteva exemple pentru a prezenta acest concept în diverse probleme de la competiții de informatică.
 
-!!! warning "Ciclurile permutarilor"
-
-Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei
-secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective)
-a articolului despre permutări, unde se vorbește de ciclurile unei permutări
-și aplicațiile care implică grafuri funcționale
+<Callout type="warning" title="Ciclurile permutarilor">
+  Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective) a articolului despre permutări, unde se vorbește de ciclurile unei permutări și aplicațiile care implică grafuri funcționale.
+</Callout>
 
 ### Problemă exemplu - [Mouse Hunt - Codeforces](https://codeforces.com/contest/1027/problem/D)
 
@@ -475,8 +460,7 @@ int main() {
 
 ### Problema [Cyclic Operations - Codeforces](https://codeforces.com/contest/1867/problem/D)
 
-Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $$k =
-1$$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $$k$$.
+Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $$k = 1$$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $$k$$.
 
 Acest lucru poate fi ușor demonstrat folosind periodicitatea operației date în enunț. Pentru mai multe detalii, recomandăm citirea soluției oficiale.
 

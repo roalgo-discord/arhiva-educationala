@@ -16,10 +16,9 @@ tags:
 
 ## Problema [Tree Distances](https://cses.fi/problemset/task/1132) de pe CSES
 
-!!! note "Observație"
-
-Această problemă are o soluție video explicată chiar de autor, pe care o
-puteți accesa [aici](https://www.youtube.com/watch?v=DZA4mYWpPno)
+<Callout type="info">
+  Această problemă are o soluție video explicată chiar de autor, pe care oputeți accesa [aici](https://www.youtube.com/watch?v=DZA4mYWpPno)
+</Callout>
 
 Pentru a rezolva problema, vom putea folosi o abordare de tip rerooting, după cum urmează:
 
@@ -27,12 +26,9 @@ Mai întâi, vom precalcula folosind un DFS dintr-un nod oarecare distanța faț
 
 Calculul acestei valori se poate face destul de simplu, deoarece pentru fiecare nod $$i$$, vom ști deja valoarea lui $$maxdist$$ pentru toți fiii acestuia, tot ce ne rămâne de făcut este să adunăm 1 la aceste valori. Evident, pentru o frunză, $$maxdist[i] = 0$$.
 
-!!! note "Observație"
-
-Se poate observa faptul că în codul de mai jos am ales drept rădăcină nodul
-1, aceasta fiind o convenție utilizată în cele mai multe probleme cu
-arbori, chiar și atunci când nu ni se precizează în mod specific rădăcina
-arborelui.
+<Callout type="obs">
+  Se poate observa faptul că în codul de mai jos am ales drept rădăcină nodul 1, aceasta fiind o convenție utilizată în cele mai multe probleme cu arbori, chiar și atunci când nu ni se precizează în mod specific rădăcina arborelui.
+</Callout>
 
 După ce am aflat valorile din vectorul $$maxdist$$, acum va trebui să folosim aceste răspunsuri pentru a afla pentru fiecare nod distanța față de cel mai îndepărtat nod care nu se află în subarborele nodului curent (la primul DFS am aflat această distanță față de nodurile care se aflau în subarborele nodului curent).
 

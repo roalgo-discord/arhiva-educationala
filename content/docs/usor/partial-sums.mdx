@@ -38,8 +38,7 @@ for (int i = 1; i <= n; i++) {
 
 După calculare, putem începe să răspunem la întrebări. Răspunsul nostru pentru un interval $$\[st, dr]$$, unde $$1 \leq st \leq dr \leq n$$ va fi: $$suma = sp\[dr] - sp\[st - 1]$$
 
-Faptul că răspunsul nostru este dat de o formulă, va face ca timpul nostru efectuat pentru rezolvarea unei întrebări să fie constant $$\mathcal{O}(1)$$, ceea ce va duce ca programul nostru să aibă o complexitate finală $$\mathcal{O}(N +
-Q)$$, pentru calcularea tabloului $$sp$$ și pentru citirea și răspunderea la întrebări. Totuși, hai să vedem de ce formula menționată mai sus funcționează.
+Faptul că răspunsul nostru este dat de o formulă, va face ca timpul nostru efectuat pentru rezolvarea unei întrebări să fie constant $$\mathcal{O}(1)$$, ceea ce va duce ca programul nostru să aibă o complexitate finală $$\mathcal{O}(N + Q)$$, pentru calcularea tabloului $$sp$$ și pentru citirea și răspunderea la întrebări. Totuși, hai să vedem de ce formula menționată mai sus funcționează.
 
 Pentru demonstrație, vom încerca o abordare grafică a formulei. Primul pas constă în adunarea sumei prefixului $$1, 2, \dots, dr$$.
 
@@ -111,10 +110,9 @@ dr]$$. Ni se dau după $$Q$$ întrebări de forma: câte intervale conțin în i
 
 O soluție foarte ineficientă ar fi pentru fiecare întrebare să luăm fiecare interval în parte și să verificăm dacă punctul nostru este inclus sau nu în interval. Soluția este ușor de intuit și de implementat, dar programul nostru ar avea complexitate $$(Q \cdot K)$$. Șmenul lui Marius Andrei (*Mars*) ne poate rezolva această problemă în timp constant, chiar și dacă o extindem pe mai multe dimensiuni (două axe, 3 axe etc.).
 
-!!! note "Observație"
-
-Deși în algoritmica românească, această tehnică este cunoscută sub numele de
-Șmenul lui Mars, numele ei standard este difference arrays.
+<Callout type="obs">
+  Deși în algoritmica românească, această tehnică este cunoscută sub numele de Șmenul lui Mars, numele ei standard este difference arrays.
+</Callout>
 
 Șmenul lui Mars permite efectuarea operațiilor de adăugare a unei valori la toate elementele dintr-un interval (sau o submatrice, pentru cazul în care lucrăm cu o matrice), **fără posibilitatea de a primi întrebări între operațiile de adăugare** (pentru acest tip de problemă se vor utiliza arborii de intervale, o tehnică care va fi prezentată ulterior).
 
@@ -129,8 +127,7 @@ mars[x]++;
 mars[y + 1]--;
 ```
 
-unde vectorul $$\mathrm{mars}\[]$$ reprezintă adunările/scăderile din șmen. Așa cum am zis și mai sus, noi calculăm valorile noastre din șir ca la sumele parțiale, deci, se poate afirma că: $$v\[i] = \mathrm{mars}\[1] + \mathrm{mars}\[2] + \dots +
-\mathrm{mars}\[i]$$
+unde vectorul $$\mathrm{mars}\[]$$ reprezintă adunările/scăderile din șmen. Așa cum am zis și mai sus, noi calculăm valorile noastre din șir ca la sumele parțiale, deci, se poate afirma că: $$v\[i] = \mathrm{mars}\[1] + \mathrm{mars}\[2] + \dots + \mathrm{mars}\[i]$$
 
 Dupa efectuarea tuturor operațiilor de adăugare pe interval, noi vom calcula printr-o parcurgere simplă valorile din șirul $$V$$:
 

@@ -31,7 +31,9 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 ```
 
-!!! note "Observație" Este de remarcat faptul că linia `cout.tie(NULL);`, deși prezentă în foarte multe coduri, inclusiv soluții oficiale, nu face nimic deoarece streamul de afișare este deja desincronizat.
+<Callout type="obs">
+  Este de remarcat faptul că linia `cout.tie(NULL);`, deși prezentă în foarte multe coduri, inclusiv soluții oficiale, nu face nimic deoarece streamul de afișare este deja desincronizat.
+</Callout>
 
 Folosind această metodă, preveniți aproape toate tipurile de erori din punct de vedere al timpului de execuție cauzate de citirea înceată. Totuși, mai putem face îmbunătățiri în ceea ce privește acest aspect.
 
@@ -43,7 +45,9 @@ Deși aceste metode sunt destul de rapide folosind optimizările menționate ant
 
 Această metodă este numită colocvial și *parsarea* datelor, acesta fiind un nume popularizat de articolele de pe infoarena în care această metodă a fost descrisă în urmă cu mulți ani.
 
-!!! note "Observație" Parsarea este necesară mai ales atunci când avem de-a face cu un șir cu foarte multe numere, deoarece atunci când citim un șir de caractere, deja accesăm bufferul de puține ori.
+<Callout type="obs">
+  Parsarea este necesară mai ales atunci când avem de-a face cu un șir cu foarte multe numere, deoarece atunci când citim un șir de caractere, deja accesăm bufferul de puține ori.
+</Callout>
 
 De regulă, se recomandă folosirea unor buffere de lungime puteri ale lui 2, fiind folosite foarte des lungimi precum 4096 sau 65536. Mai jos puteți găsi un exemplu de aplicare al acestei metode pentru a citi și afișa un șir de numere naturale. Adaptarea acestui parser la fișiere se poate face în multe moduri, o metodă care merge este folosirea unei declarări în stilul C, iar mai apoi folosirea printf pentru afișarea mai multor valori deodată.
 

@@ -28,65 +28,58 @@ Pe lângă capitolele menționate anterior, vrem să începem prin a explica anu
 
 Presupunem pentru următoarele două reguli că avem două mulțimi $$A$$ și $$B$$ disjuncte (adică $$A\cap B =\emptyset$$), având cardinalul $$|A| = n$$ și $$|B| = m$$.
 
-!!! info "Regula sumei"
+<Callout type="info">
+  Numărul de moduri de a alege o valoare din $$A$$ sau $$B$$ este $$n+m$$.
+</Callout>
 
-Numărul de moduri de a alege o valoare din $$A$$ sau $$B$$ este $$n+m$$.
+<Callout type="info">
+  Numărul de moduri de a alege o pereche de valori, una din $$A$$ și una din $$B$$
+  este $$n\cdot m$$.
+</Callout>
 
-!!! info "Regula produsului"
+<Callout type="example">
+  Câte numere de forma $$\overline{aba}$$ cu $$a \neq 0$$ i $$a \neq b$$ există?
 
-Numărul de moduri de a alege o pereche de valori, una din $$A$$ și una din $$B$$
-este $$n\cdot m$$.
+  Valorile posibile pentru $$a$$ sunt $${1, 2, 3, \dots, 9}$$, iar valorile
+  posibile ale lui $$b$$ sunt $${0, 1, 2, 3, \dots, 9}$$.
 
-!!! example "Exemplu"
-
-Câte numere de forma $$\overline{aba}$$ cu $$a \neq 0$$ i $$a \neq b$$ există?
-
-Valorile posibile pentru $$a$$ sunt $${1, 2, 3, \dots, 9}$$, iar valorile
-posibile ale lui $$b$$ sunt $${0, 1, 2, 3, \dots, 9}$$.
-
-Avem 9 variante de a alege o valoare pentru $$a$$, iar pentru $$b$$ avem tot
-9 variante (10, din care excludem cea egala cu $$a$$), astfel numărul
-total de variante este $$9 \cdot 9 = 81$$.
+  Avem 9 variante de a alege o valoare pentru $$a$$, iar pentru $$b$$ avem tot
+  9 variante (10, din care excludem cea egala cu $$a$$), astfel numărul
+  total de variante este $$9 \cdot 9 = 81$$.
+</Callout>
 
 Aceste relații vor fi foarte importante mai ales când avem de-a face cu formule independente care contribuie la răspunsul final.
 
 ### Permutări
 
-!!! info "Permutare"
+<Callout type="def" title="Permutare">
+  O permutare a unei mulțimi reprezintă o aranjare a elementelor dintr-o mulțime $$M$$ finită într-o ordine diferită. Dacă cardinalul mulțimii $$|M| = n$$, numărul de permutări ale unei mulțimi de $$n$$ valori este $$n!$$.
+</Callout>
 
-O permutare a unei mulțimi reprezintă o aranjare a elementelor dintr-o
-mulțime $$M$$ finită într-o ordine diferită. Dacă cardinalul mulțimii $$|M| =
-    n$$, numărul de permutări ale unei mulțimi de $$n$$ valori este $$n!$$.
-
-De exemplu, pentru $$n = 3$$, cele 6 permutări ale mulțimii $$\{1, 2, 3\}$$
-sunt următoarele: $$\{1, 2, 3\}$$, $$\{1, 3, 2\}$$, $$\{2, 1, 3\}$$, $$\{2, 3,
-    1\}$$, $$\{3, 1, 2\}$$, $$\{3, 2, 1\}$$
+<Callout type="example">
+  De exemplu, pentru $$n = 3$$, cele 6 permutări ale mulțimii $$\{1, 2, 3\}$$ sunt următoarele: $$\{1, 2, 3\}$$, $$\{1, 3, 2\}$$, $$\{2, 1, 3\}$$, $$\{2, 3, 1\}$$, $$\{3, 1, 2\}$$, $$\{3, 2, 1\}$$
+</Callout>
 
 În probleme, există diverse cazuri particulare ale permutărilor care devin foarte utile în rezolvarea unor probleme de combinatorică.
 
-!!! info "Deranjamente"
+<Callout type="def" title="Deranjament">
+  Un deranjament este o permutare fără puncte fixe, adică $$\forall i$$, $$p_i\neq i$$.
 
-Un deranjament este o permutare fără puncte fixe, adică $$\forall i$$,
-$$p_i\neq i$$.
+  Numărul de deranjamente cu $$n$$ elemente este egal cu $$D_n = (n-1) \cdot (D_{n-1} + D_{n-2})$$, unde $$D_0 = 1$$ și $$D_1 = 0$$. Acest concept a fost util printre altele la rezolvarea problemei [Poseidon](https://kilonova.ro/problems/2506), dată la OJI 2024, clasa a X-a.
+</Callout>
 
-Numărul de deranjamente cu $$n$$ elemente este egal cu $$D_n = (n-1)\cdot
-    (D_{n-1} + D_{n-2})$$, unde $$D_0 = 1$$ și $$D_1 = 0$$. Acest concept a fost util
-printre altele la rezolvarea problemei
-[Poseidon](https://kilonova.ro/problems/2506), dată la OJI 2024, clasa a
-X-a.
+<Callout type="def" title="Permutare cu repetiții">
+  Definim o permutare cu repetiții ca fiind o secvență de $$n$$ numere, care are
+  proprietatea că fiecare valoare este în intervalul $$[1, n]$$ și valorile se
+  pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au
+  $$n$$ elemente este
 
-!!! info "Permutări cu repetiții"
+  $$\frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}$$
 
-Definim o permutare cu repetiții ca fiind o secvență de $$n$$ numere, care are
-proprietatea că fiecare valoare este în intervalul $$[1, n]$$ și valorile se
-pot repeta. Numărul de permutări cu repetiție cu aceste proprietăți care au
-$$n$$ elemente este
-
-$$\frac{n!}{F_1!\cdot F_2!\cdot\dots\cdot F_n!} = n!\prod_{k = 1}^{n}\frac{1}{F_k!}$$
-
-unde $$F_i$$ reprezintă frecvența la care apare $$i$$ în permutare. Acest
-concept se regăsește într-un număr de probleme date în special la loturile
-de juniori.
+  unde $$F_i$$ reprezintă frecvența la care apare $$i$$ în permutare. Acest
+  concept se regăsește într-un număr de probleme date în special la loturile
+  de juniori.
+</Callout>
 
 Mai jos puteți găsi o secvență de cod pe care o putem folosi pentru a genera toate permutările unui șir. Funcția `std::next_permutation` nu va genera permutări cu repetiție dacă acestea apar de mai multe ori.
 

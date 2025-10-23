@@ -18,11 +18,9 @@ Totuși, unele tipuri de date mai complexe, cum ar fi [vectorii](../cppintro/arr
 
 ## Variabile
 
-!!! info "Definiție"
-
-O variabilă este o locație de memorie care stochează o valoare de un anumit
-tip. Aceasta este caracterizată printr-o adresă, un identificator, un tip de
-date și un domeniu de vizibilitate.
+<Callout type="def">
+  O variabilă este o locație de memorie care stochează o valoare de un anumit tip. Aceasta este caracterizată printr-o adresă, un identificator, un tip de date și un domeniu de vizibilitate.
+</Callout>
 
 Orice variabilă este caracterizată de:
 
@@ -51,20 +49,20 @@ unde:
 - `tip_de_date` specifică tipul valorii pe care o poate stoca variabila (ex.: `int`, `float`, `double`, `char`).
 - `identificator1, identificator2, ...` reprezintă numele variabilelor.
 
-!!! example
+<Callout type="example">
+  ```cpp
+  --8 < --"cppintro/data_types/datatypes2.cpp"
+  ```
+</Callout>
 
-```cpp
---8 < --"cppintro/data_types/datatypes2.cpp"
-```
+<Callout type="note">
+  - Dimensiunea memoriei ocupate de o variabilă depinde de
+    tipul de date (ex.: `int` ocupă 4 bytes în majoritatea sistemelor).
 
-!!! note "Observații"
-
-- Dimensiunea memoriei ocupate de o variabilă depinde de
-  tipul de date (ex.: `int` ocupă 4 bytes în majoritatea sistemelor).
-
-- Dacă o variabilă consumă mai multă memorie decât este disponibilă, veți primi
-  verdictul *limită de memorie depășită* sau, în limba engleză, *memory limit
-  exceeded*.
+  - Dacă o variabilă consumă mai multă memorie decât este disponibilă, veți primi
+    verdictul *limită de memorie depășită* sau, în limba engleză, *memory limit
+    exceeded*.
+</Callout>
 
 ## Tipuri de date ce păstrează numere întregi
 
@@ -74,17 +72,17 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Unele di
 
 1. `int`
    - Cel mai frecvent folosit tip de date pentru a stoca numere întregi.
-   - Stochează valori între -2<sup>31</sup> și 2<sup>31</sup> - 1 (echivalent cu -2,147,483,648 și 2,147,483,647).
+   - Stochează valori între $$-2^{31}$$ și $$2^{31}-1$$ (echivalent cu -2,147,483,648 și 2,147,483,647).
    - Ocupă 32 de biți (4 bytes) în memorie.
 
 2. `long long`
    - Un tip de date folosit pentru numerele întregi mai mari.
-   - Având limite între -2<sup>63</sup> și 2<sup>63</sup> - 1 (-9,223,372,036,854,775,808 și 9,223,372,036,854,775,807).
+   - Având limite între $$-2^{63}$$ și $$2^{63}-1$$ (-9,223,372,036,854,775,808 și 9,223,372,036,854,775,807).
    - Numere de maxim 19 cifre, stocate pe 64 de biți (8 bytes).
 
 3. `char`
    - Tipul de date folosit pentru lucrul cu caractere.
-   - Având limite între -128 și 127.
+   - Având limite între $$-128$$ și $$127$$.
    - Ocupă 1 byte.
 
 4. `bool`
@@ -93,15 +91,12 @@ Tipurile de date numerice sunt folosite pentru a stoca valori întregi. Unele di
 
 5. `short`
    - Un tip de date pentru numere întregi mai mici.
-   - Având limite între -2<sup>15</sup> și 2<sup>15</sup> - 1 (-32,768 și 32,767).
+   - Având limite între $$-2^{15}$$ și $$2^{15}-1$$ (-32,768 și 32,767).
    - Ocupă 16 biți (2 bytes).
 
-!!! note "Observație"
-
-Printre altele, există și tipul de date `__int128`, care ne permite să
-păstrăm numere pe 128 de biți, despre care vom vorbi ulterior în articol,
-deoarece cunoașterea lui nu este necesară decât pentru aplicații mai
-avansate de la olimpiadă.
+<Callout type="obs">
+  Printre altele, există și tipul de date `__int128`, care ne permite să păstrăm numere pe 128 de biți, despre care vom vorbi ulterior în articol, deoarece cunoașterea lui nu este necesară decât pentru aplicații mai avansate de la olimpiadă.
+</Callout>
 
 ### Tipurile de date `unsigned`
 
@@ -109,7 +104,7 @@ Uneori, putem fi în situația în care să avem nevoie de numere un pic mai mar
 
 Pentru toate aceste tipuri, cu excepția tipului `bool`, există și varianta `unsigned`, care ne dă posibilitatea să păstrăm numere de două ori mai mari cu aceeași memorie, prețul fiind faptul că nu mai avem cum să păstrăm valori negative.
 
-De exemplu, tipul de date `unsigned int` poate păstra în memorie valori între 0 și 2<sup>32</sup> - 1, intervalul fiind \[0, 4.294.967.295].
+De exemplu, tipul de date `unsigned int` poate păstra în memorie valori între $$0$$ și $$2^{32}-1$$, intervalul fiind $$[0, 4.294.967.295]$$.
 
 De cele mai multe ori, tipurile de date pe care le folosim sunt `unsigned int`, respectiv `unsigned long long`.
 
@@ -121,18 +116,13 @@ Pe lângă tipurile de date menționate anterior, există și tipul de date void
 
 De regulă, atâta timp cât ne permite memoria, folosirea tipului `int` este mai mult decât suficientă, asigurând echilibrul perfect între un consum optim de timp și memorie pentru operații, respectiv stocarea unor valori suficient de mari pentru calculele noastre.
 
-!!! info "Overflow"
+<Callout type="warning" title="Overflow">
+  Atunci când valoarea păstrată într-un tip de date depășește valoarea maximă permisă, se întâmplă ceea ce numim overflow. Cu alte cuvinte, valoarea se întoarce la valoarea minimă permisă, ceea ce face calculele viitoare să devină eronate.
+</Callout>
 
-Atunci când valoarea păstrată într-un tip de date depășește valoarea maximă
-permisă, se întâmplă ceea ce numim overflow. Cu alte cuvinte, valoarea se
-întoarce la valoarea minimă permisă, ceea ce face calculele viitoare să
-devină eronate.
-
-!!! note "Underflow"
-
-În mod similar, putem vorbi și de underflow, când valorile devin mai mici
-decât valorile minime permise, dar această situație se întâlnește mult mai
-rar în practică.
+<Callout type="note" title="Underflow">
+  În mod similar, putem vorbi și de underflow, când valorile devin mai mici decât valorile minime permise, dar această situație se întâlnește mult mai rar în practică.
+</Callout>
 
 Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmulțim două valori care deși ambele se încadrează în `int`, suma (sau produsul lor) depășește valoarea maximă a tipului de date `int`.
 
@@ -142,13 +132,9 @@ Un exemplu tipic de overflow se poate întâlni atunci când adunăm sau înmul�
 
 Cele mai populare două soluții pentru evitarea overflow-ului sunt fie folosirea tipului de date long long pentru păstrarea termenilor din operații, fie folosirea operatorului `1LL`, fie folosirea `(long long)` pentru convertirea datelor.
 
-!!! note "Numere mai mari"
-
-În unele probleme, chiar și numerele pe 64 (sau 128) de biți nu sunt
-îndeajuns de mari, așa că se impune păstrarea datelor sub formă de vectori,
-mai multe detalii despre asta puteți găsi în [acest
-articol](../mediu/bignum.mdx), după ce vă familiarizați cu
-lucrul cu algoritmi mai dificili decât scopul acestui articol.
+<Callout type="note" title="Numere mai mari">
+  În unele probleme, chiar și numerele pe 64 (sau 128) de biți nu sunt îndeajuns de mari, așa că se impune păstrarea datelor sub formă de vectori, mai multe detalii despre asta puteți găsi în [acest articol](../mediu/bignum.mdx), după ce vă familiarizați cu lucrul cu algoritmi mai dificili decât scopul acestui articol.
+</Callout>
 
 ## Tipuri de date reale
 
@@ -162,11 +148,9 @@ Tipurile de date reale sunt următoarele:
 
 În general, atunci când operăm cu numerele reale, vrem să avem grijă la erorile de precizie care ar putea apărea. Cel mai bun mod de a face acest lucru, în special când lucrăm cu valori foarte mari în modul, este acela de a include o valoare reală foarte mică, $$eps$$, care să servească drept etalon în ceea ce privește verificarea egalității.
 
-!!! note "Observație"
-
-Atunci când scriem coduri mai simple sau avem de-a face cu un examen de
-tipul celui de bacalaureat, nu este nevoie să folosim această metodă pentru
-a verifica egalitatea dintre numere, putem verifica folosind metoda uzuală.
+<Callout type="obs">
+  Atunci când scriem coduri mai simple sau avem de-a face cu un examen de tipul celui de bacalaureat, nu este nevoie să folosim această metodă pentru a verifica egalitatea dintre numere, putem verifica folosind metoda uzuală.
+</Callout>
 
 Astfel, pentru a verifica egalitatea dintre două numere reale mai mari, putem incorpora `eps` astfel:
 

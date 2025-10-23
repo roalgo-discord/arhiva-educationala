@@ -16,13 +16,9 @@ tags:
 
 În unele probleme de algoritmică, sunteți nevoiți să evaluați valorile unor expresii aritmetice sau în general, valorile unor expresii conform unor sisteme matematice sau logice bine definite. Aceste probleme sunt colocvial numite probleme la care avem nevoie de noțiunile specifice evaluării unor expresii aritmetice (parsing în engleză).
 
-!!! note "Observație"
-
-A nu se confunda denumirea de parsing cu cea de la parsarea datelor de
-intrare, chiar dacă ambele se ocupă de procesarea unor șiruri de caractere,
-parsarea datelor este o metodă folosită pentru îmbunătățirea vitezei de
-citire a datelor, mai multe detalii puteți găsi
-[aici](../cppintro/fast-io.mdx).
+<Callout type="warning">
+  A nu se confunda denumirea de parsing cu cea de la parsarea datelor de intrare, chiar dacă ambele se ocupă de procesarea unor șiruri de caractere, parsarea datelor este o metodă folosită pentru îmbunătățirea vitezei de citire a datelor, mai multe detalii puteți găsi [aici](../cppintro/fast-io.mdx).
+</Callout>
 
 Toate aceste probleme conțin următoarele particularități:
 
@@ -128,10 +124,9 @@ int main() {
 
 Pentru rezolvarea acestei probleme, vom folosi o implementare similară cu cea de mai sus, ținând cont de prioritățile descrise în enunț. Pentru optimizarea implementării, vom folosi structurile de date din STL.
 
-!!! note "Observație"
-
-Se poate observa faptul că chiar și după ce adaptăm implementarea la
-operațiile din problemă, structura de bază a codului rămâne aceeași.
+<Callout type="obs">
+  Se poate observa faptul că chiar și după ce adaptăm implementarea la operațiile din problemă, structura de bază a codului rămâne aceeași.
+</Callout>
 
 ```cpp
 #include <fstream>

@@ -15,14 +15,14 @@ Chiar dacă conform manualelor de informatică din țara noastră, metoda Greedy
 
 Voi începe cu un exemplu de o asemenea problemă, pentru a vă familiariza cu stilul pe care îl vor avea problemele de acest fel.
 
-!!! example "Exemplu"
-
-Ștefan merge la magazin și are un buget de $$L$$ lei. La magazinul unde își
-face cumpărăturile, se găsesc $$n$$ produse alimentare, fiecare dintre ele
-având un preț cunoscut. Deoarece este foarte generos, astăzi el vrea să
-poată oferi câte un produs alimentar unui număr cât mai mare de persoane în
-limita bugetului său inițial. Care este numărul maxim de produse pe care
-Ștefan îl poate cumpăra?
+<Callout type="example">
+  Ștefan merge la magazin și are un buget de $$L$$ lei. La magazinul unde își
+  face cumpărăturile, se găsesc $$n$$ produse alimentare, fiecare dintre ele
+  având un preț cunoscut. Deoarece este foarte generos, astăzi el vrea să
+  poată oferi câte un produs alimentar unui număr cât mai mare de persoane în
+  limita bugetului său inițial. Care este numărul maxim de produse pe care
+  Ștefan îl poate cumpăra?
+</Callout>
 
 Pentru a rezolva această problemă, vom vrea să alegem cele mai ieftine
 produse (cele cu prețul cel mai mic), acest lucru se poate fie aflând la
@@ -56,11 +56,9 @@ Strategia de a sorta după lungimea filmelor va da răspunsuri greșite când av
 
 În schimb, ordonarea filmelor după timpul final al acestora este optimă deoarece vom avea mereu un număr maxim de oportunități din care alegem.
 
-!!! note "Observație"
-
-Pentru mai multe explicații și desene, puteți accesa articolul de pe
-[usaco.guide](https://usaco.guide/silver/greedy-sorting?lang=cpp#example---the-scheduling-problem)
-care prezintă această problemă.
+<Callout type="note">
+  Pentru mai multe explicații și desene, puteți accesa articolul de pe [usaco.guide](https://usaco.guide/silver/greedy-sorting?lang=cpp#example---the-scheduling-problem) care prezintă această problemă.
+</Callout>
 
 Soluția va consta în sortarea intervalelor după timpul final, iar la fiecare pas vom alege primul film care are un timp inițial mai mare decât timpul de final precedent.
 

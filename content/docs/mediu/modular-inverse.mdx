@@ -27,10 +27,9 @@ Atunci, pentru a efectua operația de împărțire cu respect la modul dintre $$
 
 ### Calcularea folosind mica teoremă a lui Fermat
 
-!!! note "Mica teoremă a lui Fermat"
-
-Dacă $$p$$ este un număr prim și $$a$$ este un număr întreg prim cu $$p$$, atunci
-$$a^{p-1} \equiv 1 \pmod{p}$$.
+<Callout type="def">
+  Dacă $$p$$ este un număr prim și $$a$$ este un număr întreg prim cu $$p$$, atunci $$a^{p-1} \equiv 1 \pmod{p}$$.
+</Callout>
 
 Congruența se mai poate scrie ca:
 
@@ -42,10 +41,9 @@ Se poate observa ușor că de fapt inversul modular al lui $$a$$ este $$a^{p - 2
 
 Luăm în considerare următoarea identitate:
 
-!!! note "Identitatea lui Bézout"
-
-Fie numerele întregi $$A$$, $$B$$ și $$d = cmmdc(A, B)$$. Atunci, există cel puțin
-o pereche de numere întregi $$x$$ și $$y$$ astfel încat $$Ax + By = d$$.
+<Callout type="def" title="Identitatea lui Bézout">
+  Fie numerele întregi $$A$$, $$B$$ și $$d = cmmdc(A, B)$$. Atunci, există cel puțin o pereche de numere întregi $$x$$ și $$y$$ astfel încat $$Ax + By = d$$.
+</Callout>
 
 Daca $$A$$ și $$M$$ sunt prime între ele, atunci există $$x_1$$ și $$y_1$$ astfel încât $$Ax_1 + My_1 = 1$$. De aici reiese faptul că $$Ax_1 \equiv 1 \pmod{M}$$, adică $$x_1$$ este inversul modular al lui $$A$$.
 
@@ -68,10 +66,9 @@ void euclidExtins(const int a, const int b, int &x1, int &y1);
 
 În cazul în care parametrul $$b$$ din funcție este egal cu 0, atunci $$a$$ va fi egal cu 1 și astfel vom seta $$x_1 = 1$$, iar $$y_1$$ poate lua orice valoare, de exemplu tot 1.
 
-!!! warning "Atenție"
-
-Valoarea lui $$x_1$$ poate fi și negativă. Dacă este necesară o valoare
-pozitivă atunci facem operația $$x_1 = x_1 + M$$.
+<Callout type="warning">
+  Valoarea lui $$x_1$$ poate fi și negativă. Dacă este necesară o valoare pozitivă atunci facem operația $$x_1 = x_1 + M$$.
+</Callout>
 
 Mai jos se poate observa o implementare în C++ a algoritmului lui Euclid, respectiv a funcției de calculare a inversului modular al lui $$A$$ pentru modulul $$M$$:
 

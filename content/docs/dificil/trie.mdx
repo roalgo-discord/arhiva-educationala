@@ -431,39 +431,33 @@ Se dau $$N$$ cuvinte formate doar din primele $$K$$ litere mici ale alfabetului 
 
 Prima idee ar fi să sortam vectorul $$x$$. Fie $$dp_i$$ = în câte moduri putem alege primele $$i$$ cuvinte. Putem considera toate posibilitățile de a forma șirurile , iar abia apoi să vedem cum eliminăm pe cele care nu sunt bune. Cu alte cuvinte, fie $$(s_1, s_2, .. , s_{i-1})$$ primele $$i-1$$ cuvinte alese astfel încât să respecte condițiile impuse de problemă. Sunt în total $$dp_{i-1} \cdot K^{x_i}$$ moduri de a forma un set de șiruri cu primele $$i$$ cuvinte.
 
-!!! info "Observație"
+<Callout type="obs">
+  Nu există două cuvinte, $$s_x$$ și $$s_y$$, astfel încât ambele să fie prefixe
+  pentru $$s_i$$.
 
-Nu există două cuvinte, $$s_x$$ și $$s_y$$, astfel încât ambele să fie prefixe
-pentru $$s_i$$.
+  Dacă ambele ar fi prefixe pentru $$s_i$$, atunci fie $$s_x$$ este prefix pentru
+  $$s_y$$, fie invers, ceea ce este fals, pentru că noi am generat primele $$i-1$$
+  cuvinte optim.
 
-Dacă ambele ar fi prefixe pentru $$s_i$$, atunci fie $$s_x$$ este prefix pentru
-$$s_y$$, fie invers, ceea ce este fals, pentru că noi am generat primele $$i-1$$
-cuvinte optim.
-
-Astfel dacă pentru fiecare cuvânt $$k$$, $$k < i$$, putem să scădem din numărul total de posibilități șirurile unde $$s_k$$ este prefix pentru $$s_i$$, nu vom elimina două configurații la fel.
+  Astfel dacă pentru fiecare cuvânt $$k$$, $$k < i$$, putem să scădem din numărul total de posibilități șirurile unde $$s_k$$ este prefix pentru $$s_i$$, nu vom elimina două configurații la fel.
+</Callout>
 
 $$
 dp_i = dp_{i-1} \cdot K^{x_i} - dp_{i-1} \cdot \sum_{j = 1}^{i-1} K^{x_i -
 x_j}
 $$
 
-!!! info "Observație"
-
-Nu există două cuvinte, unul provenit din cele $$N$$ date și celălalt ($$s_k$$)
-din primele $$i-1$$ astfel încât ambele să fie prefixe pentru $$s_i$$. Dacă
-ambele sunt prefixe pentru $$s_i$$, atunci fie $$s_k$$ este prefix pentru un
-cuvânt din cele $$N$$, fie invers.
+<Callout type="obs">
+  Nu există două cuvinte, unul provenit din cele $$N$$ date și celălalt ($$s_k$$) din primele $$i-1$$ astfel încât ambele să fie prefixe pentru $$s_i$$. Dacă ambele sunt prefixe pentru $$s_i$$, atunci fie $$s_k$$ este prefix pentru un cuvânt din cele $$N$$, fie invers.
+</Callout>
 
 Deci, putem să fixam un cuvânt din cele $$N$$ date inițial și să eliminăm numărul de posibilități ca el să fie prefix pentru $$s_i$$. Datorită observației, nu vom elimina o posibilitate dacă a fost eliminată deja în prima etapă.
 
-În mod natural vom zice că din dp-ul nostru vom scădea în mod similar $$dp_{i-1}
-\cdot \sum_{j = 1}^{N} K^{x_i - len(j)}$$, unde $$len(j)$$ = lungimea cuvântului $$j$$, cu $$x_i \geq len(j)$$. Însă nu este adevărat, pentru că dacă avem două cuvinte $$x$$ și $$y$$ , unde $$x$$ este prefix pentru $$y$$, atunci suma de mai sus va număra 2 configurații de două ori. Observăm că nouă ne trebuie practic doar acele cuvinte $$x$$, pentru care nu există alt cuvânt $$y$$, cu $$y$$ prefix pentru $$x$$, iar $$len(x) \leq x_i$$.
+În mod natural vom zice că din dp-ul nostru vom scădea în mod similar $$dp_{i-1} \cdot \sum_{j = 1}^{N} K^{x_i - len(j)}$$, unde $$len(j)$$ = lungimea cuvântului $$j$$, cu $$x_i \geq len(j)$$. Însă nu este adevărat, pentru că dacă avem două cuvinte $$x$$ și $$y$$ , unde $$x$$ este prefix pentru $$y$$, atunci suma de mai sus va număra 2 configurații de două ori. Observăm că nouă ne trebuie practic doar acele cuvinte $$x$$, pentru care nu există alt cuvânt $$y$$, cu $$y$$ prefix pentru $$x$$, iar $$len(x) \leq x_i$$.
 
 Astfel putem parcurge direct pe Trie-ul cuvintelor. Dacă suntem la un nod $$node$$, acesta este capătul unui cuvânt, iar $$len(cuv) \leq x_i$$, atunci putem scădea din dp-ul nostru $$dp_{i-1} \cdot K^{x_i - len(cuv)}$$ și să oprim parcurgerea. Dacă suntem la un nod $$node$$, acesta are lungimea egală cu $$x_i$$, atunci scădem din dp $$dp_{i-1}$$ și oprim parcurgerea.
 
-Cu alte cuvinte, o soluție în $$\mathcal{O}(M^2 + M \cdot S)$$ este posibilă, unde $$S =
-\sum_{i=1}^{N} len(i)$$. Putem optimiza soluția, observând că de fiecare dată putem face tranzițiile în $$\mathcal{O}(1)$$. Soluția finală devine $$\mathcal{O}(M + S)$$ sau $$\mathcal{O}(M
-\cdot \log + S)$$.
+Cu alte cuvinte, o soluție în $$\mathcal{O}(M^2 + M \cdot S)$$ este posibilă, unde $$S = \sum_{i=1}^{N} len(i)$$. Putem optimiza soluția, observând că de fiecare dată putem face tranzițiile în $$\mathcal{O}(1)$$. Soluția finală devine $$\mathcal{O}(M + S)$$ sau $$\mathcal{O}(M \cdot \log + S)$$.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -589,12 +583,9 @@ int main() {
 
 ## Problema [cli](https://kilonova.ro/problems/274) (medie-grea)
 
-Se dau $$N$$ cuvinte care trebuie tastate într-un terminal. Un cuvânt este considerat tastat dacă el va apărea în terminal cel puțin odată pe parcursul tastării. Avem două tipuri de operații la dispoziție: adăugăm un caracter la finalul șirul tastat deja, eliminăm un caracter de la finalul șirului (dacă nu este vid). Pentru fiecare $$i = \overline{1, K}$$, noi trebuie să aflam care este numărul minim de operații pentru a tasta exact $$i$$ cuvinte distincte dintre cele date. În momentul în care începem să tastăm un cuvânt, trebuie mereu să începem de la un șir vid $$(\emptyset)$$, și să terminăm tastarea tot la un șir vid. Un exemplu de tastare corectă este: $$\emptyset \rightarrow a \rightarrow ab
-\rightarrow abc \rightarrow ab \rightarrow a \rightarrow \emptyset$$.
+Se dau $$N$$ cuvinte care trebuie tastate într-un terminal. Un cuvânt este considerat tastat dacă el va apărea în terminal cel puțin odată pe parcursul tastării. Avem două tipuri de operații la dispoziție: adăugăm un caracter la finalul șirul tastat deja, eliminăm un caracter de la finalul șirului (dacă nu este vid). Pentru fiecare $$i = \overline{1, K}$$, noi trebuie să aflam care este numărul minim de operații pentru a tasta exact $$i$$ cuvinte distincte dintre cele date. În momentul în care începem să tastăm un cuvânt, trebuie mereu să începem de la un șir vid $$(\emptyset)$$, și să terminăm tastarea tot la un șir vid. Un exemplu de tastare corectă este: $$\emptyset \rightarrow a \rightarrow ab \rightarrow abc \rightarrow ab \rightarrow a \rightarrow \emptyset$$.
 
-Ne vom folosi din nou de metoda programării dinamice, dar de data asta vom face dp direct pe trie. Astfel, fie $$dp[nod][i]$$ = numărul minim de operații pentru a tasta $$i$$ cuvinte cu prefixul format din lanțul de la rădăcină la $$nod$$. Acum, pentru un nod fixat din trie-ul nostru, putem presupune că în momentul tastării vom începe mereu cu șirul format de la rădăcină la $$nod$$, în loc de $$\emptyset$$. De exemplu, dacă cuvintele au prefixul *abab*, atunci noi vom presupune o succesiune validă de operații: $$abab \rightarrow abab\textbf{c} \rightarrow
-\dots \rightarrow abab\textbf{c} \rightarrow abab$$. Putem deci face un rucsac pentru fiii nodului, $$dp1[i][j]$$ = care e numărul minim de operații pentru a tasta $$j$$ cuvinte din primii $$i$$ fii. Pentru că prefixul necesită $$\text{len}(prefix)$$ operații de adăugare și ștergere, vom începe $$dp$$-ul nostru cu $$2 \cdot \text{len}(prefix)$$ operații deja făcute. Cu alte cuvinte, pentru a tasta 0 cuvinte vom face $$dp1[0][0] = 2 \cdot \text{len}(prefix)$$. În momentul în care trecem de la $$i$$ la $$i+1$$ avem 2 cazuri: fie nu luăm fiul respectiv în considerare, fie alegem $$p$$ șiruri pe care le vom tasta în $$dp[fiu(i)][p] - 2
-\cdot \text{len}(prefix)$$ operații.
+Ne vom folosi din nou de metoda programării dinamice, dar de data asta vom face dp direct pe trie. Astfel, fie $$dp[nod][i]$$ = numărul minim de operații pentru a tasta $$i$$ cuvinte cu prefixul format din lanțul de la rădăcină la $$nod$$. Acum, pentru un nod fixat din trie-ul nostru, putem presupune că în momentul tastării vom începe mereu cu șirul format de la rădăcină la $$nod$$, în loc de $$\emptyset$$. De exemplu, dacă cuvintele au prefixul *abab*, atunci noi vom presupune o succesiune validă de operații: $$abab \rightarrow abab\textbf{c} \rightarrow \dots \rightarrow abab\textbf{c} \rightarrow abab$$. Putem deci face un rucsac pentru fiii nodului, $$dp1[i][j]$$ = care e numărul minim de operații pentru a tasta $$j$$ cuvinte din primii $$i$$ fii. Pentru că prefixul necesită $$\text{len}(prefix)$$ operații de adăugare și ștergere, vom începe $$dp$$-ul nostru cu $$2 \cdot \text{len}(prefix)$$ operații deja făcute. Cu alte cuține, pentru a tasta 0 cuvinte vom face $$dp1[0][0] = 2 \cdot \text{len}(prefix)$$. În momentul în care trecem de la $$i$$ la $$i+1$$ avem 2 cazuri: fie nu luăm fiul respectiv în considerare, fie alegem $$p$$ șiruri pe care le vom tasta în $$dp[fiu(i)][p] - 2 \cdot \text{len}(prefix)$$ operații.
 
 ```cpp
 for (int i = 1; i <= 26; i++) {

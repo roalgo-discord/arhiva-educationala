@@ -24,11 +24,9 @@ Pentru a folosi intrarea și ieșirea standard (a citi "de la tastatură", respe
 
 Citirea datelor se face folosind `std::cin` și operatorul `>>`, iar afișarea datelor se face folosind `std::cout` și operatorul `<<`, câteva exemple fiind regăsite mai jos.
 
-!!! note "Observație"
-
-Deși există și metode de citire și afișare din C (cum ar fi funcțiile
-`#!c scanf` și `#!c printf`), utilizarea metodelor din C++ este mult mai
-intuitivă și simplă.
+<Callout type="obs">
+  Deși există și metode de citire și afișare din C (cum ar fi funcțiile `scanf` și `printf`), utilizarea metodelor din C++ este mult mai intuitivă și simplă.
+</Callout>
 
 După ce compilați programul și nu apar erori, va trebui să rulați executabilul și să introduceți datele de intrare conform descrierii problemei. Dacă totul este corect, veți obține rezultatul așteptat.
 
@@ -43,14 +41,14 @@ Dacă $$n = 9$$, $$a = 11$$ și $$b = 14$$, programul va afișa următoarele dat
 9
 ```
 
-!!! note "`endl` vs `'\n'`"
-
-Ați observat probabil că pentru a introduce o linie nouă, am folosit atât
-`'\n'` cât și `endl`. Deși par a fi echivalente, există
-diferențe semnificative. Instrucțiunea `endl` nu doar că introduce o
-linie nouă, dar și curăță buffer-ul (unde sunt stocate temporar datele
-afișate), ceea ce o face mai lentă decât `'\n'`. Acest lucru devine
-important atunci când lucrăm cu un volum mare de date.
+<Callout type="obs" title="endl vs '\n'">
+  Ați observat probabil că pentru a introduce o linie nouă, am folosit atât
+  `'\n'` cât și `endl`. Deși par a fi echivalente, există
+  diferențe semnificative. Instrucțiunea `endl` nu doar că introduce o
+  linie nouă, dar și curăță buffer-ul (unde sunt stocate temporar datele
+  afișate), ceea ce o face mai lentă decât `'\n'`. Acest lucru devine
+  important atunci când lucrăm cu un volum mare de date.
+</Callout>
 
 ## Citirea și afișarea folosind fișiere
 
@@ -62,13 +60,13 @@ Mai întâi, trebuie să specificăm programului de unde să preia datele și de
 --8 < --"cppintro/io/io2.cpp"
 ```
 
-!!! note "Numele fișierelor"
-
-Deși aici am folosit `fin` și `fout` pentru a putea menționa
-aceste fluxuri (stream-uri) de date, putem folosi orice nume vrem atâta timp
-cât nu avem și alte variabile numite astfel. În mod particular, putem numi
-acestea chiar și `cin`, respectiv `cout` atâta timp cât nu avem
-inclusă biblioteca `<iostream>`.
+<Callout type="obs" title="Numele fișierelor">
+  Deși aici am folosit `fin` și `fout` pentru a putea menționa
+  aceste fluxuri (stream-uri) de date, putem folosi orice nume vrem atâta timp
+  cât nu avem și alte variabile numite astfel. În mod particular, putem numi
+  acestea chiar și `cin`, respectiv `cout` atâta timp cât nu avem
+  inclusă biblioteca `<iostream>`.
+</Callout>
 
 Programul de mai sus va fi identic, singura diferență fiind adăugarea facilităților care ne permit să citim datele din fișiere.
 
@@ -76,12 +74,12 @@ Programul de mai sus va fi identic, singura diferență fiind adăugarea facilit
 --8 < --"cppintro/io/io3.cpp"
 ```
 
-!!! note "Citirea unui număr necunoscut de valori"
-
-Dacă avem de citit un număr necunoscut de valori, trebuie să folosim
-structura repetitivă `while`, așa cum veți observa în [articolul
-nostru](./loops.mdx#structura-while) pe această
-temă.
+<Callout type="obs" title="Citirea unui număr necunoscut de valori">
+  Dacă avem de citit un număr necunoscut de valori, trebuie să folosim
+  structura repetitivă `while`, așa cum veți observa în [articolul
+  nostru](./loops.mdx#structura-while) pe această
+  temă.
+</Callout>
 
 ## Afișarea specializată
 
@@ -104,11 +102,11 @@ De exemplu, dacă vrem să afișăm primele 7 zecimale ale lui $$\pi$$, putem fa
 --8 < --"cppintro/io/io4.cpp"
 ```
 
-!!! note "Observație"
-
-Fără manipulatorul `fixed`, `setprecision` controlează numărul
-total de cifre. După aplicarea lui `fixed`, controlează doar numărul
-de zecimale afişate.
+<Callout type="obs" title="Observație">
+  Fără manipulatorul `fixed`, `setprecision` controlează numărul
+  total de cifre. După aplicarea lui `fixed`, controlează doar numărul
+  de zecimale afişate.
+</Callout>
 
 ## Concluzii
 

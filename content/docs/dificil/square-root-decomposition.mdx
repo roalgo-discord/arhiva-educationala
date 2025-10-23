@@ -17,43 +17,36 @@ tags:
 
 ## Împărțirea datelor în bucăți de radical
 
-Numit în jargonul românesc și sub numele de Șmenul lui Batog, această tehnică constă în prelucrarea unui șir de valori prin împărțirea acestuia în bucăți care acoperă tot șirul, iar lungimea maximă a fiecărei bucăți este în jur de $$\sqrt
-n$$. Pentru a afla numărul de ordine al grupei unde se află o valoare, vom putea folosi formula $$\frac{i}{bk}$$, unde $$i$$ este poziția curentă, iar $$bk$$ este dimensiunea unei grupe (a unui bucket), de regulă aceasta fiind aproximativ $$\sqrt n$$.
+Numit în jargonul românesc și sub numele de Șmenul lui Batog, această tehnică constă în prelucrarea unui șir de valori prin împărțirea acestuia în bucăți care acoperă tot șirul, iar lungimea maximă a fiecărei bucăți este în jur de $$\sqrt n$$. Pentru a afla numărul de ordine al grupei unde se află o valoare, vom putea folosi formula $$\frac{i}{bk}$$, unde $$i$$ este poziția curentă, iar $$bk$$ este dimensiunea unei grupe (a unui bucket), de regulă aceasta fiind aproximativ $$\sqrt n$$.
 
 În cele mai multe cazuri, query-urile pe care le putem rezolva folosind această metodă sunt query-uri relativ simple, precum cele de sumă sau maxim, query-uri care se pot procesa și folosind alte structuri de date, precum [arborii de intervale](./segment-trees.mdx) sau [arborii indexați binar](./fenwick-tree.mdx). Totuși, în unele situații, se recomandă abordări de tipul square root decomposition, deoarece implementările se vor dovedi mai scurte și mai simplu de abordat, în special în cazul unor limite de timp mai puțin stricte și/sau a unor restricții mai mici.
 
-!!! note "Observație"
+<Callout type="obs">
+  Vom presupune în cele ce urmează că indexarea valorilor se face de la 0.
 
-Vom presupune în cele ce urmează că indexarea valorilor se face de la 0.
+  De regulă, vom vrea să ținem memorate informații pentru fiecare grupă, iar atunci când actualizăm o valoare, operația va fi efectuată în timp constant, deoarece schimbăm informațiile dintr-o singură grupă. În ceea ce privește interogările, complexitatea acestora este $$\mathcal{O}(\sqrt n)$$ deoarece dacă avem un interval de forma $$\[L, R]$$, noi vom calcula răspunsul folosind trei pași, aceștia fiind următorii:
 
-De regulă, vom vrea să ținem memorate informații pentru fiecare grupă, iar atunci când actualizăm o valoare, operația va fi efectuată în timp constant, deoarece schimbăm informațiile dintr-o singură grupă. În ceea ce privește interogările, complexitatea acestora este $$\mathcal{O}(\sqrt n)$$ deoarece dacă avem un interval de forma $$\[L, R]$$, noi vom calcula răspunsul folosind trei pași, aceștia fiind următorii:
+  - Intervalul $$\[L, x]$$, unde $$x$$ este capătul dreapta al grupării în care se află $$L$$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
+  - Intervalul $$\[x+1, y]$$, unde $$y$$ este capătul din dreapta al ultimei grupe care se află în întregime în intervalul din query. Pentru aceste grupe, se procesează răspunsul total corespunzător acestui interval și se consideră în contextul răspunsului final.
+  - Intervalul $$\[y+1, R]$$, unde $$y+1$$ este capătul stânga al grupării în care se află $$R$$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
+</Callout>
 
-- Intervalul $$\[L, x]$$, unde $$x$$ este capătul dreapta al grupării în care se află $$L$$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
-- Intervalul $$\[x+1, y]$$, unde $$y$$ este capătul din dreapta al ultimei grupe care se află în întregime în intervalul din query. Pentru aceste grupe, se procesează răspunsul total corespunzător acestui interval și se consideră în contextul răspunsului final.
-- Intervalul $$\[y+1, R]$$, unde $$y+1$$ este capătul stânga al grupării în care se află $$R$$: se poate calcula răspunsul brut, prin procesarea fiecărei valori din grupă.
+<Callout type="obs">
+  În mod particular, dacă $$L$$ și $$R$$ se află în aceeași grupă, vom putea afla
+  brut răspunsul cerut, considerând pe rând fiecare valoare din interval.
+</Callout>
 
-!!! note "Observație"
+<Callout type="example">
+  De exemplu, dacă dimensiunea unei grupări este 5, iar intervalul $$\[L, R]$$  este $$\[7, 21]$$, răspunsul se va afla în modul următor:
 
-În mod particular, dacă $$L$$ și $$R$$ se află în aceeași grupă, vom putea afla
-brut răspunsul cerut, considerând pe rând fiecare valoare din interval.
-
-!!! example "Exemplu"
-
-De exemplu, dacă dimensiunea unei grupări este 5, iar intervalul $$\[L, R]$$
-este $$\[7, 21]$$, răspunsul se va afla în modul următor:
-
-- Intervalul $$\[7, 9]$$: Fiind o grupare care nu se află în întregime în
-  interogarea dată, vom procesa valorile într-o manieră brută.
-- Intervalele $$\[10, 14]$$ și $$\[15, 19]$$: Deoarece aceste intervale se află în
-  întregime în interogarea dată, le vom procesa folosind precalcularea făcută
-  anterior pentru grupările întregi.
-- Intervalul $$\[20, 21]$$: Fiind o grupare care nu se află în întregime în
-  interogarea dată, vom procesa valorile într-o manieră brută.
+  - Intervalul $$\[7, 9]$$: Fiind o grupare care nu se află în întregime în interogarea dată, vom procesa valorile într-o manieră brută.
+  - Intervalele $$\[10, 14]$$ și $$\[15, 19]$$: Deoarece aceste intervale se află în întregime în interogarea dată, le vom procesa folosind precalcularea făcută anterior pentru grupările întregi.
+  - Intervalul $$\[20, 21]$$: Fiind o grupare care nu se află în întregime în interogarea dată, vom procesa valorile într-o manieră brută.
+</Callout>
 
 ## Când folosim aceste tehnici?
 
-De multe ori, pentru a găsi abordarea optimă pentru asemenea probleme, trebuie să avem în vedere faptul că dacă avem restricții mai mici (de regulă, când $$n
-\approx 10^5$$), o abordare de acest tip poate fi foarte eficientă datorită flexibilității pe care o avem, precum și a faptului că putem să variem punctul limită în funcție de eficiența celor două abordări.
+De multe ori, pentru a găsi abordarea optimă pentru asemenea probleme, trebuie să avem în vedere faptul că dacă avem restricții mai mici (de regulă, când $$n \approx 10^5$$), o abordare de acest tip poate fi foarte eficientă datorită flexibilității pe care o avem, precum și a faptului că putem să variem punctul limită în funcție de eficiența celor două abordări.
 
 Cu alte cuvinte, dacă avem o abordare care rulează în $$\mathcal{O}(a \cdot x)$$ și alta care rulează în $$\mathcal{O}(b \cdot \frac{n}{x})$$, unde $$a$$ și $$b$$ sunt constante, punctul de cotitură între cele două abordări este acela în care cele două ecuații au valori egale, din acest motiv nefiind mereu optim să abordăm diferit începând de la $$\mathcal{O}(\sqrt n)$$, deoarece uneori această schimbare trebuie produsă mai devreme sau mai târziu.
 
@@ -137,10 +130,9 @@ int main() {
 
 ### Problema [Consecutive Max Difference](https://csacademy.com/contest/interview-archive/task/consecutive-max-difference/) de pe CS Academy
 
-!!! note "Observație"
-
-Această problemă, împreună cu variații ale ei este explicată în detaliu și
-în acest [blog](https://codeforces.com/blog/entry/129324) de pe Codeforces.
+<Callout type="info">
+  Această problemă, împreună cu variații ale ei este explicată în detaliu și în acest [blog](https://codeforces.com/blog/entry/129324) de pe Codeforces.
+</Callout>
 
 Pentru a rezolva această problemă, trebuie să ne folosim de faptul că știm o valoare minimă a acestei diferențe, aceasta fiind raportul dintre diferența dintre maxim și minim, respectiv numărul de perechi de valori adiacente. Folosind această regulă, tot ce mai avem de făcut este să grupăm valori în functie de zona unde se află ele în șir (putem împărți valorile în $$n$$ grupe astfel), iar mai apoi vom calcula diferențele între cea mai mare valoare din grupa precedentă și cea mai mică valoare din grupa următoare.
 
@@ -191,21 +183,15 @@ Pentru a calcula query-uri mai complicate, de multe ori ne putem gândi la a gru
 
 Această metodă se numește Algoritmul lui Mo și prin folosirea ei pentru a reordona query-urile, ne asigurăm că numărul de operații pe care îl facem în medie la fiecare query este de $$\mathcal{O}(\sqrt n)$$, lucru ce se poate motiva prin însumarea a două elemente de complexitate:
 
-- Dacă avem două (sau mai multe) query-uri din același bucket, capătul din stânga se va mișca cu cel mult $$\sqrt n$$, iar numărul total de pași pe care îi facem la dreapta este de $$n$$. Deoarece numărul de bucket-uri este $$\mathcal{O}(\sqrt
-  n)$$, atunci contribuția la complexitate de la aceste query-uri este $$\mathcal{O}(n \sqrt
-  n)$$.
+- Dacă avem două (sau mai multe) query-uri din același bucket, capătul din stânga se va mișca cu cel mult $$\sqrt n$$, iar numărul total de pași pe care îi facem la dreapta este de $$n$$. Deoarece numărul de bucket-uri este $$\mathcal{O}(\sqrt n)$$, atunci contribuția la complexitate de la aceste query-uri este $$\mathcal{O}(n \sqrt  n)$$.
 
 - Dacă avem două query-uri din bucket-uri diferite, putem avea în cel mai rău caz $$n$$ pași, dar deoarece numărul de bucket-uri este $$\mathcal{O}(\sqrt n)$$, atunci contribuția la complexitate de la aceste query-uri este $$\mathcal{O}(n \sqrt n)$$.
 
 În total, complexitatea se reduce la $$\mathcal{O}(n \sqrt n)$$, presupunând că operațiile auxiliare pe care le efectuăm se realizează în timp constant.
 
-!!! note "Observație"
-
-Pentru a optimiza mai mult această metodă, putem să sortăm invers elementele
-din aceeași grupă dacă avem de-a face cu grupe cu un număr par, deoarece
-putem astfel să alternăm direcția în care adăugăm și scoatem valori la
-capătul din dreapta, constanta reducându-se cu un factor de aproximativ 2
-în majoritatea cazurilor.
+<Callout type="obs">
+  Pentru a optimiza mai mult această metodă, putem să sortăm invers elementele din aceeași grupă dacă avem de-a face cu grupe cu un număr par, deoarece putem astfel să alternăm direcția în care adăugăm și scoatem valori la capătul din dreapta, constanta reducându-se cu un factor de aproximativ 2 în majoritatea cazurilor.
+</Callout>
 
 Pentru a explica acest algoritm, voi prezenta o problemă clasică ce folosește această metodă.
 
@@ -467,8 +453,7 @@ Problema de mai jos reprezintă un exemplu mai simplu care combină și cunoști
 
 ### Problema [Rangemode](https://www.infoarena.ro/problema/rangemode) de pe infoarena
 
-Pentru a rezolva această problemă, vom pleca de la soluția obișnuită pe care o avem folosind algoritmul lui Mo, unde sortăm query-urile în ordine crescătoare a grupei de unde încep. Dacă am proceda conform unui Mo obișnuit, ar trebui să ținem și un set în care să păstrăm frecvențele maxime deoarece avem nevoie să aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $$\mathcal{O}(q
-\sqrt n \log n)$$ este prea înceată.
+Pentru a rezolva această problemă, vom pleca de la soluția obișnuită pe care o avem folosind algoritmul lui Mo, unde sortăm query-urile în ordine crescătoare a grupei de unde încep. Dacă am proceda conform unui Mo obișnuit, ar trebui să ținem și un set în care să păstrăm frecvențele maxime deoarece avem nevoie să aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $$\mathcal{O}(q \sqrt n \log n)$$ este prea înceată.
 
 Ne putem gândi acum la ce se întâmplă cu adevărat când rulăm update-urile și query-urile într-un bucket al algoritmului lui Mo. Noi continuăm să progresăm spre capătul dreapta al vectorului, adăugând valorile în structura noastră de date. Singurele ajustări pe care trebuie să le facem sunt atunci când trebuie să ne mișcăm în bucata parțială de la începutul query-urilor, bucată care are o lungime de cel mult $$\sqrt n$$. Din acest motiv, ce putem face acum este să reducem abordarea la doar niște adăugări, cu alte cuvinte vom adăuga valori una câte una, ajustând cel mai bun răspuns într-o manieră foarte simplă, deoarece putem acum să ne dăm seama dacă valorile adăugate la un moment dat pot fi răspunsuri mai bune.
 

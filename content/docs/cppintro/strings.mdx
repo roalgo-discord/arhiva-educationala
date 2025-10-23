@@ -19,13 +19,11 @@ Un șir de caractere este un tablou care stochează caractere. În limbajul C++,
 
 ## Tipul `char` și tabelul ASCII
 
-Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.mdx), limbajul C++ dispune de tipul de date `char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `char` sunt în intervalul \[-128, 127] (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului \[32, 127].
+Așa cum ați văzut când am discutat despre [tipurile de date](./data-types.mdx), limbajul C++ dispune de tipul de date `char`, utilizat pentru a stoca caractere. Deși valorile stocate într-un `char` sunt în intervalul $$[-128, 127]$$ (pentru reprezentări cu semn), cele mai utilizate caractere sunt cele afișabile, care aparțin intervalului $$[32, 127]$$.
 
-!!! note "Codificarea caracterelor"
-
-Standardul care atribuie valori caracterelor se numește ASCII (American
-Standard Code for Information Interchange). Caracterele din intervalul
-\[0, 31] nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
+<Callout type="obs" title="Codificarea caracterelor">
+  Standardul care atribuie valori caracterelor se numește ASCII (American Standard Code for Information Interchange). Caracterele din intervalul $$[0, 31]$$ nu sunt afișabile, fiind utilizate pentru instrucțiuni de sistem.
+</Callout>
 
 Printre cele mai importante coduri ASCII sunt:
 
@@ -49,7 +47,7 @@ Lista completă a codurilor pentru caractere se găsește [aici](https://www.sci
 
 | Dec | Caracter | Dec | Caracter | Dec | Caracter | Dec | Caracter |
 | --- | -------- | --- | -------- | --- | -------- | --- | -------- |
-| 0   | NUL      | 32  | \`\`     | 64  | @        | 96  | \`       |
+| 0   | NUL      | 32  | \` \`    | 64  | @        | 96  | \`       |
 | 1   | SOH      | 33  | !        | 65  | A        | 97  | a        |
 | 2   | STX      | 34  | "        | 66  | B        | 98  | b        |
 | 3   | ETX      | 35  | #        | 67  | C        | 99  | c        |
@@ -145,7 +143,9 @@ Verifică dacă un caracter anume este alfanumeric. Următoarele caractere sunt 
 - literele mici abcdefghijklmnopqrstuvwxyz
 - cifrele 0123456789
 
-!!! note "Observație" `isalnum(ch)` este echivalent cu `isdigit(ch) && isalpha(ch)`.
+<Callout type="obs">
+  `isalnum(ch)` este echivalent cu `isdigit(ch) && isalpha(ch)`.
+</Callout>
 
 #### Parametri
 

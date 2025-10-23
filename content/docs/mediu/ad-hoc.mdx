@@ -6,11 +6,9 @@ tags:
   - meta
 ---
 
-!!! note "Conținutul articolului"
-
-O bună parte din conținutul acestui articol este preluat din cursul creat de
-același autor pentru lotul de juniori din 2023, curs care se poate găsi
-[aici](https://cdn.sepi.ro/articole/curs%20ad-hoc.pdf)
+<Callout type="note">
+  O bună parte din conținutul acestui articol este preluat din cursul creat de același autor pentru lotul de juniori din 2023, curs care se poate găsi [aici](https://cdn.sepi.ro/articole/curs%20ad-hoc.pdf).
+</Callout>
 
 ## Introducere
 
@@ -68,10 +66,9 @@ De multe ori, după ce generăm răspunsuri pentru valori mici folosind o metod�
 
 Un exemplu concret este problema [asort](https://kilonova.ro/problems/1084) de la barajul de juniori din 2016.
 
-!!! note "Observație"
-
-Soluția acestei probleme este explicată în arhiva noastră
-[aici](../usor/simulating-solution.mdx#problema-exemplu-asort-baraj-2016-juniori)
+<Callout type="info">
+  Soluția acestei probleme este explicată în arhiva noastră [aici](../usor/simulating-solution.mdx#problema-exemplu-asort-baraj-2016-juniori).
+</Callout>
 
 ### Folosiți-vă de diferite restricții speciale din enunț (dacă apar asemenea restricții)
 
@@ -92,15 +89,9 @@ Acest ultim pas este de departe cel mai dificil deoarece de multe ori se poate �
 
 Indiferent de caz, este important să ne asigurăm că soluția obținută nu obține un răspuns greșit pe un caz evident, dar și să încercăm pe cât posibil să trimitem soluția când algoritmul și implementarea au sens.
 
-!!! warning "Atenție"
-
-Deși acesta este un sfat general, este foarte important să evitați să trimiteți
-soluția imediat ce găsiți un bug pe care l-ați rezolvat (cu excepția cazului
-când concursul se apropie de final și orice secundă contează) - pe lângă faptul
-că numărul de submisii este limitat, este de asemenea important să reușiti să
-rezolvați problema din mai puține submisii, deoarece din experiența personală,
-ajută în ceea ce privește încrederea pe care o căpătați pentru celelalte
-probleme în timpul concursului.
+<Callout type="warning">
+  Deși acesta este un sfat general, este foarte important să evitați să trimiteți soluția imediat ce găsiți un bug pe care l-ați rezolvat (cu excepția cazului când concursul se apropie de final și orice secundă contează) - pe lângă faptul că numărul de submisii este limitat, este de asemenea important să reușiti să rezolvați problema din mai puține submisii, deoarece din experiența personală, ajută în ceea ce privește încrederea pe care o căpătați pentru celelalte probleme în timpul concursului.
+</Callout>
 
 ## Problemă exemplu - [Pretty Permutations](https://codeforces.com/contest/1541/problem/A)
 
@@ -131,11 +122,9 @@ După găsirea acestor observații, putem să sortăm liniile, apoi coloanele fo
 
 ### Problema [Preparing Boxes (ABC 134)](https://atcoder.jp/contests/abc134/tasks/abc134_d)
 
-Mai întâi, trebuie să ne gândim la informațiile pe care le putem afla mai ușor cu privire la valorile din vectorul $$b$$. De exemplu, $$b[1] \ \% \ 2$$ = $$(a[1] +
-a[2] + \dots + a[n]) \ \% \ 2$$. Totuși, $$b[n] \ \% \ 2$$ = $$a[n] \ \% \ 2$$.
+Mai întâi, trebuie să ne gândim la informațiile pe care le putem afla mai ușor cu privire la valorile din vectorul $$b$$. De exemplu, $$b[1] \ \% \ 2$$ = $$(a[1] + a[2] + \dots + a[n]) \ \% \ 2$$. Totuși, $$b[n] \ \% \ 2$$ = $$a[n] \ \% \ 2$$.
 
-De asemenea, numărul total de valori pe care trebuie să le verificăm este $$\mathcal{O}(n
-\log n)$$, o observație ce este destul de clară pentru oricine a implementat cel puțin o dată ciurul lui Eratostene.
+De asemenea, numărul total de valori pe care trebuie să le verificăm este $$\mathcal{O}(n \log n)$$, o observație ce este destul de clară pentru oricine a implementat cel puțin o dată ciurul lui Eratostene.
 
 Din aceste observații, putem deduce faptul că este optim să fixăm valorile din $$b$$ de la dreapta la stânga, iar parcurgerea lor folosind brute force este îndeajuns de rapidă.
 

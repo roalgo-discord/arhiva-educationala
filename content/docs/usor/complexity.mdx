@@ -22,11 +22,9 @@ Imaginați-vă că trebuie să căutați un cuvânt într-un dicționar. Dacă �
 Pentru a calcula complexitatea de timp a unui algoritm, trebuie să avem în vedere că în practică, procesoarele moderne pot procesa aproximativ $$3 \cdot
 10^8$$ operații simple pe secundă, acest număr depinzând în funcție de contextul unde trebuie rezolvată problema (anumite site-uri sunt mai rapide decât altele și anumite evaluatoare de la concursurile oficiale sunt mai rapide decât altele).
 
-!!! note "Observație"
-
-În concursuri, folosirea valorii de $$10^8$$ operații pe secundă este o
-estimare precisă, care este folosită de regulă și de propunătorii de
-probleme atunci când se decid limitele de timp.
+<Callout type="tip">
+  În concursuri, folosirea valorii de $$10^8$$ operații pe secundă este o estimare precisă, care este folosită de regulă și de propunătorii de probleme atunci când se decid limitele de timp.
+</Callout>
 
 Prin operație „simplă” înțelegem concret o operație care durează un timp constant, indiferent de mărimea intrării. Exemple de operații simple includ operațiile aritmetice simple, incrementările, operațiile pe biți etc., iar exemple care nu sunt simple includ aflarea radicalului, aflarea restului împărțirii etc.
 
@@ -96,29 +94,28 @@ for (int i = 1; i <= m; i++) {
 }
 ```
 
-!!! warning "Atenție"
+<Callout type="warning">
+  O greșeală care se face deseori este să presupunem că o complexitate $$\mathcal{O}(f(n))$$ se menține pentru **valori mici**. Când calculăm
+  complexitățile, ignorăm constantele pentru că vrem să analizăm algoritmul
+  când $$n$$ devine din ce în ce mai mare. Ne interesează deci rata în care
+  crește timpul de execuție, dar asta nu ne zice nimic legat de timpul
+  concret. Pentru valori mici, nu avem voie să ignorăm constantele și alți
+  termeni, deoarece constantele contează enorm. Din acest punct de vedere,
+  putem vedea $$\mathcal{O}$$ ca fiind cazul **cel mai rău** al unui algoritm.
+  Notația nu ne zice nimic de cum rulează algoritmul în medie sau în cel mai
+  bun caz.
 
-O greșeală care se face deseori este să presupunem că o complexitate
-$$\mathcal{O}(f(n))$$ se menține pentru **valori mici**. Când calculăm
-complexitățile, ignorăm constantele pentru că vrem să analizăm algoritmul
-când $$n$$ devine din ce în ce mai mare. Ne interesează deci rata în care
-crește timpul de execuție, dar asta nu ne zice nimic legat de timpul
-concret. Pentru valori mici, nu avem voie să ignorăm constantele și alți
-termeni, deoarece constantele contează enorm. Din acest punct de vedere,
-putem vedea $$\mathcal{O}$$ ca fiind cazul **cel mai rău** al unui algoritm.
-Notația nu ne zice nimic de cum rulează algoritmul în medie sau în cel mai
-bun caz.
-
-De pildă, dacă avem un algoritm $$\mathcal{O}(n)$$ pentru care fiecare
-operație durează 50ms (am putea reprezenta asta ca $$\mathcal{O}(50n)$$),
-acesta va fi mai încet decât un algoritm $$\mathcal{O}(5n^2)$$, unde fiecare
-operație durează 5ms pentru $$n \< 10$$. Fiecare operație are un cost și există
-foarte mulți factori care pot influența cum rulează un algoritm (performanța
-procesorului, memoria disponibilă, cum accesează programul memoria, ce
-operații au loc etc.). Un algoritm $$\mathcal{O}(2n)$$ va fi de 2 ori mai
-rapid decât unul $$\mathcal{O}(4n)$$, deși ele cresc în același fel. Deci nu
-vă bazați pe complexități dacă vreți să comparați concret doi algoritmi sau
-două structuri de date; faceți teste.
+  De pildă, dacă avem un algoritm $$\mathcal{O}(n)$$ pentru care fiecare
+  operație durează 50ms (am putea reprezenta asta ca $$\mathcal{O}(50n)$$),
+  acesta va fi mai încet decât un algoritm $$\mathcal{O}(5n^2)$$, unde fiecare
+  operație durează 5ms pentru $$n \< 10$$. Fiecare operație are un cost și există
+  foarte mulți factori care pot influența cum rulează un algoritm (performanța
+  procesorului, memoria disponibilă, cum accesează programul memoria, ce
+  operații au loc etc.). Un algoritm $$\mathcal{O}(2n)$$ va fi de 2 ori mai
+  rapid decât unul $$\mathcal{O}(4n)$$, deși ele cresc în același fel. Deci nu
+  vă bazați pe complexități dacă vreți să comparați concret doi algoritmi sau
+  două structuri de date; faceți teste.
+</Callout>
 
 ### Exemple de complexități de timp
 
@@ -140,15 +137,11 @@ Aici prezentăm câteva exemple de complexități, care vor fi utile pe parcurs.
 
 Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 
-- tipul `int`: 4 octeți, limite între $$-2^{31}$$ si $$2^{31} - 1$$ ($$-2 \ 147
-  \ 483 \ 648$$ si $$2 \ 147 \ 483 \ 647$$).
-- tipul `short`: 2 octeți, limite între $$-2^{15}$$ si $$2^{15} - 1$$ ($$-32 \
-  768$$ si $$32 \ 767$$).
+- tipul `int`: 4 octeți, limite între $$-2^{31}$$ si $$2^{31} - 1$$ ($$-2 \ 147 \ 483 \ 648$$ si $$2 \ 147 \ 483 \ 647$$).
+- tipul `short`: 2 octeți, limite între $$-2^{15}$$ si $$2^{15} - 1$$ ($$-32 \ 768$$ si $$32 \ 767$$).
 - tipul `char`: 1 octet, limite între $$-128$$ si 127.
 - tipul `bool`: 1 octet, accepta doar 0 sau 1.
-- tipul `long long`: 8 octeți, limite între $$-2^{63}$$ si $$2^{63} - 1$$ ($$-9
-  \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$$ si $$9 \ 223 \ 372 \ 036 \ 854 \ 775 \
-  807$$) — numere de maxim 19 cifre.
+- tipul `long long`: 8 octeți, limite între $$-2^{63}$$ si $$2^{63} - 1$$ ($$-9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 808$$ si $$9 \ 223 \ 372 \ 036 \ 854 \ 775 \ 807$$) — numere de maxim 19 cifre.
 
 În privința tipurilor reale, putem enumera următoarele:
 
@@ -156,8 +149,7 @@ Dintre cele mai frecvente tipuri de date, putem enumera următoarele:
 - tipul `double`: 8 octeți, limite între aproximativ $$-10^{208}$$ și $$10^{208}$$.
 - tipul `long double`: în funcție de standardul de compilare, cel puțin 8 octeți, limite mai mari decât cele de la `double`.
 
-De exemplu, dacă avem un vector de $$10^6$$ elemente de tipul `int` și altul de $$10^5$$ elemente de tipul `long long`, vom folosi $$4 \cdot 10^6 + 8
-\cdot 10^5 = 4.8 \cdot 10^6$$ octeți = 4.8 MB.
+De exemplu, dacă avem un vector de $$10^6$$ elemente de tipul `int` și altul de $$10^5$$ elemente de tipul `long long`, vom folosi $$4 \cdot 10^6 + 8 \cdot 10^5 = 4.8 \cdot 10^6$$ octeți = 4.8 MB.
 
 Este foarte important în cazul complexităților de memorie să aveți în vedere faptul că în general la concursuri, se ia în considerare memoria așa cum e declarată la început, și nu ce folosești pe parcurs. Astfel, este foarte important pe cât posibil să nu declarați mai multă memorie decât folosiți și să aveți grijă la câtă memorie alocați, pentru a evita și situația în care alocați mai puțin decât trebuie.
 

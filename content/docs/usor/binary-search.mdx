@@ -17,10 +17,10 @@ Să presupunem că avem un șir de $$N$$ numere și memorie astfel încât să p
 
 ## Prezentarea algoritmului
 
-!!! note "Notă"
-
-De acum încolo, se va presupune că șirul nostru este sortat crescător.
-Căutarea binară pe un șir nesortat va da mereu răspunsuri eronate.
+<Callout type="note">
+  De acum încolo, se va presupune că șirul nostru este sortat crescător.
+  Căutarea binară pe un șir nesortat va da mereu răspunsuri eronate.
+</Callout>
 
 În algoritmul de căutare binară se va pleca de la analiza șirului pe întreaga sa lungime, și se va fixa punctul de mijloc din sir. Dacă valoarea poziției din mijloc este mai mică decât valoarea căutată, atunci sigur valoarea căutată se poate (că nu știm sigur dacă există!) afla în a doua jumătate, altfel, se poate afla în prima jumătate. Mai departe, nu va mai fi necesar sa analizăm tot șirul, ci doar jumătatea relevantă (cea în care considerăm noi că există o șansă să găsim valoarea noastră), și algoritmul se va repeta până când lungimea devine 1 și putem determina răspunsul. Dat fiind faptul că noi la fiecare pas împărțim la 2 lungimea șirului, acest lucru ne va da complexitate logaritmică la determinarea răspunsului, deci vom avea complexitate $$\mathcal{O}(Q \log N)$$ (dacă șirul nostru nu este sortat din input, se mai adaugă și un $$\mathcal{O}(N \log N)$$ la complexitate), cu memorie $$\mathcal{O}(N)$$.
 
@@ -226,11 +226,11 @@ double cb_double() {
 
 ### Problema [Equation](https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E) de pe Codeforces Edu
 
-!!! note "Observație"
-
-Pentru a accesa această problemă, trebuie să vă înregistrați în prealabil la
-aceste cursuri, intrând în secțiunea ITMO Academy - Pilot Course, pe care o
-găsiți [aici](https://codeforces.com/edu/courses)
+<Callout type="warning">
+  Pentru a accesa această problemă, trebuie să vă înregistrați în prealabil la
+  aceste cursuri, intrând în secțiunea ITMO Academy - Pilot Course, pe care o
+  găsiți [aici](https://codeforces.com/edu/courses)
+</Callout>
 
 Deși această problemă poate fi rezolvată și folosind ecuații matematice, căutarea binară a răspunsului devine o soluție elegantă care evită complicații fără rost. Fixând un număr de 100 de iterații, se ajunge la răspuns foarte simplu și eficient.
 

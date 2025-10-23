@@ -23,20 +23,13 @@ Să luăm ca exemplu problema [Static Range Sum Queries](https://cses.fi/problem
 
 Fie $$spt_{i, j}$$ suma numerelor din intervalul $$[j, j + 2^i)$$. Când avem o întrebare pe intervalul $$[st, dr]$$, îl vom împărți în intervale de lungimi puteri de 2. Lungimile acestor intervale vor fi egale cu biții din reprezentarea în baza 2 a lui $$dr - st + 1$$. Această metodă se cheamă **binary lifting**.
 
-!!! warning "Atenție"
+<Callout type="warning">
+  Este foarte important ca, în $$spt_{i, j}$$, $$2^i$$ să fie lungimea intervalului și $$j$$ să fie primul element. Dacă implementăm altfel, timpul implementării va crește foarte mult. Unoeri, acest lucru poate duce și la TLE. Mai multe detalii puteți găsi în [acest blog](https://codeforces.com/blog/entry/75611).
+</Callout>
 
-Este foarte important ca, în $$spt_{i, j}$$, $$2^i$$ să fie lungimea
-intervalului și $$j$$ să fie primul element. Dacă implementăm altfel, timpul
-implementării va crește foarte mult. Unoeri, acest lucru poate duce și la
-TLE. Mai multe detalii puteți găsi în
-[acest blog](https://codeforces.com/blog/entry/75611).
-
-!!! note "Observație"
-
-[LCA](./lowest-common-ancestor.mdx) este calculat,
-de asemenea, folosind binary lifting. Căutarea binară în
-[AIB](./fenwick-tree.mdx) folosește, de asemenea,
-binary lifting.
+<Callout type="obs">
+  [LCA](./lowest-common-ancestor.mdx) este calculat, de asemenea, folosind binary lifting. Căutarea binară în [AIB](./fenwick-tree.mdx) folosește, de asemenea, binary lifting.
+</Callout>
 
 Sursa de 100:
 
@@ -108,15 +101,13 @@ Așa cum îi spune și numele, la **Range Minimum Query (RMQ)**, avem întrebăr
 
 Ideea principală la RMQ este să împărțim intervalul $$[st, dr]$$ în două intervale: $$[st, st + 2^{lg}), (dr - 2^{lg}, dr]$$ (unde $$lg$$ reprezintă cel mai mare număr astfel încât $$2^{lg} \leq dr - st + 1$$). Aceste intervale au lungimea $$2^{lg}$$, deci le putem afla răspunsurile în $$\mathcal{O}(1)$$ (deoarece le avem deja precalculate).
 
-!!! note "Observație"
+<Callout type="obs">
+  Noi repetăm elementele din intervalul $$(st + 2^{lg}, dr - 2^{lg})$$. Acest lucru nu ne afectează, deoarece $$min(x, x) = x$$.
+</Callout>
 
-Noi repetăm elementele din intervalul $$(st + 2^{lg}, dr - 2^{lg})$$. Acest
-lucru nu ne afectează, deoarece $$min(x, x) = x$$.
-
-!!! note "Observație"
-
-Vom precalcula un vector $$lg2_i = $$ cel mai mare $$j$$ astfel încât $$2^j \leq
-    i$$. Acest vector ne va ajuta să calculăm $$lg$$ ușor.
+<Callout type="obs">
+  Vom precalcula un vector $$lg2_i = $$ cel mai mare $$j$$ astfel încât $$2^j \leq i$$. Acest vector ne va ajuta să calculăm $$lg$$ ușor.
+</Callout>
 
 Tabloul $$spt$$ se calculează la fel ca înainte.
 
@@ -180,12 +171,9 @@ int main() {
 }
 ```
 
-!!! note "Observație"
-
-RMQ poate fi folosit cu orice operație $$f$$ care este
-[idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $$f(x, x) =
-    x$$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am
-observat mai sus, noi repetăm anumite elemente.
+<Callout type="obs">
+  RMQ poate fi folosit cu orice operație $$f$$ care este [idempotentă](https://en.wikipedia.org/wiki/Idempotence), adică $$f(x, x) = x$$ (minim, maxim, cmmdc etc). Avem nevoie de acest lucru, deoarece, cum am observat mai sus, noi repetăm anumite elemente.
+</Callout>
 
 ## RMQ 2D
 
@@ -498,9 +486,7 @@ AINT este, de obicei, mai folositor ca RMQ, mai puțin atunci când numărul de 
 
 Observăm că indicatoarele trebuie să fie de forma RRR...RLLL..L. Să fixam poziția $$i$$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-uri de la $$st$$ la $$i$$ adunat cu numărul de R-uri de la $$i + 1$$ la $$dr$$. Aceste lucruri pot fi calculate ușor folosind sume parțiale.
 
-Fie $$prefL_i = $$ câte L-uri sunt de la 1 la $$i$$ și $$suffR_i = $$ câte R-uri
-sunt de la $$i$$ la $$n$$. Atunci răspunsul va fi $$min(prefL_i - prefL_{st-1} +
-suffR_{i+1} - suffR_{dr+1})$$ astfel încât $$st - 1 \leq i \leq dr$$. Acest lucru este echivalent cu a afla minimul expresiei $$prefL_i + suffR_{i+1}$$ cu $$i$$ in intervalul $$[st - 1, dr]$$. Vom folosi RMQ pentru a afla acest minim.
+Fie $$prefL_i = $$ câte L-uri sunt de la 1 la $$i$$ și $$suffR_i = $$ câte R-uri sunt de la $$i$$ la $$n$$. Atunci răspunsul va fi $$min(prefL_i - prefL_{st-1} + suffR_{i+1} - suffR_{dr+1})$$ astfel încât $$st - 1 \leq i \leq dr$$. Acest lucru este echivalent cu a afla minimul expresiei $$prefL_i + suffR_{i+1}$$ cu $$i$$ in intervalul $$[st - 1, dr]$$. Vom folosi RMQ pentru a afla acest minim.
 
 Sursa de 100 de puncte:
 
@@ -695,12 +681,9 @@ int main() {
 
 #### Versiunea grea
 
-Noi trebuie, de fapt, să avem o subsecvență (contiguă) de exact $$k$$ elemente. Observăm că $$f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, ..,
-rez_{r-k+1})$$ (încercăm fiecare subsecvență de $$k$$ elemente). Așa că, răspunsul nostru este $$\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$$.
+Noi trebuie, de fapt, să avem o subsecvență (contiguă) de exact $$k$$ elemente. Observăm că $$f(a_l, a_{l+1}, .., a_r) = k - max(rez_l, rez_{l+1}, .., rez_{r-k+1})$$ (încercăm fiecare subsecvență de $$k$$ elemente). Așa că, răspunsul nostru este $$\sum _{i=l} ^r \ k - max(rez_l, rez_{l+1}, \dots, rez_{i-k+1})$$.
 
-Vom găsi, pentru fiecare $$i$$, la câte sume contribuie $$rez_i$$. Cu alte cuvinte, vom afla pentru câți $$j > i$$ avem $$max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i$$. De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că nu există $$l \leq p < i$$ astfel încât $$rez_p = rez_i$$. Fie $$nxt_{0, i} = $$ cel
-mai mic $$j > i$$ astfel încât $$rez_j >= rez_i$$, lucru pe care îl vom afla cu [stivă](../mediu/stack.mdx#problema-stack_max_min). Fie $$sum_{0,
-i} = rez_i \cdot (i - nxt_{0, i})$$.
+Vom găsi, pentru fiecare $$i$$, la câte sume contribuie $$rez_i$$. Cu alte cuvinte, vom afla pentru câți $$j > i$$ avem $$max(rez_l, rez_{l+1}, \dots, rez_j) = rez_i$$. De asemenea, pentru a nu număra de mai multe ori anumite sume, vom presupune că nu există $$l \leq p < i$$ astfel încât $$rez_p = rez_i$$. Fie $$nxt_{0, i} = $$ cel mai mic $$j > i$$ astfel încât $$rez_j >= rez_i$$, lucru pe care îl vom afla cu [stivă](../mediu/stack.mdx#problema-stack_max_min). Fie $$sum_{0, i} = rez_i \cdot (i - nxt_{0, i})$$.
 
 Acum, să presupunem că avem un arbore, în care $$nxt_{0, i}$$ reprezintă părintele lui $$i$$ și $$sum_{0, i}$$ reprezintă costul muchiei de la $$i$$ la părintele lui $$i$$. Noi vom pleca de la $$l$$ și vom tot merge în tatăl nodului, până când indicele tatălui este mai mare decât $$r$$. Pentru a afla al câtelea tată este cu ușurinta, vom precalcula $$nxt_{i, j} = $$ al $$2^i$$-lea tată al lui $$j$$ și $$sum_{i, j} = $$ suma costurilor muchiilor lanțului de la $$j$$ la cel de-al $$2^i$$-lea tată al lui $$j$$.
 
@@ -837,12 +820,9 @@ int main() {
 }
 ```
 
-!!! note "Observatie"
-
-Această soluție este foarte asemănătoare cu soluția la problema
-[strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul
-de
-[LCA](./lowest-common-ancestor.mdx#binary-lifting)
+<Callout type="obs">
+  Această soluție este foarte asemănătoare cu soluția la problema [strămoși](https://infoarena.ro/problema/stramosi), discutată în articolul de [LCA](./lowest-common-ancestor.mdx#binary-lifting)
+</Callout>
 
 ## Concluzii
 

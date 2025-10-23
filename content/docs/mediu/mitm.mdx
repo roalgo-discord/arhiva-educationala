@@ -18,11 +18,9 @@ Numele și principiile acestei tehnici sunt înrudite cu [atacul criptografic cu
 
 În algoritmică, acea tehnică este folosită atunci când vrem să rezolvăm probleme folosind brute-force, dar restricțiile nu sunt suficient de mici pentru un brute-force clasic, utilizarea cea mai des întâlnită pentru meet in the middle este atunci când trebuie să lucrăm cu submulțimi.
 
-!!! "Observație"
-
-Deoarece spațiul de căutare se împarte în două, complexitatea exponențială
-va crește mult mai greu, meet in the middle devenind util pentru probleme la
-care dimensiunea datelor de intrare este cel mult $$40-45$$.
+<Callout type="obs">
+  Deoarece spațiul de căutare se împarte în două, complexitatea exponențială va crește mult mai greu, meet in the middle devenind util pentru probleme la care dimensiunea datelor de intrare este cel mult $$40-45$$.
+</Callout>
 
 Cu alte cuvinte, vom rula un algoritm brute-force pentru fiecare jumătate, iar apoi vom uni rezultatele obținute în timp liniar, raportat la numărul de soluții generate.
 

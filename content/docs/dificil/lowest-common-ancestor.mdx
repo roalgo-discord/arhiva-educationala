@@ -92,10 +92,9 @@ int solve(int nod, int stp) {
 De foarte multe ori, se pune problema aflării celui mai mic strămoș comun între două sau mai multe noduri, într-un timp cât mai eficient. Deși la fel ca la subproblema precedentă, putem găsi răspunsul folosind o metodă brută, folosirea binary lifting se va dovedi instrumentală pentru aflarea LCA-ului în $$\mathcal{O}(\log
 n)$$. Cu alte cuvinte, mai întâi vom vrea să aducem nodurile la același nivel, iar mai apoi, urcăm în arbore până când ajungem fix înainte de nodul care ne va da răspunsul. Cazul când un nod este strămoșul altuia se tratează anterior. Codul de mai jos se bazează pe precalculările menționate mai sus.
 
-!!! note "Observație"
-
-LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele
-două, apoi rezultatul cu al treilea nod și așa mai departe.
+<Callout type="obs">
+  LCA-ul între mai multe noduri se poate afla ca fiind LCA-ul între primele două, apoi rezultatul cu al treilea nod și așa mai departe.
+</Callout>
 
 ```cpp
 int solve(int a, int b) {
@@ -123,10 +122,9 @@ int solve(int a, int b) {
 }
 ```
 
-!!! note "Observație"
-
-LCA-ul între două noduri se poate afla și în $$\mathcal{O}(1)$$ per query, folosind o
-precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
+<Callout type="obs">
+  LCA-ul între două noduri se poate afla și în $$\mathcal{O}(1)$$ per query, folosind o precalculare de tipul RMQ, care se bazează pe liniarizarea arborelui (TO-DO)
+</Callout>
 
 ## Probleme suplimentare
 
