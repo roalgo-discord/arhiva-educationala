@@ -76,8 +76,8 @@ int Find(int x) {
 Operația union are complexitatea $$\mathcal{O}(1)$$, iar operația de find are complexitatea $$\mathcal{O}(n)$$. Totuși, datorită optimizărilor menționate mai sus (compresia drumurilor și unirea după dimensiunea mulțimilor), numărul total de operații făcute este $$\mathcal{O}(n \log^\* n)$$, unde $$\log^\* x$$ reprezintă inversul funcției Ackermann, valoare care se poate aproxima ca fiind o constantă.\
 De asemenea, nefolosirea optimizării de compresie a drumurilor ar duce la complexitatea $$\mathcal{O}(n \log n)$$, rezultat foarte important în contextul altor optimizări, cum ar fi [tehnica small-to-large](https://usaco.guide/plat/merging?lang=cpp) sau în general în demonstrarea diverselor rezultate ce țin de sume armonice.
 
-## Problema [disjoint](https://infoarena.ro/problema/disjoint)
-
+## Problema disjoint
+<ProblemPreview url="https://infoarena.ro/problems/disjoint" />
 {/*ne trebuie ceva pe kilonova de genul asta*/}
 
 Pentru fiecare operație citită de la intrare, vom implementa funcțiile necesare pentru a obține rezultatul problemei. Unirea a două mulțimi implică mai întâi folosirea funcției Find pentru a găsi rădăcinile, iar mai apoi folosim funcția Union pentru a face unirea propriu-zisă. Folosirea ambelor optimizări pentru îmbunătățirea complexității duce la soluția optimă, ce rulează într-un timp aproximativ liniar raportat la numărul de valori citite.
@@ -206,7 +206,8 @@ int main() {
 }
 ```
 
-## Problema [bile](https://infoarena.ro/problema/bile)
+## Problema bile
+<ProblemPreview url="https://infoarena.ro/problema/bile" />
 
 Mai întâi, trebuie observat faptul că problema determinării conectivității dinamice este una foarte dificil de rezolvat (vezi [acest articol de pe Wikipedia](https://en.wikipedia.org/wiki/Dynamic_connectivity)), deci nu are sens să ne chinuim cu asemenea implementări care nu fac obiectul cursului nostru sau în general a programelor olimpiadelor de informatică.
 
@@ -310,7 +311,8 @@ int main() {
 }
 ```
 
-## Problema [Secvmax](https://www.infoarena.ro/problema/secvmax)
+## Problema Secvmax
+<ProblemPreview url="https://www.infoarena.ro/problems/secvmax" />
 
 Aici putem folosi din nou prelucrarea numerelor în ordine crescătoare a numerelor din vector, iar atunci când adăugăm valorile în considerare, vom verifica fiecare vecin să vedem dacă putem uni valorile din cele două mulțimi, iar la fiecare pas răspunsul e cardinalul maxim al unei mulțimi, care e crescător pe măsură ce creștem valorile adăugate.
 
@@ -422,7 +424,8 @@ int main() {
 }
 ```
 
-## Problema [joingraf](https://kilonova.ro/problems/1907)
+## Problema joingraf
+<ProblemPreview url="https://kilonova.ro/problems/1907" />
 
 Pentru a rezolva această problemă există mai multe abordări, plecând de la diverse moduri de a gândi problema, dar în contextul pădurilor de mulțimi disjuncte, ne vom concentra pe soluția cu DSU.
 
@@ -496,7 +499,7 @@ int main() {
 
 Acest articol este menit să introducă audiența în folosirea pădurilor de mulțimi disjuncte, punând accentul pe funcționalitățile de bază, fără a menționa alte aplicații importante, cum ar fi [algoritmul lui Kruskal](./apcm.mdx#algoritmul-lui-kruskal) sau algoritmii folosiți pentru dynamic connectivity. De asemenea, pădurile de mulțimi disjuncte pot fi folosite pentru a scurta foarte mult implementările aplicațiilor simple la grafuri.
 
-{/*ref la dynamic connectivity cand va fi sa fie*/}
+{/* TODO ref la dynamic connectivity cand va fi sa fie*/}
 
 ## Probleme suplimentare
 

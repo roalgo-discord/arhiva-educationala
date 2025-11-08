@@ -7,11 +7,8 @@ import { cn } from "../lib/cn";
 import type { ProblemMetadata } from "../lib/problem-fetchers";
 import { fetchProblemData, PLATFORMS } from "../lib/problem-fetchers";
 
-/**
- * Props schema for ProblemPreview component
- */
 const ProblemPreviewPropsSchema = z.object({
-  url: z.string(),
+  url: z.url(),
   title: z.string().optional(),
   difficulty: z.union([z.number(), z.string()]).optional(),
   tags: z.array(z.string()).optional(),
@@ -19,22 +16,20 @@ const ProblemPreviewPropsSchema = z.object({
   className: z.string().optional(),
 });
 
-// Infer TypeScript type from Zod schema
 type ProblemPreviewPropsBase = z.infer<typeof ProblemPreviewPropsSchema>;
 
-// Extend with HTML attributes
 export interface ProblemPreviewProps
   extends ProblemPreviewPropsBase,
-    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof ProblemPreviewPropsBase | "href"> {}
+    Omit<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      keyof ProblemPreviewPropsBase | "href"
+    > {}
 
 function getPlatformFavicon(domain: string): string {
   if (!domain) return "";
-  return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+  return `https://www.google.com/s2/favicons?domain=${domain}`;
 }
 
-/**
- * Get color classes for platform styling
- */
 function getPlatformColors(color: string) {
   const colorMap: Record<
     string,
@@ -107,7 +102,6 @@ export async function ProblemPreview({
   className,
   ...htmlProps
 }: ProblemPreviewProps) {
-  // Validate props using Zod with safeParse for better error handling
   const validationResult = ProblemPreviewPropsSchema.safeParse({
     url,
     title,
@@ -117,7 +111,6 @@ export async function ProblemPreview({
     className,
   });
 
-  // Handle validation errors gracefully
   if (!validationResult.success) {
     const errorDetails = validationResult.error.issues
       .map((issue) => `${issue.path.join(".")}: ${issue.message}`)

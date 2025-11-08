@@ -19,7 +19,8 @@ Programarea dinamică și structurile de date reprezintă două dintre capitolel
 
 În acest articol, vom prezenta câteva exemple de probleme, împreună cu modul în care aplicăm structurile de date și utilitatea îmbinării celor două seturi de cunoștințe. Fie că este vorba de structuri precum arbori de intervale, arbori indexați binar, stive, cozi sau deques, aceste tipuri de dinamici sunt foarte utile și importante de știut.
 
-## Problema exemplu - [Projects CSES](https://cses.fi/problemset/task/1140/)
+## Problema exemplu - Projects
+<ProblemPreview url="https://cses.fi/problemset/task/1140/" />
 
 În această problemă, trebuie să alegem un număr de proiecte care nu se suprapun și ne aduc suma profiturilor maximă. Această problemă reprezintă o dinamică clasică, dar dat fiind faptul că avem restricții foarte mari, nu putem să o rezolvăm folosind metodele obișnuite. Astfel, vom avea nevoie să [normalizăm mai întâi datele](../mediu/data-normalization.mdx), iar mai apoi ne putem gândi la o recurență în care avem $$dp\[i]$$ ca fiind suma maximă a profiturilor pentru un proiect care se termină la al i-lea moment distinct de timp.
 
@@ -33,7 +34,8 @@ Mai jos puteți găsi o soluție care obține accepted.
 --8 < --"dificil/data-structures-dp/projects.cpp"
 ```
 
-## Problema [Subsequences - Codeforces](https://codeforces.com/contest/597/problem/C)
+## Problema Subsequences
+<ProblemPreview url="https://codeforces.com/contest/597/problem/C" />
 
 În această problemă, trebuie să numărăm câte subșiruri crescătoare cu lungimea $$k+1$$ are șirul dat, iar o proprietate importantă este aceea că valorile formează o permutare a primelor $$n$$ numere naturale.
 
@@ -47,7 +49,8 @@ Această recurență se poate din nou calcula relativ ușor folosind arbori de i
 --8 < --"dificil/data-structures-dp/subsequences.cpp"
 ```
 
-## Problema [Tulip Bouquet - IIOT](https://kilonova.ro/problems/2086)
+## Problema Tulip Bouquet
+<ProblemPreview url="https://kilonova.ro/problems/2086" />
 
 Pentru a rezolva această problemă, ne putem gândi în primul rând la dinamica relativ simplă, dar înceată în $$\mathcal{O}(n \cdot k^2)$$ care are tranziții în $$\mathcal{O}(k)$$.
 
@@ -63,7 +66,8 @@ Mai jos puteți găsi soluția de 100 de puncte, unde sunt mai multe detalii inc
 --8 < --"dificil/data-structures-dp/bouquets.cpp"
 ```
 
-## Problema [Pictures with Kittens - Codeforces](https://codeforces.com/problemset/problem/1077/F2)
+## Problema Pictures with Kittens
+<ProblemPreview url="https://codeforces.com/problemset/problem/1077/F2" />
 
 <Callout type="obs">
   Această problemă se poate rezolva și folosind [șmenul de la Aliens](../avansat/aliens-dp.mdx) dar aici ne vom concentra pe soluția în $$\mathcal{O}(n \cdot k)$$.
@@ -75,7 +79,8 @@ La o primă citire este evident faptul că putem găsi repede o dinamică de tip
 --8 < --"dificil/data-structures-dp/kittens.cpp"
 ```
 
-## Problema [Interstellar Intervals USACO Gold](https://usaco.org/index.php?page=viewproblem2\&cpid=1450)
+## Problema Interstellar Intervals
+<ProblemPreview url="https://usaco.org/index.php?page=viewproblem2\&cpid=1450" />
 
 <Callout type="info">
   Această problemă are o soluție video făcută de autor, care poate fi accesată [aici](https://www.youtube.com/watch?v=UDMUjRMl5OU). În acest articol vom explica doar ideile principale din spatele soluției.
@@ -83,8 +88,8 @@ La o primă citire este evident faptul că putem găsi repede o dinamică de tip
 
 Această problemă duce foarte repede cu gândul la o dinamică prin care putem număra câte șiruri distincte există cu proprietatea că toate restricțiile date până la un punct sunt respectate. Deoarece avem două tipuri de culori în practică (albastru și alb, roșu este dedus din pozițiile colorate în albastru), ne putem gândi mai întâi să păstrăm două dinamici, după cum urmează:
 
-- dp\[i] = nr de moduri de a umple primele $$i$$ poziții dacă pe poziția $$i$$ avem albastru
-- dp2\[i] = nr de moduri de a umple primele $$i$$ poziții dacă pe poziția $$i$$ avem alb
+- $$dp[i]$$ = nr de moduri de a umple primele $$i$$ poziții dacă pe poziția $$i$$ avem albastru$
+- $$dp2[i]$$ = nr de moduri de a umple primele $$i$$ poziții dacă pe poziția $$i$$ avem alb$
 
 Soluția în $$\mathcal{O}(n^2)$$ este relativ simplă, pentru alb putem avea o tranziție de la $$i-1$$ la $$i$$, iar pentru albastru, putem fixa un interval și verificăm dacă îl putem plasa conform restricțiilor date, adăugând $$dp\[x-1]$$ dacă am putut plasa un interval între $$x$$ și $$i$$.
 

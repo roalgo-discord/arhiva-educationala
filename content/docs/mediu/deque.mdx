@@ -93,7 +93,8 @@ Motivul principal pentru care folosim deque-urile este acela de a putea performa
 
 De cele mai multe ori, atunci când vom lucra cu deque-ul, vom vrea să procesăm secvențe de o lungime fixă, având operații bine stabilite și de cele mai multe ori, preluând aspecte de implementare văzute mai devreme când ați studiat principiile de funcționare ale stivei.
 
-## Problema [deque](https://www.infoarena.ro/problema/deque)
+## Problema Deque
+<ProblemPreview url="https://www.infoarena.ro/problema/deque" />
 
 În această problemă, se cere aflarea valorii minime pentru toate subsecvențele de lungime $$k$$. O soluție ce merită menționată, dar care nu este optimă, este folosirea unei structuri de tip set care reușește să obțină rezultatul dorit în $$\mathcal{O}(n \log n)$$.
 
@@ -136,7 +137,8 @@ int main() {
 }
 ```
 
-## Problema [Maximum Subarray Sum II](https://cses.fi/problemset/task/1644)
+## Problema Maximum Subarray Sum II
+<ProblemPreview url="https://cses.fi/problemset/task/1644" />
 
 Pentru a rezolva această problemă, ne folosim de faptul că suma unei subsecvențe între pozițiile $$L$$ și $$R$$ este $$sp\[R] - sp\[L-1]$$, unde $$sp\[i]$$ este suma parțială a valorilor până la poziția $$i$$. Astfel, dat fiind că trebuie să aflăm suma maximă a unei subsecvențe între lungimile $$a$$ și $$b$$, la pasul $$i$$, vom insera $$sp\[i-a]$$, folosind deque-ul drept o stivă care ține sumele minime. La fel ca la problema precedentă, dacă poziția $$i - b - 1$$ încă este în deque, o vom scoate.
 
@@ -178,7 +180,8 @@ int main() {
     cout << ans;
 ```
 
-## Problema [cetate](https://kilonova.ro/problems/917)
+## Problema Cetate
+<ProblemPreview url="https://kilonova.ro/problems/917" />
 
 Pentru rezolvarea cerinței 2 a acestei probleme, putem fixa două linii și să aplicăm o tehnică similară folosind deque, aflând suma maximă folosindu-ne de sumele parțiale de pe coloane, mai jos fiind codul de la cerința a doua, întreaga submisie putând fi accesată [aici](https://kilonova.ro/submissions/375896)
 
@@ -230,7 +233,8 @@ cout << maxSum << "\n";
 cout << maxLin << " " << maxCol << " " << maxLin1 << " " << maxCol1 << "\n";
 ```
 
-## Problema [secv - ONI 2016 Baraj Juniori](https://kilonova.ro/problems/1086/)
+## Problema Secv
+<ProblemPreview url="https://kilonova.ro/problems/1086/" />
 
 Pentru a rezolva prima cerință, este îndeajuns să scoatem din șir de la stânga la dreapta toate secvențele de lungime $$K$$ cu sumă mai mare decât $$S$$.
 

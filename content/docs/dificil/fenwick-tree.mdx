@@ -92,11 +92,12 @@ long long compute(int node) {
 
 ## Probleme rezolvate
 
-### Problema [inv](https://infoarena.ro/problema/inv)
+### Problema inv
+<ProblemPreview url="https://infoarena.ro/problema/inv" />
 
 Se dă un şir $$S$$ de lungime $$n$$ cu numere întregi. Numim o inversiune o pereche de indici $$(i, j)$$ astfel încât $$1 \leq i \< j \leq n$$ şi $$S\_i > S\_j$$. Să se determine câte inversiuni sunt în şirul dat.
 
-Pentru a rezolva această problemă, putem folosi orice structură de date ce ne permite să actualizăm valoarea unei poziții și să rulăm interogări de sumă pe un interval. În cazul problemei noastre, vom vrea pentru fiecare valoare din șir să aflăm numărul de valori de la stânga care sunt mai mari decât valoarea curentă, lucru ce se poate realiza aflând pentru valoarea curentă, poziția ei în șirul sortat și procesând un query de sumă pe intervalul $$\[poz + 1, n]$$, unde $$poz$$ este poziția în vectorul sortat a celei mai din dreapta valori din șir egală cu valoarea de la poziția curentă.
+Pentru a rezolva această problemă, putem folosi orice structură de date ce ne permite să actualizăm valoarea unei poziții și să rulăm interogări de sumă pe un interval. În cazul problemei noastre, vom vrea pentru fiecare valoare din șir să aflăm numărul de valori de la stânga care sunt mai mari decât valoarea curentă, lucru ce se poate realiza aflând pentru valoarea curentă, poziția ei în șirul sortat și procesând un query de sumă pe intervalul $$[poz + 1, n]$$, unde $$poz$$ este poziția în vectorul sortat a celei mai din dreapta valori din șir egală cu valoarea de la poziția curentă.
 
 Deoarece valorile din șir sunt destul de mari, trebuie să [normalizăm datele](../mediu/data-normalization.mdx), iar mai apoi să folosim AIB pentru a rezolva problema.
 
@@ -162,7 +163,8 @@ int main() {
 }
 ```
 
-### Problema [Goal Statistics](https://kilonova.ro/problems/960)
+### Problema Goal Statistics
+<ProblemPreview url="https://kilonova.ro/problems/960" />
 
 Se dau $$q$$ operații, operația de update adaugă o valoare egală cu $$k$$, iar operația de query cere suma celor mai mici $$p$$ valori din șir.
 

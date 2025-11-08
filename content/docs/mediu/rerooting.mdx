@@ -14,7 +14,8 @@ tags:
 
 În cele ce urmează, vom prezenta câteva exemple de probleme care se pot rezolva folosind această tehnică, împreună cu abordările posibile. Se va putea observa faptul că în cele mai multe situații, implementarea va fi una foarte similară, singurele modificări fiind făcute la modul în care vom defini dinamicile și alte date pe care le folosim.
 
-## Problema [Tree Distances](https://cses.fi/problemset/task/1132) de pe CSES
+## Problema Tree Distances
+<ProblemPreview url="https://cses.fi/problemset/task/1132" />
 
 <Callout type="info">
   Această problemă are o soluție video explicată chiar de autor, pe care oputeți accesa [aici](https://www.youtube.com/watch?v=DZA4mYWpPno)
@@ -124,7 +125,8 @@ int main() {
 }
 ```
 
-## Problema [Subtree](https://atcoder.jp/contests/dp/tasks/dp_v) de pe AtCoder
+## Problema Subtree
+<ProblemPreview url="https://atcoder.jp/contests/dp/tasks/dp_v" />
 
 Să considerăm o problemă mai simplă:
 
@@ -151,7 +153,7 @@ Numărul de moduri în care putem colora arborele dacă știm că nodul $$i$$ es
 Recurența de bază pentru a calcula $$dp2[i]$$ este
 
 $$$
-dp2[i] = 1+dp2$$text{Părintele lui } i] \cdot \prod_{s \in \text{Frații lui }
+dp2[i] = 1+dp2[\text{Părintele lui } i] \cdot \prod_{s \in \text{Frații lui }
 i} dp[s]
 $$$
 

@@ -482,7 +482,8 @@ AINT este, de obicei, mai folositor ca RMQ, mai puțin atunci când numărul de 
 
 ## Probleme rezolvate
 
-### Problema [Lot 2023 Juniori excursie](https://kilonova.ro/problems/619)
+### Problema excursie
+<ProblemPreview url="https://kilonova.ro/problems/619" />
 
 Observăm că indicatoarele trebuie să fie de forma RRR...RLLL..L. Să fixam poziția $$i$$ până la care vom avea R-uri. Costul va fi egal cu numărul de L-uri de la $$st$$ la $$i$$ adunat cu numărul de R-uri de la $$i + 1$$ la $$dr$$. Aceste lucruri pot fi calculate ușor folosind sume parțiale.
 
@@ -574,9 +575,12 @@ int main() {
 }
 ```
 
-### Problema [CF 2009G2](https://codeforces.com/contest/2009/problem/G2)
+### Problema Yunli's Subarray Queries
 
-#### Versiunea ușoară, [G1](https://codeforces.com/contest/2009/problem/G2)
+<ProblemPreview url="https://codeforces.com/contest/2009/problem/G2" />
+
+#### Versiunea ușoară
+<ProblemPreview url="https://codeforces.com/contest/2009/problem/G1" />
 
 Să rezolvăm mai întâi versiunea ușoară. Noi trebuie să avem $$b_i = b_{i+1} - 1 =
 b_{i+2} - 2 = .. = b_{i+k-1} - (k-1)$$. Să scădem $$i$$ din această relație: $$b_i -

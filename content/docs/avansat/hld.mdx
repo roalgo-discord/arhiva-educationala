@@ -1,5 +1,6 @@
 ---
 id: hld
+title: Heavy-light decomposition
 authors: [raul]
 prerequisites:
   - lowest-common-ancestor
@@ -18,7 +19,7 @@ Fie un arbore $$G$$ cu $$N$$ noduri, iar rădăcina acestuia să fie în nodul 1
 
 Ideea din spatele algoritmului este de a **sparge arborele în mai multe lanțuri** pentru a atinge rădăcina din orice nod din arbore în timp **logaritmic**.
 
-Evident, dacă efectuăm această descompunere pe arborele nostru, ne va permite să reducem anumite interogări sau update-uri unice de forma: "calculează ceva pe lanțul care leagă nodul $$a$$ pe nodul $$b$$" în mai multe interogări sau update-uri de forma: "calculează ceva pe segmentul $$\[l,r]$$ din lanțul $$K$$". Pentru a calcula eficient pe segmentul $$\[l,r]$$ din lanțul $$K$$, ne vom folosi de arbori de intervale.
+Evident, dacă efectuăm această descompunere pe arborele nostru, ne va permite să reducem anumite interogări sau update-uri unice de forma: "calculează ceva pe lanțul care leagă nodul $$a$$ pe nodul $$b$$" în mai multe interogări sau update-uri de forma: "calculează ceva pe segmentul $$[l,r]$$ din lanțul $$K$$". Pentru a calcula eficient pe segmentul $$[l,r]$$ din lanțul $$K$$, ne vom folosi de arbori de intervale.
 
 ## Construcția lanțurilor
 
@@ -111,12 +112,12 @@ void dfs(int node) {
 
 ## Probleme rezolvate
 
-### Problema [Heavy Path Decomposition](https://www.infoarena.ro/problema/heavypath)
+### Problema Heavy Path Decomposition
+<ProblemPreview url="https://www.infoarena.ro/problema/heavypath" />
 
-Se dă un arbore cu $$N$$ noduri, fiecare având asociată o valoare $$v\_i$$, $$1 \leq i
-\leq N$$. Se dau $$M$$ operații de forma $$(t, x, y)$$, cu următoarea semnificație:
+Se dă un arbore cu $$N$$ noduri, fiecare având asociată o valoare $$v\_i$$, $$1 \leq i \leq N$$. Se dau $$M$$ operații de forma $$(t, x, y)$$, cu următoarea semnificație:
 
-- dacă $$t$$ este 0, operația este de tipul update, iar valoarea $$v\_x$$ asociata nodului cu indicele $$x$$ devine $$y$$;
+- dacă $$t$$ este 0, operația este de tipul update, iar valoarea $$v\_x$$ asociată nodului cu indicele $$x$$ devine $$y$$;
 - dacă $$t$$ este 1, operația este de tipul query și se cere să se afișeze valoarea maximă asociată unui nod aflat pe lanțul elementar care unește nodurile $$x$$ și $$y$$.
 
 Pentru a rezolva această problemă clasică, trebuie să implementăm arbori de intervale pentru lanțurile create de noi, iar apoi să efectuăm cele două tipuri de operații: query și update.
@@ -323,8 +324,7 @@ Această problemă necesită cunoștințe de la [string hashing](../mediu/hashin
 
 În primul rând, ne vom folosi de tehnica string hashing pentru a afla în $$\mathcal{O}(1)$$ valoarea unui lanț. Pentru că problema ne cere să operăm și update-uri, va trebui să facem update pe fiecare lanț când schimbăm litera de la un nod. Astfel, complexitatea pentru update și query pe un lanț va rămâne tot $$\mathcal{O}(\log(N))$$, datorită string hashing. Dacă vrem să aflăm valoarea hash pe un lanț care leagă două noduri, aceasta va intra în complexitate $$\mathcal{O}((\log N)^2)$$, deoarece putem parcurge maxim $$\log N$$ lanțuri în tot arborele.
 
-În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor 2 noduri, astfel încât acesta să fie la o distanță cât mai mare, iar cele 2 stringuri formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $$\mathcal{O}(\log
-N)$$ al $$K$$ strămoș pentru nodul $$x$$, iar de căutarea binară pentru a afla valoarea $$K$$ în timp logaritmic. Astfel rezultă o complexitate finală de $$\mathcal{O}((\log N)^3)$$ pentru fiecare query și $$\mathcal{O}(\log N)$$ pentru update.
+În al doilea rând, trebuie să aflăm în mod eficient strămoșul celor 2 noduri, astfel încât acesta să fie la o distanță cât mai mare, iar cele 2 stringuri formate să fie identice. Ne vom folosi de tehnica LCA pentru a afla în $$\mathcal{O}(\log N)$$ al $$K$$ strămoș pentru nodul $$x$$, iar de căutarea binară pentru a afla valoarea $$K$$ în timp logaritmic. Astfel rezultă o complexitate finală de $$\mathcal{O}((\log N)^3)$$ pentru fiecare query și $$\mathcal{O}(\log N)$$ pentru update.
 
 O implementare de 100 de puncte poate fi citită mai jos:
 

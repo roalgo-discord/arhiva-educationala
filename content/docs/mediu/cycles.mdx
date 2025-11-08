@@ -146,7 +146,8 @@ int main() {
   ```
 </Callout>
 
-### Problemă exemplu - [Domino](https://www.infoarena.ro/problema/domino)
+### Problemă exemplu - Domino
+<ProblemPreview url="https://www.infoarena.ro/problema/domino" />
 
 Această problemă se reduce la aflarea unui lanț eulerian în graful descris în enunț.
 
@@ -243,9 +244,7 @@ int main() {
 ## Cicluri hamiltoniene
 
 <Callout type="def" title="Ciclu hamiltonian">
-  Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură
-  dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate
-  nodurile exact o singură dată.
+  Un lanț hamiltonian este un lanț care conține toate nodurile exact o singură dată. În mod similar, un ciclu hamiltonian este un ciclu care conține toate nodurile exact o singură dată.
 </Callout>
 
 În general, pentru a afla un ciclu hamiltonian, putem folosi metode de tip brute-force, precum backtracking.
@@ -330,7 +329,8 @@ Aceste grafuri, datorită formei lor speciale, au multe proprietăți interesant
   Până când vă uitați peste problemele de mai jos, recomandăm [citirea acestei secțiuni](https://nor-blog.codeberg.page/posts/2023-01-09-permutations-for-beginners/#the-cycle-decomposition-perspective) a articolului despre permutări, unde se vorbește de ciclurile unei permutări și aplicațiile care implică grafuri funcționale.
 </Callout>
 
-### Problemă exemplu - [Mouse Hunt - Codeforces](https://codeforces.com/contest/1027/problem/D)
+### Problemă exemplu - Mouse Hunt
+<ProblemPreview url="https://codeforces.com/contest/1027/problem/D" />
 
 Pentru a rezolva această problemă, vrem să filtrăm nodurile care nu aparțin ciclurilor, iar algoritmul pe care îl vom prezenta mai jos va fi unul standard, care va fi aplicat în multe asemenea probleme.
 
@@ -389,7 +389,8 @@ int main() {
 }
 ```
 
-### Problemă suplimentară - [Milk Exchange - USACO Bronze](https://usaco.org/index.php?page=viewproblem2\&cpid=1396)
+### Problemă suplimentară - Milk Exchange
+<ProblemPreview url="https://usaco.org/index.php?page=viewproblem2\&cpid=1396" />
 
 Pentru a rezolva această problemă, va trebui să reducem șirul dat la un graf funcțional, graf pentru care știm că unele noduri vor fi noduri de unde doar se va da lapte, iar alte noduri sunt noduri care doar vor primi lapte. Nodurile din prima categorie vor da treptat laptele celor din cea de-a doua categorie.
 
@@ -458,7 +459,8 @@ int main() {
 }
 ```
 
-### Problema [Cyclic Operations - Codeforces](https://codeforces.com/contest/1867/problem/D)
+### Problema Cyclic Operations
+<ProblemPreview url="https://codeforces.com/contest/1867/problem/D" />
 
 Pentru a rezolva această problemă, putem observa mai întâi faptul că cazul $$k = 1$$ este ușor de tratat, deoarece graful din șir trebuie să aibă doar bucle. În caz contrar, trebuie să verificăm dacă toate ciclurile din componentele conexe create de graful dat au lungime $$k$$.
 

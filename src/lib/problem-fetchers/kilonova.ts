@@ -57,7 +57,9 @@ export async function fetchKilonova(url: string): Promise<ProblemMetadata> {
   }
 
   try {
-    const apiUrl = `https://kilonova.ro/api/v2/problems/${problemId}`;
+    const apiUrl = z
+      .url()
+      .parse(`https://kilonova.ro/api/v2/problems/${problemId}`);
     const response = await fetch(apiUrl, {
       headers: {
         Accept: "application/json",

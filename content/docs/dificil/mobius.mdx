@@ -339,11 +339,10 @@ Iar răspunsul final este $$\sum_{k=1}^{N} f(k)$$, care este calculabil în $$\m
 
 ## Probleme propuse spre rezolvare
 
-### Problema [sumgcd](https://kilonova.ro/problems/2004) de pe Kilonova
+### Problema sumgcd
+<ProblemPreview url="https://kilonova.ro/problems/2004" />
 
-Pentru $$N$$ și $$M$$ date la tastatură, trebuie să calculați $$\sum_{V}
-\operatorname{cmmdc}(V)$$, unde $$V$$ reprezintă un $$M$$-tuplu. Un $$M$$-tuplu reprezintă o mulțime de $$M$$ elemente nu neapărat distincte cu valori cuprinse între 1 și $$N$$. Formal, noi trebuie să calculam $$\sum_{i_1 = 1}^{N} \sum_{i_2 =
-1}^{N} \dots \sum_{i_M = 1}^{N} \operatorname{cmmdc}(i_1, i_2, \dots, i_M)$$.
+Pentru $$N$$ și $$M$$ date la tastatură, trebuie să calculați $$\sum_{V} \operatorname{cmmdc}(V)$$, unde $$V$$ reprezintă un $$M$$-tuplu. Un $$M$$-tuplu reprezintă o mulțime de $$M$$ elemente nu neapărat distincte cu valori cuprinse între 1 și $$N$$. Formal, noi trebuie să calculam $$\sum_{i_1 = 1}^{N} \sum_{i_2 = 1}^{N} \dots \sum_{i_M = 1}^{N} \operatorname{cmmdc}(i_1, i_2, \dots, i_M)$$.
 
 Dacă pentru un $$K$$ fixat aflăm câte M-tupluri există cu cmmdc-ul egal cu $$K$$, atunci putem rezolva foarte ușor problema. Fie $$f(K)$$ numărul de tupluri $$(m,
 n)$$ pentru care $$\operatorname{cmmdc}(m, n) = K$$:
@@ -394,7 +393,8 @@ $$
 
 Putem precalcula puterile lui $$M$$, obținem astfel $$\mathcal{O}(N \log{N})$$. Ambele iau 100 puncte.
 
-### Problema [cntgcd](https://kilonova.ro/problems/372)
+### Problema cntgcd
+<ProblemPreview url="https://kilonova.ro/problems/372" />
 
 Se dau două numere naturale $$N$$ și $$D$$. Calculați câte perechi de numere $$A$$ și $$B$$ mai mici ca $$N$$ există, astfel încât $$\operatorname{cmmdc}(A,B) = D$$. Perechea $$(A,B)$$ este la fel ca perechea $$(B, A)$$.
 
@@ -446,7 +446,8 @@ long long f(long long n) {
 
 Complexitatea algoritmului de mai sus este foarte interesantă, ea fiind $$\mathcal{O}(N^\frac{2}{3})$$.
 
-### Problema [tupleco](https://kilonova.ro/problems/1820)
+### Problema tupleco
+<ProblemPreview url="https://kilonova.ro/problems/1820" />
 
 Se dau două numere $$K$$ și $$N$$. Să se afle $$T$$, numărul de tupluri formate din $$K$$ elemente $$(X_1, X_2, X_3, \dots , X_K)$$ cu proprietatea că:
 

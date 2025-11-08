@@ -18,7 +18,8 @@ De obicei, atunci când abordăm aceste probleme, vrem să ne gândim la modul �
 
 Aceste probleme apar foarte des la olimpiadele și concursurile de informatică românești, dinamicile pe arbore fiind un tip de problemă preferat de propunător, dat fiind faptul că se regăsește aproape în fiecare an măcar la una din etapele competiției, deci se impune cunoașterea celor mai importante abordări. De asemenea, concursuri precum USACO Gold și Platinum au un număr ridicat de asemenea probleme, de multe ori laolaltă cu diferite structuri de date.
 
-## Problema [Tree Matching - CSES](https://cses.fi/problemset/task/1130/)
+## Problema Tree Matching
+<ProblemPreview url="https://cses.fi/problemset/task/1130/" />
 
 Pentru a rezolva această problemă, ne putem gândi la un caz foarte simplu, și anume cazul când avem o rădăcină și un anumit număr de fii. În acest caz, ce putem face este fie să nu conectăm nodul curent la un alt nod, fie să îl conectăm la unul din acele noduri.
 
@@ -29,8 +30,7 @@ Astfel, putem deduce două tipuri de cazuri pe care le putem considera în dinam
 
 Pentru a defini $$dp\[0]\[i]$$, este simplu să ne gândim la faptul că vom vrea să preluăm răspunsurile maxime de la fii, deci putem scrie $$dp\[0]\[i]$$ ca fiind $$\sum \max(dp\[0]\[x], dp\[1]\[x])$$ pentru toți fiii $$x$$ ai nodului $$i$$.
 
-În mod similar, pentru a defini $$dp\[1]\[i]$$, vom vrea să cuplăm nodul $$i$$ cu unul din fiii săi, iar mai apoi să preluăm toate maximele de la celelalte noduri. Astfel, $$dp\[1]\[i]$$ va fi egal cu $$\max (1 + dp\[0]\[x]+ \sum \max(dp\[0]\[x\_0],
-dp\[1]\[x\_0]))$$, unde $$x$$ este fiul ales, iar $$x\_0$$ reprezintă oricare din ceilalți fii ai nodului $$i$$.
+În mod similar, pentru a defini $$dp\[1]\[i]$$, vom vrea să cuplăm nodul $$i$$ cu unul din fiii săi, iar mai apoi să preluăm toate maximele de la celelalte noduri. Astfel, $$dp\[1]\[i]$$ va fi egal cu $$\max (1 + dp\[0]\[x]+ \sum \max(dp\[0]\[x\_0], dp\[1]\[x\_0]))$$, unde $$x$$ este fiul ales, iar $$x\_0$$ reprezintă oricare din ceilalți fii ai nodului $$i$$.
 
 Implementarea acestei soluții se poate face folosind o parcurgere de tip DFS, complexitatea fiind una liniară. Chiar dacă această problemă este una introductivă, are foarte multe aspecte care sunt folosite în dinamicile pe arbore, în special legate de combinarea subproblemelor și folosirea unei game largi de cazuri pentru a ajunge la soluția dorită.
 
@@ -86,7 +86,8 @@ int main() {
 }
 ```
 
-## Problema [The Fair Nut and Best Path](https://codeforces.com/problemset/problem/1083/A)
+## Problema The Fair Nut and Best Path
+<ProblemPreview url="https://codeforces.com/problemset/problem/1083/A" />
 
 Pentru a calcula cantitatea maximă de combustibil pe care o putem avea la finalul unui drum, vom vrea să ținem minte cantitatea maximă pe un lanț care pleacă dintr-un nod anume spre unul din fiii săi, iar eventual să unim două lanțuri pentru a putea considera cazul când rădăcina curentă reprezintă punctul de intersecție a două asemenea drumuri.
 
@@ -154,7 +155,8 @@ int main() {
 }
 ```
 
-## Problema [Arbore ONI 2016](https://kilonova.ro/problems/188)
+## Problema Arbore
+<ProblemPreview url="https://kilonova.ro/problems/188" />
 
 Pentru a rezolva această problemă, ne vom gândi în mod similar cu prima problemă la o soluție care va avea două cazuri pentru fiecare nod, dacă păstrăm acel nod sau nu în arbore, abordare ce duce la calcularea atât a numărului maxim de componente conexe, cât și a calculării numărului de moduri de a ajunge la acest număr.
 
@@ -263,7 +265,8 @@ int main() {
 }
 ```
 
-## Problema [Museum CEOI 2017](https://oj.uz/problem/view/CEOI17_museum)
+## Problema Museum
+<ProblemPreview url="https://oj.uz/problem/view/CEOI17_museum" />
 
 <Callout type="obs">
   [Acest blog](https://codeforces.com/blog/entry/100910) va detalia o tehnică
@@ -381,7 +384,8 @@ int main() {
 }
 ```
 
-## Problema [TreeGCD ONI 2019](https://kilonova.ro/problems/11)
+## Problema TreeGCD
+<ProblemPreview url="https://kilonova.ro/problems/11" />
 
 Pentru a rezolva această problemă, ne vom folosi de faptul că valoarea lui $$M$$ este foarte mică, ceea ce ne duce cu gândul la o dinamică care să implice fiecare valoare posibilă a CMMDC-ului în parte.
 
@@ -500,7 +504,8 @@ int main() {
 }
 ```
 
-## Problema [Compressed Tree - Codeforces](https://codeforces.com/problemset/problem/1901/E)
+## Problema Compressed Tree
+<ProblemPreview url="https://codeforces.com/problemset/problem/1901/E" />
 
 Pentru această problemă, vom avea o dinamică pe două dimensiuni care va ține cont de următoarele cazuri:
 

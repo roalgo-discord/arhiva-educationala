@@ -31,7 +31,8 @@ Această tehnică se întâlnește în contextul olimpiadei de informatică mai 
 
 Pe parcurs, vom explica o implementare simplă și clară pentru aceste tipuri de probleme, împreună cu exemple explicate.
 
-## Problema exemplu - [evaluare infoarena](https://www.infoarena.ro/problema/evaluare)
+## Problema exemplu - Evaluare
+<ProblemPreview url="https://www.infoarena.ro/problema/evaluare" />
 
 Pentru a rezolva această problemă, trebuie să aplicăm unul din algoritmii consacrați și să îl adaptăm pentru operațiile aritmetice date. Cele două metode principale de implementare a expresiilor aritmetice reprezintă forma poloneză și recursivitatea indirectă. Chiar dacă ambele au avantajele și dezavantajele lor, articolul va insista mai ales pe recursivitatea indirectă, deoarece este mai ușor de folosit și mai populară în contextul olimpiadei de informatică.
 
@@ -120,7 +121,8 @@ int main() {
 }
 ```
 
-## Problema [ONI 2018 multimi](https://kilonova.ro/problems/1539)
+## Problema mulțimi
+<ProblemPreview url="https://kilonova.ro/problems/1539" />
 
 Pentru rezolvarea acestei probleme, vom folosi o implementare similară cu cea de mai sus, ținând cont de prioritățile descrise în enunț. Pentru optimizarea implementării, vom folosi structurile de date din STL.
 
@@ -201,6 +203,7 @@ vector<int> eval() {
     }
     return sol;
 }
+
 vector<int> factor() {
     vector<int> sol;
     sol = termen();

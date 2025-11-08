@@ -275,7 +275,8 @@ int main() {
 }
 ```
 
-### Problema [Alee OJI 2007](https://kilonova.ro/problems/768)
+### Problema Alee
+<ProblemPreview url="https://kilonova.ro/problems/768" />
 
 Probabil una din cele mai cunoscute probleme românești care folosește algoritmul lui Lee pentru rezolvarea acesteia, această problemă necesită implementarea algoritmului prezentat anterior pentru aflarea distanței de la origine la punctul inițial la cel final.
 
@@ -331,7 +332,8 @@ int main() {
 }
 ```
 
-### Problema [Labirint OJI 2021](https://kilonova.ro/problems/938)
+### Problema Labirint
+<ProblemPreview url="https://kilonova.ro/problems/938" />
 
 Pentru a rezolva această problemă, putem începe o parcurgere din punctele $$(1, 1)$$ și $$(n, m)$$, iar pentru a verifica dacă apar îmbunătățiri, trebuie doar să verificăm cu atenție perechile de distanțe noi ce apar, acesta fiind motivul pentru care avem nevoie de două parcurgeri, în loc de una.
 
@@ -424,7 +426,8 @@ int main() {
 
 În anumite situații, suntem nevoiți să simulăm o variație a algoritmului lui Lee în care avem de-a face cu mai multe puncte de start. În acest caz, deoarece de cele mai multe ori este prea încet să rulăm algoritmul pentru fiecare punct de start, putem pur și simplu să adăugăm în coadă toate originile și să rulăm același algoritm, singura diferență fiind atunci când vrem să aflăm originea fiecărui drum, deoarece trebuie să fim atenți să evităm situațiile în care nu putem construi drumul cum trebuie.
 
-### Problema [Monsters de pe CSES](https://cses.fi/problemset/task/1194)
+### Problema Monsters
+<ProblemPreview url="https://cses.fi/problemset/task/1194" />
 
 În această problemă, trebuie să găsim un drum pentru personajul nostru astfel încât să poată ajunge la una din marginile matricii fără să se intersecteze cu vreun monstru.
 
@@ -553,7 +556,9 @@ Deși acest algoritm este folosit în principal pentru problemele de drumuri min
 
 În unele cazuri, putem avea de-a face cu probleme în care vizitarea unui pătrat adiacent din matrice poate avea costuri diferite de 0 și 1, în acest caz se impune folosirea unor structuri de date pentru a calcula aceste costuri minime, implementarea devenind foarte similară cu cea pe care o veți vedea atunci când veți învăța [algoritmul lui Dijkstra](./shortest-path.mdx#algoritmul-lui-dijkstra), acesta fiind varianta sa pe matrice.
 
-La fel ca și la Dijkstra, cele mai populare structuri de date sunt setul și coada de priorități, mai jos găsind implementări folosind ambele structuri de date ce rezolvă problema [lee2 de pe pbinfo](https://www.pbinfo.ro/probleme/3368/lee2).
+La fel ca și la Dijkstra, cele mai populare structuri de date sunt setul și coada de priorități, mai jos găsind implementări folosind ambele structuri de date ce rezolvă problema lee2.
+
+<ProblemPreview url="https://www.pbinfo.ro/probleme/3368/lee2" />
 
 ### Implementare cu set
 

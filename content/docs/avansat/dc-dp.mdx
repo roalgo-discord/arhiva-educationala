@@ -1,5 +1,6 @@
 ---
 id: dc-dp
+title: Divide & Conquer DP
 authors: [stefdasca]
 prerequisites:
   - intro-dp
@@ -15,9 +16,7 @@ tags:
 
 Să considerăm o dinamică cu următoarea formulă:
 
-$$
-dp(i,j) = \min_{0\leq k \leq j} ( dp(i-1, k-1) + C(k,j)),
-$$
+$$ dp(i,j) = \min_{0\leq k \leq j} ( dp(i-1, k-1) + C(k,j)) $$
 
 unde $$C(i,j)$$ este o funcție de cost care poate fi calculată în $$O(1)$$. De asemenea, $$dp(i,j) =0$$ pentru $$j<0$$.
 
@@ -42,7 +41,8 @@ Vom continua acest lucru până când ajungem la intervale unitare, caz în care
 
 Deoarece fiecare valoare a $$\text{opt}(i, j)$$ apare de $$O(\log n)$$ ori, vom avea o complexitate finală de $$O(mn \log n)$$.
 
-## Problema exemplu - [Subarray Squares CSES](https://cses.fi/problemset/task/2086/)
+## Problema exemplu - Subarray Squares
+<ProblemPreview url="https://cses.fi/problemset/task/2086/" />
 
 <Callout type="note">
   Această problemă are și o soluție video postată de Algorithms Conquered [aici](https://www.youtube.com/watch?v=Ec3fSWk9JOw).
@@ -58,11 +58,8 @@ Recomandăm citirea implementării de mai jos, deoarece este una educațională 
 --8 < --"avansat/dc-dp/subarraysquares.cpp"
 ```
 
-## Problema [RoAlgo Contest #7 suxumetre](https://kilonova.ro/problems/1906)
-
-<Callout type="note">
-  Această problema a fost scrisă de [Matei Ionescu](https://rocphof.kilonova.ro/person/2375) și [Andrei Chertes](https://rocphof.kilonova.ro/person/102) ca parte a [RoAlgo Contest #7](https://kilonova.ro/contests/34)
-</Callout>
+## Problema suxumetre
+<ProblemPreview url="https://kilonova.ro/problems/1906" />
 
 Dinamicele de genul sunt foarte clasice, chiar au o optimizare foarte faină. Pentru un dp cum ar fi $$dp_{i, j} = min(dp_{i - 1, k} + C(k + 1, j)$$, notăm $$opt(i, j)$$ ca fiind "the optimum splitting point" și egal cu $$k$$-ul care minimizează $$dp_{i, j}$$.
 
@@ -72,7 +69,7 @@ $$C(x, y) = \sum_{x \leq i \leq j \leq y}{}sp(i, j) \text{, unde } sp(i, j) = \s
 
 Conform definiției avem $$sp(x, y) \geq 0$$ și $$C(x, y) \geq 0$$.
 
-<img alt="" src="../images/dc-dp/abcd_ok.png" width="790" height="521" />
+![abcd_ok](../images/dc-dp/abcd_ok.png)
 
 În primul rând, vom analiza ce intervale contribuie la costurile din inegalitatea de mai sus. Distingem trei tipuri de intervale:
 

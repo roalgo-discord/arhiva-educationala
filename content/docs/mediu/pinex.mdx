@@ -29,7 +29,8 @@ $$|A \cup B| = |A| + |B| - |A \cap B|$$
 
 Se poate observa că versiuni rudimentare ale acestei tehnici au fost folosite și în cazul calculării unor răspunsuri pe baza sumelor parțiale (suma valorilor de la poziția $$L$$ la $$R$$ este suma primelor $$R$$ valori din care scădem suma primelor $$L-1$$ valori) sau în cazul unor alte probleme celebre.
 
-### Problema [MooBuzz - USACO Silver](https://usaco.org/index.php?page=viewproblem2\&cpid=966)
+### Problema MooBuzz
+<ProblemPreview url="https://usaco.org/index.php?page=viewproblem2\&cpid=966" />
 
 Această problemă este o adaptare a celebrei probleme FizzBuzz, cerându-se aflarea celui de-al $$n$$-lea număr scris pe tablă. Pentru a face acest lucru, vom putea căuta binar răspunsul, știind că la fiecare pas, putem afla câte numere au fost scrise pe tablă care sunt mai mici sau egale cu $$k$$.
 
@@ -114,7 +115,8 @@ Acest lucru ne garantează că pentru un element care apare în mai multe mulți
   care se scad se inversează.
 </Callout>
 
-### Problema [Prime Multiples](https://cses.fi/problemset/task/2185)
+### Problema Prime Multiples
+<ProblemPreview url="https://cses.fi/problemset/task/2185" />
 
 Pentru a afla câte valori se împart la măcar unul din cele $$n$$ numere prime date, vom afla pentru fiecare submulțime de numere câte numere se împart la produsul numerelor din submulțime, adunând sau scăzând din răspuns după caz. Pentru a face asta ușor, vom reprezenta fiecare submulțime folosind o mască pe biți, tehnică explicată [în acest articol](./bitwise-ops.mdx). Singurul lucru la care trebuie avut grijă este obținerea produselor submulțimilor, pentru a evita overflow-urile.
 
@@ -163,7 +165,8 @@ int main() {
 
 Pe lângă aplicarea [funcției Möbius](../dificil/mobius.mdx) în problemele dificile ce folosesc PINEX, se mai regăsește o formă de aplicare a acestui principiu, atunci când trebuie să numărăm câte perechi sau mulțimi de valori au o anumită valoare a unei funcții. De foarte multe ori, funcțiile ce apar în aceste probleme sunt multiplicative, deci scopul va fi acela de a exclude mulțimile care au drept răspuns o valoare multiplu de numărul pe care îl căutăm.
 
-### Problema [Counting Coprime Pairs](https://cses.fi/problemset/task/2417/)
+### Problema Counting Coprime Pairs
+<ProblemPreview url="https://cses.fi/problemset/task/2417/" />
 
 Pentru a afla numărul de perechi de numere prime între ele, vom afla pentru fiecare valoare posibilă a celui mai mare divizor comun câte asemenea perechi există. Pentru a face acest lucru, vom itera în ordine descrescătoare și vom afla mai întâi numărul de numere multiple cu $$i$$ din șirul dat, iar mai apoi vom scădea din numărul de perechi posibile care se pot genera, numărul de perechi deja aflate la pașii anteriori, când am verificat valori mai mari ale celui mai mare divizor comun. Mai jos se poate vedea o asemenea implementare.
 

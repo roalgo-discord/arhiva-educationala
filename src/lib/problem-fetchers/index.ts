@@ -1,14 +1,13 @@
-/**
- * Problem fetcher infrastructure
- * Coordinates platform-specific fetchers and provides unified API
- */
-
-import { z } from 'zod';
-import { ProblemMetadataSchema, type ProblemMetadata, type ProblemFetcher } from './types';
-import { detectPlatform, PLATFORMS } from './registry';
-import { fetchKilonova } from './kilonova';
-import { fetchCodeforces } from './codeforces';
-import { fetchPBInfo } from './pbinfo';
+import { z } from "zod";
+import {
+  ProblemMetadataSchema,
+  type ProblemMetadata,
+  type ProblemFetcher,
+} from "./types";
+import { detectPlatform, PLATFORMS } from "./registry";
+import { fetchKilonova } from "./kilonova";
+import { fetchCodeforces } from "./codeforces";
+import { fetchPBInfo } from "./pbinfo";
 import {
   fetchCSES,
   fetchInfoarena,
@@ -16,11 +15,8 @@ import {
   fetchOJUZ,
   fetchAtCoder,
   fetchNerdArena,
-} from './generic';
+} from "./generic";
 
-/**
- * Registry of platform-specific fetchers
- */
 const FETCHERS: Record<string, ProblemFetcher> = {
   kilonova: fetchKilonova,
   codeforces: fetchCodeforces,
@@ -28,18 +24,11 @@ const FETCHERS: Record<string, ProblemFetcher> = {
   cses: fetchCSES,
   infoarena: fetchInfoarena,
   usaco: fetchUSACO,
-  'oj.uz': fetchOJUZ,
+  "oj.uz": fetchOJUZ,
   atcoder: fetchAtCoder,
   nerdarena: fetchNerdArena,
 };
 
-/**
- * Main fetcher function - detects platform and delegates to appropriate fetcher
- *
- * @param url - The problem URL
- * @param providedData - Optional data provided as props (overrides fetch)
- * @returns Problem metadata
- */
 export async function fetchProblemData(
   url: string,
   providedData?: Partial<ProblemMetadata>
@@ -47,7 +36,6 @@ export async function fetchProblemData(
   const platform = detectPlatform(url);
   const platformConfig = PLATFORMS[platform];
 
-  // Base metadata
   const baseMetadata: Partial<ProblemMetadata> = {
     url,
     platform,
@@ -55,17 +43,14 @@ export async function fetchProblemData(
     fetched: false,
   };
 
-  // If all data is provided via props, skip fetching
   if (providedData?.title) {
     const metadata = ProblemMetadataSchema.parse({
       ...baseMetadata,
       ...providedData,
-      fetched: false, // Explicitly mark as not fetched
+      fetched: false,
     });
     return metadata;
   }
-
-  // Try to fetch data if platform supports it
   const fetcher = FETCHERS[platform];
   if (fetcher && platformConfig.supportsAPI) {
     try {
@@ -73,28 +58,31 @@ export async function fetchProblemData(
       const metadata = ProblemMetadataSchema.parse({
         ...baseMetadata,
         ...fetchedData,
-        ...providedData, // Props override fetched data
+        ...providedData,
         fetched: true,
       });
       return metadata;
     } catch (error) {
-      // Fetch failed, return base metadata with error
       if (error instanceof z.ZodError) {
         throw new Error(
-          `Invalid problem metadata: ${error.issues.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ')}`
+          `Invalid problem metadata: ${error.issues
+            .map((e) => `${e.path.join(".")}: ${e.message}`)
+            .join(", ")}`
         );
       }
       const metadata = ProblemMetadataSchema.parse({
         ...baseMetadata,
         ...providedData,
-        error: error instanceof Error ? error.message : 'Failed to fetch problem data',
+        error:
+          error instanceof Error
+            ? error.message
+            : "Failed to fetch problem data",
         fetched: false,
       });
       return metadata;
     }
   }
 
-  // Platform doesn't support fetching, return base metadata
   const metadata = ProblemMetadataSchema.parse({
     ...baseMetadata,
     ...providedData,
@@ -102,6 +90,5 @@ export async function fetchProblemData(
   return metadata;
 }
 
-// Re-export types
-export type { ProblemMetadata, Platform } from './types';
-export { detectPlatform, PLATFORMS } from './registry';
+export type { ProblemMetadata, Platform } from "./types";
+export { detectPlatform, PLATFORMS } from "./registry";

@@ -50,7 +50,8 @@ De multe ori, pentru a găsi abordarea optimă pentru asemenea probleme, trebuie
 
 Cu alte cuvinte, dacă avem o abordare care rulează în $$\mathcal{O}(a \cdot x)$$ și alta care rulează în $$\mathcal{O}(b \cdot \frac{n}{x})$$, unde $$a$$ și $$b$$ sunt constante, punctul de cotitură între cele două abordări este acela în care cele două ecuații au valori egale, din acest motiv nefiind mereu optim să abordăm diferit începând de la $$\mathcal{O}(\sqrt n)$$, deoarece uneori această schimbare trebuie produsă mai devreme sau mai târziu.
 
-### Problema [Dynamic Range Sum Queries](https://cses.fi/problemset/task/1648/) de pe CSES
+### Problema Dynamic Range Sum Queries
+<ProblemPreview url="https://cses.fi/problemset/task/1648" />
 
 Deși această problemă se poate rezolva într-un mod mai eficient folosind arborii de intervale, actualizările și interogările reprezintă un exemplu foarte bun pentru ilustrarea acestei tehnici. Se va observa faptul că pentru fiecare bucată din vector se va ține suma acesteia, iar query-urile vor fi procesate conform descrierii de mai sus.
 
@@ -128,7 +129,8 @@ int main() {
 }
 ```
 
-### Problema [Consecutive Max Difference](https://csacademy.com/contest/interview-archive/task/consecutive-max-difference/) de pe CS Academy
+### Problema Consecutive Max Difference
+<ProblemPreview url="https://csacademy.com/contest/interview-archive/task/consecutive-max-difference/" />
 
 <Callout type="info">
   Această problemă, împreună cu variații ale ei este explicată în detaliu și în acest [blog](https://codeforces.com/blog/entry/129324) de pe Codeforces.
@@ -195,7 +197,8 @@ Această metodă se numește Algoritmul lui Mo și prin folosirea ei pentru a re
 
 Pentru a explica acest algoritm, voi prezenta o problemă clasică ce folosește această metodă.
 
-### Problema [fsecv](https://kilonova.ro/problems/1814) de la Lot Juniori 2019
+### Problema fsecv
+<ProblemPreview url="https://kilonova.ro/problems/1814" />
 
 Pentru a calcula rapid câte valori au aceeași frecvență egală cu $$k$$, trebuie să ne asigurăm că numărul de operații de adăugare și ștergere nu este foarte mare, lucru ce îl putem realiza folosind algoritmul lui Mo. Tot ce ne rămâne de făcut este să ținem doi vectori de frecvență, unul cu frecvența fiecărui element, iar cel de-al doilea, cu frecvența frecvenței elementelor.
 
@@ -300,7 +303,8 @@ int main() {
 
 În alte tipuri de probleme, suntem nevoiți să rezolvăm două probleme diferite pe care să le combinăm pentru a obține o soluție cât mai bună posibil, practic luând avantajele fiecărei metode cu scopul de a obține o soluție finală optimă pentru datele de care dispunem. Aici am prezentat două asemenea exemple.
 
-### Problema [Jumpsum](https://kilonova.ro/problems/481) de pe Kilonova
+### Problema Jumpsum
+<ProblemPreview url="https://kilonova.ro/problems/481" />
 
 Pentru a rezolva această problemă, plecăm de la faptul că dacă am vrea să rezolvăm un query în mod brut, complexitatea ar fi $$\mathcal{O}(\frac{n}{y})$$, ceea ce pentru valori mici ale lui $$y$$, ne-ar cauza mari probleme din punct de vedere al vitezei programului.
 
@@ -347,7 +351,8 @@ int main() {
 }
 ```
 
-### Problema [Bvarcolaci](https://kilonova.ro/problems/171) de la ONI 2015
+### Problema Bvarcolaci
+<ProblemPreview url="https://kilonova.ro/problems/171" />
 
 Pentru a rezolva această problemă, este foarte important să împărțim valorile în funcție de frecvența în care apar. Cu alte cuvinte, dacă un element apare de $$x$$ ori în șir, lungimea maximă a unei secvențe în care poate fi majoritar este de cel mult $$2 \cdot x - 1$$, ceea ce ne motivează să avem două abordări diferite în funcție de frecvența elementelor.
 
@@ -451,7 +456,8 @@ Mai există și alte probleme în care răspunsul final constă în unirea unor 
 
 Problema de mai jos reprezintă un exemplu mai simplu care combină și cunoștințele căpătate anterior la algoritmul lui Mo.
 
-### Problema [Rangemode](https://www.infoarena.ro/problema/rangemode) de pe infoarena
+### Problema Rangemode
+<ProblemPreview url="https://www.infoarena.ro/problema/rangemode" />
 
 Pentru a rezolva această problemă, vom pleca de la soluția obișnuită pe care o avem folosind algoritmul lui Mo, unde sortăm query-urile în ordine crescătoare a grupei de unde încep. Dacă am proceda conform unui Mo obișnuit, ar trebui să ținem și un set în care să păstrăm frecvențele maxime deoarece avem nevoie să aflăm elementul minim cu frecvența maximă. Totuși, o complexitate de genul $$\mathcal{O}(q \sqrt n \log n)$$ este prea înceată.
 

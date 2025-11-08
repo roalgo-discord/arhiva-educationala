@@ -30,7 +30,8 @@ Operațiile pe care o stivă le poate efectua în timp constant sunt:
 
 ## Probleme de bază
 
-### Problema [stack](https://kilonova.ro/problems/2001)
+### Problema stack
+<ProblemPreview url="https://kilonova.ro/problems/2001" />
 
 Această problemă ne cere să implementăm exact operațiile descrise mai sus.
 
@@ -121,7 +122,8 @@ int main() {
 }
 ```
 
-### Problema [stack\_max\_min](https://kilonova.ro/problems/2107)
+### Problema stack\_max\_min
+<ProblemPreview url="https://kilonova.ro/problems/2107" />
 
 Problema ne dă un șir de numere și 4 întrebări pentru câte o poziție:
 
@@ -260,7 +262,8 @@ int main() {
 
 ## Probleme rezolvate
 
-### Problema [skyline](https://nerdarena.ro/problema/skyline)
+### Problema skyline
+<ProblemPreview url="https://nerdarena.ro/problema/skyline" /> 
 
 Pentru a rezolva această problemă, va trebui să aflăm pentru fiecare valoare care este cea mai apropiată poziție de la stânga și de la dreapta cu o înălțime mai mică decât cea curentă.
 
@@ -315,7 +318,8 @@ int main() {
 }
 ```
 
-### Problema [unific - OJI 2013 VII](https://kilonova.ro/problems/835)
+### Problema unific
+<ProblemPreview url="https://kilonova.ro/problems/835" />
 
 Mai întâi, vom defini urmatoarele două functii:
 
@@ -459,8 +463,8 @@ int main() {
 }
 ```
 
-### Problema [swap - ONI 2013 Baraj Juniori](https://kilonova.ro/problems/1076)
-
+### Problema swap
+<ProblemPreview url="https://kilonova.ro/problems/1076" />
 Notam cu $$S$$ șirul de paranteze. Pentru punctul a), în timp ce parcurgem șirul de paranteze, vom menține o stivă care va conține indicii parantezelor deschise cărora nu le-am găsit încă o pereche. De fiecare dată când dăm peste o paranteză deschisa, îi adaugăm indicele în stivă, iar atunci când dăm peste o paranteză închisă, $$top()$$ va fi perechea ei. Adunăm la răspuns $$i - top()$$, scoatem vârful din stivă și continuăm cu $$i + 1$$. Punctele b) și c) pot fi rezolvate împreună. Deducem următoarele trei cazuri:
 
 1. $$S_i = S_{i + 1}$$, unde $$i$$ și $$i + 1$$ sunt parantezele interschimbate. Atunci, răspunsul va rămâne exact la fel, deci nu este o operație swap validă
@@ -473,7 +477,7 @@ Observăm că singurul caz în care operația swap este validă este atunci cân
 2. Înainte să scoatem perechea lui $$i$$, stiva trebuie să aiba cel puțin 2 elemente
 3. Vârful stivei trebuie să aibă valoarea $$i - 1$$.
 
-Deci noi, trebuie să numărăm câți $$i$$ respectă cele trei condiții. Dacă găsim vreunul, răspunsul este $$rez - 2$$, unde $$rez$$ este răspunsul de la punctul a). Altfel, răspunsul este $$-1$$.
+Deci noi, trebuie să numărăm câți $$i$$ respectă cele trei condiții. Dacă găsim vreunul, răspunsul este $$rez - 2$$, unde $$rez$$ este răspunsul de la punctul a. Altfel, răspunsul este $$-1$$.
 
 Sursa de 100 de puncte:
 
@@ -517,9 +521,10 @@ int main() {
 }
 ```
 
-### Problema [Ehab and Prefix MEXs - Codeforces Round 649](https://codeforces.com/contest/1364/problem/C)
+### Problema Ehab and Prefix MEXs
+<ProblemPreview url="https://codeforces.com/contest/1364/problem/C" />
 
-Să presupunem că suntem la un indice $$i$$ și am reușit să construim tot prefixul $$[1, i - 1]$$. Dacă $$a_{i - 1} = a_i$$, atunci $$b_i$$ poate fi orice valoare mai mare ca $$a_i$$. Vom ține elementele care au $$a_{i - 1} = a_i$$ într-o stivă, deoarece ele pot lua orice valoare mai mare ca $$a_i$$. Când $$a_{i - 1} < a_i$$, vom putea folosi elementele din stivă pentru a acoperi intervalul $$[a_{i - 1}, a_i)$$. Dacă în stivă sunt mai puțin de $$a_i - a_{i - 1} - 1$$ elemente, atunci nu putem forma prefixul $$[1, i]$$ și atunci răspunsul va fi $$-1$$. Altfel, setăm $$b_i$$ la $$a_{i - 1}$$. Apoi luăm primele $$a_i - a_{i - 1} - 1$$ elemente, le setăm la $$a_{i - 1} + 1, a_{i - 1} + 2, .., a_i - 1$$ și apoi le scoatem din stivă. Restul elementelor, care au rămas în stivă după ce am trecut prin tot șirul, pot fi setate la $$n + 1$$ sau la orice valoare mai mare ca $$n$$.
+Să presupunem că suntem la un indice $$i$$ și am reușit să construim tot prefixul $$[1, i - 1]$$. Dacă $$a_{i - 1} = a_i$$, atunci $$b_i$$ poate fi orice valoare mai mare ca $$a_i$$. Vom ține elementele care au $$a_{i - 1} = a_i$$ într-o stivă, deoarece ele pot lua orice valoare mai mare ca $$a_i$$. Când $$a_{i - 1} < a_i$$, vom putea folosi elementele din stivă pentru a acoperi intervalul $$[a_{i - 1}, a_i]$$. Dacă în stivă sunt mai puțin de $$a_i - a_{i - 1} - 1$$ elemente, atunci nu putem forma prefixul $$[1, i]$$ și atunci răspunsul va fi $$-1$$. Altfel, setăm $$b_i$$ la $$a_{i - 1}$$. Apoi luăm primele $$a_i - a_{i - 1} - 1$$ elemente, le setăm la $$a_{i - 1} + 1, a_{i - 1} + 2, .., a_i - 1$$ și apoi le scoatem din stivă. Restul elementelor, care au rămas în stivă după ce am trecut prin tot șirul, pot fi setate la $$n + 1$$ sau la orice valoare mai mare ca $$n$$.
 
 Codul de Accepted:
 

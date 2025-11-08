@@ -5,9 +5,9 @@ import type { Linter } from "eslint";
 import * as mdx from "eslint-plugin-mdx";
 import reactPlugin from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
-// @ts-ignore
+// @ts-expect-error "nextVitals" is not a module
 import nextVitals from "eslint-config-next/core-web-vitals";
-// @ts-ignore
+// @ts-expect-error "nextTs" is not a module
 import nextTs from "eslint-config-next/typescript";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -28,6 +28,7 @@ const mdxComponentGlobals = mdx.getGlobals([
   "Tabs",
   "Tab",
   "Image",
+  "ProblemPreview",
 ]);
 
 const eslintConfig = defineConfig([

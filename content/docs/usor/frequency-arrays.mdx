@@ -44,7 +44,8 @@ Pe parcursul acestui articol, voi prezenta câteva probleme, pentru a explica di
   vector caracteristic.
 </Callout>
 
-## Problema [cifreord de pe pbinfo](https://www.pbinfo.ro/probleme/244/cifreord)
+## Problema cifreord
+<ProblemPreview url="https://www.pbinfo.ro/probleme/244/cifreord" />
 
 O soluție posibilă pentru această problemă este să sortăm valorile folosind unul din algoritmii de sortare explicat [aici](./sorting.mdx).
 
@@ -54,7 +55,8 @@ Totuși, numărul de valori este prea mare și această abordare ar depăși lim
 --8 < --"usor/frequency_arrays/cifreord.cpp"
 ```
 
-## Problema [numere1 de pe pbinfo](https://www.pbinfo.ro/probleme/525/numere1)
+## Problema numere1
+<ProblemPreview url="https://www.pbinfo.ro/probleme/525/numere1" />
 
 Pentru a rezolva această problemă, cea mai importantă informație pe care o primim din enunț este aceea că valorile care ne interesează sunt strict cele care au trei cifre (cu alte cuvinte, cele între 100 și 999). Astfel, se impune crearea unui vector de frecvență care să poată memora aceste valori și după ce citim valorile din șir, se pot afla cu ușurință cele mai mari două valori de trei cifre care nu se află în șir.
 
@@ -62,7 +64,8 @@ Pentru a rezolva această problemă, cea mai importantă informație pe care o p
 --8 < --"usor/frequency_arrays/numere1.cpp"
 ```
 
-## Problema [nrlipsa2 de pe pbinfo](https://www.pbinfo.ro/probleme/1744/nrlipsa2)
+## Problema nrlipsa2
+<ProblemPreview url="https://www.pbinfo.ro/probleme/1744/nrlipsa2" />
 
 Pentru a citi acel număr necunoscut de valori, va trebui să ne bazăm pe o structură repetitivă de tip while. Apoi, pentru a lucra cu valorile din intervalul $$\[-100, 100]$$, trebuie să adaptăm lucrurile la realitatea limbajului C++, și anume la faptul că nu putem păstra indici negativi în vector.
 
@@ -72,7 +75,8 @@ Astfel, în loc să lucrăm cu acel interval, vom vrea să adunăm o valoare (un
 --8 < --"usor/frequency_arrays/nrlipsa2.cpp"
 ```
 
-## Problema [mincifre de pe pbinfo](https://www.pbinfo.ro/probleme/1546/mincifre)
+## Problema mincifre
+<ProblemPreview url="https://www.pbinfo.ro/probleme/1546/mincifre" />
 
 Pentru a rezolva această problemă, putem ține cifrele într-un vector de frecvență și să le afișăm crescător, singura diferență fiind faptul că deoarece nu vrem să avem numere care încep cu 0, vom afișa cea mai mică cifră nenulă la început.
 
@@ -81,7 +85,8 @@ Pentru a rezolva această problemă, putem ține cifrele într-un vector de frec
 
 ```
 
-## Problema [numere OJI 2005](https://kilonova.ro/problems/735)
+## Problema numere
+<ProblemPreview url="https://kilonova.ro/problems/735" />
 
 Pentru a rezolva această problemă, trebuie să citim cele $$n^2$$ valori și să ținem într-un vector de frecvență valorile pe care le-am obținut.
 
@@ -105,7 +110,8 @@ După cum ați observat, vectorii de frecvență au cel mai important rol atunci
 
 În privința `std::set`, acesta poate fi folosit în acest context exact ca vectorii caracteristici (pentru frecvențe mai mari ca 1, `std::map` este o metodă strict superioară), având posibilitatea să stocăm dinamic valorile care apar, fără a avea nevoie de $$\mathcal{O}(valmax)$$ memorie. La fel ca la structura de date precedentă, această metodă vine cu un cost, și anume faptul că complexitatea operațiilor este $$\mathcal{O}(\log n)$$, spre deosebire de $$\mathcal{O}(1)$$ pentru metoda clasică.
 
-### Problema [map de pe pbinfo](https://www.pbinfo.ro/probleme/2217/map)
+### Problema map
+<ProblemPreview url="https://www.pbinfo.ro/probleme/2217/map" />  
 
 ```cpp
 --8 < --"usor/frequency_arrays/map.cpp"

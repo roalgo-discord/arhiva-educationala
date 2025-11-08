@@ -19,11 +19,9 @@ Numărul de fii al unui nod este în mare parte influențat de tipul informații
 
 Inițial arborele conține doar un singur nod, rădăcina, urmând ca apoi cuvintele să fie introduse în ordinea citirii lor, de la stânga la dreapta. Observăm că înălțimea arborelui este lungimea maximă a unui cuvânt. Complexitatea de timp este $$\mathcal{O}(L)$$, unde $$L$$ este lungimea maximă, iar memoria consumată, în cel mai rău caz, este $$\mathcal{O}({ L \cdot k})$$.
 
-<figure markdown="span">
-  <img alt="" src="../images/trie/trie.png" width="316" height="450" />
+![Un exemplu de trie pentru cuvintele am, bad, be și so](../images/trie/trie.png)
 
-  <figcaption>Un exemplu de trie pentru cuvintele am, bad, be și so</figcaption>
-</figure>
+Un exemplu de trie pentru cuvintele am, bad, be și so
 
 ## Moduri de implementare
 
@@ -292,21 +290,14 @@ int main() {
 }
 ```
 
-## Problema [XOR Construction](https://codeforces.com/contest/1895/problem/D) (medie)
+## Problema XOR Construction
+<ProblemPreview url="https://codeforces.com/contest/1895/problem/D" />
 
 În această problemă ni se dau $$n-1$$ numere, unde al $$i$$-lea are valoarea $$a_i$$, iar noi trebuie să construim alt vector $$b$$, cu $$n$$ elemente, astfel încât să existe toate numerele de la 0 la $$n-1$$ în $$b$$, iar $$b_i \oplus b_{i+1} = a_i$$.
 
-În primul rând, dacă $$b_i = 0$$ atunci $$b_{i+1} = a_i$$, $$b_{i+1} \oplus b_{i+2} =
-a_{i+1}$$ , deci $$b_{i+2} = a_i \oplus a_{i+1}$$ și $$b_{i+3} = a_i \oplus a_{i+1}
-\oplus a_{i+2}$$. Prin urmare deducem o formă generală pentru $$b_j$$, unde $$i < j$$ , și anume $$b_j = a_i \oplus a_{i+1} \oplus a_{i+2} \oplus \dots \oplus
-a_{j-1}$$. Proprietatea se respectă și pentru oricare $$j < i$$, avem $$b_j = a_j
-\oplus a_{j+1} \oplus \dots \oplus a_{i-1}$$.
+În primul rând, dacă $$b_i = 0$$ atunci $$b_{i+1} = a_i$$, $$b_{i+1} \oplus b_{i+2} = a_{i+1}$$ , deci $$b_{i+2} = a_i \oplus a_{i+1}$$ și $$b_{i+3} = a_i \oplus a_{i+1} \oplus a_{i+2}$$. Prin urmare deducem o formă generală pentru $$b_j$$, unde $$i < j$$ , și anume $$b_j = a_i \oplus a_{i+1} \oplus a_{i+2} \oplus \dots \oplus a_{j-1}$$. Proprietatea se respectă și pentru oricare $$j < i$$, avem $$b_j = a_j \oplus a_{j+1} \oplus \dots \oplus a_{i-1}$$.
 
-În al doilea rând, enunțul problemei asigură faptul că mereu va exista soluție. Dar când nu avem soluție? Păi în momentul în care se repetă două elemente în vectorul $$b$$, ceea ce înseamnă faptul că trebuie să existe o secvență cu suma *xor* egală cu 0. Pentru simplitate vom spune că pe poziția $$k$$ va fi $$b_k =
-0$$. Dacă $$i < j$$ și $$b_i = b_j$$ și $$j < k$$, atunci $$a_i \oplus a_{i+1} \oplus
-a_{i+2} \oplus \dots \oplus a_{j-1} = 0$$, analog pentru $$i > j > k$$. Dacă $$i < k < j$$ și $$b_i = b_j$$ atunci $$b_i = a_i \oplus a_{i+1} \oplus \dots \oplus
-a_{k-1}$$, $$b_j = a_k \oplus a_{k+1} \dots \oplus a_{j-1}$$. Prin urmare $$a_i
-\oplus a_{i+1} \oplus \dots \oplus a_{j-1} = 0$$. Așadar, știm ca mereu în vectorul $$b$$ elementele vor fi distincte.
+În al doilea rând, enunțul problemei asigură faptul că mereu va exista soluție. Dar când nu avem soluție? Păi în momentul în care se repetă două elemente în vectorul $$b$$, ceea ce înseamnă faptul că trebuie să existe o secvență cu suma *xor* egală cu 0. Pentru simplitate vom spune că pe poziția $$k$$ va fi $$b_k = 0$$. Dacă $$i < j$$ și $$b_i = b_j$$ și $$j < k$$, atunci $$a_i \oplus a_{i+1} \oplus a_{i+2} \oplus \dots \oplus a_{j-1} = 0$$, analog pentru $$i > j > k$$. Dacă $$i < k < j$$ și $$b_i = b_j$$ atunci $$b_i = a_i \oplus a_{i+1} \oplus \dots \oplus a_{k-1}$$, $$b_j = a_k \oplus a_{k+1} \dots \oplus a_{j-1}$$. Prin urmare $$a_i \oplus a_{i+1} \oplus \dots \oplus a_{j-1} = 0$$. Așadar, știm ca mereu în vectorul $$b$$ elementele vor fi distincte.
 
 În al treilea rând, observăm că vectorul $$b$$ este generat în funcție de ce valoare are $$k$$. Deci o primă idee ar fi să fixăm mai întâi unde vom pune 0-ul în vectorul $$b$$ și să-l construim în $$\mathcal{O}(n)$$, complexitatea temporală fiind $$\mathcal{O}(n^2)$$. Dar putem să ne folosim de a doua observație, și anume că mereu vectorul $$b$$ va avea elementele distincte. Deci ne este suficient să știm care va fi valoarea maximă din $$b$$ dacă 0-ul se află pe poziția $$k$$. Pentru a face asta putem să folosim 2 trie-uri, unul pentru sufix, altul pentru prefix, complexitatea finală devenind $$\mathcal{O}(n \log n)$$.
 
@@ -418,7 +409,8 @@ int main() {
 }
 ```
 
-## Problema [cuvinte](https://kilonova.ro/problems/65) (medie-grea)
+## Problema cuvinte (medie-grea)
+<ProblemPreview url="https://kilonova.ro/problems/65" />
 
 Se dau $$N$$ cuvinte formate doar din primele $$K$$ litere mici ale alfabetului englez și un șir $$x_i$$, de $$M$$ numere naturale. Trebuie să se formeze $$M$$ cuvinte astfel încât oricare cuvânt $$(1 \leq i \leq M)$$ să respecte următoarele proprietăți:
 
@@ -581,7 +573,8 @@ int main() {
 }
 ```
 
-## Problema [cli](https://kilonova.ro/problems/274) (medie-grea)
+## Problema cli (medie-grea)
+<ProblemPreview url="https://kilonova.ro/problems/274" />
 
 Se dau $$N$$ cuvinte care trebuie tastate într-un terminal. Un cuvânt este considerat tastat dacă el va apărea în terminal cel puțin odată pe parcursul tastării. Avem două tipuri de operații la dispoziție: adăugăm un caracter la finalul șirul tastat deja, eliminăm un caracter de la finalul șirului (dacă nu este vid). Pentru fiecare $$i = \overline{1, K}$$, noi trebuie să aflam care este numărul minim de operații pentru a tasta exact $$i$$ cuvinte distincte dintre cele date. În momentul în care începem să tastăm un cuvânt, trebuie mereu să începem de la un șir vid $$(\emptyset)$$, și să terminăm tastarea tot la un șir vid. Un exemplu de tastare corectă este: $$\emptyset \rightarrow a \rightarrow ab \rightarrow abc \rightarrow ab \rightarrow a \rightarrow \emptyset$$.
 

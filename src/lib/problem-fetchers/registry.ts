@@ -1,7 +1,3 @@
-/**
- * Platform registry and URL parser
- */
-
 import { z } from "zod";
 import { PlatformSchema, type Platform, type PlatformConfig } from "./types";
 
@@ -68,33 +64,23 @@ export const PLATFORMS: Record<Platform, PlatformConfig> = {
   },
 };
 
-/**
- * Domain to platform lookup map for fast detection
- * Build once at module load time
- */
 const DOMAIN_TO_PLATFORM_MAP = new Map<string, Platform>(
   Object.entries(PLATFORMS)
-    .filter(([, config]) => config.domain) // Skip 'unknown' with empty domain
+    .filter(([, config]) => config.domain)
     .map(([platform, config]) => [config.domain, platform as Platform])
 );
 
-/**
- * Detect platform from URL using domain-based matching
- */
 export function detectPlatform(url: string): Platform {
   try {
-    // Validate URL format
     const validatedUrl = z.string().parse(url);
     const urlObj = new URL(validatedUrl);
     const hostname = urlObj.hostname.toLowerCase();
 
-    // Try exact domain match first (fastest)
     if (DOMAIN_TO_PLATFORM_MAP.has(hostname)) {
       const platform = DOMAIN_TO_PLATFORM_MAP.get(hostname)!;
       return PlatformSchema.parse(platform);
     }
 
-    // Try partial domain match (e.g., www.codeforces.com -> codeforces.com)
     for (const [domain, platform] of DOMAIN_TO_PLATFORM_MAP.entries()) {
       if (hostname.includes(domain)) {
         return PlatformSchema.parse(platform);
