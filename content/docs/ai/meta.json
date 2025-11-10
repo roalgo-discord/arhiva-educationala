@@ -1,0 +1,13 @@
+{
+  "title": "AI",
+  "description": "Inteligenta artificiala pentru Olimpiada de AI",
+  "root": true,
+  "pages": [
+    "index",
+    "---Introducere---",
+    "python",
+    "mate-1",
+    "pandas",
+    "matplotlib"
+  ]
+}

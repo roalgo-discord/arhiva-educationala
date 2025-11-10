@@ -21,7 +21,7 @@ export function createGenericFetcher(platform: Platform) {
         platform,
         title: `Problem ${problemId}`,
         source: platformConfig.name,
-        fetched: false, // Not actually fetched from API
+        fetched: false,
       });
 
       return metadata;

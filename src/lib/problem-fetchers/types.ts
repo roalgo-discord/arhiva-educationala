@@ -33,7 +33,7 @@ export const ProblemMetadataSchema = z.object({
 
 export type ProblemMetadata = z.infer<typeof ProblemMetadataSchema>;
 
-export type ProblemFetcher = (url: z.ZodURL) => Promise<ProblemMetadata>;
+export type ProblemFetcher = (url: string) => Promise<ProblemMetadata>;
 
 export const PlatformConfigSchema = z.object({
   name: z.string(),

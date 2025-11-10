@@ -1,0 +1,33 @@
+{
+  "title": "Usor",
+  "description": "Algoritmi usori",
+  "root": true,
+  "pages": [
+    "index",
+    "---Informații utile---",
+    "how-to-start",
+    "roadmap",
+    "schoolwork",
+    "bac-admitere",
+    "---Concepte fundamentale---",
+    "complexity",
+    "maxime-minime",
+    "digits-manipulation",
+    "simulating-solution",
+    "frequency-arrays",
+    "sequences",
+    "---Algebră---",
+    "generarea-sirurilor",
+    "bases",
+    "divisibility",
+    "sieve",
+    "dirichlet",
+    "---Sortare si căutare---",
+    "sorting",
+    "greedy",
+    "binary-search",
+    "partial-sums",
+    "--- ---",
+    "..."
+  ]
+}
