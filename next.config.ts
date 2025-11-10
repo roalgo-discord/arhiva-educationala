@@ -6,7 +6,7 @@ const config = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: "https" as const,
         hostname: "www.google.com",
         port: "",
         pathname: "/s2/favicons",

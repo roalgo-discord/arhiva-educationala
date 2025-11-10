@@ -29,12 +29,16 @@ export function baseOptions(): BaseLayoutProps {
           Arhiva Educațională
         </>
       ),
+      url: '/home',
     },
     links: [
       {
+        type: "icon",
         url: "https://discord.gg/roalgo",
         text: "Discord",
+        label: "Discord",
         icon: <DiscordIcon />,
+        external: true,
       },
     ],
     githubUrl: "https://github.com/roalgo-discord/arhiva-educationala",
