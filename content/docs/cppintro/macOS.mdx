@@ -1,0 +1,26 @@
+---
+title: macOS
+hide:
+  - navigation
+  - toc
+---
+
+Înainte de a instala un editor/IDE, avem nevoie de un compilator. Există următoarele opțiuni:
+
+<Cards>
+  <Card title="Apple Clang" href="./editors/macos/xcode.mdx">
+    Apple Clang este compilatorul implicit pe macOS, fiind inclus în Xcode Command Line Tools. Acesta este o variantă modificată de Clang/LLVM, optimizată pentru ecosistemul Apple.
+
+    Dacă vrei cea mai simplă soluție pentru dezvoltare pe macOS, alege această opțiune. Este recomandat pentru majoritatea utilizatorilor.
+  </Card>
+
+  <Card title="GCC" href="./compilers/macos/gcc.mdx">
+    GCC (GNU Compiler Collection) este o suită de compilatoare libere și gratuite. Cel mai folosit compilator din această suită este GCC (GNU C Compiler).
+
+    Pe macOS, cea mai ușoară metodă de a instala GCC este folosind Homebrew. Dacă ai nevoie de GCC sau nu vrei să instalezi XCode, alege această opțiune.
+  </Card>
+</Cards>
+
+Dacă ai deja un compilator instalat pe sistem (fie Clang, fie GCC), atunci aici ai unele opțiuni de editoare:
+
+[Vezi opțiuni de editoare](./editors/macos/optiuni-editoare.mdx)

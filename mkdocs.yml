@@ -1,100 +1,92 @@
 site_name: Arhiva Educațională RoAlgo
 site_url: https://edu.roalgo.ro
 site_description: >
-      O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică
-      și nu numai.
+        O colecție de tutoriale, probleme și soluții pentru olimpiada de informatică și nu numai.
 theme:
-      name: material
-      features:
-            - content.code.annotate
-            - content.code.copy
-            - content.action.edit
-            - search.suggest
-            - search.share
-            - search.highlight
-            - navigation.instant
-            - navigation.footer
-            - navigation.tabs
-            - navigation.instant.progress
-            - navigation.tracking
-            - navigation.indexes
-            - toc.follow
-            - toc.integrate
-            - navigation.top
-      icon:
-            icon:
-            admonition:
-                  note: material/note
-                  info: material/information
-                  tip: material/lightbulb-on
-                  warning: material/alert
-                  example: material/format-list-numbered
-      language: ro
-      font:
-            text: Inter
-            code: JetBrains Mono
-      palette:
-            - media: "(prefers-color-scheme)"
-              toggle:
-                    icon: material/brightness-auto
-                    name: Switch to auto mode
+        name: material
+        features:
+              - content.code.annotate
+              - content.code.copy
+              - content.action.edit
+              - search.suggest
+              - search.share
+              - search.highlight
+              - navigation.instant
+              - navigation.footer
+              - navigation.tabs
+              - navigation.instant.progress
+              - navigation.tracking
+              - navigation.indexes
+              - toc.follow
+              - toc.integrate
+              - navigation.top
+        icon:
+                icon:
+                admonition:
+                        note: material/note
+                        info: material/information
+                        tip: material/lightbulb-on
+                        warning: material/alert
+                        example: material/format-list-numbered
+        language: ro
+        font:
+                text: Inter
+                code: JetBrains Mono
+        palette:
+              - media: "(prefers-color-scheme)"
+                toggle:
+                        icon: material/brightness-auto
+                        name: Switch to auto mode
 
-            - media: "(prefers-color-scheme: light)"
-              scheme: default
-              toggle:
-                    icon: material/brightness-7
-                    name: Switch to dark mode
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                toggle:
+                        icon: material/brightness-7
+                        name: Switch to dark mode
 
-            - media: "(prefers-color-scheme: dark)"
-              scheme: slate
-              toggle:
-                    icon: material/brightness-4
-                    name: Switch to light mode
-      custom_dir: overrides
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                toggle:
+                        icon: material/brightness-4
+                        name: Switch to light mode
+        custom_dir: overrides
 
 extra:
-      prerequisites: {}
-      social:
-            - icon: fontawesome/brands/discord
-              link: https://discord.gg/roalgo
-              name: Hai pe Discord!
-      generator: false
-      analytics:
-            provider: google
-            property: G-5VXP6YEDL8
-      consent:
-            title: Consimțământ pentru cookie-uri
-            description: >-
-                  Folosim cookie-uri pentru a recunoaște vizitele și preferințele 
-                  dumneavoastră repetate, precum și pentru a măsura eficacitatea 
-                  arhivei noastre și pentru a verifica dacă utilizatorii găsesc 
-                  ceea ce caută. Prin consimțământul dumneavoastră, ne ajutați 
-                  să ne îmbunătățim arhiva.
+        prerequisites: {}
+        social:
+              - icon: fontawesome/brands/discord
+                link: https://discord.gg/roalgo
+                name: Hai pe Discord!
+        generator: false
+        analytics:
+                provider: google
+                property: G-5VXP6YEDL8
+        consent:
+                title: Consimțământ pentru cookie-uri
+                description: >-
+                        Folosim cookie-uri pentru a recunoaște vizitele și preferințele  dumneavoastră repetate, precum și pentru a măsura eficacitatea  arhivei noastre și pentru a verifica dacă utilizatorii găsesc  ceea ce caută. Prin consimțământul dumneavoastră, ne ajutați  să ne îmbunătățim arhiva.
 
 copyright: >-
-      Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai
-      multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de
-      licență </a>.
-      <a href="#__consent">Schimbă setările pentru cookie-uri</a>
+        Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de licență </a>. <a href="#__consent">Schimbă setările pentru cookie-uri</a>
 
 markdown_extensions:
       - pymdownx.arithmatex:
-              generic: true
+                generic: true
       - pymdownx.emoji:
-              emoji_index: !!python/name:material.extensions.emoji.twemoji
-              emoji_generator: !!python/name:material.extensions.emoji.to_svg
+                emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+                emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
       - pymdownx.superfences:
-              custom_fences:
-                    - name: mermaid
-                    - class: mermaid
-                      format: !!python/name:pymdownx.superfences.fence_code_format
+                custom_fences:
+                      - name: mermaid
+                      - class: mermaid
+                        format: !!python/name:pymdownx.superfences.fence_code_format ""
       - pymdownx.highlight:
-              anchor_linenums: true
-              line_spans: __span
-              pygments_lang_class: true
+                anchor_linenums: true
+                line_spans: __span
+                pygments_lang_class: true
       - pymdownx.inlinehilite
       - pymdownx.snippets:
-              base_path: ["docs/codes"]
+                base_path: [ "docs/codes" ]
       - pymdownx.keys
       - admonition
       - pymdownx.details
@@ -102,12 +94,12 @@ markdown_extensions:
       - attr_list
       - md_in_html
       - pymdownx.tabbed:
-              alternate_style: true
-              slugify: !!python/object/apply:pymdownx.slugs.slugify
-                    kwds:
-                          case: lower
+                alternate_style: true
+                slugify: !!python/object/apply:pymdownx.slugs.slugify
+                        kwds:
+                                case: lower
       - toc:
-              permalink: "#"
+                permalink: "#"
 
 repo_url: https://github.com/roalgo-discord/arhiva-educationala
 repo_name: roalgo-discord/arhiva-educationala
@@ -120,13 +112,13 @@ hooks:
 
 plugins:
       - search:
-              enabled: true
-              lang: ro
+                enabled: true
+                lang: ro
       - tags
       - social:
-              enabled: !ENV [CI, false]
-              cards_layout_options:
-                    font_family: Inter
+                enabled: !ENV [ CI, false ]
+                cards_layout_options:
+                        font_family: Inter
 
 nav:
       - Acasă: index.md
@@ -1754,26 +1746,26 @@ nav:
                                       - RoAlgo Weekly Contest 4: olimpiada/solutii/roalgo/roalgo-weekly/weekly-4.md
                                       - RoAlgo Weekly Contest 5: olimpiada/solutii/roalgo/roalgo-weekly/weekly-5.md
       - AI:
-              - Introducere: 
-                        - Cuvânt înainte: ai/intro.md
-                        - Limbajul Python: ai/python.md
-                        - Elemente de Matematică: ai/mate-1.md
-                        - Lucrul cu date tabulare: ai/pandas.md
-                        - Vizualizarea datelor: ai/matplotlib.md
+              - Introducere:
+                      - Cuvânt înainte: ai/intro.md
+                      - Limbajul Python: ai/python.md
+                      - Elemente de Matematică: ai/mate-1.md
+                      - Lucrul cu date tabulare: ai/pandas.md
+                      - Vizualizarea datelor: ai/matplotlib.md
 
 not_in_nav: |
-      licenta.md
-      codes/cppintro/strings/ascii.md
-      cppintro/linux.md
-      cppintro/macOS.md
-      cppintro/windows.md
-      cppintro/compilers/*/*.md
-      cppintro/editors/*/*.md
-      mediu/index.md
-      mediu/important-formulas.md
-      olimpiada/solutii/baraj-lot/baraj-*.md
-      olimpiada/solutii/baraj-lot/lot-*.md
-      usor/intro-cpp.md
+        licenta.md
+        codes/cppintro/strings/ascii.md
+        cppintro/linux.md
+        cppintro/macOS.md
+        cppintro/windows.md
+        cppintro/compilers/*/*.md
+        cppintro/editors/*/*.md
+        mediu/index.md
+        mediu/important-formulas.md
+        olimpiada/solutii/baraj-lot/baraj-*.md
+        olimpiada/solutii/baraj-lot/lot-*.md
+        usor/intro-cpp.md
 
 extra_javascript:
       - javascripts/katex.js

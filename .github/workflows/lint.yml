@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Reviewdog Lint
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review ]
+  push:
+    branches: [ '**' ]
+    tags-ignore: [ '*' ]
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  lint:
+    name: reviewdog lint
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: 'devenv shell bash -- -euo pipefail {0}'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Install Nix
+      uses: cachix/install-nix-action@v31
+
+    - name: Configure Cachix cache
+      uses: cachix/cachix-action@v16
+      with:
+        name: devenv
+
+    - name: Install devenv
+      shell: bash
+      run: nix profile install nixpkgs#devenv
+
+    # Optional, but speeds up the first devenv shell
+    - name: Materialize devshell
+      run: devenv ci
+
+    - name: Install dependencies
+      run: bun install --frozen-lockfile --no-progress
+
+    - name: Run reviewdog for ESLint
+      uses: reviewdog/action-eslint@v1.34
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-check' }}
+        eslint_flags: '. --ext .js,.jsx,.ts,.tsx --max-warnings=0'
+
+    - name: Run reviewdog for remark-lint
+      uses: reviewdog/action-remark-lint@v5.18
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-check' }}
+        remark_args: 'content/**/*.mdx --quiet --frail'
+        install_deps: false

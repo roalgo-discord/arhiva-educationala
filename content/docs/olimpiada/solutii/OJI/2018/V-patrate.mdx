@@ -1,0 +1,54 @@
+---
+id: OJI-2018-V-patrate
+title: Soluția problemei patrate (OJI 2018, clasa a V-a)
+problem_id: 893
+authors:
+  - traian
+tags:
+  - OJI
+  - clasa V
+---
+
+## Cerința 1
+
+Primul element din pătratul $$M$$ este $$(2 \cdot M - 1) ^ 2$$, iar ultimul este $$(2
+\cdot M + 1) ^ 2 - 1$$. Sunt $$(2 \cdot M + 1) ^ 2 - 1 - (2 \cdot M - 1) + 1 = (2
+\cdot M + 1) ^ 2 - (2 \cdot M - 1) ^ 2$$ elemente.
+
+## Cerința 2
+
+Căutăm primul număr $$T$$ pentru care $$(2 \cdot T - 1) ^ 2 \leq N \leq (2 \cdot
+T + 1) ^ 2 - 1$$ (adică $$N$$ să fie în intervalul de numere de pe pătratul $$T$$).
+
+## Cod sursă
+
+Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
+
+```cpp
+#include <fstream>
+
+using namespace std;
+
+ifstream fin("patrate.in");
+ofstream fout("patrate.out");
+
+int main() {
+    int c, n, i;
+    fin >> c >> n;
+
+    if (c == 1) {
+        fout << (1 + 2 * n) * (1 + 2 * n)
+                    - (1 + 2 * (n - 1)) * (1 + 2 * (n - 1));
+    } else {
+        int i = 0;
+        while (!((2 * i - 1) * (2 * i - 1) <= n
+                 && n <= (2 * i + 1) * (2 * i + 1) - 1)) {
+            i++;
+        }
+
+        fout << i;
+    }
+
+    return 0;
+}
+```

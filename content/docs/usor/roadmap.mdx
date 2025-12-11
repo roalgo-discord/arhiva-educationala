@@ -1,0 +1,326 @@
+---
+id: roadmap
+title: "Ordinea învățării conținuturilor (roadmap)"
+authors: [stefdasca]
+tags:
+  - meta
+  - sfaturi
+  - pas cu pas
+---
+
+## Introducere
+
+În ultimii ani, au apărut foarte multe resurse care permit învățarea algoritmilor și structurilor de date într-un mod complet fără prea multe probleme. Totuși, o mare problemă care încă există în prezent este lipsa unei structuri clare care să permită înțelegerea acestor noțiuni, adaptată la cerințele sistemului educațional din România și a diverselor niveluri, mai ales când vine vorba de olimpiadă și de concursurile de informatică.
+
+Chiar dacă programele școlare, fie că e vorba de programele cadru sau programele claselor de la olimpiadă sunt un pas important făcut în special în ultimii ani, totuși încă nu există o ordine clară în care aceste noțiuni sunt discutate, ci doar o listă a noțiunilor care trebuie parcurse la un anumit nivel, fără a ține cont de dificultatea relativă a acestora.
+
+În acest articol, vom prezenta ordinea pe care o propunem pentru învățarea acestor noțiuni, acesta fiind un roadmap pe care îl recomandăm tuturor pasionaților de algoritmi și structuri de date, și nu numai.
+
+Cu alte cuvinte, vom putea spune că sunteți la 10 capitole distanță de a putea ajunge la olimpiada internațională de informatică. Totuși, aceste capitole necesită foarte multă muncă, timp și efort pentru a fi studiate și înțelese temeinic.
+
+## Clarificări și precizări
+
+În arhivă, avem secțiunile Ușor, Mediu, Dificil și Avansat care au drept scop crearea unei împărțiri aproximative a conținuturilor pe niveluri de dificultate. De asemenea, fiecare articol va avea la început o listă de articole pe care le recomandăm să le citiți înainte să citiți articolul curent, pentru a înțelege mai bine conținutul (de exemplu, pentru a citi articolul despre aflarea [cifrelor unui număr](./digits-manipulation.mdx), trebuie să știți să lucrați cu [operatori și expresii](../cppintro/basic-math.mdx)).
+
+În cele ce urmează, vom prezenta o ordine în care recomandăm învățarea noțiunilor și parcurgerea arhivei, de la cele mai ușoare până la cele mai dificile dintre cele prezente aici și nu numai, ordinea fiind una într-o ordine relativ crescătoare a dificultății.
+
+## Capitolul 0 - Articole generale
+
+Chiar dacă acesta este capitolul 0, se recomandă întoarcerea la el de fiecare dată când concurați sau vreți să aflați mai multe despre ce vă așteaptă.
+
+### Informații generale și programa olimpiadelor
+
+- [Informații despre olimpiada de informatică](../olimpiada/olympiad-info.mdx)
+- [Listă de concursuri relevante](../mediu/contest-list.mdx)
+- [Programa pentru gimnaziu](../olimpiada/gimnaziu.mdx)
+- [Programa pentru liceu](../olimpiada/liceu.mdx)
+
+### Strategie, sfaturi utile pentru olimpiade și concursuri
+
+- [Cum te pregătești pentru olimpiadă?](../olimpiada/olympiad-prep.mdx)
+- [Abordarea concursurilor de pe Codeforces/AtCoder](../mediu/cf-atcoder.mdx)
+- [Cum ajungi tot mai bun la concursuri?](../mediu/contest-improvement.mdx)
+- [Cum abordezi proba de concurs la olimpiadă?](../olimpiada/olympiad-strategy.mdx)
+- [Cum ajungi să iei rezultate tot mai bune la olimpiadă?](../olimpiada/olympiad-improvement.mdx)
+- [Cum gestionezi presiunea concursurilor?](../mediu/contest-improvement.mdx)
+
+## Capitolul 1 - Noțiuni elementare de limbaj, algoritmi elementari
+
+Această secțiune își propune să vă ducă de la baze și să puteți ajunge să rezolvați probleme ușoare, precum și să vă familiarizați cu algoritmica, limbajul C++ și în general, tehnici de bază de rezolvare a problemelor.
+
+<Callout type="note">
+  Aceste noțiuni de bază sunt discutate și [aici](./how-to-start.mdx#notiuni-cu-care-sa-incepi), dar vom relua discuția și mai jos.
+</Callout>
+
+### Cum înveți materia?
+
+- [De unde începi?](./how-to-start.mdx)
+- [Cum ajungi să stăpânești materia de la clasă?](./schoolwork.mdx)
+- [Cum să te pregătești pentru bacalaureat și admitere?](./bac-admitere.mdx)
+
+### Fundamentele limbajului C++
+
+- [Instalarea primului editor/IDE](../cppintro/index.mdx)
+- [Primul program în C++](../cppintro/intro.mdx)
+- [Variabile și tipuri de date simple](../cppintro/data-types.mdx)
+- [Operatori și expresii. Cunoștințe matematice de bază](../cppintro/basic-math.mdx)
+- [Citirea și afișarea datelor](../cppintro/input-output.mdx)
+- [Coding Style](../cppintro/coding-style.mdx)
+
+### Structuri alternative și repetitive
+
+- [Structura alternativă](../cppintro/conditions-if.mdx)
+- [Structura repetitivă](../cppintro/loops.mdx)
+- [Prelucrarea cifrelor unui număr](./digits-manipulation.mdx)
+- [Maxime și minime](./maxime-minime.mdx)
+- [Generarea șirurilor de numere](./generarea-sirurilor.mdx)
+
+### Algoritmi elementari
+
+- [Divizibilitatea (CMMDC, CMMMC, aflarea divizorilor)](./divisibility.mdx)
+- [Abordarea problemelor cu secvențe](./sequences.mdx)
+
+## Capitolul 2 - Tablouri, tehnici introductive
+
+Aici trecem la niște conținuturi mai avansate, cunoașterea tablourilor și a unor metode de bază inspirate din aritmetică și algebră devine necesară pentru a putea trece la noțiuni mai specifice.
+
+### Lucrul cu tablouri
+
+- [Vectori (tablouri unidimensionale)](../cppintro/arrays.mdx)
+- [Vectori de frecvență](./frequency-arrays.mdx)
+- [Matrici (tablouri bidimensionale)](../cppintro/matrices.mdx)
+
+### Algoritmi și tehnici introductive
+
+- [Complexități](./complexity.mdx)
+- [Simularea soluției](./simulating-solution.mdx)
+- [Algoritmi de sortare](./sorting.mdx) - Doar algoritmii în $$\mathcal{O}(n^2)$$ și funcția std::sort
+- [Ciurul lui Eratostene](./sieve.mdx)
+- [Sume parțiale](./partial-sums.mdx) - Doar sumele parțiale
+- [Cum repari o soluție greșită?](../mediu/debugging.mdx) - sfaturile inițiale
+
+## Capitolul 3 - Sortare, căutare, tehnici mai avansate de limbaj
+
+Dacă ați ajuns aici, înseamnă că aveți o bază relativ solidă și puteți să învățați și alte metode care ajung să fie un fundament pentru multe concursuri de algoritmică. Fie că este vorba de algoritmi deprinși din cei pentru sortări și căutări sau chiar de noțiuni matematice mai avansate, aici sunt algoritmii pe care îi veți folosi în multe situații și drept pași mai mici pentru alte metode mai avansate.
+
+### Tehnici de limbaj
+
+- [Subprograme](../cppintro/functions.mdx)
+- [Introducere în STL](../cppintro/stl.mdx)
+- [Șiruri de caractere](../cppintro/strings.mdx)
+- [Operații pe biți](../mediu/bitwise-ops.mdx)
+
+### Algoritmi și metode de rezolvare a problemelor
+
+- [Introducere în Metoda Greedy](./greedy.mdx)
+- [Căutarea binară](./binary-search.mdx)
+- [Șmenul lui Mars](./partial-sums.mdx#smenul-lui-mars)
+- [Two Pointers](../mediu/two-pointers.mdx)
+- [Sliding Window](../mediu/sliding-window.mdx)
+
+### Noțiuni de algebră
+
+- [Principiul lui Dirichlet (principiul cutiei)](./dirichlet.mdx)
+- [Baze de numerație](../usor/bases.mdx)
+- [Indicatorul lui Euler](../mediu/euler-totient.mdx)
+- [Aritmetică modulară. Ridicare la putere în timp logaritmic](../mediu/pow-log.mdx)
+
+## Capitolul 4 - Structuri de date liniare, fundamentele tehnicilor avansate
+
+În această secțiune vom începe să rafinăm lucrurile folosind structuri de date liniare, precum coada, stiva și deque-ul, dar și să introducem tehnici mai avansate, precum teoria grafurilor și programarea dinamică. Continuăm și parcurgerea noțiunilor matematice.
+
+### Elemente de implementare
+
+- [Cum repari o soluție greșită?](../mediu/debugging.mdx) - generarea testelor
+- [Tehnica divide et impera](../mediu/divide-et-impera.mdx)
+- [Căutare completă. Tehnica Backtracking](../mediu/backtracking.mdx)
+- [Algoritmi de sortare](./sorting.mdx) - Restul algoritmilor de sortare
+- [Numere mari](../mediu/bignum.mdx)
+- [Normalizarea datelor](../mediu/data-normalization.mdx)
+
+### Matematică
+
+- [Principiul includerii și excluderii](../mediu/pinex.mdx)
+- [Invers modular](../mediu/modular-inverse.mdx)
+
+### Structuri de date
+
+- [Coada](../mediu/queue.mdx)
+- [Stiva](../mediu/stack.mdx)
+- [Analiza amortizată](../mediu/amortised-analysis.mdx)
+- [Algoritmul lui Lee. Flood Fill](../mediu/lee.mdx)
+- [Evaluarea unei expresii](../mediu/expression-evaluation.mdx)
+- [Deque](../mediu/deque.mdx)
+
+### Abordarea anumitor tipuri de probleme mai speciale
+
+- [Abordarea problemelor ad-hoc](../mediu/ad-hoc.mdx)
+- [Abordarea problemelor constructive](../mediu/constructive.mdx)
+
+### Introducere în tehnici mai avansate
+
+- [Introducere în teoria grafurilor](./graphs.mdx)
+- [Introducere în arbori. Diametrul unui arbore](../mediu/tree-1.mdx)
+- [Introducere în programarea dinamică](./intro-dp.mdx)
+
+## Capitolul 5 - Programarea dinamică (I), teoria grafurilor (I), combinatorică și geometrie
+
+Aici intrăm încet-încet în complexitatea a două dintre cele mai importante tehnici din algoritmică, programarea dinamică și teoria grafurilor. De asemenea, combinatorica și geometria sunt și ele abordate, existând multe probleme care folosesc aceste tehnici.
+
+### Programarea dinamică
+
+- [Problema rucsacului](../mediu/knapsack.mdx)
+- [Subșir comun maximal](../mediu/lcs.mdx)
+- [Subșir crescător maximal](../mediu/lis.mdx)
+- [Dinamică pe stări exponențiale (bitmask DP)](../mediu/bitmask-dp.mdx)
+
+### Teoria grafurilor
+
+- [Sortare topologică](../mediu/toposort.mdx)
+- [Cicluri în grafuri. Grafuri funcționale](../mediu/cycles.mdx)
+- [Păduri de mulțimi disjuncte (DSU)](../mediu/dsu.mdx)
+- [Arbore parțial de cost minim (Kruskal, Prim, Boruvka)](../mediu/apcm.mdx)
+- [Algoritmi pentru drumuri minime (Dijkstra, Bellman-Ford, Floyd-Warshall)](../mediu/shortest-path.mdx)
+- [Tehnica celor 2 DFS-uri (rerooting)](../mediu/rerooting.mdx)
+
+### Matematică
+
+- [Combinatorică](../mediu/intro-combinatorics.mdx)
+- [Concepte fundamentale de geometrie](../mediu/basic-geometry.mdx)
+
+### Alte noțiuni
+
+- [Hashing](../mediu/hashing.mdx)
+- [Meet in the Middle](../mediu/mitm.mdx)
+
+## Capitolul 6 - Structuri de date, lucrul cu arbori, probleme speciale
+
+Aici începem să lucrăm cu structurile de date care ne ajută să răspundem la întrebări și să efectuăm actualizări într-un timp rapid. De asemenea, lucrăm în moduri mai detaliate cu arbori și grafuri, dar și cu alte tipuri de probleme pe care le întâlniți la concursuri.
+
+### Structuri de date
+
+- [Descompuneri în bucăți de radical (Square Root Decomposition)](../dificil/square-root-decomposition.mdx)
+- [Arbori de intervale](../dificil/segment-trees.mdx)
+- [Arbori indexați binar](../dificil/fenwick-tree.mdx)
+- [Range Minimum Query (RMQ)](../dificil/rmq.mdx)
+- [Trie](../dificil/trie.mdx)
+- [Dinamici pe structuri de date](../dificil/data-structures-dp.mdx)
+- [Baleiere (sweep line)](../dificil/sweep-line.mdx)
+
+### Lucrul cu arbori
+
+- [Binary lifting. Lowest common ancestor (LCA)](../dificil/lowest-common-ancestor.mdx)
+- [Euler Tour](../dificil/euler-tour.mdx)
+- [Dinamici pe arbori](../dificil/tree-dp.mdx)
+- [Small to large](../dificil/small-to-large.mdx)
+- [Heavy Light Decomposition](../avansat/hld.mdx)
+- [Centroid Decomposition](../avansat/centroid-decomposition.mdx)
+
+### Abordarea anumitor tipuri de probleme mai speciale
+
+- [Abordarea problemelor interactive](../dificil/interactive.mdx)
+- [Abordarea problemelor output-only](../dificil/output-only.mdx)
+
+### Alte tehnici
+
+- [Bitsets](../dificil/bitsets.mdx)
+- [Căutare ternară](../dificil/ternary-search.mdx)
+- [Algoritmi randomizati](../dificil/random-algorithms.mdx)
+- [Funcția Möbius](../dificil/mobius.mdx)
+
+## Capitolul 7 - Programare dinamică (II), Teoria grafurilor (II), Matematică
+
+Continuăm munca de la capitolul 5 cu adaptări mai avansate ale metodelor menționate acolo, experiența devenind tot mai importantă.
+
+### Programarea dinamică
+
+- [Programare dinamică pe intervale (range DP)](../dificil/range-dp.mdx)
+- [Programare dinamică pe cifre (digit DP)](../dificil/digit-dp.mdx)
+- [Programare dinamică pe grafuri](../dificil/graph-dp.mdx)
+- [Programare dinamică pe permutări](../dificil/permutations-dp.mdx)
+
+### Teoria grafurilor
+
+- [Componente tare conexe](../dificil/componente-tare-conexe.mdx)
+- [Componente biconexe](../dificil/componente-biconexe.mdx)
+- [Cuplaj maxim pe graf bipartit](../dificil/cuplaj-maxim-pe-graf-bipartit.mdx)
+
+### Algebră
+
+- [Introducere în probabilități](../avansat/intro-probability.mdx)
+- [Introducere în algebră liniară](../dificil/intro-linalg.mdx)
+- [Ridicare la putere a unei matrici](../dificil/pow-mat.mdx)
+- [Algoritmul lui Gauss](../avansat/gauss-algorithm.mdx)
+
+### Geometrie
+
+- [Baleiere (sweep line)](../dificil/sweep-line.mdx)
+- [Înfășurătoare convexă](../dificil/convex-hull.mdx)
+
+## Capitolul 8 - Matematică avansată, algoritmi pe stringuri
+
+Aici intrăm deja în algoritmi și tehnici de o complexitate foarte ridicată, aceștia trebuie să fie știuți de cei care vor să ajungă la cel mai înalt nivel.
+
+### Matematică avansată
+
+- [Coduri Gray](../avansat/gray-codes.mdx)
+- [Codarea Huffman](../avansat/huffman.mdx)
+- [Teoria jocurilor](../avansat/game-theory.mdx)
+
+### Algoritmi pe stringuri
+
+- [Rotație lexicografică minimă](../dificil/lmsr.mdx)
+- [Hashing](../mediu/hashing.mdx)
+- [Knuth-Morris-Pratt (KMP)](../dificil/kmp.mdx)
+- [Z Function](../dificil/z-function.mdx)
+- [Algoritmul lui Manacher](../avansat/manacher.mdx)
+- [Suffix array/tree](../avansat/suffix-array-tree.mdx)
+
+## Capitolul 9 - Structuri de date avansate, DP Optimizations, Algoritmi avansați pe grafuri, matematică
+
+Acest capitol este unul open-ended, putând fi denumit mai informal drept restul algoritmicii, deoarece aici, pe lângă conținuturile menționate, orice alt conținut pe care îl considerați că trebuie abordat, îl puteți aborda.
+
+Pe lângă aceste conținuturi menționate aici, orice altceva ce vreți să învățați ar trebui învățat după ce vă asigurați că stăpâniți algoritmii menționați anterior. În mod evident, există anumite excepții, dar dacă ați ajuns la acest nivel, probabil că știți și voi cum să ajustați anumite lucruri în funcție de ce observați în studiul vostru individual.
+
+### Structuri de date
+
+- [Virtual Tree](../avansat/virtual-tree.mdx)
+- [Persistent Segment Tree](../avansat/persistent-segment-tree.mdx)
+- [Li Chao Tree](../avansat/li-chao.mdx)
+- [Aho-Corasick](../avansat/aho-corasick.mdx)
+- [Treapuri](../avansat/treaps.mdx)
+
+### Optimizări specifice programării dinamice
+
+- [Convex Hull Trick](../avansat/convex-hull-trick.mdx)
+- [Divide and Conquer DP](../avansat/dc-dp.mdx)
+- [Aliens DP](../avansat/aliens-dp.mdx)
+- [Knuth DP](../avansat/knuth-dp.mdx)
+- [Connected Component DP](../avansat/component-dp.mdx)
+
+### Algoritmică avansată pe grafuri
+
+- [Fluxuri maxime](../avansat/fluxuri.mdx)
+- [Dynamic connectivity](../avansat/dynamic-connectivity.mdx)
+- [2-SAT](../avansat/2-sat.mdx)
+
+### Matematică
+
+- [Run-length encoding](../avansat/rle.mdx)
+- [Teorema chineză a resturilor (CRT)](../avansat/crt.mdx)
+- [Recurențe liniare](../avansat/linear-recurrences.mdx)
+- [Funcții generatoare](../avansat/generating-functions.mdx)
+- [FFT, NTT](../avansat/fft.mdx)
+- [Matematică avansată](../avansat/advanced-math.mdx)
+
+## Concluzii
+
+Stăpânirea noțiunilor într-o ordine clară care să permită înțelegerea tuturor capitolelor cu ușurință este esențială pentru orice competitor care vrea să ajungă cât mai bun, iar odată cu această resursă, avem prima structură completă în limba română a unui asemenea roadmap care face învățarea algoritmilor și structurilor de date mult mai ușoară chiar și dacă nu aveți un profesor îndrumător sau altcineva care să vă ajute să aveți o ordine logică în învățare.
+
+Ca întotdeauna, vă stăm la dispoziție pe [serverul nostru](https://discord.gg/roalgo) în cazul în care aveți sugestii de orice fel și/sau considerați că anumite noțiuni merită ajustate.
+
+## Resurse suplimentare
+
+- [Competitive programming roadmap - Codeforces](https://codeforces.com/blog/entry/111099)
+- [Competitive programming roadmap - Codechef](https://www.codechef.com/roadmap/become-5-star)
+- [Structura USACO Guide](https://usaco.guide/)

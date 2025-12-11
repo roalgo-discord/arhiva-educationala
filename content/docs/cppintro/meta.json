@@ -1,0 +1,23 @@
+{
+  "title": "Introducere în C++",
+  "description": "Introducere în C++ și algoritmi de bază",
+  "root": true,
+  "pages": [
+    "index",
+    "intro",
+    "data-types",
+    "input-output",
+    "basic-math",
+    "conditions-if",
+    "loops",
+    "coding-style",
+    "arrays",
+    "matrices",
+    "functions",
+    "lambda",
+    "stl",
+    "strings",
+    "linked-lists",
+    "fast-io"
+  ]
+}

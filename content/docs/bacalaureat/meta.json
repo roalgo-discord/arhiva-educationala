@@ -1,0 +1,9 @@
+{
+  "title": "Bacalaureat",
+  "description": "Algoritmi de bacalaureat",
+  "root": true,
+  "pages": [
+    "intro",
+    "roadmap"
+  ]
+}
