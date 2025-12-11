@@ -49,7 +49,7 @@ Să considerăm un vector $$A$$ de dimensiune $$N$$. Arborele de intervale asoci
 
 Să considerăm vectorul $$A=\[5,8,6,3,2,7,2,6]$$, arborele de intervale asociat vectorului $$A$$ va arăta în felul următor:
 
-<img alt="" src="../images/segment-trees/aint.svg" width="940" height="354" />
+<img alt="" src="/images/segment-trees/aint.svg" width="940" height="354" />
 
 ### Care este memoria necesara stocarii ?
 
@@ -80,7 +80,7 @@ Construirea unui arbore de intervale se realizează într-un mod recursiv bottom
 
 Această operație se efectuează în $$\mathcal{O}(n)$$, unde $$n$$ este numărul de elemente din vectorul inițial. De reținut că există și o altă variantă de a construi arborele prin a actualiza fiecare poziție cu valoarea din vector, însă duce la o complexitate de $$\mathcal{O}(n \log n)$$.
 
-<img alt="" src="../images/segment-trees/build.svg" width="940" height="274" />
+<img alt="" src="/images/segment-trees/build.svg" width="940" height="274" />
 
 În diagramele de mai sus, vedem că la fiecare pas, valorile din noduri sunt calculate pe baza sumelor subintervalelor din fiul stâng și fiul drept. Acest proces este realizat în codul de mai jos prin apeluri recursive, unde funcția `build` este apelată pentru fiecare subarbore (stâng și drept), iar valorile din noduri sunt apoi actualizate.
 
@@ -134,7 +134,7 @@ Această operație se efectuează în $$\mathcal{O}(\log n)$$, unde $$n$$ este n
 
 Mai jos este prezentată o diagramă care ilustrează cum se modifică structura arborelui de intervale după ce actualizăm valoarea elementului de pe poziția 5 din 2 în 1.
 
-<img alt="" src="../images/segment-trees/update.svg" width="940" height="410" />
+<img alt="" src="/images/segment-trees/update.svg" width="940" height="410" />
 
 În diagramele de mai sus, putem observa cum se modifică structura arborelui de intervale după ce modificăm valoarea de pe poziția 5 din 2 în 7. Nodurile afectate de această modificare sunt evidențiate, iar valorile lor sunt actualizate pentru a reflecta noua configurație.
 
@@ -171,7 +171,7 @@ Această descompunere se bazează pe faptul că, pentru orice interval $$\[st, d
 2. **Interval complet inclus în intervalul de interogare** (portocaliu): Dacă intervalul $$\[st, dr]$$ este complet inclus în intervalul $$\[x, y]$$, returnăm valoarea stocată în nodul respectiv, deoarece aceasta reprezintă deja răspunsul pentru întregul interval.
 3. **Interval parțial suprapus** (galben): În acest caz, descompunem intervalul în două subintervale, corespunzătoare fiilor nodului curent, și combinăm rezultatele interogărilor pentru aceste subintervale.
 
-<img alt="" src="../images/segment-trees/query.svg" width="940" height="410" />
+<img alt="" src="/images/segment-trees/query.svg" width="940" height="410" />
 
 Iată un exemplu de implementare a operației de query în C++:
 
@@ -234,11 +234,11 @@ Să analizam puțin unde se poate află segmentul de sumă maximă după combina
 - Segmentul de sumă maximă se află în intervalul din dreapta (R.smax)
 - Segmentul de sumă maximă începe în intervalul stâng și se termină în cel drept. Aceasta este reprezentată prin combinația dintre L.suffmax și R.prefmax.
 
-<img alt="" src="../images/segment-trees/maxq_1.svg" width="940" height="222" />
+<img alt="" src="/images/segment-trees/maxq_1.svg" width="940" height="222" />
 
 Pentru a calcula prefixul de sumă maximă pentru fiecare nod luăm maximul dintre prefixul găsit în stânga și întregul segment din stânga la care se adaugă prefixul de sumă maximă din dreapta.
 
-<img alt="" src="../images/segment-trees/maxq_2.svg" width="940" height="222" />
+<img alt="" src="/images/segment-trees/maxq_2.svg" width="940" height="222" />
 
 Analog pentru sufixul de sumă maximă, doar că luăm maximul dintre sufixul găsit în dreapta și întregul segment care începe în dreapta și se continua în stânga.
 

@@ -36,8 +36,7 @@ Pentru a rezolva această problemă, vom încerca să construim permutarea pas c
 
 Astfel, dacă avem o permutare de lungime $$i$$ cu $$j$$ maxime, vrem să putem construi o permutare de lungime $$i+1$$ într-un mod care să ne ușureze calculul maximelor. Mai întâi, inserarea lui $$i+1$$ în permutare ar face lucrurile anevoioase, deoarece în funcție de poziția în care este inserat, numărul de maxime ar putea lua orice valoare de la 1 la $$j+1$$, lucru ce face această abordare nepractică.
 
-Totuși, ne putem gândi și altfel în ceea ce privește generarea unei permutări de lungime $$i+1$$. În loc să inserăm $$i+1$$ undeva în permutare, vrem să plecăm de la inserarea lui 1, lucru ce îl putem face cu ușurință dacă ne gândim la permutarea pe care o avem, presupunând toate valorile mai mari cu 1. De exemplu, dacă permutarea curentă este $$[2, 1, 5, 3, 4]$$, noul șir ar fi $$[3, 2,
-6, 4, 5]$$. Astfel, numărul de maxime, precum și poziția lor rămân identice, iar acum, tot ce trebuie să facem este să poziționăm 1 în permutare.
+Totuși, ne putem gândi și altfel în ceea ce privește generarea unei permutări de lungime $$i+1$$. În loc să inserăm $$i+1$$ undeva în permutare, vrem să plecăm de la inserarea lui 1, lucru ce îl putem face cu ușurință dacă ne gândim la permutarea pe care o avem, presupunând toate valorile mai mari cu 1. De exemplu, dacă permutarea curentă este $$[2, 1, 5, 3, 4]$$, noul șir ar fi $$[3, 2, 6, 4, 5]$$. Astfel, numărul de maxime, precum și poziția lor rămân identice, iar acum, tot ce trebuie să facem este să poziționăm 1 în permutare.
 
 Deoarece 1 este cea mai mică valoare, decizia este una foarte simplă, numărul de maxime crește cu 1 doar dacă inserăm această valoare la începutul permutării, în caz contrar acest număr rămâne același. Astfel, putem să calculăm numărul de permutări de lungime $$n$$ cu $$k$$ maxime folosind următoarea recurență:
 
@@ -367,5 +366,4 @@ Aceste tipuri de probleme combină două capitole, programarea dinamică și com
 
 ## Resurse suplimentare
 
-- $$[Tutorial] Non-trivial DP Tricks and Techniques - Codeforces](https://codeforces.com/blog/entry/47764)
-  $$
+- [Tutorial Non-trivial DP Tricks and Techniques - Codeforces](https://codeforces.com/blog/entry/47764)

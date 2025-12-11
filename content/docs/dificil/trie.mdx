@@ -138,8 +138,7 @@ Unele probleme necesită reținerea numerelor într-o structură de date, cum ar
 
 Un exemplu bun este chiar problema [xormax](https://kilonova.ro/problems/1984), unde ni se dă un vector cu $$N$$ elemente și trebuie să aflăm care este suma xor maximă a unui interval. Suma *xor* a unui interval cu capetele $$[L, R]$$ este valoarea $$v_L \oplus v_{L+1} \oplus \dots \oplus v_R$$, unde $$\oplus$$ este operatorul *xor* pe biți.
 
-Pentru a rezolva problema putem parcurge vectorul de la stânga la dreapta și să aflam pentru fiecare $$1 \leq i \leq N$$ care este suma *xor* maximă a unui interval care se termină în $$i$$. Dacă construim vectorul $$xp$$, unde $$xp[i] = v_1
-\oplus v_2 \oplus \dots \oplus v_{i-1} \oplus v_i$$, atunci suma *xor* pe intervalul $$[L, R]$$ este egală cu $$xp[R] \oplus xp[L-1]$$. Observăm că pentru un $$R$$ fixat trebuie să găsim care este $$L$$-ul care maximizează relația de mai sus. Pentru a face asta putem să introducem primii $$R-1$$ $$xp$$-uri într-un trie pe biți și să căutăm bit cu bit, începând cu bitul semnificativ, $$xp$$-ul care va maximiza rezultatul.
+Pentru a rezolva problema putem parcurge vectorul de la stânga la dreapta și să aflam pentru fiecare $$1 \leq i \leq N$$ care este suma *xor* maximă a unui interval care se termină în $$i$$. Dacă construim vectorul $$xp$$, unde $$xp[i] = v_1 \oplus v_2 \oplus \dots \oplus v_{i-1} \oplus v_i$$, atunci suma *xor* pe intervalul $$[L, R]$$ este egală cu $$xp[R] \oplus xp[L-1]$$. Observăm că pentru un $$R$$ fixat trebuie să găsim care este $$L$$-ul care maximizează relația de mai sus. Pentru a face asta putem să introducem primii $$R-1$$ $$xp$$-uri într-un trie pe biți și să căutăm bit cu bit, începând cu bitul semnificativ, $$xp$$-ul care va maximiza rezultatul.
 
 ```cpp
 #include <iostream>
@@ -436,8 +435,7 @@ Prima idee ar fi să sortam vectorul $$x$$. Fie $$dp_i$$ = în câte moduri pute
 </Callout>
 
 $$
-dp_i = dp_{i-1} \cdot K^{x_i} - dp_{i-1} \cdot \sum_{j = 1}^{i-1} K^{x_i -
-x_j}
+dp_i = dp_{i-1} \cdot K^{x_i} - dp_{i-1} \cdot \sum_{j = 1}^{i-1} K^{x_i - x_j}
 $$
 
 <Callout type="obs">

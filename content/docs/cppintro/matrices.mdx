@@ -39,11 +39,11 @@ Pentru declararea unei matrice statice, aveți nevoie de:
 
 Aceasta definește o matrice cu 101 linii și 101 coloane, fiecare element fiind de tip `int`. Indicii sunt numerotați de la 0 la 100.
 
-<img alt="O matrice cu 5 rânduri și 8 coloane" src="./images/matrices/matrix_1.svg" width="567" height="364" />
+<img alt="O matrice cu 5 rânduri și 8 coloane" src="/images/matrices/matrix_1.svg" width="567" height="364" />
 
 Următoarea matrice are 5 rânduri și 8 coloane și este indexată de la 0. Pentru a accesa elementul de pe al treilea rând și a cincea coloană, folosim `matrice[2][4]`. Așa ar arăta pe matricea noastră:
 
-<img alt="Accesarea elementului de pe al treilea rând și a cincea coloană" src="./images/matrices/matrix_2.svg" width="567" height="364" />
+<img alt="Accesarea elementului de pe al treilea rând și a cincea coloană" src="/images/matrices/matrix_2.svg" width="567" height="364" />
 
 <Callout type="info" title="Reprezentarea matricii">
   În terminologia uzuală:
@@ -71,7 +71,7 @@ Următoarea matrice are 5 rânduri și 8 coloane și este indexată de la 0. Pen
 
 În acel caz, matricea va fi stocată astfel:
 
-<img alt="O matrice unde indexarea începe de la 1; există spații goale pentru elementele cu rândul sau coloana 0." src="./images/matrices/matrix_index_1.svg" width="567" height="364" />
+<img alt="O matrice unde indexarea începe de la 1; există spații goale pentru elementele cu rândul sau coloana 0." src="/images/matrices/matrix_index_1.svg" width="567" height="364" />
 
 ### Parcurgere și atribuire de valori
 
@@ -111,7 +111,7 @@ Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor
 
 În acest caz, folosim pentru ambele dimensiuni o singură variabilă. De obicei se folosește `n`, însă în acest articol vom folosi `dim` (de la *dimensiune*). Așa arată una:
 
-<img alt="O matrice pătratică cu 5 rânduri și 5 coloane" src="./images/matrices/matrix_patratica_1.svg" width="364" height="364" />
+<img alt="O matrice pătratică cu 5 rânduri și 5 coloane" src="/images/matrices/matrix_patratica_1.svg" width="364" height="364" />
 
 Într-o matrice pătratică avem *diagonale*. Distingem două diagonale:
 
@@ -120,7 +120,7 @@ Problema presupune citirea unei matrice și calcularea sumei tuturor elementelor
 
 Următoarea poză arată diagonala principală a matricei de mai sus:
 
-<img alt="Diagonala principală a matricei de mai sus" src="./images/matrices/matrix_patratica_diag_principala.svg" width="364" height="364" />
+<img alt="Diagonala principală a matricei de mai sus" src="/images/matrices/matrix_patratica_diag_principala.svg" width="364" height="364" />
 
 Elementele care aparțin acestei diagonale se află la (0, 0), (1, 1), (2, 2), (3, 3), (4, 4). De aici, putem deriva faptul că elementele diagonalei principale sunt cele pentru care rândul coincide cu coloana. Asta ne permite să scriem următorul cod care parcurge diagonala principală:
 
@@ -138,7 +138,7 @@ Același lucru se aplică pentru indexarea de la 1, doar că va fi `for (int i =
 
 Pentru matricea noastră, așa va arăta diagonala secundară:
 
-<img alt="Diagonala secundara a matricei de mai sus" src="./images/matrices/matrix_patratica_diag_secundara.svg" width="364" height="364" />
+<img alt="Diagonala secundara a matricei de mai sus" src="/images/matrices/matrix_patratica_diag_secundara.svg" width="364" height="364" />
 
 Elementele care aparțin acestei diagonale se află la (0, 4), (1, 3), (2, 2), (3, 1), (4, 0). Remarcăm că dacă adunăm rândul și coloana, obținem 4, care este cu unu mai mic decât dimensiunea matricei. Asta ne permite să scriem următorul cod care parcurge diagonala secundară:
 
@@ -168,11 +168,11 @@ Firește, dacă avem o diagonală, putem vorbi și despre elementele de deasupra
 
 Așa arată elementele de deasupra, respectiv de sub diagonala principală:
 
-<img alt="Ce e sub și peste diagonala principală a matricei" src="./images/matrices/matrix_patratica_diag_principala_regiuni.svg" width="775" height="364" />
+<img alt="Ce e sub și peste diagonala principală a matricei" src="/images/matrices/matrix_patratica_diag_principala_regiuni.svg" width="775" height="364" />
 
 Așa arată elementele de deasupra, respectiv de sub diagonala secundară:
 
-<img alt="Ce e sub și peste diagonala secundară a matricei" src="./images/matrices/matrix_patratica_diag_secondara_regiuni.svg" width="755" height="364" />
+<img alt="Ce e sub și peste diagonala secundară a matricei" src="/images/matrices/matrix_patratica_diag_secondara_regiuni.svg" width="755" height="364" />
 
 Indicii urmează următoarele reguli:
 
@@ -264,7 +264,7 @@ Aici, vrem să ne folosim de structura matricii pentru a procesa diagonalele, de
 
 Parcurgerea matricii în spirală este un tip de cerință ce apare des în problemele de informatică și este de multe ori, un tip de cerință care pun mari dificultăți celor care vor să devină mai pricepuți la implementare.
 
-<img alt="" src="../images/matrici/spirala.png" width="169" height="154" />
+<img alt="" src="/images/matrici/spirala.png" width="169" height="154" />
 
 Există foarte multe moduri de a implementa corect algoritmul de parcurgere în spirală, dar aici ne vom concentra pe două dintre variante.
 
@@ -274,7 +274,7 @@ O primă variantă constă în a simula cele patru mutări pentru fiecare zonă 
 
 Cu alte cuvinte, acoperim fiecare zonă colorată diferit în imaginea de mai jos și începem mereu de pe linia și coloana i.
 
-<img alt="" src="../images/matrici/tinta.png" width="355" height="289" />
+<img alt="" src="/images/matrici/tinta.png" width="355" height="289" />
 
 Aici puteți găsi implementarea din limbajul C++ a soluției pentru problema [spirala de pe pbinfo](https://www.pbinfo.ro/probleme/211/spirala) care folosește această tehnică.
 

@@ -1,24 +1,26 @@
-import { getPageImage, source } from '@/lib/source';
+import { getPageImage, source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,
   DocsPage,
   DocsTitle,
-} from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
-import { getMDXComponents } from '@/mdx-components';
-import { randomUUID } from 'crypto';
-import type { Metadata } from 'next';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
+} from "fumadocs-ui/page";
+import { notFound, redirect } from "next/navigation";
+import { getMDXComponents } from "@/mdx-components";
+import { randomUUID } from "crypto";
+import type { Metadata } from "next";
+import { createRelativeLink } from "fumadocs-ui/mdx";
 
 function resolveTitle(title?: string | null): string {
   const trimmed = title?.trim();
   if (trimmed) return trimmed;
-  return randomUUID().replace(/-/g, '').slice(0, 12);
+  return randomUUID().replace(/-/g, "").slice(0, 12);
 }
 
-export default async function Page(props: PageProps<'/[[...slug]]'>) {
+export default async function Page(props: PageProps<"/[[...slug]]">) {
   const params = await props.params;
+  if (!params.slug?.length) redirect("/home");
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
@@ -45,9 +47,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<'/[[...slug]]'>,
+  props: PageProps<"/[[...slug]]">
 ): Promise<Metadata> {
   const params = await props.params;
+  if (!params.slug?.length) redirect("/home");
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
