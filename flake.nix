@@ -40,12 +40,10 @@
           bun2 = bun2nix.packages.${system}.default;
         in
         {
-          # Build the Next.js site with bun2nix
           packages.arhiva-educationala = pkgs.stdenv.mkDerivation {
             pname = "arhiva-educationala";
             version = "1.0.0";
 
-            # If the Next app lives in a subdirectory, point src there instead
             src = ./.;
 
             nativeBuildInputs = [
@@ -53,29 +51,23 @@
               bun2.hook
             ];
 
-            # Force bun to use the pre-fetched cache and avoid network access
             bunInstallFlags = [
               "--offline"
               "--linker=isolated"
             ];
 
-            # Consume bun.nix created by `bunx bun2nix -o bun.nix`
             bunDeps = bun2.fetchBunDeps {
               bunNix = ./bun.nix;
             };
 
-            # Assumes package.json has "build": "next build"
             buildPhase = ''
               bun run build
             '';
 
-            # Keep it simple: ship the whole repo tree including .next, node_modules, etc.
             installPhase = ''
-              # Drop dev-shell artifacts that create dangling symlinks inside the output
               rm -rf .direnv .devenv result result-* .git
               mkdir -p "$out"
               cp -R . "$out"
-              # Remove any remaining broken symlinks (e.g., from cached dev shells)
               find "$out" -xtype l -delete
             '';
           };
@@ -179,13 +171,12 @@
             users.groups.${cfg.group} = { };
 
             systemd.services.arhiva-educationala = {
-              description = "Arhiva Educationala (Next.js via Bun)";
+              description = "Arhiva Educationala";
               wantedBy = [ "multi-user.target" ];
               after = [ "network.target" ];
 
               serviceConfig = {
-                WorkingDirectory = cfg.workingDirectory;
-                # Assumes package.json has "start": "next start -p $PORT"
+                WorkingDirectory = "${cfg.package}";
                 ExecStart = "${pkgs.bun}/bin/bun run start";
 
                 Environment = [
