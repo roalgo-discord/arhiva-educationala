@@ -160,6 +160,12 @@
               type = types.str;
               default = "arhiva-educationala";
             };
+
+            workingDirectory = mkOption {
+              type = types.str;
+              default = "/var/lib/arhiva-educationala";
+              description = "Working directory used by the systemd service.";
+            };
           };
 
           config = mkIf cfg.enable {
@@ -178,7 +184,7 @@
               after = [ "network.target" ];
 
               serviceConfig = {
-                WorkingDirectory = "${cfg.package}";
+                WorkingDirectory = cfg.workingDirectory;
                 # Assumes package.json has "start": "next start -p $PORT"
                 ExecStart = "${pkgs.bun}/bin/bun run start";
 
