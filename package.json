@@ -7,6 +7,10 @@
     "dev": "next dev --turbo",
     "start": "next start",
     "postinstall": "fumadocs-mdx && bun2nix -o bun.nix",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint && lint:mdx",
     "lint:mdx": "remark \"content/**/*.mdx\" --quiet --frail",
     "format:mdx": "remark \"content/**/*.mdx\" --output",
@@ -48,6 +52,7 @@
     "@types/node": "24.9.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@vitest/ui": "^2.1.8",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.9",
     "eslint-plugin-mdx": "^3.6.2",
@@ -61,6 +66,7 @@
     "remark-preset-lint-recommended": "^7.0.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "vitest": "^2.1.8"
   }
 }
