@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  plugins: [react()],
   test: {
     globals: true,
-    environment: 'node',
-    setupFiles: ['./vitest.setup.ts'],
+    environment: 'happy-dom',
+    setupFiles: [],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -13,9 +15,8 @@ export default defineConfig({
         'node_modules/',
         '.next/',
         'content/',
-        '**/*.config.*',
+        '**/*.config.{ts,js}',
         '**/*.d.ts',
-        '**/types.ts',
       ],
     },
   },
