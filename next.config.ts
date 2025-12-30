@@ -2,11 +2,8 @@ import { createMDX } from "fumadocs-mdx/next";
 const withMDX = createMDX();
 
 const config = {
+  output: 'standalone' as const,
   reactStrictMode: true,
-  eslint: {
-    // Skip ESLint during production builds; lint in CI or separately.
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {

@@ -49,6 +49,7 @@
             nativeBuildInputs = [
               pkgs.bun
               bun2.hook
+              pkgs.makeWrapper
             ];
 
             bunInstallFlags = [
@@ -65,10 +66,21 @@
             '';
 
             installPhase = ''
-              rm -rf .direnv .devenv result result-* .git
-              mkdir -p "$out"
-              cp -R . "$out"
-              find "$out" -xtype l -delete
+              mkdir -p $out/.next
+
+              # Copy only standalone output (traced dependencies)
+              cp -r .next/standalone/. $out/
+              cp -r .next/static $out/.next/static
+              cp -r public $out/public
+
+              # Remove dangling symlinks
+              find $out -xtype l -delete
+
+              # Create wrapper script
+              mkdir -p $out/bin
+              makeWrapper ${pkgs.nodejs}/bin/node $out/bin/arhiva-educationala \
+                --chdir $out \
+                --add-flags "$out/server.js"
             '';
           };
 
@@ -176,8 +188,7 @@
               after = [ "network.target" ];
 
               serviceConfig = {
-                WorkingDirectory = "${cfg.package}";
-                ExecStart = "${pkgs.bun}/bin/bun run start";
+                ExecStart = "${cfg.package}/bin/arhiva-educationala";
 
                 Environment = [
                   "PORT=${toString cfg.port}"
