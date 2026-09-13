@@ -150,6 +150,7 @@ nav:
               - Introducere: bacalaureat/intro.md
               - Roadmap: bacalaureat/roadmap.md
       - Ușor:
+              - usor/index.md
               - Informații utile:
                       - De unde începi?: usor/how-to-start.md
                       - Ordinea învățării conținuturilor (roadmap): usor/roadmap.md
@@ -176,6 +177,7 @@ nav:
               - Introducere în programarea dinamică: usor/intro-dp.md
               - Introducere în teoria grafurilor: usor/graphs.md
       - Mediu:
+              - mediu/index.md
               - Informații utile:
                       - Cum repari o soluție greșită?: mediu/debugging.md
                       - Cum ajungi tot mai bun la concursuri?: mediu/contest-improvement.md
@@ -228,6 +230,7 @@ nav:
                       - Hashing: mediu/hashing.md
                       - Meet in the Middle: mediu/mitm.md
       - Dificil:
+              - dificil/index.md
               - Pregătirea problemelor:
                       - Cum propui și pregătești o problemă?: dificil/problemsetting.md
               - Tehnici de rezolvare a problemelor:
@@ -271,6 +274,7 @@ nav:
                       - Bitsets: dificil/bitsets.md
                       - Algoritmi randomizați: dificil/random-algorithms.md
       - Avansat:
+              - avansat/index.md
               - Algebră:
                       - Algoritmi de compresie și de corectare a erorilor:
                               - Coduri Gray: avansat/gray-codes.md

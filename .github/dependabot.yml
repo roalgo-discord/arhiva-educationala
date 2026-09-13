@@ -19,6 +19,9 @@ updates:
      # MkDocs 2.0 removes the plugin system and breaks theme overrides.
      - dependency-name: "mkdocs"
        update-types: [ "version-update:semver-major" ]
+     # 1.2.3 adds a dependency on properdocs, a second MkDocs distribution.
+     - dependency-name: "mkdocs-redirects"
+       versions: [ ">=1.2.3" ]
    groups:
      mkdocs:
        patterns: [ "*" ]

@@ -84,3 +84,25 @@
 {% endif %}
 
 {{ page.content }}
+
+{#- Section landing pages (frontmatter `section_index: true`) list the
+    section's contents straight from the nav, so the list never goes stale. -#}
+{% macro render_section_items(items) %}
+  <ul>
+    {% for item in items %}
+      {% if item.is_section %}
+        <li>
+          <strong>{{ item.title }}</strong>
+          {{ render_section_items(item.children) }}
+        </li>
+      {% elif item != page %}
+        <li><a href="{{ item.url | url }}">{{ item.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% if page.meta.section_index and page.parent %}
+  <h2 id="continut">Conținut</h2>
+  {{ render_section_items(page.parent.children) }}
+{% endif %}
