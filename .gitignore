@@ -40,3 +40,9 @@ next-env.d.ts
 .open-next
 
 .wrangler/
+
+# mkdocs
+/site
+/data
+.cache
+__pycache__/

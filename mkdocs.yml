@@ -67,7 +67,7 @@ extra:
                         Folosim cookie-uri pentru a recunoaște vizitele și preferințele  dumneavoastră repetate, precum și pentru a măsura eficacitatea  arhivei noastre și pentru a verifica dacă utilizatorii găsesc  ceea ce caută. Prin consimțământul dumneavoastră, ne ajutați  să ne îmbunătățim arhiva.
 
 copyright: >-
-        Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai multe detalii consultă <a href="/arhiva-educationala/licenta">pagina de licență </a>. <a href="#__consent">Schimbă setările pentru cookie-uri</a>
+        Acest conținut este licențiat sub CC BY-NC-SA 4.0 și EUPL v1.2. Pentru mai multe detalii consultă <a href="/licenta/">pagina de licență</a>. <a href="#__consent">Schimbă setările pentru cookie-uri</a>
 
 markdown_extensions:
       - pymdownx.arithmatex:
@@ -106,7 +106,6 @@ repo_name: roalgo-discord/arhiva-educationala
 edit_uri: edit/main/docs/
 
 hooks:
-      - draft.py
       - authors.py
       - prerequisites.py
 
@@ -119,6 +118,14 @@ plugins:
                 enabled: !ENV [ CI, false ]
                 cards_layout_options:
                         font_family: Inter
+      # URLs served by the Fumadocs site (Dec 2025 - 2026) that moved back
+      # to their original MkDocs paths.
+      - redirects:
+                redirect_maps:
+                        home/index.md: index.md
+                        home/licenta.md: licenta.md
+                        ai/index.md: ai/intro.md
+                        olimpiada/index.md: olimpiada/olympiad-info.md
 
 nav:
       - Acasă: index.md
@@ -1769,9 +1776,9 @@ not_in_nav: |
 
 extra_javascript:
       - javascripts/katex.js
-      - https://unpkg.com/katex@0/dist/katex.min.js
-      - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+      - https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.js
+      - https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/contrib/auto-render.min.js
 
 extra_css:
-      - https://unpkg.com/katex@0/dist/katex.min.css
+      - https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.css
       - stylesheets/style.css
