@@ -30,7 +30,7 @@ jobs:
       uses: cachix/install-nix-action@v31
 
     - name: Configure Cachix cache
-      uses: cachix/cachix-action@v16
+      uses: cachix/cachix-action@v17
       with:
         name: devenv
 
