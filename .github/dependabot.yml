@@ -10,3 +10,20 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+
+ - package-ecosystem: "pip"
+   directory: "/"
+   schedule:
+     interval: weekly
+   ignore:
+     # MkDocs 2.0 removes the plugin system and breaks theme overrides.
+     - dependency-name: "mkdocs"
+       update-types: [ "version-update:semver-major" ]
+   groups:
+     mkdocs:
+       patterns: [ "*" ]
+
+ - package-ecosystem: "github-actions"
+   directory: "/"
+   schedule:
+     interval: weekly
