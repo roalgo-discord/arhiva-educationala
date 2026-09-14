@@ -12,7 +12,17 @@ tags:
 
 Articolul va fi disponibil curând în arhivă.
 
-Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20(regional%20olympiad)/2003/10/rezolvare%20spirala.txt).
+Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2003/10/rezolvare%20spirala.txt).
+
+<div class="editorial-text" markdown>
+
+```text
+Se calculeaza pentru fiecare pozitie numarul de amestecari dupa care se repeta pozitia respectiva (perioda principala).
+Se calculeaza pentru toti divizorii d ai celui mai mic multiplu comun al numerelor calculate (tinut ca factori primi si exponentii corespunzatori) numarul de pozitii care se repeta dupa d amestecari.
+Sursa comisiei genereaza divizorii cu bkt pe exponentii descompunerii in factori primi.
+```
+
+</div>
 
 ## Rezolvare
 

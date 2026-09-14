@@ -12,7 +12,30 @@ tags:
 
 Articolul va fi disponibil curând în arhivă.
 
-Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20(regional%20olympiad)/2014/05/martisoare.txt).
+Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2014/05/martisoare.txt).
+
+<div class="editorial-text" markdown>
+
+```text
+P1- martisoare
+Solutie – complexitate O(N) - prof.Ana Intuneric
+
+Solutia se bazeaza pe observatia ca este suficient sa determinam
+primul numar modificat.
+
+Sunt doua cazuri clare
+
+a)primele doua numere sunt nemodificate, caz in care se calculeaza
+imediat numarul maxim si se cauta primul numar modificat comparand
+cifrele sale cu cifrele numarului care trebuia sa fie pe respectiva
+pozitie in fisier
+
+b)unul dintre primele doua numere sau amandoua sunt modificate. In
+acest caz se citesc doar primele 4 numere si se trateaza combinatiile
+posibile de numere modificate
+```
+
+</div>
 
 ## Rezolvare
 

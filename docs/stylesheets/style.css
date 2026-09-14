@@ -173,6 +173,20 @@ ul .prereq-list {
 } 
 */
 
+/* Official editorials embedded in OJI/ONI solution pages */
+.md-typeset .editorial-embed iframe {
+    display: block;
+    width: 100%;
+    height: min(85vh, 60rem);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.2rem;
+}
+
+.md-typeset .editorial-text pre > code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
 .md-typeset h3 {
     font-weight: 500;
 }

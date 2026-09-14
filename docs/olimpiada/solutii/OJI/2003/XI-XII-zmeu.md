@@ -12,7 +12,25 @@ tags:
 
 Articolul va fi disponibil curând în arhivă.
 
-Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20(regional%20olympiad)/2003/11-12/solutie%20zmeu.txt).
+Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2003/11-12/solutie%20zmeu.txt).
+
+<div class="editorial-text" markdown>
+
+```text
+Problema propusa de prof. Dana Lica (Ploiesti)
+
+Se lucreaza pe un graf orientat in care nodurile reprezinta povesti
+si din care s-au eliminat niste arce (date in zmeu.in, i->1,  p->i si 1->p)
+
+Rezolvarea are la baza un algoritm de tip Lee cu memorarea in fiecare nod
+a tuturor timpilor minimi cu care se ajunge in nodul respectiv cu 1,2,...,c
+capete netaiate.
+
+Pentru testele mari sunt necesare tehnici de alocare si optimizari legate de
+parcurgerea in latime a grafului.
+```
+
+</div>
 
 ## Rezolvare
 

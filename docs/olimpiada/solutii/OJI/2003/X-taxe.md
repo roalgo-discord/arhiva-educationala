@@ -12,7 +12,15 @@ tags:
 
 Articolul va fi disponibil curând în arhivă.
 
-Până atunci, editorialul poate fi accesat în repo-ul nostru de GitHub, linkul fiind [acesta](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20(regional%20olympiad)/2003/10/rezolvare%20taxe.txt).
+Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2003/10/rezolvare%20taxe.txt).
+
+<div class="editorial-text" markdown>
+
+```text
+se aplica un algoritm de tip Lee care expandeaza o coada ce contine initial doar starea (1,1,S) cu toate starile in care se poate ajunge dintr-o pozitie data. Se adauga starile noi sau se actualizeaza starile in care se poate ajunge cu mai multi bani in buzunar.
+```
+
+</div>
 
 ## Rezolvare
 
