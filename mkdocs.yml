@@ -741,7 +741,7 @@ nav:
                                                       - conexidad: olimpiada/solutii/OJI/2019/XI-XII-conexidad.md
                                                       - rufe: olimpiada/solutii/OJI/2019/XI-XII-rufe.md
                                                       - tairos: olimpiada/solutii/OJI/2019/XI-XII-tairos.md
-                              - OJI 2020-2025:
+                              - OJI 2020-2026:
                                       - OJI 2020:
                                               - Clasa a V-a:
                                                       - cartonase: olimpiada/solutii/OJI/2020/V-cartonase.md
@@ -892,6 +892,31 @@ nav:
                                                       - Aventura: olimpiada/solutii/OJI/2025/XI-XII-aventura.md
                                                       - Cromatic: olimpiada/solutii/OJI/2025/XI-XII-cromatic.md
                                                       - Experimente: olimpiada/solutii/OJI/2025/XI-XII-experimente.md
+                                      - OJI 2026:
+                                              - Clasa a V-a:
+                                                      - numere: olimpiada/solutii/OJI/2026/V-numere.md
+                                                      - oac: olimpiada/solutii/OJI/2026/V-oac.md
+                                              - Clasa a VI-a:
+                                                      - 10cifre: olimpiada/solutii/OJI/2026/VI-10cifre.md
+                                                      - zudt: olimpiada/solutii/OJI/2026/VI-zudt.md
+                                              - Clasa a VII-a:
+                                                      - bonsai: olimpiada/solutii/OJI/2026/VII-bonsai.md
+                                                      - mario: olimpiada/solutii/OJI/2026/VII-mario.md
+                                              - Clasa a VIII-a:
+                                                      - algocoin: olimpiada/solutii/OJI/2026/VIII-algocoin.md
+                                                      - pisicesc: olimpiada/solutii/OJI/2026/VIII-pisicesc.md
+                                              - Clasa a IX-a:
+                                                      - posta: olimpiada/solutii/OJI/2026/IX-posta.md
+                                                      - cibernetica: olimpiada/solutii/OJI/2026/IX-cibernetica.md
+                                                      - collatz: olimpiada/solutii/OJI/2026/IX-collatz.md
+                                              - Clasa a X-a:
+                                                      - unuzero: olimpiada/solutii/OJI/2026/X-unuzero.md
+                                                      - inghetata: olimpiada/solutii/OJI/2026/X-inghetata.md
+                                                      - mister: olimpiada/solutii/OJI/2026/X-mister.md
+                                              - Clasele XI-XII:
+                                                      - knight: olimpiada/solutii/OJI/2026/XI-XII-knight.md
+                                                      - rotatii: olimpiada/solutii/OJI/2026/XI-XII-rotatii.md
+                                                      - eliberare: olimpiada/solutii/OJI/2026/XI-XII-eliberare.md
                       - Olimpiada Națională de Informatică (ONI):
                               - ONI 1998-2009:
                                       - ONI 1998:
@@ -1631,7 +1656,7 @@ nav:
                                                       - compact: olimpiada/solutii/ONI/2019/XI-XII-compact.md
                                                       - hipersimetrie: olimpiada/solutii/ONI/2019/XI-XII-hipersimetrie.md
                                                       - linegraph: olimpiada/solutii/ONI/2019/XI-XII-linegraph.md
-                              - ONI 2020-2024:
+                              - ONI 2020-2026:
                                       - ONI 2021:
                                               - Clasa a V-a:
                                                       - ktlon: olimpiada/solutii/ONI/2021/V-ktlon.md
@@ -1748,6 +1773,64 @@ nav:
                                                       - Arbore: olimpiada/solutii/ONI/2024/XI-XII-arbore.md
                                                       - Detonator: olimpiada/solutii/ONI/2024/XI-XII-detonator.md
                                                       - Zid: olimpiada/solutii/ONI/2024/XI-XII-zid.md
+                                      - ONI 2025:
+                                              - Clasa a V-a:
+                                                      - Cartonașe: olimpiada/solutii/ONI/2025/V-cartonase.md
+                                                      - Căsuțe: olimpiada/solutii/ONI/2025/V-casute.md
+                                                      - Perechi: olimpiada/solutii/ONI/2025/V-perechi.md
+                                              - Clasa a VI-a:
+                                                      - diff: olimpiada/solutii/ONI/2025/VI-diff.md
+                                                      - prime: olimpiada/solutii/ONI/2025/VI-prime.md
+                                                      - special: olimpiada/solutii/ONI/2025/VI-special.md
+                                              - Clasa a VII-a:
+                                                      - Alvn: olimpiada/solutii/ONI/2025/VII-alvn.md
+                                                      - Conturi: olimpiada/solutii/ONI/2025/VII-conturi.md
+                                                      - Succesori: olimpiada/solutii/ONI/2025/VII-succesori.md
+                                              - Clasa a VIII-a:
+                                                      - Mușuroi: olimpiada/solutii/ONI/2025/VIII-musuroi.md
+                                                      - Notwen: olimpiada/solutii/ONI/2025/VIII-notwen.md
+                                                      - Program: olimpiada/solutii/ONI/2025/VIII-program.md
+                                              - Clasa a IX-a:
+                                                      - Dashgame: olimpiada/solutii/ONI/2025/IX-dashgame.md
+                                                      - Echilibrare: olimpiada/solutii/ONI/2025/IX-echilibrare.md
+                                                      - Antidivizor: olimpiada/solutii/ONI/2025/IX-antidivizor.md
+                                              - Clasa a X-a:
+                                                      - Candidati: olimpiada/solutii/ONI/2025/X-candidati.md
+                                                      - Minish: olimpiada/solutii/ONI/2025/X-minish.md
+                                                      - Sirag: olimpiada/solutii/ONI/2025/X-sirag.md
+                                              - Clasele XI-XII:
+                                                      - Experimente2: olimpiada/solutii/ONI/2025/XI-XII-experimente2.md
+                                                      - Festival: olimpiada/solutii/ONI/2025/XI-XII-festival.md
+                                                      - Prisonbreak: olimpiada/solutii/ONI/2025/XI-XII-prisonbreak.md
+                                      - ONI 2026:
+                                              - Clasa a V-a:
+                                                      - biatlon: olimpiada/solutii/ONI/2026/V-biatlon.md
+                                                      - lacate: olimpiada/solutii/ONI/2026/V-lacate.md
+                                                      - sotron: olimpiada/solutii/ONI/2026/V-sotron.md
+                                              - Clasa a VI-a:
+                                                      - operatii: olimpiada/solutii/ONI/2026/VI-operatii.md
+                                                      - pinball: olimpiada/solutii/ONI/2026/VI-pinball.md
+                                                      - snake: olimpiada/solutii/ONI/2026/VI-snake.md
+                                              - Clasa a VII-a:
+                                                      - Mapat: olimpiada/solutii/ONI/2026/VII-mapat.md
+                                                      - Tricouri: olimpiada/solutii/ONI/2026/VII-tricouri.md
+                                                      - Alchimie: olimpiada/solutii/ONI/2026/VII-alchimie.md
+                                              - Clasa a VIII-a:
+                                                      - bafta: olimpiada/solutii/ONI/2026/VIII-bafta.md
+                                                      - dj: olimpiada/solutii/ONI/2026/VIII-dj.md
+                                                      - zapada: olimpiada/solutii/ONI/2026/VIII-zapada.md
+                                              - Clasa a IX-a:
+                                                      - scuderia: olimpiada/solutii/ONI/2026/IX-scuderia.md
+                                                      - polen: olimpiada/solutii/ONI/2026/IX-polen.md
+                                                      - canonic: olimpiada/solutii/ONI/2026/IX-canonic.md
+                                              - Clasa a X-a:
+                                                      - blind: olimpiada/solutii/ONI/2026/X-blind.md
+                                                      - calculator: olimpiada/solutii/ONI/2026/X-calculator.md
+                                                      - cercetasi: olimpiada/solutii/ONI/2026/X-cercetasi.md
+                                              - Clasele XI-XII:
+                                                      - eprubete: olimpiada/solutii/ONI/2026/XI-XII-eprubete.md
+                                                      - loop: olimpiada/solutii/ONI/2026/XI-XII-loop.md
+                                                      - wind: olimpiada/solutii/ONI/2026/XI-XII-wind.md
                       - RoAlgo Contests:
                               - RoAlgo Weekly Contests:
                                       - RoAlgo Weekly Contest 0: olimpiada/solutii/roalgo/roalgo-weekly/weekly-0.md
