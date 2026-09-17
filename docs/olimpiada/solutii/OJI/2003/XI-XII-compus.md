@@ -3,14 +3,12 @@ id: OJI-2003-XI-XII-compus
 title: Soluția problemei compus (OJI 2003, clasele XI-XII)
 problem_id: 55
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - ad-hoc
 tags:
     - OJI
     - clasa XI-XII
 ---
-
-Articolul va fi disponibil curând în arhivă.
 
 Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2003/11-12/solutie%20compus.txt).
 
@@ -99,14 +97,25 @@ Am ajuns in O(N)!!
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
+ifstream f("compus.in");
+ofstream g("compus.out");
+int n;
+long long ans;
 int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a + b << '\n';
+    f >> n;
+    for (int i = n / 8; i <= (n - 5) / 5; ++i) {
+        int m = n - (i + 1) * 5;
+        if (m > 0) {
+            int l = max(m - (i - 1) * 2, 0);
+            l += (l % 2 != m % 2);
+            if (m >= l * 3)
+                ans += (m - l * 3) / 6 + 1;
+        } else
+            ans += (m == 0);
+    }
+    g << ans << '\n';
     return 0;
 }
 ```

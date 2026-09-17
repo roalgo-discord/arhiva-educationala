@@ -88,52 +88,112 @@ aceleași valori ca mai sus.
 Mai jos puteți găsi o soluție care ia punctajul maxim.
 
 ```cpp
+// credits: munteanuvlad98 (kilonova)
 #include <bits/stdc++.h>
 
 using namespace std;
 
-using i64 = long long;
+// 10 ^ 8 operatii in 1 secunda
+// O(....) aprox 10 ^ 8 -> 1 sec
+ifstream fin("summat.in");
+ofstream fout("summat.out");
+
+long long solve(int n, int m) {
+    int i1, j1, i2, j2;
+    fin >> i1 >> j1 >> i2 >> j2;
+
+    long long ans = 0;
+    int lastI = 1, lastJ = 0;
+
+    for (int i = 1; i <= 60; ++i) {
+        long long dim = (1LL << (i - 1)); // 2 ^ (i - 1)
+
+        lastJ += 1;
+        if (lastJ > m) {
+            lastI += 1;
+            lastJ = 1;
+        }
+        if (lastI > n)
+            break;
+
+        if (m - lastJ + 1 >= dim) {
+            // avem doar linia respectiva care contine elementul actual
+            int jStart = lastJ;
+            int jEnd = lastJ + dim - 1;
+            lastJ = jEnd;
+
+            if (lastI < i1 or lastI > i2)
+                continue;
+
+            // Intersectia lui jStart,jEnd cu j1,j2
+
+            int jIntersectStart = max(jStart, j1);
+            int jIntersectEnd = min(jEnd, j2);
+
+            // daca jIntersectStart <= jIntersectEnd -> avem intersectie
+
+            if (jIntersectStart <= jIntersectEnd) {
+                ans += 1LL * i * (jIntersectEnd - jIntersectStart + 1);
+            }
+        } else {
+            // avem cel putin doua linii
+            int iStart = lastI;
+            int jStart = lastJ;
+
+            dim -= (m - lastJ + 1);      // scadem din dim prima linia;
+            int iEnd = iStart + dim / m; // iEnd este iStart + numarul de linii complete
+            int jEnd = m;                // jEnd este la finalul ultimei linii complete
+
+            if (dim % m > 0) { // mai avem elemente ramase
+                iEnd += 1;
+                jEnd = dim % m;
+            }
+            lastI = iEnd;
+            lastJ = jEnd;
+
+            if (i1 <= iStart and iStart <= i2) {
+                // prima linie e in matrice
+                // intersectia dintre j1 j2 si jStart m
+                int jIntersectStart = max(jStart, j1);
+                int jIntersectEnd = min(m, j2);
+
+                // daca jIntersectStart <= jIntersectEnd -> avem intersectie
+
+                if (jIntersectStart <= jIntersectEnd) {
+                    ans += 1LL * i * (jIntersectEnd - jIntersectStart + 1);
+                }
+            }
+            if (i1 <= iEnd and iEnd <= i2) {
+                // ultima linie e in matrice
+                // intersectia dintre j1 j2 si 1 jEnd
+                int jIntersectStart = max(1, j1);
+                int jIntersectEnd = min(jEnd, j2);
+
+                // daca jIntersectStart <= jIntersectEnd -> avem intersectie
+
+                if (jIntersectStart <= jIntersectEnd) {
+                    ans += 1LL * i * (jIntersectEnd - jIntersectStart + 1);
+                }
+            }
+            // trebuie sa adaugam si liniile complete
+            // pentru liniile
+            // intersectia dintre i1 i2 si iStart+1 iEnd-1
+
+            int iIntersectStart = max(i1, iStart + 1);
+            int iIntersectEnd = min(i2, iEnd - 1);
+            if (iIntersectStart <= iIntersectEnd) {
+                ans += 1LL * i * (iIntersectEnd - iIntersectStart + 1) * (j2 - j1 + 1);
+            }
+        }
+    }
+    return ans;
+}
 
 int main() {
-#ifndef LOCAL
-    freopen("summat.in", "r", stdin);
-    freopen("summat.out", "w", stdout);
-#endif
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-    int N, M, Q;
-    cin >> N >> M >> Q;
-    while (Q--) {
-        int x1, y1, x2, y2;
-        cin >> x1 >> y1 >> x2 >> y2;
-        x1--, y1--, x2--, y2--;
-        i64 s = 0;
-        i64 ans = 0;
-        int t = 1;
-        while (s <= 1ll * N * M) {
-            int last_i = s / M;
-            int last_j = s % M;
-            s += (1ll << (t - 1));
-            int i = (s - 1) / M;
-            int j = (s - 1) % M;
-
-            if (i == last_i && x1 <= i && i <= x2) {
-                ans += 1ll * max(0, min(y2, j) - max(last_j - 1, y1 - 1)) * t;
-            } else {
-                if (x1 <= last_i && last_i <= x2) {
-                    ans += 1ll * max(y2 - max(last_j - 1, y1 - 1), 0) * t;
-                }
-                if (x1 <= i && i <= x2) {
-                    ans += 1ll * max(min(j, y2) - y1 + 1, 0) * t;
-                }
-                ans += 1ll * max(min(i - 1, x2) - max(x1 - 1, last_i), 0)
-                     * (y2 - y1 + 1) * t;
-            }
-            t++;
-        }
-
-        cout << ans << "\n";
+    int n, m, q;
+    fin >> n >> m >> q;
+    for (int i = 0; i < q; i++) {
+        fout << solve(n, m) << '\n';
     }
     return 0;
 }

@@ -3,8 +3,8 @@ id: OJI-2026-IX-posta
 title: Soluția problemei posta (OJI 2026, clasa a IX-a)
 problem_id: 4223
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - divisibility
 tags:
     - OJI
     - clasa IX
@@ -25,14 +25,23 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: brianabcr (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream fin("posta.in");
+ofstream fout("posta.out");
 
-    cout << a + b << '\n';
+int main() {
+    long long n, gcd;
+    fin >> n >> gcd;
+    gcd--;
+    for (int i = 2; i <= n; i++) {
+        long long x;
+        fin >> x;
+        gcd = __gcd(gcd, x - 1);
+    }
+    fout << gcd;
     return 0;
 }
 ```

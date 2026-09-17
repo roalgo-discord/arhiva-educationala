@@ -3,12 +3,11 @@ id: OJI-2003-V-pinochio
 title: Soluția problemei pinochio (OJI 2003, clasa a V-a)
 problem_id: 714
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa V
-draft: true
 ---
 
 Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://github.com/roalgo-discord/arhiva-educationala) sau pe [serverul nostru de discord](https://discord.gg/vdDRSmg3fC)
@@ -16,14 +15,17 @@ Daca vreti sa ne ajutati cu acest articol, ne puteti gasi pe [github](https://gi
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: roland (kilonova)
+#include <fstream>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream fin("pinochio.in");
+ofstream fout("pinochio.out");
 
-    cout << a + b << '\n';
-    return 0;
+int main() {
+  int n, p, k;
+  fin>>n>>p>>k;
+  fout<<n + k*p - ((k+1)/7)*(p+1) - (k/7)*(p+1);
+  return 0;
 }
 ```

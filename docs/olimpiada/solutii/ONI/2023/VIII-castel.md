@@ -25,14 +25,84 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: munteanuvlad98 (kilonova)
+#include <bits/stdc++.h>
+
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+struct dreptunghi {
+    int a, b, c, d;
+} prefixe[200005], sufixe[200005], v[200005];
 
-    cout << a + b << '\n';
+dreptunghi join(dreptunghi a, dreptunghi b) {
+    dreptunghi res;
+    res.a = max(a.a, b.a);
+    res.b = max(a.b, b.b);
+    res.c = min(a.c, b.c);
+    res.d = min(a.d, b.d);
+    return res;
+}
+
+pair<bool, pair<int, int>> getPoint(dreptunghi a) {
+    if (a.a > a.c)
+        return {false, {0, 0}};
+    if (a.b > a.d)
+        return {false, {0, 0}};
+
+    return {true, {a.a, a.b}};
+}
+
+long long getDistance(pair<int, int> A) { return 1LL * A.first * A.first + 1LL * A.second * A.second; }
+
+int main() {
+    freopen("castel.in", "r", stdin);
+    freopen("castel.out", "w", stdout);
+    int n;
+    cin >> n;
+    n += 1;
+    for (int i = 1; i <= n; ++i) {
+        cin >> v[i].a >> v[i].d >> v[i].c >> v[i].b;
+    }
+    prefixe[1] = v[1];
+    for (int i = 2; i <= n; ++i) {
+        prefixe[i] = join(prefixe[i - 1], v[i]);
+    }
+
+    sufixe[n] = v[n];
+    for (int i = n - 1; i >= 1; --i) {
+        sufixe[i] = join(sufixe[i + 1], v[i]);
+    }
+
+    bool found = false;
+    pair<int, int> answer = {1000000, 1000000};
+
+    for (int i = 1; i <= n; ++i) {
+        pair<bool, pair<int, int>> result;
+        if (i == 1) {
+            result = getPoint(sufixe[i + 1]);
+        } 
+        else if (i == n) {
+            result = getPoint(prefixe[i - 1]);
+        } 
+        else {
+            result = getPoint(join(prefixe[i - 1], sufixe[i + 1]));
+        }
+        if (result.first) {
+            found = true;
+            if (getDistance(result.second) < getDistance(answer)) {
+                answer = result.second;
+            } 
+            else if (getDistance(result.second) == getDistance(answer)) {
+                answer = min(answer, result.second);
+            }
+        }
+    }
+
+    if (!found) {
+        cout << "NU";
+        return 0;
+    }
+    cout << answer.first << ' ' << answer.second;
     return 0;
 }
 ```
