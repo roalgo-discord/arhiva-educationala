@@ -10,9 +10,7 @@ tags:
     - clasa V
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/05/sir.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/05/sir.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2010/05/sir.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -25,36 +23,62 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <fstream>
-
+#include <bits/stdc++.h>
 using namespace std;
-ifstream fin("sir.in");
-ofstream fout("sir.out");
-long long k, x, a, b, k2, i, sm, x2, pow = 1, cnt;
+
+int k, x, a, b;
 int main() {
-    fin >> k >> x >> a >> b;
-    k2 = k;
-    for (i = 1; i <= k; i++) {
-        sm = sm + k2 * i;
-        k2--;
-    }
-    fout << sm % 10 << '\n';
-    x2 = x;
-    while (x2 > 0) {
-        x2 = x2 / 10;
-        cnt++;
-        pow = pow * 10;
-    }
-    pow = pow / 10;
-    if (x / pow == cnt) {
-        for (i = 1; i <= cnt + 1; i++) {
-            fout << i;
+    ifstream cin("sir.in");
+    ofstream cout("sir.out");
+
+    cin >> k >> x >> a >> b;
+    int sum = 0;
+
+    for (int i = 1; i <= k; i++) {
+        int smallest = 0;
+        for (int j = 1; j <= i; j++)
+            smallest = (smallest * 10 + j);
+        int put = 1;
+        while (put * 10 <= smallest)
+            put *= 10;
+        for (int j = 1; j <= i; j++) {
+            sum = (sum + smallest % 10) % 10;
+            int cif = smallest / put;
+            smallest -= cif * put;
+            smallest *= 10;
+            smallest += cif;
         }
-        fout << endl;
-    } else {
-        fout << (x % pow) * 10 + (x / pow) << '\n';
     }
-    fout << max(1LL * 0, b - a);
+
+    cout << sum << '\n';
+    bool foundX = 0;
+    int ans = 0;
+    int cnt = 0;
+    for (int i = 1; i <= 9; i++) {
+        int smallest = 0;
+        for (int j = 1; j <= i; j++)
+            smallest = (smallest * 10 + j);
+        int put = 1;
+        while (put * 10 <= smallest)
+            put *= 10;
+        for (int j = 1; j <= i; j++) {
+            if (foundX == 1 && ans == 0)
+                ans = smallest;
+            if (smallest == x)
+                foundX = 1;
+
+            sum = (sum + smallest % 10) % 10;
+            int cif = smallest / put;
+            if (cif == a && i < b)
+                cnt++;
+            smallest -= cif * put;
+            smallest *= 10;
+            smallest += cif;
+        }
+    }
+
+    cout << ans << '\n';
+    cout << cnt << '\n';
     return 0;
 }
 ```

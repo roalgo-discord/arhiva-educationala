@@ -2,9 +2,9 @@
 id: OJI-2017-IX-roboti
 title: Soluția problemei roboti (OJI 2017, clasa a IX-a)
 problem_id: 878
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [colin]
+prerequisites:
+    - ad-hoc
 tags:
     - OJI
     - clasa IX
@@ -120,14 +120,57 @@ Se va afisa apoi secventa q[m], q[m+1],...,q[M]
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+#include <algorithm>
+
 using namespace std;
+const int NMAX = 100002;
 
+ifstream cin("roboti.in");
+ofstream cout("roboti.out");
+
+int v[2 * NMAX], ans[NMAX];
 int main() {
-    int a, b;
-    cin >> a >> b;
 
-    cout << a + b << '\n';
+    int cer, n;
+    cin >> cer >> n;
+    if(cer == 1) {
+        int cnt = 1, maxx = 1;
+        for(int i = 1; i <= n; i++) {
+            cin >> v[i];
+            v[n + i] = v[i];
+        }
+        for(int i = 2; i <= 2 * n; i++) {
+            if(v[i - 1] < v[i])
+                cnt++;
+            else {
+                if(cnt > maxx)
+                    maxx = cnt;
+                cnt = 1;
+            }
+        }
+        cout << maxx;
+    }
+    else {
+        for(int i = 0; i < n; i++)
+            cin >> v[i];
+        sort(v, v + n);
+
+
+        int st = 1, dr = n - 1; ///completam cercul in 2 dir
+        ans[0] = v[0];
+        for(int i = 1; i < n; i++) {
+            ///dc-s egale, punem < in st, ca lexicog
+            ///punem intot la al mai mic, ca sa ne ramana alea mari
+            if(ans[st - 1] <= ans[(dr + 1) % n])
+                ans[st++] = v[i];
+            else
+                ans[dr--] = v[i];
+        }
+        for(int i = 0; i < n; i++)
+            cout << ans[i] << " ";
+    }
     return 0;
 }
 ```

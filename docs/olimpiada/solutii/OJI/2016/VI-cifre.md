@@ -2,17 +2,15 @@
 id: OJI-2016-VI-cifre
 title: Soluția problemei cifre (OJI 2016, clasa a VI-a)
 problem_id: 868
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [sgroza]
+prerequisites:
+    - digits-manipulation
 tags:
     - OJI
     - clasa VI
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2016/06/cifre.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2016/06/cifre.txt).
 
 <div class="editorial-text" markdown>
 
@@ -32,14 +30,91 @@ Dacă valoarea obtinută este strict pozitiva, se numără ca solutie, actualiza
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: AntonioCC (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+int main()
+{
+    ifstream fin("cifre.in");
+    ofstream fout("cifre.out");
 
-    cout << a + b << '\n';
+    int P, N;
+
+    fin >> P >> N;
+
+    if(P == 1){
+        int A[10], B[10], nr1, nr2, nrCutiute = 0;
+
+        for(int i = 0; i < N; i++){
+            fin >> nr1 >> nr2;
+
+            for(int j = 0; j < 10; j++)
+                A[j] = B[j] = 0;
+
+            while(nr1 != 0){
+                A[nr1 % 10]++;
+                nr1 = nr1 / 10;
+            }
+
+            while(nr2 != 0){
+                B[nr2 % 10]++;
+                nr2 = nr2 / 10;
+            }
+
+            int k = 0, esteZero = 0;
+            for(int j = 0; j < 10; j++)
+                if(A[j] != 0 && B[j] != 0){
+                    k++;
+                    if(j == 0)
+                        esteZero = 1;
+                }
+
+            if(k >= 2 || (k == 1 && esteZero == 0))
+                nrCutiute++;
+        }
+
+        fout << nrCutiute;
+    }
+    else{
+        int A[10], B[10], nr1, nr2, nrCutiute = 0;
+        long long nrMax = 0;
+
+        for(int i = 0; i < N; i++){
+            fin >> nr1 >> nr2;
+
+            for(int j = 0; j < 10; j++)
+                A[j] = B[j] = 0;
+
+            while(nr1 != 0){
+                A[nr1 % 10]++;
+                nr1 = nr1 / 10;
+            }
+
+            while(nr2 != 0){
+                B[nr2 % 10]++;
+                nr2 = nr2 / 10;
+            }
+
+            long long nr = 0;
+            for(int j = 9; j >= 0; j--){
+                int minim = min(A[j], B[j]);
+                while(minim != 0){
+                    nr = nr * 10 + j;
+                    minim--;
+                }
+            }
+
+            if(nr > nrMax)
+                nrMax = nr;
+        }
+
+        fout << nrMax;
+    }
+
+    fin.close();
+    fout.close();
+
     return 0;
 }
 ```

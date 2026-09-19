@@ -2,17 +2,17 @@
 id: OJI-2017-XI-XII-armonica
 title: Soluția problemei armonica (OJI 2017, clasele XI-XII)
 problem_id: 26
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [panaete]
+prerequisites:
+    - basic-math
+    - ad-hoc
+    - backtracking
 tags:
     - OJI
     - clasa XI-XII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/11-12/armonica.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/11-12/armonica.txt).
 
 <div class="editorial-text" markdown>
 
@@ -72,14 +72,54 @@ Complexitatea algoritmului este O(sqrt(b)).
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
+ifstream f("armonica.in");
+ofstream g("armonica.out");
+long long b;
+vector<pair<long long, long long>> v;
+vector<pair<long long, int>> dv;
+void fct(long long x) {
+    for (int i = 2; i * i <= x; ++i)
+        if (x % i == 0) {
+            dv.push_back({i, 0});
+            while (x % i == 0)
+                dv.back().second += 2, x /= i;
+        }
+    if (x > 1)
+        dv.push_back({x, 2});
+}
+void bkt(long long poz, long long d) {
+    if (poz == dv.size()) {
+        long long a, c, x;
+        if (b & 1) {
+            x = (b * b) / d;
+            a = (b + d) / 2;
+            c = (b + x) / 2;
+        } else {
+            x = b * b / 4 / d;
+            a = b / 2 + d;
+            c = b / 2 + x;
+        }
+        v.push_back({a, c});
+        return;
+    }
+    long long i = dv[poz].first, j = dv[poz].second, m = 1;
+    for (int q = 0; q <= j; q++) {
+        bkt(poz + 1, d * m);
+        m *= i;
+    }
+}
 int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a + b << '\n';
+    f >> b;
+    if (b % 2)
+        fct(b);
+    else
+        fct(b / 2);
+    bkt(0, 1);
+    g << (int)v.size() << '\n';
+    for (int i = 0; i < v.size(); ++i)
+        g << v[i].first << " " << v[i].second << '\n';
     return 0;
 }
 ```

@@ -10,9 +10,7 @@ tags:
     - clasa V
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/05/tren.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/05/tren.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2010/05/tren.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -25,46 +23,82 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <fstream>
+#include <bits/stdc++.h>
 using namespace std;
-ifstream fi("tren.in");
-ofstream fo("tren.out");
-int x, t, y, z, u, t1, l, h, m, s, i, j, vine, pleaca, g[1441], v[101], inc = 1441, sf;
+
+struct trenuri {
+    int L, h, m, s;
+};
+trenuri tr[1001];
+
+int seen[87000];
 int main() {
-    fi >> t;
-    for (i = 1; i <= t; i++) {
-        fi >> l >> h >> m >> s;
-        vine = h * 60 + m;
-        pleaca = vine + s;
-        if (i == 1) 
-            inc = vine;
-        if (sf < pleaca) 
-            sf = pleaca;
-        if (l == 1) {
-            t1++;
-            for (j = vine; j <= pleaca; j++) 
-                g[j] = i;
-        } else
-            for (j = vine; j <= pleaca; j++)
-                if (g[j] == 0) 
-                    g[j] = i;
-        // trenul de pe linia 2 este vizibil numai daca nu avem tren pe linia 1
+    ifstream cin("tren.in");
+    ofstream cout("tren.out");
+
+    int n;
+    cin >> n;
+
+    int cnt1 = 0, cnt2 = 0;
+
+    for (int i = 1; i <= n; i++) {
+        int L, h, m, s;
+        cin >> L >> h >> m >> s;
+        tr[i] = {L, h, m, s};
+        if (L == 1)
+            cnt1++;
+        else
+            cnt2++;
     }
-    z = (t1 > t - t1) ? t1 : t - t1;  // numărul maxim de trenuri de pe o linie
-    y = 0;
-    for (i = inc; i <= sf; i++) {
-        v[g[i]] = 1;         // trenul care se află în momentul i în gară este vizibil
-        if (g[i] == 0) u++;  // u=numărul de minute consecutive în care
-        // ambele linii sunt libere
-        else {
-            if (u > y) y = u;
-            u = 0;
+
+    cout << max(cnt1, cnt2) << " ";
+
+    int cnt = 0;
+
+    for (int i = 1; i <= n; i++)
+        if (tr[i].L == 1) {
+            for (int j = tr[i].h * 60 + tr[i].m; j <= tr[i].h * 60 + tr[i].m + tr[i].s; j++)
+                seen[j] = 1;
+            cnt++;
         }
+    for (int i = 1; i <= n; i++)
+        if (tr[i].L == 2) {
+            bool ok = 0;
+            for (int j = tr[i].h * 60 + tr[i].m; j <= tr[i].h * 60 + tr[i].m + tr[i].s; j++)
+                if (seen[j] == 0)
+                    ok = 1;
+
+            if (ok) {
+                for (int j = tr[i].h * 60 + tr[i].m; j <= tr[i].h * 60 + tr[i].m + tr[i].s; j++)
+                    seen[j] = 1;
+                cnt++;
+            }
+        }
+
+    cout << cnt << " ";
+
+    int maxi = 0;
+
+    int smll = 0;
+    int bgg = 0;
+
+    for (int i = 0; i <= 86420; i++) {
+        if (smll == 0 && seen[i] == 1)
+            smll = i;
+        if (seen[i] == 1)
+            bgg = i;
     }
-    x = 0;
-    for (i = 1; i <= t; i++) 
-        x = x + v[i];
-    fo << z << ' ' << x << ' ' << y;
+
+    int strk = 0;
+    for (int i = smll; i <= bgg; i++) {
+        if (seen[i] == 1)
+            strk = 0;
+        else
+            strk++;
+        maxi = max(maxi, strk);
+    }
+
+    cout << maxi;
     return 0;
 }
 ```

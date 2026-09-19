@@ -2,17 +2,16 @@
 id: OJI-2017-V-numere
 title: Soluția problemei numere (OJI 2017, clasa a V-a)
 problem_id: 879
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [cardas]
+prerequisites:
+    - basic-math
+    - simulating-solution
 tags:
     - OJI
     - clasa V
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/05/numere.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/05/numere.txt).
 
 <div class="editorial-text" markdown>
 
@@ -48,14 +47,53 @@ pana cand l=c
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
-    int a, b;
-    cin >> a >> b;
 
-    cout << a + b << '\n';
+    ifstream cin("numere.in");
+    ofstream cout("numere.out");
+
+    int c, n;
+    int v[10002];
+
+    cin >> c;
+    cin >> n;
+
+    int dif = 0;
+
+    int nr = 1;
+    if (c == 1) {
+        for (int i = 1; i <= n; i++)
+            cin >> v[i];
+        for (int i = 1; i <= n; i++) {
+            if (v[i] == 2)
+                dif++;
+            nr += i;
+        }
+        cout << nr + dif << '\n';
+    } else {
+        int grp = 1;
+        int val = 1;
+        while (val + grp - 1 < n) {
+            val += grp;
+            grp++;
+        }
+        int start = 1;
+        for (int i = 1; i < grp; i++) {
+            start += i;
+        }
+        int sum = 0;
+        for (int i = grp; i >= 1; i--) {
+            if (start + i - 1 < n)
+                n--;
+            sum += n;
+            start -= (i - 1);
+            n -= (i - 1);
+        }
+        cout << sum << '\n';
+    }
     return 0;
 }
 ```

@@ -4,8 +4,8 @@ title: Soluția problemei piramide (OJI 2014, clasa a V-a)
 problem_id: 843
 authors:
     - traian
-# prerequisites:
-#    - digits-manipulation
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa V

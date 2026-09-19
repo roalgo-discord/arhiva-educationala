@@ -2,17 +2,15 @@
 id: OJI-2009-VI-factori
 title: Soluția problemei factori (OJI 2009, clasa a VI-a)
 problem_id: 786
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [marinel]
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa VI
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2009/06/factori.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2009/06/factori.txt).
 
 <div class="editorial-text" markdown>
 
@@ -95,14 +93,46 @@ Multitudinea de abordari de implementare permite obtinerea de punctaje din toata
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: AntonioCC (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+int main()
+{
+    ifstream fin("factori.in");
+    ofstream fout("factori.out");
 
-    cout << a + b << '\n';
+    int n;
+
+    fin >> n;
+
+    while(n != 0){
+        int V[60000] = {0}, d, dMax = 0;
+
+        for(int i = 2; i <= n; i++){
+            int aux = i, d = 2;
+            while(aux > 1){
+                int p = 0;
+                while(aux % d == 0){
+                    p++;
+                    aux = aux / d;
+                }
+                V[d] = V[d] + p;
+                d++;
+                if(d > dMax)
+                    dMax = d;
+                if(aux > 1 && d * d > aux)
+                    d = aux;
+            }
+        }
+
+        for(int i = 0; i < dMax; i++)
+            if(V[i] != 0)
+                fout << V[i] << " ";
+        fout << endl;
+
+        fin >> n;
+    }
     return 0;
 }
 ```

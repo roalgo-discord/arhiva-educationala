@@ -4,8 +4,8 @@ title: Soluția problemei bete (OJI 2013, clasa a V-a)
 problem_id: 831
 authors:
     - traian
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - ad-hoc
 tags:
     - OJI
     - clasa V

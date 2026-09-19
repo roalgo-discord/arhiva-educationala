@@ -2,17 +2,16 @@
 id: OJI-2017-IX-ace
 title: Soluția problemei ace (OJI 2017, clasa a IX-a)
 problem_id: 876
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [odumitrascu]
+prerequisites:
+    - divisibility
+    - basic-geometry
 tags:
     - OJI
     - clasa IX
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/09/ace.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2017/09/ace.txt).
 
 <div class="editorial-text" markdown>
 
@@ -36,14 +35,83 @@ Solutia optima are complexitate O(NxM).
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+#include <iomanip>
+#include <cmath>
+
 using namespace std;
+const int NMAX = 1002;
+using ld = long double;
+#define double ld
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("ace.in");
+ofstream cout("ace.out");
 
-    cout << a + b << '\n';
+int v[NMAX][NMAX];
+bool f[NMAX][NMAX]; ///vizitatele
+signed main()
+{
+    int cer, n, m;
+    cin >> cer >> n >> m;
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= m; j++)
+            cin >> v[i][j];
+
+    int cnt = 0, nr = 0;
+    double maxx = -1;
+    for(int i = n - 1; i >= 1; i--) { ///vest
+        f[i][m] = 1, nr++;
+        double ip = sqrt((n - i) * (n - i) + (v[i][m] * v[i][m]));
+        if((double)v[i][m] / ip > maxx) {
+            cnt++;
+            maxx = (double)v[i][m] / ip;
+        }
+    }
+    maxx = -1;
+    for(int j = m - 1; j >= 1; j--) { ///nord
+        f[n][j] = 1, nr++;
+        double ip = sqrt((m - j) * (m - j) + (v[n][j] * v[n][j]));
+        if((double)v[n][j] / ip > maxx) {
+            cnt++;
+            maxx = (double)v[n][j] / ip;
+        }
+    }
+    if(cer == 1) {
+        cout << cnt;
+        return 0;
+    }
+
+    for(int i = n - 1; i >= 1; i--) {
+        for(int j = m - 1; j >= 1; j--) {
+            if(nr == n * m - 1)
+                break;
+            if(f[i][j] == 1)
+                continue;
+
+            maxx = v[i][j];
+            cnt++;
+            int difN = n - i, difM = m - j;
+            int baza = 1; ///de cate ori e scaderea, deci basically de cate ori inm cateta
+
+            for(int x = 1; i - x * difN >= 1 && j - x * difM >= 1; x++) {
+                int ci = i - x * difN, cj = j - x * difM;
+
+                ///comp tg --> v[ci][cj] / (x + 1) > maxx / baza,
+                ///si le inv ca sa nu bagam double de 1000 de ori
+                if(v[ci][cj] * baza > maxx * (x + 1)) { ///tg
+                    if(f[ci][cj] == 0) ///ca sa nu adunam de mai multe ori
+                        cnt++;
+                    maxx = v[ci][cj];
+                    baza = x + 1;
+                }
+                f[ci][cj] = 1;
+            }
+        }
+        if(nr == n * m - 1)
+            break;
+    }
+    cout << cnt;
     return 0;
 }
 ```

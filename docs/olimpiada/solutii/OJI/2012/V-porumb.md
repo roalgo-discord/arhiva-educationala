@@ -4,8 +4,8 @@ title: Soluția problemei porumb (OJI 2012, clasa a V-a)
 problem_id: 820
 authors:
     - traian
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa V

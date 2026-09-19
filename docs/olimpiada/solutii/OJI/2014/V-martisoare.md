@@ -2,17 +2,16 @@
 id: OJI-2014-V-martisoare
 title: Soluția problemei martisoare (OJI 2014, clasa a V-a)
 problem_id: 842
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [aintuneric]
+prerequisites:
+    - basic-math
+    - simulating-solution
 tags:
     - OJI
     - clasa V
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2014/05/martisoare.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2014/05/martisoare.txt).
 
 <div class="editorial-text" markdown>
 
