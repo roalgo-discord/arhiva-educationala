@@ -2,17 +2,15 @@
 id: OJI-2011-VIII-adunscad
 title: Soluția problemei adunscad (OJI 2011, clasa a VIII-a)
 problem_id: 813
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [marinel]
+prerequisites:
+    - backtracking
 tags:
     - OJI
     - clasa VIII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2011/08/adunscad.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2011/08/adunscad.txt).
 
 <div class="editorial-text" markdown>
 
@@ -56,14 +54,45 @@ Solutii alternative:
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <algorithm>
+#include <fstream>
+#include <string>
 using namespace std;
-
+int v[200];
+int target;
+string rez;
+void check(string ss, int sumy) {
+    if (sumy == target)
+        rez = ss;
+}
+void sum(int ind, int n, string op, int suma) {
+    if (rez != "")
+        return;
+    if (ind > n) {
+        check(op, suma);
+        return;
+    }
+    string nr = to_string(v[ind]);
+    sum(ind + 1, n, op + "+" + nr, suma + v[ind]);
+    sum(ind + 1, n, op + "-" + nr, suma - v[ind]);
+}
 int main() {
-    int a, b;
-    cin >> a >> b;
+    ifstream cin("adunscad.in");
+    ofstream cout("adunscad.out");
+    int n;
+    cin >> target >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> v[i];
+    string r = to_string(v[1]);
+    sum(2, n, r, v[1]);
+    sum(2, n, "-" + r, -v[1]);
+    if (rez == "") {
+        cout << "0\n";
+        return 0;
+    }
+    cout << rez;
 
-    cout << a + b << '\n';
     return 0;
 }
 ```
