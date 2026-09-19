@@ -2,17 +2,16 @@
 id: OJI-2013-VII-compar
 title: Soluția problemei compar (OJI 2013, clasa a VII-a)
 problem_id: 834
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [cerchez]
+prerequisites:
+    - greedy
+    - sorting
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2013/07/compar.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2013/07/compar.txt).
 
 <div class="editorial-text" markdown>
 
@@ -47,14 +46,41 @@ Daca caracterul curent din sir este '>', se afiseaza maximul si se micsoreaza cu
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
 using namespace std;
-
+ 
 int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a + b << '\n';
-    return 0;
+	
+    ifstream cin("compar.in");
+    ofstream cout("compar.out");
+    
+    string arr;
+    cin >> arr;
+    int n = arr.size() + 1;
+    vector<pair<int, int>> vals = {{0, 0}};
+    int start = 0;
+    for (int i = 1; i < n; i++) {
+		if (arr[i-1] == '>') {
+			start--;
+		}
+		else {
+			start++;
+		}
+		vals.push_back({start, i});
+	}
+	sort(vals.begin(), vals.end());
+	start = 1;
+	vector<int> assigns(n);
+	for (auto i: vals) {
+		assigns[i.second] = start;
+		start++;
+	}
+    cout << n << '\n';
+	for (auto i: assigns) {
+		cout << i << ' ';
+	}
 }
 ```

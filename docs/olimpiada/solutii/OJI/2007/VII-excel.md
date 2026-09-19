@@ -3,16 +3,15 @@ id: OJI-2007-VII-excel
 title: Soluția problemei excel (OJI 2007, clasa a VII-a)
 problem_id: 765
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - simulating-solution
+    - strings
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/07/Excel.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/07/Excel.txt).
 
 <div class="editorial-text" markdown>
 
@@ -40,14 +39,66 @@ Se asigura ca matricea se poate completa prin transformarea valorilor corespunza
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+using ll = long long;
+#define pb push_back
 
-    cout << a + b << '\n';
+const string FILE_NAME = "excel";
+const int MAX_N = 50, MAX_M = 26;
+
+string tabel[MAX_N + 5][MAX_M + 5];
+
+int main() {
+#ifndef LOCAL
+    ifstream cin(FILE_NAME + ".in");
+        ofstream cout(FILE_NAME + ".out");
+#endif
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int m, n, lin, col, i, ans;
+    string expr, pos;
+
+    cin >> m >> n;
+    for (lin = 1; lin <= n; lin++) {
+        for (col = 1; col <= m; col++) {
+            cin >> tabel[lin][col];
+        }
+    }
+
+    for (col = 1; col <= m; col++) {
+        for (lin = 1; lin <= n; lin++) {
+            if (tabel[lin][col][0] == '=') {
+                /* este o formula */
+
+                expr = tabel[lin][col];
+                pos = "";
+                ans = 0;
+                expr.push_back('+'); /* to also count the last pos */
+                for (i = 1; i < expr.size(); i++) {
+                    if (expr[i] != '+') {
+                        pos.pb(expr[i]);
+                    } else {
+                        ans += stoi(tabel[stoi(pos.substr(1))][pos[0] - 'A' + 1]);
+                        pos = "";
+                    }
+                }
+
+                tabel[lin][col] = to_string(ans);
+            }
+        }
+    }
+
+    for (lin = 1; lin <= n; lin++) {
+        for (col = 1; col <= m; col++) {
+            cout << tabel[lin][col] << ' ';
+        }
+        cout << '\n';
+    }
     return 0;
 }
 ```

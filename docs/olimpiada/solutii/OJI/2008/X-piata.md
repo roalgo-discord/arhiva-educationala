@@ -2,17 +2,16 @@
 id: OJI-2008-X-piata
 title: Soluția problemei Piața (OJI 2008, clasa a X-a)
 problem_id: 781
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [dapopescu]
+prerequisites:
+    - ad-hoc
+    - partial-sums
 tags:
     - OJI
     - clasa X
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2008/10/piata.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2008/10/piata.txt).
 
 <div class="editorial-text" markdown>
 
@@ -72,14 +71,42 @@ se scrie in fisier s
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+
 using namespace std;
+const int NMAX = 40002;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("piata.in");
+ofstream cout("piata.out");
 
-    cout << a + b << '\n';
+int v[2 * NMAX], sp[2 * NMAX];
+int sumcif(int x) {
+    int sum = 0;
+    while(x > 0) {
+        sum += x % 10;
+        x /= 10;
+    }
+    return sum;
+}
+int main()
+{
+    int n, i1, j1, i2, j2;
+    cin >> n >> i1 >> j1 >> i2 >> j2;
+    for(int i = 1; i <= n; i++) {
+        int a = sumcif(i);
+        v[i] = a;
+        v[i + n] = a;
+    }
+    for(int i = 1; i <= 2 * n; i++)
+        sp[i] = sp[i - 1] + v[i];
+
+    int posj = n + 1 - i1 + j1, dif = j2 - j1 + 1, ans = 0;
+    for(int i = i1; i <= i2; i++) {
+        ans += (sp[posj + dif - 1] - sp[posj - 1]);
+        posj--;
+    }
+    cout << ans;
     return 0;
 }
 ```

@@ -2,17 +2,16 @@
 id: OJI-2016-VII-galerie
 title: Soluția problemei galerie (OJI 2016, clasa a VII-a)
 problem_id: 871
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [sichim]
+prerequisites:
+    - matrices
+    - lee
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2016/07/galerie.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2016/07/galerie.txt).
 
 <div class="editorial-text" markdown>
 
@@ -49,14 +48,125 @@ Când toate cârtițele se opresc, se determină max{li|1≤i≤t}.
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+const int MAXN = 200, MAXM = 200, MAXT = 2 * (MAXN + MAXM);
+const int EST = 0, SUD = 1, VEST = 2, NORD = 3, DIR = 4;
 
-    cout << a + b << '\n';
+struct Cartita {
+    int lin, col, dir, nrSap;
+    bool sapa;
+} cartite[MAXT + 1];
+
+int teren[MAXN + 2][MAXM + 2], f[MAXT + 1];
+int dlin[DIR] = {0, 1, 0, -1};
+int dcol[DIR] = {1, 0, -1, 0};
+
+ifstream fin("galerie.in");
+ofstream fout("galerie.out");
+
+int main() {
+    int cer, n, m, t, i, poz, lin, col, nr, newLin, newCol, val, maxSap, maxGal;
+    bool gata;
+
+    fin >> cer >> n >> m >> t;
+
+    for (i = 1; i <= t; i++) {
+        fin >> poz;
+
+        // Coloana, Linia si Directia pentru fiecare cartita
+        if (poz <= m) {
+            cartite[i].lin = 0;
+            cartite[i].col = poz;
+            cartite[i].dir = SUD;
+        } else if (poz <= n + m) {
+            cartite[i].lin = poz - m;
+            cartite[i].col = m + 1;
+            cartite[i].dir = VEST;
+        } else if (poz <= 2 * m + n) {
+            cartite[i].lin = n + 1;
+            cartite[i].col = 2 * m + n + 1 - poz;
+            cartite[i].dir = NORD;
+        } else {
+            cartite[i].lin = 2 * (m + n) + 1 - poz;
+            cartite[i].col = 0;
+            cartite[i].dir = EST;
+        }
+
+        cartite[i].sapa = 1;
+        cartite[i].nrSap = 0;
+    }
+
+    // Bordare
+    for (lin = 1; lin <= n; lin++) {
+        teren[lin][0] = teren[lin][m + 1] = -1;
+    }
+
+    for (col = 1; col <= m; col++) {
+        teren[0][col] = teren[n + 1][col] = -1;
+    }
+
+    // Bucla de simulare
+    gata = 0;
+    while (!gata) {
+        gata = 1; // Presupunem ca terminam runda asta
+        for(i = 1; i <= t; i++){
+            if(cartite[i].sapa){
+                gata = 0; // Am gasit pe cineva care sapa => continuam, nu terminam
+
+                cartite[i].lin += dlin[cartite[i].dir];
+                cartite[i].col += dcol[cartite[i].dir];
+                val = teren[cartite[i].lin][cartite[i].col];
+
+                if(val == -1){
+                    cartite[i].sapa = 0; // A iesit afara => nu mai sapa
+                } else if(val != 0){
+                    cartite[i].sapa = 0; // A mai sapat cineva acolo sau sapa cineva acolo => nu mai sapa
+
+                    if(cartite[i].lin == cartite[val].lin && cartite[i].col == cartite[val].col && i > val){ // Daca sapa cineva acolo
+                        cartite[val].sapa = 0; // Nu mai sapa
+                    }
+
+                    // Unim
+                    for(lin = 1; lin <= n; lin++){
+                        for(col = 1; col <= m; col++){
+                            if(teren[lin][col] == i){ // Unim cele doua galerii
+                                teren[lin][col] = val;
+                            }
+                        }
+                    }
+                } else { // Daca pozitia este goala
+
+                    teren[cartite[i].lin][cartite[i].col] = i; // Marcam ca am fost noi
+                    cartite[i].nrSap++; // Crestem contorul
+                }
+            }
+        }
+    }
+
+    if(cer == 1){
+        maxSap = 0;
+        for(i = 1; i <= t; i++){
+            maxSap = max(maxSap, cartite[i].nrSap);
+        }
+
+        fout << maxSap;
+    } else {
+        for(lin = 1; lin <= n; lin++){
+            for(col = 1; col <= m; col++){
+                f[teren[lin][col]]++; // Numaram galeriile
+            }
+        }
+        
+        maxGal = 0;
+        for(i = 1; i <= 2 * (n + m); i++){
+            maxGal = max(maxGal, f[i]);
+        }
+
+        fout << maxGal;
+    }
     return 0;
 }
 ```

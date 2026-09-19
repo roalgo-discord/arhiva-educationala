@@ -2,17 +2,15 @@
 id: OJI-2009-VII-grad
 title: Soluția problemei grad (OJI 2009, clasa a VII-a)
 problem_id: 788
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [dapopescu]
+prerequisites:
+    - strings
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2009/07/grad.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2009/07/grad.txt).
 
 <div class="editorial-text" markdown>
 
@@ -36,14 +34,52 @@ Se afiseaza k si nrg.
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream fin("grad.in");
+ofstream fout("grad.out");
 
-    cout << a + b << '\n';
+const int MAXN = 255;
+const char LASTCH = 'z';
+
+int grupe[MAXN * (LASTCH - 'a')];
+
+int main() {
+    int n, i, nrCuv, nrGrupe, grupa;
+    char ch, lastCh;
+
+    fin >> n >> std::ws;
+
+    nrCuv = 1;
+    grupa = nrGrupe = 0;
+
+    fin.get(ch);
+    lastCh = ch;
+    for(i = 0; i < n; i++){
+        if(lastCh == ' ' && ch != ' '){
+            if(grupe[grupa] == 0){
+                nrGrupe++;
+                grupe[grupa] = 1;
+            }
+
+            nrCuv++;
+            grupa = 0;
+        } 
+        if( ch != ' ' ){
+            grupa += (ch - 'a' + 1);
+        }
+
+        lastCh = ch;
+        fin.get(ch);
+    }
+    if(grupe[grupa] == 0){
+        nrGrupe++;
+        grupe[grupa] = 1;
+    }
+
+    fout << nrCuv << "\n" << nrGrupe;
     return 0;
 }
 ```

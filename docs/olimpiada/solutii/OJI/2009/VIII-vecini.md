@@ -2,9 +2,9 @@
 id: OJI-2009-VIII-vecini
 title: Soluția problemei vecini (OJI 2009, clasa a VIII-a)
 problem_id: 791
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [dfloarea]
+prerequisites:
+    - simulating-solution
 tags:
     - OJI
     - clasa VIII
@@ -37,14 +37,59 @@ Solutia (program vecini.cpp)
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+const int MAXM = 1e3, MAXN = 1e3, DIR = 8;
 
-    cout << a + b << '\n';
+char mat[MAXM + 2][MAXN + 2];
+
+int dlin[DIR] = {0, 1, 1, 1, 0, -1, -1, -1};
+int dcol[DIR] = {1, 1, 0, -1, -1, -1, 0, 1};
+
+ifstream fin("vecini.in");
+ofstream fout("vecini.out");
+
+int main() {
+    int m, n, k, i, lin, col, dir, cnt, maxCnt, maxCount;
+
+    fin >> m >> n >> k;
+    for(lin = 0; lin <= m + 1; lin++){
+        mat[lin][0] = mat[lin][n + 1] = -1;
+    }
+    
+    for(col = 0; col <= n + 1; col++){
+        mat[0][col] = mat[m + 1][col] = -1;
+    }
+
+    for (i = 0; i < k; i++) {
+        fin >> lin >> col;
+
+        mat[lin][col] = 1;
+    }
+
+    maxCnt = 0;
+    for (lin = 1; lin <= m; lin++){
+        for(col = 1; col <= n; col++){
+            cnt = 0;
+            for(dir = 0; dir < DIR; dir++){
+                if(mat[lin + dlin[dir]][col + dcol[dir]] == mat[lin][col]){
+                    ++cnt;
+                }
+            }
+
+            if(cnt > maxCnt){
+                maxCnt = cnt;
+                maxCount = 0;
+            }
+            if(cnt == maxCnt){
+                ++maxCount;
+            }
+        }
+    }
+
+    fout << maxCnt << ' ' << maxCount;
     return 0;
 }
 ```

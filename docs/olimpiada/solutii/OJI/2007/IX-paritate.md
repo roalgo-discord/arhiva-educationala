@@ -2,17 +2,15 @@
 id: OJI-2007-IX-paritate
 title: Soluția problemei paritate (OJI 2007, clasa a IX-a)
 problem_id: 758
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [marinel]
+prerequisites:
+    - strings
 tags:
     - OJI
     - clasa IX
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/09/paritate.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/09/paritate.txt).
 
 <div class="editorial-text" markdown>
 
@@ -55,14 +53,90 @@ Dupa terminarea acestui proces nu am decat sa verific variabila Eroare:
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+#define pb push_back
 
-    cout << a + b << '\n';
+vector<int> bad;
+
+int main () {
+    ifstream cin("paritate.in");
+    ofstream cout("paritate.out");
+
+    int n, i, ch_idx;
+    string s, ch, ans;
+
+    cin >> s;
+    n = s.size();
+    s = '#' + s;
+
+    auto good = [](string ch) {
+        int one = 0;
+        for (int i = 1; i < ch.size(); i++) {
+            one += (ch[i] == '1');
+        }
+        if (one % 2 == 1 && ch[0] == '0') {
+            return false;
+        }
+        if (one % 2 == 0 && ch[0] == '1') {
+            return false;
+        }
+
+        int code = 0;
+        int bit = 0;
+        for (int i = ch.size() - 1; i >= 1; i--) {
+            if (ch[i] == '1') {
+                code += (1 << bit);
+            }
+            bit++;
+        }
+        if (code == 10 || (32 <= code && code <= 127)) {
+            return true;
+        }
+        return false;
+    };
+
+    auto get_letter = [](string ch) {
+        int code = 0;
+        int bit = 0;
+        for (int i = ch.size() - 1; i >= 1; i--) {
+            if (ch[i] == '1') {
+                code += (1 << bit);
+            }
+            bit++;
+        }
+        return char(code);
+    };
+
+    i = 1;
+    ch_idx = 0;
+    ans = "";
+    while (i <= n) {
+        ch = "";
+        for (int j = 1; j <= 8; j++) {
+            ch += s[i];
+            i++;
+        }
+        // cout << ch << "\n";
+        if (!good(ch)) {
+            bad.pb(ch_idx);
+        } else {
+            ans += get_letter(ch);
+        }
+
+                ch_idx++;
+    }
+
+    if (bad.size() != 0) {
+        cout << "NU\n";
+        for (auto x : bad) {
+            cout << x << " ";
+        }
+    } else {
+        cout << "DA\n" << ans;
+    }
     return 0;
 }
 ```

@@ -3,16 +3,16 @@ id: OJI-2007-VIII-afise
 title: Soluția problemei afise (OJI 2007, clasa a VIII-a)
 problem_id: 766
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - simulating-solution
+    - sorting
+    - partial-sums
 tags:
     - OJI
     - clasa VIII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/08/afise.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2007/08/afise.txt).
 
 <div class="editorial-text" markdown>
 
@@ -43,14 +43,38 @@ dupa o zona ce trebuie acoperita.
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ridiche (kilonova)
+#include <algorithm>
+#include <fstream>
+
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream in;
+ofstream out;
 
-    cout << a + b << '\n';
-    return 0;
+int l, n, k, a[1005], gaps[1005];
+
+int main() {
+    in.open("afise.in");
+    out.open("afise.out");
+    in >> l >> n >> k;
+    for (int i = 0; i < n; i++) {
+        in >> a[i];
+    }
+    sort(a, a + n);
+    for (int i = 0; i < n - 1; i++) {
+        gaps[i] = a[i + 1] - a[i] - 1;
+    }
+    sort(gaps, gaps + (n - 1));
+    int r1 = n, r2 = n;
+    for (int i = 0; i < n - 1; i++) {
+        if (gaps[i] == 0 || r1 > k) {
+            r1--;
+            r2 += gaps[i];
+        } else {
+            break;
+        }
+    }
+    out << r2 << " " << r1;
 }
 ```

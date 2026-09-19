@@ -11,9 +11,7 @@ tags:
     - clasa X
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/10/text.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2010/10/text.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2010/10/text.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -26,14 +24,56 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+#include <vector>
+#include <stack>
+
 using namespace std;
+const int NMAX = 28;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("text.in");
+ofstream cout("text.out");
 
-    cout << a + b << '\n';
+vector <string> v;
+struct solutie_duh {
+    int val = -1;
+    vector <int> id;
+}dp[NMAX];
+
+int main()
+{
+    string ch;
+    while(cin >> ch)
+        v.push_back(ch);
+	
+    int cnt = 0;
+    for(auto s : v) {
+        if(dp[s[0] - 'a'].val != -1) { ///pot sa continui cv
+            if(dp[s[0] - 'a'].val + 1 > dp[s[s.size() - 1] - 'a'].val) {
+                dp[s[s.size() - 1] - 'a'].val = dp[s[0] - 'a'].val + 1;
+                dp[s[s.size() - 1] - 'a'].id = dp[s[0] - 'a'].id;
+                dp[s[s.size() - 1] - 'a'].id .push_back(cnt);
+            }
+        }
+        if(1 > dp[s[s.size() - 1] - 'a'].val) {
+            dp[s[s.size() - 1] - 'a'].val = 1;
+            dp[s[s.size() - 1] - 'a'].id.push_back(cnt);
+        }
+        cnt++;
+    }
+    int maxx = -1, ind = -1;
+    for(int i = 0; i <= 26; i++) {
+        if(dp[i].val > maxx) {
+            maxx = dp[i].val;
+            ind = i;
+        }
+    }
+    cout << v.size() - maxx << '\n';
+    cout << v.size() << '\n';
+
+    for(auto idd : dp[ind].id)
+        cout << v[idd] << '\n';
     return 0;
 }
 ```
