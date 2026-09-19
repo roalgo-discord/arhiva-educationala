@@ -2,17 +2,17 @@
 id: OJI-2021-X-sdistante
 title: Soluția problemei SDistanțe (OJI 2021, clasa a X-a)
 problem_id: 939
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [bodo]
+prerequisites:
+    - strings
+    - frequency-arrays
+    - ad-hoc
 tags:
     - OJI
     - clasa X
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/10.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/10.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2021/10.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -25,14 +25,51 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
+#include <algorithm>
+#include <fstream>
 #include <iostream>
-using namespace std;
+#include <queue>
+#include <utility>
+#include <vector>
+
+std::ifstream fin("sdistante.in");
+std::ofstream fout("sdistante.out");
+
+const int MOD = 1000000007;
+
+int x;
+std::string str;
+int freq[52] = {0};
+int map[128];
 
 int main() {
-    int a, b;
-    cin >> a >> b;
+    for (int i = 0; i < 26; i++) {
+        map[i + 'a'] = i;
+        map[i + 'A'] = i + 26;
+    }
 
-    cout << a + b << '\n';
-    return 0;
+    fin >> str;
+    x = str.size();
+
+    int ret = 0;
+    for (int i = 0; i < x; i++) {
+        // add to "base hamming distance"
+        ret += 1LL * (i + 1) * ((1LL * (x - i) * (x - i - 1) / 2) % MOD) % MOD;
+        if (ret >= MOD) {
+            ret -= MOD;
+        }
+
+        // subtract the ones that are equal
+        ret -= 1LL * freq[map[str[i]]] * (x - i) % MOD;
+        if (ret < 0) {
+            ret += MOD;
+        }
+        freq[map[str[i]]] += i + 1;
+        if (freq[map[str[i]]] >= MOD) {
+            freq[map[str[i]]] -= MOD;
+        }
+    }
+
+    fout << ret << "\n";
 }
 ```

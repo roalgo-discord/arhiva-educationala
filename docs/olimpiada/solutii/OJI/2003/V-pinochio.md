@@ -2,7 +2,7 @@
 id: OJI-2003-V-pinochio
 title: Soluția problemei pinochio (OJI 2003, clasa a V-a)
 problem_id: 714
-authors: []
+authors: [iordaiche]
 prerequisites:
     - basic-math
 tags:

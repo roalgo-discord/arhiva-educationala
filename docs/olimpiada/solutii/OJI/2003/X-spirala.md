@@ -2,7 +2,7 @@
 id: OJI-2003-X-spirala
 title: Soluția problemei Spirala (OJI 2003, clasa a X-a)
 problem_id: 721
-authors: []
+authors: [rpintea]
 prerequisites:
     - backtracking
     - divisibility

@@ -2,7 +2,7 @@
 id: OJI-2026-VI-zudt
 title: Soluția problemei zudt (OJI 2026, clasa a VI-a)
 problem_id: 4218
-authors: []
+authors: [pracsiu]
 prerequisites:
     - partial-sums
     - binary-search

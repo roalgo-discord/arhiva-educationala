@@ -2,7 +2,7 @@
 id: OJI-2026-XI-XII-eliberare
 title: Soluția problemei eliberare (OJI 2026, clasele XI-XII)
 problem_id: 4230
-authors: []
+authors: [zoltan]
 prerequisites:
     - toposort
 tags:

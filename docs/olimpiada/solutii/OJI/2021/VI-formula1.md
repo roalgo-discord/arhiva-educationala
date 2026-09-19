@@ -2,17 +2,15 @@
 id: OJI-2021-VI-formula1
 title: Soluția problemei formula1 (OJI 2021, clasa a VI-a)
 problem_id: 932
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [arisanu]
+prerequisites:
+    - basic-math
 tags:
     - OJI
     - clasa VI
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/06.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/06.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2021/06.pdf" title="Editorialul oficial" loading="lazy"></iframe>

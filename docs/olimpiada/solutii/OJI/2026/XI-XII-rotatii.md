@@ -2,7 +2,7 @@
 id: OJI-2026-XI-XII-rotatii
 title: Soluția problemei rotatii (OJI 2026, clasele XI-XII)
 problem_id: 4231
-authors: []
+authors: [mverzotti]
 prerequisites:
     - basic-geometry
 tags:

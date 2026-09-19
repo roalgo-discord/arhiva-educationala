@@ -2,7 +2,7 @@
 id: OJI-2002-X-cod
 title: Soluția problemei Cod (OJI 2002, clasa a X-a)
 problem_id: 710
-authors: []
+authors: [cerchez]
 prerequisites:
     - strings
     - intro-dp

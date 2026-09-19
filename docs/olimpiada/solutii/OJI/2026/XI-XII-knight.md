@@ -2,7 +2,7 @@
 id: OJI-2026-XI-XII-knight
 title: Soluția problemei knight (OJI 2026, clasele XI-XII)
 problem_id: 4229
-authors: []
+authors: [lbadea]
 prerequisites:
     - lowest-common-ancestor
     - partial-sums

@@ -2,9 +2,9 @@
 id: OJI-2004-IX-reactivi
 title: Soluția problemei reactivi (OJI 2004, clasa a IX-a)
 problem_id: 724
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [marinel]
+prerequisites:
+    - greedy
 tags:
     - OJI
     - clasa IX
@@ -41,14 +41,38 @@ Pentru a le determina procedez astfel:
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+#define l first
+#define r second
 
-    cout << a + b << '\n';
+const int N = 8e3;
+
+pair<int, int> p[N + 1];
+
+int main() {
+    ifstream cin("reactivi.in");
+    ofstream cout("reactivi.out");
+
+    int n, i;
+
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> p[i].l >> p[i].r;
+    }
+    sort(p + 1, p + n + 1, [](pair<int, int> a, pair<int, int> b) { return a.r < b.r; });
+
+    int ans = 0;
+    int last = -999999;
+    for (int i = 1; i <= n; i++) {
+        if (p[i].l > last) {
+            last = p[i].r;
+            ans++;
+        }
+    }
+    cout << ans;
     return 0;
 }
 ```

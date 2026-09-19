@@ -3,16 +3,15 @@ id: OJI-2004-VII-siruri
 title: Soluția problemei siruri (OJI 2004, clasa a VII-a)
 problem_id: 729
 authors: []
-# prerequisites:
-#    - placeholder
+prerequisites:
+    - constructive
+    - sorting
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2004/OJI%202004%20VII.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2004/OJI%202004%20VII.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2004/OJI%202004%20VII.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -25,14 +24,33 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+const int MAXN = 100;
 
-    cout << a + b << '\n';
+vector<int> ans(MAXN), v(MAXN);
+
+ifstream fin("siruri.in");
+ofstream fout("siruri.out");
+
+int main() {
+    int n, i, cnt, pnt;
+
+    fin >> n;
+    for (i = 0; i < n; i++) {
+        fin >> v[i];
+    }
+
+    cnt = 1;
+    while (cnt <= n) {
+        ans[distance(v.begin(), min_element(v.begin(), v.begin() + n))] = cnt++;
+        v[distance(v.begin(), min_element(v.begin(), v.begin() + n))] = INT_MAX;
+    }
+
+    for (i = 0; i < n; i++) {
+        fout << ans[i] << " ";
+    }
     return 0;
 }
 ```

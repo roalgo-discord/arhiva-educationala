@@ -2,7 +2,7 @@
 id: OJI-2003-VI-gardul
 title: Soluția problemei gardul (OJI 2003, clasa a VI-a)
 problem_id: 716
-authors: []
+authors: [dgrigoriu]
 prerequisites:
     - divisibility
 tags:

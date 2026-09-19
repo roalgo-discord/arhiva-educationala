@@ -2,7 +2,7 @@
 id: OJI-2003-IX-numere
 title: Soluția problemei numere (OJI 2003, clasa a IX-a)
 problem_id: 712
-authors: []
+authors: [marinel]
 prerequisites:
     - bitwise-ops
     - backtracking

@@ -2,7 +2,7 @@
 id: OJI-2003-XI-XII-zmeu
 title: Soluția problemei zmeu (OJI 2003, clasele XI-XII)
 problem_id: 56
-authors: []
+authors: [lica]
 prerequisites:
     - shortest-path
     - stl

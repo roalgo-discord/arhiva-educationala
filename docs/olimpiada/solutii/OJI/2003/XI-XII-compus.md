@@ -2,7 +2,7 @@
 id: OJI-2003-XI-XII-compus
 title: Soluția problemei compus (OJI 2003, clasele XI-XII)
 problem_id: 55
-authors: []
+authors: [cerchez]
 prerequisites:
     - ad-hoc
 tags:

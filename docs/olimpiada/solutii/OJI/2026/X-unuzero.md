@@ -2,7 +2,7 @@
 id: OJI-2026-X-unuzero
 title: Soluția problemei unuzero (OJI 2026, clasa a X-a)
 problem_id: 4226
-authors: []
+authors: [bunget]
 prerequisites:
     - dsu
 tags:

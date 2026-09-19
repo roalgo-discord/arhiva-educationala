@@ -2,7 +2,7 @@
 id: OJI-2026-VIII-algocoin
 title: Soluția problemei algocoin (OJI 2026, clasa a VIII-a)
 problem_id: 4221
-authors: []
+authors: [mnan]
 prerequisites:
     - ad-hoc
     - frequency-arrays

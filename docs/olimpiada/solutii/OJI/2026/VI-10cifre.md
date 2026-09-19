@@ -2,7 +2,7 @@
 id: OJI-2026-VI-10cifre
 title: Soluția problemei 10cifre (OJI 2026, clasa a VI-a)
 problem_id: 4217
-authors: []
+authors: [marinel]
 prerequisites:
     - frequency-arrays
 tags:

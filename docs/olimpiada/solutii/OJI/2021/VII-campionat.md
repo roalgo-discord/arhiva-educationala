@@ -2,17 +2,15 @@
 id: OJI-2021-VII-campionat
 title: Soluția problemei campionat (OJI 2021, clasa a VII-a)
 problem_id: 934
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [nicoli]
+prerequisites:
+    - simulating-solution
 tags:
     - OJI
     - clasa VII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/07.pdf).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2021/07.pdf).
 
 <div class="editorial-embed">
   <iframe src="https://cdn.jsdelivr.net/gh/roalgo-discord/Romanian-Olympiad-Solutions@main/OJI%20%28regional%20olympiad%29/2021/07.pdf" title="Editorialul oficial" loading="lazy"></iframe>
@@ -25,14 +23,71 @@ Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [rep
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <fstream>
+#define int long long
+
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("campionat.in");
+ofstream cout("campionat.out");
 
-    cout << a + b << '\n';
+int pct[1003];
+
+bool meciuri[1003][1003];
+int mecjuc[1003];
+
+signed main() {
+    int t, n, d, e1, e2;
+    cin >> t;
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cin >> pct[i];
+    }
+    cin >> d;
+    for (int i = 1; i <= d; i++) {
+        cin >> e1 >> e2;
+        if (meciuri[e2][e1] == 0) {
+            meciuri[e1][e2] = meciuri[e2][e1] = true;
+            mecjuc[e1]++;
+            mecjuc[e2]++;
+        }
+    }
+    if (t == 2) {
+        bool ye = false;
+        for (int i = 1; i <= n; i++) {
+            int scormax = mecjuc[i] * 3 + pct[i], scor = 0;
+            bool ok = true;
+            for (int j = 1; j <= n; j++) {
+                if (j != i) {
+                    scor = mecjuc[j] * 3 + pct[j];
+                    if (meciuri[i][j] == true) {
+                        scor -= 3;
+                    }
+                }
+                if (scor >= scormax)
+                    ok = false;
+            }
+            if (ok == true) {
+                cout << i << " ";
+                ye = true;
+            }
+        }
+        if (ye == false) {
+            cout << "0";
+        }
+    }
+    if (t == 1) {
+        int mx = -1;
+        for (int i = 1; i <= n; i++) {
+            mx = max(mx, mecjuc[i] + pct[i]);
+        }
+        for (int i = 1; i <= n; i++) {
+            if (mecjuc[i] + pct[i] == mx)
+                cout << i << " ";
+        }
+    }
+
     return 0;
 }
 ```

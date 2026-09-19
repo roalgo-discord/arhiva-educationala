@@ -2,7 +2,7 @@
 id: OJI-2026-VIII-pisicesc
 title: Soluția problemei pisicesc (OJI 2026, clasa a VIII-a)
 problem_id: 4222
-authors: []
+authors: [cerches]
 prerequisites:
     - hashing
     - strings

@@ -2,7 +2,7 @@
 id: OJI-2026-VII-mario
 title: Soluția problemei mario (OJI 2026, clasa a VII-a)
 problem_id: 4220
-authors: []
+authors: [jmogovan]
 prerequisites:
     - frequency-arrays
     - partial-sums

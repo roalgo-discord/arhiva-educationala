@@ -2,7 +2,7 @@
 id: OJI-2002-XI-XII-urgenta
 title: Soluția problemei urgenta (OJI 2002, clasele XI-XII)
 problem_id: 57
-authors: []
+authors: [fghetu]
 prerequisites:
     - dsu
     - graphs

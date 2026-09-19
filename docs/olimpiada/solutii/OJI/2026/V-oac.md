@@ -2,7 +2,7 @@
 id: OJI-2026-V-oac
 title: Soluția problemei oac (OJI 2026, clasa a V-a)
 problem_id: 4216
-authors: []
+authors: [iordaiche]
 prerequisites:
     - divisibility
 tags:

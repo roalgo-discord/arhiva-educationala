@@ -2,7 +2,7 @@
 id: OJI-2026-IX-collatz
 title: Soluția problemei collatz (OJI 2026, clasa a IX-a)
 problem_id: 4225
-authors: []
+authors: [aletu]
 prerequisites:
     - placeholder
 tags:

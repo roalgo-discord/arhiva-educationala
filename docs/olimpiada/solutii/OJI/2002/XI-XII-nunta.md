@@ -2,7 +2,7 @@
 id: OJI-2002-XI-XII-nunta
 title: Soluția problemei nunta (OJI 2002, clasele XI-XII)
 problem_id: 58
-authors: []
+authors: [cerchez]
 prerequisites:
     - range-dp
 tags:

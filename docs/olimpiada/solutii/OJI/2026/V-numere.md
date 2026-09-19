@@ -2,7 +2,7 @@
 id: OJI-2026-V-numere
 title: Soluția problemei numere (OJI 2026, clasa a V-a)
 problem_id: 4215
-authors: []
+authors: [timplaru]
 prerequisites:
     - ad-hoc
 tags:

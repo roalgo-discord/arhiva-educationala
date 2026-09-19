@@ -2,7 +2,7 @@
 id: OJI-2026-IX-cibernetica
 title: Soluția problemei cibernetica (OJI 2026, clasa a IX-a)
 problem_id: 4224
-authors: []
+authors: [ignat]
 prerequisites:
     - frequency-arrays
 tags:

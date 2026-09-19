@@ -2,7 +2,7 @@
 id: OJI-2026-X-mister
 title: Soluția problemei mister (OJI 2026, clasa a X-a)
 problem_id: 4228
-authors: []
+authors: [tamionv]
 prerequisites:
     - deque
 tags:

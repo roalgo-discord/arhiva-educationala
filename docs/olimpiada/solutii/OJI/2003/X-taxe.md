@@ -2,7 +2,7 @@
 id: OJI-2003-X-taxe
 title: Soluția problemei Taxe (OJI 2003, clasa a X-a)
 problem_id: 722
-authors: []
+authors: [dpopa]
 prerequisites:
     - lee
 tags:

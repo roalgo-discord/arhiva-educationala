@@ -2,7 +2,7 @@
 id: OJI-2026-VII-bonsai
 title: Soluția problemei bonsai (OJI 2026, clasa a VII-a)
 problem_id: 4219
-authors: []
+authors: [rcotoi]
 prerequisites:
     - partial-sums
     - binary-search

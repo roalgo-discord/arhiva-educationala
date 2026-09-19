@@ -2,7 +2,7 @@
 id: OJI-2003-IX-text
 title: Soluția problemei text (OJI 2003, clasa a IX-a)
 problem_id: 711
-authors: []
+authors: [cerchez]
 prerequisites:
     - strings
 tags:

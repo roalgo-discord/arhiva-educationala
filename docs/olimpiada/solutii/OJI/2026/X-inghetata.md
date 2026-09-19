@@ -2,7 +2,7 @@
 id: OJI-2026-X-inghetata
 title: Soluția problemei inghetata (OJI 2026, clasa a X-a)
 problem_id: 4227
-authors: []
+authors: [mbenchea]
 prerequisites:
     - intro-combinatorics
 tags:
