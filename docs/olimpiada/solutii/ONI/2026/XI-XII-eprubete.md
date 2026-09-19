@@ -23,7 +23,7 @@ Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-// credits: FFFPeOJI (kilonova)
+// credits: FFTPeOJI (kilonova)
 
 #include <bits/stdc++.h>
 #include <cassert>

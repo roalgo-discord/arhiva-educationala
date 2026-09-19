@@ -2,17 +2,16 @@
 id: OJI-2006-IX-flori
 title: Soluția problemei flori (OJI 2006, clasa a IX-a)
 problem_id: 747
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [bohm]
+prerequisites:
+    - simulating-solution
+    - dsu
 tags:
     - OJI
     - clasa IX
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2006/09/flori.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2006/09/flori.txt).
 
 <div class="editorial-text" markdown>
 
@@ -62,14 +61,106 @@ flori - solutie
 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+#include <set>
+
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("flori.in");
+ofstream cout("flori.out");
 
-    cout << a + b << '\n';
+struct salvam /// unde salvam ap fiecarei fete
+{
+    set<int> s;
+} v[152];
+set<int> ap;    /// ce fete mai au nevoie sa intre in grupe
+set<int> flori; /// ce flori sunt in grupa resp
+set<int> fete;  /// ce fete sunt in grupa resp
+
+int ok = 0, ver = 0, n;
+void init(int nr) {
+    ap.erase(nr);
+    fete.insert(nr);
+    for (auto var : v[nr].s)
+        flori.insert(var);
+}
+void program() {
+    for (int i = 1; i <= n; i++) {
+        if (fete.find(i) == fete.end()) /// adica nu se afla inca in grupa
+        {
+            for (auto var : v[i].s) {
+                if (flori.find(var) != flori.end()) {
+                    ok = 2;
+                    break;
+                }
+            }
+            if (ok == 2) {
+                for (auto var : v[i].s)
+                    flori.insert(var);
+                ap.erase(i);
+                fete.insert(i);
+                ver = 1;
+                ok = 0;
+            }
+        }
+    }
+}
+int main() {
+    int m, a;
+    cin >> n >> m;
+    for (int i = 1; i <= n; i++) {
+        ap.insert(i);
+        for (int j = 1; j <= m; j++) {
+            cin >> a;
+            v[i].s.insert(a);
+        }
+    }
+    /*for(int i = 1; i <= n; i++)
+    {
+        for(auto var : v[i].s)
+            cout << var << " ";
+        cout << '\n';
+    }*/
+    /// de fiecare data cand mai adaugam
+    /// un elem intr-o grupa, mai parcurgem
+    /// inca o data
+
+    init(1);
+    program();
+    if (ap.size() == 0) {
+        for (auto var : fete)
+            cout << var << " ";
+    }
+    while (ap.size() != 0) {
+        if (ver == 1) {
+            ver = 0;
+            program();
+            if (ap.size() == 0) {
+                for (auto var : fete)
+                    cout << var << " ";
+            }
+        } else {
+            int x;
+            for (auto var : fete)
+                cout << var << " ";
+            cout << '\n';
+            fete.clear();
+            flori.clear();
+            for (auto var : ap) {
+                x = var;
+                break;
+            }
+            init(x);
+            program();
+
+            if (ap.size() == 0) {
+                for (auto var : fete)
+                    cout << var << " ";
+            }
+        }
+    }
     return 0;
 }
+
 ```

@@ -2,9 +2,9 @@
 id: OJI-2006-IX-pluton
 title: Soluția problemei pluton (OJI 2006, clasa a IX-a)
 problem_id: 748
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [marinel]
+prerequisites:
+    - simulating-solution
 tags:
     - OJI
     - clasa IX
@@ -76,14 +76,51 @@ pluton - solutie
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <algorithm>
+#include <fstream>
+#include <unordered_map>
+#include <vector>
+
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+ifstream cin("pluton.in");
+ofstream cout("pluton.out");
 
-    cout << a + b << '\n';
+vector<string> v;
+unordered_map<string, int> umap;
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, maxx = 0, cnt = 0;
+    string s;
+    cin >> n;
+    while (n--) {
+        cin >> s;
+        v.push_back(s);
+        sort(s.begin(), s.end());
+        umap[s]++;
+    }
+    cout << umap.size() << '\n';
+    for (auto var : umap) {
+        if (var.second > maxx) {
+            maxx = var.second;
+            cnt = 1;
+        } else if (var.second == maxx)
+            cnt++;
+    }
+    cout << maxx << '\n' << cnt << '\n';
+    for (auto var : umap) {
+        if (var.second == maxx) {
+            for (int i = 0; i < v.size(); i++) {
+                s = v[i];
+                sort(s.begin(), s.end());
+                if (var.first == s)
+                    cout << v[i] << " ";
+            }
+            break;
+        }
+    }
     return 0;
 }
 ```
