@@ -2,17 +2,15 @@
 id: OJI-2015-XI-XII-dragoni
 title: Soluția problemei dragoni (OJI 2015, clasele XI-XII)
 problem_id: 32
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [vgavrila]
+prerequisites:
+    - shortest-path
 tags:
     - OJI
     - clasa XI-XII
 ---
 
-Articolul va fi disponibil curând în arhivă.
-
-Până atunci, puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2015/11-12/dragoni.txt).
+Puteți citi mai jos editorialul oficial, disponibil și în [repo-ul nostru de GitHub](https://github.com/roalgo-discord/Romanian-Olympiad-Solutions/blob/main/OJI%20%28regional%20olympiad%29/2015/11-12/dragoni.txt).
 
 <div class="editorial-text" markdown>
 
@@ -57,14 +55,101 @@ Daca insula de destinatie este chiar insula N, in loc sa introducem perechea in 
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: ema_nicole (kilonova)
+#include <fstream>
+#include <bitset>
+#include <vector>
+#include <queue>
+
 using namespace std;
+const int NMAX = 800;
+const int INF = 21e8;
+
+ifstream cin("dragoni.in");
+ofstream cout("dragoni.out");
+
+struct muchii{
+    int nod, cost;
+};
+vector <vector <muchii>> v;
+int d[NMAX + 2];
+
+int bfs(int start) { ///Cer1
+    bitset <NMAX + 2> viz = 0;
+    queue <int> q;
+    int maxx = d[start];
+    q.push(start);
+    viz[start] = 1;
+
+    while(!q.empty()) {
+        int now = q.front();
+        q.pop();
+        for(const muchii& x : v[now]) {
+            if(!viz[x.nod] && x.cost <= d[start]) {
+                maxx = max(maxx, d[x.nod]);
+                viz[x.nod] = 1;
+                q.push(x.nod);
+            }
+        }
+    }
+    return maxx;
+}
+int n;
+int dist[NMAX + 2][NMAX + 2]; ///dist[i][j] - Dmin de a ajunge de la 1 la i, avand dragonul j
+
+struct prio{
+    int i, j, cost;
+    bool operator <(const prio & rhs) const {
+        return cost > rhs.cost;
+    }
+};
+
+void dijkstra() {
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= n; j++)
+            dist[i][j] = INF;
+    priority_queue <prio> pq;
+    pq.push({1, 1, 0});
+    while(!pq.empty()) {
+        prio now = pq.top();
+        pq.pop();
+        if(dist[now.i][now.j] < now.cost)
+            continue;
+        dist[now.i][now.j] = now.cost;
+        dist[now.i][now.i] = min(dist[now.i][now.i], dist[now.i][now.j]);
+        int dragon = now.j; ///Imi aleg dragonul mai mare
+        if(d[now.j] < d[now.i])
+            dragon = now.i;
+        for(const muchii& x : v[now.i]) {
+            if(x.cost <= d[dragon] && dist[x.nod][dragon] > now.cost + x.cost) {
+                dist[x.nod][dragon] = now.cost + x.cost;
+                pq.push({x.nod, dragon, now.cost + x.cost});
+            }
+        }
+    }
+}
 
 int main() {
-    int a, b;
-    cin >> a >> b;
-
-    cout << a + b << '\n';
+    int cer, m;
+    cin >> cer >> n >> m;
+    v.resize(n + 1);
+    for(int i = 1; i <= n; i++)
+        cin >> d[i];
+    for(int i = 1; i <= m; i++) {
+        int a, b, cost;
+        cin >> a >> b >> cost;
+        v[a].push_back({b, cost});
+        v[b].push_back({a, cost});
+    }
+    if(cer == 1) {
+        cout << bfs(1);
+        return 0;
+    }
+    dijkstra();
+    int minn = INF;
+    for(int i = 1; i <= n; i++)
+        minn = min(minn, dist[n][i]);
+    cout << minn;
     return 0;
 }
 ```
