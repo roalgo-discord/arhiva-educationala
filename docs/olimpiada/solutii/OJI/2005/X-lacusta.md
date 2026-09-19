@@ -2,9 +2,9 @@
 id: OJI-2005-X-lacusta
 title: Soluția problemei Lăcusta (OJI 2005, clasa a X-a)
 problem_id: 745
-authors: []
-# prerequisites:
-#    - placeholder
+authors: [nmot]
+prerequisites:
+    - intro-dp
 tags:
     - OJI
     - clasa X
@@ -34,14 +34,51 @@ gasim minimul dintre B[m,1],B[m,2],...,B[m,n-1] si-l adunam cu A[m,n] obtinand s
 Mai jos puteți găsi o soluție neoficială care ia punctajul maxim.
 
 ```cpp
-#include <iostream>
+// credits: BurloiEmilAndrei (kilonova)
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int a, b;
-    cin >> a >> b;
+const int MAXN = 100, MAXM = 100;
 
-    cout << a + b << '\n';
+int mat[MAXN + 5][MAXM + 5];
+vector<vector<int>> dp(MAXN + 5, vector<int>(MAXM + 5, INT_MAX));
+
+int main() {
+    ifstream cin("lacusta.in");
+    ofstream cout("lacusta.out");
+
+    int n, m, lin, col, colStart, colEnd, cost;
+
+    cin >> n >> m;
+
+    for (lin = 0; lin < n; lin++) {
+        for (col = 0; col < m; col++) {
+            cin >> mat[lin][col];
+        }
+    }
+
+    // Putem sa facem un dp
+
+    // Precalculam prima linie
+    dp[0][0] = mat[0][0];
+    for (col = 1; col < m; col++) {
+        dp[0][col] = dp[0][0] + mat[0][col]; // Cat ar costa daca am sari de la (0, 0) la (0, col)
+    }
+
+    // Calculam restul
+    for (lin = 1; lin < n; lin++) {
+        for (colStart = 0; colStart < m; colStart++) { // colStart si colEnd reprezinta fiecare saritura posibila
+            for (colEnd = 0; colEnd < m; colEnd++) {
+                if (colStart != colEnd && (lin != 1 || colStart != 0)) {                  // Nu putem sari pe loc
+                    cost = dp[lin - 1][colStart] + mat[lin][colStart] + mat[lin][colEnd]; // Consideram saltul pe orizontala si
+                                                                                          // deplasarea pe verticala
+                    dp[lin][colEnd] = min(dp[lin][colEnd], cost);
+                }
+            }
+        }
+    }
+
+    cout << dp[n - 1][m - 1];
     return 0;
 }
 ```
