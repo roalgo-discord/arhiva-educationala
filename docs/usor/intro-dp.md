@@ -1,6 +1,6 @@
 ---
 id: intro-dp
-authors: [anomori, stefdasca, stalecu]
+authors: [anomori, stefdasca]
 prerequisites:
     - greedy
     - functions

@@ -1,6 +1,6 @@
 ---
 id: intro-combinatorics
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - pow-log
     - modular-inverse

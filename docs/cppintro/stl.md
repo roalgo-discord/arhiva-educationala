@@ -1,6 +1,6 @@
 ---
 id: stl
-authors: [stefdasca, stalecu, cnc]
+authors: [stefdasca, cnc]
 tags:
   - C++
   - implementare

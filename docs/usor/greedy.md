@@ -1,6 +1,6 @@
 ---
 id: greedy
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - arrays
     - sorting

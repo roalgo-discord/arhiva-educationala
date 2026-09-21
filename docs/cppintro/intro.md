@@ -1,6 +1,6 @@
 ---
 id: intro
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
   - index
 tags:

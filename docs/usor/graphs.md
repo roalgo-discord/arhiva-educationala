@@ -1,6 +1,6 @@
 ---
 id: graphs
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - lee
     - stl

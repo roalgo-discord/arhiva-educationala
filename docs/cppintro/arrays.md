@@ -1,6 +1,6 @@
 ---
 id: arrays
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
   - loops
 tags:

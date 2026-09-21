@@ -1,6 +1,6 @@
 ---
 id: functions
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:

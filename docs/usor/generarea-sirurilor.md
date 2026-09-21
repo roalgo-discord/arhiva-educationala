@@ -1,6 +1,6 @@
 ---
 id: generarea-sirurilor
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - loops
 tags:

@@ -1,6 +1,6 @@
 ---
 id: conditions-if
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
   - data-types
   - basic-math

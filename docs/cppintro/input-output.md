@@ -1,6 +1,6 @@
 ---
 id: input-output
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
   - intro
 tags:

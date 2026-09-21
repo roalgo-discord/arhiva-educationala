@@ -1,6 +1,6 @@
 ---
 id: frequency-arrays
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - arrays
 tags:

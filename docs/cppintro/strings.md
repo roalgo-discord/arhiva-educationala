@@ -1,6 +1,6 @@
 ---
 id: strings
-authors: [stefdasca, woob123, stalecu]
+authors: [stefdasca, woob123]
 prerequisites:
   - data-types
   - arrays

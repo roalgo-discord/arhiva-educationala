@@ -1,6 +1,6 @@
 ---
 id: divisibility
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
     - basic-math
     - loops

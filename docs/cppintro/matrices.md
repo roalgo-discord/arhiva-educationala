@@ -1,6 +1,6 @@
 ---
 id: matrices
-authors: [stefdasca, stalecu]
+authors: [stefdasca]
 prerequisites:
   - arrays
 tags:
